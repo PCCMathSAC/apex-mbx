@@ -1,5 +1,5 @@
 <section xml:id="sec_lhopitals_rule">
-<title>L'H&ocirc;pital's Rule</title>
+<title>L'H&#xf4;pital's Rule</title>
 
 
 <introduction>
@@ -18,14 +18,14 @@ Just as <q>0/0</q> does not mean <q>divide 0 by 0,</q> the expression <q><m>\inf
 </p>
 
 <p>
-This section introduces l'H&ocirc;pital's Rule, a method of resolving limits that produce the indeterminate forms 0/0 and <m>\infty/\infty</m>. We'll also show how algebraic manipulation can be used to convert other indeterminate expressions into one of these two forms so that our new rule can be applied.
+This section introduces l'H&#xf4;pital's Rule, a method of resolving limits that produce the indeterminate forms 0/0 and <m>\infty/\infty</m>. We'll also show how algebraic manipulation can be used to convert other indeterminate expressions into one of these two forms so that our new rule can be applied.
 </p>
 
 <theorem xml:id="thm_LHR">
-<title>L'H&ocirc;pital's Rule, Part 1</title>
+<title>L'H&#xf4;pital's Rule, Part 1</title>
 <statement>
 <p>
-Let <m>\ds \lim_{x\to c}f(x) = 0</m> and <m>\ds \lim_{x\to c}g(x)=0</m>, where <m>f</m> and <m>g</m> are differentiable functions on an open interval <m>I</m> containing <m>c</m>, and <m>g\primeskip'(x)\neq 0</m> on <m>I</m> except possibly at <m>c</m>. Then <index><main>limit</main><sub>L'H&ocirc;pital's Rule</sub></index><index><main>L'H&ocirc;pital's Rule</main></index>
+Let <m>\ds \lim_{x\to c}f(x) = 0</m> and <m>\ds \lim_{x\to c}g(x)=0</m>, where <m>f</m> and <m>g</m> are differentiable functions on an open interval <m>I</m> containing <m>c</m>, and <m>g\primeskip'(x)\neq 0</m> on <m>I</m> except possibly at <m>c</m>. Then <index><main>limit</main><sub>L'H&#xf4;pital's Rule</sub></index><index><main>L'H&#xf4;pital's Rule</main></index>
 <me>
   \lim_{x\to c} \frac{f(x)}{g(x)} = \lim_{x\to c} \frac{\fp(x)}{g\primeskip'(x)}.
 </me>
@@ -34,13 +34,13 @@ Let <m>\ds \lim_{x\to c}f(x) = 0</m> and <m>\ds \lim_{x\to c}g(x)=0</m>, where <
 </theorem>
 
 <p>
-We demonstrate the use of l'H&ocirc;pital's Rule in the following examples; we will often use <q>LHR</q> as an abbreviation of <q>l'H&ocirc;pital's Rule.</q>
+We demonstrate the use of l'H&#xf4;pital's Rule in the following examples; we will often use <q>LHR</q> as an abbreviation of <q>l'H&#xf4;pital's Rule.</q>
 </p>
 <example xml:id="ex_lhr1">
-<title>Using l'H&ocirc;pital's Rule</title>
+<title>Using l'H&#xf4;pital's Rule</title>
 <statement>
 <p>
-Evaluate the following limits, using l'H&ocirc;pital's Rule as needed.
+Evaluate the following limits, using l'H&#xf4;pital's Rule as needed.
 </p>
 <sidebyside>
 
@@ -58,7 +58,7 @@ Evaluate the following limits, using l'H&ocirc;pital's Rule as needed.
 </statement>
 <solution>
 <ol>
-<li>We proved this limit is 1 in <xref ref="ex_limit_sinx_prove">Example</xref> using the Squeeze Theorem. Here we use l'H&ocirc;pital's Rule to show its power.
+<li>We proved this limit is 1 in <xref ref="ex_limit_sinx_prove">Example</xref> using the Squeeze Theorem. Here we use l'H&#xf4;pital's Rule to show its power.
 <me>
   \lim_{x\to0}\frac{\sin x}x \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}}  \ }{=} \lim_{x\to0} \frac{\cos x}{1}=1.
 </me>
@@ -66,7 +66,7 @@ Evaluate the following limits, using l'H&ocirc;pital's Rule as needed.
 <li> <m>\ds \lim_{x\to 1}\frac{\sqrt{x+3}-2}{1-x} 	 \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}}  \ }{=} \lim_{x \to 1} \frac{\frac12(x+3)^{-1/2}}{-1} =-\frac 14.</m>\null</li>
 <li> <m>\ds \lim_{x\to 0}\frac{x^2}{1-\cos x}  \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}}  \ }{=}  \lim_{x\to 0} \frac{2x}{\sin x}.</m> \null
 
-This latter limit also evaluates to the 0/0 indeterminate form. To evaluate it, we apply l'H&ocirc;pital's Rule again.
+This latter limit also evaluates to the 0/0 indeterminate form. To evaluate it, we apply l'H&#xf4;pital's Rule again.
 
  <m>\ds  \lim_{x\to 0} \frac{2x}{\sin x}  \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}}  \ }{=} \frac{2}{\cos x} = 2 .</m> \null
 
@@ -75,7 +75,7 @@ Thus <m>\ds \lim_{x\to0}\frac{x^2}{1-\cos x}=2.</m></li>
 <me>
   \lim_{x\to 2}\frac{x^2+x-6}{x^2-3x+2} = \lim_{x\to 2}\frac{(x-2)(x+3)}{(x-2)(x-1)} = \lim_{x\to 2}\frac{x+3}{x-1} = 5.
 </me>
-We now show how to solve this using l'H&ocirc;pital's Rule.
+We now show how to solve this using l'H&#xf4;pital's Rule.
 <me>
   \lim_{x\to 2}\frac{x^2+x-6}{x^2-3x+2}\stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}}  \ }{=}  \lim_{x\to 2}\frac{2x+1}{2x-3} = 5.
 </me>
@@ -88,18 +88,18 @@ We now show how to solve this using l'H&ocirc;pital's Rule.
 </solution>
 </example>
 <p>
-Note that at each step where l'H&ocirc;pital's Rule was applied, it was <em>needed</em>: the initial limit returned the indeterminate form of <q><m>0/0</m>.</q> If the initial limit returns, for example, 1/2, then l'H&ocirc;pital's Rule does not apply.
+Note that at each step where l'H&#xf4;pital's Rule was applied, it was <em>needed</em>: the initial limit returned the indeterminate form of <q><m>0/0</m>.</q> If the initial limit returns, for example, 1/2, then l'H&#xf4;pital's Rule does not apply.
 </p>
 
 <p>
-The following theorem extends our initial version of l'H&ocirc;pital's Rule in two ways. It allows the technique to be applied to the indeterminate form <m>\infty/\infty</m> and to limits where <m>x</m> approaches <m>\pm\infty</m>.
+The following theorem extends our initial version of l'H&#xf4;pital's Rule in two ways. It allows the technique to be applied to the indeterminate form <m>\infty/\infty</m> and to limits where <m>x</m> approaches <m>\pm\infty</m>.
 </p>
 
 <theorem xml:id="thm_LHR2">
-<title>L'H&ocirc;pital's Rule, Part 2</title>
+<title>L'H&#xf4;pital's Rule, Part 2</title>
 <statement>
 <ol>
-<li>Let <m>\ds\lim_{x\to a}f(x) = \pm\infty</m> and <m>\ds\lim_{x\to a}g(x)=\pm \infty</m>, where <m>f</m> and <m>g</m> are differentiable on an open interval <m>I</m> containing <m>a</m>. Then <index><main>limit</main><sub>L'H&ocirc;pital's Rule</sub></index><index><main>L'H&ocirc;pital's Rule</main></index>
+<li>Let <m>\ds\lim_{x\to a}f(x) = \pm\infty</m> and <m>\ds\lim_{x\to a}g(x)=\pm \infty</m>, where <m>f</m> and <m>g</m> are differentiable on an open interval <m>I</m> containing <m>a</m>. Then <index><main>limit</main><sub>L'H&#xf4;pital's Rule</sub></index><index><main>L'H&#xf4;pital's Rule</main></index>
 <me>
   \lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a}\frac{\fp(x)}{g\primeskip'(x)}.
 </me>
@@ -114,7 +114,7 @@ A similar statement can be made for limits where <m>x</m> approaches <m>-\infty<
 </theorem>
 
 <example xml:id="ex_LHR2">
-<title>Using l'H&ocirc;pital's Rule with limits involving $\infty$</title>
+<title>Using l'H&#xf4;pital's Rule with limits involving $\infty$</title>
 <statement>
 <p>
 Evaluate the following limits.
@@ -126,7 +126,7 @@ Evaluate the following limits.
 </statement>
 <solution>
 <ol>
-<li>We can evaluate this limit already using <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref>; the answer is 3/4. We apply l'H&ocirc;pital's Rule to demonstrate its applicability.
+<li>We can evaluate this limit already using <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref>; the answer is 3/4. We apply l'H&#xf4;pital's Rule to demonstrate its applicability.
 <me>
   \lim_{x\to\infty} \frac{3x^2-100x+2}{4x^2+5x-1000}\stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}}  \ }{=} \lim_{x\to\infty} \frac{6x-100}{8x+5} \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}}  \ }{=} \lim_{x\to\infty} \frac68 = \frac34.
 </me>
@@ -147,11 +147,11 @@ Recall that this means that the limit does not exist; as <m>x</m> approaches <m>
 <subsection>
 <title>Indeterminate Forms <m>0\cdot\infty</m> and <m>\infty-\infty</m></title>
 <p>
-L'H&ocirc;pital's Rule can only be applied to ratios of functions. When faced with an indeterminate form such as <m>0\cdot\infty</m> or <m>\infty-\infty</m>, we can sometimes apply algebra to rewrite the limit so that l'H&ocirc;pital's Rule can be applied. We demonstrate the general idea in the next example.
+L'H&#xf4;pital's Rule can only be applied to ratios of functions. When faced with an indeterminate form such as <m>0\cdot\infty</m> or <m>\infty-\infty</m>, we can sometimes apply algebra to rewrite the limit so that l'H&#xf4;pital's Rule can be applied. We demonstrate the general idea in the next example.
 <index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index>
 </p>
 <example xml:id="ex_LHR3">
-<title>Applying l'H&ocirc;pital's Rule to other indeterminate forms</title>
+<title>Applying l'H&#xf4;pital's Rule to other indeterminate forms</title>
 <statement>
 <p>
 Evaluate the following limits.
@@ -172,7 +172,7 @@ Evaluate the following limits.
 </statement>
 <solution>
 <ol>
-<li>As <m>x\rightarrow 0^+</m>, <m>x\rightarrow 0</m> and <m>e^{1/x}\rightarrow \infty</m>. Thus we have the indeterminate form <m>0\cdot\infty</m>. We rewrite the expression <m>x\cdot e^{1/x}</m> as <m>\ds\frac{e^{1/x}}{1/x}</m>; now, as <m>x\rightarrow 0^+</m>, we get the indeterminate form <m>\infty/\infty</m> to which l'H&ocirc;pital's Rule can be applied.
+<li>As <m>x\rightarrow 0^+</m>, <m>x\rightarrow 0</m> and <m>e^{1/x}\rightarrow \infty</m>. Thus we have the indeterminate form <m>0\cdot\infty</m>. We rewrite the expression <m>x\cdot e^{1/x}</m> as <m>\ds\frac{e^{1/x}}{1/x}</m>; now, as <m>x\rightarrow 0^+</m>, we get the indeterminate form <m>\infty/\infty</m> to which l'H&#xf4;pital's Rule can be applied.
 <me>
   \lim_{x\to0^+} x\cdot e^{1/x} = \lim_{x\to 0^+} \frac{e^{1/x}}{1/x} \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}}  \ }{=} \lim_{x\to 0^+}\frac{(-1/x^2)e^{1/x}}{-1/x^2} =\lim_{x\to 0^+}e^{1/x} =\infty.
 </me>
@@ -186,7 +186,7 @@ Interpretation: <m>e^{1/x}</m> grows <q>faster</q> than <m>x</m> shrinks to zero
 <me>
   \lim_{x\to\infty} \ln(x+1)-\ln x = \lim_{x\to \infty} \ln \left(\frac{x+1}x\right).
 </me>
-As <m>x\rightarrow \infty</m>, the argument of the <m>\ln</m> term approaches <m>\infty/\infty</m>, to which we can apply l'H&ocirc;pital's Rule.
+As <m>x\rightarrow \infty</m>, the argument of the <m>\ln</m> term approaches <m>\infty/\infty</m>, to which we can apply l'H&#xf4;pital's Rule.
 <me>
   \lim_{x\to\infty} \frac{x+1}x \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}}  \ }{=} \frac11=1.
 </me>
@@ -231,7 +231,7 @@ If <m>\ds \lim_{x\to c} \ln\big(f(x)\big) = L</m>,  then
 </keyidea>
 
 <example xml:id="ex_LHR4">
-<title>Using l'H&ocirc;pital's Rule with indeterminate forms involving exponents</title>
+<title>Using l'H&#xf4;pital's Rule with indeterminate forms involving exponents</title>
 <statement>
 <p>
 Evaluate the following limits.
@@ -313,7 +313,7 @@ List the different indeterminate forms described in this section.
 <exercise>
 <statement>
 <p>
-T/F: l'H&ocirc;pital's Rule provides a faster method of computing derivatives.
+T/F: l'H&#xf4;pital's Rule provides a faster method of computing derivatives.
 </p>
 </statement>
 <answer>
@@ -326,7 +326,7 @@ F
 <exercise>
 <statement>
 <p>
-T/F: l'H&ocirc;pital's Rule states that <m>\ds \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{\fp(x)}{g'(x)}.</m>
+T/F: l'H&#xf4;pital's Rule states that <m>\ds \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{\fp(x)}{g'(x)}.</m>
 </p>
 </statement>
 <answer>
@@ -352,7 +352,7 @@ The base of an expression is approaching 1 while its power is growing without bo
 <exercise>
 <statement>
 <p>
-Fill in the blanks: The Quotient Rule is applied to <m>\ds \frac{f(x)}{g(x)}</m> when taking <u></u>; l'H&ocirc;pital's Rule is applied when taking certain <u></u>.
+Fill in the blanks: The Quotient Rule is applied to <m>\ds \frac{f(x)}{g(x)}</m> when taking <u></u>; l'H&#xf4;pital's Rule is applied when taking certain <u></u>.
 </p>
 </statement>
 <answer>
