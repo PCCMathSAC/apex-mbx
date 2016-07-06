@@ -1,0 +1,1396 @@
+<section xml:id="sec_polar">
+<title>Introduction to Polar Coordinates</title>
+
+
+<introduction>
+<p>
+We are generally introduced to the idea of graphing curves by relating <m>x</m>-values to <m>y</m>-values through a function <m>f</m>. That is, we set <m>y=f(x)</m>, and plot lots of point pairs <m>(x,y)</m> to get a good notion of how the curve looks. This method is useful but has limitations, not least of which is that curves that <q>fail the vertical line test</q> cannot be graphed without using multiple functions.
+</p>
+
+<p>
+The previous two sections introduced and studied a new way of plotting points in the <m>x,y</m>-plane. Using parametric equations, <m>x</m> and <m>y</m> values are computed independently and then plotted together. This method allows us to graph an extraordinary range of curves. This section introduces yet another way to plot points in the plane: using <b>polar coordinates</b>.
+</p>
+</introduction>
+
+
+<subsection>
+<title>Polar Coordinates</title>
+<p>
+Start with a point <m>O</m> in the plane called the <b>pole</b> (we will always identify this point with the origin). From the pole, draw a ray, called the <b>initial ray</b> (we will always draw this ray horizontally, identifying it with the positive <m>x</m>-axis). A point <m>P</m> in the plane is determined by the distance <m>r</m> that <m>P</m> is from <m>O</m>, and the angle <m>\theta</m> formed between the initial ray and the segment <m>\overline{OP}</m> (measured counter-clockwise). We record the distance and angle as an ordered pair <m>(r,\theta)</m>. To avoid confusion with rectangular coordinates, we will denote polar coordinates with the letter <m>P</m>, as in <m>P(r,\theta)</m>. This is illustrated in <xref ref="fig_polar_intro1">Figure</xref><index><main>polar coordinates</main></index><index><main>polar</main><sub>coordinates</sub></index>
+</p>
+<figure xml:id="fig_polar_intro1" >
+<caption>Illustrating polar coordinates.</caption>
+<image width="73%" source="images/17469063de1b873386a714228c785ca2ea409d7b.png" />
+</figure>
+<p>
+Practice will make this process more clear.
+</p>
+<example xml:id="ex_polar1">
+<title>Plotting Polar Coordinates</title>
+<statement>
+<p>
+Plot the following polar coordinates:<index><main>polar coordinates</main><sub>plotting points</sub></index>
+<me>
+  A = P(1,\pi/4)\quad B=P(1.5,\pi)\quad C = P(2,-\pi/3)\quad D = P(-1,\pi/4)
+</me>
+</p>
+</statement>
+<solution>
+<p>
+\AddToShipoutPicture*{\put(\LenToUnit{.4\paperwidth},\LenToUnit{.04\paperheight}){<image width="73%" source="images/fb3c44da3233f6d2753232496185f8bbc1e75313.png" />
+					
+					}}
+To aid in the drawing, a polar grid is provided at the bottom of this page. To place the point <m>A</m>, go out 1 unit along the initial ray (putting you on the inner circle shown on the grid), then rotate counter-clockwise <m>\pi/4</m> radians (or <m>45^\circ</m>). Alternately, one can consider the rotation first: think about the ray from <m>O</m> that forms an angle of <m>\pi/4</m> with the initial ray, then move out 1 unit along this ray (again placing you on the inner circle of the grid).
+</p>
+
+<p>
+To plot <m>B</m>, go out <m>1.5</m> units along the initial ray and rotate <m>\pi</m> radians (<m>180^\circ</m>).
+</p>
+
+<p>
+To plot <m>C</m>, go out 2 units along the initial ray then rotate <em>clockwise</em> <m>\pi/3</m> radians, as the angle given is negative.
+</p>
+
+<p>
+To plot <m>D</m>, move along the initial ray <q><m>-1</m></q> units <ndash /> in other words, <q>back up</q> 1 unit, then rotate counter-clockwise by <m>\pi/4</m>. The results are given in <xref ref="fig_polar1">Figure</xref>.
+</p>
+<figure xml:id="fig_polar1" >
+<caption>Plotting polar points in <xref ref="ex_polar1">Example</xref>.</caption>
+<image width="73%" source="images/figpolar1.png" />
+</figure>
+</solution>
+</example>
+<p>
+Consider the following two points: <m>A = P(1,\pi)</m> and <m>B = P(-1,0)</m>. To locate <m>A</m>, go out 1 unit on the initial ray then rotate <m>\pi</m> radians; to locate <m>B</m>, go out <m>-1</m> units on the initial ray and don't rotate. One should see that <m>A</m> and <m>B</m> are located at the same point in the plane. We can also consider <m>C=P(1,3\pi)</m>, or <m>D = P(1,-\pi)</m>; all four of these points share the same location.
+</p>
+
+<p>
+This ability to identify a point in the plane with multiple polar coordinates is both a <q>blessing</q> and a <q>curse.</q> We will see that it is beneficial as we can plot beautiful functions that intersect themselves (much like we saw with parametric functions). The unfortunate part of this is that it can be difficult to determine when this happens. We'll explore this more later in this section.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Polar to Rectangular Conversion</title>
+<p>
+It is useful to recognize both the rectangular (or, Cartesian) coordinates of a point in the plane and its polar coordinates. <xref ref="fig_polar_intro2">Figure</xref> shows a point <m>P</m> in the plane with rectangular coordinates <m>(x,y)</m> and polar coordinates <m>P(r,\theta)</m>. Using trigonometry, we can make the identities given in the following Key Idea.
+</p>
+<figure xml:id="fig_polar_intro2" >
+<caption>Converting between rectangular and polar coordinates.</caption>
+<image width="73%" source="images/figpolarintro2.png" />
+</figure>
+<keyidea xml:id="idea_polarconvert">
+<title>\parbox[t]{185pt}{Converting Between Rectangular and Polar Coordinates}</title>
+<p>
+Given the polar point <m>P(r,\theta)</m>, the rectangular coordinates are determined by
+<me>
+  x=r\cos \theta\qquad y=r\sin \theta.
+</me>
+</p>
+
+<p>
+Given the rectangular coordinates <m>(x,y)</m>, the polar coordinates are determined by
+<me>
+  r^2=x^2+y^2\qquad \tan \theta = \frac yx.
+</me>
+</p>
+</keyidea>
+
+<example xml:id="ex_polar2">
+<title>Converting Between Polar and Rectangular Coordinates</title>
+<statement>
+<ol>
+<li>Convert the polar coordinates <m>P(2,2\pi/3)</m> and <m>P(-1,5\pi/4)</m> to rectangular coordinates.</li>
+<li>Convert the rectangular coordinates <m>(1,2)</m> and <m>(-1,1)</m> to polar coordinates.</li>
+</ol>
+</statement>
+<solution>
+<ol>
+<li>
+<ol>
+<li>We start with <m>P(2,2\pi/3)</m>. Using <xref ref="idea_polarconvert">Key Idea</xref>, we have
+<me>
+  x= 2\cos (2\pi/3) = -1\qquad y = 2\sin (2\pi/3) = \sqrt{3}.
+</me>
+So the rectangular coordinates are <m>(-1,\sqrt{3}) \approx (-1,1.732)</m>.</li>
+<li>The polar point <m>P(-1,5\pi/4)</m> is converted to rectangular with:
+<me>
+  x=-1\cos (5\pi/4) = \sqrt{2}/2\qquad y= -1\sin (5\pi/4) = \sqrt{2}/2.
+</me>
+So the rectangular coordinates are <m>(\sqrt{2}/2,\sqrt{2}/2) \approx (0.707,0.707)</m>.</li>
+</ol>
+These points are plotted in <xref ref="fig_polar2">Figure</xref> (a). The rectangular coordinate system is drawn lightly under the polar coordinate system so that the relationship between the two can be seen.
+	
+<figure xml:id="fig_polar2" >
+<caption>Plotting rectangular and polar points in <xref ref="ex_polar2">Example</xref>.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figpolar2.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell><image width="73%" source="images/figpolar2b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
+</figure>
+</li>
+<li>
+<ol>
+<li>To convert the rectangular point <m>(1,2)</m> to polar coordinates, we use the Key Idea to form the following two equations:
+<me>
+  1^2+2^2 = r^2 \qquad \tan \theta = \frac{2}{1}.
+</me>
+The first equation tells us that <m>r=\sqrt{5}</m>. Using the inverse tangent function, we find
+<me>
+  \tan \theta = 2 \quad \Rightarrow \quad \theta = \tan^{-1} 2 \approx 1.11\approx 63.43^\circ.
+</me>
+Thus polar coordinates of <m>(1,2)</m> are <m>P(\sqrt{5},1.11)</m>.</li>
+<li><line>To convert <m>(-1,1)</m> to polar coordinates, we form the equations
+<me>
+  (-1)^2+1^2=r^2 \qquad \tan \theta = \frac{1}{-1}.
+</me>
+Thus <m>r=\sqrt{2}</m>. We need to be careful in computing <m>\theta</m>: using the inverse tangent function, we have
+<me>
+  \tan\theta = -1 \quad \Rightarrow \quad \theta = \tan^{-1}(-1) = -\pi/4 = -45^\circ.
+</me>
+This is not the angle we desire. The range of <m>\tan^{-1}x</m> is <m>(-\pi/2,\pi/2)</m>; that is, it returns angles that lie in the <m>1^\text{st}</m> and <m>4^\text{th}</m> quadrants. To find locations in the <m>2^\text{nd}</m>  and <m>3^\text{rd}</m> quadrants, add <m>\pi</m> to the result of <m>\tan^{-1}x</m>. So  <m>\pi+(-\pi/4)</m> puts the angle at <m>3\pi/4</m>. Thus the polar point is <m>P(\sqrt{2},3\pi/4)</m>.
+		
+		An alternate method is to use the angle <m>\theta</m> given by arctangent, but change the sign of <m>r</m>. Thus we could also refer to <m>(-1,1)</m> as</line>
+<line><m>P(-\sqrt{2},-\pi/4)</m>.</line>
+</li>
+</ol>
+These points are plotted in <xref ref="fig_polar2">Figure</xref> (b). The polar system is drawn lightly under the rectangular grid with rays to demonstrate the angles used.</li>
+</ol>
+
+<p>
+\vskip-
+</p>
+</solution>
+</example>
+</subsection>
+
+
+<subsection>
+<title>Polar Functions and Polar Graphs</title>
+<p>
+Defining a new coordinate system allows us to create a new kind of function, a <b>polar function.</b> Rectangular coordinates lent themselves well to creating functions that related <m>x</m> and <m>y</m>, such as <m>y=x^2.</m> Polar coordinates allow us to create functions that relate <m>r</m> and <m>\theta</m>. Normally these functions look like <m>r=f(\theta)</m>, although we can create functions of the form <m>\theta = f(r)</m>. The following examples introduce us to this concept.<index><main>polar</main><sub>functions</sub></index><index><main>polar</main><sub>functions!graphing</sub></index>
+</p>
+<example xml:id="ex_polar3">
+<title>Introduction to Graphing Polar Functions</title>
+<statement>
+<p>
+Describe the graphs of the following polar functions.
+</p>
+
+<ol>
+<li><m>r = 1.5</m></li>
+<li><m>\theta = \pi/4</m></li>
+</ol>
+</statement>
+<solution>
+<ol>
+<li>The equation <m>r=1.5</m> describes all points that are 1.5 units from the pole; as the angle is not specified, any <m>\theta</m> is allowable. All points 1.5 units from the pole describes a circle of radius 1.5.
+
+We can consider the rectangular equivalent of this equation; using <m>r^2=x^2+y^2</m>, we see that <m>1.5^2=x^2+y^2</m>, which we recognize as the equation of a circle centered at <m>(0,0)</m> with radius 1.5. This is sketched in <xref ref="fig_polar3">Figure</xref>.</li>
+<li>The equation <m>\theta = \pi/4</m> describes all points such that the line through them and the pole make an angle of <m>\pi/4</m> with the initial ray. As the radius <m>r</m> is not specified, it can be any value (even negative). Thus <m>\theta = \pi/4</m> describes the line through the pole that makes an angle of <m>\pi/4 = 45^\circ</m> with the initial ray.
+
+We can again consider the rectangular equivalent of this equation. Combine <m>\tan \theta =y/x</m> and <m>\theta =\pi/4</m>:
+<me>
+  \tan \pi/4 = y/x \quad \Rightarrow x\tan \pi/4 = y \quad \Rightarrow y = x.
+</me>
+This graph is also plotted in <xref ref="fig_polar3">Figure</xref>.
+<figure xml:id="fig_polar3" >
+<caption>Plotting standard polar plots.</caption>
+<image width="73%" source="images/figpolar3.png" />
+</figure>
+</li>
+</ol>
+</solution>
+</example>
+<p>
+The basic rectangular equations of the form <m>x=h</m> and <m>y=k</m> create vertical and horizontal lines, respectively; the basic polar equations <m>r= h</m> and <m>\theta =\alpha</m> create circles and lines through the pole, respectively. With this as a foundation, we can create more complicated polar functions of the form <m>r=f(\theta)</m>. The input is an angle; the output is a length, how far in the direction of the angle to go out.
+</p>
+
+<p>
+We sketch these functions much like we sketch rectangular and parametric functions: we plot lots of points and <q>connect the dots</q> with curves. We demonstrate this in the following example.
+</p>
+<example xml:id="ex_polar4">
+<title>Sketching Polar Functions</title>
+<statement>
+<p>
+Sketch the polar function <m>r=1+\cos \theta</m> on <m>[0,2\pi]</m> by plotting points.
+</p>
+</statement>
+<solution>
+<p>
+A common question when sketching curves by plotting points is <q>Which points should I plot?</q> With rectangular equations, we often choose <q>easy</q> values <ndash /> integers, then added more if needed. When plotting polar equations, start with the <q>common</q> angles <ndash /> multiples of <m>\pi/6</m> and <m>\pi/4</m>. <xref ref="fig_polar4">Figure</xref> gives a table of just a few values of <m>\theta</m> in <m>[0,\pi]</m>.
+</p>
+
+<p>
+Consider the point <m>P(0,2)</m> determined by the first line of the table. The angle is 0 radians <ndash /> we do not rotate from the initial ray <ndash /> then we go out 2 units from the pole. When <m>\theta=\pi/6</m>, <m>r = 1.866</m> (actually, it is <m>1+\sqrt{3}/2</m>); so rotate by <m>\pi/6</m> radians and go out 1.866 units.
+</p>
+
+<p>
+The graph shown uses more points, connected with straight lines. (The points on the graph that correspond to points in the table are signified with larger dots.) Such a sketch is likely good enough to give one an idea of what the graph looks like.
+</p>
+</solution>
+</example>
+
+<figure xml:id="fig_polar4" >
+<caption>Graphing a polar function in <xref ref="ex_polar4">Example</xref> by plotting points.</caption>
+<tabular>
+<row><cell><m>\begin{array}{cc}
+		\theta \amp  r=1+\cos\theta \\ \hline
+ 0 \amp  2 \\
+ \pi/6 \amp  1.86603 \\
+  \pi/2 \amp  1 \\
+ 4\pi/3 \amp  0.5 \\
+ 7 \pi /4 \amp  1.70711 \\
+\end{array}</m></cell></row>
+<row><cell></cell></row>
+<row><cell><image width="73%" source="images/figpolar4.png" /></cell></row>
+</tabular>
+</figure>
+<p>
+<b>Technology Note:</b> Plotting functions in this way can be tedious, just as it was with rectangular functions. To obtain very accurate graphs, technology is a great aid. Most graphing calculators can plot polar functions; in the menu, set the plotting mode to something like <c>polar</c> or <c>POL</c>, depending on one's calculator. As with plotting parametric functions, the viewing <q>window</q> no longer determines the <m>x</m>-values that are plotted, so additional information needs to be provided. Often with the <q>window</q> settings are the settings for the beginning and ending <m>\theta</m> values (often called <c><m>\theta_{\text{min} }</m></c> and <c><m>\theta_{\text{max} }</m></c>) as well as the <c><m>\theta_{\text{step} }</m></c> <ndash /> that is, how far apart the <m>\theta</m> values are spaced. The smaller the <c><m>\theta_{\text{step} }</m></c> value, the more accurate the graph (which also increases plotting time). Using technology, we graphed the polar function <m>r=1+\cos \theta</m> from <xref ref="ex_polar4">Example</xref> in <xref ref="fig_polar4b">Figure</xref>.
+</p>
+<figure xml:id="fig_polar4b" >
+<caption>Using  technology to graph a polar function.</caption>
+<image width="73%" source="images/figpolar4b.png" />
+</figure>
+<example xml:id="ex_polar5">
+<title>Sketching Polar Functions</title>
+<statement>
+</statement>
+<p>
+Sketch the polar function <m>r=\cos (2\theta)</m> on <m>[0,2\pi]</m> by plotting points.
+</p>
+<solution xml:id="fig_polar5table">
+<p>
+We start by making a table of <m>\cos (2\theta)</m> evaluated at common angles <m>\theta</m>, as shown in <xref ref="fig_polar5table">Figure</xref>. These points are then plotted in <xref ref="fig_polar5">Figure</xref> (a). This particular graph <q>moves</q> around quite a bit and one can easily forget which points should be connected to each other. To help us with this, we numbered each point in the table and on the graph.
+</p>
+<sidebyside>
+\vskip0pt
+<m>\begin{array}{ccc}
+\text{Pt.}  \amp  \theta \amp  \cos (2\theta)\\ \hline
+ 1 \amp  0 \amp  1. \\
+ 2 \amp  \pi /6 \amp  0.5 \\
+ 3 \amp  \pi /4 \amp  0. \\
+ 4 \amp  \pi /3 \amp  -0.5 \\
+ 5 \amp  \pi /2 \amp  -1. \\
+ 6 \amp  2 \pi /3 \amp  -0.5 \\
+ 7 \amp  3 \pi /4 \amp  0. \\
+ 8 \amp  5 \pi /6 \amp  0.5 \\
+ 9 \amp  \pi  \amp  1. \\
+\end{array}</m>
+\vskip 0pt
+<m>\begin{array}{ccc}
+\text{Pt.}  \amp  \theta \amp  \cos (2\theta)\\ \hline
+ 10 \amp  7 \pi /6 \amp  0.5 \\
+ 11 \amp  5 \pi /4 \amp  0. \\
+ 12 \amp  4 \pi /3 \amp  -0.5 \\
+ 13 \amp  3 \pi /2 \amp  -1. \\
+ 14 \amp  5 \pi /3 \amp  -0.5 \\
+ 15 \amp  7 \pi /4 \amp  0. \\
+ 16 \amp  11 \pi /6 \amp  0.5 \\
+ 17 \amp  2 \pi  \amp  1. \\
+\end{array}</m>
+</sidebyside>
+<p>
+Using more points (and the aid of technology) a smoother plot can be made as shown in <xref ref="fig_polar5">Figure</xref> (b). This plot is an example of a <em>rose curve</em>.
+</p>
+<figure xml:id="fig_polar5" >
+<caption>Polar plots from <xref ref="ex_polar5">Example</xref>.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figpolar5.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell><image width="73%" source="images/figpolar5b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
+</figure>
+</solution>
+</example>
+<p>
+It is sometimes desirable to refer to a graph via a polar equation, and other times by a rectangular equation. Therefore it is necessary to be able to convert between polar and rectangular functions, which we practice in the following example. We will make frequent use of the identities found in <xref ref="idea_polarconvert">Key Idea</xref>.
+</p>
+<example xml:id="ex_polar6">
+<title>Converting between rectangular and polar equations.</title>
+<statement>
+<sidebyside>
+Convert from rectangular to polar.
+<ol>
+<li><m>y=x^2</m></li>
+<li><m>xy = 1</m></li>
+</ol>
+Convert from polar to rectangular.
+<ol>
+<li><m>\ds r=\frac{2}{\sin \theta-\cos\theta}</m></li>
+<li><m>r=2\cos \theta</m></li>
+</ol>
+
+</sidebyside>
+</statement>
+<solution>
+<ol>
+<li>Replace <m>y</m> with <m>r\sin\theta</m> and replace <m>x</m> with <m>r\cos\theta</m>, giving:
+<md>
+  <mrow>  y \amp =x^2</mrow>
+  <mrow>  r\sin\theta \amp = r^2\cos^2\theta</mrow>
+  <mrow>  \frac{\sin\theta}{\cos^2\theta} \amp = r</mrow>
+</md>
+We have found that <m>r=\sin\theta/\cos^2\theta = \tan\theta\sec\theta</m>. The domain of this polar function is <m>(-\pi/2,\pi/2)</m>; plot a few points to see how the familiar parabola is traced out by the polar equation.</li>
+<li>We again replace <m>x</m> and <m>y</m> using the standard identities and work to solve for <m>r</m>:
+<md>
+  <mrow>  xy \amp = 1</mrow>
+  <mrow>  r\cos\theta\cdot r\sin\theta \amp  = 1</mrow>
+  <mrow>  r^2 \amp  = \frac{1}{\cos\theta\sin\theta}</mrow>
+  <mrow>  r \amp  = \frac{1}{\sqrt{\cos\theta\sin\theta}}</mrow>
+</md>
+This function is valid only when the product of <m>\cos\theta\sin\theta</m> is positive. This occurs in the first and third quadrants, meaning the domain of this polar function is <m>(0,\pi/2) \cup (\pi,3\pi/2)</m>.
+	
+	We can rewrite the original rectangular equation <m>xy=1</m> as <m>y=1/x</m>. This is graphed in <xref ref="fig_polar6">Figure</xref>; note how it only exists in the first and third quadrants.
+	<figure xml:id="fig_polar6" >
+<caption>Graphing <m>xy=1</m> from <xref ref="ex_polar6">Example</xref>.</caption>
+<image width="73%" source="images/figpolar6.png" />
+</figure>
+</li>
+<li>There is no set way to convert from polar to rectangular; in general, we look to form the products <m>r\cos \theta</m> and <m>r\sin\theta</m>, and then replace these with <m>x</m> and <m>y</m>, respectively. We start in this problem by multiplying both sides by <m>\sin\theta-\cos\theta</m>:
+<md>
+  <mrow>  r \amp = \frac{2}{\sin\theta-\cos\theta}</mrow>
+  <mrow>  r(\sin\theta-\cos\theta) \amp = 2</mrow>
+  <mrow>  r\sin\theta-r\cos\theta \amp = 2. \qquad \text{Now replace with <m>y</m> and <m>x</m>:}</mrow>
+  <mrow>  y-x \amp = 2</mrow>
+  <mrow>  y \amp = x+2.</mrow>
+</md>
+The original polar equation, <m>r=2/(\sin\theta-\cos\theta)</m> does not easily reveal that its graph is simply a line. However, our conversion shows that it is. The upcoming gallery of polar curves gives the general equations of lines in polar form.
+
+\drawexampleline</li>
+<li>By multiplying both sides by <m>r</m>, we obtain both an <m>r^2</m> term and an <m>r\cos\theta</m> term, which we replace with <m>x^2+y^2</m> and <m>x</m>, respectively.
+<md>
+  <mrow>  r \amp =2\cos\theta</mrow>
+  <mrow>  r^2 \amp = 2r\cos\theta</mrow>
+  <mrow>  x^2+y^2 \amp = 2x. 
+	\end{mathrow}
+We recognize this as a circle; by completing the square we can find its radius and center.
+\begin{mathrow}
+	x^2-2x+y^2 \amp = 0</mrow>
+  <mrow>  (x-1)^2 + y^2 \amp =1.</mrow>
+</md>
+The circle is centered at <m>(1,0)</m> and has radius 1. The upcoming gallery of polar curves gives the equations of <em>some</em> circles in polar form; circles with arbitrary centers have a complicated polar equation that we do not consider here.</li>
+</ol>
+
+<p>
+\vskip-
+</p>
+</solution>
+</example>
+<p>
+Some curves have very simple polar equations but rather complicated rectangular ones. For instance, the equation <m>r=1+\cos\theta</m> describes a <em>cardiod</em> (a shape important the sensitivity of microphones, among other things; one is graphed in the gallery in the Lima&#xe7;on section). It's rectangular form is not nearly as simple; it is the implicit equation
+<m>x^4+y^4+2x^2y^2-2xy^2-2x^3-y^2=0.</m> The conversion is not <q>hard,</q> but takes several steps, and is left as a problem in the Exercise section.
+</p>
+
+<p>
+<b> Gallery of Polar Curves</b>
+</p>
+
+<p>
+There are a number of basic and <q>classic</q> polar curves, famous for their beauty and/or applicability to the sciences. <index><main>polar</main><sub>function!gallery of graphs</sub></index> This section ends with a small gallery of some of these graphs. We encourage the reader to understand how these graphs are formed, and to investigate with technology other types of polar functions.
+</p>
+
+<p>
+\newlength{\gallerywidth}
+
+\hskip-\marginparwidth
+\rule{25pt+\marginparwidth+\textwidth}{1pt}
+</p>
+
+<p>
+\hskip-\marginparwidth
+<b> Lines</b>
+</p>
+
+<p>
+\hskip-\marginparwidth
+</p>
+<tabular>
+{p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
+<b>Through the origin:</b> <amp /> <b>Horizontal line:</b> <amp /> <b>Vertical line:</b> <amp /> <b>Not through origin:</b> \\
+<m>\theta = \alpha</m> <amp /> <m>r=a\csc\theta</m> <amp /> <m>r=a\sec\theta</m> <amp /> <m>\ds r=\frac{b}{\sin\theta-m\cos\theta}</m> \\
+<image width="90%" source="images/figpolarline1.png" />  <amp /> <image width="90%" source="images/figpolarline2.png" />  <amp /> <image width="90%" source="images/figpolarline4.png" />  <amp /> <image width="90%" source="images/figpolarline3.png" />
+</tabular>
+<p>
+\exercisegeometry\exerciseheader
+</p>
+
+<p>
+\text{<b> Circles</b>}<b> Spiral</b>
+</p>
+<tabular>
+{p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
+<b>Centered on <m>x</m>-axis:</b> <amp /> <b>Centered on <m>y</m>-axis:</b> <amp /> <b>Centered on origin:</b> &<b>Archimedean spiral</b>\\
+<m>r=a\cos \theta</m> <amp /> <m>r=a\sin\theta</m> <amp /> <m>r=a</m> <amp /> <m>r=\theta</m>\\
+<image width="90%" source="images/figpolarcircle1.png" /> &<image width="90%" source="images/figpolarcircle2.png" /> &<image width="90%" source="images/figpolarcircle3.png" /> &<image width="90%" source="images/figpolarspiral.png" />
+</tabular>
+</subsection>
+
+
+<subsection>
+<title>Lima&#xe7;ons</title>
+<p>
+\text{Symmetric about <m>x</m>-axis: <m>r=a\pm b\cos\theta</m>;   Symmetric about <m>y</m>-axis: <m>r=a\pm b\sin \theta</m>;   <m>a,b>0</m>}
+</p>
+<tabular>
+{p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
+<b>With inner loop:</b> <amp /> <b>Cardiod:</b> <amp /> <b>Dimpled:</b> <amp /> <b>Convex:</b> \\
+<m>\ds \frac ab \lt  1</m> <amp /> <m>\ds \frac ab=1</m> <amp /> <m>\ds 1\lt \frac ab \lt 2</m> <amp /> <m>\ds \frac ab>2</m> \\
+<image width="90%" source="images/figpolarlimacon1.png" />  <amp /> <image width="90%" source="images/figpolarlimacon2.png" />  <amp /> <image width="90%" source="images/figpolarlimacon3.png" />  <amp /> <image width="90%" source="images/figpolarlimacon4.png" />
+</tabular>
+</subsection>
+
+
+<subsection>
+<title>Rose Curves</title>
+<p>
+\text{Symmetric about <m>x</m>-axis: <m>r=a \cos(n\theta)</m>;   Symmetric about <m>y</m>-axis: <m>r=a\sin(n\theta)</m>}
+</p>
+
+<p>
+\text{Curve contains <m>2n</m> petals when <m>n</m> is even and <m>n</m> petals when <m>n</m> is odd.}
+</p>
+<tabular>
+{p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
+<m>r=a\cos (2\theta)</m> <amp /> <m>r=a\sin(2\theta)</m> <amp /> <m>r=a\cos (3\theta)</m> <amp /> <m>r=a\sin (3\theta)</m> \\
+<image width="90%" source="images/figpolarrose1.png" />  <amp /> <image width="90%" source="images/figpolarrose2.png" />  <amp /> <image width="90%" source="images/figpolarrose4.png" />  <amp /> <image width="90%" source="images/figpolarrose3.png" />
+</tabular>
+<p>
+<b> Special Curves</b>
+</p>
+
+<p>
+<b>Rose curves</b> <amp /> <amp /> <b>Lemniscate:</b> <amp /> <b>Eight Curve:</b>
+</p>
+
+<p>
+<m>r=a\sin (\theta/5)</m> <amp /> <m>r=a\sin(2\theta/5)</m> <amp /> <m>r^2=a^2\cos (2\theta)</m> <amp /> <m>r^2=a^2\sec^4\theta\cos (2\theta)</m>
+</p>
+
+<p>
+<image width="90%" source="images/figpolarspecial1.png" /> <amp /> <image width="90%" source="images/figpolarspecial2.png" /> <amp /> <image width="90%" source="images/figpolarspecial3.png" /> <amp /> <image width="90%" source="images/figpolarspecial4.png" />
+\end{tabular}
+</p>
+
+<p>
+\restoregeometry
+\regularheader
+</p>
+
+<p>
+Earlier we discussed how each point in the plane does not have a unique representation in polar form. This can be a <q>good</q> thing, as it allows for the beautiful and interesting curves seen in the preceding gallery. However, it can also be a <q>bad</q> thing, as it can be difficult to determine where two curves intersect.
+</p>
+<example xml:id="ex_polar7">
+<title>Finding points of intersection with polar curves</title>
+<statement>
+<p>
+Determine where the graphs of the polar equations <m>r=1+3\cos\theta</m> and <m>r=\cos \theta</m> intersect.
+</p>
+</statement>
+<solution>
+<p>
+As technology is generally readily available, it is usually a good idea to start with a graph. We have graphed the two functions in <xref ref="fig_polar7">Figure</xref>(a); to better discern the intersection points, part (b) of the figure zooms in around the origin.
+</p>
+<figure xml:id="fig_polar7" >
+<caption>Graphs to help determine the points of intersection of the polar functions given in <xref ref="ex_polar7">Example</xref>.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figpolar7.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell><image width="73%" source="images/figpolar7b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
+</figure>
+<p>
+We start by setting the two functions equal to each other and solving for <m>\theta</m>:
+<md>
+  <mrow>  1+3\cos\theta \amp = \cos \theta</mrow>
+  <mrow>  2\cos\theta \amp = -1</mrow>
+  <mrow>  \cos\theta\amp = -\frac12</mrow>
+  <mrow>  \theta \amp = \frac{2\pi}{3}, \frac{4\pi}{3}.</mrow>
+</md>
+</p>
+
+<p>
+(There are, of course, infinite solutions to the equation <m>\cos\theta=-1/2</m>; as the lima&#xe7;on is traced out once on <m>[0,2\pi]</m>, we restrict our solutions to this interval.)
+</p>
+
+<p>
+We need to analyze this solution. When <m>\theta = 2\pi/3</m> we obtain the point of intersection that lies in the 4<m>^\text{th}</m> quadrant. When <m>\theta = 4\pi/3</m>, we get the point of intersection that lies in the 2<m>^\text{nd}</m> quadrant. There is more to say about this second intersection point, however. The circle defined by <m>r=\cos\theta</m> is traced out once on <m>[0,\pi]</m>, meaning that this point of intersection occurs while tracing out the circle a second time. It seems strange to pass by the point once and then recognize it as a point of intersection only when arriving there a <q>second time.</q> The first time the circle arrives at this point is when <m>\theta = \pi/3</m>.
+It is key to understand that these two points are the same: <m>(\cos \pi/3,\pi/3)</m> and <m>(\cos 4\pi/3,4\pi/3)</m>.
+</p>
+
+<p>
+To summarize what we have done so far, we have found two points of intersection: when <m>\theta=2\pi/3</m> and when <m>\theta=4\pi/3</m>. When referencing the circle <m>r=\cos \theta</m>, the latter point is better referenced as when <m>\theta=\pi/3</m>.
+</p>
+
+<p>
+There is yet another point of intersection: the pole (or, the origin). We did not recognize this intersection point using our work above as each graph arrives at the pole at a different <m>\theta</m> value.
+</p>
+
+<p>
+A graph intersects the pole when <m>r=0</m>. Considering the circle <m>r=\cos\theta</m>, <m>r=0</m> when <m>\theta = \pi/2</m> (and odd multiples thereof, as the circle is repeatedly traced). The lima&#xe7;on intersects the pole when <m>1+3\cos\theta =0</m>; this occurs when <m>\cos \theta = -1/3</m>, or for <m>\theta = \cos^{-1}(-1/3)</m>. This is a nonstandard angle, approximately <m>\theta = 1.9106 = 109.47^\circ</m>. The lima&#xe7;on intersects the pole twice in <m>[0,2\pi]</m>; the other angle at which the lima&#xe7;on is at the pole is the reflection of the first angle across the <m>x</m>-axis. That is, <m>\theta = 4.3726 = 250.53^\circ.</m>
+</p>
+</solution>
+</example>
+<p>
+If all one is concerned with is the <m>(x,y)</m> coordinates at which the graphs intersect, much of the above work is extraneous. We know they intersect at <m>(0,0)</m>; we might not care at what <m>\theta</m> value. Likewise, using <m>\theta =2\pi/3</m> and <m>\theta=4\pi/3</m> can give us the needed rectangular coordinates. However, in the next section we apply calculus concepts to polar functions. When computing the area of a region bounded by polar curves, understanding the nuances of the points of intersection becomes important.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Terms and Concepts</title>
+<exercise>
+<statement>
+<p>
+In your own words, describe how to plot the polar point <m>P(r,\theta)</m>.
+</p>
+</statement>
+<answer>
+<p>
+Answers will vary.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+T/F: When plotting a point with polar coordinate <m>P(r,\theta)</m>, <m>r</m> must be positive.
+</p>
+</statement>
+<answer>
+<p>
+F
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+T/F: Every point in the Cartesian plane can be represented by a polar coordinate.
+</p>
+</statement>
+<answer>
+<p>
+T
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+T/F: Every point in the Cartesian plane can be represented uniquely by a polar coordinate.
+</p>
+</statement>
+<answer>
+<p>
+F
+</p>
+</answer>
+</exercise>
+</subsection>
+
+
+<subsection>
+<title>Problems</title>
+<exercise>
+<statement>
+<p>
+Plot the points with the given polar coordinates.
+</p>
+<sidebyside>
+
+<ol>
+<li><m>A=P(2,0)</m></li>
+<li><m>B=P(1,\pi)</m></li>
+</ol>
+
+<ol>
+<li><m>C=P(-2,\pi/2)</m></li>
+<li><m>D=P(1,\pi/4)</m></li>
+</ol>
+
+</sidebyside>
+</statement>
+<answer>
+<sidebyside>
+<image width="73%" source="images/db21aa16eaa8ce2f49c45924daea017d866f2335.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Plot the points with the given polar coordinates.
+</p>
+<sidebyside>
+
+<ol>
+<li><m>A=P(2,3\pi)</m></li>
+<li><m>B=P(1,-\pi)</m></li>
+</ol>
+
+<ol>
+<li><m>C=P(1,2)</m></li>
+<li><m>D=P(1/2,5\pi/6)</m></li>
+</ol>
+
+</sidebyside>
+</statement>
+<answer>
+<sidebyside>
+<image width="73%" source="images/73fea331b1f85b68578e55dc86d073f6d832f204.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+For each of the given points give two sets of polar coordinates that identify it, where <m>0\leq \theta\leq 2\pi</m>.
+</p>
+
+<p>
+<image width="73%" source="images/a066005f9c9985233a25d84c7f38c0179301e576.png" />
+</p>
+</statement>
+<answer>
+<p>
+<m>A=P(2.5,\pi/4)</m> and <m>P(-2.5,5\pi/4)</m>;
+</p>
+
+<p>
+<m>B=P(-1,5\pi/6)</m> and <m>P(1,11\pi/6)</m>;
+</p>
+
+<p>
+<m>C=P(3,4\pi/3)</m> and <m>P(-3,\pi/3)</m>;
+</p>
+
+<p>
+<m>D=P(1.5,2\pi/3)</m> and <m>P(-1.5,5\pi/3)</m>;
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+For each of the given points give two sets of polar coordinates that identify it, where <m>-\pi\leq \theta\leq \pi</m>.
+</p>
+
+<p>
+<image width="73%" source="images/93737509e39b7f791bef69a923dadc213ea717a8.png" />
+</p>
+</statement>
+<answer>
+<p>
+<m>A=P(2,\pi/6)</m> and <m>P(-2,-5\pi/6)</m>;
+</p>
+
+<p>
+<m>B=P(1,-\pi/3)</m> and <m>P(-1,2\pi/3)</m>;
+</p>
+
+<p>
+<m>C=P(2,3\pi/4)</m> and <m>P(-2,-\pi/4)</m>;
+</p>
+
+<p>
+<m>D=P(2.5,\pi)</m> and <m>P(2.5,-\pi)</m>;
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Convert each of the following polar coordinates to rectangular, and each of the following rectangular coordinates to polar.
+</p>
+<sidebyside>
+
+<ol>
+<li><m>A=P(2,\pi/4)</m></li>
+<li><m>B=P(2,-\pi/4)</m></li>
+</ol>
+
+<ol>
+<li><m>C=(2,-1)</m></li>
+<li><m>D=(-2,1)</m></li>
+</ol>
+
+</sidebyside>
+</statement>
+<answer>
+<p>
+<m>A=(\sqrt{2},\sqrt{2})</m>
+</p>
+
+<p>
+<m>B=(\sqrt{2},-\sqrt{2})</m>
+</p>
+
+<p>
+<m>C=P(\sqrt{5},-0.46)</m>
+</p>
+
+<p>
+<m>D=P(\sqrt{5},2.68)</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Convert each of the following polar coordinates to rectangular, and each of the following rectangular coordinates to polar.
+</p>
+<sidebyside>
+
+<ol>
+<li><m>A=P(3,\pi)</m></li>
+<li><m>B=P(1,2\pi/3)</m></li>
+</ol>
+
+<ol>
+<li><m>C=(0,4)</m></li>
+<li><m>D=(1,-\sqrt{3})</m></li>
+</ol>
+
+</sidebyside>
+</statement>
+<answer>
+<p>
+<m>A=(-3,0)</m>
+</p>
+
+<p>
+<m>B=(-1/2,\sqrt{3}/2)</m>
+</p>
+
+<p>
+<m>C=P(4,\pi/2)</m>
+</p>
+
+<p>
+<m>D=P(2,-\pi/3)</m>
+</p>
+</answer>
+</exercise>
+<p>
+In the following exercises, graph the polar function on the given interval.
+</p>
+<exercise>
+<statement>
+<p>
+<m>r=2</m>,  <m>0\leq \theta\leq \pi/2</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_11.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\theta=\pi/6</m>,  <m>-1\leq r\leq 2</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_12.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=1-\cos \theta</m>,  <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_13.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=2+\sin \theta</m>,  <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_14.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=2-\sin \theta</m>,  <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_15.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=1-2\sin \theta</m>,  <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_16.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=1+2\sin \theta</m>,  <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_17.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\cos(2\theta)</m>,  <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_18.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\sin(3\theta)</m>,  <m>[0,\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_19.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\cos(\theta/3)</m>,  <m>[0,3\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_20.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\cos(2\theta/3)</m>,  <m>[0,6\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_21.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\theta/2</m>,  <m>[0,4\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_22.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=3\sin(\theta)</m>,  <m>[0,\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_23.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\cos\theta\sin\theta</m>,  <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_24.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\theta^2-(\pi/2)^2</m>,  <m>[-\pi,\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_25.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds r=\frac{3}{5\sin\theta-\cos\theta}</m>,  <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_26.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds r=\frac{-2}{3\cos\theta-2\sin\theta}</m>,  <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_27.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds r=3\sec \theta</m>,  <m>(-\pi/2,\pi/2)</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_28.png" />
+</sidebyside>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds r=3\csc \theta</m>,  <m>(0,\pi)</m>
+</p>
+</statement>
+<answer>
+<sidebyside>
+<image width="75%" source="images/fig09_04_ex_29.png" />
+</sidebyside>
+</answer>
+</exercise>
+<p>
+In the following exercises, convert the polar equation to a rectangular equation.
+</p>
+<exercise>
+<statement>
+<p>
+<m>r=2\cos\theta</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>(x-1)^2+y^2=1</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=-4\sin\theta</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>x^2+(y+2)^2=4</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\cos\theta+\sin\theta</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>(x-1/2)^2+(y-1/2)^2=1/2</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds r=\frac{7}{5\sin\theta-2\cos\theta}</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>y=2/5x+7/5</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds r=\frac{3}{\cos\theta}</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>x=3</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds r=\frac{4}{\sin\theta}</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>y=4</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds r=\tan\theta</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>x^4+x^2y^2x^2-y^2=0</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds r=2</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>x^2+y^2=4</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds \theta=\pi/6</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>y=x/\sqrt{3}</m>
+</p>
+</answer>
+</exercise>
+<p>
+In the following exercises, convert the rectangular equation to a polar equation.
+</p>
+<exercise>
+<statement>
+<p>
+<m>\ds y=x</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>\theta=\pi/4</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds y=4x+7</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>r=7/(\sin\theta-4\cos\theta)</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds x=5</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>r=5\sec \theta</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds y=5</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>r=5\csc \theta</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds x=y^2</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>r=\cos\theta/\sin^2\theta</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds x^2y=1</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>r=1/\sqrt[3]{\cos^2\theta\sin\theta}</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds x^2+y^2=7</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>r=\sqrt{7}</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds (x+1)^2+y^2=1</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>r=-2\cos\theta</m>
+</p>
+</answer>
+</exercise>
+<p>
+In the following exercises, find the points of intersection of the polar graphs.
+</p>
+<exercise>
+<statement>
+<p>
+<m>r=\sin(2\theta)</m> and <m>r=\cos\theta</m> on <m>[0,\pi]</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>P(\sqrt{3}/2,\pi/6)</m>, <m>P(0,\pi/2)</m>, <m>P(-\sqrt{3}/2,5\pi/6)</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\cos(2\theta)</m> and <m>r=\cos\theta</m> on <m>[0,\pi]</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>P(1,0)</m>, <m>P(0,\pi/2)=P(0,\pi/4)</m>, <m>P(-1/2,\pi/3)</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=2\cos\theta</m> and <m>r=2\sin\theta</m> on <m>[0,\pi]</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>P(0,0)=P(0,\pi/2)</m>, <m>P(\sqrt{2},\pi/4)</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\sin\theta</m> and <m>r=\sqrt{3}+3\sin\theta</m> on <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>P(\sqrt{3}/2,\pi/3)=P(-\sqrt{3}/2,4\pi/3)</m>, <m>P(\sqrt{3}/2,2\pi/3)=P(-\sqrt{3}/2,5\pi/3)</m>, <m>P(0,\pi/2)</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=\sin(3\theta)</m> and <m>r=\cos(3\theta)</m> on <m>[0,\pi]</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>P(\sqrt{2}/2,\pi/12)</m>, <m>P(-\sqrt{2}/2,5\pi/12)</m>, <m>P(\sqrt{2}/2,3\pi/4)</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=3\cos\theta</m> and <m>r=1+\cos\theta</m> on <m>[-\pi,\pi]</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>P(3/2,\pi/3)</m>, <m>P(3/2,-\pi/3)</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=1</m> and <m>r=2\sin(2\theta)</m> on <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<p>
+For all points, <m>r=1</m>; <m>\theta = \pi/12,\ 5\pi/12,\ 7\pi/12,\ 11\pi/12,\ 13\pi/12,\ 17\pi/12,\ 19\pi/12,\ 23\pi/12</m>.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>r=1-\cos\theta</m> and <m>r=1+\sin\theta</m> on <m>[0,2\pi]</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>P(0,0)=P(0,3\pi/2)</m>, <m>P(1+\sqrt{2}/2,3\pi/4)</m>, <m>P(1-\sqrt{2}/2,7\pi/4)</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Pick a integer value for <m>n</m>, where <m>n\neq 2,3</m>, and use technology to plot <m>\ds r=\sin\left(\frac mn\theta\right)</m> for three different integer values of <m>m</m>. Sketch these and determine a minimal interval on which the entire graph is shown.
+</p>
+</statement>
+<answer>
+<p>
+Answers will vary. If <m>m</m> and <m>n</m> do not have any common factors, then an interval of <m>2n\pi</m> is needed to sketch the entire graph.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Create your own polar function, <m>r=f(\theta)</m> and sketch it. Describe why the graph looks as it does.
+</p>
+</statement>
+<answer>
+<p>
+Answers will vary.
+</p>
+</answer>
+</exercise>
+</subsection>
+
+</section>
