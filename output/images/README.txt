@@ -1,0 +1,1 @@
+This folder stores derived images from .mbx source files only. For example, images from a <latex-image-code> or <asymptote> element. Other images such as photographs or images generated with external software should be stored in `src/images`.
