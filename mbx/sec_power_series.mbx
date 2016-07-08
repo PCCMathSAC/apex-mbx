@@ -15,15 +15,21 @@ Let <m>\{a_n\}</m> be a sequence, let <m>x</m> be a variable, and let <m>c</m> b
 </p>
 
 <ol>
-<li>The <em>power series in <m>x</m></em> is the series
+<li>
+<p>
+The <em>power series in <m>x</m></em> is the series
 <me>
   \sum_{n=0}^\infty a_nx^n = a_0+a_1x+a_2x^2+a_3x^3+\ldots
 </me>
+</p>
 </li>
-<li>The <em>power series in <m>x</m> centered at <m>c</m></em> is the series
+<li>
+<p>
+The <em>power series in <m>x</m> centered at <m>c</m></em> is the series
 <me>
   \sum_{n=0}^\infty a_n(x-c)^n = a_0+a_1(x-c)+a_2(x-c)^2+a_3(x-c)^3+\ldots
 </me>
+</p>
 </li>
 </ol>
 </statement>
@@ -42,20 +48,30 @@ Write out the first five terms of the following power series:
 </statement>
 <solution>
 <ol>
-<li>One of the conventions we adopt is that <m>x^0=1</m> regardless of the value of <m>x</m>. Therefore
+<li>
+<p>
+One of the conventions we adopt is that <m>x^0=1</m> regardless of the value of <m>x</m>. Therefore
 <me>
   \sum_{n=0}^\infty x^n = 1+x+x^2+x^3+x^4+\ldots
 </me>
-This is a geometric series in <m>x</m>.</li>
-<li>This series is centered at <m>c=-1</m>. Note how this series starts with <m>n=1</m>. We could rewrite this series starting at <m>n=0</m> with the understanding that <m>a_0=0</m>, and hence the first term is <m>0</m>.
+This is a geometric series in <m>x</m>.
+</p>
+</li>
+<li>
+<p>
+This series is centered at <m>c=-1</m>. Note how this series starts with <m>n=1</m>. We could rewrite this series starting at <m>n=0</m> with the understanding that <m>a_0=0</m>, and hence the first term is <m>0</m>.
 <me>
   \sum_{n=1}^\infty (-1)^{n+1}\frac{(x+1)^n}n = (x+1) - \frac{(x+1)^2}{2} + \frac{(x+1)^3}{3} - \frac{(x+1)^4}{4}+\frac{(x+1)^5}{5}\ldots
 </me>
+</p>
 </li>
-<li>This series is centered at <m>c=\pi</m>. Recall that <m>0!=1</m>.
+<li>
+<p>
+This series is centered at <m>c=\pi</m>. Recall that <m>0!=1</m>.
 <me>
   \sum_{n=0}^\infty (-1)^{n+1} \frac{(x-\pi)^{2n}}{(2n)!} = -1+\frac{(x-\pi)^2}{2} - \frac{(x-\pi)^4}{24}+ \frac{(x-\pi)^6}{6!}-\frac{(x-\pi)^8}{8!}\ldots
 </me>
+</p>
 </li>
 </ol>
 </solution>
@@ -77,11 +93,22 @@ Let a power series <m>\ds \sum_{n=0}^\infty a_n(x-c)^n</m> be given. Then one of
 </p>
 
 <ol>
-<li>The series converges only at <m>x=c</m>.</li>
-<li><line>There is an <m>R>0</m> such that the series converges for all <m>x</m> in</line>
-<line><m>(c-R,c+R)</m> and diverges for all <m>x\lt c-R</m> and <m>x>c+R</m>.</line>
+<li>
+<p>
+The series converges only at <m>x=c</m>.
+</p>
 </li>
-<li>The series converges for all <m>x</m>.</li>
+<li>
+<p>
+<line>There is an <m>R>0</m> such that the series converges for all <m>x</m> in</line>
+<line><m>(c-R,c+R)</m> and diverges for all <m>x\lt c-R</m> and <m>x>c+R</m>.</line>
+</p>
+</li>
+<li>
+<p>
+The series converges for all <m>x</m>.
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -93,9 +120,17 @@ The value of <m>R</m> is important when understanding a power series, hence it i
 <title>Radius and Interval of Convergence</title>
 <statement>
 <ol>
-<li>The number <m>R</m> given in <xref ref="thm_radius_converge">Theorem</xref> is the <em>radius of convergence</em> of a given series. When a series converges for only <m>x=c</m>, we say the radius of convergence is 0, i.e.,  <m>R=0</m>. When a series converges for all <m>x</m>, we say the series has an infinite radius of convergence, i.e., <m>R=\infty</m>.</li>
-<li>The <em>interval of convergence</em> is the set of all values of <m>x</m> for which the series converges.
-			<index><main>convergence</main><sub>radius of</sub></index><index><main>convergence</main><sub>interval of</sub></index><index><main>radius of convergence</main></index><index><main>interval of convergence</main></index><index><main>series</main><sub>radius of convergence</sub></index><index><main>series</main><sub>interval of convergence</sub></index></li>
+<li>
+<p>
+The number <m>R</m> given in <xref ref="thm_radius_converge">Theorem</xref> is the <em>radius of convergence</em> of a given series. When a series converges for only <m>x=c</m>, we say the radius of convergence is 0, i.e.,  <m>R=0</m>. When a series converges for all <m>x</m>, we say the series has an infinite radius of convergence, i.e., <m>R=\infty</m>.
+</p>
+</li>
+<li>
+<p>
+The <em>interval of convergence</em> is the set of all values of <m>x</m> for which the series converges.
+			<index><main>convergence</main><sub>radius of</sub></index><index><main>convergence</main><sub>interval of</sub></index><index><main>radius of convergence</main></index><index><main>interval of convergence</main></index><index><main>series</main><sub>radius of convergence</sub></index><index><main>series</main><sub>interval of convergence</sub></index>
+</p>
+</li>
 </ol>
 </statement>
 </definition>
@@ -128,14 +163,20 @@ Find the radius and interval of convergence for each of the following series:
 </statement>
 <solution>
 <ol>
-<li>We apply the Ratio Test to the series <m>\ds \sum_{n=0}^\infty \left|\frac{x^n}{n!}\right|</m>:
+<li>
+<p>
+We apply the Ratio Test to the series <m>\ds \sum_{n=0}^\infty \left|\frac{x^n}{n!}\right|</m>:
 <md>
   <mrow>  \lim_{n\to\infty} \frac{\big|x^{n+1}/(n+1)!\big|}{\big|x^n/n!\big|} \amp = \lim_{n\to\infty} \left|\frac{x^{n+1}}{x^n}\cdot\frac{n!}{(n+1)!}\right|</mrow>
   <mrow>  \amp = \lim_{n\to\infty} \left|\frac x{n+1}\right|</mrow>
   <mrow>  \amp = 0 \text{ for all }  x.</mrow>
 </md>
-The Ratio Test shows us that regardless of the choice of <m>x</m>, the series converges. Therefore the radius of convergence is <m>R=\infty</m>, and the interval of convergence is <m>(-\infty,\infty)</m>.</li>
-<li>We apply the Ratio Test to the series <m>\ds \sum_{n=1}^\infty \left|(-1)^{n+1}\frac{x^n}{n}\right| = \sum_{n=1}^\infty \left|\frac{x^n}{n}\right|</m>:
+The Ratio Test shows us that regardless of the choice of <m>x</m>, the series converges. Therefore the radius of convergence is <m>R=\infty</m>, and the interval of convergence is <m>(-\infty,\infty)</m>.
+</p>
+</li>
+<li>
+<p>
+We apply the Ratio Test to the series <m>\ds \sum_{n=1}^\infty \left|(-1)^{n+1}\frac{x^n}{n}\right| = \sum_{n=1}^\infty \left|\frac{x^n}{n}\right|</m>:
 <md>
   <mrow>  \lim_{n\to\infty} \frac{\big|x^{n+1}/(n+1)\big|}{\big|x^n/n\big|} \amp = \lim_{n\to\infty} \left|\frac{x^{n+1}}{x^n}\cdot \frac{n}{n+1}\right|</mrow>
   <mrow>  \amp = \lim_{n\to\infty} |x|\frac{n}{n+1}</mrow>
@@ -151,8 +192,12 @@ The Ratio Test states a series converges if the limit of <m>|a_{n+1}/a_n| = L\lt
 </md>
 The series diverges when <m>x=-1</m>.
 	
-	When <m>x=1</m>, we have the series <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac{(1)^n}{n}</m>, which is the Alternating Harmonic Series, which converges. Therefore the interval of convergence is <m>(-1,1]</m>.</li>
-<li>We apply the Ratio Test to the series <m>\ds\sum_{n=0}^\infty \big|2^n(x-3)^n\big|</m>:
+	When <m>x=1</m>, we have the series <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac{(1)^n}{n}</m>, which is the Alternating Harmonic Series, which converges. Therefore the interval of convergence is <m>(-1,1]</m>.
+</p>
+</li>
+<li>
+<p>
+We apply the Ratio Test to the series <m>\ds\sum_{n=0}^\infty \big|2^n(x-3)^n\big|</m>:
 <md>
   <mrow>  \lim_{n\to\infty} \frac{\big| 2^{n+1}(x-3)^{n+1}\big|}{\big|2^n(x-3)^n\big|} \amp = \lim_{n\to\infty} \left|\frac{2^{n+1}}{2^n}\cdot\frac{(x-3)^{n+1}}{(x-3)^n}\right|</mrow>
   <mrow>  \amp =\lim_{n\to\infty} \big|2(x-3)\big|.</mrow>
@@ -164,13 +209,19 @@ We check for convergence at the endpoints to find the interval of convergence. W
   <mrow>  \sum_{n=0}^\infty 2^n(2.5-3)^n \amp = \sum_{n=0}^\infty 2^n(-1/2)^n</mrow>
   <mrow>  \amp =\sum_{n=0}^\infty (-1)^n,</mrow>
 </md>
-which diverges. A similar process shows that the series also diverges at <m>x=3.5</m>. Therefore the interval of convergence is <m>(2.5, 3.5)</m>.</li>
-<li>We apply the Ratio Test to <m>\ds \sum_{n=0}^\infty \big|n!x^n\big|</m>:
+which diverges. A similar process shows that the series also diverges at <m>x=3.5</m>. Therefore the interval of convergence is <m>(2.5, 3.5)</m>.
+</p>
+</li>
+<li>
+<p>
+We apply the Ratio Test to <m>\ds \sum_{n=0}^\infty \big|n!x^n\big|</m>:
 <md>
   <mrow>  \lim_{n\to\infty} \frac{\big| (n+1)!x^{n+1}\big|}{\big|n!x^n\big|} \amp = \lim_{n\to\infty} \big|(n+1)x\big|</mrow>
   <mrow>  \amp = \infty\ \text{ for all <m>x</m>, except <m>x=0</m>.}</mrow>
 </md>
-The Ratio Test shows that the series diverges for all <m>x</m> except <m>x=0</m>. Therefore the radius of convergence is <m>R=0</m>.</li>
+The Ratio Test shows that the series diverges for all <m>x</m> except <m>x=0</m>. Therefore the radius of convergence is <m>R=0</m>.
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -203,9 +254,21 @@ A few notes about <xref ref="thm_calc_power_series">Theorem</xref>:
 </p>
 
 <ol>
-<li>The theorem states that differentiation and integration do not change the radius of convergence. It does not state anything about the <em>interval</em> of convergence. They are not always the same.</li>
-<li>Notice how the summation for <m>\fp(x)</m> starts with <m>n=1</m>. This is because the constant term <m>a_0</m> of <m>f(x)</m> goes to 0.</li>
-<li>Differentiation and integration are simply calculated term<ndash />by<ndash />term using the Power Rules.</li>
+<li>
+<p>
+The theorem states that differentiation and integration do not change the radius of convergence. It does not state anything about the <em>interval</em> of convergence. They are not always the same.
+</p>
+</li>
+<li>
+<p>
+Notice how the summation for <m>\fp(x)</m> starts with <m>n=1</m>. This is because the constant term <m>a_0</m> of <m>f(x)</m> goes to 0.
+</p>
+</li>
+<li>
+<p>
+Differentiation and integration are simply calculated term<ndash />by<ndash />term using the Power Rules.
+</p>
+</li>
 </ol>
 <example xml:id="ex_ps3">
 <title>Derivatives and indefinite integrals of power series</title>

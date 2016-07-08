@@ -152,13 +152,41 @@ The following limits hold.
 </p>
 
 <ol>
-<li>\text{Constants:} <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b = b</m></li>
-<li>\text{Identity }	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} x = x_0</m>; <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} y = y_0</m></li>
-<li>\text{Sums/Differences:} <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)}\big(f(x,y)\pm g(x,y)\big) = L\pm K</m></li>
-<li>\text{Scalar Multiples:}	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b\cdot f(x,y) = bL</m></li>
-<li>\text{Products:}	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)\cdot g(x,y) = LK</m></li>
-<li>\text{Quotients:} <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)/g(x,y) = L/K</m>, (<m>K\neq 0)</m></li>
-<li>\text{Powers:} 	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)^n = L^n</m></li>
+<li>
+<p>
+\text{Constants:} <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b = b</m>
+</p>
+</li>
+<li>
+<p>
+\text{Identity }	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} x = x_0</m>; <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} y = y_0</m>
+</p>
+</li>
+<li>
+<p>
+\text{Sums/Differences:} <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)}\big(f(x,y)\pm g(x,y)\big) = L\pm K</m>
+</p>
+</li>
+<li>
+<p>
+\text{Scalar Multiples:}	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b\cdot f(x,y) = bL</m>
+</p>
+</li>
+<li>
+<p>
+\text{Products:}	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)\cdot g(x,y) = LK</m>
+</p>
+</li>
+<li>
+<p>
+\text{Quotients:} <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)/g(x,y) = L/K</m>, (<m>K\neq 0)</m>
+</p>
+</li>
+<li>
+<p>
+\text{Powers:} 	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)^n = L^n</m>
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -178,13 +206,20 @@ Evaluate the following limits:
 </statement>
 <solution>
 <ol>
-<li>The aforementioned theorems allow us to simply evaluate <m>y/x+\cos(xy)</m> when <m>x=1</m> and <m>y=\pi</m>. If an indeterminate form is returned, we must do more work to evaluate the limit; otherwise, the result is the limit. Therefore
+<li>
+<p>
+The aforementioned theorems allow us to simply evaluate <m>y/x+\cos(xy)</m> when <m>x=1</m> and <m>y=\pi</m>. If an indeterminate form is returned, we must do more work to evaluate the limit; otherwise, the result is the limit. Therefore
 <md>
   <mrow>  \lim_{(x,y)\to (1,\pi)} \frac yx + \cos(xy)  \amp = \frac\pi{1}+\cos \pi</mrow>
   <mrow>  \amp = \pi -1.</mrow>
 </md>
+</p>
 </li>
-<li>We attempt to evaluate the limit by substituting 0 in for <m>x</m> and <m>y</m>, but the result is the indeterminate form <q><m>0/0</m>.</q> To evaluate this limit, we must <q>do more work,</q> but we have not yet learned what <q>kind</q> of work to do. Therefore we cannot yet evaluate this limit.</li>
+<li>
+<p>
+We attempt to evaluate the limit by substituting 0 in for <m>x</m> and <m>y</m>, but the result is the indeterminate form <q><m>0/0</m>.</q> To evaluate this limit, we must <q>do more work,</q> but we have not yet learned what <q>kind</q> of work to do. Therefore we cannot yet evaluate this limit.
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -210,20 +245,34 @@ Our theorems tell us that we can evaluate most limits quite simply, without worr
 <title>Showing limits do not exist</title>
 <statement>
 <ol>
-<li>Show <m>\ds \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}</m> does not exist by finding the limits along the lines <m>y=mx</m>.</li>
-<li>Show <m>\ds \lim_{(x,y)\to (0,0)} \frac{\sin(xy)}{x+y}</m> does not exist by finding the limit along the path <m>y=-\sin x</m>.</li>
+<li>
+<p>
+Show <m>\ds \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}</m> does not exist by finding the limits along the lines <m>y=mx</m>.
+</p>
+</li>
+<li>
+<p>
+Show <m>\ds \lim_{(x,y)\to (0,0)} \frac{\sin(xy)}{x+y}</m> does not exist by finding the limit along the path <m>y=-\sin x</m>.
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>Evaluating <m>\ds \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}</m> along the lines <m>y=mx</m> means replace all <m>y</m>'s with <m>mx</m> and evaluating the resulting limit:
+<li>
+<p>
+Evaluating <m>\ds \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}</m> along the lines <m>y=mx</m> means replace all <m>y</m>'s with <m>mx</m> and evaluating the resulting limit:
 <md>
   <mrow>  \lim_{(x,mx)\to (0,0)} \frac{3x(mx)}{x^2+(mx)^2} \amp =\lim_{x\to 0} \frac{3mx^2}{x^2(m^2+1)}</mrow>
   <mrow>  \amp = \lim_{x\to 0} \frac{3m}{m^2+1}</mrow>
   <mrow>  \amp = \frac{3m}{m^2+1}.</mrow>
 </md>
-While the limit exists for each choice of <m>m</m>, we get a <em>different</em> limit for each choice of <m>m</m>. That is, along different lines we get differing limiting values, meaning <em>the</em> limit does not exist.</li>
-<li>Let <m>f(x,y) = \frac{\sin(xy)}{x+y}</m>. We are to show that <m>\ds \lim_{(x,y)\to (0,0)} f(x,y)</m> does not exist by finding the limit along the path <m>y=-\sin x</m>. First, however, consider the limits found along the lines <m>y=mx</m> as done above.
+While the limit exists for each choice of <m>m</m>, we get a <em>different</em> limit for each choice of <m>m</m>. That is, along different lines we get differing limiting values, meaning <em>the</em> limit does not exist.
+</p>
+</li>
+<li>
+<p>
+Let <m>f(x,y) = \frac{\sin(xy)}{x+y}</m>. We are to show that <m>\ds \lim_{(x,y)\to (0,0)} f(x,y)</m> does not exist by finding the limit along the path <m>y=-\sin x</m>. First, however, consider the limits found along the lines <m>y=mx</m> as done above.
 <md>
   <mrow>  \lim_{(x,mx)\to (0,0)} \frac{\sin\big(x(mx)\big)}{x+mx} \amp = \lim_{x\to 0} \frac{\sin (mx^2)}{x(m+1)}</mrow>
   <mrow>  \amp = \lim_{x\to 0} \frac{\sin(mx^2)}{x}\cdot\frac1{m+1}.</mrow>
@@ -241,7 +290,9 @@ Now apply L'H&#xf4;pital's Rule twice:
   <mrow>  \amp = \lim_{x\to 0}\frac{-\sin\big(-x\sin x\big)(-\sin x-x\cos x)^2+\cos\big(-x\sin x\big)(-2\cos x+x\sin x)}{\sin x}</mrow>
   <mrow>  \amp = \text{``2/0''}  \Rightarrow \text{the limit does not exist.}</mrow>
 </md>
-Step back and consider what we have just discovered. Along any line <m>y=mx</m> in the domain of the <m>f(x,y)</m>, the limit is 0. However, along the path <m>y=-\sin x</m>, which lies in the domain of  <m>f(x,y)</m> for all <m>x\neq 0</m>, the limit does not exist. Since the limit is not the same along every path to <m>(0,0)</m>, we say <m>\ds \lim_{(x,y)\to (0,0)}\frac{\sin(xy)}{x+y}</m> does not exist.</li>
+Step back and consider what we have just discovered. Along any line <m>y=mx</m> in the domain of the <m>f(x,y)</m>, the limit is 0. However, along the path <m>y=-\sin x</m>, which lies in the domain of  <m>f(x,y)</m> for all <m>x\neq 0</m>, the limit does not exist. Since the limit is not the same along every path to <m>(0,0)</m>, we say <m>\ds \lim_{(x,y)\to (0,0)}\frac{\sin(xy)}{x+y}</m> does not exist.
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -384,13 +435,41 @@ Let <m>f</m> and <m>g</m> be continuous on an open disk <m>B</m>, let <m>c</m> b
 </p>
 
 <ol>
-<li>\text{Sums/Differences:}	<m>f\pm g</m></li>
-<li>\text{Constant Multiples:}	<m>c\cdot f</m></li>
-<li>\text{Products:}	<m>f\cdot g</m></li>
-<li>\text{Quotients:}	<m>f/g</m>  { (as longs as <m>g\neq 0</m> on <m>B</m>)}</li>
-<li>\text{Powers:}	<m>f\,^n</m></li>
-<li>\text{Roots:}	<m>\sqrt[n]{f}</m>  \parbox[t]{150pt}{ (if <m>n</m> is even then <m>f\geq 0</m> on <m>B</m>; if <m>n</m> is odd, then true for all values of <m>f</m> on <m>B</m>.)}</li>
-<li>\text{Compositions:}\parbox[t]{185pt}{Adjust the definitions of <m>f</m> and <m>g</m> to: Let <m>f</m> be continuous on <m>B</m>, where the range of <m>f</m> on <m>B</m> is <m>J</m>, and let <m>g</m> be a single variable function that is continuous on <m>J</m>. Then <m>g\circ f</m>, i.e., <m>g(f(x,y))</m>, is continuous on <m>B</m>.}</li>
+<li>
+<p>
+\text{Sums/Differences:}	<m>f\pm g</m>
+</p>
+</li>
+<li>
+<p>
+\text{Constant Multiples:}	<m>c\cdot f</m>
+</p>
+</li>
+<li>
+<p>
+\text{Products:}	<m>f\cdot g</m>
+</p>
+</li>
+<li>
+<p>
+\text{Quotients:}	<m>f/g</m>  { (as longs as <m>g\neq 0</m> on <m>B</m>)}
+</p>
+</li>
+<li>
+<p>
+\text{Powers:}	<m>f\,^n</m>
+</p>
+</li>
+<li>
+<p>
+\text{Roots:}	<m>\sqrt[n]{f}</m>  \parbox[t]{150pt}{ (if <m>n</m> is even then <m>f\geq 0</m> on <m>B</m>; if <m>n</m> is odd, then true for all values of <m>f</m> on <m>B</m>.)}
+</p>
+</li>
+<li>
+<p>
+\text{Compositions:}\parbox[t]{185pt}{Adjust the definitions of <m>f</m> and <m>g</m> to: Let <m>f</m> be continuous on <m>B</m>, where the range of <m>f</m> on <m>B</m> is <m>J</m>, and let <m>g</m> be a single variable function that is continuous on <m>J</m>. Then <m>g\circ f</m>, i.e., <m>g(f(x,y))</m>, is continuous on <m>B</m>.}
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -420,16 +499,26 @@ The definitions and theorems given in this section can be extended in a natural 
 <title>Open Balls, Limit, Continuous</title>
 <statement>
 <ol>
-<li><line>An <b>open ball</b> in <m>\mathbb{R}^3</m> centered at <m>(x_0,y_0,z_0)</m> with radius <m>r</m> is the set of all points <m>(x,y,z)</m> such that <m>\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2} = r</m>.
-<index><main>multivariable function</main><sub>limit</sub></index><index><main>limit</main><sub>of multivariable function</sub></index><index><main>multivariable function</main><sub>continuity</sub></index><index><main>open ball</main></index></line>
+<li>
+<p>
+An <b>open ball</b> in <m>\mathbb{R}^3</m> centered at <m>(x_0,y_0,z_0)</m> with radius <m>r</m> is the set of all points <m>(x,y,z)</m> such that <m>\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2} = r</m>.
+<index><main>multivariable function</main><sub>limit</sub></index><index><main>limit</main><sub>of multivariable function</sub></index><index><main>multivariable function</main><sub>continuity</sub></index><index><main>open ball</main></index>
+</p>
 </li>
-<li><line>Let <m>D</m> be an open set in <m>\mathbb{R}^3</m> containing <m>(x_0,y_0,z_0)</m>, and let <m>f(x,y,z)</m> be a function of three variables defined on <m>D</m>, except possibly at  <m>(x_0,y_0,z_0)</m>. The <b>limit</b> of <m>f(x,y,z)</m> as <m>(x,y,z)</m> approaches <m>(x_0,y_0,z_0)</m> is <m>L</m>, denoted
+<li>
+<p>
+Let <m>D</m> be an open set in <m>\mathbb{R}^3</m> containing <m>(x_0,y_0,z_0)</m>, and let <m>f(x,y,z)</m> be a function of three variables defined on <m>D</m>, except possibly at  <m>(x_0,y_0,z_0)</m>. The <b>limit</b> of <m>f(x,y,z)</m> as <m>(x,y,z)</m> approaches <m>(x_0,y_0,z_0)</m> is <m>L</m>, denoted
 <me>
   \lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = L,
 </me>
-means that given any <m>\epsilon >0</m>, there is a <m>\delta >0</m> such that for all  <m>(x,y,z)\neq(x_0,y_0,z_0)</m>, if <m>(x,y,z)</m> is in the open ball centered at <m>(x_0,y_0,z_0)</m> with radius <m>\delta</m>, then <m>|f(x,y,z) - L|\lt  \epsilon</m>.</line>
+means that given any <m>\epsilon >0</m>, there is a <m>\delta >0</m> such that for all  <m>(x,y,z)\neq(x_0,y_0,z_0)</m>, if <m>(x,y,z)</m> is in the open ball centered at <m>(x_0,y_0,z_0)</m> with radius <m>\delta</m>, then <m>|f(x,y,z) - L|\lt  \epsilon</m>.
+</p>
 </li>
-<li>Let <m>f(x,y,z)</m> be defined on an open ball <m>B</m> containing <m>(x_0,y_0,z_0)</m>. <m>f</m> is <b>continuous</b> at <m>(x_0,y_0,z_0)</m> if <m>\ds \lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = f(x_0,y_0,z_0)</m>.</li>
+<li>
+<p>
+Let <m>f(x,y,z)</m> be defined on an open ball <m>B</m> containing <m>(x_0,y_0,z_0)</m>. <m>f</m> is <b>continuous</b> at <m>(x_0,y_0,z_0)</m> if <m>\ds \lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = f(x_0,y_0,z_0)</m>.
+</p>
+</li>
 </ol>
 </statement>
 </definition>
@@ -564,12 +653,14 @@ In the following exercises, a set <m>S</m> is given.
 </statement>
 <answer>
 <ol>
-<li><line>Answers will vary.</line>
+<li>
+<p>
+<line>Answers will vary.</line>
 <line>interior point: <m>(1,3)</m></line>
 <line>boundary point: <m>(3,3)</m></line>
+</p>
 </li>
-<li><line><m>S</m> is a closed set</line>
-</li>
+<li><m>S</m> is a closed set</li>
 <li><m>S</m> is bounded</li>
 </ol>
 </answer>
@@ -583,12 +674,14 @@ In the following exercises, a set <m>S</m> is given.
 </statement>
 <answer>
 <ol>
-<li><line>Answers will vary.</line>
+<li>
+<p>
+<line>Answers will vary.</line>
 <line>interior point: <m>(-5,28)</m></line>
 <line>boundary point: <m>(3,9)</m></line>
+</p>
 </li>
-<li><line><m>S</m> is an open set</line>
-</li>
+<li><m>S</m> is an open set</li>
 <li><m>S</m> is unbounded</li>
 </ol>
 </answer>
@@ -602,12 +695,14 @@ In the following exercises, a set <m>S</m> is given.
 </statement>
 <answer>
 <ol>
-<li><line>Answers will vary.</line>
+<li>
+<p>
+<line>Answers will vary.</line>
 <line>interior point: none</line>
 <line>boundary point: <m>(0,-1)</m></line>
+</p>
 </li>
-<li><line><m>S</m> is a closed set, consisting only of boundary points</line>
-</li>
+<li><m>S</m> is a closed set, consisting only of boundary points</li>
 <li><m>S</m> is bounded</li>
 </ol>
 </answer>
@@ -621,12 +716,14 @@ In the following exercises, a set <m>S</m> is given.
 </statement>
 <answer>
 <ol>
-<li><line>Answers will vary.</line>
+<li>
+<p>
+<line>Answers will vary.</line>
 <line>Interior point: <m>(0,1)</m></line>
 <line>Boundary point: <m>(0,0)</m></line>
+</p>
 </li>
-<li><line><m>S</m> is a closed set, containing all of its boundary points.</line>
-</li>
+<li><m>S</m> is a closed set, containing all of its boundary points.</li>
 <li><m>S</m> is unbounded.</li>
 </ol>
 </answer>
@@ -709,14 +806,30 @@ In the following exercises, a limit is given. Evaluate the limit along the paths
 </p>
 
 <ol>
-<li>Along the path <m>y=0</m>.</li>
-<li>Along the path <m>x=0</m>.</li>
+<li>
+<p>
+Along the path <m>y=0</m>.
+</p>
+</li>
+<li>
+<p>
+Along the path <m>x=0</m>.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Along <m>y=0</m>, the limit is 1.</li>
-<li>Along <m>x=0</m>, the limit is <m>-1</m>.</li>
+<li>
+<p>
+Along <m>y=0</m>, the limit is 1.
+</p>
+</li>
+<li>
+<p>
+Along <m>x=0</m>, the limit is <m>-1</m>.
+</p>
+</li>
 </ol>
 
 <p>
@@ -732,12 +845,20 @@ Since the above limits are not equal, the limit does not exist.
 </p>
 
 <ol>
-<li>Along the path <m>y=mx</m>.</li>
+<li>
+<p>
+Along the path <m>y=mx</m>.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Along <m>y=mx</m>, the limit is <m>\frac{m+1}{m-1}</m>.</li>
+<li>
+<p>
+Along <m>y=mx</m>, the limit is <m>\frac{m+1}{m-1}</m>.
+</p>
+</li>
 </ol>
 
 <p>
@@ -753,14 +874,30 @@ Since the above limit varies according to what <m>m</m> is used, each limit is d
 </p>
 
 <ol>
-<li>Along the path <m>y=mx</m>.</li>
-<li>Along the path <m>x=0</m>.</li>
+<li>
+<p>
+Along the path <m>y=mx</m>.
+</p>
+</li>
+<li>
+<p>
+Along the path <m>x=0</m>.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Along <m>y=mx</m>, the limit is <m>\ds\frac{mx(1-m)}{m^2x+1}</m>.</li>
-<li>Along <m>x=0</m>, the limit is <m>-1</m>.</li>
+<li>
+<p>
+Along <m>y=mx</m>, the limit is <m>\ds\frac{mx(1-m)}{m^2x+1}</m>.
+</p>
+</li>
+<li>
+<p>
+Along <m>x=0</m>, the limit is <m>-1</m>.
+</p>
+</li>
 </ol>
 
 <p>
@@ -776,13 +913,23 @@ Since the above limits are not equal, the limit does not exist.
 </p>
 
 <ol>
-<li>Along the path <m>y=mx</m>.</li>
-<li>Along the path <m>y=x^2</m>.</li>
+<li>
+<p>
+Along the path <m>y=mx</m>.
+</p>
+</li>
+<li>
+<p>
+Along the path <m>y=x^2</m>.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Along <m>y=mx</m>, the limit is:
+<li>
+<p>
+Along <m>y=mx</m>, the limit is:
 <md>
   <mrow>  \lim_{(x,y)\to(0,0)} \frac{\sin(x^2)}{y} \amp  =  \lim_{x\to 0} \frac{\sin(x^2)}{mx}
 					\end{mathrow}
@@ -791,12 +938,17 @@ apply L'H\^opital's Rule
 							\amp = \lim_{x\to 0} \frac{2x\cos(x^2)}{m}</mrow>
   <mrow>  \amp = 0.</mrow>
 </md>
+</p>
 </li>
-<li>Along <m>x=0</m>, the limit is:
+<li>
+<p>
+Along <m>x=0</m>, the limit is:
 <me>
   \lim_{(x,y)\to(0,0)} \frac{\sin(x^2)}{y} =  \lim_{x\to 0} \frac{\sin(x^2)}{x^2}.
 </me>
-This can be evaluated with L'H&#xf4;pital's Rule or from known limits; it is 1.</li>
+This can be evaluated with L'H&#xf4;pital's Rule or from known limits; it is 1.
+</p>
+</li>
 </ol>
 
 <p>
@@ -812,25 +964,39 @@ Since the limits along the lines <m>y=mx</m> are not the same as the limit along
 </p>
 
 <ol>
-<li>Along the path <m>y=2</m>.</li>
-<li>Along the path <m>y=x+1</m>.</li>
+<li>
+<p>
+Along the path <m>y=2</m>.
+</p>
+</li>
+<li>
+<p>
+Along the path <m>y=x+1</m>.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Along <m>y=2</m>, the limit is:
+<li>
+<p>
+Along <m>y=2</m>, the limit is:
 <md>
   <mrow>  \lim_{(x,y)\to(1,2)} \frac{x+y-3}{x^2-1} \amp  =  \lim_{x\to 1} \frac{x-1}{x^2-1}</mrow>
   <mrow>  \amp = \lim_{x\to 1} \frac{1}{x+1}</mrow>
   <mrow>  \amp = 1/2.</mrow>
 </md>
+</p>
 </li>
-<li>Along <m>y=x+1</m>, the limit is:
+<li>
+<p>
+Along <m>y=x+1</m>, the limit is:
 <md>
   <mrow>  \lim_{(x,y)\to(1,2)} \frac{x+y-3}{x^2-1} \amp  =  \lim_{x\to 1} \frac{2(x-1)}{x^2-1}</mrow>
   <mrow>  \amp = \lim_{x\to 1} \frac{2}{x+1}</mrow>
   <mrow>  \amp = 1.</mrow>
 </md>
+</p>
 </li>
 </ol>
 
@@ -847,19 +1013,32 @@ Since the limits along the lines <m>y=2</m> and <m>y=x+1</m> differ, the overall
 </p>
 
 <ol>
-<li>Along the path <m>x=\pi</m>.</li>
-<li>Along the path <m>y=x-\pi/2</m>.</li>
+<li>
+<p>
+Along the path <m>x=\pi</m>.
+</p>
+</li>
+<li>
+<p>
+Along the path <m>y=x-\pi/2</m>.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Along <m>x=\pi</m>, the limit is:
+<li>
+<p>
+Along <m>x=\pi</m>, the limit is:
 <md>
   <mrow>  \lim_{(x,y)\to(\pi,\pi/2)} \frac{\sin x}{\cos y} \amp  =  \lim_{y\to \pi/2} \frac{0}{\cos y}</mrow>
   <mrow>  \amp = 0.</mrow>
 </md>
+</p>
 </li>
-<li>Along <m>y=x-\pi/2</m>, the limit is:
+<li>
+<p>
+Along <m>y=x-\pi/2</m>, the limit is:
 <md>
   <mrow>  \lim_{(x,y)\to(\pi,\pi/2)} \frac{\sin x}{\cos y} \amp  =  \lim_{x\to \pi} \frac{\sin x}{\cos(x-\pi/2)}\end{mathrow}
 Apply L'H\^opital's Rule:
@@ -867,6 +1046,7 @@ Apply L'H\^opital's Rule:
 							\amp = \lim_{x\to \pi} \frac{\cos x}{\sin(x-\pi/2)}</mrow>
   <mrow>  \amp = -1.</mrow>
 </md>
+</p>
 </li>
 </ol>
 

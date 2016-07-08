@@ -183,11 +183,21 @@ Graphically, it concerns the behavior of the function to the <q>far right</q> of
 <title>Limits at Infinity and Horizontal Asymptote</title>
 <statement>
 <ol>
-<li><line>We say <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M>0</m> such that if <m>x\geq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.<index><main>limit</main><sub>at infinity</sub></index><index><main>asymptote</main><sub>horizontal</sub></index></line>
+<li>
+<p>
+We say <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M>0</m> such that if <m>x\geq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.<index><main>limit</main><sub>at infinity</sub></index><index><main>asymptote</main><sub>horizontal</sub></index>
+</p>
 </li>
-<li><line>We say <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M\lt 0</m> such that if <m>x\leq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.</line>
+<li>
+<p>
+We say <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M\lt 0</m> such that if <m>x\leq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.
+</p>
 </li>
-<li>If <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> or <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m>, we say that <m>y=L</m> is a <b>horizontal asymptote</b> of <m>f</m>.</li>
+<li>
+<p>
+If <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> or <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m>, we say that <m>y=L</m> is a <b>horizontal asymptote</b> of <m>f</m>.
+</p>
+</li>
 </ol>
 </statement>
 </definition>
@@ -305,9 +315,21 @@ where any of the coefficients may be 0 except for <m>a_n</m> and <m>b_m</m>.
 </p>
 
 <ol>
-<li>If <m>n=m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = \frac{a_n}{b_m}</m>.</li>
-<li>If <m>n\lt m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = 0</m>.</li>
-<li>If <m>n>m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x)</m> and <m>\lim_{x\rightarrow-\infty} f(x)</m> are both infinite.</li>
+<li>
+<p>
+If <m>n=m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = \frac{a_n}{b_m}</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>n\lt m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = 0</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>n>m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x)</m> and <m>\lim_{x\rightarrow-\infty} f(x)</m> are both infinite.
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -375,8 +397,14 @@ Use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> to evaluate each of 
 </statement>
 <solution>
 <ol>
-<li>The highest power of <m>x</m> is in the denominator.  Therefore, the limit is 0; see <xref ref="fig_hzasy3">Figure</xref>(a).</li>
-<li>The highest power of <m>x</m> is <m>x^2</m>, which occurs in both the numerator and denominator.  The limit is therefore the ratio of the coefficients of <m>x^2</m>, which is <m>-1/3</m>. See <xref ref="fig_hzasy3">Figure</xref>(b).
+<li>
+<p>
+The highest power of <m>x</m> is in the denominator.  Therefore, the limit is 0; see <xref ref="fig_hzasy3">Figure</xref>(a).
+</p>
+</li>
+<li>
+<p>
+The highest power of <m>x</m> is <m>x^2</m>, which occurs in both the numerator and denominator.  The limit is therefore the ratio of the coefficients of <m>x^2</m>, which is <m>-1/3</m>. See <xref ref="fig_hzasy3">Figure</xref>(b).
 	
 	
 	
@@ -391,8 +419,14 @@ Use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> to evaluate each of 
 <row><cell>(c)</cell></row>
 </tabular>
 </figure>
+
+</p>
 </li>
-<li>The highest power of <m>x</m> is in the numerator so the limit will be <m>\infty</m> or <m>-\infty</m>.  To see which, consider only the dominant terms from the numerator and denominator, which are <m>x^2</m> and <m>-x</m>.  The expression in the limit will behave like <m>x^2/(-x) = -x</m> for large values of <m>x</m>.  Therefore, the limit is <m>-\infty</m>. See <xref ref="fig_hzasy3">Figure</xref>(c).</li>
+<li>
+<p>
+The highest power of <m>x</m> is in the numerator so the limit will be <m>\infty</m> or <m>-\infty</m>.  To see which, consider only the dominant terms from the numerator and denominator, which are <m>x^2</m> and <m>-x</m>.  The expression in the limit will behave like <m>x^2/(-x) = -x</m> for large values of <m>x</m>.  Therefore, the limit is <m>-\infty</m>. See <xref ref="fig_hzasy3">Figure</xref>(c).
+</p>
+</li>
 </ol>
 
 <p>
@@ -406,12 +440,36 @@ In this chapter we:
 </p>
 
 <ul>
-<li>defined the limit,</li>
-<li>found accessible ways to approximate their values numerically and graphically,</li>
-<li>developed a not<ndash />so<ndash />easy method of proving the value of a limit (<m>\epsilon</m>-<m>\delta</m> proofs),</li>
-<li>explored when limits do not exist,</li>
-<li>defined continuity and explored properties of continuous functions, and</li>
-<li>considered limits that involved infinity.</li>
+<li>
+<p>
+defined the limit,
+</p>
+</li>
+<li>
+<p>
+found accessible ways to approximate their values numerically and graphically,
+</p>
+</li>
+<li>
+<p>
+developed a not<ndash />so<ndash />easy method of proving the value of a limit (<m>\epsilon</m>-<m>\delta</m> proofs),
+</p>
+</li>
+<li>
+<p>
+explored when limits do not exist,
+</p>
+</li>
+<li>
+<p>
+defined continuity and explored properties of continuous functions, and
+</p>
+</li>
+<li>
+<p>
+considered limits that involved infinity.
+</p>
+</li>
 </ul>
 
 <p>
@@ -592,7 +650,11 @@ In the following exercises, evaluate the given limits using the graph of the fun
 <ol>
 <li><m>-\infty</m></li>
 <li><m>\infty</m></li>
-<li>Limit does not exist</li>
+<li>
+<p>
+Limit does not exist
+</p>
+</li>
 <li><m>\infty</m></li>
 <li><m>\infty</m></li>
 <li><m>\infty</m></li>
@@ -649,8 +711,16 @@ In the following exercises, evaluate the given limits using the graph of the fun
 </statement>
 <answer>
 <ol>
-<li>Limit does not exist</li>
-<li>Limit does not exist</li>
+<li>
+<p>
+Limit does not exist
+</p>
+</li>
+<li>
+<p>
+Limit does not exist
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -672,8 +742,16 @@ In the following exercises, evaluate the given limits using the graph of the fun
 </statement>
 <answer>
 <ol>
-<li>Limit does not exist</li>
-<li>Limit does not exist</li>
+<li>
+<p>
+Limit does not exist
+</p>
+</li>
+<li>
+<p>
+Limit does not exist
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -739,7 +817,11 @@ It seems <m>\lim_{x\to3^-}f(x) =-\infty</m>.</li>
 <row><cell><m>3.001</m></cell><cell><m>1600.88</m></cell></row>
 </tabular>
 It seems <m>\lim_{x\to3^+}f(x) =\infty</m>.</li>
-<li>It seems <m>\lim_{x\to3}f(x)</m> does not exist.</li>
+<li>
+<p>
+It seems <m>\lim_{x\to3}f(x)</m> does not exist.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -774,7 +856,11 @@ It seems <m>\lim_{x\to3^-}f(x) =-\infty</m>.</li>
 <row><cell></cell></row>
 </tabular>
 It seems <m>\lim_{x\to3^+}f(x) =-\infty</m>.</li>
-<li>It seems <m>\lim_{x\to3}f(x) =-\infty</m>.</li>
+<li>
+<p>
+It seems <m>\lim_{x\to3}f(x) =-\infty</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -809,7 +895,11 @@ It seems <m>\lim_{x\to3^-}f(x) =\infty</m>.</li>
 <row><cell></cell></row>
 </tabular>
 It seems <m>\lim_{x\to3^+}f(x) =\infty</m>.</li>
-<li>It seems <m>\lim_{x\to3}f(x) =\infty</m>.</li>
+<li>
+<p>
+It seems <m>\lim_{x\to3}f(x) =\infty</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -846,7 +936,11 @@ It seems <m>\lim_{x\to3^-}f(x) =-0.6</m>.</li>
 <row><cell></cell></row>
 </tabular>
 It seems <m>\lim_{x\to3^+}f(x) =-0.6</m>.</li>
-<li>It seems <m>\lim_{x\to3}f(x) =-0.6</m>.</li>
+<li>
+<p>
+It seems <m>\lim_{x\to3}f(x) =-0.6</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1027,7 +1121,11 @@ Let <m>\ds \lim_{x\to2} f(x) = 3</m> and <m>\ds \lim_{x\to2} g(x) = -1</m>. Eval
 </statement>
 <answer>
 <ol>
-<li>2</li>
+<li>
+<p>
+2
+</p>
+</li>
 <li><m>-3</m></li>
 <li><m>-3</m></li>
 <li><m>1/3</m></li>

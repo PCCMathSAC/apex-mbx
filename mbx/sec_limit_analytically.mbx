@@ -30,19 +30,55 @@ The following limits hold.
 </p>
 
 <ol>
-<li>\text{Constants:} <m>\displaystyle \lim_{x\to c} b = b</m></li>
-<li>\text{Identity }						<m>\displaystyle \lim_{x\to c} x = c</m></li>
-<li>\text{Sums/Differences:} <m>\displaystyle \lim_{x\to c}(f(x)\pm g(x)) = L\pm K</m></li>
-<li>\text{Scalar Multiples:}	<m>\displaystyle \lim_{x\to c} b\cdot f(x) = bL</m></li>
-<li>\text{Products:}	<m>\displaystyle \lim_{x\to c} f(x)\cdot g(x) = LK</m></li>
-<li>\text{Quotients:} <m>\displaystyle \lim_{x\to c} f(x)/g(x) = L/K</m>, (<m>K\neq 0)</m></li>
-<li>\text{Powers:} 	<m>\displaystyle \lim_{x\to c} f(x)^n = L^n</m></li>
-<li>\text{Roots:}		\parbox[t]{185pt}{<m>\displaystyle \lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}</m>}</li>
-<li>\text{Compositions:} \parbox[t]{200pt}{Adjust our previously given limit situation to:
+<li>
+<p>
+\text{Constants:} <m>\displaystyle \lim_{x\to c} b = b</m>
+</p>
+</li>
+<li>
+<p>
+\text{Identity }						<m>\displaystyle \lim_{x\to c} x = c</m>
+</p>
+</li>
+<li>
+<p>
+\text{Sums/Differences:} <m>\displaystyle \lim_{x\to c}(f(x)\pm g(x)) = L\pm K</m>
+</p>
+</li>
+<li>
+<p>
+\text{Scalar Multiples:}	<m>\displaystyle \lim_{x\to c} b\cdot f(x) = bL</m>
+</p>
+</li>
+<li>
+<p>
+\text{Products:}	<m>\displaystyle \lim_{x\to c} f(x)\cdot g(x) = LK</m>
+</p>
+</li>
+<li>
+<p>
+\text{Quotients:} <m>\displaystyle \lim_{x\to c} f(x)/g(x) = L/K</m>, (<m>K\neq 0)</m>
+</p>
+</li>
+<li>
+<p>
+\text{Powers:} 	<m>\displaystyle \lim_{x\to c} f(x)^n = L^n</m>
+</p>
+</li>
+<li>
+<p>
+\text{Roots:}		\parbox[t]{185pt}{<m>\displaystyle \lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}</m>}
+</p>
+</li>
+<li>
+<p>
+\text{Compositions:} \parbox[t]{200pt}{Adjust our previously given limit situation to:
 <me>
   \lim_{x\to c}f(x) = L,\ \lim_{x\to L} g(x) = K \textit{ and\ } g(L)=K .
 </me>
-Then <m>\ds \lim_{x\to c}g(f(x)) = K</m>.}</li>
+Then <m>\ds \lim_{x\to c}g(f(x)) = K</m>.}
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -82,15 +118,26 @@ Find the following limits:
 </statement>
 <solution>
 <ol>
-<li>Using the Sum/Difference rule, we know that <m>\ds \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5</m>.</li>
-<li>Using the Scalar Multiple and Sum/Difference rules, we find that <m>\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.</m></li>
-<li>Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
+<li>
+<p>
+Using the Sum/Difference rule, we know that <m>\ds \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5</m>.
+</p>
+</li>
+<li>
+<p>
+Using the Scalar Multiple and Sum/Difference rules, we find that <m>\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.</m>
+</p>
+</li>
+<li>
+<p>
+Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
 <md>
   <mrow>  \lim_{x\to 2} p(x) \amp = \lim_{x\to 2} (3x^2-5x+7)</mrow>
   <mrow>  \amp = \lim_{x\to 2} 3x^2-\lim_{x\to 2} 5x+\lim_{x\to 2}7</mrow>
   <mrow>  \amp = 3\cdot 2^2 - 5\cdot 2+7</mrow>
   <mrow>  \amp = 9</mrow>
 </md>
+</p>
 </li>
 </ol>
 </solution>
@@ -204,8 +251,14 @@ Evaluate the following limits.
 </statement>
 <solution>
 <ol>
-<li>This is a straightforward application of <xref ref="thm_lim_continuous">Theorem</xref>. <m>\ds \lim_{x\to \pi} \cos x = \cos \pi = -1</m>.</li>
-<li>We can approach this in at least two ways. First, by directly applying <xref ref="thm_lim_continuous">Theorem</xref>, we have:
+<li>
+<p>
+This is a straightforward application of <xref ref="thm_lim_continuous">Theorem</xref>. <m>\ds \lim_{x\to \pi} \cos x = \cos \pi = -1</m>.
+</p>
+</li>
+<li>
+<p>
+We can approach this in at least two ways. First, by directly applying <xref ref="thm_lim_continuous">Theorem</xref>, we have:
 <me>
   \lim_{x\to 3} (\sec^2x - \tan^2 x) = \sec^23-\tan^23.
 </me>
@@ -217,24 +270,37 @@ We can also use the Pythagorean Theorem from the start.
 <me>
   \lim_{x\to 3} (\sec^2x - \tan^2 x) = \lim_{x\to 3} 1 = 1,
 </me>
-using the Constant limit rule. Either way, we find the limit is 1.</li>
-<li>Applying the Product limit rule of <xref ref="thm_limit_algebra">Theorem</xref> and <xref ref="thm_lim_continuous">Theorem</xref> gives
+using the Constant limit rule. Either way, we find the limit is 1.
+</p>
+</li>
+<li>
+<p>
+Applying the Product limit rule of <xref ref="thm_limit_algebra">Theorem</xref> and <xref ref="thm_lim_continuous">Theorem</xref> gives
 <me>
   \ds \lim_{x\to \pi/2} \cos x\sin x = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.
 </me>
+</p>
 </li>
-<li>Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <m>e^{\ln x} = x</m> and evaluate <m>\ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.</m> 
+<li>
+<p>
+Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <m>e^{\ln x} = x</m> and evaluate <m>\ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.</m> 
 
 We can also use the limit Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>. Using <xref ref="thm_lim_continuous">Theorem</xref>, we have <m>\ds \lim_{x\to 1}\ln x = \ln 1 = 0</m> and <m>\ds\lim_{x\to 0} e^x= e^0=1</m>, satisfying the conditions of the Composition Rule. Applying this rule,
 <me>
   \ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.
 </me>
-Both approaches are valid, giving the same result.</li>
-<li>We encountered this limit in <xref ref="sec_limit_intro">Section</xref>. Applying our theorems, we attempt to find the limit as
+Both approaches are valid, giving the same result.
+</p>
+</li>
+<li>
+<p>
+We encountered this limit in <xref ref="sec_limit_intro">Section</xref>. Applying our theorems, we attempt to find the limit as
 <me>
   \lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\text{``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}}.
 </me>
-This, of course, violates a condition of <xref ref="thm_limit_algebra">Theorem</xref>, as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.</li>
+This, of course, violates a condition of <xref ref="thm_limit_algebra">Theorem</xref>, as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -1090,18 +1156,50 @@ Let <m>f(x) = 0</m> and <m>\ds g(x) = \frac xx</m>.
 </p>
 
 <ol>
-<li>Show why <m>\ds \lim_{x\to2} f(x)=0</m>.</li>
-<li>Show why <m>\ds \lim_{x\to0} g(x) = 1</m>.</li>
-<li>Show why <m>\ds \lim_{x\to2} g\big(f(x)\big)</m> does not exist.</li>
-<li>Show why the answer to part (c) does not violate the Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>.</li>
+<li>
+<p>
+Show why <m>\ds \lim_{x\to2} f(x)=0</m>.
+</p>
+</li>
+<li>
+<p>
+Show why <m>\ds \lim_{x\to0} g(x) = 1</m>.
+</p>
+</li>
+<li>
+<p>
+Show why <m>\ds \lim_{x\to2} g\big(f(x)\big)</m> does not exist.
+</p>
+</li>
+<li>
+<p>
+Show why the answer to part (c) does not violate the Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Apply Part 1 of <xref ref="thm_limit_algebra">Theorem</xref>.</li>
-<li>Apply <xref ref="thm_limit_allbut1">Theorem</xref>; <m>g(x) = \frac xx</m> is the same as <m>g(x) = 1</m> everywhere except at <m>x=0</m>. Thus <m>\ds\lim_{x\to0} g(x) = \lim_{x\to 0} 1 = 1.</m></li>
-<li>The function <m>f(x)</m> is always 0, so <m>g\big(f(x)\big)</m> is never defined as <m>g(x)</m> is not defined at <m>x=0</m>. Therefore the limit does not exist.</li>
-<li>The Composition Rule requires that <m>\ds\lim_{x\to0} g(x)</m> be equal to <m>g(0)</m>. They are not equal, so the conditions of the Composition Rule are not satisfied, and hence the rule is not violated.</li>
+<li>
+<p>
+Apply Part 1 of <xref ref="thm_limit_algebra">Theorem</xref>.
+</p>
+</li>
+<li>
+<p>
+Apply <xref ref="thm_limit_allbut1">Theorem</xref>; <m>g(x) = \frac xx</m> is the same as <m>g(x) = 1</m> everywhere except at <m>x=0</m>. Thus <m>\ds\lim_{x\to0} g(x) = \lim_{x\to 0} 1 = 1.</m>
+</p>
+</li>
+<li>
+<p>
+The function <m>f(x)</m> is always 0, so <m>g\big(f(x)\big)</m> is never defined as <m>g(x)</m> is not defined at <m>x=0</m>. Therefore the limit does not exist.
+</p>
+</li>
+<li>
+<p>
+The Composition Rule requires that <m>\ds\lim_{x\to0} g(x)</m> be equal to <m>g(0)</m>. They are not equal, so the conditions of the Composition Rule are not satisfied, and hence the rule is not violated.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>

@@ -20,7 +20,17 @@ Start with a point <m>O</m> in the plane called the <b>pole</b> (we will always 
 </p>
 <figure xml:id="fig_polar_intro1" >
 <caption>Illustrating polar coordinates.</caption>
-<image width="73%" source="images/17469063de1b873386a714228c785ca2ea409d7b.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[>=latex]
+	\draw[thick,->] (0,0) node [below] {\(O\)} -- (3,0) node [below] {initial ray} ;
+	\filldraw (0,0) circle (1.5pt);
+	\filldraw [rotate=55] (2,0) circle (1.5pt);
+	\draw [thick,rotate=55] (0,0)-- node [rotate=55,pos=.5,above] {\(r\)} (2,0) node [above] {\(P=P(r,\theta)\)};
+	\draw [->] (.75,0) arc(0:55:.75); 
+	\draw [rotate=27.5] (1,0) node {\(\theta\)};
+\end{tikzpicture}]]></latex-image-code>
+</image>
+
 </figure>
 <p>
 Practice will make this process more clear.
@@ -37,9 +47,26 @@ Plot the following polar coordinates:<index><main>polar coordinates</main><sub>p
 </statement>
 <solution>
 <p>
-\AddToShipoutPicture*{\put(\LenToUnit{.4\paperwidth},\LenToUnit{.04\paperheight}){<image width="73%" source="images/fb3c44da3233f6d2753232496185f8bbc1e75313.png" />
-					
-					}}
+\AddToShipoutPicture*{\put(\LenToUnit{.4\paperwidth},\LenToUnit{.04\paperheight}){
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[scale=.8]
+	\draw [dashed,gray] (-3.1,0) -- (0,0);
+	\draw[thick,->,>=stealth] (0,0) node [below] {\(O\)} -- (3.5,0) ;
+	\filldraw (0,0) circle (1.5pt);
+	\foreach \x in {1,2,3}
+	{\draw (0,0) circle (\x cm);
+	\draw (\x,0) node [below right] {\x};
+	}
+	\foreach \x in {30,45,60,90,120,135,150}
+	{\draw [rotate=\x,dashed,gray] (-3.1,0) -- (3.1,0);
+	}
+	
+	
+	
+	
+\end{tikzpicture}]]></latex-image-code>
+</image>
+}}
 To aid in the drawing, a polar grid is provided at the bottom of this page. To place the point <m>A</m>, go out 1 unit along the initial ray (putting you on the inner circle shown on the grid), then rotate counter-clockwise <m>\pi/4</m> radians (or <m>45^\circ</m>). Alternately, one can consider the rotation first: think about the ray from <m>O</m> that forms an angle of <m>\pi/4</m> with the initial ray, then move out 1 unit along this ray (again placing you on the inner circle of the grid).
 </p>
 
@@ -100,24 +127,43 @@ Given the rectangular coordinates <m>(x,y)</m>, the polar coordinates are determ
 <title>Converting Between Polar and Rectangular Coordinates</title>
 <statement>
 <ol>
-<li>Convert the polar coordinates <m>P(2,2\pi/3)</m> and <m>P(-1,5\pi/4)</m> to rectangular coordinates.</li>
-<li>Convert the rectangular coordinates <m>(1,2)</m> and <m>(-1,1)</m> to polar coordinates.</li>
+<li>
+<p>
+Convert the polar coordinates <m>P(2,2\pi/3)</m> and <m>P(-1,5\pi/4)</m> to rectangular coordinates.
+</p>
+</li>
+<li>
+<p>
+Convert the rectangular coordinates <m>(1,2)</m> and <m>(-1,1)</m> to polar coordinates.
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
 <li>
+<p>
+</p>
+
 <ol>
-<li>We start with <m>P(2,2\pi/3)</m>. Using <xref ref="idea_polarconvert">Key Idea</xref>, we have
+<li>
+<p>
+We start with <m>P(2,2\pi/3)</m>. Using <xref ref="idea_polarconvert">Key Idea</xref>, we have
 <me>
   x= 2\cos (2\pi/3) = -1\qquad y = 2\sin (2\pi/3) = \sqrt{3}.
 </me>
-So the rectangular coordinates are <m>(-1,\sqrt{3}) \approx (-1,1.732)</m>.</li>
-<li>The polar point <m>P(-1,5\pi/4)</m> is converted to rectangular with:
+So the rectangular coordinates are <m>(-1,\sqrt{3}) \approx (-1,1.732)</m>.
+</p>
+</li>
+<li>
+<p>
+The polar point <m>P(-1,5\pi/4)</m> is converted to rectangular with:
 <me>
   x=-1\cos (5\pi/4) = \sqrt{2}/2\qquad y= -1\sin (5\pi/4) = \sqrt{2}/2.
 </me>
-So the rectangular coordinates are <m>(\sqrt{2}/2,\sqrt{2}/2) \approx (0.707,0.707)</m>.</li>
+So the rectangular coordinates are <m>(\sqrt{2}/2,\sqrt{2}/2) \approx (0.707,0.707)</m>.
+</p>
+</li>
 </ol>
 These points are plotted in <xref ref="fig_polar2">Figure</xref> (a). The rectangular coordinate system is drawn lightly under the polar coordinate system so that the relationship between the two can be seen.
 	
@@ -132,8 +178,13 @@ These points are plotted in <xref ref="fig_polar2">Figure</xref> (a). The rectan
 </figure>
 </li>
 <li>
+<p>
+</p>
+
 <ol>
-<li>To convert the rectangular point <m>(1,2)</m> to polar coordinates, we use the Key Idea to form the following two equations:
+<li>
+<p>
+To convert the rectangular point <m>(1,2)</m> to polar coordinates, we use the Key Idea to form the following two equations:
 <me>
   1^2+2^2 = r^2 \qquad \tan \theta = \frac{2}{1}.
 </me>
@@ -141,8 +192,12 @@ The first equation tells us that <m>r=\sqrt{5}</m>. Using the inverse tangent fu
 <me>
   \tan \theta = 2 \quad \Rightarrow \quad \theta = \tan^{-1} 2 \approx 1.11\approx 63.43^\circ.
 </me>
-Thus polar coordinates of <m>(1,2)</m> are <m>P(\sqrt{5},1.11)</m>.</li>
-<li><line>To convert <m>(-1,1)</m> to polar coordinates, we form the equations
+Thus polar coordinates of <m>(1,2)</m> are <m>P(\sqrt{5},1.11)</m>.
+</p>
+</li>
+<li>
+<p>
+<line>To convert <m>(-1,1)</m> to polar coordinates, we form the equations
 <me>
   (-1)^2+1^2=r^2 \qquad \tan \theta = \frac{1}{-1}.
 </me>
@@ -154,6 +209,7 @@ This is not the angle we desire. The range of <m>\tan^{-1}x</m> is <m>(-\pi/2,\p
 		
 		An alternate method is to use the angle <m>\theta</m> given by arctangent, but change the sign of <m>r</m>. Thus we could also refer to <m>(-1,1)</m> as</line>
 <line><m>P(-\sqrt{2},-\pi/4)</m>.</line>
+</p>
 </li>
 </ol>
 These points are plotted in <xref ref="fig_polar2">Figure</xref> (b). The polar system is drawn lightly under the rectangular grid with rays to demonstrate the angles used.</li>
@@ -186,10 +242,16 @@ Describe the graphs of the following polar functions.
 </statement>
 <solution>
 <ol>
-<li>The equation <m>r=1.5</m> describes all points that are 1.5 units from the pole; as the angle is not specified, any <m>\theta</m> is allowable. All points 1.5 units from the pole describes a circle of radius 1.5.
+<li>
+<p>
+The equation <m>r=1.5</m> describes all points that are 1.5 units from the pole; as the angle is not specified, any <m>\theta</m> is allowable. All points 1.5 units from the pole describes a circle of radius 1.5.
 
-We can consider the rectangular equivalent of this equation; using <m>r^2=x^2+y^2</m>, we see that <m>1.5^2=x^2+y^2</m>, which we recognize as the equation of a circle centered at <m>(0,0)</m> with radius 1.5. This is sketched in <xref ref="fig_polar3">Figure</xref>.</li>
-<li>The equation <m>\theta = \pi/4</m> describes all points such that the line through them and the pole make an angle of <m>\pi/4</m> with the initial ray. As the radius <m>r</m> is not specified, it can be any value (even negative). Thus <m>\theta = \pi/4</m> describes the line through the pole that makes an angle of <m>\pi/4 = 45^\circ</m> with the initial ray.
+We can consider the rectangular equivalent of this equation; using <m>r^2=x^2+y^2</m>, we see that <m>1.5^2=x^2+y^2</m>, which we recognize as the equation of a circle centered at <m>(0,0)</m> with radius 1.5. This is sketched in <xref ref="fig_polar3">Figure</xref>.
+</p>
+</li>
+<li>
+<p>
+The equation <m>\theta = \pi/4</m> describes all points such that the line through them and the pole make an angle of <m>\pi/4</m> with the initial ray. As the radius <m>r</m> is not specified, it can be any value (even negative). Thus <m>\theta = \pi/4</m> describes the line through the pole that makes an angle of <m>\pi/4 = 45^\circ</m> with the initial ray.
 
 We can again consider the rectangular equivalent of this equation. Combine <m>\tan \theta =y/x</m> and <m>\theta =\pi/4</m>:
 <me>
@@ -200,6 +262,8 @@ This graph is also plotted in <xref ref="fig_polar3">Figure</xref>.
 <caption>Plotting standard polar plots.</caption>
 <image width="73%" source="images/figpolar3.png" />
 </figure>
+
+</p>
 </li>
 </ol>
 </solution>
@@ -329,14 +393,20 @@ Convert from polar to rectangular.
 </statement>
 <solution>
 <ol>
-<li>Replace <m>y</m> with <m>r\sin\theta</m> and replace <m>x</m> with <m>r\cos\theta</m>, giving:
+<li>
+<p>
+Replace <m>y</m> with <m>r\sin\theta</m> and replace <m>x</m> with <m>r\cos\theta</m>, giving:
 <md>
   <mrow>  y \amp =x^2</mrow>
   <mrow>  r\sin\theta \amp = r^2\cos^2\theta</mrow>
   <mrow>  \frac{\sin\theta}{\cos^2\theta} \amp = r</mrow>
 </md>
-We have found that <m>r=\sin\theta/\cos^2\theta = \tan\theta\sec\theta</m>. The domain of this polar function is <m>(-\pi/2,\pi/2)</m>; plot a few points to see how the familiar parabola is traced out by the polar equation.</li>
-<li>We again replace <m>x</m> and <m>y</m> using the standard identities and work to solve for <m>r</m>:
+We have found that <m>r=\sin\theta/\cos^2\theta = \tan\theta\sec\theta</m>. The domain of this polar function is <m>(-\pi/2,\pi/2)</m>; plot a few points to see how the familiar parabola is traced out by the polar equation.
+</p>
+</li>
+<li>
+<p>
+We again replace <m>x</m> and <m>y</m> using the standard identities and work to solve for <m>r</m>:
 <md>
   <mrow>  xy \amp = 1</mrow>
   <mrow>  r\cos\theta\cdot r\sin\theta \amp  = 1</mrow>
@@ -350,8 +420,12 @@ This function is valid only when the product of <m>\cos\theta\sin\theta</m> is p
 <caption>Graphing <m>xy=1</m> from <xref ref="ex_polar6">Example</xref>.</caption>
 <image width="73%" source="images/figpolar6.png" />
 </figure>
+
+</p>
 </li>
-<li>There is no set way to convert from polar to rectangular; in general, we look to form the products <m>r\cos \theta</m> and <m>r\sin\theta</m>, and then replace these with <m>x</m> and <m>y</m>, respectively. We start in this problem by multiplying both sides by <m>\sin\theta-\cos\theta</m>:
+<li>
+<p>
+There is no set way to convert from polar to rectangular; in general, we look to form the products <m>r\cos \theta</m> and <m>r\sin\theta</m>, and then replace these with <m>x</m> and <m>y</m>, respectively. We start in this problem by multiplying both sides by <m>\sin\theta-\cos\theta</m>:
 <md>
   <mrow>  r \amp = \frac{2}{\sin\theta-\cos\theta}</mrow>
   <mrow>  r(\sin\theta-\cos\theta) \amp = 2</mrow>
@@ -361,8 +435,12 @@ This function is valid only when the product of <m>\cos\theta\sin\theta</m> is p
 </md>
 The original polar equation, <m>r=2/(\sin\theta-\cos\theta)</m> does not easily reveal that its graph is simply a line. However, our conversion shows that it is. The upcoming gallery of polar curves gives the general equations of lines in polar form.
 
-\drawexampleline</li>
-<li>By multiplying both sides by <m>r</m>, we obtain both an <m>r^2</m> term and an <m>r\cos\theta</m> term, which we replace with <m>x^2+y^2</m> and <m>x</m>, respectively.
+\drawexampleline
+</p>
+</li>
+<li>
+<p>
+By multiplying both sides by <m>r</m>, we obtain both an <m>r^2</m> term and an <m>r\cos\theta</m> term, which we replace with <m>x^2+y^2</m> and <m>x</m>, respectively.
 <md>
   <mrow>  r \amp =2\cos\theta</mrow>
   <mrow>  r^2 \amp = 2r\cos\theta</mrow>
@@ -373,7 +451,9 @@ We recognize this as a circle; by completing the square we can find its radius a
 	x^2-2x+y^2 \amp = 0</mrow>
   <mrow>  (x-1)^2 + y^2 \amp =1.</mrow>
 </md>
-The circle is centered at <m>(1,0)</m> and has radius 1. The upcoming gallery of polar curves gives the equations of <em>some</em> circles in polar form; circles with arbitrary centers have a complicated polar equation that we do not consider here.</li>
+The circle is centered at <m>(1,0)</m> and has radius 1. The upcoming gallery of polar curves gives the equations of <em>some</em> circles in polar form; circles with arbitrary centers have a complicated polar equation that we do not consider here.
+</p>
+</li>
 </ol>
 
 <p>
@@ -621,7 +701,21 @@ Plot the points with the given polar coordinates.
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/db21aa16eaa8ce2f49c45924daea017d866f2335.png" />
+
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[scale=.5]
+	\foreach \x in {1,2}
+	{\draw (0,0) circle (\x);
+		\draw (\x,0) node [below right] { \(\x\)};
+	}
+	\draw [thick,->,>=stealth] (0,0) node [below] { \(O\)} -- (2.5,0);
+	\filldraw (xyz polar cs: angle=0,radius=2) circle (2pt) node [above right] { \(A\)}
+	      (xyz polar cs: angle=180,radius=1)circle (2pt) node [right] { \(B\)}
+				(xyz polar cs: angle=90,radius=-2)circle (2pt) node [right] { \(C\)}
+				(xyz polar cs: angle=45,radius=1)circle (2pt) node [right] { \(D\)};
+	\end{tikzpicture}]]></latex-image-code>
+</image>
+
 </sidebyside>
 </answer>
 </exercise>
@@ -647,7 +741,21 @@ Plot the points with the given polar coordinates.
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/73fea331b1f85b68578e55dc86d073f6d832f204.png" />
+
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[scale=.5]
+	\foreach \x in {1,2}
+	{\draw (0,0) circle (\x);
+		\draw (\x,0) node [below right] { \(\x\)};
+	}
+	\draw [thick,->,>=stealth] (0,0) node [below] { \(O\)} -- (2.5,0);
+	\filldraw (xyz polar cs: angle=180,radius=2) circle (2pt) node [above] { \(A\)}
+	      (xyz polar cs: angle=180,radius=1)circle (2pt) node [above] { \(B\)}
+				(xyz polar cs: angle=114.6,radius=1)circle (2pt) node [right] { \(C\)}
+				(xyz polar cs: angle=150,radius=.5)circle (2pt) node [right] { \(D\)};
+	\end{tikzpicture}]]></latex-image-code>
+</image>
+
 </sidebyside>
 </answer>
 </exercise>
@@ -659,7 +767,26 @@ For each of the given points give two sets of polar coordinates that identify it
 </p>
 
 <p>
-<image width="73%" source="images/a066005f9c9985233a25d84c7f38c0179301e576.png" />
+
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[scale=.5]
+	\draw [dashed,gray] (-3.1,0) -- (0,0);
+	\draw[thick,->,>=stealth] (0,0) node [below] {\(O\)} -- (3.5,0) ;
+	\filldraw (0,0) circle (1.5pt);
+	\foreach \x in {1,2,3}
+	{\draw (0,0) circle (\x cm);
+	\draw (\x,0) node [below right] {\x};
+	}
+	\foreach \x in {30,45,60,90,120,135,150}
+	{\draw [rotate=\x,dashed,gray] (-3.1,0) -- (3.1,0);
+	}
+	\filldraw (xyz polar cs: angle=45,radius=2.5) circle (2pt) node [above] { \(A\)} (xyz polar cs: angle=-30,radius=1)circle (2pt) node [below] { \(B\)}
+				(xyz polar cs: angle=240,radius=3)circle (2pt) node [right] { \(C\)}
+				(xyz polar cs: angle=120,radius=1.5)circle (2pt) node [right] { \(D\)};
+	
+\end{tikzpicture}]]></latex-image-code>
+</image>
+
 </p>
 </statement>
 <answer>
@@ -688,7 +815,26 @@ For each of the given points give two sets of polar coordinates that identify it
 </p>
 
 <p>
-<image width="73%" source="images/93737509e39b7f791bef69a923dadc213ea717a8.png" />
+
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[scale=.5]
+	\draw [dashed,gray] (-3.1,0) -- (0,0);
+	\draw[thick,->,>=stealth] (0,0) node [below] {\(O\)} -- (3.5,0) ;
+	\filldraw (0,0) circle (1.5pt);
+	\foreach \x in {1,2,3}
+	{\draw (0,0) circle (\x cm);
+	\draw (\x,0) node [below right] {\x};
+	}
+	\foreach \x in {30,45,60,90,120,135,150}
+	{\draw [rotate=\x,dashed,gray] (-3.1,0) -- (3.1,0);
+	}
+	\filldraw (xyz polar cs: angle=30,radius=2) circle (2pt) node [above] { \(A\)} (xyz polar cs: angle=-60,radius=1)circle (2pt) node [below] { \(B\)}
+				(xyz polar cs: angle=135,radius=2)circle (2pt) node [right] { \(C\)}
+				(xyz polar cs: angle=180,radius=2.5)circle (2pt) node [below] { \(D\)};
+	
+\end{tikzpicture}]]></latex-image-code>
+</image>
+
 </p>
 </statement>
 <answer>

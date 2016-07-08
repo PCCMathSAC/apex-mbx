@@ -245,26 +245,10 @@ The region is all points between the planes <m>y=-1</m> and <m>y=2</m>. These pl
 The equation <m>x=1</m> obviously lacks the <m>y</m> and <m>z</m> variables, meaning it defines points where the <m>y</m> and <m>z</m> coordinates can take on any value. Now consider the equation <m>x^2+y^2=1</m> <em>in space.</em> In <em>the plane</em>, this equation describes a circle of radius 1, centered at the origin. In space, the <m>z</m> coordinate is not specified, meaning it can take on any value. In <xref ref="fig_spacecylinder1">Figure</xref> (a), we show part of the graph of the equation <m>x^2+y^2=1</m> by sketching 3 circles: the bottom one has a constant <m>z</m>-value of <m>-1.5</m>, the middle one has a <m>z</m>-value of 0 and the top circle has a <m>z</m>-value of 1. By plotting <em>all</em> possible <m>z</m>-values, we get the surface shown in <xref ref="fig_spacecylinder1">Figure</xref> (b).
 This surface looks like a <q>tube,</q> or a <q>cylinder</q>; mathematicians call this surface a <b>cylinder</b> for an entirely different reason.
 </p>
-
-<p>
-\begin{figure}
-\begin{tabular}c
-\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=0,
-3Dortho=0.004,
-3Dc2c=4 4 2,
-3Dcoo=0 0 0,
-3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figspacecylinder1.png" />
-</p>
-
-<p>
-(a)
-</p>
 <figure xml:id="fig_spacecylinder1" >
 <caption>Sketching <m>x^2+y^2=1</m>.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004,
@@ -272,9 +256,19 @@ This surface looks like a <q>tube,</q> or a <q>cylinder</q>; mathematicians call
 3Dcoo=0 0 0,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figspacecylinder1b.png" />
-(b)
-\end{tabular}
+<image width="125%" source="images/figspacecylinder1.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004,
+3Dc2c=4 4 2,
+3Dcoo=0 0 0,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="125%" source="images/figspacecylinder1b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
 <definition xml:id="def_cylinder">
 <title>Cylinder</title>
@@ -381,26 +375,10 @@ One of the applications of integration we learned previously was to find the vol
 <p>
 Consider the surface formed by revolving <m>y=\sqrt{x}</m> about the <m>x</m>-axis. Cross<ndash />sections of this surface parallel to the <m>y</m>-<m>z</m> plane are circles, as shown in <xref ref="fig_surf_rev_intro">Figure</xref>(a). Each circle has equation of the form <m>y^2+z^2=r^2</m> for some radius <m>r</m>. The radius is a function of <m>x</m>; in fact, it is <m>r(x) = \sqrt{x}</m>. Thus the equation of the surface shown in <xref ref="fig_surf_rev_intro">Figure</xref>b is <m>y^2+z^2=(\sqrt{x})^2.</m>
 </p>
-
-<p>
-\begin{figure}
-\begin{tabular}c
-\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=0,
-3Dortho=0.0045,
-3Dc2c=.395 .79 .356,
-3Dcoo=75 0 0,
-3Droo=130,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsurf_rev_intro.png" />
-</p>
-
-<p>
-(a)
-</p>
 <figure xml:id="fig_surf_rev_intro" >
 <caption>Introducing surfaces of revolution.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
@@ -408,9 +386,19 @@ Consider the surface formed by revolving <m>y=\sqrt{x}</m> about the <m>x</m>-ax
 3Dcoo=75 0 0,
 3Droo=130,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsurf_rev_introb.png" />
-(b)
-\end{tabular}
+<image width="73%" source="images/figsurf_rev_intro.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.395 .79 .356,
+3Dcoo=75 0 0,
+3Droo=130,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="73%" source="images/figsurf_rev_introb.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
 <p>
 We generalize the above principles to give the equations of surfaces formed by revolving curves about the coordinate axes.
@@ -422,9 +410,21 @@ Let <m>r</m> be a radius function. <index><main>surface of revolution</main></in
 </p>
 
 <ol>
-<li>The equation of the surface formed by revolving <m>y=r(x)</m> or <m>z=r(x)</m> about the <m>x</m>-axis is <m>y^2+z^2=r(x)^2</m>.</li>
-<li>The equation of the surface formed by revolving <m>x=r(y)</m> or <m>z=r(y)</m> about the <m>y</m>-axis is <m>x^2+z^2=r(y)^2</m>.</li>
-<li>The equation of the surface formed by revolving <m>x=r(z)</m> or <m>y=r(z)</m> about the <m>z</m>-axis is <m>x^2+y^2=r(z)^2</m>.</li>
+<li>
+<p>
+The equation of the surface formed by revolving <m>y=r(x)</m> or <m>z=r(x)</m> about the <m>x</m>-axis is <m>y^2+z^2=r(x)^2</m>.
+</p>
+</li>
+<li>
+<p>
+The equation of the surface formed by revolving <m>x=r(y)</m> or <m>z=r(y)</m> about the <m>y</m>-axis is <m>x^2+z^2=r(y)^2</m>.
+</p>
+</li>
+<li>
+<p>
+The equation of the surface formed by revolving <m>x=r(z)</m> or <m>y=r(z)</m> about the <m>z</m>-axis is <m>x^2+y^2=r(z)^2</m>.
+</p>
+</li>
 </ol>
 </keyidea>
 
@@ -445,25 +445,11 @@ Note how the surface (and hence the resulting equation) is the same if we began 
 </p>
 </solution>
 </example>
-<p>
-\begin{figure}
-\begin{tabular}c
-\begin{figure}
-\includemedia[width=100pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=0,
-3Dortho=0.0046,
-3Dc2c=.66 .67 .32,
-3Dcoo=0 0 75,
-3Droo=130,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsurfrev1a.png" />
-</p>
 
-<p>
-(a)
-</p>
 <figure xml:id="fig_surfrev1" >
 <caption>Revolving <m>y=\sin z</m> about the <m>z</m>-axis in <xref ref="ex_surfrev1">Example</xref>.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=100pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0046,
@@ -471,9 +457,19 @@ Note how the surface (and hence the resulting equation) is the same if we began 
 3Dcoo=0 0 75,
 3Droo=130,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsurfrev1b.png" />
-(b)
-\end{tabular}
+<image width="73%" source="images/figsurfrev1a.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=100pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0046,
+3Dc2c=.66 .67 .32,
+3Dcoo=0 0 75,
+3Droo=130,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="73%" source="images/figsurfrev1b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
 <p>
 This particular method of creating surfaces of revolution is limited. For instance, in <xref ref="ex_shell4">Example</xref> of <xref ref="sec_shell_method">Section</xref> we found the volume of the solid formed by revolving <m>y=\sin x</m> about the <m>y</m>-axis. Our current method of forming surfaces can only rotate <m>y=\sin x</m> about the <m>x</m>-axis. Trying to rewrite <m>y=\sin x</m> as a function of <m>y</m> is not trivial, as simply writing <m>x=\sin^{-1}y</m> only gives part of the region we desire.
@@ -503,9 +499,11 @@ Find the equation of the surface found by revolving <m>z=\sin x</m> about the <m
 <solution>
 <p>
 Using <xref ref="idea_surf_of_revol2">Key Idea</xref>, the surface has equation <m>z=\sin\big(\sqrt{x^2+y^2}\big)</m>. The curve and surface are graphed in <xref ref="fig_surfrev2">Figure</xref>.
-\begin{figure}
-\begin{tabular}c
-\begin{figure}
+</p>
+<figure xml:id="fig_surfrev2" >
+<caption>Revolving <m>z=\sin x</m> about the <m>z</m>-axis in <xref ref="ex_surfrev2">Example</xref>.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=100pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0046,
@@ -513,14 +511,9 @@ Using <xref ref="idea_surf_of_revol2">Key Idea</xref>, the surface has equation 
 3Dcoo=0 0 10,
 3Droo=130,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsurfrev2a.png" />
-</p>
-
-<p>
-(a)
-</p>
-<figure xml:id="fig_surfrev2" >
-<caption>Revolving <m>z=\sin x</m> about the <m>z</m>-axis in <xref ref="ex_surfrev2">Example</xref>.</caption>
+<image width="73%" source="images/figsurfrev2a.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=100pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0046,
@@ -528,9 +521,9 @@ Using <xref ref="idea_surf_of_revol2">Key Idea</xref>, the surface has equation 
 3Dcoo=0 0 25,
 3Droo=130,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsurfrev2b.png" />
-(b)
-\end{tabular}
+<image width="73%" source="images/figsurfrev2b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
 </solution>
 </example>
@@ -896,8 +889,8 @@ Sketch the quadric surface defined by the given equation.
 </statement>
 <solution>
 <ol>
-<li><line><m>\ds y=\frac{x^2}{4}+\frac{z^2}{16}</m>:</line>
-<line>We first identify the quadric by pattern<ndash />matching with the equations given previously. Only two surfaces have equations where one variable is raised to the first power, the elliptic paraboloid and the hyperbolic paraboloid. In the latter case, the other variables have different signs, so we conclude that this describes a hyperbolic paraboloid. As the variable with the first power is <m>y</m>, we note the paraboloid opens along the <m>y</m>-axis. 
+<li><m>\ds y=\frac{x^2}{4}+\frac{z^2}{16}</m>:<br />
+	We first identify the quadric by pattern<ndash />matching with the equations given previously. Only two surfaces have equations where one variable is raised to the first power, the elliptic paraboloid and the hyperbolic paraboloid. In the latter case, the other variables have different signs, so we conclude that this describes a hyperbolic paraboloid. As the variable with the first power is <m>y</m>, we note the paraboloid opens along the <m>y</m>-axis. 
 	
 	To make a decent sketch by hand, we need only draw a few traces. In this case, the traces <m>x=0</m> and <m>z=0</m> form parabolas that outline the shape.
 	
@@ -906,21 +899,10 @@ Sketch the quadric surface defined by the given equation.
 	<m>z=0</m>: 	The trace is the parabola <m>y=x^2/4</m>.
 	
 	Graphing each trace in the respective plane creates a sketch as shown in <xref ref="fig_space5a">Figure</xref>(a). This is enough to give an idea of what the paraboloid looks like. The surface is filled in in (b).
-	\begin{figure}
-
-	\begin{tabular}c
-	\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=0,
-3Dortho=0.0045,
-3Dc2c=.7 .66 .18,
-3Dcoo=0 30 0,
-3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figspace5ab.png" />
-(a)</line>
-<line><figure xml:id="fig_space5a" >
+	<figure xml:id="fig_space5a" >
 <caption>Sketching an elliptic paraboloid.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
@@ -928,14 +910,23 @@ Sketch the quadric surface defined by the given equation.
 3Dcoo=0 30 0,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figspace5a.png" />
-(b)
-	\end{tabular}
+<image width="125%" source="images/figspace5ab.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.7 .66 .18,
+3Dcoo=0 30 0,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="125%" source="images/figspace5a.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
-</line>
 </li>
-<li><line><m>\ds x^2+\frac{y^2}{9}+\frac{z^2}{4}=1:</m></line>
-<line>This is an ellipsoid. We can get a good idea of its shape by drawing the traces in the coordinate planes.
+<li><m>\ds x^2+\frac{y^2}{9}+\frac{z^2}{4}=1:</m><br />
+	This is an ellipsoid. We can get a good idea of its shape by drawing the traces in the coordinate planes.
 	
 	<m>x=0</m>: 	The trace is the ellipse <m>\ds\frac{y^2}{9}+\frac{z^2}{4}=1</m>. The major axis is along the <m>y</m><ndash />axis with length 6 (as <m>b=3</m>, the length of the axis is 6); the minor axis is along the <m>z</m>-axis with length 4.
 	
@@ -944,21 +935,10 @@ Sketch the quadric surface defined by the given equation.
 	<m>z=0</m>:	The trace is the ellipse <m>\ds x^2+\frac{y^2}{9}=1,</m> with major axis along the <m>y</m>-axis. 
 	
 	Graphing each trace in the respective plane creates a sketch as shown in <xref ref="fig_space5b">Figure</xref>(a). Filling in the surface gives <xref ref="fig_space5b">Figure</xref>(b).
-		\begin{figure}
-
-	\begin{tabular}c
-	\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=0,
-3Dortho=0.0045,
-3Dc2c=.7 .66 .18,
-3Dcoo=0 0 0,
-3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figspace5b.png" />
-(a)</line>
-<line><figure xml:id="fig_space5b" >
+		<figure xml:id="fig_space5b" >
 <caption>Sketching an ellipsoid.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
@@ -966,14 +946,23 @@ Sketch the quadric surface defined by the given equation.
 3Dcoo=0 0 0,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figspace5bb.png" />
-(b)
-	\end{tabular}
+<image width="125%" source="images/figspace5b.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.7 .66 .18,
+3Dcoo=0 0 0,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="125%" source="images/figspace5bb.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
-</line>
 </li>
-<li><line><m>\ds z=y^2-x^2</m>:</line>
-<line>This defines a hyperbolic paraboloid, very similar to the one shown in the gallery of quadric sections. Consider the traces in the <m>y-z</m> and <m>x-z</m> planes:
+<li><m>\ds z=y^2-x^2</m>:<br />
+	This defines a hyperbolic paraboloid, very similar to the one shown in the gallery of quadric sections. Consider the traces in the <m>y-z</m> and <m>x-z</m> planes:
 	
 	<m>x=0</m>: 	The trace is <m>z=y^2</m>, a parabola opening up in the <m>y-z</m> plane.
 	
@@ -981,21 +970,10 @@ Sketch the quadric surface defined by the given equation.
 	
 	Sketching these two parabolas gives a sketch like that in <xref ref="fig_space5c">Figure</xref> (a), and filling in the surface gives a sketch like (b).
 	
-	\begin{figure}
-
-	\begin{tabular}c
-	\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=0,
-3Dortho=0.0045,
-3Dc2c=.7 .55 .43,
-3Dcoo=0 0 0,
-3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figspace5c.png" />
-(a)</line>
-<line><figure xml:id="fig_space5c" >
+	<figure xml:id="fig_space5c" >
 <caption>Sketching a hyperbolic paraboloid.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
@@ -1003,11 +981,20 @@ Sketch the quadric surface defined by the given equation.
 3Dcoo=0 0 0,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figspace5cb.png" />
-(b)
-	\end{tabular}
+<image width="125%" source="images/figspace5c.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.7 .55 .43,
+3Dcoo=0 0 0,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="125%" source="images/figspace5cb.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
-</line>
 </li>
 </ol>
 </solution>
@@ -1019,12 +1006,9 @@ Sketch the quadric surface defined by the given equation.
 <p>
 Consider the quadric surface shown in <xref ref="fig_space6">Figure</xref>. Which of the following equations best fits this surface?
 </p>
-
-<p>
-\begin{figure}
-</p>
 <figure xml:id="fig_space6" >
 <caption>A possible equation of this quadric surface is found in <xref ref="ex_space6">Example</xref>.</caption>
+\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
@@ -1076,7 +1060,7 @@ This section has introduced points in space and shown how equations can describe
 <exercise>
 <statement>
 <p>
-Axes drawn in space must conform to the <u></u> <u></u> rule.
+Axes drawn in space must conform to the <fillin /> <fillin /> rule.
 </p>
 </statement>
 <answer>
@@ -1089,7 +1073,7 @@ right hand
 <exercise>
 <statement>
 <p>
-In the plane, the equation <m>x=2</m> defines a <u></u>; in space, <m>x=2</m> defines a <u></u>.
+In the plane, the equation <m>x=2</m> defines a <fillin />; in space, <m>x=2</m> defines a <fillin />.
 </p>
 </statement>
 <answer>
@@ -1102,7 +1086,7 @@ line; plane
 <exercise>
 <statement>
 <p>
-In the plane, the equation <m>y=x^2</m> defines a <u></u>; in space, <m>y=x^2</m> defines a <u></u>.
+In the plane, the equation <m>y=x^2</m> defines a <fillin />; in space, <m>y=x^2</m> defines a <fillin />.
 </p>
 </statement>
 <answer>

@@ -10,11 +10,10 @@ Let <m>y</m> be a function of <m>x</m>. We have studied in great detail the deri
 <p>
 Consider the function <m>z=f(x,y) = x^2+2y^2</m>, as graphed in <xref ref="fig_partialintro">Figure</xref>(a). By fixing <m>y=2</m>, we focus our attention to all points on the surface where the <m>y</m>-value is 2, shown in both parts (a) and (b) of the figure. These points form a curve in space: <m>z = f(x,2) = x^2+8</m> which is a function of just one variable. We can take the derivative of <m>z</m> with respect to <m>x</m> along this curve and find equations of tangent lines, etc.
 </p>
-
-<p>
-\begin{figure}
-\begin{tabular}c
-\begin{figure}
+<figure xml:id="fig_partialintro" >
+<caption>By fixing <m>y=2</m>, the surface <m>f(x,y) = x^2+2y^2</m> is a curve in space.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=1.320775024146522,
 3Dortho=0.004999999888241291,
@@ -22,14 +21,9 @@ Consider the function <m>z=f(x,y) = x^2+2y^2</m>, as graphed in <xref ref="fig_p
 3Dcoo=-3.0739071369171143 -0.40104401111602783 58.57058334350586,
 3Droo=129.99999696026478,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartialintro.png" />
-</p>
-
-<p>
-(a)
-</p>
-<figure xml:id="fig_partialintro" >
-<caption>By fixing <m>y=2</m>, the surface <m>f(x,y) = x^2+2y^2</m> is a curve in space.</caption>
+<image width="125%" source="images/figpartialintro.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=1.320775024146522,
 3Dortho=0.004999999888241291,
@@ -39,8 +33,8 @@ Consider the function <m>z=f(x,y) = x^2+2y^2</m>, as graphed in <xref ref="fig_p
 3Dlights=Headlamp,add3Djscript=asylabels.js]
 <image width="125%" source="images/figpartialintrob.png" /> 
 
-(b)
-\end{tabular}
+(b)</cell></row>
+</tabular>
 </figure>
 <p>
 The key notion to extract from this example is: by treating <m>y</m> as constant (it does not vary) we can consider how <m>z</m> changes with respect to <m>x</m>. In a similar fashion, we can hold <m>x</m> constant and consider how <m>z</m> changes with respect to <m>y</m>. This is the underlying principle of <b>partial derivatives</b>. We state the formal, limit<ndash />based definition first, then show how to compute these partial derivatives without directly taking limits.
@@ -53,15 +47,21 @@ Let <m>z=f(x,y)</m> be a continuous function on an open set <m>S</m> in <m>\math
 </p>
 
 <ol>
-<li>The <b>partial derivative of <m>f</m> with respect to <m>x</m></b> is:
+<li>
+<p>
+The <b>partial derivative of <m>f</m> with respect to <m>x</m></b> is:
 <me>
   f_x(x,y) = \lim_{h\to 0} \frac{f(x+h,y) - f(x,y)}h.
 </me>
+</p>
 </li>
-<li>The <b>partial derivative of <m>f</m> with respect to <m>y</m></b> is:
+<li>
+<p>
+The <b>partial derivative of <m>f</m> with respect to <m>y</m></b> is:
 <me>
   f_y(x,y) = \lim_{h\to 0} \frac{f(x,y+h) - f(x,y)}h.
 </me>
+</p>
 </li>
 </ol>
 
@@ -132,7 +132,9 @@ Find <m>f_x(x,y)</m> and <m>f_y(x,y)</m> in each of the following.
 </statement>
 <solution>
 <ol>
-<li><line>We have <m>f(x,y) = x^3y^2+ 5y^2-x+7</m>.</line>
+<li>
+<p>
+<line>We have <m>f(x,y) = x^3y^2+ 5y^2-x+7</m>.</line>
 <line>Begin with <m>f_x(x,y)</m>. Keep <m>y</m> fixed, treating it as a constant or coefficient, as appropriate:
 <me>
   f_x(x,y) = 3x^2y^2-1.
@@ -144,8 +146,11 @@ Note how the <m>5y^2</m> and <m>7</m> terms go to zero.
   f_y(x,y) = 2x^3y+10y.
 </me>
 Note how the <m>-x</m> and <m>7</m> terms go to zero.</line>
+</p>
 </li>
-<li><line>We have <m>f(x,y) = \cos(xy^2)+\sin x</m>.</line>
+<li>
+<p>
+<line>We have <m>f(x,y) = \cos(xy^2)+\sin x</m>.</line>
 <line>Begin with <m>f_x(x,y)</m>. We need to apply the Chain Rule with the cosine term; <m>y^2</m> is the coefficient of the <m>x</m>-term inside the cosine function.
 <me>
   f_x(x,y) = -\sin(xy^2)(y^2)+\cos x = -y^2\sin(xy^2)+\cos x.
@@ -155,8 +160,11 @@ To find <m>f_y(x,y)</m>, note that <m>x</m> is the coefficient of the <m>y^2</m>
   f_y(x,y) = -\sin(xy^2)(2xy) = -2xy\sin(xy^2).
 </me>
 </line>
+</p>
 </li>
-<li><line>We have <m>f(x,y) = e^{x^2y^3}\sqrt{x^2+1}</m>.</line>
+<li>
+<p>
+<line>We have <m>f(x,y) = e^{x^2y^3}\sqrt{x^2+1}</m>.</line>
 <line>Beginning with <m>f_x(x,y)</m>, note how we need to apply the Product Rule.
 <md>
   <mrow>  f_x(x,y) \amp = e^{x^2y^3}(2xy^3)\sqrt{x^2+1} + e^{x^2y^3}\frac12\big(x^2+1\big)^{-1/2}(2x)</mrow>
@@ -167,6 +175,7 @@ Note that when finding <m>f_y(x,y)</m> we do not have to apply the Product Rule;
   f_y(x,y) = e^{x^2y^3}(3x^2y^2)\sqrt{x^2+1} = 3x^2y^2e^{x^2y^3}\sqrt{x^2+1}.
 </me>
 </line>
+</p>
 </li>
 </ol>
 </solution>
@@ -204,26 +213,10 @@ It is also useful to note that <m>f(2,1) = 7.5</m>. What does each of these numb
 <p>
 Consider <m>f_x(2,1)=-3</m>, along with <xref ref="fig_partial3">Figure</xref>(a). If one <q>stands</q> on the surface at the point <m>(2,1,7.5)</m> and moves parallel to the <m>x</m>-axis (i.e., only the <m>x</m>-value changes, not the <m>y</m>-value), then the instantaneous rate of change is <m>-3</m>. Increasing the <m>x</m>-value will decrease the <m>z</m>-value; decreasing the <m>x</m>-value will increase the <m>z</m>-value.
 </p>
-
-<p>
-\begin{figure}
-\begin{tabular}c
-\begin{figure}
-\includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=0.,
-3Dortho=0.004999999888241291,
-3Dc2c=0.6528097987174988 0.6841705441474915 0.3251922130584717,
-3Dcoo=7.158430576324463 9.488722801208496 72.96935272216797,
-3Droo=129.9999938624484,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial3a.png" />
-</p>
-
-<p>
-(a)
-</p>
 <figure xml:id="fig_partial3" >
 <caption>Illustrating the meaning of partial derivatives.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0.,
 3Dortho=0.004999999888241291,
@@ -231,9 +224,19 @@ Consider <m>f_x(2,1)=-3</m>, along with <xref ref="fig_partial3">Figure</xref>(a
 3Dcoo=7.158430576324463 9.488722801208496 72.96935272216797,
 3Droo=129.9999938624484,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial3b.png" />
-(b)
-\end{tabular}
+<image width="125%" source="images/figpartial3a.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.,
+3Dortho=0.004999999888241291,
+3Dc2c=0.6528097987174988 0.6841705441474915 0.3251922130584717,
+3Dcoo=7.158430576324463 9.488722801208496 72.96935272216797,
+3Droo=129.9999938624484,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="125%" source="images/figpartial3b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
 <p>
 Now consider <m>f_y(2,1)=1</m>, illustrated in <xref ref="fig_partial3">Figure</xref>(b). Moving along the curve drawn on the surface, i.e., parallel to the <m>y</m>-axis and not changing the <m>x</m>-values, increases the <m>z</m>-value instantaneously at a rate of 1. Increasing the <m>y</m>-value by 1 would increase the <m>z</m>-value by approximately 1.
@@ -260,15 +263,21 @@ Let <m>z=f(x,y)</m> be continuous on an open set <m>S</m>.
 </p>
 
 <ol>
-<li>The <b>second partial derivative of <m>f</m> with respect to <m>x</m> then <m>x</m></b> is
+<li>
+<p>
+The <b>second partial derivative of <m>f</m> with respect to <m>x</m> then <m>x</m></b> is
 <me>
   \frac{\partial}{\partial x}\left(\frac{\partial f}{\px}\right) = \frac{\partial^2 f}{\px^2} = \big(\,f_x\,\big)_x = f_{xx}
 </me>
+</p>
 </li>
-<li>The <b>second partial derivative of <m>f</m> with respect to <m>x</m> then <m>y</m></b> is
+<li>
+<p>
+The <b>second partial derivative of <m>f</m> with respect to <m>x</m> then <m>y</m></b> is
 <me>
   \frac{\partial}{\partial y}\left(\frac{\partial f}{\px}\right) = \frac{\partial^2f}{\py\px} = \big(\,f_x\,\big)_y = f_{xy}
 </me>
+</p>
 </li>
 </ol>
 
@@ -425,24 +434,11 @@ We find that:
 <p>
 The slope of the tangent line at <m>(-1/2, 1/2, -1/4)</m> in the direction of <m>x</m> is <m>-1/2</m>: if one moves from that point parallel to the <m>x</m>-axis, the instantaneous rate of change will be <m>-1/2</m>. The slope of the tangent line
 at this point in the direction of <m>y</m> is <m>-3/2</m>: if one moves from this point parallel to the <m>y</m>-axis, the instantaneous rate of change will be <m>-3/2</m>. These tangents lines are graphed in <xref ref="fig_partial7">Figure</xref>(a) and (b), respectively, where the tangent lines are drawn in a solid line.
-\begin{figure}
-\begin{tabular}c
-\begin{figure}
-\includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=0.4263461176034552,
-3Dortho=0.004999999888241291,
-3Dc2c=0.358655720949173 0.8657855987548828 0.34897172451019287,
-3Dcoo=14.456816673278809 24.785551071166992 12.880075454711914,
-3Droo=129.9999903526944,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial6.png" />
-</p>
-
-<p>
-(a)
 </p>
 <figure xml:id="fig_partial7" >
 <caption>Understanding the second partial derivatives in <xref ref="ex_partial7">Example</xref>.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0.4263461176034552,
 3Dortho=0.004999999888241291,
@@ -450,9 +446,19 @@ at this point in the direction of <m>y</m> is <m>-3/2</m>: if one moves from thi
 3Dcoo=14.456816673278809 24.785551071166992 12.880075454711914,
 3Droo=129.9999903526944,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial6b.png" />
-(b)
-\end{tabular}
+<image width="125%" source="images/figpartial6.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.4263461176034552,
+3Dortho=0.004999999888241291,
+3Dc2c=0.358655720949173 0.8657855987548828 0.34897172451019287,
+3Dcoo=14.456816673278809 24.785551071166992 12.880075454711914,
+3Droo=129.9999903526944,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="125%" source="images/figpartial6b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
 <p>
 Now consider only <xref ref="fig_partial7">Figure</xref>(a). Three directed tangent lines are drawn (two are dashed), each in the direction of <m>x</m>; that is, each has a slope determined by <m>f_x</m>. Note how as <m>y</m> increases, the slope of these lines get closer to <m>0</m>. Since the slopes are all negative, getting closer to 0 means the <em>slopes are increasing.</em> The slopes given by <m>f_x</m> are increasing as <m>y</m> increases, meaning <m>f_{xy}</m> must be positive.
@@ -547,13 +553,23 @@ We do not formally define each higher order derivative, but rather give just a f
 <title>Higher order partial derivatives</title>
 <statement>
 <ol>
-<li>Let <m>f(x,y) = x^2y^2+\sin(xy)</m>. Find <m>f_{xxy}</m> and <m>f_{yxx}</m>.</li>
-<li>Let <m>f(x,y,z) = x^3e^{xy}+\cos(z)</m>. Find <m>f_{xyz}</m>.</li>
+<li>
+<p>
+Let <m>f(x,y) = x^2y^2+\sin(xy)</m>. Find <m>f_{xxy}</m> and <m>f_{yxx}</m>.
+</p>
+</li>
+<li>
+<p>
+Let <m>f(x,y,z) = x^3e^{xy}+\cos(z)</m>. Find <m>f_{xyz}</m>.
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>To find <m>f_{xxy}</m>, we first find <m>f_x</m>, then <m>f_{xx}</m>, then <m>f_{xxy}</m>:
+<li>
+<p>
+To find <m>f_{xxy}</m>, we first find <m>f_x</m>, then <m>f_{xx}</m>, then <m>f_{xxy}</m>:
 <md>
   <mrow>  f_x \amp = 2xy^2+y\cos(xy) \quad\quad f_{xx} = 2y^2-y^2\sin(xy)</mrow>
   <mrow>  f_{xxy} \amp = 4y-2y\sin(xy) - xy^2\cos(xy).</mrow>
@@ -564,12 +580,17 @@ To find <m>f_{yxx}</m>, we first find <m>f_y</m>, then <m>f_{yx}</m>, then <m>f_
   <mrow>  f_{yxx} \amp = 4y-y\sin(xy) - \big(y\sin(xy) + xy^2\cos(xy)\big)</mrow>
   <mrow>  \amp = 4y-2y\sin(xy)-xy^2\cos(xy).</mrow>
 </md>
-Note how <m>f_{xxy} = f_{yxx}</m>.</li>
-<li>To find <m>f_{xyz}</m>, we find <m>f_x</m>, then <m>f_{xy}</m>, then <m>f_{xyz}</m>:
+Note how <m>f_{xxy} = f_{yxx}</m>.
+</p>
+</li>
+<li>
+<p>
+To find <m>f_{xyz}</m>, we find <m>f_x</m>, then <m>f_{xy}</m>, then <m>f_{xyz}</m>:
 <md>
   <mrow>  f_x \amp = 3x^2e^{xy}+ x^3ye^{xy} \quad \quad f_{xy} = 3x^3e^{xy}+x^3e^{xy}+x^4ye^{xy} = 4x^3e^{xy}+x^4ye^{xy}</mrow>
   <mrow>  f_{xyz} \amp = 0.</mrow>
 </md>
+</p>
 </li>
 </ol>
 </solution>

@@ -68,7 +68,7 @@ We break the interval <m>[0,4]</m> into four subintervals as before. In <xref re
 <image width="73%" source="images/figrie2a.png" />
 </figure>
 <p>
-Note how in the first subinterval, <m>[0,1]</m>, the rectangle has height <m>f(0)=0</m>. We add up the areas of each rectangle (height<m>\times</m> width) for our Left Hand Rule approximation:
+Note how in the first subinterval, <m>[0,1]</m>, the rectangle has height <m>f(0)=0</m>. We add up the areas of each rectangle (height&#215; width) for our Left Hand Rule approximation:
 <md>
   <mrow>  f(0)\cdot 1 + f(1)\cdot 1+ f(2)\cdot 1+f(3)\cdot 1 \amp =</mrow>
   <mrow>  0+3+4+3\amp = 10.</mrow>
@@ -146,26 +146,35 @@ Let the numbers <m>\{a_i\}</m> be defined as <m>a_i = 2i-1</m> for integers <m>i
 </statement>
 <solution>
 <ol>
-<li>\vskip-45pt
+<li>
+<p>
+\vskip-45pt
 <md>
   <mrow>  \sum_{i=1}^6 a_i \amp = a_1+a_2+a_3+a_4+a_5+a_6</mrow>
   <mrow>  \amp =	1+3+5+7+9+11</mrow>
   <mrow>  \amp =	36.</mrow>
 </md>
+</p>
 </li>
-<li>Note the starting value is different than 1:
+<li>
+<p>
+Note the starting value is different than 1:
 <md>
   <mrow>  \sum_{i=3}^7 a_i \amp = (3a_3-4)+(3a_4-4)+(3a_5-4)+(3a_6-4)+(3a_7-4)</mrow>
   <mrow>  \amp = 11+17+23+29+35</mrow>
   <mrow>  \amp = 115.</mrow>
 </md>
+</p>
 </li>
-<li>\vskip-45pt
+<li>
+<p>
+\vskip-45pt
 <md>
   <mrow>  \sum_{i=1}^4 (a_i)^2 \amp =	(a_1)^2+(a_2)^2+(a_3)^2+(a_4)^2</mrow>
   <mrow>  \amp =	1^2+3^2+5^2+7^2</mrow>
   <mrow>  \amp =	84</mrow>
 </md>
+</p>
 </li>
 </ol>
 </solution>
@@ -359,8 +368,16 @@ Before the above example, we stated what the summations for the Left Hand, Right
 </p>
 
 <ol>
-<li>each rectangle has the same width, which we referred to as <m>\Delta x</m>, and</li>
-<li>each rectangle's height is determined by evaluating <m>f</m> at a particular point in each subinterval. For instance, the Left Hand Rule states that each rectangle's height is determined by evaluating <m>f</m> at the left hand endpoint of the subinterval the rectangle lives on.</li>
+<li>
+<p>
+each rectangle has the same width, which we referred to as <m>\Delta x</m>, and
+</p>
+</li>
+<li>
+<p>
+each rectangle's height is determined by evaluating <m>f</m> at a particular point in each subinterval. For instance, the Left Hand Rule states that each rectangle's height is determined by evaluating <m>f</m> at the left hand endpoint of the subinterval the rectangle lives on.
+</p>
+</li>
 </ol>
 
 <p>
@@ -412,11 +429,31 @@ Consider <m>\ds \int_a^b f(x) \ dx \approx \sum_{i=1}^n f(c_i)\Delta x_i.</m>
 </p>
 
 <ol>
-<li>When the <m>n</m> subintervals have equal length, <m>\ds \Delta x_i = \Delta x = \frac{b-a}n.</m></li>
-<li>The <m>i^\text{ th}</m> term of the partition is <m>x_i = a + (i-1)\Delta x</m>. (This makes <m>x_{n+1} = b</m>.)</li>
-<li>The Left Hand Rule summation is: <m>\ds \sum_{i=1}^n f(x_i)\Delta x</m>.</li>
-<li>The Right Hand Rule summation is: <m>\ds \sum_{i=1}^n f(x_{i+1})\Delta x</m>.</li>
-<li>The Midpoint Rule summation is: <m>\ds \sum_{i=1}^n f\left(\frac{x_i+x_{x+1}}{2}\right)\Delta x</m>.</li>
+<li>
+<p>
+When the <m>n</m> subintervals have equal length, <m>\ds \Delta x_i = \Delta x = \frac{b-a}n.</m>
+</p>
+</li>
+<li>
+<p>
+The <m>i^\text{ th}</m> term of the partition is <m>x_i = a + (i-1)\Delta x</m>. (This makes <m>x_{n+1} = b</m>.)
+</p>
+</li>
+<li>
+<p>
+The Left Hand Rule summation is: <m>\ds \sum_{i=1}^n f(x_i)\Delta x</m>.
+</p>
+</li>
+<li>
+<p>
+The Right Hand Rule summation is: <m>\ds \sum_{i=1}^n f(x_{i+1})\Delta x</m>.
+</p>
+</li>
+<li>
+<p>
+The Midpoint Rule summation is: <m>\ds \sum_{i=1}^n f\left(\frac{x_i+x_{x+1}}{2}\right)\Delta x</m>.
+</p>
+</li>
 </ol>
 </keyidea>
 <p>
@@ -667,11 +704,31 @@ We summarize what we have learned over the past few sections here.
 </p>
 
 <ul>
-<li>Knowing the <q>area under the curve</q> can be useful. One common example is: the area under a velocity curve is displacement.</li>
-<li>We have defined the definite integral, <m>\int_a^b f(x)\ dx</m>, to be the signed area under <m>f</m> on the interval <m>[a,b]</m>.</li>
-<li>While we can approximate a definite integral many ways, we have focused on using rectangles whose heights can be determined using: the Left Hand Rule, the Right Hand Rule and the Midpoint Rule.</li>
-<li>Sums of rectangles of this type are called Riemann sums.</li>
-<li>The exact value of the definite integral can be computed using the limit of a Riemann sum. We generally use one of the above methods as it makes the algebra simpler.</li>
+<li>
+<p>
+Knowing the <q>area under the curve</q> can be useful. One common example is: the area under a velocity curve is displacement.
+</p>
+</li>
+<li>
+<p>
+We have defined the definite integral, <m>\int_a^b f(x)\ dx</m>, to be the signed area under <m>f</m> on the interval <m>[a,b]</m>.
+</p>
+</li>
+<li>
+<p>
+While we can approximate a definite integral many ways, we have focused on using rectangles whose heights can be determined using: the Left Hand Rule, the Right Hand Rule and the Midpoint Rule.
+</p>
+</li>
+<li>
+<p>
+Sums of rectangles of this type are called Riemann sums.
+</p>
+</li>
+<li>
+<p>
+The exact value of the definite integral can be computed using the limit of a Riemann sum. We generally use one of the above methods as it makes the algebra simpler.
+</p>
+</li>
 </ul>
 
 <p>
@@ -685,7 +742,7 @@ We first learned of derivatives through limits then learned rules that made the 
 <exercise>
 <statement>
 <p>
-A fundamental calculus technique is to use <u></u> to refine approximations to get an exact answer.
+A fundamental calculus technique is to use <fillin /> to refine approximations to get an exact answer.
 </p>
 </statement>
 <answer>
@@ -1156,7 +1213,11 @@ In the following exercises, a definite integral
 </statement>
 <answer>
 <ol>
-<li>Exact expressions will vary; <m>\frac{(1+n)^2}{4n^2}</m>.</li>
+<li>
+<p>
+Exact expressions will vary; <m>\frac{(1+n)^2}{4n^2}</m>.
+</p>
+</li>
 <li><m>121/400</m>, <m>10201/40000</m>, <m>1002001/4000000</m></li>
 <li><m>1/4</m></li>
 </ol>
@@ -1171,7 +1232,11 @@ In the following exercises, a definite integral
 </statement>
 <answer>
 <ol>
-<li>Exact expressions will vary; <m>2+4/n^2</m>.</li>
+<li>
+<p>
+Exact expressions will vary; <m>2+4/n^2</m>.
+</p>
+</li>
 <li><m>51/25</m>, <m>5001/2500</m>, <m>500001/250000</m></li>
 <li><m>2</m></li>
 </ol>
@@ -1186,8 +1251,16 @@ In the following exercises, a definite integral
 </statement>
 <answer>
 <ol>
-<li>8.</li>
-<li>8, 8, 8</li>
+<li>
+<p>
+8.
+</p>
+</li>
+<li>
+<p>
+8, 8, 8
+</p>
+</li>
 <li><m>8</m></li>
 </ol>
 </answer>
@@ -1201,7 +1274,11 @@ In the following exercises, a definite integral
 </statement>
 <answer>
 <ol>
-<li>Exact expressions will vary; <m>20/3-96/(3n)+64/(3n^2)</m>.</li>
+<li>
+<p>
+Exact expressions will vary; <m>20/3-96/(3n)+64/(3n^2)</m>.
+</p>
+</li>
 <li><m>92/25</m>, <m>3968/625</m>, <m>103667/15625</m></li>
 <li><m>20/3</m></li>
 </ol>
@@ -1216,7 +1293,11 @@ In the following exercises, a definite integral
 </statement>
 <answer>
 <ol>
-<li>Exact expressions will vary; <m>100-200/n</m>.</li>
+<li>
+<p>
+Exact expressions will vary; <m>100-200/n</m>.
+</p>
+</li>
 <li><m>80</m>, <m>98</m>, <m>499/5</m></li>
 <li><m>100</m></li>
 </ol>
@@ -1231,7 +1312,11 @@ In the following exercises, a definite integral
 </statement>
 <answer>
 <ol>
-<li>Exact expressions will vary; <m>-1/12(1-1/n^2)</m>.</li>
+<li>
+<p>
+Exact expressions will vary; <m>-1/12(1-1/n^2)</m>.
+</p>
+</li>
 <li><m>-33/400</m>, <m>-3333/40000</m>, <m>-333333/4000000</m></li>
 <li><m>-1/12</m></li>
 </ol>

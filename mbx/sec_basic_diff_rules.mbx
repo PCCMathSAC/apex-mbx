@@ -82,26 +82,58 @@ Let <m>f(x)=x^3</m>.
 </p>
 
 <ol>
-<li>Find <m>\fp(x)</m>.</li>
-<li>Find the equation of the line tangent to the graph of <m>f</m> at <m>x=-1</m>.</li>
-<li>Use the tangent line to approximate <m>(-1.1)^3</m>.</li>
-<li>Sketch <m>f</m>, <m>\fp</m> and the found tangent line on the same axis.</li>
+<li>
+<p>
+Find <m>\fp(x)</m>.
+</p>
+</li>
+<li>
+<p>
+Find the equation of the line tangent to the graph of <m>f</m> at <m>x=-1</m>.
+</p>
+</li>
+<li>
+<p>
+Use the tangent line to approximate <m>(-1.1)^3</m>.
+</p>
+</li>
+<li>
+<p>
+Sketch <m>f</m>, <m>\fp</m> and the found tangent line on the same axis.
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>The Power Rule states that if <m>f(x) = x^3</m>, then <m>\fp(x) = 3x^2</m>.</li>
-<li>To find the equation of the line tangent to the graph of <m>f</m> at <m>x=-1</m>, we need a point and the slope. The point is <m>(-1,f(-1)) = (-1, -1)</m>. The slope is <m>\fp(-1)= 3</m>. Thus the tangent line has equation <m>y = 3(x-(-1))+(-1) = 3x+2</m>.</li>
-<li>We can use the tangent line to approximate <m>(-1.1)^3</m> as <m>-1.1</m> is close to <m>-1</m>. We have
+<li>
+<p>
+The Power Rule states that if <m>f(x) = x^3</m>, then <m>\fp(x) = 3x^2</m>.
+</p>
+</li>
+<li>
+<p>
+To find the equation of the line tangent to the graph of <m>f</m> at <m>x=-1</m>, we need a point and the slope. The point is <m>(-1,f(-1)) = (-1, -1)</m>. The slope is <m>\fp(-1)= 3</m>. Thus the tangent line has equation <m>y = 3(x-(-1))+(-1) = 3x+2</m>.
+</p>
+</li>
+<li>
+<p>
+We can use the tangent line to approximate <m>(-1.1)^3</m> as <m>-1.1</m> is close to <m>-1</m>. We have
 <me>
   (-1.1)^3 \approx 3(-1.1)+2 = -1.3.
 </me>
-We can easily find the actual answer; <m>(-1.1)^3 = -1.331</m>.</li>
-<li>See <xref ref="fig_xcubedwithderiv">Figure</xref>.
+We can easily find the actual answer; <m>(-1.1)^3 = -1.331</m>.
+</p>
+</li>
+<li>
+<p>
+See <xref ref="fig_xcubedwithderiv">Figure</xref>.
 		<figure xml:id="fig_xcubedwithderiv" >
 <caption>A graph of <m>f(x) = x^3</m>, along with its derivative <m>\fp(x) = 3x^2</m> and its tangent line at <m>x=-1</m>.</caption>
 <image width="73%" source="images/figxcubedwithderiv.png" />
 </figure>
+
+</p>
 </li>
 </ol>
 </solution>
@@ -195,20 +227,29 @@ Let <m>y=f(x)</m> be a differentiable function on <m>I</m>. <index><main>derivat
 </p>
 
 <ol>
-<li>The <em>second derivative</em> of <m>f</m> is:
+<li>
+<p>
+The <em>second derivative</em> of <m>f</m> is:
 <me>
   \fp'(x) = \frac{d}{dx}\Big(\fp(x)\Big) = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d\primeskip^2y}{dx^2}=y\primeskip''.
 </me>
+</p>
 </li>
-<li>The <em>third derivative</em> of <m>f</m> is:
+<li>
+<p>
+The <em>third derivative</em> of <m>f</m> is:
 <me>
   \fp''(x) = \frac{d}{dx}\Big(\fp'(x)\Big) = \frac{d}{dx}\left(\frac{d\primeskip^2y}{dx^2}\right) = \frac{d\primeskip^3y}{dx^3}=y\primeskip'''.
 </me>
+</p>
 </li>
-<li>The <em>n<m>^{\text{th} }</m> derivative</em> of <m>f</m> is:
+<li>
+<p>
+The <em>n<m>^{\text{th} }</m> derivative</em> of <m>f</m> is:
 <me>
   f\,^{(n)}(x) = \frac{d}{dx}\left(f\,^{(n-1)}(x)\right) = \frac{d}{dx}\left(\frac{d\primeskip^{n-1}y}{dx^{n-1}}\right) = \frac{d\primeskip^ny}{dx^n}=y^{(n)}.
 </me>
+</p>
 </li>
 </ol>
 </statement>
@@ -241,20 +282,31 @@ Find the first four derivatives of the following functions:
 </statement>
 <solution>
 <ol>
-<li>Using the Power and Constant Multiple Rules, we have: <m>\fp(x) = 8x</m>. Continuing on, we have
+<li>
+<p>
+Using the Power and Constant Multiple Rules, we have: <m>\fp(x) = 8x</m>. Continuing on, we have
 <me>
   \fp'(x) = \frac{d}{dx}\big(8x\big) = 8;\qquad \fp''(x) = 0;\qquad f\,^{(4)}(x) = 0.
 </me>
-Notice how all successive derivatives will also be 0.</li>
-<li>We employ <xref ref="thm_deriv_common">Theorem</xref> repeatedly.
+Notice how all successive derivatives will also be 0.
+</p>
+</li>
+<li>
+<p>
+We employ <xref ref="thm_deriv_common">Theorem</xref> repeatedly.
 <me>
   \fp(x) = \cos x;\qquad \fp'(x) = -\sin x;\qquad \fp''(x) = -\cos x;\qquad f\,^{(4)}(x) = \sin x.
 </me>
-Note how we have come right back to <m>f(x)</m> again. (Can you quickly figure what <m>f\,^{(23)}(x)</m> is?)</li>
-<li>Employing <xref ref="thm_deriv_common">Theorem</xref> and the Constant Multiple Rule, we can see that
+Note how we have come right back to <m>f(x)</m> again. (Can you quickly figure what <m>f\,^{(23)}(x)</m> is?)
+</p>
+</li>
+<li>
+<p>
+Employing <xref ref="thm_deriv_common">Theorem</xref> and the Constant Multiple Rule, we can see that
 <me>
   \fp(x) = \fp'(x) = \fp''(x) = f\,^{(4)}(x) = 5e^x.
 </me>
+</p>
 </li>
 </ol>
 </solution>
@@ -648,9 +700,21 @@ A property of logarithms is that <m>\ds \log_a x = \frac{\log_b x}{\log_b a}</m>
 </p>
 
 <ol>
-<li>Rewrite this identity when <m>b=e</m>, i.e., using <m>\log_ex =\ln x</m>.</li>
-<li>Use part (a) to find the derivative of <m>y=\log_a x</m>.</li>
-<li>Give the derivative of <m>y=\log_{10} x</m>.</li>
+<li>
+<p>
+Rewrite this identity when <m>b=e</m>, i.e., using <m>\log_ex =\ln x</m>.
+</p>
+</li>
+<li>
+<p>
+Use part (a) to find the derivative of <m>y=\log_a x</m>.
+</p>
+</li>
+<li>
+<p>
+Give the derivative of <m>y=\log_{10} x</m>.
+</p>
+</li>
 </ol>
 </statement>
 </exercise>

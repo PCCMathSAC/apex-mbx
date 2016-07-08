@@ -487,9 +487,21 @@ In our examples, we approximated the value of a definite integral using a given 
 </p>
 
 <ol>
-<li>How was the <q>right</q> answer computed?</li>
-<li>If the right answer can be found, what is the point of approximating?</li>
-<li>If there is value to approximating, how are we supposed to know if the approximation is any good?</li>
+<li>
+<p>
+How was the <q>right</q> answer computed?
+</p>
+</li>
+<li>
+<p>
+If the right answer can be found, what is the point of approximating?
+</p>
+</li>
+<li>
+<p>
+If there is value to approximating, how are we supposed to know if the approximation is any good?
+</p>
+</li>
 </ol>
 
 <p>
@@ -515,19 +527,25 @@ A second method is to use Error Analysis. While the details are beyond the scope
 <ol>
 <index><main>integration</main><sub>numerical!Trapezoidal Rule</sub></index><index><main>integration</main><sub>numerical!Simpson's Rule</sub></index>
 <index><main>Trapezoidal Rule</main><sub>error bounds</sub></index><index><main>Simpson's Rule</main><sub>error bounds</sub></index>
-<index><main>numerical integration</main><sub>Trapezoidal Rule!error bounds</sub></index><index><main>numerical integration</main><sub>Simpson's Rule!error bounds</sub></index><li>Let <m>E_T</m> be the error in approximating <m>\ds \int_a^b f(x)\ dx</m> using the Trapezoidal Rule. 
+<index><main>numerical integration</main><sub>Trapezoidal Rule!error bounds</sub></index><index><main>numerical integration</main><sub>Simpson's Rule!error bounds</sub></index><li>
+<p>
+Let <m>E_T</m> be the error in approximating <m>\ds \int_a^b f(x)\ dx</m> using the Trapezoidal Rule. 
 
 If <m>f</m> has a continuous 2<m>^\text{nd}</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\big|\fpp(x)\big|</m> on <m>[a,b]</m>, then
 <me>
   \ds E_T \leq \frac{(b-a)^3}{12n^2}M.
 </me>
+</p>
 </li>
-<li>Let <m>E_S</m> be the error in approximating <m>\ds \int_a^b f(x)\ dx</m> using Simpson's Rule. 
+<li>
+<p>
+Let <m>E_S</m> be the error in approximating <m>\ds \int_a^b f(x)\ dx</m> using Simpson's Rule. 
 
 If <m>f</m> has a continuous 4<m>^\text{th}</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\big|f\,^{(4)}\big|</m> on <m>[a,b]</m>, then
 <me>
   E_S \leq \frac{(b-a)^5}{180n^4}M.
 </me>
+</p>
 </li>
 </ol>
 </statement>
@@ -538,9 +556,21 @@ There are some key things to note about this theorem.
 </p>
 
 <ol>
-<li>The larger the interval, the larger the error. This should make sense intuitively.</li>
-<li>The error shrinks as more subintervals are used (i.e., as <m>n</m> gets larger).</li>
-<li>The error in Simpson's Rule has a term relating to the 4<m>^{\text{th} }</m> derivative of <m>f</m>. Consider a cubic polynomial: it's <m>4^{\text{th} }</m> derivative is 0. Therefore, the error in approximating the definite integral of a cubic polynomial with Simpson's Rule is 0 <ndash /> Simpson's Rule computes the exact answer!</li>
+<li>
+<p>
+The larger the interval, the larger the error. This should make sense intuitively.
+</p>
+</li>
+<li>
+<p>
+The error shrinks as more subintervals are used (i.e., as <m>n</m> gets larger).
+</p>
+</li>
+<li>
+<p>
+The error in Simpson's Rule has a term relating to the 4<m>^{\text{th} }</m> derivative of <m>f</m>. Consider a cubic polynomial: it's <m>4^{\text{th} }</m> derivative is 0. Therefore, the error in approximating the definite integral of a cubic polynomial with Simpson's Rule is 0 <ndash /> Simpson's Rule computes the exact answer!
+</p>
+</li>
 </ol>
 
 <p>
@@ -1096,8 +1126,16 @@ In the following exercises, a region is given. Find the area of the region using
 </statement>
 <answer>
 <ol>
-<li>Area is <m>30.8667</m> cm<m>^2</m>.</li>
-<li>Area is <m>308,667</m> yd<m>^2</m>.</li>
+<li>
+<p>
+Area is <m>30.8667</m> cm<m>^2</m>.
+</p>
+</li>
+<li>
+<p>
+Area is <m>308,667</m> yd<m>^2</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1110,8 +1148,16 @@ In the following exercises, a region is given. Find the area of the region using
 </statement>
 <answer>
 <ol>
-<li>Area is 25.0667 cm<m>^2</m></li>
-<li>Area is 250,667 yd<m>^2</m></li>
+<li>
+<p>
+Area is 25.0667 cm<m>^2</m>
+</p>
+</li>
+<li>
+<p>
+Area is 250,667 yd<m>^2</m>
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
