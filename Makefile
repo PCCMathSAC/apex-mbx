@@ -50,7 +50,7 @@ include Makefile.paths
 
 # These paths are subdirectories of
 # the project distribution
-PRJSRC    = $(PRJ)/src
+PRJSRC    = $(PRJ)/mbx
 OUTPUT    = $(PRJ)/output
 
 # The project's main hub file
