@@ -6,7 +6,15 @@
 <p>
 We are familiar with sketching shapes, such as parabolas, by following this basic procedure:
 </p>
-<image width="73%" source="images/70ecb06b5e0127240aa74f2ac9b2caa5a8faca9e.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[>=latex]
+\draw (0,0) node (A) [align=center] {Choose <br /> \(x\)} 
+      (3,0) node[align=center] (B) {Use a function<br /> \(f\) to find \(y\)<br /> \(\big(y=f(x)\big)\)}
+			(6.25,0) node [align=center] (C) {Plot point <br /> \((x,y)\)};
+\draw [->](A) <ndash />(B);
+\draw [->](B) <ndash /> (C);
+\end{tikzpicture}]]></latex-image-code>
+</image>
 <p>
 The <b>rectangular equation</b> <m>y=f(x)</m> works well for some shapes like a parabola with a vertical axis of symmetry, but in the previous section we encountered several shapes that could not be sketched in this manner. (To plot an ellipse using the above procedure, we need to plot the <q>top</q> and <q>bottom</q> separately.)<index><main>curve</main><sub>rectangular equation</sub></index>
 </p>
@@ -14,7 +22,18 @@ The <b>rectangular equation</b> <m>y=f(x)</m> works well for some shapes like a 
 <p>
 In this section we introduce a new sketching procedure:
 </p>
-<image width="73%" source="images/0cbcd0195366e48108458f3b16e33c22d15197a3.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[>=latex]
+\draw (0,0) node (A) [align=center] {Choose <br /> \(t\)} 
+      (3,1) node[align=center] (B1) {Use a function<br /> \(f\) to find \(x\)<br /> \(\big(x=f(t)\big)\)}
+			(3,-1) node[align=center] (B2) {Use a function<br /> \(g\) to find \(y\)<br /> \(\big(y=g(t)\big)\)}
+			(6.25,0) node [align=center] (C) {Plot point <br /> \((x,y)\)};
+\draw [->](A) <ndash />(B1);
+\draw [->](A) <ndash />(B2);
+\draw [->](B1) <ndash /> (C);
+\draw [->](B2) <ndash /> (C);
+\end{tikzpicture}]]></latex-image-code>
+</image>
 <p>
 Here, <m>x</m> and <m>y</m> are found separately but then plotted together. This leads us to a definition.
 </p>
@@ -318,13 +337,19 @@ The Pythagorean Theorem can also be used to identify parametric equations for hy
 <keyidea xml:id="idea_par_ellipse_hyperbola">
 <title>Parametric Equations of Ellipses and Hyperbolas</title>
 <ul>
-<li>The parametric equations
+<li>
+<p>
+The parametric equations
 <me>
   x=a\cos t+h, \quad y=b\sin t+k
 </me>
 define an ellipse with horizontal axis of length <m>2a</m> and vertical axis of length <m>2b</m>, centered at <m>(h,k)</m>.
-<index><main>ellipse</main><sub>parametric equations</sub></index></li>
-<li>The parametric equations
+<index><main>ellipse</main><sub>parametric equations</sub></index>
+</p>
+</li>
+<li>
+<p>
+The parametric equations
 <me>
   x= a\tan t+h,\quad y=\pm b\sec t+k
 </me>
@@ -333,7 +358,9 @@ define a hyperbola with vertical transverse axis centered at <m>(h,k)</m>, and
   x=\pm a\sec t+h, \quad y=b\tan t + k
 </me>
 defines a hyperbola with horizontal transverse axis. Each has asymptotes at <m>y=\pm b/a(x-h)+k</m>.
-<index><main>hyperbola</main><sub>parametric equations</sub></index></li>
+<index><main>hyperbola</main><sub>parametric equations</sub></index>
+</p>
+</li>
 </ul>
 </keyidea>
 </subsection>
@@ -460,7 +487,7 @@ T
 <exercise>
 <statement>
 <p>
-The direction in which a graph is <q>moving</q> is called the <u></u> of the graph.
+The direction in which a graph is <q>moving</q> is called the <fillin /> of the graph.
 </p>
 </statement>
 <answer>
@@ -473,7 +500,7 @@ orientation
 <exercise>
 <statement>
 <p>
-An equation written as <m>y=f(x)</m> is written in <u></u> form.
+An equation written as <m>y=f(x)</m> is written in <fillin /> form.
 </p>
 </statement>
 <answer>
@@ -687,10 +714,26 @@ In the following exercises, four sets of parametric equations are given. Describ
 </statement>
 <answer>
 <ol>
-<li>Traces the parabola <m>y=x^2</m>, moves from left to right.</li>
-<li>Traces the parabola <m>y=x^2</m>, but only from <m>-1\leq x\leq 1</m>; traces this portion back and forth infinitely.</li>
-<li>Traces the parabola <m>y=x^2</m>, but only for <m>0\lt x</m>. Moves left to right.</li>
-<li>Traces the parabola <m>y=x^2</m>, moves from right to left.</li>
+<li>
+<p>
+Traces the parabola <m>y=x^2</m>, moves from left to right.
+</p>
+</li>
+<li>
+<p>
+Traces the parabola <m>y=x^2</m>, but only from <m>-1\leq x\leq 1</m>; traces this portion back and forth infinitely.
+</p>
+</li>
+<li>
+<p>
+Traces the parabola <m>y=x^2</m>, but only for <m>0\lt x</m>. Moves left to right.
+</p>
+</li>
+<li>
+<p>
+Traces the parabola <m>y=x^2</m>, moves from right to left.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -706,10 +749,26 @@ In the following exercises, four sets of parametric equations are given. Describ
 </statement>
 <answer>
 <ol>
-<li>Traces a circle of radius 1 counterclockwise once.</li>
-<li>Traces a circle of radius 1 counterclockwise over 6 times.</li>
-<li>Traces a circle of radius 1 clockwise infinite times.</li>
-<li>Traces an arc of a circle of radius 1, from an angle of -1 radians to 1 radian, twice.</li>
+<li>
+<p>
+Traces a circle of radius 1 counterclockwise once.
+</p>
+</li>
+<li>
+<p>
+Traces a circle of radius 1 counterclockwise over 6 times.
+</p>
+</li>
+<li>
+<p>
+Traces a circle of radius 1 clockwise infinite times.
+</p>
+</li>
+<li>
+<p>
+Traces an arc of a circle of radius 1, from an angle of -1 radians to 1 radian, twice.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>

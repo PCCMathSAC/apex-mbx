@@ -30,18 +30,34 @@ An object is moving with position function <m>\vec r(t) = \la t^2-t,t^2+t\ra</m>
 </p>
 
 <ol>
-<li>Find \vvt<nbsp /> and \vat.</li>
-<li>Sketch \vrt; plot <m>\vec v(-1)</m>, <m>\vec a(-1)</m>, <m>\vec v(1)</m> and <m>\vec a(1)</m>, each with their initial point at their corresponding point on the graph of <m>\vrt</m>.</li>
-<li>When is the object's speed minimized?</li>
+<li>
+<p>
+Find \vvt<nbsp /> and \vat.
+</p>
+</li>
+<li>
+<p>
+Sketch \vrt; plot <m>\vec v(-1)</m>, <m>\vec a(-1)</m>, <m>\vec v(1)</m> and <m>\vec a(1)</m>, each with their initial point at their corresponding point on the graph of <m>\vrt</m>.
+</p>
+</li>
+<li>
+<p>
+When is the object's speed minimized?
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>Taking derivatives, we find
+<li>
+<p>
+Taking derivatives, we find
 <me>
   \vvt = \vrp(t) =\la 2t-1,2t+1\ra \quad \text{and}  \quad \vat = \vrp'(t) = \la 2,2\ra.
 </me>
-Note that acceleration is constant.</li>
+Note that acceleration is constant.
+</p>
+</li>
 <li><m>\vec v(-1) = \la -3,-1\ra</m>,<nbsp /> <m>\vec a(-1) = \la 2,2\ra</m>;   <m>\vec v(1) = \la 1,3\ra</m>,<nbsp /> <m>\vec a(1) = \la 2,2\ra</m>. These are plotted with \vrt<nbsp />in <xref ref="fig_motion1">Figure</xref>(a).
 	
 	We can think of acceleration as <q>pulling</q> the velocity vector in a certain direction. At <m>t=-1</m>, the velocity vector points down and to the left; at <m>t=1</m>, the velocity vector has been pulled in the <m>\la 2,2\ra</m> direction and is now pointing up and to the right. In <xref ref="fig_motion1">Figure</xref>(b) we plot more velocity/acceleration vectors, making more clear the effect acceleration has on velocity.
@@ -56,13 +72,17 @@ Note that acceleration is constant.</li>
 </tabular>
 </figure>
 Since <m>\vat</m> is constant in this example, as <m>t</m> grows large \vvt<nbsp />becomes almost parallel to \vat. For instance, when <m>t=10</m>, <m>\vec v(10) = \la 19,21\ra</m>, which is nearly parallel to <m>\la 2,2\ra</m>.</li>
-<li>The object's speed is given by
+<li>
+<p>
+The object's speed is given by
 <me>
   \norm{\vvt} = \sqrt{(2t-1)^2+(2t+1)^2} =\sqrt{8t^2+2}.
 </me>
 To find the minimal speed, we could apply calculus techniques (such as set the derivative equal to 0 and solve for <m>t</m>, etc.) but we can find it by inspection. Inside the square root we have a quadratic which is minimized when <m>t=0</m>. Thus the speed is minimized at <m>t=0</m>, with a speed of <m>\sqrt{2}</m> ft/s.
 	
-	The graph in <xref ref="fig_motion1">Figure</xref>(b) also implies speed is minimized here. The filled dots on the graph are located at integer values of <m>t</m> between <m>-3</m> and 3. Dots that are far apart imply the object traveled a far distance in 1 second, indicating high speed; dots that are close together imply the object did not travel far in 1 second, indicating a low speed. The dots are closest together near <m>t=0</m>, implying the speed is minimized near that value.</li>
+	The graph in <xref ref="fig_motion1">Figure</xref>(b) also implies speed is minimized here. The filled dots on the graph are located at integer values of <m>t</m> between <m>-3</m> and 3. Dots that are far apart imply the object traveled a far distance in 1 second, indicating high speed; dots that are close together imply the object did not travel far in 1 second, indicating a low speed. The dots are closest together near <m>t=0</m>, implying the speed is minimized near that value.
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -132,19 +152,37 @@ A young boy whirls a ball, attached to a string, above his head in a counter-clo
 </p>
 
 <ol>
-<li>Find the position function <m>\vec r(t)</m> that describes this situation.</li>
-<li>Find the acceleration of the ball and derive a physical interpretation of it.</li>
-<li>A tree stands 10ft in front of the boy. At what <m>t</m>-values should the boy release the string so that the ball hits the tree?</li>
+<li>
+<p>
+Find the position function <m>\vec r(t)</m> that describes this situation.
+</p>
+</li>
+<li>
+<p>
+Find the acceleration of the ball and derive a physical interpretation of it.
+</p>
+</li>
+<li>
+<p>
+A tree stands 10ft in front of the boy. At what <m>t</m>-values should the boy release the string so that the ball hits the tree?
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>The ball whirls in a  circle. Since the string is 2ft long, the radius of the circle is 2. The position function <m>\vrt = \la 2\cos t, 2\sin t\ra</m> describes a circle with radius 2, centered at the origin, but makes a full revolution every <m>2\pi</m> seconds, not two revolutions per second. We modify the period of the trigonometric functions to be 1/2 by multiplying <m>t</m> by <m>4\pi</m>. The final position function is thus
+<li>
+<p>
+The ball whirls in a  circle. Since the string is 2ft long, the radius of the circle is 2. The position function <m>\vrt = \la 2\cos t, 2\sin t\ra</m> describes a circle with radius 2, centered at the origin, but makes a full revolution every <m>2\pi</m> seconds, not two revolutions per second. We modify the period of the trigonometric functions to be 1/2 by multiplying <m>t</m> by <m>4\pi</m>. The final position function is thus
 <me>
   \vrt = \la 2\cos (4\pi t), 2\sin (4\pi t)\ra.
 </me>
-(Plot this for <m>0\leq t\leq 1/2</m> to verify that one revolution is made in 1/2 a second.)</li>
-<li>To find <m>\vat</m>, we derive <m>\vrt</m> twice.
+(Plot this for <m>0\leq t\leq 1/2</m> to verify that one revolution is made in 1/2 a second.)
+</p>
+</li>
+<li>
+<p>
+To find <m>\vat</m>, we derive <m>\vrt</m> twice.
 <md>
   <mrow>  \vvt = \vrp(t) \amp = \la -8\pi \sin (4\pi t), 8\pi \cos (4\pi t)\ra</mrow>
   <mrow>  \vat =\vrp'(t) \amp = \la -32\pi^2 \cos (4\pi t), -32\pi^2 \sin (4\pi t) \ra</mrow>
@@ -152,10 +190,14 @@ A young boy whirls a ball, attached to a string, above his head in a counter-clo
 </md>
 Note how <m>\vat</m> is parallel to \vrt, but has a different magnitude and points in the opposite direction. Why is this?
 	
-	Recall the classic physics equation, <q>Force <m>=</m> mass <m>\times</m> acceleration.</q> A force acting on a mass induces acceleration (i.e., the mass moves); acceleration acting on a mass induces a force (gravity gives our mass a <em>weight</em>). Thus force and acceleration are closely related. A moving ball <q>wants</q> to travel in a straight line. Why does the ball in our example move in a circle? It is attached to the boy's hand by a string. The string applies a force to the ball, affecting it's motion: the string <em>accelerates</em> the ball. This is not acceleration in the sense of <q>it travels faster;</q> rather, this acceleration is changing the velocity of the ball. In what direction is this force/acceleration being applied? In the direction of the string, towards the boy's hand.
+	Recall the classic physics equation, <q>Force <m>=</m> mass &#215; acceleration.</q> A force acting on a mass induces acceleration (i.e., the mass moves); acceleration acting on a mass induces a force (gravity gives our mass a <em>weight</em>). Thus force and acceleration are closely related. A moving ball <q>wants</q> to travel in a straight line. Why does the ball in our example move in a circle? It is attached to the boy's hand by a string. The string applies a force to the ball, affecting it's motion: the string <em>accelerates</em> the ball. This is not acceleration in the sense of <q>it travels faster;</q> rather, this acceleration is changing the velocity of the ball. In what direction is this force/acceleration being applied? In the direction of the string, towards the boy's hand.
 	
-	The magnitude of the acceleration is related to the speed at which the ball is traveling. A ball whirling quickly is rapidly changing direction/velocity. When velocity is changing rapidly, the acceleration must be <q>large.</q></li>
-<li>When the boy releases the string, the string no longer applies a force to the ball, meaning acceleration is <m>\vec 0</m> and the ball can now move in a straight line in the direction of <m>\vec v(t)</m>. 
+	The magnitude of the acceleration is related to the speed at which the ball is traveling. A ball whirling quickly is rapidly changing direction/velocity. When velocity is changing rapidly, the acceleration must be <q>large.</q>
+</p>
+</li>
+<li>
+<p>
+When the boy releases the string, the string no longer applies a force to the ball, meaning acceleration is <m>\vec 0</m> and the ball can now move in a straight line in the direction of <m>\vec v(t)</m>. 
 	\drawexampleline
 	
 	Let <m>t=t_0</m> be the time when the boy lets go of the string. The ball will be at <m>\vec r(t_0)</m>, traveling in the direction of <m>\vec v(t_0)</m>. We want to find <m>t_0</m> so that this line contains the point <m>(0,10)</m> (since the tree is 10ft directly in front of the boy).
@@ -176,7 +218,9 @@ where $n$ is an integer. Solving for $t_0$ we have:
 \begin{mathrow}
 	t_0 \amp \approx 0.016 + n/2</mrow>
 </md>
-This is a wonderful formula. Every 1/2 second after <m>t=0.016</m>s the boy can release the string (since the ball makes 2 revolutions per second, he has two chances each second to release the ball).</li>
+This is a wonderful formula. Every 1/2 second after <m>t=0.016</m>s the boy can release the string (since the ball makes 2 revolutions per second, he has two chances each second to release the ball).
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -385,8 +429,16 @@ Consider a driver who sets her cruise<ndash />control to 60mph, and travels at t
 </p>
 
 <ol>
-<li>How far did the driver travel?</li>
-<li>How far from her starting position is the driver?</li>
+<li>
+<p>
+How far did the driver travel?
+</p>
+</li>
+<li>
+<p>
+How far from her starting position is the driver?
+</p>
+</li>
 </ol>
 
 <p>
@@ -421,25 +473,47 @@ A particle moves in space with position function <m>\vrt = \la t,t^2,\sin (\pi t
 </p>
 
 <ol>
-<li>The distance traveled by the particle on <m>[-2,2]</m>.</li>
-<li>The displacement of the particle on <m>[-2,2]</m>.</li>
-<li>The particle's average speed.</li>
+<li>
+<p>
+The distance traveled by the particle on <m>[-2,2]</m>.
+</p>
+</li>
+<li>
+<p>
+The displacement of the particle on <m>[-2,2]</m>.
+</p>
+</li>
+<li>
+<p>
+The particle's average speed.
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>We use <xref ref="thm_distance_traveled">Theorem</xref> to establish the integral:
+<li>
+<p>
+We use <xref ref="thm_distance_traveled">Theorem</xref> to establish the integral:
 <md>
   <mrow>  \text{distance traveled}  \amp = \int_{-2}^2 \norm{\vvt}\ dt</mrow>
   <mrow>  \amp = \int_{-2}^2 \sqrt{1+(2t)^2+ \pi^2\cos^2(\pi t)}\ dt.</mrow>
 </md>
-This cannot be solved in terms of elementary functions so we turn to numerical integration, finding the distance to be 12.88m.</li>
-<li>The displacement is the vector
+This cannot be solved in terms of elementary functions so we turn to numerical integration, finding the distance to be 12.88m.
+</p>
+</li>
+<li>
+<p>
+The displacement is the vector
 <me>
   \vec r(2)-\vec r(-2) = \la 2,4,0\ra - \la -2,4,0\ra = \la 4,0,0\ra.
 </me>
-That is, the particle ends with an <m>x</m>-value increased by 4 and with <m>y</m>- and <m>z</m>-values the same (see <xref ref="fig_motion6">Figure</xref>).</li>
-<li>We found above that the particle traveled 12.88m over 4 seconds. We can compute average speed by dividing: 12.88/4 = 3.22m/s. 
+That is, the particle ends with an <m>x</m>-value increased by 4 and with <m>y</m>- and <m>z</m>-values the same (see <xref ref="fig_motion6">Figure</xref>).
+</p>
+</li>
+<li>
+<p>
+We found above that the particle traveled 12.88m over 4 seconds. We can compute average speed by dividing: 12.88/4 = 3.22m/s. 
 	
 	
 	
@@ -459,7 +533,9 @@ We should also consider <xref ref="def_av_val">Definition</xref> of <xref ref="s
 <me>
   \text{average speed}  = \frac{1}{2-(-2)}\int_{-2}^2 \norm{\vvt}\ dt \approx \frac14 12.88 = 3.22\text{m/s} .
 </me>
-Note how the physical context of a particle traveling gives meaning to a more abstract concept learned earlier.</li>
+Note how the physical context of a particle traveling gives meaning to a more abstract concept learned earlier.
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -555,7 +631,7 @@ The average velocity is found by dividing the displacement by the time traveled 
 <exercise>
 <statement>
 <p>
-<em>Distance traveled</em> is the same as <u></u> <u></u>, just viewed in a different context.
+<em>Distance traveled</em> is the same as <fillin /> <fillin />, just viewed in a different context.
 </p>
 </statement>
 <answer>
@@ -914,9 +990,8 @@ In the following exercises , position functions <m>\vec r_1(t)</m> and <m>\vec r
 <answer>
 <ol>
 <li><m>\vec r_1(1) = \la 1,1\ra</m>; <m>\vec r_2(1) = \la 1,1\ra</m></li>
-<li><line><m>\vec v_1(1) = \la 1,2\ra</m>; <m>\norm{\vec v_1(1)} = \sqrt{5}</m>; <m>\vec a_1(1) = \la 0,2\ra</m></line>
-<line><m>\vec v_2(1) = \la 2,4\ra</m>; <m>\norm{\vec v_2(1)} = 2\sqrt{5}</m>; <m>\vec a_2(1) = \la 2,12\ra</m></line>
-</li>
+<li><m>\vec v_1(1) = \la 1,2\ra</m>; <m>\norm{\vec v_1(1)} = \sqrt{5}</m>; <m>\vec a_1(1) = \la 0,2\ra</m><br />
+			<m>\vec v_2(1) = \la 2,4\ra</m>; <m>\norm{\vec v_2(1)} = 2\sqrt{5}</m>; <m>\vec a_2(1) = \la 2,12\ra</m></li>
 </ol>
 </answer>
 </exercise>
@@ -934,9 +1009,8 @@ In the following exercises , position functions <m>\vec r_1(t)</m> and <m>\vec r
 <answer>
 <ol>
 <li><m>\vec r_1(\pi/2) = \la0,3\ra</m>; <m>\vec r_2(\pi/8) = \la 0,3\ra</m></li>
-<li><line><m>\vec v_1(\pi/2) = \la -3,0\ra</m>; <m>\norm{\vec v_1(\pi/2)} = 3</m>; <m>\vec a_1(\pi/2) = \la 0,-3\ra</m></line>
-<line><m>\vec v_2(\pi/8) = \la -12,0\ra</m>; <m>\norm{\vec v_2(\pi/8)} = 12</m>; <m>\vec a_2(\pi/8) = \la 0,-48\ra</m></line>
-</li>
+<li><m>\vec v_1(\pi/2) = \la -3,0\ra</m>; <m>\norm{\vec v_1(\pi/2)} = 3</m>; <m>\vec a_1(\pi/2) = \la 0,-3\ra</m><br />
+			<m>\vec v_2(\pi/8) = \la -12,0\ra</m>; <m>\norm{\vec v_2(\pi/8)} = 12</m>; <m>\vec a_2(\pi/8) = \la 0,-48\ra</m></li>
 </ol>
 </answer>
 </exercise>
@@ -954,9 +1028,8 @@ In the following exercises , position functions <m>\vec r_1(t)</m> and <m>\vec r
 <answer>
 <ol>
 <li><m>\vec r_1(2) = \la6,4\ra</m>; <m>\vec r_2(2) = \la 6,4\ra</m></li>
-<li><line><m>\vec v_1(2) = \la 3,2\ra</m>; <m>\norm{\vec v_1(2)} = \sqrt{13}</m>; <m>\vec a_1(2) = \la 0,0\ra</m></line>
-<line><m>\vec v_2(2) = \la 6,4\ra</m>; <m>\norm{\vec v_2(2)} = 2\sqrt{13}</m>; <m>\vec a_2(2) = \la 0,0\ra</m></line>
-</li>
+<li><m>\vec v_1(2) = \la 3,2\ra</m>; <m>\norm{\vec v_1(2)} = \sqrt{13}</m>; <m>\vec a_1(2) = \la 0,0\ra</m><br />
+			<m>\vec v_2(2) = \la 6,4\ra</m>; <m>\norm{\vec v_2(2)} = 2\sqrt{13}</m>; <m>\vec a_2(2) = \la 0,0\ra</m></li>
 </ol>
 </answer>
 </exercise>
@@ -974,9 +1047,8 @@ In the following exercises , position functions <m>\vec r_1(t)</m> and <m>\vec r
 <answer>
 <ol>
 <li><m>\vec r_1(1) = \la 1,1\ra</m>; <m>\vec r_2(\pi/2) = \la 1,1\ra</m></li>
-<li><line><m>\vec v_1(1) = \la 1,1/2\ra</m>; <m>\norm{\vec v_1(1)} = \sqrt{5}/2</m>; <m>\vec a_1(1) = \la 0,-1/4\ra</m></line>
-<line><m>\vec v_2(\pi/2) = \la 0,0\ra</m>; <m>\norm{\vec v_2(\pi/2)} = 0</m>; <m>\vec a_2(\pi/2) = \la -1,-1/2\ra</m></line>
-</li>
+<li><m>\vec v_1(1) = \la 1,1/2\ra</m>; <m>\norm{\vec v_1(1)} = \sqrt{5}/2</m>; <m>\vec a_1(1) = \la 0,-1/4\ra</m><br />
+			<m>\vec v_2(\pi/2) = \la 0,0\ra</m>; <m>\norm{\vec v_2(\pi/2)} = 0</m>; <m>\vec a_2(\pi/2) = \la -1,-1/2\ra</m></li>
 </ol>
 </answer>
 </exercise>
@@ -1126,9 +1198,17 @@ The stone, while whirling, can be modeled by <m>\vrt = \la 3\cos(8\pi t),3\sin (
 </p>
 
 <ol>
-<li>For <m>t</m>-values <m>t=\sin^{-1}(3/20)/(8\pi) + n/4 \approx 0.006 + n/4</m>, where <m>n</m> is an integer.</li>
+<li>
+<p>
+For <m>t</m>-values <m>t=\sin^{-1}(3/20)/(8\pi) + n/4 \approx 0.006 + n/4</m>, where <m>n</m> is an integer.
+</p>
+</li>
 <li><m>\norm{\vrp(t)} = 24\pi\approx 51.4</m>ft/s</li>
-<li>At <m>t=0.006</m>, the stone is approximately <m>19.77</m>ft from Goliath. Using the formula for projectile motion, we want the angle of elevation that lets a projectile starting at <m>\la 0,6\ra</m> with a initial velocity of <m>51.4</m>ft/s arrive at <m>\la 19.77,9\ra</m>. The desired angle is <m>0.27</m> radians, or <m>15.69^\circ</m>.</li>
+<li>
+<p>
+At <m>t=0.006</m>, the stone is approximately <m>19.77</m>ft from Goliath. Using the formula for projectile motion, we want the angle of elevation that lets a projectile starting at <m>\la 0,6\ra</m> with a initial velocity of <m>51.4</m>ft/s arrive at <m>\la 19.77,9\ra</m>. The desired angle is <m>0.27</m> radians, or <m>15.69^\circ</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1140,14 +1220,30 @@ A hunter aims at a deer which is 40 yards away. Her crossbow is at a height of 5
 </p>
 
 <ol>
-<li>At what angle of elevation should she hold the crossbow to hit her target?</li>
-<li>If the deer is moving perpendicularly to her line of sight at a rate of 20mph, by approximately how much should she lead the deer in order to hit it in the desired location?</li>
+<li>
+<p>
+At what angle of elevation should she hold the crossbow to hit her target?
+</p>
+</li>
+<li>
+<p>
+If the deer is moving perpendicularly to her line of sight at a rate of 20mph, by approximately how much should she lead the deer in order to hit it in the desired location?
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Holding the crossbow at an angle of <m>0.013</m> radians, <m>\approx 0.745^\circ</m> will hit the target <m>0.4</m>s later. (Another solution exists, with an angle of <m>89^\circ</m>, landing <m>18.75</m>s later, but this is impractical.)</li>
-<li>In the .4 seconds the arrow travels, a deer, traveling at 20mph or 29.33ft/s, can travel 11.7ft. So she needs to lead the deer by 11.7ft.</li>
+<li>
+<p>
+Holding the crossbow at an angle of <m>0.013</m> radians, <m>\approx 0.745^\circ</m> will hit the target <m>0.4</m>s later. (Another solution exists, with an angle of <m>89^\circ</m>, landing <m>18.75</m>s later, but this is impractical.)
+</p>
+</li>
+<li>
+<p>
+In the .4 seconds the arrow travels, a deer, traveling at 20mph or 29.33ft/s, can travel 11.7ft. So she needs to lead the deer by 11.7ft.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1169,8 +1265,16 @@ The position function of the ball is <m>\vrt = \la (146.67\cos\theta)t,-16t^2+(1
 </p>
 
 <ol>
-<li>With <m>\theta=20^\circ</m>, the ball reaches 310ft from home plate in 2.25 seconds; at this time, the height of the ball is 34.9ft, not enough to clear the Green Monster.</li>
-<li>With <m>\theta=21^\circ</m>, the ball reaches 310ft from home plate in 2.26s, with a height of 40ft, clearing the wall.</li>
+<li>
+<p>
+With <m>\theta=20^\circ</m>, the ball reaches 310ft from home plate in 2.25 seconds; at this time, the height of the ball is 34.9ft, not enough to clear the Green Monster.
+</p>
+</li>
+<li>
+<p>
+With <m>\theta=21^\circ</m>, the ball reaches 310ft from home plate in 2.26s, with a height of 40ft, clearing the wall.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1205,8 +1309,16 @@ The position function of the ball is <m>\vrt = \la (v_0\cos\theta)t,-16t^2+(v_0\
 </p>
 
 <ol>
-<li>With <m>v_0 = 73.33</m>ft/s, there are two angles of elevation possible. An angle of <m>\theta = 9.47^\circ</m> delivers the ball in 0.83s, while an angle of <m>79.57^\circ</m> delivers the ball in <m>4.5</m>s.</li>
-<li>With <m>\theta=8^\circ</m>, the initial speed must be 53.8mph<m>\approx 78.9</m>ft/s.</li>
+<li>
+<p>
+With <m>v_0 = 73.33</m>ft/s, there are two angles of elevation possible. An angle of <m>\theta = 9.47^\circ</m> delivers the ball in 0.83s, while an angle of <m>79.57^\circ</m> delivers the ball in <m>4.5</m>s.
+</p>
+</li>
+<li>
+<p>
+With <m>\theta=8^\circ</m>, the initial speed must be 53.8mph<m>\approx 78.9</m>ft/s.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>

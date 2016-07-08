@@ -356,9 +356,17 @@ Let <m>w=f(x,y,z)</m> be defined on an open ball <m>B</m> containing <m>(x_0,y_0
 </p>
 
 <ol>
-<li>If <m>f</m> is differentiable at <m>(x_0,y_0,z_0)</m>, then <m>f</m> is continuous at <m>(x_0,y_0,z_0)</m>.</li>
-<li>If <m>f_x</m>, <m>f_y</m>  and <m>f_z</m> are continuous on <m>B</m>, then <m>f</m> is differentiable on <m>B</m>.
-<index><main>multivariable function</main><sub>differentiability</sub></index><index><main>multivariable function</main><sub>continuity</sub></index></li>
+<li>
+<p>
+If <m>f</m> is differentiable at <m>(x_0,y_0,z_0)</m>, then <m>f</m> is continuous at <m>(x_0,y_0,z_0)</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>f_x</m>, <m>f_y</m>  and <m>f_z</m> are continuous on <m>B</m>, then <m>f</m> is differentiable on <m>B</m>.
+<index><main>multivariable function</main><sub>differentiability</sub></index><index><main>multivariable function</main><sub>continuity</sub></index>
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -417,7 +425,7 @@ T
 <exercise>
 <statement>
 <p>
-Finish the sentence: <q>The new <m>z</m>-value is approximately the old <m>z</m>-value plus the approximate <u></u>.</q>
+Finish the sentence: <q>The new <m>z</m>-value is approximately the old <m>z</m>-value plus the approximate <fillin />.</q>
 </p>
 </statement>
 <answer>
@@ -582,7 +590,14 @@ The length <m>\ell</m> of a long wall is to be approximated. The angle <m>\theta
 Is the measurement of the length of <m>\ell</m> more sensitive to errors in the measurement of <m>x</m> or in <m>\theta</m>?
 </p>
 <sidebyside>
-<image width="73%" source="images/f9f7a7ecd5640893256d35af8879d85af562f013.png" />
+
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}
+\draw [ultra thick] (1,-1) <ndash /> node [pos=.5,right] { \(\ell=\)?}(1,1);
+\draw [dashed] (1,1) <ndash /> (-1,-1) node [xshift=10pt,yshift=5pt] { \(\theta\)} <ndash /> node [pos=.5,below] { \(x\)} (1,-1);
+\end{tikzpicture}]]></latex-image-code>
+</image>
+
 </sidebyside>
 </statement>
 <answer>

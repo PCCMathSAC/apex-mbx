@@ -93,14 +93,19 @@ Use <xref ref="def_hyperbolic_functions">Definition</xref> to rewrite the follow
 </statement>
 <solution>
 <ol>
-<li><line>\cosh^2x-\sinh^2x <amp />= \left(\frac{e^x+e^{-x}}2\right)^2 -\left(\frac{e^x-e^{-x}}2\right)^2</line>
+<li>
+<p>
+<line>\cosh^2x-\sinh^2x <amp />= \left(\frac{e^x+e^{-x}}2\right)^2 -\left(\frac{e^x-e^{-x}}2\right)^2</line>
 <line><amp />= \frac{e^{2x}+2e^xe^{-x} + e^{-2x}}4 - \frac{e^{2x}-2e^xe^{-x} + e^{-2x}}4</line>
 <line><amp />= \frac44=1.
 \end{aligned}$
 
 So $\cosh^2 x-\sinh^2x=1$.</line>
+</p>
 </li>
-<li>$\begin{aligned}\tanh^2 x+\sech^2 x \amp =\frac{\sinh^2x}{\cosh^2 x} + \frac{1}{\cosh^2 x} \\
+<li>
+<p>
+$\begin{aligned}\tanh^2 x+\sech^2 x \amp =\frac{\sinh^2x}{\cosh^2 x} + \frac{1}{\cosh^2 x} \\
 					\amp = \frac{\sinh^2x+1}{\cosh^2 x}\qquad \text{ Now use identity from \#1.} \\
 					\amp = \frac{\cosh^2 x}{\cosh^2 x} = 1.
 \end{aligned} $
@@ -109,14 +114,22 @@ So $\cosh^2 x-\sinh^2x=1$.</line>
 
 So $\tanh^2 x+\sech^2 x=1$.
 
-\drawexampleline</li>
-<li>$\begin{aligned}2\cosh x\sinh x \amp = 2\left(\frac{e^x+e^{-x}}2\right)\left(\frac{e^x-e^{-x}}2\right) \\
+\drawexampleline
+</p>
+</li>
+<li>
+<p>
+$\begin{aligned}2\cosh x\sinh x \amp = 2\left(\frac{e^x+e^{-x}}2\right)\left(\frac{e^x-e^{-x}}2\right) \\
 					\amp = 2 \cdot\frac{e^{2x} - e^{-2x}}4\\
 					\amp = \frac{e^{2x} - e^{-2x}}2 = \sinh (2x).\\
 \end{aligned} <m>\hfill
 			
-Thus</m>2\cosh x\sinh x = \sinh (2x)$.</li>
-<li>$\begin{aligned}\frac{d}{dx}\big(\cosh x\big) \amp = \frac{d}{dx}\left(\frac{e^x+e^{-x}}2\right) \\
+Thus</m>2\cosh x\sinh x = \sinh (2x)$.
+</p>
+</li>
+<li>
+<p>
+$\begin{aligned}\frac{d}{dx}\big(\cosh x\big) \amp = \frac{d}{dx}\left(\frac{e^x+e^{-x}}2\right) \\
 					\amp = \frac{e^x-e^{-x}}2\\
 					\amp = \sinh x.
 \end{aligned} $
@@ -132,7 +145,9 @@ So $\frac{d}{dx}\big(\sinh x\big) = \cosh x.<m>\item  \hfill</m>\begin{aligned}\
 					\amp = \sech^2 x.
 \end{aligned} $
 
-So $\frac{d}{dx}\big(\tanh x\big) = \sech^2 x.$</li>
+So $\frac{d}{dx}\big(\tanh x\big) = \sech^2 x.$
+</p>
+</li>
 </ol>
 
 <p>
@@ -201,18 +216,25 @@ Evaluate the following derivatives and integrals.
 </statement>
 <solution>
 <ol>
-<li>Using the Chain Rule directly, we have <m>\frac{d}{dx} \big(\cosh 2x\big) = 2\sinh 2x</m>.
+<li>
+<p>
+Using the Chain Rule directly, we have <m>\frac{d}{dx} \big(\cosh 2x\big) = 2\sinh 2x</m>.
 
 Just to demonstrate that it works, let's also use the Basic Identity found in <xref ref="idea_hyperbolic_identities">Key Idea</xref>: <m>\cosh 2x = \cosh^2x+\sinh^2x</m>.
 <md>
   <mrow>  \frac{d}{dx}\big(\cosh 2x\big) = \frac{d}{dx}\big(\cosh^2x+\sinh^2x\big) \amp = 2\cosh x\sinh x+ 2\sinh x\cosh x</mrow>
   <mrow>  \amp = 4\cosh x\sinh x.</mrow>
 </md>
-Using another Basic Identity, we can see that <m>4\cosh x\sinh x = 2\sinh 2x</m>. We get the same answer either way.</li>
-<li>We employ substitution, with <m>u = 7t-3</m> and <m>du = 7dt</m>. Applying <xref ref="idea_linearsub">Key Ideas</xref>  and <xref ref="idea_hyperbolic_identities"></xref> we have:
+Using another Basic Identity, we can see that <m>4\cosh x\sinh x = 2\sinh 2x</m>. We get the same answer either way.
+</p>
+</li>
+<li>
+<p>
+We employ substitution, with <m>u = 7t-3</m> and <m>du = 7dt</m>. Applying <xref ref="idea_linearsub">Key Ideas</xref>  and <xref ref="idea_hyperbolic_identities"></xref> we have:
 <me>
   \int \sech^2 (7t-3)\ dt = \frac17\tanh (7t-3) + C.
 </me>
+</p>
 </li>
 <li>
 <me>
@@ -314,13 +336,33 @@ The following Key Ideas give the derivatives and integrals relating to the inver
 <keyidea xml:id="idea_hyperbolic_inverse_integrals">
 <title>Integrals Involving Inverse Hyperbolic Functions</title>
 <ol>
-<li>\text{<m>\ds\int \frac{1}{\sqrt{x^2-a^2}}\ dx</m>} \text{<m>\ds=\qquad \cosh^{-1}\left(\frac xa\right)+C;\ 0\lt a\lt x</m>} <m>\ds=\ln\Big|x+\sqrt{x^2-a^2}\Big|+C</m><index><main>integration</main><sub>inverse hyper.</sub></index><index><main>hyperbolic function</main><sub>inverse!integration</sub></index></li>
-<li>\text{<m>\ds\int \frac{1}{\sqrt{x^2+a^2}}\ dx</m>} \text{<m>\ds=\qquad \sinh^{-1}\left(\frac xa\right)+C;\ a>0</m>} <m>\ds=\ln\Big|x+\sqrt{x^2+a^2}\Big|+C</m></li>
-<li>\text{<m>\ds\int \frac{1}{a^2-x^2}\ dx</m>} \text{<m>\ds=\qquad \left\{\begin{array}{ccc} \frac1a\tanh^{-1}\left(\frac xa\right)+C \amp  \amp  x^2\lt a^2 \\ \\
+<li>
+<p>
+\text{<m>\ds\int \frac{1}{\sqrt{x^2-a^2}}\ dx</m>} \text{<m>\ds=\qquad \cosh^{-1}\left(\frac xa\right)+C;\ 0\lt a\lt x</m>} <m>\ds=\ln\Big|x+\sqrt{x^2-a^2}\Big|+C</m><index><main>integration</main><sub>inverse hyper.</sub></index><index><main>hyperbolic function</main><sub>inverse!integration</sub></index>
+</p>
+</li>
+<li>
+<p>
+\text{<m>\ds\int \frac{1}{\sqrt{x^2+a^2}}\ dx</m>} \text{<m>\ds=\qquad \sinh^{-1}\left(\frac xa\right)+C;\ a>0</m>} <m>\ds=\ln\Big|x+\sqrt{x^2+a^2}\Big|+C</m>
+</p>
+</li>
+<li>
+<p>
+\text{<m>\ds\int \frac{1}{a^2-x^2}\ dx</m>} \text{<m>\ds=\qquad \left\{\begin{array}{ccc} \frac1a\tanh^{-1}\left(\frac xa\right)+C \amp  \amp  x^2\lt a^2 \\ \\
 \frac1a\coth^{-1}\left(\frac xa\right)+C \amp  \amp  a^2\lt x^2
-\end{array} \right.</m>} <m>\ds=\frac1{2a}\ln\left|\frac{a+x}{a-x}\right|+C</m></li>
-<li>\text{<m>\ds\int \frac{1}{x\sqrt{a^2-x^2}}\ dx</m>} \text{<m>\ds=\qquad -\frac1a\sech^{-1}\left(\frac xa\right)+C;\ 0\lt x\lt a</m>} <m>\ds= \frac1a \ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C</m></li>
-<li>\text{<m>\ds\int \frac{1}{x\sqrt{x^2+a^2}}\ dx</m>} \text{<m>\ds=\qquad -\frac1a\csch^{-1}\left|\frac xa\right| + C;\ x\neq 0,\ a>0</m>}<m>\ds= \frac1a \ln\left|\frac{x}{a+\sqrt{a^2+x^2}}\right|+C</m></li>
+\end{array} \right.</m>} <m>\ds=\frac1{2a}\ln\left|\frac{a+x}{a-x}\right|+C</m>
+</p>
+</li>
+<li>
+<p>
+\text{<m>\ds\int \frac{1}{x\sqrt{a^2-x^2}}\ dx</m>} \text{<m>\ds=\qquad -\frac1a\sech^{-1}\left(\frac xa\right)+C;\ 0\lt x\lt a</m>} <m>\ds= \frac1a \ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C</m>
+</p>
+</li>
+<li>
+<p>
+\text{<m>\ds\int \frac{1}{x\sqrt{x^2+a^2}}\ dx</m>} \text{<m>\ds=\qquad -\frac1a\csch^{-1}\left|\frac xa\right| + C;\ x\neq 0,\ a>0</m>}<m>\ds= \frac1a \ln\left|\frac{x}{a+\sqrt{a^2+x^2}}\right|+C</m>
+</p>
+</li>
 </ol>
 </keyidea>
 <p>
@@ -351,12 +393,17 @@ Evaluate the following.
 </statement>
 <solution>
 <ol>
-<li>Applying <xref ref="idea_hyperbolic_inverse_derivatives">Key Idea</xref> with the Chain Rule gives:
+<li>
+<p>
+Applying <xref ref="idea_hyperbolic_inverse_derivatives">Key Idea</xref> with the Chain Rule gives:
 <me>
   \frac{d}{dx}\left[\cosh^{-1}\left(\frac{3x-2}5\right)\right] = \frac{1}{\sqrt{\left(\frac{3x-2}5\right)^2-1}}\cdot\frac35.
 </me>
+</p>
 </li>
-<li>Multiplying the numerator and denominator by <m>(-1)</m> gives: <m>\ds \int \frac{1}{x^2-1}\ dx = \int \frac{-1}{1-x^2}\ dx</m>. The second integral can be solved with a direct application of item <hash />3 from <xref ref="idea_hyperbolic_inverse_integrals">Key Idea</xref>, with <m>a=1</m>. Thus
+<li>
+<p>
+Multiplying the numerator and denominator by <m>(-1)</m> gives: <m>\ds \int \frac{1}{x^2-1}\ dx = \int \frac{-1}{1-x^2}\ dx</m>. The second integral can be solved with a direct application of item <hash />3 from <xref ref="idea_hyperbolic_inverse_integrals">Key Idea</xref>, with <m>a=1</m>. Thus
 <md>
   <mrow>  \int \frac{1}{x^2-1}\ dx \amp = -\int \frac{1}{1-x^2}\ dx</mrow>
   <mrow>  \amp = \left\{\begin{array}{ccc} -\tanh^{-1}\left(x\right)+C \amp  \amp  x^2\lt 1 \\ \\
@@ -365,8 +412,12 @@ Evaluate the following.
   <mrow>  \amp =-\frac12\ln\left|\frac{x+1}{x-1}\right|+C</mrow>
   <mrow>  \amp =\frac12\ln\left|\frac{x-1}{x+1}\right|+C.</mrow>
 </md>
-We should note that this exact problem was solved at the beginning of <xref ref="sec_partial_fraction">Section</xref>. In that example the answer was given as <m>\frac12\ln|x-1|-\frac12\ln|x+1|+C.</m> Note that this is equivalent to the answer given in <xref ref="eq_hf3">Equation</xref>, as <m>\ln(a/b) = \ln a - \ln b</m>.</li>
-<li>This requires a substitution, then item <hash />2 of <xref ref="idea_hyperbolic_inverse_integrals">Key Idea</xref> can be applied.
+We should note that this exact problem was solved at the beginning of <xref ref="sec_partial_fraction">Section</xref>. In that example the answer was given as <m>\frac12\ln|x-1|-\frac12\ln|x+1|+C.</m> Note that this is equivalent to the answer given in <xref ref="eq_hf3">Equation</xref>, as <m>\ln(a/b) = \ln a - \ln b</m>.
+</p>
+</li>
+<li>
+<p>
+This requires a substitution, then item <hash />2 of <xref ref="idea_hyperbolic_inverse_integrals">Key Idea</xref> can be applied.
 
 Let <m>u = 3x</m>, hence <m>du = 3dx</m>. We have
 <md>
@@ -377,6 +428,7 @@ Note $a^2=10$, hence $a = \sqrt{10}.$ Now apply the integral rule.
   <mrow>  \amp = \frac13 \sinh^{-1}\left(\frac{3x}{\sqrt{10}}\right) + C</mrow>
   <mrow>  \amp = \frac13 \ln \Big|3x+\sqrt{9x^2+10}\Big|+C.</mrow>
 </md>
+</p>
 </li>
 </ol>
 

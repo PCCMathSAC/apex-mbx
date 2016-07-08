@@ -13,40 +13,11 @@ The previous section introduced the Disk and Washer Methods, which computed the 
 
 <p>
 Consider <xref ref="fig_shell_intro">Figure</xref>, where the region shown in (a) is rotated around the <m>y</m>-axis forming the solid shown in (b). A small slice of the region is drawn in (a), parallel to the axis of rotation. When the region is rotated, this thin slice forms a <b>cylindrical shell</b>, as pictured in part (c) of the figure. The previous section approximated a solid with lots of thin disks (or washers); we now approximate a solid with many thin cylindrical shells.
-\begin{figure}
-\begin{tabular}c
-\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=134.9923368693739,
-3Dortho=0.00484071671962738,
-3Dc2c=0.3376615047454834 0.4032796025276184 0.8504999876022339,
-3Dcoo=3.760643243789673 66.28701782226562 -12.64914608001709,
-3Droo=149.99997892897957,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figshell_intro_b.png" />
-</p>
-
-<p>
-(a)
-</p>
-
-<p>
-\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=134.9923368693739,
-3Dortho=0.00484071671962738,
-3Dc2c=0.3376615047454834 0.4032796025276184 0.8504999876022339,
-3Dcoo=3.760643243789673 66.28701782226562 -12.64914608001709,
-3Droo=149.99997892897957,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figshell_intro_a.png" />
-</p>
-
-<p>
-(b)
 </p>
 <figure xml:id="fig_shell_intro" >
 <caption>Introducing the Shell Method.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=134.9923368693739,
 3Dortho=0.00484071671962738,
@@ -54,9 +25,29 @@ Consider <xref ref="fig_shell_intro">Figure</xref>, where the region shown in (a
 3Dcoo=3.760643243789673 66.28701782226562 -12.64914608001709,
 3Droo=149.99997892897957,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figshell_intro_d.png" />
-(c)
-\end{tabular}
+<image width="73%" source="images/figshell_intro_b.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=134.9923368693739,
+3Dortho=0.00484071671962738,
+3Dc2c=0.3376615047454834 0.4032796025276184 0.8504999876022339,
+3Dcoo=3.760643243789673 66.28701782226562 -12.64914608001709,
+3Droo=149.99997892897957,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="73%" source="images/figshell_intro_a.png" /></cell></row>
+<row><cell>(b)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=134.9923368693739,
+3Dortho=0.00484071671962738,
+3Dc2c=0.3376615047454834 0.4032796025276184 0.8504999876022339,
+3Dcoo=3.760643243789673 66.28701782226562 -12.64914608001709,
+3Droo=149.99997892897957,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="73%" source="images/figshell_intro_d.png" /></cell></row>
+<row><cell>(c)</cell></row>
+</tabular>
 </figure>
 <p>
 To compute the volume of one shell, first consider the paper label on a soup can with radius <m>r</m> and height <m>h</m>. What is the area of this label? A simple way of determining this is to cut the label and lay it out flat, forming a rectangle with height <m>h</m> and length <m>2\pi r</m>. Thus the area is <m>A = 2\pi rh</m>; see <xref ref="fig_soupcan">Figure</xref> (a).
@@ -100,8 +91,16 @@ Let a solid be formed by revolving a region <m>R</m>, bounded by <m>x=a</m> and 
 </p>
 
 <ol>
-<li>When the region <m>R</m> is bounded above by <m>y=f(x)</m> and below by <m>y=g(x)</m>, then <m>h(x) = f(x)-g(x)</m>.</li>
-<li>When the axis of rotation is the <m>y</m>-axis (i.e., <m>x=0</m>) then <m>r(x) = x</m>.</li>
+<li>
+<p>
+When the region <m>R</m> is bounded above by <m>y=f(x)</m> and below by <m>y=g(x)</m>, then <m>h(x) = f(x)-g(x)</m>.
+</p>
+</li>
+<li>
+<p>
+When the axis of rotation is the <m>y</m>-axis (i.e., <m>x=0</m>) then <m>r(x) = x</m>.
+</p>
+</li>
 </ol>
 
 <p>
@@ -154,34 +153,13 @@ Find the volume of the solid formed by rotating the triangular region determined
 <p>
 The region is sketched in <xref ref="fig_shell2">Figure</xref>(a) along with the differential element, a line within the region parallel to the axis of rotation. In part (b) of the figure, we see the shell traced out by the differential element, and in part (c) the whole solid is shown.
 </p>
-
-<p>
-\begin{figure}
-\begin{tabular}c
-<image width="73%" source="images/figshell2a.png" />
-</p>
-
-<p>
-(a)
-</p>
-
-<p>
-\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=138.26595091591264,
-3Dortho=0.0048407199792563915,
-3Dc2c=0.16831636428833008 0.19470007717609406 0.966313362121582,
-3Dcoo=74.36175537109375 71.21556854248047 -40.660457611083984,
-3Droo=149.9999886313645,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figshell2b.png" />
-</p>
-
-<p>
-(b)
-</p>
 <figure xml:id="fig_shell2" >
 <caption>Graphing a region in <xref ref="ex_shell2">Example</xref>.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figshell2a.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell></cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=138.26595091591264,
 3Dortho=0.0048407199792563915,
@@ -189,9 +167,20 @@ The region is sketched in <xref ref="fig_shell2">Figure</xref>(a) along with the
 3Dcoo=74.36175537109375 71.21556854248047 -40.660457611083984,
 3Droo=149.9999886313645,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figshell2c.png" />
-(c)
-\end{tabular}
+<image width="73%" source="images/figshell2b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+<row><cell></cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=138.26595091591264,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.16831636428833008 0.19470007717609406 0.966313362121582,
+3Dcoo=74.36175537109375 71.21556854248047 -40.660457611083984,
+3Droo=149.9999886313645,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="73%" source="images/figshell2c.png" /></cell></row>
+<row><cell>(c)</cell></row>
+</tabular>
 </figure>
 <p>
 The height of the differential element is the distance from <m>y=1</m> to <m>y=2x+1</m>, the line that connects the points <m>(0,1)</m> and <m>(1,3)</m>. Thus <m>h(x) = 2x+1-1 = 2x</m>. The radius of the shell formed by the differential element is the distance from <m>x</m> to <m>x=3</m>; that is, it is <m>r(x)=3-x</m>. The <m>x</m>-bounds of the region are <m>x=0</m> to <m>x=1</m>, giving
@@ -221,32 +210,13 @@ The region is sketched in <xref ref="fig_shell3">Figure</xref>(a) with a sample 
 
 <p>
 The height of the differential element is an <m>x</m>-distance, between <m>x=\frac12y-\frac12</m> and <m>x=1</m>. Thus <m>h(y) = 1-(\frac12y-\frac12) = -\frac12y+\frac32.</m> The radius is the distance from <m>y</m> to the <m>x</m>-axis, so <m>r(y) =y</m>. The <m>y</m> bounds of the region are <m>y=1</m> and <m>y=3</m>, leading to the integral
-\begin{figure}
-\begin{tabular}c
-<image width="73%" source="images/figshell3a.png" />
-</p>
-
-<p>
-(a)
-</p>
-
-<p>
-\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=97.25039174241927,
-3Dortho=0.0048407199792563915,
-3Dc2c=0.34401965141296387 0.04830114170908928 0.9377192854881287,
-3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
-3Droo=149.99998743176678,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figshell3b.png" />
-</p>
-
-<p>
-(b)
 </p>
 <figure xml:id="fig_shell3" >
 <caption>Graphing a region in <xref ref="ex_shell3">Example</xref>.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figshell3a.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=97.25039174241927,
 3Dortho=0.0048407199792563915,
@@ -254,9 +224,19 @@ The height of the differential element is an <m>x</m>-distance, between <m>x=\fr
 3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
 3Droo=149.99998743176678,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figshell3c.png" />
-(c)
-\end{tabular}
+<image width="73%" source="images/figshell3b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=97.25039174241927,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.34401965141296387 0.04830114170908928 0.9377192854881287,
+3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
+3Droo=149.99998743176678,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="73%" source="images/figshell3c.png" /></cell></row>
+<row><cell>(c)</cell></row>
+</tabular>
 </figure>
 <md>
   <mrow>  V \amp = 2\pi\int_1^3\left[y\left(-\frac12y+\frac32\right)\right]\ dy</mrow>
@@ -283,32 +263,13 @@ Find the volume of the solid formed by revolving the region bounded by <m>y= \si
 <solution>
 <p>
 The region and a differential element, the shell formed by this differential element, and the resulting solid are given in <xref ref="fig_shell4">Figure</xref>.
-\begin{figure}
-\begin{tabular}c
-<image width="73%" source="images/figshell4a.png" />
-</p>
-
-<p>
-(a)
-</p>
-
-<p>
-\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=97.25039174241927,
-3Dortho=0.0048407199792563915,
-3Dc2c=0.34401965141296387 0.04830114170908928 0.9377192854881287,
-3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
-3Droo=149.99998743176678,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figshell4c.png" />
-</p>
-
-<p>
-(b)
 </p>
 <figure xml:id="fig_shell4" >
 <caption>Graphing a region in <xref ref="ex_shell4">Example</xref>.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figshell4a.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=97.25039174241927,
 3Dortho=0.0048407199792563915,
@@ -316,9 +277,19 @@ The region and a differential element, the shell formed by this differential ele
 3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
 3Droo=149.99998743176678,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figshell4b.png" />
-(c)
-\end{tabular}
+<image width="73%" source="images/figshell4c.png" /></cell></row>
+<row><cell>(b)</cell></row>
+<row><cell>\begin{figure}
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=97.25039174241927,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.34401965141296387 0.04830114170908928 0.9377192854881287,
+3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
+3Droo=149.99998743176678,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+<image width="73%" source="images/figshell4b.png" /></cell></row>
+<row><cell>(c)</cell></row>
+</tabular>
 </figure>
 <p>
 The radius of a sample shell is <m>r(x) = x</m>; the height of a sample shell is <m>h(x) = \sin x</m>, each from <m>x=0</m> to <m>x=\pi</m>. Thus the volume of the solid is
@@ -555,12 +526,20 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>the <m>y</m>-axis</li>
+<li>
+<p>
+the <m>y</m>-axis
+</p>
+</li>
 <li><m>x=1</m></li>
 </ol>
 
 <ol>
-<li>the <m>x</m>-axis</li>
+<li>
+<p>
+the <m>x</m>-axis
+</p>
+</li>
 <li><m>y=1</m></li>
 </ol>
 
@@ -593,7 +572,11 @@ Rotate about:
 </ol>
 
 <ol>
-<li>the <m>x</m>-axis</li>
+<li>
+<p>
+the <m>x</m>-axis
+</p>
+</li>
 <li><m>y=4</m></li>
 </ol>
 
@@ -621,12 +604,20 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>the <m>y</m>-axis</li>
+<li>
+<p>
+the <m>y</m>-axis
+</p>
+</li>
 <li><m>x=1</m></li>
 </ol>
 
 <ol>
-<li>the <m>x</m>-axis</li>
+<li>
+<p>
+the <m>x</m>-axis
+</p>
+</li>
 <li><m>y=2</m></li>
 </ol>
 
@@ -654,7 +645,11 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>the <m>y</m>-axis</li>
+<li>
+<p>
+the <m>y</m>-axis
+</p>
+</li>
 <li><m>x=1</m></li>
 </ol>
 
@@ -685,7 +680,11 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>the <m>y</m>-axis</li>
+<li>
+<p>
+the <m>y</m>-axis
+</p>
+</li>
 </ol>
 
 <ol>
@@ -714,12 +713,20 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>the <m>y</m>-axis</li>
+<li>
+<p>
+the <m>y</m>-axis
+</p>
+</li>
 <li><m>x=2</m></li>
 </ol>
 
 <ol>
-<li>the <m>x</m>-axis</li>
+<li>
+<p>
+the <m>x</m>-axis
+</p>
+</li>
 <li><m>y=4</m></li>
 </ol>
 

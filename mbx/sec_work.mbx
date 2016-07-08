@@ -28,7 +28,7 @@ What if the force applied is variable? For instance, imagine a climber pulling a
 </p>
 
 <p>
-In general, let <m>F(x)</m> be a force function on an interval <m>[a,b]</m>. We want to measure the amount of work done applying the force <m>F</m> from <m>x=a</m> to <m>x=b</m>. We can approximate the amount of work being done by partitioning <m>[a,b]</m> into subintervals <m>a=x_1\lt x_2 \lt \cdots \lt x_{n+1}=b</m> and assuming that <m>F</m> is constant on each subinterval. Let <m>c_i</m> be a value in the <m>i\,^{\text{th} }</m> subinterval <m>[x_i,x_{i+1}]</m>. Then the work done on this interval is approximately <m>W_i\approx F(c_i)\cdot(x_{i+1}-x_i) = F(c_i)\dx_i</m>, a constant force <m>\times</m> the distance over which it is applied. The total work is
+In general, let <m>F(x)</m> be a force function on an interval <m>[a,b]</m>. We want to measure the amount of work done applying the force <m>F</m> from <m>x=a</m> to <m>x=b</m>. We can approximate the amount of work being done by partitioning <m>[a,b]</m> into subintervals <m>a=x_1\lt x_2 \lt \cdots \lt x_{n+1}=b</m> and assuming that <m>F</m> is constant on each subinterval. Let <m>c_i</m> be a value in the <m>i\,^{\text{th} }</m> subinterval <m>[x_i,x_{i+1}]</m>. Then the work done on this interval is approximately <m>W_i\approx F(c_i)\cdot(x_{i+1}-x_i) = F(c_i)\dx_i</m>, a constant force &#215; the distance over which it is applied. The total work is
 <me>
   W = \sum_{i=1}^n W_i \approx \sum_{i=1}^n F(c_i)\dx_i.
 </me>
@@ -126,30 +126,51 @@ A box of 100 lb of sand is being pulled up at a uniform rate a distance of 50 ft
 </p>
 
 <ol>
-<li>How much work is done lifting just the rope?</li>
-<li>How much work is done lifting just the box and sand?</li>
-<li>What is the total amount of work performed?</li>
+<li>
+<p>
+How much work is done lifting just the rope?
+</p>
+</li>
+<li>
+<p>
+How much work is done lifting just the box and sand?
+</p>
+</li>
+<li>
+<p>
+What is the total amount of work performed?
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>We start by forming the force function <m>F_r(x)</m> for the rope (where the subscript denotes we are considering the rope). As in the previous example, let <m>x</m> denote the amount of rope, in feet, pulled in. (This is the same as saying <m>x</m> denotes the height of the box.) The weight of the rope with <m>x</m> feet pulled in is <m>F_r(x) = 0.2(50-x) = 10-0.2x</m>. (Note that we do not have to include the acceleration of gravity here, for the <em>weight</em> of the rope per foot is given, not its <em>mass</em> per meter as before.) The work performed lifting the rope is
+<li>
+<p>
+We start by forming the force function <m>F_r(x)</m> for the rope (where the subscript denotes we are considering the rope). As in the previous example, let <m>x</m> denote the amount of rope, in feet, pulled in. (This is the same as saying <m>x</m> denotes the height of the box.) The weight of the rope with <m>x</m> feet pulled in is <m>F_r(x) = 0.2(50-x) = 10-0.2x</m>. (Note that we do not have to include the acceleration of gravity here, for the <em>weight</em> of the rope per foot is given, not its <em>mass</em> per meter as before.) The work performed lifting the rope is
 <me>
   W_r = \int_0^{50} (10-0.2x)\ dx = 250\ \text{ft--lb} .
 </me>
+</p>
 </li>
-<li>The sand is leaving the box at a rate of 1 lb/s. As the vertical trip is to take one minute, we know that 60 lb will have left when the box reaches its final height of 50 ft. Again letting <m>x</m> represent the height of the box, we have two points on the line that describes the weight of the sand: when <m>x=0</m>, the sand weight is 100 lb, producing the point <m>(0,100)</m>; when <m>x=50</m>, the sand in the box weighs 40 lb, producing the point <m>(50,40)</m>. The slope of this line is <m>\frac{100-40}{0-50} = -1.2</m>, giving the equation of the weight of the sand at height <m>x</m> as <m>w(x) = -1.2x+100</m>. The box itself weighs a constant 5 lb, so the total force function is <m>F_b(x) = -1.2x+105</m>. Integrating from <m>x=0</m> to <m>x=50</m> gives the work performed in lifting box and sand:
+<li>
+<p>
+The sand is leaving the box at a rate of 1 lb/s. As the vertical trip is to take one minute, we know that 60 lb will have left when the box reaches its final height of 50 ft. Again letting <m>x</m> represent the height of the box, we have two points on the line that describes the weight of the sand: when <m>x=0</m>, the sand weight is 100 lb, producing the point <m>(0,100)</m>; when <m>x=50</m>, the sand in the box weighs 40 lb, producing the point <m>(50,40)</m>. The slope of this line is <m>\frac{100-40}{0-50} = -1.2</m>, giving the equation of the weight of the sand at height <m>x</m> as <m>w(x) = -1.2x+100</m>. The box itself weighs a constant 5 lb, so the total force function is <m>F_b(x) = -1.2x+105</m>. Integrating from <m>x=0</m> to <m>x=50</m> gives the work performed in lifting box and sand:
 <me>
   W_b = \int_0^{50} (-1.2x+105)\ dx = 3750\ \text{ft--lb.}
 </me>
+</p>
 </li>
-<li>The total work is the sum of <m>W_r</m> and <m>W_b</m>: <m>250+3750=4000</m> ft<ndash />lb. We can also arrive at this via integration:
+<li>
+<p>
+The total work is the sum of <m>W_r</m> and <m>W_b</m>: <m>250+3750=4000</m> ft<ndash />lb. We can also arrive at this via integration:
 <md>
   <mrow>  W \amp = \int_0^{50} (F_r(x)+F_b(x))\ dx</mrow>
   <mrow>  \amp = \int_0^{50} (10-0.2x-1.2x+105)\ dx</mrow>
   <mrow>  \amp = \int_0^{50} (-1.4x+115) \ dx</mrow>
   <mrow>  \amp = 4000 \ \text{ft--lb.}</mrow>
 </md>
+</p>
 </li>
 </ol>
 </solution>
@@ -242,7 +263,7 @@ We start as we often do: we partition an interval into subintervals. We orient o
 </p>
 
 <p>
-Consider the work <m>W_i</m> of pumping only the water residing in the <m>i\,^\text{th}</m> subinterval, illustrated in <xref ref="fig_pump1a">Figure</xref>. The force required to move this water is equal to its weight which we calculate as volume <m>\times</m> density. The volume of water in this subinterval is
+Consider the work <m>W_i</m> of pumping only the water residing in the <m>i\,^\text{th}</m> subinterval, illustrated in <xref ref="fig_pump1a">Figure</xref>. The force required to move this water is equal to its weight which we calculate as volume &#215; density. The volume of water in this subinterval is
 <m>V_i = 10^2\pi \Delta y_i</m>; its density is <m>62.4</m> lb/ft<m>^3</m>. Thus the required force is <m>6240\pi\Delta y_i</m> lb.
 </p>
 
@@ -283,7 +304,7 @@ We can <q>streamline</q> the above process a bit as we may now recognize what th
 <image width="73%" source="images/figwork_pump2.png" />
 </figure>
 <p>
-Instead, we just draw one differential element. This helps establish the height a small amount of water must travel along with the force required to move it (where the force is volume <m>\times</m> density).
+Instead, we just draw one differential element. This helps establish the height a small amount of water must travel along with the force required to move it (where the force is volume &#215; density).
 </p>
 
 <p>
@@ -439,13 +460,25 @@ A 100 ft rope, weighing 0.1 lb/ft, hangs over the edge of a tall building.
 </p>
 
 <ol>
-<li>How much work is done pulling the entire rope to the top of the building?</li>
-<li>How much rope is pulled in when half of the total work is done?</li>
+<li>
+<p>
+How much work is done pulling the entire rope to the top of the building?
+</p>
+</li>
+<li>
+<p>
+How much rope is pulled in when half of the total work is done?
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>500 ft<ndash />lb</li>
+<li>
+<p>
+500 ft<ndash />lb
+</p>
+</li>
 <li><m>100-50\sqrt{2} \approx 29.29</m> ft<ndash />lb</li>
 </ol>
 </answer>
@@ -458,14 +491,30 @@ A 50 m rope, with a mass density of 0.2 kg/m, hangs over the edge of a tall buil
 </p>
 
 <ol>
-<li>How much work is done pulling the entire rope to the top of the building?</li>
-<li>How much work is done pulling in the first 20 m?</li>
+<li>
+<p>
+How much work is done pulling the entire rope to the top of the building?
+</p>
+</li>
+<li>
+<p>
+How much work is done pulling in the first 20 m?
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>2450 j</li>
-<li>1568 j</li>
+<li>
+<p>
+2450 j
+</p>
+</li>
+<li>
+<p>
+1568 j
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -477,15 +526,31 @@ A rope of length <m>\ell</m> ft hangs over the edge of tall cliff. (Assume the c
 </p>
 
 <ol>
-<li>How much work is done pulling the entire rope to the top of the cliff?</li>
-<li>What percentage of the total work is done pulling in the first half of the rope?</li>
-<li>How much rope is pulled in when half of the total work is done?</li>
+<li>
+<p>
+How much work is done pulling the entire rope to the top of the cliff?
+</p>
+</li>
+<li>
+<p>
+What percentage of the total work is done pulling in the first half of the rope?
+</p>
+</li>
+<li>
+<p>
+How much rope is pulled in when half of the total work is done?
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
 <li><m>\frac12\cdot d\cdot l^2</m> ft<ndash />lb</li>
-<li>75 <percent /></li>
+<li>
+<p>
+75 <percent />
+</p>
+</li>
 <li><m>\ell(1-\sqrt{2}/2) \approx 0.2929\ell</m></li>
 </ol>
 </answer>
@@ -511,16 +576,40 @@ A crane lifts a 2,000 lb load vertically 30 ft with a 1'' cable weighing 1.68 lb
 </p>
 
 <ol>
-<li>How much work is done lifting the cable alone?</li>
-<li>How much work is done lifting the load alone?</li>
-<li>Could one conclude that the work done lifting the cable is negligible compared to the work done lifting the load?</li>
+<li>
+<p>
+How much work is done lifting the cable alone?
+</p>
+</li>
+<li>
+<p>
+How much work is done lifting the load alone?
+</p>
+</li>
+<li>
+<p>
+Could one conclude that the work done lifting the cable is negligible compared to the work done lifting the load?
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>756 ft<ndash />lb</li>
-<li>60,000 ft<ndash />lb</li>
-<li>Yes, for the cable accounts for about 1<percent /> of the total work.</li>
+<li>
+<p>
+756 ft<ndash />lb
+</p>
+</li>
+<li>
+<p>
+60,000 ft<ndash />lb
+</p>
+</li>
+<li>
+<p>
+Yes, for the cable accounts for about 1<percent /> of the total work.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -683,16 +772,40 @@ A 6 ft cylindrical tank with a radius of 3 ft is filled with water, which has a 
 </p>
 
 <ol>
-<li>How much work is performed in pumping all the water from the tank?</li>
-<li>How much work is performed in pumping 3 ft of water from the tank?</li>
-<li>At what point is 1/2 of the total work done?</li>
+<li>
+<p>
+How much work is performed in pumping all the water from the tank?
+</p>
+</li>
+<li>
+<p>
+How much work is performed in pumping 3 ft of water from the tank?
+</p>
+</li>
+<li>
+<p>
+At what point is 1/2 of the total work done?
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>52,929.6 ft<ndash />lb</li>
-<li>18,525.3 ft<ndash />lb</li>
-<li>When 3.83 ft of water have been pumped from the tank, leaving about 2.17 ft in the tank.</li>
+<li>
+<p>
+52,929.6 ft<ndash />lb
+</p>
+</li>
+<li>
+<p>
+18,525.3 ft<ndash />lb
+</p>
+</li>
+<li>
+<p>
+When 3.83 ft of water have been pumped from the tank, leaving about 2.17 ft in the tank.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -719,7 +832,20 @@ A fuel oil storage tank is 10 ft deep with trapezoidal sides, 5 ft at the top an
 </p>
 
 <p>
-\hfill<image width="73%" source="images/f94d9b52a9aeef9ad30dd9121bf7ab6708fdab2b.png" />
+
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[x={(1,0)},z={(0,1)},y={(.5,.87)},xscale=.4,yscale=.3]
+\draw [thick] (0,0,0) <ndash /> node [above,rotate=90,pos=.5] { 10} (0,0,-10) <ndash /> node [below, pos=.5] { 2} (2,0,-10) <ndash /> node [right, pos=.5] { 15} (2,5,-10) <ndash /> (5,5,0)
+							(5,5,0) <ndash /> (5,0,0)
+							(5,0,0) <ndash /> (0,0,0) <ndash /> (0,5,0) <ndash /> node [above,pos=.5] { 5}(5,5,0)
+							(5,0,0) <ndash /> (2,0,-10);
+</p>
+
+<p>
+\draw [thick,dashed] (0,0,-10) <ndash /> (0,5,-10) <ndash /> (2,5,-10)
+																	(0,5,-10) <ndash /> (0,5,0);
+\end{tikzpicture}]]></latex-image-code>
+</image>
 \null
 </p>
 </statement>
@@ -737,16 +863,40 @@ A conical water tank is 5 m deep with a top radius of 3 m. (This is similar to <
 </p>
 
 <ol>
-<li>Find the work performed in pumping all the water to the top of the tank.</li>
-<li>Find the work performed in pumping the top 2.5 m of water to the top of the tank.</li>
-<li>Find the work performed in pumping the top half of the water, by volume, to the top of the tank.</li>
+<li>
+<p>
+Find the work performed in pumping all the water to the top of the tank.
+</p>
+</li>
+<li>
+<p>
+Find the work performed in pumping the top 2.5 m of water to the top of the tank.
+</p>
+</li>
+<li>
+<p>
+Find the work performed in pumping the top half of the water, by volume, to the top of the tank.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>approx. 577,000 j</li>
-<li>approx. 399,000 j</li>
-<li>approx 110,000 j  (By volume, half of the water is between the base of the cone and a height of 3.9685 m. If one rounds this to 4 m, the work is approx 104,000 j.)</li>
+<li>
+<p>
+approx. 577,000 j
+</p>
+</li>
+<li>
+<p>
+approx. 399,000 j
+</p>
+</li>
+<li>
+<p>
+approx 110,000 j  (By volume, half of the water is between the base of the cone and a height of 3.9685 m. If one rounds this to 4 m, the work is approx 104,000 j.)
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -758,10 +908,20 @@ A water tank has the shape of a truncated cone, with dimensions given below, and
 </p>
 
 <p>
-\hfill<image width="73%" source="images/f36e1732eafdda3847796ca5f0b776cfd90e5c29.png" />
-</p>
 
-<p>
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[xscale=.7,yscale=.5]\draw [thick] (0,0) circle (1)
+							(-1,.1) <ndash /> (-1.5,-1.9)
+							(1,.1) <ndash /> (1.5,-1.9);
+\draw (0,0)<ndash /> node [above,pos=.5] { 2 ft} (1,0)
+			(0,-2) <ndash /> node [above,pos=.5] { 5 ft} (1.5,-2)
+			(1.7,0) <ndash /> (2.3,0)
+			(1.7,-2) <ndash /> (2.3,-2)
+			(2,0) <ndash /> node [pos=.5,right] { 10 ft} (2,-2);
+\draw [thick] (-1.5,-2) arc (180:360:1.5);
+\draw [thick,dashed] (-1.5,-2) arc (180:0:1.5);
+\end{tikzpicture}]]></latex-image-code>
+</image>
 \null
 </p>
 </statement>
@@ -779,10 +939,19 @@ A water tank has the shape of an inverted pyramid, with dimensions given below, 
 </p>
 
 <p>
-\hfill<image width="73%" source="images/f5a96f618058e72a88fb88ba297fd70eafe33081.png" />
-</p>
 
-<p>
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[xscale=.7,yscale=.7]
+\draw [thick] (0,0) <ndash /> node [pos=.5,left]{ 2 m} (1,1) <ndash />node [above,pos=.5] { 2 m} (3,1) <ndash /> (2,0)<ndash />cycle
+							(0,0) <ndash /> (1.5,-2)
+							(3,1) <ndash /> (1.5,-2)
+							(2,0) <ndash /> (1.5,-2);
+\draw [thick,dashed] (1,1) <ndash /> (1.5,-2);
+\draw (3,.5) <ndash /> (3.6,.5)
+			(3,-2) <ndash /> (3.6,-2)
+			(3.3,.5) <ndash /> node [pos=.5,right] { 7 m} (3.3,-2);
+\end{tikzpicture}]]></latex-image-code>
+</image>
 \null
 </p>
 </statement>
@@ -800,10 +969,21 @@ A water tank has the shape of an truncated, inverted pyramid, with dimensions gi
 </p>
 
 <p>
-\hfill<image width="73%" source="images/e4edd94101953cc37d12cc8725630d2675ea7b0a.png" />
-</p>
 
-<p>
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[xscale=.7,yscale=.7]
+\draw [thick] (0,0) node (A) <ndash /> node [pos=.5,left]{ 5 m} (1,1)node (B)  <ndash />node [above,pos=.5] { 5 m} (3,1) node (C)  <ndash /> (2,0) node (D) <ndash />cycle;
+\begin{scope}[scale=.75,shift={(.5,-3)}]
+\draw [thick] (0,0) node (AA)  <ndash /> (1,1) node (BB)  <ndash /> (3,1) node (CC)  <ndash /> node [right,pos=.5] { 2 m} (2,0) node (DD) <ndash /> node [pos=.5,below]{ 2 m} (0,0);
+\end{scope}
+\draw [dashed,thick] (BB.center) <ndash /> (B.center);
+\draw [thick] (AA.center) <ndash /> (A.center)
+							(DD.center) <ndash /> (D.center)
+							(CC.center) <ndash /> (C.center);
+\draw (3.2,.5) <ndash /> (3.8,.5)
+			(3.2,-2) <ndash /> (3.8,-2)
+			(3.5,.5) <ndash /> node [pos=.5,right] { 9 m} (3.5,-2);\end{tikzpicture}]]></latex-image-code>
+</image>
 \null
 </p>
 </statement>

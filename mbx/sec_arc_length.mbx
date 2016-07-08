@@ -8,8 +8,16 @@ In previous sections we have used integration to answer the following questions:
 </p>
 
 <ol>
-<li>Given a region, what is its area?</li>
-<li>Given a solid, what is its volume?</li>
+<li>
+<p>
+Given a region, what is its area?
+</p>
+</li>
+<li>
+<p>
+Given a solid, what is its volume?
+</p>
+</li>
 </ol>
 
 <p>
@@ -208,16 +216,13 @@ Using a computer with <m>n=100</m> the approximation is <m>L\approx 3.8202</m>; 
 <title>Surface Area of Solids of Revolution</title>
 <p>
 We have already seen how a curve <m>y=f(x)</m> on <m>[a,b]</m> can be revolved around an axis to form a solid. Instead of computing its volume, we now consider its surface area.
-\begin{figure}
-\begin{tabular}c
-<image width="73%" source="images/figarc4b.png" />
-</p>
-
-<p>
-(a)
 </p>
 <figure xml:id="fig_surface_intro" >
 <caption>Establishing the formula for surface area.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figarc4b.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=121.00092658103458,
 3Dortho=0.0048407199792563915,
@@ -225,9 +230,9 @@ We have already seen how a curve <m>y=f(x)</m> on <m>[a,b]</m> can be revolved a
 3Dcoo=72.58285522460938 2.891160011291504 -26.545438766479492,
 3Droo=149.99998703790175,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figarc4.png" />
-(b)
-\end{tabular}
+<image width="73%" source="images/figarc4.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
 <p>
 We begin as we have in the previous sections: we partition the interval <m>[a,b]</m> with <m>n</m> subintervals, where the <m>i\,^{\text{th} }</m> subinterval is <m>[x_i,x_{i+1}]</m>. On each subinterval, we can approximate the curve <m>y=f(x)</m> with a straight line that connects <m>f(x_i)</m> and <m>f(x_{i+1})</m> as shown in <xref ref="fig_surface_intro">Figure</xref>(a). Revolving this line segment about the <m>x</m>-axis creates part of a cone (called a <em>frustum</em> of a cone) as shown in <xref ref="fig_surface_intro">Figure</xref>(b). The surface area of a frustum of a cone is
@@ -275,15 +280,21 @@ Let <m>f</m> be differentiable on an open interval containing <m>[a,b]</m> where
 </p>
 
 <ol>
-<li>The surface area of the solid formed by revolving the graph of <m>y=f(x)</m>, where <m>f(x)\geq0</m>, about the <m>x</m>-axis is
+<li>
+<p>
+The surface area of the solid formed by revolving the graph of <m>y=f(x)</m>, where <m>f(x)\geq0</m>, about the <m>x</m>-axis is
 <me>
   \text{Surface Area}  = 2\pi\int_a^b f(x)\sqrt{1+\fp(x)^2}\ dx.
 </me>
+</p>
 </li>
-<li>The surface area of the solid formed by revolving the graph of <m>y=f(x)</m> about the <m>y</m>-axis, where <m>a,b\geq0</m>, is
+<li>
+<p>
+The surface area of the solid formed by revolving the graph of <m>y=f(x)</m> about the <m>y</m>-axis, where <m>a,b\geq0</m>, is
 <me>
   \text{Surface Area}  = 2\pi\int_a^b x\sqrt{1+\fp(x)^2}\ dx.
 </me>
+</p>
 </li>
 </ol>
 </keyidea>
@@ -337,14 +348,21 @@ Find the surface area of the solid formed by revolving the curve <m>y=x^2</m> on
 </p>
 
 <ol>
-<li>the <m>x</m>-axis</li>
-<li>the <m>y</m>-axis.</li>
-</ol>
-
+<li>
 <p>
-\begin{figure}
-\begin{tabular}c
-\begin{figure}
+the <m>x</m>-axis
+</p>
+</li>
+<li>
+<p>
+the <m>y</m>-axis.
+</p>
+</li>
+</ol>
+<figure xml:id="fig_sa2" >
+<caption>The solids used in <xref ref="ex_sa2">Example</xref>.</caption>
+<tabular>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=138.26595091591264,
 3Dortho=0.0048407199792563915,
@@ -352,14 +370,10 @@ Find the surface area of the solid formed by revolving the curve <m>y=x^2</m> on
 3Dcoo=81.32470703125 3.403531074523926 -28.20997428894043,
 3Droo=149.9999886313645,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsa2a.png" />
-</p>
-
-<p>
-(a)
-</p>
-<figure xml:id="fig_sa2" >
-<caption>The solids used in <xref ref="ex_sa2">Example</xref>.</caption>
+<image width="73%" source="images/figsa2a.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell></cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=138.26595091591264,
 3Dortho=0.0048407199792563915,
@@ -367,14 +381,16 @@ Find the surface area of the solid formed by revolving the curve <m>y=x^2</m> on
 3Dcoo=0.013853734359145164 79.42704010009766 -29.364774703979492,
 3Droo=149.99998895240248,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsa2b.png" />
-(b)
-\end{tabular}
+<image width="73%" source="images/figsa2b.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
 </statement>
 <solution>
 <ol>
-<li>The integral is straightforward to setup:
+<li>
+<p>
+The integral is straightforward to setup:
 <md>
   <mrow>  SA \amp = 2\pi\int_0^1 x^2\sqrt{1+(2x)^2}\ dx.
 	\end{mathrow}
@@ -384,8 +400,12 @@ Like the integral in <xref ref="ex_sa1">Example</xref>, this requires Trigonomet
   <mrow>  \amp =\frac{\pi}{32}\left(18\sqrt{5}-\sinh^{-1}2\right)</mrow>
   <mrow>  \amp \approx 3.81\ \text{units} ^2.</mrow>
 </md>
-The solid formed by revolving <m>y=x^2</m> around the <m>x</m>-axis is graphed in <xref ref="fig_sa2">Figure</xref> (a).</li>
-<li>Since we are revolving around the <m>y</m>-axis, the <q>radius</q> of the solid is not <m>f(x)</m> but rather <m>x</m>. Thus the integral to compute the surface area is:
+The solid formed by revolving <m>y=x^2</m> around the <m>x</m>-axis is graphed in <xref ref="fig_sa2">Figure</xref> (a).
+</p>
+</li>
+<li>
+<p>
+Since we are revolving around the <m>y</m>-axis, the <q>radius</q> of the solid is not <m>f(x)</m> but rather <m>x</m>. Thus the integral to compute the surface area is:
 <md>
   <mrow>  SA \amp = 2\pi\int_0^1x\sqrt{1+(2x)^2}\ dx.
 		\end{mathrow}
@@ -396,7 +416,9 @@ This integral can be solved using substitution. Set $u=1+4x^2$; the new bounds a
   <mrow>  \amp = \frac{\pi}6\left(5\sqrt{5}-1\right)</mrow>
   <mrow>  \amp \approx 5.33\ \text{units} ^2.</mrow>
 </md>
-The solid formed by revolving <m>y=x^2</m> about the <m>y</m>-axis is graphed in <xref ref="fig_sa2">Figure</xref> (b).</li>
+The solid formed by revolving <m>y=x^2</m> about the <m>y</m>-axis is graphed in <xref ref="fig_sa2">Figure</xref> (b).
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -462,7 +484,7 @@ Somehow this paradox is striking when we think about it in terms of volume and a
 </solution>
 </example>
 <p>
-A standard equation from physics is <q>Work = force <m>\times</m> distance</q>, when the force applied is constant. In the next section we learn how to compute work when the force applied is variable.
+A standard equation from physics is <q>Work = force &#215; distance</q>, when the force applied is constant. In the next section we learn how to compute work when the force applied is variable.
 </p>
 </subsection>
 

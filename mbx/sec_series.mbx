@@ -41,11 +41,27 @@ Let <m>\{a_n\}</m> be a sequence.
 </p>
 
 <ol>
-<li>The sum <m>\ds \sum_{n=1}^\infty a_n</m> is an <b>infinite series</b> (or, simply <b>series</b>).</li>
-<li>Let <m>\ds S_n = \sum_{i=1}^n a_i</m> ; the sequence <m>\{S_n\}</m> is the sequence of <b><m>n^\text{th}</m> partial sums</b> of <m>\{a_n\}</m>.</li>
-<li>If the sequence <m>\{S_n\}</m> converges to <m>L</m>, we say the series <m>\ds \sum_{n=1}^\infty a_n</m> <b>converges</b> to <m>L</m>, and we write <m>\ds \sum_{n=1}^\infty a_n = L</m>.</li>
-<li>If the sequence <m>\{S_n\}</m> diverges, the series <m>\ds \sum_{n=1}^\infty a_n</m> <b>diverges</b>.
-<index><main>series</main><sub>definition</sub></index><index><main>series</main><sub>partial sums</sub></index><index><main>series</main><sub>convergent</sub></index><index><main>series</main><sub>divergent</sub></index><index><main>convergence</main><sub>of series</sub></index><index><main>divergence</main><sub>of series</sub></index></li>
+<li>
+<p>
+The sum <m>\ds \sum_{n=1}^\infty a_n</m> is an <b>infinite series</b> (or, simply <b>series</b>).
+</p>
+</li>
+<li>
+<p>
+Let <m>\ds S_n = \sum_{i=1}^n a_i</m> ; the sequence <m>\{S_n\}</m> is the sequence of <b><m>n^\text{th}</m> partial sums</b> of <m>\{a_n\}</m>.
+</p>
+</li>
+<li>
+<p>
+If the sequence <m>\{S_n\}</m> converges to <m>L</m>, we say the series <m>\ds \sum_{n=1}^\infty a_n</m> <b>converges</b> to <m>L</m>, and we write <m>\ds \sum_{n=1}^\infty a_n = L</m>.
+</p>
+</li>
+<li>
+<p>
+If the sequence <m>\{S_n\}</m> diverges, the series <m>\ds \sum_{n=1}^\infty a_n</m> <b>diverges</b>.
+<index><main>series</main><sub>definition</sub></index><index><main>series</main><sub>partial sums</sub></index><index><main>series</main><sub>convergent</sub></index><index><main>series</main><sub>divergent</sub></index><index><main>convergence</main><sub>of series</sub></index><index><main>divergence</main><sub>of series</sub></index>
+</p>
+</li>
 </ol>
 </statement>
 </definition>
@@ -60,13 +76,23 @@ We will explore a variety of series in this section. We start with two series th
 <title>Showing series diverge</title>
 <statement>
 <ol>
-<li>Let <m>\{a_n\} = \{n^2\}</m>. Show <m>\ds \sum_{n=1}^\infty a_n</m> diverges.</li>
-<li>Let <m>\{b_n\} = \{(-1)^{n+1}\}</m>. Show <m>\ds \sum_{n=1}^\infty b_n</m> diverges.</li>
+<li>
+<p>
+Let <m>\{a_n\} = \{n^2\}</m>. Show <m>\ds \sum_{n=1}^\infty a_n</m> diverges.
+</p>
+</li>
+<li>
+<p>
+Let <m>\{b_n\} = \{(-1)^{n+1}\}</m>. Show <m>\ds \sum_{n=1}^\infty b_n</m> diverges.
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>Consider <m>S_n</m>, the <m>n^\text{th}</m> partial sum.
+<li>
+<p>
+Consider <m>S_n</m>, the <m>n^\text{th}</m> partial sum.
 <md>
   <mrow>  S_n \amp = a_1+a_2+a_3+\cdots+a_n</mrow>
   <mrow>  \amp = 1^2+2^2+3^2\cdots + n^2.
@@ -77,8 +103,12 @@ By <xref ref="thm_summation">Theorem</xref>, this is
 </md>
 Since <m>\ds \lim_{n\to\infty}S_n = \infty</m>, we conclude that the series <m>\ds \sum_{n=1}^\infty n^2</m> diverges. It is instructive to write <m>\ds \sum_{n=1}^\infty n^2=\infty</m> for this tells us <em>how</em> the series diverges: it grows without bound.
 
-A scatter plot of the sequences <m>\{a_n\}</m> and <m>\{S_n\}</m> is given in <xref ref="fig_series1">Figure</xref>(a). The terms of <m>\{a_n\}</m> are growing, so the terms of the partial sums <m>\{S_n\}</m> are growing even faster, illustrating that the series diverges.</li>
-<li>The sequence <m>\{b_n\}</m> starts with 1, <m>-1</m>, 1, <m>-1</m>, <m>\ldots</m>. Consider some of the partial sums <m>S_n</m> of <m>\{b_n\}</m>:
+A scatter plot of the sequences <m>\{a_n\}</m> and <m>\{S_n\}</m> is given in <xref ref="fig_series1">Figure</xref>(a). The terms of <m>\{a_n\}</m> are growing, so the terms of the partial sums <m>\{S_n\}</m> are growing even faster, illustrating that the series diverges.
+</p>
+</li>
+<li>
+<p>
+The sequence <m>\{b_n\}</m> starts with 1, <m>-1</m>, 1, <m>-1</m>, <m>\ldots</m>. Consider some of the partial sums <m>S_n</m> of <m>\{b_n\}</m>:
 <md>
   <mrow>  S_1 \amp = 1</mrow>
   <mrow>  S_2 \amp = 0</mrow>
@@ -100,6 +130,8 @@ A scatter plot of the sequence <m>\{b_n\}</m> and the partial sums <m>\{S_n\}</m
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
+
+</p>
 </li>
 </ol>
 </solution>
@@ -142,12 +174,19 @@ Consider the geometric series <m>\ds \sum_{n=0}^\infty r^n</m>.
 </p>
 
 <ol>
-<li>The <m>n^\text{th}</m> partial sum is: <m>\ds S_n = \frac{1-r\,^{n+1}}{1-r}</m>.</li>
-<li>The series converges if, and only if, <m>|r| \lt  1</m>. When <m>|r|\lt 1</m>, 
+<li>
+<p>
+The <m>n^\text{th}</m> partial sum is: <m>\ds S_n = \frac{1-r\,^{n+1}}{1-r}</m>.
+</p>
+</li>
+<li>
+<p>
+The series converges if, and only if, <m>|r| \lt  1</m>. When <m>|r|\lt 1</m>, 
 <index><main>series</main><sub>geometric</sub></index><index><main>geometric series</main></index><index><main>convergence</main><sub>of geometric series</sub></index><index><main>divergence</main><sub>of geometric series</sub></index>
 <me>
   \sum_{n=0}^\infty r^n = \frac{1}{1-r}.
 </me>
+</p>
 </li>
 </ol>
 </statement>
@@ -173,7 +212,9 @@ Check the convergence of the following series. If the series converges, find its
 </statement>
 <solution>
 <ol>
-<li>Since <m>r=3/4\lt 1</m>, this series converges. By <xref ref="thm_geom_series">Theorem</xref>, we have that
+<li>
+<p>
+Since <m>r=3/4\lt 1</m>, this series converges. By <xref ref="thm_geom_series">Theorem</xref>, we have that
 <me>
   \sum_{n=0}^\infty \left(\frac34\right)^n = \frac{1}{1-3/4} = 4.
 </me>
@@ -187,13 +228,21 @@ This is illustrated in <xref ref="fig_series2a">Figure</xref>.
 <caption>Scatter plots relating to the series in <xref ref="ex_series2">Example</xref>.</caption>
 <image width="73%" source="images/figseries2a.png" />
 </figure>
+
+</p>
 </li>
-<li>Since <m>|r| = 1/2 \lt  1</m>, this series converges, and by <xref ref="thm_geom_series">Theorem</xref>,
+<li>
+<p>
+Since <m>|r| = 1/2 \lt  1</m>, this series converges, and by <xref ref="thm_geom_series">Theorem</xref>,
 <me>
   \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n = \frac{1}{1-(-1/2)} = \frac23.
 </me>
-The partial sums of this series are plotted in <xref ref="fig_series2">Figure</xref>(a). Note how the partial sums are not purely increasing as some of the terms of the sequence <m>\{(-1/2)^n\}</m> are negative.</li>
-<li>Since <m>r>1</m>, the series diverges. (This makes <q>common sense</q>; we expect the sum
+The partial sums of this series are plotted in <xref ref="fig_series2">Figure</xref>(a). Note how the partial sums are not purely increasing as some of the terms of the sequence <m>\{(-1/2)^n\}</m> are negative.
+</p>
+</li>
+<li>
+<p>
+Since <m>r>1</m>, the series diverges. (This makes <q>common sense</q>; we expect the sum
 <me>
   1+3+9+27 + 81+243+\cdots
 </me>
@@ -208,6 +257,8 @@ to diverge.) This is illustrated in <xref ref="fig_series2">Figure</xref>(b).
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
+
+</p>
 </li>
 </ol>
 
@@ -228,16 +279,22 @@ Another important type of series is the <em>p-series</em>.
 <title>$p$<ndash />Series, General $p$<ndash />Series</title>
 <statement>
 <ol>
-<li>A <b><m>p</m><ndash />series</b> is a series of the form
+<li>
+<p>
+A <b><m>p</m><ndash />series</b> is a series of the form
 <me>
   \sum_{n=1}^\infty \frac{1}{n^p}, \qquad \text{where <m>p>0</m>.}
 </me>
+</p>
 </li>
-<li>A <b>general <m>p</m><ndash />series</b> is a series of the form 
+<li>
+<p>
+A <b>general <m>p</m><ndash />series</b> is a series of the form 
 <index><main>series</main><sub>p@<m>p</m>-series</sub></index><index><main>p@<m>p</m>-series</main></index>
 <me>
   \sum_{n=1}^\infty \frac{1}{(an+b)^p}, \qquad \text{where <m>p>0</m> and <m>a</m>, <m>b</m> are real numbers.}
 </me>
+</p>
 </li>
 </ol>
 </statement>
@@ -289,14 +346,38 @@ Determine the convergence of the following series.
 </statement>
 <solution>
 <ol>
-<li>This is a <m>p</m><ndash />series with <m>p=1</m>. By <xref ref="thm_pseries">Theorem</xref>, this series diverges. 
+<li>
+<p>
+This is a <m>p</m><ndash />series with <m>p=1</m>. By <xref ref="thm_pseries">Theorem</xref>, this series diverges. 
 
-This series is a famous series, called the <em>Harmonic Series</em>, so named because of its relationship to <em>harmonics</em> in the study of music and sound.</li>
-<li>This is a <m>p</m><ndash />series with <m>p=2</m>. By <xref ref="thm_pseries">Theorem</xref>, it converges. Note that the theorem does not give a formula by which we can determine <em>what</em> the series converges to; we just know it converges. A famous, unexpected result is that this series converges to <m>\ds{\pi^2}/{6}</m>.</li>
-<li>This is a <m>p</m><ndash />series with <m>p=1/2</m>; the theorem states that it diverges.</li>
-<li>This is not a <m>p</m><ndash />series; the definition does not allow for alternating signs. Therefore we cannot apply <xref ref="thm_pseries">Theorem</xref>. (Another famous result states that this series, the <em>Alternating Harmonic Series</em>, converges to <m>\ln 2</m>.)</li>
-<li>This is a general <m>p</m><ndash />series with <m>p=3</m>, therefore it converges.</li>
-<li>This is not a <m>p</m><ndash />series, but a geometric series with <m>r=1/2</m>. It converges.</li>
+This series is a famous series, called the <em>Harmonic Series</em>, so named because of its relationship to <em>harmonics</em> in the study of music and sound.
+</p>
+</li>
+<li>
+<p>
+This is a <m>p</m><ndash />series with <m>p=2</m>. By <xref ref="thm_pseries">Theorem</xref>, it converges. Note that the theorem does not give a formula by which we can determine <em>what</em> the series converges to; we just know it converges. A famous, unexpected result is that this series converges to <m>\ds{\pi^2}/{6}</m>.
+</p>
+</li>
+<li>
+<p>
+This is a <m>p</m><ndash />series with <m>p=1/2</m>; the theorem states that it diverges.
+</p>
+</li>
+<li>
+<p>
+This is not a <m>p</m><ndash />series; the definition does not allow for alternating signs. Therefore we cannot apply <xref ref="thm_pseries">Theorem</xref>. (Another famous result states that this series, the <em>Alternating Harmonic Series</em>, converges to <m>\ln 2</m>.)
+</p>
+</li>
+<li>
+<p>
+This is a general <m>p</m><ndash />series with <m>p=3</m>, therefore it converges.
+</p>
+</li>
+<li>
+<p>
+This is not a <m>p</m><ndash />series, but a geometric series with <m>r=1/2</m>. It converges.
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -351,7 +432,9 @@ Evaluate each of the following infinite series.
 </statement>
 <solution>
 <ol>
-<li>We can decompose the fraction <m>2/(n^2+2n)</m> as
+<li>
+<p>
+We can decompose the fraction <m>2/(n^2+2n)</m> as
 <me>
   \frac2{n^2+2n} = \frac1n-\frac1{n+2}.
 </me>
@@ -380,8 +463,12 @@ This is illustrated in <xref ref="fig_series4">Figure</xref>(a).
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
+
+</p>
 </li>
-<li>We begin by writing the first few partial sums of the series:
+<li>
+<p>
+We begin by writing the first few partial sums of the series:
 <md>
   <mrow>  S_1 \amp = \ln\left(2\right)</mrow>
   <mrow>  S_2 \amp = \ln\left(2\right)+\ln\left(\frac32\right)</mrow>
@@ -392,7 +479,9 @@ At first, this does not seem helpful, but recall the logarithmic identity: <m>\l
 <me>
   S_4 = \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)+\ln\left(\frac54\right) = \ln\left(\frac21\cdot\frac32\cdot\frac43\cdot\frac54\right) = \ln\left(5\right).
 </me>
-We can conclude that <m>\{S_n\} = \big\{\ln (n+1)\big\}</m>. This sequence  does not converge, as <m>\ds \lim_{n\to\infty}S_n=\infty</m>. Therefore  <m>\ds\sum_{n=1}^\infty  \ln\left(\frac{n+1}{n}\right)=\infty</m>; the series diverges. Note in <xref ref="fig_series4">Figure</xref>(b) how the sequence of partial sums grows slowly; after 100 terms, it is not yet over 5. Graphically we may be fooled into thinking the series converges, but our analysis above shows that it does not.</li>
+We can conclude that <m>\{S_n\} = \big\{\ln (n+1)\big\}</m>. This sequence  does not converge, as <m>\ds \lim_{n\to\infty}S_n=\infty</m>. Therefore  <m>\ds\sum_{n=1}^\infty  \ln\left(\frac{n+1}{n}\right)=\infty</m>; the series diverges. Note in <xref ref="fig_series4">Figure</xref>(b) how the sequence of partial sums grows slowly; after 100 terms, it is not yet over 5. Graphically we may be fooled into thinking the series converges, but our analysis above shows that it does not.
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -408,9 +497,17 @@ Let \quad<m>\ds \sum_{n=1}^\infty a_n = L</m>,  <m>\ds\sum_{n=1}^\infty b_n = K<
 </p>
 
 <ol>
-<li>Constant Multiple Rule: <m>\ds\sum_{n=1}^\infty c\cdot a_n = c\cdot\sum_{n=1}^\infty a_n = c\cdot L.</m><index><main>Constant Multiple Rule</main><sub>of series</sub></index></li>
-<li>Sum/Difference Rule: <m>\ds\sum_{n=1}^\infty \big(a_n\pm b_n\big) = \sum_{n=1}^\infty a_n \pm \sum_{n=1}^\infty b_n = L \pm K.</m>
-<index><main>series</main><sub>properties</sub></index><index><main>Sum/Difference Rule</main><sub>of series</sub></index></li>
+<li>
+<p>
+Constant Multiple Rule: <m>\ds\sum_{n=1}^\infty c\cdot a_n = c\cdot\sum_{n=1}^\infty a_n = c\cdot L.</m><index><main>Constant Multiple Rule</main><sub>of series</sub></index>
+</p>
+</li>
+<li>
+<p>
+Sum/Difference Rule: <m>\ds\sum_{n=1}^\infty \big(a_n\pm b_n\big) = \sum_{n=1}^\infty a_n \pm \sum_{n=1}^\infty b_n = L \pm K.</m>
+<index><main>series</main><sub>properties</sub></index><index><main>Sum/Difference Rule</main><sub>of series</sub></index>
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -421,12 +518,24 @@ Before using this theorem, we provide a few <q>famous</q> series.
 <keyidea xml:id="idea_famous_series">
 <title>Important Series</title>
 <ol>
-<li>\text{<m>\ds\sum_{n=0}^\infty \frac1{n!} = e</m>. } (Note that the index starts with <m>n=0</m>.)</li>
+<li>
+<p>
+\text{<m>\ds\sum_{n=0}^\infty \frac1{n!} = e</m>. } (Note that the index starts with <m>n=0</m>.)
+</p>
+</li>
 <li><m>\ds\sum_{n=1}^\infty \frac1{n^2} = \frac{\pi^2}{6}</m>.</li>
 <li><m>\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2} = \frac{\pi^2}{12}</m>.</li>
 <li><m>\ds\sum_{n=0}^\infty \frac{(-1)^{n}}{2n+1} = \frac{\pi}{4}</m>.</li>
-<li>\text{<m>\ds\sum_{n=1}^\infty \frac{1}{n}</m>   diverges.} (This is called the <em>Harmonic Series</em>.)<index><main>Harmonic Series</main></index></li>
-<li>\text{<m>\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n} = \ln 2</m>.} (This is called the <em>Alternating Harmonic Series</em>.)<index><main>Alternating Harmonic Series</main></index></li>
+<li>
+<p>
+\text{<m>\ds\sum_{n=1}^\infty \frac{1}{n}</m>   diverges.} (This is called the <em>Harmonic Series</em>.)<index><main>Harmonic Series</main></index>
+</p>
+</li>
+<li>
+<p>
+\text{<m>\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n} = \ln 2</m>.} (This is called the <em>Alternating Harmonic Series</em>.)<index><main>Alternating Harmonic Series</main></index>
+</p>
+</li>
 </ol>
 </keyidea>
 
@@ -443,14 +552,20 @@ Evaluate the given series.
 </statement>
 <solution>
 <ol>
-<li>We start by using algebra to break the series apart:
+<li>
+<p>
+We start by using algebra to break the series apart:
 <md>
   <mrow>  \sum_{n=1}^\infty \frac{(-1)^{n+1}\big(n^2-n\big)}{n^3} \amp = \sum_{n=1}^\infty\left(\frac{(-1)^{n+1}n^2}{n^3}-\frac{(-1)^{n+1}n}{n^3}\right)</mrow>
   <mrow>  \amp = \sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}-\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n^2}</mrow>
   <mrow>  \amp = \ln(2) - \frac{\pi^2}{12}	\approx	-0.1293.</mrow>
 </md>
-This is illustrated in <xref ref="fig_series5">Figure</xref>(a).</li>
-<li>This looks very similar to the series that involves <m>e</m> in <xref ref="idea_famous_series">Key Idea</xref>. Note, however, that the series given in this example starts with <m>n=1</m> and not <m>n=0</m>. The first term of the series in the Key Idea is <m>1/0! = 1</m>, so we will subtract this from our result below:
+This is illustrated in <xref ref="fig_series5">Figure</xref>(a).
+</p>
+</li>
+<li>
+<p>
+This looks very similar to the series that involves <m>e</m> in <xref ref="idea_famous_series">Key Idea</xref>. Note, however, that the series given in this example starts with <m>n=1</m> and not <m>n=0</m>. The first term of the series in the Key Idea is <m>1/0! = 1</m>, so we will subtract this from our result below:
 <md>
   <mrow>  \sum_{n=1}^\infty \frac{1000}{n!} \amp = 1000\cdot\sum_{n=1}^\infty \frac{1}{n!}</mrow>
   <mrow>  \amp = 1000\cdot (e-1) \approx  1718.28.</mrow>
@@ -465,8 +580,12 @@ This is illustrated in <xref ref="fig_series5">Figure</xref>(b). The graph shows
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
+
+</p>
 </li>
-<li>The denominators in each term are perfect squares; we are adding <m>\ds \sum_{n=4}^\infty \frac{1}{n^2}</m> (note  we start with <m>n=4</m>, not <m>n=1</m>). This series will converge. Using the formula from <xref ref="idea_famous_series">Key Idea</xref>, we have the following:
+<li>
+<p>
+The denominators in each term are perfect squares; we are adding <m>\ds \sum_{n=4}^\infty \frac{1}{n^2}</m> (note  we start with <m>n=4</m>, not <m>n=1</m>). This series will converge. Using the formula from <xref ref="idea_famous_series">Key Idea</xref>, we have the following:
 <md>
   <mrow>  \sum_{n=1}^\infty \frac1{n^2} \amp = \sum_{n=1}^3 \frac1{n^2} +\sum_{n=4}^\infty \frac1{n^2}</mrow>
   <mrow>  \sum_{n=1}^\infty \frac1{n^2} - \sum_{n=1}^3 \frac1{n^2} \amp =\sum_{n=4}^\infty \frac1{n^2}</mrow>
@@ -474,6 +593,7 @@ This is illustrated in <xref ref="fig_series5">Figure</xref>(b). The graph shows
   <mrow>  \frac{\pi^2}{6} - \frac{49}{36} \amp = \sum_{n=4}^\infty \frac1{n^2}</mrow>
   <mrow>  0.2838\amp \approx \sum_{n=4}^\infty \frac1{n^2}</mrow>
 </md>
+</p>
 </li>
 </ol>
 </solution>
@@ -487,13 +607,37 @@ As one contemplates the behavior of series, a few facts become clear.
 </p>
 
 <ol>
-<li>In order to add an infinite list of nonzero numbers and get a finite result, <q>most</q> of those numbers must be <q>very near</q> 0.</li>
-<li>If a series diverges, it means that the sum of an infinite list of numbers is not finite (it may approach <m>\pm \infty</m> or it may oscillate), and:
+<li>
+<p>
+In order to add an infinite list of nonzero numbers and get a finite result, <q>most</q> of those numbers must be <q>very near</q> 0.
+</p>
+</li>
+<li>
+<p>
+If a series diverges, it means that the sum of an infinite list of numbers is not finite (it may approach <m>\pm \infty</m> or it may oscillate), and:
+</p>
+
 <ol>
-<li>The series will still diverge if the first term is removed.</li>
-<li>The series will still diverge if the first 10 terms are removed.</li>
-<li>The series will still diverge if the first <m>1,000,000</m> terms are removed.</li>
-<li>The series will still diverge if any finite number of terms from anywhere in the series are removed.</li>
+<li>
+<p>
+The series will still diverge if the first term is removed.
+</p>
+</li>
+<li>
+<p>
+The series will still diverge if the first 10 terms are removed.
+</p>
+</li>
+<li>
+<p>
+The series will still diverge if the first <m>1,000,000</m> terms are removed.
+</p>
+</li>
+<li>
+<p>
+The series will still diverge if any finite number of terms from anywhere in the series are removed.
+</p>
+</li>
 </ol>
 </li>
 </ol>
@@ -511,8 +655,16 @@ Consider the series <m>\ds\sum_{n=1}^\infty a_n</m>.
 </p>
 
 <ol>
-<li>If <m>\ds\sum_{n=1}^\infty a_n</m> converges, then <m>\ds \lim_{n\to\infty}a_n =0</m>.</li>
-<li>If <m>\ds \lim_{n\to\infty}a_n \neq 0</m>, then <m>\ds\sum_{n=1}^\infty a_n</m> diverges.</li>
+<li>
+<p>
+If <m>\ds\sum_{n=1}^\infty a_n</m> converges, then <m>\ds \lim_{n\to\infty}a_n =0</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>\ds \lim_{n\to\infty}a_n \neq 0</m>, then <m>\ds\sum_{n=1}^\infty a_n</m> diverges.
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -537,8 +689,16 @@ The convergence or divergence remains unchanged by the addition or subtraction o
 </p>
 
 <ol>
-<li>A divergent series will remain divergent with the addition or subtraction of any finite number of terms.</li>
-<li>A convergent series will remain convergent with the addition or subtraction of any finite number of terms. (Of course, the <em>sum</em> will likely change.)</li>
+<li>
+<p>
+A divergent series will remain divergent with the addition or subtraction of any finite number of terms.
+</p>
+</li>
+<li>
+<p>
+A convergent series will remain convergent with the addition or subtraction of any finite number of terms. (Of course, the <em>sum</em> will likely change.)
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -650,7 +810,11 @@ In the following exercises, a series <m>\ds\sum_{n=1}^\infty a_n</m> is given.
 <answer>
 <ol>
 <li><m>-1,-\frac{1}{2},-\frac{5}{6},-\frac{7}{12},-\frac{47}{60}</m></li>
-<li>Plot omitted</li>
+<li>
+<p>
+Plot omitted
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -665,7 +829,11 @@ In the following exercises, a series <m>\ds\sum_{n=1}^\infty a_n</m> is given.
 <ol>
 <li><m>1,\frac{5}{4},\frac{49}{36},\frac{205}{144},\frac{526
    9}{3600}</m></li>
-<li>Plot omitted</li>
+<li>
+<p>
+Plot omitted
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -679,7 +847,11 @@ In the following exercises, a series <m>\ds\sum_{n=1}^\infty a_n</m> is given.
 <answer>
 <ol>
 <li><m>-1,0,-1,0,-1</m></li>
-<li>Plot omitted</li>
+<li>
+<p>
+Plot omitted
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -693,7 +865,11 @@ In the following exercises, a series <m>\ds\sum_{n=1}^\infty a_n</m> is given.
 <answer>
 <ol>
 <li><m>1,3,6,10,15</m></li>
-<li>Plot omitted</li>
+<li>
+<p>
+Plot omitted
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -707,7 +883,11 @@ In the following exercises, a series <m>\ds\sum_{n=1}^\infty a_n</m> is given.
 <answer>
 <ol>
 <li><m>1,\frac{3}{2},\frac{5}{3},\frac{41}{24},\frac{103}{60}</m></li>
-<li>Plot omitted</li>
+<li>
+<p>
+Plot omitted
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -721,7 +901,11 @@ In the following exercises, a series <m>\ds\sum_{n=1}^\infty a_n</m> is given.
 <answer>
 <ol>
 <li><m>\frac{1}{3},\frac{4}{9},\frac{13}{27},\frac{40}{81},\frac{121}{243}</m></li>
-<li>Plot omitted</li>
+<li>
+<p>
+Plot omitted
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -735,7 +919,11 @@ In the following exercises, a series <m>\ds\sum_{n=1}^\infty a_n</m> is given.
 <answer>
 <ol>
 <li><m>-0.9,-0.09,-0.819,-0.1629,-0.75339</m></li>
-<li>Plot omitted</li>
+<li>
+<p>
+Plot omitted
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -749,7 +937,11 @@ In the following exercises, a series <m>\ds\sum_{n=1}^\infty a_n</m> is given.
 <answer>
 <ol>
 <li><m>0.1,0.11,0.111,0.1111,0.11111</m></li>
-<li>Plot omitted</li>
+<li>
+<p>
+Plot omitted
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -982,7 +1174,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>S_n = \frac{1-(1/4)^n}{3/4}</m></li>
-<li>Converges to <m>4/3</m>.</li>
+<li>
+<p>
+Converges to <m>4/3</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -996,7 +1192,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>S_n = \left(\frac{n(n+1)}{2}\right)^2</m></li>
-<li>Diverges</li>
+<li>
+<p>
+Diverges
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1012,7 +1212,11 @@ In the following exercises, a series is given.
 <li><m>S_n = \left\{\begin{array}{cc} \frac{n+1}{2} \amp  <m>n</m> \text{ is odd } \\
 																			-\frac{n}{2} \amp  <m>n</m> \text{ is even} 
 \end{array} \right.</m></li>
-<li>Diverges</li>
+<li>
+<p>
+Diverges
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1026,7 +1230,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>S_n = 5\frac{1-1/2^n}{1/2}</m></li>
-<li>Converges to 10.</li>
+<li>
+<p>
+Converges to 10.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1040,7 +1248,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>S_n = \frac{1-(1/e)^{n+1}}{1-1/e}</m>.</li>
-<li>Converges to <m>1/(1-1/e) = e/(e-1)</m>.</li>
+<li>
+<p>
+Converges to <m>1/(1-1/e) = e/(e-1)</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1054,7 +1266,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>S_n = \frac{1-(-1/3)^n}{4/3}</m></li>
-<li>Converges to <m>3/4</m>.</li>
+<li>
+<p>
+Converges to <m>3/4</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1067,8 +1283,16 @@ In the following exercises, a series is given.
 </statement>
 <answer>
 <ol>
-<li>With partial fractions, <m>a_n = \frac1n-\frac1{n+1}</m>. Thus <m>S_n = 1-\frac1{n+1}</m>.</li>
-<li>Converges to 1.</li>
+<li>
+<p>
+With partial fractions, <m>a_n = \frac1n-\frac1{n+1}</m>. Thus <m>S_n = 1-\frac1{n+1}</m>.
+</p>
+</li>
+<li>
+<p>
+Converges to 1.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1081,8 +1305,16 @@ In the following exercises, a series is given.
 </statement>
 <answer>
 <ol>
-<li>With partial fractions, <m>a_n = \frac32\left(\frac1n-\frac1{n+2}\right)</m>. Thus <m>S_n = \frac32\left(\frac32-\frac1{n+1}-\frac1{n+2}\right)</m>.</li>
-<li>Converges to 9/4</li>
+<li>
+<p>
+With partial fractions, <m>a_n = \frac32\left(\frac1n-\frac1{n+2}\right)</m>. Thus <m>S_n = \frac32\left(\frac32-\frac1{n+1}-\frac1{n+2}\right)</m>.
+</p>
+</li>
+<li>
+<p>
+Converges to 9/4
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1095,8 +1327,16 @@ In the following exercises, a series is given.
 </statement>
 <answer>
 <ol>
-<li>Use partial fraction decomposition to recognize the telescoping series: <m>a_n = \frac12\left(\frac{1}{2n-1}-\frac{1}{2n+1}\right)</m>. Then <m>S_n = \frac{n}{2n+1}</m>.</li>
-<li>Converges to <m>1/2</m>.</li>
+<li>
+<p>
+Use partial fraction decomposition to recognize the telescoping series: <m>a_n = \frac12\left(\frac{1}{2n-1}-\frac{1}{2n+1}\right)</m>. Then <m>S_n = \frac{n}{2n+1}</m>.
+</p>
+</li>
+<li>
+<p>
+Converges to <m>1/2</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1110,7 +1350,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>S_n = \ln \big(1/(n+1)\big)</m></li>
-<li>Diverges (to <m>-\infty</m>).</li>
+<li>
+<p>
+Diverges (to <m>-\infty</m>).
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1124,7 +1368,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>S_n = 1-\frac{1}{(n+1)^2}</m></li>
-<li>Converges to 1.</li>
+<li>
+<p>
+Converges to 1.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1138,7 +1386,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>a_n = \frac1{n(n+3)}</m>; using partial fractions, the resulting telescoping sum reduces to <m>S_n = \frac13\left(1+\frac12+\frac13-\frac1{n+1}-\frac1{n+2}-\frac1{n+3}\right)</m></li>
-<li>Converges to <m>11/18</m>.</li>
+<li>
+<p>
+Converges to <m>11/18</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1152,7 +1404,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>a_n = 1/2^n+1/3^n</m> for <m>n\geq 0</m>. Thus <m>S_n = \frac{1-1/2^2}{1/2}+\frac{1-1/3^n}{2/3}</m>.</li>
-<li>Converges to <m>2+3/2 = 7/2</m>.</li>
+<li>
+<p>
+Converges to <m>2+3/2 = 7/2</m>.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1165,8 +1421,16 @@ In the following exercises, a series is given.
 </statement>
 <answer>
 <ol>
-<li>With partial fractions, <m>a_n = \frac12\left(\frac1{n-1}-\frac1{n+1}\right)</m>. Thus <m>S_n = \frac12\left(3/2-\frac1n-\frac{1}{n+1}\right)</m>.</li>
-<li>Converges to 3/4.</li>
+<li>
+<p>
+With partial fractions, <m>a_n = \frac12\left(\frac1{n-1}-\frac1{n+1}\right)</m>. Thus <m>S_n = \frac12\left(3/2-\frac1n-\frac{1}{n+1}\right)</m>.
+</p>
+</li>
+<li>
+<p>
+Converges to 3/4.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1180,7 +1444,11 @@ In the following exercises, a series is given.
 <answer>
 <ol>
 <li><m>S_n=\frac{1-(\sin 1)^{n+1}}{1-\sin 1}</m></li>
-<li>Converges to <m>\frac{1}{1-\sin 1}</m>..</li>
+<li>
+<p>
+Converges to <m>\frac{1}{1-\sin 1}</m>..
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -1199,22 +1467,54 @@ The goal is to show that each of the series on the right diverge.
 </p>
 
 <ol>
-<li>Show why <m>\ds \sum_{n=1}^\infty \frac{1}{2n-1}>\sum_{n=1}^\infty \frac{1}{2n}</m>. 
+<li>
+<p>
+Show why <m>\ds \sum_{n=1}^\infty \frac{1}{2n-1}>\sum_{n=1}^\infty \frac{1}{2n}</m>. 
 		
-		(Compare each <m>n^\text{th}</m> partial sum.)</li>
-<li>Show why <m>\ds\sum_{n=1}^\infty \frac{1}{2n-1}\lt 1+\sum_{n=1}^\infty \frac{1}{2n}</m></li>
-<li>Explain why (a) and (b) demonstrate that the series of odd terms is convergent, if, and only if, the series of even terms is also convergent. (That is, show both converge or both diverge.)</li>
-<li>Explain why knowing the Harmonic Series is divergent determines that the even and odd series are also divergent.</li>
+		(Compare each <m>n^\text{th}</m> partial sum.)
+</p>
+</li>
+<li>
+<p>
+Show why <m>\ds\sum_{n=1}^\infty \frac{1}{2n-1}\lt 1+\sum_{n=1}^\infty \frac{1}{2n}</m>
+</p>
+</li>
+<li>
+<p>
+Explain why (a) and (b) demonstrate that the series of odd terms is convergent, if, and only if, the series of even terms is also convergent. (That is, show both converge or both diverge.)
+</p>
+</li>
+<li>
+<p>
+Explain why knowing the Harmonic Series is divergent determines that the even and odd series are also divergent.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>The <m>n^\text{th}</m> partial sum of the odd series is <m>1+\frac13+\frac15+\cdots+\frac{1}{2n-1}</m>. The <m>n^\text{th}</m> partial sum of the even series is <m>\frac12+\frac14 + \frac16 + \cdots +\frac1{2n}</m>. Each term of the even series is less than the corresponding term of the odd series, giving us our result.</li>
-<li>The <m>n^\text{th}</m> partial sum of the odd series is <m>1+\frac13+\frac15+\cdots+\frac1{2n-1}</m>. The <m>n^\text{th}</m> partial sum of 1 plus the even series is <m>1+\frac12+\frac14+\cdots + \frac{1}{2(n-1)}</m>. Each term of the even series is now greater than or equal to the corresponding term of the odd series, with equality only on the first term. This gives us the result.</li>
-<li>If the odd series converges, the work done in (a) shows the even series converges also. (The sequence of the <m>n^\text{th}</m> partial sum of the even series is bounded and monotonically increasing.) Likewise, (b) shows that if the even series converges, the odd series will, too. Thus if either series converges, the other does. 
+<li>
+<p>
+The <m>n^\text{th}</m> partial sum of the odd series is <m>1+\frac13+\frac15+\cdots+\frac{1}{2n-1}</m>. The <m>n^\text{th}</m> partial sum of the even series is <m>\frac12+\frac14 + \frac16 + \cdots +\frac1{2n}</m>. Each term of the even series is less than the corresponding term of the odd series, giving us our result.
+</p>
+</li>
+<li>
+<p>
+The <m>n^\text{th}</m> partial sum of the odd series is <m>1+\frac13+\frac15+\cdots+\frac1{2n-1}</m>. The <m>n^\text{th}</m> partial sum of 1 plus the even series is <m>1+\frac12+\frac14+\cdots + \frac{1}{2(n-1)}</m>. Each term of the even series is now greater than or equal to the corresponding term of the odd series, with equality only on the first term. This gives us the result.
+</p>
+</li>
+<li>
+<p>
+If the odd series converges, the work done in (a) shows the even series converges also. (The sequence of the <m>n^\text{th}</m> partial sum of the even series is bounded and monotonically increasing.) Likewise, (b) shows that if the even series converges, the odd series will, too. Thus if either series converges, the other does. 
 
-Similarly, (a) and (b) can be used to show that if either series diverges, the other does, too.</li>
-<li>If both the even and odd series converge, then their sum would be a convergent series. This would imply that the Harmonic Series, their sum, is convergent. It is not. Hence each series diverges.</li>
+Similarly, (a) and (b) can be used to show that if either series diverges, the other does, too.
+</p>
+</li>
+<li>
+<p>
+If both the even and odd series converge, then their sum would be a convergent series. This would imply that the Harmonic Series, their sum, is convergent. It is not. Hence each series diverges.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>

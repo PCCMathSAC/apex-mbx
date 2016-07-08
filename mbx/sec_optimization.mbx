@@ -97,9 +97,21 @@ We outline here the basic process of solving these optimization problems.
 <keyidea xml:id="idea_optimization">
 <title>Solving Optimization Problems</title>
 <ol>
-<li>Understand the problem. Clearly identify what quantity is to be maximized or minimized. Make a sketch if helpful.</li>
-<li>Create equations relevant to the context of the problem, using the information given. (One of these should describe the quantity to be optimized. We'll call this the <em>fundamental equation.</em>)</li>
-<li>If the fundamental equation defines the quantity to be optimized as a function of more than one variable, reduce it to a single variable function using substitutions derived from the other equations.</li>
+<li>
+<p>
+Understand the problem. Clearly identify what quantity is to be maximized or minimized. Make a sketch if helpful.
+</p>
+</li>
+<li>
+<p>
+Create equations relevant to the context of the problem, using the information given. (One of these should describe the quantity to be optimized. We'll call this the <em>fundamental equation.</em>)
+</p>
+</li>
+<li>
+<p>
+If the fundamental equation defines the quantity to be optimized as a function of more than one variable, reduce it to a single variable function using substitutions derived from the other equations.
+</p>
+</li>
 </ol>
 
 <p>
@@ -110,9 +122,21 @@ We outline here the basic process of solving these optimization problems.
 <keyidea xml:id="idea_optimizationb">
 <title>Solving Optimization Problems <ndash /> Continued</title>
 <ol>
-<li>Identify the domain of this function, keeping in mind the context of the problem.</li>
-<li>Find the extreme values of this function on the determined domain.</li>
-<li>Identify the values of all relevant quantities of the problem.</li>
+<li>
+<p>
+Identify the domain of this function, keeping in mind the context of the problem.
+</p>
+</li>
+<li>
+<p>
+Find the extreme values of this function on the determined domain.
+</p>
+</li>
+<li>
+<p>
+Identify the values of all relevant quantities of the problem.
+</p>
+</li>
 </ol>
 </keyidea>
 <p>
@@ -131,14 +155,20 @@ We will follow the steps outlined by <xref ref="idea_optimization">Key Idea</xre
 </p>
 
 <ol>
-<li>We are maximizing <em>area</em>. A sketch of the region will help; <xref ref="fig_opt2">Figure</xref> gives two sketches of the proposed enclosed area. A key feature of the sketches is to acknowledge that one side is not fenced. 
+<li>
+<p>
+We are maximizing <em>area</em>. A sketch of the region will help; <xref ref="fig_opt2">Figure</xref> gives two sketches of the proposed enclosed area. A key feature of the sketches is to acknowledge that one side is not fenced. 
 	
 <figure xml:id="fig_opt2" >
 <caption>A sketch of the enclosure in <xref ref="ex_opt2">Example</xref>.</caption>
 <image width="73%" source="images/figopt2a.png" />
 </figure>
+
+</p>
 </li>
-<li>We want to maximize the area; as in the example before,
+<li>
+<p>
+We want to maximize the area; as in the example before,
 <me>
   \text{Area}  = xy.
 </me>
@@ -148,21 +178,38 @@ This is our fundamental equation. This defines area as a function of two variabl
 <me>
   \text{Perimeter}  = 100 = x+2y.
 </me>
-Note how this is different than in our previous example.</li>
-<li>We now reduce the fundamental equation to a single variable. In the perimeter equation, solve for <m>y</m>: <m>y = 50 - x/2</m>. We can now write Area as
+Note how this is different than in our previous example.
+</p>
+</li>
+<li>
+<p>
+We now reduce the fundamental equation to a single variable. In the perimeter equation, solve for <m>y</m>: <m>y = 50 - x/2</m>. We can now write Area as
 <me>
   \text{Area}  = A(x) = x(50-x/2) = 50x - \frac12x^2.
 </me>
-Area is now defined as a function of one variable.</li>
-<li>We want the area to be nonnegative. Since <m>A(x) = x(50-x/2)</m>, we want <m>x\geq 0</m> and <m>50-x/2\geq 0</m>. The latter inequality implies that <m>x\leq100</m>, so <m>0\leq x\leq 100</m>.</li>
-<li>We now find the extreme values. At the endpoints, the minimum is found, giving an area of 0. 
+Area is now defined as a function of one variable.
+</p>
+</li>
+<li>
+<p>
+We want the area to be nonnegative. Since <m>A(x) = x(50-x/2)</m>, we want <m>x\geq 0</m> and <m>50-x/2\geq 0</m>. The latter inequality implies that <m>x\leq100</m>, so <m>0\leq x\leq 100</m>.
+</p>
+</li>
+<li>
+<p>
+We now find the extreme values. At the endpoints, the minimum is found, giving an area of 0. 
 	
 	Find the critical points. We have <m>A'(x) = 50-x</m>; setting this equal to 0 and solving for <m>x</m> returns <m>x=50</m>. This gives an area of
 <me>
   A(50) = 50(25) = 1250.
 </me>
+</p>
 </li>
-<li>We earlier set <m>y = 50-x/2</m>; thus <m>y = 25</m>. Thus our rectangle will have two sides of length 25 and one side of length 50, with a total area of 1250 ft<m>^2</m>.</li>
+<li>
+<p>
+We earlier set <m>y = 50-x/2</m>; thus <m>y = 25</m>. Thus our rectangle will have two sides of length 25 and one side of length 50, with a total area of 1250 ft<m>^2</m>.
+</p>
+</li>
 </ol>
 
 <p>
@@ -374,7 +421,14 @@ Area = 1/4, with sides of length <m>1/\sqrt{2}</m>.
 A rancher has 1000 feet of fencing in which to construct adjacent, equally sized rectangular pens. What dimensions should these pens have to maximize the enclosed area?
 </p>
 <sidebyside>
-<image width="73%" source="images/6f01766f061ecd2075546df5410e42dc889b3633.png" />
+
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}
+\draw [thick](0,0) rectangle (3,2);
+\draw [thick](1.5,0) <ndash /> (1.5,2);
+\end{tikzpicture}]]></latex-image-code>
+</image>
+
 </sidebyside>
 </statement>
 <answer>
@@ -437,7 +491,16 @@ The height and width should be <m>18</m> and the length should be <m>36</m>, giv
 The strength <m>S</m> of a wooden beam is directly proportional to its cross sectional width <m>w</m> and the square of its height <m>h</m>; that is, <m>S = kwh^2</m> for some constant <m>k</m>.
 </p>
 <sidebyside>
-<image width="73%" source="images/1994e43bc4a18a93d6f21fbce28b0f564d38b07d.png" />
+
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}
+\draw [thick](0,0) circle (1cm);
+\draw [thick](-.6,.8) <ndash /> node [pos=.5,right] { \(12\)} (.6,-.8);
+\draw [thick](-.6,-.8) rectangle (.6,.8);
+\draw (.7,0) node { \(h\)} (0,.7) node { \(w\)};
+\end{tikzpicture}]]></latex-image-code>
+</image>
+
 </sidebyside>
 <p>
 Given a circular log with diameter of 12 inches, what sized beam can be cut from the log with maximum strength?

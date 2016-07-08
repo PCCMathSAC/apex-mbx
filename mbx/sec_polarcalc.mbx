@@ -48,13 +48,23 @@ Consider the lima&#xe7;on <m>r=1+2\sin\theta</m> on <m>[0,2\pi]</m>.
 </p>
 
 <ol>
-<li>Find the equations of the tangent and normal lines to the graph at <m>\theta=\pi/4</m>.</li>
-<li>Find where the graph has vertical and horizontal tangent lines.</li>
+<li>
+<p>
+Find the equations of the tangent and normal lines to the graph at <m>\theta=\pi/4</m>.
+</p>
+</li>
+<li>
+<p>
+Find where the graph has vertical and horizontal tangent lines.
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>We start by computing <m>\frac{dy}{dx}</m>. With <m>\fp(\theta) = 2\cos\theta</m>, we have
+<li>
+<p>
+We start by computing <m>\frac{dy}{dx}</m>. With <m>\fp(\theta) = 2\cos\theta</m>, we have
 <md>
   <mrow>  \frac{dy}{dx} \amp = \frac{2\cos\theta\sin\theta + \cos\theta(1+2\sin\theta)}{2\cos^2\theta-\sin\theta(1+2\sin\theta)}</mrow>
   <mrow>  \amp = \frac{\cos\theta(4\sin\theta+1)}{2(\cos^2\theta-\sin^2\theta)-\sin\theta}.</mrow>
@@ -73,8 +83,12 @@ The lima&#xe7;on and the tangent line are graphed in <xref ref="fig_polcalc1">Fi
 <caption>The lima&#xe7;on in <xref ref="ex_polcalc1">Example</xref> with its tangent line at <m>\theta=\pi/4</m> and points of vertical and horizontal tangency.</caption>
 <image width="73%" source="images/figpolcalc1.png" />
 </figure>
-\drawexampleline</li>
-<li><line>To find the horizontal lines of tangency, we find where <m>\frac{dy}{dx}=0</m>; thus we find where the numerator of our equation for <m>\frac{dy}{dx}</m> is 0.
+\drawexampleline
+</p>
+</li>
+<li>
+<p>
+<line>To find the horizontal lines of tangency, we find where <m>\frac{dy}{dx}=0</m>; thus we find where the numerator of our equation for <m>\frac{dy}{dx}</m> is 0.
 <me>
   \cos\theta(4\sin\theta+1)=0\quad \Rightarrow \quad \cos\theta=0 \quad \text{or} \quad 4\sin\theta+1=0.
 </me>
@@ -109,6 +123,7 @@ and
   \sin\theta = \frac{-1-\sqrt{33}}8 \quad \Rightarrow \quad \theta = 4.1446,\ 5.2802 \text{ radians.}
 </me>
 These points are also shown in <xref ref="fig_polcalc1">Figure</xref> with white<ndash />filled dots.</line>
+</p>
 </li>
 </ol>
 
@@ -175,10 +190,16 @@ Consider <xref ref="fig_polararea">Figure</xref> (a) where a region defined by <
 </p>
 
 <p>
-<image width="73%" source="images/7b6f49ba5971dc9565f7bb76271bea7bca17cb9d.png" />
-</p>
 
-<p>
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[x=30pt,y=30pt,thick]
+			\draw (2,0) arc (0:50:2) <ndash /> (0,0);
+			\draw [] (0,0) <ndash /> (2,0) node [pos=.5,below] {\(r\)};
+			\draw [fill=black] (0,0) circle (1pt);
+			
+			\draw (0,0) node [shift={(15pt,8pt)}] {\(\theta\)};
+			\end{tikzpicture}]]></latex-image-code>
+</image>
 \null
 </p>
 </aside>
@@ -468,15 +489,21 @@ Consider the graph of the polar equation <m>r=f(\theta)</m>, where <m>\fp</m> is
 </p>
 
 <ol>
-<li>The surface area of the solid formed by revolving the graph about the initial ray (<m>\theta=0</m>) is:
+<li>
+<p>
+The surface area of the solid formed by revolving the graph about the initial ray (<m>\theta=0</m>) is:
 <me>
   \text{Surface Area}  = 2\pi\int_\alpha^\beta f(\theta)\sin\theta\sqrt{\fp(\theta)^2+f(\theta)^2}\ d\theta.
 </me>
+</p>
 </li>
-<li>The surface area of the solid formed by revolving the graph about the line <m>\theta=\pi/2</m> is:
+<li>
+<p>
+The surface area of the solid formed by revolving the graph about the line <m>\theta=\pi/2</m> is:
 <me>
   \text{Surface Area}  = 2\pi\int_\alpha^\beta f(\theta)\cos\theta\sqrt{\fp(\theta)^2+f(\theta)^2}\ d\theta.
 </me>
+</p>
 </li>
 </ol>
 </keyidea>
@@ -488,18 +515,12 @@ Consider the graph of the polar equation <m>r=f(\theta)</m>, where <m>\fp</m> is
 Find the surface area formed by revolving one petal of the rose curve <m>r=\cos(2\theta)</m> about its central axis (see <xref ref="fig_polcalc8">Figure</xref>).
 </p>
 </statement>
-<solution>
-<p>
-\begin{figure}
-\begin{tabular}c
-<image width="73%" source="images/figpolcalc8.png" />
-</p>
-
-<p>
-(a)
-</p>
-<figure xml:id="fig_polcalc8" >
+<solution><figure xml:id="fig_polcalc8" >
 <caption>Finding the surface area of a rose<ndash />curve petal that is revolved around its central axis.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figpolcalc8.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=pageinvisible,
 3Droll=0,
 3Dortho=0.009,
@@ -507,9 +528,10 @@ Find the surface area formed by revolving one petal of the rose curve <m>r=\cos(
 3Dcoo=65.85308837890625 6.341495513916016 17.98039436340332,
 3Droo=85,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpolcalc8a.png" />
-(b)<br />
-\end{tabular}
+<image width="125%" source="images/figpolcalc8a.png" /></cell></row>
+<row><cell>(b)</cell></row>
+<row><cell></cell></row>
+</tabular>
 </figure>
 <p>
 We choose, as implied by the figure, to revolve the portion of the curve that lies on <m>[0,\pi/4]</m> about the initial ray. Using <xref ref="idea_surface_area_polar">Key Idea</xref> and the fact that <m>\fp(\theta) = -2\sin(2\theta)</m>, we have
@@ -548,7 +570,7 @@ Using <m>x=r\cos\theta</m> and <m>y=r\sin\theta</m>, we can write <m>x=f(\theta)
 <exercise>
 <statement>
 <p>
-With rectangular coordinates, it is natural to approximate area with <u></u>; with polar coordinates, it is natural to approximate area with <u></u>.
+With rectangular coordinates, it is natural to approximate area with <fillin />; with polar coordinates, it is natural to approximate area with <fillin />.
 </p>
 </statement>
 <answer>
@@ -579,7 +601,11 @@ In the following exercises, find:
 <answer>
 <ol>
 <li><m>\frac{dy}{dx} = -\cot\theta</m></li>
-<li>tangent line: <m>y=-(x-\sqrt{2}/2)+\sqrt{2}/2</m>; normal line: <m>y=x</m></li>
+<li>
+<p>
+tangent line: <m>y=-(x-\sqrt{2}/2)+\sqrt{2}/2</m>; normal line: <m>y=x</m>
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -593,7 +619,11 @@ In the following exercises, find:
 <answer>
 <ol>
 <li><m>\frac{dy}{dx} = 1/2(\tan \theta-\cot\theta)</m></li>
-<li>tangent line: <m>y=1/2</m>; normal line: <m>x=1/2</m></li>
+<li>
+<p>
+tangent line: <m>y=1/2</m>; normal line: <m>x=1/2</m>
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -607,7 +637,11 @@ In the following exercises, find:
 <answer>
 <ol>
 <li><m>\frac{dy}{dx} = \frac{\cos\theta(1+2\sin\theta)}{\cos^2\theta-\sin\theta(1+\sin\theta)}</m></li>
-<li>tangent line: <m>x=3\sqrt{3}/4</m>; normal line: <m>y=3/4</m></li>
+<li>
+<p>
+tangent line: <m>x=3\sqrt{3}/4</m>; normal line: <m>y=3/4</m>
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -622,7 +656,11 @@ In the following exercises, find:
 <ol>
 <li><m>\frac{dy}{dx} = \frac{3 \sin ^2(t)+(1-3 \cos (t)) \cos (t)}{3 \sin (t) \cos
    (t)-\sin (t) (1-3 \cos (t))}</m></li>
-<li>tangent line: <m>y=\frac{1}{1+3\sqrt{2}}(x+(1/\sqrt{2}+3/2))+1/\sqrt{2}+3/2 \approx y=0.19(x+2.21)+2.21</m>; normal line: <m>y=-(1+3\sqrt{2})(x+(1/\sqrt{2}+3/2))+1/\sqrt{2}+3/2</m></li>
+<li>
+<p>
+tangent line: <m>y=\frac{1}{1+3\sqrt{2}}(x+(1/\sqrt{2}+3/2))+1/\sqrt{2}+3/2 \approx y=0.19(x+2.21)+2.21</m>; normal line: <m>y=-(1+3\sqrt{2})(x+(1/\sqrt{2}+3/2))+1/\sqrt{2}+3/2</m>
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -636,7 +674,11 @@ In the following exercises, find:
 <answer>
 <ol>
 <li><m>\frac{dy}{dx} = \frac{\theta\cos\theta+\sin\theta}{\cos\theta-\theta\sin\theta}</m></li>
-<li>tangent line: <m>y=-2/\pi x+\pi/2</m>; normal line: <m>y=\pi/2x+\pi/2</m></li>
+<li>
+<p>
+tangent line: <m>y=-2/\pi x+\pi/2</m>; normal line: <m>y=\pi/2x+\pi/2</m>
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -650,7 +692,11 @@ In the following exercises, find:
 <answer>
 <ol>
 <li><m>\frac{dy}{dx} = \frac{\cos\theta\cos(3\theta)-3\sin\theta\sin(3\theta)}{-\cos(3\theta)\sin\theta-3\cos\theta\sin(3\theta)}</m></li>
-<li>tangent line: <m>y=x/\sqrt{3}</m>; normal line: <m>y=-\sqrt{3}x</m></li>
+<li>
+<p>
+tangent line: <m>y=x/\sqrt{3}</m>; normal line: <m>y=-\sqrt{3}x</m>
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -665,7 +711,11 @@ In the following exercises, find:
 <ol>
 <li><m>\frac{dy}{dx} = \frac{4 \sin (t) \cos (4 t)+\sin (4 t) \cos (t)}{4 \cos (t) \cos
    (4 t)-\sin (t) \sin (4 t)}</m></li>
-<li>tangent line: <m>y=5\sqrt{3}(x+\sqrt{3}/4)-3/4</m>; normal line: <m>y=-1/5\sqrt{3}(x+\sqrt{3}/4)-3/4</m></li>
+<li>
+<p>
+tangent line: <m>y=5\sqrt{3}(x+\sqrt{3}/4)-3/4</m>; normal line: <m>y=-1/5\sqrt{3}(x+\sqrt{3}/4)-3/4</m>
+</p>
+</li>
 </ol>
 </answer>
 </exercise>
@@ -679,7 +729,11 @@ In the following exercises, find:
 <answer>
 <ol>
 <li><m>\frac{dy}{dx} = 1</m></li>
-<li>tangent line: <m>y=x+1</m>; normal line: <m>y=-x-1</m></li>
+<li>
+<p>
+tangent line: <m>y=x+1</m>; normal line: <m>y=-x-1</m>
+</p>
+</li>
 </ol>
 </answer>
 </exercise>

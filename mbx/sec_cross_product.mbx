@@ -65,15 +65,39 @@ Since both dot products are zero, <m>\crossp uv</m> is indeed orthogonal to both
 <p>
 A convenient method of computing the cross product starts with forming a particular <m>3\times 3</m> <em>matrix</em>, or rectangular array. The first row comprises the standard unit vectors <m>\vec i</m>, <m>\vec j</m>, and <m>\vec k</m>. The second and third rows are the vectors <m>\vec u</m> and <m>\vec v</m>, respectively. Using <m>\vec u</m> and <m>\vec v</m> from <xref ref="ex_crossp1">Example</xref>, we begin with:
 </p>
-<image width="73%" source="images/68d9ee080e3c4c8086d0f075efc42501c9f4a3cc.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}
+ [baseline=-3pt,>=stealth]
+\node at (0,0) {\(\begin{array}{ccc} \veci\amp \vecj\amp \veck \\  2\amp -1\amp 4\\3\amp 2\amp 5
+\end{array} \)};
+\end{tikzpicture}]]></latex-image-code>
+</image>
 <p>
 Now repeat the first two columns after the original three:
 </p>
-<image width="73%" source="images/0baa5bb98d070b2270b175d0ae1385f636d63753.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}
+ [baseline=-3pt,>=stealth]
+\node at (0,0) {\(\begin{array}{ccccc} \veci\amp \vecj\amp \veck\amp \veci\amp \vecj \\  2\amp -1\amp 4\amp 2\amp -1\\3\amp 2\amp 5\amp 3\amp 2
+\end{array} \)};
+\end{tikzpicture}]]></latex-image-code>
+</image>
 <p>
 This gives three full <q>upper left to lower right</q> diagonals, and three full <q>upper right to lower left</q> diagonals, as shown. Compute the products along each diagonal, then add the products on the right and subtract the products on the left:
 </p>
-<image width="73%" source="images/0363716c768681f550eef40540af8269bd37ee80.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}
+ [baseline=-3pt,>=stealth]
+\node at (0,0) {\(\begin{array}{ccccc} \ \veci\ \amp \ \vecj\ \amp \ \veck\ \amp \ \veci\ \amp \ \vecj\ \\  2\amp -1\amp 4\amp 2\amp -1\\3\amp 2\amp 5\amp 3\amp 2
+\end{array} \)};
+\draw[->,  thin] (-1.3,.4) <ndash /> (.5,-.8) node[below right] {\(-5\veci\)};
+\draw[->,  thin] (-.7,.4) <ndash /> (1.3,-.8) node[below right ] {12\vecj};
+\draw[->, thin] (0,.4) <ndash /> (2,-.8) node[below right] {4\veck};
+\draw[->, thin] (0,.4) <ndash /> (-2,-.8) node[below left] {\(-3\veck\)};
+\draw[->, thin] (.7,.4) <ndash /> (-1.3,-.8) node[below left ] {8\veci};
+\draw[->, thin] (1.3,.4) <ndash /> (-.5,-.8) node[below left] {10\vecj};
+\end{tikzpicture}]]></latex-image-code>
+</image>
 <me>
   \crossp uv = \big(-5\veci+12\vecj+4\veck\,\big) - \big(-3\veck+8\veci+10\vecj\,\big) = -13\veci+2\vecj+7\veck = \la -13,2,7\ra.
 </me>
@@ -138,23 +162,45 @@ Let <m>\vecu</m>, <m>\vecv</m> and <m>\vecw</m> be vectors in <m>\mathbb{R}^3</m
 </p>
 
 <ol>
-<li>\text{<m>\crossp uv = -(\crossp vu)</m>} Anticommutative Property</li>
 <li>
+<p>
+\text{<m>\crossp uv = -(\crossp vu)</m>} Anticommutative Property
+</p>
+</li>
+<li>
+<p>
+</p>
+
 <ol>
-<li>\text{<m>(\vec u+\vec v)\times \vecw = \crossp uw+\crossp vw</m>} Distributive Properties</li>
+<li>
+<p>
+\text{<m>(\vec u+\vec v)\times \vecw = \crossp uw+\crossp vw</m>} Distributive Properties
+</p>
+</li>
 <li><m>\vec u \times (\vec v+\vec w) = \crossp uv+\crossp uw</m></li>
 </ol>
 </li>
 <li><m>c(\crossp uv) = (c\vecu) \times \vec v = \vecu \times (c\vecv)</m></li>
 <li>
+<p>
+</p>
+
 <ol>
-<li>\text{<m>(\crossp uv)\cdot \vecu = 0</m>} Orthogonality Properties</li>
+<li>
+<p>
+\text{<m>(\crossp uv)\cdot \vecu = 0</m>} Orthogonality Properties
+</p>
+</li>
 <li><m>(\crossp uv)\cdot \vecv = 0</m></li>
 </ol>
 </li>
 <li><m>\crossp uu = \vec 0</m></li>
 <li><m>\crossp u0 = \vec 0</m></li>
-<li>\text{<m>\vecu \cdot (\vecv\times\vecw) = (\crossp uv)\cdot \vecw</m>} Triple Scalar Product</li>
+<li>
+<p>
+\text{<m>\vecu \cdot (\vecv\times\vecw) = (\crossp uv)\cdot \vecw</m>} Triple Scalar Product
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -296,21 +342,28 @@ We illustrate using Equation <xref ref="eq_crossp1" /> in the following example.
 <title>Finding the area of a parallelogram</title>
 <statement>
 <ol>
-<li>Find the area of the parallelogram defined by the vectors <m>\vecu = \la 2,1\ra</m> and <m>\vecv = \la 1,3\ra</m>.</li>
-<li>Verify that the points <m>A = (1,1,1)</m>, <m>B = (2,3,2)</m>, <m>C = (4,5,3)</m> and <m>D = (3,3,2)</m> are the vertices of a parallelogram. Find the area of the parallelogram.</li>
+<li>
+<p>
+Find the area of the parallelogram defined by the vectors <m>\vecu = \la 2,1\ra</m> and <m>\vecv = \la 1,3\ra</m>.
+</p>
+</li>
+<li>
+<p>
+Verify that the points <m>A = (1,1,1)</m>, <m>B = (2,3,2)</m>, <m>C = (4,5,3)</m> and <m>D = (3,3,2)</m> are the vertices of a parallelogram. Find the area of the parallelogram.
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li><line><xref ref="fig_crossp4">Figure</xref>(a) sketches the parallelogram defined by the vectors <m>\vec u</m> and <m>\vec v</m>. We have a slight problem in that our vectors exist in <m>\mathbb{R}^2</m>, not <m>\mathbb{R}^3</m>, and the cross product is only defined on vectors in <m>\mathbb{R}^3</m>. We skirt this issue by viewing <m>\vec u</m> and <m>\vecv</m> as vectors in the <m>x-y</m> plane of <m>\mathbb{R}^3</m>, and rewrite them as <m>\vec u = \la 2,1,0\ra</m> and <m>\vecv =\la 1,3,0\ra</m>. We can now compute the cross product. 
+<li><xref ref="fig_crossp4">Figure</xref>(a) sketches the parallelogram defined by the vectors <m>\vec u</m> and <m>\vec v</m>. We have a slight problem in that our vectors exist in <m>\mathbb{R}^2</m>, not <m>\mathbb{R}^3</m>, and the cross product is only defined on vectors in <m>\mathbb{R}^3</m>. We skirt this issue by viewing <m>\vec u</m> and <m>\vecv</m> as vectors in the <m>x-y</m> plane of <m>\mathbb{R}^3</m>, and rewrite them as <m>\vec u = \la 2,1,0\ra</m> and <m>\vecv =\la 1,3,0\ra</m>. We can now compute the cross product. 
 	It is easy to show that <m>\crossp uv = \la 0,0,5\ra</m>; therefore the area of the parallelogram is <m>A = \norm{\crossp uv} = 5</m>.
-	\begin{figure}
-
-	\begin{tabular}c
-	<image width="73%" source="images/figcrossp4b.png" />
-(a)</line>
-<line><figure xml:id="fig_crossp4" >
+	<figure xml:id="fig_crossp4" >
 <caption>Sketching the parallelograms in <xref ref="ex_crossp4">Example</xref>.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figcrossp4b.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004,
@@ -318,16 +371,18 @@ We illustrate using Equation <xref ref="eq_crossp1" /> in the following example.
 3Dcoo=61 60 63,
 3Droo=250,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figcrossp4a.png" />
-(b)
-	\end{tabular}
+<image width="125%" source="images/figcrossp4a.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
-</line>
 </li>
-<li>To show that the quadrilateral <m>ABCD</m> is a parallelogram (shown in <xref ref="fig_crossp4">Figure</xref>(b)), we need to show that the opposite sides are parallel. We can quickly show that <m>\vv{AB} =\vv{DC} = \la 1,2,1\ra</m> and <m>\vv{BC} = \vv{AD} = \la 2,2,1\ra</m>. We find the area by computing the magnitude of the cross product of <m>\vv{AB}</m> and <m>\vv{BC}</m>:
+<li>
+<p>
+To show that the quadrilateral <m>ABCD</m> is a parallelogram (shown in <xref ref="fig_crossp4">Figure</xref>(b)), we need to show that the opposite sides are parallel. We can quickly show that <m>\vv{AB} =\vv{DC} = \la 1,2,1\ra</m> and <m>\vv{BC} = \vv{AD} = \la 2,2,1\ra</m>. We find the area by computing the magnitude of the cross product of <m>\vv{AB}</m> and <m>\vv{BC}</m>:
 <me>
   \vv{AB} \times \vv{BC} = \la 0,1,-2\ra \quad \Rightarrow \quad \norm{\vv{AB}\times\vv{BC}} = \sqrt{5} \approx 2.236.
 </me>
+</p>
 </li>
 </ol>
 
@@ -466,13 +521,23 @@ A lever of length 2ft makes an angle with the horizontal of <m>45^\circ</m>. Fin
 <image width="73%" source="images/figcrossp7.png" />
 </figure>
 <ol>
-<li>the force is perpendicular to the lever, and</li>
-<li>the force makes an angle of <m>60^\circ</m> with the lever, as shown in <xref ref="fig_crossp7">Figure</xref>.</li>
+<li>
+<p>
+the force is perpendicular to the lever, and
+</p>
+</li>
+<li>
+<p>
+the force makes an angle of <m>60^\circ</m> with the lever, as shown in <xref ref="fig_crossp7">Figure</xref>.
+</p>
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>We start by determining vectors for the force and lever arm. Since the lever arm makes a <m>45^\circ</m> angle with the horizontal and is 2ft long, we can state that <m>\vec \ell = 2\la \cos 45^\circ,\sin 45^\circ\ra = \la \sqrt2,\sqrt2\ra.</m>
+<li>
+<p>
+We start by determining vectors for the force and lever arm. Since the lever arm makes a <m>45^\circ</m> angle with the horizontal and is 2ft long, we can state that <m>\vec \ell = 2\la \cos 45^\circ,\sin 45^\circ\ra = \la \sqrt2,\sqrt2\ra.</m>
 	
 	Since the force vector is perpendicular to the lever arm (as seen in the left hand side of <xref ref="fig_crossp7">Figure</xref>), we can conclude it is making an angle of <m>-45^\circ</m> with the horizontal. As it has a magnitude of 10lb, we can state <m>\vec F = 10\la \cos (-45^\circ), \sin(-45^\circ)\ra = \la 5\sqrt2,-5\sqrt2\ra.</m>
 	
@@ -484,8 +549,12 @@ A lever of length 2ft makes an angle with the horizontal of <m>45^\circ</m>. Fin
 </md>
 This clearly has a magnitude of 20 ft-lb.
 	
-	We can view the force and lever arm vectors as lying <q>on the page</q>; our computation of <m>\vec\tau</m> shows that the torque goes <q>into the page.</q> This follows the Right Hand Rule of the cross product, and it also matches well with the example of the wrench turning the bolt. Turning a bolt clockwise moves it in.</li>
-<li>Our lever arm can still be represented by <m>\vec \ell = \la \sqrt2,\sqrt2\ra</m>. As our force vector makes a <m>60^\circ</m> angle with <m>\vec \ell</m>, we can see (referencing the right hand side of the figure) that <m>\vec F</m> makes a <m>-15^\circ</m> angle with the horizontal. Thus
+	We can view the force and lever arm vectors as lying <q>on the page</q>; our computation of <m>\vec\tau</m> shows that the torque goes <q>into the page.</q> This follows the Right Hand Rule of the cross product, and it also matches well with the example of the wrench turning the bolt. Turning a bolt clockwise moves it in.
+</p>
+</li>
+<li>
+<p>
+Our lever arm can still be represented by <m>\vec \ell = \la \sqrt2,\sqrt2\ra</m>. As our force vector makes a <m>60^\circ</m> angle with <m>\vec \ell</m>, we can see (referencing the right hand side of the figure) that <m>\vec F</m> makes a <m>-15^\circ</m> angle with the horizontal. Thus
 <md>
   <mrow>  \vec F = 10\la \cos-15^\circ,\sin-15^\circ\ra \amp = \la \frac{5(1+\sqrt3)}{\sqrt2},-\frac{5(1+\sqrt3)}{\sqrt2}\ra</mrow>
   <mrow>  \amp \approx \la 9.659,-2.588\ra.</mrow>
@@ -497,7 +566,9 @@ We again make the third component 0 and take the cross product to find the torqu
   <mrow>  \amp = \la 0,0,-10\sqrt3\ra</mrow>
   <mrow>  \amp \approx \la 0,0,-17.321\ra.</mrow>
 </md>
-As one might expect, when the force and lever arm vectors <em>are</em> orthogonal, the magnitude of force is greater than when the vectors <em>are not</em> orthogonal.</li>
+As one might expect, when the force and lever arm vectors <em>are</em> orthogonal, the magnitude of force is greater than when the vectors <em>are not</em> orthogonal.
+</p>
+</li>
 </ol>
 
 <p>
@@ -516,7 +587,7 @@ While the cross product has a variety of applications (as noted in this chapter)
 <exercise>
 <statement>
 <p>
-The cross product of two vectors is a <u></u>, not a scalar.
+The cross product of two vectors is a <fillin />, not a scalar.
 </p>
 </statement>
 <answer>
@@ -533,7 +604,7 @@ One can visualize the direction of <m>\vec u\times\vec v</m> using the
 </p>
 
 <p>
-<u></u> <u></u> <u></u>.
+<fillin /> <fillin /> <fillin />.
 </p>
 </statement>
 <answer>
@@ -572,7 +643,7 @@ T
 <exercise>
 <statement>
 <p>
-<u></u> is a measure of the turning force applied to an object.
+<fillin /> is a measure of the turning force applied to an object.
 </p>
 </statement>
 <answer>

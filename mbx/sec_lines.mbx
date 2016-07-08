@@ -40,7 +40,21 @@ The figure illustrates how every point on the line can be obtained by starting w
 <p>
 In many ways, this is <em>not</em> a new concept. Compare Equation <xref ref="eq_lines1" /> to the familiar <q><m>y=mx+b</m></q> equation of a line:
 </p>
-<image width="73%" source="images/90ce3a8ee9e2649893eed6017b63c956eaebc7ca.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[>=stealth]
+	\draw (0,0) node (L) { \(y\ =\ b\ +\ m\,x\)};
+	\draw (5,0) node (R) { \(\vec \ell(t)\ =\ \vec p\ +\ t\,\vec d\)};
+\node (A) at (1,1.5) [align=center,] {Starting<br /> Point};
+\node (B) at (4,1.5) [align=center] {Direction};
+\node (C) at (2.5,-1.5) [align=center] {How Far To<br />  Go In That <br />Direction};
+\draw [->,thick] (A) <ndash /> (\((R)+(-1pt,8pt)\));	
+\draw [->,thick] (A) <ndash /> (\((L)+(-0pt,10pt)\));
+\draw [->,thick] (B) <ndash /> (.9,.2);
+\draw [->,thick] (B) <ndash /> (\((R)+(30pt,7pt)\));
+\draw [->,thick] (C) <ndash /> (1.3,-.15);
+\draw [->,thick] (C) <ndash /> (\((R)+(25pt,-7pt)\));
+\end{tikzpicture}]]></latex-image-code>
+</image>
 <p>
 The equations exhibit the same structure: they give a starting point, define a direction, and state how far in that direction to travel.
 </p>
@@ -87,20 +101,29 @@ Consider the line in space that passes through <m>\vec p = \la x_0,y_0,z_0\ra</m
 </p>
 
 <ol>
-<li>The <b>vector equation</b> of the line is
+<li>
+<p>
+The <b>vector equation</b> of the line is
 <me>
   \vec \ell(t) = \vec p+t\vec d.
 </me>
+</p>
 </li>
-<li>The <b>parametric equations</b> of the line are
+<li>
+<p>
+The <b>parametric equations</b> of the line are
 <me>
   x = x_0+at, \quad y=y_0+bt, \quad z = z_0+ct .
 </me>
+</p>
 </li>
-<li>The <b>symmetric equations</b> of the line are
+<li>
+<p>
+The <b>symmetric equations</b> of the line are
 <me>
   \frac{x-x_0}{a} = \frac{y-y_0}{b}=\frac{z-z_0}{c}.
 </me>
+</p>
 </li>
 </ol>
 </statement>
@@ -119,16 +142,26 @@ We identify the point <m>P=(2,3,1)</m> with the vector <m>\vec p =\la 2,3,1\ra</
 </p>
 
 <ul>
-<li>the vector equation of the line is <m>\vec\ell(t) = \la 2,3,1\ra + t\la -1,1,2\ra</m>;</li>
-<li>the parametric equations of the line are
+<li>
+<p>
+the vector equation of the line is <m>\vec\ell(t) = \la 2,3,1\ra + t\la -1,1,2\ra</m>;
+</p>
+</li>
+<li>
+<p>
+the parametric equations of the line are
 <me>
   x = 2-t,\quad y = 3+t,\quad z = 1+2t; \text{ and}
 </me>
+</p>
 </li>
-<li>the symmetric equations of the line are
+<li>
+<p>
+the symmetric equations of the line are
 <me>
   \frac{x-2}{-1}=\frac{y-3}{1} = \frac{z-1}{2}.
 </me>
+</p>
 </li>
 </ul>
 <figure xml:id="fig_lines1" >
@@ -391,16 +424,22 @@ The following Key Idea restates these two distance formulas.
 <keyidea xml:id="idea_line_distance">
 <title>Distances to Lines</title>
 <ol>
-<li>Let <m>P</m> be a point on a line <m>\ell</m> that is parallel to <m>\vec d</m>. The distance <m>h</m> from a point <m>Q</m> to the line <m>\ell</m> is:
+<li>
+<p>
+Let <m>P</m> be a point on a line <m>\ell</m> that is parallel to <m>\vec d</m>. The distance <m>h</m> from a point <m>Q</m> to the line <m>\ell</m> is:
 	<index><main>distance</main><sub>between point and line</sub></index><index><main>distance</main><sub>between lines</sub></index><index><main>lines</main><sub>distances between</sub></index>
 <me>
   h =\frac{\norm{\vv{PQ}\times \vec d}}{\vnorm{d}}.
 </me>
+</p>
 </li>
-<li>Let <m>P_1</m> be a point on line <m>\ell_1</m> that is parallel to <m>\vec d_1</m>, and let <m>P_2</m> be a point on line <m>\ell_2</m> parallel to <m>\vec d_2</m>, and let <m>\vec c = \vec d_1\times \vec d_2</m>, where lines <m>\ell_1</m> and <m>\ell_2</m> are not parallel. The distance <m>h</m> between the two lines is:
+<li>
+<p>
+Let <m>P_1</m> be a point on line <m>\ell_1</m> that is parallel to <m>\vec d_1</m>, and let <m>P_2</m> be a point on line <m>\ell_2</m> parallel to <m>\vec d_2</m>, and let <m>\vec c = \vec d_1\times \vec d_2</m>, where lines <m>\ell_1</m> and <m>\ell_2</m> are not parallel. The distance <m>h</m> between the two lines is:
 <me>
   h=\frac{|\vv{P_1P_2}\cdot \vec c|}{\vnorm c}.
 </me>
+</p>
 </li>
 </ol>
 </keyidea>
@@ -491,7 +530,7 @@ A point on the line and the direction of the line.
 <exercise>
 <statement>
 <p>
-Two distinct lines in the plane can intersect or be <u></u>.
+Two distinct lines in the plane can intersect or be <fillin />.
 </p>
 </statement>
 <answer>
@@ -504,7 +543,7 @@ parallel
 <exercise>
 <statement>
 <p>
-Two distinct lines in space can intersect, be <u></u> or be <u></u>.
+Two distinct lines in space can intersect, be <fillin /> or be <fillin />.
 </p>
 </statement>
 <answer>
@@ -1032,16 +1071,40 @@ Let lines <m>\ell_1(t)</m> and <m>\ell_2(t)</m> be parallel.
 </p>
 
 <ol>
-<li>Show why the distance formula for distance between lines cannot be used as stated to find the distance between the lines.</li>
-<li>Show why letting <m>c=(\vv{P_1P_2}\times\vec d_2)\times\vec d_2</m> allows one to the use the formula.</li>
-<li>Show how one can use the formula for the distance between a point and a line to find the distance between parallel lines.</li>
+<li>
+<p>
+Show why the distance formula for distance between lines cannot be used as stated to find the distance between the lines.
+</p>
+</li>
+<li>
+<p>
+Show why letting <m>c=(\vv{P_1P_2}\times\vec d_2)\times\vec d_2</m> allows one to the use the formula.
+</p>
+</li>
+<li>
+<p>
+Show how one can use the formula for the distance between a point and a line to find the distance between parallel lines.
+</p>
+</li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>The distance formula cannot be used because since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel, <m>\vec c</m> is <m>\vec 0</m> and we cannot divide by <m>\vnorm{0}</m>.</li>
-<li>Since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel, <m>\vv{P_1P_2}</m> lies in the plane formed by the two lines. Thus <m>\vv{P_1P_2}\times\vec d_2</m> is orthogonal to this plane, and <m>\vec c=(\vv{P_1P_2}\times\vec d_2)\times \vec d_2</m> is parallel to the plane, but still orthogonal to both <m>\vec d_1</m> and <m>\vec d_2</m>. We desire the length of the projection of <m>\vv{P_1P_2}</m> onto <m>\vec c</m>, which is what the formula provides.</li>
-<li>Since the lines are parallel, one can measure the distance between the lines at any location on either line (just as to find the distance between straight railroad tracks, one can use a measuring tape anywhere along the track, not just at one specific place.) Let <m>P=P_1</m> and <m>Q=P_2</m> as given by the equations of the lines, and apply the formula for distance between a point and a line.</li>
+<li>
+<p>
+The distance formula cannot be used because since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel, <m>\vec c</m> is <m>\vec 0</m> and we cannot divide by <m>\vnorm{0}</m>.
+</p>
+</li>
+<li>
+<p>
+Since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel, <m>\vv{P_1P_2}</m> lies in the plane formed by the two lines. Thus <m>\vv{P_1P_2}\times\vec d_2</m> is orthogonal to this plane, and <m>\vec c=(\vv{P_1P_2}\times\vec d_2)\times \vec d_2</m> is parallel to the plane, but still orthogonal to both <m>\vec d_1</m> and <m>\vec d_2</m>. We desire the length of the projection of <m>\vv{P_1P_2}</m> onto <m>\vec c</m>, which is what the formula provides.
+</p>
+</li>
+<li>
+<p>
+Since the lines are parallel, one can measure the distance between the lines at any location on either line (just as to find the distance between straight railroad tracks, one can use a measuring tape anywhere along the track, not just at one specific place.) Let <m>P=P_1</m> and <m>Q=P_2</m> as given by the equations of the lines, and apply the formula for distance between a point and a line.
+</p>
+</li>
 </ol>
 </answer>
 </exercise>

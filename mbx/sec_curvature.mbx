@@ -228,20 +228,29 @@ Let <m>C</m> be a smooth curve on an open interval <m>I</m> in the plane or in s
 </p>
 
 <ol>
-<li>If <m>C</m> is defined by <m>y=f(x)</m>, then
+<li>
+<p>
+If <m>C</m> is defined by <m>y=f(x)</m>, then
 <me>
   \kappa = \frac{|\fp'(x)|}{\Big(1+\big(\fp(x)\big)^2\Big)^{3/2}}.
 </me>
+</p>
 </li>
-<li>If <m>C</m> is defined as a vector<ndash />valued function in the plane, <m>\vec r(t) = \la x(t), y(t)\ra</m>, then
+<li>
+<p>
+If <m>C</m> is defined as a vector<ndash />valued function in the plane, <m>\vec r(t) = \la x(t), y(t)\ra</m>, then
 <me>
   \kappa = \frac{|x\primeskip'y\primeskip''-x\primeskip''y\primeskip'|}{\big((x\primeskip')^2+(y\primeskip')^2\big)^{3/2}}.
 </me>
+</p>
 </li>
-<li>If <m>C</m> is defined in space by a vector<ndash />valued function <m>\vec r(t)</m>, then
+<li>
+<p>
+If <m>C</m> is defined in space by a vector<ndash />valued function <m>\vec r(t)</m>, then
 <me>
   \kappa = \frac{\norm{\vec T\,'(t)}}{\norm{\vrp(t)}} = \frac{\norm{\vrp(t)\times\vrp'(t)}}{\norm{\vrp(t)}^3} = \frac{\vec a(t)\cdot \vec N(t)}{\norm{\vec v(t)}^2}.
 </me>
+</p>
 </li>
 </ol>
 </statement>
@@ -286,10 +295,26 @@ Let a point <m>P</m> on a smooth curve <m>C</m> be given, and let <m>\kappa</m> 
 </p>
 
 <ul>
-<li>passes through <m>P</m>,</li>
-<li>lies on the concave side of <m>C</m>,</li>
-<li>has a common tangent line as <m>C</m> at <m>P</m> and</li>
-<li>has radius <m>r=1/\kappa</m> (hence has curvature <m>\kappa</m>)</li>
+<li>
+<p>
+passes through <m>P</m>,
+</p>
+</li>
+<li>
+<p>
+lies on the concave side of <m>C</m>,
+</p>
+</li>
+<li>
+<p>
+has a common tangent line as <m>C</m> at <m>P</m> and
+</p>
+</li>
+<li>
+<p>
+has radius <m>r=1/\kappa</m> (hence has curvature <m>\kappa</m>)
+</p>
+</li>
 </ul>
 
 <p>
@@ -341,18 +366,12 @@ We use the third formula in <xref ref="thm_curvature_formulas">Theorem</xref> as
   \vrp(t) =\la 1,2t,6t^2\ra,\quad \vrp'(t) = \la 0,2,12t\ra,\quad \text{and} \quad \vrp(t)\times \vrp'(t) = \la 12t^2,-12t,2\ra.
 </me>
 </p>
-
-<p>
-\begin{figure}
-\begin{tabular}c
-<image width="73%" source="images/figcurvature4a.png" />
-</p>
-
-<p>
-(a)
-</p>
 <figure xml:id="fig_curvature4" >
 <caption>Understanding the curvature of a curve in space.</caption>
+<tabular>
+<row><cell><image width="73%" source="images/figcurvature4a.png" /></cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>\begin{figure}
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004910729825496674,
@@ -360,9 +379,9 @@ We use the third formula in <xref ref="thm_curvature_formulas">Theorem</xref> as
 3Dcoo=-0.0000029802322387695312 -0.0000029802322387695312 -0.0000014901161193847656,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figcurvature4.png" />
-(b)
-\end{tabular}
+<image width="125%" source="images/figcurvature4.png" /></cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
 </figure>
 <p>
 Thus
@@ -486,7 +505,7 @@ Using Equation <xref ref="eq_curvature_an" />, we can compute the acceleration n
   <mrow>  \amp = 8.07\text{ft/s} ^2.</mrow>
 </md>
 <p>
-Note that each acceleration is similar; this is by design. Considering the classic <q>Force <m>=</m> mass <m>\times</m> acceleration</q> formula, this acceleration must be kept small in order for the tires of a vehicle to keep a <q>grip</q> on the road. If one travels on a turn of radius 310ft at a rate of 50mph, the acceleration is double, at 17.35ft/s<m>^2</m>. If the acceleration is too high, the frictional force created by the tires may not be enough to keep the car from sliding. Civil engineers routinely compute a <q>safe</q> design speed, then subtract 5-10mph to create the posted speed limit for additional safety.
+Note that each acceleration is similar; this is by design. Considering the classic <q>Force <m>=</m> mass &#215; acceleration</q> formula, this acceleration must be kept small in order for the tires of a vehicle to keep a <q>grip</q> on the road. If one travels on a turn of radius 310ft at a rate of 50mph, the acceleration is double, at 17.35ft/s<m>^2</m>. If the acceleration is too high, the frictional force created by the tires may not be enough to keep the car from sliding. Civil engineers routinely compute a <q>safe</q> design speed, then subtract 5-10mph to create the posted speed limit for additional safety.
 </p>
 </solution>
 </example>
@@ -501,7 +520,7 @@ We end this chapter with a reflection on what we've covered. We started with vec
 <exercise>
 <statement>
 <p>
-It is common to describe position in terms of both <u></u> and/or <u></u>.
+It is common to describe position in terms of both <fillin /> and/or <fillin />.
 </p>
 </statement>
 <answer>
@@ -514,7 +533,7 @@ time and/or distance
 <exercise>
 <statement>
 <p>
-A measure of the <q>curviness</q> of a curve is <u></u>.
+A measure of the <q>curviness</q> of a curve is <fillin />.
 </p>
 </statement>
 <answer>
@@ -553,7 +572,7 @@ Answers will vary; they should mention the circle is tangent to the curve and ha
 <exercise>
 <statement>
 <p>
-Complete the identity: <m>\vec T\,'(s) = \underline{\hskip .5in}\vec N(s)</m>.
+Complete the identity: <m>\vec T\,'(s) = \lt fillin />\vec N(s)</m>.
 </p>
 </statement>
 <answer>

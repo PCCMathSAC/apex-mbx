@@ -32,8 +32,16 @@ When we defined the definite integral <m>\ds\int_a^b f(x)\ dx</m>, we made two s
 </p>
 
 <ol>
-<li>The interval over which we integrated, <m>[a,b]</m>, was a finite interval, and</li>
-<li>The function <m>f(x)</m> was continuous on <m>[a,b]</m> (ensuring that the range of <m>f</m> was finite).</li>
+<li>
+<p>
+The interval over which we integrated, <m>[a,b]</m>, was a finite interval, and
+</p>
+</li>
+<li>
+<p>
+The function <m>f(x)</m> was continuous on <m>[a,b]</m> (ensuring that the range of <m>f</m> was finite).
+</p>
+</li>
 </ol>
 
 <p>
@@ -48,20 +56,29 @@ In this section we consider integrals where one or both of the above conditions 
 <title>\parbox[t]{210pt}{Improper Integrals with Infinite Bounds; Converge, Diverge}</title>
 <statement>
 <ol>
-<li>Let <m>f</m> be a continuous function on <m>[a,\infty)</m>. Define <index><main>integration</main><sub>improper</sub></index><index><main>improper integration</main></index><index><main>convergence</main><sub>of improper int.</sub></index><index><main>divergence</main><sub>of improper int.</sub></index>
+<li>
+<p>
+Let <m>f</m> be a continuous function on <m>[a,\infty)</m>. Define <index><main>integration</main><sub>improper</sub></index><index><main>improper integration</main></index><index><main>convergence</main><sub>of improper int.</sub></index><index><main>divergence</main><sub>of improper int.</sub></index>
 <me>
   \int_a^\infty f(x)\ dx \quad \text{to be} \quad \lim_{b\to\infty}\int_a^b f(x)\ dx.
 </me>
+</p>
 </li>
-<li>Let <m>f</m> be a continuous function on <m>(-\infty,b]</m>. Define
+<li>
+<p>
+Let <m>f</m> be a continuous function on <m>(-\infty,b]</m>. Define
 <me>
   \int_{-\infty}^b f(x)\ dx \quad \text{to be} \quad \lim_{a\to-\infty}\int_a^b f(x)\ dx.
 </me>
+</p>
 </li>
-<li>Let <m>f</m> be a continuous function on <m>(-\infty,\infty)</m>. Let <m>c</m> be any real number; define
+<li>
+<p>
+Let <m>f</m> be a continuous function on <m>(-\infty,\infty)</m>. Let <m>c</m> be any real number; define
 <me>
   \int_{-\infty}^\infty f(x)\ dx \quad \text{to be} \quad \lim_{a\to-\infty}\int_a^c f(x)\ dx\ +\ \lim_{b\to\infty}\int_c^b f(x)\ dx.
 </me>
+</p>
 </li>
 </ol>
 
@@ -93,7 +110,9 @@ Evaluate the following improper integrals.
 </statement>
 <solution>
 <ol>
-<li>\hfill<m>\begin{aligned}\int_1^\infty \frac{1}{x^2}\ dx\  =\ \lim_{b\to\infty} \int_1^b\frac1{x^2}\ dx\  \amp =\ \lim_{b\to\infty} \frac{-1}{x}\Big|_1^b \\ 
+<li>
+<p>
+\hfill<m>\begin{aligned}\int_1^\infty \frac{1}{x^2}\ dx\  =\ \lim_{b\to\infty} \int_1^b\frac1{x^2}\ dx\  \amp =\ \lim_{b\to\infty} \frac{-1}{x}\Big|_1^b \\ 
  \amp = \lim_{b\to\infty} \frac{-1}{b} + 1\\
  \amp = 1.
 \end{aligned}</m>\null
@@ -104,8 +123,12 @@ A graph of the area defined by this integral is given in <xref ref="fig_impint1a
 <caption>A graph of <m>f(x) = \frac{1}{x^2}</m> in <xref ref="ex_impint1">Example</xref>.</caption>
 <image width="73%" source="images/figeximpint1a.png" />
 </figure>
+
+</p>
 </li>
-<li>\hfill<m>\begin{aligned}\int_1^\infty \frac1x\ dx \amp  = \lim_{b\to\infty}\int_1^b\frac1x\ dx \\
+<li>
+<p>
+\hfill<m>\begin{aligned}\int_1^\infty \frac1x\ dx \amp  = \lim_{b\to\infty}\int_1^b\frac1x\ dx \\
 						\amp = \lim_{b\to\infty} \ln |x|\Big|_1^b \\
 						\amp = \lim_{b\to\infty} \ln (b)\\
 						\amp = \infty.
@@ -117,8 +140,12 @@ The limit does not exist, hence the improper integral <m>\ds\int_1^\infty\frac1x
 <caption>A graph of <m>f(x) = \frac{1}{x}</m> in <xref ref="ex_impint1">Example</xref>.</caption>
 <image width="73%" source="images/figeximpint1b.png" />
 </figure>
+
+</p>
 </li>
-<li>\hfill<m>\begin{aligned}\int_{-\infty}^0 e^x \ dx \amp = \lim_{a\to-\infty} \int_a^0e^x\ dx \\
+<li>
+<p>
+\hfill<m>\begin{aligned}\int_{-\infty}^0 e^x \ dx \amp = \lim_{a\to-\infty} \int_a^0e^x\ dx \\
 					\amp =  \lim_{a\to-\infty} e^x\Big|_a^0 \\
 					\amp = \lim_{a\to-\infty} e^0-e^a \\
 					\amp = 1.
@@ -130,8 +157,12 @@ The limit does not exist, hence the improper integral <m>\ds\int_1^\infty\frac1x
 <caption>A graph of <m>f(x) = e^x</m> in <xref ref="ex_impint1">Example</xref>.</caption>
 <image width="73%" source="images/figeximpint1c.png" />
 </figure>
+
+</p>
 </li>
-<li>We will need to break this into two improper integrals and choose a value of <m>c</m> as in part 3 of <xref ref="def_imp_int1">Definition</xref>. Any value of <m>c</m> is fine; we choose <m>c=0</m>.
+<li>
+<p>
+We will need to break this into two improper integrals and choose a value of <m>c</m> as in part 3 of <xref ref="def_imp_int1">Definition</xref>. Any value of <m>c</m> is fine; we choose <m>c=0</m>.
 <md>
   <mrow>  \int_{-\infty}^\infty \frac1{1+x^2}\ dx \amp = \lim_{a\to-\infty} \int_a^0\frac{1}{1+x^2}\ dx + \lim_{b\to\infty} \int_0^b\frac{1}{1+x^2}\ dx</mrow>
   <mrow>  \amp = \lim_{a\to-\infty} \tan^{-1}x\Big|_a^0 + \lim_{b\to\infty} \tan^{-1}x\Big|_0^b</mrow>
@@ -148,6 +179,8 @@ A graph of the area defined by this integral is given in <xref ref="fig_impint1d
 <caption>A graph of <m>f(x) = \frac{1}{1+x^2}</m> in <xref ref="ex_impint1">Example</xref>.</caption>
 <image width="73%" source="images/figeximpint1d.png" />
 </figure>
+
+</p>
 </li>
 </ol>
 
@@ -223,7 +256,9 @@ Evaluate the following improper integrals:
 </statement>
 <solution>
 <ol>
-<li>A graph of <m>f(x) = 1/\sqrt{x}</m> is given in <xref ref="fig_impint3">Figure</xref>. Notice that <m>f</m> has a vertical asymptote at <m>x=0</m>; in some sense, we are trying to compute the area of a region that has no <q>top.</q> Could this have a finite value?
+<li>
+<p>
+A graph of <m>f(x) = 1/\sqrt{x}</m> is given in <xref ref="fig_impint3">Figure</xref>. Notice that <m>f</m> has a vertical asymptote at <m>x=0</m>; in some sense, we are trying to compute the area of a region that has no <q>top.</q> Could this have a finite value?
 <md>
   <mrow>  \int_0^1 \frac{1}{\sqrt{x}}\ dx \amp = \lim_{a\to0^+}\int_a^1 \frac1{\sqrt{x}}\ dx</mrow>
   <mrow>  \amp =	\lim_{a\to0^+} 2\sqrt{x}\Big|_a^1</mrow>
@@ -244,8 +279,12 @@ It turns out that the region does have a finite area even though it has no upper
 <caption>A graph of <m>f(x)=\frac{1}{\sqrt{x}}</m> in <xref ref="ex_impint3">Example</xref>.</caption>
 <image width="73%" source="images/figimpint3.png" />
 </figure>
+
+</p>
 </li>
-<li>The function <m>f(x) = 1/x^2</m> has a vertical asymptote at <m>x=0</m>, as shown in <xref ref="fig_impint3b">Figure</xref>, so this integral is an improper integral. Let's eschew using limits for a moment and proceed without recognizing the improper nature of the integral. This leads to:
+<li>
+<p>
+The function <m>f(x) = 1/x^2</m> has a vertical asymptote at <m>x=0</m>, as shown in <xref ref="fig_impint3b">Figure</xref>, so this integral is an improper integral. Let's eschew using limits for a moment and proceed without recognizing the improper nature of the integral. This leads to:
 <md>
   <mrow>  \int_{-1}^1\frac1{x^2}\ dx \amp = -\frac1x\Big|_{-1}^1</mrow>
   <mrow>  \amp = -1 - (1)</mrow>
@@ -262,7 +301,9 @@ Clearly the area in question is above the <m>x</m>-axis, yet the area is suppose
   <mrow>  \amp = \lim_{t\to0^-}-\frac1t-1 + \lim_{t\to0^+} -1+\frac1t</mrow>
   <mrow>  \amp \Rightarrow \Big(\infty-1\Big)\ + \ \Big(- 1+\infty\Big).</mrow>
 </md>
-Neither limit converges hence the original improper integral diverges. The nonsensical answer we obtained by ignoring the improper nature of the integral is just that: nonsensical.</li>
+Neither limit converges hence the original improper integral diverges. The nonsensical answer we obtained by ignoring the improper nature of the integral is just that: nonsensical.
+</p>
+</li>
 </ol>
 </solution>
 </example>
@@ -318,8 +359,16 @@ The result of <xref ref="ex_impint4">Example</xref> provides an important tool i
 <keyidea xml:id="idea_impint1">
 <title>Convergence of Improper Integrals $\ds \int_1^\infty\frac1{x\hskip1pt ^p}<nbsp />dx$ and $\ds \int_0^1\frac1{x\hskip1pt ^p}<nbsp />dx$.</title>
 <ol>
-<li>The improper integral <m>\ds \int_1^\infty\frac1{x\hskip1pt ^p}\ dx</m> converges when <m>p>1</m> and diverges when <m>p\leq 1.</m><index><main>convergence</main><sub>of improper int.</sub></index><index><main>divergence</main><sub>of improper int.</sub></index></li>
-<li>The improper integral <m>\ds \int_0^1\frac1{x\hskip1pt ^p}\ dx</m> converges when <m>p\lt 1</m> and diverges when <m>p\geq 1.</m></li>
+<li>
+<p>
+The improper integral <m>\ds \int_1^\infty\frac1{x\hskip1pt ^p}\ dx</m> converges when <m>p>1</m> and diverges when <m>p\leq 1.</m><index><main>convergence</main><sub>of improper int.</sub></index><index><main>divergence</main><sub>of improper int.</sub></index>
+</p>
+</li>
+<li>
+<p>
+The improper integral <m>\ds \int_0^1\frac1{x\hskip1pt ^p}\ dx</m> converges when <m>p\lt 1</m> and diverges when <m>p\geq 1.</m>
+</p>
+</li>
 </ol>
 </keyidea>
 <p>
@@ -339,9 +388,17 @@ Let <m>f</m> and <m>g</m> be continuous on <m>[a,\infty)</m> where <m>0\leq f(x)
 </p>
 
 <ol>
-<li>If <m>\ds \int_a^\infty g(x)\ dx</m> converges, then <m>\ds \int_a^\infty f(x)\ dx</m> converges.
-	<index><main>integration</main><sub>improper</sub></index><index><main>convergence</main><sub>Direct Comparison Test!for integration</sub></index><index><main>divergence</main><sub>Direct Comparison Test!for integration</sub></index><index><main>Direct Comparison Test</main><sub>for integration</sub></index><index><main>convergence</main><sub>of improper int.</sub></index><index><main>divergence</main><sub>of improper int.</sub></index></li>
-<li>If <m>\ds \int_a^\infty f(x)\ dx</m> diverges, then <m>\ds \int_a^\infty g(x)\ dx</m> diverges.</li>
+<li>
+<p>
+If <m>\ds \int_a^\infty g(x)\ dx</m> converges, then <m>\ds \int_a^\infty f(x)\ dx</m> converges.
+	<index><main>integration</main><sub>improper</sub></index><index><main>convergence</main><sub>Direct Comparison Test!for integration</sub></index><index><main>divergence</main><sub>Direct Comparison Test!for integration</sub></index><index><main>Direct Comparison Test</main><sub>for integration</sub></index><index><main>convergence</main><sub>of improper int.</sub></index><index><main>divergence</main><sub>of improper int.</sub></index>
+</p>
+</li>
+<li>
+<p>
+If <m>\ds \int_a^\infty f(x)\ dx</m> diverges, then <m>\ds \int_a^\infty g(x)\ dx</m> diverges.
+</p>
+</li>
 </ol>
 </statement>
 </theorem>
@@ -359,13 +416,19 @@ Determine the convergence of the following improper integrals.
 </statement>
 <solution>
 <ol>
-<li>The function <m>f(x) = e^{-x^2}</m> does not have an antiderivative expressible in terms of elementary functions, so we cannot integrate directly. It is comparable to <m>g(x)=1/x^2</m>, and as demonstrated in <xref ref="fig_impint5">Figure</xref>, <m>e^{-x^2} \lt  1/x^2</m> on <m>[1,\infty)</m>. We know from <xref ref="idea_impint1">Key Idea</xref> that <m>\ds \int_1^\infty \frac{1}{x^2}\ dx</m> converges, hence <m>\ds\int_1^\infty e^{-x^2}\ dx</m> also converges.
+<li>
+<p>
+The function <m>f(x) = e^{-x^2}</m> does not have an antiderivative expressible in terms of elementary functions, so we cannot integrate directly. It is comparable to <m>g(x)=1/x^2</m>, and as demonstrated in <xref ref="fig_impint5">Figure</xref>, <m>e^{-x^2} \lt  1/x^2</m> on <m>[1,\infty)</m>. We know from <xref ref="idea_impint1">Key Idea</xref> that <m>\ds \int_1^\infty \frac{1}{x^2}\ dx</m> converges, hence <m>\ds\int_1^\infty e^{-x^2}\ dx</m> also converges.
 <figure xml:id="fig_impint5" >
 <caption>Graphs of <m>f(x) = e^{-x^2}</m> and <m>f(x)= 1/x^2</m> in <xref ref="ex_impint5">Example</xref>.</caption>
 <image width="73%" source="images/figimpint5.png" />
 </figure>
+
+</p>
 </li>
-<li>Note that for large values of <m>x</m>, <m>\ds \frac{1}{\sqrt{x^2-x}} \approx \frac{1}{\sqrt{x^2}} =\frac{1}{x}</m>. We know from <xref ref="idea_impint1">Key Idea</xref> and the subsequent note that  <m>\ds \int_3^\infty \frac1x\ dx</m> diverges, so we seek to compare the original integrand to <m>1/x</m>.
+<li>
+<p>
+Note that for large values of <m>x</m>, <m>\ds \frac{1}{\sqrt{x^2-x}} \approx \frac{1}{\sqrt{x^2}} =\frac{1}{x}</m>. We know from <xref ref="idea_impint1">Key Idea</xref> and the subsequent note that  <m>\ds \int_3^\infty \frac1x\ dx</m> diverges, so we seek to compare the original integrand to <m>1/x</m>.
 
 It is easy to see that when <m>x>0</m>, we have <m>x = \sqrt{x^2} > \sqrt{x^2-x}</m>. Taking reciprocals reverses the inequality, giving
 <me>
@@ -377,6 +440,8 @@ Using <xref ref="thm_impint_comparison">Theorem</xref>, we conclude that since <
 <caption>Graphs of <m>f(x) = 1/\sqrt{x^2-x}</m> and <m>f(x)= 1/x</m> in <xref ref="ex_impint5">Example</xref>.</caption>
 <image width="73%" source="images/figimpint5b.png" />
 </figure>
+
+</p>
 </li>
 </ol>
 
@@ -488,7 +553,7 @@ The interval of integration is finite, and the integrand is continuous on that i
 <exercise>
 <statement>
 <p>
-If <m>\ds \lim_{b\to \infty} \int_0^b f(x)\ dx</m> exists, then the integral <m>\ds \int_0^\infty f(x)\ dx</m> is said to <u></u>.
+If <m>\ds \lim_{b\to \infty} \int_0^b f(x)\ dx</m> exists, then the integral <m>\ds \int_0^\infty f(x)\ dx</m> is said to <fillin />.
 </p>
 </statement>
 <answer>
@@ -501,7 +566,7 @@ converge
 <exercise>
 <statement>
 <p>
-If <m>\ds \int_1^\infty f(x)\ dx=10</m>, and <m>0\leq g(x)\leq f(x)</m> for all <m>x</m>, then we know that <m>\ds \int_1^\infty g(x)\ dx</m> <u></u>.
+If <m>\ds \int_1^\infty f(x)\ dx=10</m>, and <m>0\leq g(x)\leq f(x)</m> for all <m>x</m>, then we know that <m>\ds \int_1^\infty g(x)\ dx</m> <fillin />.
 </p>
 </statement>
 <answer>

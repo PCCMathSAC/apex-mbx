@@ -27,7 +27,9 @@ Consider <m>\ds \int \sin^mx\cos^nx\ dx</m>, where <m>m,n</m> are nonnegative in
 </p>
 
 <ol>
-<li>If <m>m</m> is odd, then <m>m=2k+1</m> for some integer <m>k</m>. Rewrite
+<li>
+<p>
+If <m>m</m> is odd, then <m>m=2k+1</m> for some integer <m>k</m>. Rewrite
 <me>
   \sin^mx = \sin^{2k+1}x = \sin^{2k}x\sin x = (\sin^2x)^k\sin x = (1-\cos^2x)^k\sin x.
 </me>
@@ -35,18 +37,28 @@ Then
 <me>
   \int \sin^mx\cos^nx\ dx = \int (1-\cos^2x)^k\sin x\cos^nx\ dx = -\int (1-u^2)^ku^n\ du,
 </me>
-where <m>u = \cos x</m> and <m>du = -\sin x\ dx</m>.</li>
-<li>If <m>n</m> is odd, then using substitutions similar to that outlined above we have
+where <m>u = \cos x</m> and <m>du = -\sin x\ dx</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>n</m> is odd, then using substitutions similar to that outlined above we have
 <me>
   \int \sin^mx\cos^nx\ dx = \int u^m(1-u^2)^k\ du,
 </me>
-where <m>u = \sin x</m> and <m>du = \cos x\ dx</m>.</li>
-<li>If both <m>m</m> and <m>n</m> are even, use the power<ndash />reducing identities
+where <m>u = \sin x</m> and <m>du = \cos x\ dx</m>.
+</p>
+</li>
+<li>
+<p>
+If both <m>m</m> and <m>n</m> are even, use the power<ndash />reducing identities
 		\small
 <me>
   \cos^2x = \frac{1+\cos (2x)}{2} \quad \text{and} \quad \sin^2x = \frac{1-\cos(2x)}2
 </me>
-to reduce the degree of the integrand. Expand the result and apply the principles of this Key Idea again.</li>
+to reduce the degree of the integrand. Expand the result and apply the principles of this Key Idea again.
+</p>
+</li>
 </ol>
 </keyidea>
 </sidebyside>
@@ -271,7 +283,9 @@ Consider <m>\ds\int\tan^mx\sec^nx\ dx</m>, where <m>m,n</m> are nonnegative inte
 </p>
 
 <ol>
-<li>If <m>n</m> is even, then <m>n=2k</m> for some integer <m>k</m>. Rewrite <m>\sec^nx</m> as
+<li>
+<p>
+If <m>n</m> is even, then <m>n=2k</m> for some integer <m>k</m>. Rewrite <m>\sec^nx</m> as
 <me>
   \sec^nx = \sec^{2k}x = \sec^{2k-2}x\sec^2x = (1+\tan^2x)^{k-1}\sec^2x.
 </me>
@@ -279,8 +293,12 @@ Then
 <me>
   \int\tan^mx\sec^nx\ dx=\int\tan^mx(1+\tan^2x)^{k-1}\sec^2x\ dx = \int u^m(1+u^2)^{k-1}\ du,
 </me>
-where <m>u = \tan x</m> and <m>du = \sec^2x\ dx</m>.</li>
-<li>If <m>m</m> is odd, then <m>m=2k+1</m> for some integer <m>k</m>. Rewrite <m>\tan^mx\sec^nx</m> as
+where <m>u = \tan x</m> and <m>du = \sec^2x\ dx</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>m</m> is odd, then <m>m=2k+1</m> for some integer <m>k</m>. Rewrite <m>\tan^mx\sec^nx</m> as
 <me>
   \tan^mx\sec^nx = \tan^{2k+1}x\sec^nx = \tan^{2k}x\sec^{n-1}x\sec x\tan x = (\sec^2x-1)^k\sec^{n-1}x\sec x\tan x.
 </me>
@@ -288,9 +306,17 @@ Then
 <me>
   \int\tan^mx\sec^nx\ dx=\int(\sec^2x-1)^k\sec^{n-1}x\sec x\tan x\ dx = \int(u^2-1)^ku^{n-1}\ du,
 </me>
-where <m>u = \sec x</m> and <m>du = \sec x\tan x\ dx</m>.</li>
-<li>If <m>n</m> is odd and <m>m</m> is even, then <m>m=2k</m> for some integer <m>k</m>. Convert <m>\tan^mx</m> to <m>(\sec^2x-1)^k</m>. Expand the new integrand and use Integration By Parts, with <m>dv = \sec^2x\ dx</m>.</li>
-<li>If <m>m</m> is even and <m>n=0</m>, rewrite <m>\tan^mx</m> as
+where <m>u = \sec x</m> and <m>du = \sec x\tan x\ dx</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>n</m> is odd and <m>m</m> is even, then <m>m=2k</m> for some integer <m>k</m>. Convert <m>\tan^mx</m> to <m>(\sec^2x-1)^k</m>. Expand the new integrand and use Integration By Parts, with <m>dv = \sec^2x\ dx</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>m</m> is even and <m>n=0</m>, rewrite <m>\tan^mx</m> as
 <me>
   \tan^mx = \tan^{m-2}x\tan^2x = \tan^{m-2}x(\sec^2x-1) = \tan^{m-2}\sec^2x-\tan^{m-2}x.
 </me>
@@ -298,6 +324,7 @@ So
 <me>
   \int\tan^mx\ dx = \underbrace{\int\tan^{m-2}\sec^2x\ dx}_{\text{ apply rule \#1} }\quad - \underbrace{\int\tan^{m-2}x\ dx}_{\text{ apply rule \#4 again} }.
 </me>
+</p>
 </li>
 </ol>
 </keyidea>
