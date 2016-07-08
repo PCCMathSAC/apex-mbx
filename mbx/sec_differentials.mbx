@@ -789,8 +789,8 @@ The length <m>l</m> of a long wall is to be approximated. The angle <m>\theta</m
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}
-\draw [ultra thick] (1,-1) <ndash /> node [pos=.5,right] { \(l=\)?}(1,1);
-\draw [dashed] (1,1) <ndash /> (-1,-1) node [xshift=10pt,yshift=5pt] { \(\theta\)} <ndash /> node [pos=.5,below] { \(25'\)} (1,-1);
+\draw [ultra thick] (1,-1) -- node [pos=.5,right] { \(l=\)?}(1,1);
+\draw [dashed] (1,1) -- (-1,-1) node [xshift=10pt,yshift=5pt] { \(\theta\)} -- node [pos=.5,below] { \(25'\)} (1,-1);
 \end{tikzpicture}]]></latex-image-code>
 </image>
 
@@ -854,9 +854,9 @@ The length <m>l</m> of a long wall is to be calculated by measuring the angle <m
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}
-\draw [ultra thick] (1,-1) <ndash /> node [pos=.5,right] { \(l=\)?}(1,1);
-\draw [dashed] (1,1) <ndash /> (-1,0) node [xshift=10pt] { \(\theta\)} <ndash /> (1,-1);
-\draw (-.5,0) <ndash /> node [pos=.5,draw=white,fill=white] { \(50'\)} (1,0);
+\draw [ultra thick] (1,-1) -- node [pos=.5,right] { \(l=\)?}(1,1);
+\draw [dashed] (1,1) -- (-1,0) node [xshift=10pt] { \(\theta\)} -- (1,-1);
+\draw (-.5,0) -- node [pos=.5,draw=white,fill=white] { \(50'\)} (1,0);
 \end{tikzpicture}]]></latex-image-code>
 </image>
 

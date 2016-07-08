@@ -8,11 +8,11 @@ We are familiar with sketching shapes, such as parabolas, by following this basi
 </p>
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[>=latex]
-\draw (0,0) node (A) [align=center] {Choose <br /> \(x\)} 
-      (3,0) node[align=center] (B) {Use a function<br /> \(f\) to find \(y\)<br /> \(\big(y=f(x)\big)\)}
-			(6.25,0) node [align=center] (C) {Plot point <br /> \((x,y)\)};
-\draw [->](A) <ndash />(B);
-\draw [->](B) <ndash /> (C);
+\draw (0,0) node (A) [align=center] {Choose \ \(x\)} 
+      (3,0) node[align=center] (B) {Use a function\ \(f\) to find \(y\)\ \(\big(y=f(x)\big)\)}
+			(6.25,0) node [align=center] (C) {Plot point \ \((x,y)\)};
+\draw [->](A) --(B);
+\draw [->](B) -- (C);
 \end{tikzpicture}]]></latex-image-code>
 </image>
 <p>
@@ -24,14 +24,14 @@ In this section we introduce a new sketching procedure:
 </p>
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[>=latex]
-\draw (0,0) node (A) [align=center] {Choose <br /> \(t\)} 
-      (3,1) node[align=center] (B1) {Use a function<br /> \(f\) to find \(x\)<br /> \(\big(x=f(t)\big)\)}
-			(3,-1) node[align=center] (B2) {Use a function<br /> \(g\) to find \(y\)<br /> \(\big(y=g(t)\big)\)}
-			(6.25,0) node [align=center] (C) {Plot point <br /> \((x,y)\)};
-\draw [->](A) <ndash />(B1);
-\draw [->](A) <ndash />(B2);
-\draw [->](B1) <ndash /> (C);
-\draw [->](B2) <ndash /> (C);
+\draw (0,0) node (A) [align=center] {Choose \ \(t\)} 
+      (3,1) node[align=center] (B1) {Use a function\ \(f\) to find \(x\)\ \(\big(x=f(t)\big)\)}
+			(3,-1) node[align=center] (B2) {Use a function\ \(g\) to find \(y\)\ \(\big(y=g(t)\big)\)}
+			(6.25,0) node [align=center] (C) {Plot point \ \((x,y)\)};
+\draw [->](A) --(B1);
+\draw [->](A) --(B2);
+\draw [->](B1) -- (C);
+\draw [->](B2) -- (C);
 \end{tikzpicture}]]></latex-image-code>
 </image>
 <p>

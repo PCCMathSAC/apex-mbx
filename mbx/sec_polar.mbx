@@ -22,10 +22,10 @@ Start with a point <m>O</m> in the plane called the <b>pole</b> (we will always 
 <caption>Illustrating polar coordinates.</caption>
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[>=latex]
-	\draw[thick,->] (0,0) node [below] {\(O\)} <ndash /> (3,0) node [below] {initial ray} ;
+	\draw[thick,->] (0,0) node [below] {\(O\)} -- (3,0) node [below] {initial ray} ;
 	\filldraw (0,0) circle (1.5pt);
 	\filldraw [rotate=55] (2,0) circle (1.5pt);
-	\draw [thick,rotate=55] (0,0)<ndash /> node [rotate=55,pos=.5,above] {\(r\)} (2,0) node [above] {\(P=P(r,\theta)\)};
+	\draw [thick,rotate=55] (0,0)-- node [rotate=55,pos=.5,above] {\(r\)} (2,0) node [above] {\(P=P(r,\theta)\)};
 	\draw [->] (.75,0) arc(0:55:.75); 
 	\draw [rotate=27.5] (1,0) node {\(\theta\)};
 \end{tikzpicture}]]></latex-image-code>
@@ -50,15 +50,15 @@ Plot the following polar coordinates:<index><main>polar coordinates</main><sub>p
 \AddToShipoutPicture*{\put(\LenToUnit{.4\paperwidth},\LenToUnit{.04\paperheight}){
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[scale=.8]
-	\draw [dashed,gray] (-3.1,0) <ndash /> (0,0);
-	\draw[thick,->,>=stealth] (0,0) node [below] {\(O\)} <ndash /> (3.5,0) ;
+	\draw [dashed,gray] (-3.1,0) -- (0,0);
+	\draw[thick,->,>=stealth] (0,0) node [below] {\(O\)} -- (3.5,0) ;
 	\filldraw (0,0) circle (1.5pt);
 	\foreach \x in {1,2,3}
 	{\draw (0,0) circle (\x cm);
 	\draw (\x,0) node [below right] {\x};
 	}
 	\foreach \x in {30,45,60,90,120,135,150}
-	{\draw [rotate=\x,dashed,gray] (-3.1,0) <ndash /> (3.1,0);
+	{\draw [rotate=\x,dashed,gray] (-3.1,0) -- (3.1,0);
 	}
 	
 	
@@ -708,7 +708,7 @@ Plot the points with the given polar coordinates.
 	{\draw (0,0) circle (\x);
 		\draw (\x,0) node [below right] { \(\x\)};
 	}
-	\draw [thick,->,>=stealth] (0,0) node [below] { \(O\)} <ndash /> (2.5,0);
+	\draw [thick,->,>=stealth] (0,0) node [below] { \(O\)} -- (2.5,0);
 	\filldraw (xyz polar cs: angle=0,radius=2) circle (2pt) node [above right] { \(A\)}
 	      (xyz polar cs: angle=180,radius=1)circle (2pt) node [right] { \(B\)}
 				(xyz polar cs: angle=90,radius=-2)circle (2pt) node [right] { \(C\)}
@@ -748,7 +748,7 @@ Plot the points with the given polar coordinates.
 	{\draw (0,0) circle (\x);
 		\draw (\x,0) node [below right] { \(\x\)};
 	}
-	\draw [thick,->,>=stealth] (0,0) node [below] { \(O\)} <ndash /> (2.5,0);
+	\draw [thick,->,>=stealth] (0,0) node [below] { \(O\)} -- (2.5,0);
 	\filldraw (xyz polar cs: angle=180,radius=2) circle (2pt) node [above] { \(A\)}
 	      (xyz polar cs: angle=180,radius=1)circle (2pt) node [above] { \(B\)}
 				(xyz polar cs: angle=114.6,radius=1)circle (2pt) node [right] { \(C\)}
@@ -770,15 +770,15 @@ For each of the given points give two sets of polar coordinates that identify it
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[scale=.5]
-	\draw [dashed,gray] (-3.1,0) <ndash /> (0,0);
-	\draw[thick,->,>=stealth] (0,0) node [below] {\(O\)} <ndash /> (3.5,0) ;
+	\draw [dashed,gray] (-3.1,0) -- (0,0);
+	\draw[thick,->,>=stealth] (0,0) node [below] {\(O\)} -- (3.5,0) ;
 	\filldraw (0,0) circle (1.5pt);
 	\foreach \x in {1,2,3}
 	{\draw (0,0) circle (\x cm);
 	\draw (\x,0) node [below right] {\x};
 	}
 	\foreach \x in {30,45,60,90,120,135,150}
-	{\draw [rotate=\x,dashed,gray] (-3.1,0) <ndash /> (3.1,0);
+	{\draw [rotate=\x,dashed,gray] (-3.1,0) -- (3.1,0);
 	}
 	\filldraw (xyz polar cs: angle=45,radius=2.5) circle (2pt) node [above] { \(A\)} (xyz polar cs: angle=-30,radius=1)circle (2pt) node [below] { \(B\)}
 				(xyz polar cs: angle=240,radius=3)circle (2pt) node [right] { \(C\)}
@@ -818,15 +818,15 @@ For each of the given points give two sets of polar coordinates that identify it
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[scale=.5]
-	\draw [dashed,gray] (-3.1,0) <ndash /> (0,0);
-	\draw[thick,->,>=stealth] (0,0) node [below] {\(O\)} <ndash /> (3.5,0) ;
+	\draw [dashed,gray] (-3.1,0) -- (0,0);
+	\draw[thick,->,>=stealth] (0,0) node [below] {\(O\)} -- (3.5,0) ;
 	\filldraw (0,0) circle (1.5pt);
 	\foreach \x in {1,2,3}
 	{\draw (0,0) circle (\x cm);
 	\draw (\x,0) node [below right] {\x};
 	}
 	\foreach \x in {30,45,60,90,120,135,150}
-	{\draw [rotate=\x,dashed,gray] (-3.1,0) <ndash /> (3.1,0);
+	{\draw [rotate=\x,dashed,gray] (-3.1,0) -- (3.1,0);
 	}
 	\filldraw (xyz polar cs: angle=30,radius=2) circle (2pt) node [above] { \(A\)} (xyz polar cs: angle=-60,radius=1)circle (2pt) node [below] { \(B\)}
 				(xyz polar cs: angle=135,radius=2)circle (2pt) node [right] { \(C\)}

@@ -996,7 +996,7 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 <ol>
 <li>
 <p>
-\deriv{cx}c
+\deriv{cx}{c}
 </p>
 </li>
 <li>
@@ -1021,12 +1021,12 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 </li>
 <li>
 <p>
-\deriv{c}0
+\deriv{c}{0}
 </p>
 </li>
 <li>
 <p>
-\deriv{x}1
+\deriv{x}{1}
 </p>
 </li>
 <li>
@@ -1049,7 +1049,7 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 </li>
 <li>
 <p>
-\deriv{\ln x}{\frac{1}x}
+\deriv{\ln x}{\frac{1}{x}}
 </p>
 </li>
 <li>
@@ -1233,7 +1233,7 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 </li>
 <li>
 <p>
-\myint{\frac{1}x}{\ln |x| + C}
+\myint{\frac{1}{x}}{\ln |x| + C}
 </p>
 </li>
 <li>
@@ -1314,7 +1314,7 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 </li>
 <li>
 <p>
-\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}a\right)+C}
+\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}{a}\right)+C}
 </p>
 </li>
 <li>
@@ -1377,9 +1377,9 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[scale=3]
-\draw [<->,>=latex] (-1.5,0) <ndash /> (1.4,0) node [right] { \(x\)};
-\draw [<->,>=latex] (0,-1.3) <ndash /> (0,1.3) node [above] { \(y\)};
-\foreach \x / \y / \z / \w / &icaron;n {
+\draw [<->,>=latex] (-1.5,0) -- (1.4,0) node [right] { \(x\)};
+\draw [<->,>=latex] (0,-1.3) -- (0,1.3) node [above] { \(y\)};
+\foreach \x / \y / \z / \w / \v in {
 								0/0/{1,0}/right/white,
 								30/{\pi/6}/{\frac{\sqrt{3}}2,\frac 12}/above right/none,
 								45/{\pi/4}/{\frac{\sqrt{2}}2,\frac{\sqrt{2}}2}/above right/none,
@@ -1427,13 +1427,13 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 \vskip 0in
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[>=latex,scale=1.5,thick]
-\draw [<->](-1.3,0)<ndash />(1.3,0) node [right] {\(x\)};
-\draw [<->] (0,-1.3) <ndash /> (0,1.3) node [above] {\(y\)};
+\draw [<->](-1.3,0)--(1.3,0) node [right] {\(x\)};
+\draw [<->] (0,-1.3) -- (0,1.3) node [above] {\(y\)};
 \draw (0,0) circle (1);
 \draw [fill= black] (-.6,.8) circle (1pt);
-\draw (0,0) <ndash /> (-.6,.8) node [above left] {\((x,y)\)};
+\draw (0,0) -- (-.6,.8) node [above left] {\((x,y)\)};
 \draw [->] (.5,0) arc (0:127:.5);
-\draw [dashed,thin] (-.6,.8) <ndash /> (-.6,0) node [pos=.5,left] {\(y\)};
+\draw [dashed,thin] (-.6,.8) -- (-.6,0) node [pos=.5,left] {\(y\)};
 \draw (-.3,0) node [below] {\(x\)};
 \draw (.45,.45) node {\(\theta\)};
 \end{tikzpicture}]]></latex-image-code>
@@ -1454,9 +1454,9 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[thick]
-\draw (0,0) <ndash /> (2.5,0) node [below,pos=.5] {Adjacent} <ndash /> (2.5,2) node [pos=.5,rotate=-90,shift={(0pt,7pt)}] {Opposite} <ndash /> (0,0) node [pos=.5,above,rotate=38.7] {Hypotenuse} node [shift={(20pt,8pt)}] {\(\theta\)};
+\draw (0,0) -- (2.5,0) node [below,pos=.5] {Adjacent} -- (2.5,2) node [pos=.5,rotate=-90,shift={(0pt,7pt)}] {Opposite} -- (0,0) node [pos=.5,above,rotate=38.7] {Hypotenuse} node [shift={(20pt,8pt)}] {\(\theta\)};
 \draw[->,>=latex] (1,0) arc (0:38.7:1);
-\draw (2.2,0) <ndash /> (2.2,.3) <ndash /> (2.5,.3);
+\draw (2.2,0) -- (2.2,.3) -- (2.5,.3);
 \end{tikzpicture}]]></latex-image-code>
 </image>
 \vskip 0in
@@ -1542,10 +1542,10 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 \vskip 0pt
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[x=30pt,y=30pt,thick]
-			\draw (0,0) <ndash /> node [below,pos=.5]  { \(b\)} (3,0) node [shift={(-15pt,8pt)}] {\(\theta\)} <ndash /> node [pos=.5,right] { \(a\)} (2,1.5) <ndash /> node [pos=.5,above left] { \(c\)} (0,0);
+			\draw (0,0) -- node [below,pos=.5]  { \(b\)} (3,0) node [shift={(-15pt,8pt)}] {\(\theta\)} -- node [pos=.5,right] { \(a\)} (2,1.5) -- node [pos=.5,above left] { \(c\)} (0,0);
 			\draw (2.7,0) arc (180:125:.3);
-			\draw [dashed] (2,1.5) <ndash /> (2,0) node [pos=.5,left] {\(h\)};
-			\draw (2,.2) <ndash /> (1.8,.2) <ndash /> (1.8,0);
+			\draw [dashed] (2,1.5) -- (2,0) node [pos=.5,left] {\(h\)};
+			\draw (2,.2) -- (1.8,.2) -- (1.8,0);
 			\end{tikzpicture}]]></latex-image-code>
 </image>
 
@@ -1561,9 +1561,9 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 			\begin{scope}[xscale=2]
 			\draw (-1,0) arc (-180:0:1);
 			\draw [dashed] (1,0) arc (0:180:1);
-			\draw (-1,.1) <ndash /> (0,3) <ndash /> (1,.15);
-			\draw [dashed] (0,3) <ndash /> node [pos=.5,left] { \(h\)} (0,0);
-			\draw [dashed] (0,0) <ndash /> (1,0) node [pos=.5,above] { \(r\)};
+			\draw (-1,.1) -- (0,3) -- (1,.15);
+			\draw [dashed] (0,3) -- node [pos=.5,left] { \(h\)} (0,0);
+			\draw [dashed] (0,0) -- (1,0) node [pos=.5,above] { \(r\)};
 			\end{scope}
 			\draw [fill=black] (0,0) circle (1pt);
 			\end{tikzpicture}]]></latex-image-code>
@@ -1589,8 +1589,8 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 			\draw (-1,0) arc (-180:0:1);
 			\draw [dashed] (1,0) arc (0:180:1);
 			\draw (0,2.5) circle (1);
-			\draw (-1,0) <ndash /> (-1,2.5) (1,0)<ndash /> (1,2.5) node [right,pos=.5] {\(h\)};
-			\draw (0,2.5) <ndash /> (1,2.5) node [above,pos=.5] {\(r\)};
+			\draw (-1,0) -- (-1,2.5) (1,0)-- (1,2.5) node [right,pos=.5] {\(h\)};
+			\draw (0,2.5) -- (1,2.5) node [above,pos=.5] {\(r\)};
 			\end{scope}
 			\draw [fill=black] (0,2.5) circle (1pt);
 			\end{tikzpicture}]]></latex-image-code>
@@ -1616,7 +1616,7 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 			\draw [dashed] (1,0) arc (0:180:1);
 			\end{scope}
 			\draw (0,0) circle (2);
-			\draw [dashed] (0,0) <ndash /> (2,0) node [pos=.5,above] {\(r\)};
+			\draw [dashed] (0,0) -- (2,0) node [pos=.5,above] {\(r\)};
 			\draw [fill=black] (0,0) circle (1pt);
 			\end{tikzpicture}]]></latex-image-code>
 </image>
@@ -1644,8 +1644,8 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 			\clip (0,0) rectangle (4,2.5);
 			\draw [smooth,dashed] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
 			\end{scope}
-			\draw (0,0) <ndash /> (2,4)<ndash />(4,0);
-			\draw [dashed] (2,0)<ndash />(2,4) node [pos=.5,right] {\(h\)}; 
+			\draw (0,0) -- (2,4)--(4,0);
+			\draw [dashed] (2,0)--(2,4) node [pos=.5,right] {\(h\)}; 
 			\draw [fill=black](2,0) circle (1pt);
 			\draw (1.5,-.75) node {\(A\)};
 			\end{tikzpicture}]]></latex-image-code>
@@ -1677,7 +1677,7 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 			\begin{scope}[shift={(0,4)}]
 			\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
 			\end{scope}
-			\draw (0,0) <ndash /> (0,4) (4,0) <ndash /> (4,4) node [pos=.5,right] {\(h\)};
+			\draw (0,0) -- (0,4) (4,0) -- (4,4) node [pos=.5,right] {\(h\)};
 			\draw (2,0) node {\(A\)};
 			\end{tikzpicture}]]></latex-image-code>
 </image>

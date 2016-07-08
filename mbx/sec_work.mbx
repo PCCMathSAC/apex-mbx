@@ -835,15 +835,15 @@ A fuel oil storage tank is 10 ft deep with trapezoidal sides, 5 ft at the top an
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[x={(1,0)},z={(0,1)},y={(.5,.87)},xscale=.4,yscale=.3]
-\draw [thick] (0,0,0) <ndash /> node [above,rotate=90,pos=.5] { 10} (0,0,-10) <ndash /> node [below, pos=.5] { 2} (2,0,-10) <ndash /> node [right, pos=.5] { 15} (2,5,-10) <ndash /> (5,5,0)
-							(5,5,0) <ndash /> (5,0,0)
-							(5,0,0) <ndash /> (0,0,0) <ndash /> (0,5,0) <ndash /> node [above,pos=.5] { 5}(5,5,0)
-							(5,0,0) <ndash /> (2,0,-10);
+\draw [thick] (0,0,0) -- node [above,rotate=90,pos=.5] { 10} (0,0,-10) -- node [below, pos=.5] { 2} (2,0,-10) -- node [right, pos=.5] { 15} (2,5,-10) -- (5,5,0)
+							(5,5,0) -- (5,0,0)
+							(5,0,0) -- (0,0,0) -- (0,5,0) -- node [above,pos=.5] { 5}(5,5,0)
+							(5,0,0) -- (2,0,-10);
 </p>
 
 <p>
-\draw [thick,dashed] (0,0,-10) <ndash /> (0,5,-10) <ndash /> (2,5,-10)
-																	(0,5,-10) <ndash /> (0,5,0);
+\draw [thick,dashed] (0,0,-10) -- (0,5,-10) -- (2,5,-10)
+																	(0,5,-10) -- (0,5,0);
 \end{tikzpicture}]]></latex-image-code>
 </image>
 \null
@@ -911,13 +911,13 @@ A water tank has the shape of a truncated cone, with dimensions given below, and
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[xscale=.7,yscale=.5]\draw [thick] (0,0) circle (1)
-							(-1,.1) <ndash /> (-1.5,-1.9)
-							(1,.1) <ndash /> (1.5,-1.9);
-\draw (0,0)<ndash /> node [above,pos=.5] { 2 ft} (1,0)
-			(0,-2) <ndash /> node [above,pos=.5] { 5 ft} (1.5,-2)
-			(1.7,0) <ndash /> (2.3,0)
-			(1.7,-2) <ndash /> (2.3,-2)
-			(2,0) <ndash /> node [pos=.5,right] { 10 ft} (2,-2);
+							(-1,.1) -- (-1.5,-1.9)
+							(1,.1) -- (1.5,-1.9);
+\draw (0,0)-- node [above,pos=.5] { 2 ft} (1,0)
+			(0,-2) -- node [above,pos=.5] { 5 ft} (1.5,-2)
+			(1.7,0) -- (2.3,0)
+			(1.7,-2) -- (2.3,-2)
+			(2,0) -- node [pos=.5,right] { 10 ft} (2,-2);
 \draw [thick] (-1.5,-2) arc (180:360:1.5);
 \draw [thick,dashed] (-1.5,-2) arc (180:0:1.5);
 \end{tikzpicture}]]></latex-image-code>
@@ -942,14 +942,14 @@ A water tank has the shape of an inverted pyramid, with dimensions given below, 
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[xscale=.7,yscale=.7]
-\draw [thick] (0,0) <ndash /> node [pos=.5,left]{ 2 m} (1,1) <ndash />node [above,pos=.5] { 2 m} (3,1) <ndash /> (2,0)<ndash />cycle
-							(0,0) <ndash /> (1.5,-2)
-							(3,1) <ndash /> (1.5,-2)
-							(2,0) <ndash /> (1.5,-2);
-\draw [thick,dashed] (1,1) <ndash /> (1.5,-2);
-\draw (3,.5) <ndash /> (3.6,.5)
-			(3,-2) <ndash /> (3.6,-2)
-			(3.3,.5) <ndash /> node [pos=.5,right] { 7 m} (3.3,-2);
+\draw [thick] (0,0) -- node [pos=.5,left]{ 2 m} (1,1) --node [above,pos=.5] { 2 m} (3,1) -- (2,0)--cycle
+							(0,0) -- (1.5,-2)
+							(3,1) -- (1.5,-2)
+							(2,0) -- (1.5,-2);
+\draw [thick,dashed] (1,1) -- (1.5,-2);
+\draw (3,.5) -- (3.6,.5)
+			(3,-2) -- (3.6,-2)
+			(3.3,.5) -- node [pos=.5,right] { 7 m} (3.3,-2);
 \end{tikzpicture}]]></latex-image-code>
 </image>
 \null
@@ -972,17 +972,17 @@ A water tank has the shape of an truncated, inverted pyramid, with dimensions gi
 
 <image>
 <latex-image-code><![CDATA[\begin{tikzpicture}[xscale=.7,yscale=.7]
-\draw [thick] (0,0) node (A) <ndash /> node [pos=.5,left]{ 5 m} (1,1)node (B)  <ndash />node [above,pos=.5] { 5 m} (3,1) node (C)  <ndash /> (2,0) node (D) <ndash />cycle;
+\draw [thick] (0,0) node (A) -- node [pos=.5,left]{ 5 m} (1,1)node (B)  --node [above,pos=.5] { 5 m} (3,1) node (C)  -- (2,0) node (D) --cycle;
 \begin{scope}[scale=.75,shift={(.5,-3)}]
-\draw [thick] (0,0) node (AA)  <ndash /> (1,1) node (BB)  <ndash /> (3,1) node (CC)  <ndash /> node [right,pos=.5] { 2 m} (2,0) node (DD) <ndash /> node [pos=.5,below]{ 2 m} (0,0);
+\draw [thick] (0,0) node (AA)  -- (1,1) node (BB)  -- (3,1) node (CC)  -- node [right,pos=.5] { 2 m} (2,0) node (DD) -- node [pos=.5,below]{ 2 m} (0,0);
 \end{scope}
-\draw [dashed,thick] (BB.center) <ndash /> (B.center);
-\draw [thick] (AA.center) <ndash /> (A.center)
-							(DD.center) <ndash /> (D.center)
-							(CC.center) <ndash /> (C.center);
-\draw (3.2,.5) <ndash /> (3.8,.5)
-			(3.2,-2) <ndash /> (3.8,-2)
-			(3.5,.5) <ndash /> node [pos=.5,right] { 9 m} (3.5,-2);\end{tikzpicture}]]></latex-image-code>
+\draw [dashed,thick] (BB.center) -- (B.center);
+\draw [thick] (AA.center) -- (A.center)
+							(DD.center) -- (D.center)
+							(CC.center) -- (C.center);
+\draw (3.2,.5) -- (3.8,.5)
+			(3.2,-2) -- (3.8,-2)
+			(3.5,.5) -- node [pos=.5,right] { 9 m} (3.5,-2);\end{tikzpicture}]]></latex-image-code>
 </image>
 \null
 </p>
