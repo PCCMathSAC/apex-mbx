@@ -73,7 +73,43 @@ Because <m>\{a_n\}</m> is decreasing, the amount by which <m>S_n</m> bounces up/
 </p>
 <figure xml:id="fig_alt_series_converge" >
 <caption>Illustrating convergence with the Alternating Series Test.</caption>
-<image width="73%" source="images/figalt_series_converge.png" />
+
+<!-- START figures/fig_alt_series_converge.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			xtick={2,4,6,8,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.25,ymax=1.25,%
+			xmin=-1,xmax=11%
+]
+\draw [thick, dashed] (axis cs: -.1,.614) node [left] {\scriptsize $L$} -- (axis cs: 10.25,.614);
+
+\addplot [only marks,{\colorone},mark size={1.5pt},domain=1:10,samples=10] {2/(x+1)};
+
+\addplot [only marks,{\colortwo},mark size={1.5pt},domain=1:10,samples=10]coordinates {(1., 1.)(2., 0.333333)(3., 0.833333)(4., 0.433333)(5.,0.766667)(6., 0.480952)(7., 0.730952)(8., 0.50873)(9.,0.70873)(10., 0.526912)};
+
+%\fill [{\colorone}](axis cs:2,250) circle (1.5pt) node[right,black] {\scriptsize $a_n$};
+%\fill [{\colortwo}](axis cs:2,225) circle (1.5pt) node[right,black] {\scriptsize $S_n$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\node[shift={(0,-10pt)},draw] at (myplot.south) {\begin{tikzpicture} 
+																\fill [\colorone] (0,0) circle (1.5pt) node [right,black] {\scriptsize $a_n$};
+																\fill [\colortwo] (1,0) circle (1.5pt) node [right, black] {\scriptsize $S_n$};
+																\end{tikzpicture}};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_alt_series_converge.tex -->
+
 </figure>
 <example xml:id="ex_alt1">
 <title>Applying the Alternating Series Test</title>
@@ -88,16 +124,10 @@ Determine if the Alternating Series Test applies to each of the following series
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-This is the Alternating Harmonic Series as seen previously. The underlying sequence is <m>\{a_n\} = \{1/n\}</m>, which is positive, decreasing, and approaches 0 as <m>n\to\infty</m>. Therefore we can apply the Alternating Series Test and conclude this series converges. 
+<li><p>This is the Alternating Harmonic Series as seen previously. The underlying sequence is <m>\{a_n\} = \{1/n\}</m>, which is positive, decreasing, and approaches 0 as <m>n\to\infty</m>. Therefore we can apply the Alternating Series Test and conclude this series converges. 
 	
-	While the test does not state what the series converges to, we will see later that <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac1n=\ln2.</m>
-</p>
-</li>
-<li>
-<p>
-The underlying sequence is <m>\{a_n\} = \{\ln n/n\}</m>. This is positive and approaches 0 as <m>n\to\infty</m> (use L'H&#xf4;pital's Rule). However, the sequence is not decreasing for all <m>n</m>. It is straightforward to compute <m>a_1=0</m>, <m>a_2\approx0.347</m>, <m>a_3\approx 0.366</m>, and <m>a_4\approx 0.347</m>: the sequence is increasing for at least the first 3 terms. 
+	While the test does not state what the series converges to, we will see later that <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac1n=\ln2.</m></p></li>
+<li><p>The underlying sequence is <m>\{a_n\} = \{\ln n/n\}</m>. This is positive and approaches 0 as <m>n\to\infty</m> (use L'H&#xf4;pital's Rule). However, the sequence is not decreasing for all <m>n</m>. It is straightforward to compute <m>a_1=0</m>, <m>a_2\approx0.347</m>, <m>a_3\approx 0.366</m>, and <m>a_4\approx 0.347</m>: the sequence is increasing for at least the first 3 terms. 
 	
 	We do not immediately conclude that we cannot apply the Alternating Series Test. Rather, consider the long<ndash />term behavior of <m>\{a_n\}</m>. Treating <m>a_n=a(n)</m> as a continuous function of <m>n</m> defined on <m>[1,\infty)</m>, we can take its derivative:
 <me>
@@ -105,16 +135,10 @@ The underlying sequence is <m>\{a_n\} = \{\ln n/n\}</m>. This is positive and ap
 </me>
 The derivative is negative for all <m>n\geq 3</m> (actually, for all <m>n>e</m>), meaning <m>a(n)=a_n</m> is decreasing on <m>[3,\infty)</m>. We can apply the Alternating Series Test to the series when we start with <m>n=3</m> and conclude that <m>\ds \sum_{n=3}^\infty(-1)^n\frac{\ln n}{n}</m> converges; adding the terms with <m>n=1</m> and <m>n=2</m> do not change the convergence (i.e., we apply <xref ref="thm_series_behavior">Theorem</xref>).
 	
-	The important lesson here is that as before, if a series fails to meet the criteria of the Alternating Series Test on only a finite number of terms, we can still apply the test.
-</p>
-</li>
-<li>
-<p>
-The underlying sequence is <m>\{a_n\} = |\sin n|/n</m>. This sequence is positive and approaches <m>0</m> as <m>n\to\infty</m>. However, it is not a decreasing sequence; the value of <m>|\sin n|</m> oscillates between <m>0</m> and <m>1</m> as <m>n\to\infty</m>. We cannot remove a finite number of terms to make <m>\{a_n\}</m> decreasing, therefore we cannot apply the Alternating Series Test.
+	The important lesson here is that as before, if a series fails to meet the criteria of the Alternating Series Test on only a finite number of terms, we can still apply the test.</p></li>
+<li><p>The underlying sequence is <m>\{a_n\} = |\sin n|/n</m>. This sequence is positive and approaches <m>0</m> as <m>n\to\infty</m>. However, it is not a decreasing sequence; the value of <m>|\sin n|</m> oscillates between <m>0</m> and <m>1</m> as <m>n\to\infty</m>. We cannot remove a finite number of terms to make <m>\{a_n\}</m> decreasing, therefore we cannot apply the Alternating Series Test.
 	
-	Keep in mind that this does not mean we conclude the series diverges; in fact, it does converge. We are just unable to conclude this based on <xref ref="thm_alt_series_test">Theorem</xref>.
-</p>
-</li>
+	Keep in mind that this does not mean we conclude the series diverges; in fact, it does converge. We are just unable to conclude this based on <xref ref="thm_alt_series_test">Theorem</xref>.</p></li>
 </ol>
 </solution>
 </example>
@@ -172,9 +196,7 @@ Approximate the sum of the following series, accurate to within <m>0.001</m>.
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Using <xref ref="thm_alt_series_approx">Theorem</xref>, we want to find <m>n</m> where <m>1/n^3 \lt  0.001</m>:
+<li><p>Using <xref ref="thm_alt_series_approx">Theorem</xref>, we want to find <m>n</m> where <m>1/n^3 \lt  0.001</m>:
 <md>
   <mrow>  \frac1{n^3} \amp \leq 0.001=\frac{1}{1000}</mrow>
   <mrow>  n^3 \amp \geq 1000</mrow>
@@ -183,12 +205,8 @@ Using <xref ref="thm_alt_series_approx">Theorem</xref>, we want to find <m>n</m>
 </md>
 Let <m>L</m> be the sum of this series. By Part 1 of the theorem, <m>|S_9-L|\lt a_{10} = 1/1000</m>. We can compute <m>S_9=0.902116</m>, which our theorem states is within <m>0.001</m> of the total sum. 
 	
-	We can use Part 2 of the theorem to obtain an even more accurate result. As we know the <m>10^\text{th}</m> term of the series is <m>-1/1000</m>, we can easily compute <m>S_{10} = 0.901116</m>. Part 2 of the theorem states that <m>L</m> is between <m>S_9</m> and <m>S_{10}</m>, so <m>0.901116 \lt L\lt 0.902116</m>.
-</p>
-</li>
-<li>
-<p>
-We want to find <m>n</m> where <m>\ln (n)/n \lt  0.001</m>. We start by solving <m>\ln (n)/n = 0.001</m> for <m>n</m>. This cannot be solved algebraically, so we will use Newton's Method to approximate a solution. 
+	We can use Part 2 of the theorem to obtain an even more accurate result. As we know the <m>10^\text{th}</m> term of the series is <m>-1/1000</m>, we can easily compute <m>S_{10} = 0.901116</m>. Part 2 of the theorem states that <m>L</m> is between <m>S_9</m> and <m>S_{10}</m>, so <m>0.901116 \lt L\lt 0.902116</m>.</p></li>
+<li><p>We want to find <m>n</m> where <m>\ln (n)/n \lt  0.001</m>. We start by solving <m>\ln (n)/n = 0.001</m> for <m>n</m>. This cannot be solved algebraically, so we will use Newton's Method to approximate a solution. 
 	
 	Let <m>f(x) = \ln(x)/x-0.001</m>; we want to know where <m>f(x) = 0</m>. We make a guess that <m>x</m> must be <q>large,</q> so our initial guess will be <m>x_1=1000</m>. Recall how Newton's Method works: given an approximate solution <m>x_n</m>, our next approximation <m>x_{n+1}</m> is given by
 <me>
@@ -201,9 +219,7 @@ We find <m>\fp(x) = \big(1-\ln(x)\big)/x^2</m>. This gives
 </md>
 Using a computer, we find that Newton's Method seems to converge to a solution <m>x=9118.01</m> after 8 iterations. Taking the next integer higher, we have <m>n=9119</m>, where <m>\ln(9119)/9119 =0.000999903\lt 0.001</m>.
 	
-	Again using a computer, we find <m>S_{9118} = -0.160369</m>. Part 1 of the theorem states that this is within <m>0.001</m> of the actual sum <m>L</m>. Already knowing the 9,119<m>^\text{th}</m> term, we can compute <m>S_{9119} = -0.159369</m>, meaning <m>-0.159369 \lt  L \lt  -0.160369</m>.
-</p>
-</li>
+	Again using a computer, we find <m>S_{9118} = -0.160369</m>. Part 1 of the theorem states that this is within <m>0.001</m> of the actual sum <m>L</m>. Already knowing the 9,119<m>^\text{th}</m> term, we can compute <m>S_{9119} = -0.159369</m>, meaning <m>-0.159369 \lt  L \lt  -0.160369</m>.</p></li>
 </ol>
 
 <p>
@@ -218,17 +234,9 @@ One of the famous results of mathematics is that the Harmonic Series, <m>\ds \su
 <title>Absolute and Conditional Convergence</title>
 <statement>
 <ol>
-<li>
-<p>
-A series <m>\ds \sum_{n=1}^\infty a_n</m> <em>converges absolutely</em> if <m>\ds \sum_{n=1}^\infty |a_n|</m> converges.
-	<index><main>convergence</main><sub>absolute</sub></index><index><main>convergence</main><sub>conditional</sub></index><index><main>series</main><sub>absolute convergence</sub></index><index><main>series</main><sub>conditional convergence</sub></index>
-</p>
-</li>
-<li>
-<p>
-A series <m>\ds \sum_{n=1}^\infty a_n</m> <em>converges conditionally</em> if <m>\ds \sum_{n=1}^\infty a_n</m> converges but <m>\ds \sum_{n=1}^\infty |a_n|</m> diverges.
-</p>
-</li>
+<li><p>A series <m>\ds \sum_{n=1}^\infty a_n</m> <em>converges absolutely</em> if <m>\ds \sum_{n=1}^\infty |a_n|</m> converges.
+	<index><main>convergence</main><sub>absolute</sub></index><index><main>convergence</main><sub>conditional</sub></index><index><main>series</main><sub>absolute convergence</sub></index><index><main>series</main><sub>conditional convergence</sub></index></p></li>
+<li><p>A series <m>\ds \sum_{n=1}^\infty a_n</m> <em>converges conditionally</em> if <m>\ds \sum_{n=1}^\infty a_n</m> converges but <m>\ds \sum_{n=1}^\infty |a_n|</m> diverges.</p></li>
 </ol>
 </statement>
 </definition>
@@ -254,31 +262,21 @@ Determine if the following series converge absolutely, conditionally, or diverge
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-We can show the series
+<li><p>We can show the series
 <me>
   \ds \sum_{n=1}^\infty \left|(-1)^n\frac{n+3}{n^2+2n+5}\right|= \sum_{n=1}^\infty \frac{n+3}{n^2+2n+5}
 </me>
 diverges using the Limit Comparison Test, comparing with <m>1/n</m>. 
 	
-	The series <m>\ds \sum_{n=1}^\infty (-1)^n\frac{n+3}{n^2+2n+5}</m> converges using the Alternating Series Test; we conclude it converges conditionally.
-</p>
-</li>
-<li>
-<p>
-We can show the series
+	The series <m>\ds \sum_{n=1}^\infty (-1)^n\frac{n+3}{n^2+2n+5}</m> converges using the Alternating Series Test; we conclude it converges conditionally.</p></li>
+<li><p>We can show the series
 <me>
   \ds \sum_{n=1}^\infty \left|(-1)^n\frac{n^2+2n+5}{2^n}\right|=\sum_{n=1}^\infty \frac{n^2+2n+5}{2^n}
 </me>
 converges using the Ratio Test. 
 	
-	Therefore we conclude <m>\ds \sum_{n=1}^\infty (-1)^n\frac{n^2+2n+5}{2^n}</m> converges absolutely.
-</p>
-</li>
-<li>
-<p>
-The series
+	Therefore we conclude <m>\ds \sum_{n=1}^\infty (-1)^n\frac{n^2+2n+5}{2^n}</m> converges absolutely.</p></li>
+<li><p>The series
 <me>
   \ds \sum_{n=3}^\infty \left|(-1)^n\frac{3n-3}{5n-10}\right| = \sum_{n=3}^\infty \frac{3n-3}{5n-10}
 </me>
@@ -286,9 +284,7 @@ diverges using the <m>n^\text{th}</m> Term Test, so it does not converge absolut
 	
 	The series <m>\ds \sum_{n=3}^\infty (-1)^n\frac{3n-3}{5n-10}</m> fails the conditions of the Alternating Series Test as <m>(3n-3)/(5n-10)</m> does not approach <m>0</m> as <m>n\to\infty</m>. We can state further that this series diverges; as <m>n\to\infty</m>, the series effectively adds and subtracts <m>3/5</m> over and over. This causes the sequence of partial sums to oscillate and not converge.
 	
-	Therefore the series <m>\ds \sum_{n=1}^\infty (-1)^n\frac{3n-3}{5n-10}</m> diverges.
-</p>
-</li>
+	Therefore the series <m>\ds \sum_{n=1}^\infty (-1)^n\frac{3n-3}{5n-10}</m> diverges.</p></li>
 </ol>
 </solution>
 </example>
@@ -314,14 +310,10 @@ Let <m>\ds \sum_{n=1}^\infty a_n</m> be a series that converges absolutely.
 
 <ol>
 <li><m>\ds \sum_{n=1}^\infty a_n</m> converges.</li>
-<li>
-<p>
-Let <m>\{b_n\}</m> be any rearrangement of the sequence <m>\{a_n\}</m>. Then
+<li><p>Let <m>\{b_n\}</m> be any rearrangement of the sequence <m>\{a_n\}</m>. Then
 <me>
   \sum_{n=1}^\infty b_n = \sum_{n=1}^\infty a_n.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 </statement>
 </theorem>
@@ -450,21 +442,9 @@ In the following exercises, an alternating series <m>\ds \sum_{n=i}^\infty a_n</
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-converges (<m>p</m>-Series)
-</p>
-</li>
-<li>
-<p>
-absolute
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>converges (<m>p</m>-Series)</p></li>
+<li><p>absolute</p></li>
 </ol>
 </answer>
 </exercise>
@@ -477,21 +457,9 @@ absolute
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-converges (use Ratio Test)
-</p>
-</li>
-<li>
-<p>
-absolute
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>converges (use Ratio Test)</p></li>
+<li><p>absolute</p></li>
 </ol>
 </answer>
 </exercise>
@@ -504,21 +472,9 @@ absolute
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-diverges (limit of terms is not 0)
-</p>
-</li>
-<li>
-<p>
-diverges
-</p>
-</li>
-<li>
-<p>
-n/a; diverges
-</p>
-</li>
+<li><p>diverges (limit of terms is not 0)</p></li>
+<li><p>diverges</p></li>
+<li><p>n/a; diverges</p></li>
 </ol>
 </answer>
 </exercise>
@@ -531,21 +487,9 @@ n/a; diverges
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-diverges (limit of terms is not 0)
-</p>
-</li>
-<li>
-<p>
-diverges
-</p>
-</li>
-<li>
-<p>
-n/a; diverges
-</p>
-</li>
+<li><p>diverges (limit of terms is not 0)</p></li>
+<li><p>diverges</p></li>
+<li><p>n/a; diverges</p></li>
 </ol>
 </answer>
 </exercise>
@@ -558,21 +502,9 @@ n/a; diverges
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-diverges (Limit Comparison Test with <m>1/n</m>)
-</p>
-</li>
-<li>
-<p>
-conditional
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>diverges (Limit Comparison Test with <m>1/n</m>)</p></li>
+<li><p>conditional</p></li>
 </ol>
 </answer>
 </exercise>
@@ -585,21 +517,9 @@ conditional
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-diverges (Direct Comparison Test with <m>1/n</m>)
-</p>
-</li>
-<li>
-<p>
-conditional
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>diverges (Direct Comparison Test with <m>1/n</m>)</p></li>
+<li><p>conditional</p></li>
 </ol>
 </answer>
 </exercise>
@@ -612,21 +532,9 @@ conditional
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-diverges (limit of terms is not 0)
-</p>
-</li>
-<li>
-<p>
-diverges
-</p>
-</li>
-<li>
-<p>
-n/a; diverges
-</p>
-</li>
+<li><p>diverges (limit of terms is not 0)</p></li>
+<li><p>diverges</p></li>
+<li><p>n/a; diverges</p></li>
 </ol>
 </answer>
 </exercise>
@@ -639,21 +547,9 @@ n/a; diverges
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-converges (the sum in the denominator is <m>n^2</m>)
-</p>
-</li>
-<li>
-<p>
-absolute
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>converges (the sum in the denominator is <m>n^2</m>)</p></li>
+<li><p>absolute</p></li>
 </ol>
 </answer>
 </exercise>
@@ -666,21 +562,9 @@ absolute
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-diverges (terms oscillate between <m>\pm 1</m>)
-</p>
-</li>
-<li>
-<p>
-diverges
-</p>
-</li>
-<li>
-<p>
-n/a; diverges
-</p>
-</li>
+<li><p>diverges (terms oscillate between <m>\pm 1</m>)</p></li>
+<li><p>diverges</p></li>
+<li><p>n/a; diverges</p></li>
 </ol>
 </answer>
 </exercise>
@@ -693,21 +577,9 @@ n/a; diverges
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-diverges (Integral Test)
-</p>
-</li>
-<li>
-<p>
-conditional
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>diverges (Integral Test)</p></li>
+<li><p>conditional</p></li>
 </ol>
 </answer>
 </exercise>
@@ -720,21 +592,9 @@ conditional
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-converges (Geometric Series with <m>r=2/3</m>)
-</p>
-</li>
-<li>
-<p>
-absolute
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>converges (Geometric Series with <m>r=2/3</m>)</p></li>
+<li><p>absolute</p></li>
 </ol>
 </answer>
 </exercise>
@@ -747,21 +607,9 @@ absolute
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-converges (Geometric Series with <m>r=1/e</m>)
-</p>
-</li>
-<li>
-<p>
-absolute
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>converges (Geometric Series with <m>r=1/e</m>)</p></li>
+<li><p>absolute</p></li>
 </ol>
 </answer>
 </exercise>
@@ -774,21 +622,9 @@ absolute
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-converges (Ratio Test)
-</p>
-</li>
-<li>
-<p>
-absolute
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>converges (Ratio Test)</p></li>
+<li><p>absolute</p></li>
 </ol>
 </answer>
 </exercise>
@@ -801,21 +637,9 @@ absolute
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-converges (Ratio Test)
-</p>
-</li>
-<li>
-<p>
-absolute
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>converges (Ratio Test)</p></li>
+<li><p>absolute</p></li>
 </ol>
 </answer>
 </exercise>
@@ -828,21 +652,9 @@ absolute
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-diverges (<m>p</m>-Series Test with <m>p=1/2</m>)
-</p>
-</li>
-<li>
-<p>
-conditional
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>diverges (<m>p</m>-Series Test with <m>p=1/2</m>)</p></li>
+<li><p>conditional</p></li>
 </ol>
 </answer>
 </exercise>
@@ -855,21 +667,9 @@ conditional
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-converges
-</p>
-</li>
-<li>
-<p>
-converges (Ratio Test)
-</p>
-</li>
-<li>
-<p>
-absolute
-</p>
-</li>
+<li><p>converges</p></li>
+<li><p>converges (Ratio Test)</p></li>
+<li><p>absolute</p></li>
 </ol>
 </answer>
 </exercise>

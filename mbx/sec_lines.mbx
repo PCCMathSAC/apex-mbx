@@ -28,7 +28,83 @@ Clearly one point on the line is <m>P</m>; we can say that the <em>vector</em> <
 3Dcoo=0 70 0,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figlines_intro.png" />
+
+<!-- START figures/figlines_intro_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figlines_intro.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+pair xbounds=(-1,1);
+pair ybounds=(-1,3.5);
+pair zbounds=(-1,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//draw vector d=<-1,0,1>
+draw((0,0,0)--(-1,0,1),red,Arrow3(size=2mm));
+label("$\vec{d}$",(-1,0,1),N);
+//draw vector p=<0,2,1>
+draw((0,0,0)--(0,2,1),black,Arrow3(size=2mm));
+label("$\vec{p}$",(0,2,1),N);
+//draw vector p+d
+draw((0,0,0)--(-1,2,2),black,Arrow3(size=2mm));
+label("$\vec{p}+\vec{d}$",(-1,2,2),W);
+//draw vector p-2d
+draw((0,0,0)--(2,2,-1),black,Arrow3(size=2mm));
+label("$\vec{p}-2\vec{d}$",(2,2,-1),W);
+//draw the line ({-x},{2},{1+x});
+draw((2.2,2,-1.2)--(-1.5,2,2.5),blue);
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figlines_intro_3D.asy -->
+
 </figure>
 <p>
 The figure illustrates how every point on the line can be obtained by starting with <m>\vec p</m> and moving a certain distance in the direction of <m>\vec d</m>. That is, we can define the line as a function of <m>t</m>:
@@ -101,30 +177,18 @@ Consider the line in space that passes through <m>\vec p = \la x_0,y_0,z_0\ra</m
 </p>
 
 <ol>
-<li>
-<p>
-The <b>vector equation</b> of the line is
+<li><p>The <b>vector equation</b> of the line is
 <me>
   \vec \ell(t) = \vec p+t\vec d.
-</me>
-</p>
-</li>
-<li>
-<p>
-The <b>parametric equations</b> of the line are
+</me></p></li>
+<li><p>The <b>parametric equations</b> of the line are
 <me>
   x = x_0+at, \quad y=y_0+bt, \quad z = z_0+ct .
-</me>
-</p>
-</li>
-<li>
-<p>
-The <b>symmetric equations</b> of the line are
+</me></p></li>
+<li><p>The <b>symmetric equations</b> of the line are
 <me>
   \frac{x-x_0}{a} = \frac{y-y_0}{b}=\frac{z-z_0}{c}.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 </statement>
 </definition>
@@ -142,27 +206,15 @@ We identify the point <m>P=(2,3,1)</m> with the vector <m>\vec p =\la 2,3,1\ra</
 </p>
 
 <ul>
-<li>
-<p>
-the vector equation of the line is <m>\vec\ell(t) = \la 2,3,1\ra + t\la -1,1,2\ra</m>;
-</p>
-</li>
-<li>
-<p>
-the parametric equations of the line are
+<li><p>the vector equation of the line is <m>\vec\ell(t) = \la 2,3,1\ra + t\la -1,1,2\ra</m>;</p></li>
+<li><p>the parametric equations of the line are
 <me>
   x = 2-t,\quad y = 3+t,\quad z = 1+2t; \text{ and}
-</me>
-</p>
-</li>
-<li>
-<p>
-the symmetric equations of the line are
+</me></p></li>
+<li><p>the symmetric equations of the line are
 <me>
   \frac{x-2}{-1}=\frac{y-3}{1} = \frac{z-1}{2}.
-</me>
-</p>
-</li>
+</me></p></li>
 </ul>
 <figure xml:id="fig_lines1" >
 <caption>Graphing a line in <xref ref="ex_lines1">Example</xref>.</caption>
@@ -173,7 +225,81 @@ the symmetric equations of the line are
 3Dcoo=0 70 50,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figlines1.png" />
+
+<!-- START figures/figlines1_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file forfiglines1.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2.5);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={2};
+real[] myychoice={5};
+real[] myzchoice={5};
+defaultpen(0.5mm);
+pair xbounds=(-1,2.5);
+pair ybounds=(-1,5.5);
+pair zbounds=(-1,5.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//draw vector d=<-1,1,2>
+draw((0,0,0)--(-1,1,2),black,Arrow3(size=2mm));
+label("$\vec{d}$",(-1,0,1),N);
+// dot at P=(2,3,1)
+dotfactor=3;dot((2,3,1));
+label("P",(2,3,1),N);
+// dot at Q=(-1,6,6)
+dotfactor=3;dot((-1,6,6));
+label("Q",(-1,6,6),S);
+//draw the line ({2-t},{3+t},{1+2t});
+draw((3,2,-1)--(-1,6,7),blue);
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figlines1_3D.asy -->
+
 </figure>
 <p>
 The first two equations of the line are useful when a <m>t</m> value is given: one can immediately find the corresponding point on the line. These forms are good when calculating with a computer; most software programs easily handle equations in these formats. (For instance, to make <xref ref="fig_lines1">Figure</xref>, a certain graphics program was given the input <c>(2-x,3+x,1+2*x)</c>. This particular program requires the variable always be <q><m>x</m></q> instead of <q><m>t</m></q>).
@@ -219,7 +345,80 @@ The parametric equations of the line <m>\ell</m> through <m>P</m> in the directi
 3Dcoo=58 8.7 4.6,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figlines6.png" />
+
+<!-- START figures/figlines6_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figlines6.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,17,9);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={2};
+real[] myychoice={-4,4};
+real[] myzchoice={-4,4};
+defaultpen(0.5mm);
+pair xbounds=(-1,3);
+pair ybounds=(-4.5,4.5);
+pair zbounds=(-4.5,4.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//draw vector PQ=<-1,4,-3>
+draw((2,-1,2)--(1,3,-1),red,Arrow3(size=2mm));
+label("$\overrightarrow{PQ}$",(1.5,1,0.5),S);
+// dot at P=(2,-1,2)
+dotfactor=3;dot((2,-1,2));label("P",(2,-1,2),N);
+// dot at Q=(1,3,-1)
+dotfactor=3;dot((1,3,-1));label("Q",(1,3,-1),N);
+//draw the line ({2-t},{-1+4t},{2-3t}) in two parts, before P and after Q
+draw((2.5,-3,3.5)--(2,-1,2),blue);
+draw((1,3,-1)--(0.5,5,-2.5),blue);
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figlines6_3D.asy -->
+
 </figure>
 <p>
 A graph of the points and line are given in <xref ref="fig_lines6">Figure</xref>. Note how in the given parametrization of the line, <m>t=0</m> corresponds to the point <m>P</m>, and <m>t=1</m> corresponds to the point <m>Q</m>. This relates to the understanding of the vector equation of a line described in <xref ref="fig_lines_eq">Figure</xref>. The parametric equations <q>start</q> at the point <m>P</m>, and <m>t</m> determines how far in the direction of <m>\vv{PQ}</m> to travel. When <m>t=0</m>, we travel 0 lengths of <m>\vv{PQ}</m>; when <m>t=1</m>, we travel one length of <m>\vv{PQ}</m>, resulting in the point <m>Q</m>.
@@ -273,7 +472,87 @@ We start by looking at the directions of each line. Line <m>\ell_1</m> has the d
 3Dcoo=0 30 50,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figlines2.png" />
+
+<!-- START figures/figlines2_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figlines2.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-5,5};
+real[] myychoice={-5,5};
+real[] myzchoice={-5,5};
+defaultpen(0.5mm);
+pair xbounds=(-5.5,5.5);
+pair ybounds=(-5.5,5.5);
+pair zbounds=(-1,6);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//draw P1 and vector d1 at P1
+dotfactor=3;dot((1,2,0));label("$P_1$",(1,2,0),S);
+draw((1,2,0)--(4,1,1),black,Arrow3(size=2mm));
+label("$\vec{d}_1$",(4,1,1),N);
+
+//draw P2 and vector d2 at P2
+dotfactor=3;dot((-2,3,5));label("$P_2$",(-2,3,5),N);
+draw((-2,3,5)--(2,4,7),black,Arrow3(size=2mm));
+label("$\vec{d}_2$",(2,4,7),S);
+
+//draw the line L1 ({1+3t},{2-t},{t}) in two parts, before P1 and after P1+d1
+draw((-2,3,-1)--(1,2,0),blue);
+draw((4,1,1)--(7,0,2),blue);
+label("$\ell_1$",(7,0,2),S);
+
+//draw the line L2 ({-2+4t},{3+t},{5+2t}) in two parts, before P2 and after P2+d2
+draw((-6,2,3)--(-2,3,5),blue);
+draw((2,4,7)--(6,5,9),blue);
+label("$\ell_2$",(-6,2,3),S);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figlines2_3D.asy -->
+
 </figure>
 <p>
 We next check to see if they intersect (if they do not, they are skew lines). To find if they intersect, we look for <m>t</m> and <m>s</m> values such that the respective <m>x</m>, <m>y</m> and <m>z</m> values are the same. That is, we want <m>s</m> and <m>t</m> such that:
@@ -368,7 +647,88 @@ Are they the same line? The parametric equations for a line describe one point t
 3Dcoo=0 0 0,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figlines3.png" />
+
+<!-- START figures/figlines3_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figlines3.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(10,26,7);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={2,4};
+real[] myychoice={10};
+real[] myzchoice={-5,5};
+defaultpen(0.5mm);
+pair xbounds=(-1,4.5);
+pair ybounds=(-1,11);
+pair zbounds=(-6,6);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//draw P1 and vector d1 at P1
+dotfactor=3;dot((-0.7,4.2,2.3));label("$P_1$",(-0.7,4.2,2.3),E);
+//draw((-0.7,4.2,2.3)--(0.9,6.92,-1.06),black,Arrow3(size=2mm));
+label("$\vec{d}_1$",(0.9+.5,6.92,-1.06),W);
+
+//draw P2 and vector d2 at P2
+//dotfactor=3;dot((5.7,15.08,-11.14));label("$P_2$",(5.7,15.08,-11.14),E);
+//draw((5.7,15.08,-11.14)--(2.8,10.15,-5.05),black,Arrow3(size=2mm));
+//label("$\vec{d}_2$",(2.8,10.15,-5.05),E);
+
+dotfactor=3;dot((2.8,10.15,-5.05));label("$P_2$",(2.8,10.15,-5.05),W);
+//draw((2.8,10.15,-5.05)--(-.1,5.22,1.04),black,Arrow3(size=2mm));
+label("$\vec{d}_2$",(-.1-.5,5.22,1.04),E);
+
+
+//draw the line L ({-0.7+1.6t},{4.2+2.72t},{2.3-3.36t}) 
+draw((3.3,11,-6.1)--(-2.3,1.48,5.66),blue);
+
+draw((2.8-.5,10.15,-5.05)--(-.1-.5,5.22,1.04),red,Arrow3(size=2mm));
+draw((-0.7+.5,4.2,2.3)--(0.9+.5,6.92,-1.06),red,Arrow3(size=2mm));
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figlines3_3D.asy -->
+
 </figure>
 <p>
 The point <m>P_1</m> lies on both lines, so we conclude they are the same line, just parametrized differently. <xref ref="fig_lines3">Figure</xref> graphs this line along with the points and vectors described by the parametric equations. Note how <m>\vec d_1</m> and <m>\vec d_2</m> are parallel, though point in opposite directions (as indicated by their unit vectors above).
@@ -385,7 +745,21 @@ Given a point <m>Q</m> and a line <m>\vec\ell(t) = \vec p+t\vec d</m> in space, 
 </p>
 <figure xml:id="fig_lines_dist1" >
 <caption>Establishing the distance from a point to a line.</caption>
-<image width="73%" source="images/figlines_dist1.png" />
+
+<!-- START figures/fig_lines_dist1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\draw [thin,{\colorone}] (-2,-1) -- (2,1);
+\draw [thick,->,{\colortwo}] (0,0) -- (1,.5) node [below,black] {\scriptsize $\vec d$};
+\filldraw [black] (0,3) circle (1.5pt) node [above] {\scriptsize $Q$}
+									(0,0) circle (1.5pt) node [below] {\scriptsize $P$};
+\draw [thick,dashed] (0,3) -- (1.2,.6) node [right,pos=.5] {\scriptsize $h$};
+\draw [thick,->] (0,0) -- (0,3) node [pos=.5,left] {\scriptsize $\vv{PQ}$};
+\draw [rotate=58.3] (.4,0) node {\scriptsize $\theta$};
+	
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_lines_dist1.tex -->
+
 </figure>
 <p>
 From trigonometry, we know <m>h = \norm{\vv{PQ}}\sin\theta</m>. We have a similar identity involving the cross product: <m>\norm{\vv{PQ}\times \vec d} = \norm{\vv{PQ}}\, \vnorm{d}\sin\theta.</m> Divide both sides of this latter equation by <m>\vnorm{d}</m> to obtain <m>h</m>:
@@ -402,7 +776,101 @@ From trigonometry, we know <m>h = \norm{\vv{PQ}}\sin\theta</m>. We have a simila
 3Dcoo=2.92 11.35 23.78,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figlines_dist2.png" />
+
+<!-- START figures/figlines_dist2_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figlines_dist23D.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((-.14,-9.67,3.98),(0.003,0.01,0.026),(0,0,0),1.5,(-0.09,-0.2));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+usepackage("esvect");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+pair xbounds=(-3,3);
+pair ybounds=(-3,3);
+pair zbounds=(-3,3);
+
+xaxis3("",xbounds.x,xbounds.y,invisible,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,invisible,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+triple p1=(0,0,0);
+triple p2=(0,0,2);
+triple p12=p2-p1;
+triple d1=(1,0,0);
+triple d2=(1,1,-1);
+
+// line 1
+triple f(real t) {
+	return (p1+t*d1);}
+	
+	// line 2
+triple g(real t) {
+	return (p2+t*d2);}
+
+
+//draw P1 (t=0) and vector d1 at P1 (t=1)
+dotfactor=3;
+dot(p1);label("$P_1$",p1,S);
+draw(f(0)--f(.6),red+.7mm,Arrow3(size=2mm));
+label("$\vec{d}_1$",f(.6),S);
+
+//draw P2 (t=-1.5) and vector d2 at P2 (t=-0.5)
+dotfactor=3;
+dot(p2);label("$P_2$",p2,N);
+draw(g(0)--g(.6),red+.7mm,Arrow3(size=2mm));
+label("$\vec{d}_2$",g(.6),N);
+
+//draw vector P1 to P2
+draw(p1--p2,black,Arrow3(size=2mm));
+//label("$\overrightarrow{P_1 P_2}$",(p1+p2)/2,W);
+label("$\vv{P_1 P_2}$",(p1+p2)/2,W);
+
+//draw the lines
+draw(f(-1)--f(0),blue);//L1
+draw(f(.6)--f(2),blue);//L1
+draw(g(-1)--g(0),blue);//L2
+draw(g(.6)--g(2),blue);//L2
+
+triple c=cross(d1,d2);
+c=c/sqrt(dot(c,c));
+
+//draw perp line
+draw(f(1)--f(1)+c*abs(dot(p12,c)),black);
+
+// draw perp vector
+draw(f(.9)--f(.9)+c*abs(dot(p12,c))*.4,red,Arrow3(size=2mm));
+label("$\vec c$",f(.9)+c*abs(dot(p12,c))*.4,W);
+
+label("$h$",(f(1)+f(1)+c*abs(dot(p12,c)))/2,E);
+
+// draw squares on perp line
+triple sq1a = f(1)+c*abs(dot(p12,c))*.15;
+triple sq1b = sq1a+.15*d1;
+triple sq1c = sq1b+(f(1)-sq1a);
+draw(sq1a -- sq1b -- sq1c); 
+
+triple sq2a = f(1)+c*abs(dot(p12,c))*.85;
+triple sq2b = sq2a+.15*d2/length(d2);
+triple sq2c = sq2b+(f(1)+c*abs(dot(p12,c))-sq2a);
+draw(sq2a -- sq2b -- sq2c);
+]]></asymptote></image><!-- END figures/figlines_dist2_3D.asy -->
+
 </figure>
 <p>
 It is also useful to determine the distance between lines, which we define as the length of the shortest line segment that connects the two lines (an argument from geometry shows that this line segments is perpendicular to both lines). Let lines <m>\vec\ell_1(t) = \vec p_1 + t\vec d_1</m> and <m>\vec\ell_2(t) = \vec p_2 + t\vec d_2</m> be given, as shown in <xref ref="fig_lines_dist2">Figure</xref>. To find the direction orthogonal to both <m>\vec d_1</m> and <m>\vec d_2</m>, we take the cross product: <m>\vec c = \vec d_1\times \vec d_2</m>. The magnitude of the orthogonal projection of <m>\vv{P_1P_2}</m> onto <m>\vec c</m> is the distance <m>h</m> we seek:
@@ -424,23 +892,15 @@ The following Key Idea restates these two distance formulas.
 <keyidea xml:id="idea_line_distance">
 <title>Distances to Lines</title>
 <ol>
-<li>
-<p>
-Let <m>P</m> be a point on a line <m>\ell</m> that is parallel to <m>\vec d</m>. The distance <m>h</m> from a point <m>Q</m> to the line <m>\ell</m> is:
+<li><p>Let <m>P</m> be a point on a line <m>\ell</m> that is parallel to <m>\vec d</m>. The distance <m>h</m> from a point <m>Q</m> to the line <m>\ell</m> is:
 	<index><main>distance</main><sub>between point and line</sub></index><index><main>distance</main><sub>between lines</sub></index><index><main>lines</main><sub>distances between</sub></index>
 <me>
   h =\frac{\norm{\vv{PQ}\times \vec d}}{\vnorm{d}}.
-</me>
-</p>
-</li>
-<li>
-<p>
-Let <m>P_1</m> be a point on line <m>\ell_1</m> that is parallel to <m>\vec d_1</m>, and let <m>P_2</m> be a point on line <m>\ell_2</m> parallel to <m>\vec d_2</m>, and let <m>\vec c = \vec d_1\times \vec d_2</m>, where lines <m>\ell_1</m> and <m>\ell_2</m> are not parallel. The distance <m>h</m> between the two lines is:
+</me></p></li>
+<li><p>Let <m>P_1</m> be a point on line <m>\ell_1</m> that is parallel to <m>\vec d_1</m>, and let <m>P_2</m> be a point on line <m>\ell_2</m> parallel to <m>\vec d_2</m>, and let <m>\vec c = \vec d_1\times \vec d_2</m>, where lines <m>\ell_1</m> and <m>\ell_2</m> are not parallel. The distance <m>h</m> between the two lines is:
 <me>
   h=\frac{|\vv{P_1P_2}\cdot \vec c|}{\vnorm c}.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 </keyidea>
 
@@ -1071,40 +1531,16 @@ Let lines <m>\ell_1(t)</m> and <m>\ell_2(t)</m> be parallel.
 </p>
 
 <ol>
-<li>
-<p>
-Show why the distance formula for distance between lines cannot be used as stated to find the distance between the lines.
-</p>
-</li>
-<li>
-<p>
-Show why letting <m>c=(\vv{P_1P_2}\times\vec d_2)\times\vec d_2</m> allows one to the use the formula.
-</p>
-</li>
-<li>
-<p>
-Show how one can use the formula for the distance between a point and a line to find the distance between parallel lines.
-</p>
-</li>
+<li><p>Show why the distance formula for distance between lines cannot be used as stated to find the distance between the lines.</p></li>
+<li><p>Show why letting <m>c=(\vv{P_1P_2}\times\vec d_2)\times\vec d_2</m> allows one to the use the formula.</p></li>
+<li><p>Show how one can use the formula for the distance between a point and a line to find the distance between parallel lines.</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-The distance formula cannot be used because since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel, <m>\vec c</m> is <m>\vec 0</m> and we cannot divide by <m>\vnorm{0}</m>.
-</p>
-</li>
-<li>
-<p>
-Since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel, <m>\vv{P_1P_2}</m> lies in the plane formed by the two lines. Thus <m>\vv{P_1P_2}\times\vec d_2</m> is orthogonal to this plane, and <m>\vec c=(\vv{P_1P_2}\times\vec d_2)\times \vec d_2</m> is parallel to the plane, but still orthogonal to both <m>\vec d_1</m> and <m>\vec d_2</m>. We desire the length of the projection of <m>\vv{P_1P_2}</m> onto <m>\vec c</m>, which is what the formula provides.
-</p>
-</li>
-<li>
-<p>
-Since the lines are parallel, one can measure the distance between the lines at any location on either line (just as to find the distance between straight railroad tracks, one can use a measuring tape anywhere along the track, not just at one specific place.) Let <m>P=P_1</m> and <m>Q=P_2</m> as given by the equations of the lines, and apply the formula for distance between a point and a line.
-</p>
-</li>
+<li><p>The distance formula cannot be used because since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel, <m>\vec c</m> is <m>\vec 0</m> and we cannot divide by <m>\vnorm{0}</m>.</p></li>
+<li><p>Since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel, <m>\vv{P_1P_2}</m> lies in the plane formed by the two lines. Thus <m>\vv{P_1P_2}\times\vec d_2</m> is orthogonal to this plane, and <m>\vec c=(\vv{P_1P_2}\times\vec d_2)\times \vec d_2</m> is parallel to the plane, but still orthogonal to both <m>\vec d_1</m> and <m>\vec d_2</m>. We desire the length of the projection of <m>\vv{P_1P_2}</m> onto <m>\vec c</m>, which is what the formula provides.</p></li>
+<li><p>Since the lines are parallel, one can measure the distance between the lines at any location on either line (just as to find the distance between straight railroad tracks, one can use a measuring tape anywhere along the track, not just at one specific place.) Let <m>P=P_1</m> and <m>Q=P_2</m> as given by the equations of the lines, and apply the formula for distance between a point and a line.</p></li>
 </ol>
 </answer>
 </exercise>

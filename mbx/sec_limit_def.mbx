@@ -109,9 +109,9 @@ So, what is the desired <m>x</m> tolerance? Remember, we want to find a symmetri
 </p>
 <figure xml:id="fig_choose_e_d" >
 <caption>Illustrating the <m>\epsilon-\delta</m> process.</caption>
-<image width="73%" source="images/figLimitProof1a.png" />
-<image width="73%" source="images/figLimitProof1b.png" />
-\text{With <m>\epsilon=0.5</m>, we pick any <m>\delta \lt  1.75</m>.}
+<br />
+		<br />
+		\text{With <m>\epsilon=0.5</m>, we pick any <m>\delta \lt  1.75</m>.}
 </figure>
 <p>
 Given the <m>y</m> tolerance <m>\epsilon =0.5</m>, we have found an <m>x</m> tolerance, <m>\delta \leq 1.75</m>, such that whenever <m>x</m> is within <m>\delta</m> units of 4, then <m>y</m> is within <m>\epsilon</m> units of 2. That's what we were trying to find.
@@ -230,7 +230,39 @@ We have also picked <m>\delta</m> to be smaller than <q>necessary.</q> We could 
 </p>
 <figure xml:id="fig_limit_eover5" >
 <caption>Choosing <m>\delta = \epsilon/5</m> in <xref ref="ex_compute_lim2">Example</xref>.</caption>
-<image width="73%" source="images/figlimit_proof2a.png" />
+
+<!-- START figures/fig_limit_proof2a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,ymin=2,ymax=6,xmin=1.3,xmax=3.3,xtick={2},ytick={4},name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {((0.,0.) (0.25,0.0625) (0.5,0.25) (0.75,0.5625) (1.,1.) (1.25,1.5625)
+(1.5,2.25) (1.75,3.0625) (2.,4.) (2.25,5.0625) (2.5,6.25)
+(2.75,7.5625) (3.,9.) 
+};
+\fill[black] (axis cs:2,4) circle (1pt);
+\draw[thin,dashed,thick,{\colortwo}] (axis cs:0,3) -- (axis cs:1.73,3);
+\draw[thin,dashed,thick,{\colortwo}] (axis cs:0,5) -- (axis cs:2.24,5);
+\draw[thin,dashed,thick,{\colortwo}] (axis cs:2.24,0) -- (axis cs:2.24,5);
+\draw[thin,dashed,thick,{\colortwo}] (axis cs:1.73,0) -- (axis cs:1.73,3);
+\draw[dotted,ultra thick,gray] (axis cs:2.2,0) -- (axis cs:2.2,4.84);
+\draw[dotted,ultra thick,gray] (axis cs:1.8,0) -- (axis cs:1.8,3.24);
+\draw (axis cs:-.1,4.5) node [right]{\scriptsize$\left.\rule{0pt}{12pt}\right\}\epsilon$};
+\draw (axis cs:2.1,2.15) node [above] {\scriptsize$\delta$};
+\draw (axis cs:2.1,2.05) node [above,scale=.35] {$\overbrace{\phantom{..........}}$};
+\draw (axis cs:2.3,4.5)  -- (axis cs: 3.2,4.5);
+\draw (axis cs:2.3,4.3)  -- (axis cs: 2.5,4.3);
+\draw (axis cs:2.75,4.7) node [align=center]{\scriptsize length of $\epsilon$};
+\draw (axis cs:2.75,3.9) node [align=center,text width=35pt]{\scriptsize length of\\[-2pt] $\delta=\epsilon/5$};
+\fill[{\colortwo}] (axis cs:1.73,3) circle (1pt);
+\fill[{\colortwo}] (axis cs:2.24,5) circle (1pt);
+\end{axis}
+%\fill[{\colortwo}] (1,1) circle (1pt);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_limit_proof2a.tex -->
+
 </figure>
 <p>
 In summary, given <m>\epsilon > 0</m>, set <m>\delta=\leq\epsilon/5</m>. Then <m>|x - 2| \lt  \delta</m> implies
@@ -243,11 +275,7 @@ Make note of the general pattern exhibited in these last two examples. In some s
 </p>
 
 <ol>
-<li>
-<p>
-start with <m>|x-c|\lt \delta</m> and conclude that
-</p>
-</li>
+<li><p>start with <m>|x-c|\lt \delta</m> and conclude that</p></li>
 <li><m>|f(x)-L|\lt \epsilon</m>,</li>
 </ol>
 

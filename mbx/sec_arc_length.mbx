@@ -8,16 +8,8 @@ In previous sections we have used integration to answer the following questions:
 </p>
 
 <ol>
-<li>
-<p>
-Given a region, what is its area?
-</p>
-</li>
-<li>
-<p>
-Given a solid, what is its volume?
-</p>
-</li>
+<li><p>Given a region, what is its area?</p></li>
+<li><p>Given a solid, what is its volume?</p></li>
 </ol>
 
 <p>
@@ -38,9 +30,71 @@ The length of straight<ndash />line segments is easy to compute using the Distan
 <figure xml:id="fig_arcintro" >
 <caption>Graphing <m>y=\sin x</m> on <m>[0,\pi]</m> and approximating the curve with line segments.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figarcintroa.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_arcintroa.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.79,1.57,2.36,3.14},
+			extra x tick labels={$\frac{\pi}4$,$\frac{\pi}2$,$\frac{3\pi}{4}$,$\pi$},
+%			ytick={1},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+%			extra y ticks={1.8},%
+%			extra y tick labels={$y$},
+%			minor x tick num=4,
+			ymin=-.2,ymax=1.25,%
+			xmin=-.1,xmax=3.5,%
+]
+
+\addplot [{\colorone},smooth,thick,domain=0:3.14] {sin(deg(x))};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_arcintroa.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figarcintrob.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_arcintrob.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.79,1.57,2.36,3.14},
+			extra x tick labels={$\frac{\pi}4$,$\frac{\pi}2$,$\frac{3\pi}{4}$,$\pi$},
+%			ytick={1},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+			extra y ticks={.71},%
+			extra y tick labels={$\frac{\sqrt{2}}2$},
+%			minor x tick num=4,
+			ymin=-.2,ymax=1.25,%
+			xmin=-.1,xmax=3.5,%
+]
+
+\addplot [{\colorone},smooth,thick,domain=0:3.14] {sin(deg(x))};
+
+\draw [{\colortwo},thick] (axis cs:0,0) -- (axis cs:.79,.71) -- (axis cs: 1.57,1) -- (axis cs:2.36,.71) -- (axis cs: 3.14,0);
+
+\filldraw (axis cs:0,0) circle (1pt) (axis cs:.79,.71) circle (1pt) (axis cs: 1.57,1) circle (1pt) (axis cs:2.36,.71) circle (1pt) (axis cs: 3.14,0)circle (1pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_arcintrob.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 <row><cell></cell></row>
 </tabular>
@@ -54,7 +108,55 @@ In general, we can approximate the arc length of <m>y=f(x)</m> on <m>[a,b]</m> i
 </p>
 <figure xml:id="fig_arcintro2" >
 <caption>Zooming in on the <m>i<nbsp />^th</m> subinterval <m>[x_i,x_{i+1}</m>] of a partition of <m>[a,b]</m>.</caption>
-<image width="73%" source="images/figarcintrod.png" />
+
+<!-- START figures/fig_arcintrod.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.3,1.37},
+			extra x tick labels={$x_i$,$x_{i+1}$},
+			ytick=\empty,
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+			extra y ticks={.48,1},%
+			extra y tick labels={$y_i$,$y_{i+1}$},
+%			minor x tick num=4,
+			ymin=-.2,ymax=1.25,%
+			xmin=-.1,xmax=1.6,%
+]
+%\addplot [{\colorone},smooth,thin,dashed,domain=0.1:1.55] {sin(deg(x+.2))};
+
+\addplot [{\colorone},smooth,thick,domain=0.3:1.37] {sin(deg(x+.2))};
+
+\draw (axis cs: .25,1) -- (axis cs:.1,1) 
+			(axis cs: .25,.48) -- (axis cs:.1,.48)
+			(axis cs: .175,.48) -- node [pos=.5,fill=white] {\scriptsize $\Delta y_i$} (axis cs:.175,1);
+
+\draw (axis cs: .3,.25) -- (axis cs: .3,.4)
+			(axis cs: 1.37,.25) -- (axis cs: 1.37,.4)
+			(axis cs: .3,.325) -- node [pos=.5,fill=white] {\scriptsize $\Delta x_i$} (axis cs: 1.37,.325);
+			
+\draw [{\colortwo},thick] (axis cs: .3,.48) -- (axis cs:1.37,1);
+
+\draw [dashed,thin] (axis cs: .3,.48) -| (axis cs:1.37,1);
+			
+\filldraw (axis cs: .3,.48) circle (1pt) (axis cs:1.37,1) circle (1pt);
+
+%\draw [{\colortwo},thick] (axis cs:0,0)--(axis cs:0.5236,0.5)--(axis cs:1.047,0.866)--(axis cs:1.571,1.)--(axis cs:2.094,0.866)--(axis cs:2.618,0.5)--(axis cs:3.142,0);
+%
+%\filldraw (axis cs:0,0) circle (1pt) (axis cs:0.5236,0.5) circle (1pt) (axis cs:1.047,0.866) circle (1pt) (axis cs:1.571,1.) circle (1pt) (axis cs:2.094,0.866) circle (1pt) (axis cs:2.618,0.5) circle (1pt) (axis cs:3.142,0);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_arcintrod.tex -->
+
 </figure>
 <p>
 <xref ref="fig_arcintro2">Figure</xref> zooms in on the <m>i\,^\text{th}</m> subinterval where <m>y=f(x)</m> is approximated by a straight line segment. The dashed lines show that we can view this line segment as they hypotenuse of a right triangle whose sides have length <m>\dx_i</m> and <m>\dy_i</m>. Using the Pythagorean Theorem, the length of this line segment is
@@ -119,7 +221,36 @@ We begin by finding <m>\fp(x)= \frac32x^{1/2}</m>. Using the formula, we find th
 </p>
 <figure xml:id="fig_arc1" >
 <caption>A graph of <m>f(x) = x^{3/2}</m> from <xref ref="ex_arc1">Example</xref>.</caption>
-<image width="73%" source="images/figarc1.png" />
+
+<!-- START figures/fig_arc1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={.79,1.57,2.36,3.14},
+%			extra x tick labels={$\frac{\pi}4$,$\frac{\pi}2$,$\frac{3\pi}{4}$,$\pi$},
+%			ytick={1},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+%			extra y ticks={1.8},%
+%			extra y tick labels={$y$},
+%			minor x tick num=4,
+			ymin=-.2,ymax=8.5,%
+			xmin=-.1,xmax=4.5,%
+]
+
+\addplot [{\colorone},smooth,thick,domain=0:4,samples=50] coordinates {(0,0)(0.1,0.03162)(0.2,0.08944)(0.3,0.1643)(0.4,0.253)(0.5,0.3536)(0.6,0.4648)(0.7,0.5857)(0.8,0.7155)(0.9,0.8538)(1.,1.)(1.3,1.482)(1.6,2.024)(1.9,2.619)(2.2,3.263)(2.5,3.953)(2.8,4.685)(3.1,5.458)(3.4,6.269)(3.7,7.117)(4.,8.)};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_arc1.tex -->
+
 </figure>
 <p>
 A graph of <m>f</m> is given in <xref ref="fig_arc1">Figure</xref>.
@@ -151,7 +282,38 @@ This function was chosen specifically because the resulting integral can be eval
 </md>
 <figure xml:id="fig_arc2" >
 <caption>A graph of <m>f(x) =\frac18x^2-\ln x</m> from <xref ref="ex_arc2">Example</xref>.</caption>
-<image width="73%" source="images/figarc2.png" />
+
+<!-- START figures/fig_arc2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={.79,1.57,2.36,3.14},
+%			extra x tick labels={$\frac{\pi}4$,$\frac{\pi}2$,$\frac{3\pi}{4}$,$\pi$},
+%			ytick={1},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+%			extra y ticks={1.8},%
+%			extra y tick labels={$y$},
+%			minor x tick num=4,
+			ymin=-.26,ymax=1.2,%
+			xmin=-.1,xmax=3.1,%
+]
+\addplot [{\colorone},smooth,thin] coordinates{(0.2,1.614)(0.3,1.215)(0.4,0.9363)(0.5,0.7244)(0.6,0.5558)(0.7,0.4179)(0.8,0.3031)(0.9,0.2066)(1.,0.125)(1.1,0.05594)(1.2,-0.002322)(1.3,-0.05111)(1.4,-0.09147)(1.5,-0.1242)(1.6,-0.15)(1.7,-0.1694)(1.8,-0.1828)(1.9,-0.1906)(2.,-0.1931)(2.1,-0.1907)(2.2,-0.1835)(2.3,-0.1717)(2.4,-0.1555)(2.5,-0.135)(2.6,-0.1105)(2.7,-0.082)(2.8,-0.04962)(2.9,-0.01346)(3.,0.02639)};
+
+\addplot [{\colorone},smooth,very thick,] coordinates {(1.,0.125)(1.1,0.05594)(1.2,-0.002322)(1.3,-0.05111)(1.4,-0.09147)(1.5,-0.1242)(1.6,-0.15)(1.7,-0.1694)(1.8,-0.1828)(1.85,-0.1874)(1.9,-0.1906)(1.95,-0.1925)(2.,-0.1931)};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_arc2.tex -->
+
 </figure>
 <p>
 A graph of <m>f</m> is given in <xref ref="fig_arc2">Figure</xref>; the portion of the curve measured in this problem is in bold.
@@ -209,6 +371,9 @@ Using a computer with <m>n=100</m> the approximation is <m>L\approx 3.8202</m>; 
 </p>
 </solution>
 </example>
+<p>
+\vskip
+</p>
 </introduction>
 
 
@@ -220,9 +385,65 @@ We have already seen how a curve <m>y=f(x)</m> on <m>[a,b]</m> can be revolved a
 <figure xml:id="fig_surface_intro" >
 <caption>Establishing the formula for surface area.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figarc4b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_arc4b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}%
+[
+width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis on top,
+			axis y line=none,
+%			axis x line=none,
+%			axis z line=none,%
+			axis lines=center,
+			y dir=reverse,
+			view={10}{30},
+			name=myplot,
+%			%x=.37\marginparwidth,
+%			%y=.37\marginparwidth,
+			xtick=\empty,
+			ztick=\empty,% 
+			extra x ticks={.5,.9,1.4,1.9},
+			extra x tick labels={$a$,$x_i$,$x_{i+1}$,$b$},
+%			ytick={.1,1},
+%			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1,ymax=1,%
+			xmin=.25,xmax=2.1,
+			zmin=-.2,zmax=1.2%
+]
+
+%\addplot3[domain=1:3,y domain=150:325,samples y=36,surf,shader=flat,colormap={mp2}{\colormaptwo}] ({2*cos(y)+3},{2*sin(y)},{x});
+
+
+%\addplot3[domain=1:1.2,y domain=-210:150,samples y=36,surf,shader=flat,colormap={mp2}{\colormapone}] ({x},{(sin(deg(3*x+.25))-.5)*sin(y)},{(sin(deg(3*x+.25))-.5)*cos(y)});
+
+%\addplot3[domain=.83:1.4,,samples y=0,{\colorone},thick] ({x},{0},{-(sin(deg(3*x+.25)))+.5});
+
+\addplot3[domain=.5:1.9,,samples y=0,{\colorone},thick] ({x},{0},{(sin(deg(x)))});
+
+\draw [{\colortwo},thick] (axis cs:.9,0,.78) -- (axis cs:1.4,0,.985);
+\draw [fill=black] (axis cs:.9,.0,.78) circle (1pt) (axis cs:1.4,0,.985) circle (1pt);
+%\draw [>=stealth,->]  (axis cs:1.15,0,0) -- (axis cs:1.4,0,0);
+%\draw [dashed] (axis cs:.96,0,0) -- (axis cs:1.17,0,0);
+
+%\draw (axis cs:1.28,0,.64) node {\scriptsize $\left.\rule{0pt}{17pt}\right\}\ R(x_{i+1})$};
+%\draw (axis cs:.92,0,.33) node {\scriptsize $r(x_i)\left\{\rule{0pt}{8pt}\right.$};
+%\draw [dashed] (axis cs:3,0,0) -- (axis cs:3,0,3.75);
+%
+%\draw (axis cs:1.09,0,1.18) node [rotate=19] {\scriptsize $\overbrace{\rule{38pt}{0pt}}^L$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin)[shift={(-10pt,-6pt)}] {\scriptsize $x$};
+\node [above] at (myplot.above origin) [shift={(0,-17pt)}] {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_arc4b.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=121.00092658103458,
 3Dortho=0.0048407199792563915,
@@ -230,7 +451,122 @@ We have already seen how a curve <m>y=f(x)</m> on <m>[a,b]</m> can be revolved a
 3Dcoo=72.58285522460938 2.891160011291504 -26.545438766479492,
 3Droo=149.99998703790175,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figarc4.png" /></cell></row>
+
+<!-- START figures/figarc4_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figarc4_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((16.7,13.2,46),(0,1,0),(0,0,0),1,(-.0323,0.0012));
+//currentprojection=orthographic((16.7,13.2,46),(0,1,0),(0,0,0),1,(0.0148,0.00673));
+defaultrender.merge=true;
+
+usepackage("amsmath");
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-.25,2.1);
+pair ybounds=(-1.1,1.1);
+pair zbounds=(-1.1,1.1);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//\addplot3[domain=.9:1.4,y domain=-210:150,samples y=36,surf,shader=flat,colormap={mp2}{\colormapone}]
+// ({x},{(.41*(x-.9)+.78)*sin(y)},{(.41*(x-.9)+.78)*cos(y)});
+
+//\addplot3[domain=.5:1.9,,samples y=0,{\colorone},] ({x},{0},{(sin(deg(x)))});
+
+//\addplot3[domain=0:360,,samples y=0,black,smooth] ({1.4},{.98*cos(x)},{.98*sin(x)});
+
+//\addplot3[domain=130:330,,samples y=0,black,dashed,smooth] ({.9},{.78*cos(x)},{.78*sin(x)});
+
+pen p=rgb(0,0,.7);
+
+triple f2(pair t) {return (t.x,(.41*(t.x-.9)+.78)*sin(t.y),(.41*(t.x-.9)+.78)*cos(t.y));}
+surface s2=surface(f2,(.9,0),(1.4,2*pi),2,16,Spline);
+draw(s2,emissive(rgb(.6,.6,1)+opacity(.7)),meshpen=p);
+
+triple g3(real t) {return (t,sin(t),0);}
+path3 p3=graph(g3,.5,1.9,operator ..);
+draw(p3,blue+.4mm);
+
+triple g3(real t) {return (.9,.78*sin(t),.78*cos(t));}
+path3 p3=graph(g3,0,2*pi,operator ..);
+draw(p3,blue+.2mm);
+
+triple g3(real t) {return (1.4,.985*sin(t),.985*cos(t));}
+path3 p3=graph(g3,0,2*pi,operator ..);
+draw(p3,blue+.2mm);
+
+draw((.9,.78,0)--(1.4,.985,0),red+.6mm);
+
+draw((.5,.05,0)--(.5,-.05,0),black+.2mm);
+label("$a$",(.5,-.05,0),S);
+
+draw((1.9,.05,0)--(1.9,-.05,0),black+.2mm);
+label("$b$",(1.9,-.05,0),S);
+
+draw((.9,.05,0)--(.9,-.05,0),black+.2mm);
+label("$x_i$",(.9,-.05,0),S);
+
+draw((1.4,.05,0)--(1.4,-.05,0),black+.2mm);
+label("$x_{i+1}$",(1.4,-.05,0),S);
+
+label(XY*"$\left.\rule{0pt}{40pt}\right\}\ R$",(1.4,.49,0),E,Embedded);
+label(XY*"$r\left\{\rule{0pt}{30pt}\right.$",(.85,.37,0),W,Embedded);
+label(rotate(20,(0,0,1))*"$\overbrace{\rule{41pt}{0pt}}^{\text{\normalsize \textit{L}}}$",(1.1,1.03,0),Embedded);
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figarc4_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -280,22 +616,14 @@ Let <m>f</m> be differentiable on an open interval containing <m>[a,b]</m> where
 </p>
 
 <ol>
-<li>
-<p>
-The surface area of the solid formed by revolving the graph of <m>y=f(x)</m>, where <m>f(x)\geq0</m>, about the <m>x</m>-axis is
+<li><p>The surface area of the solid formed by revolving the graph of <m>y=f(x)</m>, where <m>f(x)\geq0</m>, about the <m>x</m>-axis is
 <me>
   \text{Surface Area}  = 2\pi\int_a^b f(x)\sqrt{1+\fp(x)^2}\ dx.
-</me>
-</p>
-</li>
-<li>
-<p>
-The surface area of the solid formed by revolving the graph of <m>y=f(x)</m> about the <m>y</m>-axis, where <m>a,b\geq0</m>, is
+</me></p></li>
+<li><p>The surface area of the solid formed by revolving the graph of <m>y=f(x)</m> about the <m>y</m>-axis, where <m>a,b\geq0</m>, is
 <me>
   \text{Surface Area}  = 2\pi\int_a^b x\sqrt{1+\fp(x)^2}\ dx.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 </keyidea>
 <p>
@@ -316,7 +644,98 @@ Find the surface area of the solid formed by revolving <m>y=\sin x</m> on <m>[0,
 3Dcoo=72.58285522460938 2.891160011291504 -26.545438766479492,
 3Droo=149.99998703790175,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsa1.png" />
+
+<!-- START figures/figsa1_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figarc4_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((16.7,13.2,46),(0,1,0),(0,0,0),1,(-.0323,0.0012));
+//currentprojection=orthographic((16.7,13.2,46),(0,1,0),(0,0,0),1,(0.0148,0.00673));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={-1,1};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-.1,3.5);
+pair ybounds=(-1.5,1.5);
+pair zbounds=(-1.5,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//\addplot3[domain=.9:1.4,y domain=-210:150,samples y=36,surf,shader=flat,colormap={mp2}{\colormapone}]
+// ({x},{(.41*(x-.9)+.78)*sin(y)},{(.41*(x-.9)+.78)*cos(y)});
+
+//\addplot3[domain=.5:1.9,,samples y=0,{\colorone},] ({x},{0},{(sin(deg(x)))});
+
+//\addplot3[domain=0:360,,samples y=0,black,smooth] ({1.4},{.98*cos(x)},{.98*sin(x)});
+
+//\addplot3[domain=130:330,,samples y=0,black,dashed,smooth] ({.9},{.78*cos(x)},{.78*sin(x)});
+
+pen p=rgb(0,0,.8)+.1mm;
+
+triple f2(pair t) {return (t.x,sin(t.x)*sin(t.y),sin(t.x)*cos(t.y));}
+surface s2=surface(f2,(0,0),(pi,2*pi),16,16,usplinetype=new splinetype[] {notaknot,notaknot,monotonic}
+,vsplinetype=new splinetype[] {notaknot,notaknot,monotonic}
+);
+draw(s2,emissive(rgb(.6,.6,1)+opacity(.7)),meshpen=p);
+
+triple g3(real t) {return (t,sin(t),0);}
+path3 p3=graph(g3,0,pi,32,operator ..);
+draw(p3,blue+.6mm);
+
+draw((pi,.05,0)--(pi,-.05,0),black+.2mm);
+label("$\pi$",(pi,-.05,0),S);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figsa1_3D.asy -->
+
 </figure>
 </statement>
 <solution>
@@ -348,21 +767,14 @@ Find the surface area of the solid formed by revolving the curve <m>y=x^2</m> on
 </p>
 
 <ol>
-<li>
-<p>
-the <m>x</m>-axis
-</p>
-</li>
-<li>
-<p>
-the <m>y</m>-axis.
-</p>
-</li>
+<li><p>the <m>x</m>-axis</p></li>
+<li><p>the <m>y</m>-axis.</p></li>
 </ol>
 <figure xml:id="fig_sa2" >
 <caption>The solids used in <xref ref="ex_sa2">Example</xref>.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=138.26595091591264,
 3Dortho=0.0048407199792563915,
@@ -370,10 +782,93 @@ the <m>y</m>-axis.
 3Dcoo=81.32470703125 3.403531074523926 -28.20997428894043,
 3Droo=149.9999886313645,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsa2a.png" /></cell></row>
+
+<!-- START figures/figsa2a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figarc4_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((7.4,20,47),(0,1,0),(0,0,0),1,(-.004432,-0.00537));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={1};
+real[] myychoice={-1,1};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-.1,1.5);
+pair ybounds=(-1.1,1.1);
+pair zbounds=(-1.1,1.1);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+pen p=rgb(0,0,.8)+.1mm;
+
+triple f2(pair t) {return (t.x,t.x^2*sin(t.y),t.x^2*cos(t.y));}
+surface s2=surface(f2,(0,0),(1,2*pi),8,16,usplinetype=new splinetype[] {notaknot,notaknot,monotonic}
+,vsplinetype=new splinetype[] {notaknot,notaknot,monotonic}
+);
+draw(s2,emissive(rgb(.6,.6,1)+opacity(.7)),meshpen=p);
+
+triple g3(real t) {return (t,t^2,0);}
+path3 p3=graph(g3,0,1,operator ..);
+draw(p3,blue+.6mm);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figsa2a_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(a)</cell></row>
 <row><cell></cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=138.26595091591264,
 3Dortho=0.0048407199792563915,
@@ -381,16 +876,96 @@ the <m>y</m>-axis.
 3Dcoo=0.013853734359145164 79.42704010009766 -29.364774703979492,
 3Droo=149.99998895240248,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figsa2b.png" /></cell></row>
+
+<!-- START figures/figsa2b_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figarc4_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((10.4,3.7,64),(0,1,0),(0,0,0),.95,(0.00404,0.00136));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={1,-1};
+real[] myychoice={-1,1};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-1.5,1.5);
+pair ybounds=(-.1,1.1);
+pair zbounds=(-1.5,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+pen p=rgb(0,0,.8)+.1mm;
+
+triple f2(pair t) {return (t.x*sin(t.y),t.x^2,t.x*cos(t.y));}
+surface s2=surface(f2,(0,0),(1,2*pi),8,16,usplinetype=new splinetype[] {notaknot,notaknot,monotonic}
+,vsplinetype=new splinetype[] {notaknot,notaknot,monotonic}
+);
+draw(s2,emissive(rgb(.6,.6,1)+opacity(.7)),meshpen=p);
+
+triple g3(real t) {return (t,t^2,0);}
+path3 p3=graph(g3,0,1,operator ..);
+draw(p3,blue+.6mm);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figsa2b_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-The integral is straightforward to setup:
+<li><p>The integral is straightforward to setup:
 <md>
   <mrow>  SA \amp = 2\pi\int_0^1 x^2\sqrt{1+(2x)^2}\ dx.
 	\end{mathrow}
@@ -400,12 +975,8 @@ Like the integral in <xref ref="ex_sa1">Example</xref>, this requires Trigonomet
   <mrow>  \amp =\frac{\pi}{32}\left(18\sqrt{5}-\sinh^{-1}2\right)</mrow>
   <mrow>  \amp \approx 3.81\ \text{units} ^2.</mrow>
 </md>
-The solid formed by revolving <m>y=x^2</m> around the <m>x</m>-axis is graphed in <xref ref="fig_sa2">Figure</xref> (a).
-</p>
-</li>
-<li>
-<p>
-Since we are revolving around the <m>y</m>-axis, the <q>radius</q> of the solid is not <m>f(x)</m> but rather <m>x</m>. Thus the integral to compute the surface area is:
+The solid formed by revolving <m>y=x^2</m> around the <m>x</m>-axis is graphed in <xref ref="fig_sa2">Figure</xref> (a).</p></li>
+<li><p>Since we are revolving around the <m>y</m>-axis, the <q>radius</q> of the solid is not <m>f(x)</m> but rather <m>x</m>. Thus the integral to compute the surface area is:
 <md>
   <mrow>  SA \amp = 2\pi\int_0^1x\sqrt{1+(2x)^2}\ dx.
 		\end{mathrow}
@@ -416,9 +987,7 @@ This integral can be solved using substitution. Set $u=1+4x^2$; the new bounds a
   <mrow>  \amp = \frac{\pi}6\left(5\sqrt{5}-1\right)</mrow>
   <mrow>  \amp \approx 5.33\ \text{units} ^2.</mrow>
 </md>
-The solid formed by revolving <m>y=x^2</m> about the <m>y</m>-axis is graphed in <xref ref="fig_sa2">Figure</xref> (b).
-</p>
-</li>
+The solid formed by revolving <m>y=x^2</m> about the <m>y</m>-axis is graphed in <xref ref="fig_sa2">Figure</xref> (b).</p></li>
 </ol>
 </solution>
 </example>
@@ -440,7 +1009,88 @@ Consider the solid formed by revolving <m>y=1/x</m> about the <m>x</m>-axis on <
 3Dcoo=72.58285522460938 2.8911631107330322 -26.545440673828125,
 3Droo=149.99999776925813,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figgabriel.png" />
+
+<!-- START figures/figgabriel_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figgabriel_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((372,29,113),(0,1,0),(0,0,0),.95,(-0.024,-0.0032));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={5,10,15};
+real[] myychoice={-1,1};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-1,17);
+pair ybounds=(-1.3,1.3);
+pair zbounds=(-1.3,1.3);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+pen p=rgb(0,0,.8)+.1mm;
+
+triple f2(pair t) {return (t.x,1/t.x*sin(t.y),1/t.x*cos(t.y));}
+surface s2=surface(f2,(1,0),(15,2*pi),16,16,usplinetype=new splinetype[] {notaknot,notaknot,monotonic}
+,vsplinetype=new splinetype[] {notaknot,notaknot,monotonic}
+);
+draw(s2,emissive(rgb(.6,.6,1)+opacity(.7)),meshpen=p);
+
+triple g3(real t) {return (t,1/t,0);}
+path3 p3=graph(g3,1,15,16,operator ..);
+draw(p3,blue+.6mm);
+
+draw((0,-2,0)--(0,2,0),invisible);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figgabriel_3D.asy -->
+
 </figure>
 </statement>
 <solution>

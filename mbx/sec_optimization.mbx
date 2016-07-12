@@ -27,7 +27,47 @@ It helps to make a sketch of the situation. Our enclosure is sketched twice in <
 </p>
 <figure xml:id="fig_opt1" >
 <caption>A sketch of the enclosure in <xref ref="ex_opt1">Example</xref>.</caption>
-<image width="73%" source="images/figopt1a.png" />
+
+<!-- START figures/fig_opt1a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[scale=1.3]
+
+\shadedraw [top color = green,bottom color = green!50!black] (0,0) -- (33.6pt,35.28pt) -- (95.2pt,35.28pt) -- (61.6pt,0) -- cycle;
+
+\begin{scope}[cm={1,1.05,0,1,(0,0)}]
+\foreach \x in {0,...,7}
+	{
+	\shadedraw [xscale=.3,shift={(\x*14 pt,0)},left color=brown!40!white,right color = brown!99!white] (0,0) -- 	++(0,20pt)  -- ++(4pt,4pt)  -- ++(6pt,0pt) -- ++(4pt,-4pt)-- ++(0pt,-20pt) -- cycle;
+	}
+\end{scope}
+
+\begin{scope}[shift={(33.6pt,35.28pt)}]
+\foreach \x in {0,...,10}
+	{
+		\shadedraw [xscale=.4,shift={(\x*14 pt,0)},left color=brown!40!white,right color = brown!99!white] (0,0) -- 	++(0,20pt)  -- ++(4pt,4pt)  -- ++(6pt,0pt) -- ++(4pt,-4pt)-- ++(0pt,-20pt) -- cycle;
+	}
+\end{scope}
+
+\foreach \x in {0,...,10}
+	{
+		\shadedraw [xscale=.4,shift={(\x*14 pt,0)},left color=brown!40!white,right color = brown!99!white] (0,0) -- 	++(0,20pt)  -- ++(4pt,4pt)  -- ++(6pt,0pt) -- ++(4pt,-4pt)-- ++(0pt,-20pt) -- cycle;
+	}
+	
+\begin{scope}[cm={1,1.05,0,1,(61.6pt,0)}]
+\foreach \x in {0,...,7}
+	{
+	\shadedraw [xscale=.3,shift={(\x*14 pt,0)},left color=brown!40!white,right color = brown!99!white] (0,0) -- 	++(0,20pt)  -- ++(4pt,4pt)  -- ++(6pt,0pt) -- ++(4pt,-4pt)-- ++(0pt,-20pt) -- cycle;
+	}
+\end{scope}
+
+\draw [<->,>=latex] (0,-5pt) -- (61.6pt,-5pt) node [below,pos=.5] {$x$};
+\draw [<->,>=latex] (100.2pt,35.28pt) -- (66.6pt,0pt) node [right,pos=.5] {$y$};
+
+\draw [shift = {(0,-70pt)}] (0,0) -- (80pt,0) node [pos=.5,below] {$x$} -- (80pt,50pt) node [pos=.5,right] {$y$} -- (0,50pt) -- cycle;
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_opt1a.tex -->
+
 </figure>
 <p>
 We let <m>x</m> and <m>y</m> denote the lengths of the sides of the rectangle. Clearly,
@@ -97,21 +137,9 @@ We outline here the basic process of solving these optimization problems.
 <keyidea xml:id="idea_optimization">
 <title>Solving Optimization Problems</title>
 <ol>
-<li>
-<p>
-Understand the problem. Clearly identify what quantity is to be maximized or minimized. Make a sketch if helpful.
-</p>
-</li>
-<li>
-<p>
-Create equations relevant to the context of the problem, using the information given. (One of these should describe the quantity to be optimized. We'll call this the <em>fundamental equation.</em>)
-</p>
-</li>
-<li>
-<p>
-If the fundamental equation defines the quantity to be optimized as a function of more than one variable, reduce it to a single variable function using substitutions derived from the other equations.
-</p>
-</li>
+<li><p>Understand the problem. Clearly identify what quantity is to be maximized or minimized. Make a sketch if helpful.</p></li>
+<li><p>Create equations relevant to the context of the problem, using the information given. (One of these should describe the quantity to be optimized. We'll call this the <em>fundamental equation.</em>)</p></li>
+<li><p>If the fundamental equation defines the quantity to be optimized as a function of more than one variable, reduce it to a single variable function using substitutions derived from the other equations.</p></li>
 </ol>
 
 <p>
@@ -122,21 +150,9 @@ If the fundamental equation defines the quantity to be optimized as a function o
 <keyidea xml:id="idea_optimizationb">
 <title>Solving Optimization Problems <ndash /> Continued</title>
 <ol>
-<li>
-<p>
-Identify the domain of this function, keeping in mind the context of the problem.
-</p>
-</li>
-<li>
-<p>
-Find the extreme values of this function on the determined domain.
-</p>
-</li>
-<li>
-<p>
-Identify the values of all relevant quantities of the problem.
-</p>
-</li>
+<li><p>Identify the domain of this function, keeping in mind the context of the problem.</p></li>
+<li><p>Find the extreme values of this function on the determined domain.</p></li>
+<li><p>Identify the values of all relevant quantities of the problem.</p></li>
 </ol>
 </keyidea>
 <p>
@@ -155,20 +171,56 @@ We will follow the steps outlined by <xref ref="idea_optimization">Key Idea</xre
 </p>
 
 <ol>
-<li>
-<p>
-We are maximizing <em>area</em>. A sketch of the region will help; <xref ref="fig_opt2">Figure</xref> gives two sketches of the proposed enclosed area. A key feature of the sketches is to acknowledge that one side is not fenced. 
+<li><p>We are maximizing <em>area</em>. A sketch of the region will help; <xref ref="fig_opt2">Figure</xref> gives two sketches of the proposed enclosed area. A key feature of the sketches is to acknowledge that one side is not fenced. 
 	
 <figure xml:id="fig_opt2" >
 <caption>A sketch of the enclosure in <xref ref="ex_opt2">Example</xref>.</caption>
-<image width="73%" source="images/figopt2a.png" />
-</figure>
 
-</p>
-</li>
-<li>
-<p>
-We want to maximize the area; as in the example before,
+<!-- START figures/fig_opt2a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[scale=1.3]
+
+\shadedraw [top color = green,bottom color = green!50!black] (0,0) -- (33.6pt,35.28pt) -- (95.2pt,35.28pt) -- (61.6pt,0) -- cycle;
+
+\begin{scope}[cm={1,1.05,0,1,(0,0)}]
+\foreach \x in {0,...,7}
+	{
+	\shadedraw [xscale=.3,shift={(\x*14 pt,0)},left color=brown!40!white,right color = brown!99!white] (0,0) -- 	++(0,20pt)  -- ++(4pt,4pt)  -- ++(6pt,0pt) -- ++(4pt,-4pt)-- ++(0pt,-20pt) -- cycle;
+	}
+\end{scope}
+
+\begin{scope}[shift={(33.6pt,35.28pt)}]
+\foreach \x in {0,...,10}
+	{
+		\shadedraw [xscale=.4,shift={(\x*14 pt,0)},left color=brown!40!white,right color = brown!99!white] (0,0) -- 	++(0,20pt)  -- ++(4pt,4pt)  -- ++(6pt,0pt) -- ++(4pt,-4pt)-- ++(0pt,-20pt) -- cycle;
+	}
+\end{scope}
+	
+\begin{scope}[cm={1,1.05,0,1,(61.6pt,0)}]
+\foreach \x in {0,...,7}
+	{
+	\shadedraw [xscale=.3,shift={(\x*14 pt,0)},left color=brown!40!white,right color = brown!99!white] (0,0) -- 	++(0,20pt)  -- ++(4pt,4pt)  -- ++(6pt,0pt) -- ++(4pt,-4pt)-- ++(0pt,-20pt) -- cycle;
+	}
+\end{scope}
+
+\shadedraw [top color=blue, bottom color=blue!50!white] (-10pt,0) sin (30pt,2pt) cos (70pt,0pt) -- (70pt,-10pt) sin (35pt,-8pt) cos (-10pt,-10pt) --cycle;
+
+%\foreach \x in {0,...,10}
+%	{
+%		\shadedraw [xscale=.4,shift={(\x*14 pt,0)},left color=brown!40!white,right color = brown!99!white] (0,0) -- 	++(0,20pt)  -- ++(4pt,4pt)  -- ++(6pt,0pt) -- ++(4pt,-4pt)-- ++(0pt,-20pt) -- cycle;
+%	}
+
+\draw [<->,>=latex] (0,-15pt) -- (61.6pt,-15pt) node [below,pos=.5] {$x$};
+\draw [<->,>=latex] (100.2pt,35.28pt) -- (66.6pt,0pt) node [right,pos=.5] {$y$};
+
+\draw [shift = {(0,-80pt)}] (0,0) -- (0,50pt) -- (80pt,50pt) node [pos=.5,below] {$x$} --(80pt,0) node [pos=.5,right] {$y$};
+\draw [{\colorone},very thick,shift = {(0,-80pt)}] (0,0) sin (40pt,2pt) cos (80pt,0);
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_opt2a.tex -->
+
+</figure></p></li>
+<li><p>We want to maximize the area; as in the example before,
 <me>
   \text{Area}  = xy.
 </me>
@@ -178,38 +230,20 @@ This is our fundamental equation. This defines area as a function of two variabl
 <me>
   \text{Perimeter}  = 100 = x+2y.
 </me>
-Note how this is different than in our previous example.
-</p>
-</li>
-<li>
-<p>
-We now reduce the fundamental equation to a single variable. In the perimeter equation, solve for <m>y</m>: <m>y = 50 - x/2</m>. We can now write Area as
+Note how this is different than in our previous example.</p></li>
+<li><p>We now reduce the fundamental equation to a single variable. In the perimeter equation, solve for <m>y</m>: <m>y = 50 - x/2</m>. We can now write Area as
 <me>
   \text{Area}  = A(x) = x(50-x/2) = 50x - \frac12x^2.
 </me>
-Area is now defined as a function of one variable.
-</p>
-</li>
-<li>
-<p>
-We want the area to be nonnegative. Since <m>A(x) = x(50-x/2)</m>, we want <m>x\geq 0</m> and <m>50-x/2\geq 0</m>. The latter inequality implies that <m>x\leq100</m>, so <m>0\leq x\leq 100</m>.
-</p>
-</li>
-<li>
-<p>
-We now find the extreme values. At the endpoints, the minimum is found, giving an area of 0. 
+Area is now defined as a function of one variable.</p></li>
+<li><p>We want the area to be nonnegative. Since <m>A(x) = x(50-x/2)</m>, we want <m>x\geq 0</m> and <m>50-x/2\geq 0</m>. The latter inequality implies that <m>x\leq100</m>, so <m>0\leq x\leq 100</m>.</p></li>
+<li><p>We now find the extreme values. At the endpoints, the minimum is found, giving an area of 0. 
 	
 	Find the critical points. We have <m>A'(x) = 50-x</m>; setting this equal to 0 and solving for <m>x</m> returns <m>x=50</m>. This gives an area of
 <me>
   A(50) = 50(25) = 1250.
-</me>
-</p>
-</li>
-<li>
-<p>
-We earlier set <m>y = 50-x/2</m>; thus <m>y = 25</m>. Thus our rectangle will have two sides of length 25 and one side of length 50, with a total area of 1250 ft<m>^2</m>.
-</p>
-</li>
+</me></p></li>
+<li><p>We earlier set <m>y = 50-x/2</m>; thus <m>y = 25</m>. Thus our rectangle will have two sides of length 25 and one side of length 50, with a total area of 1250 ft<m>^2</m>.</p></li>
 </ol>
 
 <p>
@@ -232,7 +266,31 @@ It costs <dollar />50/ft. to run a power line along the land, and <dollar />130/
 </p>
 <figure xml:id="fig_opt3b" >
 <caption>Running a power line from the power station to an offshore facility with minimal cost in <xref ref="ex_opt3">Example</xref>.</caption>
-<image width="73%" source="images/figopt3b.png" />
+
+<!-- START figures/fig_opt3b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=latex]
+
+\begin{scope}
+\clip (0,0) rectangle (140pt,50pt);
+\draw [inner color={\colorone},draw = white] (-10,-25pt) rectangle (180pt,70pt);
+\end{scope}
+\draw [top color=brown, bottom color=white,draw=white] (0,0) rectangle (140pt,-15pt);
+\draw (0,0) -- (150pt,0);
+\filldraw [fill=white] (10pt,-5pt) rectangle (20pt,5pt);
+%\filldraw [fill=white] (130pt,35pt) circle (7pt);
+
+\draw [<->] (15pt,-10pt) -- (130pt,-10pt) node [below,pos=.5] {\scriptsize 5000 ft};
+\draw [<->] (140pt,0pt) -- (140pt,35pt) node [right, pos=.5] {\scriptsize 1000 ft};
+
+\draw [ultra thick] (20pt,0) -- (70pt,0);
+\filldraw (70pt,0) circle (2pt);
+\draw [dashed,thick] (70pt,0) -- (130pt,35pt);
+\filldraw [fill=white] (130pt,35pt) circle (7pt);
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_opt3b.tex -->
+
 </figure>
 </statement>
 <solution>
@@ -249,7 +307,33 @@ The optimal solution likely has the line being run along the ground for a while,
 </p>
 <figure xml:id="fig_opt3c" >
 <caption>Labeling unknown distances in <xref ref="ex_opt3">Example</xref>.</caption>
-<image width="73%" source="images/figopt3c.png" />
+
+<!-- START figures/fig_opt3c.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=latex]
+
+\begin{scope}
+\clip (0,0) rectangle (140pt,50pt);
+\draw [inner color={\colorone},draw = white] (-10,-25pt) rectangle (180pt,70pt);
+\end{scope}
+\draw [top color=brown, bottom color=white,draw=white] (0,0) rectangle (140pt,-15pt);
+\draw (0,0) -- (150pt,0);
+\filldraw [fill=white] (10pt,-5pt) rectangle (20pt,5pt);
+%\filldraw [fill=white] (130pt,35pt) circle (7pt);
+
+\draw [<->] (15pt,-10pt) -- (70pt,-10pt) node [below,pos=.5] {\scriptsize $5000 -x$};
+\draw [<->] (70pt,-10pt) -- (130pt,-10pt) node [below,pos=.5] {\scriptsize $x$};
+\draw [<->] (140pt,0pt) -- (140pt,35pt) node [right, pos=.5] {\scriptsize 1000 ft};
+
+\draw [ultra thick] (20pt,0) -- (70pt,0);
+\filldraw (70pt,0) circle (2pt);
+\draw [dashed,thick] (70pt,0) -- (130pt,35pt) ;
+\draw (100pt,23pt) node [rotate=30] {\scriptsize $\sqrt{x^2+1000^2}$};
+\filldraw [fill=white] (130pt,35pt) circle (7pt);
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_opt3c.tex -->
+
 </figure>
 <p>
 By choosing <m>x</m> as we did, we make the expression under the square root simple. We now create the cost function.

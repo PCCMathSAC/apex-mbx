@@ -13,7 +13,36 @@ In <xref ref="fig_taypolyintroa">Figure</xref>, we see a function <m>y=f(x)</m> 
 <figure xml:id="fig_taypolyintroa" >
 <caption>Plotting <m>y=f(x)</m> and a table of derivatives of <m>f</m> evaluated at 0.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figtaypolyintroa.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_taypolyintroa.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={2,4,6,8,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-5.5,ymax=8.5,%
+			xmin=-4.2,xmax=4.4%
+]
+
+\addplot [{\colorone},domain=-4:4,smooth,thick,samples=50] {exp(x)*sin(deg(x))*cos(deg(x))+2};
+\addplot [{\colortwo},domain=-4:4,thick] {x+2};
+
+\draw (axis cs:-3.,3) node {\scriptsize $y=f(x)$};
+\draw (axis cs:-2.75,-2.2) node {\scriptsize $y=p_1(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_taypolyintroa.tex -->
+</cell></row>
 <row><cell></cell></row>
 <row><cell>
 <tabular>
@@ -47,11 +76,71 @@ If <m>p_2''(x) = 2</m>, then <m>p_2'(x) = 2x+C</m> for some constant <m>C</m>. S
 </p>
 <figure xml:id="fig_taypolyintrob" >
 <caption>Plotting <m>f</m>, <m>p_2</m> and <m>p_4</m>.</caption>
-<image width="73%" source="images/figtaypolyintrob.png" />
+
+<!-- START figures/fig_taypolyintrob.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={2,4,6,8,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-5.5,ymax=8.5,%
+			xmin=-4.2,xmax=4.4%
+]
+
+\addplot [{\colorone},domain=-4:4,smooth,thick,samples=50] {exp(x)*sin(deg(x))*cos(deg(x))+2};
+\addplot [{\colortwo},domain=-4:4,thick,smooth] {x^2+x+2};
+\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
+
+\draw (axis cs:-3.,3.5) node {\scriptsize $y=p_2(x)$};
+\draw (axis cs:-3.1,-2.5) node {\scriptsize $y=p_4(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_taypolyintrob.tex -->
+
 </figure>
 <figure xml:id="fig_taypolyintroc" >
 <caption>Plotting <m>f</m> and <m>p_{13}</m>.</caption>
-<image width="73%" source="images/figtaypolyintroc.png" />
+
+<!-- START figures/fig_taypolyintroc.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={2,4,6,8,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-5.5,ymax=8.5,%
+			xmin=-4.2,xmax=4.4%
+]
+
+\addplot [{\colorone},domain=-4:4,smooth,thick,samples=50] {exp(x)*sin(deg(x))*cos(deg(x))+2};
+\addplot [{\colortwo},domain=-4:4,thick,smooth] coordinates {(-3.52,-6.364)(-3.36,-2.334)(-3.2,-0.1706)(-3.04,0.9569)(-2.88,1.528)(-2.72,1.809)(-2.56,1.944)(-2.4,2.009)(-2.24,2.038)(-2.08,2.048)(-1.92,2.046)(-1.76,2.031)(-1.6,2.006)(-1.44,1.969)(-1.28,1.924)(-1.12,1.872)(-0.96,1.82)(-0.8,1.775)(-0.64,1.747)(-0.48,1.747)(-0.32,1.783)(-0.16,1.866)(0,2.)(0.16,2.185)(0.32,2.411)(0.48,2.662)(0.64,2.908)(0.8,3.112)(0.96,3.227)(1.12,3.202)(1.28,2.988)(1.44,2.546)(1.6,1.855)(1.76,0.9264)(1.92,-0.1926)(2.08,-1.406)(2.24,-2.565)(2.4,-3.474)(2.56,-3.891)(2.72,-3.542)(2.88,-2.133)(3.04,0.6461)(3.2,5.139)(3.36,11.79)};
+%\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
+
+%\draw (axis cs:-3.,3.5) node {\scriptsize $y=p_2(x)$};
+\draw (axis cs:-2,-2.75) node {\scriptsize $y=p_{13}(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_taypolyintroc.tex -->
+
 </figure>
 <p>
 We can repeat this approximation process by creating polynomials of higher degree that match more of the derivatives of <m>f</m> at <m>x=0</m>. In general, a polynomial of degree <m>n</m> can be created to match the first <m>n</m> derivatives of <m>f</m>. <xref ref="fig_taypolyintrob">Figure</xref> also shows <m>p_4(x)= -x^4/2-x^3/6+x^2+x+2</m>, whose first four derivatives at 0 match those of <m>f</m>. (Using the table in <xref ref="fig_taypolyintroa">Figure</xref>, start with <m>p_4^{(4)}(x)=-12</m> and solve the related initial<ndash />value problem.)
@@ -81,26 +170,18 @@ Let <m>f</m> be a function whose first <m>n</m> derivatives exist at <m>x=c</m>.
 </p>
 
 <ol>
-<li>
-<p>
-The <b>Taylor polynomial of degree <m>n</m> of <m>f</m> at <m>x=c</m></b> is 
+<li><p>The <b>Taylor polynomial of degree <m>n</m> of <m>f</m> at <m>x=c</m></b> is 
 				{
 <me>
   p_n(x) = f(c) + \fp(c)(x-c) + \frac{\fpp(c)}{2!}(x-c)^2+\frac{\fp''(c)}{3!}(x-c)^3+\cdots+\frac{f\,^{(n)}(c)}{n!}(x-c)^n.
 </me>
-}
-</p>
-</li>
-<li>
-<p>
-A special case of the Taylor polynomial is the Maclaurin polynomial, where <m>c=0</m>. That is, the <b>Maclaurin polynomial of degree <m>n</m> of <m>f</m></b> is 
+}</p></li>
+<li><p>A special case of the Taylor polynomial is the Maclaurin polynomial, where <m>c=0</m>. That is, the <b>Maclaurin polynomial of degree <m>n</m> of <m>f</m></b> is 
 {
 <me>
   p_n(x) = f(0) + \fp(0)x + \frac{\fpp(0)}{2!}x^2+\frac{\fp''(0)}{3!}x^3+\cdots+\frac{f\,^{(n)}(0)}{n!}x^n.
 </me>
-}
-</p>
-</li>
+}</p></li>
 </ol>
 </statement>
 </definition>
@@ -112,23 +193,13 @@ We will practice creating Taylor and Maclaurin polynomials in the following exam
 <title>Finding and using Maclaurin polynomials</title>
 <statement>
 <ol>
-<li>
-<p>
-Find the <m>n^\text{th}</m> Maclaurin polynomial for <m>f(x) = e^x</m>.
-</p>
-</li>
-<li>
-<p>
-Use <m>p_5(x)</m> to approximate the value of <m>e</m>.
-</p>
-</li>
+<li><p>Find the <m>n^\text{th}</m> Maclaurin polynomial for <m>f(x) = e^x</m>.</p></li>
+<li><p>Use <m>p_5(x)</m> to approximate the value of <m>e</m>.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-We start with creating a table of the derivatives of <m>e^x</m> evaluated at <m>x=0</m>. In this particular case, this is relatively simple, as shown in <xref ref="fig_taypoly1a">Figure</xref>.
+<li><p>We start with creating a table of the derivatives of <m>e^x</m> evaluated at <m>x=0</m>. In this particular case, this is relatively simple, as shown in <xref ref="fig_taypoly1a">Figure</xref>.
 <figure xml:id="fig_taypoly1a" >
 <caption>The derivatives of <m>f(x)=e^x</m> evaluated at <m>x=0</m>.</caption>
 <tabular>
@@ -143,12 +214,8 @@ By the definition of the Maclaurin series, we have
 <md>
   <mrow>  p_n(x) \amp = f(0) + \fp(0)x + \frac{\fpp(0)}{2!}x^2+\frac{\fp''(0)}{3!}x^3+\cdots+\frac{f\,^n(0)}{n!}x^n</mrow>
   <mrow>  \amp = 1+x+\frac{1}{2}x^2+\frac{1}{6}x^3 + \frac{1}{24}x^4 + \cdots + \frac{1}{n!}x^n.</mrow>
-</md>
-</p>
-</li>
-<li>
-<p>
-Using our answer from part 1, we have
+</md></p></li>
+<li><p>Using our answer from part 1, we have
 <me>
   p_5 = 1+x+\frac{1}{2}x^2+\frac{1}{6}x^3 + \frac{1}{24}x^4 + \frac{1}{120}x^5.
 </me>
@@ -159,11 +226,47 @@ To approximate the value of <m>e</m>, note that <m>e = e^1 = f(1) \approx p_5(1)
 A plot of <m>f(x)=e^x</m> and <m>p_5(x)</m> is given in <xref ref="fig_taypoly1b">Figure</xref>.
 <figure xml:id="fig_taypoly1b" >
 <caption>A plot of <m>f(x)=e^x</m> and its 5<m>^th</m> degree Maclaurin polynomial <m>p_5(x)</m>.</caption>
-<image width="73%" source="images/figtaypoly1b.png" />
-</figure>
 
-</p>
-</li>
+<!-- START figures/fig_taypoly1b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={2,4,6,8,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-3,ymax=11,%
+			xmin=-3.75,xmax=2.9%
+]
+
+\addplot [{\colorone},domain=-3.5:2.5,smooth,thick,samples=50] {exp(x)};
+\addplot [{\colortwo},domain=-4:4,smooth,thick] coordinates {(-3.5,-1.645)(-3.39,-1.365)(-3.28,-1.123)(-3.17,-0.9148)(-3.06,-0.7362)(-3.,-0.65)(-2.89,-0.5103)(-2.78,-0.3917)(-2.67,-0.2911)(-2.56,-0.
+2061)(-2.45,-0.1341)(-2.34,-0.07308)(-2.23,-0.02097)(-2.12,0.02397)(-
+2.01,0.06332)(-1.9,0.0985)(-1.79,0.1308)(-1.68,0.1613)(-1.57,0.1911)(-
+1.46,0.2212)(-1.35,0.2522)(-1.24,0.2851)(-1.13,0.3205)(-1.02,0.3592)(-
+0.91,0.4018)(-0.8,0.449)(-0.69,0.5014)(-0.58,0.5598)(-0.47,0.625)(-0.
+36,0.6977)(-0.25,0.7788)(-0.14,0.8694)(-0.03,0.9704)(0.08,1.083)(0.19,
+1.209)(0.3,1.35)(0.41,1.507)(0.52,1.682)(0.63,1.878)(0.74,2.096)(0.85,
+2.339)(0.96,2.61)(1.07,2.913)(1.18,3.25)(1.29,3.625)(1.4,4.042)(1.51,
+4.506)(1.62,5.021)(1.73,5.592)(1.84,6.224)(1.95,6.924)(2.06,7.698)(2.
+17,8.552)(2.28,9.494)(2.39,10.53)(2.5,11.67)};
+%\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
+
+\draw (axis cs:-3.,-2) node {\scriptsize $y=p_5(x)$};
+%\draw (axis cs:-2,-2.75) node {\scriptsize $y=p_{13}(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_taypoly1b.tex -->
+
+</figure></p></li>
 </ol>
 </solution>
 </example>
@@ -172,28 +275,14 @@ A plot of <m>f(x)=e^x</m> and <m>p_5(x)</m> is given in <xref ref="fig_taypoly1b
 <title>Finding and using Taylor polynomials</title>
 <statement>
 <ol>
-<li>
-<p>
-Find the <m>n^\text{th}</m> Taylor polynomial of <m>y=\ln x</m> at <m>x=1</m>.
-</p>
-</li>
-<li>
-<p>
-Use <m>p_6(x)</m> to approximate the value of <m>\ln 1.5</m>.
-</p>
-</li>
-<li>
-<p>
-Use <m>p_6(x)</m> to approximate the value of <m>\ln 2</m>.
-</p>
-</li>
+<li><p>Find the <m>n^\text{th}</m> Taylor polynomial of <m>y=\ln x</m> at <m>x=1</m>.</p></li>
+<li><p>Use <m>p_6(x)</m> to approximate the value of <m>\ln 1.5</m>.</p></li>
+<li><p>Use <m>p_6(x)</m> to approximate the value of <m>\ln 2</m>.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-We begin by creating a table of derivatives of <m>\ln x</m> evaluated at <m>x=1</m>. While this is not as straightforward as it was in the previous example, a pattern does emerge, as shown in <xref ref="fig_taypoly2a">Figure</xref>.
+<li><p>We begin by creating a table of derivatives of <m>\ln x</m> evaluated at <m>x=1</m>. While this is not as straightforward as it was in the previous example, a pattern does emerge, as shown in <xref ref="fig_taypoly2a">Figure</xref>.
 <figure xml:id="fig_taypoly2a" >
 <caption>Derivatives of <m>\ln x</m> evaluated at <m>x=1</m>.</caption>
 <tabular>
@@ -212,12 +301,8 @@ Using <xref ref="def_taypoly">Definition</xref>, we have
   <mrow>  p_n(x) \amp =	f(c) + \fp(c)(x-c) + \frac{\fpp(c)}{2!}(x-c)^2+\frac{\fp''(c)}{3!}(x-c)^3+\cdots+\frac{f\,^n(c)}{n!}(x-c)^n</mrow>
   <mrow>  \amp = 0+(x-1)-\frac12(x-1)^2+\frac13(x-1)^3-\frac14(x-1)^4+\cdots+\frac{(-1)^{n+1}}{n}(x-1)^n.</mrow>
 </md>
-Note how the coefficients of the <m>(x-1)</m> terms turn out to be <q>nice.</q>
-</p>
-</li>
-<li>
-<p>
-We can compute <m>p_6(x)</m> using our work above:
+Note how the coefficients of the <m>(x-1)</m> terms turn out to be <q>nice.</q></p></li>
+<li><p>We can compute <m>p_6(x)</m> using our work above:
 <me>
   p_6(x) = (x-1)-\frac12(x-1)^2+\frac13(x-1)^3-\frac14(x-1)^4+\frac15(x-1)^5-\frac16(x-1)^6.
 </me>
@@ -232,14 +317,48 @@ This is a good approximation as a calculator shows that <m>\ln 1.5 \approx 0.405
 
 <figure xml:id="fig_taypoly2b" >
 <caption>A plot of <m>y=\ln x</m> and its 6<m>^th</m> degree Taylor polynomial at <m>x=1</m>.</caption>
-<image width="73%" source="images/figtaypoly2b.png" />
-</figure>
 
-</p>
-</li>
-<li>
-<p>
-We approximate <m>\ln 2</m> with <m>p_6(2)</m>:
+<!-- START figures/fig_taypoly2b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={2,4,6,8,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-4.5,ymax=2.4,%
+			xmin=-.5,xmax=3.2%
+]
+
+\addplot [{\colorone},domain=0.01:3,smooth,thick,samples=50] {ln(x)};
+\addplot [{\colortwo},domain=-4:4,smooth,thick] coordinates {(-0.22,-4.213)(-0.15,-3.543)(-0.1,-3.132)(-0.04,-2.702)(0.02,-2.333)(0.08,-2.015)(0.14,-1.74)(0.2,
+-1.502)(0.26,-1.296)(0.32,-1.115)(0.38,-0.9564)(0.44,-0.8161)(0.5,-0.
+6911)(0.56,-0.5791)(0.62,-0.4778)(0.68,-0.3856)(0.74,-0.3011)(0.8,-0.
+2231)(0.86,-0.1508)(0.92,-0.08338)(0.98,-0.0202)(1.04,0.03922)(1.1,0.
+09531)(1.16,0.1484)(1.22,0.1988)(1.28,0.2468)(1.34,0.2926)(1.4,0.3363)
+(1.46,0.378)(1.52,0.4177)(1.58,0.4553)(1.64,0.4907)(1.7,0.5233)(1.76,
+0.5527)(1.82,0.578)(1.88,0.5982)(1.94,0.6117)(2.,0.6167)(2.06,0.6108)(
+2.12,0.5912)(2.18,0.5544)(2.24,0.4961)(2.3,0.4114)(2.36,0.2944)(2.42,
+0.1381)(2.48,-0.06544)(2.54,-0.3253)(2.6,-0.6521)(2.66,-1.058)(2.72,-
+1.556)(2.78,-2.161)(2.84,-2.892)(2.9,-3.765)(2.96,-4.804)};
+%\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
+
+\draw (axis cs:2.5,1.65) node {\scriptsize $y=\ln x$};
+\draw (axis cs:2.2,-2.75) node {\scriptsize $y=p_{6}(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_taypoly2b.tex -->
+
+</figure></p></li>
+<li><p>We approximate <m>\ln 2</m> with <m>p_6(2)</m>:
 <md>
   <mrow>  p_6(2) \amp = (2-1)-\frac12(2-1)^2+\frac13(2-1)^3-\frac14(2-1)^4+\cdots</mrow>
   <mrow>  \amp \cdots +\frac15(2-1)^5-\frac16(2-1)^6</mrow>
@@ -252,11 +371,46 @@ This approximation is not terribly impressive: a hand held calculator shows that
 Surprisingly enough, even the 20<m>^\text{th}</m> degree Taylor polynomial fails to approximate <m>\ln x</m> for <m>x>2</m>, as shown in <xref ref="fig_taypoly2c">Figure</xref>. We'll soon discuss why this is.
 <figure xml:id="fig_taypoly2c" >
 <caption>A plot of <m>y=\ln x</m> and its 20<m>^th</m> degree Taylor polynomial at <m>x=1</m>.</caption>
-<image width="73%" source="images/figtaypoly2c.png" />
-</figure>
 
-</p>
-</li>
+<!-- START figures/fig_taypoly2c.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={2,4,6,8,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-4.5,ymax=2.4,%
+			xmin=-.5,xmax=3.2%
+]
+
+\addplot [{\colorone},domain=0.01:3,smooth,thick,samples=50] {ln(x)};
+\addplot [{\colortwo},domain=-4:4,smooth,thick] coordinates {(-0.108,-7.567)(-0.052,-4.958)(0.004,-3.519)(0.06,-2.671)(0.116,-2.13)
+(0.172,-1.756)(0.228,-1.478)(0.284,-1.259)(0.34,-1.079)(0.396,-0.9263)
+(0.452,-0.7941)(0.508,-0.6773)(0.564,-0.5727)(0.62,-0.478)(0.676,-0.
+3916)(0.732,-0.312)(0.788,-0.2383)(0.844,-0.1696)(0.9,-0.1054)(0.956,-
+0.045)(1.012,0.01193)(1.068,0.06579)(1.124,0.1169)(1.18,0.1655)(1.236,
+0.2119)(1.292,0.2562)(1.348,0.2986)(1.404,0.3393)(1.46,0.3784)(1.516,
+0.4161)(1.572,0.4523)(1.628,0.4874)(1.684,0.5212)(1.74,0.5538)(1.796,
+0.5853)(1.852,0.6154)(1.908,0.6427)(1.964,0.6635)(2.02,0.6665)(2.076,
+0.621)(2.132,0.4476)(2.188,-0.04877)(2.244,-1.326)(2.3,-4.421)};
+%\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
+
+\draw (axis cs:2.5,1.65) node {\scriptsize $y=\ln x$};
+\draw (axis cs:1.7,-2.75) node {\scriptsize $y=p_{20}(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_taypoly2c.tex -->
+
+</figure></p></li>
 </ol>
 </solution>
 </example>
@@ -265,16 +419,8 @@ Taylor polynomials are used to approximate functions <m>f(x)</m> in mainly two s
 </p>
 
 <ol>
-<li>
-<p>
-When <m>f(x)</m> is known, but perhaps <q>hard</q> to compute directly. For instance, we can define <m>y=\cos x</m> as either the ratio of sides of a right triangle (<q>adjacent over hypotenuse</q>) or with the unit circle. However, neither of these provides a convenient way of computing <m>\cos 2</m>. A Taylor polynomial of sufficiently high degree can provide a reasonable method of computing such values using only operations usually hard<ndash />wired into a computer (<m>+</m>, <m>-</m>, &#215; and <m>\div</m>).
-</p>
-</li>
-<li>
-<p>
-When <m>f(x)</m> is not known, but information about its derivatives is known. This occurs more often than one might think, especially in the study of differential equations.
-</p>
-</li>
+<li><p>When <m>f(x)</m> is known, but perhaps <q>hard</q> to compute directly. For instance, we can define <m>y=\cos x</m> as either the ratio of sides of a right triangle (<q>adjacent over hypotenuse</q>) or with the unit circle. However, neither of these provides a convenient way of computing <m>\cos 2</m>. A Taylor polynomial of sufficiently high degree can provide a reasonable method of computing such values using only operations usually hard<ndash />wired into a computer (<m>+</m>, <m>-</m>, &#215; and <m>\div</m>).</p></li>
+<li><p>When <m>f(x)</m> is not known, but information about its derivatives is known. This occurs more often than one might think, especially in the study of differential equations.</p></li>
 </ol>
 <aside>
 <p>
@@ -293,16 +439,12 @@ We had the same problem when studying Numerical Integration. <xref ref="thm_nume
 <title>Taylor's Theorem</title>
 <statement>
 <ol>
-<li>
-<p>
-Let <m>f</m> be a function whose <m>n+1^\text{th}</m> derivative exists on an interval <m>I</m> and let <m>c</m> be in <m>I</m>. Then, for each <m>x</m> in <m>I</m>, there exists <m>z_x</m> between <m>x</m> and <m>c</m> such that
+<li><p>Let <m>f</m> be a function whose <m>n+1^\text{th}</m> derivative exists on an interval <m>I</m> and let <m>c</m> be in <m>I</m>. Then, for each <m>x</m> in <m>I</m>, there exists <m>z_x</m> between <m>x</m> and <m>c</m> such that
 <me>
   f(x) = f(c) + \fp(c)(x-c) + \frac{\fpp(c)}{2!}(x-c)^2+ \cdots +\frac{f\,^{(n)}(c)}{n!}(x-c)^n+R_n(x),
 </me>
 where <m>\ds R_n(x) = \frac{f\,^{(n+1)}(z_x)}{(n+1)!}(x-c)^{(n+1)}.</m>
-<index><main>Taylor Polynomial</main><sub>Taylor's Theorem</sub></index><index><main>Taylor's Theorem</main></index>
-</p>
-</li>
+<index><main>Taylor Polynomial</main><sub>Taylor's Theorem</sub></index><index><main>Taylor's Theorem</main></index></p></li>
 <li><m>\ds \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|(x-c)^{(n+1)}\big|</m></li>
 </ol>
 </statement>
@@ -324,9 +466,7 @@ Use <xref ref="thm_taylorthm">Theorem</xref> to find error bounds when approxima
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-We start with the approximation of <m>\ln 1.5</m> with <m>p_6(1.5)</m>. The theorem references an open interval <m>I</m> that contains both <m>x</m> and <m>c</m>. The smaller the interval we use the better; it will give us a more accurate (and smaller!) approximation of the error. We let <m>I = (0.9,1.6)</m>, as this interval contains both <m>c=1</m> and <m>x=1.5</m>. 
+<li><p>We start with the approximation of <m>\ln 1.5</m> with <m>p_6(1.5)</m>. The theorem references an open interval <m>I</m> that contains both <m>x</m> and <m>c</m>. The smaller the interval we use the better; it will give us a more accurate (and smaller!) approximation of the error. We let <m>I = (0.9,1.6)</m>, as this interval contains both <m>c=1</m> and <m>x=1.5</m>. 
 
 The theorem references <m>\max\big|f\,^{(n+1)}(z)\big|</m>. In our situation, this is asking <q>How big can the <m>7^\text{th}</m> derivative of <m>y=\ln x</m> be on the interval <m>(0.9,1.6)</m>?</q> The seventh derivative is <m>y = -6!/x^7</m>. The largest value it attains on <m>I</m> is about 1506. Thus we can bound the error as:
 <md>
@@ -334,12 +474,8 @@ The theorem references <m>\max\big|f\,^{(n+1)}(z)\big|</m>. In our situation, th
   <mrow>  \amp \leq \frac{1506}{5040}\cdot\frac1{2^7}</mrow>
   <mrow>  \amp \approx 0.0023.</mrow>
 </md>
-We computed <m>p_6(1.5) = 0.404688</m>; using a calculator, we find <m>\ln 1.5 \approx 0.405465</m>, so the actual error is about <m>0.000778</m>, which is less than our bound of <m>0.0023</m>. This affirms Taylor's Theorem; the theorem states that our approximation would be within about 2 thousandths of the actual value, whereas the approximation was actually closer.
-</p>
-</li>
-<li>
-<p>
-We again find an interval <m>I</m> that contains both <m>c=1</m> and <m>x=2</m>; we choose <m>I = (0.9,2.1)</m>. The maximum value of the seventh derivative of <m>f</m> on this interval is again about 1506 (as the largest values come near <m>x=0.9</m>). Thus
+We computed <m>p_6(1.5) = 0.404688</m>; using a calculator, we find <m>\ln 1.5 \approx 0.405465</m>, so the actual error is about <m>0.000778</m>, which is less than our bound of <m>0.0023</m>. This affirms Taylor's Theorem; the theorem states that our approximation would be within about 2 thousandths of the actual value, whereas the approximation was actually closer.</p></li>
+<li><p>We again find an interval <m>I</m> that contains both <m>c=1</m> and <m>x=2</m>; we choose <m>I = (0.9,2.1)</m>. The maximum value of the seventh derivative of <m>f</m> on this interval is again about 1506 (as the largest values come near <m>x=0.9</m>). Thus
 <md>
   <mrow>  \big| R_6(2)\big| \amp \leq \frac{\max\big|f\,^{(7)}(z)\big|}{7!}\big|(2-1)^7\big|</mrow>
   <mrow>  \amp \leq \frac{1506}{5040}\cdot1^7</mrow>
@@ -347,9 +483,7 @@ We again find an interval <m>I</m> that contains both <m>c=1</m> and <m>x=2</m>;
 </md>
 This bound is not as nearly as good as before. Using the degree 6 Taylor polynomial at <m>x =1</m> will bring us within 0.3 of the correct answer. As <m>p_6(2)\approx 0.61667</m>, our error estimate guarantees that the actual value of <m>\ln 2</m> is somewhere between <m>0.31667</m> and <m>0.91667</m>. These bounds are not particularly useful.
 
-In reality, our approximation was only off by about 0.07. However, we are approximating ostensibly because we do not know the real answer. In order to be assured that we have a good approximation, we would have to resort to using a polynomial of higher degree.
-</p>
-</li>
+In reality, our approximation was only off by about 0.07. However, we are approximating ostensibly because we do not know the real answer. In order to be assured that we have a good approximation, we would have to resort to using a polynomial of higher degree.</p></li>
 </ol>
 </solution>
 </example>
@@ -422,7 +556,47 @@ Our error bound guarantee that this approximation is within <m>0.001</m> of the 
 </p>
 <figure xml:id="fig_taypoly4b" >
 <caption>A graph of <m>f(x)= \cos x</m> and its degree 8 Maclaurin polynomial.</caption>
-<image width="73%" source="images/figtaypoly4.png" />
+
+<!-- START figures/fig_taypoly4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			xtick={-5,-4,-3,-2,-1,1,2,3,4,5},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.5,%
+			xmin=-5.5,xmax=5.5%
+]
+
+\addplot [{\colorone},domain=-5:5,smooth,thick,samples=50] {cos(deg(x))};
+\addplot [{\colortwo},domain=-4:4,smooth,thick] coordinates {(-5.,2.528)(-4.8,1.6)(-4.6,0.8894)(-4.4,0.343)(-4.2,-0.0768)(-4.,-0.
+3968)(-3.8,-0.6355)(-3.6,-0.8052)(-3.4,-0.9146)(-3.2,-0.9695)(-3.,-0.
+9748)(-2.8,-0.9345)(-2.6,-0.8532)(-2.4,-0.7357)(-2.2,-0.5878)(-2.,-0.
+4159)(-1.8,-0.2271)(-1.6,-0.02917)(-1.4,0.17)(-1.2,0.3624)(-1.,0.5403)
+(-0.8,0.6967)(-0.6,0.8253)(-0.4,0.9211)(-0.2,0.9801)(0,1.)(0.2,0.9801)
+(0.4,0.9211)(0.6,0.8253)(0.8,0.6967)(1.,0.5403)(1.2,0.3624)(1.4,0.17)(
+1.6,-0.02917)(1.8,-0.2271)(2.,-0.4159)(2.2,-0.5878)(2.4,-0.7357)(2.6,-
+0.8532)(2.8,-0.9345)(3.,-0.9748)(3.2,-0.9695)(3.4,-0.9146)(3.6,-0.
+8052)(3.8,-0.6355)(4.,-0.3968)(4.2,-0.0768)(4.4,0.343)(4.6,0.8894)(4.
+8,1.6)(5.,2.528)};
+%\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
+
+\draw (axis cs:-3.,1) node {\scriptsize $y=p_8(x)$};
+%\draw (axis cs:-2,-2.75) node {\scriptsize $y=p_{13}(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\node [below] at (myplot.below origin) {\begin{tikzpicture} \draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $f(x)= \cos x$};\end{tikzpicture}};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_taypoly4.tex -->
+
 </figure>
 </solution>
 </example>
@@ -431,28 +605,14 @@ Our error bound guarantee that this approximation is within <m>0.001</m> of the 
 <title>Finding and using Taylor polynomials</title>
 <statement>
 <ol>
-<li>
-<p>
-Find the degree 4 Taylor polynomial, <m>p_4(x)</m>, for <m>f(x)=\sqrt{x}</m> at <m>x=4.</m>
-</p>
-</li>
-<li>
-<p>
-Use <m>p_4(x)</m> to approximate <m>\sqrt{3}</m>.
-</p>
-</li>
-<li>
-<p>
-Find bounds on the error when approximating <m>\sqrt{3}</m> with <m>p_4(3)</m>.
-</p>
-</li>
+<li><p>Find the degree 4 Taylor polynomial, <m>p_4(x)</m>, for <m>f(x)=\sqrt{x}</m> at <m>x=4.</m></p></li>
+<li><p>Use <m>p_4(x)</m> to approximate <m>\sqrt{3}</m>.</p></li>
+<li><p>Find bounds on the error when approximating <m>\sqrt{3}</m> with <m>p_4(3)</m>.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-We begin by evaluating the derivatives of <m>f</m> at <m>x=4</m>. This is done in <xref ref="fig_taypoly5a">Figure</xref>.
+<li><p>We begin by evaluating the derivatives of <m>f</m> at <m>x=4</m>. This is done in <xref ref="fig_taypoly5a">Figure</xref>.
 <figure xml:id="fig_taypoly5a" >
 <caption>A table of the derivatives of <m>f(x)=\sqrt{x}</m> evaluated at <m>x=4</m>.</caption>
 <tabular>
@@ -466,28 +626,60 @@ We begin by evaluating the derivatives of <m>f</m> at <m>x=4</m>. This is done i
 These values allow us to form the Taylor polynomial <m>p_4(x)</m>:
 <me>
   p_4(x) = 2 + \frac14(x-4) +\frac{-1/32}{2!}(x-4)^2+\frac{3/256}{3!}(x-4)^3+\frac{-15/2048}{4!}(x-4)^4.
-</me>
-</p>
-</li>
-<li>
-<p>
-As <m>p_4(x) \approx \sqrt{x}</m> near <m>x=4</m>, we approximate <m>\sqrt{3}</m> with <m>p_4(3) = 1.73212</m>.
-</p>
-</li>
-<li>
-<p>
-To find a bound on the error, we need an open interval that contains <m>x=3</m> and <m>x=4</m>. We set <m>I = (2.9,4.1)</m>. The largest value the fifth derivative of <m>f(x)=\sqrt{x}</m> takes on this interval is near <m>x=2.9</m>, at about <m>0.0273</m>. Thus
+</me></p></li>
+<li><p>As <m>p_4(x) \approx \sqrt{x}</m> near <m>x=4</m>, we approximate <m>\sqrt{3}</m> with <m>p_4(3) = 1.73212</m>.</p></li>
+<li><p>To find a bound on the error, we need an open interval that contains <m>x=3</m> and <m>x=4</m>. We set <m>I = (2.9,4.1)</m>. The largest value the fifth derivative of <m>f(x)=\sqrt{x}</m> takes on this interval is near <m>x=2.9</m>, at about <m>0.0273</m>. Thus
 <me>
   \big|R_4(3)\big| \leq \frac{0.0273}{5!}\big|(3-4)^5\big| \approx 0.00023.
 </me>
 This shows our approximation is accurate to at least the first 2 places after the decimal. (It turns out that our approximation is actually accurate to 4 places after the decimal.) A graph of <m>f(x)=\sqrt x</m> and <m>p_4(x)</m> is given in <xref ref="fig_taypoly5b">Figure</xref>. Note how the two functions are nearly indistinguishable on <m>(2,7)</m>.
 <figure xml:id="fig_taypoly5b" >
 <caption>A graph of <m>f(x)=\sqrt{x}</m> and its degree 4 Taylor polynomial at <m>x=4</m>.</caption>
-<image width="73%" source="images/figtaypoly5.png" />
-</figure>
 
-</p>
-</li>
+<!-- START figures/fig_taypoly5.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={-5,-4,-3,-2,-1,1,2,3,4,5},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=3.5,%
+			xmin=-1,xmax=11%
+]
+
+\addplot [{\colorone},domain=0:10,smooth,thick,samples=50] coordinates {(0,0)(0.016,0.1265)(0.032,0.1789)(0.048,0.2191)(0.064,0.253)(0.08,0.2828)(0.096,0.3098)(0.112,0.3347)(0.128,0.3578)(0.144,0.3795)(0.16,0.4)(0.176,0.4195)(0.192,0.4382)(0.208,0.4561)(0.224,0.4733)(0.24,0.4899)(0.256,0.506)(0.272,0.5215)(0.288,0.5367)(0.304,0.5514)(0.32,0.5657)(0.336,0.5797)(0.352,0.5933)(0.368,0.6066)(0.384,0.6197)(0.4,0.6325)(0.8,0.8944)(1.2,1.095)(1.6,1.265)(2.,1.414)(2.4,1.549)(2.8,1.673)(3.2,1.789)(3.6,1.897)(4.,2.)(4.4,2.098)(4.8,2.191)(5.2,2.28)(5.6,2.366)(6.,2.449)(6.4,2.53)(6.8,2.608)(7.2,2.683)(7.6,2.757)(8.,2.828)(8.4,2.898)(8.8,2.966)(9.2,3.033)(9.6,3.098)(10.,3.162)};
+\addplot [{\colortwo},smooth,thick] coordinates {(0,0.5469)(0.2,0.6536)(0.4,0.7551)(0.6,0.8518)(0.8,0.944)(1.,1.032)(1.
+2,1.116)(1.4,1.196)(1.6,1.273)(1.8,1.346)(2.,1.417)(2.2,1.485)(2.4,1.
+55)(2.6,1.613)(2.8,1.673)(3.,1.732)(3.2,1.789)(3.4,1.844)(3.6,1.897)(
+3.8,1.949)(4.,2.)(4.2,2.049)(4.4,2.098)(4.6,2.145)(4.8,2.191)(5.,2.
+236)(5.2,2.28)(5.4,2.324)(5.6,2.366)(5.8,2.408)(6.,2.448)(6.2,2.488)(
+6.4,2.527)(6.6,2.565)(6.8,2.602)(7.,2.637)(7.2,2.672)(7.4,2.705)(7.6,
+2.737)(7.8,2.768)(8.,2.797)(8.2,2.824)(8.4,2.849)(8.6,2.873)(8.8,2.
+894)(9.,2.913)(9.2,2.929)(9.4,2.942)(9.6,2.953)(9.8,2.96)(10.,2.964)};
+%\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
+
+\draw (axis cs:8.,1) node {\begin{tikzpicture}
+						\draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $y= \sqrt x$};
+						\draw[{\colortwo},thick] (0,-10pt)--(10pt,-10pt) node [right,black] {\scriptsize $y= p_4(x)$};
+													\end{tikzpicture}};
+%\draw (axis cs:-2,-2.75) node {\scriptsize $y=p_{13}(x)$};
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+%\node [below] at (myplot.below origin) {\begin{tikzpicture} \draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $f(x)= \cos x$};\end{tikzpicture}};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_taypoly5.tex -->
+
+</figure></p></li>
 </ol>
 </solution>
 </example>
@@ -569,7 +761,51 @@ We can now form <m>p_3(x)</m>:
 </p>
 <figure xml:id="fig_taypoly6" >
 <caption>A graph of <m>y=-1/(x-1)</m> and <m>y=p_3(x)</m> from <xref ref="ex_taypoly6">Example</xref>.</caption>
-<image width="73%" source="images/figtaypoly6.png" />
+
+<!-- START figures/fig_taypoly6.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={-5,-4,-3,-2,-1,1,2,3,4,5},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=3.5,%
+			xmin=-1.1,xmax=1.1%
+]
+
+\addplot [{\colorone},domain=-1:.7,smooth,thick,samples=50] {-1/(x-1)};
+\addplot [{\colortwo},smooth,thick] coordinates {(-1.,0)(-0.96,0.07686)(-0.92,0.1477)(-0.88,0.2129)(-0.84,0.2729)(-0.8,
+0.328)(-0.76,0.3786)(-0.72,0.4252)(-0.68,0.468)(-0.64,0.5075)(-0.6,0.
+544)(-0.56,0.578)(-0.52,0.6098)(-0.48,0.6398)(-0.44,0.6684)(-0.4,0.
+696)(-0.36,0.7229)(-0.32,0.7496)(-0.28,0.7764)(-0.24,0.8038)(-0.2,0.
+832)(-0.16,0.8615)(-0.12,0.8927)(-0.08,0.9259)(-0.04,0.9615)(0,1.)(0.
+04,1.042)(0.08,1.087)(0.12,1.136)(0.16,1.19)(0.2,1.248)(0.24,1.311)(0.
+28,1.38)(0.32,1.455)(0.36,1.536)(0.4,1.624)(0.44,1.719)(0.48,1.821)(0.
+52,1.931)(0.56,2.049)(0.6,2.176)(0.64,2.312)(0.68,2.457)(0.72,2.612)(
+0.76,2.777)(0.8,2.952)(0.84,3.138)(0.88,3.336)(0.92,3.545)(0.96,3.766)(1.,4.)};
+%\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
+
+\draw (axis cs:.75,.9) node {\begin{tikzpicture}
+						\draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $\displaystyle y= \frac{1}{1-x}$};
+						\draw[{\colortwo},thick] (0,-15pt)--(10pt,-15pt) node [right,black] {\scriptsize $y= p_3(x)$};
+													\end{tikzpicture}};
+%\draw (axis cs:-2,-2.75) node {\scriptsize $y=p_{13}(x)$};
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+%\node [below] at (myplot.below origin) {\begin{tikzpicture} \draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $f(x)= \cos x$};\end{tikzpicture}};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_taypoly6.tex -->
+
 </figure>
 <p>
 It turns out that the differential equation we started with, <m>y\primeskip'=y^2</m>, where <m>y(0)=1</m>, can be solved without too much difficulty: <m>\ds y = \frac{1}{1-x}</m>. <xref ref="fig_taypoly6">Figure</xref> shows this function plotted with <m>p_3(x)</m>. Note how similar they are near <m>x=0</m>.

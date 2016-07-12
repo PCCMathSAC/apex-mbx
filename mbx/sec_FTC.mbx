@@ -12,7 +12,34 @@ Let <m>F(x) = \int_a^x f(t)\ dt</m>. It computes the area under <m>f</m> on <m>[
 </p>
 <figure xml:id="fig_ftc1" >
 <caption>The area of the shaded region is <m>F(x) = \int_a^x f(t)<nbsp />dt</m>.</caption>
-<image width="73%" source="images/figftc1.png" />
+
+<!-- START figures/fig_ftc1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={1,2.5,3},
+			extra x tick labels={$a$,$x$,$b$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.5,ymax=2,%
+			xmin=-.5,xmax=3.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style,domain=1:2.5] {.5*sin(deg(x))+1} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=0:3.25] {.5*sin(deg(x))+1};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc1.tex -->
+
 </figure>
 <p>
 We can also apply calculus ideas to <m>F(x)</m>; in particular, we can compute its derivative. While this may seem like an innocuous thing to do, it has far<ndash />reaching implications, as demonstrated by the fact that the result is given as an important theorem.
@@ -184,6 +211,7 @@ means the velocity has increased by 15m/h from <m>t=0</m> to <m>t=3</m>.
 <subsection>
 <title>The Fundamental Theorem of Calculus and the Chain Rule</title>
 <p>
+\vskip
 Part 1 of the Fundamental Theorem of Calculus (FTC) states that given <m>\ds F(x) = \int_a^x f(t)\ dt</m>, <m>\Fp(x) = f(x)</m>. Using other notation, <m>\ds \frac{d}{dx}\big(F(x)\big) = f(x)</m>. While we have just practiced evaluating definite integrals, sometimes finding antiderivatives is impossible and we need to rely on other techniques to approximate the value of a definite integral. Functions written as <m>F(x) = \int_a^x f(t)\ dt</m> are useful in such situations.
 </p>
 
@@ -248,11 +276,73 @@ Note that <m>\ds F(x) = -\int_5^{\cos x} t^3\ dt</m>. Viewed this way, the deriv
 <subsection>
 <title>Area Between Curves</title>
 <p>
+\vskip
 Consider continuous functions <m>f(x)</m> and <m>g(x)</m> defined on <m>[a,b]</m>, where <m>f(x) \geq g(x)</m> for all <m>x</m> in <m>[a,b]</m>, as demonstrated in <xref ref="fig_ftc5">Figure</xref>. What is the area of the shaded region bounded by the two curves over <m>[a,b]</m>?<index><main>integration</main><sub>area between curves</sub></index>
 </p>
 <figure xml:id="fig_ftc5" >
 <caption>Finding the area bounded by two functions on an interval; it is found by subtracting the area under <m>g</m> from the area under <m>f</m>.</caption>
-<image width="73%" source="images/figftc5.png" />  <image width="73%" source="images/figftc5a.png" />
+
+<!-- START figures/fig_ftc5.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.5,3},
+			extra x tick labels={$a$,$b$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.5,ymax=2,%
+			xmin=-.5,xmax=3.5%
+]
+
+\addplot [{\coloronefill},domain=.5:3,stack plots=y] {.25*(x-2)^2+.2};
+\addplot [{\coloronefill},thick,fill={\coloronefill},area style,domain=.5:3,stack plots=y] {.25*sin(deg(2*x))+1.25-(.25*(x-2)^2+.2)} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.25:3.25] {.25*sin(deg(2*x))+1.25} node [shift={(5pt,7pt)} ,black] {\scriptsize $f(x)$};
+\addplot [smooth,thick, {\colorone},domain=-.25:3.25] {.25*(x-2)^2+.2}node [shift={(5pt,7pt)} ,black] {\scriptsize $g(x)$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc5.tex -->
+ 
+<!-- START figures/fig_ftc5a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.5,3},
+			extra x tick labels={$a$,$b$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.5,ymax=2,%
+			xmin=-.5,xmax=3.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style,domain=.5:3] {.25*sin(deg(2*x))+1.25} \closedcycle;
+\addplot [{\colortwofill},fill={\colortwofill},domain=.5:3,fill opacity=.5] {.25*(x-2)^2+.2} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.25:3.25] {.25*sin(deg(2*x))+1.25} node [shift={(5pt,7pt)} ,black] {\scriptsize $f(x)$};
+\addplot [smooth,thick, {\colorone},domain=-.25:3.25] {.25*(x-2)^2+.2}node [shift={(5pt,7pt)} ,black] {\scriptsize $g(x)$};
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc5a.tex -->
+
 </figure>
 <p>
 The area can be found by recognizing that this area is <q>the area under <m>f</m> <m>-</m> the area under <m>g</m>.</q> Using mathematical notation, the area is
@@ -293,7 +383,37 @@ It will help to sketch these two functions, as done in <xref ref="fig_ftc6">Figu
 </p>
 <figure xml:id="fig_ftc6" >
 <caption>Sketching the region enclosed by <m>y=x^2+x-5</m> and <m>y=3x-2</m> in <xref ref="ex_ftc6">Example</xref>.</caption>
-<image width="73%" source="images/figftc6.png" />
+
+<!-- START figures/fig_ftc6.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-2,-1,1,2,3,4},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+			ytick={5,10,15},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-10,ymax=16,%
+			xmin=-2.5,xmax=4.5%
+]
+
+\addplot [smooth,thick, {\colorone},domain=-2:4] {x^2+x-5}; 
+\draw (axis cs: 2.5,15) node [black] {\scriptsize $y=x^2+x-5$};
+\addplot [smooth,thick, {\colorone},domain=-2:4] {3*x-2}; 
+\draw (axis cs: -1.5,-9) node [black] {\scriptsize $y=3x-2$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc6.tex -->
+
 </figure>
 <p>
 The region whose area we seek is completely bounded by these two functions; they seem to intersect at <m>x=-1</m> and <m>x=3</m>. To check, set <m>x^2+x-5=3x-2</m> and solve for <m>x</m>:
@@ -326,9 +446,39 @@ Following <xref ref="thm_areabtwncurves">Theorem</xref>, the area is
 
 <subsection>
 <title>The Mean Value Theorem and Average Value</title>
+<p>
+\vskip
+</p>
 <figure xml:id="fig_ftc7a" >
 <caption>A graph of a function <m>f</m> to introduce the Mean Value Theorem.</caption>
-<image width="73%" source="images/figftc7a.png" />
+
+<!-- START figures/fig_ftc7a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.5,ymax=1.75,%
+			xmin=-.5,xmax=4.5%
+]
+
+\addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1}; 
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc7a.tex -->
+
 </figure>
 <p>
 Consider the graph of a function <m>f</m> in <xref ref="fig_ftc7a">Figure</xref> and the area defined by <m>\int_1^4 f(x)\ dx</m>. Three rectangles are drawn in <xref ref="fig_ftc7b">Figure</xref>; in (a), the height of the rectangle is greater than <m>f</m> on <m>[1,4]</m>, hence the area of this rectangle is is greater than <m>\int_0^4 f(x)\ dx</m>.
@@ -340,11 +490,92 @@ In (b), the height of the rectangle is smaller than <m>f</m> on <m>[1,4]</m>, he
 <figure xml:id="fig_ftc7b" >
 <caption>Differently sized rectangles give upper and lower bounds on <m>\int_1^4 f(x)<nbsp />dx</m>; the last rectangle matches the area exactly.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figftc7b2.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_ftc7b2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.5,ymax=1.75,%
+			xmin=-.5,xmax=4.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {.3*cos(deg(x))+1} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1}; 
+\draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,1.35);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc7b2.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figftc7b1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_ftc7b1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.5,ymax=1.75,%
+			xmin=-.5,xmax=4.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {.3*cos(deg(x))+1} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1}; 
+\draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,.65);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc7b1.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
-<row><cell><image width="73%" source="images/figftc7b3.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_ftc7b3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.5,ymax=1.75,%
+			xmin=-.5,xmax=4.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {.3*cos(deg(x))+1} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1}; 
+\draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,.84);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc7b3.tex -->
+</cell></row>
 <row><cell>(c)</cell></row>
 </tabular>
 </figure>
@@ -399,7 +630,36 @@ Thus we seek a value <m>c</m> in <m>[0,\pi]</m> such that <m>\pi\sin c =2</m>.
 </p>
 <figure xml:id="fig_ftc8" >
 <caption>A graph of <m>y=\sin x</m> on <m>[0,\pi]</m> and the rectangle guaranteed by the Mean Value Theorem.</caption>
-<image width="73%" source="images/figftc8.png" />
+
+<!-- START figures/fig_ftc8.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2},% 
+			extra x ticks={.69,3.14},
+			extra x tick labels={$c$,$\pi$},
+			ytick={1},
+			%minor y tick num=1,
+			extra y ticks={.637},%
+			extra y tick labels={$\sin 0.69$},
+%			minor x tick num=4,
+			ymin=-.25,ymax=1.25,%
+			xmin=-.5,xmax=3.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:3.14] {sin(deg(x))} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:3.5] {sin(deg(x))}; 
+\draw [thick,draw={\colortwo}] (axis cs: 0,0) rectangle (axis cs:3.14,.637);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc8.tex -->
+
 </figure>
 <p>
 In <xref ref="fig_ftc8">Figure</xref> <m>\sin x</m> is sketched along with a rectangle with height <m>\sin (0.69)</m>. The area of the rectangle is the same as the area under <m>\sin x</m> on <m>[0,\pi]</m>.
@@ -420,8 +680,67 @@ When <m>f(x)</m> is shifted by <m>-f(c)</m>, the amount of area under <m>f</m> a
 </p>
 <figure xml:id="fig_ftc9" >
 <caption>On top, a graph of <m>y=f(x)</m> and the rectangle guaranteed by the Mean Value Theorem. Below, <m>y=f(x)</m> is shifted down by <m>f(c)</m>; the resulting <q>area under the curve</q> is 0.</caption>
-<image width="73%" source="images/figftc9a.png" />
-<image width="73%" source="images/figftc9b.png" />
+
+<!-- START figures/fig_ftc9a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={1,4,1.63},
+			extra x tick labels={$a$,$b$,$c$},
+			ytick=\empty,
+			%minor y tick num=1,
+			extra y ticks={1.75},%
+			extra y tick labels={$f(c)$},
+%			minor x tick num=4,
+			ymin=-1,ymax=3.5,%
+			xmin=-.5,xmax=4.25%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {(x-2.5)^2+1} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:4.25] {(x-2.5)^2+1}; 
+\draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,1.75);
+\draw (axis cs:3.35,3) node {\scriptsize $y=f(x)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc9a.tex -->
+<br />  
+<!-- START figures/fig_ftc9b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={1,4,1.63},
+			extra x tick labels={$a$,$b$,$c$},
+			ytick=\empty,
+			%minor y tick num=1,
+			extra y ticks={1.75},%
+			extra y tick labels={$f(c)$},
+%			minor x tick num=4,
+			ymin=-1,ymax=3.5,%
+			xmin=-.5,xmax=4.25%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {(x-2.5)^2-.75} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=.75:4.25] {(x-2.5)^2-.75}; 
+%\draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,1.75);
+\draw (axis cs:3.2,2.5) node {\scriptsize $y=f(x)-f(c)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_ftc9b.tex -->
+
 </figure>
 <p>
 The value <m>f(c)</m> is the average value in another sense. First, recognize that the Mean Value Theorem can be rewritten as

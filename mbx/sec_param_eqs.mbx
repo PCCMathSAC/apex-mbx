@@ -80,7 +80,48 @@ The points <m>(x,y)</m> from the table are plotted in <xref ref="fig_pareq1">Fig
 </cell></row>
 <row><cell></cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figpareq1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_pareq1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-10,-5,5,10},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.2,ymax=4.2,%
+			xmin=-.9,xmax=5.2%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2:2,] ({x^2},{x+1});
+\draw [->,>=latex] (axis cs:3.9204,2.98) -- (axis cs:3.96,2.99);
+\draw [->,>=latex] (axis cs:2.25,-.5) -- (axis cs:2.22,-.49);
+
+\filldraw (axis cs:4,-1) circle (1.5pt) node [below] {\scriptsize $t=-2$};
+\filldraw (axis cs:1,0) circle (1.5pt) node [shift={(0pt,-10pt)}] {\scriptsize $t=-1$};
+\filldraw (axis cs:0,1) circle (1.5pt) node [left] {\scriptsize $t=0$};
+\filldraw (axis cs:1,2) circle (1.5pt) node [above] {\scriptsize $t=1$};
+\filldraw (axis cs:4,3) circle (1.5pt) node [above ] {\scriptsize $t=2$};
+
+
+
+			
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pareq1.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -116,7 +157,48 @@ We again start by making a table of values in <xref ref="fig_pareq2">Figure</xre
 </cell></row>
 <row><cell></cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figpareq2.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_pareq2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-10,-5,5,10},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.1,%
+			xmin=-.1,xmax=1.6%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=0:180,] ({(cos(x))^2},{cos(x)+1});
+\draw [->,>=latex] (axis cs:0.998271, 0.00086485) -- (axis cs:0.999534, 0.000233112);
+\draw [->,>=latex] (axis cs:0.770151, 1.87758) -- (axis cs:0.75311, 1.86782);
+
+\filldraw (axis cs:1,2) circle (1.5pt) node [right] {\scriptsize $t=0$};
+\filldraw (axis cs:.5,1.71) circle (1.5pt) node [below right] {\scriptsize $t=\pi/4$};
+\filldraw (axis cs:0,1) circle (1.5pt) node [right] {\scriptsize $t=\pi/2$};
+\filldraw (axis cs:.5,.292) circle (1.5pt) node [above right] {\scriptsize $t=3\pi/4$};
+\filldraw (axis cs:1,0) circle (1.5pt) node [above right] {\scriptsize $t=\pi$};
+
+
+
+			
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pareq2.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -154,9 +236,83 @@ In order to shift the graph to the right 3 units, we need to increase the <m>x</
 <figure xml:id="fig_pareq3" >
 <caption>Illustrating how to shift graphs in <xref ref="ex_pareq3">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figpareq3a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_pareq3a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={2,4,6,8,10},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.6,ymax=6.5,%
+			xmin=-.6,xmax=10.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-3:3,] ({x^2+x},{x^2-x});
+\draw [->,>=latex] (axis cs:0.96, 4.16) -- (axis cs:0.9381, 4.1181);
+\draw [->,>=latex] (axis cs:6,2) -- (axis cs:6.05,2.03);
+
+\draw (axis cs: 4,5) node [align=left] {\scriptsize $x=t^2+t$\\ \scriptsize $y=t^2-t$};
+
+
+
+			
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pareq3a.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figpareq3b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_pareq3b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={2,4,6,8,10},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.6,ymax=6.5,%
+			xmin=-.6,xmax=10.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-3:3,] ({x^2+x+3},{x^2-x-2});
+\draw [->,>=latex] (axis cs:3.96, 2.16) -- (axis cs:3.9381, 2.1181);
+\draw [->,>=latex] (axis cs:9,0) -- (axis cs:9.05,0.03);
+
+\draw (axis cs: 2.5,5) node [align=left] {\scriptsize $x=t^2+t+3$\\ \scriptsize $y=t^2-t-2$};
+
+
+
+			
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pareq3b.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -178,7 +334,44 @@ Using the methods developed in this section, we again plot points and graph the 
 </p>
 <figure xml:id="fig_pareq4" >
 <caption>A graph of the parametric equations from <xref ref="ex_pareq4">Example</xref>.</caption>
-<image width="73%" source="images/figpareq4.png" />
+
+<!-- START figures/fig_pareq4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={2,4,6,8,10},
+			minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.9,ymax=16,%
+			xmin=-6,xmax=16%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick, {\colorone},smooth,domain=-2:5,samples=50] ({x^3-5*x^2+3*x+11},{x^2-2*x+3});
+\draw [->,>=latex] (axis cs:-4.62287, 7.5225) -- (axis cs:-4.4041, 7.4756);
+\draw [->,>=latex] (axis cs:7,11) -- (axis cs:7.1107, 11.0601);
+
+\draw (axis cs: 7,14) node [align=left] {\scriptsize $x=t^3-5t^2+3t+11$\\ \scriptsize $y=t^2-2t+3$};
+
+
+
+			
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pareq4.tex -->
+
 </figure>
 <p>
 We are looking for two different values, say, <m>s</m> and <m>t</m>, where <m>x(s) = x(t)</m> and <m>y(s) = y(t)</m>. That is, the <m>x</m>-values are the same precisely when the <m>y</m>-values are the same. This gives us a system of 2 equations with 2 unknowns:
@@ -200,6 +393,7 @@ Solving this system is not trivial but involves only algebra. Using the quadrati
 <subsection>
 <title>Converting between rectangular and parametric equations</title>
 <p>
+\vskip
 It is sometimes useful to rewrite equations in rectangular form (i.e., <m>y=f(x)</m>) into parametric form, and vice<ndash />versa. Converting from rectangular to parametric can be very simple: given <m>y=f(x)</m>, the parametric equations <m>x=t</m>, <m>y=f(t)</m> produce the same graph. As an example, given <m>y=x^2</m>, the parametric equations <m>x=t</m>, <m>y=t^2</m> produce the familiar parabola. However, other parametrizations can be used. The following example demonstrates one possible alternative.
 </p>
 <example xml:id="ex_pareq5">
@@ -242,7 +436,45 @@ These parametric equations make certain determinations about the object's locati
 </p>
 <figure xml:id="fig_pareq6" >
 <caption>Graphing projectile motion in <xref ref="ex_pareq6">Example</xref>.</caption>
-<image width="73%" source="images/figpareq6.png" />
+
+<!-- START figures/fig_pareq6.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={2,4,6,8,10},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=0,ymax=160,%
+			xmin=0,xmax=210%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick, {\colorone},smooth,domain=0:6] ({32*x},{-16*x^2+96*x});
+\draw [->,>=latex] (axis cs:32,80) -- (axis cs:35.2, 86.24);
+%\draw [->,>=latex] (axis cs:7,11) -- (axis cs:7.1107, 11.0601);
+\filldraw (axis cs:64, 128) circle (1.5pt) node [above left] {\scriptsize $t=2$};
+
+\draw (axis cs: 100,50) node [align=left] {\scriptsize $x=32t$\\ \scriptsize $y=-16t^2+96t$};
+
+
+
+			
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pareq6.tex -->
+
 </figure>
 </solution>
 </example>
@@ -276,7 +508,47 @@ Starting with <m>x= 1/(t^2+1)</m>, solve for <m>t</m>: <m>t = \pm\sqrt{1/x-1}</m
 </p>
 <figure xml:id="fig_pareq7" >
 <caption>Graphing parametric and rectangular equations for a graph in <xref ref="ex_pareq7">Example</xref>.</caption>
-<image width="73%" source="images/figpareq7.png" />
+
+<!-- START figures/fig_pareq7.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={2,4,6,8,10},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=2.1,%
+			xmin=-2.1,xmax=2.1%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [ {\colorone},smooth,domain=-2:2] ({x},{1-x});
+\addplot [{\colorone},ultra thick, smooth,domain=0:1] ({x},{1-x});
+\draw [fill=white] (axis cs:0,1) circle (1.5pt);
+%\draw [->,>=latex] (axis cs:7,11) -- (axis cs:7.1107, 11.0601);
+\filldraw [fill=black] (axis cs:1,0) circle (1.5pt) node [align=left,shift={(5pt,30pt)}] {\scriptsize $\displaystyle x=\frac{1}{t^2+1}$\\[2pt] \scriptsize $\displaystyle y=\frac{t^2}{t^2+1}$};
+\draw (axis cs: -1,1.4) node {\scriptsize $y=1-x$};
+
+%\draw (axis cs: 100,50) node [align=left] {\scriptsize $x=32t$\\ \scriptsize $y=-16t^2+96t$};
+
+
+
+			
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pareq7.tex -->
+
 </figure>
 <p>
 Thus <m>y=1-x</m>. One may have recognized this earlier by manipulating the equation for <m>y</m>:
@@ -324,7 +596,47 @@ The Pythagorean Theorem gives <m>\cos^2t+\sin^2t=1</m>, so:
 </p>
 <figure xml:id="fig_pareq8" >
 <caption>Graphing the parametric equations <m>x=4\cos t+3</m>, <m>y=2\sin t+1</m> in <xref ref="ex_pareq8">Example</xref>.</caption>
-<image width="73%" source="images/figpareq8.png" />
+
+<!-- START figures/fig_pareq8.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={2,4,6,8,10},
+			minor x tick num=1,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-3.1,ymax=5.1,%
+			xmin=-1.1,xmax=8.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone},smooth,domain=0:360,samples=60] ({4*cos(x)+3},{2*sin(x)+1});
+%\addplot [ultra thick, smooth,domain=0:1] ({x},{1-x});
+%\draw [fill=white] (axis cs:0,1) circle (1.5pt);
+%\draw [->,>=latex] (axis cs:7,11) -- (axis cs:7.1107, 11.0601);
+%\filldraw [fill=black] (axis cs:1,0) circle (1.5pt) node [align=left,shift={(5pt,30pt)}] {\scriptsize $\ds x=\frac{1}{t^2+1}$\\[2pt] \scriptsize $\ds y=\frac{t^2}{t^2+1}$};
+%\draw (axis cs: -1,1.4) node {\scriptsize $y=1-x$};
+
+%\draw (axis cs: 100,50) node [align=left] {\scriptsize $x=32t$\\ \scriptsize $y=-16t^2+96t$};
+
+
+
+			
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pareq8.tex -->
+
 </figure>
 <p>
 This final equation should look familiar <ndash /> it is the equation of an ellipse! <xref ref="fig_pareq8">Figure</xref> plots the parametric equations, demonstrating that the graph is indeed of an ellipse with a horizontal major axis and center at <m>(3,1)</m>.
@@ -337,19 +649,13 @@ The Pythagorean Theorem can also be used to identify parametric equations for hy
 <keyidea xml:id="idea_par_ellipse_hyperbola">
 <title>Parametric Equations of Ellipses and Hyperbolas</title>
 <ul>
-<li>
-<p>
-The parametric equations
+<li><p>The parametric equations
 <me>
   x=a\cos t+h, \quad y=b\sin t+k
 </me>
 define an ellipse with horizontal axis of length <m>2a</m> and vertical axis of length <m>2b</m>, centered at <m>(h,k)</m>.
-<index><main>ellipse</main><sub>parametric equations</sub></index>
-</p>
-</li>
-<li>
-<p>
-The parametric equations
+<index><main>ellipse</main><sub>parametric equations</sub></index></p></li>
+<li><p>The parametric equations
 <me>
   x= a\tan t+h,\quad y=\pm b\sec t+k
 </me>
@@ -358,9 +664,7 @@ define a hyperbola with vertical transverse axis centered at <m>(h,k)</m>, and
   x=\pm a\sec t+h, \quad y=b\tan t + k
 </me>
 defines a hyperbola with horizontal transverse axis. Each has asymptotes at <m>y=\pm b/a(x-h)+k</m>.
-<index><main>hyperbola</main><sub>parametric equations</sub></index>
-</p>
-</li>
+<index><main>hyperbola</main><sub>parametric equations</sub></index></p></li>
 </ul>
 </keyidea>
 </subsection>
@@ -369,6 +673,7 @@ defines a hyperbola with horizontal transverse axis. Each has asymptotes at <m>y
 <subsection>
 <title>Special Curves</title>
 <p>
+\vskip
 <xref ref="fig_pareq_special">Figure</xref> gives a small gallery of <q>interesting</q> and <q>famous</q> curves along with parametric equations that produce them. Interested readers can begin learning more about these curves through internet searches.
 </p>
 
@@ -378,22 +683,142 @@ One might note a feature shared by two of these graphs: <q>sharp corners,</q> or
 <figure xml:id="fig_pareq_special" >
 <caption>A gallery of interesting planar curves.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figplanecurve1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_planecurve1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.1,xmax=1.1%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=0:360,samples=360] ({(cos(x))^3},{(sin(x))^3});
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_planecurve1.tex -->
+</cell></row>
 <row><cell>\text{ Astroid</cell></row>
 <row><cell><m>x=\cos^3 t</m></cell></row>
 <row><cell><m>y=\sin^3t</m>}</cell></row>
 <row><cell></cell></row>
-<row><cell><image width="73%" source="images/figplanecurve2.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_planecurve2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.1,xmax=1.1%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick, {\colorone},smooth,domain=0:360,samples=360] ({sin(4*x)*cos(x)},{(sin(4*x)*sin(x)});
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_planecurve2.tex -->
+</cell></row>
 <row><cell>\text{ Rose Curve</cell></row>
 <row><cell><m>x=\cos(t)\sin(4t)</m></cell></row>
 <row><cell><m>y=\sin(t)\sin(4t)</m>}</cell></row>
 <row><cell></cell></row>
-<row><cell><image width="73%" source="images/figplanecurve3.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_planecurve3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-7.1,ymax=7.1,%
+			xmin=-7.1,xmax=7.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick, {\colorone},smooth,domain=0:1440,samples=120] ({2*cos(x)+5*cos(2*x/3)},{2*sin(x)-5*sin(2*x/3)});
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_planecurve3.tex -->
+</cell></row>
 <row><cell>\text{ Hypotrochoid</cell></row>
 <row><cell><m>x=2\cos(t)+5\cos(2t/3)</m></cell></row>
 <row><cell><m>y=2\sin(t)-5\sin(2t/3)</m>}</cell></row>
 <row><cell></cell></row>
-<row><cell><image width="73%" source="images/figplanecurve4.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_planecurve4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-7.1,ymax=7.1,%
+			xmin=-7.1,xmax=7.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=0:720,samples=240] ({4*cos(x)-cos(4*x)},{4*sin(x)-sin(4*x)});
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_planecurve4.tex -->
+</cell></row>
 <row><cell>\text{ Epicycloid</cell></row>
 <row><cell><m>x=4\cos(t)-\cos(4t)</m></cell></row>
 <row><cell><m>y=4\sin(t)-\sin(4t)</m>}</cell></row>
@@ -451,7 +876,37 @@ We see at <m>t=2</m> both <m>x\primeskip'</m> and <m>y\primeskip'</m> are 0; thu
 </p>
 <figure xml:id="fig_pareq9" >
 <caption>Graphing the curve in <xref ref="ex_pareq9">Example</xref>; note it is not smooth at <m>(1,4)</m>.</caption>
-<image width="73%" source="images/figpareq9.png" />
+
+<!-- START figures/fig_pareq9.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1},
+			minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1,ymax=9,%
+			xmin=-1,xmax=11%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2:3.5,samples=40] ({x^3-12*x+17},{x^2-4*x+8)});
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pareq9.tex -->
+
 </figure>
 </solution>
 </example>
@@ -538,7 +993,37 @@ In the following exercises, sketch the graph of the given parametric equations <
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_05.png" />
+
+<!-- START figures/fig_09_02_ex_05.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1,2,-2},
+			minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-9,ymax=2,%
+			xmin=-1,xmax=13%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick, smooth,domain=-3:3,samples=30] ({x^2+x},{1-x^2});
+
+\draw [>=latex,->,thick] (axis cs: 6,-3) -- (axis cs:6.05,-3.04);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_05.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -551,7 +1036,38 @@ In the following exercises, sketch the graph of the given parametric equations <
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_06.png" />
+
+<!-- START figures/fig_09_02_ex_06.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1,2,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-5.5,ymax=5.5,%
+			xmin=-.5,xmax=1.6%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick, smooth,domain=-5:5,samples=30] ({1},{x});
+
+\draw [>=latex,->,thick] (axis cs: 1,1) -- (axis cs:1,1.1);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_06.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -564,7 +1080,37 @@ In the following exercises, sketch the graph of the given parametric equations <
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_07.png" />
+
+<!-- START figures/fig_09_02_ex_07.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1,2,-2},
+			minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=2.5,%
+			xmin=-.5,xmax=2.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick, smooth,domain=-2:2,samples=30] ({x^2},{2});
+
+\draw [>=latex,<->,thick] (axis cs: .9,2) -- (axis cs:1.5,2);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_07.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -577,7 +1123,37 @@ In the following exercises, sketch the graph of the given parametric equations <
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_08.png" />
+
+<!-- START figures/fig_09_02_ex_08.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1,2,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=4.5,%
+			xmin=-.5,xmax=5.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick, smooth,domain=-2:2,samples=30] ({x^3-x+3},{x^2+1});
+
+\draw [>=latex,->,thick] (axis cs: 3.897,2.69) -- (axis cs:3.938,2.7161);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_08.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -592,7 +1168,22 @@ In the following exercises, sketch the graph of the given parametric equations; 
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_09.png" />
+
+<!-- START figures/fig_09_02_ex_09.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+ymin=0.1,ymax=9,xmin=-11,xmax=11]
+
+\addplot [thick, smooth,domain=-2:3,samples=30] ({x^3-2*x^2},{x^2});
+\draw[>=latex,->,thick] (axis cs:-1.183,1.69)-- (axis cs:-1.18411,1.7161);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_09.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -605,7 +1196,22 @@ In the following exercises, sketch the graph of the given parametric equations; 
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_10.png" />
+
+<!-- START figures/fig_09_02_ex_10.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+ymin=-1.1,ymax=1.1,xmin=-0.5,xmax=1.5]
+
+\addplot [thick, smooth,domain=0.1:10,samples=60] ({1/x},{sin(deg(x))});
+\draw[>=latex,->,thick] (axis cs:0.25,-.756802)-- (axis cs:0.249377,-.763301);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_10.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -618,7 +1224,22 @@ In the following exercises, sketch the graph of the given parametric equations; 
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_11.png" />
+
+<!-- START figures/fig_09_02_ex_11.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+ymin=-5.5,ymax=5.5,xmin=-5.5,xmax=5.5]
+
+\addplot [thick, smooth,domain=0:360,samples=60] ({3*cos(x)},{5*sin(x)});
+\draw[>=latex,->,thick] (axis cs:2.12,3.5355)-- (axis cs:2.1,3.5707);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_11.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -631,7 +1252,23 @@ In the following exercises, sketch the graph of the given parametric equations; 
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_12.png" />
+
+<!-- START figures/fig_09_02_ex_12.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+minor x tick num=4,minor y tick num=4,
+ymin=-5.5,ymax=8.5,xmin=-5.5,xmax=7.5]
+
+\addplot [thick, smooth,domain=0:360,samples=60] ({3*cos(x)+2},{5*sin(x)+3});
+\draw[>=latex,->,thick] (axis cs:4.12,6.5355)-- (axis cs:4.1,6.5707);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_12.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -644,7 +1281,23 @@ In the following exercises, sketch the graph of the given parametric equations; 
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_13.png" />
+
+<!-- START figures/fig_09_02_ex_13.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+%minor x tick num=4,minor y tick num=4,
+ymin=-1.1,ymax=1.1,xmin=-1.1,xmax=1.1]
+
+\addplot [thick, smooth,domain=0:180,samples=60] ({cos(x)},{cos(x*2)});
+\draw[>=latex,->,thick] (axis cs:0.8845,0.5646)-- (axis cs:0.8798,0.548024);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_13.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -657,7 +1310,23 @@ In the following exercises, sketch the graph of the given parametric equations; 
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_14.png" />
+
+<!-- START figures/fig_09_02_ex_14.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+%minor x tick num=4,minor y tick num=4,
+ymin=-1.1,ymax=1.1,xmin=-1.1,xmax=1.1]
+
+\addplot [thick, smooth,domain=0:360,samples=60] ({cos(x)},{sin(x*2)});
+\draw[>=latex,->,thick] (axis cs:0.8845,0.82534)-- (axis cs:0.8798,0.8365);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_14.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -670,7 +1339,23 @@ In the following exercises, sketch the graph of the given parametric equations; 
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_15.png" />
+
+<!-- START figures/fig_09_02_ex_15.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+minor x tick num=4,minor y tick num=4,
+ymin=-16.,ymax=16,xmin=-1,xmax=11]
+
+\addplot [thick, smooth,domain=-80:80,samples=60] ({2*sec(x)},{3*tan(x)});
+\draw[>=latex,->,thick] (axis cs:5.32,7.395)-- (axis cs:5.4549,7.61254);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_15.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -683,7 +1368,23 @@ In the following exercises, sketch the graph of the given parametric equations; 
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_16.png" />
+
+<!-- START figures/fig_09_02_ex_16.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+%minor x tick num=4,minor y tick num=4,
+ymin=-1.5,ymax=1.5,xmin=-1.5,xmax=1.5]
+
+\addplot [thick, smooth,domain=0:360,samples=120] ({cos(x)+cos(8*x)/4},{sin(x)+sin(8*x)/4});
+\draw[>=latex,->,thick] (axis cs:.9571,.7071)-- (axis cs:.9534,.7341);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_16.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -696,7 +1397,23 @@ In the following exercises, sketch the graph of the given parametric equations; 
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig09_02_ex_17.png" />
+
+<!-- START figures/fig_09_02_ex_17.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+%minor x tick num=4,minor y tick num=4,
+ymin=-1.5,ymax=1.5,xmin=-1.5,xmax=1.5]
+
+\addplot [thick, smooth,domain=0:360,samples=120] ({cos(x)+sin(8*x)/4},{sin(x)+cos(8*x)/4});
+\draw[>=latex,->,thick] (axis cs:0.3613,.6771)-- (axis cs:.33215,.68275);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_09_02_ex_17.tex -->
+
 </sidebyside>
 </answer>
 </exercise>
@@ -714,26 +1431,10 @@ In the following exercises, four sets of parametric equations are given. Describ
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-Traces the parabola <m>y=x^2</m>, moves from left to right.
-</p>
-</li>
-<li>
-<p>
-Traces the parabola <m>y=x^2</m>, but only from <m>-1\leq x\leq 1</m>; traces this portion back and forth infinitely.
-</p>
-</li>
-<li>
-<p>
-Traces the parabola <m>y=x^2</m>, but only for <m>0\lt x</m>. Moves left to right.
-</p>
-</li>
-<li>
-<p>
-Traces the parabola <m>y=x^2</m>, moves from right to left.
-</p>
-</li>
+<li><p>Traces the parabola <m>y=x^2</m>, moves from left to right.</p></li>
+<li><p>Traces the parabola <m>y=x^2</m>, but only from <m>-1\leq x\leq 1</m>; traces this portion back and forth infinitely.</p></li>
+<li><p>Traces the parabola <m>y=x^2</m>, but only for <m>0\lt x</m>. Moves left to right.</p></li>
+<li><p>Traces the parabola <m>y=x^2</m>, moves from right to left.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -749,26 +1450,10 @@ Traces the parabola <m>y=x^2</m>, moves from right to left.
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-Traces a circle of radius 1 counterclockwise once.
-</p>
-</li>
-<li>
-<p>
-Traces a circle of radius 1 counterclockwise over 6 times.
-</p>
-</li>
-<li>
-<p>
-Traces a circle of radius 1 clockwise infinite times.
-</p>
-</li>
-<li>
-<p>
-Traces an arc of a circle of radius 1, from an angle of -1 radians to 1 radian, twice.
-</p>
-</li>
+<li><p>Traces a circle of radius 1 counterclockwise once.</p></li>
+<li><p>Traces a circle of radius 1 counterclockwise over 6 times.</p></li>
+<li><p>Traces a circle of radius 1 clockwise infinite times.</p></li>
+<li><p>Traces an arc of a circle of radius 1, from an angle of -1 radians to 1 radian, twice.</p></li>
 </ol>
 </answer>
 </exercise>

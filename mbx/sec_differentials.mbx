@@ -27,9 +27,88 @@ For instance, we can approximate <m>\sin 1.1</m> using the tangent line to the g
 <figure xml:id="fig_diffal1" >
 <caption>Graphing <m>f(x) = \sin x</m> and its tangent line at <m>x=\pi/3</m> in order to estimate <m>\sin 1.1</m>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figdiffal1a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_diffal1a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={1.047},
+			extra x tick labels={$\frac{\pi}{3}$},
+%			ytick={0.86,0.87,0.88,0.89},
+			extra y ticks={0.866},
+			extra y tick labels={$\frac{\sqrt{3}}{2}$},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=1.1,%
+			xmin=-.1,xmax=2,%
+%			axis x discontinuity=crunch,
+%			axis y discontinuity=crunch
+]
+
+\addplot [thick, {\colorone},smooth,samples=50] {sin(deg(x))};
+%\addplot [thick,{\colorone}] coordinates {(1.02,0.85211) (1.03,0.8573) (1.04,0.8624) (1.05,0.86742)(1.06,0.87236) (1.07,0.8772) (1.08,0.88196) (1.09,0.88663)(1.1,0.89121) (1.11,0.8957) (1.12,0.9001) (1.13,0.90441)(1.14,0.90863) (1.15,0.91276) };
+\addplot [{\colortwo},thick] {.5*(x-1.047197551)+0.866025};
+\filldraw (axis cs:1.047,0.866) circle (1pt);
+%\filldraw (axis cs:1.1,.8925) circle (.75pt);
+%\filldraw (axis cs:1.1,.8912) circle (.75pt);
+\draw (axis cs:1.04,.86) rectangle (axis cs:1.12,.9);
+%\draw (axis cs:1.5,8) node {\tiny \parbox{30pt}{\centering$\fpp>0$ \vskip 2pt c. up}};
+%\draw (axis cs:3.5,8) node {\tiny \parbox{30pt}{\centering$\fpp>0$ \vskip 2pt c. up}};
+%\draw (axis cs:2.5,4) node {\tiny \parbox{30pt}{\centering$\fpp<0$ \vskip 2pt c. down}};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_diffal1a.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figdiffal1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_diffal1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={1.047,1.1},
+			extra x tick labels={$\frac{\pi}{3}$,$1.1$},
+			ytick={0.86,0.87,0.88,0.89},
+			extra y ticks={0.866},
+			extra y tick labels={$\frac{\sqrt{3}}{2}$},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=.86,ymax=.9,%
+			xmin=1.04,xmax=1.12,%
+%			axis x discontinuity=crunch,
+%			axis y discontinuity=crunch
+]
+
+%\addplot [thick, {\colorone},smooth,samples=50] {sin(deg(x))};
+\addplot [thick,{\colorone}] coordinates {(1.02,0.85211) (1.03,0.8573) (1.04,0.8624) (1.05,0.86742)(1.06,0.87236) (1.07,0.8772) (1.08,0.88196) (1.09,0.88663)(1.1,0.89121) (1.11,0.8957) (1.12,0.9001) (1.13,0.90441)(1.14,0.90863) (1.15,0.91276) };
+\addplot [{\colortwo},thick] {.5*(x-1.047197551)+0.866025};
+\filldraw (axis cs:1.047,0.866) circle (1pt);
+\filldraw (axis cs:1.1,.8925) circle (.75pt);
+\filldraw (axis cs:1.1,.8912) circle (.75pt);
+
+\draw (axis cs:1.07,.8925) node (a) {\tiny $\ell(1.1) \approx \sin 1.1$} ;
+
+\draw [->,>=latex] (a) -- (axis cs:1.097,.8925);
+\draw(axis cs:1.1,.88) node (b) {\tiny $\sin 1.1$};
+
+\draw [->,>=latex] (b) -- (axis cs:1.1,.889);
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_diffal1.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -296,26 +375,10 @@ We first learned of the derivative in the context of instantaneous rates of chan
 </p>
 
 <ul>
-<li>
-<p>
-Equation solving (Newton's Method)
-</p>
-</li>
-<li>
-<p>
-Related Rates (furthering our use of the derivative to find instantaneous rates of change)
-</p>
-</li>
-<li>
-<p>
-Optimization (applied extreme values), and
-</p>
-</li>
-<li>
-<p>
-Differentials (useful for various approximations and for something called integration).
-</p>
-</li>
+<li><p>Equation solving (Newton's Method)</p></li>
+<li><p>Related Rates (furthering our use of the derivative to find instantaneous rates of change)</p></li>
+<li><p>Optimization (applied extreme values), and</p></li>
+<li><p>Differentials (useful for various approximations and for something called integration).</p></li>
 </ul>
 
 <p>
@@ -732,16 +795,8 @@ The distance, in feet, a stone drops in <m>t</m> seconds is given by <m>d(t) = 1
 </p>
 
 <ol>
-<li>
-<p>
-2 seconds?
-</p>
-</li>
-<li>
-<p>
-5 seconds?
-</p>
-</li>
+<li><p>2 seconds?</p></li>
+<li><p>5 seconds?</p></li>
 </ol>
 </statement>
 <answer>
@@ -796,30 +851,14 @@ The length <m>l</m> of a long wall is to be approximated. The angle <m>\theta</m
 
 </sidebyside>
 <ol>
-<li>
-<p>
-What is the measured length <m>l</m> of the wall?
-</p>
-</li>
-<li>
-<p>
-What is the propagated error?
-</p>
-</li>
-<li>
-<p>
-What is the percent error?
-</p>
-</li>
+<li><p>What is the measured length <m>l</m> of the wall?</p></li>
+<li><p>What is the propagated error?</p></li>
+<li><p>What is the percent error?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-297.8 feet
-</p>
-</li>
+<li><p>297.8 feet</p></li>
 <li><m>\pm 62.3</m> ft</li>
 <li><m>\pm 20.9</m><percent /></li>
 </ol>
@@ -834,11 +873,7 @@ Answer the questions of <xref ref="exer_04_04_ex_35">Exercise</xref>, but with a
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-298.8 feet
-</p>
-</li>
+<li><p>298.8 feet</p></li>
 <li><m>\pm 17.3</m> ft</li>
 <li><m>\pm 5.8</m><percent /></li>
 </ol>
@@ -862,30 +897,14 @@ The length <m>l</m> of a long wall is to be calculated by measuring the angle <m
 
 </sidebyside>
 <ol>
-<li>
-<p>
-What is the measured length of the wall?
-</p>
-</li>
-<li>
-<p>
-What is the propagated error?
-</p>
-</li>
-<li>
-<p>
-What is the percent error?
-</p>
-</li>
+<li><p>What is the measured length of the wall?</p></li>
+<li><p>What is the propagated error?</p></li>
+<li><p>What is the percent error?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-298.9 feet
-</p>
-</li>
+<li><p>298.9 feet</p></li>
 <li><m>\pm 8.67</m> ft</li>
 <li><m>\pm 2.9</m></li>
 </ol>

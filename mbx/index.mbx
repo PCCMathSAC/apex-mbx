@@ -8,16 +8,17 @@
 \newcommand{\bwlinecolor}{black!30}
 \newcommand{\thelinecolor}{\colorlinecolor}
 \newcommand{\colornamesuffix}{}
-\newcommand{\includegraphics}[2][]{\includegraphics[#1]{#2\colornamesuffix}}
+\newcommand{\apexincludegraphics}[2][]{\includegraphics[#1]{#2\colornamesuffix}}
 \newcommand{\myincludegraphicsthreenostar}[3]{{
-				\includegraphics[#2]{#3} }}
+				\apexincludegraphics[#2]{#3} }}
 \newcommand{\myincludegraphicsthreestarred}[3]{{
-				\includegraphics[#2]{#3} }}
+				\apexincludegraphics[#2]{#3} }}
 \newcommand{\linestyle}{[thick, \thelinecolor]}
 \newcommand{\exc}{\arabic{excounter}}
+\newcommand{\include}[1]{}
 \def\printexercisename{exercises/#1_#2_#3_#4 {#1 #2 #3 #4}}
 \newcommand{\readsection}[1]{.#2{#2}}
-\newcommand{\writeexercisestofile}[1]{\write\answrite{\noexpand\printanswers{exercises/0\thechapter_0\expandafter\readsection #1_exercises.tex} \noexpand } \write\answrite{} }
+\newcommand{\writeexercisestofile}[1]{}
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ \ \ \ {#1}}{}}
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\headrulewidth}{0pt}

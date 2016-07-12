@@ -13,7 +13,8 @@ Consider the function <m>z=f(x,y) = x^2+2y^2</m>, as graphed in <xref ref="fig_p
 <figure xml:id="fig_partialintro" >
 <caption>By fixing <m>y=2</m>, the surface <m>f(x,y) = x^2+2y^2</m> is a curve in space.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=1.320775024146522,
 3Dortho=0.004999999888241291,
@@ -21,18 +22,192 @@ Consider the function <m>z=f(x,y) = x^2+2y^2</m>, as graphed in <xref ref="fig_p
 3Dcoo=-3.0739071369171143 -0.40104401111602783 58.57058334350586,
 3Droo=129.99999696026478,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartialintro.png" /></cell></row>
-<row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
-3Droll=1.320775024146522,
-3Dortho=0.004999999888241291,
-3Dc2c=0.6570873856544495 0.6839641332626343 0.31690558791160583,
-3Dcoo=-3.0739071369171143 -0.40104401111602783 58.57058334350586,
-3Droo=129.99999696026478,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartialintrob.png" /> 
 
+<!-- START figures/figpartialintro_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartialintro3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(16,16,36);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-4,-2,2,4};
+real[] myychoice={-4,-2,2,4};
+real[] myzchoice={10,20};
+defaultpen(0.5mm);
+pair xbounds=(-5,5);
+pair ybounds=(-5,5);
+pair zbounds=(-1,22);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=x^2+2*y^2
+triple f(pair t) {
+  return (t.x,t.y,t.x^2+2*t.y^2);
+}
+surface s=surface(f,(-3,-3),(3,3),16,16,usplinetype=new splinetype[] {notaknot,notaknot,monotonic},
+          vsplinetype=new splinetype[] {notaknot,notaknot,monotonic});
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//Draw the trace for y=2
+triple g(real t) {return (t,2,t^2+8);}
+path3 mypath=graph(g,-3,3,operator ..); draw(mypath,blue);
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figpartialintro_3D.asy -->
+
+</figure>
+</cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>
+<figure>
+\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=1.320775024146522,
+3Dortho=0.004999999888241291,
+3Dc2c=0.6570873856544495 0.6839641332626343 0.31690558791160583,
+3Dcoo=-3.0739071369171143 -0.40104401111602783 58.57058334350586,
+3Droo=129.99999696026478,
+3Dlights=Headlamp,add3Djscript=asylabels.js]
+
+<!-- START figures/figpartialintrob_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartialintrob3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(16,16,36);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-4,-2,2,4};
+real[] myychoice={-4,-2,2,4};
+real[] myzchoice={10,20};
+defaultpen(0.5mm);
+pair xbounds=(-5,5);
+pair ybounds=(-5,5);
+pair zbounds=(-1,22);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+//Draw the trace for y=2
+triple g(real t) {return (t,2,t^2+8);}
+path3 mypath=graph(g,-3,3,operator ..); draw(mypath,blue);
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figpartialintrob_3D.asy -->
+
+</figure>
 (b)</cell></row>
 </tabular>
 </figure>
@@ -47,22 +222,14 @@ Let <m>z=f(x,y)</m> be a continuous function on an open set <m>S</m> in <m>\math
 </p>
 
 <ol>
-<li>
-<p>
-The <b>partial derivative of <m>f</m> with respect to <m>x</m></b> is:
+<li><p>The <b>partial derivative of <m>f</m> with respect to <m>x</m></b> is:
 <me>
   f_x(x,y) = \lim_{h\to 0} \frac{f(x+h,y) - f(x,y)}h.
-</me>
-</p>
-</li>
-<li>
-<p>
-The <b>partial derivative of <m>f</m> with respect to <m>y</m></b> is:
+</me></p></li>
+<li><p>The <b>partial derivative of <m>f</m> with respect to <m>y</m></b> is:
 <me>
   f_y(x,y) = \lim_{h\to 0} \frac{f(x,y+h) - f(x,y)}h.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 
 <p>
@@ -132,9 +299,7 @@ Find <m>f_x(x,y)</m> and <m>f_y(x,y)</m> in each of the following.
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-<line>We have <m>f(x,y) = x^3y^2+ 5y^2-x+7</m>.</line>
+<li><p><line>We have <m>f(x,y) = x^3y^2+ 5y^2-x+7</m>.</line>
 <line>Begin with <m>f_x(x,y)</m>. Keep <m>y</m> fixed, treating it as a constant or coefficient, as appropriate:
 <me>
   f_x(x,y) = 3x^2y^2-1.
@@ -145,12 +310,8 @@ Note how the <m>5y^2</m> and <m>7</m> terms go to zero.
 <me>
   f_y(x,y) = 2x^3y+10y.
 </me>
-Note how the <m>-x</m> and <m>7</m> terms go to zero.</line>
-</p>
-</li>
-<li>
-<p>
-<line>We have <m>f(x,y) = \cos(xy^2)+\sin x</m>.</line>
+Note how the <m>-x</m> and <m>7</m> terms go to zero.</line></p></li>
+<li><p><line>We have <m>f(x,y) = \cos(xy^2)+\sin x</m>.</line>
 <line>Begin with <m>f_x(x,y)</m>. We need to apply the Chain Rule with the cosine term; <m>y^2</m> is the coefficient of the <m>x</m>-term inside the cosine function.
 <me>
   f_x(x,y) = -\sin(xy^2)(y^2)+\cos x = -y^2\sin(xy^2)+\cos x.
@@ -159,12 +320,8 @@ To find <m>f_y(x,y)</m>, note that <m>x</m> is the coefficient of the <m>y^2</m>
 <me>
   f_y(x,y) = -\sin(xy^2)(2xy) = -2xy\sin(xy^2).
 </me>
-</line>
-</p>
-</li>
-<li>
-<p>
-<line>We have <m>f(x,y) = e^{x^2y^3}\sqrt{x^2+1}</m>.</line>
+</line></p></li>
+<li><p><line>We have <m>f(x,y) = e^{x^2y^3}\sqrt{x^2+1}</m>.</line>
 <line>Beginning with <m>f_x(x,y)</m>, note how we need to apply the Product Rule.
 <md>
   <mrow>  f_x(x,y) \amp = e^{x^2y^3}(2xy^3)\sqrt{x^2+1} + e^{x^2y^3}\frac12\big(x^2+1\big)^{-1/2}(2x)</mrow>
@@ -174,9 +331,7 @@ Note that when finding <m>f_y(x,y)</m> we do not have to apply the Product Rule;
 <me>
   f_y(x,y) = e^{x^2y^3}(3x^2y^2)\sqrt{x^2+1} = 3x^2y^2e^{x^2y^3}\sqrt{x^2+1}.
 </me>
-</line>
-</p>
-</li>
+</line></p></li>
 </ol>
 </solution>
 </example>
@@ -216,7 +371,8 @@ Consider <m>f_x(2,1)=-3</m>, along with <xref ref="fig_partial3">Figure</xref>(a
 <figure xml:id="fig_partial3" >
 <caption>Illustrating the meaning of partial derivatives.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0.,
 3Dortho=0.004999999888241291,
@@ -224,9 +380,113 @@ Consider <m>f_x(2,1)=-3</m>, along with <xref ref="fig_partial3">Figure</xref>(a
 3Dcoo=7.158430576324463 9.488722801208496 72.96935272216797,
 3Droo=129.9999938624484,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial3a.png" /></cell></row>
+
+<!-- START figures/figpartial3a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial3a3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(8,8,10);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={2};
+real[] myychoice={2};
+real[] myzchoice={5,10};
+defaultpen(0.5mm);
+pair xbounds=(-1,3);
+pair ybounds=(-1,3);
+pair zbounds=(-1,12);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=-x^2-(1/2)*y^2+xy+10
+triple f(pair t) {
+  return (t.x,t.y,-t.x^2-(1/2)*t.y^2+t.x*t.y+10);
+}
+surface s=surface(f,(0,0),(3,3),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//Draw the point (2,1,7.5) trace for y=1
+dotfactor=3;dot((2,1,7.5));
+triple g(real t) {return (t,1,-t^2-(1/2)+t+10);}
+path3 mypath=graph(g,0,3,operator ..); draw(mypath,blue);
+
+//Draw the tan line (y=1) L=(2,1,7.5)+t(1,0,-3) for t=-1.5,1
+draw((0.5,1,12)--(3,1,4.5),red);
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figpartial3a_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0.,
 3Dortho=0.004999999888241291,
@@ -234,7 +494,100 @@ Consider <m>f_x(2,1)=-3</m>, along with <xref ref="fig_partial3">Figure</xref>(a
 3Dcoo=7.158430576324463 9.488722801208496 72.96935272216797,
 3Droo=129.9999938624484,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial3b.png" /></cell></row>
+
+<!-- START figures/figpartial3b_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial3a3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(8,8,10);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={2};
+real[] myychoice={2};
+real[] myzchoice={5,10};
+defaultpen(0.5mm);
+pair xbounds=(-1,3);
+pair ybounds=(-1,3);
+pair zbounds=(-1,12);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=-x^2-(1/2)*y^2+xy+10
+triple f(pair t) {
+  return (t.x,t.y,-t.x^2-(1/2)*t.y^2+t.x*t.y+10);
+}
+surface s=surface(f,(0,0),(3,3),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//Draw the point (2,1,7.5) trace for x=2
+dotfactor=3;dot((2,1,7.5));
+triple g(real t) {return (2,t,-4-(1/2)*t^2+2*t+10);}
+path3 mypath=graph(g,0,3,operator ..); draw(mypath,blue);
+
+//Draw the tan line (x=2) L=(2,1,7.5)+t(0,1,1) for t=-1,2
+draw((2,0,6.5)--(2,3,9.5),red);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figpartial3b_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -263,22 +616,14 @@ Let <m>z=f(x,y)</m> be continuous on an open set <m>S</m>.
 </p>
 
 <ol>
-<li>
-<p>
-The <b>second partial derivative of <m>f</m> with respect to <m>x</m> then <m>x</m></b> is
+<li><p>The <b>second partial derivative of <m>f</m> with respect to <m>x</m> then <m>x</m></b> is
 <me>
   \frac{\partial}{\partial x}\left(\frac{\partial f}{\px}\right) = \frac{\partial^2 f}{\px^2} = \big(\,f_x\,\big)_x = f_{xx}
-</me>
-</p>
-</li>
-<li>
-<p>
-The <b>second partial derivative of <m>f</m> with respect to <m>x</m> then <m>y</m></b> is
+</me></p></li>
+<li><p>The <b>second partial derivative of <m>f</m> with respect to <m>x</m> then <m>y</m></b> is
 <me>
   \frac{\partial}{\partial y}\left(\frac{\partial f}{\px}\right) = \frac{\partial^2f}{\py\px} = \big(\,f_x\,\big)_y = f_{xy}
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 
 <p>
@@ -438,7 +783,8 @@ at this point in the direction of <m>y</m> is <m>-3/2</m>: if one moves from thi
 <figure xml:id="fig_partial7" >
 <caption>Understanding the second partial derivatives in <xref ref="ex_partial7">Example</xref>.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0.4263461176034552,
 3Dortho=0.004999999888241291,
@@ -446,9 +792,114 @@ at this point in the direction of <m>y</m> is <m>-3/2</m>: if one moves from thi
 3Dcoo=14.456816673278809 24.785551071166992 12.880075454711914,
 3Droo=129.9999903526944,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial6.png" /></cell></row>
+
+<!-- START figures/figpartial6_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial63D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(2.5,8.4,3.4);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-1,1};
+real[] myychoice={-1,1};
+real[] myzchoice={-1,1};
+defaultpen(0.5mm);
+pair xbounds=(-1.5,1.5);
+pair ybounds=(-1.5,1.5);
+pair zbounds=(-2,2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=x^2-y^2+xy
+triple f(pair t) {
+  return (t.x,t.y,t.x^2-t.y^2+t.x*t.y);
+}
+surface s=surface(f,(-1,-1),(1,1),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//Draw the point (-0.5,0.5,-0.25) trace for x=-0.5
+dotfactor=3;dot((-0.5,0.5,-0.25));
+triple g(real t) {return (-0.5,t,0.25-t^2-0.5*t);}
+path3 mypath=graph(g,-1,1,operator ..); draw(mypath,red);
+
+//Draw the tangent lines in x direction, slope -0.5 
+//  L=(-0.5,0.5,-0.25)+t(1,0,-0.5) for t=-1,1
+draw((-1.5,0.5,0.25)--(0.5,0.5,-0.75),blue);
+
+//Draw the tangent lines in x direction, slope -0.75 and dot
+//  L=(-0.5,0.25,0.065)+t(1,0,-0.75) for t=-1,1
+dot((-0.5,0.25,0.065));
+draw((-1.5,0.25,0.815)--(0.5,0.25,-0.685),dashed+blue);
+
+//Draw the tangent lines in x direction, slope -0.25 and dot
+//  L=(-0.5,0.75,-0.6875)+t(1,0,-0.25) for t=-1,1
+dot((-0.5,0.75,-0.6875));
+draw((-1.5,0.75,-0.4375)--(0.5,0.75,-0.9375),dashed+blue);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figpartial6_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0.4263461176034552,
 3Dortho=0.004999999888241291,
@@ -456,7 +907,112 @@ at this point in the direction of <m>y</m> is <m>-3/2</m>: if one moves from thi
 3Dcoo=14.456816673278809 24.785551071166992 12.880075454711914,
 3Droo=129.9999903526944,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial6b.png" /></cell></row>
+
+<!-- START figures/figpartial6b_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial6b3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(2.5,8.4,3.);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-1,1};
+real[] myychoice={-1,1};
+real[] myzchoice={-1,1};
+defaultpen(0.5mm);
+pair xbounds=(-1.5,1.5);
+pair ybounds=(-1.5,1.5);
+pair zbounds=(-2,2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=x^2-y^2+xy
+triple f(pair t) {
+  return (t.x,t.y,t.x^2-t.y^2+t.x*t.y);
+}
+surface s=surface(f,(-1,-1),(1,1),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//Draw the point (-0.5,0.5,-0.25) and trace for y=0.5
+dotfactor=3;dot((-0.5,0.5,-0.25));
+triple g(real t) {return (t,0.5,t^2-0.25+0.5*t);}
+path3 mypath=graph(g,-1,1,operator ..); draw(mypath,red);
+
+//Draw the tangent lines in y direction, slope -1.5 
+//  L=(-0.5,0.5,-0.25)+t(0,1,-1.5) for t=-1,1
+draw((-0.5,-0.3,.95)--(-0.5,1.3,-1.45),blue);
+
+//Draw the tangent lines in y direction, slope -1.75 and dot
+//  L=(-0.75,0.5,-0.0625)+t(0,1,-1.75) for t=-1,1
+dot((-0.75,0.5,-0.0625));
+draw((-0.75, -0.3, 1.3375)--(-0.75, 1.3, -1.4625),dashed+blue);
+
+//Draw the tangent lines in y direction, slope -1.25 and dot
+//  L=(-0.25,0.5,-0.3125)+t(0,1,-1.25) for t=-1,1
+dot((-0.25,0.5,-0.3125));
+draw((-0.25, -0.3, 0.6875)--(-0.25, 1.3, -1.3125),dashed+blue);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figpartial6b_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -553,23 +1109,13 @@ We do not formally define each higher order derivative, but rather give just a f
 <title>Higher order partial derivatives</title>
 <statement>
 <ol>
-<li>
-<p>
-Let <m>f(x,y) = x^2y^2+\sin(xy)</m>. Find <m>f_{xxy}</m> and <m>f_{yxx}</m>.
-</p>
-</li>
-<li>
-<p>
-Let <m>f(x,y,z) = x^3e^{xy}+\cos(z)</m>. Find <m>f_{xyz}</m>.
-</p>
-</li>
+<li><p>Let <m>f(x,y) = x^2y^2+\sin(xy)</m>. Find <m>f_{xxy}</m> and <m>f_{yxx}</m>.</p></li>
+<li><p>Let <m>f(x,y,z) = x^3e^{xy}+\cos(z)</m>. Find <m>f_{xyz}</m>.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-To find <m>f_{xxy}</m>, we first find <m>f_x</m>, then <m>f_{xx}</m>, then <m>f_{xxy}</m>:
+<li><p>To find <m>f_{xxy}</m>, we first find <m>f_x</m>, then <m>f_{xx}</m>, then <m>f_{xxy}</m>:
 <md>
   <mrow>  f_x \amp = 2xy^2+y\cos(xy) \quad\quad f_{xx} = 2y^2-y^2\sin(xy)</mrow>
   <mrow>  f_{xxy} \amp = 4y-2y\sin(xy) - xy^2\cos(xy).</mrow>
@@ -580,18 +1126,12 @@ To find <m>f_{yxx}</m>, we first find <m>f_y</m>, then <m>f_{yx}</m>, then <m>f_
   <mrow>  f_{yxx} \amp = 4y-y\sin(xy) - \big(y\sin(xy) + xy^2\cos(xy)\big)</mrow>
   <mrow>  \amp = 4y-2y\sin(xy)-xy^2\cos(xy).</mrow>
 </md>
-Note how <m>f_{xxy} = f_{yxx}</m>.
-</p>
-</li>
-<li>
-<p>
-To find <m>f_{xyz}</m>, we find <m>f_x</m>, then <m>f_{xy}</m>, then <m>f_{xyz}</m>:
+Note how <m>f_{xxy} = f_{yxx}</m>.</p></li>
+<li><p>To find <m>f_{xyz}</m>, we find <m>f_x</m>, then <m>f_{xy}</m>, then <m>f_{xyz}</m>:
 <md>
   <mrow>  f_x \amp = 3x^2e^{xy}+ x^3ye^{xy} \quad \quad f_{xy} = 3x^3e^{xy}+x^3e^{xy}+x^4ye^{xy} = 4x^3e^{xy}+x^4ye^{xy}</mrow>
   <mrow>  f_{xyz} \amp = 0.</mrow>
-</md>
-</p>
-</li>
+</md></p></li>
 </ol>
 </solution>
 </example>

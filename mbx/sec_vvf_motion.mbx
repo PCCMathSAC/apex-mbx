@@ -30,34 +30,18 @@ An object is moving with position function <m>\vec r(t) = \la t^2-t,t^2+t\ra</m>
 </p>
 
 <ol>
-<li>
-<p>
-Find \vvt<nbsp /> and \vat.
-</p>
-</li>
-<li>
-<p>
-Sketch \vrt; plot <m>\vec v(-1)</m>, <m>\vec a(-1)</m>, <m>\vec v(1)</m> and <m>\vec a(1)</m>, each with their initial point at their corresponding point on the graph of <m>\vrt</m>.
-</p>
-</li>
-<li>
-<p>
-When is the object's speed minimized?
-</p>
-</li>
+<li><p>Find \vvt<nbsp /> and \vat.</p></li>
+<li><p>Sketch \vrt; plot <m>\vec v(-1)</m>, <m>\vec a(-1)</m>, <m>\vec v(1)</m> and <m>\vec a(1)</m>, each with their initial point at their corresponding point on the graph of <m>\vrt</m>.</p></li>
+<li><p>When is the object's speed minimized?</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Taking derivatives, we find
+<li><p>Taking derivatives, we find
 <me>
   \vvt = \vrp(t) =\la 2t-1,2t+1\ra \quad \text{and}  \quad \vat = \vrp'(t) = \la 2,2\ra.
 </me>
-Note that acceleration is constant.
-</p>
-</li>
+Note that acceleration is constant.</p></li>
 <li><m>\vec v(-1) = \la -3,-1\ra</m>,<nbsp /> <m>\vec a(-1) = \la 2,2\ra</m>;   <m>\vec v(1) = \la 1,3\ra</m>,<nbsp /> <m>\vec a(1) = \la 2,2\ra</m>. These are plotted with \vrt<nbsp />in <xref ref="fig_motion1">Figure</xref>(a).
 	
 	We can think of acceleration as <q>pulling</q> the velocity vector in a certain direction. At <m>t=-1</m>, the velocity vector points down and to the left; at <m>t=1</m>, the velocity vector has been pulled in the <m>\la 2,2\ra</m> direction and is now pointing up and to the right. In <xref ref="fig_motion1">Figure</xref>(b) we plot more velocity/acceleration vectors, making more clear the effect acceleration has on velocity.
@@ -65,24 +49,138 @@ Note that acceleration is constant.
 	<figure xml:id="fig_motion1" >
 <caption>Graphing the position, velocity and acceleration of an object in <xref ref="ex_motion1">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figmotion1a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_motion1a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.9,ymax=13,%
+			xmin=-1.9,xmax=13%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-3:3,samples=20] ({x^2-x},{x^2+x});
+
+%\filldraw (axis cs:6,2) circle (1.5pt);
+\filldraw (axis cs:2,0) circle (1.5pt);
+%\filldraw (axis cs:0,0) circle (1.5pt);
+\filldraw (axis cs:0,2) circle (1.5pt);
+%\filldraw (axis cs:2,6) circle (1.5pt);
+%\filldraw (axis cs:12,6) circle (1.5pt);
+%\filldraw (axis cs:6,12) circle (1.5pt);
+
+%\draw [thick,->,{\colortwo}] (axis cs:6,2)--(axis cs:1,-1);
+\draw [thick,->,{\colortwo}] (axis cs:2,0)--(axis cs:-1,-1);
+%\draw [thick,->,{\colortwo}] (axis cs:0,0)--(axis cs:-1,1);
+\draw [thick,->,{\colortwo}] (axis cs:0,2)--(axis cs:1,5);
+%\draw [thick,->,{\colortwo}] (axis cs:2,6)--(axis cs:5,11);
+
+%\draw [thick,->] (axis cs:6,2)--(axis cs:8,4);
+\draw [thick,->] (axis cs:2,0)--(axis cs:4,2);
+%\draw [thick,->] (axis cs:0,0)--(axis cs:2,2);
+\draw [thick,->] (axis cs:0,2)--(axis cs:2,4);
+%\draw [thick,->] (axis cs:2,6)--(axis cs:4,8);
+
+\draw [thick,->,{\colorone}] (axis cs:8.75,3.75) -- (axis cs: 8.69,3.71);
+\end{axis}
+
+
+
+%
+%\draw [thick] (0,1) circle (1);
+%\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+%
+%\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+%\draw [thick] (-1,0) -- (15,0);
+%%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+%\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+%\draw [thick,white] (0,2.5) -- (1,2.5);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_motion1a.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figmotion1b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_motion1b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.9,ymax=13,%
+			xmin=-1.9,xmax=13%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-3:3,samples=20] ({x^2-x},{x^2+x});
+
+\filldraw (axis cs:6,2) circle (1.5pt);
+\filldraw (axis cs:2,0) circle (1.5pt);
+\filldraw (axis cs:0,0) circle (1.5pt);
+\filldraw (axis cs:0,2) circle (1.5pt);
+\filldraw (axis cs:2,6) circle (1.5pt);
+\filldraw (axis cs:12,6) circle (1.5pt);
+\filldraw (axis cs:6,12) circle (1.5pt);
+
+\draw [thick,->,{\colortwo}] (axis cs:6,2)--(axis cs:1,-1);
+\draw [thick,->,{\colortwo}] (axis cs:2,0)--(axis cs:-1,-1);
+\draw [thick,->,{\colortwo}] (axis cs:0,0)--(axis cs:-1,1);
+\draw [thick,->,{\colortwo}] (axis cs:0,2)--(axis cs:1,5);
+\draw [thick,->,{\colortwo}] (axis cs:2,6)--(axis cs:5,11);
+
+\draw [thick,->] (axis cs:6,2)--(axis cs:8,4);
+\draw [thick,->] (axis cs:2,0)--(axis cs:4,2);
+\draw [thick,->] (axis cs:0,0)--(axis cs:2,2);
+\draw [thick,->] (axis cs:0,2)--(axis cs:2,4);
+\draw [thick,->] (axis cs:2,6)--(axis cs:4,8);
+
+\draw [thick,->,{\colorone}] (axis cs:8.75,3.75) -- (axis cs: 8.69,3.71);
+\end{axis}
+
+
+
+%
+%\draw [thick] (0,1) circle (1);
+%\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+%
+%\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+%\draw [thick] (-1,0) -- (15,0);
+%%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+%\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+%\draw [thick,white] (0,2.5) -- (1,2.5);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_motion1b.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
 Since <m>\vat</m> is constant in this example, as <m>t</m> grows large \vvt<nbsp />becomes almost parallel to \vat. For instance, when <m>t=10</m>, <m>\vec v(10) = \la 19,21\ra</m>, which is nearly parallel to <m>\la 2,2\ra</m>.</li>
-<li>
-<p>
-The object's speed is given by
+<li><p>The object's speed is given by
 <me>
   \norm{\vvt} = \sqrt{(2t-1)^2+(2t+1)^2} =\sqrt{8t^2+2}.
 </me>
 To find the minimal speed, we could apply calculus techniques (such as set the derivative equal to 0 and solve for <m>t</m>, etc.) but we can find it by inspection. Inside the square root we have a quadratic which is minimized when <m>t=0</m>. Thus the speed is minimized at <m>t=0</m>, with a speed of <m>\sqrt{2}</m> ft/s.
 	
-	The graph in <xref ref="fig_motion1">Figure</xref>(b) also implies speed is minimized here. The filled dots on the graph are located at integer values of <m>t</m> between <m>-3</m> and 3. Dots that are far apart imply the object traveled a far distance in 1 second, indicating high speed; dots that are close together imply the object did not travel far in 1 second, indicating a low speed. The dots are closest together near <m>t=0</m>, implying the speed is minimized near that value.
-</p>
-</li>
+	The graph in <xref ref="fig_motion1">Figure</xref>(b) also implies speed is minimized here. The filled dots on the graph are located at integer values of <m>t</m> between <m>-3</m> and 3. Dots that are far apart imply the object traveled a far distance in 1 second, indicating high speed; dots that are close together imply the object did not travel far in 1 second, indicating a low speed. The dots are closest together near <m>t=0</m>, implying the speed is minimized near that value.</p></li>
 </ol>
 </solution>
 </example>
@@ -112,7 +210,49 @@ At <m>t=-1</m>, we have <m>\vec v_1(-1) = \la 1,-2\ra</m> and <m>\vec v_2(-1) = 
 </p>
 <figure xml:id="fig_motion2a" >
 <caption>Plotting velocity and acceleration vectors for Object 1 in <xref ref="ex_motion2">Example</xref>.</caption>
-<image width="73%" source="images/figmotion2a.png" />
+
+<!-- START figures/fig_motion2a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=3.1,%
+			xmin=-2.1,xmax=2.1%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-1:1,samples=20] ({x},{x^2});
+
+\filldraw (axis cs:-1.,1.) circle (1.5pt);\filldraw (axis cs:-0.5,0.25) circle (1.5pt);\filldraw (axis cs:0.,0.) circle (1.5pt);\filldraw (axis cs:0.5,0.25) circle (1.5pt);\filldraw (axis cs:1.,1.) circle (1.5pt);
+
+\draw [thick,->,{\colortwo}] (axis cs:-1.,1.)--(axis cs:0.,-1.);
+\draw [thick,->,{\colortwo}] (axis cs:-0.5,0.25)--(axis cs:0.5,-0.75);
+\draw [thick,->,{\colortwo}] (axis cs:0.,0.)--(axis cs:1.,0.);
+\draw [thick,->,{\colortwo}] (axis cs:0.5,0.25)--(axis cs:1.5,1.25);
+\draw [thick,->,{\colortwo}] (axis cs:1.,1.)--(axis cs:2.,3.);
+
+\draw [thick,->] (axis cs:-1.,1.)--(axis cs:-1.,3.);
+\draw [thick,->] (axis cs:-0.5,0.25)--(axis cs:-0.5,2.25);\draw [thick,->] (axis cs:0.,0.)--(axis cs:0.,2.);\draw [thick,->] (axis cs:0.5,0.25)--(axis cs:0.5,2.25);\draw [thick,->] (axis cs:1.,1.)--(axis cs:1.,3.);
+
+\draw [thick,->,{\colorone}] (axis cs:-.9,.81) -- (axis cs: -.89,.7921);
+
+
+\end{axis}
+
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_motion2a.tex -->
+
 </figure>
 <p>
 At <m>t=0</m>, the velocity of Object 1 is <m>\vec v(1) = \la 1,0\ra</m> and the velocity of Object 2 is <m>\vec 0</m>! This tells us that Object 2 comes to a complete stop at <m>t=0</m>.
@@ -128,9 +268,93 @@ Instead, we simply plot the locations of Object 1 and 2 on intervals of <m>1/10^
 <figure xml:id="fig_motion2b" >
 <caption>Comparing the positions of Objects 1 and 2 in <xref ref="ex_motion2">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figmotion2c.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_motion2c.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=1.1,%
+			xmin=-1.1,xmax=1.1%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-1:1,samples=20] ({x},{x^2});
+
+\filldraw (axis cs:-1.,1.) circle (1.5pt);\filldraw (axis cs:-0.8,0.64) circle (1.5pt);\filldraw (axis cs:-0.6,0.36) circle (1.5pt);\filldraw (axis cs:-0.4,0.16) circle (1.5pt);\filldraw (axis cs:-0.2,0.04) circle (1.5pt);\filldraw (axis cs:0.,0.) circle (1.5pt);\filldraw (axis cs:0.2,0.04) circle (1.5pt);\filldraw (axis cs:0.4,0.16) circle (1.5pt);\filldraw (axis cs:0.6,0.36) circle (1.5pt);\filldraw (axis cs:0.8,0.64) circle (1.5pt);\filldraw (axis cs:1.,1.) circle (1.5pt);
+%
+%\draw [thick,->,{\colortwo}] (axis cs:-1.,1.)--(axis cs:0.,-1.);
+%\draw [thick,->,{\colortwo}] (axis cs:-0.5,0.25)--(axis cs:0.5,-0.75);
+%\draw [thick,->,{\colortwo}] (axis cs:0.,0.)--(axis cs:1.,0.);
+%\draw [thick,->,{\colortwo}] (axis cs:0.5,0.25)--(axis cs:1.5,1.25);
+%\draw [thick,->,{\colortwo}] (axis cs:1.,1.)--(axis cs:2.,3.);
+%
+%\draw [thick,->] (axis cs:-1.,1.)--(axis cs:-1.,3.);
+%\draw [thick,->] (axis cs:-0.5,0.25)--(axis cs:-0.5,2.25);\draw [thick,->] (axis cs:0.,0.)--(axis cs:0.,2.);\draw [thick,->] (axis cs:0.5,0.25)--(axis cs:0.5,2.25);\draw [thick,->] (axis cs:1.,1.)--(axis cs:1.,3.);
+%
+\draw [thick,->,{\colorone}] (axis cs:-.9,.81) -- (axis cs: -.89,.7921);
+
+\draw (axis cs: .5,.6) node {\scriptsize $\vec r_1(t)$};
+\end{axis}
+
+
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_motion2c.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figmotion2b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_motion2b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=1.1,%
+			xmin=-1.1,xmax=1.1%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-1:1,samples=20] ({x},{x^2});
+
+\filldraw (axis cs:-1.,1.) circle (1.5pt);\filldraw (axis cs:-0.512,0.262144) circle (1.5pt);\filldraw (axis cs:-0.216,0.046656) circle (1.5pt);\filldraw (axis cs:-0.064,0.004096) circle (1.5pt);\filldraw (axis cs:-0.008,0.000064) circle (1.5pt);\filldraw (axis cs:0.,0.) circle (1.5pt);\filldraw (axis cs:0.008,0.000064) circle (1.5pt);\filldraw (axis cs:0.064,0.004096) circle (1.5pt);\filldraw (axis cs:0.216,0.046656) circle (1.5pt);\filldraw (axis cs:0.512,0.262144) circle (1.5pt);\filldraw (axis cs:1.,1.) circle (1.5pt);
+
+%%\draw [thick,->,{\colortwo}] (axis cs:-1.,1.)--(axis cs:2.,-5.);
+%\draw [thick,->,{\colortwo}] (axis cs:-0.125,0.015625)--(axis cs:0.625,-0.171875);\draw [thick,->,{\colortwo}] (axis cs:0.,0.)--(axis cs:0.,0.);\draw [thick,->,{\colortwo}] (axis cs:0.125,0.015625)--(axis cs:0.875,0.203125);
+%%\draw [thick,->,{\colortwo}] (axis cs:1.,1.)--(axis cs:4.,7.);
+%
+%%\draw [thick,->] (axis cs:-1.,1.)--(axis cs:-7.,31.);
+%\draw [thick,->] (axis cs:-0.125,0.015625)--(axis cs:-3.125,1.89063);\draw [thick,->] (axis cs:0.,0.)--(axis cs:0.,0.);\draw [thick,->] (axis cs:0.125,0.015625)--(axis cs:3.125,1.89063);
+%%\draw [thick,->] (axis cs:1.,1.)--(axis cs:7.,31.);
+
+\draw [thick,->,{\colorone}] (axis cs:-.9,.81) -- (axis cs: -.89,.7921);
+
+\draw (axis cs: .5,.6) node {\scriptsize $\vec r_2(t)$};
+\end{axis}
+
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_motion2b.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -152,37 +376,19 @@ A young boy whirls a ball, attached to a string, above his head in a counter-clo
 </p>
 
 <ol>
-<li>
-<p>
-Find the position function <m>\vec r(t)</m> that describes this situation.
-</p>
-</li>
-<li>
-<p>
-Find the acceleration of the ball and derive a physical interpretation of it.
-</p>
-</li>
-<li>
-<p>
-A tree stands 10ft in front of the boy. At what <m>t</m>-values should the boy release the string so that the ball hits the tree?
-</p>
-</li>
+<li><p>Find the position function <m>\vec r(t)</m> that describes this situation.</p></li>
+<li><p>Find the acceleration of the ball and derive a physical interpretation of it.</p></li>
+<li><p>A tree stands 10ft in front of the boy. At what <m>t</m>-values should the boy release the string so that the ball hits the tree?</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-The ball whirls in a  circle. Since the string is 2ft long, the radius of the circle is 2. The position function <m>\vrt = \la 2\cos t, 2\sin t\ra</m> describes a circle with radius 2, centered at the origin, but makes a full revolution every <m>2\pi</m> seconds, not two revolutions per second. We modify the period of the trigonometric functions to be 1/2 by multiplying <m>t</m> by <m>4\pi</m>. The final position function is thus
+<li><p>The ball whirls in a  circle. Since the string is 2ft long, the radius of the circle is 2. The position function <m>\vrt = \la 2\cos t, 2\sin t\ra</m> describes a circle with radius 2, centered at the origin, but makes a full revolution every <m>2\pi</m> seconds, not two revolutions per second. We modify the period of the trigonometric functions to be 1/2 by multiplying <m>t</m> by <m>4\pi</m>. The final position function is thus
 <me>
   \vrt = \la 2\cos (4\pi t), 2\sin (4\pi t)\ra.
 </me>
-(Plot this for <m>0\leq t\leq 1/2</m> to verify that one revolution is made in 1/2 a second.)
-</p>
-</li>
-<li>
-<p>
-To find <m>\vat</m>, we derive <m>\vrt</m> twice.
+(Plot this for <m>0\leq t\leq 1/2</m> to verify that one revolution is made in 1/2 a second.)</p></li>
+<li><p>To find <m>\vat</m>, we derive <m>\vrt</m> twice.
 <md>
   <mrow>  \vvt = \vrp(t) \amp = \la -8\pi \sin (4\pi t), 8\pi \cos (4\pi t)\ra</mrow>
   <mrow>  \vat =\vrp'(t) \amp = \la -32\pi^2 \cos (4\pi t), -32\pi^2 \sin (4\pi t) \ra</mrow>
@@ -192,18 +398,58 @@ Note how <m>\vat</m> is parallel to \vrt, but has a different magnitude and poin
 	
 	Recall the classic physics equation, <q>Force <m>=</m> mass &#215; acceleration.</q> A force acting on a mass induces acceleration (i.e., the mass moves); acceleration acting on a mass induces a force (gravity gives our mass a <em>weight</em>). Thus force and acceleration are closely related. A moving ball <q>wants</q> to travel in a straight line. Why does the ball in our example move in a circle? It is attached to the boy's hand by a string. The string applies a force to the ball, affecting it's motion: the string <em>accelerates</em> the ball. This is not acceleration in the sense of <q>it travels faster;</q> rather, this acceleration is changing the velocity of the ball. In what direction is this force/acceleration being applied? In the direction of the string, towards the boy's hand.
 	
-	The magnitude of the acceleration is related to the speed at which the ball is traveling. A ball whirling quickly is rapidly changing direction/velocity. When velocity is changing rapidly, the acceleration must be <q>large.</q>
-</p>
-</li>
-<li>
-<p>
-When the boy releases the string, the string no longer applies a force to the ball, meaning acceleration is <m>\vec 0</m> and the ball can now move in a straight line in the direction of <m>\vec v(t)</m>. 
+	The magnitude of the acceleration is related to the speed at which the ball is traveling. A ball whirling quickly is rapidly changing direction/velocity. When velocity is changing rapidly, the acceleration must be <q>large.</q></p></li>
+<li><p>When the boy releases the string, the string no longer applies a force to the ball, meaning acceleration is <m>\vec 0</m> and the ball can now move in a straight line in the direction of <m>\vec v(t)</m>. 
 	\drawexampleline
 	
 	Let <m>t=t_0</m> be the time when the boy lets go of the string. The ball will be at <m>\vec r(t_0)</m>, traveling in the direction of <m>\vec v(t_0)</m>. We want to find <m>t_0</m> so that this line contains the point <m>(0,10)</m> (since the tree is 10ft directly in front of the boy).
 	<figure xml:id="fig_motion3" >
 <caption>Modeling the flight of a ball in <xref ref="ex_motion3">Example</xref>.</caption>
-<image width="73%" source="images/figmotion3.png" />
+
+<!-- START figures/fig_motion3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=latex,scale=.75]
+
+
+
+
+\begin{scope}[scale=.5,shift={(0,10)}]
+ \ifthenelse{\boolean{colorprint}}{\draw[fill=brown,ultra thick] }
+{\draw[ultra thick,fill=white]}
+   (.75,-1)  ..  controls (.5,.5)  and   (.5,3)    .. (0.5,4) 
+-- (-0.5,4)  ..  controls (-.5,3) and (-.5,.5)     .. (-.75,-1) ;
+\ifthenelse{\boolean{colorprint}}{\draw[ultra thick,fill=green!50!black] }
+{\draw[ultra thick,fill=white]}
+      (0,10) .. controls  (0,8)     and   (1,7)    .. (1.5,7) 
+             ..  controls (1,7)     and   (1,7)    .. (0.5,7.25) 
+             ..  controls (1.5,5)   and   (2.5,4)  .. (3,4)
+             ..  controls (2,4)     and   (1.25,4) .. (1,4.5)
+             ..  controls (2,2)     and   (3.5,2)  .. (4,2)
+             ..  controls (1,1)     and   (-1,1)   .. (-4,2) 
+             ..  controls (-3.5,2)  and   (-2,2)   .. (-1,4.5)
+             ..  controls (-1.25,4) and   (-2,4)   .. (-3,4) 
+             ..  controls (-2.5,4)  and   (-1.5,5) .. (-0.5,7.25) 
+             ..  controls  (-1,7)   and   (-1,7)   .. (-1.5,7)
+             ..  controls  (-1,7)   and   (0,8)    .. (0,10)
+              ;
+\end{scope}	
+
+\begin{scope}[scale=.5]
+\coordinate (ball) at (215:2cm);
+\coordinate (release) at (11.5:2cm);
+
+
+\draw [rotate=11.5] (0,0) -- (1.9,0) node [above,sloped,pos=.5] {\scriptsize 2ft};
+\draw [thick,dashed] (0,0) circle (2cm);
+\draw [thick,->] (ball) arc (215:225:2cm);
+
+\draw (0,10) circle (2pt);
+\draw[dotted,thick] (release) -- (0,10) node [sloped, pos=.5, above] {\scriptsize $\langle 0,10\rangle - \vec r(t_0)$};
+\filldraw[draw=black,fill=white,thick] (release) circle (.1);
+\end{scope}
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_motion3.tex -->
+
 </figure>
 There are many ways to find this time value. We choose one that is relatively simple computationally. As shown in <xref ref="fig_motion3">Figure</xref>, the vector from the release point to the tree is <m>\la 0,10\ra - \vec r(t_0)</m>. This line segment is tangent to the circle, which means it is also perpendicular to <m>\vec r(t_0)</m> itself, so their dot product is 0.
 <md>
@@ -218,9 +464,7 @@ where $n$ is an integer. Solving for $t_0$ we have:
 \begin{mathrow}
 	t_0 \amp \approx 0.016 + n/2</mrow>
 </md>
-This is a wonderful formula. Every 1/2 second after <m>t=0.016</m>s the boy can release the string (since the ball makes 2 revolutions per second, he has two chances each second to release the ball).
-</p>
-</li>
+This is a wonderful formula. Every 1/2 second after <m>t=0.016</m>s the boy can release the string (since the ball makes 2 revolutions per second, he has two chances each second to release the ball).</p></li>
 </ol>
 </solution>
 </example>
@@ -429,16 +673,8 @@ Consider a driver who sets her cruise<ndash />control to 60mph, and travels at t
 </p>
 
 <ol>
-<li>
-<p>
-How far did the driver travel?
-</p>
-</li>
-<li>
-<p>
-How far from her starting position is the driver?
-</p>
-</li>
+<li><p>How far did the driver travel?</p></li>
+<li><p>How far from her starting position is the driver?</p></li>
 </ol>
 
 <p>
@@ -473,47 +709,25 @@ A particle moves in space with position function <m>\vrt = \la t,t^2,\sin (\pi t
 </p>
 
 <ol>
-<li>
-<p>
-The distance traveled by the particle on <m>[-2,2]</m>.
-</p>
-</li>
-<li>
-<p>
-The displacement of the particle on <m>[-2,2]</m>.
-</p>
-</li>
-<li>
-<p>
-The particle's average speed.
-</p>
-</li>
+<li><p>The distance traveled by the particle on <m>[-2,2]</m>.</p></li>
+<li><p>The displacement of the particle on <m>[-2,2]</m>.</p></li>
+<li><p>The particle's average speed.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-We use <xref ref="thm_distance_traveled">Theorem</xref> to establish the integral:
+<li><p>We use <xref ref="thm_distance_traveled">Theorem</xref> to establish the integral:
 <md>
   <mrow>  \text{distance traveled}  \amp = \int_{-2}^2 \norm{\vvt}\ dt</mrow>
   <mrow>  \amp = \int_{-2}^2 \sqrt{1+(2t)^2+ \pi^2\cos^2(\pi t)}\ dt.</mrow>
 </md>
-This cannot be solved in terms of elementary functions so we turn to numerical integration, finding the distance to be 12.88m.
-</p>
-</li>
-<li>
-<p>
-The displacement is the vector
+This cannot be solved in terms of elementary functions so we turn to numerical integration, finding the distance to be 12.88m.</p></li>
+<li><p>The displacement is the vector
 <me>
   \vec r(2)-\vec r(-2) = \la 2,4,0\ra - \la -2,4,0\ra = \la 4,0,0\ra.
 </me>
-That is, the particle ends with an <m>x</m>-value increased by 4 and with <m>y</m>- and <m>z</m>-values the same (see <xref ref="fig_motion6">Figure</xref>).
-</p>
-</li>
-<li>
-<p>
-We found above that the particle traveled 12.88m over 4 seconds. We can compute average speed by dividing: 12.88/4 = 3.22m/s. 
+That is, the particle ends with an <m>x</m>-value increased by 4 and with <m>y</m>- and <m>z</m>-values the same (see <xref ref="fig_motion6">Figure</xref>).</p></li>
+<li><p>We found above that the particle traveled 12.88m over 4 seconds. We can compute average speed by dividing: 12.88/4 = 3.22m/s. 
 	
 	
 	
@@ -521,10 +735,86 @@ We found above that the particle traveled 12.88m over 4 seconds. We can compute 
 	<figure xml:id="fig_motion6" >
 <caption>The path of the particle, from two perspectives, in <xref ref="ex_motion6">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="125%" source="images/figmotion6.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_motion6.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={115}{25},
+			name=myplot,
+			%xtick={-3,3},minor tick num=2,
+			%ytick={-3,3},
+			%ztick={-3,3},
+			ymin=-.5,ymax=4.5,
+			xmin=-3.5,xmax=3.5,
+			zmin=-1.5, zmax=1.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=0pt,yshift=-5pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-2:2,,thick,smooth,samples y=0,{\colorone},samples=30,] ({x},{x^2},{sin(180*x)});
+
+\draw[thick,->,{\colorone}] (axis cs: 1,1,0) -- (axis cs: 1.01,1.02,-.0314);
+%\draw[thick,->,{\colortwo}] (axis cs: 0,0,0) -- (axis cs: -1,0,1) node (B) {};
+
+
+\end{axis}
+
+%\draw (A) node [ above] {\scriptsize $\vec r\,'(\pi/2)$};
+%\draw (B) node [shift={(-5pt,5pt)}] {\scriptsize $\vec r\,'(\pi/2)$};
+
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_motion6.tex -->
+</cell></row>
 <row><cell>[-20pt]
 	(a)</cell></row>
-<row><cell><image width="125%" source="images/figmotion6b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_motion6b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={165}{25},
+			name=myplot,
+			%xtick={-3,3},minor tick num=2,
+			%ytick={-3,3},
+			%ztick={-3,3},
+			ymin=-.5,ymax=4.5,
+			xmin=-3.5,xmax=3.5,
+			zmin=-1.5, zmax=1.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=0pt,yshift=-5pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-2:2,,thick,smooth,samples y=0,{\colorone},samples=30,] ({x},{x^2},{sin(180*x)});
+
+\draw[thick,->,{\colorone}] (axis cs: 1,1,0) -- (axis cs: 1.01,1.02,-.0314);
+%\draw[thick,->,{\colortwo}] (axis cs: 0,0,0) -- (axis cs: -1,0,1) node (B) {};
+
+
+\end{axis}
+
+%\draw (A) node [ above] {\scriptsize $\vec r\,'(\pi/2)$};
+%\draw (B) node [shift={(-5pt,5pt)}] {\scriptsize $\vec r\,'(\pi/2)$};
+
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_motion6b.tex -->
+</cell></row>
 <row><cell>[-20pt]
 	(b)</cell></row>
 </tabular>
@@ -533,9 +823,7 @@ We should also consider <xref ref="def_av_val">Definition</xref> of <xref ref="s
 <me>
   \text{average speed}  = \frac{1}{2-(-2)}\int_{-2}^2 \norm{\vvt}\ dt \approx \frac14 12.88 = 3.22\text{m/s} .
 </me>
-Note how the physical context of a particle traveling gives meaning to a more abstract concept learned earlier.
-</p>
-</li>
+Note how the physical context of a particle traveling gives meaning to a more abstract concept learned earlier.</p></li>
 </ol>
 </solution>
 </example>
@@ -740,7 +1028,39 @@ In the following exercises , a position function <m>\vrt</m> is given. Sketch \v
 </p>
 
 <p>
-<image width="73%" source="images/fig11_03_ex_11.png" />
+
+<!-- START figures/fig_11_03_ex_11.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=1.9,%
+			xmin=-.1,xmax=1.9%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=0:1.57] ({x},{sin(deg(x))});
+\draw [thick,{\colortwo},->] (axis cs: 0.785,.707) -- (axis cs:1.785,1.414) node [black,above left] {\scriptsize $\vec v(\pi/4)$};
+
+\draw [thick,{\colortwo},->] (axis cs: 0.785,.707) -- (axis cs:.785,0) node [black,above right] {\scriptsize $\vec a(\pi/4)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_11_03_ex_11.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -757,7 +1077,39 @@ In the following exercises , a position function <m>\vrt</m> is given. Sketch \v
 </p>
 
 <p>
-<image width="73%" source="images/fig11_03_ex_12.png" />
+
+<!-- START figures/fig_11_03_ex_12.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=2.5,%
+			xmin=-.5,xmax=3.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=0:1.57] ({x^2},{sin(deg(x^2))});
+\draw [thick,{\colortwo},->] (axis cs: 0.785,.707) -- (axis cs:2.55785, 1.96042) node [black,above] {\scriptsize $\vec v(\sqrt{\pi/4})$};
+
+\draw [thick,{\colortwo},->] (axis cs: 0.785,.707) -- (axis cs:2.7854, -0.100121) node [black,above] {\scriptsize $\vec a(\sqrt{\pi/4})$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_11_03_ex_12.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -774,7 +1126,40 @@ In the following exercises , a position function <m>\vrt</m> is given. Sketch \v
 </p>
 
 <p>
-<image width="73%" source="images/fig11_03_ex_13.png" />
+
+<!-- START figures/fig_11_03_ex_13.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={2,-2,-4,-6,-8},
+			%minor y tick num=2,
+			%extra y ticks={-1,-3,-5,-7,1},%
+			ymin=-8.8,ymax=2.9,%
+			xmin=-.5,xmax=6.9%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2:2] ({x^2+x},{-x^2+2*x});
+\draw [thick,{\colortwo},->] (axis cs:2,1) -- (axis cs:5,1) node [black,above] {\scriptsize $\vec v(1)$};
+
+\draw [thick,{\colortwo},->] (axis cs: 2,1) -- (axis cs:4,-1) node [black,below] {\scriptsize $\vec a(1)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_11_03_ex_13.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -792,7 +1177,39 @@ t-1\right)}{\left(t^2+1\right)^2},2 t\ra</m>, <m>\vat = \la \frac{2 \left(2 t^3+
 </p>
 
 <p>
-<image width="73%" source="images/fig11_03_ex_10.png" />
+
+<!-- START figures/fig_11_03_ex_10.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.5,%
+			xmin=-3.5,xmax=5.9%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-1:1] ({(2*x+3)/(x^2+1)},{x^2});
+\draw [thick,{\colortwo},->] (axis cs: 3,0) -- (axis cs:5,0) node [black,above] {\scriptsize $\vec v(0)$};
+
+\draw [thick,{\colortwo},->] (axis cs: 3,0) -- (axis cs:-3,2) node [black,above right] {\scriptsize $\vec a(0)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_11_03_ex_10.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -1198,17 +1615,9 @@ The stone, while whirling, can be modeled by <m>\vrt = \la 3\cos(8\pi t),3\sin (
 </p>
 
 <ol>
-<li>
-<p>
-For <m>t</m>-values <m>t=\sin^{-1}(3/20)/(8\pi) + n/4 \approx 0.006 + n/4</m>, where <m>n</m> is an integer.
-</p>
-</li>
+<li><p>For <m>t</m>-values <m>t=\sin^{-1}(3/20)/(8\pi) + n/4 \approx 0.006 + n/4</m>, where <m>n</m> is an integer.</p></li>
 <li><m>\norm{\vrp(t)} = 24\pi\approx 51.4</m>ft/s</li>
-<li>
-<p>
-At <m>t=0.006</m>, the stone is approximately <m>19.77</m>ft from Goliath. Using the formula for projectile motion, we want the angle of elevation that lets a projectile starting at <m>\la 0,6\ra</m> with a initial velocity of <m>51.4</m>ft/s arrive at <m>\la 19.77,9\ra</m>. The desired angle is <m>0.27</m> radians, or <m>15.69^\circ</m>.
-</p>
-</li>
+<li><p>At <m>t=0.006</m>, the stone is approximately <m>19.77</m>ft from Goliath. Using the formula for projectile motion, we want the angle of elevation that lets a projectile starting at <m>\la 0,6\ra</m> with a initial velocity of <m>51.4</m>ft/s arrive at <m>\la 19.77,9\ra</m>. The desired angle is <m>0.27</m> radians, or <m>15.69^\circ</m>.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -1220,30 +1629,14 @@ A hunter aims at a deer which is 40 yards away. Her crossbow is at a height of 5
 </p>
 
 <ol>
-<li>
-<p>
-At what angle of elevation should she hold the crossbow to hit her target?
-</p>
-</li>
-<li>
-<p>
-If the deer is moving perpendicularly to her line of sight at a rate of 20mph, by approximately how much should she lead the deer in order to hit it in the desired location?
-</p>
-</li>
+<li><p>At what angle of elevation should she hold the crossbow to hit her target?</p></li>
+<li><p>If the deer is moving perpendicularly to her line of sight at a rate of 20mph, by approximately how much should she lead the deer in order to hit it in the desired location?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-Holding the crossbow at an angle of <m>0.013</m> radians, <m>\approx 0.745^\circ</m> will hit the target <m>0.4</m>s later. (Another solution exists, with an angle of <m>89^\circ</m>, landing <m>18.75</m>s later, but this is impractical.)
-</p>
-</li>
-<li>
-<p>
-In the .4 seconds the arrow travels, a deer, traveling at 20mph or 29.33ft/s, can travel 11.7ft. So she needs to lead the deer by 11.7ft.
-</p>
-</li>
+<li><p>Holding the crossbow at an angle of <m>0.013</m> radians, <m>\approx 0.745^\circ</m> will hit the target <m>0.4</m>s later. (Another solution exists, with an angle of <m>89^\circ</m>, landing <m>18.75</m>s later, but this is impractical.)</p></li>
+<li><p>In the .4 seconds the arrow travels, a deer, traveling at 20mph or 29.33ft/s, can travel 11.7ft. So she needs to lead the deer by 11.7ft.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -1265,16 +1658,8 @@ The position function of the ball is <m>\vrt = \la (146.67\cos\theta)t,-16t^2+(1
 </p>
 
 <ol>
-<li>
-<p>
-With <m>\theta=20^\circ</m>, the ball reaches 310ft from home plate in 2.25 seconds; at this time, the height of the ball is 34.9ft, not enough to clear the Green Monster.
-</p>
-</li>
-<li>
-<p>
-With <m>\theta=21^\circ</m>, the ball reaches 310ft from home plate in 2.26s, with a height of 40ft, clearing the wall.
-</p>
-</li>
+<li><p>With <m>\theta=20^\circ</m>, the ball reaches 310ft from home plate in 2.25 seconds; at this time, the height of the ball is 34.9ft, not enough to clear the Green Monster.</p></li>
+<li><p>With <m>\theta=21^\circ</m>, the ball reaches 310ft from home plate in 2.26s, with a height of 40ft, clearing the wall.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -1309,16 +1694,8 @@ The position function of the ball is <m>\vrt = \la (v_0\cos\theta)t,-16t^2+(v_0\
 </p>
 
 <ol>
-<li>
-<p>
-With <m>v_0 = 73.33</m>ft/s, there are two angles of elevation possible. An angle of <m>\theta = 9.47^\circ</m> delivers the ball in 0.83s, while an angle of <m>79.57^\circ</m> delivers the ball in <m>4.5</m>s.
-</p>
-</li>
-<li>
-<p>
-With <m>\theta=8^\circ</m>, the initial speed must be 53.8mph<m>\approx 78.9</m>ft/s.
-</p>
-</li>
+<li><p>With <m>v_0 = 73.33</m>ft/s, there are two angles of elevation possible. An angle of <m>\theta = 9.47^\circ</m> delivers the ball in 0.83s, while an angle of <m>79.57^\circ</m> delivers the ball in <m>4.5</m>s.</p></li>
+<li><p>With <m>\theta=8^\circ</m>, the initial speed must be 53.8mph<m>\approx 78.9</m>ft/s.</p></li>
 </ol>
 </answer>
 </exercise>

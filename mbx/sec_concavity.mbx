@@ -20,6 +20,7 @@ This section explores how knowing information about \fpp<nbsp />gives informatio
 <subsection>
 <title>Concavity</title>
 <p>
+\vskip
 We begin with a definition, then explore its meaning.
 </p>
 <definition xml:id="def_concavity">
@@ -42,7 +43,38 @@ The graph of a function <m>f</m> is <em>concave up</em> when \fp<nbsp />is <em>i
 </p>
 <figure xml:id="fig_concavity1" >
 <caption>A function <m>f</m> with a concave up graph. Notice how the slopes of the tangent lines, when looking from left to right, are increasing.</caption>
-<image width="73%" source="images/figconcavity1.png" />
+
+<!-- START figures/fig_concavity1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={-2,-1,1,2},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1,ymax=35,%
+			xmin=-3.5,xmax=3.5%
+]
+
+
+%\addplot [thick, {\colorone},smooth,domain=-3:3,samples=40] {x^(8/3)-4*x^(2/3)};
+\addplot [thick, {\colorone},smooth,domain=-3:3] {3*x^2+5};
+\addplot [thick,{\colortwo}, domain =-3:-1] {-12*(x+2)+17};
+\addplot [thick,{\colortwo}, domain =1:3] {12*(x-2)+17} ;
+\addplot [thick,{\colortwo}, domain =-2.5:.5] {-6*(x+1)+8};
+\addplot [thick,{\colortwo}, domain =-.5:2.5] {6*(x-1)+8} ;
+%\addplot [{\colortwo}, domain =0:2] {6*(x-1)+8} ;
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_concavity1.tex -->
+
 </figure>
 <p>
 If a function is decreasing and concave up, then its rate of decrease is slowing; it is <q>leveling off.</q> If the function is increasing and concave up, then the <em>rate</em> of increase is increasing. The function is increasing at a faster and faster rate.
@@ -57,7 +89,38 @@ The graph of a function <m>f</m> is <em>concave down</em> when \fp<nbsp />is <em
 </p>
 <figure xml:id="fig_concavity2" >
 <caption>A function <m>f</m> with a concave down graph. Notice how the slopes of the tangent lines, when looking from left to right, are decreasing.</caption>
-<image width="73%" source="images/figconcavity2.png" />
+
+<!-- START figures/fig_concavity2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={-2,-1,1,2},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1,ymax=35,%
+			xmin=-3.5,xmax=3.5%
+]
+
+
+%\addplot [thick, {\colorone},smooth,domain=-3:3,samples=40] {x^(8/3)-4*x^(2/3)};
+\addplot [thick, {\colorone},smooth,domain=-3:3] {-3*x^2+31};
+\addplot [thick,{\colortwo}, domain =-3:-1] {12*(x+2)+19};
+\addplot [thick,{\colortwo}, domain =1:3] {-12*(x-2)+19} ;
+\addplot [thick,{\colortwo}, domain =-2.5:-.2] {6*(x+1)+28};
+\addplot [thick,{\colortwo}, domain =.2:2.5] {-6*(x-1)+28} ;
+%\addplot [{\colortwo}, domain =0:2] {6*(x-1)+8} ;
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_concavity2.tex -->
+
 </figure>
 <p>
 If a function is increasing and concave down, then its rate of increase is slowing; it is <q>leveling off.</q> If the function is decreasing and concave down, then the <em>rate</em> of decrease is decreasing. The function is decreasing at a faster and faster rate.
@@ -82,7 +145,25 @@ Let <m>f</m> be twice differentiable on an interval <m>I</m>. The graph of <m>f<
 
 <figure xml:id="fig_concavity3" >
 <caption>Demonstrating the 4 ways that concavity interacts with increasing/decreasing, along with the relationships with the first and second derivatives.</caption>
-<image width="73%" source="images/figconcavity3.png" />
+
+<!-- START figures/fig_concavity3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[scale=.9]
+
+
+\draw [thick] (-2.5,.5) arc (180:90:2);
+\draw [thick] (2.5,.5) arc (0:90:2);
+\draw [thick] (-2.5,-.5) arc (180:270:2);
+\draw [thick] (2.5,-.5) arc (0:-90:2);
+
+\draw (-1,1.25) node [] {\tiny \parbox{50pt}{$\fp>0$, increasing \vskip 3pt $\fpp<0$, c. down}};
+\draw (1.5,1.25) node [] {\tiny \parbox{50pt}{$\fp<0$, decreasing \vskip 3pt $\fpp<0$, c. down}};
+\draw (-1,-1.25) node [] {\tiny \parbox{50pt}{$\fp<0$, decreasing \vskip 3pt $\fpp>0$, c. up}};
+\draw (1.5,-1.25) node [] {\tiny \parbox{50pt}{$\fp>0$, increasing \vskip 3pt $\fpp>0$, c. up}};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_concavity3.tex -->
+
 </figure>
 <aside>
 <p>
@@ -105,7 +186,36 @@ A <term>point of inflection</term> is a point on the graph of <m>f</m> at which 
 </p>
 <figure xml:id="fig_concavity4" >
 <caption>A graph of a function with its inflection points marked. The intervals where concave up/down are also indicated.</caption>
-<image width="73%" source="images/figconcavity4.png" />
+
+<!-- START figures/fig_concavity4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1,ymax=16,%
+			xmin=-.5,xmax=4.5%
+]
+
+\addplot [thick, {\colorone},smooth,domain=.5:4.5] {2*(x-1)*(x-2)*(x-3)*(x-4)+5};
+\filldraw (axis cs:1.85,4.39) circle (1pt);
+\filldraw (axis cs:3.15,4.39) circle (1pt);
+\draw (axis cs:1.5,8) node {\tiny \parbox{30pt}{\centering$\fpp>0$ \vskip 2pt c. up}};
+\draw (axis cs:3.5,8) node {\tiny \parbox{30pt}{\centering$\fpp>0$ \vskip 2pt c. up}};
+\draw (axis cs:2.5,4) node {\tiny \parbox{30pt}{\centering$\fpp<0$ \vskip 2pt c. down}};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_concavity4.tex -->
+
 </figure>
 <p>
 If the concavity of <m>f</m> changes at a point <m>(c,f(c))</m>, then \fp<nbsp />is changing from increasing to decreasing (or, decreasing to increasing) at <m>x=c</m>. That means that the sign of \fpp<nbsp />is changing from positive to negative (or, negative to positive) at <m>x=c</m>. This leads to the following theorem.
@@ -144,11 +254,60 @@ The number line in <xref ref="fig_concline1">Figure</xref> illustrates the proce
 </p>
 <figure xml:id="fig_concline1" >
 <caption>A number line determining the concavity of <m>f</m> in <xref ref="ex_conc1">Example</xref>.</caption>
-<image width="73%" source="images/figconcline1.png" />
+
+<!-- START figures/fig_concline1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=latex]
+
+\draw [<->, thick] (-2,0) -- (2,0);
+\foreach \x / \y  in %
+					{%
+%					-2.5/{$-1$},%
+					0/{$0$}%
+%					2.5/{$1$}%
+					}
+		{\draw (\x,-.3) node[below] {\scriptsize \parbox{40pt}{\centering \y}} -- (\x,.3);}
+		
+\draw (-1,.5) node {\scriptsize \parbox{50pt}{\centering $\fpp<0$ \ c. down }};
+\draw (1,.5) node {\scriptsize \parbox{50pt}{\centering $\fpp>0$ \ c. up }};
+%\draw (1.25,.5) node {\scriptsize \parbox{50pt}{\centering $\fp<0$ \ decr }};
+%\draw (3.75,.5) node {\scriptsize \parbox{50pt}{\centering $\fp>0$ \ incr}};
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_concline1.tex -->
+
 </figure>
 <figure xml:id="fig_conc1" >
 <caption>A graph of <m>f(x)</m> used in <xref ref="ex_conc1">Example</xref>.</caption>
-<image width="73%" source="images/figconc1.png" />
+
+<!-- START figures/fig_conc1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-3.5,ymax=3.5,%
+			xmin=-2.2,xmax=2.2%
+]
+
+\addplot [thick, {\colorone},smooth,samples=50] {x^3-x*3+1};
+\addplot [{\colortwo},thick,smooth] {6*x};
+\draw (axis cs: -.8,2) node {\scriptsize $f(x)$};
+\draw (axis cs: .8,2) node {\scriptsize $\fp'(x)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_conc1.tex -->
+
 </figure>
 </solution>
 </example>
@@ -192,14 +351,67 @@ The important <m>x</m>-values at which concavity might switch are <m>x=-1</m>, <
 <b>Interval 4,</b> <m>(1,\infty)</m>: Choose a large value for <m>c</m>. It is evident that <m>\fpp(c)>0</m>, so we conclude that <m>f</m> is concave up on <m>(1,\infty)</m>.
 </p>
 <sidebyside>
-<image width="73%" source="images/figconcline2.png" />
+
+<!-- START figures/fig_concline2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=latex]
+
+\draw [<->, thick] (-5,0) -- (5,0);
+\foreach \x / \y  in %
+					{%
+					-2.5/{$-1$},%
+					0/{$0$},%
+					2.5/{$1$}%
+					}
+		{\draw (\x,-.3) node[below] {\scriptsize \parbox{40pt}{\centering \y}} -- (\x,.3);}
+		
+\draw (-3.75,.5) node {\scriptsize \parbox{50pt}{\centering $\fpp<0$ \ c. down }};
+\draw (-1.25,.5) node {\scriptsize \parbox{50pt}{\centering $\fpp>0$ \ c. up }};
+\draw (1.25,.5) node {\scriptsize \parbox{50pt}{\centering $\fpp<0$ \ c. down }};
+\draw (3.75,.5) node {\scriptsize \parbox{50pt}{\centering $\fpp>0$ \ c. up}};
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_concline2.tex -->
+
 </sidebyside>
 <p>
 We conclude that <m>f</m> is concave up on <m>(-1,0)\cup(1,\infty)</m> and concave down on <m>(-\infty,-1)\cup(0,1)</m>. There is only one point of inflection, <m>(0,0)</m>, as <m>f</m> is not defined at <m>x=\pm 1</m>. Our work is confirmed by the graph of <m>f</m> in <xref ref="fig_conc2">Figure</xref>. Notice how <m>f</m> is concave up whenever \fpp<nbsp />is positive, and concave down when \fpp<nbsp />is negative.
 </p>
 <figure xml:id="fig_conc2" >
 <caption>A graph of <m>f(x)</m> and <m>\fpp(x)</m> in <xref ref="ex_conc2">Example</xref>.</caption>
-<image width="73%" source="images/figconc2.png" />
+
+<!-- START figures/fig_conc2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-11,ymax=11,%
+			xmin=-3.2,xmax=3.2%
+]
+
+\addplot [thick, {\colorone},smooth,samples=25,domain=-3.1:-1.05] {x/(x^2-1)};
+\addplot [thick, {\colorone},smooth,samples=25,domain=-.95:.95] {x/(x^2-1)};
+\addplot [thick, {\colorone},smooth,samples=25,domain=1.05:3.1] {x/(x^2-1)};
+\addplot [{\colortwo},thick,smooth,samples=25,domain=-3.1:-1.1] {(2*x*(x^2+3))/((x^2-1)^3)};
+\addplot [{\colortwo},thick,smooth,samples=25,domain=-.9:.9] {(2*x*(x^2+3))/((x^2-1)^3)};
+\addplot [{\colortwo},smooth,thick,samples=25,domain=1.1:3.1] {(2*x*(x^2+3))/((x^2-1)^3)};
+\draw (axis cs: .75,5) node {\scriptsize $f(x)$};
+\draw (axis cs: 2.2,5) node {\scriptsize $\fp'(x)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_conc2.tex -->
+
 </figure>
 </solution>
 </example>
@@ -222,7 +434,33 @@ The sales of a certain product over a three-year span are modeled by <m>S(t)= t^
 </p>
 <figure xml:id="fig_conc3" >
 <caption>A graph of <m>S(t)</m> in <xref ref="ex_conc3">Example</xref>, modeling the sale of a product over time.</caption>
-<image width="73%" source="images/figconc3.png" />
+
+<!-- START figures/fig_conc3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1,ymax=21,%
+			xmin=-.2,xmax=3.2%
+]
+
+\addplot [thick, {\colorone},smooth,domain=0:3] {x^4-8*x^2+20};
+%\filldraw (axis cs:1.16,11.04) circle (1pt);
+\draw (axis cs:1,16) node {\scriptsize $S(t)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_conc3.tex -->
+
 </figure>
 </statement>
 <solution>
@@ -244,11 +482,66 @@ Not every critical point corresponds to a relative extrema; <m>f(x)=x^3</m> has 
 </p>
 <figure xml:id="fig_conc3b" >
 <caption>A graph of <m>S(t)</m> in <xref ref="ex_conc3">Example</xref> along with <m>S\primeskip'(t)</m>.</caption>
-<image width="73%" source="images/figconc3b.png" />
+
+<!-- START figures/fig_conc3b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-16,ymax=22,%
+			xmin=-.2,xmax=3.2%
+]
+
+\addplot [thick, {\colortwo},smooth,domain=0:3] {4*x^3-16*x};
+\addplot [thick, {\colorone},smooth,domain=0:3] {x^4-8*x^2+20};
+\filldraw (axis cs:1.16,11.04) circle (1pt);
+\draw (axis cs:1.9,-10) node {\scriptsize $S\hskip.75pt'(t)$};
+\draw (axis cs:1,16) node {\scriptsize $S(t)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_conc3b.tex -->
+
 </figure>
 <figure xml:id="fig_concavity5" >
 <caption>A graph of <m>f(x) = x^4</m>. Clearly <m>f</m> is always concave up, despite the fact that <m>\fpp(x) = 0</m> when <m>x=0</m>. It this example, the <em>possible</em> point of inflection <m>(0,0)</m> is not a point of inflection.</caption>
-<image width="73%" source="images/figconcavity5.png" />
+
+<!-- START figures/fig_concavity5.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=1.1,%
+			xmin=-1.1,xmax=1.1%
+]
+
+\addplot [thick, {\colorone},smooth,domain=-1:1] {x^4};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_concavity5.tex -->
+
 </figure>
 </subsection>
 
@@ -256,11 +549,40 @@ Not every critical point corresponds to a relative extrema; <m>f(x)=x^3</m> has 
 <subsection>
 <title>The Second Derivative Test</title>
 <p>
+\vskip
 The first derivative of a function gave us a test to find if a critical value corresponded to a relative maximum, minimum, or neither. The second derivative gives us another way to test if a critical point is a local maximum or minimum. The following theorem officially states something that is intuitive: if a critical value occurs in a region where a function <m>f</m> is concave up, then that critical value must correspond to a relative minimum of <m>f</m>, etc. See <xref ref="fig_concavity6">Figure</xref> for a visualization of this.
 </p>
 <figure xml:id="fig_concavity6" >
 <caption>Demonstrating the fact that relative maxima occur when the graph is concave down and relative minima occur when the graph is concave up.</caption>
-<image width="73%" source="images/figconcavity6.png" />
+
+<!-- START figures/fig_concavity6.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-11,ymax=11,%
+			xmin=-2.1,xmax=2.1%
+]
+
+\addplot [thick, {\colorone},smooth,samples=55] {5*x^3-15*x};
+\filldraw (axis cs:-1,10) node [shift={(0pt,-20pt)}] {\tiny \parbox{50pt}{\centering c. down \vskip 2pt $\Rightarrow$ rel. max}} circle (1pt);
+\filldraw (axis cs:1,-10) node [shift={(0pt,20pt)}] {\tiny \parbox{50pt}{\centering c. up \vskip 2pt $\Rightarrow$ rel. min}} circle (1pt);
+%\filldraw (axis cs:1.16,11.04) circle (1pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_concavity6.tex -->
+
 </figure>
 
 <theorem xml:id="thm_second_der">
@@ -271,16 +593,8 @@ Let <m>c</m> be a critical value of <m>f</m> where <m>\fpp(c)</m> is defined. <i
 </p>
 
 <ol>
-<li>
-<p>
-If <m>\fpp(c)>0</m>, then <m>f</m> has a local minimum at <m>(c,f(c))</m>.
-</p>
-</li>
-<li>
-<p>
-If <m>\fpp(c)\lt 0</m>, then <m>f</m> has a local maximum at <m>(c,f(c))</m>.
-</p>
-</li>
+<li><p>If <m>\fpp(c)>0</m>, then <m>f</m> has a local minimum at <m>(c,f(c))</m>.</p></li>
+<li><p>If <m>\fpp(c)\lt 0</m>, then <m>f</m> has a local maximum at <m>(c,f(c))</m>.</p></li>
 </ol>
 </statement>
 </theorem>
@@ -304,7 +618,36 @@ We find <m>\fp(x)=-100/x^2+1</m> and <m>\fpp(x) = 200/x^3.</m> We set <m>\fp(x)=
 
 <figure xml:id="fig_conc4" >
 <caption>A graph of <m>f(x)</m> in <xref ref="ex_conc4">Example</xref>. The second derivative is evaluated at each critical point. When the graph is concave up, the critical point represents a local minimum; when the graph is concave down, the critical point represents a local maximum.</caption>
-<image width="73%" source="images/figconc4.png" />
+
+<!-- START figures/fig_conc4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-51,ymax=51,%
+			xmin=-21,xmax=21%
+]
+
+\addplot [thick, {\colorone},smooth,domain=-20:-.5] {100/x+x};
+\addplot [thick, {\colorone},smooth,domain=.5:20] {100/x+x};
+\filldraw (axis cs:10,20) node [shift={(2pt,10pt)}] {\tiny $\fpp(10)>0$} circle (1pt);
+\filldraw (axis cs:-10,-20) node [shift={(-2pt,-10pt)}] {\tiny $\fpp(-10)<0$} circle (1pt);
+%\filldraw (axis cs:1.16,11.04) circle (1pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_conc4.tex -->
+
 </figure>
 <p>
 We have been learning how the first and second derivatives of a function relate information about the graph of that function. We have found intervals of increasing and decreasing, intervals where the graph is concave up and down, along with the locations of relative extrema and inflection points. In <xref ref="chapter_limits">Chapter</xref> we saw how limits explained asymptotic behavior. In the next section we combine all of this information to produce accurate sketches of functions.
@@ -334,26 +677,10 @@ Sketch a graph of a function <m>f(x)</m> that is:
 </p>
 
 <ol>
-<li>
-<p>
-Increasing, concave up on <m>(0,1)</m>,
-</p>
-</li>
-<li>
-<p>
-increasing, concave down on <m>(1,2)</m>,
-</p>
-</li>
-<li>
-<p>
-decreasing, concave down on <m>(2,3)</m> and
-</p>
-</li>
-<li>
-<p>
-increasing, concave down on <m>(3,4)</m>.
-</p>
-</li>
+<li><p>Increasing, concave up on <m>(0,1)</m>,</p></li>
+<li><p>increasing, concave down on <m>(1,2)</m>,</p></li>
+<li><p>decreasing, concave down on <m>(2,3)</m> and</p></li>
+<li><p>increasing, concave down on <m>(3,4)</m>.</p></li>
 </ol>
 </statement>
 <answer>
@@ -548,11 +875,7 @@ In the following exercises, a function <m>f(x)</m> is given.
 </p>
 
 <ol>
-<li>
-<p>
-Find the possible points of inflection of <m>f</m>.
-</p>
-</li>
+<li><p>Find the possible points of inflection of <m>f</m>.</p></li>
 <li class="custom-list-style-type" label="(b)" >Create a number line to determine the intervals on which <m>f</m> is concave up or concave down.</li>
 </ol>
 <exercise xml:id="exer_03_04_ex_16">

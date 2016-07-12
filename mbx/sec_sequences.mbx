@@ -78,11 +78,94 @@ We can plot the terms of a sequence with a scatter plot. The <q><m>x</m></q>-axi
 <figure xml:id="fig_seq1b" >
 <caption>Plotting sequences in <xref ref="ex_seq1">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figseq1a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq1a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			xtick={1,2,3,4},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+			ytick={1,2,3,4,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=5.5,%
+			xmin=-.1,xmax=4.5%
+]
+
+\addplot [only marks,{\colorone},mark size={1.75pt}] coordinates {(1,3)(2,4.5)(3,4.5)(4,3.375)};
+
+\draw (axis cs:2.5,1.5) node {\scriptsize $\ds a_n = \frac{3^n}{n!}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq1a.tex -->
+</cell></row>
 <row><cell>(a)\rule[-10pt]{0pt}{5pt}</cell></row>
-<row><cell><image width="73%" source="images/figseq1b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq1b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			xtick={1,2,3,4},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+			ytick={1,2,3,4,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=5.5,%
+			xmin=-.1,xmax=4.5%
+]
+
+\addplot [only marks,{\colorone},mark size={1.75pt},domain=1:4] {4+(-1)^x};
+
+\draw (axis cs:2,1) node {\scriptsize $\ds a_n = 4+(-1)^n$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq1b.tex -->
+</cell></row>
 <row><cell>(b)\rule[-10pt]{0pt}{5pt}</cell></row>
-<row><cell><image width="73%" source="images/figseq1c.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq1c.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			xtick={1,2,3,4,5},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+			ytick={-1},
+			%minor y tick num=1,
+			extra y ticks={.5,.25},
+			extra y tick labels={$1/2$,$1/4$},
+%			minor x tick num=4,
+			ymin=-1.1,ymax=0.6,%
+			xmin=-.1,xmax=5.5%
+]
+
+\addplot [only marks,{\colorone},mark size={1.75pt}] coordinates{(1,-1)(2,-.25)(3,.111)(4,0.0625)(5,-.04)};
+
+\draw (axis cs:3,-.5) node {\scriptsize $\ds a_n = \frac{(-1)^{n(n+1)/2}}{n^2}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq1c.tex -->
+</cell></row>
 <row><cell>(c)</cell></row>
 </tabular>
 </figure>
@@ -103,21 +186,9 @@ Find the <m>n^\text{th}</m> term of the following sequences, i.e., find a functi
 </p>
 
 <ol>
-<li>
-<p>
-2, 5, 8, 11, 14, <m>\ldots</m>
-</p>
-</li>
-<li>
-<p>
-2, <m>-5</m>, 10, <m>-17</m>, 26, <m>-37</m>, <m>\ldots</m>
-</p>
-</li>
-<li>
-<p>
-1, 1, 2, 6, 24, 120, 720, <m>\ldots</m>
-</p>
-</li>
+<li><p>2, 5, 8, 11, 14, <m>\ldots</m></p></li>
+<li><p>2, <m>-5</m>, 10, <m>-17</m>, 26, <m>-37</m>, <m>\ldots</m></p></li>
+<li><p>1, 1, 2, 6, 24, 120, 720, <m>\ldots</m></p></li>
 <li><m>\ds \frac52</m>, <m>\ds \frac52</m>, <m>\ds \frac{15}8</m>, <m>\ds \frac54</m>, <m>\ds \frac{25}{32}</m>, <m>\ldots</m></li>
 </ol>
 </statement>
@@ -127,30 +198,14 @@ We should first note that there is never exactly one function that describes a f
 </p>
 
 <ol>
-<li>
-<p>
-Note how each term is 3 more than the previous one. This implies a linear function would be appropriate: <m>a(n) = a_n = 3n + b</m> for some appropriate value of <m>b</m>. As we want <m>a_1=2</m>, we set <m>b=-1</m>. Thus <m>a_n = 3n-1</m>.
-</p>
-</li>
-<li>
-<p>
-First notice how the sign changes from term to term. This is most commonly accomplished by multiplying the terms by either <m>(-1)^n</m> or <m>(-1)^{n+1}</m>. Using <m>(-1)^n</m> multiplies the odd terms by <m>(-1)</m>; using <m>(-1)^{n+1}</m> multiplies the even terms by <m>(-1)</m>. As this sequence has negative even terms, we will multiply by <m>(-1)^{n+1}</m>. 
+<li><p>Note how each term is 3 more than the previous one. This implies a linear function would be appropriate: <m>a(n) = a_n = 3n + b</m> for some appropriate value of <m>b</m>. As we want <m>a_1=2</m>, we set <m>b=-1</m>. Thus <m>a_n = 3n-1</m>.</p></li>
+<li><p>First notice how the sign changes from term to term. This is most commonly accomplished by multiplying the terms by either <m>(-1)^n</m> or <m>(-1)^{n+1}</m>. Using <m>(-1)^n</m> multiplies the odd terms by <m>(-1)</m>; using <m>(-1)^{n+1}</m> multiplies the even terms by <m>(-1)</m>. As this sequence has negative even terms, we will multiply by <m>(-1)^{n+1}</m>. 
 
-After this, we might feel a bit stuck as to how to proceed. At this point, we are just looking for a pattern of some sort: what do the numbers 2, 5, 10, 17, etc., have in common? There are many correct answers, but the one that we'll use here is that each is one more than a perfect square. That is, <m>2=1^1+1</m>, <m>5=2^2+1</m>, <m>10=3^2+1</m>, etc. Thus our formula is <m>a_n= (-1)^{n+1}(n^2+1)</m>.
-</p>
-</li>
-<li>
-<p>
-One who is familiar with the factorial function will readily recognize these numbers. They are <m>0!</m>, <m>1!</m>, <m>2!</m>, <m>3!</m>, etc. Since our sequences start with <m>n=1</m>, we cannot write <m>a_n = n!</m>, for this misses the <m>0!</m> term. Instead, we shift by 1, and write <m>a_n = (n-1)!</m>.
-</p>
-</li>
-<li>
-<p>
-This one may appear difficult, especially as the first two terms are the same, but a little <q>sleuthing</q> will help. Notice how the terms in the numerator are always multiples of 5, and the terms in the denominator are always powers of 2. Does something as simple as <m>a_n = \frac{5n}{2^n}</m> work?
+After this, we might feel a bit stuck as to how to proceed. At this point, we are just looking for a pattern of some sort: what do the numbers 2, 5, 10, 17, etc., have in common? There are many correct answers, but the one that we'll use here is that each is one more than a perfect square. That is, <m>2=1^1+1</m>, <m>5=2^2+1</m>, <m>10=3^2+1</m>, etc. Thus our formula is <m>a_n= (-1)^{n+1}(n^2+1)</m>.</p></li>
+<li><p>One who is familiar with the factorial function will readily recognize these numbers. They are <m>0!</m>, <m>1!</m>, <m>2!</m>, <m>3!</m>, etc. Since our sequences start with <m>n=1</m>, we cannot write <m>a_n = n!</m>, for this misses the <m>0!</m> term. Instead, we shift by 1, and write <m>a_n = (n-1)!</m>.</p></li>
+<li><p>This one may appear difficult, especially as the first two terms are the same, but a little <q>sleuthing</q> will help. Notice how the terms in the numerator are always multiples of 5, and the terms in the denominator are always powers of 2. Does something as simple as <m>a_n = \frac{5n}{2^n}</m> work?
 
-When <m>n=1</m>, we see that we indeed get <m>5/2</m> as desired. When <m>n=2</m>, we get <m>10/4 = 5/2</m>. Further checking shows that this formula indeed matches the other terms of the sequence.
-</p>
-</li>
+When <m>n=1</m>, we see that we indeed get <m>5/2</m> as desired. When <m>n=2</m>, we get <m>10/4 = 5/2</m>. Further checking shows that this formula indeed matches the other terms of the sequence.</p></li>
 </ol>
 </solution>
 </example>
@@ -198,18 +253,10 @@ If <m>\ds \lim_{x\to\infty} f(x) = L</m>, then <m>\ds\lim_{n\to\infty} a_n = L</
 </p>
 
 <ol>
-<li>
-<p>
-If <m>\ds \lim_{x\to\infty}f(x)</m> does not exist, we cannot conclude that <m>\ds\lim_{n\to\infty} a_n</m> does not exist. It may, or may not, exist. For instance, we can define a sequence <m>\{a_n\} = \{\cos(2\pi n)\}</m>. Let <m>f(x) = \cos (2\pi x)</m>. Since the cosine function oscillates over the real numbers, the limit <m>\ds \lim_{x\to\infty}f(x)</m> does not exist. 
+<li><p>If <m>\ds \lim_{x\to\infty}f(x)</m> does not exist, we cannot conclude that <m>\ds\lim_{n\to\infty} a_n</m> does not exist. It may, or may not, exist. For instance, we can define a sequence <m>\{a_n\} = \{\cos(2\pi n)\}</m>. Let <m>f(x) = \cos (2\pi x)</m>. Since the cosine function oscillates over the real numbers, the limit <m>\ds \lim_{x\to\infty}f(x)</m> does not exist. 
 		
-		However, for every positive integer <m>n</m>, <m>\cos(2\pi n) = 1</m>, so <m>\ds \lim_{n\to\infty} a_n = 1</m>.
-</p>
-</li>
-<li>
-<p>
-If we cannot find a function <m>f(x)</m> whose domain contains the positive real numbers where <m>f(n) = a_n</m> for all <m>n</m> in <m>\mathbb{N}</m>, we cannot conclude <m>\ds\lim_{n\to\infty} a_n</m> does not exist. It may, or may not, exist.
-</p>
-</li>
+		However, for every positive integer <m>n</m>, <m>\cos(2\pi n) = 1</m>, so <m>\ds \lim_{n\to\infty} a_n = 1</m>.</p></li>
+<li><p>If we cannot find a function <m>f(x)</m> whose domain contains the positive real numbers where <m>f(n) = a_n</m> for all <m>n</m> in <m>\mathbb{N}</m>, we cannot conclude <m>\ds\lim_{n\to\infty} a_n</m> does not exist. It may, or may not, exist.</p></li>
 </ol>
 <example xml:id="ex_seq4">
 <title>Determining convergence/divergence of a sequence</title>
@@ -226,38 +273,108 @@ Determine the convergence or divergence of the following sequences.
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Using <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref>, we can state that <m>\ds\lim_{x\to\infty} \frac{3x^2-2x+1}{x^2-1000} = 3</m>. (We could have also directly applied l'H&#xf4;pital's Rule.) Thus the sequence <m>\{a_n\}</m> converges, and its limit is 3. A scatter plot of every 5 values of <m>a_n</m> is given in <xref ref="fig_seq4">Figure</xref> (a). The values of <m>a_n</m> vary widely near <m>n=30</m>, ranging from about <m>-73</m> to <m>125</m>, but as <m>n</m> grows, the values approach 3.
+<li><p>Using <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref>, we can state that <m>\ds\lim_{x\to\infty} \frac{3x^2-2x+1}{x^2-1000} = 3</m>. (We could have also directly applied l'H&#xf4;pital's Rule.) Thus the sequence <m>\{a_n\}</m> converges, and its limit is 3. A scatter plot of every 5 values of <m>a_n</m> is given in <xref ref="fig_seq4">Figure</xref> (a). The values of <m>a_n</m> vary widely near <m>n=30</m>, ranging from about <m>-73</m> to <m>125</m>, but as <m>n</m> grows, the values approach 3.
 
 <figure xml:id="fig_seq4" >
 <caption>Scatter plots of the sequences in <xref ref="ex_seq4">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figseq4a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq4a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={1,2,3,4,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-11,ymax=11,%
+			xmin=-.1,xmax=110%
+]
+
+\addplot [only marks,{\colorone},mark size={.75pt},domain=1:100,samples=21] {(3*x^2 - 2*x + 1)/(x^2 - 1000)};
+
+\draw (axis cs:60,-8) node {\scriptsize $\ds a_n = \frac{3x^2 - 2x + 1}{x^2 - 1000}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq4a.tex -->
+</cell></row>
 <row><cell>(a)\rule[-25pt]{0pt}{1pt}</cell></row>
-<row><cell><image width="73%" source="images/figseq4b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq4b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={1,2,3,4,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.1,xmax=110%
+]
+
+\addplot [only marks,{\colorone},mark size={.75pt},domain=1:100,samples=100] {cos(deg(x))};
+
+%\draw (axis cs:60,-.8) node {\scriptsize $\ds a_n = \cos n$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\node [] at (myplot.north) {\scriptsize $\ds a_n = \cos n$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq4b.tex -->
+</cell></row>
 <row><cell>(b)\rule[-25pt]{0pt}{1pt}</cell></row>
-<row><cell><image width="73%" source="images/figseq4c.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq4c.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={1,2,3,4,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.1,xmax=22%
+]
+
+\addplot [only marks,{\colorone},mark size={.75pt},domain=1:20,samples=20] {((-1)^x)/x};
+
+\draw (axis cs:10,-.7) node {\scriptsize $\ds a_n = \frac{(-1)^n}{n}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+%\node [] at (myplot.north) {\scriptsize $\ds a_n = \cos n$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq4c.tex -->
+</cell></row>
 <row><cell>(c)</cell></row>
 </tabular>
-</figure>
-
-</p>
-</li>
-<li>
-<p>
-The limit <m>\ds\lim_{x\to\infty}\cos x</m> does not exist, as <m>\cos x</m> oscillates (and takes on every value in <m>[-1,1]</m> infinitely many times). Thus we cannot apply <xref ref="thm_seq_limit">Theorem</xref>. 
+</figure></p></li>
+<li><p>The limit <m>\ds\lim_{x\to\infty}\cos x</m> does not exist, as <m>\cos x</m> oscillates (and takes on every value in <m>[-1,1]</m> infinitely many times). Thus we cannot apply <xref ref="thm_seq_limit">Theorem</xref>. 
 
 The fact that the cosine function oscillates strongly hints that <m>\cos n</m>, when <m>n</m> is restricted to <m>\mathbb{N}</m>, will also oscillate. <xref ref="fig_seq4">Figure</xref> (b), where the sequence is plotted, shows that this is true. Because only discrete values of cosine are plotted, it does not bear strong resemblance to the familiar cosine wave.
 
-We conclude that <m>\ds\lim_{n\to\infty}a_n</m> does not exist.
-</p>
-</li>
-<li>
-<p>
-We cannot actually apply <xref ref="thm_seq_limit">Theorem</xref> here, as the function <m>f(x) = (-1)^x/x</m> is not well defined. (What does <m>(-1)^{\sqrt{2}}</m> mean? In actuality, there is an answer, but it involves <em>complex analysis</em>, beyond the scope of this text.) So for now we say that we cannot determine the limit. (But we will be able to very soon.) By looking at the plot in <xref ref="fig_seq4">Figure</xref> (c), we would like to conclude that the sequence converges to 0. That is true, but at this point we are unable to decisively say so.
-</p>
-</li>
+We conclude that <m>\ds\lim_{n\to\infty}a_n</m> does not exist.</p></li>
+<li><p>We cannot actually apply <xref ref="thm_seq_limit">Theorem</xref> here, as the function <m>f(x) = (-1)^x/x</m> is not well defined. (What does <m>(-1)^{\sqrt{2}}</m> mean? In actuality, there is an answer, but it involves <em>complex analysis</em>, beyond the scope of this text.) So for now we say that we cannot determine the limit. (But we will be able to very soon.) By looking at the plot in <xref ref="fig_seq4">Figure</xref> (c), we would like to conclude that the sequence converges to 0. That is true, but at this point we are unable to decisively say so.</p></li>
 </ol>
 
 <p>
@@ -292,20 +409,14 @@ Determine the convergence or divergence of the following sequences.
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-This appeared in <xref ref="ex_seq4">Example</xref>. We want to apply <xref ref="thm_abs_val_seq">Theorem</xref>, so consider the limit of <m>\{|a_n|\}</m>:
+<li><p>This appeared in <xref ref="ex_seq4">Example</xref>. We want to apply <xref ref="thm_abs_val_seq">Theorem</xref>, so consider the limit of <m>\{|a_n|\}</m>:
 <md>
   <mrow>  \lim_{n\to\infty} |a_n| \amp = \lim_{n\to\infty} \left|\frac{(-1)^n}{n}\right|</mrow>
   <mrow>  \amp = \lim_{n\to\infty} \frac{1}{n}</mrow>
   <mrow>  \amp = 0.</mrow>
 </md>
-Since this limit is 0, we can apply <xref ref="thm_abs_val_seq">Theorem</xref> and state that <m>\ds\lim_{n\to\infty} a_n=0</m>.
-</p>
-</li>
-<li>
-<p>
-Because of the alternating nature of this sequence (i.e., every other term is multiplied by <m>-1</m>), we cannot simply look at the limit <m>\ds \lim_{x\to\infty} \frac{(-1)^x(x+1)}{x}</m>. We can try to apply the techniques of <xref ref="thm_abs_val_seq">Theorem</xref>:
+Since this limit is 0, we can apply <xref ref="thm_abs_val_seq">Theorem</xref> and state that <m>\ds\lim_{n\to\infty} a_n=0</m>.</p></li>
+<li><p>Because of the alternating nature of this sequence (i.e., every other term is multiplied by <m>-1</m>), we cannot simply look at the limit <m>\ds \lim_{x\to\infty} \frac{(-1)^x(x+1)}{x}</m>. We can try to apply the techniques of <xref ref="thm_abs_val_seq">Theorem</xref>:
 <md>
   <mrow>  \lim_{n\to\infty} |a_n| \amp = \lim_{n\to\infty} \left|\frac{(-1)^n(n+1)}{n}\right|</mrow>
   <mrow>  \amp = \lim_{n\to\infty} \frac{n+1}{n}</mrow>
@@ -315,11 +426,36 @@ We have concluded that when we ignore the alternating sign, the sequence approac
 
 <figure xml:id="fig_seq5" >
 <caption>A plot of a sequence in <xref ref="ex_seq5">Example</xref>, part 2.</caption>
-<image width="73%" source="images/figseq5.png" />
+
+<!-- START figures/fig_seq5.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-2.5,ymax=2.5,%
+			xmin=-.1,xmax=22%
+]
+
+\addplot [only marks,{\colorone},mark size={1.5pt},domain=1:20,samples=20] {((-1)^x*(x+1))/x};
+
+\draw (axis cs:15,1.9) node {\scriptsize $\ds a_n = \frac{(-1)^n(n+1)}{n}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq5.tex -->
+
 </figure>
-Since we know that the signs of the terms alternate <em>and</em> we know that the limit of <m>|a_n|</m> is 1, we know that as <m>n</m> approaches infinity, the terms will alternate between values close to 1 and <m>-1</m>, meaning the sequence diverges. A plot of this sequence is given in <xref ref="fig_seq5">Figure</xref>.
-</p>
-</li>
+Since we know that the signs of the terms alternate <em>and</em> we know that the limit of <m>|a_n|</m> is 1, we know that as <m>n</m> approaches infinity, the terms will alternate between values close to 1 and <m>-1</m>, meaning the sequence diverges. A plot of this sequence is given in <xref ref="fig_seq5">Figure</xref>.</p></li>
 </ol>
 
 <p>
@@ -381,21 +517,9 @@ We will use <xref ref="thm_seq_properties">Theorem</xref> to answer each of thes
 </p>
 
 <ol>
-<li>
-<p>
-Since <m>\ds \lim_{n\to\infty} a_n = 0</m> and <m>\ds \lim_{n\to\infty} b_n = e</m>, we conclude that <m>\ds \lim_{n\to\infty} (a_n+b_n) = 0+e = e.</m> So even though we are adding something to each term of the sequence <m>b_n</m>, we are adding something so small that the final limit is the same as before.
-</p>
-</li>
-<li>
-<p>
-Since <m>\ds \lim_{n\to\infty} b_n = e</m> and <m>\ds \lim_{n\to\infty} c_n = 5</m>, we conclude that <m>\ds \lim_{n\to\infty} (b_n\cdot c_n) = e\cdot 5 = 5e.</m>
-</p>
-</li>
-<li>
-<p>
-Since <m>\ds \lim_{n\to\infty} a_n = 0</m>, we have <m>\ds \lim_{n\to\infty} 1000a_n =1000\cdot 0 = 0</m>. It does not matter that we multiply each term by 1000; the sequence still approaches 0. (It just takes longer to get close to 0.)
-</p>
-</li>
+<li><p>Since <m>\ds \lim_{n\to\infty} a_n = 0</m> and <m>\ds \lim_{n\to\infty} b_n = e</m>, we conclude that <m>\ds \lim_{n\to\infty} (a_n+b_n) = 0+e = e.</m> So even though we are adding something to each term of the sequence <m>b_n</m>, we are adding something so small that the final limit is the same as before.</p></li>
+<li><p>Since <m>\ds \lim_{n\to\infty} b_n = e</m> and <m>\ds \lim_{n\to\infty} c_n = 5</m>, we conclude that <m>\ds \lim_{n\to\infty} (b_n\cdot c_n) = e\cdot 5 = 5e.</m></p></li>
+<li><p>Since <m>\ds \lim_{n\to\infty} a_n = 0</m>, we have <m>\ds \lim_{n\to\infty} 1000a_n =1000\cdot 0 = 0</m>. It does not matter that we multiply each term by 1000; the sequence still approaches 0. (It just takes longer to get close to 0.)</p></li>
 </ol>
 </solution>
 </example>
@@ -435,27 +559,76 @@ Determine the boundedness of the following sequences.
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-The terms of this sequence are always positive but are decreasing, so we have <m>0\lt a_n\lt 2</m> for all <m>n</m>. Thus this sequence is bounded. <xref ref="fig_seq3">Figure</xref>(a) illustrates this.
+<li><p>The terms of this sequence are always positive but are decreasing, so we have <m>0\lt a_n\lt 2</m> for all <m>n</m>. Thus this sequence is bounded. <xref ref="fig_seq3">Figure</xref>(a) illustrates this.
 
 <figure xml:id="fig_seq3" >
 <caption>A plot of <m>\{a_n\} = \{1/n\}</m> and <m>\{a_n\} = \{2^n\}</m> from <xref ref="ex_seq3">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figseq3a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq3a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			xtick={1,...,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+			ytick={1},
+			%minor y tick num=1,
+			extra y ticks={.5,.25,.1},%
+			extra y tick labels={$1/2$,$1/4$,$1/10$},
+%			minor x tick num=4,
+			ymin=-.1,ymax=1.1,%
+			xmin=-.1,xmax=11%
+]
+
+\addplot [only marks,{\colorone},mark size={1.75pt},domain=1:10,samples=10]  {1/x};
+
+\draw (axis cs:6,.75) node {\scriptsize $\ds a_n = \frac{1}{n}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq3a.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figseq3b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq3b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={1,...,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={1},
+			%minor y tick num=1,
+%			extra y ticks={.5,.25,.1},%
+%			extra y tick labels={$1/2$,$1/4$,$1/10$},
+%			minor x tick num=4,
+			ymin=-.1,ymax=275,%
+			xmin=-.1,xmax=9%
+]
+
+\addplot [only marks,{\colorone},mark size={1.75pt},domain=1:8,samples=8]  {2^x};
+
+\draw (axis cs:4,150) node {\scriptsize $\ds a_n = 2^{n}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq3b.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
-</figure>
-
-</p>
-</li>
-<li>
-<p>
-The terms of this sequence obviously grow without bound. However, it is also true that these terms are all positive, meaning <m>0\lt a_n</m>. Thus we can say the sequence is unbounded, but also bounded below. <xref ref="fig_seq3">Figure</xref>(b) illustrates this.
-</p>
-</li>
+</figure></p></li>
+<li><p>The terms of this sequence obviously grow without bound. However, it is also true that these terms are all positive, meaning <m>0\lt a_n</m>. Thus we can say the sequence is unbounded, but also bounded below. <xref ref="fig_seq3">Figure</xref>(b) illustrates this.</p></li>
 </ol>
 </solution>
 </example>
@@ -493,28 +666,16 @@ Another interesting concept to come out of <xref ref="ex_seq3">Example</xref> ag
 <title>Monotonic Sequences</title>
 <statement>
 <ol>
-<li>
-<p>
-A sequence <m>\{a_n\}</m> is <b>monotonically increasing</b> if <m>a_n \leq a_{n+1}</m> for all <m>n</m>, i.e.,
+<li><p>A sequence <m>\{a_n\}</m> is <b>monotonically increasing</b> if <m>a_n \leq a_{n+1}</m> for all <m>n</m>, i.e.,
 <me>
   a_1 \leq a_2 \leq a_3 \leq \cdots a_n \leq a_{n+1} \cdots
-</me>
-</p>
-</li>
-<li>
-<p>
-A sequence <m>\{a_n\}</m> is <b>monotonically decreasing</b> if <m>a_n \geq a_{n+1}</m> for all <m>n</m>, i.e.,
+</me></p></li>
+<li><p>A sequence <m>\{a_n\}</m> is <b>monotonically decreasing</b> if <m>a_n \geq a_{n+1}</m> for all <m>n</m>, i.e.,
 <me>
   a_1 \geq a_2 \geq a_3 \geq \cdots a_n \geq a_{n+1} \cdots
-</me>
-</p>
-</li>
-<li>
-<p>
-A sequence is <b>monotonic</b> if it is monotonically increasing or monotonically decreasing.
-<index><main>sequences</main><sub>monotonic</sub></index><index><main>monotonic sequence</main></index>
-</p>
-</li>
+</me></p></li>
+<li><p>A sequence is <b>monotonic</b> if it is monotonically increasing or monotonically decreasing.
+<index><main>sequences</main><sub>monotonic</sub></index><index><main>monotonic sequence</main></index></p></li>
 </ol>
 </statement>
 </definition>
@@ -570,11 +731,92 @@ Since <m>a_{n+1}-a_n\lt 0</m> for all <m>n</m>, we conclude that the sequence is
 <figure xml:id="fig_seq7" >
 <caption>Plots of sequences in <xref ref="ex_seq7">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figseq7a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq7a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=2.5,%
+			xmin=-1,xmax=11%
+]
+
+\addplot [only marks,{\colorone},mark size={1.5pt},domain=1:10,samples=10] {(x+1)/x};
+
+\draw (axis cs:6,1.9) node {\scriptsize $\ds a_n = \frac{n+1}{n}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq7a.tex -->
+</cell></row>
 <row><cell>(a)\rule[-25pt]{0pt}{10pt}</cell></row>
-<row><cell><image width="73%" source="images/figseq7b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq7b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1,ymax=11,%
+			xmin=-1,xmax=11%
+]
+
+\addplot [only marks,{\colorone},mark size={1.5pt},domain=1:10,samples=10] {(x^2+1)/(x+1)};
+
+\draw (axis cs:7.5,1.9) node {\scriptsize $\ds a_n = \frac{n^2+1}{n+1}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq7b.tex -->
+</cell></row>
 <row><cell>(b)\rule[-25pt]{0pt}{10pt}</cell></row>
-<row><cell><image width="73%" source="images/figseq7c.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_seq7c.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1,ymax=16,%
+			xmin=-1,xmax=11%
+]
+
+\addplot [only marks,{\colorone},mark size={1.5pt},domain=1:10,samples=10] {(x^2-9)/(x^2-10*x+26)};
+
+\draw (axis cs:3.4,11) node {\scriptsize $\ds a_n = \frac{n^2-9}{n^2-10n+26}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq7c.tex -->
+</cell></row>
 <row><cell>(c)</cell></row>
 <row><cell></cell></row>
 </tabular>
@@ -588,9 +830,7 @@ Since <m>a_{n+1}-a_n\lt 0</m> for all <m>n</m>, we conclude that the sequence is
 					
 Since <m>a_{n+1}-a_n>0</m> for all <m>n</m>, we conclude the sequence is increasing.
 \drawexampleline</li>
-<li>
-<p>
-We can clearly see in <xref ref="fig_seq7">Figure</xref> (c), where the sequence is plotted, that it is not monotonic. However, it does seem that after the first 4 terms it is decreasing. To understand why, perform the same analysis as done before:
+<li><p>We can clearly see in <xref ref="fig_seq7">Figure</xref> (c), where the sequence is plotted, that it is not monotonic. However, it does seem that after the first 4 terms it is decreasing. To understand why, perform the same analysis as done before:
 
 						 <m>\ds \begin{aligned}a_{n+1}-a_n \amp = \frac{(n+1)^2-9}{(n+1)^2-10(n+1)+26} - \frac{n^2-9}{n^2-10n+26} \\		
 								\amp = \frac{n^2+2n-8}{n^2-8n+17}-\frac{n^2-9}{n^2-10n+26}\\
@@ -604,12 +844,8 @@ Between <m>1.13</m> and <m>4.87</m>, i.e., for <m>n=2</m>, 3 and 4, we have that
 
 When <m>n> 4.87</m>, i.e, for <m>n\geq 5</m>, we have that <m>-10n^2+60n+55\lt 0</m>, hence <m>a_{n+1}-a_n\lt 0</m>, so the sequence is decreasing.
 
-In short, the sequence is simply not monotonic. However, it is useful to note that for <m>n\geq 5</m>, the sequence is monotonically decreasing.
-</p>
-</li>
-<li>
-<p>
-Again, the plot in <xref ref="fig_seq7d">Figure</xref> shows that the sequence is not monotonic, but it suggests that it is monotonically decreasing after the first term. We perform the usual analysis to confirm this.
+In short, the sequence is simply not monotonic. However, it is useful to note that for <m>n\geq 5</m>, the sequence is monotonically decreasing.</p></li>
+<li><p>Again, the plot in <xref ref="fig_seq7d">Figure</xref> shows that the sequence is not monotonic, but it suggests that it is monotonically decreasing after the first term. We perform the usual analysis to confirm this.
 
 					 <m>\ds \begin{aligned}a_{n+1}-a_n \amp = \frac{(n+1)^2}{(n+1)!} - \frac{n^2}{n!} \\
 								\amp = \frac{(n+1)^2-n^2(n+1)}{(n+1)!} \\
@@ -619,11 +855,35 @@ Again, the plot in <xref ref="fig_seq7d">Figure</xref> shows that the sequence i
 When <m>n=1</m>, the above expression is <m>>0</m>; for <m>n\geq 2</m>, the above expression is <m>\lt 0</m>. Thus this sequence is not monotonic, but it is monotonically decreasing after the first term.
 <figure xml:id="fig_seq7d" >
 <caption>A plot of <m>\{a_n\} = \{n^2/n!\}</m> in <xref ref="ex_seq7">Example</xref>.</caption>
-<image width="73%" source="images/figseq7d.png" />
-</figure>
 
-</p>
-</li>
+<!-- START figures/fig_seq7d.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=2.1,%
+			xmin=-1,xmax=11%
+]
+
+\addplot [only marks,{\colorone},mark size={1.5pt},domain=1:10,samples=10] {(x^2)/(factorial(x))};
+
+\draw (axis cs:7,1.25) node {\scriptsize $\ds a_n = \frac{n^2}{n!}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_seq7d.tex -->
+
+</figure></p></li>
 </ol>
 </solution>
 </example>
@@ -635,22 +895,10 @@ Knowing that a sequence is monotonic can be useful. In particular, if we know th
 <title>Bounded Monotonic Sequences are Convergent</title>
 <statement>
 <ol>
-<li>
-<p>
-Let <m>\{a_n\}</m> be a bounded, monotonic sequence. Then <m>\{a_n\}</m> converges; i.e., <m>\ds \lim_{n \to\infty}a_n</m> exists.
-</p>
-</li>
-<li>
-<p>
-Let <m>\{a_n\}</m> be a monotonically increasing sequence that is bounded above. Then <m>\{a_n\}</m> converges.
-</p>
-</li>
-<li>
-<p>
-Let <m>\{a_n\}</m> be a monotonically decreasing sequence that is bounded below. Then <m>\{a_n\}</m> converges.
-<index><main>sequences</main><sub>convergent</sub></index><index><main>convergence</main><sub>of monotonic sequences</sub></index>
-</p>
-</li>
+<li><p>Let <m>\{a_n\}</m> be a bounded, monotonic sequence. Then <m>\{a_n\}</m> converges; i.e., <m>\ds \lim_{n \to\infty}a_n</m> exists.</p></li>
+<li><p>Let <m>\{a_n\}</m> be a monotonically increasing sequence that is bounded above. Then <m>\{a_n\}</m> converges.</p></li>
+<li><p>Let <m>\{a_n\}</m> be a monotonically decreasing sequence that is bounded below. Then <m>\{a_n\}</m> converges.
+<index><main>sequences</main><sub>convergent</sub></index><index><main>convergence</main><sub>of monotonic sequences</sub></index></p></li>
 </ol>
 </statement>
 </theorem>
@@ -841,21 +1089,9 @@ In the following exercises, use the following information to determine the limit
 </p>
 
 <ul>
-<li>
-<p>
-\text{<m>\ds \{a_n\} = \left\{\frac{2^n-20}{2^n}\right\}</m>;}  <m>\ds \lim_{n\to\infty} a_n = 1</m>
-</p>
-</li>
-<li>
-<p>
-\text{<m>\ds \{b_n\} = \left\{\left(1+\frac{2}{n}\right)^n\right\}</m>;}  <m>\ds \lim_{n\to\infty} b_n = e^2</m>
-</p>
-</li>
-<li>
-<p>
-\text{<m>\ds \{c_n\} = \left\{\sin (3/n)\right\}</m>;}  <m>\ds \lim_{n\to\infty} c_n = 0</m>
-</p>
-</li>
+<li><p>\text{<m>\ds \{a_n\} = \left\{\frac{2^n-20}{2^n}\right\}</m>;}  <m>\ds \lim_{n\to\infty} a_n = 1</m></p></li>
+<li><p>\text{<m>\ds \{b_n\} = \left\{\left(1+\frac{2}{n}\right)^n\right\}</m>;}  <m>\ds \lim_{n\to\infty} b_n = e^2</m></p></li>
+<li><p>\text{<m>\ds \{c_n\} = \left\{\sin (3/n)\right\}</m>;}  <m>\ds \lim_{n\to\infty} c_n = 0</m></p></li>
 </ul>
 <exercise>
 <statement>
@@ -1232,25 +1468,13 @@ Let <m>\{a_n\}</m> and <m>\{b_n\}</m> be sequences such that <m>\ds\lim_{n\to\in
 </p>
 
 <ol>
-<li>
-<p>
-Show that if <m>a_n\lt b_n</m> for all <m>n</m>, then <m>L\leq K</m>.
-</p>
-</li>
-<li>
-<p>
-Give an example where <m>L = K</m>.
-</p>
-</li>
+<li><p>Show that if <m>a_n\lt b_n</m> for all <m>n</m>, then <m>L\leq K</m>.</p></li>
+<li><p>Give an example where <m>L = K</m>.</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-Left to reader
-</p>
-</li>
+<li><p>Left to reader</p></li>
 <li><m>a_n = 1/3^n</m> and <m>b_n = 1/2^n</m></li>
 </ol>
 </answer>
