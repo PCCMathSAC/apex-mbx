@@ -13,9 +13,88 @@ Currently, our vector<ndash />valued functions have defined points with a parame
 <figure xml:id="fig_vvfarc_intro1" >
 <caption>Introducing the arc length parameter.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figvvfarc_intro1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvfarc_intro1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=6.5,%
+			xmin=-2.1,xmax=7%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-2:2.1,samples=30] ({x^2-x},{x^2+x});
+
+\filldraw [{\colortwo}](axis cs: 0,0) circle (1.5pt) node [black,above right] {\scriptsize $t=0$};
+\filldraw [{\colortwo}](axis cs: 0,2) circle (1.5pt) node [black, right] {\scriptsize $t=1$};
+\filldraw [{\colortwo}](axis cs: 2,6) circle (1.5pt) node [black, right] {\scriptsize $t=2$};
+
+%\filldraw [{\colortwo}](axis cs: -.24,.94) circle (1.5pt) node [black, right] {\scriptsize $s=1$};
+%\filldraw [{\colortwo}](axis cs: -.03,1.91) circle (1.5pt) node [black, right] {\scriptsize $s=2$};
+%\filldraw [{\colortwo}](axis cs: .33,2.84) circle (1.5pt) node [black, right] {\scriptsize $s=3$};
+
+\draw [thick,->,{\colorone}] (axis cs:3.79,.77)--(axis cs:3.75,.75) node [above ,black] {\scriptsize $\vec r(t)$};
+\end{axis}
+
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfarc_intro1.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figvvfarc_intro1b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvfarc_intro1b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=6.5,%
+			xmin=-2.1,xmax=7%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-2:2.1,samples=30] ({x^2-x},{x^2+x});
+
+\filldraw [{\colortwo}](axis cs: 0,0) circle (1.5pt) node [black,above right] {\scriptsize $s=0$};
+%\filldraw [{\colortwo}](axis cs: 0,2) circle (1.5pt) node [black, right] {\scriptsize $t=1$};
+%\filldraw [{\colortwo}](axis cs: 2,6) circle (1.5pt) node [black, right] {\scriptsize $t=2$};
+
+\filldraw [{\colortwo}](axis cs: -.24,.94) circle (1.5pt) node [black, right] {\scriptsize $s=1$};
+\filldraw [{\colortwo}](axis cs: -.03,1.91) circle (1.5pt) node [black, right] {\scriptsize $s=2$};
+\filldraw [{\colortwo}](axis cs: .33,2.84) circle (1.5pt) node [black, right] {\scriptsize $s=3$};
+\filldraw [{\colortwo}](axis cs: .75,3.75) circle (1.5pt) node [black, right] {\scriptsize $s=4$};
+\filldraw [{\colortwo}](axis cs: 1.21,4.63) circle (1.5pt) node [black, right] {\scriptsize $s=5$};
+\filldraw [{\colortwo}](axis cs: 1.71, 5.51) circle (1.5pt) node [black, right] {\scriptsize $s=6$};
+
+
+\draw [thick,->,{\colorone}] (axis cs:3.79,.77)--(axis cs:3.75,.75)node [above ,black] {\scriptsize $\vec r(s)$};
+
+\end{axis}
+
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfarc_intro1b.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -81,7 +160,53 @@ Clearly, as shown in <xref ref="fig_vvfarc1">Figure</xref>, the graph of <m>\vec
 </p>
 <figure xml:id="fig_vvfarc1" >
 <caption>Graphing <m>\vec r</m> in <xref ref="ex_vvfarc1">Example</xref> with parameters <m>t</m> and <m>s</m>.</caption>
-<image width="73%" source="images/figvvfarc1.png" />
+
+<!-- START figures/fig_vvfarc1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,-1,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=6.5,%
+			xmin=-2.1,xmax=2.9%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2.5:2.5] ({3*x-1},{4*x+2});
+
+\filldraw (axis cs:-1,2) circle (1.5pt) node [left] {\scriptsize $t=0$}
+					(axis cs:2,6) circle (1.5pt) node [left] {\scriptsize $t=1$}
+					%(axis cs: 5,10) circle (1.5pt) node [right] {\scriptsize $t=2$}
+					%(axis cs: -4,-2) circle (1.5pt) node [right] {\scriptsize $t=-1$}
+					%(axis cs: -7,-6) circle (1.5pt) node [right] {\scriptsize $t=-2$}
+					(axis cs: -.4,2.8) circle (1.5pt) node [right,{\colortwo}] {\scriptsize $s=1$}
+					(axis cs: .2,3.6) circle (1.5pt) node [right,{\colortwo}] {\scriptsize $s=2$}
+					(axis cs: .8,4.4) circle (1.5pt) node [right,{\colortwo}] {\scriptsize $s=3$}
+					(axis cs: 1.4,5.2) circle (1.5pt) node [right,{\colortwo}] {\scriptsize $s=4$}
+					(axis cs: 2,6) circle (1.5pt) node [right,{\colortwo}] {\scriptsize $s=5$};
+					
+
+\draw (axis cs:-1,2) node [{\colortwo},shift={(10pt,-5pt)}]  {\scriptsize $s=0$};
+
+%\filldraw
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfarc1.tex -->
+
 </figure>
 <p>
 Is the point <m>(1/5,18/5)</m> really 2 units away from <m>(-1,2)</m>? We use the Distance Formula to check:
@@ -146,9 +271,99 @@ Consider points <m>A</m> and <m>B</m> on the curve graphed in <xref ref="fig_cur
 <figure xml:id="fig_curvatureintro" >
 <caption>Establishing the concept of curvature.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figcurvature_intro.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_curvature_intro.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={1,2,-1,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.9,%
+			xmin=-.1,xmax=3.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-1:1.5] ({x^2-x+1},{x^3+1});
+
+
+					%(axis cs: 1.2684, 0.989352) circle (1.5pt);
+					
+
+%\draw[->,{\colortwo},thick] (axis cs:0.8461, 1.53144)  -- (axis cs:1.14654, 2.48524);
+%\draw[->,{\colortwo},thick] (axis cs:1.2684, 0.989352)  -- (axis cs:0.273445, 1.08968);
+%\draw[->,{\colortwo},thick] (axis cs:2.20203, 0.649597)  -- (axis cs:1.35163, 1.17574);
+
+\draw[->,{\colorone},thick] (axis cs:2.44, 0.488) -- (axis cs: 2.4141, 0.506961);
+
+\filldraw (axis cs:.77,1.04) circle (1.5pt) node [below] {\scriptsize $A$}
+					%(axis cs:0.8461, 1.53144) circle (1.5pt)
+					%(axis cs: 1.2684, 0.989352) circle (1.5pt)
+					(axis cs: 1.75, 0.875) circle (1.5pt) node [below] {\scriptsize $B$};
+					%(axis cs: 2.20203, 0.649597) circle (1.5pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_curvature_intro.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figcurvature_introb.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_curvature_introb.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={1,2,-1,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.9,%
+			xmin=-.1,xmax=3.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-1:1.5] ({x^2-x+1},{x^3+1});
+
+
+					%(axis cs: 1.2684, 0.989352) circle (1.5pt);
+					
+
+\draw[->,{\colortwo},thick] (axis cs:0.8461, 1.53144)  -- (axis cs:1.14654, 2.48524);
+\draw[->,{\colortwo},thick] (axis cs:1.2684, 0.989352)  -- (axis cs:0.273445, 1.08968);
+\draw[->,{\colortwo},thick] (axis cs:2.20203, 0.649597)  -- (axis cs:1.35163, 1.17574);
+
+\draw[->,{\colorone},thick] (axis cs:2.44, 0.488) -- (axis cs: 2.4141, 0.506961);
+
+\filldraw (axis cs:.77,1.04) circle (1.5pt) node [below] {\scriptsize $A$}
+					(axis cs:0.8461, 1.53144) circle (1.5pt)
+					(axis cs: 1.2684, 0.989352) circle (1.5pt)
+					(axis cs: 1.75, 0.875) circle (1.5pt) node [below] {\scriptsize $B$}
+					(axis cs: 2.20203, 0.649597) circle (1.5pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_curvature_introb.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -228,30 +443,18 @@ Let <m>C</m> be a smooth curve on an open interval <m>I</m> in the plane or in s
 </p>
 
 <ol>
-<li>
-<p>
-If <m>C</m> is defined by <m>y=f(x)</m>, then
+<li><p>If <m>C</m> is defined by <m>y=f(x)</m>, then
 <me>
   \kappa = \frac{|\fp'(x)|}{\Big(1+\big(\fp(x)\big)^2\Big)^{3/2}}.
-</me>
-</p>
-</li>
-<li>
-<p>
-If <m>C</m> is defined as a vector<ndash />valued function in the plane, <m>\vec r(t) = \la x(t), y(t)\ra</m>, then
+</me></p></li>
+<li><p>If <m>C</m> is defined as a vector<ndash />valued function in the plane, <m>\vec r(t) = \la x(t), y(t)\ra</m>, then
 <me>
   \kappa = \frac{|x\primeskip'y\primeskip''-x\primeskip''y\primeskip'|}{\big((x\primeskip')^2+(y\primeskip')^2\big)^{3/2}}.
-</me>
-</p>
-</li>
-<li>
-<p>
-If <m>C</m> is defined in space by a vector<ndash />valued function <m>\vec r(t)</m>, then
+</me></p></li>
+<li><p>If <m>C</m> is defined in space by a vector<ndash />valued function <m>\vec r(t)</m>, then
 <me>
   \kappa = \frac{\norm{\vec T\,'(t)}}{\norm{\vrp(t)}} = \frac{\norm{\vrp(t)\times\vrp'(t)}}{\norm{\vrp(t)}^3} = \frac{\vec a(t)\cdot \vec N(t)}{\norm{\vec v(t)}^2}.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 </statement>
 </theorem>
@@ -295,26 +498,10 @@ Let a point <m>P</m> on a smooth curve <m>C</m> be given, and let <m>\kappa</m> 
 </p>
 
 <ul>
-<li>
-<p>
-passes through <m>P</m>,
-</p>
-</li>
-<li>
-<p>
-lies on the concave side of <m>C</m>,
-</p>
-</li>
-<li>
-<p>
-has a common tangent line as <m>C</m> at <m>P</m> and
-</p>
-</li>
-<li>
-<p>
-has radius <m>r=1/\kappa</m> (hence has curvature <m>\kappa</m>)
-</p>
-</li>
+<li><p>passes through <m>P</m>,</p></li>
+<li><p>lies on the concave side of <m>C</m>,</p></li>
+<li><p>has a common tangent line as <m>C</m> at <m>P</m> and</p></li>
+<li><p>has radius <m>r=1/\kappa</m> (hence has curvature <m>\kappa</m>)</p></li>
 </ul>
 
 <p>
@@ -322,7 +509,55 @@ is the <b>osculating circle</b>, or <b>circle of curvature</b>, to <m>C</m> at <
 </p>
 <figure xml:id="fig_curvature_osculate" >
 <caption>Illustrating the osculating circles for the curve seen in <xref ref="fig_curvatureintro">Figure</xref>.</caption>
-<image width="73%" source="images/figcurvature_introc.png" />
+
+<!-- START figures/fig_curvature_introc.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={1,2,-1,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.9,%
+			xmin=-.1,xmax=3.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-1:1.5] ({x^2-x+1},{x^3+1});
+
+\addplot[thick,{\colortwo},smooth,domain=0:360] ({.08*cos(x)+.83},{.08*sin(x)+1.09});
+
+\addplot[thick,{\colortwo},smooth,domain=0:360] ({2.17*cos(x)+.99},{2.17*sin(x)+-1.15});
+
+					%(axis cs: 1.2684, 0.989352) circle (1.5pt);
+					
+
+%\draw[->,{\colortwo},thick] (axis cs:0.8461, 1.53144)  -- (axis cs:1.14654, 2.48524);
+%\draw[->,{\colortwo},thick] (axis cs:1.2684, 0.989352)  -- (axis cs:0.273445, 1.08968);
+%\draw[->,{\colortwo},thick] (axis cs:2.20203, 0.649597)  -- (axis cs:1.35163, 1.17574);
+
+\draw[->,{\colorone},thick] (axis cs:2.44, 0.488) -- (axis cs: 2.4141, 0.506961);
+
+\filldraw (axis cs:.77,1.04) circle (1.5pt) node [below] {\scriptsize $A$}
+					%(axis cs:0.8461, 1.53144) circle (1.5pt)
+					%(axis cs: 1.2684, 0.989352) circle (1.5pt)
+					(axis cs: 1.75, 0.875) circle (1.5pt) node [below] {\scriptsize $B$};
+					%(axis cs: 2.20203, 0.649597) circle (1.5pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_curvature_introc.tex -->
+
 </figure>
 <p>
 (The word <q>osculating</q> comes from a Latin word related to kissing; an osculating circle <q>kisses</q> the graph at a particular point. Many beautiful ideas in mathematics have come from studying the osculating circles to a curve.)
@@ -344,7 +579,55 @@ We use the first formula found in <xref ref="thm_curvature_formulas">Theorem</xr
 </p>
 <figure xml:id="fig_curvature3" >
 <caption>Examining the curvature of <m>y=x^2</m>.</caption>
-<image width="73%" source="images/figcurvature3.png" />
+
+<!-- START figures/fig_curvature3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={1,2,-1,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.5,ymax=10.1,%
+			xmin=-10.2,xmax=4.9%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-3.2:3.2] ({x},{x^2});
+
+\addplot[thick,{\colortwo},smooth,domain=0:360] ({.5*cos(x)},{.5*sin(x)+.5});
+
+\addplot[thick,{\colortwo},smooth,domain=0:360,samples=60] ({5.6*cos(x)-4},{5.6*sin(x)+3.5});
+
+					%(axis cs: 1.2684, 0.989352) circle (1.5pt);
+					
+
+%\draw[->,{\colortwo},thick] (axis cs:0.8461, 1.53144)  -- (axis cs:1.14654, 2.48524);
+%\draw[->,{\colortwo},thick] (axis cs:1.2684, 0.989352)  -- (axis cs:0.273445, 1.08968);
+%\draw[->,{\colortwo},thick] (axis cs:2.20203, 0.649597)  -- (axis cs:1.35163, 1.17574);
+
+%\draw[->,{\colorone},thick] (axis cs:2.44, 0.488) -- (axis cs: 2.4141, 0.506961);
+
+%\filldraw (axis cs:.77,1.04) circle (1.5pt) node [below] {\scriptsize $A$}
+					%%(axis cs:0.8461, 1.53144) circle (1.5pt)
+					%%(axis cs: 1.2684, 0.989352) circle (1.5pt)
+					%(axis cs: 1.75, 0.875) circle (1.5pt) node [below] {\scriptsize $B$};
+					%%(axis cs: 2.20203, 0.649597) circle (1.5pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_curvature3.tex -->
+
 </figure>
 <p>
 At the vertex (<m>x=0</m>), the curvature is <m>\kappa = 2</m>. At <m>x=1</m>, the curvature is <m>\kappa = 2/(5)^{3/2} \approx 0.179.</m> So at <m>x=0</m>, the curvature of <m>y=x^2</m> is that of a circle of radius <m>1/2</m>; at <m>x=1</m>, the curvature is that of a circle with radius <m>\approx 1/0.179 \approx 5.59</m>. This is illustrated in <xref ref="fig_curvature3">Figure</xref>. At <m>x=3</m>, the curvature is <m>0.009</m>; the graph is nearly straight as the curvature is very close to 0.
@@ -369,9 +652,37 @@ We use the third formula in <xref ref="thm_curvature_formulas">Theorem</xref> as
 <figure xml:id="fig_curvature4" >
 <caption>Understanding the curvature of a curve in space.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figcurvature4a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_curvature4a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={1,2,-1,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.5,%
+			xmin=-2.1,xmax=2.1%
+]
+
+
+\addplot [thick,{\colorone}, smooth] coordinates {(-1.5,0.0122)(-1.45,0.01404)(-1.4,0.01623)(-1.35,0.01887)(-1.3,0.02207)(-1.25,0.02596)(-1.2,0.03074)(-1.15,0.03666)(-1.1,0.04403)(-1.05,0.05331)(-1.,0.06509)(-0.95,0.08019)(-0.9,0.09974)(-0.85,0.1253)(-0.8,0.159)(-0.75,0.204)(-0.7,0.2643)(-0.65,0.3457)(-0.6,0.4557)(-0.55,0.6035)(-0.5,0.7989)(-0.45,1.049)(-0.4,1.352)(-0.35,1.686)(-0.3,2.006)(-0.25,2.246)(-0.2,2.353)(-0.15,2.318)(-0.1,2.191)(-0.05,2.057)(0,2.)(0.05,2.057)(0.1,2.191)(0.15,2.318)(0.2,2.353)(0.25,2.246)(0.3,2.006)(0.35,1.686)(0.4,1.352)(0.45,1.049)(0.5,0.7989)(0.55,0.6035)(0.6,0.4557)(0.65,0.3457)(0.7,0.2643)(0.75,0.204)(0.8,0.159)(0.85,0.1253)(0.9,0.09974)(0.95,0.08019)(1.,0.06509)(1.05,0.05331)(1.1,0.04403)(1.15,0.03666)(1.2,0.03074)(1.25,0.02596)(1.3,0.02207)(1.35,0.01887)(1.4,0.01623)(1.45,0.01404)(1.5,0.0122)};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_curvature4a.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004910729825496674,
@@ -379,7 +690,87 @@ We use the third formula in <xref ref="thm_curvature_formulas">Theorem</xref> as
 3Dcoo=-0.0000029802322387695312 -0.0000029802322387695312 -0.0000014901161193847656,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figcurvature4.png" /></cell></row>
+
+<!-- START figures/figcurvature4_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcurvature43D.asy in Chapter 11
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+pair xbounds=(-2,2);
+pair ybounds=(-1,2);
+pair zbounds=(-2,2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the curve <t, t^2, 2*t^3> for t from -1 to 1
+triple g(real t) {return (t, t^2, 2*t^3);}
+path3 mypath=graph(g,-1,1,operator ..); draw(mypath,blue);
+//path3 mypath=graph(g,-1,-0.9,operator ..); draw(mypath,blue,Arrow3(size=4mm));
+path3 mypath=graph(g,-1,-0.7,operator ..); draw(mypath,blue,Arrow3(size=4mm));
+//path3 mypath=graph(g,-1,0.7,operator ..); draw(mypath,blue,Arrow3(size=4mm));
+//path3 mypath=graph(g,-1,0.9,operator ..); draw(mypath,blue,Arrow3(size=4mm));
+
+//Draw points of maximum curvature (0.189,(0.189)^2,2*(0.189)^3)
+// cooresponding to values t=+/-0.189
+dotfactor=4;
+dot(((0.189,(0.189)^2,2*(0.189)^3)),red);
+dot(((-0.189,(-0.189)^2,2*(-0.189)^3)),red);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figcurvature4_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>

@@ -16,7 +16,34 @@ It is interesting to note that this solution of 50 feet can be represented graph
 </p>
 <figure xml:id="fig_defint1" >
 <caption>The area under a constant velocity function corresponds to distance traveled.</caption>
-<image width="73%" source="images/figdefint1.png" />
+
+<!-- START figures/fig_defint1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.9,ymax=5.9,%
+			xmin=-.9,xmax=10.9%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},domain=0:10] {5};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
+\node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint1.tex -->
+
 </figure>
 <p>
 Now consider a slightly harder situation (and not particularly realistic): an object travels in a straight line with a constant velocity of 5ft/s for 10 seconds, then instantly reverses course at a rate of 2ft/s for 4 seconds. (Since the object is traveling in the opposite direction when reversing course, we say the velocity is a constant <m>-2</m>ft/s.) How far away from the starting point is the object <ndash /> what is its <em>displacement</em>?
@@ -42,7 +69,36 @@ which is easy to calculate as <m>50-8=42</m> feet.
 </p>
 <figure xml:id="fig_defint2" >
 <caption>The total displacement is the area above the <m>t</m><ndash />axis minus the area below the <m>t</m><ndash />axis.</caption>
-<image width="73%" source="images/figdefint2.png" />
+
+<!-- START figures/fig_defint2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-2,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			minor x tick num=4,
+			ymin=-2.9,ymax=5.9,%
+			xmin=-.9,xmax=15.9%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} \closedcycle;
+\addplot [thick, {\colorone},domain=0:10] {5};
+\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
+\addplot [thick, {\colorone},domain=10:14] {-2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
+\node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint2.tex -->
+
 </figure>
 <p>
 Now consider a more difficult problem.
@@ -55,21 +111,9 @@ The velocity of an object moving straight up/down under the acceleration of grav
 </p>
 
 <ol>
-<li>
-<p>
-What was the initial velocity of the object?
-</p>
-</li>
-<li>
-<p>
-What was the maximum height of the object?
-</p>
-</li>
-<li>
-<p>
-What was the height of the object at time <m>t=2</m>?
-</p>
-</li>
+<li><p>What was the initial velocity of the object?</p></li>
+<li><p>What was the maximum height of the object?</p></li>
+<li><p>What was the height of the object at time <m>t=2</m>?</p></li>
 </ol>
 </statement>
 <solution>
@@ -115,7 +159,36 @@ While we have answered all three questions, let's look at them again graphically
 </p>
 <figure xml:id="fig_defint3" >
 <caption>A graph of <m>v(t)=-32t+48</m>; the shaded areas help determine displacement.</caption>
-<image width="73%" source="images/figdefint3.png" />
+
+<!-- START figures/fig_defint3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra y ticks={48,-48},
+%			extra y tick labels={$48$,$-48$},
+%			ytick={-2,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-55,ymax=55,%
+			xmin=-.5,xmax=3.2%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=0:3,area style] {-32*x+48} \closedcycle;
+\addplot [thick, {\colorone},domain=0:3] {-32*x+48};
+%\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
+%\addplot [thick, {\colorone},domain=10:14] {-2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
+\node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint3.tex -->
+
 </figure>
 <p>
 Recall how in our previous work that the displacement of the object (in this case, its height) was found as the area under the velocity curve, as shaded in the figure. Moreover, the area between the curve and the <m>t</m><ndash />axis that is below the <m>t</m><ndash />axis counted as <q>negative</q> area. That is, it represents the object coming back toward its starting position. So to find the maximum distance from the starting point <ndash /> the maximum height <ndash /> we find the area under the velocity line that is above the <m>t</m><ndash />axis, i.e., from <m>t=0</m> to <m>t=1.5</m>. This region is a triangle; its area is
@@ -192,7 +265,36 @@ Consider the function <m>f</m> given in <xref ref="fig_defint4">Figure</xref>.
 </p>
 <figure xml:id="fig_defint4" >
 <caption>A graph of <m>f(x)</m> in <xref ref="ex_defint4">Example</xref>.</caption>
-<image width="73%" source="images/figdefint4.png" />
+
+<!-- START figures/fig_defint4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5},% 
+%			extra y ticks={48,-48},
+%			extra y tick labels={$48$,$-48$},
+			ytick={-1,1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style] coordinates {(0,0) (1,1) (5,-1)} \closedcycle;
+\addplot [thick, {\colorone}] coordinates {(0,0) (1,1) (5,-1)};
+%\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
+%\addplot [thick, {\colorone},domain=10:14] {-2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint4.tex -->
+
 </figure>
 <p>
 Find:
@@ -227,7 +329,36 @@ Find:
 		
 <figure xml:id="fig_defint4a" >
 <caption>A graph of <m>5f</m> in <xref ref="ex_defint4">Example</xref>. (Yes, it looks just like the graph of <m>f</m> in <xref ref="fig_defint4">Figure</xref>, just with a different <m>y</m>-scale.)</caption>
-<image width="73%" source="images/figdefint4a.png" />
+
+<!-- START figures/fig_defint4a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5},% 
+%			extra y ticks={48,-48},
+%			extra y tick labels={$48$,$-48$},
+			ytick={-5,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-5.5,ymax=5.5,%
+			xmin=-.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style] coordinates {(0,0) (1,5) (5,-5)} \closedcycle;
+\addplot [thick, {\colorone}] coordinates {(0,0) (1,5) (5,-5)};
+%\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
+%\addplot [thick, {\colorone},domain=10:14] {-2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint4a.tex -->
+
 </figure>
 </li>
 <li><m>\int_1^1f(x)\ dx</m> is the area under <m>f</m> on the <q>interval</q> <m>[1,1]</m>. This describes a line segment, not a region; it has no width. Therefore the area is 0.</li>
@@ -264,21 +395,11 @@ We give a brief justification of <xref ref="thm_defintprop">Theorem</xref> here.
 </p>
 
 <ol>
-<li>
-<p>
-As demonstrated in <xref ref="ex_defint4">Example</xref>, there is no <q>area under the curve</q> when the region has no width; hence this definite integral is 0.
-</p>
-</li>
-<li>
-<p>
-This states that total area is the sum of the areas of subregions. It is easily considered when we let <m>a\lt b\lt c</m>. We can break the interval <m>[a,c]</m> into two subintervals, <m>[a,b]</m> and <m>[b,c]</m>. The total area over <m>[a,c]</m> is the area over <m>[a,b]</m> plus the area over <m>[b,c]</m>. 
+<li><p>As demonstrated in <xref ref="ex_defint4">Example</xref>, there is no <q>area under the curve</q> when the region has no width; hence this definite integral is 0.</p></li>
+<li><p>This states that total area is the sum of the areas of subregions. It is easily considered when we let <m>a\lt b\lt c</m>. We can break the interval <m>[a,c]</m> into two subintervals, <m>[a,b]</m> and <m>[b,c]</m>. The total area over <m>[a,c]</m> is the area over <m>[a,b]</m> plus the area over <m>[b,c]</m>. 
 		
-		It is important to note that this still holds true even if <m>a\lt b\lt c</m> is not true. We discuss this in the next point.
-</p>
-</li>
-<li>
-<p>
-This property can be viewed a merely a convention to make other properties work well. (Later we will see how this property has a justification all its own, not necessarily in support of other properties.) Suppose <m>b\lt a\lt c</m>. The discussion from the previous point clearly justifies
+		It is important to note that this still holds true even if <m>a\lt b\lt c</m> is not true. We discuss this in the next point.</p></li>
+<li><p>This property can be viewed a merely a convention to make other properties work well. (Later we will see how this property has a justification all its own, not necessarily in support of other properties.) Suppose <m>b\lt a\lt c</m>. The discussion from the previous point clearly justifies
 <men xml:id="eq_defint1" >
   \int_b^a f(x)\ dx + \int_a^c f(x)\ dx = \int_b^c f(x)\ dx.
 </men>
@@ -293,9 +414,7 @@ How do Equations <xref ref="eq_defint1" /> and <xref ref="eq_defint2" /> relate?
 </md>
 Property <m>(3)</m> justifies changing the sign and switching the bounds of integration on the <m>\ds -\int_b^a f(x)\ dx</m> term; when this is done, Equations <xref ref="eq_defint1" /> and <xref ref="eq_defint2" /> are equivalent.
 
-The conclusion is this: by adopting the convention of Property (3), Property (2) holds no matter the order of <m>a</m>, <m>b</m> and <m>c</m>. Again, in the next section we will see another justification for this property.
-</p>
-</li>
+The conclusion is this: by adopting the convention of Property (3), Property (2) holds no matter the order of <m>a</m>, <m>b</m> and <m>c</m>. Again, in the next section we will see another justification for this property.</p></li>
 <li class="custom-list-style-type" label="4,5." >Each of these may be non<ndash />intuitive. Property (5) states that when one scales a function by, for instance, 7, the area of the enclosed region also is scaled by a factor of 7. Both Properties (4) and (5)  can be proved using geometry. The details are not complicated but are not discussed here.</li>
 </ol>
 <example xml:id="ex_defint5">
@@ -306,39 +425,52 @@ Consider the graph of a function <m>f(x)</m> shown in <xref ref="fig_defint5">Fi
 </p>
 <figure xml:id="fig_defint5" >
 <caption>A graph of a function in <xref ref="ex_defint5">Example</xref>.</caption>
-<image width="73%" source="images/figdefint5.png" />
+
+<!-- START figures/fig_defint5.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.5,1.5,3},
+			extra x tick labels={$a$,$b$,$\ c$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.2,xmax=3.5%
+]
+
+\addplot [smooth,{\coloronefill},fill={\coloronefill},area style,domain=0.5:3] {(x-.5)*(x-1.5)*(x-3)} \closedcycle;
+\addplot [thick, {\colorone},smooth,domain=0.5:3] {(x-.5)*(x-1.5)*(x-3)};
+%\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
+%\addplot [thick, {\colorone},domain=10:14] {-2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint5.tex -->
+
 </figure>
 <p>
 Answer the following:
 </p>
 
 <ol>
-<li>
-<p>
-Which value is greater: <m>\ds \int_a^b f(x)\ dx</m> or <m>\ds \int_b^c f(x)\ dx</m>?
-</p>
-</li>
-<li>
-<p>
-Is <m>\ds \int_a^c f(x)\ dx</m> greater or less than 0?
-</p>
-</li>
-<li>
-<p>
-Which value is greater: <m>\ds \int_a^b f(x)\ dx</m> or <m>\ds \int_c^b f(x)\ dx</m>?
-</p>
-</li>
+<li><p>Which value is greater: <m>\ds \int_a^b f(x)\ dx</m> or <m>\ds \int_b^c f(x)\ dx</m>?</p></li>
+<li><p>Is <m>\ds \int_a^c f(x)\ dx</m> greater or less than 0?</p></li>
+<li><p>Which value is greater: <m>\ds \int_a^b f(x)\ dx</m> or <m>\ds \int_c^b f(x)\ dx</m>?</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
 <li><m>\int_a^b f(x)\ dx</m> has a positive value (since the area is above the <m>x</m><ndash />axis) whereas <m>\int_b^c f(x)\ dx</m> has a negative value. Hence <m>\int_a^b f(x)\ dx</m> is bigger.</li>
 <li><m>\int_a^c f(x)\ dx</m> is the total signed area under <m>f</m> between <m>x=a</m> and <m>x=c</m>. Since the region below the <m>x</m><ndash />axis looks to be larger than the region above, we conclude that the definite integral has a value less than 0.</li>
-<li>
-<p>
-Note how the second integral has the bounds <q>reversed.</q> Therefore <m>\int_c^b f(x)\ dx</m> represents a positive number, greater than the area described by the first definite integral. Hence <m>\int_c^b f(x)\ dx</m> is greater.
-</p>
-</li>
+<li><p>Note how the second integral has the bounds <q>reversed.</q> Therefore <m>\int_c^b f(x)\ dx</m> represents a positive number, greater than the area described by the first definite integral. Hence <m>\int_c^b f(x)\ dx</m> is greater.</p></li>
 </ol>
 </solution>
 </example>
@@ -358,21 +490,15 @@ The area definition of the definite integral allows us to use geometry compute t
 </p>
 
 <ol>
-<li>
-<p>
-It is useful to sketch the function in the integrand, as shown in <xref ref="fig_defint8">Figure</xref>(a). We see we need to compute the areas of two regions, which we have labeled <m>R_1</m> and <m>R_2</m>. Both are triangles, so the area computation is straightforward:
+<li><p>It is useful to sketch the function in the integrand, as shown in <xref ref="fig_defint8">Figure</xref>(a). We see we need to compute the areas of two regions, which we have labeled <m>R_1</m> and <m>R_2</m>. Both are triangles, so the area computation is straightforward:
 <me>
   R_1: \frac12(4)(8) = 16 \qquad R_2: \frac12(3)6 = 9.
 </me>
 Region <m>R_1</m> lies under the <m>x</m><ndash />axis, hence it is counted as negative area (we can think of the triangle's height as being <q><m>-8</m></q>), so
 <me>
   \int_{-2}^5(2x-4)\ dx = -16+9 = -7.
-</me>
-</p>
-</li>
-<li>
-<p>
-Recognize that the integrand of this definite integral describes a half circle, as sketched in <xref ref="fig_defint8">Figure</xref>(b), with radius 3. Thus the area is:
+</me></p></li>
+<li><p>Recognize that the integrand of this definite integral describes a half circle, as sketched in <xref ref="fig_defint8">Figure</xref>(b), with radius 3. Thus the area is:
 <me>
   \int_{-3}^3 \sqrt{9-x^2}\ dx = \frac12\pi r^2 = \frac 92\pi.
 </me>
@@ -381,15 +507,75 @@ Recognize that the integrand of this definite integral describes a half circle, 
 <figure xml:id="fig_defint8" >
 <caption>A graph of <m>f(x) = 2x-4</m> in (a) and <m>f(x) = \sqrt{9-x^2}</m> in (b), from <xref ref="ex_defint8">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figdefint8a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_defint8a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-2,2,5},% 
+%			extra x ticks={.5,1.5,3},
+%			extra x tick labels={$a$,$b$,$\ c$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-11,ymax=11,%
+			xmin=-3.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style,domain=-2:5] {2*x-4} \closedcycle;
+\addplot [thick, {\colorone},domain=-2:5] {2*x-4};
+
+\draw [black,fill=black] (axis cs: -2,-8) node [shift={(-6pt,-7pt)}] {\scriptsize $(-2,-8)$} circle (1.5pt);
+\draw [black,fill=black] (axis cs: 5,6) node [above left] {\scriptsize $(5,6)$} circle (1.5pt);
+
+\draw (axis cs:-1,-2) node {\scriptsize $R_1$};
+\draw (axis cs:4.2,2) node {\scriptsize $R_2$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint8a.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figdefint8b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_defint8b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-3,3},% 
+%			extra x ticks={.5,1.5,3},
+%			extra x tick labels={$a$,$b$,$\ c$},
+			extra y ticks={1,2,3,4},%
+			extra y tick labels=\empty,
+			ytick={5},
+%			minor y tick num=4,
+%			minor x tick num=4,
+			ymin=-.5,ymax=5.5,%
+			xmin=-3.5,xmax=3.5%
+]
+
+\addplot [smooth,{\coloronefill},fill={\coloronefill},area style,domain=0:180] ({3*cos (x)},{3*sin(x)}) \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=0:180] ({3*cos (x)},{3*sin(x)});
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint8b.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
-</figure>
-
-</p>
-</li>
+</figure></p></li>
 </ol>
 <example xml:id="ex_defint6">
 <title>Understanding motion given velocity</title>
@@ -399,7 +585,37 @@ Consider the graph of a velocity function of an object moving in a straight line
 </p>
 <figure xml:id="fig_defint6" >
 <caption>A graph of a velocity in <xref ref="ex_defint6">Example</xref>.</caption>
-<image width="73%" source="images/figdefint6.png" />
+
+<!-- START figures/fig_defint6.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={2,6,8},
+			extra x tick labels={$\ a$,$b\ $,$\ c$},
+			ytick={-5,5,10,15},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-9,ymax=17,%
+			xmin=-.5,xmax=8.5%
+]
+
+\addplot [smooth,{\coloronefill},fill={\coloronefill},area style,domain=0:8] {15/64*x*(x-2)*(x-6)*(x-8)} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=0:8] {15/64*x*(x-2)*(x-6)*(x-8)};
+
+\draw (axis cs:.9,-4) node {\scriptsize $11$};
+\draw (axis cs:7.1,-4) node {\scriptsize $11$};
+\draw (axis cs:4,8) node {\scriptsize $38$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
+\node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint6.tex -->
+
 </figure>
 </statement>
 <solution>
@@ -417,7 +633,34 @@ In our examples, we have either found the areas of regions that have nice geomet
 </p>
 <figure xml:id="fig_defint7" >
 <caption>What is the area below <m>y=x^2</m> on <m>[0,3]</m>? The region is not a usual geometric shape.</caption>
-<image width="73%" source="images/figdefint7.png" />
+
+<!-- START figures/fig_defint7.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3},% 
+%			extra x ticks={2,6,8},
+%			extra x tick labels={$\ a$,$b\ $,$\ c$},
+%			ytick={-5,5,10,15},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1,ymax=11,%
+			xmin=-1,xmax=3.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style,domain=0:3] {x^2} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=0:3] {x^2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_defint7.tex -->
+
 </figure>
 <p>
 In the next section we will explore how to find the areas of such regions.
@@ -493,7 +736,36 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_05.png" />
+
+<!-- START figures/fig_05_02_ex_05.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-4.5,ymax=4.5,%
+			xmin=-.9,xmax=4.5%
+]
+
+%\addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},domain=0:4] {-2*x+4};
+
+\draw (axis cs:2,2.5) node {\scriptsize $y = -2x+4$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_05.tex -->
+
 <ol>
 <li><m>\ds \int_0^1 (-2x+4)\ dx</m></li>
 <li><m>\ds \int_0^2 (-2x+4)\ dx</m></li>
@@ -510,32 +782,12 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-3
-</p>
-</li>
-<li>
-<p>
-4
-</p>
-</li>
-<li>
-<p>
-3
-</p>
-</li>
-<li>
-<p>
-0
-</p>
-</li>
+<li><p>3</p></li>
+<li><p>4</p></li>
+<li><p>3</p></li>
+<li><p>0</p></li>
 <li><m>-4</m></li>
-<li>
-<p>
-9
-</p>
-</li>
+<li><p>9</p></li>
 </ol>
 </answer>
 </exercise>
@@ -543,7 +795,38 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_06.png" />
+
+<!-- START figures/fig_05_02_ex_06.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.2,ymax=2.2,%
+			xmin=-.9,xmax=5.5%
+]
+
+%\addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},domain=0:2] {-2};
+\addplot [thick, {\colorone},domain=2:3] {2*x-6};
+\addplot [thick, {\colorone},domain=3:5] {x-3};
+
+\draw (axis cs:3.2,-1.5) node {\scriptsize $y = f(x)$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_06.tex -->
+
 <ol>
 <li><m>\ds \int_0^2 f(x)\ dx</m></li>
 <li><m>\ds \int_0^3 f(x)\ dx</m></li>
@@ -563,17 +846,9 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 <li><m>-4</m></li>
 <li><m>-5</m></li>
 <li><m>-3</m></li>
-<li>
-<p>
-1
-</p>
-</li>
+<li><p>1</p></li>
 <li><m>-2</m></li>
-<li>
-<p>
-10
-</p>
-</li>
+<li><p>10</p></li>
 </ol>
 </answer>
 </exercise>
@@ -581,7 +856,39 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_07.png" />
+
+<!-- START figures/fig_05_02_ex_07.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=4.5,%
+			xmin=-.9,xmax=4.5%
+]
+
+%\addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},domain=0:1] {4*x};
+\addplot [thick, {\colorone},domain=1:2] {-4*(x-2)};
+\addplot [thick, {\colorone},domain=2:3] {2*(x-2)};
+\addplot [thick, {\colorone},domain=3:4] {-2*(x-4)};
+
+\draw (axis cs:3,2.5) node {\scriptsize $y = f(x)$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_07.tex -->
+
 <ol>
 <li><m>\ds \int_0^2 f(x)\ dx</m></li>
 <li><m>\ds \int_2^4 f(x)\ dx</m></li>
@@ -601,17 +908,9 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 <li><m>4</m></li>
 <li><m>2</m></li>
 <li><m>4</m></li>
-<li>
-<p>
-2
-</p>
-</li>
+<li><p>2</p></li>
 <li><m>1</m></li>
-<li>
-<p>
-2
-</p>
-</li>
+<li><p>2</p></li>
 </ol>
 </answer>
 </exercise>
@@ -619,7 +918,36 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_08.png" />
+
+<!-- START figures/fig_05_02_ex_08.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.5,ymax=3.5,%
+			xmin=-.9,xmax=4.5%
+]
+
+%\addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},domain=0:4] {x-1};
+
+\draw (axis cs:2,2.5) node {\scriptsize $y = x-1$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_08.tex -->
+
 <ol>
 <li><m>\ds \int_0^1 (x-1)\ dx</m></li>
 <li><m>\ds \int_0^2 (x-1)\ dx</m></li>
@@ -649,7 +977,36 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_09.png" />
+
+<!-- START figures/fig_05_02_ex_09.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=3.5,%
+			xmin=-.9,xmax=4.5%
+]
+
+%\addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},smooth,samples=40,domain=0:3.14159] ({2*cos(deg(x))+2}, {2*sin(deg(x))});
+
+\draw (axis cs:3,2.4) node {\scriptsize $f(x) = \sqrt{4-(x-2)^2}$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_09.tex -->
+
 <ol>
 <li><m>\ds \int_0^2 f(x)\ dx</m></li>
 <li><m>\ds \int_2^4 f(x)\ dx</m></li>
@@ -677,7 +1034,39 @@ In the following exercises, a graph of a function <m>f(x)</m> is given; the numb
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_10.png" />
+
+<!-- START figures/fig_05_02_ex_10.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-105,ymax=55,%
+			xmin=-.9,xmax=3.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=0:3,area style,smooth] {60*x*(1-x)*(x-2)*(x-2)*(x-3)} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},smooth,samples=40,domain=0:3] {60*x*(1-x)*(x-2)*(x-2)*(x-3)};
+
+\draw (axis cs:1.5,30) node {\scriptsize $y=f(x)$};
+\draw (axis cs:.45,-10) node {\scriptsize $59$};
+\draw (axis cs:1.4,10) node {\scriptsize $11$};
+\draw (axis cs:2.6,10) node {\scriptsize $21$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_10.tex -->
+
 <ol>
 <li><m>\ds \int_0^1 f(x)\ dx</m></li>
 <li><m>\ds \int_0^2 f(x)\ dx</m></li>
@@ -703,7 +1092,39 @@ In the following exercises, a graph of a function <m>f(x)</m> is given; the numb
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_11.png" />
+
+<!-- START figures/fig_05_02_ex_11.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.5,ymax=1.5,%
+			xmin=-.9,xmax=4.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=0:4,area style,smooth] {sin(deg(3.14159*x/2))} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},smooth,samples=40,domain=0:4] {sin(deg(3.14159*x/2))};
+
+\draw (axis cs:3,0.75) node {\scriptsize $f(x)=\sin (\pi x/2)$};
+\draw (axis cs:1,.6) node {\scriptsize $4/\pi$};
+\draw (axis cs:3,-.6) node {\scriptsize $4/\pi$};
+%\draw (axis cs:2.6,10) node {\scriptsize $21$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_11.tex -->
+
 <ol>
 <li><m>\ds \int_0^2 f(x)\ dx</m></li>
 <li><m>\ds \int_2^4 f(x)\ dx</m></li>
@@ -729,7 +1150,40 @@ In the following exercises, a graph of a function <m>f(x)</m> is given; the numb
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_12.png" />
+
+<!-- START figures/fig_05_02_ex_12.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-2,-1,1,2},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-5.5,ymax=11,%
+			xmin=-2.5,xmax=2.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=-2:2,area style] {3*x^2-3} |- (axis cs:-2,0) --cycle;
+\addplot [thick, {\colorone},smooth,samples=40,domain=-2:2] {3*x^2-3};
+
+%\draw (axis cs:-.9,8) node {\scriptsize $f(x)=3x^2-3$};
+\draw (axis cs:1.5,10) node {\scriptsize $f(x)=3x^2-3$};
+\draw (axis cs:-1.5,1) node {\scriptsize $4$};
+\draw (axis cs:1.5,1) node {\scriptsize $4$};
+\draw (axis cs:.3,-1) node {\scriptsize $-4$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_12.tex -->
+
 <ol>
 <li><m>\ds \int_{-2}^{-1} f(x)\ dx</m></li>
 <li><m>\ds \int_1^2 f(x)\ dx</m></li>
@@ -755,7 +1209,41 @@ In the following exercises, a graph of a function <m>f(x)</m> is given; the numb
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_13.png" />
+
+<!-- START figures/fig_05_02_ex_13.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=4.2,%
+			xmin=-.2,xmax=2.1%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=0:2,area style] {x^2} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},smooth,samples=40,domain=0:2] {x^2};
+
+\draw [thick,{\colorone},dashed] (axis cs:1,0) -- (axis cs:1,1);
+
+\draw (axis cs:1,3) node {\scriptsize $f(x)=x^2$};
+\draw (axis cs:.7,.2) node {\scriptsize $1/3$};
+\draw (axis cs:1.5,.2) node {\scriptsize $7/3$};
+%\draw (axis cs:.3,-1) node {\scriptsize $-4$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_13.tex -->
+
 <ol>
 <li><m>\ds \int_{0}^{2} 5x^2\ dx</m></li>
 <li><m>\ds \int_0^2 (x^2+3)\ dx</m></li>
@@ -783,43 +1271,45 @@ In the following exercises, a graph of the velocity function of an object moving
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_14.png" />
+
+<!-- START figures/fig_05_02_ex_14.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=2.2,%
+			xmin=-.2,xmax=3.1%
+]
+
+%\addplot [{\coloronefill},fill={\coloronefill},domain=0:2,area style] {x^2} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},domain=0:3] {-x+2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
+\node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_14.tex -->
+
 </sidebyside>
 <ol>
-<li>
-<p>
-What is the object's maximum velocity?
-</p>
-</li>
-<li>
-<p>
-What is the object's maximum displacement?
-</p>
-</li>
-<li>
-<p>
-What is the object's total displacement on <m>[0,3]</m>?
-</p>
-</li>
+<li><p>What is the object's maximum velocity?</p></li>
+<li><p>What is the object's maximum displacement?</p></li>
+<li><p>What is the object's total displacement on <m>[0,3]</m>?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-2ft/s
-</p>
-</li>
-<li>
-<p>
-2ft
-</p>
-</li>
-<li>
-<p>
-1.5ft
-</p>
-</li>
+<li><p>2ft/s</p></li>
+<li><p>2ft</p></li>
+<li><p>1.5ft</p></li>
 </ol>
 </answer>
 </exercise>
@@ -827,43 +1317,48 @@ What is the object's total displacement on <m>[0,3]</m>?
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig05_02_ex_15.png" />
+
+<!-- START figures/fig_05_02_ex_15.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=3.2,%
+			xmin=-.2,xmax=5.3%
+]
+
+%\addplot [{\coloronefill},fill={\coloronefill},domain=0:2,area style] {x^2} |- (axis cs:0,0) --cycle;
+\addplot [thick, {\colorone},domain=0:1] {3};
+\addplot [thick, {\colorone},domain=1:2] {-3*(x-2)};
+\addplot [thick, {\colorone},domain=2:3] {2*(x-2)};
+\addplot [thick, {\colorone},domain=3:5] {2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
+\node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_05_02_ex_15.tex -->
+
 </sidebyside>
 <ol>
-<li>
-<p>
-What is the object's maximum velocity?
-</p>
-</li>
-<li>
-<p>
-What is the object's maximum displacement?
-</p>
-</li>
-<li>
-<p>
-What is the object's total displacement on <m>[0,5]</m>?
-</p>
-</li>
+<li><p>What is the object's maximum velocity?</p></li>
+<li><p>What is the object's maximum displacement?</p></li>
+<li><p>What is the object's total displacement on <m>[0,5]</m>?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-3ft/s
-</p>
-</li>
-<li>
-<p>
-9.5ft
-</p>
-</li>
-<li>
-<p>
-9.5ft
-</p>
-</li>
+<li><p>3ft/s</p></li>
+<li><p>9.5ft</p></li>
+<li><p>9.5ft</p></li>
 </ol>
 </answer>
 </exercise>
@@ -875,40 +1370,16 @@ An object is thrown straight up with a velocity, in ft/s, given by <m>v(t) = -32
 </p>
 
 <ol>
-<li>
-<p>
-What is the object's maximum velocity?
-</p>
-</li>
-<li>
-<p>
-What is the object's maximum displacement?
-</p>
-</li>
-<li>
-<p>
-When does the maximum displacement occur?
-</p>
-</li>
-<li>
-<p>
-When will the object reach a height of 0? (Hint: find when the displacement is <m>-48</m>ft.)
-</p>
-</li>
+<li><p>What is the object's maximum velocity?</p></li>
+<li><p>What is the object's maximum displacement?</p></li>
+<li><p>When does the maximum displacement occur?</p></li>
+<li><p>When will the object reach a height of 0? (Hint: find when the displacement is <m>-48</m>ft.)</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-64ft/s
-</p>
-</li>
-<li>
-<p>
-64ft
-</p>
-</li>
+<li><p>64ft/s</p></li>
+<li><p>64ft</p></li>
 <li><m>t=2</m></li>
 <li><m>t=2+\sqrt{7}\approx 4.65</m> seconds</li>
 </ol>
@@ -922,50 +1393,18 @@ An object is thrown straight up with a velocity, in ft/s, given by <m>v(t) = -32
 </p>
 
 <ol>
-<li>
-<p>
-What is the object's initial velocity?
-</p>
-</li>
-<li>
-<p>
-When is the object's displacement 0?
-</p>
-</li>
-<li>
-<p>
-How long does it take for the object to return to its initial height?
-</p>
-</li>
-<li>
-<p>
-When will the object reach a height of 210 feet?
-</p>
-</li>
+<li><p>What is the object's initial velocity?</p></li>
+<li><p>When is the object's displacement 0?</p></li>
+<li><p>How long does it take for the object to return to its initial height?</p></li>
+<li><p>When will the object reach a height of 210 feet?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-96ft/s
-</p>
-</li>
-<li>
-<p>
-6 seconds
-</p>
-</li>
-<li>
-<p>
-6 seconds
-</p>
-</li>
-<li>
-<p>
-Never; the maximum height is 208ft.
-</p>
-</li>
+<li><p>96ft/s</p></li>
+<li><p>6 seconds</p></li>
+<li><p>6 seconds</p></li>
+<li><p>Never; the maximum height is 208ft.</p></li>
 </ol>
 </answer>
 </exercise>

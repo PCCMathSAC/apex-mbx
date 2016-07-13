@@ -57,7 +57,23 @@ We graph <m>y</m> and its tangent line at <m>x=\pi/2</m>, which has a slope of <
 </p>
 <figure xml:id="fig_5xsquaredsinx" >
 <caption>A graph of <m>y = 5x^2\sin x</m> and its tangent line at <m>x=\pi/2</m>.</caption>
-<image width="73%" source="images/fig5xsquaredsinx.png" />
+
+<!-- START figures/fig_5xsquaredsinx.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=21,xmin=-0.1,xmax=3.5,xtick={1.57,3.14},xticklabels={$\frac{\pi}2$,$\pi$},name=myplot]
+\addplot [{\colorone},smooth,thick,domain=0:3.14] {5*(x^2)*sin(x*180/3.14)};
+\addplot [{\colortwo},smooth,thick,domain=0:2.2] {15.7*(x-1.57)+12.34};
+%\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
+%\filldraw (axis cs:-1,-1) circle (1pt);
+%\filldraw (axis cs:-1,3) circle (1pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_5xsquaredsinx.tex -->
+
 </figure>
 </solution>
 </example>
@@ -176,14 +192,10 @@ Recalling that the derivative of <m>\ln x</m> is <m>1/x</m>, we use the Product 
 
 <ol>
 <li><m>\ds \frac{d}{dx}\Big(x\ln x\Big) = x\cdot 1/x + 1\cdot \ln x = 1+\ln x</m>.</li>
-<li>
-<p>
-Using the result from above, we compute
+<li><p>Using the result from above, we compute
 <me>
   \ds \frac{d}{dx}\Big(x\ln x-x\Big) = 1+\ln x-1 = \ln x.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 
 <p>
@@ -262,7 +274,23 @@ This is a beautiful result. To confirm its truth, we can find the equation of th
 </p>
 <figure xml:id="fig_tanx" >
 <caption>A graph of <m>y=\tan x</m> along with its tangent line at <m>x=\pi/4</m>.</caption>
-<image width="73%" source="images/figtanx.png" />
+
+<!-- START figures/fig_tanx.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-11,ymax=11,xmin=-1.65,xmax=1.7,xtick={-1.57,-.785,.785,1.57},xticklabels={$-\frac{\pi}2$,$-\frac{\pi}2$,$\frac{\pi}4$,$\frac{\pi}2$},name=myplot]
+\addplot [{\colorone},smooth,thick,samples=50,domain=-1.5:1.5] {tan(x*180/3.14159)};
+\addplot [{\colortwo},smooth,thick,domain=-1.0:1.5] {2*(x-.785)+1};
+%\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
+%\filldraw (axis cs:-1,-1) circle (1pt);
+%\filldraw (axis cs:-1,3) circle (1pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_tanx.tex -->
+
 </figure>
 </solution>
 </example>
@@ -385,21 +413,9 @@ Let <m>\ds f(x) = \frac{x^2-3x+1}{x}</m>. Find <m>\fp(x)</m> in each of the foll
 </p>
 
 <ol>
-<li>
-<p>
-By applying the Quotient Rule,
-</p>
-</li>
-<li>
-<p>
-by viewing <m>f</m> as <m>f(x) = \big(x^2-3x+1\big)\cdot x^{-1}</m> and applying the Product and Power Rules, and
-</p>
-</li>
-<li>
-<p>
-by <q>simplifying\primeskip</q> first through division.
-</p>
-</li>
+<li><p>By applying the Quotient Rule,</p></li>
+<li><p>by viewing <m>f</m> as <m>f(x) = \big(x^2-3x+1\big)\cdot x^{-1}</m> and applying the Product and Power Rules, and</p></li>
+<li><p>by <q>simplifying\primeskip</q> first through division.</p></li>
 </ol>
 
 <p>
@@ -408,35 +424,23 @@ Verify that all three methods give the same result.
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Applying the Quotient Rule gives:
+<li><p>Applying the Quotient Rule gives:
 <me>
   \fp(x) = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2} = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2}.
-</me>
-</p>
-</li>
-<li>
-<p>
-By rewriting <m>f</m>, we can apply the Product and Power Rules as follows:
+</me></p></li>
+<li><p>By rewriting <m>f</m>, we can apply the Product and Power Rules as follows:
 <md>
   <mrow>  \fp(x) \amp =		\big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}</mrow>
   <mrow>  \amp =	-\frac{x^2-3x+1}{x^2}+\frac{2x-3}{x}</mrow>
   <mrow>  \amp = -\frac{x^2-3x+1}{x^2}+\frac{2x^2-3x}{x^2}</mrow>
   <mrow>  \amp = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2},</mrow>
 </md>
-the same result as above.
-</p>
-</li>
-<li>
-<p>
-As <m>x\neq 0</m>, we can divide through by <m>x</m> first, giving <m>\ds f(x) = x-3+\frac{1}x</m>. Now apply the Power Rule.
+the same result as above.</p></li>
+<li><p>As <m>x\neq 0</m>, we can divide through by <m>x</m> first, giving <m>\ds f(x) = x-3+\frac{1}x</m>. Now apply the Power Rule.
 <me>
   \fp(x) = 1-\frac{1}{x^2},
 </me>
-the same result as before.
-</p>
-</li>
+the same result as before.</p></li>
 </ol>
 
 <p>
@@ -562,11 +566,7 @@ In the following exercises:
 <ol>
 <li><m>\fp(x) = (x^2+3x) + x(2x+3)</m></li>
 <li><m>\fp(x) = 3x^2 + 6x</m></li>
-<li>
-<p>
-They are equal.
-</p>
-</li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -581,11 +581,7 @@ They are equal.
 <ol>
 <li><m>g'(x) = 4x(5x^3)+2x^2(15x^2)</m></li>
 <li><m>g'(x) = 50x^4</m></li>
-<li>
-<p>
-They are equal.
-</p>
-</li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -600,11 +596,7 @@ They are equal.
 <ol>
 <li><m>h'(s) = 2(s+4) + (2s-1)(1)</m></li>
 <li><m>h'(s) = 4s + 7</m></li>
-<li>
-<p>
-They are equal.
-</p>
-</li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -619,11 +611,7 @@ They are equal.
 <ol>
 <li><m>\fp(x) = 2x(3-x^3)+(x^2+5)(-3x^2)</m></li>
 <li><m>\fp(x) = -5x^4-15x^2+6x</m></li>
-<li>
-<p>
-They are equal.
-</p>
-</li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -646,11 +634,7 @@ In the following exercises:
 <ol>
 <li><m>\fp(x) = \frac{x(2x)-(x^2+3)1}{x^2}</m></li>
 <li><m>\fp(x) = 1-\frac{3}{x^2}</m></li>
-<li>
-<p>
-They are equal.
-</p>
-</li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -665,11 +649,7 @@ They are equal.
 <ol>
 <li><m>g'(x) = \frac{2x^2(3x^2-4x)-(x^3-2x^2)(4x)}{4x^4}</m></li>
 <li><m>g'(x) = 1/2</m></li>
-<li>
-<p>
-They are equal.
-</p>
-</li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -684,11 +664,7 @@ They are equal.
 <ol>
 <li><m>h'(s) = \frac{4s^3(0) - 3(12s^2)}{16s^6}</m></li>
 <li><m>h'(s) = -9/4s^{-4}</m></li>
-<li>
-<p>
-They are equal.
-</p>
-</li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -703,11 +679,7 @@ They are equal.
 <ol>
 <li><m>\fp(t) = \frac{(t+1)(2t) - (t^2-1)(1)}{(t+1)^2}</m></li>
 <li><m>f(t) = t-1</m> when <m>t\neq -1</m>, so <m>\fp(t) = 1</m>.</li>
-<li>
-<p>
-They are equal.
-</p>
-</li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -802,11 +774,7 @@ In the following exercises, compute the derivative of the given function.
 <ol>
 <li><m>\fp(x) = \frac{(x+2)(4x^3+6x^2)-(x^4+2x^3)(1)}{(x+2)^2}</m></li>
 <li><m>f(x) = x^3</m> when <m>x\neq -2</m>, so <m>\fp(x) = 3x^2</m>.</li>
-<li>
-<p>
-They are equal.
-</p>
-</li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -1098,12 +1066,56 @@ In the following exercises, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig02_04_ex_42.png" />
+
+<!-- START figures/fig_02_04_ex_42.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,-3,3},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-3.5,xmax=3.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone}] {2*x+1};
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_04_ex_42.tex -->
+
 </sidebyside>
 </statement>
 <answer>
 <p>
-<image width="80%" source="images/fig02_04_ex_42a.png" />
+
+<!-- START figures/fig_02_04_ex_42a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,-3,3},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-3.5,xmax=3.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone}] {2};
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_04_ex_42a.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -1111,12 +1123,60 @@ In the following exercises, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig02_04_ex_43.png" />
+
+<!-- START figures/fig_02_04_ex_43.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,-3,3},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-3.5,xmax=3.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},domain=-3.5:-1] {3*x+6};
+\addplot [thick,{\colorone},domain=-1:3.5] {-x+2};
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_04_ex_43.tex -->
+
 </sidebyside>
 </statement>
 <answer>
 <p>
-<image width="80%" source="images/fig02_04_ex_43a.png" />
+
+<!-- START figures/fig_02_04_ex_43a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,-3,3},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-3.5,xmax=3.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},domain=-3.5:-1] {3};
+\addplot [thick,{\colorone},domain=-1:3.5] {-1};
+\filldraw [fill=white] (axis cs:-1,3) circle (1.5pt);
+\filldraw [fill=white] (axis cs:-1,-1) circle (1.5pt);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_04_ex_43a.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -1124,12 +1184,56 @@ In the following exercises, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig02_04_ex_44.png" />
+
+<!-- START figures/fig_02_04_ex_44.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,4,3,5},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-2.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth] {x^3/3-2*x^2+x+5};
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_04_ex_44.tex -->
+
 </sidebyside>
 </statement>
 <answer>
 <p>
-<image width="80%" source="images/fig02_04_ex_44a.png" />
+
+<!-- START figures/fig_02_04_ex_44a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,3,4,5},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-2.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth] {x^2-4*x+1};
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_04_ex_44a.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -1137,12 +1241,63 @@ In the following exercises, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig02_04_ex_45.png" />
+
+<!-- START figures/fig_02_04_ex_45.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,4,3,5},
+%			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-10.9,ymax=10.9,%
+			xmin=-5.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-5.5:-1.08,samples=40] {-1/(x+1)-4};
+\addplot [thick,{\colorone},smooth,domain=-.92:5.5,samples=40] {-1/(x+1)+3};
+\draw [dashed,{\colorone}] (axis cs:-1,-10.5) -- (axis cs:-1,10.5);
+\draw [dashed,{\colorone}] (axis cs:-5.5,-4) -- (axis cs:5.5,-4);
+\draw [dashed,{\colorone}] (axis cs:-5.5,3) -- (axis cs:5.5,3);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_04_ex_45.tex -->
+
 </sidebyside>
 </statement>
 <answer>
 <p>
-<image width="80%" source="images/fig02_04_ex_45a.png" />
+
+<!-- START figures/fig_02_04_ex_45a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,4,3,5},
+%			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-1.1,ymax=10.9,%
+			xmin=-5.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-5.5:-1.08,samples=40] {1/((x+1)^2)};
+\addplot [thick,{\colorone},smooth,domain=-.9:5.5,samples=60] {1/((x+1)^2)};
+\draw [{\colorone}, dashed] (axis cs:-1,-1) -- (axis cs:-1,10.5);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_04_ex_45a.tex -->
+
 </p>
 </answer>
 </exercise>

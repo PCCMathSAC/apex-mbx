@@ -61,7 +61,38 @@ The above equation describes the interior of an ellipse as shown in <xref ref="f
 </p>
 <figure xml:id="fig_multi2" >
 <caption>Illustrating the domain of <m>f(x,y)</m> in <xref ref="ex_multi2">Example</xref>.</caption>
-<image width="73%" source="images/figmulti2.png" />
+
+<!-- START figures/fig_multi2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={1,2,-1,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-5.9,ymax=5.9,%
+			xmin=-5.9,xmax=5.9%
+]
+
+\addplot [thick,{\colorone},fill={\coloronefill}, smooth,domain=0:360,samples=45] ({3*cos(x)},{2*sin(x)});
+
+\draw (axis cs: 3,3) node {\scriptsize $\displaystyle \frac{x^2}9+\frac{y^2}4=1$};
+
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_multi2.tex -->
+
 </figure>
 <p>
 The range is the set of all possible output values. The square<ndash />root ensures that all output is <m>\geq 0</m>. Since the <m>x</m> and <m>y</m> terms are squared, then subtracted, inside the square<ndash />root, the largest output value comes at <m>x=0</m>, <m>y=0</m>: <m>f(0,0) = 1</m>. Thus the range <m>R</m> is the interval <m>[0,1]</m>.
@@ -79,7 +110,8 @@ The <b>graph</b> of a function <m>f</m> of two variables is the set of all point
 <figure xml:id="fig_multigraph_intro" >
 <caption>Graphing a function of two variables.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=pageinvisible,
 3Droll=0.5548354761871764,
 3Dortho=0.004999999888241291,
@@ -87,9 +119,106 @@ The <b>graph</b> of a function <m>f</m> of two variables is the set of all point
 3Dcoo=-4.197300910949707 1.0700405836105347 59.15589141845703,
 3Droo=129.99999935798337,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figmultigraph_intro.png" /></cell></row>
+
+<!-- START figures/figmultigraph_intro_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figmultigraph_intro3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(8,8,1.5);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-2,2};
+real[] myychoice={-2,2};
+real[] myzchoice={0.5,1};
+defaultpen(0.5mm);
+pair xbounds=(-2.5,2.5);
+pair ybounds=(-2.5,2.5);
+pair zbounds=(-0.25,1.25);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw 25 points on the surface z=1/(1+x^2+y^2)
+dotfactor=3;
+real[] A={-2,-1,0,1,2};
+for (int i=0; i<5; ++i)
+{
+ for (int j=0; j<5; ++j)
+ {
+  dot((A[i],A[j],1/(1+(A[i])^2+(A[j])^2)),rgb(.6,.6,1));
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figmultigraph_intro_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=pageinvisible,
 3Droll=0.5548354761871764,
 3Dortho=0.004999999888241291,
@@ -97,7 +226,80 @@ The <b>graph</b> of a function <m>f</m> of two variables is the set of all point
 3Dcoo=-4.197300910949707 1.0700405836105347 59.15589141845703,
 3Droo=129.99999935798337,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figmultigraph_introb.png" /></cell></row>
+
+<!-- START figures/figmultigraph_introb_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figmultigraph_introb3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(8,8,1.5);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-2,2};
+real[] myychoice={-2,2};
+real[] myzchoice={0.5,1};
+defaultpen(0.5mm);
+pair xbounds=(-2.5,2.5);
+pair ybounds=(-2.5,2.5);
+pair zbounds=(-0.25,1.25);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the surface z=1/(1+x^2+y^2)
+triple f(pair t) {
+  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+}
+surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figmultigraph_introb_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -118,7 +320,7 @@ It may be surprising to find that the problem of representing a three dimensiona
 </p>
 <figure xml:id="fig_topomap" >
 <caption>A topographical map displays elevation by drawing contour lines, along with the elevation is constant.<br />  Sample taken from the public domain USGS Digital Raster Graphics, <c>http://topmaps.usgs.gove/drg/</c>.</caption>
-<image width="73%" source="images/MT_ChromeMountain_topo_smallx.png" />
+
 </figure>
 <p>
 Given a function <m>z=f(x,y)</m>, we can draw a <q>topographical map</q> of <m>f</m> by drawing <b>level curves</b> (or, contour lines). A level curve at <m>z=c</m> is a curve in the <m>x</m>-<m>y</m> plane such that for all points <m>(x,y)</m> on the curve, <m>f(x,y) = c</m>.
@@ -174,9 +376,50 @@ The level curves are shown in <xref ref="fig_levelcurves1">Figure</xref>(a). Not
 <figure xml:id="fig_levelcurves1" >
 <caption>Graphing the level curves in <xref ref="ex_levelcurve1">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figlevelcurve1b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_levelcurve1b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1,2,-2,3,-3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-1,1,-2,2,3,-3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.5,ymax=2.5,%
+			xmin=-3.2,xmax=3.2%
+]
+
+\addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({3*(cos(x))},{2*(sin(x))});
+
+\addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({2.93*(cos(x))},{1.96*(sin(x))});
+
+\addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({2.75*(cos(x))},{1.83*(sin(x))});
+
+\addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({2.4*(cos(x))},{1.6*(sin(x))});
+
+\addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({1.8*(cos(x))},{1.2*(sin(x))});
+
+\filldraw [{\colorone}] (axis cs:0,0) circle (1pt) node [black, above right] {\scriptsize $c=1$};
+
+\draw [->,>=stealth] (axis cs:1.7,1.13) -- (axis cs:2.6,2) node [above] {\scriptsize $c=0.6$};
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_levelcurve1b.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=pageinvisible,
 3Droll=0,
 3Dortho=0.004999999888241291,
@@ -184,7 +427,111 @@ The level curves are shown in <xref ref="fig_levelcurves1">Figure</xref>(a). Not
 3Dcoo=2.348435640335083 -6.5163373947143555 66.12745666503906,
 3Droo=129.99999641808185,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figlevelcurve1.png" /></cell></row>
+
+<!-- START figures/figlevelcurve1_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figlevelcurve13D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(9,9,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-2,2};
+real[] myychoice={-2,2};
+real[] myzchoice={1,2};
+defaultpen(0.5mm);
+pair xbounds=(-3.5,3.5);
+pair ybounds=(-2.5,2.5);
+pair zbounds=(-0.25,2.25);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw top half of surface x^2/9+y^2/4+z^2=1
+triple f(pair t) {
+  //return (cos(t.x)*3*cos(t.y),sin(t.x)*2*cos(t.y),sin(t.y));
+	return (3*sin(t.y),sin(t.x)*2*cos(t.y),cos(t.x)*cos(t.y));
+}
+surface s=surface(f,(-pi/2,-pi/2),(pi/2,pi/2),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//Draw level curves for surface x^2/9+y^2/4+z^2=1 at c=0,0.2,0.4,0.6,0.8,1
+triple g(real t) {return (3*cos(t)*sqrt(1-(0.8)^2),2*sin(t)*sqrt(1-(0.8)^2),0.8);}
+path3 mypath=graph(g,0,2*pi,operator ..); draw(mypath,blue);
+triple g(real t) {return (3*cos(t)*sqrt(1-(0.6)^2),2*sin(t)*sqrt(1-(0.6)^2),0.6);}
+path3 mypath=graph(g,0,2*pi,operator ..); draw(mypath,blue);
+triple g(real t) {return (3*cos(t)*sqrt(1-(0.4)^2),2*sin(t)*sqrt(1-(0.4)^2),0.4);}
+path3 mypath=graph(g,0,2*pi,operator ..); draw(mypath,blue);
+triple g(real t) {return (3*cos(t)*sqrt(1-(0.2)^2),2*sin(t)*sqrt(1-(0.2)^2),0.2);}
+path3 mypath=graph(g,0,2*pi,operator ..); draw(mypath,blue);
+triple g(real t) {return (3*cos(t)*sqrt(1-(0)^2),2*sin(t)*sqrt(1-(0)^2),0);}
+path3 mypath=graph(g,0,2*pi,operator ..); draw(mypath,blue);
+
+dotfactor=3;
+dot((0,0,1),blue);
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figlevelcurve1_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -225,9 +572,66 @@ In <xref ref="fig_levelcurves2">Figure</xref>(b) we see a graph of the surface. 
 <figure xml:id="fig_levelcurves2" >
 <caption>Graphing the level curves in <xref ref="ex_levelcurves2">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figlevelcurve2b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_levelcurve2b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1,2,-2,3,-3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1,-2,2,3,-3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-5.1,ymax=5.1,%
+			xmin=-6.1,xmax=6.1%
+]
+
+\addplot [thin,{\colorone}, smooth] coordinates {(1.457,0.8333)(1.443,0.963)(1.403,1.087)(1.338,1.2)(1.251,1.297)(1.145,1.373)(1.026,1.426)(0.8985,1.454)(0.7681,1.454)(0.6406,1.426)(0.5215,1.373)(0.4161,1.297)(0.3288,1.2)(0.2636,1.087)(0.2234,0.963)(0.2097,0.8333)(0.2234,0.7037)(0.2636,0.5797)(0.3288,0.4668)(0.4161,0.3699)(0.5215,0.2933)(0.6406,0.2402)(0.7681,0.2131)(0.8985,0.2131)(1.026,0.2402)(1.145,0.2933)(1.251,0.3699)(1.338,0.4668)(1.403,0.5797)(1.443,0.7037)(1.457,0.8333)};
+
+\addplot [ thick,{\colorone}, smooth] coordinates {(2.708,1.25)(2.676,1.553)(2.582,1.843)(2.429,2.107)(2.225,2.333)(1.979,2.512)(1.7,2.636)(1.402,2.7)(1.098,2.7)(0.7995,2.636)(0.5211,2.512)(0.2746,2.333)(0.07067,2.107)(-0.08171,1.843)(-0.1759,1.553)(-0.2077,1.25)(-0.1759,0.9469)(-0.08171,0.6571)(0.07067,0.3932)(0.2746,0.1667)(0.5211,-0.01244)(0.7995,-0.1364)(1.098,-0.1998)(1.402,-0.1998)(1.7,-0.1364)(1.979,-0.01244)(2.225,0.1667)(2.429,0.3932)(2.582,0.6571)(2.676,0.9469)(2.708,1.25)};
+
+\addplot [very thick,{\colorone}, smooth] coordinates {(5.891,2.5)(5.817,3.205)(5.598,3.879)(5.244,4.493)(4.769,5.02)(4.196,5.437)(3.548,5.725)(2.854,5.873)(2.146,5.873)(1.452,5.725)(0.8044,5.437)(0.2309,5.02)(-0.2435,4.493)(-0.598,3.879)(-0.8171,3.205)(-0.8912,2.5)(-0.8171,1.795)(-0.598,1.121)(-0.2435,0.5067)(0.2309,-0.02013)(0.8044,-0.4368)(1.452,-0.7252)(2.146,-0.8726)(2.854,-0.8726)(3.548,-0.7252)(4.196,-0.4368)(4.769,-0.02013)(5.244,0.5067)(5.598,1.121)(5.817,1.795)(5.891,2.5)};
+
+\addplot [thin,{\colorone},dashed, smooth] coordinates {(-0.2097,-0.8333)(-0.2234,-0.7037)(-0.2636,-0.5797)(-0.3288,-0.4668)(-0.4161,-0.3699)(-0.5215,-0.2933)(-0.6406,-0.2402)(-0.7681,-0.2131)(-0.8985,-0.2131)(-1.026,-0.2402)(-1.145,-0.2933)(-1.251,-0.3699)(-1.338,-0.4668)(-1.403,-0.5797)(-1.443,-0.7037)(-1.457,-0.8333)(-1.443,-0.963)(-1.403,-1.087)(-1.338,-1.2)(-1.251,-1.297)(-1.145,-1.373)(-1.026,-1.426)(-0.8985,-1.454)(-0.7681,-1.454)(-0.6406,-1.426)(-0.5215,-1.373)(-0.4161,-1.297)(-0.3288,-1.2)(-0.2636,-1.087)(-0.2234,-0.963)(-0.2097,-0.8333)};
+
+\addplot [thick,{\colorone},dashed, smooth] coordinates {(0.2077,-1.25)(0.1759,-0.9469)(0.08171,-0.6571)(-0.07067,-0.3932)(-0.2746,-0.1667)(-0.5211,0.01244)(-0.7995,0.1364)(-1.098,0.1998)(-1.402,0.1998)(-1.7,0.1364)(-1.979,0.01244)(-2.225,-0.1667)(-2.429,-0.3932)(-2.582,-0.6571)(-2.676,-0.9469)(-2.708,-1.25)(-2.676,-1.553)(-2.582,-1.843)(-2.429,-2.107)(-2.225,-2.333)(-1.979,-2.512)(-1.7,-2.636)(-1.402,-2.7)(-1.098,-2.7)(-0.7995,-2.636)(-0.5211,-2.512)(-0.2746,-2.333)(-0.07067,-2.107)(0.08171,-1.843)(0.1759,-1.553)(0.2077,-1.25)};
+
+\addplot [very thick,{\colorone},dashed, smooth] coordinates {(0.8912,-2.5)(0.8171,-1.795)(0.598,-1.121)(0.2435,-0.5067)(-0.2309,0.02013)(-0.8044,0.4368)(-1.452,0.7252)(-2.146,0.8726)(-2.854,0.8726)(-3.548,0.7252)(-4.196,0.4368)(-4.769,0.02013)(-5.244,-0.5067)(-5.598,-1.121)(-5.817,-1.795)(-5.891,-2.5)(-5.817,-3.205)(-5.598,-3.879)(-5.244,-4.493)(-4.769,-5.02)(-4.196,-5.437)(-3.548,-5.725)(-2.854,-5.873)(-2.146,-5.873)(-1.452,-5.725)(-0.8044,-5.437)(-0.2309,-5.02)(0.2435,-4.493)(0.598,-3.879)(0.8171,-3.205)(0.8912,-2.5)};
+
+\addplot[ultra thick,{\colorone}] {-x};
+
+\draw (axis cs:5,-3.5) node {\scriptsize $c=0$};
+\draw (axis cs:3.8,4.6) node {\scriptsize $c=0.2$};
+\draw (axis cs:1.5,3) node {\scriptsize $c=0.4$};
+
+%\addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({2.93*(cos(x))},{1.96*(sin(x))});
+%
+%\addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({2.75*(cos(x))},{1.83*(sin(x))});
+%
+%\addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({2.4*(cos(x))},{1.6*(sin(x))});
+%
+%\addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({1.8*(cos(x))},{1.2*(sin(x))});
+%
+%\filldraw [{\colorone}] (axis cs:0,0) circle (1pt) node [black, above right] {\scriptsize $c=1$};
+%
+%\draw [->,>=stealth] (axis cs:1.7,1.13) -- (axis cs:2.6,2) node [above] {\scriptsize $c=0.6$};
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_levelcurve2b.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>{\begin{figure}
+<row><cell>{
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=pageinvisible,
 3Droll=0.25732633644359904,
 3Dortho=0.004999999888241291,
@@ -235,7 +639,115 @@ In <xref ref="fig_levelcurves2">Figure</xref>(b) we see a graph of the surface. 
 3Dcoo=-0.7249413728713989 1.7016432285308838 3.277412176132202,
 3Droo=130.00000541214214,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="120%" source="images/figlevelcurve2.png" /> 
+
+<!-- START figures/figlevelcurve2_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figlevelcurve23D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(16,-12,1.4);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-5,5};
+real[] myychoice={-5,5};
+real[] myzchoice={-0.7,0.7};
+defaultpen(0.5mm);
+pair xbounds=(-6,6);
+pair ybounds=(-6,6);
+pair zbounds=(-0.8,.8);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=(x+y)/(1+x^2+y^2)
+triple f(pair t) {
+  return (t.x,t.y,(t.x+t.y)/(1+(t.x)^2+(t.y)^2));
+}
+surface s=surface(f,(-6,-6),(6,6),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//Draw level curves for surface x^2/9+y^2/4+z^2=1 at c=0.2,0.4,0.6
+real[] A={0.2,0.4,0.6};
+for (int i=0; i<3; ++i)
+{
+  triple g(real t) {
+	return (1/(2*A[i])+(cos(t))*sqrt(-1+(1/(2*A[i]^2))),1/(2*A[i])+(sin(t))*sqrt(-1+(1/(2*A[i]^2))),A[i]);}
+	path3 mypath=graph(g,0,2*pi,operator ..); draw(mypath,blue);
+	//Negative values too
+	triple g(real t) {
+	return (1/(-2*A[i])+(cos(t))*sqrt(-1+(1/(2*A[i]^2))),1/(-2*A[i])+(sin(t))*sqrt(-1+(1/(2*A[i]^2))),-A[i]);}
+	path3 mypath=graph(g,0,2*pi,operator ..); draw(mypath,blue);
+}
+
+draw((-6,6,0)--(6,-6,0),blue);
+
+
+//triple g(real t) {
+//return (1/(2*0.6)+(cos(t))*sqrt(-1+(1/(2*0.6^2))),1/(2*0.6)+(sin(t))*sqrt(-1+(1/(2*0.6^2))),0.6);}
+//path3 mypath=graph(g,0,2*pi,operator ..); draw(mypath,blue);
+
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figlevelcurve2_3D.asy -->
+
+</figure>
 }</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
@@ -604,7 +1116,31 @@ Level curves are lines <m>y = (3/2)x-c/2</m>.
 </p>
 
 <p>
-<image width="73%" source="images/fig12_01_ex_15.png" />
+
+<!-- START figures/fig_12_01_ex_15.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-3.1,ymax=3.1,%
+			xmin=-2.1,xmax=2.1%
+]
+
+\addplot [{\colorone},smooth,thick,] {3/2*x+1};
+
+\addplot [{\colorone},smooth,thick,] {3/2*x};
+
+\addplot [{\colorone},smooth,thick,] {3/2*x-1};
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_12_01_ex_15.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -621,7 +1157,46 @@ Level curves are hyperbolas <m>\frac{x^2}{c}-\frac{y^2}{c}=1</m>, except for <m>
 </p>
 
 <p>
-<image width="73%" source="images/fig12_01_ex_16.png" />
+
+<!-- START figures/fig_12_01_ex_16.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.1,xmax=4.1%
+]
+
+\addplot [{\colorone},smooth,thick,] {x};
+
+\addplot [{\colorone},smooth,thick,] {-x};
+
+\addplot [{\colorone},smooth,thick,domain=-80:80] ({tan(x)},{sec(x)});
+\addplot [{\colorone},smooth,thick,domain=-80:80] ({tan(x)},{-sec(x)});
+
+\addplot [{\colorone},smooth,thick,domain=-80:80] ({sec(x)},{tan(x)});
+\addplot [{\colorone},smooth,thick,domain=-80:80] ({-sec(x)},{tan(x)});
+
+\draw (axis cs:2,.5) node {\scriptsize $c=-1$};
+\draw (axis cs:-2,.5) node {\scriptsize $c=-1$};
+
+
+\draw (axis cs:1,2.1) node {\scriptsize $c=1$};
+\draw (axis cs:1,-2.1) node {\scriptsize $c=1$};
+
+\draw (axis cs:-1,-3) node  (A) {\scriptsize $c=0$};
+\draw[->,thick,>=stealth] (A) -- (axis cs: .4,-.41);
+\draw[->,thick,>=stealth] (A) -- (axis cs: -.4,-.41);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_12_01_ex_16.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -638,7 +1213,41 @@ Level curves are parabolas <m>x=y^2+c</m>.
 </p>
 
 <p>
-<image width="73%" source="images/fig12_01_ex_17.png" />
+
+<!-- START figures/fig_12_01_ex_17.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.1,xmax=4.1%
+]
+
+\addplot [{\colorone},smooth,thick,] ({x^2-2},{x});
+\addplot [{\colorone},smooth,thick,] ({x^2},{x});
+\addplot [{\colorone},smooth,thick,] ({x^2+2},{x});
+
+
+\draw (axis cs:3,.5) node {\scriptsize $c=2$};
+\draw (axis cs:1,.5) node {\scriptsize $c=0$};
+
+
+\draw (axis cs:-2.3,1) node {\scriptsize $c=-2$};
+%\draw (axis cs:1,-2.1) node {\scriptsize $c=1$};
+%
+%\draw (axis cs:-1,-3) node  (A) {\scriptsize $c=0$};
+%\draw[->,thick,>=stealth] (A) -- (axis cs: .4,-.41);
+%\draw[->,thick,>=stealth] (A) -- (axis cs: -.4,-.41);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_12_01_ex_17.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -655,7 +1264,51 @@ Level curves are hyperbolas <m>(x-c)^2-(y-c)^2=1</m>, drawn in graph in differen
 </p>
 
 <p>
-<image width="73%" source="images/fig12_01_ex_18.png" />
+
+<!-- START figures/fig_12_01_ex_18.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.1,xmax=4.1%
+]
+
+\addplot [{\colorone},smooth,thick,domain=-80:80] ({tan(x)+2},{sec(x)+2});
+\addplot [{\colorone},smooth,thick,domain=-80:80] ({tan(x)+2},{-sec(x)+2});
+
+\addplot [{\colorone},smooth,thick,dashed,domain=-80:80] ({tan(x)},{sec(x)});
+\addplot [{\colorone},smooth,thick,dashed,domain=-80:80] ({tan(x)},{-sec(x)});
+
+\addplot [{\colorone},smooth,very thick,dotted,domain=-80:80] ({tan(x)-2},{sec(x)-2});
+\addplot [{\colorone},smooth,very thick,dotted,domain=-80:80] ({tan(x)-2},{-sec(x)-2});
+
+
+
+%\addplot [{\colorone},smooth,thick,] ({x^2},{x});
+%\addplot [{\colorone},smooth,thick,] ({x^2+2},{x});
+
+
+%\draw (axis cs:3,.5) node {\scriptsize $c=2$};
+%\draw (axis cs:1,.5) node {\scriptsize $c=0$};
+%
+%
+%\draw (axis cs:-2.3,1) node {\scriptsize $c=-2$};
+%\draw (axis cs:1,-2.1) node {\scriptsize $c=1$};
+%
+%\draw (axis cs:-1,-3) node  (A) {\scriptsize $c=0$};
+%\draw[->,thick,>=stealth] (A) -- (axis cs: .4,-.41);
+%\draw[->,thick,>=stealth] (A) -- (axis cs: -.4,-.41);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_12_01_ex_18.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -672,7 +1325,51 @@ When <m>c\neq 0</m>, the level curves are circles, centered at <m>(1/c,-1/c)</m>
 </p>
 
 <p>
-<image width="73%" source="images/fig12_01_ex_19.png" />
+
+<!-- START figures/fig_12_01_ex_19.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.1,xmax=4.1%
+]
+
+\addplot [{\colorone},smooth,thick,domain=0:360] ({cos(x)+1},{sin(x)-1});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({cos(x)-1},{sin(x)+1});
+
+\addplot [{\colorone},smooth,thick,] ({x},{x});
+%\addplot [{\colorone},smooth,thick,dashed,domain=-80:80] ({tan(x)},{-sec(x)});
+%
+%\addplot [{\colorone},smooth,very thick,dotted,domain=-80:80] ({tan(x)-2},{sec(x)-2});
+%\addplot [{\colorone},smooth,very thick,dotted,domain=-80:80] ({tan(x)-2},{-sec(x)-2});
+
+
+
+%\addplot [{\colorone},smooth,thick,] ({x^2},{x});
+%\addplot [{\colorone},smooth,thick,] ({x^2+2},{x});
+
+
+\draw (axis cs:1.5,-2.5) node {\scriptsize $c=1$};
+\draw (axis cs:-1.5,2.5) node {\scriptsize $c=-1$};
+
+
+\draw (axis cs:3,2) node {\scriptsize $c=0$};
+%\draw (axis cs:1,-2.1) node {\scriptsize $c=1$};
+%
+%\draw (axis cs:-1,-3) node  (A) {\scriptsize $c=0$};
+%\draw[->,thick,>=stealth] (A) -- (axis cs: .4,-.41);
+%\draw[->,thick,>=stealth] (A) -- (axis cs: -.4,-.41);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_12_01_ex_19.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -689,7 +1386,55 @@ Level curves are cubics of the form <m>y=x^3+cx+1</m>. Note how each curve passe
 </p>
 
 <p>
-<image width="73%" source="images/fig12_01_ex_20.png" />
+
+<!-- START figures/fig_12_01_ex_20.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.1,xmax=4.1%
+]
+
+\addplot [{\colorone},smooth,thick,] ({x},{x^3-3*x+1});
+\addplot [{\colorone},smooth,thick,] ({x},{x^3-x+1});
+\addplot [{\colorone},smooth,thick,] ({x},{x^3+1});
+\addplot [{\colorone},smooth,thick,] ({x},{x^3+x+1});
+\addplot [{\colorone},smooth,thick,] ({x},{x^3+3*x+1});
+%\addplot [{\colorone},smooth,thick,domain=0:360] ({cos(x)-1},{sin(x)+1});
+%
+%\addplot [{\colorone},smooth,thick,] ({x},{x});
+%\addplot [{\colorone},smooth,thick,dashed,domain=-80:80] ({tan(x)},{-sec(x)});
+%
+%\addplot [{\colorone},smooth,very thick,dotted,domain=-80:80] ({tan(x)-2},{sec(x)-2});
+%\addplot [{\colorone},smooth,very thick,dotted,domain=-80:80] ({tan(x)-2},{-sec(x)-2});
+
+
+
+%\addplot [{\colorone},smooth,thick,] ({x^2},{x});
+%\addplot [{\colorone},smooth,thick,] ({x^2+2},{x});
+
+
+%\draw (axis cs:1.5,-2.5) node {\scriptsize $c=1$};
+%\draw (axis cs:-1.5,2.5) node {\scriptsize $c=-1$};
+%
+%
+%\draw (axis cs:3,2) node {\scriptsize $c=0$};
+%\draw (axis cs:1,-2.1) node {\scriptsize $c=1$};
+%
+%\draw (axis cs:-1,-3) node  (A) {\scriptsize $c=0$};
+%\draw[->,thick,>=stealth] (A) -- (axis cs: .4,-.41);
+%\draw[->,thick,>=stealth] (A) -- (axis cs: -.4,-.41);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_12_01_ex_20.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -706,7 +1451,42 @@ Level curves are ellipses of the form <m>\frac{x^2}{c^2}+\frac{y^2}{c^2/4}=1</m>
 </p>
 
 <p>
-<image width="73%" source="images/fig12_01_ex_21.png" />
+
+<!-- START figures/fig_12_01_ex_21.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.1,xmax=4.1%
+]
+
+\addplot [{\colorone},smooth,thick,domain=0:360] ({cos(x)},{.5*sin(x)});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({2*cos(x)},{sin(x)});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({3*cos(x)},{1.5*sin(x)});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({4*cos(x)},{2*sin(x)});
+
+
+%\draw (axis cs:1.5,-2.5) node {\scriptsize $c=1$};
+%\draw (axis cs:-1.5,2.5) node {\scriptsize $c=-1$};
+%
+%
+%\draw (axis cs:3,2) node {\scriptsize $c=0$};
+%\draw (axis cs:1,-2.1) node {\scriptsize $c=1$};
+%
+%\draw (axis cs:-1,-3) node  (A) {\scriptsize $c=0$};
+%\draw[->,thick,>=stealth] (A) -- (axis cs: .4,-.41);
+%\draw[->,thick,>=stealth] (A) -- (axis cs: -.4,-.41);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_12_01_ex_21.tex -->
+
 </p>
 </answer>
 </exercise>
@@ -723,7 +1503,42 @@ Level curves are ellipses of the form <m>\frac{x^2}{c}+\frac{y^2}{c/4}=1</m>, i.
 </p>
 
 <p>
-<image width="73%" source="images/fig12_01_ex_22.png" />
+
+<!-- START figures/fig_12_01_ex_22.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.1,xmax=4.1%
+]
+
+\addplot [{\colorone},smooth,thick,domain=0:360] ({cos(x)},{.5*sin(x)});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({sqrt(2)*cos(x)},{sqrt(2)/2*sin(x)});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({sqrt(3)*cos(x)},{sqrt(3)/2*sin(x)});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({sqrt(4)*cos(x)},{sqrt(4)/2*sin(x)});
+
+
+%\draw (axis cs:1.5,-2.5) node {\scriptsize $c=1$};
+%\draw (axis cs:-1.5,2.5) node {\scriptsize $c=-1$};
+%
+%
+%\draw (axis cs:3,2) node {\scriptsize $c=0$};
+%\draw (axis cs:1,-2.1) node {\scriptsize $c=1$};
+%
+%\draw (axis cs:-1,-3) node  (A) {\scriptsize $c=0$};
+%\draw[->,thick,>=stealth] (A) -- (axis cs: .4,-.41);
+%\draw[->,thick,>=stealth] (A) -- (axis cs: -.4,-.41);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_12_01_ex_22.tex -->
+
 </p>
 </answer>
 </exercise>

@@ -10,6 +10,10 @@ The previous section defined the derivative of a function and gave examples of h
 <p>
 This section falls in between the <q>What is the definition of the derivative?</q> and <q>How do I compute the derivative?</q> sections. Here we are concerned with <q>What does the derivative mean?</q>, or perhaps, when read with the right emphasis, <q>What <em>is</em> the derivative?</q> We offer two interconnected interpretations of the derivative, hopefully explaining why we care about it and why it is worthy of study.<index><main>derivative</main><sub>interpretation</sub></index>
 </p>
+
+<p>
+\vskip
+</p>
 </introduction>
 
 
@@ -30,11 +34,11 @@ One could argue the <em>only</em> good approximation, given the information prov
 <p>
 Referring back to the falling amusement<ndash />park ride, knowing that at <m>t=2</m> the velocity was <m>-64</m> ft/s, we could reasonably assume that 1 second later the riders' height would have dropped by about 64 feet. Knowing that the riders were <em>accelerating</em> as they fell would inform us that this is an <em>under<ndash />approximation</em>. If all we knew was that <m>f(2) = 86</m> and <m>\fp(2) = -64</m>, we'd know that we'd have to stop the riders quickly otherwise they would hit the ground!
 </p>
-</subsection>
 
+<p>
+of the Derivative}
+</p>
 
-<subsection>
-<title>Units of the Derivative</title>
 <p>
 It is useful to recognize the <em>units</em> of the derivative function. If <m>y</m> is a function of <m>x</m>, i.e., <m>y=f(x)</m> for some function <m>f</m>, and <m>y</m> is measured in feet and <m>x</m> in seconds, then the units of <m>y' = \fp</m> are <q>feet per second,</q> commonly written as <q>ft/s.</q> In general, if <m>y</m> is measured in units <m>P</m> and <m>x</m> is measured in units <m>Q</m>, then <m>y'</m> will be measured in units <q><m>P</m> per <m>Q</m></q>, or <q><m>P/Q</m>.</q> Here we see the fraction<ndash />like behavior of the derivative in the notation:
 </p>
@@ -115,16 +119,8 @@ These ideas are so important we write them out as a Key Idea.
 <keyidea xml:id="idea_motion">
 <title>The Derivative and Motion</title>
 <ol>
-<li>
-<p>
-Let <m>s(t)</m> be the position function of an object. Then <m>s\primeskip'(t)</m> is the velocity function of the object.
-</p>
-</li>
-<li>
-<p>
-Let <m>v(t)</m> be the velocity function of an object. Then <m>v\primeskip'(t)</m> is the acceleration function of the object.
-</p>
-</li>
+<li><p>Let <m>s(t)</m> be the position function of an object. Then <m>s\primeskip'(t)</m> is the velocity function of the object.</p></li>
+<li><p>Let <m>v(t)</m> be the velocity function of an object. Then <m>v\primeskip'(t)</m> is the acceleration function of the object.</p></li>
 </ol>
 
 <p>
@@ -154,7 +150,25 @@ Consider <m>f(x) = x^2</m> as shown in <xref ref="fig_xsquared">Figure</xref>. I
 </p>
 <figure xml:id="fig_xsquared" >
 <caption>A graph of <m>f(x)=x^2</m>.</caption>
-<image width="73%" source="images/figxsquared.png" />
+
+<!-- START figures/fig_xsquared.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,axis y line=middle,axis x line=middle,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.01) (0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16)
+(0.5,0.25) (0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.)(1.1,1.21) (1.2,1.44) (1.3,1.69) (1.4,1.96) (1.5,2.25) (1.6,2.56)(1.7,2.89) (1.8,3.24) (1.9,3.61) (2.,4.) (2.1,4.41) (2.2,4.84)(2.3,5.29) (2.4,5.76) (2.5,6.25) (2.6,6.76) (2.7,7.29) (2.8,7.84)(2.9,8.41) (3.,9.) (3.1,9.61) (3.2,10.2) (3.3,10.9) (3.4,11.6)(3.5,12.3) (3.6,13.) (3.7,13.7) (3.8,14.4) (3.9,15.2) (4.,16.)(4.1,16.8)};
+%\addplot [{\colortwo},domain=0:4]{2*(x-1)+1};
+%\addplot [{\colortwo},domain=1.5:4]{6*(x-3)+9};
+%\filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
+%\filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
+%\draw (axis cs:0,0) grid (axis cs:4,16);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_xsquared.tex -->
+
 </figure>
 </statement>
 <solution>
@@ -163,7 +177,25 @@ We can answer this directly after the following section, where we learn to quick
 </p>
 <figure xml:id="fig_xsquaredwithgrid" >
 <caption>A graph of <m>f(x)=x^2</m> and tangent lines.</caption>
-<image width="73%" source="images/figxsquaredwithgrid.png" />
+
+<!-- START figures/fig_xsquaredwithgrid.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,axis y line=middle,axis x line=middle,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,name=myplot,grid=major]
+\addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.01) (0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16)
+(0.5,0.25) (0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.)(1.1,1.21) (1.2,1.44) (1.3,1.69) (1.4,1.96) (1.5,2.25) (1.6,2.56)(1.7,2.89) (1.8,3.24) (1.9,3.61) (2.,4.) (2.1,4.41) (2.2,4.84)(2.3,5.29) (2.4,5.76) (2.5,6.25) (2.6,6.76) (2.7,7.29) (2.8,7.84)(2.9,8.41) (3.,9.) (3.1,9.61) (3.2,10.2) (3.3,10.9) (3.4,11.6)(3.5,12.3) (3.6,13.) (3.7,13.7) (3.8,14.4) (3.9,15.2) (4.,16.)(4.1,16.8)};
+\addplot [{\colortwo},domain=0:4]{2*(x-1)+1};
+\addplot [{\colortwo},domain=1.5:4]{6*(x-3)+9};
+%\filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
+%\filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
+%\draw (axis cs:0,0) grid (axis cs:4,16);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_xsquaredwithgrid.tex -->
+
 </figure>
 <p>
 With practice, one can fairly effectively sketch tangent lines to a curve at a particular point. In <xref ref="fig_xsquaredwithgrid">Figure</xref>, we have sketched the tangent lines to <m>f</m> at <m>x=1</m> and <m>x=3</m>, along with a grid to help us measure the slopes of these lines. At <m>x=1</m>, the slope is 2; at <m>x=3</m>, the slope is 6. Thus we can say not only is <m>f</m> growing faster at <m>x=3</m> than at <m>x=1</m>, it is growing <em>three times as fast</em>.
@@ -181,9 +213,46 @@ Use these graphs to find the slopes of the tangent lines to the graph of <m>f</m
 <figure xml:id="fig_fwithderiv" >
 <caption>Graphs of <m>f</m> and <m>\fp</m> in <xref ref="ex_der_meaning4">Example</xref>, along with tangent lines in (b).</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figfwithderiv.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_fwithderiv.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=4,axis y line=middle,axis x line=middle,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,name=myplot]
+\addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
+\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+\draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
+\draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_fwithderiv.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figfwithderivdots.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_fwithderivdots.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=4,axis y line=middle,axis x line=middle,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,name=myplot]
+\addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
+\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+\addplot [domain=0:2,thick] {-1*(x-1)-2};
+\addplot [domain=1:3,thick] {4*(x-2)};
+\addplot [domain=2:4,thick] {3*(x-3)+4};
+\filldraw [{\colortwo}] (axis cs:1,-1) circle (1pt);
+\filldraw [{\colortwo}] (axis cs:2,4) circle (1pt);
+\filldraw [{\colortwo}] (axis cs:3,3) circle (1pt);
+\draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
+\draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_fwithderivdots.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -224,7 +293,21 @@ Consider again the graph of <m>f(x)</m> and its derivative <m>\fp(x)</m> in <xre
 </p>
 <figure xml:id="fig_fwithderivzoom3" >
 <caption>Zooming in on <m>f</m> at <m>x=3</m> for the function given in <xref ref="ex_der_meaning4">Examples</xref> and <xref ref="ex_der_meaning5"></xref>.</caption>
-<image width="73%" source="images/figfwithderivzoom3.png" />
+
+<!-- START figures/fig_fwithderivzoom3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=4,axis y line=middle,axis x line=middle,ymin=1.9,ymax=4.9,xmin=2.7,xmax=3.3,name=myplot]
+\addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
+%\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+\addplot [domain=2:4,thick] {3*(x-3)+4};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_fwithderivzoom3.tex -->
+
 </figure>
 <p>
 While the tangent line to <m>f</m> was drawn in <xref ref="ex_der_meaning4">Example</xref>, it was not explicitly computed. Recall that the tangent line to <m>f</m> at <m>x=c</m> is <m>y = \fp(c)(x-c)+f(c)</m>. While <m>f</m> is not explicitly given, by the graph it looks like <m>f(3) = 4</m>. Recalling that <m>\fp(3) = 3</m>, we can compute the tangent line to be approximately <m>y = 3(x-3)+4.</m> It is often useful to leave the tangent line in point<ndash />slope form.
@@ -247,16 +330,8 @@ To demonstrate the accuracy of the tangent line approximation, we now state that
 </p>
 
 <ol>
-<li>
-<p>
-What <m>f(c)</m> is, for some value of <m>c</m>, and
-</p>
-</li>
-<li>
-<p>
-what <m>\fp(c)</m> is.
-</p>
-</li>
+<li><p>What <m>f(c)</m> is, for some value of <m>c</m>, and</p></li>
+<li><p>what <m>\fp(c)</m> is.</p></li>
 </ol>
 
 <p>
@@ -279,6 +354,10 @@ If we know <m>f(c)</m> and <m>\fp(c)</m> for some value <m>x=c</m>, then computi
 
 <p>
 This is the exact same approximation method used above! Not only does it make intuitive sense, as explained above, it makes analytical sense, as this approximation method is simply using a tangent line to approximate a function's value.
+</p>
+
+<p>
+\vskip
 </p>
 
 <p>
@@ -456,30 +535,14 @@ ft/h
 </p>
 
 <ol>
-<li>
-<p>
-What are the units of <m>P\primeskip'(c)</m>?
-</p>
-</li>
-<li>
-<p>
-What is likely true of <m>P(0)</m>?
-</p>
-</li>
+<li><p>What are the units of <m>P\primeskip'(c)</m>?</p></li>
+<li><p>What is likely true of <m>P(0)</m>?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-thousands of dollars per car
-</p>
-</li>
-<li>
-<p>
-It is likely that <m>P(0)\lt 0</m>. That is, negative profit for not producing any cars.
-</p>
-</li>
+<li><p>thousands of dollars per car</p></li>
+<li><p>It is likely that <m>P(0)\lt 0</m>. That is, negative profit for not producing any cars.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -491,40 +554,16 @@ It is likely that <m>P(0)\lt 0</m>. That is, negative profit for not producing a
 </p>
 
 <ol>
-<li>
-<p>
-What are the units of <m>T\primeskip'(h)</m>?
-</p>
-</li>
-<li>
-<p>
-Is <m>T\primeskip'(8)</m> likely greater than or less than 0? Why?
-</p>
-</li>
-<li>
-<p>
-Is <m>T(8)</m> likely greater than or less than 0? Why?
-</p>
-</li>
+<li><p>What are the units of <m>T\primeskip'(h)</m>?</p></li>
+<li><p>Is <m>T\primeskip'(8)</m> likely greater than or less than 0? Why?</p></li>
+<li><p>Is <m>T(8)</m> likely greater than or less than 0? Why?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-degrees Fahrenheit per hour
-</p>
-</li>
-<li>
-<p>
-It is likely that <m>T\primeskip'(8)>0</m> since at 8 in the morning, the temperature is likely rising.
-</p>
-</li>
-<li>
-<p>
-It is very likely that <m>T(8)>0</m>, as at 8 in the morning on July 4, we would expect the temperature to be well above 0.
-</p>
-</li>
+<li><p>degrees Fahrenheit per hour</p></li>
+<li><p>It is likely that <m>T\primeskip'(8)>0</m> since at 8 in the morning, the temperature is likely rising.</p></li>
+<li><p>It is very likely that <m>T(8)>0</m>, as at 8 in the morning on July 4, we would expect the temperature to be well above 0.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -534,7 +573,38 @@ In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are 
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig02_02_ex_15.png" />
+
+<!-- START figures/fig_02_02_ex_15.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-5.1,ymax=5.1,%
+			xmin=-4.5,xmax=4.3,%
+%			grid=major
+]
+
+\addplot [thick,{\colortwo},smooth,domain=-4.5:4.5] {.25*(x-1)^2+2};
+\addplot [thick,{\colorone},smooth,domain=-4.5:4.5] {.5*(x-1)};
+\draw (axis cs:3.9,2) node {\scriptsize $f(x)$};
+\draw (axis cs:3,4) node[] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\filldraw [fill=white] (axis cs:-3,1) circle (1.5pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_02_ex_15.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -547,7 +617,38 @@ In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are 
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig02_02_ex_16.png" />
+
+<!-- START figures/fig_02_02_ex_16.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-5.1,ymax=5.1,%
+			xmin=-1.5,xmax=3.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-1.5:3.5] {x*(x-1)*(x-2)};
+\addplot [thick,{\colortwo},smooth,domain=-1.5:3.5] {3*x^2-6*x+2};
+\draw (axis cs:3,3) node {\scriptsize $f(x)$};
+\draw (axis cs:1.85,3) node[] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\filldraw [fill=white] (axis cs:-3,1) circle (1.5pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_02_ex_16.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -560,7 +661,40 @@ In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are 
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig02_02_ex_17.png" />
+
+<!-- START figures/fig_02_02_ex_17.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-5.5,ymax=5.5,%
+			xmin=-5.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-5.5:-.1,samples=40] {1/x};
+\addplot [thick,{\colorone},smooth,domain=.1:5.5,samples=40] {1/x};
+\addplot [thick,{\colortwo},smooth,domain=-5.5:-.1,samples=40] {-1/x^2};
+\addplot [thick,{\colortwo},smooth,domain=.1:5.5,samples=40] {-1/x^2};
+\draw (axis cs:1.5,1.5) node {\scriptsize $f(x)$};
+\draw (axis cs:1.5,-2) node[] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\filldraw [fill=white] (axis cs:-3,1) circle (1.5pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_02_ex_17.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -573,7 +707,40 @@ Either <m>g(x) = \fp(x)</m> or <m>f(x) = g'(x)</m> is acceptable. The actual ans
 <exercise>
 <statement>
 <sidebyside>
-<image width="80%" source="images/fig02_02_ex_18.png" />
+
+<!-- START figures/fig_02_02_ex_18.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-1.5,ymax=1.5,%
+			xmin=-4.5,xmax=4.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-4.5:4.5,samples=40] {sin(deg(3.14*x/2))};
+\addplot [thick,{\colortwo},smooth,domain=-4.5:4.5,samples=40] {cos(deg(3.14*x/2))};
+%\addplot [thick,{\colortwo},smooth,domain=-5.5:-.1,samples=40] {-1/x^2};
+%\addplot [thick,{\colortwo},smooth,domain=.1:5.5,samples=40] {-1/x^2};
+\draw (axis cs:1,1) node[above] {\scriptsize $f(x)$};
+\draw (axis cs:2,-1) node[below] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\filldraw [fill=white] (axis cs:-3,1) circle (1.5pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_02_02_ex_18.tex -->
+
 </sidebyside>
 </statement>
 <answer>

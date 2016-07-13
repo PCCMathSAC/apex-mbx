@@ -126,57 +126,34 @@ A box of 100 lb of sand is being pulled up at a uniform rate a distance of 50 ft
 </p>
 
 <ol>
-<li>
-<p>
-How much work is done lifting just the rope?
-</p>
-</li>
-<li>
-<p>
-How much work is done lifting just the box and sand?
-</p>
-</li>
-<li>
-<p>
-What is the total amount of work performed?
-</p>
-</li>
+<li><p>How much work is done lifting just the rope?</p></li>
+<li><p>How much work is done lifting just the box and sand?</p></li>
+<li><p>What is the total amount of work performed?</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-We start by forming the force function <m>F_r(x)</m> for the rope (where the subscript denotes we are considering the rope). As in the previous example, let <m>x</m> denote the amount of rope, in feet, pulled in. (This is the same as saying <m>x</m> denotes the height of the box.) The weight of the rope with <m>x</m> feet pulled in is <m>F_r(x) = 0.2(50-x) = 10-0.2x</m>. (Note that we do not have to include the acceleration of gravity here, for the <em>weight</em> of the rope per foot is given, not its <em>mass</em> per meter as before.) The work performed lifting the rope is
+<li><p>We start by forming the force function <m>F_r(x)</m> for the rope (where the subscript denotes we are considering the rope). As in the previous example, let <m>x</m> denote the amount of rope, in feet, pulled in. (This is the same as saying <m>x</m> denotes the height of the box.) The weight of the rope with <m>x</m> feet pulled in is <m>F_r(x) = 0.2(50-x) = 10-0.2x</m>. (Note that we do not have to include the acceleration of gravity here, for the <em>weight</em> of the rope per foot is given, not its <em>mass</em> per meter as before.) The work performed lifting the rope is
 <me>
   W_r = \int_0^{50} (10-0.2x)\ dx = 250\ \text{ft--lb} .
-</me>
-</p>
-</li>
-<li>
-<p>
-The sand is leaving the box at a rate of 1 lb/s. As the vertical trip is to take one minute, we know that 60 lb will have left when the box reaches its final height of 50 ft. Again letting <m>x</m> represent the height of the box, we have two points on the line that describes the weight of the sand: when <m>x=0</m>, the sand weight is 100 lb, producing the point <m>(0,100)</m>; when <m>x=50</m>, the sand in the box weighs 40 lb, producing the point <m>(50,40)</m>. The slope of this line is <m>\frac{100-40}{0-50} = -1.2</m>, giving the equation of the weight of the sand at height <m>x</m> as <m>w(x) = -1.2x+100</m>. The box itself weighs a constant 5 lb, so the total force function is <m>F_b(x) = -1.2x+105</m>. Integrating from <m>x=0</m> to <m>x=50</m> gives the work performed in lifting box and sand:
+</me></p></li>
+<li><p>The sand is leaving the box at a rate of 1 lb/s. As the vertical trip is to take one minute, we know that 60 lb will have left when the box reaches its final height of 50 ft. Again letting <m>x</m> represent the height of the box, we have two points on the line that describes the weight of the sand: when <m>x=0</m>, the sand weight is 100 lb, producing the point <m>(0,100)</m>; when <m>x=50</m>, the sand in the box weighs 40 lb, producing the point <m>(50,40)</m>. The slope of this line is <m>\frac{100-40}{0-50} = -1.2</m>, giving the equation of the weight of the sand at height <m>x</m> as <m>w(x) = -1.2x+100</m>. The box itself weighs a constant 5 lb, so the total force function is <m>F_b(x) = -1.2x+105</m>. Integrating from <m>x=0</m> to <m>x=50</m> gives the work performed in lifting box and sand:
 <me>
   W_b = \int_0^{50} (-1.2x+105)\ dx = 3750\ \text{ft--lb.}
-</me>
-</p>
-</li>
-<li>
-<p>
-The total work is the sum of <m>W_r</m> and <m>W_b</m>: <m>250+3750=4000</m> ft<ndash />lb. We can also arrive at this via integration:
+</me></p></li>
+<li><p>The total work is the sum of <m>W_r</m> and <m>W_b</m>: <m>250+3750=4000</m> ft<ndash />lb. We can also arrive at this via integration:
 <md>
   <mrow>  W \amp = \int_0^{50} (F_r(x)+F_b(x))\ dx</mrow>
   <mrow>  \amp = \int_0^{50} (10-0.2x-1.2x+105)\ dx</mrow>
   <mrow>  \amp = \int_0^{50} (-1.4x+115) \ dx</mrow>
   <mrow>  \amp = 4000 \ \text{ft--lb.}</mrow>
-</md>
-</p>
-</li>
+</md></p></li>
 </ol>
 </solution>
 </example>
 <p>
 <b> Hooke's Law and Springs</b>
+\vskip
 Hooke's Law states that the force required to compress or stretch a spring <m>x</m> units from its natural length is proportional to <m>x</m>; that is, this force is <m>F(x) = kx</m> for some constant <m>k</m>. For example, if a force of 1 N stretches a given spring 2 cm, then a force of 5 N will stretch the spring 10 cm. Converting the distances to meters, we have that stretching this spring 0.02 m requires a force of <m>F(0.02) = k(0.02) = 1</m> N, hence <m>k = 1/0.02 = 50</m> N/m.
 <index><main>Hooke's Law</main></index>
 </p>
@@ -191,7 +168,80 @@ A force of 20 lb stretches a spring from a natural length of 7 inches to a lengt
 <p>
 In many ways, we are not at all concerned with the actual length of the spring, only with the amount of its change. Hence, we do not care that 20 lb of force stretches the spring to a length of 12 inches, but rather that a force of 20 lb stretches the spring by 5 in. This is illustrated in <xref ref="fig_spring1">Figure</xref>; we only measure the change in the spring's length, not the overall length of the spring.
 </p>
-<image width="73%" source="images/figwork_spring1.png" />
+
+<!-- START figures/fig_work_spring1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+
+\begin{scope}[xscale=.2,yscale=.5,shift={(.5,0)}]
+\draw [thick,{\colorone}] (-1,.5)--(-.5,.5)--(0,0);
+\foreach \x in {0,1,...,5}
+{%
+	\begin{scope}[shift={(\x*2,0)}]
+	\draw [thick,{\colorone}] (0,0)--(1,1)--(2,0);
+	\end{scope}
+}
+
+		\begin{scope}[shift={(12,0)}]
+		\draw [thick,{\colorone}] (0,0) --(1,1) --(1.5,.5)--(2,.5);
+		\end{scope}
+\end{scope}
+
+\draw [shift={(.9,0)},thick,left color={\colorone!70},right color={\coloronefill},{\colorone}] (2,0) rectangle (2.5,.5);
+
+\draw [shift={(.9,0)},->,>=stealth] (2.75,.15)-= node [pos=.5,above] {$F$} (3.25,.15);
+
+		\begin{scope}[shift={(0,-.25)}]
+			\draw [thick] (-.5,0)--(5.5,0);
+
+			\foreach \x in {0,...,6}
+			{%
+			\draw (\x*.4+2.8,.1)--(\x*.4+2.8,-.1) node [below] {\scriptsize $\x$};
+			}
+		\end{scope}
+		
+\begin{scope}[shift={(0,-1.75)}]
+
+\begin{scope}[xscale=.343,yscale=.5,shift={(.5,0)}]
+\draw [thick,{\colorone}] (-1,.5)--(-.5,.5)--(0,0);
+\foreach \x in {0,1,...,5}
+{%
+	\begin{scope}[shift={(\x*2,0)}]
+	\draw [thick,{\colorone}] (0,0)--(1,1)--(2,0);
+	\end{scope}
+}
+
+		\begin{scope}[shift={(12,0)}]
+		\draw [thick,{\colorone}] (0,0) --(1,1) --(1.5,.5)--(2,.5);
+		\end{scope}
+\end{scope}
+
+		\begin{scope}[shift={(0,-.25)}]
+			\draw [thick] (-.5,0)--(5.5,0);
+
+			\foreach \x in {0,...,6}
+			{%
+			\draw (\x*.4+2.8,.1)--(\x*.4+2.8,-.1) node [below] {\scriptsize $\x$};
+			}
+		\end{scope}
+		
+\draw [shift={(2.9,0)},thick,left color={\colorone!70},right color={\coloronefill},{\colorone}] (2,0) rectangle (2.5,.5);
+		
+\end{scope}		
+
+%\foreach \x in {0,2,4,6}
+%{%
+%	\begin{scope}[shift={(\x*.3,0)}]
+%	\draw [rounded corners=.1cm,rotate=-45,thick,left color=black!80,right color=black!30] (-.1,-.5) rectangle (.1,.5);
+%	\end{scope}
+%}
+
+
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_work_spring1.tex -->
+
 <p>
 Converting the units of length to feet, we have
 <me>
@@ -219,6 +269,7 @@ We compute the total work performed by integrating <m>F(x)</m> from <m>x=0</m> t
 <subsection>
 <title>Pumping Fluids</title>
 <p>
+\vskip
 Another useful example of the application of integration to compute work comes in the pumping of fluids, often illustrated in the context of emptying a storage tank by pumping the fluid out the top. This situation is different than our previous examples for the forces involved are constant. After all, the force required to move one cubic foot of water (about 62.4 lb) is the same regardless of its location in the tank. What is variable is the distance that cubic foot of water has to travel; water closer to the top travels less distance than water at the bottom, producing less work.
 </p>
 <figure xml:id="fig_weight_density" >
@@ -253,7 +304,49 @@ We will refer often to <xref ref="fig_pump1a">Figure</xref> which illustrates th
 </p>
 <figure xml:id="fig_pump1a" >
 <caption>Illustrating a water tank in order to compute the work required to empty it in <xref ref="ex_pump1">Example</xref>.</caption>
-<image width="73%" source="images/figwork_pump1.png" />
+
+<!-- START figures/fig_work_pump1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[x=.1cm,y=.125cm,>=stealth]
+
+%\begin{scope}[xscale=1.5]
+
+\draw [->] (0,-2) -- (0,37) node [above] {\scriptsize $y$};
+
+\draw		(-1,0) node [left] {\scriptsize 0} -- (1,0)
+				(-1,30) node [left] {\scriptsize 30} -- (1,30)
+				(-1,35) node [left] {\scriptsize 35} -- (1,35);
+				
+\draw (2,12)--(4,12)  (2,35)--(4,35)
+			(3,12) -- node [pos=.5,fill=white,rotate=90] {\scriptsize $35-y_i$} (3,35);
+							
+\begin{scope}[xscale=4,shift={(4.5,0)}]		
+
+\draw (0,30) -- node [pos=.5,above] {\scriptsize $10$} (2.9,29.22);		
+\draw [thick] (3,30) --(3,0) arc (0:-180:3) -- (-3,30);
+\draw [thick](0,30) circle (3);
+\draw [thick,dashed] (3,0) arc (0:180:3);
+
+\foreach \y/\x in {12/{$y_i$},16/{$y_{i+1}$}}
+{%
+		\draw (3,\y) node [right] {\scriptsize\x} arc (0:-180:3);
+		\draw [dashed] (3,\y) arc (0:180:3);
+}
+
+\draw (5.1,14) node {\scriptsize $\left.\rule{0pt}{.3cm}\right\}\Delta y_i$};
+
+%%
+
+\draw [left color={\colorone},right color={\coloronefill},thick] (0,16) circle (3);
+%
+\draw [left color={\colorone},right color={\coloronefill},thick] (-3,16) -- (-3,12)  arc (180:360:3) -- (3,16) arc (360:180:3);
+
+\end{scope}
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_work_pump1.tex -->
+
 </figure>
 <p>
 We start as we often do: we partition an interval into subintervals. We orient our tank vertically since this makes intuitive sense with the base of the tank at <m>y=0</m>. Hence the top of the water is at <m>y=30</m>, meaning we are interested in subdividing the <m>y</m>-interval <m>[0,30]</m> into <m>n</m> subintervals as
@@ -301,7 +394,40 @@ We can <q>streamline</q> the above process a bit as we may now recognize what th
 </p>
 <figure xml:id="fig_pump1b" >
 <caption>A simplified illustration for computing work.</caption>
-<image width="73%" source="images/figwork_pump2.png" />
+
+<!-- START figures/fig_work_pump2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[x=.1cm,y=.125cm,>=stealth]
+
+
+
+\draw [->] (0,-2) -- (0,37) node [above] {\scriptsize $y$};
+
+\draw		(-1,0) node [left] {\scriptsize 0} -- (1,0)
+				(-1,30) node [left] {\scriptsize 30} -- (1,30)
+				(-1,35) node [left] {\scriptsize 35} -- (1,35)
+				(-1,14) node [left] {\scriptsize $y$} -- (1,14);
+				
+\draw (2,14)--(4,14)  (2,35)--(4,35)
+			(3,14) -- node [pos=.5,fill=white,rotate=90] {\scriptsize $35-y$} (3,35);
+							
+\begin{scope}[xscale=4,shift={(4.5,0)}]		
+
+\draw (0,30) -- node [pos=.5,above] {\scriptsize $10$} (2.9,29.22);				
+\draw [thick](3,30) --(3,0) arc (0:-180:3) -- (-3,30);
+\draw [thick] (0,30) circle (3);
+\draw [thick,dashed] (3,0) arc (0:180:3);
+
+\draw [left color={\colorone},right color={\coloronefill},thick,draw={\colorone}] (0,14) circle (3);
+
+\draw [->] (5.25,16) node [above] {\scriptsize $V(y)=100\pi dy$} -- (2,14);
+
+\end{scope}
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_work_pump2.tex -->
+
 </figure>
 <p>
 Instead, we just draw one differential element. This helps establish the height a small amount of water must travel along with the force required to move it (where the force is volume &#215; density).
@@ -323,7 +449,40 @@ The conical tank is sketched in <xref ref="fig_pump2">Figure</xref>. We can orie
 </p>
 <figure xml:id="fig_pump2" >
 <caption>A graph of the conical water tank in <xref ref="ex_pump2">Example</xref>.</caption>
-<image width="73%" source="images/figwork_pump3.png" />
+
+<!-- START figures/fig_work_pump3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[x=.1cm,y=.125cm,>=stealth]
+
+
+
+\draw [->] (0,-2) -- (0,37) node [above] {\scriptsize $y$};
+
+\draw		(-1,0) node [left] {\scriptsize $-10$} -- (1,0)
+				(-1,30) node [left] {\scriptsize 0} -- (1,30)
+				(-1,35) node [left] {\scriptsize 3} -- (1,35)
+				(-1,14) node [left] {\scriptsize $y$} -- (1,14);
+				
+\draw (2,14)--(4,14)  (2,35)--(4,35)
+			(3,14) -- node [pos=.5,fill=white,rotate=90] {\scriptsize $3-y$} (3,35);
+							
+\begin{scope}[xscale=4,shift={(4.5,0)}]		
+
+\draw (0,30) -- node [pos=.5,above] {\scriptsize $2$} (2.9,29.22);				
+\draw [thick](3,30) --(0,0) -- (-3,30);
+\draw [thick] (0,30) circle (3);
+%\draw [thick,dashed] (3,0) arc (0:180:3);
+
+\draw [left color={\colorone},right color={\coloronefill},thick,draw={\colorone}] (0,14) circle (1.4);
+
+\draw [->] (3.4,6) node [below] {\scriptsize $V(y)=\pi(\frac y5+2)^2 dy$} -- (0,14);
+
+\end{scope}
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_work_pump3.tex -->
+
 </figure>
 <p>
 The figure also sketches a differential element, a cross<ndash />sectional circle. The radius of this circle is variable, depending on <m>y</m>. When <m>y=-10</m>, the circle has radius 0; when <m>y=0</m>, the circle has radius 2. These two points, <m>(-10,0)</m> and <m>(0,2)</m>, allow us to find the equation of the line that gives the radius of the cross<ndash />sectional circle, which is <m>r(y) = 1/5y+2</m>. Hence the volume of water at this height is <m>V(y)=\pi(1/5y+2)^2dy</m>, where <m>dy</m> represents a very small height of the differential element. The force required to move the water at height <m>y</m> is <m>F(y) = 62.4\times V(y)</m>.
@@ -358,11 +517,57 @@ For the purposes of this problem we choose to set <m>y=0</m> to represent the bo
 </p>
 <figure xml:id="fig_pump3" >
 <caption>The cross<ndash />section of a swimming pool filled with water in <xref ref="ex_pump3">Example</xref>.</caption>
-<image width="73%" source="images/figpump4.png" />
+
+<!-- START figures/fig_pump4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[x=.18cm,y=.2cm,>=stealth]
+
+
+
+\draw [fill={\coloronefill},draw={\coloronefill}] (0,0) -- node [below,pos=.5] {\scriptsize 10 ft.} (10,0) -- (15,3) -- node [below,pos=.5] {\scriptsize 10 ft.} (25,3)-- node [right,pos=.5] {\scriptsize 3 ft.} (25,6)--(0,6) -- node [left,pos=.5] {\scriptsize 6 ft.} (0,0);
+
+\draw [thick] (0,0) -- (10,0) -- (15,3) --(25,3)--(25,7)-- node [above,pos=.5] {\scriptsize 25 ft} (0,7) -- cycle;
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pump4.tex -->
+
 </figure>
 <figure xml:id="fig_pump3b" >
 <caption>Orienting the pool and showing differential elements for <xref ref="ex_pump3">Example</xref>.</caption>
-<image width="73%" source="images/figpump4b.png" />
+
+<!-- START figures/fig_pump4b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[x=.18cm,y=.2cm,>=stealth]
+
+
+
+%\draw [thick] (0,0) -- node [below,pos=.5] {\scriptsize 10 ft.} (10,0) -- (15,3) -- node [below,pos=.5] {\scriptsize 10 ft.} (25,3)-- node [right,pos=.5] {\scriptsize 3 ft.} (25,7)--node [above,pos=.5] {\scriptsize 25 ft} (0,7) -- node [left,pos=.5] {\scriptsize 6 ft.} (0,0);
+
+\draw[>=stealth,->] (-2,-1) -- ( -2,10) node [above] {\scriptsize $y$};
+
+\foreach \y/\x in {0/0,1.5/$y$,3/3,6/6,8/8}
+  {
+		\draw (-2.5,\y) node [left] {\scriptsize $\x$} -- (-1.5,\y);
+  }
+\draw [thick] (0,0) --  (10,0) -- (15,3) --  (25,3)--  (25,6)-- (0,6) -- (0,0);
+
+
+\draw [thick,{\colorone}] (0,5) -- (25,5)
+													(0,1.5) -- (12.5,1.5);
+													
+\draw [fill=black] (10,0) circle (1.5pt) node [shift={(15pt,-2pt)}] {\scriptsize $(10,0)$}
+									 (15,3) circle (1.5pt) node [shift={(15pt,-6pt)}] {\scriptsize $(15,3)$};
+									 
+\draw[>=stealth,->] (-2,-2) -- (20,-2) node [right] {\scriptsize $x$};
+
+\foreach \y in {0,10,15}
+  {
+		\draw (\y,-2.5) node [below] {\scriptsize $\y$} -- (\y,-1.5);
+  }									 
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_pump4b.tex -->
+
 </figure>
 <p>
 <xref ref="fig_pump3b">Figure</xref> shows the pool oriented with this <m>y</m>-axis, along with 2 differential elements as the pool must be split into two different regions.
@@ -460,25 +665,13 @@ A 100 ft rope, weighing 0.1 lb/ft, hangs over the edge of a tall building.
 </p>
 
 <ol>
-<li>
-<p>
-How much work is done pulling the entire rope to the top of the building?
-</p>
-</li>
-<li>
-<p>
-How much rope is pulled in when half of the total work is done?
-</p>
-</li>
+<li><p>How much work is done pulling the entire rope to the top of the building?</p></li>
+<li><p>How much rope is pulled in when half of the total work is done?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-500 ft<ndash />lb
-</p>
-</li>
+<li><p>500 ft<ndash />lb</p></li>
 <li><m>100-50\sqrt{2} \approx 29.29</m> ft<ndash />lb</li>
 </ol>
 </answer>
@@ -491,30 +684,14 @@ A 50 m rope, with a mass density of 0.2 kg/m, hangs over the edge of a tall buil
 </p>
 
 <ol>
-<li>
-<p>
-How much work is done pulling the entire rope to the top of the building?
-</p>
-</li>
-<li>
-<p>
-How much work is done pulling in the first 20 m?
-</p>
-</li>
+<li><p>How much work is done pulling the entire rope to the top of the building?</p></li>
+<li><p>How much work is done pulling in the first 20 m?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-2450 j
-</p>
-</li>
-<li>
-<p>
-1568 j
-</p>
-</li>
+<li><p>2450 j</p></li>
+<li><p>1568 j</p></li>
 </ol>
 </answer>
 </exercise>
@@ -526,31 +703,15 @@ A rope of length <m>\ell</m> ft hangs over the edge of tall cliff. (Assume the c
 </p>
 
 <ol>
-<li>
-<p>
-How much work is done pulling the entire rope to the top of the cliff?
-</p>
-</li>
-<li>
-<p>
-What percentage of the total work is done pulling in the first half of the rope?
-</p>
-</li>
-<li>
-<p>
-How much rope is pulled in when half of the total work is done?
-</p>
-</li>
+<li><p>How much work is done pulling the entire rope to the top of the cliff?</p></li>
+<li><p>What percentage of the total work is done pulling in the first half of the rope?</p></li>
+<li><p>How much rope is pulled in when half of the total work is done?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
 <li><m>\frac12\cdot d\cdot l^2</m> ft<ndash />lb</li>
-<li>
-<p>
-75 <percent />
-</p>
-</li>
+<li><p>75 <percent /></p></li>
 <li><m>\ell(1-\sqrt{2}/2) \approx 0.2929\ell</m></li>
 </ol>
 </answer>
@@ -576,40 +737,16 @@ A crane lifts a 2,000 lb load vertically 30 ft with a 1'' cable weighing 1.68 lb
 </p>
 
 <ol>
-<li>
-<p>
-How much work is done lifting the cable alone?
-</p>
-</li>
-<li>
-<p>
-How much work is done lifting the load alone?
-</p>
-</li>
-<li>
-<p>
-Could one conclude that the work done lifting the cable is negligible compared to the work done lifting the load?
-</p>
-</li>
+<li><p>How much work is done lifting the cable alone?</p></li>
+<li><p>How much work is done lifting the load alone?</p></li>
+<li><p>Could one conclude that the work done lifting the cable is negligible compared to the work done lifting the load?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-756 ft<ndash />lb
-</p>
-</li>
-<li>
-<p>
-60,000 ft<ndash />lb
-</p>
-</li>
-<li>
-<p>
-Yes, for the cable accounts for about 1<percent /> of the total work.
-</p>
-</li>
+<li><p>756 ft<ndash />lb</p></li>
+<li><p>60,000 ft<ndash />lb</p></li>
+<li><p>Yes, for the cable accounts for about 1<percent /> of the total work.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -772,40 +909,16 @@ A 6 ft cylindrical tank with a radius of 3 ft is filled with water, which has a 
 </p>
 
 <ol>
-<li>
-<p>
-How much work is performed in pumping all the water from the tank?
-</p>
-</li>
-<li>
-<p>
-How much work is performed in pumping 3 ft of water from the tank?
-</p>
-</li>
-<li>
-<p>
-At what point is 1/2 of the total work done?
-</p>
-</li>
+<li><p>How much work is performed in pumping all the water from the tank?</p></li>
+<li><p>How much work is performed in pumping 3 ft of water from the tank?</p></li>
+<li><p>At what point is 1/2 of the total work done?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-52,929.6 ft<ndash />lb
-</p>
-</li>
-<li>
-<p>
-18,525.3 ft<ndash />lb
-</p>
-</li>
-<li>
-<p>
-When 3.83 ft of water have been pumped from the tank, leaving about 2.17 ft in the tank.
-</p>
-</li>
+<li><p>52,929.6 ft<ndash />lb</p></li>
+<li><p>18,525.3 ft<ndash />lb</p></li>
+<li><p>When 3.83 ft of water have been pumped from the tank, leaving about 2.17 ft in the tank.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -863,40 +976,16 @@ A conical water tank is 5 m deep with a top radius of 3 m. (This is similar to <
 </p>
 
 <ol>
-<li>
-<p>
-Find the work performed in pumping all the water to the top of the tank.
-</p>
-</li>
-<li>
-<p>
-Find the work performed in pumping the top 2.5 m of water to the top of the tank.
-</p>
-</li>
-<li>
-<p>
-Find the work performed in pumping the top half of the water, by volume, to the top of the tank.
-</p>
-</li>
+<li><p>Find the work performed in pumping all the water to the top of the tank.</p></li>
+<li><p>Find the work performed in pumping the top 2.5 m of water to the top of the tank.</p></li>
+<li><p>Find the work performed in pumping the top half of the water, by volume, to the top of the tank.</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-approx. 577,000 j
-</p>
-</li>
-<li>
-<p>
-approx. 399,000 j
-</p>
-</li>
-<li>
-<p>
-approx 110,000 j  (By volume, half of the water is between the base of the cone and a height of 3.9685 m. If one rounds this to 4 m, the work is approx 104,000 j.)
-</p>
-</li>
+<li><p>approx. 577,000 j</p></li>
+<li><p>approx. 399,000 j</p></li>
+<li><p>approx 110,000 j  (By volume, half of the water is between the base of the cone and a height of 3.9685 m. If one rounds this to 4 m, the work is approx 104,000 j.)</p></li>
 </ol>
 </answer>
 </exercise>

@@ -162,45 +162,25 @@ Let <m>\vecu</m>, <m>\vecv</m> and <m>\vecw</m> be vectors in <m>\mathbb{R}^3</m
 </p>
 
 <ol>
-<li>
-<p>
-\text{<m>\crossp uv = -(\crossp vu)</m>} Anticommutative Property
-</p>
-</li>
-<li>
-<p>
-</p>
+<li><p>\text{<m>\crossp uv = -(\crossp vu)</m>} Anticommutative Property</p></li>
+<li><p></p>
 
 <ol>
-<li>
-<p>
-\text{<m>(\vec u+\vec v)\times \vecw = \crossp uw+\crossp vw</m>} Distributive Properties
-</p>
-</li>
+<li><p>\text{<m>(\vec u+\vec v)\times \vecw = \crossp uw+\crossp vw</m>} Distributive Properties</p></li>
 <li><m>\vec u \times (\vec v+\vec w) = \crossp uv+\crossp uw</m></li>
 </ol>
 </li>
 <li><m>c(\crossp uv) = (c\vecu) \times \vec v = \vecu \times (c\vecv)</m></li>
-<li>
-<p>
-</p>
+<li><p></p>
 
 <ol>
-<li>
-<p>
-\text{<m>(\crossp uv)\cdot \vecu = 0</m>} Orthogonality Properties
-</p>
-</li>
+<li><p>\text{<m>(\crossp uv)\cdot \vecu = 0</m>} Orthogonality Properties</p></li>
 <li><m>(\crossp uv)\cdot \vecv = 0</m></li>
 </ol>
 </li>
 <li><m>\crossp uu = \vec 0</m></li>
 <li><m>\crossp u0 = \vec 0</m></li>
-<li>
-<p>
-\text{<m>\vecu \cdot (\vecv\times\vecw) = (\crossp uv)\cdot \vecw</m>} Triple Scalar Product
-</p>
-</li>
+<li><p>\text{<m>\vecu \cdot (\vecv\times\vecw) = (\crossp uv)\cdot \vecw</m>} Triple Scalar Product</p></li>
 </ol>
 </statement>
 </theorem>
@@ -302,8 +282,94 @@ Another wonderful property of the cross product, as defined, is that it follows 
 3Dcoo=0 0 34,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figcrossp_rhr.png" />
+
+<!-- START figures/figcrossp_rhr_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcrossp_rhr.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+pair xbounds=(-1.5,1.5);
+pair ybounds=(-1.5,1.5);
+pair zbounds=(-0.5,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+//Draw theplane z=(-2*x+5*y)/27;
+triple f(pair t) {
+  return (t.x,t.y,(-2*t.x+5*t.y)/27);
+}
+surface s=surface(f,(-1.5,-1.5),(1.5,1.5),8,8,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p,nolight,render(merge=true));
+
+
+// Draw vec{u}=<-1/5,1,1/5>
+draw((0,0,0)--(-1/5,1,1/5), blue,Arrow3(size=3mm));
+label("$\vec{u}$",(-1/5,1,1/5),N);
+
+// Draw  \vec{v}=<-6/5,3/5,1/5>
+draw((0,0,0)--(-6/5,3/5,1/5), blue,Arrow3(size=3mm));
+label("$\vec{v}$",(-6/5,3/5,1/5),N);
+
+// Draw the cross product of u and v <2,-5,27> but scale it as <2,-5,27>/25
+draw((0,0,0)--(2/25,-5/25,27/25), red,Arrow3(size=3mm));
+label("$\vec{u} \times \vec{v}$",(2/25,-5/25,27/25),NW);
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figcrossp_rhr_3D.asy -->
+
 </figure>
+<p>
+\vskip
+</p>
 </subsection>
 
 
@@ -342,16 +408,8 @@ We illustrate using Equation <xref ref="eq_crossp1" /> in the following example.
 <title>Finding the area of a parallelogram</title>
 <statement>
 <ol>
-<li>
-<p>
-Find the area of the parallelogram defined by the vectors <m>\vecu = \la 2,1\ra</m> and <m>\vecv = \la 1,3\ra</m>.
-</p>
-</li>
-<li>
-<p>
-Verify that the points <m>A = (1,1,1)</m>, <m>B = (2,3,2)</m>, <m>C = (4,5,3)</m> and <m>D = (3,3,2)</m> are the vertices of a parallelogram. Find the area of the parallelogram.
-</p>
-</li>
+<li><p>Find the area of the parallelogram defined by the vectors <m>\vecu = \la 2,1\ra</m> and <m>\vecv = \la 1,3\ra</m>.</p></li>
+<li><p>Verify that the points <m>A = (1,1,1)</m>, <m>B = (2,3,2)</m>, <m>C = (4,5,3)</m> and <m>D = (3,3,2)</m> are the vertices of a parallelogram. Find the area of the parallelogram.</p></li>
 </ol>
 </statement>
 <solution>
@@ -363,7 +421,8 @@ Verify that the points <m>A = (1,1,1)</m>, <m>B = (2,3,2)</m>, <m>C = (4,5,3)</m
 <tabular>
 <row><cell><image width="73%" source="images/figcrossp4b.png" /></cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004,
@@ -371,19 +430,98 @@ Verify that the points <m>A = (1,1,1)</m>, <m>B = (2,3,2)</m>, <m>C = (4,5,3)</m
 3Dcoo=61 60 63,
 3Droo=250,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figcrossp4a.png" /></cell></row>
+
+<!-- START figures/figcrossp4a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcrossp4a.asy in Chapter 10
+// CAN'T FILL IT IN WITH ''fill'' (only in 2d)
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+//currentprojection=orthographic(4,4,2);
+currentprojection=orthographic(7.5,14,4);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={2,4};
+real[] myychoice={2,4};
+real[] myzchoice={2};
+defaultpen(0.5mm);
+pair xbounds=(-0.5,4.5);
+pair ybounds=(-0.5,4.5);
+pair zbounds=(-0.5,3.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the edges of the parallelogram with corners at (1,1,1),(2,3,2),(4,5,3),(3,3,2)
+draw((1,1,1)--(2,3,2)--(4,5,3)--(3,3,2)--cycle);
+label("A",(1,1,1),S);
+label("B",(2,3,2),N);
+label("C",(4,5,3),N);
+label("D",(3,3,2),W);
+
+// Fill in the parallelogram
+//I changed the viewpoint to (1,4,1), then added://Hartman comment
+ triple f(pair t) {return (1+t.x+2t.y,1+2t.x+2t.y,1+t.x+t.y);}
+surface s=surface(f,(0,0),(1,1),1,1);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.6),meshpen=p);
+
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figcrossp4a_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
 </li>
-<li>
-<p>
-To show that the quadrilateral <m>ABCD</m> is a parallelogram (shown in <xref ref="fig_crossp4">Figure</xref>(b)), we need to show that the opposite sides are parallel. We can quickly show that <m>\vv{AB} =\vv{DC} = \la 1,2,1\ra</m> and <m>\vv{BC} = \vv{AD} = \la 2,2,1\ra</m>. We find the area by computing the magnitude of the cross product of <m>\vv{AB}</m> and <m>\vv{BC}</m>:
+<li><p>To show that the quadrilateral <m>ABCD</m> is a parallelogram (shown in <xref ref="fig_crossp4">Figure</xref>(b)), we need to show that the opposite sides are parallel. We can quickly show that <m>\vv{AB} =\vv{DC} = \la 1,2,1\ra</m> and <m>\vv{BC} = \vv{AD} = \la 2,2,1\ra</m>. We find the area by computing the magnitude of the cross product of <m>\vv{AB}</m> and <m>\vv{BC}</m>:
 <me>
   \vv{AB} \times \vv{BC} = \la 0,1,-2\ra \quad \Rightarrow \quad \norm{\vv{AB}\times\vv{BC}} = \sqrt{5} \approx 2.236.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 
 <p>
@@ -407,7 +545,37 @@ We found the area of this triangle in <xref ref="ex_abc4">Example</xref> to be <
 </p>
 <figure xml:id="fig_crossp5" >
 <caption>Finding the area of a triangle in <xref ref="ex_crossp5">Example</xref>.</caption>
-<image width="73%" source="images/figcrossp5.png" />
+
+<!-- START figures/fig_crossp5.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3},% 
+%			extra x ticks={12.57},
+%			extra x tick labels={$4\pi$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=3.5,%
+			xmin=-.1,xmax=3.9%
+]
+
+\addplot [{\colorone},thick,fill={\coloronefill}] coordinates {(1,2) (2,3) (3,1) (1,2)};
+
+\draw (axis cs:1,2) node [left]{\scriptsize $A$} (axis cs:2,3) node [above] {\scriptsize $B$} (axis cs:3,1) node [below] {\scriptsize $C$};
+%
+%\filldraw [{\colortwo},fill={\colortwofill},thick] (axis cs: 0.0625,2.2) rectangle (axis cs:1.867,2.3);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_crossp5.tex -->
+
 </figure>
 <p>
 We can choose any two sides of the triangle to use to form vectors; we choose <m>\vv{AB} = \la 1,1\ra</m> and <m>\vv{AC}=\la 2,-1\ra</m>. As in the previous example, we will rewrite these vectors with a third component of 0 so that we can apply the cross product. The area of the triangle is
@@ -442,7 +610,120 @@ The three dimensional analogue to the parallelogram is the <b>parallelepiped</b>
 3Dcoo=0 110 86,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figcrosspparallelpiped.png" />
+
+<!-- START figures/figcrosspparallelpiped_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcrosspparallelpiped.asy in Chapter 10
+// NOT SHADED!!
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+//real[] myxchoice={};
+//real[] myychoice={};
+//real[] myzchoice={};
+defaultpen(0.5mm);
+//xaxis3("$x$",-0.5,1,black,OutTicks(myxchoice),Arrow3(size=3mm));
+//yaxis3("$y$",-1,1,black,OutTicks(myychoice),Arrow3(size=3mm));
+//zaxis3("$z$",-0.5,1.5,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+//Draw the parallelepiped with u=<1,1,0>, v=<-1,1,0>, w=<0,1,1>
+draw((0,0,0)--(1,1,0), Arrow3(size=3mm));// u
+label("$\vec{u}$",(1,1,0),W);
+draw((0,0,0)--(-1,1,0), Arrow3(size=3mm));// v
+label("$\vec{v}$",(-1,1,0),N);
+draw((0,0,0)--(0,1,1), Arrow3(size=3mm));// w
+label("$\vec{w}$",(0,1,1),W);
+//shifted u to get the other edges of the box
+draw((-1,1,0)--(0,2,0),blue);// u shifted to v
+draw((0,1,1)--(1,2,1),blue);// u shifted to w
+draw((-1,2,1)--(0,3,1),blue);// u shifted to v+w
+//shifted v to get the other edges of the box
+draw((1,1,0)--(0,2,0),blue);// v shifted to u
+draw((0,1,1)--(-1,2,1),blue);// v shifted to w
+draw((1,2,1)--(0,3,1),blue);// v shifted to u+w
+//shifted w to get the other edges of the box
+draw((1,1,0)--(1,2,1),blue);// w shifted to u
+draw((-1,1,0)--(-1,2,1),blue);// w shifted to v
+draw((0,2,0)--(0,3,1),blue);// w shifted to u+v
+
+
+
+
+// MIGHT BE ABLE TO USE THIS TO FILL IN THE 6 SIDES
+// Fill in the parallelogram
+//I changed the viewpoint to (1,4,1), then added://Hartman comment
+//triple f(pair t) {return (1+t.x+2t.y,1+2t.x+2t.y,1+t.x+t.y);}
+//surface s=surface(f,(0,0),(1,1),1,1);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(1),meshpen=p);
+
+//OR THIS FROM THE WEB????
+//http://tex.stackexchange.com/questions/137153/fill-a-region-between-two-coplanar-paths-in-asymptote
+//settings.outformat="pdf";
+//settings.render=0;
+//import three;
+//size(5cm);
+//path3 p =  (0,-2,-2)-- (0,2,-2) -- (0,2,2) -- (0,-2,2) -- (0,-2,-2) -- (0,-2,-2);
+//path3 q =  (0,-.25,-1.1) -- (0,.25,-1.1) -- (0,.25,1.1) -- (0,-.25,1.1) -- (0,-.25,-1.1);
+//draw(surface(p -- reverse(q) -- cycle), emissive(yellow));
+//draw(p ^^ q, black);
+
+//my try
+import three;
+path3 p =  (0,0,0)-- (1,1,0) -- (0,2,0) -- (-1,1,0); //Left
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (0,0,0)-- (1,1,0) -- (1,2,1) -- (0,1,1); //bottom
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (-1,1,0)-- (0,2,0) -- (0,3,1) -- (-1,2,1); //right
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (0,0,0)-- (-1,1,0) -- (-1,2,1) -- (0,1,1); //back
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (1,1,0)-- (0,2,0) -- (0,3,1) -- (1,2,1); //front
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (0,1,1)-- (1,2,1) -- (0,3,1) -- (-1,2,1); //top
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figcrosspparallelpiped_3D.asy -->
+
 </figure>
 <p>
 <index><main>cross product</main><sub>applications!volume of parallelepiped</sub></index>
@@ -488,7 +769,109 @@ So the volume of the parallelepiped is 2 cubic units.
 3Dcoo=0 50 50,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figcrossp6.png" />
+
+<!-- START figures/figcrossp6_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcrossp6.asy in Chapter 10
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={1};
+real[] myychoice={2};
+real[] myzchoice={0.5,1};
+defaultpen(0.5mm);
+
+pair xbounds=(-1.5,1.5);
+pair ybounds=(0,3);
+pair zbounds=(-0.5,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the parallelepiped with u=<1,1,0>, v=<-1,1,0>, w=<0,1,1>
+draw((0,0,0)--(1,1,0), Arrow3(size=3mm));// u
+label("$\vec{u}$",(1,1,0),W);
+draw((0,0,0)--(-1,1,0), Arrow3(size=3mm));// v
+label("$\vec{v}$",(-1,1,0),N);
+draw((0,0,0)--(0,1,1), Arrow3(size=3mm));// w
+label("$\vec{w}$",(0,1,1),W);
+//shifted u to get the other edges of the box
+draw((-1,1,0)--(0,2,0),blue);// u shifted to v
+draw((0,1,1)--(1,2,1),blue);// u shifted to w
+draw((-1,2,1)--(0,3,1),blue);// u shifted to v+w
+//shifted v to get the other edges of the box
+draw((1,1,0)--(0,2,0),blue);// v shifted to u
+draw((0,1,1)--(-1,2,1),blue);// v shifted to w
+draw((1,2,1)--(0,3,1),blue);// v shifted to u+w
+//shifted w to get the other edges of the box
+draw((1,1,0)--(1,2,1),blue);// w shifted to u
+draw((-1,1,0)--(-1,2,1),blue);// w shifted to v
+draw((0,2,0)--(0,3,1),blue);// w shifted to u+v
+
+
+
+
+//my try at shading.
+import three;
+path3 p =  (0,0,0)-- (1,1,0) -- (0,2,0) -- (-1,1,0); //Left
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (0,0,0)-- (1,1,0) -- (1,2,1) -- (0,1,1); //bottom
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (-1,1,0)-- (0,2,0) -- (0,3,1) -- (-1,2,1); //right
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (0,0,0)-- (-1,1,0) -- (-1,2,1) -- (0,1,1); //back
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (1,1,0)-- (0,2,0) -- (0,3,1) -- (1,2,1); //front
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (0,1,1)-- (1,2,1) -- (0,3,1) -- (-1,2,1); //top
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figcrossp6_3D.asy -->
+
 </figure>
 </solution>
 </example>
@@ -518,26 +901,45 @@ A lever of length 2ft makes an angle with the horizontal of <m>45^\circ</m>. Fin
 </p>
 <figure xml:id="fig_crossp7" >
 <caption>Showing a force being applied to a lever in <xref ref="ex_crossp7">Example</xref>.</caption>
-<image width="73%" source="images/figcrossp7.png" />
+
+<!-- START figures/fig_crossp7.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+	
+	
+	\draw [thick,->,rotate=45] (-2,0) -- (0,0) node [below,pos=.5] {\scriptsize $\vec\ell$};
+	\filldraw[black,rotate=45] (-2,0) circle (1.5pt);
+	\draw [rotate=45,->] (-1.8,0) arc (0:-270:.2);
+	\draw[rotate=45] (-.4,0) arc (180:90:.4);
+	\draw [rotate=0] (-.6,0) node {\scriptsize $90^\circ$};
+	\begin{scope}[shift={(-.05,.05)}]
+	\draw [thick,->,rotate=-45] (-1.5,0)node [left] {\scriptsize $\vec F$} -- (0,0);
+		\end{scope}
+	
+	\begin{scope}[shift={(3,0)}]
+		
+	\draw [thick,->,rotate=45] (-2,0) -- (0,0) node [below,pos=.5] {\scriptsize $\vec\ell$};
+	\filldraw[black,rotate=45] (-2,0) circle (1.5pt);
+	\draw [rotate=45,->] (-1.8,0) arc (0:-270:.2);
+	%\filldraw [black] (-2,0) circle (1.5pt);
+	\draw[rotate=45] (-.4,0) arc (180:120:.4);
+	\draw [rotate=15] (-.6,0) node {\scriptsize $60^\circ$};
+	\begin{scope}[shift={(-.05,.05)}]
+	\draw [thick,->,rotate=-15] (-1.5,0)node [above] {\scriptsize $\vec F$} -- (0,0);
+		\end{scope}
+	\end{scope}
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_crossp7.tex -->
+
 </figure>
 <ol>
-<li>
-<p>
-the force is perpendicular to the lever, and
-</p>
-</li>
-<li>
-<p>
-the force makes an angle of <m>60^\circ</m> with the lever, as shown in <xref ref="fig_crossp7">Figure</xref>.
-</p>
-</li>
+<li><p>the force is perpendicular to the lever, and</p></li>
+<li><p>the force makes an angle of <m>60^\circ</m> with the lever, as shown in <xref ref="fig_crossp7">Figure</xref>.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-We start by determining vectors for the force and lever arm. Since the lever arm makes a <m>45^\circ</m> angle with the horizontal and is 2ft long, we can state that <m>\vec \ell = 2\la \cos 45^\circ,\sin 45^\circ\ra = \la \sqrt2,\sqrt2\ra.</m>
+<li><p>We start by determining vectors for the force and lever arm. Since the lever arm makes a <m>45^\circ</m> angle with the horizontal and is 2ft long, we can state that <m>\vec \ell = 2\la \cos 45^\circ,\sin 45^\circ\ra = \la \sqrt2,\sqrt2\ra.</m>
 	
 	Since the force vector is perpendicular to the lever arm (as seen in the left hand side of <xref ref="fig_crossp7">Figure</xref>), we can conclude it is making an angle of <m>-45^\circ</m> with the horizontal. As it has a magnitude of 10lb, we can state <m>\vec F = 10\la \cos (-45^\circ), \sin(-45^\circ)\ra = \la 5\sqrt2,-5\sqrt2\ra.</m>
 	
@@ -549,12 +951,8 @@ We start by determining vectors for the force and lever arm. Since the lever arm
 </md>
 This clearly has a magnitude of 20 ft-lb.
 	
-	We can view the force and lever arm vectors as lying <q>on the page</q>; our computation of <m>\vec\tau</m> shows that the torque goes <q>into the page.</q> This follows the Right Hand Rule of the cross product, and it also matches well with the example of the wrench turning the bolt. Turning a bolt clockwise moves it in.
-</p>
-</li>
-<li>
-<p>
-Our lever arm can still be represented by <m>\vec \ell = \la \sqrt2,\sqrt2\ra</m>. As our force vector makes a <m>60^\circ</m> angle with <m>\vec \ell</m>, we can see (referencing the right hand side of the figure) that <m>\vec F</m> makes a <m>-15^\circ</m> angle with the horizontal. Thus
+	We can view the force and lever arm vectors as lying <q>on the page</q>; our computation of <m>\vec\tau</m> shows that the torque goes <q>into the page.</q> This follows the Right Hand Rule of the cross product, and it also matches well with the example of the wrench turning the bolt. Turning a bolt clockwise moves it in.</p></li>
+<li><p>Our lever arm can still be represented by <m>\vec \ell = \la \sqrt2,\sqrt2\ra</m>. As our force vector makes a <m>60^\circ</m> angle with <m>\vec \ell</m>, we can see (referencing the right hand side of the figure) that <m>\vec F</m> makes a <m>-15^\circ</m> angle with the horizontal. Thus
 <md>
   <mrow>  \vec F = 10\la \cos-15^\circ,\sin-15^\circ\ra \amp = \la \frac{5(1+\sqrt3)}{\sqrt2},-\frac{5(1+\sqrt3)}{\sqrt2}\ra</mrow>
   <mrow>  \amp \approx \la 9.659,-2.588\ra.</mrow>
@@ -566,9 +964,7 @@ We again make the third component 0 and take the cross product to find the torqu
   <mrow>  \amp = \la 0,0,-10\sqrt3\ra</mrow>
   <mrow>  \amp \approx \la 0,0,-17.321\ra.</mrow>
 </md>
-As one might expect, when the force and lever arm vectors <em>are</em> orthogonal, the magnitude of force is greater than when the vectors <em>are not</em> orthogonal.
-</p>
-</li>
+As one might expect, when the force and lever arm vectors <em>are</em> orthogonal, the magnitude of force is greater than when the vectors <em>are not</em> orthogonal.</p></li>
 </ol>
 
 <p>

@@ -36,23 +36,15 @@ Note how the measurement of distance between real numbers is the absolute value 
 <title>Limits of Vector<ndash />Valued Functions</title>
 <statement>
 <ol>
-<li>
-<p>
-Let <m>\vec r(t) = \la \,f(t),g(t)\,\ra</m> be a vector<ndash />valued function in <m>\mathbb{R}^2</m> defined on an open interval <m>I</m> containing <m>c</m>. Then
+<li><p>Let <m>\vec r(t) = \la \,f(t),g(t)\,\ra</m> be a vector<ndash />valued function in <m>\mathbb{R}^2</m> defined on an open interval <m>I</m> containing <m>c</m>. Then
 	<index><main>vector<ndash />valued function</main><sub>limits</sub></index><index><main>limit</main><sub>of vector<ndash />valued functions</sub></index>
 <me>
   \lim_{t\to c} \vec r(t) = \la \lim_{t\to c}f(t)\, , \,\lim_{t\to c} g(t)\ra.
-</me>
-</p>
-</li>
-<li>
-<p>
-Let <m>\vec r(t) = \la \,f(t),g(t),h(t)\,\ra</m> be a vector<ndash />valued function in <m>\mathbb{R}^3</m> defined on an open interval <m>I</m> containing <m>c</m>. Then
+</me></p></li>
+<li><p>Let <m>\vec r(t) = \la \,f(t),g(t),h(t)\,\ra</m> be a vector<ndash />valued function in <m>\mathbb{R}^3</m> defined on an open interval <m>I</m> containing <m>c</m>. Then
 <me>
   \lim_{t\to c} \vec r(t) = \la \lim_{t\to c}f(t)\, , \,\lim_{t\to c} g(t)\,, \,\lim_{t\to c} h(t)\ra
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 </statement>
 </theorem>
@@ -92,11 +84,7 @@ Let <m>\vec r(t)</m> be a vector<ndash />valued function defined on an open inte
 
 <ol>
 <li><m>\vec r(t)</m> is <b>continuous at <m>c</m></b> if <m>\ds \lim_{t\to c} \vec r(t) = r(c)</m>.</li>
-<li>
-<p>
-If <m>\vec r(t)</m> is continuous at all <m>c</m> in <m>I</m>, then <m>\vec r(t)</m> is <b>continuous on <m>I</m>.</b>
-</p>
-</li>
+<li><p>If <m>\vec r(t)</m> is continuous at all <m>c</m> in <m>I</m>, then <m>\vec r(t)</m> is <b>continuous on <m>I</m>.</b></p></li>
 </ol>
 </statement>
 </definition>
@@ -140,11 +128,48 @@ At <m>t=1</m> each of the component functions is continuous. Therefore <m>\vec r
 Consider a vector<ndash />valued function <m>\vec r</m> defined on an open interval <m>I</m> containing <m>t_0</m> and <m>t_1</m>. We can compute the displacement of <m>\vec r</m> on <m>[t_0,t_1]</m>, as shown in <xref ref="fig_vvfderiv_intro">Figure</xref>(a). Recall that dividing the displacement vector by <m>t_1-t_0</m> gives the average rate of change on <m>[t_0,t_1]</m>, as shown in (b).
 </p>
 <tabular>
-<row><cell><image width="90%" source="images/figvvfderiv_intro.png" /></cell><cell><image width="90%" source="images/figvvfderiv_introb.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvfderiv_intro.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+	
+
+\draw [thick,{\colorone}] (2,1) arc [x radius=4,y radius=3,start angle=145,end angle=135] node (A) {};
+\draw [thick,{\colorone}] (A.center) arc [x radius=4,y radius=3,start angle=135,end angle=70] node (B) {};
+\draw [thick,{\colorone}] (B.center) arc [x radius=4,y radius=3,start angle=70,end angle=60];
+
+
+
+\draw [thick,->] (0,0) -- (A.center) node [left,pos=.6] {\scriptsize $\vec r(t_0)$};
+\draw [thick,->] (0,0) -- (B.center) node [below,pos=.5] {\scriptsize $\vec r(t_1)$};
+\draw [->,thick,{\colortwo}] (A)--(B) node [above,black,pos=.5,sloped] {\scriptsize $\vec r(t_1)-\vec r(t_0)$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfderiv_intro.tex -->
+</cell><cell>
+<!-- START figures/fig_vvfderiv_introb.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+	
+
+\draw [thick,{\colorone}] (2,1) arc [x radius=4,y radius=3,start angle=145,end angle=135] node (A) {};
+\draw [thick,{\colorone}] (A.center) arc [x radius=4,y radius=3,start angle=135,end angle=70] node (B) {};
+\draw [thick,{\colorone}] (B.center) arc [x radius=4,y radius=3,start angle=70,end angle=60];
+
+
+
+\draw [thick,->] (0,0) -- (A.center) node [left,pos=.6] {\scriptsize $\vec r(t_0)$};
+\draw [thick,->] (0,0) -- (B.center) node [below,pos=.5] {\scriptsize $\vec r(t_1)$};
+\draw [->,thick,{\colortwo}] (A.center)--($(A)!1.2!(B)$) node [above,black,pos=.99,] {\scriptsize $\displaystyle\frac{\vec r(t_1)-\vec r(t_0)}{t_1-t_0}$};
+
+\draw [->,thick,{\colortwo}] (A.center)--($(A)!.4!29:(B)$) node [above,black] {\scriptsize $\vec r\,'(t_0)$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfderiv_introb.tex -->
+</cell></row>
 <row><cell>(a)</cell><cell>(b)</cell></row>
 </tabular>
 <p>
 \captionof{figure}{Illustrating displacement, leading to an understanding of the derivative of vector<ndash />valued functions.} \end{minipage}
+\vskip
 The <b>derivative</b> of a vector<ndash />valued function is a measure of the <em>instantaneous</em> rate of change, measured by taking the limit as the length of <m>[t_0,t_1]</m> goes to 0. Instead of thinking of an interval as <m>[t_0,t_1]</m>, we think of it as <m>[c,c+h]</m> for some value of <m>h</m> (hence the interval has length <m>h</m>). The <em>average</em> rate of change is
 <me>
   \frac{\vec r(c+h)-\vec r(c)}{h}
@@ -160,22 +185,14 @@ Let <m>\vec r(t)</m> be continuous on an open interval <m>I</m> containing <m>c<
 </p>
 
 <ol>
-<li>
-<p>
-The derivative of <m>\vec r</m> at <m>t=c</m> is
+<li><p>The derivative of <m>\vec r</m> at <m>t=c</m> is
 <me>
   \vrp (c) = \lim_{h\to 0} \frac{\vec r(c+h) - \vec r(c)}{h}.
-</me>
-</p>
-</li>
-<li>
-<p>
-The derivative of <m>\vec r</m> is
+</me></p></li>
+<li><p>The derivative of <m>\vec r</m> is
 <me>
   \vrp (t) = \lim_{h\to 0} \frac{\vec r(t+h) - \vec r(t)}{h}.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 
 <p>
@@ -204,23 +221,15 @@ Once again we might view this definition as intimidating, but recall that we can
 <title>Derivatives of Vector<ndash />Valued Functions</title>
 <statement>
 <ol>
-<li>
-<p>
-Let <m>\vec r(t) = \la \, f(t), g(t)\,\ra</m>. Then
+<li><p>Let <m>\vec r(t) = \la \, f(t), g(t)\,\ra</m>. Then
 <me>
   \vrp(t) = \la\, \fp(t), g\primeskip'(t)\, \ra.
-</me>
-</p>
-</li>
-<li>
-<p>
-Let <m>\vec r(t) = \la \, f(t), g(t), h(t)\,\ra</m>. Then
+</me></p></li>
+<li><p>Let <m>\vec r(t) = \la \, f(t), g(t), h(t)\,\ra</m>. Then
 	<index><main>vector<ndash />valued function</main><sub>derivatives</sub></index><index><main>derivative</main><sub>vector<ndash />valued functions</sub></index>
 <me>
   \vrp(t) = \la\, \fp(t), g\primeskip'(t), h\primeskip'(t)\, \ra.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 </statement>
 </theorem>
@@ -233,16 +242,8 @@ Let <m>\vec r(t) = \la t^2,t\ra</m>.
 </p>
 
 <ol>
-<li>
-<p>
-Sketch <m>\vec r(t)</m> and <m>\vrp(t)</m> on the same axes.
-</p>
-</li>
-<li>
-<p>
-Compute <m>\vrp(1)</m> and sketch this vector with its initial point at the origin and at <m>\vec r(1)</m>.
-</p>
-</li>
+<li><p>Sketch <m>\vec r(t)</m> and <m>\vrp(t)</m> on the same axes.</p></li>
+<li><p>Compute <m>\vrp(1)</m> and sketch this vector with its initial point at the origin and at <m>\vec r(1)</m>.</p></li>
 </ol>
 </statement>
 <solution>
@@ -252,21 +253,110 @@ Compute <m>\vrp(1)</m> and sketch this vector with its initial point at the orig
   \vrp(t) = \la 2t, 1\ra.
 </me>
 <m>\vec r(t)</m> and <m>\vrp(t)</m> are graphed together in <xref ref="fig_vvflimit3">Figure</xref>(a). Note how plotting the two of these together, in this way, is not very illuminating. When dealing with real<ndash />valued functions, plotting <m>f(x)</m> with <m>\fp(x)</m> gave us useful information as we were able to compare <m>f</m> and <m>\fp</m> at the same <m>x</m>-values. When dealing with vector<ndash />valued functions, it is hard to tell which points on the graph of <m>\vrp</m> correspond to which points on the graph of <m>\vec r</m>.</li>
-<li>
-<p>
-We easily compute <m>\vrp(1) = \la 2,1\ra</m>, which is drawn in <xref ref="fig_vvflimit3">Figure</xref> with its initial point at the origin, as well as at <m>\vec r(1) = \la 1,1\ra.</m> These are sketched in <xref ref="fig_vvflimit3">Figure</xref>(b).
+<li><p>We easily compute <m>\vrp(1) = \la 2,1\ra</m>, which is drawn in <xref ref="fig_vvflimit3">Figure</xref> with its initial point at the origin, as well as at <m>\vec r(1) = \la 1,1\ra.</m> These are sketched in <xref ref="fig_vvflimit3">Figure</xref>(b).
 <figure xml:id="fig_vvflimit3" >
 <caption>Graphing the derivative of a vector<ndash />valued function in <xref ref="ex_vvflimit3">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figvvflimit3a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvflimit3a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.2,ymax=2.2,%
+			xmin=-4.54,xmax=4.54%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-2:2,samples=20] ({x^2},{x});
+
+\draw (axis cs:2,1.7) node {\scriptsize $\vec r(t)$};
+
+\draw [thick,{\colortwo}] (axis cs: -4,1) -- (axis cs:4,1) node [below,pos=.9,black]{\scriptsize $\vec r\,'(t)$};
+
+\draw [thick,{\colortwo},->] (axis cs: -2,1) -- (axis cs:-1.99,1);
+
+\draw [thick,->,{\colorone}] (axis cs:1,-1) -- (axis cs:0.9801,-.99);
+
+
+
+
+\end{axis}
+
+
+
+%
+%\draw [thick] (0,1) circle (1);
+%\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+%
+%\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+%\draw [thick] (-1,0) -- (15,0);
+%%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+%\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+%\draw [thick,white] (0,2.5) -- (1,2.5);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvflimit3a.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figvvflimit3.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvflimit3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.2,ymax=2.2,%
+			xmin=-4.54,xmax=4.54%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-2:2,samples=20] ({x^2},{x});
+
+\draw [thick,->,{\colortwo}] (axis cs: 0,0) -- (axis cs:2,1) node [shift={(15pt,0)},pos=.6,black]{\scriptsize $\vec r\,'(1)$};
+
+\draw [thick,->,{\colortwo}] (axis cs: 1,1) -- (axis cs:3,2) node [left,pos=.8,black]{\scriptsize $\vec r\,'(1)$};
+
+\draw [thick,->,{\colorone}] (axis cs:1,-1) -- (axis cs:0.9801,-.99);
+
+
+\end{axis}
+
+
+
+%
+%\draw [thick] (0,1) circle (1);
+%\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+%
+%\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+%\draw [thick] (-1,0) -- (15,0);
+%%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+%\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+%\draw [thick,white] (0,2.5) -- (1,2.5);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvflimit3.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
-</figure>
-
-</p>
-</li>
+</figure></p></li>
 </ol>
 </solution>
 </example>
@@ -285,9 +375,85 @@ We compute <m>\vrp</m> as <m>\vrp(t) = \la -\sin t, \cos t, 1\ra</m>. At <m>t= \
 <figure xml:id="fig_vvflimit4" >
 <caption>Viewing a vector<ndash />valued function, and its derivative at one point, from two different perspectives.</caption>
 <tabular>
-<row><cell><image width="125%" source="images/figvvflimit4.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvflimit4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={135}{35},
+			name=myplot,
+			%xtick={-3,3},minor tick num=2,
+			%ytick={-3,3},
+			%ztick={-3,3},
+			ymin=-1.2,ymax=1.2,
+			xmin=-1.2,xmax=1.2,
+			zmin=-.1, zmax=6.2,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:360,,thick,smooth,samples y=0,{\colorone},samples=30,] ({cos(x)},{sin(x)},{x/180*3.14159});
+
+\draw[thick,->,{\colortwo}] (axis cs: 0,1,1.57) -- (axis cs: -1,1,2.57) node (A) {};
+\draw[thick,->,{\colortwo}] (axis cs: 0,0,0) -- (axis cs: -1,0,1) node (B) {};
+
+
+\end{axis}
+
+\draw (A) node [ above] {\scriptsize $\vec r\,'(\pi/2)$};
+\draw (B) node [shift={(-5pt,5pt)}] {\scriptsize $\vec r\,'(\pi/2)$};
+
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvflimit4.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="125%" source="images/figvvflimit4a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvflimit4a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={235}{35},
+			name=myplot,
+			%xtick={-3,3},minor tick num=2,
+			%ytick={-3,3},
+			%ztick={-3,3},
+			ymin=-1.2,ymax=1.2,
+			xmin=-1.2,xmax=1.2,
+			zmin=-.1, zmax=6.2,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:360,,thick,smooth,samples y=0,{\colorone},samples=30,] ({cos(x)},{sin(x)},{x/180*3.14159});
+
+\draw[thick,->,{\colortwo}] (axis cs: 0,1,1.57) -- (axis cs: -1,1,2.57) node (A) {};
+\draw[thick,->,{\colortwo}] (axis cs: 0,0,0) -- (axis cs: -1,0,1) node (B) {};
+
+
+\end{axis}
+
+%\draw (A) node [ above] {\scriptsize $\vec r\,'(\pi/2)$};
+%\draw (B) node [shift={(-5pt,5pt)}] {\scriptsize $\vec r\,'(\pi/2)$};
+
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvflimit4a.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -305,19 +471,11 @@ Let <m>\vec r(t)</m> be a differentiable vector<ndash />valued function on an op
 </p>
 
 <ol>
-<li>
-<p>
-A vector <m>\vec v</m> is <b>tangent to the graph of <m>\vec r(t)</m> at <m>t=c</m></b> if <m>\vec v</m> is parallel to <m>\vrp(c)</m>.
-</p>
-</li>
-<li>
-<p>
-The <b>tangent line</b>  to the graph of <m>\vec r(t)</m> at <m>t=c</m> is the line through <m>\vec r(c)</m> with direction parallel to <m>\vrp(c)</m>. An equation of the tangent line is
+<li><p>A vector <m>\vec v</m> is <b>tangent to the graph of <m>\vec r(t)</m> at <m>t=c</m></b> if <m>\vec v</m> is parallel to <m>\vrp(c)</m>.</p></li>
+<li><p>The <b>tangent line</b>  to the graph of <m>\vec r(t)</m> at <m>t=c</m> is the line through <m>\vec r(c)</m> with direction parallel to <m>\vrp(c)</m>. An equation of the tangent line is
 <me>
   \vec \ell(t) = \vec r(c) + t\,\vrp(c).
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 </statement>
 </definition>
@@ -340,9 +498,89 @@ The direction comes from <m>\vrp(-1)</m>. We compute, component<ndash />wise, <m
 <figure xml:id="fig_vvfderiv1" >
 <caption>Graphing a curve in space with its tangent line.</caption>
 <tabular>
-<row><cell><image width="125%" source="images/figvvfderiv1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvfderiv1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={135}{25},
+			name=myplot,
+			%xtick={-3,3},minor tick num=2,
+			%ytick={-3,3},
+			%ztick={-3,3},
+			ymin=-2.5,ymax=2.5,
+			xmin=-2.5,xmax=2.5,
+			zmin=-2.5, zmax=2.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-1.5:1.5,,thick,smooth,samples y=0,{\colorone},samples=30,] ({x},{x^2},{x^3});
+
+\addplot3[domain=-1:1.5,,thick,smooth,samples y=0,{\colortwo},samples=30,] ({-1+x},{1-2*x},{-1+3*x});
+
+%\draw[thick,->,{\colortwo}] (axis cs: 0,1,1.57) -- (axis cs: -1,1,2.57) node (A) {};
+%\draw[thick,->,{\colortwo}] (axis cs: 0,0,0) -- (axis cs: -1,0,1) node (B) {};
+
+
+\end{axis}
+
+%\draw (A) node [ above] {\scriptsize $\vec r\,'(\pi/2)$};
+%\draw (B) node [shift={(-5pt,5pt)}] {\scriptsize $\vec r\,'(\pi/2)$};
+
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfderiv1.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figvvfderiv1b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvfderiv1b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={185}{25},
+			name=myplot,
+			%xtick={-3,3},minor tick num=2,
+			%ytick={-3,3},
+			%ztick={-3,3},
+			ymin=-2.5,ymax=2.5,
+			xmin=-2.5,xmax=2.5,
+			zmin=-2.5, zmax=2.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=0pt,yshift=-5pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-1.5:1.5,,thick,smooth,samples y=0,{\colorone},samples=30,] ({x},{x^2},{x^3});
+
+\addplot3[domain=-1:1.5,,thick,smooth,samples y=0,{\colortwo},samples=30,] ({-1+x},{1-2*x},{-1+3*x});
+
+%\draw[thick,->,{\colortwo}] (axis cs: 0,1,1.57) -- (axis cs: -1,1,2.57) node (A) {};
+%\draw[thick,->,{\colortwo}] (axis cs: 0,0,0) -- (axis cs: -1,0,1) node (B) {};
+
+
+\end{axis}
+
+%\draw (A) node [ above] {\scriptsize $\vec r\,'(\pi/2)$};
+%\draw (B) node [shift={(-5pt,5pt)}] {\scriptsize $\vec r\,'(\pi/2)$};
+
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfderiv1b.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -376,7 +614,56 @@ This line is graphed with <m>\vec r(t)</m> in <xref ref="fig_vvfderiv3">Figure</
 </p>
 <figure xml:id="fig_vvfderiv3" >
 <caption>Graphing <m>\vec r(t)</m> and its tangent line in <xref ref="ex_vvfderiv3">Example</xref>.</caption>
-<image width="73%" source="images/figvvfderiv3.png" />
+
+<!-- START figures/fig_vvfderiv3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.96,ymax=2.96,%
+			xmin=-3.5,xmax=3.5%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-1.5:1.5,samples=30] ({x^3},{x^2});
+
+\addplot [thick,{\colortwo}, smooth,domain=-1:1.5,samples=30] ({3*x-1},{-2*x+1});
+\draw (axis cs:2,2) node {\scriptsize $\vec r(t)$};
+\draw (axis cs:2,-1.7) node {\scriptsize $\vec \ell(t)$};
+
+%\draw (axis cs:.5,.6) node {\scriptsize $\vec u(t)$};
+%
+%\draw [thick,{\colortwo}] (axis cs: -4,1) -- (axis cs:4,1) node [below,pos=.9,black]{\scriptsize $\vec r\,'(t)$};
+%
+\draw [thick,{\colorone},->] (axis cs: 1,1) -- (axis cs:1.03,1.02);
+\draw [thick,{\colortwo},->] (axis cs:2,-1)--(axis cs:2.03,-1.02);
+
+\end{axis}
+
+
+
+%
+%\draw [thick] (0,1) circle (1);
+%\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+%
+%\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+%\draw [thick] (-1,0) -- (15,0);
+%%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+%\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+%\draw [thick,white] (0,2.5) -- (1,2.5);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfderiv3.tex -->
+
 </figure>
 <p>
 At <m>t=0</m>, we have <m>\vrp(0) = \la 0,0\ra=\vec 0</m>! This implies that the tangent line <q>has no direction.</q> We cannot apply <xref ref="def_vector_tangent">Definition</xref>, hence cannot find the equation of the tangent line.
@@ -411,26 +698,10 @@ Let <m>\vec r</m> and <m>\vec s</m> be differentiable vector<ndash />valued func
 <ol>
 <li><m>\ds \frac{d}{dt}\Big(\vec r(t) \pm \vec s(t)\Big) = \vrp(t) \pm \vec s\,'(t)</m></li>
 <li><m>\ds \frac{d}{dt}\Big(c\vec r(t)\Big) = c\vrp(t)</m></li>
-<li>
-<p>
-\text{<m>\ds \frac{d}{dt}\Big(f(t)\vec r(t)\Big) = \fp(t)\vec r(t) + f(t)\vrp(t)</m>} <b>Product Rule</b>
-</p>
-</li>
-<li>
-<p>
-\text{<m>\ds \frac{d}{dt}\Big(\vec r(t)\cdot \vec s(t) \Big) = \vrp(t)\cdot \vec s(t) + \vec r(t)\cdot \vec s\,'(t)</m>} <b>Product Rule</b>
-</p>
-</li>
-<li>
-<p>
-\text{<m>\ds \frac{d}{dt}\Big(\vec r(t)\times \vec s(t) \Big) = \vrp(t)\times \vec s(t) + \vec r(t)\times \vec s\,'(t)</m>} <b>Product Rule</b>
-</p>
-</li>
-<li>
-<p>
-\text{<m>\ds \frac{d}{dt}\Big(\vec r\big(f(t)\big)\Big) = \vrp\big(f(t)\big)\fp(t)</m>}  <b>Chain Rule</b>
-</p>
-</li>
+<li><p>\text{<m>\ds \frac{d}{dt}\Big(f(t)\vec r(t)\Big) = \fp(t)\vec r(t) + f(t)\vrp(t)</m>} <b>Product Rule</b></p></li>
+<li><p>\text{<m>\ds \frac{d}{dt}\Big(\vec r(t)\cdot \vec s(t) \Big) = \vrp(t)\cdot \vec s(t) + \vec r(t)\cdot \vec s\,'(t)</m>} <b>Product Rule</b></p></li>
+<li><p>\text{<m>\ds \frac{d}{dt}\Big(\vec r(t)\times \vec s(t) \Big) = \vrp(t)\times \vec s(t) + \vec r(t)\times \vec s\,'(t)</m>} <b>Product Rule</b></p></li>
+<li><p>\text{<m>\ds \frac{d}{dt}\Big(\vec r\big(f(t)\big)\Big) = \vrp\big(f(t)\big)\fp(t)</m>}  <b>Chain Rule</b></p></li>
 </ol>
 </statement>
 </theorem>
@@ -443,37 +714,75 @@ Let <m>\vec r(t) = \la t, t^2-1\ra</m> and let <m>\vec u(t)</m> be the unit vect
 </p>
 
 <ol>
-<li>
-<p>
-Graph <m>\vec r(t)</m> and <m>\vec u(t)</m> on the same axes, on <m>[-2,2]</m>.
-</p>
-</li>
-<li>
-<p>
-Find <m>\vec u\,'(t)</m> and sketch <m>\vec u\,'(-2)</m>, <m>\vec u\,'(-1)</m> and <m>\vec u\,'(0)</m>. Sketch each with initial point the corresponding point on the graph of <m>\vec u</m>.
-</p>
-</li>
+<li><p>Graph <m>\vec r(t)</m> and <m>\vec u(t)</m> on the same axes, on <m>[-2,2]</m>.</p></li>
+<li><p>Find <m>\vec u\,'(t)</m> and sketch <m>\vec u\,'(-2)</m>, <m>\vec u\,'(-1)</m> and <m>\vec u\,'(0)</m>. Sketch each with initial point the corresponding point on the graph of <m>\vec u</m>.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-To form the unit vector that points in the direction of <m>\vec r</m>, we need to divide <m>\vec r(t)</m> by its magnitude.
+<li><p>To form the unit vector that points in the direction of <m>\vec r</m>, we need to divide <m>\vec r(t)</m> by its magnitude.
 <me>
   \norm{\vec r(t)} = \sqrt{t^2+(t^2-1)^2} \quad \Rightarrow \quad \vec u(t) = \frac{1}{\sqrt{t^2+(t^2-1)^2}}\la t,t^2-1\ra.
 </me>
 <m>\vec r(t)</m> and <m>\vec u(t)</m> are graphed in <xref ref="fig_vvfderiv2a">Figure</xref>. Note how the graph of <m>\vec u(t)</m> forms part of a circle; this must be the case, as the length of <m>\vec u(t)</m> is 1 for all <m>t</m>.
 	<figure xml:id="fig_vvfderiv2a" >
 <caption>Graphing <m>\vec r(t)</m> and <m>\vec u(t)</m> in <xref ref="ex_vvfderiv2">Example</xref>.</caption>
-<image width="73%" source="images/figvvfderiv2a.png" />
-</figure>
 
-</p>
-</li>
-<li>
-<p>
-To compute <m>\vec u\,'(t)</m>, we use <xref ref="thm_vvf_deriv_prop">Theorem</xref>, writing
+<!-- START figures/fig_vvfderiv2a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=3.1,%
+			xmin=-2.5,xmax=2.5%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-2:2,samples=30] ({x},{x^2-1});
+
+\addplot [thick,{\colortwo}, smooth,domain=-2:2,samples=30] ({x/sqrt(x^2+(x^2-1)^2)},{(x^2-1)/sqrt(x^2+(x^2-1)^2)});
+
+\draw (axis cs:-2,1.5) node {\scriptsize $\vec r(t)$};
+
+\draw (axis cs:.7,1.1) node {\scriptsize $\vec u(t)$};
+%
+%\draw [thick,{\colortwo}] (axis cs: -4,1) -- (axis cs:4,1) node [below,pos=.9,black]{\scriptsize $\vec r\,'(t)$};
+%
+\draw [thick,{\colortwo},->] (axis cs: -0.768,.64) -- (axis cs:-.7737,.633);
+%
+\draw [thick,->,{\colorone}] (axis cs:-1.5,1.25) -- (axis cs:-1.49,1.22);
+
+
+
+
+\end{axis}
+
+
+
+%
+%\draw [thick] (0,1) circle (1);
+%\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+%
+%\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+%\draw [thick] (-1,0) -- (15,0);
+%%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+%\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+%\draw [thick,white] (0,2.5) -- (1,2.5);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfderiv2a.tex -->
+
+</figure></p></li>
+<li><p>To compute <m>\vec u\,'(t)</m>, we use <xref ref="thm_vvf_deriv_prop">Theorem</xref>, writing
 <me>
   \vec u(t) = f(t)\vec r(t),\quad  \text{where} \quad f(t) = \frac{1}{\sqrt{t^2+(t^2-1)^2}}=\big(t^2+(t^2-1)^2\big)^{-1/2}.
 </me>
@@ -502,11 +811,66 @@ This is admittedly very <q>messy;</q> such is usually the case when we deal with
 </md>
 <figure xml:id="fig_vvfderiv2b" >
 <caption>Graphing some of the derivatives of <m>\vec u(t)</m> in <xref ref="ex_vvfderiv2">Example</xref>.</caption>
-<image width="73%" source="images/figvvfderiv2b.png" />
+
+<!-- START figures/fig_vvfderiv2b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.1,ymax=1.1,%
+			xmin=-1.92,xmax=1.92%
+]
+
+
+%\addplot [thick,{\colorone}, smooth,domain=-2:2,samples=30] ({x},{x^2-1});
+
+\addplot [thick,{\colorone}, smooth,domain=-2:2,samples=30] ({x/sqrt(x^2+(x^2-1)^2)},{(x^2-1)/sqrt(x^2+(x^2-1)^2)});
+
+%\draw (axis cs:-2,1.5) node {\scriptsize $\vec r(t)$};
+
+\draw (axis cs:.5,.6) node {\scriptsize $\vec u(t)$};
+%
+%\draw [thick,{\colortwo}] (axis cs: -4,1) -- (axis cs:4,1) node [below,pos=.9,black]{\scriptsize $\vec r\,'(t)$};
+%
+\draw [thick,{\colorone},->] (axis cs: -0.98226, 0.187522) -- (axis cs:-0.985435, 0.170055);
+%
+\draw [thick,->,{\colorone}] (axis cs:-1.5,1.25) -- (axis cs:-1.49,1.22);
+
+\draw [thick,{\colortwo},->] (axis cs:-0.5547, 0.83205)--(axis cs:-0.87472, 0.618704);
+%
+\draw [thick,{\colortwo},->] (axis cs:-1., 0)--(axis cs:-1., -2.);
+\draw [thick,{\colortwo},->] (axis cs:0., -1.)--(axis cs:1., -1.);
+
+
+
+\end{axis}
+
+
+
+%
+%\draw [thick] (0,1) circle (1);
+%\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+%
+%\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+%\draw [thick] (-1,0) -- (15,0);
+%%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+%\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+%\draw [thick,white] (0,2.5) -- (1,2.5);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_vvfderiv2b.tex -->
+
 </figure>
-Each of these is sketched in <xref ref="fig_vvfderiv2b">Figure</xref>. Note how the length of the vector gives an indication of how quickly the circle is being traced at that point. When <m>t=-2</m>, the circle is being drawn relatively slow; when <m>t=-1</m>, the circle is being traced much more quickly.
-</p>
-</li>
+Each of these is sketched in <xref ref="fig_vvfderiv2b">Figure</xref>. Note how the length of the vector gives an indication of how quickly the circle is being traced at that point. When <m>t=-2</m>, the circle is being drawn relatively slow; when <m>t=-1</m>, the circle is being traced much more quickly.</p></li>
 </ol>
 </solution>
 </example>
@@ -889,7 +1253,37 @@ In the following exercises, find <m>\vrp (t)</m>. Sketch <m>\vec r(t)</m> and <m
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig11_02_ex_15.png" />
+
+<!-- START figures/fig_11_02_ex_15.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.5,ymax=6.5,%
+			xmin=-1.5,xmax=6.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2:2] ({x^2+x},{x^2-x});
+\draw [thick,{\colortwo},->] (axis cs: 2,0) -- (axis cs:5,1) node [black,right] {\scriptsize $\vec r\,'(1)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_11_02_ex_15.tex -->
+<br />
 <m>\vrp(t) = \la 2t+1,2t-1\ra</m>
 </sidebyside>
 </answer>
@@ -903,7 +1297,37 @@ In the following exercises, find <m>\vrp (t)</m>. Sketch <m>\vec r(t)</m> and <m
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig11_02_ex_16.png" />
+
+<!-- START figures/fig_11_02_ex_16.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.5,ymax=1.5,%
+			xmin=-.5,xmax=3.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-.5:2.5] ({x^2-2*x+2},{x^3-3*x^2+2*x});
+\draw [thick,{\colortwo},->] (axis cs: 1,0) -- (axis cs:1,-1) node [black,right] {\scriptsize $\vec r\,'(1)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_11_02_ex_16.tex -->
+<br />
 <m>\vrp(t) = \la 2t-2,3t^2-6t+2\ra</m>
 </sidebyside>
 </answer>
@@ -917,7 +1341,37 @@ In the following exercises, find <m>\vrp (t)</m>. Sketch <m>\vec r(t)</m> and <m
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig11_02_ex_17.png" />
+
+<!-- START figures/fig_11_02_ex_17.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.5,ymax=2.5,%
+			xmin=-.5,xmax=4.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-.5:2.5] ({x^2-2*x+2},{x^3-3*x^2+2*x});
+\draw [thick,{\colortwo},->] (axis cs: 2,0) -- (axis cs:4,2) node [black,above] {\scriptsize $\vec r\,'(1)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_11_02_ex_17.tex -->
+<br />
 <m>\vrp(t) = \la 2t,3t^2-1\ra</m>
 </sidebyside>
 </answer>
@@ -931,7 +1385,37 @@ In the following exercises, find <m>\vrp (t)</m>. Sketch <m>\vec r(t)</m> and <m
 </statement>
 <answer>
 <sidebyside>
-<image width="73%" source="images/fig11_02_ex_18.png" />
+
+<!-- START figures/fig_11_02_ex_18.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.5,ymax=2.5,%
+			xmin=-.5,xmax=4.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-.5:2.5] ({x^2-2*x+2},{x^3-3*x^2+2*x});
+\draw [thick,{\colortwo},->] (axis cs: 2,0) -- (axis cs:0,2) node [black,right] {\scriptsize $\vec r\,'(1)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_11_02_ex_18.tex -->
+<br />
 <m>\vrp(t) = \la 2t-4,3t^2-12t+11\ra</m>
 </sidebyside>
 </answer>

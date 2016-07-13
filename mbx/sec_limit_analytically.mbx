@@ -30,55 +30,19 @@ The following limits hold.
 </p>
 
 <ol>
-<li>
-<p>
-\text{Constants:} <m>\displaystyle \lim_{x\to c} b = b</m>
-</p>
-</li>
-<li>
-<p>
-\text{Identity }						<m>\displaystyle \lim_{x\to c} x = c</m>
-</p>
-</li>
-<li>
-<p>
-\text{Sums/Differences:} <m>\displaystyle \lim_{x\to c}(f(x)\pm g(x)) = L\pm K</m>
-</p>
-</li>
-<li>
-<p>
-\text{Scalar Multiples:}	<m>\displaystyle \lim_{x\to c} b\cdot f(x) = bL</m>
-</p>
-</li>
-<li>
-<p>
-\text{Products:}	<m>\displaystyle \lim_{x\to c} f(x)\cdot g(x) = LK</m>
-</p>
-</li>
-<li>
-<p>
-\text{Quotients:} <m>\displaystyle \lim_{x\to c} f(x)/g(x) = L/K</m>, (<m>K\neq 0)</m>
-</p>
-</li>
-<li>
-<p>
-\text{Powers:} 	<m>\displaystyle \lim_{x\to c} f(x)^n = L^n</m>
-</p>
-</li>
-<li>
-<p>
-\text{Roots:}		\parbox[t]{185pt}{<m>\displaystyle \lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}</m>}
-</p>
-</li>
-<li>
-<p>
-\text{Compositions:} \parbox[t]{200pt}{Adjust our previously given limit situation to:
+<li><p>\text{Constants:} <m>\displaystyle \lim_{x\to c} b = b</m></p></li>
+<li><p>\text{Identity }						<m>\displaystyle \lim_{x\to c} x = c</m></p></li>
+<li><p>\text{Sums/Differences:} <m>\displaystyle \lim_{x\to c}(f(x)\pm g(x)) = L\pm K</m></p></li>
+<li><p>\text{Scalar Multiples:}	<m>\displaystyle \lim_{x\to c} b\cdot f(x) = bL</m></p></li>
+<li><p>\text{Products:}	<m>\displaystyle \lim_{x\to c} f(x)\cdot g(x) = LK</m></p></li>
+<li><p>\text{Quotients:} <m>\displaystyle \lim_{x\to c} f(x)/g(x) = L/K</m>, (<m>K\neq 0)</m></p></li>
+<li><p>\text{Powers:} 	<m>\displaystyle \lim_{x\to c} f(x)^n = L^n</m></p></li>
+<li><p>\text{Roots:}		\parbox[t]{185pt}{<m>\displaystyle \lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}</m>}</p></li>
+<li><p>\text{Compositions:} \parbox[t]{200pt}{Adjust our previously given limit situation to:
 <me>
   \lim_{x\to c}f(x) = L,\ \lim_{x\to L} g(x) = K \textit{ and\ } g(L)=K .
 </me>
-Then <m>\ds \lim_{x\to c}g(f(x)) = K</m>.}
-</p>
-</li>
+Then <m>\ds \lim_{x\to c}g(f(x)) = K</m>.}</p></li>
 </ol>
 </statement>
 </theorem>
@@ -118,27 +82,15 @@ Find the following limits:
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Using the Sum/Difference rule, we know that <m>\ds \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5</m>.
-</p>
-</li>
-<li>
-<p>
-Using the Scalar Multiple and Sum/Difference rules, we find that <m>\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.</m>
-</p>
-</li>
-<li>
-<p>
-Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
+<li><p>Using the Sum/Difference rule, we know that <m>\ds \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5</m>.</p></li>
+<li><p>Using the Scalar Multiple and Sum/Difference rules, we find that <m>\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.</m></p></li>
+<li><p>Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
 <md>
   <mrow>  \lim_{x\to 2} p(x) \amp = \lim_{x\to 2} (3x^2-5x+7)</mrow>
   <mrow>  \amp = \lim_{x\to 2} 3x^2-\lim_{x\to 2} 5x+\lim_{x\to 2}7</mrow>
   <mrow>  \amp = 3\cdot 2^2 - 5\cdot 2+7</mrow>
   <mrow>  \amp = 9</mrow>
-</md>
-</p>
-</li>
+</md></p></li>
 </ol>
 </solution>
 </example>
@@ -251,14 +203,8 @@ Evaluate the following limits.
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-This is a straightforward application of <xref ref="thm_lim_continuous">Theorem</xref>. <m>\ds \lim_{x\to \pi} \cos x = \cos \pi = -1</m>.
-</p>
-</li>
-<li>
-<p>
-We can approach this in at least two ways. First, by directly applying <xref ref="thm_lim_continuous">Theorem</xref>, we have:
+<li><p>This is a straightforward application of <xref ref="thm_lim_continuous">Theorem</xref>. <m>\ds \lim_{x\to \pi} \cos x = \cos \pi = -1</m>.</p></li>
+<li><p>We can approach this in at least two ways. First, by directly applying <xref ref="thm_lim_continuous">Theorem</xref>, we have:
 <me>
   \lim_{x\to 3} (\sec^2x - \tan^2 x) = \sec^23-\tan^23.
 </me>
@@ -270,37 +216,23 @@ We can also use the Pythagorean Theorem from the start.
 <me>
   \lim_{x\to 3} (\sec^2x - \tan^2 x) = \lim_{x\to 3} 1 = 1,
 </me>
-using the Constant limit rule. Either way, we find the limit is 1.
-</p>
-</li>
-<li>
-<p>
-Applying the Product limit rule of <xref ref="thm_limit_algebra">Theorem</xref> and <xref ref="thm_lim_continuous">Theorem</xref> gives
+using the Constant limit rule. Either way, we find the limit is 1.</p></li>
+<li><p>Applying the Product limit rule of <xref ref="thm_limit_algebra">Theorem</xref> and <xref ref="thm_lim_continuous">Theorem</xref> gives
 <me>
   \ds \lim_{x\to \pi/2} \cos x\sin x = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.
-</me>
-</p>
-</li>
-<li>
-<p>
-Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <m>e^{\ln x} = x</m> and evaluate <m>\ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.</m> 
+</me></p></li>
+<li><p>Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <m>e^{\ln x} = x</m> and evaluate <m>\ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.</m> 
 
 We can also use the limit Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>. Using <xref ref="thm_lim_continuous">Theorem</xref>, we have <m>\ds \lim_{x\to 1}\ln x = \ln 1 = 0</m> and <m>\ds\lim_{x\to 0} e^x= e^0=1</m>, satisfying the conditions of the Composition Rule. Applying this rule,
 <me>
   \ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.
 </me>
-Both approaches are valid, giving the same result.
-</p>
-</li>
-<li>
-<p>
-We encountered this limit in <xref ref="sec_limit_intro">Section</xref>. Applying our theorems, we attempt to find the limit as
+Both approaches are valid, giving the same result.</p></li>
+<li><p>We encountered this limit in <xref ref="sec_limit_intro">Section</xref>. Applying our theorems, we attempt to find the limit as
 <me>
   \lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\text{``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}}.
 </me>
-This, of course, violates a condition of <xref ref="thm_limit_algebra">Theorem</xref>, as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
-</p>
-</li>
+This, of course, violates a condition of <xref ref="thm_limit_algebra">Theorem</xref>, as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.</p></li>
 </ol>
 </solution>
 </example>
@@ -369,13 +301,72 @@ We begin by considering the unit circle. Each point on the unit circle has coord
 </p>
 <figure xml:id="fig_squeeze_sinx" >
 <caption>The unit circle and related triangles.</caption>
-<image width="73%" source="images/figSqueeze1.png" />
+
+<!-- START figures/fig_squeeze1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[x=.4\marginparwidth,y=.4\marginparwidth,>=stealth]
+%\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,ymin=-1.1,ymax=1.1,xmin=-1.1,xmax=1.1,xtick={1},ytick={1},name=myplot]
+%\end{axis}
+\draw [thick] (0,0) node [shift={(10pt,4pt)}] {\scriptsize$\theta$} circle (1);
+\draw [<->,thick] (-1.1,0) -- (1.1,0);
+\draw [<->,thick] (0,-1.1) -- (0,1.1);
+\draw [thick] (0,0) -- (1,.839) node [above] {\scriptsize$(1,\tan \theta)$}-- (1,0) -- (.766,.643);
+\fill [black] (1,.839) circle (1.5pt);
+\fill [black] (.766,.643) node [left] {\scriptsize$(\cos \theta,\sin \theta)$} circle (1.5pt);
+\fill [black] (1,0) node [below right] {\scriptsize$(1,0)$} circle (1.5pt);
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_squeeze1.tex -->
+
 </figure>
 <p>
 <xref ref="fig_squeeze_sinx">Figure</xref> shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is <m>\frac12\tan\theta</m>; the area of the sector is <m>\theta/2</m>; the area of the triangle contained inside the sector is <m>\frac12\sin\theta</m>. It is then clear from the diagram that
 </p>
 <tabular>
-<row><cell><image width="73%" source="images/figSqueeze1a.png" /></cell><cell></cell><cell><image width="73%" source="images/figSqueeze1b.png" /></cell><cell></cell><cell><image width="73%" source="images/figSqueeze1c.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_squeeze1a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[x=.5\marginparwidth,y=.5\marginparwidth,>=stealth]
+%\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,ymin=-1.1,ymax=1.1,xmin=-1.1,xmax=1.1,xtick={1},ytick={1},name=myplot]
+%\end{axis}
+%\draw (0,0) node [shift={(10pt,4pt)}] {\scriptsize$\theta$} circle (1);
+%\draw [<->] (-1.1,0) -- (1.1,0);
+%\draw [<->] (0,-1.1) -- (0,1.1);
+\fill [draw=black,thick,fill=blue!20] (0,0) node [shift={(10pt,4pt)}] {\scriptsize$\theta$} -- (1,.839) -- node [pos=.5,right] {\scriptsize$\tan \theta$} (1,0) -- cycle;
+\draw (.5,0) node [below] {\scriptsize$1$};
+\draw [black,dashed,thick] (1,0) arc (0:40:1);
+\draw [black,dashed,thick] (1,0) -- (.766,.643);
+%%\fill [black] (1,.839) circle (1.5pt);
+%\fill [black] (.766,.643) node [left] {\scriptsize$(\cos \theta,\sin \theta)$} circle (1.5pt);
+%\fill [black] (1,0) node [below right] {\scriptsize$(1,0)$} circle (1.5pt);
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_squeeze1a.tex -->
+</cell><cell></cell><cell>
+<!-- START figures/fig_squeeze1b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[x=.5\marginparwidth,y=.5\marginparwidth,>=stealth]
+\fill [draw=black,thick,fill=blue!20] (0,0) node [shift={(10pt,4pt)}] {\scriptsize$\theta$} -- (1,0) arc(0:40:1) -- cycle;
+\draw (.5,0) node [below] {\scriptsize$1$};
+\draw [black,dashed,thick] (1,0) arc (0:40:1);
+\draw [black,dashed,thick] (1,0) -- (.766,.643) -- (1,.839) -- cycle;
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_squeeze1b.tex -->
+</cell><cell></cell><cell>
+<!-- START figures/fig_squeeze1c.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[x=.5\marginparwidth,y=.5\marginparwidth,>=stealth]
+\fill [draw=black,thick,fill=blue!20] (0,0) node [shift={(10pt,4pt)}] {\scriptsize$\theta$} -- (1,0) --(.766,.643) -- cycle;
+\draw [dashed,thick] (.766,0)  -- node [pos=.4,left] {\scriptsize$\sin \theta$}(.766,.643);
+\draw (.766,5pt) -- ++(5pt,0) -- ++(0,-5pt);
+\draw (.5,0) node [below] {\scriptsize$1$};
+%\draw [black,dashed] (1,0) arc (0:40:1);
+\draw [black,dashed,thick] (1,0) arc(0:40:1) --  (1,.839) -- cycle;
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_squeeze1c.tex -->
+</cell></row>
 <row><cell><m>\ds \frac{\tan \theta}{2}</m></cell><cell><m>\geq</m></cell><cell><m>\ds \frac{\theta}{2}</m></cell><cell><m>\geq</m></cell><cell><m>\ds \frac{\sin \theta}{2}</m></cell></row>
 </tabular>
 <p>
@@ -479,7 +470,7 @@ and indeterminate form. We cannot apply the theorem.
 </p>
 <figure xml:id="fig_limitxplus1" >
 <caption>Graphing <m>f</m> in <xref ref="ex_limit_onept">Example</xref> to understand a limit.</caption>
-<image width="73%" source="images/fig_LimitXplus1.png" />
+
 </figure>
 <p>
 By graphing the function, as in <xref ref="fig_limitxplus1">Figure</xref>, we see that the function seems to be linear, implying that the limit should be easy to evaluate. Recognize that the numerator of our quotient can be factored:
@@ -1156,50 +1147,18 @@ Let <m>f(x) = 0</m> and <m>\ds g(x) = \frac xx</m>.
 </p>
 
 <ol>
-<li>
-<p>
-Show why <m>\ds \lim_{x\to2} f(x)=0</m>.
-</p>
-</li>
-<li>
-<p>
-Show why <m>\ds \lim_{x\to0} g(x) = 1</m>.
-</p>
-</li>
-<li>
-<p>
-Show why <m>\ds \lim_{x\to2} g\big(f(x)\big)</m> does not exist.
-</p>
-</li>
-<li>
-<p>
-Show why the answer to part (c) does not violate the Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>.
-</p>
-</li>
+<li><p>Show why <m>\ds \lim_{x\to2} f(x)=0</m>.</p></li>
+<li><p>Show why <m>\ds \lim_{x\to0} g(x) = 1</m>.</p></li>
+<li><p>Show why <m>\ds \lim_{x\to2} g\big(f(x)\big)</m> does not exist.</p></li>
+<li><p>Show why the answer to part (c) does not violate the Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>.</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>
-<p>
-Apply Part 1 of <xref ref="thm_limit_algebra">Theorem</xref>.
-</p>
-</li>
-<li>
-<p>
-Apply <xref ref="thm_limit_allbut1">Theorem</xref>; <m>g(x) = \frac xx</m> is the same as <m>g(x) = 1</m> everywhere except at <m>x=0</m>. Thus <m>\ds\lim_{x\to0} g(x) = \lim_{x\to 0} 1 = 1.</m>
-</p>
-</li>
-<li>
-<p>
-The function <m>f(x)</m> is always 0, so <m>g\big(f(x)\big)</m> is never defined as <m>g(x)</m> is not defined at <m>x=0</m>. Therefore the limit does not exist.
-</p>
-</li>
-<li>
-<p>
-The Composition Rule requires that <m>\ds\lim_{x\to0} g(x)</m> be equal to <m>g(0)</m>. They are not equal, so the conditions of the Composition Rule are not satisfied, and hence the rule is not violated.
-</p>
-</li>
+<li><p>Apply Part 1 of <xref ref="thm_limit_algebra">Theorem</xref>.</p></li>
+<li><p>Apply <xref ref="thm_limit_allbut1">Theorem</xref>; <m>g(x) = \frac xx</m> is the same as <m>g(x) = 1</m> everywhere except at <m>x=0</m>. Thus <m>\ds\lim_{x\to0} g(x) = \lim_{x\to 0} 1 = 1.</m></p></li>
+<li><p>The function <m>f(x)</m> is always 0, so <m>g\big(f(x)\big)</m> is never defined as <m>g(x)</m> is not defined at <m>x=0</m>. Therefore the limit does not exist.</p></li>
+<li><p>The Composition Rule requires that <m>\ds\lim_{x\to0} g(x)</m> be equal to <m>g(0)</m>. They are not equal, so the conditions of the Composition Rule are not satisfied, and hence the rule is not violated.</p></li>
 </ol>
 </answer>
 </exercise>

@@ -10,23 +10,15 @@ The previous section introduced vectors and described how to add them together a
 <title>Dot Product</title>
 <statement>
 <ol>
-<li>
-<p>
-Let <m>\vec u = \la u_1,u_2\ra</m> and <m>\vec v = \la v_1,v_2\ra</m>  in <m>\mathbb{R}^2</m>. The <b>dot product</b> of <m>\vec u</m> and <m>\vec v</m>, denoted \dotp uv, is 
+<li><p>Let <m>\vec u = \la u_1,u_2\ra</m> and <m>\vec v = \la v_1,v_2\ra</m>  in <m>\mathbb{R}^2</m>. The <b>dot product</b> of <m>\vec u</m> and <m>\vec v</m>, denoted \dotp uv, is 
 	<index><main>dot product</main><sub>definition</sub></index><index><main>vectors</main><sub>dot product</sub></index>
 <me>
   \dotp uv = u_1v_1+u_2v_2.
-</me>
-</p>
-</li>
-<li>
-<p>
-Let <m>\vec u = \la u_1,u_2,u_3\ra</m> and <m>\vec v = \la v_1,v_2,v_3\ra</m>  in <m>\mathbb{R}^3</m>. The <b>dot product</b> of <m>\vec u</m> and <m>\vec v</m>, denoted \dotp uv, is
+</me></p></li>
+<li><p>Let <m>\vec u = \la u_1,u_2,u_3\ra</m> and <m>\vec v = \la v_1,v_2,v_3\ra</m>  in <m>\mathbb{R}^3</m>. The <b>dot product</b> of <m>\vec u</m> and <m>\vec v</m>, denoted \dotp uv, is
 <me>
   \dotp uv = u_1v_1+u_2v_2+u_3v_3.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 </statement>
 </definition>
@@ -37,36 +29,20 @@ Note how this product of vectors returns a <em>scalar</em>, not another vector. 
 <title>Evaluating dot products</title>
 <statement>
 <ol>
-<li>
-<p>
-Let <m>\vec u=\la 1,2\ra</m>, <m>\vec v=\la 3,-1\ra</m> in <m>\mathbb{R}^2</m>. Find \dotp uv.
-</p>
-</li>
-<li>
-<p>
-Let <m>\vec x = \la 2,-2,5\ra</m> and <m>\vec y = \la -1, 0, 3\ra</m> in <m>\mathbb{R}^3</m>. Find \dotp xy.
-</p>
-</li>
+<li><p>Let <m>\vec u=\la 1,2\ra</m>, <m>\vec v=\la 3,-1\ra</m> in <m>\mathbb{R}^2</m>. Find \dotp uv.</p></li>
+<li><p>Let <m>\vec x = \la 2,-2,5\ra</m> and <m>\vec y = \la -1, 0, 3\ra</m> in <m>\mathbb{R}^3</m>. Find \dotp xy.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Using <xref ref="def_dot_product">Definition</xref>, we have
+<li><p>Using <xref ref="def_dot_product">Definition</xref>, we have
 <me>
   \dotp uv = 1(3)+2(-1) = 1.
-</me>
-</p>
-</li>
-<li>
-<p>
-Using the definition, we have
+</me></p></li>
+<li><p>Using the definition, we have
 <me>
   \dotp xy = 2(-1)  -2(0) + 5(3) = 13.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 
 <p>
@@ -86,16 +62,8 @@ Let <m>\vec u</m>, <m>\vec v</m> and <m>\vec w</m> be vectors in <m>\mathbb{R}^2
 </p>
 
 <ol>
-<li>
-<p>
-\text{<m>\dotp uv = \dotp vu</m>}{Commutative Property}
-</p>
-</li>
-<li>
-<p>
-\text{<m>\vec u\cdot(\vec v+\vec w) = \dotp uv + \dotp uw</m>}{Distributive Property}
-</p>
-</li>
+<li><p>\text{<m>\dotp uv = \dotp vu</m>}{Commutative Property}</p></li>
+<li><p>\text{<m>\vec u\cdot(\vec v+\vec w) = \dotp uv + \dotp uw</m>}{Distributive Property}</p></li>
 <li><m>c(\dotp uv) = (c\vec u)\cdot \vec v = \vec u \cdot (c\vec v)</m></li>
 <li><m>\dotp 0v = 0</m></li>
 <li><m>\dotp vv=\norm{\vec v}^2</m></li>
@@ -116,7 +84,8 @@ The next theorem extends this understanding by connecting the dot product to mag
 <tabular>
 <row><cell><image width="73%" source="images/figdotpangle.png" /></cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
@@ -124,7 +93,89 @@ The next theorem extends this understanding by connecting the dot product to mag
 3Dcoo=0 0 40,
 3Droo=170,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figdotpangle3D.png" /></cell></row>
+
+<!-- START figures/figdotpangle3D_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figdotpangle3D.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+pair xbounds=(-0.5,2.5);
+pair ybounds=(-0.5,2.5);
+pair zbounds=(-0.5,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw theplane z=.1*x+y+1;
+triple f(pair t) {
+  return (t.x,t.y,-.1*t.x+.3*t.y+.5);
+}
+surface s=surface(f,(0,0),(2,2),8,8,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p,nolight,render(merge=true));
+
+// Draw the vectors
+draw((0.5,0.5,.6)--(1.5,0.25,.425), black+linewidth(2),Arrow3(size=3mm));//u
+draw((0.5,0.5,.6)--(0.25,1.8,1.015), black+linewidth(2),Arrow3(size=3mm));//v
+label("$\vec{u}$",(1.5,0.25,.425),N);
+label("$\vec{v}$",(0.25,1.8,1.015),N);
+dotfactor=3;  dot((0.5,0.5,.6),black);
+
+//Draw the arc with theta
+draw((.99,.38,.51)..(.81,.78,.65)..(.41,.97,.75));
+label("$\theta$",(0.5,0.5,.7),W);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figdotpangle3D_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -155,6 +206,7 @@ When <m>\theta</m> is an acute angle (i.e., <m>0\leq \theta \lt \pi/2</m>), <m>\
 </p>
 <image width="73%" source="images/figdotpanglesign.png" />
 <p>
+\vskip
 We <em>can</em> use <xref ref="thm_dot_product">Theorem</xref> to compute the dot product, but generally this theorem is used to find the angle between known vectors (since the dot product is generally easy to compute). To this end, we rewrite the theorem's equation as
 <me>
   \cos \theta = \frac{\dotp uv}{\norm{\vec u}\norm{\vec v}} \quad \Leftrightarrow \quad \theta = \cos^{-1}\left(\frac{\dotp uv}{\norm{\vec u}\norm{\vec v}}\right).
@@ -166,7 +218,50 @@ We practice using this theorem in the following example.
 </p>
 <figure xml:id="fig_dotp2" >
 <caption>Vectors used in <xref ref="ex_dotp2">Example</xref>.</caption>
-<image width="73%" source="images/figdotp2.png" />
+
+<!-- START figures/fig_dotp2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick=\empty,% 
+			minor x tick num=4,
+			%extra x ticks={1,1.57,3.14},
+			%extra x tick labels={$x$,$\frac{\pi}2$,$\pi$},
+			%ytick={1},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			minor y tick num=1,
+%			extra y ticks={1.8},%
+%			extra y tick labels={$y$},
+%			minor x tick num=4,
+			ymin=-1.8,ymax=6.99,%
+			xmin=-5.5,xmax=5.5,%
+]
+
+
+\draw [thick,->] (axis cs:0,0) --(axis cs: 3,1) node [above] {\scriptsize$\vec u$};
+\draw [thick,->] (axis cs:0,0) --(axis cs: -2,6) node [above] {\scriptsize$\vec v$};
+\draw [thick,->] (axis cs:0,0) --(axis cs: -4,3) node [above] {\scriptsize$\vec w$};
+
+\draw [->] (axis cs: .949,.316) arc (18.4:108.4:12pt);
+\draw [] (axis cs:0.680986, 1.33651) node {\scriptsize $\alpha$};
+
+\draw [->] (axis cs: -0.474342, 1.42302) arc (108.4:155.1:12pt);
+\draw [] (axis cs:-1.13929, 1.58257) node {\scriptsize $\beta$};
+
+\draw [->] (axis cs: 2.3725, 0.79) arc (18.4:143.1:30pt);
+\draw [] (axis cs:1.5, 2.59808) node {\scriptsize $\theta$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_dotp2.tex -->
+
 </figure>
 <example xml:id="ex_dotp2">
 <title>Using the dot product to find angles</title>
@@ -219,7 +314,94 @@ We do a similar example next in the context of vectors in space.
 3Dcoo=10 50 46,
 3Droo=200,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figdotp3.png" />
+
+<!-- START figures/figdotp3_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figdotp3.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(23,7.4,3.8);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-5,5};
+real[] myychoice={2,4};
+real[] myzchoice={-2,2,4};
+defaultpen(0.5mm);
+pair xbounds=(-5.5,5.5);
+pair ybounds=(-1,4.5);
+pair zbounds=(-2.5,4.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+// Draw the lines for vec{u}=<1,1,1>
+draw((0,0,1)--(0,1,1)--(1,1,1)--(1,0,1)--(0,0,1), dashed+linewidth(.5)+blue);//top 
+draw((0,0,0)--(0,1,0)--(1,1,0)--(1,0,0)--(0,0,0), dashed+linewidth(.5)+blue);//bottom 
+draw((1,0,0)--(1,0,1), dashed+linewidth(.5)+blue);//up1 
+draw((0,1,0)--(0,1,1), dashed+linewidth(.5)+blue);//up2 
+draw((1,1,0)--(1,1,1), dashed+linewidth(.5)+blue);//up3 
+draw((0,0,0)--(1,1,1), blue,Arrow3(size=2mm));
+label("$\vec{u}$",(1,1,1),E);
+//dotfactor=3;  dot((2,1,1),blue);
+
+// Draw the lines for \vec{v}=<-1,3,-2>
+draw((0,0,-2)--(0,3,-2)--(-1,3,-2)--(-1,0,-2)--(0,0,-2), dashed+linewidth(.5)+red);//top 
+draw((0,0,0)--(0,3,0)--(-1,3,0)--(-1,0,0)--(0,0,0), dashed+linewidth(.5)+red);//bottom 
+draw((-1,0,0)--(-1,0,-2), dashed+linewidth(.5)+red);//up1 
+draw((0,3,0)--(0,3,-2), dashed+linewidth(.5)+red);//up2
+draw((-1,3,0)--(-1,3,-2), dashed+linewidth(.5)+red);//up3 
+draw((0,0,0)--(-1,3,-2),red,Arrow3(size=2mm));
+label("$\vec{v}$",(-1,3,-2),E);
+
+// Draw the lines for \vec{w}=<-5,1,4>
+draw((0,0,4)--(0,1,4)--(-5,1,4)--(-5,0,4)--(0,0,4), dashed+linewidth(.5)+orange);//top 
+draw((0,0,0)--(0,1,0)--(-5,1,0)--(-5,0,0)--(0,0,0), dashed+linewidth(.5)+orange);//bottom 
+draw((-5,0,0)--(-5,0,4), dashed+linewidth(.5)+orange);//up1 
+draw((0,1,0)--(0,1,4), dashed+linewidth(.5)+orange);//up2
+draw((-5,1,0)--(-5,1,4), dashed+linewidth(.5)+orange);//up3 
+draw((0,0,0)--(-5,1,4), orange,Arrow3(size=2mm));
+label("$\vec{w}$",(-5,1,4),E);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figdotp3_3D.asy -->
+
 </figure>
 <example xml:id="ex_dotp3">
 <title>Using the dot product to find angles</title>
@@ -230,36 +412,24 @@ Let <m>\vec u = \la 1,1,1\ra</m>, <m>\vec v = \la -1,3,-2\ra</m> and <m>\vec w =
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Between <m>\vec u</m> and <m>\vec v</m>:
+<li><p>Between <m>\vec u</m> and <m>\vec v</m>:
 <md>
   <mrow>  \theta \amp = \cos^{-1}\left(\frac{\dotp uv}{\norm{\vec u}\norm{\vec v}}\right)</mrow>
   <mrow>  \amp = \cos^{-1}\left(\frac{0}{\sqrt{3}\sqrt{14}}\right)</mrow>
   <mrow>  \amp = \frac{\pi}2.</mrow>
-</md>
-</p>
-</li>
-<li>
-<p>
-Between <m>\vec u</m> and <m>\vec w</m>:
+</md></p></li>
+<li><p>Between <m>\vec u</m> and <m>\vec w</m>:
 <md>
   <mrow>  \theta \amp = \cos^{-1}\left(\frac{\dotp uw}{\norm{\vec u}\norm{\vec w}}\right)</mrow>
   <mrow>  \amp = \cos^{-1}\left(\frac{0}{\sqrt{3}\sqrt{42}}\right)</mrow>
   <mrow>  \amp = \frac{\pi}2.</mrow>
-</md>
-</p>
-</li>
-<li>
-<p>
-Between <m>\vec v</m> and <m>\vec w</m>:
+</md></p></li>
+<li><p>Between <m>\vec v</m> and <m>\vec w</m>:
 <md>
   <mrow>  \theta \amp = \cos^{-1}\left(\frac{\dotp vw}{\norm{\vec v}\norm{\vec w}}\right)</mrow>
   <mrow>  \amp = \cos^{-1}\left(\frac{0}{\sqrt{14}\sqrt{42}}\right)</mrow>
   <mrow>  \amp = \frac{\pi}2.</mrow>
-</md>
-</p>
-</li>
+</md></p></li>
 </ol>
 
 <p>
@@ -294,31 +464,17 @@ Let <m>\vec u = \la 3,5\ra</m> and <m>\vec v = \la 1,2,3\ra</m>.
 </p>
 
 <ol>
-<li>
-<p>
-Find two vectors in <m>\mathbb{R}^2</m> that are orthogonal to <m>\vec u</m>.
-</p>
-</li>
-<li>
-<p>
-Find two non<ndash />parallel vectors in <m>\mathbb{R}^3</m> that are orthogonal to <m>\vec v</m>.
-</p>
-</li>
+<li><p>Find two vectors in <m>\mathbb{R}^2</m> that are orthogonal to <m>\vec u</m>.</p></li>
+<li><p>Find two non<ndash />parallel vectors in <m>\mathbb{R}^3</m> that are orthogonal to <m>\vec v</m>.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Recall that a line perpendicular to a line with slope <m>m</m> has slope <m>-1/m</m>, the <q>opposite reciprocal slope.</q> We can think of the slope of <m>\vec u</m> as <m>5/3</m>, its <q>rise over run.</q> A vector orthogonal to <m>\vec u</m> will have slope <m>-3/5</m>. There are many such choices, though all parallel:
+<li><p>Recall that a line perpendicular to a line with slope <m>m</m> has slope <m>-1/m</m>, the <q>opposite reciprocal slope.</q> We can think of the slope of <m>\vec u</m> as <m>5/3</m>, its <q>rise over run.</q> A vector orthogonal to <m>\vec u</m> will have slope <m>-3/5</m>. There are many such choices, though all parallel:
 <me>
   \la -5,3\ra \quad \text{or}  \quad\la 5,-3\ra \quad \text{or}  \quad \la -10,6\ra\quad \text{or}  \quad \la 15,-9\ra,\text{etc.}
-</me>
-</p>
-</li>
-<li>
-<p>
-There are infinite directions in space orthogonal to any given direction, so there are an infinite number of non<ndash />parallel vectors orthogonal to <m>\vec v</m>. Since there are so many, we have great leeway in finding some.
+</me></p></li>
+<li><p>There are infinite directions in space orthogonal to any given direction, so there are an infinite number of non<ndash />parallel vectors orthogonal to <m>\vec v</m>. Since there are so many, we have great leeway in finding some.
 	
 	One way is to arbitrarily pick values for the first two components, leaving the third unknown. For instance, let <m>\vec v_1 = \la 2,7,z\ra</m>. If <m>\vec v_1</m> is to be orthogonal to <m>\vec v</m>, then <m>\vec v_1\cdot\vec v = 0</m>, so
 <me>
@@ -330,9 +486,7 @@ So <m>\vec v_1 = \la 2, 7, -16/3\ra</m> is orthogonal to <m>\vec v</m>. We can a
 <me>
   \vec v_2\cdot\vec v = \la -2,1,0\ra\cdot\la 1,2,3\ra = 0.
 </me>
-Clearly <m>\vec v_1</m> and <m>\vec v_2</m> are not parallel.
-</p>
-</li>
+Clearly <m>\vec v_1</m> and <m>\vec v_2</m> are not parallel.</p></li>
 </ol>
 </solution>
 </example>
@@ -395,23 +549,13 @@ Let <m>\vec u</m> and <m>\vec v</m> be given. The <term>orthogonal projection of
 <title>Computing the orthogonal projection</title>
 <statement>
 <ol>
-<li>
-<p>
-Let <m>\vec u= \la -2,1\ra</m> and <m>\vec v=\la 3,1\ra</m>. Find <m>\proj uv</m>, and sketch all three vectors with initial points at the origin.
-</p>
-</li>
-<li>
-<p>
-Let <m>\vec w = \la 2,1,3\ra</m> and <m>\vec x = \la 1,1,1\ra</m>. Find <m>\proj wx</m>, and sketch all three vectors with initial points at the origin.
-</p>
-</li>
+<li><p>Let <m>\vec u= \la -2,1\ra</m> and <m>\vec v=\la 3,1\ra</m>. Find <m>\proj uv</m>, and sketch all three vectors with initial points at the origin.</p></li>
+<li><p>Let <m>\vec w = \la 2,1,3\ra</m> and <m>\vec x = \la 1,1,1\ra</m>. Find <m>\proj wx</m>, and sketch all three vectors with initial points at the origin.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Applying <xref ref="def_orthogonal_projection">Definition</xref>, we have
+<li><p>Applying <xref ref="def_orthogonal_projection">Definition</xref>, we have
 <md>
   <mrow>  \proj uv \amp = \frac{\dotp uv}{\dotp vv}\vec v</mrow>
   <mrow>  \amp = \frac{-5}{10}\la 3,1\ra</mrow>
@@ -423,7 +567,8 @@ Vectors <m>\vec u</m>, <m>\vec v</m> and <m>\proj uv</m> are sketched in <xref r
 <tabular>
 <row><cell><image width="73%" source="images/figdotp4a.png" /></cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=100pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0046,
@@ -431,9 +576,107 @@ Vectors <m>\vec u</m>, <m>\vec v</m> and <m>\proj uv</m> are sketched in <xref r
 3Dcoo=0 50 30,
 3Droo=250,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figdotp4b.png" /></cell></row>
+
+<!-- START figures/figdotp4b_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figdotp4b.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+
+// The text calls for two viewpoints of this picture to show orthogonality
+// The two projections below give those two views
+//  view "b", saved as figdotp4b_3D
+currentprojection=orthographic(8,2,5);
+
+//  view "c", saved as figdotp4c_3D
+//currentprojection=orthographic(2,8,6);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={2};
+real[] myychoice={2};
+real[] myzchoice={2};
+defaultpen(0.5mm);
+pair xbounds=(-0.5,2.5);
+pair ybounds=(-1,2.5);
+pair zbounds=(-0.5,3);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+// Draw the lines for vec{x}=<1,1,1>
+//draw((0,0,1)--(0,1,1)--(1,1,1)--(1,0,1)--(0,0,1), dashed+linewidth(.5));//top 
+draw((0,0,0)--(0,1,0)--(1,1,0)--(1,0,0)--(0,0,0), dashed+linewidth(.5));//bottom 
+//draw((1,0,0)--(1,0,1), dashed+linewidth(.5));//up1 
+//draw((0,1,0)--(0,1,1), dashed+linewidth(.5));//up2 
+draw((1,1,0)--(1,1,1), dashed+linewidth(.5));//up3 
+draw((0,0,0)--(1,1,1), Arrow3(size=3mm));
+label("$\vec{x}$",(1,1,1),N);
+//dotfactor=3;  dot((2,1,1),blue);
+
+// Draw the lines for projection of w onto x as <2,2,2>
+//draw((0,0,2)--(0,2,2)--(2,2,2)--(2,0,2)--(0,0,2), dashed+linewidth(.5));//top 
+draw((0,0,0)--(0,2,0)--(2,2,0)--(2,0,0)--(0,0,0), dashed+linewidth(.5));//bottom 
+//draw((2,0,0)--(2,0,2), dashed+linewidth(.5));//up1 
+//draw((0,2,0)--(0,2,2), dashed+linewidth(.5));//up2
+draw((2,2,0)--(2,2,2), dashed+linewidth(.5));//up3 
+draw((0,0,0)--(2,2,2), gray,Arrow3(size=3mm));
+label("$\textrm{proj}_{\vec{x}} \vec{w}$",(2,2,2),N);
+
+// Draw the lines for \vec{w}=<2,1,3>
+//draw((0,0,3)--(0,1,3)--(2,1,3)--(2,0,3)--(0,0,3), dashed+linewidth(.5));//top 
+draw((0,0,0)--(0,1,0)--(2,1,0)--(2,0,0)--(0,0,0), dashed+linewidth(.5));//bottom 
+//draw((2,0,0)--(2,0,3), dashed+linewidth(.5));//up1 
+//draw((0,1,0)--(0,1,3), dashed+linewidth(.5));//up2
+draw((2,1,0)--(2,1,3), dashed+linewidth(.5));//up3 
+draw((0,0,0)--(2,1,3), Arrow3(size=3mm));
+label("$\vec{w}$",(2,1,3),N);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figdotp4b_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=100pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0046,
@@ -441,25 +684,115 @@ Vectors <m>\vec u</m>, <m>\vec v</m> and <m>\proj uv</m> are sketched in <xref r
 3Dcoo=50 0 40,
 3Droo=250,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figdotp4c.png" /></cell></row>
+
+<!-- START figures/figdotp4c_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figdotp4b.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+
+// The text calls for two viewpoints of this picture to show orthogonality
+// The two projections below give those two views
+//  view "b", saved as figdotp4b_3D
+//currentprojection=orthographic(8,2,5);
+
+//  view "c", saved as figdotp4c_3D
+currentprojection=orthographic(2,8,6);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={2};
+real[] myychoice={2};
+real[] myzchoice={2};
+defaultpen(0.5mm);
+pair xbounds=(-0.5,2.5);
+pair ybounds=(-1,2.5);
+pair zbounds=(-0.5,3);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+// Draw the lines for vec{x}=<1,1,1>
+//draw((0,0,1)--(0,1,1)--(1,1,1)--(1,0,1)--(0,0,1), dashed+linewidth(.5));//top 
+draw((0,0,0)--(0,1,0)--(1,1,0)--(1,0,0)--(0,0,0), dashed+linewidth(.5));//bottom 
+//draw((1,0,0)--(1,0,1), dashed+linewidth(.5));//up1 
+//draw((0,1,0)--(0,1,1), dashed+linewidth(.5));//up2 
+draw((1,1,0)--(1,1,1), dashed+linewidth(.5));//up3 
+draw((0,0,0)--(1,1,1), Arrow3(size=3mm));
+label("$\vec{x}$",(1,1,1),N);
+//dotfactor=3;  dot((2,1,1),blue);
+
+// Draw the lines for projection of w onto x as <2,2,2>
+//draw((0,0,2)--(0,2,2)--(2,2,2)--(2,0,2)--(0,0,2), dashed+linewidth(.5));//top 
+draw((0,0,0)--(0,2,0)--(2,2,0)--(2,0,0)--(0,0,0), dashed+linewidth(.5));//bottom 
+//draw((2,0,0)--(2,0,2), dashed+linewidth(.5));//up1 
+//draw((0,2,0)--(0,2,2), dashed+linewidth(.5));//up2
+draw((2,2,0)--(2,2,2), dashed+linewidth(.5));//up3 
+draw((0,0,0)--(2,2,2), gray,Arrow3(size=3mm));
+label("$\textrm{proj}_{\vec{x}} \vec{w}$",(2,2,2),N);
+
+// Draw the lines for \vec{w}=<2,1,3>
+//draw((0,0,3)--(0,1,3)--(2,1,3)--(2,0,3)--(0,0,3), dashed+linewidth(.5));//top 
+draw((0,0,0)--(0,1,0)--(2,1,0)--(2,0,0)--(0,0,0), dashed+linewidth(.5));//bottom 
+//draw((2,0,0)--(2,0,3), dashed+linewidth(.5));//up1 
+//draw((0,1,0)--(0,1,3), dashed+linewidth(.5));//up2
+draw((2,1,0)--(2,1,3), dashed+linewidth(.5));//up3 
+draw((0,0,0)--(2,1,3), Arrow3(size=3mm));
+label("$\vec{w}$",(2,1,3),N);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figdotp4c_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(c)</cell></row>
 <row><cell></cell></row>
 </tabular>
-</figure>
-
-</p>
-</li>
-<li>
-<p>
-Apply the definition:
+</figure></p></li>
+<li><p>Apply the definition:
 <md>
   <mrow>  \proj wx \amp = \frac{\dotp wx}{\dotp xx}\vec x</mrow>
   <mrow>  \amp = \frac{6}{3}\la 1,1,1\ra</mrow>
   <mrow>  \amp = \la 2,2,2\ra.</mrow>
 </md>
-These vectors are sketched in <xref ref="fig_dotp4">Figure</xref>(b), and again in part (c) from a different perspective. Because of the nature of graphing these vectors, the sketch in part (b) makes it difficult  to recognize that the drawn projection has the geometric properties it should. The graph shown in part (c) illustrates these properties better.
-</p>
-</li>
+These vectors are sketched in <xref ref="fig_dotp4">Figure</xref>(b), and again in part (c) from a different perspective. Because of the nature of graphing these vectors, the sketch in part (b) makes it difficult  to recognize that the drawn projection has the geometric properties it should. The graph shown in part (c) illustrates these properties better.</p></li>
 </ol>
 
 <p>
@@ -470,7 +803,20 @@ These vectors are sketched in <xref ref="fig_dotp4">Figure</xref>(b), and again 
 
 <figure xml:id="fig_dotpprojc" >
 <caption>Illustrating the orthogonal projection.</caption>
-<image width="73%" source="images/figdotpprojc.png" />
+
+<!-- START figures/fig_dotpprojc.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+	\draw [thick,->] (2,1) -- (4,2) node [below] {\scriptsize $\vec v$};
+	\draw [thick,->] (0,0) -- (1,3) node [above ] {\scriptsize $\vec u$};
+	\draw [thick,->,gray] (0,0) -- (2,1) node [pos=.6,below,black] {\scriptsize $\text{proj}_{\, \vec v}\, \vec u$};
+	\draw [<-,thick] (1,3) -- (2,1) node [right,pos=.5] {\scriptsize $\vec z$};
+	\draw (1.82111, 0.910557) -- ({1.73167, 1.08944})--(1.91056, 1.17889);
+%\draw (.4,.2) arc (26.5:71.6:.45);
+	%\draw [rotate=49] (.6,0) node {\scriptsize $\theta$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_dotpprojc.tex -->
+
 </figure>
 <p>
 Consider <xref ref="fig_dotpprojc">Figure</xref> where the concept of the orthogonal projection is again illustrated. It is clear that
@@ -513,23 +859,13 @@ We illustrate the use of this equality in the following example.
 <title>Orthogonal decomposition of vectors</title>
 <statement>
 <ol>
-<li>
-<p>
-Let <m>\vec u = \la -2,1\ra</m> and <m>\vec v = \la 3,1\ra</m> as in <xref ref="ex_dotp4">Example</xref>. Decompose <m>\vec u</m> as the sum of a vector parallel to <m>\vec v</m> and a vector orthogonal to <m>\vec v</m>.
-</p>
-</li>
-<li>
-<p>
-Let <m>\vec w =\la 2,1,3\ra</m> and <m>\vec x  =\la 1,1,1\ra</m> as in <xref ref="ex_dotp4">Example</xref>. Decompose <m>\vec w</m> as the sum of a vector parallel to <m>\vec x</m> and a vector orthogonal to <m>\vec x</m>.
-</p>
-</li>
+<li><p>Let <m>\vec u = \la -2,1\ra</m> and <m>\vec v = \la 3,1\ra</m> as in <xref ref="ex_dotp4">Example</xref>. Decompose <m>\vec u</m> as the sum of a vector parallel to <m>\vec v</m> and a vector orthogonal to <m>\vec v</m>.</p></li>
+<li><p>Let <m>\vec w =\la 2,1,3\ra</m> and <m>\vec x  =\la 1,1,1\ra</m> as in <xref ref="ex_dotp4">Example</xref>. Decompose <m>\vec w</m> as the sum of a vector parallel to <m>\vec x</m> and a vector orthogonal to <m>\vec x</m>.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-In <xref ref="ex_dotp4">Example</xref>, we found that <m>\proj uv = \la -1.5,-0.5\ra</m>. Let
+<li><p>In <xref ref="ex_dotp4">Example</xref>, we found that <m>\proj uv = \la -1.5,-0.5\ra</m>. Let
 <me>
   \vec z = \vec u - \proj uv = \la -2,1\ra - \la -1.5,-0.5\ra = \la-0.5, 1.5\ra.
 </me>
@@ -541,12 +877,8 @@ Since the dot product is 0, we know <m>\vec z \perp \vec v</m>. Thus:
 <md>
   <mrow>  \vec u \amp = \proj uv\ +\ (\vec u - \proj uv)</mrow>
   <mrow>  \la -2,1\ra \amp = \underbrace{\la -1.5,-0.5\ra}_{\parallel\ \vec v}\ +\ \underbrace{\la -0.5,1.5\ra}_{\perp \ \vec v}.</mrow>
-</md>
-</p>
-</li>
-<li>
-<p>
-We found in <xref ref="ex_dotp4">Example</xref> that <m>\proj wx = \la 2,2,2\ra</m>. Applying the Key Idea, we have:
+</md></p></li>
+<li><p>We found in <xref ref="ex_dotp4">Example</xref> that <m>\proj wx = \la 2,2,2\ra</m>. Applying the Key Idea, we have:
 <me>
   \vec z = \vec w - \proj wx = \la 2,1,3\ra  - \la 2,2,2\ra = \la 0,-1,1\ra.
 </me>
@@ -559,9 +891,7 @@ Since the dot product is 0, we know the two vectors are orthogonal.
 <md>
   <mrow>  \vec w \amp = \proj wx\ +\ (\vec w - \proj wx)</mrow>
   <mrow>  \la 2,1,3\ra \amp = \underbrace{\la 2,2,2\ra}_{\parallel\ \vec x}\ +\ \underbrace{\la 0,-1,1\ra}_{\perp \ \vec x}</mrow>
-</md>
-</p>
-</li>
+</md></p></li>
 </ol>
 
 <p>
@@ -588,16 +918,8 @@ Consider <xref ref="fig_dotp6">Figure</xref>(a), showing a box weighing 50lb on 
 </tabular>
 </figure>
 <ol>
-<li>
-<p>
-in the direction of the ramp, and
-</p>
-</li>
-<li>
-<p>
-orthogonal to the ramp.
-</p>
-</li>
+<li><p>in the direction of the ramp, and</p></li>
+<li><p>orthogonal to the ramp.</p></li>
 </ol>
 </statement>
 <solution>
@@ -606,27 +928,19 @@ As the ramp rises 5ft over a horizontal distance of 20ft, we can represent the d
 </p>
 
 <ol>
-<li>
-<p>
-To find the force of gravity in the direction of the ramp, we compute <m>\proj gr</m>:
+<li><p>To find the force of gravity in the direction of the ramp, we compute <m>\proj gr</m>:
 <md>
   <mrow>  \proj gr \amp = \frac{\dotp gr}{\dotp rr}\vec r</mrow>
   <mrow>  \amp =  \frac{-250}{425}\la 20,5\ra</mrow>
   <mrow>  \amp = \la -\frac{200}{17},-\frac{50}{17}\ra \approx \la -11.76,-2.94\ra.</mrow>
 </md>
-The magnitude of <m>\proj gr</m> is <m>\norm{\proj gr} = 50/\sqrt{17} \approx 12.13\text{lb}</m>. Though the box weighs 50lb, a force of about 12lb is enough to keep the box from sliding down the ramp.
-</p>
-</li>
-<li>
-<p>
-To find the component <m>\vec z</m> of gravity orthogonal to the ramp, we use <xref ref="idea_orthog_proj">Key Idea</xref>.
+The magnitude of <m>\proj gr</m> is <m>\norm{\proj gr} = 50/\sqrt{17} \approx 12.13\text{lb}</m>. Though the box weighs 50lb, a force of about 12lb is enough to keep the box from sliding down the ramp.</p></li>
+<li><p>To find the component <m>\vec z</m> of gravity orthogonal to the ramp, we use <xref ref="idea_orthog_proj">Key Idea</xref>.
 <md>
   <mrow>  \vec z \amp = \vec g - \proj gr</mrow>
   <mrow>  \amp = \la \frac{200}{17},-\frac{800}{17}\ra \approx \la 11.76,-47.06\ra.</mrow>
 </md>
-The magnitude of this force is <m>\norm{\vec z} \approx 48.51</m>lb. In physics and engineering, knowing this force is important when computing things like static frictional force. (For instance, we could easily compute if the static frictional force alone was enough to keep the box from sliding down the ramp.)
-</p>
-</li>
+The magnitude of this force is <m>\norm{\vec z} \approx 48.51</m>lb. In physics and engineering, knowing this force is important when computing things like static frictional force. (For instance, we could easily compute if the static frictional force alone was enough to keep the box from sliding down the ramp.)</p></li>
 </ol>
 
 <p>
@@ -644,7 +958,18 @@ In physics, the application of a force <m>F</m> to move an object in a straight 
 </p>
 <figure xml:id="fig_dotpwork" >
 <caption>Finding work when the force and direction of travel are given as vectors.</caption>
-<image width="73%" source="images/figdotpwork.png" />
+
+<!-- START figures/fig_dotpwork.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth,scale=.8]
+	\draw [thick] (0,0) rectangle (2,2);
+	\draw [thick,->] (0,-.25) -- (5,-.25) node [right] {\scriptsize $\vec d$};
+	\draw [thick,->] (1,1) -- (3,2) node [shift={(5pt,2.5pt)}] {\scriptsize $\vec F$};
+	\draw [thick,gray,->] (1,1) -- (3,1) node [right,black] {\scriptsize $\proj Fd$};
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_dotpwork.tex -->
+
 </figure>
 <p>
 Consider <xref ref="fig_dotpwork">Figure</xref>, where a force <m>\vec F</m> is being applied to an object moving in the direction of <m>\vec d</m>. (The distance the object travels is the magnitude of <m>\vec d</m>.) The work done is the amount of force in the direction of <m>\vec d</m>, <m>\norm{\proj Fd}</m>, times <m>\vnorm d</m>:
@@ -685,7 +1010,21 @@ The figure indicates that the force applied makes a <m>30^\circ</m> angle with t
 </p>
 <figure xml:id="fig_dotp7" >
 <caption>Computing work when sliding a box up a ramp in <xref ref="ex_dotp7">Example</xref>.</caption>
-<image width="73%" source="images/figdotp7.png" />
+
+<!-- START figures/fig_dotp7.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth,scale=.3]
+	\draw [thick] (0,0) -- node [below,pos=.5] {\scriptsize 15} (15,0) -- node [right, pos=.5] {\scriptsize 3} (15,3) -- cycle;
+	\draw [thick] (5,1) -- (4.55,3.25) -- (6.8,3.7) -- (7.25,1.45);
+	\begin{scope}[,shift={(5.9,2.35)}]
+		\draw [thick,rotate=30,->] (0,0) -- (5,0) node [right] {\scriptsize $\vec F$};
+		\draw [thick,dashed] (-2,0) -- (4,0);
+		\draw (2,0) arc (0:30:2);
+		\draw [rotate=15] (3,0) node {\scriptsize $30^\circ$};
+	\end{scope}
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_dotp7.tex -->
+
 </figure>
 <p>
 Note how we did not actually compute the distance the object traveled, nor the magnitude of the force in the direction of travel; this is all inherently computed by the dot product!

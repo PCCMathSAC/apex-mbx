@@ -15,7 +15,88 @@ Any flat surface, such as a wall, table top or stiff piece of cardboard can be t
 3Dcoo=65.14276885986328 3.0251121520996094 21.06670570373535,
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figplanes_intro.png" />
+
+<!-- START figures/figplanes_intro_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figlines3.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((-4,27,7),(.012,-0.002,0.015),(0,0,0),.9);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+
+pair xbounds=(-2,2);
+pair ybounds=(-2,2);
+pair zbounds=(-2,2);
+
+xaxis3("",xbounds.x,xbounds.y,invisible,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,invisible,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+
+defaultpen(0.5mm);
+
+real f(pair z) {return 0;}
+surface s=surface(f,(-2,-2),(2,2),1,1);
+pen p=rgb(0,0,1)+.3mm;
+draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+draw(scale(.1,.1,.2)*rotate(180,Y)*shift(-1Z)*unitcone,surfacepen=white);
+draw(scale(.1,.1,.5)*shift(.4Z)*unitcylinder,surfacepen=white);
+draw(scale(.15,.15,.05)*shift(14Z)*unitcylinder,surfacepen=white);
+
+
+//real f(pair z) {return 0;}
+//surface s=surface(f,(-2,-2),(2,2));
+//draw(s,white,meshpen=p,render(merge=true));
+draw(scale3(.15)*shift(4.7Z)*unitdisk,surfacepen=white);
+draw(scale3(.15)*shift(5Z)*unitdisk,surfacepen=white);
+
+draw(scale3(.05)*unitdisk);
+label("$P$",(0,0,0),NW);
+
+
+//draw((0,0,.9)--(0,0,0),gray+1mm,Arrow3(size=2mm));
+//draw((0,0,.9)--(0,0,1),gray+1.2mm);
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figplanes_intro_3D.asy -->
+
 </figure>
 <p>
 This nail provides a <q>handle</q> for the cardboard. Moving the cardboard around moves <m>P</m> to different locations in space. Tilting the nail (but keeping <m>P</m> fixed) tilts the cardboard. Both moving and tilting the cardboard defines a different plane in space. In fact, we can define a plane by: 1) the location of <m>P</m> in space, and 2) the direction of the nail.
@@ -99,7 +180,112 @@ The plane is sketched in <xref ref="fig_planes1">Figure</xref>.
 3Dcoo=7.7291765213012695 11.105842590332031 32.345008850097656,
 3Droo=150.00000744992093,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figplanes1.png" />
+
+<!-- START figures/figplanes1_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figlines_dist2.asy in Chapter 10
+//ASY file for figplanes1.asy in Chapter 10
+
+//size(200,200,IgnoreAspect);
+size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((1.92,19.3,4),(0,-0.015,0.06),(0,0,0),1);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+usepackage("esvect");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-4,4};
+real[] myychoice={-4,4};
+real[] myzchoice={-4,4};
+defaultpen(0.5mm);
+pair xbounds=(-3.5,3.5);
+pair ybounds=(-4.5,4.5);
+pair zbounds=(-4.5,6.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0),S);
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the plane
+triple f(pair t) {
+  return (t.x,t.y,-2*t.x-t.y+3);
+}
+surface s=surface(f,(-1,-2),(2,3),8,8,Spline);
+pen p=rgb(0,0,.7)+.2mm;
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p,nolight,render(merge=true));
+
+//Draw points P=(1,1,0), Q=(1,2,-1), R=(0,1,2)
+dotfactor=3;
+dot((1,1,0));label("$P$",(1,1,0),N);
+dot((1,2,-1));label("$Q$",(1,2,-1),W);
+dot((0,1,2));label("$R$",(0,1,2),W);
+//Draw Vectors
+draw((1,1,0)--(1,2,-1),blue,Arrow3(size=2mm));//PQ
+draw((1,1,0)--(0,1,2),blue,Arrow3(size=2mm));//PR
+draw((1,1,0)--(3,2,1),blue,Arrow3(size=2mm));//P to PQxPR
+label("$\vv{PQ}\times \vv{PR}$",(3,2,1),N);
+
+//test i,j,k moved to P
+//draw((1,1,0)--(2,1,0),blue,Arrow3(size=2mm));//P by i
+//draw((1,1,0)--(1,2,0),blue,Arrow3(size=2mm));//P by j
+//draw((1,1,0)--(1,1,1),blue,Arrow3(size=2mm));//P by k
+
+// Use lines L1 1+3t,2-t,t  and L2 -2+4t,3+t,5+2t
+//draw P1 (t=0) and vector d1 at P1 (t=1)
+//dotfactor=3;dot((1,2,0));label("$P_1$",(1,2,0),N);
+//draw((1,2,0)--(4,1,1),red,Arrow3(size=2mm));
+//label("$\vec{d}_1$",(4,1,1),N);
+//draw P2 (t=-1.5) and vector d2 at P2 (t=-0.5)
+//dotfactor=3;dot((-8,1.5,2));label("$P_2$",(-8,1.5,2),N);
+//draw((-8,1.5,2)--(-4,2.5,4),red,Arrow3(size=2mm));
+//label("$\vec{d}_2$",(-4,2.5,4),N);
+
+//draw vector P1 to P2
+//draw((1,2,0)--(-8,1.5,2),black,Arrow3(size=2mm));
+//label("$\overrightarrow{P_1 P_2}$",(-3.5,1.75,1),W);
+
+//draw the lines 1+3t,2-t,t  and -2+4t,3+t,5+2t
+//draw((-5,4,-2)--(7,0,2),blue);//L1
+//draw((-14,0,-1)--(2,4,7),blue);//L2
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figplanes1_3D.asy -->
+
 </figure>
 </solution>
 </example>
@@ -162,7 +348,90 @@ The plane's equation in general form is <m>5x+4y-7z=7</m>; it is sketched in <xr
 3Dcoo=-0.8311560153961182 6.697127819061279 -4.196700572967529,
 3Droo=149.99999773205013,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figplanes2.png" />
+
+<!-- START figures/figplanes2_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figplanes2.asy in Chapter 10
+
+size(200,200,Aspect);
+//size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((-16,18.6,6.76),(0.014,-0.015,0077),(0,0,0),.99);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={5};
+real[] myychoice={5};
+real[] myzchoice={-5};
+defaultpen(0.5mm);
+pair xbounds=(-4,6);
+pair ybounds=(-1,6);
+pair zbounds=(-6,5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the plane
+triple f(pair t) {
+  return (t.x,t.y,(5/7)*t.x+(4/7)*t.y-1);
+}
+surface s=surface(f,(-5,-6),(5,6),8,8,Spline);
+pen p=rgb(0,0,.7)+.1mm;
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p,nolight,render(merge=true));
+
+//Draw points P=(-1,3,0)
+dotfactor=3;dot((-1,3,0));label("$P$",(-1,3,0),E);
+
+//Draw normal vector at P, n=(5,4,-7)
+draw((-1,3,0)--(4,7,-7),black,Arrow3(size=2mm));//n at P
+label("$\vec{n}$",(4,7,-7),W);
+
+
+
+//draw the lines -5+2t,1+t,-4+2t  and 2+3t,1-2t,1+t
+draw((5,6,6)--(-5,1,-4),blue);label("$\ell_1$",(5,6,6),N);//L1
+draw((5,-1,2)--(-4.9,5.6,-1.3),blue);label("$\ell_2$",(5,-1,2),N);//L2
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figplanes2_3D.asy -->
+
 </figure>
 </solution>
 </example>
@@ -194,7 +463,89 @@ The line and plane are sketched in <xref ref="fig_planes3">Figure</xref>.
 3Dcoo=-0.8311604261398315 6.69713020324707 -4.196701526641846,
 3Droo=149.99999682944613,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figplanes3.png" />
+
+<!-- START figures/figplanes3_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figplanes3.asy in Chapter 10
+
+size(200,200,Aspect);
+//size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-3,3};
+real[] myychoice={-3,3};
+real[] myzchoice={-3,3};
+defaultpen(0.5mm);
+pair xbounds=(-4,4);
+pair ybounds=(-4,4);
+pair zbounds=(-4,4);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the plane z=-(x+1)/2-y+1
+triple f(pair t) {
+  return (t.x,t.y,(-1/2)*(t.x+1)-t.y+1);
+}
+surface s=surface(f,(-3,-3),(3,3),8,8,Spline);
+pen p=rgb(0,0,.7)+.1mm;
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p,nolight,render(merge=true));
+
+//Draw points P=(-1,0,1)
+dotfactor=3;dot((-1,0,1));label("$P$",(-1,0,1),N);
+
+//draw the line -1+t,2t,1+2t 
+draw((1,4,5)--(-3,-4,-3),blue);//L t=2 to t=-2
+
+
+
+
+//Draw normal vector at P, n=(1,2,2)
+//draw((-1,3,0)--(4,7,-7),black,Arrow3(size=2mm));//n at P
+//label("$\vec{n}$",(4,7,-7),W);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figplanes3_3D.asy -->
+
 </figure>
 </solution>
 </example>
@@ -259,7 +610,99 @@ The planes and line are graphed in <xref ref="fig_planes4">Figure</xref>.
 3Dcoo=-0.8311622142791748 6.697126388549805 -4.196705341339111,
 3Droo=149.99999623071383,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figplanes4.png" />
+
+<!-- START figures/figplanes4_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figplanes43D.asy in Chapter 10
+
+//size(200,200,Aspect);
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(8,14.7,14);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+
+// setup and draw the axes
+real[] myxchoice={-2,2};
+real[] myychoice={-2,2};
+real[] myzchoice={-5};
+defaultpen(0.5mm);
+pair xbounds=(-3,3);
+pair ybounds=(-3,3);
+pair zbounds=(-6,2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the planes z=-x+y-1 and z=2x-y-2 
+triple f(pair t) {
+  return (t.x,t.y,-t.x+t.y-1);
+}
+surface s=surface(f,(-3,-3),(3,3),8,8,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.5,.5,1)+opacity(.8),meshpen=p+.2mm,nolight,render(merge=true));
+triple f(pair t) {
+  return (t.x,t.y,2*t.x-t.y-2);
+}
+surface s=surface(f,(-3,-3),(3,3),8,8,Spline);
+pen pp=rgb(0,0,.7)+.2mm;
+//draw(s,rgb(1,.4,.7)+opacity(.7),meshpen=pp,nolight,render(merge=true)); // HOT PINK
+
+pen q=rgb(.9,0,0)+.1mm;
+draw(s,rgb(1,.6,.6)+opacity(.8),meshpen=q,nolight,render(merge=true)); // better red
+
+
+//Draw point P=(1,1,-1)
+dotfactor=3;dot((1,1,-1));label("$P$",(1,1,-1),N);
+
+
+
+//draw the line 1-2t,1-3t,-1-t 
+draw((4,5.5,0.5)--(-2,-3.5,-2.5),blue);//L t=-1.5 to t=1.5
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figplanes4_3D.asy -->
+
 </figure>
 </solution>
 </example>
@@ -305,7 +748,87 @@ When <m>t=2</m>, the point on the line satisfies the equation of the plane; that
 3Dcoo=7.167160511016846 -9.016068458557129 21.630752563476562,
 3Droo=149.9999995928182,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figplanes5.png" />
+
+<!-- START figures/figplanes5_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figplanes53D.asy in Chapter 10
+
+//size(200,200,Aspect);
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(5,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-2,2};
+real[] myychoice={-2,2};
+real[] myzchoice={2};
+defaultpen(0.5mm);
+pair xbounds=(-3,4);
+pair ybounds=(-3,4);
+pair zbounds=(-2,7);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the plane z=4-2x-y
+triple f(pair t) {
+  return (t.x,t.y,4-2*t.x-t.y);
+}
+surface s=surface(f,(-2,-2),(3,3),8,8,Spline);
+pen p=rgb(0,0,.7)+.2mm;
+draw(s,rgb(.6,.6,1)+opacity(.9),meshpen=p,nolight,render(merge=true));
+
+//Draw point P=(1,1,1)
+dotfactor=3;dot((1,1,1),red);//label("$P$",(1,1,1),N);
+
+//draw the line 3-t,-3+2t,-1+t 
+draw((3,-3,-1)--(0,3,2),red);//L t=0 to t=3
+label("$\ell(t)$",(3,-3,-1),N);
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figplanes5_3D.asy -->
+
 </figure>
 </solution>
 </example>
@@ -337,7 +860,99 @@ Equation <xref ref="eq_plane_dist" /> is important as it does more than just giv
 3Dcoo=1.2409521341323853 -5.606988430023193 29.735889434814453,
 3Droo=149.9999995928182,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figplanes_dist.png" />
+
+<!-- START figures/figplanes_dist_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figplanes_dist3D.asy in Chapter 10
+
+size(200,200,Aspect);
+//size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4.5,4.5,1.5);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-4,4};
+real[] myychoice={-4,4};
+real[] myzchoice={2};
+defaultpen(0.5mm);
+pair xbounds=(-5,5);
+pair ybounds=(-5,5);
+pair zbounds=(-5,5);
+
+//xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+//yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+//zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+//label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+//label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the plane xy-plane
+triple f(pair t) {
+  return (t.x,t.y,0);
+}
+surface s=surface(f,(-2,-1),(2,1.5),1,1,Spline);
+pen p=rgb(0,0,0);
+//pen p=rgb(0,0,.7);
+draw(s,rgb(1,1,1)+opacity(0),meshpen=p+thick(),nolight,render(merge=true));
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p,nolight,render(merge=true));
+
+//Draw origin point and P=(1,1,1)
+dotfactor=3;dot((0,0,0),black);dot((0,1,0),black);label("$P$",(0,1,0),E);
+
+//Draw the normal at P
+draw((0,1,0)--(0,1,1),linewidth(.75),Arrow3(size=2mm));label("$\vec{n}$",(0,1,1),E);
+
+//Draw the dashed line from origin to Q=(0,0,2) with label h
+draw((0,0,0)--(0,0,2),dashed+linewidth(.75));dot((0,0,2),black);label("$Q$",(0,0,2),W);
+label("$h$",(0,0,1),W);
+
+//Draw the vector PQ stopping just short of Q
+draw((0,1,0)--(0,.05,1.95),linewidth(.75),Arrow3(size=2mm));//label("$\vec{n}$",(0,1,1),E);
+
+//Draw the perpendicular symbol as two small lines
+draw((0,0,0.2)--(0,0.2,0.2),linewidth(.75));
+draw((0,0.2,0)--(0,0.2,0.2),linewidth(.75));
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figplanes_dist_3D.asy -->
+
 </figure>
 <keyidea xml:id="idea_planes_dist">
 <title>Distance from a Point to a Plane</title>

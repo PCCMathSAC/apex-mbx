@@ -19,7 +19,110 @@ When dealing with functions of two variables, the graph is no longer a curve but
 3Dcoo=-23.771865844726562 -11.790743827819824 45.958377838134766,
 3Droo=200.99999868169073,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figspace_tangent_intro.png" />
+
+<!-- START figures/figspace_tangent_intro_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figspace_tangent_intro3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(8,8,13);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={2};
+real[] myychoice={2};
+real[] myzchoice={10};
+defaultpen(0.5mm);
+pair xbounds=(-0.5,3);
+pair ybounds=(-0.5,3);
+pair zbounds=(-0.5,11);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=-x^2-.5*(y^2)+x*y+10 //(x,y,{-x^2-.5*(y^2)+x*y+10});
+triple f(pair t) {
+  return (t.x,t.y,-t.x^2-.5*(t.y^2)+t.x*t.y+10);
+}
+surface s=surface(f,(0,0),(3,3),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//plot point on surface
+dotfactor=3;dot((2,1,7.5));
+
+//Draw traces on the surface
+triple g(real t) {return (2,t,-4-0.5*t^2+2*t+10);}//-x^2-.5*(y^2)+x*y+10
+path3 mypath=graph(g,0,3,operator ..); draw(mypath,blue);
+triple g(real t) {return (t,1,-t^2-0.5+t+10);}//-x^2-.5*(y^2)+x*y+10
+path3 mypath=graph(g,0,3,operator ..); draw(mypath,blue);
+triple g(real t) {return (t,3-t,-t^2-0.5*(3-t)^2+(3-t)*t+10);}
+path3 mypath=graph(g,0,3,operator ..); draw(mypath,blue);
+
+
+//Draw tangent lines on the surface with gradient (-3,1)
+//L1 = (2,1,7.5)+t(1,0,-3) for t=-1,1
+draw((1,1,10.5)--(3,1,4.5),red);
+//L2 = (2,1,7.5)+t(0,1,1) for t=-1,1
+draw((2,0,6.5)--(2,2,8.5),red);
+//L3 = (2,1,7.5)+t(0.707,-0.707,-2.828) for t=-1,1
+draw((1.293,1.707,10.328)--(2.707,0.293,4.672),red);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figspace_tangent_intro_3D.asy -->
+
 </figure>
 <p>
 In <xref ref="fig_space_tangent_intro">Figures</xref> we see lines that are tangent to curves in space. Since each curve lies on a surface, it makes sense to say that the lines are also tangent to the surface. The next definition formally defines what it means to be <q>tangent to a surface.</q>
@@ -34,21 +137,9 @@ Let <m>z=f(x,y)</m> be differentiable on an open set <m>S</m> containing <m>(x_0
 </p>
 
 <ol>
-<li>
-<p>
-The line <m>\ell_x</m> through <m>\big(x_0,y_0,f(x_0,y_0)\big)</m> parallel to <m>\la 1,0,f_x(x_0,y_0)\ra</m>	is the <b>tangent line to <m>f</m> in the direction of <m>x</m> at <m>(x_0,y_0)</m></b>.
-</p>
-</li>
-<li>
-<p>
-The line <m>\ell_y</m>  through <m>\big(x_0,y_0,f(x_0,y_0)\big)</m> parallel to <m>\la 0,1,f_y(x_0,y_0)\ra</m>	is the <b>tangent line to <m>f</m> in the direction of <m>y</m> at <m>(x_0,y_0)</m></b>.
-</p>
-</li>
-<li>
-<p>
-The line <m>\ell_{\vec u}</m> through <m>\big(x_0,y_0,f(x_0,y_0)\big)</m> parallel to <m>\la u_1,u_2,D_{\vec u\,}f(x_0,y_0)\ra</m>	is the <b>tangent line to <m>f</m> in the direction of <m>\vec u</m> at <m>(x_0,y_0)</m></b>.
-</p>
-</li>
+<li><p>The line <m>\ell_x</m> through <m>\big(x_0,y_0,f(x_0,y_0)\big)</m> parallel to <m>\la 1,0,f_x(x_0,y_0)\ra</m>	is the <b>tangent line to <m>f</m> in the direction of <m>x</m> at <m>(x_0,y_0)</m></b>.</p></li>
+<li><p>The line <m>\ell_y</m>  through <m>\big(x_0,y_0,f(x_0,y_0)\big)</m> parallel to <m>\la 0,1,f_y(x_0,y_0)\ra</m>	is the <b>tangent line to <m>f</m> in the direction of <m>y</m> at <m>(x_0,y_0)</m></b>.</p></li>
+<li><p>The line <m>\ell_{\vec u}</m> through <m>\big(x_0,y_0,f(x_0,y_0)\big)</m> parallel to <m>\la u_1,u_2,D_{\vec u\,}f(x_0,y_0)\ra</m>	is the <b>tangent line to <m>f</m> in the direction of <m>\vec u</m> at <m>(x_0,y_0)</m></b>.</p></li>
 </ol>
 </statement>
 </definition>
@@ -104,7 +195,8 @@ The two lines are shown with the surface in <xref ref="fig_partial4">Figure</xre
 <figure xml:id="fig_partial4" >
 <caption>A surface and directional tangent lines in <xref ref="ex_tpl1">Example</xref>.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.005110511556267738,
@@ -112,9 +204,102 @@ The two lines are shown with the surface in <xref ref="fig_partial4">Figure</xre
 3Dcoo=1.7508834600448608 15.36020565032959 -12.730416297912598,
 3Droo=201.00000286631447,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial4a.png" /></cell></row>
+
+<!-- START figures/figpartial4a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial4a3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={2,4};
+real[] myychoice={2,4};
+real[] myzchoice={-1,1};
+defaultpen(0.5mm);
+pair xbounds=(-0.5,5);
+pair ybounds=(-0.5,4.5);
+pair zbounds=(-1.5,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=sin(x)cos(y)
+triple f(pair t) {
+  return (t.x,t.y,sin(t.x)*cos(t.y));
+}
+surface s=surface(f,(-1,-1),(4,4),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//plot point on surface
+dotfactor=3;dot((pi/2,pi/2,0));
+
+//Draw lines on the surface 
+//L1 = (pi/2,pi/2,0)+t(1,0,0) for t=-1,1
+draw((0.57,1.57,0)--(2.57,1.57,0),red);
+//L2 = (pi/2,pi/2,0)+t(0,1,-1) for t=-1,1
+draw((1.57,.57,1)--(1.57,2.57,-1),red);
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figpartial4a_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.005110511556267738,
@@ -122,7 +307,104 @@ The two lines are shown with the surface in <xref ref="fig_partial4">Figure</xre
 3Dcoo=1.7508834600448608 15.36020565032959 -12.730416297912598,
 3Droo=201.00000286631447,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figpartial4b.png" /></cell></row>
+
+<!-- START figures/figpartial4b_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial4b3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={2,4};
+real[] myychoice={2,4};
+real[] myzchoice={-1,1};
+defaultpen(0.5mm);
+pair xbounds=(-0.5,5);
+pair ybounds=(-0.5,4.5);
+pair zbounds=(-1.5,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=sin(x)cos(y)
+triple f(pair t) {
+  return (t.x,t.y,sin(t.x)*cos(t.y));
+}
+surface s=surface(f,(-1,-1),(4,4),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//plot point on surface
+dotfactor=3;dot((pi/2,pi/2,0));
+
+//Draw traces on the surface
+triple g(real t) {return (t,pi-t,sin(t)*cos(pi-t));}
+path3 mypath=graph(g,0,3.75,operator ..); draw(mypath,blue);
+
+
+
+//Draw lines on the surface 
+//L1 = (pi/2,pi/2,0)+t(-0.707,0.707,-0.707) for t=-1,1
+draw((2.28,.864,0.707)--(.864,2.28,-0.707),red);
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figpartial4b_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -182,7 +464,112 @@ Thus <m>\nabla f(1,1) = \la 0,0\ra</m>. Let <m>\vec u = \la u_1,u_2\ra</m> be an
 3Dcoo=-8.829919815063477 56.8592643737793 -4.442079067230225,
 3Droo=201.0000074006932,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="110%" source="images/figtpl2.png" />
+
+<!-- START figures/figtpl2_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial4b3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(8,2.6,4.7);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={1,2};
+real[] myychoice={1,2};
+real[] myzchoice={2};
+defaultpen(0.5mm);
+pair xbounds=(-0.5,2.5);
+pair ybounds=(-0.5,2.5);
+pair zbounds=(-3.5,3.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=\addplot3[domain=-.1:2,y domain=-.1:2,surf,colormap={mp2}{\colormapplaneone}//,shader=faceted,faceted color=black!40,samples y=20,very thin,z buffer=sort,%opacity=.6,
+//samples=20,] (x,y,{4*x*y-x^4-y^4});
+
+bool cond(pair t) {return 4*t.x*t.y-(t.x)^4-(t.y)^4 >-3;}
+
+//triple f(pair t) {
+//  return (t.x,t.y,4*t.x*t.y-(t.x)^4-(t.y)^4);
+//}
+//surface s=surface(f,(-.1,-.1),(1.5,1.5),32,32,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+triple f(pair t) {
+  return (cos(t.x)*t.y+1,sin(t.x)*t.y+1,4*(cos(t.x)*t.y+1)*(sin(t.x)*t.y+1)-(cos(t.x)*t.y+1)^4-(sin(t.x)*t.y+1)^4);
+}
+surface s=surface(f,(0,0),(2*pi,.75),32,32,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//plot point on surface
+dotfactor=3;
+dot((1,1,2));
+
+//Draw traces on the surface
+//triple g(real t) {return (t,pi-t,sin(t)*cos(pi-t));}
+//path3 mypath=graph(g,0,3.75,operator ..); draw(mypath,blue);
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figtpl2_3D.asy -->
+
 </figure>
 <p>
 That is, consider any curve on the surface that goes through this point. Each curve will have a relative maximum at this point, hence its tangent line will have a slope of 0. The following section investigates the points on surfaces where all tangent lines have a slope of 0.
@@ -224,16 +611,8 @@ are defined.<index><main>normal line</main></index><index><main>orthogonal</main
 </p>
 
 <ol>
-<li>
-<p>
-A nonzero vector parallel to <m>\vec n=\la a,b,-1\ra</m> is <b>orthogonal to <m>f</m> at <m>P=\big(x_0,y_0,f(x_0,y_0)\big)</m></b>.
-</p>
-</li>
-<li>
-<p>
-The line <m>\ell_n</m> through <m>P</m> with direction parallel to <m>\vec n</m> is the <b>normal line to <m>f</m> at <m>P</m></b>.
-</p>
-</li>
+<li><p>A nonzero vector parallel to <m>\vec n=\la a,b,-1\ra</m> is <b>orthogonal to <m>f</m> at <m>P=\big(x_0,y_0,f(x_0,y_0)\big)</m></b>.</p></li>
+<li><p>The line <m>\ell_n</m> through <m>P</m> with direction parallel to <m>\vec n</m> is the <b>normal line to <m>f</m> at <m>P</m></b>.</p></li>
 </ol>
 </statement>
 </definition>
@@ -243,6 +622,10 @@ Thus the parametric equations of the normal line to a surface <m>f</m> at <m>\bi
   \ell_{n}(t) = \left\{\begin{array}{l} x= x_0+at\\ y = y_0 + bt \\ z = f(x_0,y_0) - t
 \end{array} \right..
 </me>
+</p>
+
+<p>
+\vskip
 </p>
 <example xml:id="ex_tpl3">
 <title>Finding a normal line</title>
@@ -268,7 +651,117 @@ We find <m>z_x(x,y) = -2x</m> and <m>z_y(x,y) = -2y</m>; at <m>(0,1)</m>, we hav
 3Dcoo=2.022836208343506 -0.9065411686897278 3.1147446632385254,
 3Droo=200.99998967155275,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="150%" source="images/figtpl3.png" />
+
+<!-- START figures/figtpl3_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial4b3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(8,4.8,2.8);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={2};
+real[] myychoice={2};
+real[] myzchoice={-2,2};
+defaultpen(0.5mm);
+pair xbounds=(-2.5,2.5);
+pair ybounds=(-2.5,2.5);
+pair zbounds=(-2.5,2.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=\addplot3[domain=-.1:2,y domain=-.1:2,surf,colormap={mp2}{\colormapplaneone}//,shader=faceted,faceted color=black!40,samples y=20,very thin,z buffer=sort,%opacity=.6,
+//samples=20,] (x,y,{4*x*y-x^4-y^4});
+
+bool cond(pair t) {return 2-(t.x)^2-(t.y)^2 >-2;}
+
+//triple f(pair t) {
+// return (t.x,t.y,2-t.x^2-t.y^2);
+//}
+
+triple f(pair t) {
+  return (cos(t.x)*t.y,sin(t.x)*t.y,2-t.y^2);
+	}
+surface s=surface(f,(0,0),(2*pi,2),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+draw ((0,2.5,1.75)--(0,-1,0),red+2bp);
+
+//triple f(pair t) {
+//  return (cos(t.x)*t.y,sin(t.x)*t.y,4*cos(t.x)*t.y*sin(t.x)*t.y-(cos(t.x)*t.y)^4-(sin(t.x)//*t.y)^4);
+//}
+//surface s=surface(f,(-.1,0),(pi/2+.1,1.6),32,32,cond);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//plot point on surface
+dotfactor=3;
+dot((0,1,1));
+
+//Draw traces on the surface
+//triple g(real t) {return (t,pi-t,sin(t)*cos(pi-t));}
+//path3 mypath=graph(g,0,3.75,operator ..); draw(mypath,blue);
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figtpl3_3D.asy -->
+
 </figure>
 <p>
 The surface <m>z=-x^2+y^2</m>, along with the found normal line, is graphed in <xref ref="fig_tpl3">Figure</xref>.
@@ -374,7 +867,108 @@ An advantage of this parametrization of the line is that letting <m>t=t_0</m> gi
 3Dcoo=-13.70578670501709 -0.4136597216129303 47.15321731567383,
 3Droo=200.99997225183392,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figtpl5.png" />
+
+<!-- START figures/figtpl5_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial4b3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(15,10,9);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={2,4};
+real[] myychoice={2,4};
+real[] myzchoice={2,4};
+defaultpen(0.5mm);
+pair xbounds=(-1,5.5);
+pair ybounds=(-2,4.5);
+pair zbounds=(-1,5.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//   -y^2+x+3
+
+bool cond(pair t) {return 4*t.x*t.y-(t.x)^4-(t.y)^4 >-3;}
+
+triple f(pair t) {
+  return (t.x,t.y,3+t.x-t.y^2);
+}
+surface s=surface(f,(-.5,-2.1),(4,2),8,16,vsplinetype=new splinetype[] {notaknot,notaknot,monotonic},usplinetype=Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//plot point on surface
+dotfactor=3;
+dot((2,1,4));
+dot((3.63,-2.27,2.37));
+dot((.37,4.27,5.63));
+
+draw ((.37,4.27,5.63)--(3.63,-2.27,2.37),red+2bp);
+
+//Draw traces on the surface
+//triple g(real t) {return (t,pi-t,sin(t)*cos(pi-t));}
+//path3 mypath=graph(g,0,3.75,operator ..); draw(mypath,blue);
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figtpl5_3D.asy -->
+
 </figure>
 <p>
 The surface is graphed along with points <m>P</m>, <m>Q_1</m>, <m>Q_2</m> and a portion of the normal line to <m>f</m> at <m>P</m>.
@@ -430,7 +1024,110 @@ Note that this is the same surface and point used in <xref ref="ex_tpl3">Example
 3Dcoo=-2.8726136684417725 0.033301327377557755 9.961321830749512,
 3Droo=200.99997428361934,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="150%" source="images/figtpl6.png" />
+
+<!-- START figures/figtpl6_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial4b3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(13,10,9);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-2,2};
+real[] myychoice={-2,2};
+real[] myzchoice={-2,2};
+defaultpen(0.5mm);
+pair xbounds=(-3,3);
+pair ybounds=(-3,3);
+pair zbounds=(-3,3);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//   -x^2-y^2+2
+
+triple f(pair t) {
+  return (cos(t.x)*t.y,sin(t.x)*t.y,2-t.y^2);
+}
+surface s=surface(f,(0,0),(2*pi,2),8,8,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//plot point on surface
+dotfactor=3;
+dot((0,1,1));
+
+// -2*y+3
+triple g(pair t) {
+	return (t.x,t.y,-2*t.y+3);}
+surface ss=surface(g,(-1,.5),(1,1.5),1,1);
+pen q=rgb(.9,0,0)+.1mm;
+draw(ss,rgb(1,.6,.6)+opacity(.8),meshpen=q,nolight,render(merge=true));
+
+
+//Draw traces on the surface
+//triple g(real t) {return (t,pi-t,sin(t)*cos(pi-t));}
+//path3 mypath=graph(g,0,3.75,operator ..); draw(mypath,blue);
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figtpl6_3D.asy -->
+
 </figure>
 <p>
 The surface <m>z=-x^2+y^2</m> and tangent plane are graphed in <xref ref="fig_tpl6">Figure</xref>.
@@ -486,20 +1183,12 @@ Let <m>w=F(x,y,z)</m> be differentiable on an open ball <m>B</m> that contains t
 </p>
 
 <ol>
-<li>
-<p>
-The <b>gradient of <m>F</m></b> is <m>\nabla F(x,y,z) = \la f_x(x,y,z),f_y(x,y,z),f_z(x,y,z)\ra</m>.
-</p>
-</li>
-<li>
-<p>
-The <b>gradient of <m>F</m> at <m>(x_0,y_0,z_0)</m> is
+<li><p>The <b>gradient of <m>F</m></b> is <m>\nabla F(x,y,z) = \la f_x(x,y,z),f_y(x,y,z),f_z(x,y,z)\ra</m>.</p></li>
+<li><p>The <b>gradient of <m>F</m> at <m>(x_0,y_0,z_0)</m> is
 <me>
   \nabla F(x_0,y_0,z_0) = \la f_x(x_0,y_0,z_0),f_y(x_0,y_0,z_0),f_z(x_0,y_0,z_0)\ra.
 </me>
-</b>
-</p>
-</li>
+</b></p></li>
 </ol>
 </statement>
 </definition>
@@ -555,7 +1244,113 @@ At <m>P</m>, the gradient is <m>\nabla F(1,2,1) = \la 1/6, 2/3, 1/2\ra</m>. Thus
 3Dcoo=-2.872609853744507 0.03330020606517792 9.961324691772461,
 3Droo=200.99997078585088,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="150%" source="images/figtpl8.png" />
+
+<!-- START figures/figtpl8_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figpartial4b3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(14,11,4.7);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-2,2};
+real[] myychoice={-2,2};
+real[] myzchoice={-2,2};
+defaultpen(0.5mm);
+pair xbounds=(-3.5,3.5);
+pair ybounds=(-3.5,3.5);
+pair zbounds=(-3.5,3.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//   ({cos(y)*(3.46*cos(x))},{cos(y)*(2.45*sin(x))},{2*sin(y)})
+
+triple f(pair t) {
+  return (cos(t.y)*(3.46*cos(t.x)),cos(t.y)*(2.45*sin(t.x)),2*sin(t.y));
+}
+surface s=surface(f,(-pi,-pi/2),(pi,pi/2),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//plot point on surface
+dotfactor=3;
+dot((1,2,1));
+
+// 1-(x-1)/3-4*(y-2)/3   1. - 0.980581 x, 2. + 0.156893 x + 0.6 y, 1. + 0.11767 x - 0.8 y
+//triple g(pair t) {
+//	return (t.x,t.y,1-(t.x-1)/3-4*(t.y-2)/3);}
+//surface ss=surface(g,(.5,1.5),(1.5,2.5),1,1);
+triple g(pair t) {
+	return (1.-0.980581*t.x, 2.+0.156893*t.x+0.6*t.y,1.+0.11767*t.x-0.8*t.y);}
+surface ss=surface(g,(-.75,-.75),(.75,.75),1,1);
+pen q=rgb(.9,0,0)+.1mm;
+draw(ss,rgb(1,.6,.6)+opacity(.8),meshpen=q,nolight,render(merge=true));
+
+
+//Draw traces on the surface
+//triple g(real t) {return (t,pi-t,sin(t)*cos(pi-t));}
+//path3 mypath=graph(g,0,3.75,operator ..); draw(mypath,blue);
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- END figures/figtpl8_3D.asy -->
+
 </figure>
 <p>
 The ellipsoid and tangent plane are graphed in <xref ref="fig_tpl8">Figure</xref>.

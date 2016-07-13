@@ -198,34 +198,22 @@ Find the derivatives of the following functions:
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-Consider <m>y = \sin 2x</m>. Recognize that this is a composition of functions, where <m>f(x) = \sin x</m> and <m>g(x) = 2x</m>. Thus
+<li><p>Consider <m>y = \sin 2x</m>. Recognize that this is a composition of functions, where <m>f(x) = \sin x</m> and <m>g(x) = 2x</m>. Thus
 <me>
   y\primeskip' = \fp(g(x))\cdot g\primeskip'(x) = \cos (2x)\cdot 2 = 2\cos 2x.
-</me>
-</p>
-</li>
-<li>
-<p>
-Recognize that <m>y = \ln (4x^3-2x^2)</m> is the composition of <m>f(x) = \ln x</m> and <m>g(x) = 4x^3-2x^2</m>. Also, recall that
+</me></p></li>
+<li><p>Recognize that <m>y = \ln (4x^3-2x^2)</m> is the composition of <m>f(x) = \ln x</m> and <m>g(x) = 4x^3-2x^2</m>. Also, recall that
 <me>
   \frac{d}{dx}\Big(\ln x\Big) = \frac{1}{x}.
 </me>
 This leads us to:
 <me>
   y\primeskip' = \frac{1}{4x^3-2x^2} \cdot (12x^2-4x) = \frac{12x^2-4x}{4x^3-2x^2}= \frac{4x(3x-1)}{2x(2x^2-x)} = \frac{2(3x-1)}{2x^2-x}.
-</me>
-</p>
-</li>
-<li>
-<p>
-Recognize  that <m>y = e^{-x^2}</m> is the composition of <m>f(x) = e^x</m> and <m>g(x) = -x^2</m>. Remembering that <m>\fp(x) = e^x</m>, we have
+</me></p></li>
+<li><p>Recognize  that <m>y = e^{-x^2}</m> is the composition of <m>f(x) = e^x</m> and <m>g(x) = -x^2</m>. Remembering that <m>\fp(x) = e^x</m>, we have
 <me>
   y\primeskip' = e^{-x^2}\cdot (-2x) = (-2x)e^{-x^2}.
-</me>
-</p>
-</li>
+</me></p></li>
 </ol>
 
 <p>
@@ -258,7 +246,29 @@ The tangent line is sketched along with <m>f</m> in <xref ref="fig_chain7">Figur
 </p>
 <figure xml:id="fig_chain7" >
 <caption><m>f(x) = \cos x^2</m> sketched along with its tangent line at <m>x=1</m>.</caption>
-<image width="73%" source="images/figchain7.png" />
+
+<!-- START figures/fig_chain7.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,height=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=1.1,xmin=-3.1,xmax=3.1,name=myplot]
+
+\addplot [{\colorone},smooth,thick,domain=-3.14:3.14,samples=40] ({x},{cos(deg(x^2))});% {};
+\addplot [{\colortwo},smooth,thick,domain=.1:1.9] {-1.68*(x-1)+0.54};
+%\filldraw [black] (axis cs:8,8) node [shift={(10pt,8pt)}] {\scriptsize $(8,8)$} circle (1pt);
+%
+%\addplot [black,smooth,thick,domain=0:360] ({22.63*cos(x)},{22.63*sin(x)});% {};
+%\addplot [{\colortwo},smooth,thick,domain=0:360] ({5.66*cos(x)-12},{5.66*sin(x)-12});% {};
+%\filldraw [black] (axis cs:-8,-8) circle (1pt);
+%\draw [thin,{\colortwo},dashed] (axis cs:0,0) -- (axis cs:.5,.866);
+%\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x+1};
+%\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x-1};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_chain7.tex -->
+
 </figure>
 </solution>
 </example>
@@ -305,7 +315,7 @@ The following is a short list of how the Chain Rule can be quickly applied to fa
 
 </sidebyside>
 <p>
-Of course, the Chain Rule can be applied in conjunction with any of the other rules we have already learned. We practice this next.
+\vskip Of course, the Chain Rule can be applied in conjunction with any of the other rules we have already learned. We practice this next.
 </p>
 <example xml:id="ex_chain4">
 <title>Using the Product, Quotient and Chain Rules</title>
@@ -320,23 +330,15 @@ Find the derivatives of the following functions.
 </statement>
 <solution>
 <ol>
-<li>
-<p>
-We must use the Product and Chain Rules. Do not think that you must be able to <q>see</q> the whole answer immediately; rather, just proceed step<ndash />by<ndash />step.
+<li><p>We must use the Product and Chain Rules. Do not think that you must be able to <q>see</q> the whole answer immediately; rather, just proceed step<ndash />by<ndash />step.
 <me>
   \fp(x) = x^5\big(6x^2\cos 2x^3\big) + 5x^4\big(\sin 2x^3\big)= 6x^7\cos2x^3+5x^4\sin 2x^3.
-</me>
-</p>
-</li>
-<li>
-<p>
-We must employ the Quotient Rule along with the Chain Rule. Again, proceed step<ndash />by<ndash />step.
+</me></p></li>
+<li><p>We must employ the Quotient Rule along with the Chain Rule. Again, proceed step<ndash />by<ndash />step.
 <md>
   <mrow>  \fp(x) = \frac{e^{-x^2}\big(15x^2\big) - 5x^3\big((-2x)e^{-x^2}\big)}{\big(e^{-x^2}\big)^2} \amp =\frac{e^{-x^2}\big(10x^4+15x^2\big)}{e^{-2x^2}}</mrow>
   <mrow>  \amp = e^{x^2}\big(10x^4+15x^2\big).</mrow>
-</md>
-</p>
-</li>
+</md></p></li>
 </ol>
 </solution>
 </example>
@@ -478,6 +480,10 @@ Let <m>f(x)=a^x</m>, for <m>a>0, a\neq 1</m>.<index><main>derivative</main><sub>
 </p>
 </statement>
 </theorem>
+
+<p>
+\vskip
+</p>
 </introduction>
 
 
@@ -513,7 +519,7 @@ One of the most common ways of
 </p>
 <figure xml:id="fig_chainrulegears" >
 <caption>A series of gears to demonstrate the Chain Rule. Note how <m>\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}</m></caption>
-<image width="73%" source="images/figchainrulegears.png" />
+
 </figure>
 <p>
 Likewise, every revolution of <m>u</m> causes 3 revolutions of <m>y</m>: <m>\frac{dy}{du} = 3</m>. How does <m>y</m> change with respect to <m>x</m>? For each revolution of <m>x</m>, <m>y</m> revolves 6 times; that is,
@@ -986,16 +992,8 @@ Compute <m>\ds \frac{d}{dx}\big(\ln (kx)\big)</m> two ways:
 </p>
 
 <ol>
-<li>
-<p>
-Using the Chain Rule, and
-</p>
-</li>
-<li>
-<p>
-by first using the logarithm rule <m>\ln (ab) = \ln a + \ln b</m>, then taking the derivative.
-</p>
-</li>
+<li><p>Using the Chain Rule, and</p></li>
+<li><p>by first using the logarithm rule <m>\ln (ab) = \ln a + \ln b</m>, then taking the derivative.</p></li>
 </ol>
 </statement>
 <answer>
@@ -1012,16 +1010,8 @@ Compute <m>\ds \frac{d}{dx}\big(\ln (x^k)\big)</m> two ways:
 </p>
 
 <ol>
-<li>
-<p>
-Using the Chain Rule, and
-</p>
-</li>
-<li>
-<p>
-by first using the logarithm rule <m>\ln (a^p) = p\ln a</m>, then taking the derivative.
-</p>
-</li>
+<li><p>Using the Chain Rule, and</p></li>
+<li><p>by first using the logarithm rule <m>\ln (a^p) = p\ln a</m>, then taking the derivative.</p></li>
 </ol>
 </statement>
 <answer>
@@ -1042,26 +1032,14 @@ The <q>wind chill factor</q> is a measurement of how cold it <q>feels</q> during
 </p>
 
 <ol>
-<li>
-<p>
-What are the units of <m>W'(w)</m>?
-</p>
-</li>
-<li>
-<p>
-What would you expect the sign of <m>W'(10)</m> to be?
-</p>
-</li>
+<li><p>What are the units of <m>W'(w)</m>?</p></li>
+<li><p>What would you expect the sign of <m>W'(10)</m> to be?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
 <li><m>^\circ</m> F/mph</li>
-<li>
-<p>
-The sign would be negative; when the wind is blowing at 10 mph, any increase in wind speed will make it feel colder, i.e., a lower number on the Fahrenheit scale.
-</p>
-</li>
+<li><p>The sign would be negative; when the wind is blowing at 10 mph, any increase in wind speed will make it feel colder, i.e., a lower number on the Fahrenheit scale.</p></li>
 </ol>
 </answer>
 </exercise>

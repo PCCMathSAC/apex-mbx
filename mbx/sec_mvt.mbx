@@ -54,9 +54,58 @@ with <m>a=-1</m> and <m>b=1</m> as shown in <xref ref="fig_mvt1">Figure</xref>(a
 <figure xml:id="fig_mvt1" >
 <caption>A graph of <m>f_1(x) = 1/x^2</m> and <m>f_2(x) = |x|</m> in <xref ref="ex_mvt1">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figmvt1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_mvt1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.6,ymax=3.9,xmin=-1.95,xmax=1.95,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-4.+2,0.25) (-3.9+2,0.277008) (-3.8+2,0.308642) (-3.7+2,0.346021) 
+(-3.6+2,0.390625) (-3.5+2,0.444444) (-3.4+2,0.510204) (-3.3+2,0.591716) 
+(-3.2+2,0.694444) (-3.1+2,0.826446) (-3.+2,1.) (-2.9+2,1.23457) (-2.8+2,1.5625) 
+(-2.7+2,2.04082) (-2.6+2,2.77778) (-2.5+2,4.) (-2.4+2,6.25) (-2.3+2,11.1111) 
+(-2.2+2,25.) (-2.1+2,100.)  (-1.9+2,100.) (-1.8+2,25.) 
+(-1.7+2,11.1111) (-1.6+2,6.25) (-1.5+2,4.) (-1.4+2,2.77778) (-1.3+2,2.04082) 
+(-1.2+2,1.5625) (-1.1+2,1.23457) (-1.+2,1.) (-0.9+2,0.826446) (-0.8+2,0.694444) 
+(-0.7+2,0.591716) (-0.6+2,0.510204) (-0.5+2,0.444444) (-0.4+2,0.390625) 
+(-0.3+2,0.346021) (-0.2+2,0.308642) (-0.1+2,0.277008)(0+2,.25)(0.1+2,0.226757) (0.2+2,0.206612) (0.3+2,0.189036) 
+(0.4+2,0.173611) (0.5+2,0.16) (0.6+2,0.147929) (0.7+2,0.137174) 
+(0.8+2,0.127551) (0.9+2,0.118906) (1.+2,0.111111) (1.1+2,0.104058) 
+(1.2+2,0.0976562) (1.3+2,0.0918274) (1.4+2,0.0865052) (1.5+2,0.0816327) 
+(1.6+2,0.0771605) (1.7+2,0.073046) (1.8+2,0.0692521) (1.9+2,0.0657462) 
+(2.+2,0.0625)};
+%\addplot [{\colorone},smooth,domain=-4:-2.1,samples=20] {1/(x+2)^2+1.9375};
+%\addplot [{\colorone},smooth,domain=-1.8:2,samples=25] {1/(x+2)^2+1.9375};
+%\draw [{\colorone}] (axis cs:2,4)--(axis cs:3,2)-- (axis cs:5,5);
+\filldraw [fill={\colorone},draw={\colorone},thick] (axis cs:-1,1) circle (1pt);
+\filldraw [fill={\colorone},draw={\colorone},thick] (axis cs:1,1) circle (1pt);
+%\filldraw [fill=black,draw=black,thick] (axis cs:2,4) circle (2pt);
+\draw [{\colorone},dashed,thick] (axis cs:-1,1) -- (axis cs:1,1);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_mvt1.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figmvt2.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_mvt2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.1,ymax=1.2,ytick={.5,1},xmin=-1.4,xmax=1.4,name=myplot]
+\filldraw [fill={\colorone},draw={\colorone},thick] (axis cs:-1,1) circle (1pt);
+\filldraw [fill={\colorone},draw={\colorone},thick] (axis cs:1,1) circle (1pt);
+
+\draw [{\colorone},dashed,thick] (axis cs:-1,1) -- (axis cs:1,1); 
+\draw [{\colorone},thick] (axis cs:-1.2,1.2) -- (axis cs:0,0); 
+\draw [{\colorone},thick] (axis cs:0,0) -- (axis cs:1.2,1.2);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_mvt2.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -107,7 +156,36 @@ Consider <xref ref="fig_mvt3">Figure</xref> where the graph of a function <m>f</
 </p>
 <figure xml:id="fig_mvt3" >
 <caption>A graph of <m>f(x) = x^3-5x^2+3x+5</m>, where <m>f(a) = f(b)</m>. Note the existence of <m>c</m>, where <m>a\lt c\lt b</m>, where <m>\fp(c)=0</m>.</caption>
-<image width="73%" source="images/figmvt3.png" />
+
+<!-- START figures/fig_mvt3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1,2},% 
+			extra x ticks={-.39,1.22,.333},
+			extra x tick labels={$a$,$b$,$c$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-5.2,ymax=8,%
+			xmin=-1.5,xmax=2.5%
+]
+
+\addplot [thick,{\colorone},smooth,domain=-1.5:3.5] {x^3-5*x^2+3*x+5};
+\addplot [dashed,thin,domain=-1:2] {3};
+\filldraw (axis cs:-.39,3) circle (1pt);
+\filldraw (axis cs:1.22,3) circle (1pt);
+\addplot [thin,dashed,domain=-.75:1.5] {5.48};
+\filldraw (axis cs:.3333,5.48) circle (1pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_mvt3.tex -->
+
 </figure>
 <p>
 Rolle's Theorem is really just a special case of the Mean Value Theorem. If <m>f(a) = f(b)</m>, then the <em>average</em> rate of change on <m>(a,b)</m> is <m>0</m>, and the theorem guarantees some <m>c</m> where <m>\fp(c)=0</m>. We will prove Rolle's Theorem, then use it to prove the Mean Value Theorem.
@@ -193,7 +271,38 @@ We have found 2 values <m>c</m> in <m>[-3,3]</m> where the instantaneous rate of
 </p>
 <figure xml:id="fig_mvt4" >
 <caption>Demonstrating the Mean Value Theorem in <xref ref="ex_mvt2">Example</xref>.</caption>
-<image width="73%" source="images/figmvt4.png" />
+
+<!-- START figures/fig_mvt4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-3,-2,-1,1,2,3},% 
+%			extra x ticks={-.39,1.22,.333},
+%			extra x tick labels={$a$,$b$,$c$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-45,ymax=51,%
+			xmin=-3.2,xmax=3.2%
+]
+
+\addplot [thick,{\colorone},smooth,domain=-3:3] {x^3+5*x+5};
+\draw [dashed,thick] (axis cs:-3,-37) -- (axis cs:3,47);
+\filldraw (axis cs:-3,-37) circle (1pt);
+\filldraw (axis cs:3,47) circle (1pt);
+\filldraw (axis cs:-1.732,-8.86) circle (.75pt);
+\addplot [thick,dashed,domain=-2.8:-.1,{\colortwo}] {14*(x+1.732)-13.86+5};
+\filldraw (axis cs:1.732,18.86) circle (.75pt);
+\addplot [thick,dashed,domain=-.1:3,{\colortwo}] {14*(x-1.732)+13.86+5};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_mvt4.tex -->
+
 </figure>
 </solution>
 </example>

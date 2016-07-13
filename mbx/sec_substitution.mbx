@@ -309,6 +309,7 @@ The final answer is interesting; the natural log of the natural log. Take the de
 <subsection>
 <title>Integrals Involving Trigonometric Functions</title>
 <p>
+\vskip
 <xref ref="sec_trigint">Section</xref> delves deeper into integrals of a variety of trigonometric functions; here we use substitution to establish a foundation that we will build upon.
 </p>
 
@@ -459,6 +460,7 @@ We'll make significant use of this power<ndash />reducing technique in future se
 <subsection>
 <title>Simplifying the Integrand</title>
 <p>
+\vskip
 It is common to be reluctant to manipulate the integrand of an integral; at first, our grasp of integration is tenuous and one may think that working with the integrand will improperly change the results. Integration by substitution works using a different logic: as long as <em>equality</em> is maintained, the integrand can be manipulated so that its <em>form</em> is easier to deal with. The next two examples demonstrate common ways in which using algebra first makes the integration easier to perform.
 </p>
 <example xml:id="ex_sub9">
@@ -553,6 +555,7 @@ which is obviously the same answer we obtained before. In this situation, substi
 <subsection>
 <title>Substitution and Inverse Trigonometric Functions</title>
 <p>
+\vskip
 When studying derivatives of inverse functions, we learned that
 <me>
   \frac{d}{dx}\big(\tan^{-1}x\big) = \frac{1}{1+x^2}.
@@ -757,25 +760,14 @@ Combining these together, we have
 <subsection>
 <title>Substitution and Definite Integration</title>
 <p>
+\vskip
 This section has focused on evaluating indefinite integrals as we are learning a new technique for finding antiderivatives. However, much of the time integration is used in the context of a definite integral. Definite integrals that require substitution can be calculated using the following workflow:
 </p>
 
 <ol>
-<li>
-<p>
-Start with a definite integral <m>\ds \int_a^b f(x)\ dx</m> that requires substitution.
-</p>
-</li>
-<li>
-<p>
-Ignore the bounds; use substitution to evaluate <m>\ds \int f(x)\ dx</m> and find an antiderivative <m>F(x)</m>.
-</p>
-</li>
-<li>
-<p>
-Evaluate <m>F(x)</m> at the bounds; that is, evaluate <m>F(x)\Big|_a^b = F(b) - F(a)</m>.
-</p>
-</li>
+<li><p>Start with a definite integral <m>\ds \int_a^b f(x)\ dx</m> that requires substitution.</p></li>
+<li><p>Ignore the bounds; use substitution to evaluate <m>\ds \int f(x)\ dx</m> and find an antiderivative <m>F(x)</m>.</p></li>
+<li><p>Evaluate <m>F(x)</m> at the bounds; that is, evaluate <m>F(x)\Big|_a^b = F(b) - F(a)</m>.</p></li>
 </ol>
 
 <p>
@@ -828,9 +820,63 @@ Notice how once we converted the integral to be in terms of <m>u</m>, we never w
 <figure xml:id="fig_subst12" >
 <caption>Graphing the areas defined by the definite integrals of <xref ref="ex_sub12">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figsubst12a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_subst12a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1,2,3,4,5},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:2] {cos(deg(3*x-1))} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-1.5:5.5,samples=50] {cos(deg(3*x-1))}; 
+\draw (axis cs:3.5,1.05) node {\scriptsize $y=\cos(3x-1)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_subst12a.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figsubst12b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_subst12b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1,2,3,4,5},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=-1:5] {cos(deg(x))/3} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-1.5:5.5] {cos(deg(x))/3}; 
+\draw (axis cs:3.5,.5) node {\scriptsize $y=\frac13\cos(u)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $u$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_subst12b.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -867,9 +913,63 @@ In <xref ref="fig_subst13">Figure</xref> we have again graphed the two regions d
 <figure xml:id="fig_subst13" >
 <caption>Graphing the areas defined by the definite integrals of <xref ref="ex_subst13">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figsubst13a.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_subst13a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1},% 
+			extra x ticks={1.57},
+			extra x tick labels={$\frac{\pi}{2}$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.6,ymax=1.1,%
+			xmin=-.5,xmax=2%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:1.57] {cos(deg(x))*sin(deg(x)} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:2] {cos(deg(x))*sin(deg(x)}; 
+\draw (axis cs:1.25,.6) node {\scriptsize $y=\sin x\cos x$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_subst13a.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figsubst13b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_subst13b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1},% 
+			extra x ticks={1.57},
+			extra x tick labels={$\frac{\pi}{2}$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.6,ymax=1.1,%
+			xmin=-.5,xmax=2%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:1] {x} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:1.1] {x}; 
+\draw (axis cs:1.25,1) node {\scriptsize $y=u$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $u$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_subst13b.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>

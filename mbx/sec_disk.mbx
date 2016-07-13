@@ -19,7 +19,106 @@ Area of the base &#215; height. \null
 3Dcoo=-7.312352180480957 -16.589130401611328 29.674652099609375,
 3Droo=149.99999509331877,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figcross1.png" />
+
+<!-- START figures/figcross1_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcross1.asy in Chapter 7
+
+
+size(100,100,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(3.4,5.4,.9);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={1,2};
+real[] myychoice={1,2,3};
+real[] myzchoice={1};
+defaultpen(0.5mm);
+
+pair xbounds=(-0.25,2.5);
+pair ybounds=(-0.25,2.5);
+pair zbounds=(-0.25,1.5);
+
+//xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+//yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+//zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+//label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+//label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+triple f(pair t) {
+  return (t.y*(cos(t.x)*(1.5+.5*cos(t.x)*sin(3*t.x))+.5*sin(t.x)*(1.5+.5*cos(t.x)*sin(3*t.x))),t.y*(sin(t.x)*(1.5+.5*cos(t.x)*sin(3*t.x))),0);
+}
+surface s=surface(f,(0,0),(2*pi,1),16,2,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.2,.2,1)+opacity(.7),meshpen=p);
+
+triple f(pair t) {
+  return (cos(t.x)*(1.5+.5*cos(t.x)*sin(3*t.x))+.5*sin(t.x)*(1.5+.5*cos(t.x)*sin(3*t.x)),sin(t.x)*(1.5+.5*cos(t.x)*sin(3*t.x)),t.y);
+}
+surface s=surface(f,(0,0),(2*pi,1),16,2,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.4),meshpen=p);
+
+triple f(pair t) {
+  return (t.y*(cos(t.x)*(1.5+.5*cos(t.x)*sin(3*t.x))+.5*sin(t.x)*(1.5+.5*cos(t.x)*sin(3*t.x))),t.y*(sin(t.x)*(1.5+.5*cos(t.x)*sin(3*t.x))),1);
+}
+surface s=surface(f,(0,0),(2*pi,1),16,2,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+triple g(real t) {return (cos(t)*(1.5+.5*cos(t)*sin(3*t))+.5*sin(t)*(1.5+.5*cos(t)*sin(3*t)),sin(t)*(1.5+.5*cos(t)*sin(3*t)),1);}
+path3 mypath=graph(g,0,2*pi,operator ..);
+draw(mypath,blue+linewidth(2));
+
+triple g(real t) {return (cos(t)*(1.5+.5*cos(t)*sin(3*t))+.5*sin(t)*(1.5+.5*cos(t)*sin(3*t)),sin(t)*(1.5+.5*cos(t)*sin(3*t)),0);}
+path3 mypath=graph(g,0,2*pi,operator ..);
+draw(mypath,blue+linewidth(2));
+
+label("base area $= A$",(2,2,-.1));
+label("Volume $=A\cdot h$",(2,2,-.4));
+label("$h$",(-1.9,0,.5));
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figcross1_3D.asy -->
+
 </figure>
 <p>
 We can use this fact as the building block in finding volumes of a variety of shapes.
@@ -74,7 +173,109 @@ There are many ways to <q>orient</q> the pyramid along the <m>x</m>-axis; <xref 
 3Dcoo=60.78499984741211 0.48087620735168457 -14.641631126403809,
 3Droo=150.00000157638937,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figcross_area1.png" />
+
+<!-- START figures/figcross_area1_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for fig13_06_ex_143D.asy in Chapter 13
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((8.1,15.5,23.4),(0,1,0),(0,0,0),1,(-0.13,0.0046));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+//(-0.01,0.061,-0.029)
+
+// setup and draw the axes
+real[] myxchoice={5};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-0.25,8);
+pair ybounds=(-8,8);
+pair zbounds=(-8,8);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+
+path3 p=(5,5,5)--(5,-5,5)--(5,-5,-5)--(5,5,-5);
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p--cycle,blue+.3mm);
+
+
+path3 p1=(0,0,0)--(5,5,5)--(5,-5,5);
+draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p1--cycle,blue+.3mm);
+
+path3 p2=(0,0,0)--(5,5,5)--(5,5,-5);
+draw(surface(p2 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p2--cycle,blue+.3mm);
+
+path3 p3=(0,0,0)--(5,5,-5)--(5,-5,-5);
+draw(surface(p3 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p3--cycle,blue+.3mm);
+
+path3 p4=(0,0,0)--(5,-5,5)--(5,-5,-5);
+draw(surface(p4 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p4--cycle,blue+.3mm);
+
+draw((3,-3,3) -- (3,-3,-3) -- (3,3,-3)-- (3,3,3)--cycle,black+.5mm);
+
+
+dotfactor=3;
+dot((3,0,0));
+label("$x$",(3,0,0),S);
+
+label("$2x$",(3,0,3),W);
+label("$2x$",(3,3,0),N);
+label("$10$",(5,-5,0),S);
+label("$10$",(5,0,-5),E);
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figcross_area1_3D.asy -->
+
 </figure>
 <p>
 Each cross section of the pyramid is a square; this is a sample differential element. To determine its area <m>A(x)</m>, we need to determine the side lengths of the square.
@@ -96,7 +297,145 @@ If one were to cut a slice out of the pyramid at <m>x=3</m>, as shown in <xref r
 3Dcoo=60.78499984741211 0.48087620735168457 -14.641631126403809,
 3Droo=150.00000157638937,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/" />
+
+<!-- START figures/figcross_area1a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for fig13_06_ex_143D.asy in Chapter 13
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((8.1,15.5,23.4),(0,1,0),(0,0,0),1,(-0.13,0.0046));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+//(-0.01,0.061,-0.029)
+
+// setup and draw the axes
+real[] myxchoice={3,5};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-0.25,8);
+pair ybounds=(-8,8);
+pair zbounds=(-8,8);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+triple f1(real t) {
+  return (t,t,t);
+}
+triple f2(real t) {
+  return (t,-t,t);
+}
+triple f3(real t) {
+  return (t,t,-t);
+}
+triple f4(real t) {
+  return (t,-t,-t);
+}
+//path3 mypath1=graph(f1,2.8,3.2,operator ..);
+//draw(mypath1,blue+.3mm);
+
+real x1=2.8;
+real x2=3.2;
+
+path3 p1=f1(x1)--f1(x2)--f2(x2)--f2(x1);
+draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p1--cycle,blue+.3mm);
+
+path3 p2=f1(x1)--f1(x2)--f3(x2)--f3(x1);
+draw(surface(p2 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p2--cycle,blue+.3mm);
+
+path3 p3=f4(x1)--f4(x2)--f3(x2)--f3(x1);
+draw(surface(p3 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p3--cycle,blue+.3mm);
+
+path3 p4=f4(x1)--f4(x2)--f2(x2)--f2(x1);
+draw(surface(p4 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p4--cycle,blue+.3mm);
+
+path3 p5=f1(x1)--f3(x1)--f4(x1)--f2(x1);
+draw(surface(p5 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p5--cycle,blue+.3mm);
+
+path3 p6=f1(x2)--f3(x2)--f4(x2)--f2(x2);
+draw(surface(p6 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p6--cycle,blue+.3mm);
+
+label("$\Delta x$",f3(3),N);
+
+path3 p=(5,5,5)--(5,-5,5)--(5,-5,-5)--(5,5,-5);
+draw(p--cycle,blue+.2mm+dashed);
+
+path3 p1=(0,0,0)--(5,5,5);
+draw(p1,blue+.2mm+dashed);
+
+path3 p2=(0,0,0)--(5,-5,-5);
+draw(p2,blue+.2mm+dashed);
+
+path3 p3=(0,0,0)--(5,5,-5);
+draw(p3,blue+.2mm+dashed);
+
+path3 p4=(0,0,0)--(5,-5,5);
+draw(p4,blue+.2mm+dashed);
+
+
+//draw((3,-3,3) -- (3,-3,-3) -- (3,3,-3)-- (3,3,3)--cycle,black+.5mm);
+
+
+//dotfactor=3;
+//dot((3,0,0));
+//label("$x$",(3,0,0),S);
+
+//label("$2x$",(3,0,3),W);
+//label("$2x$",(3,3,0),N);
+//label("$10$",(5,-5,0),S);
+//label("$10$",(5,0,-5),E);
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figcross_area1a_3D.asy -->
+
 </figure>
 <p>
 Cutting the pyramid into <m>n</m> slices divides the total volume into <m>n</m> equally<ndash />spaced smaller pieces, each with volume <m>(2x_i)^2\Delta x</m>, where <m>x_i</m> is the approximate location of the slice along the <m>x</m>-axis and <m>\Delta x</m> represents the thickness of each slice. One can approximate total volume of the pyramid by summing up the volumes of these slices:
@@ -168,7 +507,8 @@ The volume of the differential element shown in part (a) of the figure is approx
 <figure xml:id="fig_disk1" >
 <caption>Sketching a solid in <xref ref="ex_disk1">Example</xref>.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=110pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=126.0060482236849,
 3Dortho=0.004875946324318647,
@@ -176,9 +516,110 @@ The volume of the differential element shown in part (a) of the figure is approx
 3Dcoo=67.21983337402344 3.5258262157440186 -29.566415786743164,
 3Droo=150.00000160608386,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figdisk1.png" /></cell></row>
+
+<!-- START figures/figdisk1_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figdisk1.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((18,7.7,21.1),(0,1,0),(0,0,0),1,(-0.088,.0039));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+//(-0.01,0.061,-0.029)
+
+// setup and draw the axes
+real[] myxchoice={1,2};
+real[] myychoice={.5,1};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-0.1,2.2);
+pair ybounds=(-1.2,1.2);
+pair zbounds=(-1.2,1.2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+
+path3 p=(3/2,2/3,0)..(3/2,0,2/3)..(3/2,-2/3,0)..(3/2,0,-2/3);
+draw(surface(p .. cycle), emissive(rgb(1,.6,.6)+opacity(0.5)));
+draw(p..cycle,red+.4mm);
+
+triple g(real t) {return (t,1/t,0);}
+path3 mypath=graph(g,1,2,operator ..);
+draw(mypath,blue+linewidth(2));
+
+draw((1.5,0,0)--(1.5,2/3,0),black+.3mm);
+
+triple pt=(1.3,Sin(-20),Cos(-20));
+
+draw(pt--(1.48,.3,.05),linewidth(.75),Arrow3);
+label("$R(x)=1/x$",pt,S);
+
+label("$y=1/x$",(1,1,0),N);
+
+//triple f(pair t) {return (t.x,1/t.x*cos(t.y),1/t.x*sin(t.y));}
+//surface s=surface(f,(1,0),(2,2*pi),5,16,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//path3 p1=(0,0,0)--(5,5,5)--(5,-5,5);
+//draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+//draw(p1--cycle,blue+.3mm);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figdisk1_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=110pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=126.0060482236849,
 3Dortho=0.004875946324318647,
@@ -186,7 +627,110 @@ The volume of the differential element shown in part (a) of the figure is approx
 3Dcoo=67.21983337402344 3.5258262157440186 -29.566415786743164,
 3Droo=150.00000160608386,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figdisk1b.png" /></cell></row>
+
+<!-- START figures/figdisk1b_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figdisk1b.asy in Chapter 7
+
+
+size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((18,7.7,21.1),(0,1,0),(0,0,0),1,(-0.088,.0039));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+//(-0.01,0.061,-0.029)
+
+// setup and draw the axes
+real[] myxchoice={1,2};
+real[] myychoice={.5,1};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-0.1,2.2);
+pair ybounds=(-1.2,1.2);
+pair zbounds=(-1.2,1.2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+path3 p2=(1,1,0)..(1,0,1)..(1,-1,0)..(1,0,-1);
+draw(surface(p2 .. cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p2..cycle,blue+.4mm);
+
+triple f(pair t) {return (t.x,1/t.x*cos(t.y),1/t.x*sin(t.y));}
+surface s=surface(f,(1,0),(2,2*pi),5,16,Spline);
+pen p=rgb(0,0,.7)+.1mm;
+draw(s,emissive(rgb(.6,.6,1)+opacity(.7)),meshpen=p);
+
+path3 p1=(2,.5,0)..(2,0,.5)..(2,-.5,0)..(2,0,-.5);
+draw(surface(p1 .. cycle), emissive(rgb(.6,.6,1)+opacity(0.7)));
+draw(p1..cycle,blue+.4mm);
+
+path3 p=(3/2,2/3,0)..(3/2,0,2/3)..(3/2,-2/3,0)..(3/2,0,-2/3);
+draw(surface(p .. cycle), emissive(rgb(1,.6,.6)+opacity(0.5)));
+draw(p..cycle,red+.4mm);
+
+triple g(real t) {return (t,1/t,0);}
+path3 mypath=graph(g,1.01,1.99,operator ..);
+draw(mypath,blue+linewidth(2));
+
+
+
+
+
+
+
+
+//path3 p1=(0,0,0)--(5,5,5)--(5,-5,5);
+//draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+//draw(p1--cycle,blue+.3mm);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figdisk1b_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -236,7 +780,8 @@ Thus we are rotating the curve <m>x=1/y</m>, from <m>y=1/2</m> to <m>y=1</m> abo
 <figure xml:id="fig_disk2" >
 <caption>Sketching a solid in <xref ref="ex_disk2">Example</xref>.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=112.9954735907269,
 3Dortho=0.003950905054807663,
@@ -244,9 +789,112 @@ Thus we are rotating the curve <m>x=1/y</m>, from <m>y=1/2</m> to <m>y=1</m> abo
 3Dcoo=-9.51923942565918 49.542564392089844 -9.694497108459473,
 3Droo=150.00000339216956,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figdisk1a.png" /></cell></row>
+
+<!-- START figures/figdisk1a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figdisk1a.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((24.2,2.9,24.5),(0,1,0),(0,0,0),.95,(0.011,0.0033));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-2,-1,1,2};
+real[] myychoice={1};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-2.3,2.3);
+pair ybounds=(-.2,1.2);
+pair zbounds=(-2.3,2.3);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+
+path3 p=(3/2,2/3,0)..(0,2/3,3/2)..(-3/2,2/3,0)..(0,2/3,-3/2);
+draw(surface(p .. cycle), emissive(rgb(1,.6,.6)+opacity(0.5)));
+draw(p..cycle,red+.4mm);
+
+triple g(real t) {return (t,1/t,0);}
+path3 mypath=graph(g,1,2,operator ..);
+draw(mypath,blue+linewidth(2));
+
+draw((0,2/3,0)--(1.5,2/3,0),black+.3mm);
+
+label("$x=1/y$",(1,1,0),N);
+
+triple pt=(1,.2,0);
+draw(pt--(.75,.65,0),linewidth(.75),Arrow3);
+label("$R(y)=1/y$",pt,S);
+
+triple f(pair t) {return (1/t.x*cos(t.y),t.x,1/t.x*sin(t.y));}
+surface s=surface(f,(.5,0),(1,2*pi),5,16,Spline);
+pen p=rgb(0,0,.7)+.1mm;
+draw(s,invisible);
+
+//triple f(pair t) {return (t.x,1/t.x*cos(t.y),1/t.x*sin(t.y));}
+//surface s=surface(f,(1,0),(2,2*pi),5,16,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//path3 p1=(0,0,0)--(5,5,5)--(5,-5,5);
+//draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+//draw(p1--cycle,blue+.3mm);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figdisk1a_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=112.9954735907269,
 3Dortho=0.003950905054807663,
@@ -254,7 +902,109 @@ Thus we are rotating the curve <m>x=1/y</m>, from <m>y=1/2</m> to <m>y=1</m> abo
 3Dcoo=-9.51923942565918 49.542564392089844 -9.694497108459473,
 3Droo=150.00000339216956,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figdisk2a.png" /></cell></row>
+
+<!-- START figures/figdisk2a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figdisk2a.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((24.2,2.9,24.5),(0,1,0),(0,0,0),.95,(0.011,0.0033));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-2,-1,1,2};
+real[] myychoice={1};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-2.3,2.3);
+pair ybounds=(-.2,1.2);
+pair zbounds=(-2.3,2.3);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+triple g(real t) {return (t,1/t,0);}
+path3 mypath=graph(g,1.005,1.99,operator ..);
+draw(mypath,blue+linewidth(2));
+
+
+triple f(pair t) {return (1/t.x*cos(t.y),t.x,1/t.x*sin(t.y));}
+surface s=surface(f,(.5,0),(1,2*pi),5,16,Spline);
+pen p=rgb(0,0,.7)+.1mm;
+draw(s,emissive(rgb(.6,.6,1)+opacity(.7)),meshpen=p);
+
+path3 p1=(1,1,0)..(0,1,1)..(-1,1,0)..(0,1,-1);
+draw(surface(p1 .. cycle), emissive(rgb(.6,.6,1)+opacity(.7)));
+draw(p1..cycle,blue+.4mm);
+
+path3 p2=(2,.5,0)..(0,.5,2)..(-2,.5,0)..(0,.5,-2);
+draw(surface(p2 .. cycle), emissive(rgb(.6,.6,1)+opacity(.5)));
+draw(p2..cycle,blue+.4mm);
+
+path3 p=(3/2,2/3,0)..(0,2/3,3/2)..(-3/2,2/3,0)..(0,2/3,-3/2);
+draw(surface(p .. cycle), emissive(rgb(1,.6,.6)+opacity(0.5)));
+draw(p..cycle,red+.4mm);
+
+//triple f(pair t) {return (t.x,1/t.x*cos(t.y),1/t.x*sin(t.y));}
+//surface s=surface(f,(1,0),(2,2*pi),5,16,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//path3 p1=(0,0,0)--(5,5,5)--(5,-5,5);
+//draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+//draw(p1--cycle,blue+.3mm);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figdisk2a_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
 </figure>
@@ -277,7 +1027,8 @@ We can also compute the volume of solids of revolution that have a hole in the c
 <figure xml:id="fig_washeridea" >
 <caption>Establishing the Washer Method; see also <xref ref="fig_washeridea_b">Figure</xref>.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=96.94265756936434,
 3Dortho=0.005309578496962786,
@@ -285,9 +1036,129 @@ We can also compute the volume of solids of revolution that have a hole in the c
 3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
 3Droo=149.99999789136484,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figwasher_idea_a.png" /></cell></row>
+
+<!-- START figures/figwasher_idea_a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figwasher_idea_a_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((10.17,5.3,46),(0,1,0),(0,0,0),1,(-0.0999,0.0072));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-.2,3.5);
+pair ybounds=(-3.5,3.5);
+pair zbounds=(-3.5,3.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//  \addplot3[domain=1:3,y domain=0:1,surf,shader=flat,colormap={mp2}{\colormapone}] 
+//  (x,0,{y*(-.5*(x-2)^2+3-((x-2)^2+1))+(x-2)^2+1});
+
+//path3 p=(3/2,2/3,0)..(0,2/3,3/2)..(-3/2,2/3,0)..(0,2/3,-3/2);
+//draw(surface(p .. cycle), emissive(rgb(1,.6,.6)+opacity(0.5)));
+//draw(p..cycle,red+.4mm);
+
+triple g1(real t) {return (t,((t-2)^2+1),0);}
+path3 p1=graph(g1,1,3,operator ..);
+draw(p1,red+.4mm);
+
+triple g2(real t) {return (t,(-.5*(t-2)^2+3),0);}
+path3 p2=graph(g2,3,1,operator ..);
+draw(p2,blue+.4mm);
+
+path3 p3=p1--p2;
+draw(surface(p3 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+
+draw((-.2,.5,0)--(3.5,.5,0),dashed+.2mm);
+
+draw((1,0,0)--(1,-.1,0));
+draw((3,0,0)--(3,-.1,0));
+label("$a$",(1,-.1,0),S);
+label("$b$",(3,-.1,0),S);
+
+//\draw (axis cs:1.2,0,2.68) -- node [pos=.6,left] {\scriptsize $R(x)$} (axis cs:1.2,0,.5);
+//\draw (axis cs: 2.8,0,1.64) -- node [pos=.5,right] {\scriptsize $r(x)$} (axis cs: 2.8,0,.5);
+
+
+
+triple dot1=(1.2,2.68,0);
+triple dot2=(1.2,.5,0);
+triple dot3=(2.8,1.64,0);
+triple dot4=(2.8,.5,0);
+
+draw(dot1--dot2,black+.2mm);
+draw(dot3--dot4,black+.2mm);
+
+dotfactor=2;
+dot(dot1);
+dot(dot2);
+dot(dot3);
+dot(dot4);
+
+label("$R(x)$",dot2+.3*(dot1-dot2),W);
+label("$r(x)$",dot4+.4*(dot3-dot4),E);
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figwasher_idea_a_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=96.94265756936434,
 3Dortho=0.005309578496962786,
@@ -295,7 +1166,167 @@ We can also compute the volume of solids of revolution that have a hole in the c
 3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
 3Droo=149.99999789136484,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figwasher_idea_b.png" /></cell></row>
+
+<!-- START figures/figwasher_idea_b_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figwasher_idea_a_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((10.17,5.3,46),(0,1,0),(0,0,0),1,(-0.0999,0.0072));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-.2,3.5);
+pair ybounds=(-3.5,3.5);
+pair zbounds=(-3.5,3.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//  \addplot3[domain=1:3,y domain=0:1,surf,shader=flat,colormap={mp2}{\colormapone}] 
+//  (x,0,{y*(-.5*(x-2)^2+3-((x-2)^2+1))+(x-2)^2+1});
+
+//path3 p=(3/2,2/3,0)..(0,2/3,3/2)..(-3/2,2/3,0)..(0,2/3,-3/2);
+//draw(surface(p .. cycle), emissive(rgb(1,.6,.6)+opacity(0.5)));
+//draw(p..cycle,red+.4mm);
+
+
+pen p=rgb(0,0,.7)+.1mm;
+
+
+triple g1(real t) {return (t,((t-2)^2+1),0);}
+path3 p1=graph(g1,1,3,operator ..);
+draw(p1,red+.5mm);
+
+triple g2(real t) {return (t,(-.5*(t-2)^2+3),0);}
+path3 p2=graph(g2,3,1,operator ..);
+draw(p2,blue+.5mm);
+
+triple f2(pair t) {return (1,cos(t.x)*t.y+.5,sin(t.x)*t.y);}
+surface s2=surface(f2,(0,1.5),(2*pi,2),16,1,Spline);
+draw(s2,emissive(rgb(.6,.6,1)+opacity(.5)),meshpen=p);
+
+triple f3(pair t) {return (3,cos(t.x)*t.y+.5,sin(t.x)*t.y);}
+surface s3=surface(f3,(0,1.5),(2*pi,2),16,1,Spline);
+draw(s3,emissive(rgb(.6,.6,1)+opacity(.5)),meshpen=p);
+
+triple g3(real t) {return (1,1.5*cos(t)+.5,1.5*sin(t));}
+path3 p3=graph(g3,0,2*pi,operator ..);
+draw(p3,red+.3mm);
+
+triple g3(real t) {return (3,1.5*cos(t)+.5,1.5*sin(t));}
+path3 p3=graph(g3,0,2*pi,operator ..);
+draw(p3,red+.3mm);
+
+triple g3(real t) {return (1,2*cos(t)+.5,2*sin(t));}
+path3 p3=graph(g3,0,2*pi,operator ..);
+draw(p3,blue+.3mm);
+
+triple g3(real t) {return (3,2*cos(t)+.5,2*sin(t));}
+path3 p3=graph(g3,0,2*pi,operator ..);
+draw(p3,blue+.3mm);
+
+
+
+
+//path3 p3=p1--p2;
+//draw(surface(p3 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+
+draw((-.2,.5,0)--(3.5,.5,0),dashed+.2mm);
+
+
+
+triple f(pair t) {return (t.x,(-.5*(t.x-2)^2+3-.5)*cos(t.y)+.5,(-.5*(t.x-2)^2+3-.5)*sin(t.y));}
+surface s=surface(f,(1,0),(3,2*pi),5,16,usplinetype=new splinetype[] {notaknot,notaknot,monotonic},vsplinetype=new splinetype[] {notaknot,notaknot,monotonic});
+draw(s,emissive(rgb(.6,.6,1)+opacity(.5)),meshpen=p);
+
+
+triple f1(pair t) {return (t.x,((t.x-2)^2+1-.5)*cos(t.y)+.5,((t.x-2)^2+1-.5)*sin(t.y));}
+surface s1=surface(f1,(1,0),(3,2*pi),5,16,usplinetype=new splinetype[] {notaknot,notaknot,monotonic},vsplinetype=new splinetype[] {notaknot,notaknot,monotonic});
+draw(s1,emissive(rgb(1,.6,.6)+opacity(.5)),meshpen=p);
+
+
+
+
+
+
+
+//draw(p..cycle,red+.4mm);
+
+//label("$x=1/y$",(1,1,0),N);
+
+//triple pt=(1,.2,0);
+//draw(pt--(.75,.65,0),linewidth(.75),Arrow3);
+//label("$R(y)=1/y$",pt,S);
+
+//triple f(pair t) {return (1/t.x*cos(t.y),t.x,1/t.x*sin(t.y));}
+//surface s=surface(f,(.5,0),(1,2*pi),5,16,Spline);
+//pen p=rgb(0,0,.7)+.1mm;
+//draw(s,invisible);
+
+//triple f(pair t) {return (t.x,1/t.x*cos(t.y),1/t.x*sin(t.y));}
+//surface s=surface(f,(1,0),(2,2*pi),5,16,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//path3 p1=(0,0,0)--(5,5,5)--(5,-5,5);
+//draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+//draw(p1--cycle,blue+.3mm);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figwasher_idea_b_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(b)</cell></row>
 <row><cell></cell></row>
 </tabular>
@@ -312,7 +1343,133 @@ One can generate a solid of revolution with a hole in the middle by revolving a 
 3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
 3Droo=149.99999789136484,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figwasher_idea_c.png" />
+
+<!-- START figures/figwasher_idea_c_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figwasher_idea_a_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((10.17,5.3,46),(0,1,0),(0,0,0),1,(-0.0999,0.0072));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-.2,3.5);
+pair ybounds=(-3.5,3.5);
+pair zbounds=(-3.5,3.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//  \addplot3[domain=1:3,y domain=0:1,surf,shader=flat,colormap={mp2}{\colormapone}] 
+//  (x,0,{y*(-.5*(x-2)^2+3-((x-2)^2+1))+(x-2)^2+1});
+
+//path3 p=(3/2,2/3,0)..(0,2/3,3/2)..(-3/2,2/3,0)..(0,2/3,-3/2);
+//draw(surface(p .. cycle), emissive(rgb(1,.6,.6)+opacity(0.5)));
+//draw(p..cycle,red+.4mm);
+
+triple g1(real t) {return (t,((t-2)^2+1),0);}
+path3 p1=graph(g1,1,3,operator ..);
+draw(p1,red+.4mm);
+
+triple g2(real t) {return (t,(-.5*(t-2)^2+3),0);}
+path3 p2=graph(g2,3,1,operator ..);
+draw(p2,blue+.4mm);
+
+path3 p3=p1--p2;
+draw(surface(p3 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+
+draw((-.2,.5,0)--(3.5,.5,0),dashed+.2mm);
+
+draw((1,0,0)--(1,-.1,0));
+draw((3,0,0)--(3,-.1,0));
+label("$a$",(1,-.1,0),S);
+label("$b$",(3,-.1,0),S);
+
+//\draw (axis cs:1.2,0,2.68) -- node [pos=.6,left] {\scriptsize $R(x)$} (axis cs:1.2,0,.5);
+//\draw (axis cs: 2.8,0,1.64) -- node [pos=.5,right] {\scriptsize $r(x)$} (axis cs: 2.8,0,.5);
+
+
+
+triple dot1=(1.2,2.68,0);
+triple dot2=(1.2,.5,0);
+triple dot3=(2.8,1.64,0);
+triple dot4=(2.8,.5,0);
+
+draw(dot1--dot2,black+.2mm);
+draw(dot3--dot4,black+.2mm);
+
+dotfactor=2;
+dot(dot1);
+dot(dot2);
+dot(dot3);
+dot(dot4);
+
+label("$R(x)$",dot2+.3*(dot1-dot2),W);
+label("$r(x)$",dot4+.4*(dot3-dot4),E);
+
+triple f2(pair t) {return (2,cos(t.x)*t.y+.5,sin(t.x)*t.y);}
+surface s2=surface(f2,(0,.5),(2*pi,2.5),16,1,Spline);
+draw(s2,emissive(rgb(1,.6,.6)+opacity(.5)));
+
+triple g3(real t) {return (2,.5*cos(t)+.5,.5*sin(t));}
+path3 p3=graph(g3,0,2*pi,operator ..);
+draw(p3,red+.4mm);
+
+triple g3(real t) {return (2,2.5*cos(t)+.5,2.5*sin(t));}
+path3 p3=graph(g3,0,2*pi,operator ..);
+draw(p3,blue+.4mm);
+
+draw((2,1,0)--(2,3,0),purple+linetype(new real[] {4,4})+.3mm);
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figwasher_idea_c_3D.asy -->
+
 </figure>
 <keyidea xml:id="idea_washermethod">
 <title>The Washer Method</title>
@@ -347,7 +1504,7 @@ Rotating about the <m>x</m>-axis will produce cross sections in the shape of was
 </p>
 
 <p>
-408ac4db25c6ec811aa231a0ae9efb4f6d8bb8END
+3f4f9526691fa26229fbd533e1d8985e54e824eEND
 </p>
 </solution>
 </example>
@@ -372,7 +1529,8 @@ The outside radius <m>R(y)</m> is formed by the line connecting <m>(2,1)</m> and
 <figure xml:id="fig_wash2" >
 <caption>Sketching the solid in <xref ref="ex_wash2">Example</xref>.</caption>
 <tabular>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=123.42078064170005,
 3Dortho=0.00488104997202754,
@@ -380,9 +1538,120 @@ The outside radius <m>R(y)</m> is formed by the line connecting <m>(2,1)</m> and
 3Dcoo=-7.115118026733398 66.85215759277344 -16.372848510742188,
 3Droo=149.99999819286032,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figwash2a.png" /></cell></row>
+
+<!-- START figures/figwash2a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figwasher_idea_a_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((13.6,14.55,43),(0,1,0),(0,0,0),1,(0.029,-0.015));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-1,-2,1,2};
+real[] myychoice={1,2,3};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-2.2,2.2);
+pair ybounds=(-.2,3.2);
+pair zbounds=(-2.2,2.2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//  \addplot3[domain=1:3,y domain=0:1,surf,shader=flat,colormap={mp2}{\colormapone}] 
+//  (axis cs:1,0,1) -- (axis cs:2,0,1)--(axis cs:2,0,3) -- cycle;
+
+//path3 p=(3/2,2/3,0)..(0,2/3,3/2)..(-3/2,2/3,0)..(0,2/3,-3/2);
+//draw(surface(p .. cycle), emissive(rgb(1,.6,.6)+opacity(0.5)));
+//draw(p..cycle,red+.4mm);
+
+path3 p1=(1,1,0)--(2,1,0)--(2,3,0);
+draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p1--cycle,blue+.4mm);
+
+
+//\draw (axis cs: 0,0,1.2) -- (axis cs:2,0,1.2);
+//\draw (axis cs: .8,0,.5) node {\scriptsize $R(y)=2$};
+//\filldraw (axis cs:0,0,1.2) circle (1pt) 
+//					(axis cs:2,0,1.2) circle (1pt)
+//					(axis cs:0,0,2.6) circle (1pt)
+//					(axis cs:1.8,0,2.6) circle (1pt);
+//\draw (axis cs: 0,0,2.6) -- (axis cs:1.8,0,2.6);
+//\draw (axis cs: 1.5,0,3.2) node  {\scriptsize $r(y)=\frac12(y+1)$};
+
+triple dot1=(0,1.2,0);
+triple dot2=(2,1.2,0);
+triple dot3=(0,2.6,0);
+triple dot4=(1.8,2.6,0);
+
+draw(dot1--dot2,black+.2mm);
+draw(dot3--dot4,black+.2mm);
+
+dotfactor=2;
+dot(dot1);
+dot(dot2);
+dot(dot3);
+dot(dot4);
+
+label("$R(y)$",dot2+.7*(dot1-dot2),S);
+label("$r(y)$",dot4+.7*(dot3-dot4),N);
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figwash2a_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell>\begin{figure}
+<row><cell>
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=123.42078064170005,
 3Dortho=0.00488104997202754,
@@ -390,9 +1659,111 @@ The outside radius <m>R(y)</m> is formed by the line connecting <m>(2,1)</m> and
 3Dcoo=-7.115118026733398 66.85215759277344 -16.372848510742188,
 3Droo=149.99999819286032,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figwash2b.png" /></cell></row>
-<row><cell>(b) 
-\begin{figure}
+
+<!-- START figures/figwash2b_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figwasher_idea_a_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((13.6,14.55,43),(0,1,0),(0,0,0),1,(0.029,-0.015));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-1,-2,1,2};
+real[] myychoice={1,2,3};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-2.2,2.2);
+pair ybounds=(-.2,3.2);
+pair zbounds=(-2.2,2.2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//  \addplot3[domain=1:3,y domain=0:1,surf,shader=flat,colormap={mp2}{\colormapone}] 
+//  (axis cs:1,0,1) -- (axis cs:2,0,1)--(axis cs:2,0,3) -- cycle;
+
+//path3 p=(3/2,2/3,0)..(0,2/3,3/2)..(-3/2,2/3,0)..(0,2/3,-3/2);
+//draw(surface(p .. cycle), emissive(rgb(1,.6,.6)+opacity(0.5)));
+//draw(p..cycle,red+.4mm);
+
+path3 p1=(1,1,0)--(2,1,0)--(2,3,0);
+draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p1--cycle,blue+.4mm);
+
+
+//\draw (axis cs: 0,0,1.2) -- (axis cs:2,0,1.2);
+//\draw (axis cs: .8,0,.5) node {\scriptsize $R(y)=2$};
+//\filldraw (axis cs:0,0,1.2) circle (1pt) 
+//					(axis cs:2,0,1.2) circle (1pt)
+//					(axis cs:0,0,2.6) circle (1pt)
+//					(axis cs:1.8,0,2.6) circle (1pt);
+//\draw (axis cs: 0,0,2.6) -- (axis cs:1.8,0,2.6);
+//\draw (axis cs: 1.5,0,3.2) node  {\scriptsize $r(y)=\frac12(y+1)$};
+
+triple g1(real t) {return (1.5*cos(t),2,1.5*sin(t));}
+path3 p1=graph(g1,0,2*pi,operator ..);
+draw(p1,red+.4mm);
+
+triple g1(real t) {return (2*cos(t),2,2*sin(t));}
+path3 p1=graph(g1,0,2*pi,operator ..);
+draw(p1,red+.4mm);
+
+triple f2(pair t) {return (cos(t.x)*t.y,2,sin(t.x)*t.y);}
+surface s2=surface(f2,(0,1.5),(2*pi,2),16,1,Spline);
+draw(s2,emissive(rgb(1,.6,.6)+opacity(.5)));
+
+draw((1.5,2,0)--(2,2,0),purple+linetype(new real[] {4,4})+.3mm);
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figwash2b_3D.asy -->
+
+</figure>
+</cell></row>
+<row><cell>(b)
+<figure>
 \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=123.42078064170005,
 3Dortho=0.00488104997202754,
@@ -400,7 +1771,120 @@ The outside radius <m>R(y)</m> is formed by the line connecting <m>(2,1)</m> and
 3Dcoo=-7.115118026733398 66.85215759277344 -16.372848510742188,
 3Droo=149.99999819286032,
 3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figwash2c.png" /></cell></row>
+
+<!-- START figures/figwash2c_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figwasher_idea_a_3D.asy in Chapter 7
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic((13.6,14.55,43),(0,1,0),(0,0,0),1,(0.029,-0.015));
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-1,-2,1,2};
+real[] myychoice={1,2,3};
+real[] myzchoice={};
+defaultpen(0.5mm);
+
+pair xbounds=(-2.2,2.2);
+pair ybounds=(-.2,3.2);
+pair zbounds=(-2.2,2.2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+//label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//  \addplot3[domain=1:3,y domain=0:1,surf,shader=flat,colormap={mp2}{\colormapone}] 
+//  (axis cs:1,0,1) -- (axis cs:2,0,1)--(axis cs:2,0,3) -- cycle;
+
+pen p=rgb(0,0,.7)+.1mm;
+pen q=rgb(.7,0,0)+.1mm;
+
+path3 p1=(1,1,0)--(2,1,0)--(2,3,0);
+draw(surface(p1 -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+draw(p1--cycle,blue+.4mm);
+
+
+//\draw (axis cs: 0,0,1.2) -- (axis cs:2,0,1.2);
+//\draw (axis cs: .8,0,.5) node {\scriptsize $R(y)=2$};
+//\filldraw (axis cs:0,0,1.2) circle (1pt) 
+//					(axis cs:2,0,1.2) circle (1pt)
+//					(axis cs:0,0,2.6) circle (1pt)
+//					(axis cs:1.8,0,2.6) circle (1pt);
+//\draw (axis cs: 0,0,2.6) -- (axis cs:1.8,0,2.6);
+//\draw (axis cs: 1.5,0,3.2) node  {\scriptsize $r(y)=\frac12(y+1)$};
+
+triple g1(real t) {return (2*cos(t),3,2*sin(t));}
+path3 p1=graph(g1,0,2*pi,operator ..);
+draw(p1,blue+.4mm);
+
+triple g1(real t) {return (2*cos(t),1,2*sin(t));}
+path3 p1=graph(g1,0,2*pi,operator ..);
+draw(p1,blue+.4mm);
+
+triple g1(real t) {return (1*cos(t),1,1*sin(t));}
+path3 p1=graph(g1,0,2*pi,operator ..);
+draw(p1,red+.4mm);
+
+triple f2(pair t) {return (cos(t.x)*t.y,1,sin(t.x)*t.y);}
+surface s2=surface(f2,(0,1),(2*pi,1),16,1,Spline);
+draw(s2,emissive(rgb(.6,.6,1)+opacity(.5)));
+
+triple f2(pair t) {return (cos(t.x)*(2),t.y,sin(t.x)*2);}
+surface s2=surface(f2,(0,1),(2*pi,3),16,2,Spline);
+draw(s2,emissive(rgb(.6,.6,1)+opacity(.5)),meshpen=p);
+
+triple f2(pair t) {return (cos(t.x)*(t.y/2+1/2),t.y,sin(t.x)*(t.y/2+1/2));}
+surface s2=surface(f2,(0,1),(2*pi,3),16,2,Spline);
+draw(s2,emissive(rgb(1,.6,.6)+opacity(.5)),meshpen=q);
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+//draw(mypath,blue+dashed+linewidth(2));
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- END figures/figwash2c_3D.asy -->
+
+</figure>
+</cell></row>
 <row><cell>(c)</cell></row>
 </tabular>
 </figure>
@@ -428,21 +1912,9 @@ The ultimate goal of this section is not to compute volumes of solids. That can 
 </p>
 
 <ul>
-<li>
-<p>
-we start with an approximation (in this section, slice the solid and approximate the volume of each slice),
-</p>
-</li>
-<li>
-<p>
-then make the approximation better by refining our original approximation (i.e., use more slices),
-</p>
-</li>
-<li>
-<p>
-then use limits to establish a definite integral which gives the exact value.
-</p>
-</li>
+<li><p>we start with an approximation (in this section, slice the solid and approximate the volume of each slice),</p></li>
+<li><p>then make the approximation better by refining our original approximation (i.e., use more slices),</p></li>
+<li><p>then use limits to establish a definite integral which gives the exact value.</p></li>
 </ul>
 
 <p>
@@ -502,7 +1974,45 @@ In the following exercises, a region of the Cartesian plane is shaded. Use the D
 <exercise>
 <statement>
 <sidebyside>
-<image width="73%" source="images/fig07_02_ex_05.png" />
+
+<!-- START figures/fig_07_02_ex_05.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=3.5,%
+			xmin=-2.1,xmax=2.1%
+]
+
+%\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {1};
+%\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {1} \closedcycle;
+
+%\addplot [thick, {\coloronefill},fill={\coloronefill}] coordinates { (0,1.)(0.1,1.01)(0.2,1.04)(0.3,1.09)(0.4,1.16)(0.5,1.25)(0.6,1.36)(0.7,1.49)(0.8,1.64)(0.9,1.81)(1.,2.)(1.1,1.903)(1.2,1.81)(1.3,1.723)(1.4,1.64)(1.5,1.563)(1.6,1.49)(1.7,1.423)(1.8,1.36)(1.9,1.303)(2.,1.25)(2.1,1.203)(2.2,1.16)(2.3,1.123)(2.4,1.09)(2.5,1.063)(2.6,1.04)(2.7,1.023)(2.8,1.01)(2.9,1.003)(3.,1.)(0,1)};
+
+\addplot [ {\coloronefill},fill={\coloronefill}, samples=50,domain=-1.73:1.73] {3-x^2};
+
+\addplot [smooth,thick, {\colorone}, samples=50,domain=-1.73:1.73] {3-x^2} node [shift={(-10pt,80pt)} ,black] {\scriptsize $y=3-x^2$};
+
+
+%\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
+
+%\draw [smooth,thick, {\colorone}] (axis cs:0,1) --  node [pos=.5,below,black] {\scriptsize $y=1$} (axis cs:3,1);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_07_02_ex_05.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -515,7 +2025,45 @@ In the following exercises, a region of the Cartesian plane is shaded. Use the D
 <exercise>
 <statement>
 <sidebyside>
-<image width="73%" source="images/fig07_02_ex_06.png" />
+
+<!-- START figures/fig_07_02_ex_06.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=11,%
+			xmin=-.1,xmax=2.1%
+]
+
+%\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {1};
+%\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {1} \closedcycle;
+
+%\addplot [thick, {\coloronefill},fill={\coloronefill}] coordinates { (0,1.)(0.1,1.01)(0.2,1.04)(0.3,1.09)(0.4,1.16)(0.5,1.25)(0.6,1.36)(0.7,1.49)(0.8,1.64)(0.9,1.81)(1.,2.)(1.1,1.903)(1.2,1.81)(1.3,1.723)(1.4,1.64)(1.5,1.563)(1.6,1.49)(1.7,1.423)(1.8,1.36)(1.9,1.303)(2.,1.25)(2.1,1.203)(2.2,1.16)(2.3,1.123)(2.4,1.09)(2.5,1.063)(2.6,1.04)(2.7,1.023)(2.8,1.01)(2.9,1.003)(3.,1.)(0,1)};
+
+\addplot [ {\coloronefill},fill={\coloronefill}, samples=50,domain=1:2] {5*x} -- (axis cs: 2,0) -- (axis cs:1,0) -- (axis cs: 1,5);
+
+\addplot [smooth,thick, {\colorone}, samples=50,domain=0:2.1] {5*x} node [shift={(-30pt,-10pt)} ,black] {\scriptsize $y=5x$};
+
+
+%\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
+
+%\draw [smooth,thick, {\colorone}] (axis cs:0,1) --  node [pos=.5,below,black] {\scriptsize $y=1$} (axis cs:3,1);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_07_02_ex_06.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -528,7 +2076,45 @@ In the following exercises, a region of the Cartesian plane is shaded. Use the D
 <exercise>
 <statement>
 <sidebyside>
-<image width="73%" source="images/fig07_02_ex_07.png" />
+
+<!-- START figures/fig_07_02_ex_07.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=1.1,%
+			xmin=-.1,xmax=1.7%
+]
+
+%\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {1};
+%\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {1} \closedcycle;
+
+%\addplot [thick, {\coloronefill},fill={\coloronefill}] coordinates { (0,1.)(0.1,1.01)(0.2,1.04)(0.3,1.09)(0.4,1.16)(0.5,1.25)(0.6,1.36)(0.7,1.49)(0.8,1.64)(0.9,1.81)(1.,2.)(1.1,1.903)(1.2,1.81)(1.3,1.723)(1.4,1.64)(1.5,1.563)(1.6,1.49)(1.7,1.423)(1.8,1.36)(1.9,1.303)(2.,1.25)(2.1,1.203)(2.2,1.16)(2.3,1.123)(2.4,1.09)(2.5,1.063)(2.6,1.04)(2.7,1.023)(2.8,1.01)(2.9,1.003)(3.,1.)(0,1)};
+
+\addplot [ {\coloronefill},fill={\coloronefill}, samples=50,domain=0:1.57] {cos(deg(x))}--(axis cs:0,0);
+
+\addplot [smooth,thick, {\colorone}, samples=50,domain=0:1.57] {cos(deg(x)} node [shift={(-20pt,50pt)} ,black] {\scriptsize $y=\cos x$};
+
+
+%\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
+
+%\draw [smooth,thick, {\colorone}] (axis cs:0,1) --  node [pos=.5,below,black] {\scriptsize $y=1$} (axis cs:3,1);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_07_02_ex_07.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -541,7 +2127,47 @@ In the following exercises, a region of the Cartesian plane is shaded. Use the D
 <exercise>
 <statement>
 <sidebyside>
-<image width="73%" source="images/fig07_02_ex_04.png" />
+
+<!-- START figures/fig_07_02_ex_04.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=1.1,%
+			xmin=-.1,xmax=1.1%
+]
+
+%\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {1};
+%\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {1} \closedcycle;
+
+%\addplot [thick, {\coloronefill},fill={\coloronefill}] coordinates { (0,1.)(0.1,1.01)(0.2,1.04)(0.3,1.09)(0.4,1.16)(0.5,1.25)(0.6,1.36)(0.7,1.49)(0.8,1.64)(0.9,1.81)(1.,2.)(1.1,1.903)(1.2,1.81)(1.3,1.723)(1.4,1.64)(1.5,1.563)(1.6,1.49)(1.7,1.423)(1.8,1.36)(1.9,1.303)(2.,1.25)(2.1,1.203)(2.2,1.16)(2.3,1.123)(2.4,1.09)(2.5,1.063)(2.6,1.04)(2.7,1.023)(2.8,1.01)(2.9,1.003)(3.,1.)(0,1)};
+
+\addplot [ {\coloronefill},fill={\coloronefill}, samples=50,domain=0:1] {sqrt(x)};
+
+\addplot [smooth,thick, {\colorone}, samples=60,domain=0:1] {sqrt(x)} node [shift={(-55pt,-15pt)} ,black] {\scriptsize $y=\sqrt{x}$};
+
+\draw [thick,{\colorone}] (axis cs:0,0) -- (axis cs:1,1) node [black, shift={(-30pt,-40pt)}] {\scriptsize $y=x$};
+
+
+%\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
+
+%\draw [smooth,thick, {\colorone}] (axis cs:0,1) --  node [pos=.5,below,black] {\scriptsize $y=1$} (axis cs:3,1);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_07_02_ex_04.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -556,7 +2182,45 @@ In the following exercises, a region of the Cartesian plane is shaded. Use the D
 <exercise>
 <statement>
 <sidebyside>
-<image width="73%" source="images/fig07_02_ex_09.png" />
+
+<!-- START figures/fig_07_02_ex_09.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=3.5,%
+			xmin=-2.1,xmax=2.1%
+]
+
+%\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {1};
+%\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {1} \closedcycle;
+
+%\addplot [thick, {\coloronefill},fill={\coloronefill}] coordinates { (0,1.)(0.1,1.01)(0.2,1.04)(0.3,1.09)(0.4,1.16)(0.5,1.25)(0.6,1.36)(0.7,1.49)(0.8,1.64)(0.9,1.81)(1.,2.)(1.1,1.903)(1.2,1.81)(1.3,1.723)(1.4,1.64)(1.5,1.563)(1.6,1.49)(1.7,1.423)(1.8,1.36)(1.9,1.303)(2.,1.25)(2.1,1.203)(2.2,1.16)(2.3,1.123)(2.4,1.09)(2.5,1.063)(2.6,1.04)(2.7,1.023)(2.8,1.01)(2.9,1.003)(3.,1.)(0,1)};
+
+\addplot [ {\coloronefill},fill={\coloronefill}, samples=50,domain=0:1.73] {3-x^2}--(axis cs:0,0);
+
+\addplot [smooth,thick, {\colorone}, samples=50,domain=-1.73:1.73] {3-x^2} node [shift={(-10pt,80pt)} ,black] {\scriptsize $y=3-x^2$};
+
+
+%\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
+
+%\draw [smooth,thick, {\colorone}] (axis cs:0,1) --  node [pos=.5,below,black] {\scriptsize $y=1$} (axis cs:3,1);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_07_02_ex_09.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -569,7 +2233,45 @@ In the following exercises, a region of the Cartesian plane is shaded. Use the D
 <exercise>
 <statement>
 <sidebyside>
-<image width="73%" source="images/fig07_02_ex_10.png" />
+
+<!-- START figures/fig_07_02_ex_10.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=11,%
+			xmin=-.1,xmax=2.1%
+]
+
+%\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {1};
+%\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {1} \closedcycle;
+
+%\addplot [thick, {\coloronefill},fill={\coloronefill}] coordinates { (0,1.)(0.1,1.01)(0.2,1.04)(0.3,1.09)(0.4,1.16)(0.5,1.25)(0.6,1.36)(0.7,1.49)(0.8,1.64)(0.9,1.81)(1.,2.)(1.1,1.903)(1.2,1.81)(1.3,1.723)(1.4,1.64)(1.5,1.563)(1.6,1.49)(1.7,1.423)(1.8,1.36)(1.9,1.303)(2.,1.25)(2.1,1.203)(2.2,1.16)(2.3,1.123)(2.4,1.09)(2.5,1.063)(2.6,1.04)(2.7,1.023)(2.8,1.01)(2.9,1.003)(3.,1.)(0,1)};
+
+\addplot [ {\coloronefill},fill={\coloronefill}, samples=50] coordinates {(1,5) (2,10) (0,10) (0,5) (1,5)};
+
+\addplot [smooth,thick, {\colorone}, samples=50,domain=0:2.1] {5*x} node [shift={(-20pt,-30pt)} ,black] {\scriptsize $y=5x$};
+
+
+%\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
+
+%\draw [smooth,thick, {\colorone}] (axis cs:0,1) --  node [pos=.5,below,black] {\scriptsize $y=1$} (axis cs:3,1);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_07_02_ex_10.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -582,7 +2284,45 @@ In the following exercises, a region of the Cartesian plane is shaded. Use the D
 <exercise>
 <statement>
 <sidebyside>
-<image width="73%" source="images/fig07_02_ex_11.png" />
+
+<!-- START figures/fig_07_02_ex_11.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=1.1,%
+			xmin=-.1,xmax=1.7%
+]
+
+%\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {1};
+%\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {1} \closedcycle;
+
+%\addplot [thick, {\coloronefill},fill={\coloronefill}] coordinates { (0,1.)(0.1,1.01)(0.2,1.04)(0.3,1.09)(0.4,1.16)(0.5,1.25)(0.6,1.36)(0.7,1.49)(0.8,1.64)(0.9,1.81)(1.,2.)(1.1,1.903)(1.2,1.81)(1.3,1.723)(1.4,1.64)(1.5,1.563)(1.6,1.49)(1.7,1.423)(1.8,1.36)(1.9,1.303)(2.,1.25)(2.1,1.203)(2.2,1.16)(2.3,1.123)(2.4,1.09)(2.5,1.063)(2.6,1.04)(2.7,1.023)(2.8,1.01)(2.9,1.003)(3.,1.)(0,1)};
+
+\addplot [ {\coloronefill},fill={\coloronefill}, samples=50,domain=0:1.57] {cos(deg(x))}--(axis cs:0,0);
+
+\addplot [smooth,thick, {\colorone}, samples=50,domain=0:1.57] {cos(deg(x)} node [shift={(-20pt,50pt)} ,black] {\scriptsize $y=\cos x$};
+
+
+%\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
+
+%\draw [smooth,thick, {\colorone}] (axis cs:0,1) --  node [pos=.5,below,black] {\scriptsize $y=1$} (axis cs:3,1);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_07_02_ex_11.tex -->
+
 </sidebyside>
 <p>
 (Hint: Integration By Parts will be necessary, twice. First let <m>u = \arccos^2x</m>, then let <m>u=\arccos x</m>.)
@@ -598,7 +2338,47 @@ In the following exercises, a region of the Cartesian plane is shaded. Use the D
 <exercise>
 <statement>
 <sidebyside>
-<image width="73%" source="images/fig07_02_ex_08.png" />
+
+<!-- START figures/fig_07_02_ex_08.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=1.1,%
+			xmin=-.1,xmax=1.1%
+]
+
+%\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {1};
+%\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {1} \closedcycle;
+
+%\addplot [thick, {\coloronefill},fill={\coloronefill}] coordinates { (0,1.)(0.1,1.01)(0.2,1.04)(0.3,1.09)(0.4,1.16)(0.5,1.25)(0.6,1.36)(0.7,1.49)(0.8,1.64)(0.9,1.81)(1.,2.)(1.1,1.903)(1.2,1.81)(1.3,1.723)(1.4,1.64)(1.5,1.563)(1.6,1.49)(1.7,1.423)(1.8,1.36)(1.9,1.303)(2.,1.25)(2.1,1.203)(2.2,1.16)(2.3,1.123)(2.4,1.09)(2.5,1.063)(2.6,1.04)(2.7,1.023)(2.8,1.01)(2.9,1.003)(3.,1.)(0,1)};
+
+\addplot [ {\coloronefill},fill={\coloronefill}, samples=50,domain=0:1] {sqrt(x)};
+
+\addplot [smooth,thick, {\colorone}, samples=60,domain=0:1] {sqrt(x)} node [shift={(-55pt,-15pt)} ,black] {\scriptsize $y=\sqrt{x}$};
+
+\draw [thick,{\colorone}] (axis cs:0,0) -- (axis cs:1,1) node [black, shift={(-30pt,-40pt)}] {\scriptsize $y=x$};
+
+
+%\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
+
+%\draw [smooth,thick, {\colorone}] (axis cs:0,1) --  node [pos=.5,below,black] {\scriptsize $y=1$} (axis cs:3,1);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_07_02_ex_08.tex -->
+
 </sidebyside>
 </statement>
 <answer>
@@ -622,20 +2402,12 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>
-<p>
-the <m>x</m>-axis
-</p>
-</li>
+<li><p>the <m>x</m>-axis</p></li>
 <li><m>y=1</m></li>
 </ol>
 
 <ol>
-<li>
-<p>
-the <m>y</m>-axis
-</p>
-</li>
+<li><p>the <m>y</m>-axis</p></li>
 <li><m>x=1</m></li>
 </ol>
 
@@ -663,11 +2435,7 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>
-<p>
-the <m>x</m>-axis
-</p>
-</li>
+<li><p>the <m>x</m>-axis</p></li>
 <li><m>y=4</m></li>
 </ol>
 
@@ -700,20 +2468,12 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>
-<p>
-the <m>x</m>-axis
-</p>
-</li>
+<li><p>the <m>x</m>-axis</p></li>
 <li><m>y=2</m></li>
 </ol>
 
 <ol>
-<li>
-<p>
-the <m>y</m>-axis
-</p>
-</li>
+<li><p>the <m>y</m>-axis</p></li>
 <li><m>x=1</m></li>
 </ol>
 
@@ -741,11 +2501,7 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>
-<p>
-the <m>x</m>-axis
-</p>
-</li>
+<li><p>the <m>x</m>-axis</p></li>
 <li><m>y=1</m></li>
 </ol>
 
@@ -776,11 +2532,7 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>
-<p>
-the <m>x</m>-axis
-</p>
-</li>
+<li><p>the <m>x</m>-axis</p></li>
 <li><m>y=1</m></li>
 </ol>
 
@@ -811,20 +2563,12 @@ Rotate about:
 <sidebyside>
 
 <ol>
-<li>
-<p>
-the <m>x</m>-axis
-</p>
-</li>
+<li><p>the <m>x</m>-axis</p></li>
 <li><m>y=4</m></li>
 </ol>
 
 <ol>
-<li>
-<p>
-the <m>y</m>-axis
-</p>
-</li>
+<li><p>the <m>y</m>-axis</p></li>
 <li><m>x=2</m></li>
 </ol>
 
