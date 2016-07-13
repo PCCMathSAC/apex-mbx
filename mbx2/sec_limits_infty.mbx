@@ -1,0 +1,1478 @@
+<section xml:id="sec_limits_infty">
+<title>Limits Involving Infinity</title>
+
+
+<introduction>
+<p>
+In <xref ref="def_limit">Definition</xref> we stated that in the equation <m>\ds \lim_{x\to c}f(x) = L</m>, both <m>c</m> and <m>L</m> were numbers. In this section we relax that definition a bit by considering situations when it makes sense to let <m>c</m> and/or <m>L</m> be <q>infinity.</q>
+</p>
+
+<p>
+As a motivating example, consider <m>f(x) = 1/x^2</m>, as shown in <xref ref="fig_oneoverxsquared">Figure</xref>. Note how, as <m>x</m> approaches 0, <m>f(x)</m> grows very, very large. It seems appropriate, and descriptive, to state that
+<me>
+  \lim_{x\rightarrow 0} \frac1{x^2}=\infty.
+</me>
+</p>
+
+<p>
+Also note that as <m>x</m> gets very large, <m>f(x)</m> gets very, very small. We could represent this concept with notation such as
+<me>
+  \lim_{x\rightarrow \infty} \frac1{x^2}=0.
+</me>
+</p>
+<figure xml:id="fig_oneoverxsquared" >
+<caption>Graphing <m>f(x) = 1/x^2</m> for values of <m>x</m> near 0.</caption>
+
+<!-- START figures/fig_oneoverxsquared.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.1,ymax=110,xmin=-1.1,xmax=1.1,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-1.,1.) (-0.95,1.10803) (-0.9,1.23457) (-0.85,1.38408) (-0.8,1.5625)(-0.75,1.77778) (-0.7,2.04082) (-0.65,2.36686) (-0.6,2.77778)(-0.55,3.30579) (-0.5,4.) (-0.49,4.16493) (-0.48,4.34028) (-0.47,4.52694) (-0.46,4.7259) (-0.45,4.93827) (-0.44,5.16529) (-0.43,5.40833)(-0.42,5.66893) (-0.41,5.94884) (-0.4,6.25) (-0.39,6.57462)
+(-0.38,6.92521) (-0.37,7.3046) (-0.36,7.71605) (-0.35,8.16327)(-0.34,8.65052) (-0.33,9.18274) (-0.32,9.76563) (-0.31,10.4058)(-0.3,11.1111) (-0.29,11.8906) (-0.28,12.7551) (-0.27,13.7174)(-0.26,14.7929) (-0.25,16.) (-0.24,17.3611) (-0.23,18.9036)(-0.22,20.6612) (-0.21,22.6757) (-0.2,25.) (-0.19,27.7008)(-0.18,30.8642) (-0.17,34.6021) (-0.16,39.0625) (-0.15,44.4444)(-0.14,51.0204) (-0.13,59.1716) (-0.12,69.4444) (-0.11,82.6446)(-0.1,100.)};
+\addplot [{\colorone},smooth,thick] coordinates { ((0.1,100.) (0.11,82.6446) (0.12,69.4444) (0.13,59.1716)(0.14,51.0204) (0.15,44.4444) (0.16,39.0625) (0.17,34.6021)(0.18,30.8642) (0.19,27.7008) (0.2,25.) (0.21,22.6757) (0.22,20.6612)(0.23,18.9036) (0.24,17.3611) (0.25,16.) (0.26,14.7929)(0.27,13.7174) (0.28,12.7551) (0.29,11.8906) (0.3,11.1111)(0.31,10.4058) (0.32,9.76563) (0.33,9.18274) (0.34,8.65052)(0.35,8.16327) (0.4,6.25) (0.45,4.93827)(0.5,4.) (0.55,3.30579) (0.6,2.77778) (0.65,2.36686) (0.7,2.04082)(0.75,1.77778) (0.8,1.5625) (0.85,1.38408) (0.9,1.23457)(0.95,1.10803) (1.,1.)
+};
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+%\spy [{\colortwo}] on (1,1) in node at (1.5,-2);
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_oneoverxsquared.tex -->
+
+</figure>
+<p>
+We explore both types of use of <m>\infty</m> in turn.
+</p>
+<definition xml:id="def_limit_of_infinity">
+<title>Limit of Infinity, $\infty$</title>
+<statement>
+<p>
+We say <m>\ds \lim_{x\rightarrow c} f(x)=\infty</m> if for every <m>M>0</m> there exists <m>\delta>0</m> such that for all <m>x\neq c</m>, if <m>|x-c|\lt \delta</m>, then <m>f(x)\geq M</m>. <index><main>limit</main><sub>of infinity</sub></index>
+</p>
+</statement>
+</definition>
+<p>
+This is just like the <m>\epsilon</m><ndash /><m>\delta</m> definition from <xref ref="sec_limit_def">Section</xref>. In that definition, given any (small) value <m>\epsilon</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>) then <m>f(x)</m> is guaranteed to be within <m>\epsilon</m> of <m>f(c)</m>. Here, given any (large) value <m>M</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>), then <m>f(x)</m> will be at least as large as <m>M</m>. In other words, if we get close enough to <m>c</m>, then we can make <m>f(x)</m> as large as we want. We can define limits equal to <m>-\infty</m> in a similar way.
+</p>
+
+<p>
+It is important to note that by saying <m>\ds \lim_{x\to c}f(x) = \infty</m> we are implicitly stating that <em>the</em> limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, <em>does not exist.</em> A limit only exists when <m>f(x)</m> approaches an actual numeric value. We use the concept of limits that approach infinity because it is helpful and descriptive.
+</p>
+<example xml:id="ex_inflim1">
+<title>Evaluating limits involving infinity</title>
+<statement>
+<p>
+Find <m>\displaystyle \lim_{x\rightarrow 1}\frac1{(x-1)^2}</m> as shown in <xref ref="fig_inflim1">Figure</xref>.
+</p>
+<figure xml:id="fig_inflim1" >
+<caption>Observing infinite limit as <m>x\to 1</m> in <xref ref="ex_inflim1">Example</xref>.</caption>
+
+<!-- START figures/fig_nolimit2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=110,xmin=-.1,xmax=2.1,name=myplot]
+
+\addplot [{\colorone},smooth,thick] coordinates {(0.,1.) (0.05,1.10803) (0.1,1.23457) (0.15,1.38408) (0.2,1.5625)(0.25,1.77778) (0.3,2.04082) (0.35,2.36686) (0.4,2.77778)(0.45,3.30579) (0.5,4.) (0.55,4.93827) (0.6,6.25) (0.65,8.16327)(0.7,11.1111) (0.75,16.) (0.8,25.) (0.85,44.4444) (0.9,100.) };
+\addplot [{\colorone},smooth,thick] coordinates {(1.1,100.) (1.15,44.4444) (1.2,25.) (1.25,16.) (1.3,11.1111) (1.35,8.16327) (1.4,6.25) (1.45,4.93827) (1.5,4.) (1.55,3.30579) (1.6,2.77778) (1.65,2.36686) (1.7,2.04082) (1.75,1.77778) (1.8,1.5625) (1.85,1.38408) (1.9,1.23457) (1.95,1.10803) (2.,1.)};
+%\addplot [{\colorone},smooth] coordinates {(1,1) (1.1,1.1) (1.2,1.2) (1.3,1.3) (1.4,1.4) (1.5,1.5) (1.6,1.6) (1.7,1.7) (1.8,1.8) (1.9,1.9) (2.,2.)
+\draw [dashed,thick] (axis cs: 1,1) -- (axis cs: 1,100);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+%\caption{of $f(x)$ in Example \ref{ex_no_limit2}.}\label{fig:nolimit2}
+]]></latex-image-code></image><!-- END figures/fig_nolimit2.tex -->
+
+</figure>
+</statement>
+<solution>
+<p>
+In <xref ref="ex_no_limit2">Example</xref> of <xref ref="sec_limit_intro">Section</xref>, by inspecting values of <m>x</m> close to 1 we concluded that this limit does not exist. That is, it cannot equal any real number. But the limit could be infinite. And in fact, we see that the function does appear to be growing larger and larger, as <m>f(.99)=10^4</m>, <m>f(.999)=10^6</m>, <m>f(.9999)=10^8</m>. A similar thing happens on the other side of 1. In general, let a <q>large</q> value <m>M</m> be given. Let <m>\delta=1/\sqrt{M}</m>. If <m>x</m> is within <m>\delta</m> of 1, i.e., if <m>|x-1|\lt 1/\sqrt{M}</m>, then:
+<md>
+  <mrow>  |x-1| \amp \lt  \frac{1}{\sqrt{M}}</mrow>
+  <mrow>  (x-1)^2 \amp \lt  \frac{1}{M}</mrow>
+  <mrow>  \frac{1}{(x-1)^2} \amp > M,</mrow>
+</md>
+which is what we wanted to show. So we may say <m>\ds\lim_{x\rightarrow 1}1/{(x-1)^2}=\infty</m>.
+</p>
+</solution>
+</example>
+
+<example xml:id="ex_inflim2">
+<title>Evaluating limits involving infinity</title>
+<statement>
+<p>
+Find <m>\displaystyle\lim_{x\rightarrow 0}\frac1x</m>, as shown in <xref ref="fig_oneoverx">Figure</xref>.
+</p>
+</statement>
+<solution>
+<p>
+It is easy to see that the function grows without bound near 0, but it does so in different ways on different sides of 0. Since its behavior is not consistent, we cannot say that <m>\ds \lim_{x\to 0}\frac{1}{x}=\infty</m>. However, we can make a statement about one<ndash />sided limits. We can state that <m>\ds \lim_{x\rightarrow 0^+}\frac1x=\infty</m> and <m>\ds \lim_{x\rightarrow 0^-}\frac1x=-\infty</m>.
+</p>
+<figure xml:id="fig_oneoverx" >
+<caption>Evaluating <m>\ds\lim_{x\rightarrow 0}\frac1x</m>.</caption>
+
+<!-- START figures/fig_oneoverx.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-55,ymax=55,xmin=-1.1,xmax=1.1,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-1.,-1.) (-0.95,-1.05263) (-0.9,-1.11111) (-0.85,-1.17647)(-0.8,-1.25) (-0.75,-1.33333) (-0.7,-1.42857) (-0.65,-1.53846)(-0.6,-1.66667) (-0.55,-1.81818) (-0.5,-2.) (-0.45,-2.22222)(-0.4,-2.5) (-0.35,-2.85714) (-0.3,-3.33333) (-0.25,-4.) (-0.245,-4.08163) (-0.24,-4.16667) (-0.235,-4.25532) (-0.23,-4.34783) (-0.225,-4.44444) (-0.22,-4.54545) (-0.215,-4.65116)
+(-0.21,-4.7619) (-0.205,-4.87805) (-0.2,-5.) (-0.195,-5.12821) 
+(-0.19,-5.26316) (-0.185,-5.40541) (-0.18,-5.55556) (-0.175,-5.71429) 
+(-0.17,-5.88235) (-0.165,-6.06061) (-0.16,-6.25) (-0.155,-6.45161)
+(-0.15,-6.66667) (-0.145,-6.89655) (-0.14,-7.14286) (-0.135,-7.40741) (-0.13,-7.69231) (-0.125,-8.) (-0.12,-8.33333) (-0.115,-8.69565)(-0.11,-9.09091) (-0.105,-9.52381) (-0.1,-10.) (-0.095,-10.5263)(-0.09,-11.1111) (-0.085,-11.7647) (-0.08,-12.5) (-0.075,-13.3333)(-0.07,-14.2857) (-0.065,-15.3846) (-0.06,-16.6667) (-0.055,-18.1818)(-0.05,-20.) (-0.045,-22.2222) (-0.04,-25.) (-0.035,-28.5714)(-0.03,-33.3333) (-0.025,-40.) (-0.02,-50.) };
+\addplot [{\colorone},smooth,thick] coordinates {(0.02,50.) (0.025,40.) (0.03,33.3333) (0.035,28.5714) (0.04,25.) (0.045,22.2222) (0.05,20.) (0.055,18.1818) (0.06,16.6667)(0.065,15.3846) (0.07,14.2857) (0.075,13.3333) (0.08,12.5)(0.085,11.7647) (0.09,11.1111) (0.095,10.5263) (0.1,10.)(0.105,9.52381) (0.11,9.09091) (0.115,8.69565) (0.12,8.33333)(0.125,8.) (0.13,7.69231) (0.135,7.40741) (0.14,7.14286)(0.145,6.89655) (0.15,6.66667) (0.155,6.45161) (0.16,6.25)(0.165,6.06061) (0.17,5.88235) (0.175,5.71429) (0.18,5.55556)(0.185,5.40541) (0.19,5.26316) (0.195,5.12821) (0.2,5.)(0.205,4.87805) (0.21,4.7619) (0.215,4.65116) (0.22,4.54545)(0.225,4.44444) (0.23,4.34783) (0.235,4.25532) (0.24,4.16667)(0.245,4.08163) (0.25,4.)(0.3,3.33333) (0.35,2.85714) (0.4,2.5) (0.45,2.22222) (0.5,2.)(0.55,1.81818) (0.6,1.66667) (0.65,1.53846) (0.7,1.42857)(0.75,1.33333) (0.8,1.25) (0.85,1.17647) (0.9,1.11111) (0.95,1.05263)
+(1.,1.)};
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+%\spy [{\colortwo}] on (1,1) in node at (1.5,-2);
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_oneoverx.tex -->
+
+</figure>
+</solution>
+</example>
+<p>
+\vskip
+</p>
+</introduction>
+
+
+<subsection xml:id="fig_hzasy">
+<title>Vertical asymptotes</title>
+<p>
+<index><main>asymptote</main><sub>vertical</sub></index>
+</p>
+
+<p>
+If the limit of <m>f(x)</m> as <m>x</m> approaches <m>c</m> from either the left or right (or both) is <m>\infty</m> or <m>-\infty</m>, we say the function has a <em>vertical asymptote</em> at <m>c</m>.
+</p>
+<example xml:id="ex_vertasy1">
+<title>Finding vertical asymptotes</title>
+<statement>
+<p>
+Find the vertical asymptotes of <m>f(x)=\dfrac{3x}{x^2-4}</m>.
+</p>
+</statement>
+<solution>
+<p>
+Vertical asymptotes occur where the function grows without bound; this can occur at values of <m>c</m> where the denominator is 0. When <m>x</m> is near <m>c</m>, the denominator is small, which in turn can make the function take on large values. In the case of the given function, the denominator is 0 at <m>x=\pm 2</m>. Substituting in values of <m>x</m> close to <m>2</m> and <m>-2</m> seems to indicate that the function tends toward <m>\infty</m> or <m>-\infty</m> at those points. We can graphically confirm this by looking at <xref ref="fig_multipleasymptotes">Figure</xref>. Thus the vertical asymptotes are at <m>x=\pm2</m>.
+</p>
+<figure xml:id="fig_multipleasymptotes" >
+<caption>Graphing <m>f(x) = \dfrac{3x}{x^2-4}</m>.</caption>
+
+<!-- START figures/fig_multipleasymptotes.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-16,ymax=16,xmin=-6.1,xmax=6.1,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-6.,-0.5625) (-5.9,-0.574489) (-5.8,-0.587045) (-5.7,-0.600211)(-5.6,-0.614035) (-5.5,-0.628571) (-5.4,-0.643879) (-5.3,-0.660025)(-5.2,-0.677083) (-5.1,-0.695139) (-5.,-0.714286) (-4.9,-0.734633)
+(-4.8,-0.756303) (-4.7,-0.779436) (-4.6,-0.804196) (-4.5,-0.830769)(-4.4,-0.859375) (-4.3,-0.890269) (-4.2,-0.923754) (-4.1,-0.960187)(-4.,-1.) (-3.9,-1.04371) (-3.8,-1.09195) (-3.7,-1.14551)(-3.6,-1.20536) (-3.5,-1.27273) (-3.4,-1.34921) (-3.3,-1.43687)(-3.2,-1.53846) (-3.1,-1.65775) (-3.,-1.8) (-2.9,-1.97279)(-2.8,-2.1875) (-2.7,-2.46201) (-2.6,-2.82609) (-2.5,-3.33333)(-2.4,-4.09091) (-2.3,-5.34884) (-2.2,-7.85714) (-2.1,-15.3659) };
+
+\addplot [{\colorone},smooth,thick] coordinates {(-1.9,14.6154) (-1.8,7.10526) (-1.7,4.59459)(-1.6,3.33333) (-1.5,2.57143) (-1.4,2.05882) (-1.3,1.68831)
+(-1.2,1.40625) (-1.1,1.1828) (-1.,1.) (-0.9,0.846395) (-0.8,0.714286)(-0.7,0.598291) (-0.6,0.494505) (-0.5,0.4) (-0.4,0.3125)(-0.3,0.230179) (-0.2,0.151515) (-0.1,0.075188)(0,0)(0.1,-0.075188) (0.2,-0.151515) (0.3,-0.230179)
+(0.4,-0.3125) (0.5,-0.4) (0.6,-0.494505) (0.7,-0.598291)
+(0.8,-0.714286) (0.9,-0.846395) (1.,-1.) (1.1,-1.1828) (1.2,-1.40625)
+(1.3,-1.68831) (1.4,-2.05882) (1.5,-2.57143) (1.6,-3.33333)(1.7,-4.59459) (1.8,-7.10526) (1.9,-14.6154)};
+
+\addplot [{\colorone},smooth,thick] coordinates {(2.1,15.3659) (2.2,7.85714) (2.3,5.34884) (2.4,4.09091)(2.5,3.33333) (2.6,2.82609) (2.7,2.46201) (2.8,2.1875) (2.9,1.97279)(3.,1.8) (3.1,1.65775) (3.2,1.53846) (3.3,1.43687) (3.4,1.34921)(3.5,1.27273) (3.6,1.20536) (3.7,1.14551) (3.8,1.09195) (3.9,1.04371)(4.,1.) (4.1,0.960187) (4.2,0.923754) (4.3,0.890269) (4.4,0.859375)(4.5,0.830769) (4.6,0.804196) (4.7,0.779436) (4.8,0.756303)(4.9,0.734633) (5.,0.714286) (5.1,0.695139) (5.2,0.677083)(5.3,0.660025) (5.4,0.643879) (5.5,0.628571) (5.6,0.614035)(5.7,0.600211) (5.8,0.587045) (5.9,0.574489) (6.,0.5625)};
+
+\draw [dashed,thick] (axis cs:-2,-16) -- (axis cs:-2,16);
+\draw [dashed,thick] (axis cs:2,-16) -- (axis cs: 2,16);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+%\spy [{\colortwo}] on (1,1) in node at (1.5,-2);
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_multipleasymptotes.tex -->
+
+</figure>
+</solution>
+</example>
+<p>
+When a rational function has a vertical asymptote at <m>x=c</m>, we can conclude that the denominator is 0 at <m>x=c</m>. However, just because the denominator is 0 at a certain point does not mean there is a vertical asymptote there. For instance, <m>f(x)=(x^2-1)/(x-1)</m> does not have a vertical asymptote at <m>x=1</m>, as shown in <xref ref="fig_noasy">Figure</xref>. While the denominator does get small near <m>x=1</m>, the numerator gets small too, matching the denominator step for step. In fact, factoring the numerator, we get
+<me>
+  f(x)=\frac{(x-1)(x+1)}{x-1}.
+</me>
+</p>
+
+<p>
+Canceling the common term, we get that <m>f(x)=x+1</m> for <m>x\not=1</m>. So there is clearly no asymptote, rather a hole exists in the graph at <m>x=1</m>.
+</p>
+<figure xml:id="fig_noasy" >
+<caption>Graphically showing that <m>f(x) = \dfrac{x^2-1}{x-1}</m> does not have an asymptote at <m>x=1</m>.</caption>
+
+<!-- START figures/fig_noasy.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.2,ymax=3.2,xmin=-1.2,xmax=2.2,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-1,0) (2,3)};
+\fill[white,draw=black] (axis cs:1,2) circle (1pt);
+%\fill[black,draw=black] (axis cs:2,1) circle (1pt);
+%\fill[black,draw=black] (axis cs:0,1.5) circle (1pt);
+%\fill[black,draw=black] (axis cs:3,1) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_noasy.tex -->
+
+</figure>
+<p>
+The above example may seem a little contrived. Another example demonstrating this important concept is <m>f(x)= (\sin x)/x</m>. We have considered this function several times in the previous sections. We found that <m>\ds \lim_{x\to0}\frac{\sin x}{x}=1</m>; i.e., there is no vertical asymptote. No simple algebraic cancellation makes this fact obvious; we used the Squeeze Theorem in <xref ref="sec_limit_analytically">Section</xref> to prove this.
+</p>
+
+<p>
+If the denominator is 0 at a certain point but the numerator is not, then there will usually be a vertical asymptote at that point. On the other hand, if the numerator and denominator are both zero at that point, then there may or may not be a vertical asymptote at that point. This case where the numerator and denominator are both zero returns us to an important topic.
+</p>
+
+<p>
+Forms}<index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index>
+</p>
+
+<p>
+We have seen how the limits
+<me>
+  \lim_{x\rightarrow 0}\frac{\sin x}{x}\quad \text{and} \quad \lim_{x\to1}\frac{x^2-1}{x-1}
+</me>
+each return the indeterminate form <q><m>0/0</m></q> when we blindly plug in <m>x=0</m> and <m>x=1</m>, respectively. However, <m>0/0</m> is not a valid arithmetical expression. It gives no indication that the respective limits are 1 and 2.
+</p>
+
+<p>
+With a little cleverness, one can come up <m>0/0</m> expressions which have a limit of <m>\infty</m>, 0, or any other real number. That is why this expression is called <em>indeterminate</em>.
+</p>
+
+<p>
+A key concept to understand is that such limits do not really return <m>0/0</m>. Rather, keep in mind that we are taking <em>limits</em>. What is really happening is that the numerator is shrinking to 0 while the denominator is also shrinking to 0. The respective rates at which they do this are very important and determine the actual value of the limit.
+</p>
+
+<p>
+An indeterminate form indicates that one needs to do more work in order to compute the limit. That work may be algebraic (such as factoring and canceling) or it may require a tool such as the Squeeze Theorem.
+In a later section we will learn a technique called l'Hospital's Rule that provides another way to handle indeterminate forms.
+</p>
+
+<p>
+Some other common indeterminate forms are <m>\infty-\infty</m>, <m>\infty\cdot 0</m>, <m>\infty/\infty</m>, <m>0^0</m>, <m>\infty^0</m> and <m>1^{\infty}</m>. Again, keep in mind that these are the <q>blind</q> results of evaluating a limit, and each, in and of itself, has no meaning. The expression <m>\infty-\infty</m> does not really mean <q>subtract infinity from infinity.</q> Rather, it means <q>One quantity is subtracted from the other, but both are growing without bound.</q> What is the result? It is possible to get every value between <m>-\infty</m> and <m>\infty</m>
+</p>
+
+<p>
+Note that <m>1/0</m> and <m>\infty/0</m> are not indeterminate forms, though they are not exactly valid mathematical expressions, either. In each, the function is growing without bound, indicating that the limit will be <m>\infty</m>, <m>-\infty</m>, or simply not exist if the left- and right-hand limits do not match.
+</p>
+
+<p>
+at Infinity and Horizontal Asymptotes}
+</p>
+
+<p>
+At the beginning of this section we briefly considered what happens to <m>f(x) = 1/x^2</m> as <m>x</m> grew very large.
+Graphically, it concerns the behavior of the function to the <q>far right</q> of the graph. We make this notion more explicit in the following definition.
+</p>
+<definition xml:id="def_limit_at_infinity">
+<title>Limits at Infinity and Horizontal Asymptote</title>
+<statement>
+<ol>
+<li><p>We say <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M>0</m> such that if <m>x\geq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.<index><main>limit</main><sub>at infinity</sub></index><index><main>asymptote</main><sub>horizontal</sub></index></p></li>
+<li><p>We say <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M\lt 0</m> such that if <m>x\leq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.</p></li>
+<li><p>If <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> or <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m>, we say that <m>y=L</m> is a <b>horizontal asymptote</b> of <m>f</m>.</p></li>
+</ol>
+</statement>
+</definition>
+<p>
+We can also define limits such as <m>\ds\lim_{x\rightarrow\infty}f(x)=\infty</m> by combining this definition with <xref ref="def_limit_of_infinity">Definition</xref>.
+</p>
+<example xml:id="ex_hzasy1">
+<title>Approximating horizontal asymptotes</title>
+<statement>
+<p>
+Approximate the horizontal asymptote(s) of <m>\ds f(x)=\frac{x^2}{x^2+4}</m>.
+</p>
+</statement>
+<solution>
+<p>
+We will approximate the horizontal asymptotes by approximating the limits
+<me>
+  \lim_{x\to-\infty} \frac{x^2}{x^2+4}\quad \text{and} \quad \lim_{x\to\infty} \frac{x^2}{x^2+4}.
+</me>
+</p>
+
+<p>
+<xref ref="fig_hzasy1">Figure</xref>(a) shows a sketch of <m>f</m>, and part (b) gives values of <m>f(x)</m> for large magnitude values of <m>x</m>. It seems reasonable to conclude from both of these sources that <m>f</m> has a horizontal asymptote at <m>y=1</m>.
+</p>
+<figure xml:id="fig_hzasy1" >
+<caption>Using a graph and a table to approximate a horizontal asymptote in <xref ref="ex_hzasy1">Example</xref>.</caption>
+<tabular>
+<row><cell>
+<!-- START figures/fig_hzasy1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.2,ymax=1.1,xmin=-21,xmax=21,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-20.,0.990099) (-19.5,0.98959) (-19.,0.989041) (-18.5,0.988448)(-18.,0.987805) (-17.5,0.987107) (-17.,0.986348) (-16.5,0.98552) (-16.,0.984615) (-15.5,0.983623)(-15.,0.982533) (-14.5,0.98133) (-14.,0.98) (-13.5,0.978523) (-13.,0.976879) (-12.5,0.975039) (-12.,0.972973) (-11.5,0.970642)(-11.,0.968) (-10.5,0.964989) (-10.,0.961538) (-9.5,0.95756)
+(-9.,0.952941) (-8.5,0.947541) (-8.,0.941176) (-7.5,0.93361)(-7.,0.924528) (-6.5,0.913514) (-6.,0.9) (-5.5,0.883212)
+(-5.,0.862069) (-4.5,0.835052) (-4.,0.8) (-3.5,0.753846)(-3.,0.692308) (-2.5,0.609756) (-2.,0.5) (-1.5,0.36) (-1.,0.2)
+(-0.5,0.0588235) (0.,0.) (0.5,0.0588235) (1.,0.2) (1.5,0.36) (2.,0.5)(2.5,0.609756) (3.,0.692308) (3.5,0.753846) (4.,0.8) (4.5,0.835052)(5.,0.862069) (5.5,0.883212) (6.,0.9) (6.5,0.913514) (7.,0.924528)(7.5,0.93361) (8.,0.941176) (8.5,0.947541) (9.,0.952941)(9.5,0.95756) (10.,0.961538) (10.5,0.964989) (11.,0.968)(11.5,0.970642) (12.,0.972973) (12.5,0.975039) (13.,0.976879)(13.5,0.978523) (14.,0.98) (14.5,0.98133) (15.,0.982533) (15.5,0.983623) (16.,0.984615) (16.5,0.98552) (17.,0.986348)(17.5,0.987107) (18.,0.987805) (18.5,0.988448) (19.,0.989041)(19.5,0.98959) (20.,0.990099)};
+\draw [dashed,thick](axis cs:-21,1) -- (axis cs:21,1);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_hzasy1.tex -->
+</cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>
+<tabular>
+<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+<row bottom="minor"><cell></cell><cell></cell></row>
+<row><cell>10</cell><cell>0.9615</cell></row>
+<row><cell>100</cell><cell>0.9996</cell></row>
+<row><cell>10000</cell><cell>0.999996</cell></row>
+<row><cell><m>-10</m></cell><cell>0.9615</cell></row>
+<row><cell><m>-100</m></cell><cell>0.9996</cell></row>
+<row><cell><m>-10000</m></cell><cell>0.999996</cell></row>
+</tabular>
+</cell></row>
+<row><cell>(b)</cell></row>
+</tabular>
+</figure>
+<p>
+Later, we will show how to determine this analytically.
+</p>
+</solution>
+</example>
+<p>
+Horizontal asymptotes can take on a variety of forms. <xref ref="fig_hzasy">Figure</xref>(a) shows that <m>f(x) = x/(x^2+1)</m> has a horizontal asymptote of <m>y=0</m>, where 0 is approached from both above and below.
+</p>
+
+<p>
+<xref ref="fig_hzasy">Figure</xref>(b) shows that <m>f(x) =x/\sqrt{x^2+1}</m> has two horizontal asymptotes; one at <m>y=1</m> and the other at <m>y=-1</m>.
+</p>
+
+<p>
+<xref ref="fig_hzasy">Figure</xref>(c) shows that <m>f(x) = (\sin x)/x</m> has even more interesting behavior than at just <m>x=0</m>; as <m>x</m> approaches <m>\pm\infty</m>, <m>f(x)</m> approaches 0, but oscillates as it does this.
+</p>
+<sidebyside>
+<tabular>
+<row><cell>
+<!-- START figures/fig_hzasy2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=1.1,xmin=-21,xmax=21,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-20.,-0.0498753) (-19.,-0.0524862) (-18.,-0.0553846)
+(-17.,-0.0586207) (-16.,-0.0622568) (-15.,-0.0663717)
+(-14.,-0.071066) (-13.,-0.0764706) (-12.,-0.0827586) 
+(-11.,-0.0901639) (-10.,-0.0990099) (-9.,-0.109756) (-8.,-0.123077) 
+(-7.,-0.14) (-6.,-0.162162) (-5.,-0.192308) (-4.,-0.235294) 
+(-3.,-0.3) (-2.,-0.4) (-1.5,-0.461538) (-1.,-0.5) (-0.5,-0.4) (0.,0.) (0.5,0.4)
+(1.,0.5) (1.5,0.461538) (2.,0.4)  (3.,0.3) 
+(4.,0.235294) (5.,0.192308) (6.,0.162162) (7.,0.14) (8.,0.123077) 
+(9.,0.109756) (10.,0.0990099) (11.,0.0901639) (12.,0.0827586) 
+(13.,0.0764706) (14.,0.071066) (15.,0.0663717) (16.,0.0622568) 
+(17.,0.0586207) (18.,0.0553846) (19.,0.0524862) (20.,0.0498753)};
+%\draw [dashed](axis cs:-21,1) -- (axis cs:21,1);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_hzasy2.tex -->
+</cell><cell>
+<!-- START figures/fig_hzasy3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=1.1,xmin=-21,xmax=21,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-20.,-0.998752) (-19.,-0.998618) (-18.,-0.99846) (-17.,-0.998274)
+(-16.,-0.998053) (-15.,-0.997785) (-14.,-0.997459) (-13.,-0.997054)
+(-12.,-0.996546) (-11.,-0.995893) (-10.,-0.995037) (-9.,-0.993884)
+(-8.,-0.992278) (-7.,-0.989949) (-6.,-0.986394) (-5.,-0.980581)
+(-4.,-0.970143) (-3.,-0.948683) (-2.,-0.894427) (-1.,-0.707107)
+(0.,0.) (1.,0.707107) (2.,0.894427) (3.,0.948683) (4.,0.970143)
+(5.,0.980581) (6.,0.986394) (7.,0.989949) (8.,0.992278) (9.,0.993884)
+(10.,0.995037) (11.,0.995893) (12.,0.996546) (13.,0.997054)
+(14.,0.997459) (15.,0.997785) (16.,0.998053) (17.,0.998274)
+(18.,0.99846) (19.,0.998618) (20.,0.998752) };
+%\draw [dashed](axis cs:-21,1) -- (axis cs:21,1);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_hzasy3.tex -->
+</cell><cell>
+<!-- START figures/fig_hzasy4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.3,ymax=1.1,xmin=-21,xmax=21,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-20.,0.0456473) (-19.5,0.0310533) (-19.,0.00788827)
+(-18.5,-0.0185125) (-18.,-0.0417215) (-17.5,-0.0557501) 
+(-17.,-0.0565528) (-16.5,-0.0431385) (-16.,-0.017994) 
+(-15.5,0.0133205) (-15.,0.0433525) (-14.5,0.0644755) (-14.,0.0707577) 
+(-13.5,0.0595396) (-13.,0.0323205) (-12.5,-0.00530575) 
+(-12.,-0.0447144) (-11.5,-0.0761263) (-11.,-0.0909082) 
+(-10.5,-0.0837805) (-10.,-0.0544021) (-9.5,-0.00791064) 
+(-9.,0.0457909) (-8.5,0.0939397) (-8.,0.12367) (-7.5,0.125067) 
+(-7.,0.0938552) (-6.5,0.0330954) (-6.,-0.0465692) (-5.5,-0.12828) 
+(-5.,-0.191785) (-4.5,-0.217229) (-4.,-0.189201) (-3.5,-0.100224) 
+(-3.,0.04704) (-2.5,0.239389) (-2.,0.454649) (-1.5,0.664997) 
+(-1.,0.841471) (-0.5,0.958851) (0.,1) (0.5,0.958851) 
+(1.,0.841471) (1.5,0.664997) (2.,0.454649) (2.5,0.239389) 
+(3.,0.04704) (3.5,-0.100224) (4.,-0.189201) (4.5,-0.217229) 
+(5.,-0.191785) (5.5,-0.12828) (6.,-0.0465692) (6.5,0.0330954) 
+(7.,0.0938552) (7.5,0.125067) (8.,0.12367) (8.5,0.0939397) 
+(9.,0.0457909) (9.5,-0.00791064) (10.,-0.0544021) (10.5,-0.0837805) 
+(11.,-0.0909082) (11.5,-0.0761263) (12.,-0.0447144) 
+(12.5,-0.00530575) (13.,0.0323205) (13.5,0.0595396) (14.,0.0707577) 
+(14.5,0.0644755) (15.,0.0433525) (15.5,0.0133205) (16.,-0.017994) 
+(16.5,-0.0431385) (17.,-0.0565528) (17.5,-0.0557501) (18.,-0.0417215) 
+(18.5,-0.0185125) (19.,0.00788827) (19.5,0.0310533) (20.,0.0456473) };
+%\draw [dashed](axis cs:-21,1) -- (axis cs:21,1);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_hzasy4.tex -->
+</cell></row>
+<row><cell>(a)</cell><cell>(b)</cell><cell>(c)</cell></row>
+</tabular>
+</sidebyside>
+<p>
+We can analytically evaluate limits at infinity for rational functions once we understand <m>\ds\lim_{x\rightarrow\infty} 1/x</m>. As <m>x</m> gets larger and larger, the <m>1/x</m> gets smaller and smaller, approaching 0. We can, in fact, make <m>1/x</m> as small as we want by choosing a large enough value of <m>x</m>. Given <m>\epsilon</m>, we can make <m>1/x\lt \epsilon</m> by choosing <m>x>1/\epsilon</m>. Thus we have <m>\lim_{x\rightarrow\infty} 1/x=0</m>.
+</p>
+
+<p>
+It is now not much of a jump to conclude the following:
+<me>
+  \lim_{x\rightarrow\infty}\frac1{x^n}=0\quad \text{and} \quad \lim_{x\rightarrow-\infty}\frac1{x^n}=0
+</me>
+</p>
+
+<p>
+Now suppose we need to compute the following limit:
+<me>
+  \lim_{x\rightarrow\infty}\frac{x^3+2x+1}{4x^3-2x^2+9}.
+</me>
+</p>
+
+<p>
+A good way of approaching this is to divide through the numerator and denominator by <m>x^3</m> (hence dividing by 1), which is the largest power of <m>x</m> to appear in the function. Doing this, we get
+<md>
+  <mrow>  \lim_{x\rightarrow\infty}\frac{x^3+2x+1}{4x^3-2x^2+9} \amp =
+\lim_{x\rightarrow\infty}\frac{1/x^3}{1/x^3}\cdot\frac{x^3+2x+1}{4x^3-2x^2+9}</mrow>
+  <mrow>  \amp =\lim_{x\rightarrow\infty}\frac{x^3/x^3+2x/x^3+1/x^3}{4x^3/x^3-2x^2/x^3+9/x^3}</mrow>
+  <mrow>  \amp = \lim_{x\rightarrow\infty}\frac{1+2/x^2+1/x^3}{4-2/x+9/x^3}.</mrow>
+</md>
+</p>
+
+<p>
+Then using the rules for limits (which also hold for limits at infinity), as well as the fact about limits of <m>1/x^n</m>, we see that the limit becomes
+<me>
+  \frac{1+0+0}{4-0+0}=\frac14.
+</me>
+</p>
+
+<p>
+This procedure works for any rational function. In fact, it gives us the following theorem.
+</p>
+
+<theorem xml:id="thm_lim_rational_fn_at_infty">
+<title>Limits of Rational Functions at Infinity</title>
+<statement>
+<p>
+Let <m>f(x)</m> be a rational function of the following form:
+<me>
+  f(x)=\frac{a_nx^n + a_{n-1}x^{n-1}+\dots + a_1x + a_0}{b_mx^m + b_{m-1}x^{m-1} + \dots + b_1x + b_0},
+</me>
+where any of the coefficients may be 0 except for <m>a_n</m> and <m>b_m</m>.
+</p>
+
+<ol>
+<li><p>If <m>n=m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = \frac{a_n}{b_m}</m>.</p></li>
+<li><p>If <m>n\lt m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = 0</m>.</p></li>
+<li><p>If <m>n>m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x)</m> and <m>\lim_{x\rightarrow-\infty} f(x)</m> are both infinite.</p></li>
+</ol>
+</statement>
+</theorem>
+
+<p>
+We can see why this is true. If the highest power of <m>x</m> is the same in both the numerator and denominator (i.e. <m>n=m</m>), we will be in a situation like the example above, where we will divide by <m>x^n</m> and in the limit all the terms will approach 0 except for <m>a_nx^n/x^n</m> and <m>b_mx^m/x^n</m>. Since <m>n=m</m>, this will leave us with the limit <m>a_n/b_m</m>. If <m>n\lt m</m>, then after dividing through by <m>x^m</m>, all the terms in the numerator will approach 0 in the limit, leaving us with <m>0/b_m</m> or 0. If <m>n>m</m>, and we try dividing through by <m>x^n</m>, we end up with all the terms in the denominator tending toward 0, while the <m>x^n</m> term in the numerator does not approach 0. This is indicative of some sort of infinite limit.
+</p>
+
+<p>
+Intuitively, as <m>x</m> gets very large, all the terms in the numerator are small in comparison to <m>a_nx^n</m>, and likewise all the terms in the denominator are small compared to <m>b_nx^m</m>. If <m>n=m</m>, looking only at these two important terms, we have <m>(a_nx^n)/(b_nx^m)</m>. This reduces to <m>a_n/b_m</m>. If <m>n\lt m</m>, the function behaves like <m>a_n/(b_mx^{m-n})</m>, which tends toward 0. If <m>n>m</m>, the function behaves like <m>a_nx^{n-m}/b_m</m>, which will tend to either <m>\infty</m> or <m>-\infty</m> depending on the values of <m>n</m>, <m>m</m>, <m>a_n</m>, <m>b_m</m> and whether you are looking for <m>\lim_{x\rightarrow\infty} f(x)</m> or <m>\lim_{x\rightarrow-\infty} f(x)</m>.
+</p>
+
+<p>
+With care, we can quickly evaluate limits at infinity for a large number of functions by considering the largest powers of <m>x</m>. For instance, consider again <m>\ds\lim_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},</m> graphed in <xref ref="fig_hzasy">Figure</xref>(b). When <m>x</m> is very large, <m>x^2+1 \approx x^2</m>. Thus
+<me>
+  \sqrt{x^2+1}\approx \sqrt{x^2} = |x|,\quad \text{and} \quad \frac{x}{\sqrt{x^2+1}} \approx \frac{x}{|x|}.
+</me>
+</p>
+
+<p>
+This expression is 1 when <m>x</m> is positive and <m>-1</m> when <m>x</m> is negative. Hence we get asymptotes of <m>y=1</m> and <m>y=-1</m>, respectively.
+</p>
+<example xml:id="ex_hzasy2">
+<title>Finding a limit of a rational function</title>
+<statement>
+<p>
+Confirm analytically that <m>y=1</m> is the horizontal asymptote of <m>\ds f(x) = \frac{x^2}{x^2+4}</m>, as approximated in <xref ref="ex_hzasy1">Example</xref>.
+</p>
+</statement>
+<solution>
+<p>
+Before using <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref>, let's use the technique of evaluating limits at infinity of rational functions that led to that theorem. The largest power of <m>x</m> in <m>f</m> is 2, so divide the numerator and denominator of <m>f</m> by <m>x^2</m>, then take limits.
+<md>
+  <mrow>  \lim_{x\to\infty}\frac{x^2}{x^2+4} \amp = \lim_{x\to\infty}\frac{x^2/x^2}{x^2/x^2+4/x^2}</mrow>
+  <mrow>  \amp =\lim_{x\to\infty}\frac{1}{1+4/x^2}</mrow>
+  <mrow>  \amp =\frac{1}{1+0}</mrow>
+  <mrow>  \amp = 1.</mrow>
+</md>
+</p>
+
+<p>
+We can also use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> directly; in this case <m>n=m</m> so the limit is the ratio of the leading coefficients of the numerator and denominator, i.e., 1/1 = 1.
+</p>
+</solution>
+</example>
+
+<example xml:id="ex_hzasy3">
+<title>Finding limits of rational functions</title>
+<statement>
+<p>
+Use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> to evaluate each of the following limits.
+</p>
+<sidebyside>
+
+<ol>
+<li><m>\displaystyle\lim_{x\rightarrow-\infty}\frac{x^2+2x-1}{x^3+1}</m></li>
+<li><m>\displaystyle\lim_{x\rightarrow\infty}\frac{x^2+2x-1}{1-x-3x^2}</m></li>
+</ol>
+
+<ol>
+<li><m>\displaystyle\lim_{x\rightarrow\infty}\frac{x^2-1}{3-x}</m></li>
+</ol>
+
+</sidebyside>
+</statement>
+<solution>
+<ol>
+<li><p>The highest power of <m>x</m> is in the denominator.  Therefore, the limit is 0; see <xref ref="fig_hzasy3">Figure</xref>(a).</p></li>
+<li><p>The highest power of <m>x</m> is <m>x^2</m>, which occurs in both the numerator and denominator.  The limit is therefore the ratio of the coefficients of <m>x^2</m>, which is <m>-1/3</m>. See <xref ref="fig_hzasy3">Figure</xref>(b).
+	
+	
+	
+	<figure xml:id="fig_hzasy3" >
+<caption>Visualizing the functions in <xref ref="ex_hzasy3">Example</xref>.</caption>
+<tabular>
+<row><cell>
+<!-- START figures/fig_hzasy5.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.6,ymax=.6,xmin=-41,xmax=2,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-40.,-0.0237347) (-39.,-0.0243097) (-38.,-0.024913) 
+(-37.,-0.0255469) (-36.,-0.0262137) (-35.,-0.0269161) 
+(-34.,-0.0276569) (-33.,-0.0284394) (-32.,-0.0292673) 
+(-31.,-0.0301443) (-30.,-0.0310752) (-29.,-0.0320649) 
+(-28.,-0.0331192) (-27.,-0.0342445) (-26.,-0.0354481) 
+(-25.,-0.0367384) (-24.,-0.0381249) (-23.,-0.0396186) 
+(-22.,-0.0412323) (-21.,-0.0429806) (-20.,-0.0448806) 
+(-19.,-0.0469525) (-18.,-0.0492197) (-17.,-0.0517101) 
+(-16.,-0.0544567) (-15.,-0.0574985) (-14.,-0.0608822) 
+(-13.,-0.064663) (-12.,-0.0689056) (-11.,-0.0736842) 
+(-10.,-0.0790791) (-9.,-0.0851648) (-8.,-0.0919765) (-7.,-0.0994152) 
+(-6.,-0.106977) (-5.,-0.112903) (-4.,-0.111111) (-3.,-0.0769231) 
+(-2.,0.142857)};
+%\draw [dashed](axis cs:-21,1) -- (axis cs:21,1);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_hzasy5.tex -->
+</cell></row>
+<row><cell>(a)</cell></row>
+<row><cell>
+<!-- START figures/fig_hzasy6.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num = 4,axis y line=middle,axis x line=middle,ymin=-.55,ymax=.55,xmin=-1,xmax=41,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0.,-1.) (1.,-0.666667) (2.,-0.538462) (3.,-0.482759) (4.,-0.45098) 
+(5.,-0.43038) (6.,-0.415929) (7.,-0.405229) (8.,-0.396985) 
+(9.,-0.390438) (10.,-0.385113) (11.,-0.380697) (12.,-0.376975) 
+(13.,-0.373796) (14.,-0.371048) (15.,-0.36865) (16.,-0.366539) 
+(17.,-0.364666) (18.,-0.362993) (19.,-0.36149) (20.,-0.360131) 
+(21.,-0.358898) (22.,-0.357773) (23.,-0.356743) (24.,-0.355797) 
+(25.,-0.354924) (26.,-0.354116) (27.,-0.353366) (28.,-0.352669) 
+(29.,-0.352019) (30.,-0.351411) (31.,-0.350841) (32.,-0.350306) 
+(33.,-0.349803) (34.,-0.349329) (35.,-0.348881) (36.,-0.348458) 
+(37.,-0.348057) (38.,-0.347677) (39.,-0.347316) (40.,-0.346973) };
+\draw [dashed,thick](axis cs:-1,-.33333) -- (axis cs:41,-.3333);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_hzasy6.tex -->
+</cell></row>
+<row><cell>(b)</cell></row>
+<row><cell>
+<!-- START figures/fig_hzasy7.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-50,ymax=5,xmin=-5,xmax=41,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(4.,-15.) (5.,-12.) (6.,-11.6667) (7.,-12.) (8.,-12.6) (9.,-13.3333) 
+(10.,-14.1429) (11.,-15.) (12.,-15.8889) (13.,-16.8) (14.,-17.7273) 
+(15.,-18.6667) (16.,-19.6154) (17.,-20.5714) (18.,-21.5333) 
+(19.,-22.5) (20.,-23.4706) (21.,-24.4444) (22.,-25.4211) (23.,-26.4) 
+(24.,-27.381) (25.,-28.3636) (26.,-29.3478) (27.,-30.3333) 
+(28.,-31.32) (29.,-32.3077) (30.,-33.2963) (31.,-34.2857) 
+(32.,-35.2759) (33.,-36.2667) (34.,-37.2581) (35.,-38.25) 
+(36.,-39.2424) (37.,-40.2353) (38.,-41.2286) (39.,-42.2222) 
+(40.,-43.2162)  };
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_hzasy7.tex -->
+</cell></row>
+<row><cell>(c)</cell></row>
+</tabular>
+</figure></p></li>
+<li><p>The highest power of <m>x</m> is in the numerator so the limit will be <m>\infty</m> or <m>-\infty</m>.  To see which, consider only the dominant terms from the numerator and denominator, which are <m>x^2</m> and <m>-x</m>.  The expression in the limit will behave like <m>x^2/(-x) = -x</m> for large values of <m>x</m>.  Therefore, the limit is <m>-\infty</m>. See <xref ref="fig_hzasy3">Figure</xref>(c).</p></li>
+</ol>
+
+<p>
+\vskip -
+</p>
+</solution>
+</example>
+<p>
+<b> Chapter Summary</b>
+\vskip
+In this chapter we:
+</p>
+
+<ul>
+<li><p>defined the limit,</p></li>
+<li><p>found accessible ways to approximate their values numerically and graphically,</p></li>
+<li><p>developed a not<ndash />so<ndash />easy method of proving the value of a limit (<m>\epsilon</m>-<m>\delta</m> proofs),</p></li>
+<li><p>explored when limits do not exist,</p></li>
+<li><p>defined continuity and explored properties of continuous functions, and</p></li>
+<li><p>considered limits that involved infinity.</p></li>
+</ul>
+
+<p>
+Why? Mathematics is famous for building on itself and calculus proves to be no exception. In the next chapter we will be interested in <q>dividing by 0.</q> That is, we will want to divide a quantity by a smaller and smaller number and see what value the quotient approaches. In other words, we will want to find a limit. These limits will enable us to, among other things, determine <em>exactly</em> how fast something is moving when we are only given position information.
+</p>
+
+<p>
+Later, we will want to add up an infinite list of numbers. We will do so by first adding up a finite list of numbers, then take a limit as the number of things we are adding approaches infinity. Surprisingly, this sum often is finite; that is, we can add up an infinite list of numbers and get, for instance, 42.
+</p>
+
+<p>
+These are just two quick examples of why we are interested in limits. Many students dislike this topic when they are first introduced to it, but over time an appreciation is often formed based on the scope of its applicability.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Terms and Concepts</title>
+<exercise>
+<statement>
+<p>
+T/F: If <m>\ds \lim_{x\to 5} f(x) = \infty</m>, then we are implicitly stating that the limit exists.
+</p>
+</statement>
+<answer>
+<p>
+F
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+T/F: If <m>\ds \lim_{x\to \infty} f(x) = 5</m>, then we are implicitly stating that the limit exists.
+</p>
+</statement>
+<answer>
+<p>
+T
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+T/F: If <m>\ds \lim_{x\to 1^-} f(x) = -\infty</m>, then <m>\ds \lim_{x\to 1^+} f(x) = \infty</m>
+</p>
+</statement>
+<answer>
+<p>
+F
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+T/F: If <m>\ds \lim_{x\to 5} f(x) = \infty</m>, then <m>f</m> has a vertical asymptote at <m>x=5</m>.
+</p>
+</statement>
+<answer>
+<p>
+T
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+T/F: <m>\infty/0</m> is not an indeterminate form.
+</p>
+</statement>
+<answer>
+<p>
+T
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+List 5 indeterminate forms.
+</p>
+</statement>
+<answer>
+<p>
+Answers will vary.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Construct a function with a vertical asymptote at <m>x=5</m> and a horizontal asymptote at <m>y=5</m>.
+</p>
+</statement>
+<answer>
+<p>
+Answers will vary.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Let <m>\ds \lim_{x\to 7} f(x) = \infty</m>. Explain how we know that <m>f</m> is/is not continuous at <m>x=7</m>.
+</p>
+</statement>
+<answer>
+<p>
+The limit of <m>f</m> as <m>x</m> approaches 7 does not exist, hence <m>f</m> is not continuous. (Note: <m>f</m> could be defined at 7!)
+</p>
+</answer>
+</exercise>
+</subsection>
+
+
+<subsection>
+<title>Problems</title>
+<p>
+In the following exercises, evaluate the given limits using the graph of the function.
+</p>
+<exercise>
+<statement>
+<p>
+<m>\ds f(x) = \frac{1}{(x+1)^2}</m>
+</p>
+
+<ol>
+<li><m>\ds \lim_{x\to -1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to -1^+} f(x)</m></li>
+</ol>
+
+<p>
+
+<!-- START figures/fig_01_06_ex_09.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-5,ymax=105,%
+			xmin=-2.5,xmax=.5%
+]
+
+\addplot [thick,{\colorone},domain=-2.5:-1.1,samples=50] {1/(x+1)^2};
+\addplot [thick,{\colorone},domain=-.9:0.5,samples=50] {1/(x+1)^2};
+\draw [{\colorone},dashed] (axis cs:-1,105) -- (axis cs:-1,-5);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_01_06_ex_09.tex -->
+
+</p>
+</statement>
+<answer>
+<ol>
+<li><m>\infty</m></li>
+<li><m>\infty</m></li>
+</ol>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x) = \frac{1}{(x-3)(x-5)^2}</m>.
+</p>
+<sidebyside>
+
+<ol>
+<li class="custom-list-style-type" label="(a)" ><m>\ds \lim_{x\to 3^-} f(x)</m></li>
+<li class="custom-list-style-type" label="(b)" ><m>\ds \lim_{x\to 3^+} f(x)</m></li>
+<li class="custom-list-style-type" label="(c)" ><m>\ds \lim_{x\to 3} f(x)</m></li>
+</ol>
+
+<ol>
+<li><m>\ds \lim_{x\to 5^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 5^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to 5} f(x)</m></li>
+</ol>
+
+</sidebyside>
+<p>
+
+<!-- START figures/fig_01_06_ex_10.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-55,ymax=55,%
+			xmin=1.5,xmax=6.5%
+]
+
+\addplot [thick,{\colorone},domain=1.5:2.999,samples=50] {1/((x-3)*(x-5)^2)};
+\addplot [thick,{\colorone},domain=3.001:4.99,samples=50] {1/((x-3)*(x-5)^2)};
+\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+\draw [{\colorone},dashed] (axis cs:3,105) -- (axis cs:3,-105);
+\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_01_06_ex_10.tex -->
+
+</p>
+</statement>
+<answer>
+<ol>
+<li><m>-\infty</m></li>
+<li><m>\infty</m></li>
+<li><p>Limit does not exist</p></li>
+<li><m>\infty</m></li>
+<li><m>\infty</m></li>
+<li><m>\infty</m></li>
+</ol>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x) = \frac{1}{e^x+1}</m>
+</p>
+<sidebyside>
+
+<ol>
+<li><m>\ds \lim_{x\to -\infty} f(x)</m></li>
+<li><m>\ds \lim_{x\to \infty} f(x)</m></li>
+</ol>
+
+<ol>
+<li><m>\ds \lim_{x\to 0^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+</ol>
+
+</sidebyside>
+<p>
+
+<!-- START figures/fig_01_06_ex_11.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-10.5,xmax=10.5%
+]
+
+\addplot [thick,{\colorone},domain=-10.5:10.5,samples=50] {1/(exp(x)+1)};
+%\addplot [thick,{\colorone},domain=3.001:4.99,samples=50] {1/((x-3)*(x-5)^2)};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\draw [{\colorone},dashed] (axis cs:3,105) -- (axis cs:3,-105);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_01_06_ex_11.tex -->
+
+</p>
+</statement>
+<answer>
+<ol>
+<li><m>1</m></li>
+<li><m>0</m></li>
+<li><m>1/2</m></li>
+<li><m>1/2</m></li>
+</ol>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x) = x^2\sin (\pi x)</m>
+</p>
+
+<ol>
+<li><m>\ds \lim_{x\to -\infty} f(x)</m></li>
+<li><m>\ds \lim_{x\to \infty} f(x)</m></li>
+</ol>
+
+<p>
+
+<!-- START figures/fig_01_06_ex_12.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-105,ymax=110,%
+			xmin=-10.5,xmax=10.5%
+]
+
+\addplot [thick,{\colorone},smooth,domain=-10.5:10.5,samples=200] {x^2*sin(deg(3.14*x))};
+%\addplot [thick,{\colorone},domain=3.001:4.99,samples=50] {1/((x-3)*(x-5)^2)};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\draw [{\colorone},dashed] (axis cs:3,105) -- (axis cs:3,-105);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_01_06_ex_12.tex -->
+
+</p>
+</statement>
+<answer>
+<ol>
+<li><p>Limit does not exist</p></li>
+<li><p>Limit does not exist</p></li>
+</ol>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x) = \cos (x)</m>
+</p>
+
+<ol>
+<li><m>\ds \lim_{x\to -\infty} f(x)</m></li>
+<li><m>\ds \lim_{x\to \infty} f(x)</m></li>
+</ol>
+
+<p>
+
+<!-- START figures/fig_01_06_ex_13.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick=\empty,
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+			extra x ticks={-12.57,-9.42,-6.28,-3.14,3.14,6.28,9.42,12.57},%
+			extra x tick labels={$-4\pi$,$-3\pi$,$-2\pi$, $-\pi$, $\pi$, $2\pi$,$3\pi$,$4\pi$},
+			ymin=-1.1,ymax=1.1,%
+			xmin=-14,xmax=14%
+]
+
+\addplot [thick,{\colorone},smooth,domain=-13:13,samples=100] {cos(deg(x))};
+%\addplot [thick,{\colorone},domain=3.001:4.99,samples=50] {1/((x-3)*(x-5)^2)};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\draw [{\colorone},dashed] (axis cs:3,105) -- (axis cs:3,-105);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_01_06_ex_13.tex -->
+
+</p>
+</statement>
+<answer>
+<ol>
+<li><p>Limit does not exist</p></li>
+<li><p>Limit does not exist</p></li>
+</ol>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x) = 2^x+10</m>
+</p>
+
+<ol>
+<li><m>\ds \lim_{x\to -\infty} f(x)</m></li>
+<li><m>\ds \lim_{x\to \infty} f(x)</m></li>
+</ol>
+
+<p>
+
+<!-- START figures/fig_01_06_ex_40.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-5,ymax=160,%
+			xmin=-11,xmax=8%
+]
+
+\addplot [thick,{\colorone},domain=-10:10,samples=40] {2^x+10};
+%\addplot [thick,{\colorone},domain=-.9:0.5,samples=50] {1/(x+1)^2};
+%\draw [{\colorone},dashed] (axis cs:-1,105) -- (axis cs:-1,-5);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_01_06_ex_40.tex -->
+
+</p>
+</statement>
+<answer>
+<ol>
+<li><m>10</m></li>
+<li><m>\infty</m></li>
+</ol>
+</answer>
+</exercise>
+<p>
+In the following exercises, numerically approximate the following limits:
+</p>
+
+<ol>
+<li class="custom-list-style-type" label="(a)" ><m>\ds \lim_{x\to 3^-} f(x)</m></li>
+<li class="custom-list-style-type" label="(b)" ><m>\ds \lim_{x\to 3^+} f(x)</m></li>
+<li class="custom-list-style-type" label="(c)" ><m>\ds \lim_{x\to 3} f(x)</m></li>
+</ol>
+<exercise>
+<statement>
+<p>
+<m>\ds f(x)=\frac{x^2-1}{x^2-x-6}</m>
+</p>
+</statement>
+<answer>
+<p>
+Tables will vary.
+</p>
+
+<ol>
+<li>
+<tabular>
+<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+<row bottom="minor"><cell></cell><cell></cell></row>
+<row><cell><m>2.9</m></cell><cell><m>-15.1224</m></cell></row>
+<row><cell><m>2.99</m></cell><cell><m>-159.12</m></cell></row>
+<row><cell><m>2.999</m></cell><cell><m>-1599.12</m></cell></row>
+</tabular>
+It seems <m>\lim_{x\to3^-}f(x) =-\infty</m>.</li>
+<li>
+<tabular>
+<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+<row bottom="minor"><cell></cell><cell></cell></row>
+<row><cell><m>3.1</m></cell><cell><m>16.8824</m></cell></row>
+<row><cell><m>3.01</m></cell><cell><m>160.88</m></cell></row>
+<row><cell><m>3.001</m></cell><cell><m>1600.88</m></cell></row>
+</tabular>
+It seems <m>\lim_{x\to3^+}f(x) =\infty</m>.</li>
+<li><p>It seems <m>\lim_{x\to3}f(x)</m> does not exist.</p></li>
+</ol>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x)= \frac{x^2+5 x-36}{x^3-5 x^2+3 x+9}</m>
+</p>
+</statement>
+<answer>
+<p>
+Tables will vary.
+</p>
+
+<ol>
+<li>
+<tabular>
+<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+<row bottom="minor"><cell></cell><cell></cell></row>
+<row><cell><m>2.9</m></cell><cell><m>-335.64</m></cell></row>
+<row><cell><m>2.99</m></cell><cell><m>-30350.6</m></cell></row>
+<row><cell></cell></row>
+</tabular>
+It seems <m>\lim_{x\to3^-}f(x) =-\infty</m>.</li>
+<li>
+<tabular>
+<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+<row bottom="minor"><cell></cell><cell></cell></row>
+<row><cell><m>3.1</m></cell><cell><m>-265.61</m></cell></row>
+<row><cell><m>3.01</m></cell><cell><m>-29650.6</m></cell></row>
+<row><cell></cell></row>
+</tabular>
+It seems <m>\lim_{x\to3^+}f(x) =-\infty</m>.</li>
+<li><p>It seems <m>\lim_{x\to3}f(x) =-\infty</m>.</p></li>
+</ol>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x)=\frac{x^2-11 x+30}{x^3-4 x^2-3 x+18}</m>
+</p>
+</statement>
+<answer>
+<p>
+Tables will vary.
+</p>
+
+<ol>
+<li>
+<tabular>
+<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+<row bottom="minor"><cell></cell><cell></cell></row>
+<row><cell><m>2.9</m></cell><cell><m>132.857</m></cell></row>
+<row><cell><m>2.99</m></cell><cell><m>12124.4</m></cell></row>
+<row><cell></cell></row>
+</tabular>
+It seems <m>\lim_{x\to3^-}f(x) =\infty</m>.</li>
+<li>
+<tabular>
+<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+<row bottom="minor"><cell></cell><cell></cell></row>
+<row><cell><m>3.1</m></cell><cell><m>108.039</m></cell></row>
+<row><cell><m>3.01</m></cell><cell><m>11876.4</m></cell></row>
+<row><cell></cell></row>
+</tabular>
+It seems <m>\lim_{x\to3^+}f(x) =\infty</m>.</li>
+<li><p>It seems <m>\lim_{x\to3}f(x) =\infty</m>.</p></li>
+</ol>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x)=\frac{x^2-9 x+18}{x^2-x-6}</m>
+</p>
+</statement>
+<answer>
+<p>
+Tables will vary.
+</p>
+
+<ol>
+<li>
+<tabular>
+<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+<row bottom="minor"><cell></cell><cell></cell></row>
+<row><cell><m>2.9</m></cell><cell><m>-0.632</m></cell></row>
+<row><cell><m>2.99</m></cell><cell><m>-0.6032</m></cell></row>
+<row><cell><m>2.999</m></cell><cell><m>-0.60032</m></cell></row>
+<row><cell></cell></row>
+</tabular>
+It seems <m>\lim_{x\to3^-}f(x) =-0.6</m>.</li>
+<li>
+<tabular>
+<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+<row bottom="minor"><cell></cell><cell></cell></row>
+<row><cell><m>3.1</m></cell><cell><m>-0.5686</m></cell></row>
+<row><cell><m>3.01</m></cell><cell><m>-0.5968</m></cell></row>
+<row><cell><m>3.001</m></cell><cell><m>-0.59968</m></cell></row>
+<row><cell></cell></row>
+</tabular>
+It seems <m>\lim_{x\to3^+}f(x) =-0.6</m>.</li>
+<li><p>It seems <m>\lim_{x\to3}f(x) =-0.6</m>.</p></li>
+</ol>
+</answer>
+</exercise>
+<p>
+In the following exercises, identify the horizontal and vertical asymptotes, if any, of the given function.
+</p>
+<exercise>
+<statement>
+<p>
+<m>\ds f(x)=\frac{2 x^2-2 x-4}{x^2+x-20}</m>
+</p>
+</statement>
+<answer>
+<p>
+Horizontal asymptote at <m>y=2</m>; vertical asymptotes at <m>x=-5,4</m>.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x)=\frac{-3 x^2-9 x-6}{5 x^2-10 x-15}</m>
+</p>
+</statement>
+<answer>
+<p>
+Horizontal asymptote at <m>y=-3/5</m>; vertical asymptote at <m>x=3</m>.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x)=\frac{x^2+x-12}{7 x^3-14 x^2-21 x}</m>
+</p>
+</statement>
+<answer>
+<p>
+Horizontal asymptote at <m>y=0</m>; vertical asymptotes at <m>x=-1,0</m>.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x)=\frac{x^2-9}{9 x-9}</m>
+</p>
+</statement>
+<answer>
+<p>
+No horizontal asymptote; vertical asymptote at <m>x=1</m>.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x)=\frac{x^2-9}{9 x+27}</m>
+</p>
+</statement>
+<answer>
+<p>
+No horizontal or vertical asymptotes.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds f(x) = \frac{x^2-1}{-x^2-1}</m>
+</p>
+</statement>
+<answer>
+<p>
+Horizontal asymptote at <m>y=-1</m>; no vertical asymptotes
+</p>
+</answer>
+</exercise>
+<p>
+In the following exercises, evaluate the given limit.
+</p>
+<exercise>
+<statement>
+<p>
+<m>\ds \lim_{x\to\infty} \frac{x^3+2x^2+1}{x-5}</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>\infty</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds \lim_{x\to\infty} \frac{x^3+2x^2+1}{5-x}</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>-\infty</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds \lim_{x\to-\infty} \frac{x^3+2x^2+1}{x^2-5}</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>-\infty</m>
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+<m>\ds \lim_{x\to-\infty} \frac{x^3+2x^2+1}{5-x^2}</m>
+</p>
+</statement>
+<answer>
+<p>
+<m>\infty</m>
+</p>
+</answer>
+</exercise>
+</subsection>
+
+
+<subsection>
+<title>Review</title>
+<exercise>
+<statement>
+<p>
+Use an <m>\epsilon-\delta</m> proof to show that
+</p>
+
+<p>
+<m>\ds \lim_{x\to 1} 5x-2=3</m>.
+</p>
+</statement>
+<answer>
+<p>
+Solution omitted.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Let <m>\ds \lim_{x\to2} f(x) = 3</m> and <m>\ds \lim_{x\to2} g(x) = -1</m>. Evaluate the following limits.
+</p>
+<sidebyside>
+
+<ol>
+<li><m>\ds \lim_{x\to2}(f+g)(x)</m></li>
+<li><m>\ds \lim_{x\to2}(fg)(x)</m></li>
+</ol>
+
+<ol>
+<li><m>\ds \lim_{x\to2}(f/g)(x)</m></li>
+<li><m>\ds \lim_{x\to2}f(x)^{g(x)}</m></li>
+</ol>
+
+</sidebyside>
+</statement>
+<answer>
+<ol>
+<li><p>2</p></li>
+<li><m>-3</m></li>
+<li><m>-3</m></li>
+<li><m>1/3</m></li>
+</ol>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Let <m>\ds f(x) = \left\{ \begin{array}{ccc} x^2-1 \amp  \amp  x \lt  3 \\
+																						x+5 \amp  \amp  x\geq 3
+\end{array} \right.</m>.
+													
+Is <m>f</m> continuous everywhere?
+</p>
+</statement>
+<answer>
+<p>
+Yes. The only <q>questionable</q> place is at <m>x=3</m>, but the left and right limits agree.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Evaluate the limit: <m>\ds \lim_{x\to e} \ln x</m>.
+</p>
+</statement>
+<answer>
+<p>
+1
+</p>
+</answer>
+</exercise>
+<p>
+{
+</p>
+</subsection>
+
+</section>
