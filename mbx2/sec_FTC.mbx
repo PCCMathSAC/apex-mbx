@@ -211,7 +211,6 @@ means the velocity has increased by 15m/h from <m>t=0</m> to <m>t=3</m>.
 <subsection>
 <title>The Fundamental Theorem of Calculus and the Chain Rule</title>
 <p>
-\vskip
 Part 1 of the Fundamental Theorem of Calculus (FTC) states that given <m>\ds F(x) = \int_a^x f(t)\ dt</m>, <m>\Fp(x) = f(x)</m>. Using other notation, <m>\ds \frac{d}{dx}\big(F(x)\big) = f(x)</m>. While we have just practiced evaluating definite integrals, sometimes finding antiderivatives is impossible and we need to rely on other techniques to approximate the value of a definite integral. Functions written as <m>F(x) = \int_a^x f(t)\ dt</m> are useful in such situations.
 </p>
 
@@ -262,13 +261,17 @@ Practice this once more.
 <title>The FTC, Part 1, and the Chain Rule</title>
 <statement>
 <p>
-Find the derivative of <m>\ds F(x) = \int_{\cos x}^5 t^3\ dt.</m>\begin{solution}
+Find the derivative of <m>\ds F(x) = \int_{\cos x}^5 t^3\ dt.</m>
+</p>
+</statement>
+<solution>
+<p>
 Note that <m>\ds F(x) = -\int_5^{\cos x} t^3\ dt</m>. Viewed this way, the derivative of <m>F</m> is straightforward:
 <me>
   F\primeskip'(x) = \sin x \cos^3 x.
 </me>
 </p>
-</statement>
+</solution>
 </example>
 </subsection>
 
@@ -276,7 +279,6 @@ Note that <m>\ds F(x) = -\int_5^{\cos x} t^3\ dt</m>. Viewed this way, the deriv
 <subsection>
 <title>Area Between Curves</title>
 <p>
-\vskip
 Consider continuous functions <m>f(x)</m> and <m>g(x)</m> defined on <m>[a,b]</m>, where <m>f(x) \geq g(x)</m> for all <m>x</m> in <m>[a,b]</m>, as demonstrated in <xref ref="fig_ftc5">Figure</xref>. What is the area of the shaded region bounded by the two curves over <m>[a,b]</m>?<index><main>integration</main><sub>area between curves</sub></index>
 </p>
 <figure xml:id="fig_ftc5" >
@@ -435,10 +437,6 @@ Following <xref ref="thm_areabtwncurves">Theorem</xref>, the area is
   <mrow>  \amp = 10\frac23 = 10.\overline{6}</mrow>
 </md>
 </p>
-
-<p>
-\vskip-
-</p>
 </solution>
 </example>
 </subsection>
@@ -446,9 +444,6 @@ Following <xref ref="thm_areabtwncurves">Theorem</xref>, the area is
 
 <subsection>
 <title>The Mean Value Theorem and Average Value</title>
-<p>
-\vskip
-</p>
 <figure xml:id="fig_ftc7a" >
 <caption>A graph of a function <m>f</m> to introduce the Mean Value Theorem.</caption>
 
@@ -808,10 +803,6 @@ By our definition, the average velocity is:
 <me>
   \frac{1}{3-0}\int_0^3 (t-1)^2\ dt =\frac13 \int_0^3 \big(t^2-2t+1\big)\ dt = \left.\frac13\left(\frac13t^3-t^2+t\right)\right|_0^3 = 1\text{ ft/s} .
 </me>
-</p>
-
-<p>
-\vskip-
 </p>
 </solution>
 </example>
