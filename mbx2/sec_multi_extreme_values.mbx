@@ -1851,18 +1851,11 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 <p>
 \end{minipage}
 </p>
-
-<p>
-\vskip
-</p>
 </subsection>
 
 
 <subsection>
 <title>Common Trigonometric Identities</title>
-<p>
-\vskip
-</p>
 <sidebyside>
 <b>Pythagorean Identities</b>\vskip 5pt
 
@@ -1886,11 +1879,6 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 	<m>= 2\cos^2x-1</m>\vskip 5pt
 	<m>= 1-2\sin^2x</m>\vskip 5pt
 	<m>\ds\tan 2x = \frac{2\tan x}{1-\tan^2 x}</m>
-</sidebyside>
-<p>
-\vskip
-</p>
-<sidebyside>
 <b>Sum to Product Formulas</b>\vskip 5pt
 <m>\ds \sin x+\sin y = 2\sin \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)</m>\vskip 5pt
 <m>\ds \sin x-\sin y = 2\sin \left(\frac{x-y}2\right)\cos\left(\frac{x+y}2\right)</m>\vskip 5pt
@@ -1907,11 +1895,6 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 <m>\csc(-x) = -\csc x</m>\vskip 5pt
 <m>\sec (-x) = \sec x</m>\vskip 5pt
 <m>\cot (-x) = -\cot x</m>\vskip 5pt
-</sidebyside>
-<p>
-\vskip
-</p>
-<sidebyside>
 <b>Product to Sum Formulas</b>\vskip 5pt
 <m>\ds \sin x\sin y = \frac12 \big(\cos(x-y) - \cos (x+y)\big)</m>\vskip 5pt
 <m>\ds \cos x\cos y = \frac12\big(\cos (x-y) +\cos (x+y)\big)</m>\vskip 5pt
@@ -1926,9 +1909,6 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 
 <subsection>
 <title>Areas and Volumes</title>
-<p>
-\vskip
-</p>
 <sidebyside>
 
 <sidebyside>
@@ -1969,13 +1949,19 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 </image>
 
 </sidebyside>
+<sidebyside>
+<b>Parallelograms</b>\vskip 5pt
+		Area = <m>bh</m>
+\vskip 0pt
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[x=30pt,y=25pt,thick]
+			\draw (0,0) -- node [below,pos=.5]  { \(b\)} (2,0) -- (3,1.5) -- (1,1.5) -- (0,0);
+			\draw [dashed] (1,1.5) -- (1,0) node [pos=.5,right] {\(h\)};
+			\draw (.8,0) -- (.8,.2) -- (1,.2);
+			\end{tikzpicture}]]></latex-image-code>
+</image>
 
 </sidebyside>
-<p>
-13ae239b6bed8881efe43859baf3a9214d996890END
-</p>
-<sidebyside>
-
 <sidebyside>
 <b>Right Circular Cylinder</b>\vskip 5pt
 		Volume = <m>\pi r^2h</m> \vskip 5pt
@@ -1996,13 +1982,19 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 </image>
 
 </sidebyside>
+<sidebyside>
+<b>Trapezoids</b>\vskip 5pt
+		Area = <m>\frac12(a+b)h</m>
+\vskip 0pt
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[x=30pt,y=25pt,thick]
+			\draw (0,0) -- node [below,pos=.7]  { \(b\)} (3,0) -- (2.5,1.5) -- node [above,pos=.5] {\(a\)} (1.5,1.5) -- (0,0);
+			\draw [dashed] (1.5,1.5) -- (1.5,0) node [pos=.5,right] {\(h\)};
+			\draw (1.3,0) -- (1.3,.2) -- (1.5,.2);
+			\end{tikzpicture}]]></latex-image-code>
+</image>
 
 </sidebyside>
-<p>
-3870df3b8eba93990890fb06e358bcf7ec02cEND
-</p>
-<sidebyside>
-
 <sidebyside>
 <b>Sphere</b>\vskip 5pt
 		Volume = <m>\frac43\pi r^3</m> \vskip 5pt
@@ -2021,13 +2013,20 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 </image>
 
 </sidebyside>
+<sidebyside>
+<b>Circles</b>\vskip 5pt
+		Area = <m>\pi r^2</m>\vskip 5pt
+		Circumference = <m>2\pi r</m>
+\vskip 0pt
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[x=30pt,y=30pt,thick]
+			\draw (0,0) circle (1);
+			\draw [dashed] (0,0) -- (1,0) node [pos=.5,above] {\(r\)};
+			\draw [fill=black] (0,0) circle (1pt);
+			\end{tikzpicture}]]></latex-image-code>
+</image>
 
 </sidebyside>
-<p>
-6c0afa2d7becb002b5ad3dc422f66ca0531868d8END
-</p>
-<sidebyside>
-
 <sidebyside>
 <b>General Cone</b>\vskip 5pt
 		Area of Base = <m>A</m>\vskip 5pt
@@ -2051,13 +2050,23 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 </image>
 
 </sidebyside>
+<sidebyside>
+<b>Sectors of Circles</b>\vskip 5pt
+		<m>\theta</m> in radians \vskip 5pt
+		Area = <m>\frac12\theta r^2</m>\vskip 5pt
+		<m>s=r\theta</m>
+\vskip 0pt
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[x=30pt,y=30pt,thick]
+			\draw (2,0) arc (0:50:2) -- (0,0);
+			\draw [] (0,0) -- (2,0) node [pos=.5,below] {\(r\)};
+			\draw [fill=black] (0,0) circle (1pt);
+			\draw (1.95,1.0) node {\(s\)};
+			\draw (0,0) node [shift={(15pt,8pt)}] {\(\theta\)};
+			\end{tikzpicture}]]></latex-image-code>
+</image>
 
 </sidebyside>
-<p>
-8a05e31055af65591a501ef4c79cb3796eb8758END
-</p>
-<sidebyside>
-
 <sidebyside>
 <b>General Right Cylinder</b>\vskip 5pt
 		Area of Base = <m>A</m>\vskip 5pt
@@ -2085,14 +2094,13 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 
 </sidebyside>
 <p>
-<b> Algebra</b>
-<b> Factors and Zeros of Polynomials</b>
+<b> Algebra</b> <b> Factors and Zeros of Polynomials</b>
 </p>
 
 <p>
 Let <m>p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0</m> be a polynomial. If <m>p(a)=0</m>, then <m>a</m> is a <m>zero</m> of the polynomial and a solution
 of the equation <m>p(x)=0</m>. Furthermore, <m>(x-a)</m> is a <m>factor</m> of the polynomial.
-Fundamental Theorem of Algebra}
+<b> Fundamental Theorem of Algebra</b>
 </p>
 
 <p>
@@ -2101,7 +2109,7 @@ must have at least one real zero.
 </p>
 
 <p>
-Quadratic Formula}
+<b> Quadratic Formula</b>
 </p>
 
 <p>
@@ -2109,7 +2117,7 @@ If <m>p(x) = ax^2 + bx + c</m>, and <m>0 \le b^2 - 4ac</m>, then the real zeros 
 </p>
 
 <p>
-Special Factors}
+<b> Special Factors</b>
 </p>
 
 <p>
@@ -2123,7 +2131,7 @@ x^3 + a^3 = (x+a)(x^2-ax+a^2) \qquad \qquad \qquad \amp  x^4 - a^4 = (x^2-a^2)(x
 <m>\begin{array}{l}
 (x+y)^n  =x^n + nx^{n-1}y+\frac{n(n-1)}{2!}x^{n-2}y^2+\cdots +nxy^{n-1}+y^n\\
 (x-y)^n  =x^n - nx^{n-1}y+\frac{n(n-1)}{2!}x^{n-2}y^2-\cdots \pm nxy^{n-1}\mp y^n
-\end{array}</m> Binomial Theorem}
+\end{array}</m> <b> Binomial Theorem</b>
 </p>
 
 <p>
@@ -2131,7 +2139,7 @@ x^3 + a^3 = (x+a)(x^2-ax+a^2) \qquad \qquad \qquad \amp  x^4 - a^4 = (x^2-a^2)(x
 (x+y)^2 = x^2 + 2xy + y^2 \qquad \amp  (x-y)^2 = x^2 -2xy +y^2\\
 (x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 \qquad  \amp  (x-y)^3 = x^3 -3x^2y + 3xy^2 -y^3\\
 (x+y)^4 = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4 \qquad  \amp  (x-y)^4 = x^4 - 4x^3y + 6x^2y^2 - 4xy^3 + y^4\\
-\end{array}</m> Rational Zero Theorem}
+\end{array}</m> <b> Rational Zero Theorem</b>
 </p>
 
 <p>
@@ -2140,7 +2148,7 @@ If <m>p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0</m> has integer co
 </p>
 
 <p>
-Factoring by Grouping}
+<b> Factoring by Grouping</b>
 </p>
 
 <p>
@@ -2148,7 +2156,7 @@ Factoring by Grouping}
 </p>
 
 <p>
-Arithmetic Operations}
+<b> Arithmetic Operations</b>
 </p>
 
 <p>
@@ -2158,7 +2166,7 @@ ab+ac=a(b+c) \qquad \qquad \amp  \displaystyle \frac{a}{b}+\frac{c}{d} = \frac{a
 \amp \displaystyle \frac{\left(\displaystyle\frac{a}{b}\right)}{c} =\displaystyle \frac{a}{bc}
 \amp \displaystyle \frac{a}{\left(\displaystyle\frac{b}{c}\right)} =\displaystyle \frac{ac}{b}\\ \\
 a\left(\displaystyle\frac{b}{c}\right)= \displaystyle \frac{ab}{c}\amp \displaystyle\frac{a-b}{c-d}=\frac{b-a}{d-c}\amp \displaystyle\frac{ab+ac}{a}=b+c\\
-\end{array}</m> Exponents and Radicals}
+\end{array}</m> <b> Exponents and Radicals</b>
 </p>
 
 <p>

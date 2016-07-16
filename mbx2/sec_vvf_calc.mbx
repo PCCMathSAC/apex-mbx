@@ -169,7 +169,6 @@ Consider a vector<ndash />valued function <m>\vec r</m> defined on an open inter
 </tabular>
 <p>
 \captionof{figure}{Illustrating displacement, leading to an understanding of the derivative of vector<ndash />valued functions.} \end{minipage}
-\vskip
 The <b>derivative</b> of a vector<ndash />valued function is a measure of the <em>instantaneous</em> rate of change, measured by taking the limit as the length of <m>[t_0,t_1]</m> goes to 0. Instead of thinking of an interval as <m>[t_0,t_1]</m>, we think of it as <m>[c,c+h]</m> for some value of <m>h</m> (hence the interval has length <m>h</m>). The <em>average</em> rate of change is
 <me>
   \frac{\vec r(c+h)-\vec r(c)}{h}
@@ -194,10 +193,6 @@ Let <m>\vec r(t)</m> be continuous on an open interval <m>I</m> containing <m>c<
   \vrp (t) = \lim_{h\to 0} \frac{\vec r(t+h) - \vec r(t)}{h}.
 </me></p></li>
 </ol>
-
-<p>
-\vskip-
-</p>
 </statement>
 </definition>
 
@@ -986,10 +981,16 @@ So <m>\vrp(t) = \la 2t,\sin t,6t^2\ra + \la 5,3,0\ra = \la 2t+5, \sin t + 3, 6t^
 
 <p>
 With <m>\vec r(0) = \la -7,-1,2\ra</m>, we solve for <m>\vec C</m>:
+<md>
+  <mrow>  \vec r(t) \amp = \la t^2+5t, -\cos t + 3t, 2t^3\ra + \vec C</mrow>
+  <mrow>  \vec r(0) \amp = \la 0,-1,0\ra + \vec C</mrow>
+  <mrow>  \la -7,-1,2\ra \amp = \la 0,-1,0\ra + \vec C</mrow>
+  <mrow>  \la -7,0,2\ra \amp = \vec C.</mrow>
+</md>
+</p>
 
-7ae9b415d39dae74a7566875a75c76b29b1b1017END
+<p>
 So <m>\vec r(t) = \la t^2+5t, -\cos t + 3t, 2t^3\ra + \la -7,0,2\ra = \la t^2+5t-7,-\cos t+3t,2t^3+2\ra.</m>
-\vskip-
 </p>
 </solution>
 </example>

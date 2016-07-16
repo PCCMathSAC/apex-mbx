@@ -367,9 +367,6 @@ label("$\vec{u} \times \vec{v}$",(2/25,-5/25,27/25),NW);
 ]]></asymptote></image><!-- END figures/figcrossp_rhr_3D.asy -->
 
 </figure>
-<p>
-\vskip
-</p>
 </subsection>
 
 
@@ -393,9 +390,30 @@ where the second equality comes from <xref ref="thm_cross_product">Theorem</xref
 <figure xml:id="fig_crossp_parallelogram" >
 <caption>Using the cross product to find the area of a parallelogram.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figcrossp_parallelogram1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_crossp_parallelogram1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[thick,scale=1.25]
+			\draw (0,0) -- node [below,pos=.5]  {\scriptsize $b$} (2,0) -- (3,1.5) -- (1,1.5) -- (0,0);
+			\draw [dashed] (1,1.5) -- (1,0) node [pos=.5,right] {\scriptsize$h$};
+			\draw (.8,0) -- (.8,.2) -- (1,.2);
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_crossp_parallelogram1.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figcrossp_parallelogram2.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_crossp_parallelogram2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[thick,scale=1.25,>=stealth]
+			\draw [->](0,0) -- node [below,pos=1]  {\scriptsize $\vec v$} (2,0);
+			\draw (2,0) -- (3,1.5) -- (1,1.5);
+			\draw (.3,.175) node {\scriptsize $\theta$};
+			\draw [->](0,0) -- (1,1.5) node [above] {\scriptsize $\vec u$};
+			\draw [dashed] (1,1.5) -- (1,0) node [pos=.5,right] {\scriptsize$h$};
+			\draw (.8,0) -- (.8,.2) -- (1,.2);
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_crossp_parallelogram2.tex -->
+</cell></row>
 <row><cell>(b)</cell></row>
 <row><cell></cell></row>
 </tabular>
@@ -419,7 +437,39 @@ We illustrate using Equation <xref ref="eq_crossp1" /> in the following example.
 	<figure xml:id="fig_crossp4" >
 <caption>Sketching the parallelograms in <xref ref="ex_crossp4">Example</xref>.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figcrossp4b.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_crossp4b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},
+			%minor x tick num=1,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={1,2,3,4,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=5.5,%
+			xmin=-.5,xmax=4.5%
+]
+
+\draw[thick,->,>=stealth] (axis cs:0,0) --(axis cs:2,1) node [right,] {\scriptsize $\vec u$};
+
+\draw[thick,->,>=stealth] (axis cs:0,0) --(axis cs:1,3) node [above] {\scriptsize $\vec v$};
+
+\draw[thick] (axis cs:2,1) --(axis cs:3,4) -- (axis cs: 1,3);
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- END figures/fig_crossp4b.tex -->
+</cell></row>
 <row><cell>(a)</cell></row>
 <row><cell>
 <figure>
@@ -523,10 +573,6 @@ draw(s,rgb(.6,.6,1)+opacity(.6),meshpen=p);
   \vv{AB} \times \vv{BC} = \la 0,1,-2\ra \quad \Rightarrow \quad \norm{\vv{AB}\times\vv{BC}} = \sqrt{5} \approx 2.236.
 </me></p></li>
 </ol>
-
-<p>
-\vskip-
-</p>
 </solution>
 </example>
 <p>
@@ -966,10 +1012,6 @@ We again make the third component 0 and take the cross product to find the torqu
 </md>
 As one might expect, when the force and lever arm vectors <em>are</em> orthogonal, the magnitude of force is greater than when the vectors <em>are not</em> orthogonal.</p></li>
 </ol>
-
-<p>
-\vskip-
-</p>
 </solution>
 </example>
 <p>

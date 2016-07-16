@@ -86,6 +86,23 @@ Let <m>\ds f(x) = \left\{\begin{array}{cc} x \amp  0\leq x\leq 1 \\ 3-x \amp  1\
 <figure xml:id="fig_onesided1" >
 <caption>A graph of <m>f</m> in <xref ref="ex_onesidea">Example</xref>.</caption>
 
+<!-- START figures/fig_one_sidedlimit1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=2.4,xmin=-.4,xmax=2.4,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0,0) (1,1)};
+\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\addplot [{\colorone},smooth,thick] coordinates {(1,2) (2,1)};
+\fill[white,draw=black,thick] (axis cs:1,2) circle (1.5pt);
+\fill[white,draw=black,thick] (axis cs:2,1) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_one_sidedlimit1.tex -->
+
 </figure>
 </statement>
 <solution>
@@ -103,10 +120,6 @@ For these problems, the visual aid of the graph is likely more effective in eval
 <li><p>As <m>x</m> goes to 2 from the left, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 2^-} f(x)=1.</m></p></li>
 <li><p>The graph and the definition of the function show that <m>f(2)</m> is not defined.</p></li>
 </ol>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
 <p>
@@ -161,6 +174,23 @@ Let <m>f(x) = \left\{\begin{array}{cc} 2-x \amp  0\lt x\lt 1 \\ (x-2)^2 \amp  1\
 <figure xml:id="fig_onesidedb" >
 <caption>A graph of <m>f</m> from <xref ref="ex_onesideb">Example</xref></caption>
 
+<!-- START figures/fig_one_sidedlimit2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=2.4,xmin=-.4,xmax=2.4,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0,2) (1,1)};
+\addplot [{\colorone},smooth,thick] coordinates {(1.,1.) (1.1,0.81) (1.2,0.64) (1.3,0.49) (1.4,0.36) (1.5,0.25) (1.6,0.16) (1.7,0.09) (1.8,0.04) (1.9,0.01) (2.,0.)};
+\fill[white,draw=black,thick] (axis cs:2,0) circle (1.5pt);
+\fill[white,draw=black,thick] (axis cs:0,2) circle (1.5pt);
+\fill[white,draw=black,thick] (axis cs:1,1) circle (1.5pt);
+%\fill[white,draw=black] (axis cs:2,1) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_one_sidedlimit2.tex -->
+
 </figure>
 </statement>
 <solution>
@@ -178,10 +208,6 @@ Again we will evaluate each using both the definition of <m>f</m> and its graph.
 <li><p>As <m>x</m> goes to 2 from the left, <m>f(x)</m> approaches 0. So <m>\ds \lim_{x\to 2^-} f(x)=0</m>.</p></li>
 <li><m>f(2)</m>  is not defined as 2 is not in the domain of <m>f</m>.</li>
 </ol>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
 
@@ -207,6 +233,26 @@ Let <m>f(x) = \left\{\begin{array}{cc} (x-1)^2 \amp  0\leq x\leq 2, x\neq 1\\ 1 
 </sidebyside>
 <figure xml:id="fig_onesidedc" >
 <caption>Graphing <m>f</m> in <xref ref="ex_onesidec">Example</xref></caption>
+
+<!-- START figures/fig_one_sidedlimit3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=1.4,xmin=-.4,xmax=2.4,name=myplot]
+%\addplot [{\colorone},smooth] coordinates {(0,2) (1,1)};
+\addplot [{\colorone},smooth,thick] coordinates {(0.,1.) (0.1,0.81) (0.2,0.64) (0.3,0.49) (0.4,0.36) (0.5,0.25) (0.6,0.16) (0.7,0.09) (0.8,0.04) (0.9,0.01) (1.,0.) (1.1,0.01)
+(1.2,0.04) (1.3,0.09) (1.4,0.16) (1.5,0.25) (1.6,0.36) (1.7,0.49)
+(1.8,0.64) (1.9,0.81) (2.,1.)
+};
+\fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[white,draw=black,thick] (axis cs:1,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_one_sidedlimit3.tex -->
 
 </figure>
 </statement>
@@ -244,6 +290,23 @@ It is clear from the definition of the function and its graph that all of the fo
 </p>
 <figure xml:id="fig_onesidedd" >
 <caption>Graphing <m>f</m> in <xref ref="ex_onesided">Example</xref></caption>
+
+<!-- START figures/fig_one_sidedlimit4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=1.4,xmin=-.4,xmax=2.4,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(2,0) (1,1)};
+\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16) (0.5,0.25)(0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.) };
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+%\fill[white,draw=black] (axis cs:2,1) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- END figures/fig_one_sidedlimit4.tex -->
 
 </figure>
 <me>
