@@ -50,7 +50,7 @@ include Makefile.paths
 
 # These paths are subdirectories of
 # the project distribution
-PRJSRC    = $(PRJ)/mbx
+PRJSRC    = $(PRJ)/mbx2
 OUTPUT    = $(PRJ)/output
 
 # The project's main hub file
@@ -105,6 +105,7 @@ images:
 	install -d $(IMAGESOUT)
 	-rm $(IMAGESOUT)/*.svg
 	$(MB)/script/mbx -c latex-image -f svg -d $(IMAGESOUT) $(MAINFILE)
+	$(MB)/script/mbx -c asymptote -f svg -d $(IMAGESOUT) $(MAINFILE)
 
 # for pdf output, a one-time prerequisite for LaTeX conversion of
 # problems living on a server, and image construction at server
