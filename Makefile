@@ -50,7 +50,7 @@ include Makefile.paths
 
 # These paths are subdirectories of
 # the project distribution
-PRJSRC    = $(PRJ)/mbx2
+PRJSRC    = $(PRJ)/mbx4
 OUTPUT    = $(PRJ)/output
 
 # The project's main hub file
@@ -98,14 +98,14 @@ html:
 	-rm $(HTMLOUT)/knowl/*.html
 	cp -a $(IMAGESOUT) $(HTMLOUT)
 	cd $(HTMLOUT); \
-	xsltproc -xinclude --stringparam webwork.server $(SERVER) --stringparam html.knowl.exercise.inline no $(MBXSL)/mathbook-html.xsl $(MAINFILE)
+	xsltproc -xinclude --stringparam webwork.server $(SERVER) --stringparam html.knowl.exercise.inline no --stringparam html.knowl.example no $(MBXSL)/mathbook-html.xsl $(MAINFILE)
 
 # make all the image files in svg format
 images:
 	install -d $(IMAGESOUT)
 	-rm $(IMAGESOUT)/*.svg
 	$(MB)/script/mbx -c latex-image -f svg -d $(IMAGESOUT) $(MAINFILE)
-	$(MB)/script/mbx -c asymptote -f svg -d $(IMAGESOUT) $(MAINFILE)
+#	$(MB)/script/mbx -c asymptote -f svg -d $(IMAGESOUT) $(MAINFILE)
 
 # for pdf output, a one-time prerequisite for LaTeX conversion of
 # problems living on a server, and image construction at server
