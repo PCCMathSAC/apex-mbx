@@ -231,7 +231,7 @@ Note that both of these are 0 at <m>t=0</m>; the curve is not smooth at <m>t=0</
 <p>
 We can, however, examine the slopes of tangent lines near <m>t=0</m>, and take the limit as <m>t\to 0</m>.
 <md>
-  <mrow>  \lim_{t\to0} \frac{y'(t)}{x'(t)} \amp =\lim_{t\to0} \frac{3\cos t\sin^2t}{-3\sin t\cos^2t}  \\text{ (We can cancel as \(t\neq 0\).) }</mrow>
+  <mrow>  \lim_{t\to0} \frac{y'(t)}{x'(t)} \amp =\lim_{t\to0} \frac{3\cos t\sin^2t}{-3\sin t\cos^2t}  \text{ (We can cancel as \(t\neq 0\).) }</mrow>
   <mrow>  \amp = \lim_{t\to0} -\frac{\sin t}{\cos t}</mrow>
   <mrow>  \amp = 0.</mrow>
 </md>
@@ -385,7 +385,7 @@ As the numerator of <m>\ds -\frac{9}{(5t-3)^3}</m> is never 0, <m>\frac{d^2y}{dx
 		\draw [<->, thick] (-2.5,0) -- (2.5,0);
 		\foreach \x / \y  in 
 					{0/{\(3/5\)}}
-		{\draw (\x,-.3) node[below] { \\text{ \y }} -- (\x,.3);}
+		{\draw (\x,-.3) node[below] { \text{ \y }} -- (\x,.3);}
 		\draw (-1,.75) node { \parbox{50pt}{\(\ds \frac{d^2y}{dx^2}>0\) \ c. up }};
 		\draw (1,.75) node { \parbox{50pt}{\(\ds\frac{d^2y}{dx^2}<0\) \ c. down }};\end{tikzpicture}]]></latex-image-code>
 </image>
@@ -420,7 +420,7 @@ The points of inflection are found by setting <m>\frac{d^2y}{dx^2}=0</m>. This i
 <p>
 In <xref ref="fig_parcalc5">Figure</xref>(a) we see a plot of the second derivative. It shows that it has zeros at approximately <m>t=0.5,\ 3.5,\ 6.5,\ 9.5,\ 12.5</m> and <m>16</m>. These approximations are not very good, made only by looking at the graph. Newton's Method provides more accurate approximations. Accurate to 2 decimal places, we have:
 <me>
-  t=0.65,\ 3.29,\ 6.36,\ 9.48,\ 12.61\ \\text{ and } \ 15.74.
+  t=0.65,\ 3.29,\ 6.36,\ 9.48,\ 12.61\ \text{ and } \ 15.74.
 </me>
 </p>
 
@@ -667,11 +667,11 @@ Consider the graph of the parametric equations <m>x=f(t)</m> and <m>y=g(t)</m>, 
 <ol>
 <li><p>The surface area of the solid formed by revolving the graph about the <m>x</m>-axis is (where <m>g(t)\geq~0</m> on <m>[t_1,t_2]</m>):
 <me>
-  \\text{ Surface Area }  = 2\pi\int_{t_1}^{t_2} g(t)\sqrt{\fp(t)^2+g'(t)^2}\ dt.
+  \text{ Surface Area }  = 2\pi\int_{t_1}^{t_2} g(t)\sqrt{\fp(t)^2+g'(t)^2}\ dt.
 </me></p></li>
 <li><p>The surface area of the solid formed by revolving the graph about the <m>y</m>-axis is (where <m>f(t)\geq~0</m> on <m>[t_1,t_2]</m>):
 <me>
-  \\text{ Surface Area }  = 2\pi\int_{t_1}^{t_2} f(t)\sqrt{\fp(t)^2+g'(t)^2}\ dt.
+  \text{ Surface Area }  = 2\pi\int_{t_1}^{t_2} f(t)\sqrt{\fp(t)^2+g'(t)^2}\ dt.
 </me></p></li>
 </ol>
 </insight>
@@ -687,7 +687,7 @@ Consider the teardrop shape formed by the parametric equations <m>x=t(t^2-1)</m>
 <p>
 The teardrop shape is formed between <m>t=-1</m> and <m>t=1</m>. Using <xref ref="idea_surface_area_parametric">Key Idea</xref>, we see we need for <m>g(t)\geq 0</m> on <m>[-1,1]</m>, and this is not the case. To fix this, we simplify replace <m>g(t)</m> with <m>-g(t)</m>, which flips the whole graph about the <m>x</m>-axis (and does not change the surface area of the resulting solid). The surface area is:
 <md>
-  <mrow>  \\text{ Area } \ S \amp = 2\pi\int_{-1}^1 (1-t^2)\sqrt{(3t^2-1)^2+(2t)^2}\ dt</mrow>
+  <mrow>  \text{ Area } \ S \amp = 2\pi\int_{-1}^1 (1-t^2)\sqrt{(3t^2-1)^2+(2t)^2}\ dt</mrow>
   <mrow>  \amp =	2\pi\int_{-1}^1 (1-t^2)\sqrt{9t^4-2t^2+1} \ dt.</mrow>
 </md>
 </p>

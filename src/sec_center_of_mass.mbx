@@ -136,13 +136,13 @@ We can write a simple double integral that represents the mass of the lamina: <m
 </p>
 
 <p>
-To evaluate this double integral, partition <m>R</m> into <m>n</m> subregions as we have done in the past. The <m>i^{\,\\text{ th } }</m> subregion has area <m>\Delta A_i</m>.
-A fundamental property of mass is that <q>mass=density<times />area.</q> If the lamina has a constant density <m>\delta</m>, then the mass of this <m>i^{\,\\text{ th } }</m> subregion is <m>\Delta m_i=\delta\Delta A_i</m>.
+To evaluate this double integral, partition <m>R</m> into <m>n</m> subregions as we have done in the past. The <m>i^{\,\text{ th } }</m> subregion has area <m>\Delta A_i</m>.
+A fundamental property of mass is that <q>mass=density<times />area.</q> If the lamina has a constant density <m>\delta</m>, then the mass of this <m>i^{\,\text{ th } }</m> subregion is <m>\Delta m_i=\delta\Delta A_i</m>.
 That is, we can compute a small amount of mass by multiplying a small amount of area by the density.
 </p>
 
 <p>
-If density is variable, with density function <m>\delta= \delta(x,y)</m>, then we can approximate the mass of the <m>i^{\,\\text{ th } }</m> subregion of <m>R</m> by multiplying <m>\Delta A_i</m> by <m>\delta(x_i,y_i)</m>, where <m>(x_i,y_i)</m> is a point in that subregion. That is, for a small enough subregion of <m>R</m>, the density across that region is almost constant.
+If density is variable, with density function <m>\delta= \delta(x,y)</m>, then we can approximate the mass of the <m>i^{\,\text{ th } }</m> subregion of <m>R</m> by multiplying <m>\Delta A_i</m> by <m>\delta(x_i,y_i)</m>, where <m>(x_i,y_i)</m> is a point in that subregion. That is, for a small enough subregion of <m>R</m>, the density across that region is almost constant.
 </p>
 <aside>
 <p>
@@ -165,7 +165,7 @@ Taking the limit as the size of the subregions shrinks to 0 gives us the actual 
 <p>
 Let <m>\delta(x,y)</m> be a continuous density function of a lamina corresponding to a plane region <m>R</m>. The mass <m>M</m> of the lamina is<index><main>mass</main></index>
 <me>
-  \\text{ mass }  M = \iint_R\ dm = \iint_R \delta(x,y)\ dA.
+  \text{ mass }  M = \iint_R\ dm = \iint_R \delta(x,y)\ dA.
 </me>
 </p>
 </statement>
@@ -236,7 +236,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 <p>
 Following <xref ref="def_mass">Definition</xref>, the mass <m>M</m> of the lamina is
 <me>
-  M = \iint_R 3\ dA = \int_0^1\int_0^1 3\ dx\ dy = 3\int_0^1\int_0^1 \ dx\ dy=3\\text{ gm } .
+  M = \iint_R 3\ dA = \int_0^1\int_0^1 3\ dx\ dy = 3\int_0^1\int_0^1 \ dx\ dy=3\text{ gm } .
 </me>
 </p>
 
@@ -265,7 +265,7 @@ The mass <m>M</m> is found by integrating <m>\delta(x,y)</m> over <m>R</m>. The 
   <mrow>  \amp = \int_0^1\left.\left(\frac 12x^2+x(y+2)\right)\right|_0^1dy</mrow>
   <mrow>  \amp = \int_0^1 \left(\frac52+y\right)\ dy</mrow>
   <mrow>  \amp = \left.\left(\frac52y+\frac12y^2\right)\right|_0^1</mrow>
-  <mrow>  \amp = 3\\text{ gm } .</mrow>
+  <mrow>  \amp = 3\text{ gm } .</mrow>
 </md>
 </p>
 <figure xml:id="fig_mass2" >
@@ -402,7 +402,7 @@ The density function <m>\delta(x,y) = x^2+y^2+1</m> becomes <m>\delta(r,\theta) 
   <mrow>  W \amp = \int_0^{2\pi}\int_0^2 (r^2+1)r\ dr\ d\theta</mrow>
   <mrow>  \amp = \int_0^{2\pi} \left.\left(\frac14r^4+\frac12r^2\right)\right|_0^2d\theta</mrow>
   <mrow>  \amp = \int_0^{2\pi} \left(6\right) d\theta</mrow>
-  <mrow>  \amp = 12\pi \approx 37.70\\text{ lb } .</mrow>
+  <mrow>  \amp = 12\pi \approx 37.70\text{ lb } .</mrow>
 </md>
 </p>
 
@@ -412,7 +412,7 @@ Now compare this with the density function <m>\delta(x,y) = 2\sqrt{x^2+y^2}+1</m
   <mrow>  W \amp = \int_0^{2\pi}\int_0^2 (2r+1)r\ dr\ d\theta</mrow>
   <mrow>  \amp = \int_0^{2\pi} (\frac23r^3+\frac12r^2)\Big|_0^2d\theta</mrow>
   <mrow>  \amp = \int_0^{2\pi} \left(\frac{22}3\right)\ d\theta</mrow>
-  <mrow>  \amp = \frac{44}3\pi \approx 46.08\\text{ lb } .</mrow>
+  <mrow>  \amp = \frac{44}3\pi \approx 46.08\text{ lb } .</mrow>
 </md>
 </p>
 
@@ -644,14 +644,14 @@ Consider a disk of radius 1 with uniform density. It is common knowledge that th
 <p>
 We find the center of mass based on the principle of a <em>weighted average</em>. Consider a college class in which your homework average is 90<percent />, your test average is 73<percent />, and your final exam grade is an 85<percent />. Experience tells us that our final grade <em>is not</em> the <em>average</em> of these three grades: that is, it is not:
 <me>
-  \frac{0.9+0.73+0.85}{3} \approx 0.837 = 83.7\\text{ \% } .
+  \frac{0.9+0.73+0.85}{3} \approx 0.837 = 83.7\text{ \% } .
 </me>
 </p>
 
 <p>
 That is, you are probably not pulling a B in the course. Rather, your grades are <em>weighted</em>. Let's say the homework is worth 10<percent /> of the grade, tests are 60<percent /> and the exam is 30<percent />. Then your final grade is:
 <me>
-  (0.1)(0.9) + (0.6)(0.73)+(0.3)(0.85) = 0.783 = 78.3\\text{ \% } .
+  (0.1)(0.9) + (0.6)(0.73)+(0.3)(0.85) = 0.783 = 78.3\text{ \% } .
 </me>
 </p>
 
@@ -842,7 +842,7 @@ Let point masses <m>m_1</m>, <m>m_2,\ldots,m_n</m> be located at points <m>(x_1,
 <p>
 The center of mass of the system is at <m>(\overline{x},\overline{y})</m>, where
 <me>
-  \overline{x}= \frac{M_y}{M} \\text{ and }  \overline{y} = \frac{M_x}{M}.
+  \overline{x}= \frac{M_y}{M} \text{ and }  \overline{y} = \frac{M_x}{M}.
 </me>
 </p>
 </statement>
@@ -928,11 +928,11 @@ We finally arrive at our true goal of this section: finding the center of mass o
 </p>
 
 <p>
-We begin by representing a planar lamina with a region <m>R</m> in the <m>x</m>-<m>y</m> plane with density function <m>\delta(x,y)</m>. Partition <m>R</m> into <m>n</m> subdivisions, each with area <m>\Delta A_i</m>. As done before, we can approximate the mass of the <m>i^{\,\\text{ th } }</m> subregion with <m>\delta(x_i,y_i)\Delta A_i</m>, where <m>(x_i,y_i)</m> is a point inside the <m>i^{\,\\text{ th } }</m> subregion. We can approximate the moment of this subregion about the <m>y</m>-axis with <m>x_i\delta(x_i,y_i)\Delta A_i</m> <mdash /> that is, by multiplying the approximate mass of the region by its approximate distance from the <m>y</m>-axis. Similarly, we can approximate the moment about the <m>x</m>-axis with <m>y_i\delta(x_i,y_i)\Delta A_i</m>. By summing over all subregions, we have:
+We begin by representing a planar lamina with a region <m>R</m> in the <m>x</m>-<m>y</m> plane with density function <m>\delta(x,y)</m>. Partition <m>R</m> into <m>n</m> subdivisions, each with area <m>\Delta A_i</m>. As done before, we can approximate the mass of the <m>i^{\,\text{ th } }</m> subregion with <m>\delta(x_i,y_i)\Delta A_i</m>, where <m>(x_i,y_i)</m> is a point inside the <m>i^{\,\text{ th } }</m> subregion. We can approximate the moment of this subregion about the <m>y</m>-axis with <m>x_i\delta(x_i,y_i)\Delta A_i</m> <mdash /> that is, by multiplying the approximate mass of the region by its approximate distance from the <m>y</m>-axis. Similarly, we can approximate the moment about the <m>x</m>-axis with <m>y_i\delta(x_i,y_i)\Delta A_i</m>. By summing over all subregions, we have:
 <md>
-  <mrow>  \\text{ mass: }  M \amp \approx \sum_{i=1}^n \delta(x_i,y_i)\Delta A_i \\text{ (as seen before) }</mrow>
-  <mrow>  \\text{ moment about the \(x\)-axis: }  M_x \amp \approx \sum_{i=1}^n y_i\delta(x_i,y_i)\Delta A_i</mrow>
-  <mrow>  \\text{ moment about the \(y\)-axis: }  M_y \amp \approx \sum_{i=1}^n x_i\delta(x_i,y_i)\Delta A_i</mrow>
+  <mrow>  \text{ mass: }  M \amp \approx \sum_{i=1}^n \delta(x_i,y_i)\Delta A_i \text{ (as seen before) }</mrow>
+  <mrow>  \text{ moment about the \(x\)-axis: }  M_x \amp \approx \sum_{i=1}^n y_i\delta(x_i,y_i)\Delta A_i</mrow>
+  <mrow>  \text{ moment about the \(y\)-axis: }  M_y \amp \approx \sum_{i=1}^n x_i\delta(x_i,y_i)\Delta A_i</mrow>
 </md>
 </p>
 
@@ -948,9 +948,9 @@ Let a planar lamina be represented by a region <m>R</m> in the <m>x</m>-<m>y</m>
 </p>
 
 <ol>
-<li><p><m>\ds \\text{ mass: }  M = \iint_R\delta(x,y)\ dA</m></p></li>
-<li><p><m>\ds \\text{ moment about the \(x\)-axis: }  M_x = \iint_Ry\delta(x,y)\ dA</m></p></li>
-<li><p><m>\ds \\text{ moment about the \(y\)-axis: }  M_y = \iint_Rx\delta(x,y)\ dA</m></p></li>
+<li><p><m>\ds \text{ mass: }  M = \iint_R\delta(x,y)\ dA</m></p></li>
+<li><p><m>\ds \text{ moment about the \(x\)-axis: }  M_x = \iint_Ry\delta(x,y)\ dA</m></p></li>
+<li><p><m>\ds \text{ moment about the \(y\)-axis: }  M_y = \iint_Rx\delta(x,y)\ dA</m></p></li>
 <li><p>The center of mass  of the lamina is
 <me>
   (\overline{x},\overline{y}) = \left(\frac{M_y}{M},\frac{M_x}M\right).
@@ -1028,7 +1028,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 <p>
 Following <xref ref="thm_center_of_mass">Theorem</xref>, we find <m>M</m>, <m>M_x</m> and <m>M_y</m>:
 <md>
-  <mrow>  M \amp = \iint_R 3\ dA = \int_0^1\int_0^1 3\ dx\ dy =3\\text{ gm } .</mrow>
+  <mrow>  M \amp = \iint_R 3\ dA = \int_0^1\int_0^1 3\ dx\ dy =3\text{ gm } .</mrow>
   <mrow>  M_x \amp = \iint_R 3y\ dA = \int_0^1\int_0^1 3y\ dx\ dy =3/2 = 1.5.</mrow>
   <mrow>  M_y \amp = \iint_R 3x\ dA = \int_0^1\int_0^1 3x\ dx\ dy =3/2 = 1.5.</mrow>
 </md>
@@ -1051,7 +1051,7 @@ Find the center of mass of a square lamina, represented by the unit square with 
 <p>
 We follow <xref ref="thm_center_of_mass">Theorem</xref>, to find <m>M</m>, <m>M_x</m> and <m>M_y</m>:
 <md>
-  <mrow>  M \amp = \iint_R (x+y+2)\ dA = \int_0^1\int_0^1 (x+y+2)\ dx\ dy =3\\text{ gm } .</mrow>
+  <mrow>  M \amp = \iint_R (x+y+2)\ dA = \int_0^1\int_0^1 (x+y+2)\ dx\ dy =3\text{ gm } .</mrow>
   <mrow>  M_x \amp = \iint_R y(x+y+2)\ dA = \int_0^1\int_0^1 y(x+y+2)\ dx\ dy =\frac{19}{12}.</mrow>
   <mrow>  M_y \amp = \iint_R x(x+y+2)\ dA = \int_0^1\int_0^1 x(x+y+2)\ dx\ dy =\frac{19}{12}.</mrow>
 </md>
@@ -1075,7 +1075,7 @@ Find the center of mass of the lamina represented by the circle with radius 2ft,
 As done in <xref ref="ex_mass3">Example</xref>, it is best to describe <m>R</m> using polar coordinates.
 Thus when we compute <m>M_y</m>, we will integrate not <m>x\delta(x,y) = x(x^2+y^2+1)</m>, but rather <m>\big(r\cos\theta\big)\delta(r\cos\theta,r\sin\theta) = \big(r\cos\theta\big)\big(r^2+1\big).</m> We compute <m>M</m>, <m>M_x</m> and <m>M_y</m>:
 <md>
-  <mrow>  M \amp = \int_0^{2\pi}\int_0^2 (r^2+1)r\ dr\ d\theta = 12\pi\approx 37.7\\text{ lb } .</mrow>
+  <mrow>  M \amp = \int_0^{2\pi}\int_0^2 (r^2+1)r\ dr\ d\theta = 12\pi\approx 37.7\text{ lb } .</mrow>
   <mrow>  M_x \amp = \int_0^{2\pi}\int_0^2 (r\sin\theta)(r^2+1)r \ dr\ d\theta = 0.</mrow>
   <mrow>  M_y \amp = \int_0^{2\pi}\int_0^2 (r\cos\theta)(r^2+1)r \ dr\ d\theta = 0.</mrow>
 </md>
@@ -1098,7 +1098,7 @@ Find the center of mass of the lamina represented by the region <m>R</m> shown i
 <p>
 Once again it will be useful to represent <m>R</m> in polar coordinates. Using the description of <m>R</m> and/or the illustration, we see that <m>R</m> is bounded by <m>5\leq r\leq 6</m> and <m>0\leq\theta\leq\pi</m>. As the lamina is symmetric about the <m>y</m>-axis, we should expect <m>M_y=0</m>. We compute <m>M</m>, <m>M_x</m> and <m>M_y</m>:
 <md>
-  <mrow>  M \amp = \int_0^{\pi}\int_5^6 (2)r\ dr\ d\theta = 11\pi\\text{ lb } .</mrow>
+  <mrow>  M \amp = \int_0^{\pi}\int_5^6 (2)r\ dr\ d\theta = 11\pi\text{ lb } .</mrow>
   <mrow>  M_x \amp = \int_0^{\pi}\int_5^6 (r\sin\theta)(2)r\ dr\ d\theta = \frac{364}3\approx 121.33 .</mrow>
   <mrow>  M_y \amp = \int_0^{\pi}\int_5^6 (r\cos\theta)(2)r\ dr\ d\theta = 0.</mrow>
 </md>

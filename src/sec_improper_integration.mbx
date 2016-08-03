@@ -83,15 +83,15 @@ In this section we consider integrals where one or both of the above conditions 
 <ol>
 <li><p>Let <m>f</m> be a continuous function on <m>[a,\infty)</m>. Define <index><main>integration</main><sub>improper</sub></index><index><main>improper integration</main></index><index><main>convergence</main><sub>of improper int.</sub></index><index><main>divergence</main><sub>of improper int.</sub></index>
 <me>
-  \int_a^\infty f(x)\ dx  \\text{ to be }  \lim_{b\to\infty}\int_a^b f(x)\ dx.
+  \int_a^\infty f(x)\ dx  \text{ to be }  \lim_{b\to\infty}\int_a^b f(x)\ dx.
 </me></p></li>
 <li><p>Let <m>f</m> be a continuous function on <m>(-\infty,b]</m>. Define
 <me>
-  \int_{-\infty}^b f(x)\ dx  \\text{ to be }  \lim_{a\to-\infty}\int_a^b f(x)\ dx.
+  \int_{-\infty}^b f(x)\ dx  \text{ to be }  \lim_{a\to-\infty}\int_a^b f(x)\ dx.
 </me></p></li>
 <li><p>Let <m>f</m> be a continuous function on <m>(-\infty,\infty)</m>. Let <m>c</m> be any real number; define
 <me>
-  \int_{-\infty}^\infty f(x)\ dx  \\text{ to be }  \lim_{a\to-\infty}\int_a^c f(x)\ dx\ +\ \lim_{b\to\infty}\int_c^b f(x)\ dx.
+  \int_{-\infty}^\infty f(x)\ dx  \text{ to be }  \lim_{a\to-\infty}\int_a^c f(x)\ dx\ +\ \lim_{b\to\infty}\int_c^b f(x)\ dx.
 </me></p></li>
 </ol>
 
@@ -341,7 +341,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
   <mrow>  \amp =  \lim_{b\to\infty} \left.\left(-\frac{\ln x}{x} -\frac1x\right)\right|_1^b</mrow>
   <mrow>  \amp =	\lim_{b\to\infty} \left(-\frac{\ln b}{b}-\frac1b - \left(-\ln 1-1\right)\right).</mrow>
 <intertext>The <m>1/b</m> and <m>\ln 1</m> terms go to 0, leaving <m>\ds \lim_{b\to\infty} -\frac{\ln b}b + 1.</m> We need to evaluate <m>\ds \lim_{b\to\infty} \frac{\ln b}{b}</m> with l'H\^opital's Rule. We have:</intertext>
-  <mrow>  \lim_{b\to\infty}\frac{\ln b}b \amp \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{b\to\infty} \frac{1/b}{1}</mrow>
+  <mrow>  \lim_{b\to\infty}\frac{\ln b}b \amp \stackrel{\ \text{ by LHR }  \ }{=} \lim_{b\to\infty} \frac{1/b}{1}</mrow>
   <mrow>  \amp = 0.</mrow>
 <intertext>Thus the improper integral evaluates as: </intertext>
   <mrow>  \int_1^\infty\frac{\ln x}{x^2}\ dx \amp = 1.</mrow>
@@ -504,7 +504,7 @@ Determine the values of <m>p</m> for which <m>\ds \int_1^\infty \frac1{x^p}\ dx<
 We begin by integrating and then evaluating the limit.
 <md>
   <mrow>  \int_1^\infty \frac1{x^p}\ dx \amp =	\lim_{b\to\infty}\int_1^b\frac1{x^p}\ dx</mrow>
-  <mrow>  \amp =	\lim_{b\to\infty}\int_1^b x^{-p}\ dx \qquad \\text{ (assume \(p\neq 1\)) }</mrow>
+  <mrow>  \amp =	\lim_{b\to\infty}\int_1^b x^{-p}\ dx \qquad \text{ (assume \(p\neq 1\)) }</mrow>
   <mrow>  \amp = \lim_{b\to\infty} \frac{1}{-p+1}x^{-p+1}\Big|_1^b</mrow>
   <mrow>  \amp = \lim_{b\to\infty} \frac{1}{1-p}\big(b^{1-p}-1^{1-p}\big).</mrow>
 </md>
@@ -708,7 +708,7 @@ Let <m>f</m> and <m>g</m> be continuous functions on <m>[a,\infty)</m> where <m>
 </me>
 then
 <me>
-  \int_a^\infty f(x)\ dx  \\text{ and }   \int_a^\infty g(x)\ dx
+  \int_a^\infty f(x)\ dx  \text{ and }   \int_a^\infty g(x)\ dx
 </me>
 either both converge or both diverge.
 	<index><main>integration</main><sub>improper</sub></index><index><main>convergence</main><sub>Limit Comparison Test!for integration</sub></index><index><main>divergence</main><sub>Limit Comparison Test!for integration</sub></index><index><main>Limit Comparison Test</main><sub>for integration</sub></index><index><main>convergence</main><sub>of improper int.</sub></index><index><main>divergence</main><sub>of improper int.</sub></index>

@@ -315,7 +315,7 @@ Let <m>\vrt = \la 3\cos t, 3\sin t, 4t\ra</m> as in <xref ref="ex_tannorm1">Exam
 <p>
 In <xref ref="ex_tannorm1">Example</xref>, we found <m>\vec T(t) = \la  (-3/5)\sin t,(3/5)\cos t,4/5\ra</m>. Therefore
 <me>
-  \vec T\,'(t) = \la -\frac35\cos t,-\frac35\sin t,0\ra \\text{ and }   \norm{\vec T\,'(t)} = \frac35.
+  \vec T\,'(t) = \la -\frac35\cos t,-\frac35\sin t,0\ra \text{ and }   \norm{\vec T\,'(t)} = \frac35.
 </me>
 </p>
 
@@ -538,7 +538,7 @@ Consider again <xref ref="fig_tannorm4">Figure</xref>, where we have plotted som
 <p>
 Let <m>\vec r(t)</m> be a vector<ndash />valued function in <m>\mathbb{R}^2</m> where <m>\vec T\,'(t)</m> is smooth on an open interval <m>I</m>. Let <m>t_0</m> be in <m>I</m> and <m>\vec T(t_0) = \la t_1,t_2\ra</m> Then <m>\vec N(t_0)</m> is either
 <me>
-  \vec N(t_0) = \la -t_2,t_1\ra  \\text{ or }  \vec N(t_0) = \la t_2,-t_1\ra,
+  \vec N(t_0) = \la -t_2,t_1\ra  \text{ or }  \vec N(t_0) = \la t_2,-t_1\ra,
 </me>
 whichever is the vector that points to the concave side of the graph of <m>\vec r</m>.
 <index><main>unit tangent vector</main><sub>in <m>\mathbb{R}^2</m></sub></index><index><main>unit normal vector</main><sub>in <m>\mathbb{R}^2</m></sub></index>
@@ -552,35 +552,35 @@ whichever is the vector that points to the concave side of the graph of <m>\vec 
 <title>Application to Acceleration</title>
 <p>
 Let \vrt<nbsp />be a position function. It is a fact (stated later in <xref ref="thm_acc_plane">Theorem</xref>)
-that acceleration, \vat, lies in the plane defined by <m>\vec T</m> and <m>\vec N</m>. That is, there are scalars <m>a_{\\text{T} }</m> and <m>a_{\\text{N} }</m> such that
+that acceleration, \vat, lies in the plane defined by <m>\vec T</m> and <m>\vec N</m>. That is, there are scalars <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m> such that
 <me>
-  \vat = a_{\\text{T} }\vec T(t) + a_{\\text{N} }\vec N(t).
+  \vat = a_{\text{T} }\vec T(t) + a_{\text{N} }\vec N(t).
 </me>
 </p>
 
 <p>
-The scalar <m>a_{\\text{T} }</m> measures <q>how much</q> acceleration is in the direction of travel, that is, it measures the component of acceleration that affects the speed. The scalar <m>a_{\\text{N} }</m> measures <q>how much</q> acceleration is perpendicular to the direction of travel, that is, it measures the component of acceleration that affects the direction of travel.
+The scalar <m>a_{\text{T} }</m> measures <q>how much</q> acceleration is in the direction of travel, that is, it measures the component of acceleration that affects the speed. The scalar <m>a_{\text{N} }</m> measures <q>how much</q> acceleration is perpendicular to the direction of travel, that is, it measures the component of acceleration that affects the direction of travel.
 <index><main>unit tangent vector</main><sub>and acceleration</sub></index><index><main>unit normal vector</main><sub>and acceleration</sub></index>
 </p>
 
 <p>
-We can find <m>a_{\\text{T} }</m> using the orthogonal projection of <m>\vec a(t)</m> onto <m>\vec T(t)</m> (review <xref ref="def_orthogonal_projection">Definition</xref> in <xref ref="sec_dot_product">Section</xref> if needed).
+We can find <m>a_{\text{T} }</m> using the orthogonal projection of <m>\vec a(t)</m> onto <m>\vec T(t)</m> (review <xref ref="def_orthogonal_projection">Definition</xref> in <xref ref="sec_dot_product">Section</xref> if needed).
 Recalling that since <m>\vec T(t)</m> is a unit vector, <m>\vec T(t)\cdot\vec T(t)=1</m>, so we have
 <me>
-  \proj{a(t)}{T(t)} = \frac{\vec a(t)\cdot\vec T(t)}{\vec T(t)\cdot\vec T(t)}\vec T(t) = \underbrace{\big(\vec a(t)\cdot\vec T(t)\big)}_{a_{\\text{T} }}\vec T(t).
+  \proj{a(t)}{T(t)} = \frac{\vec a(t)\cdot\vec T(t)}{\vec T(t)\cdot\vec T(t)}\vec T(t) = \underbrace{\big(\vec a(t)\cdot\vec T(t)\big)}_{a_{\text{T} }}\vec T(t).
 </me>
 </p>
 
 <p>
-Thus the amount of \vat<nbsp />in the direction of <m>\vec T(t)</m> is <m>a_{\\text{T} }=\vat\cdot\vec T(t)</m>. The same logic gives <m>a_{\\text{N} } = \vat\cdot\vec N(t)</m>.
+Thus the amount of \vat<nbsp />in the direction of <m>\vec T(t)</m> is <m>a_{\text{T} }=\vat\cdot\vec T(t)</m>. The same logic gives <m>a_{\text{N} } = \vat\cdot\vec N(t)</m>.
 </p>
 
 <p>
-While this is a fine way of computing <m>a_{\\text{T} }</m>, there are simpler ways of finding <m>a_{\\text{N} }</m> (as finding <m>\vec N</m> itself can be complicated). The following theorem gives alternate formulas for <m>a_{\\text{T} }</m> and <m>a_{\\text{N} }</m>.
+While this is a fine way of computing <m>a_{\text{T} }</m>, there are simpler ways of finding <m>a_{\text{N} }</m> (as finding <m>\vec N</m> itself can be complicated). The following theorem gives alternate formulas for <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m>.
 </p>
 <aside>
 <p>
-<em>Note:</em> Keep in mind that both <m>a_\\text{T}</m> and <m>a_\\text{N}</m> are functions of <m>t</m>; that is, the scalar changes depending on <m>t</m>. It is convention to drop the <q><m>(t)</m></q> notation from <m>a_\\text{T} (t)</m> and simply write <m>a_\\text{T}</m>.
+<em>Note:</em> Keep in mind that both <m>a_\text{T}</m> and <m>a_\text{N}</m> are functions of <m>t</m>; that is, the scalar changes depending on <m>t</m>. It is convention to drop the <q><m>(t)</m></q> notation from <m>a_\text{T} (t)</m> and simply write <m>a_\text{T}</m>.
 </p>
 </aside>
 
@@ -588,50 +588,50 @@ While this is a fine way of computing <m>a_{\\text{T} }</m>, there are simpler w
 <title>Acceleration in the Plane Defined by $\vec T$ and $\vec N$</title>
 <statement>
 <p>
-Let \vrt<nbsp />be a position function with acceleration \vat<nbsp />and unit tangent and normal vectors <m>\vec T(t)</m> and <m>\vec N(t)</m>. Then <m>\vat</m> lies in the plane defined by <m>\vec T(t)</m> and <m>\vec N(t)</m>; that is, there exists scalars <m>a_\\text{T}</m> and <m>a_\\text{N}</m> such that
+Let \vrt<nbsp />be a position function with acceleration \vat<nbsp />and unit tangent and normal vectors <m>\vec T(t)</m> and <m>\vec N(t)</m>. Then <m>\vat</m> lies in the plane defined by <m>\vec T(t)</m> and <m>\vec N(t)</m>; that is, there exists scalars <m>a_\text{T}</m> and <m>a_\text{N}</m> such that
 <me>
-  \vat = a_\\text{T} \vec T(t) + a_\\text{N} \vec N(t).
+  \vat = a_\text{T} \vec T(t) + a_\text{N} \vec N(t).
 </me>
 </p>
 
 <p>
 Moreover,
 <md>
-  <mrow>  a_\\text{T}  \amp = \vat\cdot\vec T(t) = \frac{d}{dt}\Big(\norm{\vec v(t)}\Big)</mrow>
-  <mrow>  a_\\text{N}  \amp = \vat\cdot \vec N(t) = \sqrt{\norm{\vec a(t)}^2-a_\\text{T} ^2} = \frac{\norm{\vat\times\vvt}}{\norm{\vvt}} = \norm{\vvt}\,\norm{\vec T\,'(t)}</mrow>
+  <mrow>  a_\text{T}  \amp = \vat\cdot\vec T(t) = \frac{d}{dt}\Big(\norm{\vec v(t)}\Big)</mrow>
+  <mrow>  a_\text{N}  \amp = \vat\cdot \vec N(t) = \sqrt{\norm{\vec a(t)}^2-a_\text{T} ^2} = \frac{\norm{\vat\times\vvt}}{\norm{\vvt}} = \norm{\vvt}\,\norm{\vec T\,'(t)}</mrow>
 </md>
 </p>
 </statement>
 </theorem>
 
 <p>
-<index><main>unit tangent vector</main><sub>and acceleration</sub></index><index><main>unit normal vector</main><sub>and acceleration</sub></index><index><main>an@<m>a_\\text{N}</m></main></index><index><main>at@<m>a_\\text{T}</m></main></index><index><main>unit normal vector</main><sub>an@<m>a_\\text{N}</m></sub></index><index><main>unit tangent vector</main><sub>at@<m>a_\\text{T}</m></sub></index>
+<index><main>unit tangent vector</main><sub>and acceleration</sub></index><index><main>unit normal vector</main><sub>and acceleration</sub></index><index><main>an@<m>a_\text{N}</m></main></index><index><main>at@<m>a_\text{T}</m></main></index><index><main>unit normal vector</main><sub>an@<m>a_\text{N}</m></sub></index><index><main>unit tangent vector</main><sub>at@<m>a_\text{T}</m></sub></index>
 </p>
 
 <p>
-Note the second formula for <m>a_\\text{T}</m>: <m>\ds \frac{d}{dt}\Big(\norm{\vvt}\Big)</m>. This measures the rate of change of speed, which again is the amount of acceleration in the direction of travel.
+Note the second formula for <m>a_\text{T}</m>: <m>\ds \frac{d}{dt}\Big(\norm{\vvt}\Big)</m>. This measures the rate of change of speed, which again is the amount of acceleration in the direction of travel.
 </p>
 
 <example xml:id="ex_tannorm5">
 <title>Computing $a_T$ and $a_N$</title>
 <statement>
 <p>
-Let <m>\vrt = \la 3\cos t, 3\sin t, 4t\ra</m> as in <xref ref="ex_tannorm1">Examples</xref> and <xref ref="ex_tannorm3"></xref>. Find <m>a_\\text{T}</m> and <m>a_\\text{N}</m>.
+Let <m>\vrt = \la 3\cos t, 3\sin t, 4t\ra</m> as in <xref ref="ex_tannorm1">Examples</xref> and <xref ref="ex_tannorm3"></xref>. Find <m>a_\text{T}</m> and <m>a_\text{N}</m>.
 </p>
 </statement>
 <solution>
 <p>
 The previous examples give <m>\vat = \la -3\cos t,-3\sin t,0\ra</m> and
 <me>
-  \vec T(t) = \la -\frac35\sin t,\frac35\cos t,\frac45\ra  \\text{ and }  \vec N(t) = \la -\cos t,-\sin t,0\ra.
+  \vec T(t) = \la -\frac35\sin t,\frac35\cos t,\frac45\ra  \text{ and }  \vec N(t) = \la -\cos t,-\sin t,0\ra.
 </me>
 </p>
 
 <p>
-We can find <m>a_\\text{T}</m> and <m>a_\\text{N}</m> directly with dot products:
+We can find <m>a_\text{T}</m> and <m>a_\text{N}</m> directly with dot products:
 <md>
-  <mrow>  a_\\text{T}  \amp = \vat\cdot \vec T(t) = \frac95\cos t\sin t-\frac95\cos t\sin t+0 = 0.</mrow>
-  <mrow>  a_\\text{N}  \amp = \vat\cdot \vec N(t) = 3\cos^2t+3\sin^2t + 0 = 3.</mrow>
+  <mrow>  a_\text{T}  \amp = \vat\cdot \vec T(t) = \frac95\cos t\sin t-\frac95\cos t\sin t+0 = 0.</mrow>
+  <mrow>  a_\text{N}  \amp = \vat\cdot \vec N(t) = 3\cos^2t+3\sin^2t + 0 = 3.</mrow>
 </md>
 </p>
 
@@ -640,7 +640,7 @@ Thus <m>\vat = 0\vec T(t) + 3\vec N(t) = 3\vec N(t)</m>, which is clearly the ca
 </p>
 
 <p>
-What is the practical interpretation of these numbers? <m>a_\\text{T} =0</m> means the object is moving at a constant speed, and hence all acceleration comes in the form of direction change.
+What is the practical interpretation of these numbers? <m>a_\text{T} =0</m> means the object is moving at a constant speed, and hence all acceleration comes in the form of direction change.
 </p>
 </solution>
 </example>
@@ -649,27 +649,27 @@ What is the practical interpretation of these numbers? <m>a_\\text{T} =0</m> mea
 <title>Computing $a_T$ and $a_N$</title>
 <statement>
 <p>
-Let <m>\vrt=\la t^2-t,t^2+t\ra</m> as in <xref ref="ex_tannorm2">Examples</xref> and <xref ref="ex_tannorm4"></xref>. Find <m>a_\\text{T}</m> and <m>a_\\text{N}</m>.
+Let <m>\vrt=\la t^2-t,t^2+t\ra</m> as in <xref ref="ex_tannorm2">Examples</xref> and <xref ref="ex_tannorm4"></xref>. Find <m>a_\text{T}</m> and <m>a_\text{N}</m>.
 </p>
 </statement>
 <solution>
 <p>
 The previous examples give <m>\vat = \la 2,2\ra</m> and
 <me>
-  \vec T(t) = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra  \\text{ and }  \vec N(t) = \la \frac{2t+1}{\sqrt{8t^2+2}},-\frac{2t-1}{\sqrt{8t^2+2}}\ra.
+  \vec T(t) = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra  \text{ and }  \vec N(t) = \la \frac{2t+1}{\sqrt{8t^2+2}},-\frac{2t-1}{\sqrt{8t^2+2}}\ra.
 </me>
 </p>
 
 <p>
-While we can compute <m>a_\\text{N}</m> using <m>\vec N(t)</m>, we instead demonstrate using another formula from <xref ref="thm_acc_plane">Theorem</xref>.
+While we can compute <m>a_\text{N}</m> using <m>\vec N(t)</m>, we instead demonstrate using another formula from <xref ref="thm_acc_plane">Theorem</xref>.
 <md>
-  <mrow>  a_\\text{T}  \amp = \vat\cdot\vec T(t) = \frac{4t-2}{\sqrt{8t^2+2}}+\frac{4t+2}{\sqrt{8t^2+2}} = \frac{8t}{\sqrt{8t^2+2}}.</mrow>
-  <mrow>  a_\\text{N}  \amp = \sqrt{\norm{\vat}^2-a_\\text{T} ^2} = \sqrt{8-\left(\frac{8t}{\sqrt{8t^2+2}}\right)^2}=\frac{4}{\sqrt{8t^2+2}}.</mrow>
+  <mrow>  a_\text{T}  \amp = \vat\cdot\vec T(t) = \frac{4t-2}{\sqrt{8t^2+2}}+\frac{4t+2}{\sqrt{8t^2+2}} = \frac{8t}{\sqrt{8t^2+2}}.</mrow>
+  <mrow>  a_\text{N}  \amp = \sqrt{\norm{\vat}^2-a_\text{T} ^2} = \sqrt{8-\left(\frac{8t}{\sqrt{8t^2+2}}\right)^2}=\frac{4}{\sqrt{8t^2+2}}.</mrow>
 </md>
 </p>
 
 <p>
-When <m>t=2</m>, <m>\ds a_\\text{T}  = \frac{16}{\sqrt{34}}\approx 2.74</m> and <m>\ds a_\\text{N}  = \frac{4}{\sqrt{34}} \approx 0.69</m>. We interpret this to mean that at <m>t=2</m>, the particle is acclerating mostly by increasing speed, not by changing direction. As the path near <m>t=2</m> is relatively straight, this should make intuitive sense. <xref ref="fig_tannorm6">Figure</xref> gives a graph of the path for reference.
+When <m>t=2</m>, <m>\ds a_\text{T}  = \frac{16}{\sqrt{34}}\approx 2.74</m> and <m>\ds a_\text{N}  = \frac{4}{\sqrt{34}} \approx 0.69</m>. We interpret this to mean that at <m>t=2</m>, the particle is acclerating mostly by increasing speed, not by changing direction. As the path near <m>t=2</m> is relatively straight, this should make intuitive sense. <xref ref="fig_tannorm6">Figure</xref> gives a graph of the path for reference.
 </p>
 <figure xml:id="fig_tannorm6" >
 <caption>Graphing <m>\vec r(t)</m> in <xref ref="ex_tannorm6">Example</xref>.</caption>
@@ -712,7 +712,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 
 </figure>
 <p>
-Contrast this with <m>t=0</m>, where <m>a_\\text{T}  = 0</m> and <m>a_\\text{N}  = 4/\sqrt{2}\approx 2.82</m>. Here the particle's speed is not changing and all acceleration is in the form of direction change.
+Contrast this with <m>t=0</m>, where <m>a_\text{T}  = 0</m> and <m>a_\text{N}  = 4/\sqrt{2}\approx 2.82</m>. Here the particle's speed is not changing and all acceleration is in the form of direction change.
 </p>
 </solution>
 </example>
@@ -721,7 +721,7 @@ Contrast this with <m>t=0</m>, where <m>a_\\text{T}  = 0</m> and <m>a_\\text{N} 
 <title>Analyzing projectile motion</title>
 <statement>
 <p>
-A ball is thrown from a height of 240ft with an initial speed of 64ft/s and an angle of elevation of <m>30^\circ</m>. Find the position function \vrt<nbsp />of the ball and analyze <m>a_\\text{T}</m> and <m>a_\\text{N}</m>.<index><main>projectile motion</main></index>
+A ball is thrown from a height of 240ft with an initial speed of 64ft/s and an angle of elevation of <m>30^\circ</m>. Find the position function \vrt<nbsp />of the ball and analyze <m>a_\text{T}</m> and <m>a_\text{N}</m>.<index><main>projectile motion</main></index>
 </p>
 </statement>
 <solution>
@@ -787,30 +787,30 @@ From this we find <m>\vvt = \la 64\cos 30^\circ, -32t+64\sin 30^\circ\ra</m> and
 </p>
 
 <p>
-With <m>\vat</m> as simple as it is, finding <m>a_\\text{T}</m> is also simple:
+With <m>\vat</m> as simple as it is, finding <m>a_\text{T}</m> is also simple:
 <me>
-  a_\\text{T}  = \vat\cdot \vec T(t) = \frac{32t-32}{\sqrt{t^2-2t+4}}.
+  a_\text{T}  = \vat\cdot \vec T(t) = \frac{32t-32}{\sqrt{t^2-2t+4}}.
 </me>
 </p>
 
 <p>
-We choose to not find <m>\vec N(t)</m> and find <m>a_\\text{N}</m> through the formula <m>a_\\text{N}  = \sqrt{\norm{\vat}^2-a_\\text{T} ^2\,}</m> :
+We choose to not find <m>\vec N(t)</m> and find <m>a_\text{N}</m> through the formula <m>a_\text{N}  = \sqrt{\norm{\vat}^2-a_\text{T} ^2\,}</m> :
 <me>
-  a_\\text{N}  = \sqrt{32^2-\left(\frac{32t-32}{\sqrt{t^2-2t+4}}\right)^2} = \frac{32\sqrt{3}}{\sqrt{t^2-2t+4}}.
+  a_\text{N}  = \sqrt{32^2-\left(\frac{32t-32}{\sqrt{t^2-2t+4}}\right)^2} = \frac{32\sqrt{3}}{\sqrt{t^2-2t+4}}.
 </me>
 </p>
 
 <p>
-<xref ref="fig_tannorm7a">Figure</xref> gives a table of values of <m>a_\\text{T}</m> and <m>a_\\text{N}</m>. When <m>t=0</m>, we see the ball's speed is decreasing; when <m>t=1</m> the speed of the ball is unchanged. This corresponds to the fact that at <m>t=1</m> the ball reaches its highest point.
+<xref ref="fig_tannorm7a">Figure</xref> gives a table of values of <m>a_\text{T}</m> and <m>a_\text{N}</m>. When <m>t=0</m>, we see the ball's speed is decreasing; when <m>t=1</m> the speed of the ball is unchanged. This corresponds to the fact that at <m>t=1</m> the ball reaches its highest point.
 </p>
 
 <p>
-After <m>t=1</m> we see that <m>a_\\text{N}</m> is decreasing in value. This is because as the ball falls, it's path becomes straighter and most of the acceleration is in the form of speeding up the ball, and not in changing its direction.
+After <m>t=1</m> we see that <m>a_\text{N}</m> is decreasing in value. This is because as the ball falls, it's path becomes straighter and most of the acceleration is in the form of speeding up the ball, and not in changing its direction.
 </p>
 <table xml:id="fig_tannorm7a" >
 <caption>A table of values of <m>a_T</m> and <m>a_N</m> in <xref ref="ex_tannorm7">Example</xref>.</caption>
 <tabular>
-<row><cell><m>t</m></cell><cell><m>a_\\text{T}</m></cell><cell><m>a_\\text{N}</m></cell></row>
+<row><cell><m>t</m></cell><cell><m>a_\text{T}</m></cell><cell><m>a_\text{N}</m></cell></row>
 <row bottom="minor"><cell></cell><cell></cell><cell></cell></row>
 <row><cell>0</cell><cell><m>-16</m></cell><cell>27.7</cell></row>
 <row><cell>1</cell><cell>0</cell><cell>32</cell></row>
@@ -878,7 +878,7 @@ The acceleration vector <m>\vat</m> lies in the plane defined by what two vector
 <exercise>
 <statement>
 <p>
-<m>a_\\text{T}</m> measures how much the acceleration is affecting the <fillin /> of an object.
+<m>a_\text{T}</m> measures how much the acceleration is affecting the <fillin /> of an object.
 </p>
 </statement>
 <answer>
@@ -1202,7 +1202,7 @@ In the following exercises , find <m>\vec N(t)</m>.
 </answer>
 </exercise>
 <p>
-In the following exercises , find <m>a_{\\text{T} }</m> and <m>a_{\\text{N} }</m> given <m>\vrt</m>. Sketch \vrt<nbsp />on the indicated interval, and comment on the relative sizes of <m>a_{\\text{T} }</m> and <m>a_{\\text{N} }</m> at the indicated <m>t</m> values.
+In the following exercises , find <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m> given <m>\vrt</m>. Sketch \vrt<nbsp />on the indicated interval, and comment on the relative sizes of <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m> at the indicated <m>t</m> values.
 </p>
 <exercise>
 <statement>
@@ -1212,15 +1212,15 @@ In the following exercises , find <m>a_{\\text{T} }</m> and <m>a_{\\text{N} }</m
 </statement>
 <answer>
 <p>
-<m>a_{\\text{T} } = \frac{4t}{\sqrt{1+4t^2}}</m> and <m>a_{\\text{N} } = \sqrt{4-\frac{16t^2}{1+4t^2}}</m>
+<m>a_{\text{T} } = \frac{4t}{\sqrt{1+4t^2}}</m> and <m>a_{\text{N} } = \sqrt{4-\frac{16t^2}{1+4t^2}}</m>
 </p>
 
 <p>
-At <m>t=0</m>, <m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = 2</m>;
+At <m>t=0</m>, <m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 2</m>;
 </p>
 
 <p>
-At <m>t=1</m>, <m>a_{\\text{T} } = 4/\sqrt{5}</m> and <m>a_{\\text{N} } = 2/\sqrt{5}</m>.
+At <m>t=1</m>, <m>a_{\text{T} } = 4/\sqrt{5}</m> and <m>a_{\text{N} } = 2/\sqrt{5}</m>.
 </p>
 
 <p>
@@ -1237,19 +1237,19 @@ At <m>t=0</m>, all acceleration comes in the form of changing the direction of v
 </statement>
 <answer>
 <p>
-<m>a_{\\text{T} } = \frac{-2/t^5}{\sqrt{1+1/t^4}}</m> and <m>a_{\\text{N} } = \sqrt{\frac{4}{t^6}-\frac{4/t^{10}}{1+1/t^4}}</m>
+<m>a_{\text{T} } = \frac{-2/t^5}{\sqrt{1+1/t^4}}</m> and <m>a_{\text{N} } = \sqrt{\frac{4}{t^6}-\frac{4/t^{10}}{1+1/t^4}}</m>
 </p>
 
 <p>
-At <m>t=1</m>, <m>a_{\\text{T} } = \sqrt{2}</m> and <m>a_{\\text{N} } = -\sqrt{2}</m>;
+At <m>t=1</m>, <m>a_{\text{T} } = \sqrt{2}</m> and <m>a_{\text{N} } = -\sqrt{2}</m>;
 </p>
 
 <p>
-At <m>t=2</m>, <m>a_{\\text{T} } = -\frac{1}{4\sqrt{17}}</m> and <m>a_{\\text{N} } = \frac{1}{\sqrt{17}}</m>.
+At <m>t=2</m>, <m>a_{\text{T} } = -\frac{1}{4\sqrt{17}}</m> and <m>a_{\text{N} } = \frac{1}{\sqrt{17}}</m>.
 </p>
 
 <p>
-At <m>t=1</m>, acceleration comes from changing speed and changing direction in <q>equal measure;</q> at <m>t=2</m>, acceleration is nearly <m>\vec 0</m> as it is; the low value of <m>a_{\\text{T} }</m> shows that the speed is nearly constant and the low value of <m>a_{\\text{N} }</m> shows the direction is not changing quickly.
+At <m>t=1</m>, acceleration comes from changing speed and changing direction in <q>equal measure;</q> at <m>t=2</m>, acceleration is nearly <m>\vec 0</m> as it is; the low value of <m>a_{\text{T} }</m> shows that the speed is nearly constant and the low value of <m>a_{\text{N} }</m> shows the direction is not changing quickly.
 </p>
 </answer>
 </exercise>
@@ -1262,19 +1262,19 @@ At <m>t=1</m>, acceleration comes from changing speed and changing direction in 
 </statement>
 <answer>
 <p>
-<m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = 2</m>
+<m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 2</m>
 </p>
 
 <p>
-At <m>t=0</m>, <m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = 2</m>;
+At <m>t=0</m>, <m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 2</m>;
 </p>
 
 <p>
-At <m>t=\pi/2</m>, <m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = 2</m>.
+At <m>t=\pi/2</m>, <m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 2</m>.
 </p>
 
 <p>
-The object moves at constant speed, so all acceleration comes from changing direction, hence <m>a_{\\text{T} }=0</m>. <m>\vat</m> is always parallel to <m>\vec N(t)</m>, but twice as long, hence <m>a_{\\text{N} }=2</m>.
+The object moves at constant speed, so all acceleration comes from changing direction, hence <m>a_{\text{T} }=0</m>. <m>\vat</m> is always parallel to <m>\vec N(t)</m>, but twice as long, hence <m>a_{\text{N} }=2</m>.
 </p>
 </answer>
 </exercise>
@@ -1287,19 +1287,19 @@ The object moves at constant speed, so all acceleration comes from changing dire
 </statement>
 <answer>
 <p>
-<m>a_{\\text{T} } = 2</m> and <m>a_{\\text{N} } = 4t^2</m>
+<m>a_{\text{T} } = 2</m> and <m>a_{\text{N} } = 4t^2</m>
 </p>
 
 <p>
-At <m>t=\sqrt{\pi/2}</m>, <m>a_{\\text{T} } = 2</m> and <m>a_{\\text{N} } = 2\pi</m>;
+At <m>t=\sqrt{\pi/2}</m>, <m>a_{\text{T} } = 2</m> and <m>a_{\text{N} } = 2\pi</m>;
 </p>
 
 <p>
-At <m>t=\sqrt{\pi}</m>, <m>a_{\\text{T} } = 2</m> and <m>a_{\\text{N} } = 4\pi</m>.
+At <m>t=\sqrt{\pi}</m>, <m>a_{\text{T} } = 2</m> and <m>a_{\text{N} } = 4\pi</m>.
 </p>
 
 <p>
-The object moves at increasing speed (increasing at a constant rate of acceleration), hence <m>a_{\\text{T} }=2</m>. Since the object is increasing speed yet always traveling in a circle of radius 1, the direction must change more quickly; the amount of acceleration that changes direction increases over time.
+The object moves at increasing speed (increasing at a constant rate of acceleration), hence <m>a_{\text{T} }=2</m>. Since the object is increasing speed yet always traveling in a circle of radius 1, the direction must change more quickly; the amount of acceleration that changes direction increases over time.
 </p>
 </answer>
 </exercise>
@@ -1312,19 +1312,19 @@ The object moves at increasing speed (increasing at a constant rate of accelerat
 </statement>
 <answer>
 <p>
-<m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = a</m>
+<m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = a</m>
 </p>
 
 <p>
-At <m>t=0</m>, <m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = a</m>;
+At <m>t=0</m>, <m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = a</m>;
 </p>
 
 <p>
-At <m>t=\pi/2</m>, <m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = a</m>.
+At <m>t=\pi/2</m>, <m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = a</m>.
 </p>
 
 <p>
-The object moves at constant speed, meaning that <m>a_{\\text{T} }</m> is always 0. The object <q>rises</q> along the <m>z</m>-axis at a constant rate, so all acceleration comes in the form of changing direction circling the <m>z</m>-axis. The greater the radius of this circle the greater the acceleration, hence <m>a_{\\text{N} }=a</m>.
+The object moves at constant speed, meaning that <m>a_{\text{T} }</m> is always 0. The object <q>rises</q> along the <m>z</m>-axis at a constant rate, so all acceleration comes in the form of changing direction circling the <m>z</m>-axis. The greater the radius of this circle the greater the acceleration, hence <m>a_{\text{N} }=a</m>.
 </p>
 </answer>
 </exercise>
@@ -1337,19 +1337,19 @@ The object moves at constant speed, meaning that <m>a_{\\text{T} }</m> is always
 </statement>
 <answer>
 <p>
-<m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = 5</m>
+<m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 5</m>
 </p>
 
 <p>
-At <m>t=0</m>, <m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = 5</m>;
+At <m>t=0</m>, <m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 5</m>;
 </p>
 
 <p>
-At <m>t=\pi/2</m>, <m>a_{\\text{T} } = 0</m> and <m>a_{\\text{N} } = 5</m>.
+At <m>t=\pi/2</m>, <m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 5</m>.
 </p>
 
 <p>
-The object moves at constant speed, meaning that <m>a_{\\text{T} }</m> is always 0. Acceleration is thus always perpendicular to the direction of travel; in this particular case, it is always 5 times the unit vector pointing orthogonal to the direction of travel.
+The object moves at constant speed, meaning that <m>a_{\text{T} }</m> is always 0. Acceleration is thus always perpendicular to the direction of travel; in this particular case, it is always 5 times the unit vector pointing orthogonal to the direction of travel.
 </p>
 </answer>
 </exercise>

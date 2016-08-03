@@ -20,7 +20,7 @@ The issue to address next is how to systematically break a region into subregion
 </p>
 
 <p>
-We now approximate the area of a slice. Again, we have many options, but using a rectangle seems simplest. Picking any <m>x</m>-value <m>c_i</m> in the <m>i^\\text{ th }</m> slice, we set the height of the rectangle to be <m>f(c_i)-g(c_i)</m>, the difference of the corresponding <m>y</m>-values. The width of the rectangle is a small difference in <m>x</m>-values, which we represent with <m>\dx</m>. <xref ref="fig_abcintro">Figure</xref> (c) shows sample points <m>c_i</m> chosen in each subinterval and appropriate rectangles drawn. (Each of these rectangles represents a differential element.) Each slice has an area approximately equal to <m>\big(f(c_i)-g(c_i)\big)\dx</m>; hence, the total area is approximately the Riemann Sum
+We now approximate the area of a slice. Again, we have many options, but using a rectangle seems simplest. Picking any <m>x</m>-value <m>c_i</m> in the <m>i^\text{ th }</m> slice, we set the height of the rectangle to be <m>f(c_i)-g(c_i)</m>, the difference of the corresponding <m>y</m>-values. The width of the rectangle is a small difference in <m>x</m>-values, which we represent with <m>\dx</m>. <xref ref="fig_abcintro">Figure</xref> (c) shows sample points <m>c_i</m> chosen in each subinterval and appropriate rectangles drawn. (Each of these rectangles represents a differential element.) Each slice has an area approximately equal to <m>\big(f(c_i)-g(c_i)\big)\dx</m>; hence, the total area is approximately the Riemann Sum
 <me>
   Q = \sum_{i=1}^n \big(f(c_i)-g(c_i)\big)\dx.
 </me>
@@ -193,7 +193,7 @@ The graph verifies that the upper boundary of the region is given by <m>f</m> an
 <md>
   <mrow>  \int_0^{4\pi} \big(f(x)- g(x)\big)\ dx \amp  = \int_0^{4\pi} \Big(\sin x+2 - \big(\frac12\cos (2x)-1\big)\Big)\ dx</mrow>
   <mrow>  \amp = -\cos x -\frac14\sin(2x)+3x\Big|_0^{4\pi}</mrow>
-  <mrow>  \amp =	12\pi \approx 37.7\ \\text{ units } ^2.</mrow>
+  <mrow>  \amp =	12\pi \approx 37.7\ \text{ units } ^2.</mrow>
 </md>
 </p>
 <figure xml:id="fig_abc1" >
@@ -277,10 +277,10 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 <p>
 A quick calculation shows that <m>f=g</m> at <m>x=1, 2</m> and 4. One can proceed thoughtlessly by computing <m>\ds \int_1^4\big(f(x)-g(x)\big)\ dx</m>, but this ignores the fact that on <m>[1,2]</m>, <m>g(x)>f(x)</m>. (In fact, the thoughtless integration returns <m>-9/4</m>, hardly the expected value of an <em>area</em>.) Thus we compute the total area by breaking the interval <m>[1,4]</m> into two subintervals, <m>[1,2]</m> and <m>[2,4]</m> and using the proper integrand in each.
 <md>
-  <mrow>  \\text{ Total Area }  \amp = \int_1^2 \big(g(x)-f(x)\big)\ dx + \int_2^4\big(f(x)-g(x)\big)\ dx</mrow>
+  <mrow>  \text{ Total Area }  \amp = \int_1^2 \big(g(x)-f(x)\big)\ dx + \int_2^4\big(f(x)-g(x)\big)\ dx</mrow>
   <mrow>  \amp = \int_1^2 \big(x^3-7x^2+14x-8\big) \ dx + \int_2^4\big(-x^3+7x^2-14x+8\big)\ dx</mrow>
   <mrow>  \amp = 5/12 + 8/3</mrow>
-  <mrow>  \amp = 37/12 = 3.083\ \\text{ units } ^2.</mrow>
+  <mrow>  \amp = 37/12 = 3.083\ \text{ units } ^2.</mrow>
 </md>
 </p>
 </solution>
@@ -340,7 +340,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 <p>
 Thus we compute the area as the sum of two integrals:
 <md>
-  <mrow>  \\text{ Total Area }  \amp = \int_0^1 \Big(\big(\sqrt{x}+2\big)-2\Big)\ dx + \int_1^2 \Big(\big(-(x-1)^2+3\big)-2\Big)\ dx</mrow>
+  <mrow>  \text{ Total Area }  \amp = \int_0^1 \Big(\big(\sqrt{x}+2\big)-2\Big)\ dx + \int_1^2 \Big(\big(-(x-1)^2+3\big)-2\Big)\ dx</mrow>
   <mrow>  \amp = 2/3 + 2/3</mrow>
   <mrow>  \amp =4/3.</mrow>
 </md>
@@ -399,7 +399,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 <p>
 The area is found by integrating the above function with respect to <m>y</m> with the appropriate bounds. We determine these by considering the <m>y</m>-values the region occupies. It is bounded below by <m>y=2</m>, and bounded above by <m>y=3</m>. That is, both the <q>top</q> and <q>bottom</q> functions exist on the <m>y</m> interval <m>[2,3]</m>. Thus
 <md>
-  <mrow>  \\text{ Total Area }  \amp = \int_2^3 \big(\sqrt{3-y}+1 - (y-2)^2\big)\ dy</mrow>
+  <mrow>  \text{ Total Area }  \amp = \int_2^3 \big(\sqrt{3-y}+1 - (y-2)^2\big)\ dy</mrow>
   <mrow>  \amp = \Big(-\frac23(3-y)^{3/2}+y-\frac13(y-2)^3\Big)\Big|_2^3</mrow>
   <mrow>  \amp = 4/3.</mrow>
 </md>
@@ -408,7 +408,7 @@ The area is found by integrating the above function with respect to <m>y</m> wit
 </example>
 
 <p>
-This calculus<ndash />based technique of finding area can be useful even with shapes that we normally think of as <q>easy.</q> <xref ref="ex_abc4">Example</xref> computes the area of a triangle. While the formula <q><m>\frac12\times\\text{ base } \times\\text{ height }</m></q> is well known, in arbitrary triangles it can be nontrivial to compute the height. Calculus makes the problem simple.
+This calculus<ndash />based technique of finding area can be useful even with shapes that we normally think of as <q>easy.</q> <xref ref="ex_abc4">Example</xref> computes the area of a triangle. While the formula <q><m>\frac12\times\text{ base } \times\text{ height }</m></q> is well known, in arbitrary triangles it can be nontrivial to compute the height. Calculus makes the problem simple.
 </p>
 
 <example xml:id="ex_abc4">
@@ -426,7 +426,7 @@ Compute the area of the regions bounded by the lines
 <p>
 Recognize that there are two <q>top</q> functions to this region, causing us to use two definite integrals.
 <md>
-  <mrow>  \\text{ Total Area }  \amp = \int_1^2\big((x+1)-(-\frac12x+\frac52)\big)\ dx + \int_2^3\big((-2x+7)-(-\frac12x+\frac52)\big)\ dx</mrow>
+  <mrow>  \text{ Total Area }  \amp = \int_1^2\big((x+1)-(-\frac12x+\frac52)\big)\ dx + \int_2^3\big((-2x+7)-(-\frac12x+\frac52)\big)\ dx</mrow>
   <mrow>  \amp = 3/4+3/4</mrow>
   <mrow>  \amp =3/2.</mrow>
 </md>
@@ -472,7 +472,7 @@ We can also approach this by converting each function into a function of <m>y</m
 <p>
 The <q>top</q> function is always <m>x=\frac{7-y}2</m> while there are two <q>bottom</q> functions. Being mindful of the proper integration bounds, we have
 <md>
-  <mrow>  \\text{ Total Area }  \amp = \int_1^2\big(\frac{7-y}2 - (5-2y)\big)\ dy + \int_2^3\big(\frac{7-y}2-(y-1)\big)\ dy</mrow>
+  <mrow>  \text{ Total Area }  \amp = \int_1^2\big(\frac{7-y}2 - (5-2y)\big)\ dy + \int_2^3\big(\frac{7-y}2-(y-1)\big)\ dy</mrow>
   <mrow>  \amp = 3/4 + 3/4</mrow>
   <mrow>  \amp = 3/2.</mrow>
 </md>
@@ -580,13 +580,13 @@ We have the following data points:
 <p>
 We also have that <m>\dx=\frac{b-a}{n} = 2</m>, so Simpson's Rule gives
 <md>
-  <mrow>  \\text{ Area } \amp \approx \frac{2}{3}\Big(1\cdot0+4\cdot2.25+2\cdot5.08+4\cdot6.35+2\cdot5.21+4\cdot2.76+1\cdot0\Big)</mrow>
-  <mrow>  \amp = 44.01\overline{3} \ \\text{ units } ^2.</mrow>
+  <mrow>  \text{ Area } \amp \approx \frac{2}{3}\Big(1\cdot0+4\cdot2.25+2\cdot5.08+4\cdot6.35+2\cdot5.21+4\cdot2.76+1\cdot0\Big)</mrow>
+  <mrow>  \amp = 44.01\overline{3} \ \text{ units } ^2.</mrow>
 </md>
 </p>
 
 <p>
-Since the measurements are in hundreds of feet, units<m>^2 = (100\ \\text{ ft } )^2 = 10,000\ \\text{ ft } ^2</m>, giving a total area of <m>440,133\ \\text{ ft } ^2</m>. (Since we are approximating, we'd likely say the area was about <m>440,000\ \\text{ ft } ^2</m>, which is a little more than 10 acres.)
+Since the measurements are in hundreds of feet, units<m>^2 = (100\ \text{ ft } )^2 = 10,000\ \text{ ft } ^2</m>, giving a total area of <m>440,133\ \text{ ft } ^2</m>. (Since we are approximating, we'd likely say the area was about <m>440,000\ \text{ ft } ^2</m>, which is a little more than 10 acres.)
 </p>
 </solution>
 </example>

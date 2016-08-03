@@ -49,7 +49,7 @@ We begin by reviewing the Chain Rule. Let <m>f</m> and <m>g</m> be functions of 
 <p>
 Suppose now that <m>y=g(x)</m>. We can rewrite the above as
 <men xml:id="eq_implicit1" >
-  \frac{d}{dx}\Big(f(y))\Big) = \fp(y))\cdot y',  \\text{ or }  \frac{d}{dx}\Big(f(y))\Big)= \fp(y)\cdot \frac{dy}{dx} .
+  \frac{d}{dx}\Big(f(y))\Big) = \fp(y))\cdot y',  \text{ or }  \frac{d}{dx}\Big(f(y))\Big)= \fp(y)\cdot \frac{dy}{dx} .
 </men>
 </p>
 
@@ -442,7 +442,7 @@ This section has shown how to find the derivatives of implicitly defined functio
 <p>
 One hole in our current understanding of derivatives is this: what is the derivative of the square root function? That is,
 <me>
-  \frac{d}{dx}\big(\sqrt{x}\big) = \frac{d}{dx}\big(x^{1/2}\big) = \\text{?}
+  \frac{d}{dx}\big(\sqrt{x}\big) = \frac{d}{dx}\big(x^{1/2}\big) = \text{?}
 </me>
 </p>
 
@@ -587,7 +587,7 @@ Given <m>x^2+y^2=1</m>, find <m>\ds\frac{d^2y}{dx^2} = y''</m>.
 We found that <m>y' = \frac{dy}{dx} = -x/y</m> in <xref ref="ex_implicit7">Example</xref>. To find <m>y''</m>, we apply implicit differentiation to <m>y'</m>.
 <md>
   <mrow>  y'' \amp = \frac{d}{dx}\big(y'\big)</mrow>
-  <mrow>  \amp = \frac{d}{dx}\left(-\frac xy\right)\qquad \\text{ (Now use the Quotient Rule.) }</mrow>
+  <mrow>  \amp = \frac{d}{dx}\left(-\frac xy\right)\qquad \text{ (Now use the Quotient Rule.) }</mrow>
   <mrow>  \amp = -\frac{y(1) - x(y')}{y^2}</mrow>
 <intertext>replace <m>y'</m> with <m>-x/y</m>:</intertext>
   <mrow>  \amp = -\frac{y-x(-x/y)}{y^2}</mrow>
@@ -668,12 +668,12 @@ Given <m>y=x^x</m>, use logarithmic differentiation to find <m>y'</m>.
 As suggested above, we start by taking the natural log of both sides then applying implicit differentiation.
 <md>
   <mrow>  y \amp = x^x</mrow>
-  <mrow>  \ln (y) \amp = $\ln (x^x)$ \\text{ (apply logarithm rule) }</mrow>
-  <mrow>  \ln (y) \amp = $x\ln x$  \\text{ (now use implicit differentiation) }</mrow>
+  <mrow>  \ln (y) \amp = $\ln (x^x)$ \text{ (apply logarithm rule) }</mrow>
+  <mrow>  \ln (y) \amp = $x\ln x$  \text{ (now use implicit differentiation) }</mrow>
   <mrow>  \frac{d}{dx}\Big(\ln (y)\Big) \amp = \frac{d}{dx}\Big(x\ln x\Big)</mrow>
   <mrow>  \frac{y'}{y} \amp = \ln x + x\cdot\frac1x</mrow>
   <mrow>  \frac{y'}{y} \amp = \ln x + 1</mrow>
-  <mrow>  y' \amp = $y\big(\ln x+1\big)$ \\text{ (substitute \(y=x^x\)) }</mrow>
+  <mrow>  y' \amp = $y\big(\ln x+1\big)$ \text{ (substitute \(y=x^x\)) }</mrow>
   <mrow>  y' \amp = x^x\big(\ln x+1\big).</mrow>
 </md>
 </p>

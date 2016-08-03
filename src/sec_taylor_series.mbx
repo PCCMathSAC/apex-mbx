@@ -27,7 +27,7 @@ Let <m>f(x)</m> have derivatives of all orders at <m>x=c</m>.
 </statement>
 </definition>
 <p>
-The difference between a Taylor polynomial and a Taylor series is the former is a polynomial, containing only a finite number of terms, whereas the latter is a series, a summation of an infinite set of terms. When creating the Taylor polynomial of degree <m>n</m> for a function <m>f(x)</m> at <m>x=c</m>, we needed to evaluate <m>f</m>, and the first <m>n</m> derivatives of <m>f</m>, at <m>x=c</m>. When creating the Taylor series of <m>f</m>, it helps to find a pattern that describes the <m>n^\\text{ th }</m> derivative of <m>f</m> at <m>x=c</m>. We demonstrate this in the next two examples.
+The difference between a Taylor polynomial and a Taylor series is the former is a polynomial, containing only a finite number of terms, whereas the latter is a series, a summation of an infinite set of terms. When creating the Taylor polynomial of degree <m>n</m> for a function <m>f(x)</m> at <m>x=c</m>, we needed to evaluate <m>f</m>, and the first <m>n</m> derivatives of <m>f</m>, at <m>x=c</m>. When creating the Taylor series of <m>f</m>, it helps to find a pattern that describes the <m>n^\text{ th }</m> derivative of <m>f</m> at <m>x=c</m>. We demonstrate this in the next two examples.
 </p>
 
 <example xml:id="ex_ts1">
@@ -39,7 +39,7 @@ Find the Maclaurin series of <m>f(x)=\cos x</m>.
 </statement>
 <solution>
 <p>
-In <xref ref="ex_taypoly4">Example</xref> we found the <m>8^\\text{ th }</m> degree Maclaurin polynomial of <m>\cos x</m>. In doing so, we created the table shown in <xref ref="fig_ts1">Figure</xref>.
+In <xref ref="ex_taypoly4">Example</xref> we found the <m>8^\text{ th }</m> degree Maclaurin polynomial of <m>\cos x</m>. In doing so, we created the table shown in <xref ref="fig_ts1">Figure</xref>.
 </p>
 <table xml:id="fig_ts1" >
 <caption>A table of the derivatives of <m>f(x)=\cos x</m> evaluated at <m>x=0</m>.</caption>
@@ -81,14 +81,14 @@ Find the Taylor series of <m>f(x) = \ln x</m> centered at <m>x=1</m>.
 </statement>
 <solution>
 <p>
-<xref ref="fig_ts2">Figure</xref> shows the <m>n^\\text{ th }</m> derivative of <m>\ln x</m> evaluated at <m>x=1</m> for <m>n=0,\ldots,5</m>, along with an expression for the <m>n^\\text{ th }</m> term:
+<xref ref="fig_ts2">Figure</xref> shows the <m>n^\text{ th }</m> derivative of <m>\ln x</m> evaluated at <m>x=1</m> for <m>n=0,\ldots,5</m>, along with an expression for the <m>n^\text{ th }</m> term:
 <me>
-  f\,^{(n)}(1) = (-1)^{n+1}(n-1)! \\text{ for \(n\geq 1\). }
+  f\,^{(n)}(1) = (-1)^{n+1}(n-1)! \text{ for \(n\geq 1\). }
 </me>
 </p>
 
 <p>
-Remember that this is what distinguishes Taylor series from Taylor polynomials; we are very interested in finding a pattern for the <m>n^\\text{ th }</m> term, not just finding a finite set of coefficients for a polynomial.
+Remember that this is what distinguishes Taylor series from Taylor polynomials; we are very interested in finding a pattern for the <m>n^\text{ th }</m> term, not just finding a finite set of coefficients for a polynomial.
 </p>
 <table xml:id="fig_ts2" >
 <caption>Derivatives of <m>\ln x</m> evaluated at <m>x=1</m>.</caption>
@@ -118,7 +118,7 @@ It is important to note that <xref ref="def_taylor_series">Definition</xref> def
 </p>
 
 <p>
-<xref ref="thm_taylorthm">Theorem</xref> states that the error between a function <m>f(x)</m> and its <m>n^\\text{ th }</m><ndash />degree Taylor polynomial <m>p_n(x)</m> is <m>R_n(x)</m>, where
+<xref ref="thm_taylorthm">Theorem</xref> states that the error between a function <m>f(x)</m> and its <m>n^\text{ th }</m><ndash />degree Taylor polynomial <m>p_n(x)</m> is <m>R_n(x)</m>, where
 <me>
   \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|(x-c)^{(n+1)}\big|.
 </me>
@@ -136,7 +136,7 @@ Let <m>f(x)</m> have derivatives of all orders at <m>x=c</m>, let <m>R_n(x)</m> 
 If <m>\ds\lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m> in <m>I</m>, then
 <index><main>Taylor Series</main><sub>equality with generating function</sub></index>
 <me>
-  f(x) = \sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n\ \\text{ on \(I\). }
+  f(x) = \sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n\ \text{ on \(I\). }
 </me>
 </p>
 </statement>
@@ -175,7 +175,7 @@ which implies
 <p>
 For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0</m>. Applying the Squeeze Theorem to Equation <xref ref="eq_coseqtaylor" />, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
 <me>
-  \cos x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!} \\text{ for all \(x\) } .
+  \cos x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!} \text{ for all \(x\) } .
 </me>
 </p>
 </solution>
@@ -284,7 +284,7 @@ Unfortunately, this particular expansion of <m>\pi</m> converges very slowly. Th
 <sidebyside><insight xml:id="idea_common_taylor">
 <title>Important Taylor Series Expansions</title>
 <tabular>
-<row><cell><term>Function and Series</term></cell><cell><term>First Few Terms</term></cell><cell>\\text{ <term>Interval of</term></cell></row>
+<row><cell><term>Function and Series</term></cell><cell><term>First Few Terms</term></cell><cell>\text{ <term>Interval of</term></cell></row>
 <row><cell><term>Convergence</term> }</cell></row>
 <row><cell><m>\ds e^x = \sum_{n=0}^\infty \frac{x^n}{n!}</m></cell><cell><m>\ds 1+ x+\frac{x^2}{2!} + \frac{x^3}{3!}+\cdots</m></cell><cell><m>(-\infty,\infty)</m></cell></row>
 <row><cell><m>\ds \sin x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m></cell><cell><m>\ds x-\frac{x^3}{3!}+\frac{x^5}{5!} - \frac{x^7}{7!}+\cdots</m></cell><cell><m>(-\infty,\infty)</m></cell></row>
@@ -326,7 +326,7 @@ Write out the first 3 terms of the Taylor Series for <m>f(x) = e^x\cos x</m> usi
 <p>
 <xref ref="idea_common_taylor">Key Idea</xref> informs us that
 <me>
-  e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots \\text{ and }  \cos x = 1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots.
+  e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots \text{ and }  \cos x = 1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots.
 </me>
 </p>
 
@@ -487,7 +487,7 @@ Suppose that all we know is that
 <p>
 <xref ref="def_taylor_series">Definition</xref> states that each term of the Taylor expansion of a function includes an <m>n!</m>. This allows us to say that
 <me>
-  a_2=2=\frac{b_2}{2!}, a_3 = \frac43=\frac{b_3}{3!}, \\text{ and }  a_4 = \frac23=\frac{b_4}{4!}
+  a_2=2=\frac{b_2}{2!}, a_3 = \frac43=\frac{b_3}{3!}, \text{ and }  a_4 = \frac23=\frac{b_4}{4!}
 </me>
 for some values <m>b_2</m>, <m>b_3</m> and <m>b_4</m>.
 Solving for these values, we see that <m>b_2=4</m>, <m>b_3 = 8</m> and <m>b_4=16</m>. That is, we are recovering the pattern we had previously seen, allowing us to write
@@ -550,7 +550,7 @@ What theorem must we use to show that a function is equal to its Taylor series?
 
 <title>Problems</title>
 <p>
-{ <xref ref="idea_common_taylor">Key Idea</xref> gives the <m>n^\\text{ th }</m> term of the Taylor series of common functions. In Exercises}
+{ <xref ref="idea_common_taylor">Key Idea</xref> gives the <m>n^\text{ th }</m> term of the Taylor series of common functions. In Exercises}
 {, verify the formula given in the Key Idea by finding the first few terms of the Taylor series of the given function and identifying a pattern.
 }
 </p>
@@ -600,7 +600,7 @@ the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m>
 </statement>
 <answer>
 <p>
-The <m>n^\\text{ th }</m> derivative of <m>1/(1-x)</m> is <m>f\,^{(n)}(x) = (n)!/(1-x)^{n+1}</m>, which evaluates to <m>n!</m> at <m>x=0</m>.
+The <m>n^\text{ th }</m> derivative of <m>1/(1-x)</m> is <m>f\,^{(n)}(x) = (n)!/(1-x)^{n+1}</m>, which evaluates to <m>n!</m> at <m>x=0</m>.
 </p>
 
 <p>
@@ -642,7 +642,7 @@ the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1}</m>.
 </answer>
 </exercise>
 <p>
-In the following exercises, find a formula for the <m>n^\\text{ th }</m> term of the Taylor series of <m>f(x)</m>, centered at <m>c</m>, by finding the coefficients of the first few powers of <m>x</m> and looking for a pattern. (The formulas for several of these are found in <xref ref="idea_common_taylor">Key Idea</xref>; show work verifying these formula.)
+In the following exercises, find a formula for the <m>n^\text{ th }</m> term of the Taylor series of <m>f(x)</m>, centered at <m>c</m>, by finding the coefficients of the first few powers of <m>x</m> and looking for a pattern. (The formulas for several of these are found in <xref ref="idea_common_taylor">Key Idea</xref>; show work verifying these formula.)
 </p>
 <exercise>
 <statement>
@@ -790,7 +790,7 @@ If <m>x>0</m>, then <m>z\lt x</m> and <m>f\,^{(n+1)}(z) =e^z\lt e^x</m>. If <m>x
 <p>
 For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{M}{(n+1)!}\big|x^{(n+1)}\big|= 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
 <me>
-  e^x = \sum_{n=0}^\infty \frac{x^{n}}{n!} \\text{ for all \(x\) } .
+  e^x = \sum_{n=0}^\infty \frac{x^{n}}{n!} \text{ for all \(x\) } .
 </me>
 </p>
 </answer>
@@ -824,7 +824,7 @@ Since all derivatives of <m>\sin x</m> are <m>\pm \cos x</m> or <m>\pm\sin x</m>
 <p>
 For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
 <me>
-  \sin x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n+1}}{(2n+1)!} \\text{ for all \(x\) } .
+  \sin x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n+1}}{(2n+1)!} \text{ for all \(x\) } .
 </me>
 </p>
 </answer>
@@ -884,7 +884,7 @@ Since <m>0\lt x\lt 1</m>, <m>x^{n+1}\lt 1</m> and <m>(1-x)^{n+1}\lt 1</m>. We ca
 <p>
 As <m>n\to\infty</m>, <m>1/(n+1)\to0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
 <me>
-  \ln x = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^{n}}{n} \\text{ for all \(0\lt x\leq 2\) } .
+  \ln x = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^{n}}{n} \text{ for all \(0\lt x\leq 2\) } .
 </me>
 </p>
 </answer>
@@ -924,7 +924,7 @@ For a fixed <m>x</m>,
 </me>
 hence
 <me>
-  \frac{1}{1-x} = \sum_{n=0}^\infty x^n \\text{ on }  (-1,0).
+  \frac{1}{1-x} = \sum_{n=0}^\infty x^n \text{ on }  (-1,0).
 </me>
 </p>
 </answer>

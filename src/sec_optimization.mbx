@@ -71,14 +71,14 @@ It helps to make a sketch of the situation. Our enclosure is sketched twice in <
 
 \captionof{figure}{A sketch of the enclosure in <xref ref="ex_opt1">Example</xref>.} We let <m>x</m> and <m>y</m> denote the lengths of the sides of the rectangle. Clearly,
 <me>
-  \\text{ Area } =xy.
+  \text{ Area } =xy.
 </me>
 </p>
 
 <p>
 We do not yet know how to handle functions with 2 variables; we need to reduce this down to a single variable. We know more about the situation: the man has 100 feet of fencing. By knowing the perimeter of the rectangle must be 100, we can create another equation:
 <me>
-  \\text{ Perimeter }  = 100 = 2x+2y.
+  \text{ Perimeter }  = 100 = 2x+2y.
 </me>
 </p>
 
@@ -92,7 +92,7 @@ We now have 2 equations and 2 unknowns. In the latter equation, we solve for <m>
 <p>
 Now substitute this expression for <m>y</m> in the area equation:
 <me>
-  \\text{ Area }  = A(x) = x(50-x).
+  \text{ Area }  = A(x) = x(50-x).
 </me>
 </p>
 
@@ -118,7 +118,7 @@ We solve <m>50-2x=0</m> to find <m>x=25</m>; this is the only critical point. We
 </p>
 
 <p>
-Clearly <m>A(0)=0</m> and <m>A(50)=0</m>, whereas <m>A(25) = 625 \\text{ ft } ^2</m>. This is the maximum. Since we earlier found <m>y = 50-x</m>, we find that <m>y</m> is also <m>25</m>. Thus the dimensions of the rectangular enclosure with perimeter of 100 ft. with maximum area is a square, with sides of length 25 ft.
+Clearly <m>A(0)=0</m> and <m>A(50)=0</m>, whereas <m>A(25) = 625 \text{ ft } ^2</m>. This is the maximum. Since we earlier found <m>y = 50-x</m>, we find that <m>y</m> is also <m>25</m>. Thus the dimensions of the rectangular enclosure with perimeter of 100 ft. with maximum area is a square, with sides of length 25 ft.
 </p>
 </solution>
 </example>
@@ -213,18 +213,18 @@ We will follow the steps outlined by <xref ref="idea_optimization">Key Idea</xre
 </figure></p></li>
 <li><p>We want to maximize the area; as in the example before,
 <me>
-  \\text{ Area }  = xy.
+  \text{ Area }  = xy.
 </me>
 This is our fundamental equation. This defines area as a function of two variables, so we need another equation to  reduce it to one variable. 
 	
 	We again appeal to the perimeter; here the perimeter is
 <me>
-  \\text{ Perimeter }  = 100 = x+2y.
+  \text{ Perimeter }  = 100 = x+2y.
 </me>
 Note how this is different than in our previous example.</p></li>
 <li><p>We now reduce the fundamental equation to a single variable. In the perimeter equation, solve for <m>y</m>: <m>y = 50 - x/2</m>. We can now write Area as
 <me>
-  \\text{ Area }  = A(x) = x(50-x/2) = 50x - \frac12x^2.
+  \text{ Area }  = A(x) = x(50-x/2) = 50x - \frac12x^2.
 </me>
 Area is now defined as a function of one variable.</p></li>
 <li><p>We want the area to be nonnegative. Since <m>A(x) = x(50-x/2)</m>, we want <m>x\geq 0</m> and <m>50-x/2\geq 0</m>. The latter inequality implies that <m>x\leq100</m>, so <m>0\leq x\leq 100</m>.</p></li>
@@ -328,8 +328,8 @@ The optimal solution likely has the line being run along the ground for a while,
 By choosing <m>x</m> as we did, we make the expression under the square root simple. We now create the cost function.
 <me>
   \begin{array}{ccccc}
-\\text{ Cost }  \amp =\amp   \\text{ land cost }  \amp + \amp  \\text{ water cost }  \\
-						\amp 	\amp  \\text{ \dollar50 } \times \\text{ land distance }  \amp +\amp  \\text{ \dollar130 } \times \\text{ water distance }  \\
+\text{ Cost }  \amp =\amp   \text{ land cost }  \amp + \amp  \text{ water cost }  \\
+						\amp 	\amp  \text{ \dollar50 } \times \text{ land distance }  \amp +\amp  \text{ \dollar130 } \times \text{ water distance }  \\
 						\amp 	\amp  50(5000-x) \amp +\amp  130\sqrt{x^2+1000^2}.\\
 \end{array}
 </me>

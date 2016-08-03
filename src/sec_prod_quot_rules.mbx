@@ -101,11 +101,11 @@ By the limit definition, we have
 <p>
 We now do something a bit unexpected; add 0 to the numerator (so that nothing is changed) in the form of <m>-f(x+h)g(x)+f(x+h)g(x)</m>, then do some regrouping as shown.
 <md>
-  <mrow>  \frac{d}{dx}\Big(f(x)g(x)\Big) \amp =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}  \\text{ (now add 0 to the numerator) }</mrow>
-  <mrow>  \amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h}  \\text{ (regroup) }</mrow>
+  <mrow>  \frac{d}{dx}\Big(f(x)g(x)\Big) \amp =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}  \text{ (now add 0 to the numerator) }</mrow>
+  <mrow>  \amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h}  \text{ (regroup) }</mrow>
   <mrow>  \amp =	\lim_{h\to0} \frac{\Big(f(x+h)g(x+h)-f(x+h)g(x)\Big)+\Big(f(x+h)g(x)-f(x)g(x)\Big)}{h}</mrow>
-  <mrow>  \amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}\\text{ (factor) }</mrow>
-  <mrow>  \amp =\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x)\\text{ (apply limits) }</mrow>
+  <mrow>  \amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}\text{ (factor) }</mrow>
+  <mrow>  \amp =\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x)\text{ (apply limits) }</mrow>
   <mrow>  \amp =f(x)g'(x) + \fp(x)g(x)</mrow>
 </md>
 </p>
@@ -224,7 +224,7 @@ Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, whe
 <p>
 The Quotient Rule is not hard to use, although it might be a bit tricky to remember. A useful mnemonic works as follows. Consider a fraction's numerator and denominator as <q>HI</q> and <q>LO</q>, respectively. Then
 <me>
-  \frac{d}{dx}\left(\frac{\\text{ HI } }{\\text{ LO } }\right) = \frac{\\text{ LO\(\cdot\) dHI -- HI\(\cdot\) dLO } }{\\text{ LOLO } },
+  \frac{d}{dx}\left(\frac{\text{ HI } }{\text{ LO } }\right) = \frac{\text{ LO\(\cdot\) dHI -- HI\(\cdot\) dLO } }{\text{ LOLO } },
 </me>
 read <q>low dee high minus high dee low, over low low.</q> Said fast, that phrase can roll off the tongue, making it easy to memorize. The <q>dee high</q> and <q>dee low</q> parts refer to the derivatives of the numerator and denominator, respectively.
 </p>
@@ -334,9 +334,9 @@ In <xref ref="ex_quot1">Example</xref> the derivative of <m>\ds f(x) = \frac{5x^
 We found in <xref ref="ex_quot1">Example</xref> that the <m>\ds \fp(x) = \frac{10x\sin x - 5x^2\cos x}{\sin^2 x}</m>. We now find <m>\fp</m> using the Product Rule, considering <m>f</m> as <m>f(x) = 5x^2\csc x</m>.
 <md>
   <mrow>  \fp(x) \amp = \frac{d}{dx}\Big(5x^2\csc x\Big)</mrow>
-  <mrow>  \amp =	$5x^2(-\csc x\cot x) + 10x\csc x$ \\text{ (now rewrite trig functions) }</mrow>
+  <mrow>  \amp =	$5x^2(-\csc x\cot x) + 10x\csc x$ \text{ (now rewrite trig functions) }</mrow>
   <mrow>  \amp = 5x^2\cdot \frac{-1}{\sin x}\cdot \frac{\cos x}{\sin x} + \frac{10x}{\sin x}</mrow>
-  <mrow>  \amp =	\parbox{140pt}{$\ds\frac{-5x^2\cos x}{\sin ^2x}+\frac{10x}{\sin x}$} \\text{ (get common denominator) }</mrow>
+  <mrow>  \amp =	\parbox{140pt}{$\ds\frac{-5x^2\cos x}{\sin ^2x}+\frac{10x}{\sin x}$} \text{ (get common denominator) }</mrow>
   <mrow>  \amp = \frac{10x\sin x - 5x^2\cos x}{\sin^2x}</mrow>
 </md>
 </p>
@@ -378,8 +378,8 @@ We employ the Quotient Rule.
 <p>
 The derivative of <m>\ds y=\frac{1}{x^n}</m> turned out to be rather nice. It gets better. Consider:
 <md>
-  <mrow>  \frac{d}{dx}\left(\frac{1}{x^n}\right) \amp = \parbox{60pt}{$\ds\frac{d}{dx}\Big(x^{-n}\Big)$} \\text{ (apply result from <xref ref="ex_deriv_power">Example</xref>) }</mrow>
-  <mrow>  \amp = \parbox{60pt}{$\ds-\frac{n}{x^{n+1}}$}\\text{ (rewrite algebraically) }</mrow>
+  <mrow>  \frac{d}{dx}\left(\frac{1}{x^n}\right) \amp = \parbox{60pt}{$\ds\frac{d}{dx}\Big(x^{-n}\Big)$} \text{ (apply result from <xref ref="ex_deriv_power">Example</xref>) }</mrow>
+  <mrow>  \amp = \parbox{60pt}{$\ds-\frac{n}{x^{n+1}}$}\text{ (rewrite algebraically) }</mrow>
   <mrow>  \amp = -nx^{-(n+1)}</mrow>
   <mrow>  \amp = -nx^{-n-1}.</mrow>
 </md>

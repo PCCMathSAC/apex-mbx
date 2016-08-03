@@ -4,7 +4,7 @@
 
 <introduction>
 <p>
-The definite integral of <m>f</m> over <m>[a,b]</m>, <m>\int_a^b f(x)\ dx</m>, was introduced as <q>the signed area under the curve.</q> We approximated the value of this area by first subdividing <m>[a,b]</m> into <m>n</m> subintervals, where the <m>i^\\text{ th }</m> subinterval has length <m>\dx_i</m>, and letting <m>c_i</m> be any value in the <m>i^\\text{ th }</m> subinterval. We formed rectangles that approximated part of the region under the curve with width <m>\dx_i</m>, height <m>f(c_i)</m>, and hence with area <m>f(c_i)\dx_i</m>. Summing all the rectangle's areas gave an approximation of the definite integral, and <xref ref="thm_riemann_sum">Theorem</xref> stated that
+The definite integral of <m>f</m> over <m>[a,b]</m>, <m>\int_a^b f(x)\ dx</m>, was introduced as <q>the signed area under the curve.</q> We approximated the value of this area by first subdividing <m>[a,b]</m> into <m>n</m> subintervals, where the <m>i^\text{ th }</m> subinterval has length <m>\dx_i</m>, and letting <m>c_i</m> be any value in the <m>i^\text{ th }</m> subinterval. We formed rectangles that approximated part of the region under the curve with width <m>\dx_i</m>, height <m>f(c_i)</m>, and hence with area <m>f(c_i)\dx_i</m>. Summing all the rectangle's areas gave an approximation of the definite integral, and <xref ref="thm_riemann_sum">Theorem</xref> stated that
 <me>
   \int_a^bf(x)\ dx = \lim_{\|\Delta x\|\to 0}\sum f(c_i)\dx_i,
 </me>
@@ -20,7 +20,7 @@ Let <m>R</m> be a closed, bounded region in the <m>x</m>-<m>y</m> plane and let 
 </p>
 
 <p>
-We start by partitioning <m>R</m> into <m>n</m> rectangular subregions as shown in <xref ref="fig_double_intro">Figure</xref>(a). For simplicity's sake, we let all widths be <m>\dx</m> and all heights be <m>\dy</m>. Note that the sum of the areas of the rectangles is not equal to the area of <m>R</m>, but rather is a close approximation. Arbitrarily number the rectangles 1 through <m>n</m>, and pick a point <m>(x_i,y_i)</m> in the <m>i^\\text{ th }</m> subregion.
+We start by partitioning <m>R</m> into <m>n</m> rectangular subregions as shown in <xref ref="fig_double_intro">Figure</xref>(a). For simplicity's sake, we let all widths be <m>\dx</m> and all heights be <m>\dy</m>. Note that the sum of the areas of the rectangles is not equal to the area of <m>R</m>, but rather is a close approximation. Arbitrarily number the rectangles 1 through <m>n</m>, and pick a point <m>(x_i,y_i)</m> in the <m>i^\text{ th }</m> subregion.
 </p>
 <figure xml:id="fig_double_intro" >
 <caption>Developing a method for finding signed volume under a surface.</caption>
@@ -288,7 +288,7 @@ draw(surface(p -- cycle),rgb(1,.6,.6)+opacity(.8),meshpen=q,nolight,render(merge
 
 </figure>
 <p>
-The volume of the rectangular solid whose base is the <m>i^\\text{ th }</m> subregion and whose height is <m>f(x_i,y_i)</m> is <m>V_i=f(x_i,y_i)\dx\dy</m>. Such a solid is shown in <xref ref="fig_double_intro">Figure</xref>(b). Note how this rectangular solid only approximates the true volume under the surface; part of the solid is above the surface and part is below.
+The volume of the rectangular solid whose base is the <m>i^\text{ th }</m> subregion and whose height is <m>f(x_i,y_i)</m> is <m>V_i=f(x_i,y_i)\dx\dy</m>. Such a solid is shown in <xref ref="fig_double_intro">Figure</xref>(b). Note how this rectangular solid only approximates the true volume under the surface; part of the solid is above the surface and part is below.
 </p>
 
 <p>
@@ -304,7 +304,7 @@ This approximates the signed volume under <m>f</m> over <m>R</m>. As we have don
 </p>
 
 <p>
-In general, each rectangle could have a different width <m>\dx_j</m> and height <m>\dy_k</m>, giving the <m>i^\\text{ th }</m> rectangle an area <m>\Delta A_i = \dx_j\dy_k</m> and the <m>i^\\text{ th }</m> rectangular solid a volume of <m>f(x_i,y_i)\Delta A_i</m>. Let <m>||\Delta A||</m> denote the length of the longest diagonal of all rectangles in the subdivision of <m>R</m>; <m>||\Delta A||\to 0</m> means each rectangle's width and height are both approaching 0. If <m>f</m> is a continuous function, as <m>||\Delta A||</m> shrinks (and hence <m>n\to\infty</m>) the summation <m>\ds \sum_{i=1}^n f(x_i,y_i)\Delta A_i</m> approximates the signed volume better and better. This leads to a definition.
+In general, each rectangle could have a different width <m>\dx_j</m> and height <m>\dy_k</m>, giving the <m>i^\text{ th }</m> rectangle an area <m>\Delta A_i = \dx_j\dy_k</m> and the <m>i^\text{ th }</m> rectangular solid a volume of <m>f(x_i,y_i)\Delta A_i</m>. Let <m>||\Delta A||</m> denote the length of the longest diagonal of all rectangles in the subdivision of <m>R</m>; <m>||\Delta A||\to 0</m> means each rectangle's width and height are both approaching 0. If <m>f</m> is a continuous function, as <m>||\Delta A||</m> shrinks (and hence <m>n\to\infty</m>) the summation <m>\ds \sum_{i=1}^n f(x_i,y_i)\Delta A_i</m> approximates the signed volume better and better. This leads to a definition.
 </p>
 <aside>
 <p>
@@ -1398,7 +1398,7 @@ In short, evaluating one iterated integral is impossible; the other iterated int
 <p>
 <xref ref="def_av_val">Definition</xref> defines the average value of a single<ndash />variable function <m>f(x)</m> on the interval <m>[a,b]</m> as
 <me>
-  \\text{ average value of \(f(x)\) on \([a,b]\) }  = \frac1{b-a}\int_a^b f(x)\ dx;
+  \text{ average value of \(f(x)\) on \([a,b]\) }  = \frac1{b-a}\int_a^b f(x)\ dx;
 </me>
 that is, it is the <q>area under <m>f</m> over an interval divided by the length of the interval.</q> We make an analogous statement here: the average value of <m>z=f(x,y)</m> over a region <m>R</m> is the volume under <m>f</m> over <m>R</m> divided by the area of <m>R</m>.
 </p>
@@ -1408,7 +1408,7 @@ that is, it is the <q>area under <m>f</m> over an interval divided by the length
 <p>
 Let <m>z=f(x,y)</m> be a continuous function defined over a closed region <m>R</m> in the <m>x</m>-<m>y</m> plane. The <term>average value of <m>f</m> on <m>R</m></term> is <index><main>average value of a function</main></index>
 <me>
-  \\text{ average value of \(f\) on \(R\) }  = \frac{\ds \iint_R f(x,y)\ dA}{\ds\iint_R \ dA}.
+  \text{ average value of \(f\) on \(R\) }  = \frac{\ds \iint_R f(x,y)\ dA}{\ds\iint_R \ dA}.
 </me>
 </p>
 </statement>
@@ -1439,7 +1439,7 @@ We find the area of <m>R</m> by computing <m>\iint_R \ dA</m>:
 <p>
 Dividing the volume under the surface by the area gives the average value:
 <me>
-  \\text{ average value of \(f\) on \(R\) }  = \frac{176/15}{16/3} = \frac{11}5 = 2.2.
+  \text{ average value of \(f\) on \(R\) }  = \frac{176/15}{16/3} = \frac{11}5 = 2.2.
 </me>
 </p>
 

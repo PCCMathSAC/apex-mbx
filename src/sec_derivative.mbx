@@ -18,7 +18,7 @@ We have been given a <em>position</em> function, but what we want to compute is 
 <p>
 However, we do know from common experience how to calculate an <em>average velocity</em>. (If we travel 60 miles in 2 hours, we know we had an average velocity of 30 mph.) We looked at this concept in <xref ref="sec_limit_intro">Section</xref> when we introduced the difference quotient. We have
 <me>
-  \frac{\\text{ change in distance } }{\\text{ change in time } } = \frac{\\text{ ``\ rise\ '' } }{\\text{ run } } = \\text{ average velocity } .
+  \frac{\text{ change in distance } }{\text{ change in time } } = \frac{\text{ ``\ rise\ '' } }{\text{ run } } = \text{ average velocity } .
 </me>
 </p>
 
@@ -29,25 +29,25 @@ We can approximate the instantaneous velocity at <m>t=2</m> by considering the a
 <p>
 Consider the interval from <m>t=2</m> to <m>t=3</m> (just before the riders hit the ground). On that interval, the average velocity is
 <me>
-  \frac{f(3)-f(2)}{3-2} = \frac{f(3)-f(2)}{1} =-80\ \\text{ ft/s } ,
+  \frac{f(3)-f(2)}{3-2} = \frac{f(3)-f(2)}{1} =-80\ \text{ ft/s } ,
 </me>
 where the minus sign indicates that the riders are moving <em>down</em>. By narrowing the interval we consider, we will likely get a better approximation of the instantaneous velocity. On <m>[2,2.5]</m> we have
 <me>
-  \frac{f(2.5)-f(2)}{2.5-2} = \frac{f(2.5)-f(2)}{0.5} =-72\ \\text{ ft/s } .
+  \frac{f(2.5)-f(2)}{2.5-2} = \frac{f(2.5)-f(2)}{0.5} =-72\ \text{ ft/s } .
 </me>
 </p>
 
 <p>
-We can do this for smaller and smaller intervals of time. For instance, over a time span of 1/10<m>^\\text{ th }</m> of a second, i.e., on <m>[2,2.1]</m>, we have
+We can do this for smaller and smaller intervals of time. For instance, over a time span of 1/10<m>^\text{ th }</m> of a second, i.e., on <m>[2,2.1]</m>, we have
 <me>
-  \frac{f(2.1)-f(2)}{2.1-2} = \frac{f(2.1)-f(2)}{0.1} =-65.6\ \\text{ ft/s } .
+  \frac{f(2.1)-f(2)}{2.1-2} = \frac{f(2.1)-f(2)}{0.1} =-65.6\ \text{ ft/s } .
 </me>
 </p>
 
 <p>
-Over a time span of 1/100<m>^\\text{ th }</m> of a second, on <m>[2,2.01]</m>, the average velocity is
+Over a time span of 1/100<m>^\text{ th }</m> of a second, on <m>[2,2.01]</m>, the average velocity is
 <me>
-  \frac{f(2.01)-f(2)}{2.01-2} = \frac{f(2.01)-f(2)}{0.01} =-64.16\ \\text{ ft/s } .
+  \frac{f(2.01)-f(2)}{2.01-2} = \frac{f(2.01)-f(2)}{0.01} =-64.16\ \text{ ft/s } .
 </me>
 </p>
 
@@ -559,9 +559,9 @@ Find the derivative of <m>f(x) = \sin x</m>.
 <p>
 Before applying <xref ref="def_the_derivative">Definition</xref>, note that once this is found, we can find the actual tangent line to <m>f(x) = \sin x</m> at <m>x=0</m>, whereas we settled for an approximation in <xref ref="ex_der_num_approx">Example</xref>.
 <md>
-  <mrow>  \fp(x) \amp = \lim_{h\to 0} \frac{\sin(x+h)-\sin x}{h} \amp  \amp  \left(\text{\scriptsize \\text{ Use trig identity \(\sin(x+h) = \sin x\cos h+\cos x\sin h\) }} \right)</mrow>
-  <mrow>  \amp = \lim_{h\to 0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} \amp  \amp  \\text{ \scriptsize (regroup) }</mrow>
-  <mrow>  \amp = \lim_{h\to 0} \frac{\sin x(\cos h-1) + \cos x\sin h}{h} \amp  \amp  \\text{ \scriptsize (split into two fractions) }</mrow>
+  <mrow>  \fp(x) \amp = \lim_{h\to 0} \frac{\sin(x+h)-\sin x}{h} \amp  \amp  \left(\text{\scriptsize \text{ Use trig identity \(\sin(x+h) = \sin x\cos h+\cos x\sin h\) }} \right)</mrow>
+  <mrow>  \amp = \lim_{h\to 0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} \amp  \amp  \text{ \scriptsize (regroup) }</mrow>
+  <mrow>  \amp = \lim_{h\to 0} \frac{\sin x(\cos h-1) + \cos x\sin h}{h} \amp  \amp  \text{ \scriptsize (split into two fractions) }</mrow>
   <mrow>  \amp = \lim_{h\to 0} \left(\frac{\sin x(\cos h-1)}{h} + \frac{\cos x\sin h}{h}\right) \amp  \amp  \left(\parbox{130pt}{\scriptsize use $\ds \lim_{h\to 0} \frac{\cos h-1}{h} = 0$ and $\ds \lim_{h\to 0} \frac{\sin h}{h} = 1$}\right)</mrow>
   <mrow>  \amp =	\sin x\cdot 0 + \cos x \cdot 1</mrow>
   <mrow>  \amp = \cos x\ !</mrow>

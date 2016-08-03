@@ -94,7 +94,7 @@ We begin by finding <m>f(x+dx,y+dy)</m>, <m>\ddz</m>, <m>f_x</m> and <m>f_y</m>.
 <p>
 It is straightforward to compute <m>f_x = y</m> and <m>f_y = x+6y</m>. Consider once more <m>\ddz</m>:
 <md>
-  <mrow>  \ddz \amp = xdy + ydx + dxdy + 6ydy+3dy^2 \qquad \\text{ (now reorder) }</mrow>
+  <mrow>  \ddz \amp = xdy + ydx + dxdy + 6ydy+3dy^2 \qquad \text{ (now reorder) }</mrow>
   <mrow>  \amp = ydx + xdy+6ydy+ dxdy + 3dy^2</mrow>
   <mrow>  \amp = \underbrace{(y)}_{f_x}dx + \underbrace{(x+6y)}_{f_y}dy + \underbrace{(dy)}_{E_x}dx+\underbrace{(3dy)}_{E_y}dy</mrow>
   <mrow>  \amp = f_xdx + f_ydy + E_xdx+E_ydy.</mrow>
@@ -164,7 +164,7 @@ We can find <m>f_x(0,0)</m> and <m>f_y(0,0)</m> using <xref ref="def_partial_der
 <p>
 Both <m>f_x</m> and <m>f_y</m> <em>exist</em> at <m>(0,0)</m>, but they are not continuous at <m>(0,0)</m>, as
 <me>
-  f_x(x,y) = \frac{y(y^2-x^2)}{(x^2+y^2)^2} \qquad \\text{ and } \qquad f_y(x,y) = \frac{x(x^2-y^2)}{(x^2+y^2)^2}
+  f_x(x,y) = \frac{y(y^2-x^2)}{(x^2+y^2)^2} \qquad \text{ and } \qquad f_y(x,y) = \frac{x(x^2-y^2)}{(x^2+y^2)^2}
 </me>
 are not continuous at <m>(0,0)</m>. (Take the limit of <m>f_x</m> as <m>(x,y)\to(0,0)</m> along the <m>x</m>- and <m>y</m>-axes; they give different results.) So even though <m>f_x</m> and <m>f_y</m> <em>exist</em> at every point in the <m>x</m>-<m>y</m> plane, they are not continuous. Therefore it is possible, by <xref ref="thm_differentiable">Theorem</xref>, for <m>f</m> to not be differentiable.
 </p>
@@ -300,7 +300,7 @@ A cylindrical steel storage tank is to be built that is 10ft tall and 4ft across
 <p>
 A cylindrical solid with height <m>h</m> and radius <m>r</m> has volume <m>V = \pi r^2h</m>. We can view <m>V</m> as a function of two variables, <m>r</m> and <m>h</m>. We can compute partial derivatives of <m>V</m>:
 <me>
-  \frac{\partial V}{\partial r} = V_r(r,h) = 2\pi rh \qquad \\text{ and } \qquad \frac{\partial V}{\partial h} = V_h(r,h) = \pi r^2.
+  \frac{\partial V}{\partial r} = V_r(r,h) = 2\pi rh \qquad \text{ and } \qquad \frac{\partial V}{\partial h} = V_h(r,h) = \pi r^2.
 </me>
 </p>
 

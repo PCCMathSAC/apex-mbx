@@ -17,7 +17,7 @@ In this section we explore series whose summation includes negative terms. We st
 Let <m>\{a_n\}</m> be a positive sequence. An <term>alternating series</term> is a series of either the form
 <index><main>series</main><sub>alternating</sub></index>
 <me>
-  \sum_{n=1}^\infty (-1)^na_n\qquad \\text{ or } \qquad \sum_{n=1}^\infty (-1)^{n+1}a_n.
+  \sum_{n=1}^\infty (-1)^na_n\qquad \text{ or } \qquad \sum_{n=1}^\infty (-1)^{n+1}a_n.
 </me>
 </p>
 </statement>
@@ -54,7 +54,7 @@ A powerful convergence theorem exists for other alternating series that meet a f
 Let <m>\{a_n\}</m> be a positive, decreasing sequence where <m>\ds \lim_{n\to\infty}a_n=0</m>. Then
 <index><main>series</main><sub>Alternating Series Test</sub></index><index><main>Alternating Series Test</main><sub>for series</sub></index><index><main>convergence</main><sub>Alternating Series Test</sub></index><index><main>divergence</main><sub>Alternating Series Test</sub></index>
 <me>
-  \sum_{n=1}^\infty (-1)^{n}a_n \qquad \\text{ and } \qquad \sum_{n=1}^\infty (-1)^{n+1}a_n
+  \sum_{n=1}^\infty (-1)^{n}a_n \qquad \text{ and } \qquad \sum_{n=1}^\infty (-1)^{n+1}a_n
 </me>
 converge.
 </p>
@@ -147,7 +147,7 @@ The derivative is negative for all <m>n\geq 3</m> (actually, for all <m>n>e</m>)
 <p>
 <xref ref="idea_famous_series">Key Idea</xref> gives the sum of some important series. Two of these are
 <me>
-  \sum_{n=1}^\infty \frac1{n^2} =\frac{\pi^2}6 \approx 1.64493  \\text{ and }   \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2} = \frac{\pi^2}{12}\approx 0.82247.
+  \sum_{n=1}^\infty \frac1{n^2} =\frac{\pi^2}6 \approx 1.64493  \text{ and }   \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2} = \frac{\pi^2}{12}\approx 0.82247.
 </me>
 </p>
 
@@ -163,7 +163,7 @@ While there are many factors involved when studying rates of convergence, the al
 <title>The Alternating Series Approximation Theorem</title>
 <statement>
 <p>
-Let <m>\{a_n\}</m> be a sequence that satisfies the hypotheses of the Alternating Series Test, and let <m>S_n</m> and <m>L</m> be the <m>n^\\text{ th }</m> partial sums and sum, respectively, of either <m>\ds \sum_{n=1}^\infty (-1)^{n}a_n</m> or <m>\ds \sum_{n=1}^\infty (-1)^{n+1}a_n</m>. Then
+Let <m>\{a_n\}</m> be a sequence that satisfies the hypotheses of the Alternating Series Test, and let <m>S_n</m> and <m>L</m> be the <m>n^\text{ th }</m> partial sums and sum, respectively, of either <m>\ds \sum_{n=1}^\infty (-1)^{n}a_n</m> or <m>\ds \sum_{n=1}^\infty (-1)^{n+1}a_n</m>. Then
 <index><main>series</main><sub>alternating!Approximation Theorem</sub></index>
 </p>
 
@@ -175,7 +175,7 @@ Let <m>\{a_n\}</m> be a sequence that satisfies the hypotheses of the Alternatin
 </theorem>
 
 <p>
-Part 1 of <xref ref="thm_alt_series_approx">Theorem</xref> states that the <m>n^\\text{ th }</m> partial sum of a convergent alternating series will be within <m>a_{n+1}</m> of its total sum. Consider the alternating series we looked at before the statement of the theorem, <m>\ds \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2}</m>. Since <m>a_{14} = 1/14^2 \approx 0.0051</m>, we know that <m>S_{13}</m> is within <m>0.0051</m> of the total sum.
+Part 1 of <xref ref="thm_alt_series_approx">Theorem</xref> states that the <m>n^\text{ th }</m> partial sum of a convergent alternating series will be within <m>a_{n+1}</m> of its total sum. Consider the alternating series we looked at before the statement of the theorem, <m>\ds \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2}</m>. Since <m>a_{14} = 1/14^2 \approx 0.0051</m>, we know that <m>S_{13}</m> is within <m>0.0051</m> of the total sum.
 </p>
 
 <p>
@@ -208,7 +208,7 @@ Approximate the sum of the following series, accurate to within <m>0.001</m>.
 </md>
 Let <m>L</m> be the sum of this series. By Part 1 of the theorem, <m>|S_9-L|\lt a_{10} = 1/1000</m>. We can compute <m>S_9=0.902116</m>, which our theorem states is within <m>0.001</m> of the total sum. 
 	
-	We can use Part 2 of the theorem to obtain an even more accurate result. As we know the <m>10^\\text{ th }</m> term of the series is <m>-1/1000</m>, we can easily compute <m>S_{10} = 0.901116</m>. Part 2 of the theorem states that <m>L</m> is between <m>S_9</m> and <m>S_{10}</m>, so <m>0.901116 \lt L\lt 0.902116</m>.</p></li>
+	We can use Part 2 of the theorem to obtain an even more accurate result. As we know the <m>10^\text{ th }</m> term of the series is <m>-1/1000</m>, we can easily compute <m>S_{10} = 0.901116</m>. Part 2 of the theorem states that <m>L</m> is between <m>S_9</m> and <m>S_{10}</m>, so <m>0.901116 \lt L\lt 0.902116</m>.</p></li>
 <li><p>We want to find <m>n</m> where <m>\ln (n)/n \lt  0.001</m>. We start by solving <m>\ln (n)/n = 0.001</m> for <m>n</m>. This cannot be solved algebraically, so we will use Newton's Method to approximate a solution. 
 	
 	Let <m>f(x) = \ln(x)/x-0.001</m>; we want to know where <m>f(x) = 0</m>. We make a guess that <m>x</m> must be <q>large,</q> so our initial guess will be <m>x_1=1000</m>. Recall how Newton's Method works: given an approximate solution <m>x_n</m>, our next approximation <m>x_{n+1}</m> is given by
@@ -222,7 +222,7 @@ We find <m>\fp(x) = \big(1-\ln(x)\big)/x^2</m>. This gives
 </md>
 Using a computer, we find that Newton's Method seems to converge to a solution <m>x=9118.01</m> after 8 iterations. Taking the next integer higher, we have <m>n=9119</m>, where <m>\ln(9119)/9119 =0.000999903\lt 0.001</m>.
 	
-	Again using a computer, we find <m>S_{9118} = -0.160369</m>. Part 1 of the theorem states that this is within <m>0.001</m> of the actual sum <m>L</m>. Already knowing the 9,119<m>^\\text{ th }</m> term, we can compute <m>S_{9119} = -0.159369</m>, meaning <m>-0.159369 \lt  L \lt  -0.160369</m>.</p></li>
+	Again using a computer, we find <m>S_{9118} = -0.160369</m>. Part 1 of the theorem states that this is within <m>0.001</m> of the actual sum <m>L</m>. Already knowing the 9,119<m>^\text{ th }</m> term, we can compute <m>S_{9119} = -0.159369</m>, meaning <m>-0.159369 \lt  L \lt  -0.160369</m>.</p></li>
 </ol>
 
 <p>
@@ -285,7 +285,7 @@ converges using the Ratio Test.
 <me>
   \ds \sum_{n=3}^\infty \left|(-1)^n\frac{3n-3}{5n-10}\right| = \sum_{n=3}^\infty \frac{3n-3}{5n-10}
 </me>
-diverges using the <m>n^\\text{ th }</m> Term Test, so it does not converge absolutely. 
+diverges using the <m>n^\text{ th }</m> Term Test, so it does not converge absolutely. 
 	
 	The series <m>\ds \sum_{n=3}^\infty (-1)^n\frac{3n-3}{5n-10}</m> fails the conditions of the Alternating Series Test as <m>(3n-3)/(5n-10)</m> does not approach <m>0</m> as <m>n\to\infty</m>. We can state further that this series diverges; as <m>n\to\infty</m>, the series effectively adds and subtracts <m>3/5</m> over and over. This causes the sequence of partial sums to oscillate and not converge.
 	
@@ -691,7 +691,7 @@ If <m>\ds \sum_{n=0}^\infty a_n</m> converges, determine if the convergence is c
 </answer>
 </exercise>
 <p>
-{ Let <m>S_n</m> be the <m>n^\\text{ th }</m> partial sum of a series. In Exercises}
+{ Let <m>S_n</m> be the <m>n^\text{ th }</m> partial sum of a series. In Exercises}
 {, a convergent alternating series is given and a value of <m>n</m>. Compute <m>S_n</m> and <m>S_{n+1}</m> and use these values to find bounds on the sum of the series.
 }
 </p>
@@ -763,7 +763,7 @@ If <m>\ds \sum_{n=0}^\infty a_n</m> converges, determine if the convergence is c
 </answer>
 </exercise>
 <p>
-In the following exercises, a convergent alternating series is given along with its sum and a value of <m>\epsilon</m>. Use <xref ref="thm_alt_series_approx">Theorem</xref> to find <m>n</m> such that the <m>n^\\text{ th }</m> partial sum of the series is within <m>\epsilon</m> of the sum of the series.
+In the following exercises, a convergent alternating series is given along with its sum and a value of <m>\epsilon</m>. Use <xref ref="thm_alt_series_approx">Theorem</xref> to find <m>n</m> such that the <m>n^\text{ th }</m> partial sum of the series is within <m>\epsilon</m> of the sum of the series.
 </p>
 <exercise>
 <statement>

@@ -188,7 +188,7 @@ We will practice creating Taylor and Maclaurin polynomials in the following exam
 <title>Finding and using Maclaurin polynomials</title>
 <statement>
 <ol>
-<li><p>Find the <m>n^\\text{ th }</m> Maclaurin polynomial for <m>f(x) = e^x</m>.</p></li>
+<li><p>Find the <m>n^\text{ th }</m> Maclaurin polynomial for <m>f(x) = e^x</m>.</p></li>
 <li><p>Use <m>p_5(x)</m> to approximate the value of <m>e</m>.</p></li>
 </ol>
 </statement>
@@ -270,7 +270,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 <title>Finding and using Taylor polynomials</title>
 <statement>
 <ol>
-<li><p>Find the <m>n^\\text{ th }</m> Taylor polynomial of <m>y=\ln x</m> at <m>x=1</m>.</p></li>
+<li><p>Find the <m>n^\text{ th }</m> Taylor polynomial of <m>y=\ln x</m> at <m>x=1</m>.</p></li>
 <li><p>Use <m>p_6(x)</m> to approximate the value of <m>\ln 1.5</m>.</p></li>
 <li><p>Use <m>p_6(x)</m> to approximate the value of <m>\ln 2</m>.</p></li>
 </ol>
@@ -363,7 +363,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 </md>
 This approximation is not terribly impressive: a hand held calculator shows that <m>\ln 2 \approx 0.693147.</m> The graph in <xref ref="fig_taypoly2b">Figure</xref> shows that <m>p_6(x)</m> provides less accurate approximations of <m>\ln x</m> as <m>x</m> gets close to 0 or 2. 
 
-Surprisingly enough, even the 20<m>^\\text{ th }</m> degree Taylor polynomial fails to approximate <m>\ln x</m> for <m>x>2</m>, as shown in <xref ref="fig_taypoly2c">Figure</xref>. We'll soon discuss why this is.
+Surprisingly enough, even the 20<m>^\text{ th }</m> degree Taylor polynomial fails to approximate <m>\ln x</m> for <m>x>2</m>, as shown in <xref ref="fig_taypoly2c">Figure</xref>. We'll soon discuss why this is.
 <figure xml:id="fig_taypoly2c" >
 <caption>A plot of <m>y=\ln x</m> and its 20<m>^th</m> degree Taylor polynomial at <m>x=1</m>.</caption>
 
@@ -435,7 +435,7 @@ We had the same problem when studying Numerical Integration. <xref ref="thm_nume
 <title>Taylor's Theorem</title>
 <statement>
 <ol>
-<li><p>Let <m>f</m> be a function whose <m>n+1^\\text{ th }</m> derivative exists on an interval <m>I</m> and let <m>c</m> be in <m>I</m>. Then, for each <m>x</m> in <m>I</m>, there exists <m>z_x</m> between <m>x</m> and <m>c</m> such that
+<li><p>Let <m>f</m> be a function whose <m>n+1^\text{ th }</m> derivative exists on an interval <m>I</m> and let <m>c</m> be in <m>I</m>. Then, for each <m>x</m> in <m>I</m>, there exists <m>z_x</m> between <m>x</m> and <m>c</m> such that
 <me>
   f(x) = f(c) + \fp(c)(x-c) + \frac{\fpp(c)}{2!}(x-c)^2+ \cdots +\frac{f\,^{(n)}(c)}{n!}(x-c)^n+R_n(x),
 </me>
@@ -447,7 +447,7 @@ where <m>\ds R_n(x) = \frac{f\,^{(n+1)}(z_x)}{(n+1)!}(x-c)^{(n+1)}.</m>
 </theorem>
 
 <p>
-The first part of Taylor's Theorem states that <m>f(x) = p_n(x) + R_n(x)</m>, where <m>p_n(x)</m> is the <m>n^\\text{ th }</m> order Taylor polynomial and <m>R_n(x)</m> is the remainder, or error, in the Taylor approximation. The second part gives bounds on how big that error can be. If the <m>(n+1)^\\text{ th }</m> derivative is large, the error may be large; if <m>x</m> is far from <m>c</m>, the error may also be large. However, the <m>(n+1)!</m> term in the denominator tends to ensure that the error gets smaller as <m>n</m> increases.
+The first part of Taylor's Theorem states that <m>f(x) = p_n(x) + R_n(x)</m>, where <m>p_n(x)</m> is the <m>n^\text{ th }</m> order Taylor polynomial and <m>R_n(x)</m> is the remainder, or error, in the Taylor approximation. The second part gives bounds on how big that error can be. If the <m>(n+1)^\text{ th }</m> derivative is large, the error may be large; if <m>x</m> is far from <m>c</m>, the error may also be large. However, the <m>(n+1)!</m> term in the denominator tends to ensure that the error gets smaller as <m>n</m> increases.
 </p>
 
 <p>
@@ -465,7 +465,7 @@ Use <xref ref="thm_taylorthm">Theorem</xref> to find error bounds when approxima
 <ol>
 <li><p>We start with the approximation of <m>\ln 1.5</m> with <m>p_6(1.5)</m>. The theorem references an open interval <m>I</m> that contains both <m>x</m> and <m>c</m>. The smaller the interval we use the better; it will give us a more accurate (and smaller!) approximation of the error. We let <m>I = (0.9,1.6)</m>, as this interval contains both <m>c=1</m> and <m>x=1.5</m>. 
 
-The theorem references <m>\max\big|f\,^{(n+1)}(z)\big|</m>. In our situation, this is asking <q>How big can the <m>7^\\text{ th }</m> derivative of <m>y=\ln x</m> be on the interval <m>(0.9,1.6)</m>?</q> The seventh derivative is <m>y = -6!/x^7</m>. The largest value it attains on <m>I</m> is about 1506. Thus we can bound the error as:
+The theorem references <m>\max\big|f\,^{(n+1)}(z)\big|</m>. In our situation, this is asking <q>How big can the <m>7^\text{ th }</m> derivative of <m>y=\ln x</m> be on the interval <m>(0.9,1.6)</m>?</q> The seventh derivative is <m>y = -6!/x^7</m>. The largest value it attains on <m>I</m> is about 1506. Thus we can bound the error as:
 <md>
   <mrow>  \big|R_6(1.5)\big| \amp \leq \frac{\max\big|f\,^{(7)}(z)\big|}{7!}\big|(1.5-1)^7\big|</mrow>
   <mrow>  \amp \leq \frac{1506}{5040}\cdot\frac1{2^7}</mrow>
@@ -493,7 +493,7 @@ We practice again. This time, we use Taylor's theorem to find <m>n</m> that guar
 <title>Finding sufficiently accurate Taylor polynomials</title>
 <statement>
 <p>
-Find <m>n</m> such that the <m>n^\\text{ th }</m> Taylor polynomial of <m>f(x)=\cos x</m> at <m>x=0</m> approximates <m>\cos 2</m> to within <m>0.001</m> of the actual answer. What is <m>p_n(2)</m>?
+Find <m>n</m> such that the <m>n^\text{ th }</m> Taylor polynomial of <m>f(x)=\cos x</m> at <m>x=0</m> approximates <m>\cos 2</m> to within <m>0.001</m> of the actual answer. What is <m>p_n(2)</m>?
 </p>
 </statement>
 <solution>
@@ -1173,7 +1173,7 @@ Find <m>n</m> such that the Maclaurin polynomial of degree <m>n</m> of <m>f(x)= 
 </statement>
 <answer>
 <p>
-The <m>n^\\text{ th }</m> derivative of <m>f(x)=e^x</m> is bounded by <m>3</m> on intervals containing <m>0</m> and 1. Thus <m>|R_n(1)|\leq \frac{3}{(n+1)!}1^{(n+1)}</m>. When <m>n=7</m>, this is less than <m>0.0001</m>.
+The <m>n^\text{ th }</m> derivative of <m>f(x)=e^x</m> is bounded by <m>3</m> on intervals containing <m>0</m> and 1. Thus <m>|R_n(1)|\leq \frac{3}{(n+1)!}1^{(n+1)}</m>. When <m>n=7</m>, this is less than <m>0.0001</m>.
 </p>
 </answer>
 </exercise>
@@ -1186,7 +1186,7 @@ Find <m>n</m> such that the Taylor polynomial of degree <m>n</m> of <m>f(x)= \sq
 </statement>
 <answer>
 <p>
-The <m>n^\\text{ th }</m> derivative of <m>f(x)=\sqrt x</m> is bounded by <m>0.1</m> on intervals containing <m>3</m> and <m>4</m>. Thus <m>|R_n(\pi)|\leq \frac{0.1}{(n+1)!}(1)^{(n+1)}</m>. When <m>n=4</m>, this is less than <m>0.0001</m>.
+The <m>n^\text{ th }</m> derivative of <m>f(x)=\sqrt x</m> is bounded by <m>0.1</m> on intervals containing <m>3</m> and <m>4</m>. Thus <m>|R_n(\pi)|\leq \frac{0.1}{(n+1)!}(1)^{(n+1)}</m>. When <m>n=4</m>, this is less than <m>0.0001</m>.
 </p>
 </answer>
 </exercise>
@@ -1199,7 +1199,7 @@ Find <m>n</m> such that the Maclaurin polynomial of degree <m>n</m> of <m>f(x)= 
 </statement>
 <answer>
 <p>
-The <m>n^\\text{ th }</m> derivative of <m>f(x)=\cos x</m> is bounded by <m>1</m> on intervals containing <m>0</m> and <m>\pi/3</m>. Thus <m>|R_n(\pi/3)|\leq \frac{1}{(n+1)!}(\pi/3)^{(n+1)}</m>. When <m>n=7</m>, this is less than <m>0.0001</m>. Since the Maclaurin polynomial of <m>\cos x</m> only uses even powers, we can actually just use <m>n=6</m>.
+The <m>n^\text{ th }</m> derivative of <m>f(x)=\cos x</m> is bounded by <m>1</m> on intervals containing <m>0</m> and <m>\pi/3</m>. Thus <m>|R_n(\pi/3)|\leq \frac{1}{(n+1)!}(\pi/3)^{(n+1)}</m>. When <m>n=7</m>, this is less than <m>0.0001</m>. Since the Maclaurin polynomial of <m>\cos x</m> only uses even powers, we can actually just use <m>n=6</m>.
 </p>
 </answer>
 </exercise>
@@ -1212,35 +1212,22 @@ Find <m>n</m> such that the Maclaurin polynomial of degree <m>n</m> of <m>f(x)= 
 </statement>
 <answer>
 <p>
-The <m>n^\\text{ th }</m> derivative of <m>f(x)=\sin x</m> is bounded by <m>1</m> on intervals containing <m>0</m> and <m>\pi</m>. Thus <m>|R_n(\pi)|\leq \frac{1}{(n+1)!}(\pi)^{(n+1)}</m>. When <m>n=12</m>, this is less than <m>0.0001</m>. Since the Maclaurin polynomial of <m>\sin x</m> only uses odd powers, we can actually just use <m>n=11</m>.
+The <m>n^\text{ th }</m> derivative of <m>f(x)=\sin x</m> is bounded by <m>1</m> on intervals containing <m>0</m> and <m>\pi</m>. Thus <m>|R_n(\pi)|\leq \frac{1}{(n+1)!}(\pi)^{(n+1)}</m>. When <m>n=12</m>, this is less than <m>0.0001</m>. Since the Maclaurin polynomial of <m>\sin x</m> only uses odd powers, we can actually just use <m>n=11</m>.
 </p>
 </answer>
 </exercise>
 <p>
-In the following exercises, find the <m>n^\\text{ th }</m> term of the indicated Taylor polynomial.
+In the following exercises, find the <m>n^\text{ th }</m> term of the indicated Taylor polynomial.
 </p>
 <exercise>
 <statement>
 <p>
-Find a formula for the <m>n^\\text{ th }</m> term of the Maclaurin polynomial for <m>f(x)=e^x</m>.
+Find a formula for the <m>n^\text{ th }</m> term of the Maclaurin polynomial for <m>f(x)=e^x</m>.
 </p>
 </statement>
 <answer>
 <p>
-The <m>n^\\text{ th }</m> term is <m>\frac{1}{n!}x^n</m>.
-</p>
-</answer>
-</exercise>
-
-<exercise>
-<statement>
-<p>
-Find a formula for the <m>n^\\text{ th }</m> term of the Maclaurin polynomial for <m>f(x)=\cos x</m>.
-</p>
-</statement>
-<answer>
-<p>
-The <m>n^\\text{ th }</m> term is: when <m>n</m> is even, <m>\frac{(-1)^{n/2}}{n!}x^n</m>; when <m>n</m> is odd, <m>0</m>.
+The <m>n^\text{ th }</m> term is <m>\frac{1}{n!}x^n</m>.
 </p>
 </answer>
 </exercise>
@@ -1248,12 +1235,12 @@ The <m>n^\\text{ th }</m> term is: when <m>n</m> is even, <m>\frac{(-1)^{n/2}}{n
 <exercise>
 <statement>
 <p>
-Find a formula for the <m>n^\\text{ th }</m> term of the Maclaurin polynomial for <m>\ds f(x)=\frac{1}{1-x}</m>.
+Find a formula for the <m>n^\text{ th }</m> term of the Maclaurin polynomial for <m>f(x)=\cos x</m>.
 </p>
 </statement>
 <answer>
 <p>
-The <m>n^\\text{ th }</m> term is <m>x^n</m>.
+The <m>n^\text{ th }</m> term is: when <m>n</m> is even, <m>\frac{(-1)^{n/2}}{n!}x^n</m>; when <m>n</m> is odd, <m>0</m>.
 </p>
 </answer>
 </exercise>
@@ -1261,12 +1248,12 @@ The <m>n^\\text{ th }</m> term is <m>x^n</m>.
 <exercise>
 <statement>
 <p>
-Find a formula for the <m>n^\\text{ th }</m> term of the Maclaurin polynomial for <m>\ds f(x)=\frac{1}{1+x}</m>.
+Find a formula for the <m>n^\text{ th }</m> term of the Maclaurin polynomial for <m>\ds f(x)=\frac{1}{1-x}</m>.
 </p>
 </statement>
 <answer>
 <p>
-The <m>n^\\text{ th }</m> term is <m>(-1)^nx^n</m>.
+The <m>n^\text{ th }</m> term is <m>x^n</m>.
 </p>
 </answer>
 </exercise>
@@ -1274,12 +1261,25 @@ The <m>n^\\text{ th }</m> term is <m>(-1)^nx^n</m>.
 <exercise>
 <statement>
 <p>
-Find a formula for the <m>n^\\text{ th }</m> term of the Taylor polynomial for <m>\ds f(x)=\ln x</m>.
+Find a formula for the <m>n^\text{ th }</m> term of the Maclaurin polynomial for <m>\ds f(x)=\frac{1}{1+x}</m>.
 </p>
 </statement>
 <answer>
 <p>
-The <m>n^\\text{ th }</m> term is <m>(-1)^n\frac{(x-1)^n}{n}</m>.
+The <m>n^\text{ th }</m> term is <m>(-1)^nx^n</m>.
+</p>
+</answer>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Find a formula for the <m>n^\text{ th }</m> term of the Taylor polynomial for <m>\ds f(x)=\ln x</m>.
+</p>
+</statement>
+<answer>
+<p>
+The <m>n^\text{ th }</m> term is <m>(-1)^n\frac{(x-1)^n}{n}</m>.
 </p>
 </answer>
 </exercise>

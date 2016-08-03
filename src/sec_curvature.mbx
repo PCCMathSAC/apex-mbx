@@ -112,7 +112,7 @@ How do we find the arc length parameter?
 <p>
 Start with any parametrization of <m>\vec r</m>. We can compute the arc length of the graph of <m>\vec r</m> on the interval <m>[0,t]</m> with
 <me>
-  \\text{ arc length }  = \int_0^t\norm{\vec r\,'(u)}\ du.
+  \text{ arc length }  = \int_0^t\norm{\vec r\,'(u)}\ du.
 </me>
 </p>
 
@@ -393,7 +393,7 @@ Let <m>\vec r(s)</m> be a vector<ndash />valued function where <m>s</m> is the a
 <p>
 If <m>\vec r(s)</m> is parametrized by the arc length parameter, then
 <me>
-  \vec T(s) = \frac{\vrp(s)}{\norm{\vrp(s)}}  \\text{ and }  \vec N(s) = \frac{\vec T\,'(s)}{\norm{\vec T\,'(s)}}.
+  \vec T(s) = \frac{\vrp(s)}{\norm{\vrp(s)}}  \text{ and }  \vec N(s) = \frac{\vec T\,'(s)}{\norm{\vec T\,'(s)}}.
 </me>
 </p>
 
@@ -423,7 +423,7 @@ Use <xref ref="def_curvature">Definition</xref> to find the curvature of <m>\vrt
 <p>
 In <xref ref="ex_vvfarc1">Example</xref>, we found that the arc length parameter was defined by <m>s=5t</m>, so <m>\vec r(s) =\la 3t/5-1, 4t/5+2\ra</m> parametrized <m>\vec r</m> with the arc length parameter. To find <m>\kappa</m>, we need to find <m>\vec T\,'(s)</m>.
 <md>
-  <mrow>  \vec T(s) \amp = \vrp(s) \\text{ (recall this is a unit vector) }</mrow>
+  <mrow>  \vec T(s) \amp = \vrp(s) \text{ (recall this is a unit vector) }</mrow>
   <mrow>  \amp = \la 3/5, 4/5\ra.</mrow>
 <intertext>Therefore</intertext>
   <mrow>  \vec T\,'(s) \amp = \la 0,0\ra</mrow>
@@ -657,7 +657,7 @@ Find where the curvature of <m>\vec r(t) = \la t, t^2, 2t^3\ra</m> is maximized.
 <p>
 We use the third formula in <xref ref="thm_curvature_formulas">Theorem</xref> as <m>\vrt</m> is defined in space. We leave it to the reader to verify that
 <me>
-  \vrp(t) =\la 1,2t,6t^2\ra, \vrp'(t) = \la 0,2,12t\ra, \\text{ and }  \vrp(t)\times \vrp'(t) = \la 12t^2,-12t,2\ra.
+  \vrp(t) =\la 1,2t,6t^2\ra, \vrp'(t) = \la 0,2,12t\ra, \text{ and }  \vrp(t)\times \vrp'(t) = \la 12t^2,-12t,2\ra.
 </me>
 </p>
 <figure xml:id="fig_curvature4" >
@@ -807,29 +807,29 @@ While this is not a particularly <q>nice</q> formula, it does explictly tell us 
 <subsection>
 <title>Curvature and Motion</title>
 <p>
-Let <m>\vec r(t)</m> be a position function of an object, with velocity <m>\vvt = \vrp(t)</m> and acceleration <m>\vec a(t)=\vrp'(t)</m>. In <xref ref="sec_tan_norm">Section</xref> we established that acceleration is in the plane formed by <m>\vec T(t)</m> and <m>\vec N(t)</m>, and that we can find scalars <m>a_\\text{T}</m> and <m>a_\\text{N}</m> such that
-<index><main>curvature</main><sub>and motion</sub></index><index><main>unit tangent vector</main><sub>and curvature</sub></index><index><main>unit normal vector</main><sub>and curvature</sub></index><index><main>at@<m>a_\\text{T}</m></main></index><index><main>an@<m>a_\\text{N}</m></main></index>
+Let <m>\vec r(t)</m> be a position function of an object, with velocity <m>\vvt = \vrp(t)</m> and acceleration <m>\vec a(t)=\vrp'(t)</m>. In <xref ref="sec_tan_norm">Section</xref> we established that acceleration is in the plane formed by <m>\vec T(t)</m> and <m>\vec N(t)</m>, and that we can find scalars <m>a_\text{T}</m> and <m>a_\text{N}</m> such that
+<index><main>curvature</main><sub>and motion</sub></index><index><main>unit tangent vector</main><sub>and curvature</sub></index><index><main>unit normal vector</main><sub>and curvature</sub></index><index><main>at@<m>a_\text{T}</m></main></index><index><main>an@<m>a_\text{N}</m></main></index>
 <me>
-  \vat = a_\\text{T} \vec T(t) + a_\\text{N} \vec N(t).
+  \vat = a_\text{T} \vec T(t) + a_\text{N} \vec N(t).
 </me>
 </p>
 
 <p>
-<xref ref="thm_acc_plane">Theorem</xref> gives formulas for <m>a_\\text{T}</m> and <m>a_\\text{N}</m>:
+<xref ref="thm_acc_plane">Theorem</xref> gives formulas for <m>a_\text{T}</m> and <m>a_\text{N}</m>:
 <me>
-  a_\\text{T}  = \frac{d}{dt}\Big(\norm{\vvt}\Big)  \\text{ and }   a_\\text{N}  = \frac{\norm{\vvt\times \vat}}{\norm{\vvt}}.
+  a_\text{T}  = \frac{d}{dt}\Big(\norm{\vvt}\Big)  \text{ and }   a_\text{N}  = \frac{\norm{\vvt\times \vat}}{\norm{\vvt}}.
 </me>
 </p>
 
 <p>
-We understood that the amount of acceleration in the direction of <m>\vec T</m> relates only to how the speed of the object is changing, and that the amount of acceleration in the direction of <m>\vec N</m> relates to how the direction of travel of the object is changing. (That is, if the object travels at constant speed, <m>a_\\text{T} =0</m>; if the object travels in a constant direction, <m>a_\\text{N} =0</m>.)
+We understood that the amount of acceleration in the direction of <m>\vec T</m> relates only to how the speed of the object is changing, and that the amount of acceleration in the direction of <m>\vec N</m> relates to how the direction of travel of the object is changing. (That is, if the object travels at constant speed, <m>a_\text{T} =0</m>; if the object travels in a constant direction, <m>a_\text{N} =0</m>.)
 </p>
 
 <p>
 In Equation <xref ref="eq_vvfarc3" /> at the beginning of this section, we found
-<m>s\,'(t) = \norm{\vvt}</m>. We can combine this fact with the above formula for <m>a_\\text{T}</m> to write
+<m>s\,'(t) = \norm{\vvt}</m>. We can combine this fact with the above formula for <m>a_\text{T}</m> to write
 <me>
-  a_\\text{T}  = \frac{d}{dt}\Big(\norm{\vvt}\Big) = \frac{d}{dt}\big( s\,'(t)\big) = s\,''(t).
+  a_\text{T}  = \frac{d}{dt}\Big(\norm{\vvt}\Big) = \frac{d}{dt}\big( s\,'(t)\big) = s\,''(t).
 </me>
 </p>
 
@@ -838,16 +838,16 @@ Since <m>s\,'(t)</m> is speed, <m>s\,''(t)</m> is the rate at which speed is cha
 </p>
 
 <p>
-Now compare the formula for <m>a_\\text{N}</m> above to the formula for curvature in <xref ref="thm_curvature_formulas">Theorem</xref>:
+Now compare the formula for <m>a_\text{N}</m> above to the formula for curvature in <xref ref="thm_curvature_formulas">Theorem</xref>:
 <me>
-  a_\\text{N}  = \frac{\norm{\vvt\times \vat}}{\norm{\vvt}} \\text{ and }  \kappa = \frac{\norm{\vrp(t)\times\vrp'(t)}}{\norm{\vrp(t)}^3}=\frac{\norm{\vvt\times \vat}}{\norm{\vvt}^3} .
+  a_\text{N}  = \frac{\norm{\vvt\times \vat}}{\norm{\vvt}} \text{ and }  \kappa = \frac{\norm{\vrp(t)\times\vrp'(t)}}{\norm{\vrp(t)}^3}=\frac{\norm{\vvt\times \vat}}{\norm{\vvt}^3} .
 </me>
 </p>
 
 <p>
 Thus
 <md>
-  <mrow>  a_\\text{N}  \amp = \kappa \norm{\vvt}^2</mrow>
+  <mrow>  a_\text{N}  \amp = \kappa \norm{\vvt}^2</mrow>
   <mrow>  \amp = \kappa\Big(s\,'(t)\Big)^2</mrow>
 </md>
 </p>
@@ -857,32 +857,32 @@ This last equation shows that the component of acceleration that changes the obj
 </p>
 
 <p>
-Imagine driving a car in a clockwise circle. You will naturally feel a force pushing you towards the door (more accurately, the door is pushing you as the car is turning and you want to travel in a straight line). If you keep the radius of the circle constant but speed up (i.e., increasing <m>s\,'(t)</m>), the door pushes harder against you (<m>a_\\text{N}</m> has increased). If you keep your speed constant but tighten the turn (i.e., increase <m>\kappa</m>), once again the door will push harder against you.
+Imagine driving a car in a clockwise circle. You will naturally feel a force pushing you towards the door (more accurately, the door is pushing you as the car is turning and you want to travel in a straight line). If you keep the radius of the circle constant but speed up (i.e., increasing <m>s\,'(t)</m>), the door pushes harder against you (<m>a_\text{N}</m> has increased). If you keep your speed constant but tighten the turn (i.e., increase <m>\kappa</m>), once again the door will push harder against you.
 </p>
 
 <p>
-Putting our new formulas for <m>a_\\text{T}</m> and <m>a_\\text{N}</m> together, we have
+Putting our new formulas for <m>a_\text{T}</m> and <m>a_\text{N}</m> together, we have
 <me>
   \vat = s\,''(t)\vec T(t) + \kappa\norm{\vvt}^2\vec N(t).
 </me>
 </p>
 
 <p>
-This is not a particularly practical way of finding <m>a_\\text{T}</m> and <m>a_\\text{N}</m>, but it reveals some great concepts about how acceleration interacts with speed and the shape of a curve.
+This is not a particularly practical way of finding <m>a_\text{T}</m> and <m>a_\text{N}</m>, but it reveals some great concepts about how acceleration interacts with speed and the shape of a curve.
 </p>
 
 <example xml:id="ex_curvature5">
 <title>Curvature and road design</title>
 <statement>
 <p>
-The minimum radius of the curve in a highway cloverleaf is determined by the operating speed, as given in the table in <xref ref="fig_curvature5">Figure</xref>. For each curve and speed, compute <m>a_\\text{N}</m>.
+The minimum radius of the curve in a highway cloverleaf is determined by the operating speed, as given in the table in <xref ref="fig_curvature5">Figure</xref>. For each curve and speed, compute <m>a_\text{N}</m>.
 </p>
 </statement>
 <solution><table xml:id="fig_curvature5" >
 <caption>Operating speed and minimum radius in highway cloverleaf design.</caption>
 <tabular>
-<row><cell>\\text{ Operating</cell></row>
-<row><cell>Speed (mph) }</cell><cell>\\text{ Minimum</cell></row>
+<row><cell>\text{ Operating</cell></row>
+<row><cell>Speed (mph) }</cell><cell>\text{ Minimum</cell></row>
 <row><cell>Radius (ft) }</cell></row>
 <row bottom="minor"><cell></cell><cell></cell></row>
 <row><cell>35</cell><cell>310</cell></row>
@@ -893,20 +893,20 @@ The minimum radius of the curve in a highway cloverleaf is determined by the ope
 <p>
 Using Equation <xref ref="eq_curvature_an" />, we can compute the acceleration normal to the curve in each case. We start by converting each speed from <q>miles per hour</q> to <q>feet per second</q> by multiplying by <m>5280/3600</m>.
 <md>
-  <mrow>  \\text{ 35mph, 310ft }  \amp \Rightarrow 51.33\\text{ ft/s } , \kappa = 1/310</mrow>
-  <mrow>  a_\\text{N} \amp = \kappa\ \norm{\vvt}^2</mrow>
+  <mrow>  \text{ 35mph, 310ft }  \amp \Rightarrow 51.33\text{ ft/s } , \kappa = 1/310</mrow>
+  <mrow>  a_\text{N} \amp = \kappa\ \norm{\vvt}^2</mrow>
   <mrow>  \amp = \frac1{310}\big(51.33\big)^2</mrow>
-  <mrow>  \amp = 8.50\\text{ ft/s } ^2.</mrow>
+  <mrow>  \amp = 8.50\text{ ft/s } ^2.</mrow>
 </md>
 <md>
-  <mrow>  \\text{ 40mph, 430ft }  \amp \Rightarrow 58.67\\text{ ft/s } , \kappa = 1/430</mrow>
-  <mrow>  a_\\text{N} \amp = \frac1{430}\big(58.67\big)^2</mrow>
-  <mrow>  \amp = 8.00\\text{ ft/s } ^2.</mrow>
+  <mrow>  \text{ 40mph, 430ft }  \amp \Rightarrow 58.67\text{ ft/s } , \kappa = 1/430</mrow>
+  <mrow>  a_\text{N} \amp = \frac1{430}\big(58.67\big)^2</mrow>
+  <mrow>  \amp = 8.00\text{ ft/s } ^2.</mrow>
 </md>
 <md>
-  <mrow>  \\text{ 45mph,540ft }  \amp \Rightarrow 66\\text{ ft/s } , \kappa = 1/540</mrow>
-  <mrow>  a_\\text{N} \amp = \frac1{540}\big(66\big)^2</mrow>
-  <mrow>  \amp = 8.07\\text{ ft/s } ^2.</mrow>
+  <mrow>  \text{ 45mph,540ft }  \amp \Rightarrow 66\text{ ft/s } , \kappa = 1/540</mrow>
+  <mrow>  a_\text{N} \amp = \frac1{540}\big(66\big)^2</mrow>
+  <mrow>  \amp = 8.07\text{ ft/s } ^2.</mrow>
 </md>
 </p>
 
@@ -994,12 +994,12 @@ Complete the identity: <m>\vec T\,'(s) = \underline{}\vec N(s)</m>.
 <exercise>
 <statement>
 <p>
-Given a position function \vrt, how are <m>a_{\\text{T} }</m> and <m>a_{\\text{N} }</m> affected by the curvature?
+Given a position function \vrt, how are <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m> affected by the curvature?
 </p>
 </statement>
 <answer>
 <p>
-<m>a_{\\text{T} }</m> is not affected by curvature; the greater the curvature, the larger <m>a_{\\text{N} }</m> becomes.
+<m>a_{\text{T} }</m> is not affected by curvature; the greater the curvature, the larger <m>a_{\text{N} }</m> becomes.
 </p>
 </answer>
 </exercise>

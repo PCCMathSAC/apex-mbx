@@ -130,7 +130,7 @@ Find the radius and interval of convergence for each of the following series:
 <md>
   <mrow>  \lim_{n\to\infty} \frac{\big|x^{n+1}/(n+1)!\big|}{\big|x^n/n!\big|} \amp = \lim_{n\to\infty} \left|\frac{x^{n+1}}{x^n}\cdot\frac{n!}{(n+1)!}\right|</mrow>
   <mrow>  \amp = \lim_{n\to\infty} \left|\frac x{n+1}\right|</mrow>
-  <mrow>  \amp = 0 \\text{ for all }  x.</mrow>
+  <mrow>  \amp = 0 \text{ for all }  x.</mrow>
 </md>
 The Ratio Test shows us that regardless of the choice of <m>x</m>, the series converges. Therefore the radius of convergence is <m>R=\infty</m>, and the interval of convergence is <m>(-\infty,\infty)</m>.</p></li>
 <li><p>We apply the Ratio Test to the series <m>\ds \sum_{n=1}^\infty \left|(-1)^{n+1}\frac{x^n}{n}\right| = \sum_{n=1}^\infty \left|\frac{x^n}{n}\right|</m>:
@@ -166,7 +166,7 @@ which diverges. A similar process shows that the series also diverges at <m>x=3.
 <li><p>We apply the Ratio Test to <m>\ds \sum_{n=0}^\infty \big|n!x^n\big|</m>:
 <md>
   <mrow>  \lim_{n\to\infty} \frac{\big| (n+1)!x^{n+1}\big|}{\big|n!x^n\big|} \amp = \lim_{n\to\infty} \big|(n+1)x\big|</mrow>
-  <mrow>  \amp = \infty\ \\text{ for all \(x\), except \(x=0\). }</mrow>
+  <mrow>  \amp = \infty\ \text{ for all \(x\), except \(x=0\). }</mrow>
 </md>
 The Ratio Test shows that the series diverges for all <m>x</m> except <m>x=0</m>. Therefore the radius of convergence is <m>R=0</m>.</p></li>
 </ol>
@@ -226,10 +226,10 @@ In <xref ref="ex_ps1">Example</xref>, we recognized that <m>\ds \sum_{n=0}^\inft
 
 To determine the interval of convergence of <m>\fp(x)</m>, we consider the endpoints of <m>(-1,1)</m>:
 <me>
-  \fp(-1) =  1-2+3-4+\cdots, \\text{ which diverges. }
+  \fp(-1) =  1-2+3-4+\cdots, \text{ which diverges. }
 </me>
 <me>
-  \fp(1) = 1+2+3+4+\cdots, \\text{ which diverges. }
+  \fp(1) = 1+2+3+4+\cdots, \text{ which diverges. }
 </me>
 Therefore, the interval of convergence of <m>\fp(x)</m> is <m>(-1,1)</m>.</p></li>
 <li><p><m>\ds F(x) = \int f(x)\ dx = C+\sum_{n=0}^\infty \frac{x^{n+1}}{n+1} = C+ x+\frac{x^2}{2}+\frac{x^3}3+\cdots</m>
@@ -254,7 +254,7 @@ The previous example showed how to take the derivative and indefinite integral o
 <p>
 Recall that <m>\ds f(x) = \sum_{n=0}^\infty x^n</m> in <xref ref="ex_ps3">Example</xref> is a geometric series. According to <xref ref="thm_geom_series">Theorem</xref>, this series converges to <m>1/(1-x)</m> when <m>|x|\lt 1</m>. Thus we can say
 <me>
-  f(x) = \sum_{n=0}^\infty x^n = \frac 1{1-x}, \\text{ on }  (-1,1).
+  f(x) = \sum_{n=0}^\infty x^n = \frac 1{1-x}, \text{ on }  (-1,1).
 </me>
 </p>
 
@@ -402,17 +402,17 @@ Since <m>\fp(x) = 2f(x)</m>, we have
 <p>
 The coefficients of like powers of <m>x</m> must be equal, so we find that
 <me>
-  a_1 = 2a_0, 2a_2 = 2a_1, 3a_3 = 2a_2, 4a_4 = 2a_3, \\text{ etc. }
+  a_1 = 2a_0, 2a_2 = 2a_1, 3a_3 = 2a_2, 4a_4 = 2a_3, \text{ etc. }
 </me>
 </p>
 
 <p>
 The initial condition <m>y(0) = f(0) = 1</m> indicates that <m>a_0 = 1</m>; with this, we can find the values of the other coefficients:
 <md>
-  <mrow>  a_0 = 1 \\text{ and }  a_1=2a_0 \amp \Rightarrow a_1 = 2;</mrow>
-  <mrow>  a_1 = 2 \\text{ and }  2a_2 = 2a_1 \amp \Rightarrow a_2=4/2 =2;</mrow>
-  <mrow>  a_2=2 \\text{ and }  3a_3 = 2a_2 \amp \Rightarrow a_3=8/(2\cdot3)=4/3;</mrow>
-  <mrow>  a_3=4/3 \\text{ and }  4a_4 = 2a_3 \amp \Rightarrow a_4 =16/(2\cdot3\cdot4)= 2/3.</mrow>
+  <mrow>  a_0 = 1 \text{ and }  a_1=2a_0 \amp \Rightarrow a_1 = 2;</mrow>
+  <mrow>  a_1 = 2 \text{ and }  2a_2 = 2a_1 \amp \Rightarrow a_2=4/2 =2;</mrow>
+  <mrow>  a_2=2 \text{ and }  3a_3 = 2a_2 \amp \Rightarrow a_3=8/(2\cdot3)=4/3;</mrow>
+  <mrow>  a_3=4/3 \text{ and }  4a_4 = 2a_3 \amp \Rightarrow a_4 =16/(2\cdot3\cdot4)= 2/3.</mrow>
 </md>
 </p>
 

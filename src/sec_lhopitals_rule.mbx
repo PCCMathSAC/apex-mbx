@@ -54,14 +54,14 @@ Evaluate the following limits, using l'H&#xf4;pital's Rule as needed.
 <ol>
 <li><p>We proved this limit is 1 in <xref ref="ex_limit_sinx_prove">Example</xref> using the Squeeze Theorem. Here we use l'H&#xf4;pital's Rule to show its power.
 <me>
-  \lim_{x\to0}\frac{\sin x}x \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x\to0} \frac{\cos x}{1}=1.
+  \lim_{x\to0}\frac{\sin x}x \stackrel{\ \text{ by LHR }  \ }{=} \lim_{x\to0} \frac{\cos x}{1}=1.
 </me></p></li>
-<li><p><m>\ds \lim_{x\to 1}\frac{\sqrt{x+3}-2}{1-x} 	 \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x \to 1} \frac{\frac12(x+3)^{-1/2}}{-1} =-\frac 14.</m></p></li>
-<li><p><m>\ds \lim_{x\to 0}\frac{x^2}{1-\cos x}  \stackrel{\ \\text{ by LHR }  \ }{=}  \lim_{x\to 0} \frac{2x}{\sin x}.</m> 
+<li><p><m>\ds \lim_{x\to 1}\frac{\sqrt{x+3}-2}{1-x} 	 \stackrel{\ \text{ by LHR }  \ }{=} \lim_{x \to 1} \frac{\frac12(x+3)^{-1/2}}{-1} =-\frac 14.</m></p></li>
+<li><p><m>\ds \lim_{x\to 0}\frac{x^2}{1-\cos x}  \stackrel{\ \text{ by LHR }  \ }{=}  \lim_{x\to 0} \frac{2x}{\sin x}.</m> 
 
 This latter limit also evaluates to the 0/0 indeterminate form. To evaluate it, we apply l'H&#xf4;pital's Rule again.
 
- <m>\ds  \lim_{x\to 0} \frac{2x}{\sin x}  \stackrel{\ \\text{ by LHR }  \ }{=} \frac{2}{\cos x} = 2 .</m> 
+ <m>\ds  \lim_{x\to 0} \frac{2x}{\sin x}  \stackrel{\ \text{ by LHR }  \ }{=} \frac{2}{\cos x} = 2 .</m> 
 
 Thus <m>\ds \lim_{x\to0}\frac{x^2}{1-\cos x}=2.</m></p></li>
 <li><p>We already know how to evaluate this limit; first factor the numerator and denominator. We then have:
@@ -70,7 +70,7 @@ Thus <m>\ds \lim_{x\to0}\frac{x^2}{1-\cos x}=2.</m></p></li>
 </me>
 We now show how to solve this using l'H&#xf4;pital's Rule.
 <me>
-  \lim_{x\to 2}\frac{x^2+x-6}{x^2-3x+2}\stackrel{\ \\text{ by LHR }  \ }{=}  \lim_{x\to 2}\frac{2x+1}{2x-3} = 5.
+  \lim_{x\to 2}\frac{x^2+x-6}{x^2-3x+2}\stackrel{\ \text{ by LHR }  \ }{=}  \lim_{x\to 2}\frac{2x+1}{2x-3} = 5.
 </me></p></li>
 </ol>
 </solution>
@@ -116,9 +116,9 @@ Evaluate the following limits.
 <ol>
 <li><p>We can evaluate this limit already using <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref>; the answer is 3/4. We apply l'H&#xf4;pital's Rule to demonstrate its applicability.
 <me>
-  \lim_{x\to\infty} \frac{3x^2-100x+2}{4x^2+5x-1000}\stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{6x-100}{8x+5} \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac68 = \frac34.
+  \lim_{x\to\infty} \frac{3x^2-100x+2}{4x^2+5x-1000}\stackrel{\ \text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{6x-100}{8x+5} \stackrel{\ \text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac68 = \frac34.
 </me></p></li>
-<li><p><m>\ds \lim_{x\to \infty}\frac{e^x}{x^3} \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{3x^2} \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{6x} \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{6} = \infty.</m>
+<li><p><m>\ds \lim_{x\to \infty}\frac{e^x}{x^3} \stackrel{\ \text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{3x^2} \stackrel{\ \text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{6x} \stackrel{\ \text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{6} = \infty.</m>
 
 Recall that this means that the limit does not exist; as <m>x</m> approaches <m>\infty</m>, the expression <m>e^x/x^3</m> grows without bound. We can infer from this that <m>e^x</m> grows <q>faster</q> than <m>x^3</m>; as <m>x</m> gets large, <m>e^x</m> is far larger than <m>x^3</m>. (This has important implications in computing when considering efficiency of algorithms.)</p></li>
 </ol>
@@ -151,7 +151,7 @@ Evaluate the following limits.
 <ol>
 <li><p>As <m>x\rightarrow 0^+</m>, <m>x\rightarrow 0</m> and <m>e^{1/x}\rightarrow \infty</m>. Thus we have the indeterminate form <m>0\cdot\infty</m>. We rewrite the expression <m>x\cdot e^{1/x}</m> as <m>\ds\frac{e^{1/x}}{1/x}</m>; now, as <m>x\rightarrow 0^+</m>, we get the indeterminate form <m>\infty/\infty</m> to which l'H&#xf4;pital's Rule can be applied.
 <me>
-  \lim_{x\to0^+} x\cdot e^{1/x} = \lim_{x\to 0^+} \frac{e^{1/x}}{1/x} \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x\to 0^+}\frac{(-1/x^2)e^{1/x}}{-1/x^2} =\lim_{x\to 0^+}e^{1/x} =\infty.
+  \lim_{x\to0^+} x\cdot e^{1/x} = \lim_{x\to 0^+} \frac{e^{1/x}}{1/x} \stackrel{\ \text{ by LHR }  \ }{=} \lim_{x\to 0^+}\frac{(-1/x^2)e^{1/x}}{-1/x^2} =\lim_{x\to 0^+}e^{1/x} =\infty.
 </me>
 Interpretation: <m>e^{1/x}</m> grows <q>faster</q> than <m>x</m> shrinks to zero, meaning their product grows without bound.</p></li>
 <li><p>As <m>x\rightarrow 0^-</m>, <m>x\rightarrow 0</m> and <m>e^{1/x}\rightarrow e^{-\infty}\rightarrow 0</m>. The the limit evaluates to <m>0\cdot 0</m> which is not an indeterminate form. We conclude then that
@@ -164,11 +164,11 @@ Interpretation: <m>e^{1/x}</m> grows <q>faster</q> than <m>x</m> shrinks to zero
 </me>
 As <m>x\rightarrow \infty</m>, the argument of the <m>\ln</m> term approaches <m>\infty/\infty</m>, to which we can apply l'H&#xf4;pital's Rule.
 <me>
-  \lim_{x\to\infty} \frac{x+1}x \stackrel{\ \\text{ by LHR }  \ }{=} \frac11=1.
+  \lim_{x\to\infty} \frac{x+1}x \stackrel{\ \text{ by LHR }  \ }{=} \frac11=1.
 </me>
 Since <m>x\rightarrow \infty</m> implies <m>\ds\frac{x+1}x\rightarrow 1</m>, it follows that
 <me>
-  x\rightarrow \infty  \\text{ implies }  \ln\left(\frac{x+1}x\right)\rightarrow \ln 1=0.
+  x\rightarrow \infty  \text{ implies }  \ln\left(\frac{x+1}x\right)\rightarrow \ln 1=0.
 </me>
 Thus
 <me>
@@ -177,7 +177,7 @@ Thus
 Interpretation: since this limit evaluates to 0, it means that for large <m>x</m>, there is essentially no difference between <m>\ln (x+1)</m> and <m>\ln x</m>; their difference is essentially 0.</p></li>
 <li><p>The limit <m>\ds \lim_{x\to\infty} x^2-e^x</m> initially returns the indeterminate form <m>\infty-\infty</m>. We can rewrite the expression by factoring out <m>x^2</m>; <m>\ds x^2-e^x = x^2\left(1-\frac{e^x}{x^2}\right).</m> We need to evaluate how <m>e^x/x^2</m> behaves as <m>x\rightarrow \infty</m>:
 <me>
-  \lim_{x\to\infty}\frac{e^x}{x^2} \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{2x} \stackrel{\ \\text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{2} = \infty.
+  \lim_{x\to\infty}\frac{e^x}{x^2} \stackrel{\ \text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{2x} \stackrel{\ \text{ by LHR }  \ }{=} \lim_{x\to\infty} \frac{e^x}{2} = \infty.
 </me>
 Thus <m>\lim_{x\to\infty}x^2(1-e^x/x^2)</m> evaluates to <m>\infty\cdot(-\infty)</m>, which is not an indeterminate form; rather, <m>\infty\cdot(-\infty)</m> evaluates to <m>-\infty</m>. We conclude that 
 <m>\ds \lim_{x\to\infty} x^2-e^x = -\infty.</m>

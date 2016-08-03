@@ -55,7 +55,7 @@ If <m>x</m> is within <m>\delta</m> units of <m>c</m>, then the corresponding va
 <p>
 We can write <q><m>x</m> is within <m>\delta</m> units of <m>c</m></q> mathematically as
 <me>
-  |x-c| \lt  \delta, \qquad \\text{ which is equivalent to } \qquad c-\delta \lt  x \lt  c+\delta.
+  |x-c| \lt  \delta, \qquad \text{ which is equivalent to } \qquad c-\delta \lt  x \lt  c+\delta.
 </me>
 </p>
 
@@ -90,7 +90,7 @@ if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.<index><main
 <p>
 <m>\displaystyle \lim_{x\rightarrow c} f(x) = L \iff</m>
 <m>\forall \, \epsilon > 0, \exists \, \delta > 0 \; s.t. \;
-0\lt |x - c| \lt  \delta \longrightarrow |f(x) - L| \lt  \epsilon</m>.\\text{)}
+0\lt |x - c| \lt  \delta \longrightarrow |f(x) - L| \lt  \epsilon</m>.\text{)}
 </p>
 
 <p>
@@ -179,7 +179,7 @@ So, what is the desired <m>x</m> tolerance? Remember, we want to find a symmetri
 ]]></latex-image-code></image><!-- figures/fig_limit_proof1b.tex END -->
 
 
-		\\text{ With \(\epsilon=0.5\), we pick any \(\delta \lt  1.75\). }
+		\text{ With \(\epsilon=0.5\), we pick any \(\delta \lt  1.75\). }
 </figure>
 <p>
 Given the <m>y</m> tolerance <m>\epsilon =0.5</m>, we have found an <m>x</m> tolerance, <m>\delta \leq 1.75</m>, such that whenever <m>x</m> is within <m>\delta</m> units of 4, then <m>y</m> is within <m>\epsilon</m> units of 2. That's what we were trying to find.
@@ -272,8 +272,8 @@ We are close to an answer, but the catch is that <m>\delta</m> must be a <em>con
 <p>
 Now, back to the fraction <m>\displaystyle \frac{\epsilon}{|x+2|}</m>. If <m>1\lt x\lt 3</m>, then <m>3\lt x+2\lt 5</m> (add 2 to all terms in the inequality). Taking reciprocals, we have
 <md>
-  <mrow>  \frac15 \lt \amp  \frac1{|x+2|} \lt  \frac 13 \amp  \\text{ which implies }</mrow>
-  <mrow>  \frac15 \lt \amp  \frac1{|x+2|} \amp  \\text{ which implies }</mrow>
+  <mrow>  \frac15 \lt \amp  \frac1{|x+2|} \lt  \frac 13 \amp  \text{ which implies }</mrow>
+  <mrow>  \frac15 \lt \amp  \frac1{|x+2|} \amp  \text{ which implies }</mrow>
   <mrow>  \frac\epsilon5\lt \amp \frac{\epsilon}{|x+2|}.</mrow>
 </md>
 </p>
@@ -283,11 +283,11 @@ This suggests that we set
 <m>\displaystyle \delta \leq \frac{\epsilon}{5}</m>. To see why, let consider what follows when we assume <m>|x-2|\lt \delta</m>:
 <md>
   <mrow>  |x - 2| \amp \lt  \delta \amp</mrow>
-  <mrow>  |x - 2| \amp \lt  \frac{\epsilon}{5}\amp   \\text{ (Our choice of \(\delta\)) }</mrow>
-  <mrow>  |x - 2|\cdot|x + 2| \amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\amp   \\text{ (Multiply by \(|x+2|\)) }</mrow>
-  <mrow>  |x^2 - 4|\amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\amp   \\text{ (Combine left side) }</mrow>
+  <mrow>  |x - 2| \amp \lt  \frac{\epsilon}{5}\amp   \text{ (Our choice of \(\delta\)) }</mrow>
+  <mrow>  |x - 2|\cdot|x + 2| \amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\amp   \text{ (Multiply by \(|x+2|\)) }</mrow>
+  <mrow>  |x^2 - 4|\amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\amp   \text{ (Combine left side) }</mrow>
   <mrow>  |x^2 - 4|\amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\lt  |x + 2|\cdot\frac{\epsilon}{|x+2|}=\epsilon \amp   
-\\text{ (Using (1.2.4) as long as \(\delta \lt 1\)) }</mrow>
+\text{ (Using (1.2.4) as long as \(\delta \lt 1\)) }</mrow>
 </md>
 </p>
 
@@ -379,7 +379,7 @@ Prove that <m>\ds \lim_{x\rightarrow 1}x^3-2x = -1</m>.
 We start our scratch<ndash />work by considering <m>|f(x) - (-1)| \lt  \epsilon</m>:
 <md>
   <mrow>  |f(x)-(-1)| \amp \lt  \epsilon</mrow>
-  <mrow>  |x^3-2x + 1|\amp \lt  \epsilon \amp  \\text{ (Now factor) }</mrow>
+  <mrow>  |x^3-2x + 1|\amp \lt  \epsilon \amp  \text{ (Now factor) }</mrow>
   <mrow>  |(x-1)(x^2+x-1)|\amp \lt  \epsilon</mrow>
   <mrow>  |x-1| \amp \lt \frac{\epsilon}{|x^2+x-1|}.</mrow>
 </md>
@@ -393,18 +393,18 @@ We are at the phase of saying that <m>|x-1|\lt</m> <em>something</em>, where <em
 Since <m>x</m> is approaching 1, we are safe to assume that <m>x</m> is between 0 and 2. So
 <md>
   <mrow>  0\amp \lt  x\lt 2  \amp</mrow>
-  <mrow>  0\amp \lt  x^2\lt 4.\amp \\text{ (squared each term) }</mrow>
+  <mrow>  0\amp \lt  x^2\lt 4.\amp \text{ (squared each term) }</mrow>
 <intertext>Since <m>0\lt x\lt 2</m>, we can add <m>0</m>, <m>x</m> and <m>2</m>, respectively, to each part of the inequality and maintain the inequality.</intertext>
   <mrow>  0\amp \lt  x^2+x\lt 6 \amp</mrow>
-  <mrow>  -1\amp \lt  x^2+x-1\lt 5.\amp \\text{ (subtracted 1 from each part) }</mrow>
+  <mrow>  -1\amp \lt  x^2+x-1\lt 5.\amp \text{ (subtracted 1 from each part) }</mrow>
 </md>
 </p>
 
 <p>
 In Equation <xref ref="eq_lim4" />, we wanted <m>|x-1|\lt \epsilon/|x^2+x-1|</m>. The above shows that given any <m>x</m> in <m>[0,2]</m>, we know that
 <md>
-  <mrow>  x^2+x-1 \amp \lt  5 \amp \\text{ which implies that }</mrow>
-  <mrow>  \frac15 \amp \lt  \frac{1}{x^2+x-1} \amp \\text{ which implies that }</mrow>
+  <mrow>  x^2+x-1 \amp \lt  5 \amp \text{ which implies that }</mrow>
+  <mrow>  \frac15 \amp \lt  \frac{1}{x^2+x-1} \amp \text{ which implies that }</mrow>
   <mrow>  \frac{\epsilon}5 \amp \lt  \frac{\epsilon}{x^2+x-1}.</mrow>
 </md>
 </p>
@@ -418,7 +418,7 @@ Given <m>\epsilon</m>, let <m>\delta \leq \epsilon/5</m>. We want to show that w
 <md>
   <mrow>  |x-1| \amp \lt  \delta</mrow>
   <mrow>  |x-1| \amp \lt  \frac{\epsilon}5</mrow>
-  <mrow>  |x-1| \amp \lt  \frac\epsilon5 \lt  \frac{\epsilon}{|x^2+x-1|} \amp  \\text{ (for \(x\) near 1, from Equation (1.2.11)) }</mrow>
+  <mrow>  |x-1| \amp \lt  \frac\epsilon5 \lt  \frac{\epsilon}{|x^2+x-1|} \amp  \text{ (for \(x\) near 1, from Equation (1.2.11)) }</mrow>
   <mrow>  |x-1|\cdot |x^2+x-1| \amp \lt  \epsilon</mrow>
   <mrow>  |x^3-2x+1| \amp \lt  \epsilon</mrow>
   <mrow>  |(x^3-2x)-(-1)| \amp \lt \epsilon,</mrow>
@@ -467,7 +467,7 @@ Now, we work through the actual the proof:
   <mrow>  |x - 0|\amp \lt \delta</mrow>
   <mrow>  -\delta \amp \lt  x \lt  \delta \amp   \textrm{(Definition of absolute value)}</mrow>
   <mrow>  -\ln(1+\epsilon) \amp \lt  x \lt  \ln(1+\epsilon). \amp</mrow>
-  <mrow>  \ln(1-\epsilon) \amp \lt  x \lt  \ln(1+\epsilon). \amp  \\text{ (since \(\ln(1-\epsilon) \lt  -\ln(1+\epsilon)\)) }</mrow>
+  <mrow>  \ln(1-\epsilon) \amp \lt  x \lt  \ln(1+\epsilon). \amp  \text{ (since \(\ln(1-\epsilon) \lt  -\ln(1+\epsilon)\)) }</mrow>
 <intertext>The above line is true by our choice of <m>\delta</m> and by the fact that since <m>|\ln(1-\epsilon)|>\ln(1+\epsilon)</m> and <m>\ln(1-\epsilon)\lt 0</m>, we know <m>\ln(1-\epsilon) \lt  -\ln(1+\epsilon )</m>.</intertext>
   <mrow>  1-\epsilon \amp \lt  e^x \lt  1+\epsilon \amp   \textrm{(Exponentiate)}</mrow>
   <mrow>  -\epsilon \amp \lt  e^x - 1 \lt  \epsilon \amp   \textrm{(Subtract 1)}</mrow>

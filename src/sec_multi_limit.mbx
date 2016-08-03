@@ -408,13 +408,13 @@ The following limits hold.
 </p>
 
 <ol>
-<li><p>\\text{ Constants: } <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b = b</m></p></li>
-<li><p>\\text{ Identity }	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} x = x_0</m>; <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} y = y_0</m></p></li>
-<li><p>\\text{ Sums/Differences: } <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)}\big(f(x,y)\pm g(x,y)\big) = L\pm K</m></p></li>
-<li><p>\\text{ Scalar Multiples: }	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b\cdot f(x,y) = bL</m></p></li>
-<li><p>\\text{ Products: }	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)\cdot g(x,y) = LK</m></p></li>
-<li><p>\\text{ Quotients: } <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)/g(x,y) = L/K</m>, (<m>K\neq 0)</m></p></li>
-<li><p>\\text{ Powers: } 	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)^n = L^n</m></p></li>
+<li><p>\text{ Constants: } <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b = b</m></p></li>
+<li><p>\text{ Identity }	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} x = x_0</m>; <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} y = y_0</m></p></li>
+<li><p>\text{ Sums/Differences: } <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)}\big(f(x,y)\pm g(x,y)\big) = L\pm K</m></p></li>
+<li><p>\text{ Scalar Multiples: }	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b\cdot f(x,y) = bL</m></p></li>
+<li><p>\text{ Products: }	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)\cdot g(x,y) = LK</m></p></li>
+<li><p>\text{ Quotients: } <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)/g(x,y) = L/K</m>, (<m>K\neq 0)</m></p></li>
+<li><p>\text{ Powers: } 	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)^n = L^n</m></p></li>
 </ol>
 </statement>
 </theorem>
@@ -448,7 +448,7 @@ Evaluate the following limits:
 <p>
 When dealing with functions of a single variable we also considered one<ndash />sided limits and stated
 <me>
-  \lim_{x\to c}f(x) = L \\text{ if, and only if, }  \lim_{x\to c^+}f(x) =L \textbf{ and} \lim_{x\to c^-}f(x) =L.
+  \lim_{x\to c}f(x) = L \text{ if, and only if, }  \lim_{x\to c^+}f(x) =L \textbf{ and} \lim_{x\to c^-}f(x) =L.
 </me>
 </p>
 
@@ -495,9 +495,9 @@ By applying L'H&#xf4;pital's Rule, we can show this limit is 0 <em>except</em> w
 </md>
 Now apply L'H&#xf4;pital's Rule twice:
 <md>
-  <mrow>  \amp = \lim_{x\to 0}\frac{\cos\big(-x\sin x\big)(-\sin x-x\cos x)}{1-\cos x}  \left(\\text{ `` } = 0/0\\text{ '' } \right)</mrow>
+  <mrow>  \amp = \lim_{x\to 0}\frac{\cos\big(-x\sin x\big)(-\sin x-x\cos x)}{1-\cos x}  \left(\text{ `` } = 0/0\text{ '' } \right)</mrow>
   <mrow>  \amp = \lim_{x\to 0}\frac{-\sin\big(-x\sin x\big)(-\sin x-x\cos x)^2+\cos\big(-x\sin x\big)(-2\cos x+x\sin x)}{\sin x}</mrow>
-  <mrow>  \amp = \\text{ ``2/0'' }  \Rightarrow \\text{ the limit does not exist. }</mrow>
+  <mrow>  \amp = \text{ ``2/0'' }  \Rightarrow \text{ the limit does not exist. }</mrow>
 </md>
 Step back and consider what we have just discovered. Along any line <m>y=mx</m> in the domain of the <m>f(x,y)</m>, the limit is 0. However, along the path <m>y=-\sin x</m>, which lies in the domain of  <m>f(x,y)</m> for all <m>x\neq 0</m>, the limit does not exist. Since the limit is not the same along every path to <m>(0,0)</m>, we say <m>\ds \lim_{(x,y)\to (0,0)}\frac{\sin(xy)}{x+y}</m> does not exist.</p></li>
 </ol>
@@ -740,13 +740,13 @@ Let <m>f</m> and <m>g</m> be continuous on an open disk <m>B</m>, let <m>c</m> b
 </p>
 
 <ol>
-<li><p>\\text{ Sums/Differences: }	<m>f\pm g</m></p></li>
-<li><p>\\text{ Constant Multiples: }	<m>c\cdot f</m></p></li>
-<li><p>\\text{ Products: }	<m>f\cdot g</m></p></li>
-<li><p>\\text{ Quotients: }	<m>f/g</m>  { (as longs as <m>g\neq 0</m> on <m>B</m>)}</p></li>
-<li><p>\\text{ Powers: }	<m>f\,^n</m></p></li>
-<li><p>\\text{ Roots: }	<m>\sqrt[n]{f}</m>  \parbox[t]{150pt}{ (if <m>n</m> is even then <m>f\geq 0</m> on <m>B</m>; if <m>n</m> is odd, then true for all values of <m>f</m> on <m>B</m>.)}</p></li>
-<li><p>\\text{ Compositions: }\parbox[t]{185pt}{Adjust the definitions of <m>f</m> and <m>g</m> to: Let <m>f</m> be continuous on <m>B</m>, where the range of <m>f</m> on <m>B</m> is <m>J</m>, and let <m>g</m> be a single variable function that is continuous on <m>J</m>. Then <m>g\circ f</m>, i.e., <m>g(f(x,y))</m>, is continuous on <m>B</m>.}</p></li>
+<li><p>\text{ Sums/Differences: }	<m>f\pm g</m></p></li>
+<li><p>\text{ Constant Multiples: }	<m>c\cdot f</m></p></li>
+<li><p>\text{ Products: }	<m>f\cdot g</m></p></li>
+<li><p>\text{ Quotients: }	<m>f/g</m>  { (as longs as <m>g\neq 0</m> on <m>B</m>)}</p></li>
+<li><p>\text{ Powers: }	<m>f\,^n</m></p></li>
+<li><p>\text{ Roots: }	<m>\sqrt[n]{f}</m>  \parbox[t]{150pt}{ (if <m>n</m> is even then <m>f\geq 0</m> on <m>B</m>; if <m>n</m> is odd, then true for all values of <m>f</m> on <m>B</m>.)}</p></li>
+<li><p>\text{ Compositions: }\parbox[t]{185pt}{Adjust the definitions of <m>f</m> and <m>g</m> to: Let <m>f</m> be continuous on <m>B</m>, where the range of <m>f</m> on <m>B</m> is <m>J</m>, and let <m>g</m> be a single variable function that is continuous on <m>J</m>. Then <m>g\circ f</m>, i.e., <m>g(f(x,y))</m>, is continuous on <m>B</m>.}</p></li>
 </ol>
 </statement>
 </theorem>

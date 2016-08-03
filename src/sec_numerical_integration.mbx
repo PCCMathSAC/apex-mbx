@@ -8,9 +8,9 @@ The Fundamental Theorem of Calculus gives a concrete technique for finding the e
 </p>
 
 <p>
-An <em>elementary function</em><index><main>elementary function</main></index> is any function that is a combination of polynomials, <m>n^{\\text{ th } }</m> roots, rational, exponential, logarithmic and trigonometric functions. We can compute the derivative of any elementary function, but there are many elementary functions of which we cannot compute an antiderivative. For example, the following functions do not have antiderivatives that we can express with elementary functions:
+An <em>elementary function</em><index><main>elementary function</main></index> is any function that is a combination of polynomials, <m>n^{\text{ th } }</m> roots, rational, exponential, logarithmic and trigonometric functions. We can compute the derivative of any elementary function, but there are many elementary functions of which we cannot compute an antiderivative. For example, the following functions do not have antiderivatives that we can express with elementary functions:
 <me>
-  e^{-x^2},  \sin(x^3) \\text{ and }   \frac{\sin x}{x}.
+  e^{-x^2},  \sin(x^3) \text{ and }   \frac{\sin x}{x}.
 </me>
 </p>
 
@@ -25,7 +25,7 @@ This section outlines three common methods of approximating the value of definit
 <p>
 We will apply the methods we learn in this section to the following definite integrals:
 <me>
-  \int_0^1 e^{-x^2} \ dx,  \int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin(x^3) \ dx,  \\text{ and }   \int_{0.5}^{4\pi} \frac{\sin(x)}{x} \ dx,
+  \int_0^1 e^{-x^2} \ dx,  \int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin(x^3) \ dx,  \text{ and }   \int_{0.5}^{4\pi} \frac{\sin(x)}{x} \ dx,
 </me>
 as pictured in <xref ref="fig_numerical1">Figure</xref>.
 </p>
@@ -230,7 +230,7 @@ Approximate <m>\ds \int_0^1e^{-x^2}\ dx</m> using the Left and Right Hand Rules 
 <p>
 We begin by partitioning the interval <m>[0,1]</m> into 5 equally spaced intervals. We have <m>\dx = \frac{1-0}5 = 1/5=0.2</m>, so
 <me>
-  x_1 = 0,\ x_2 = 0.2,\ x_3 = 0.4,\ x_4 = 0.6,\ x_5 = 0.8,\ \\text{ and } \ x_6 = 1.
+  x_1 = 0,\ x_2 = 0.2,\ x_3 = 0.4,\ x_4 = 0.6,\ x_5 = 0.8,\ \text{ and } \ x_6 = 1.
 </me>
 </p>
 
@@ -1072,7 +1072,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 
 </figure>
 <p>
-Recall that the actual value, accurate to 3 decimal places, is 0.460. Our approximation is within one 1/100<m>^\\text{ th }</m> of the correct value. The graph in <xref ref="fig_num6b">Figure</xref> shows how closely the parabolas match the shape of the graph.
+Recall that the actual value, accurate to 3 decimal places, is 0.460. Our approximation is within one 1/100<m>^\text{ th }</m> of the correct value. The graph in <xref ref="fig_num6b">Figure</xref> shows how closely the parabolas match the shape of the graph.
 </p>
 </solution>
 </example>
@@ -1101,19 +1101,19 @@ Consider <m>\ds\int_a^b f(x)\ dx</m>.
 </p>
 
 <p>
-\\text{ Left Hand Rule: } <m>\ds\int_a^b f(x)\ dx \approx \dx\Big[f(x_1) + f(x_2) + \ldots + f(x_n)\big]</m>.
+\text{ Left Hand Rule: } <m>\ds\int_a^b f(x)\ dx \approx \dx\Big[f(x_1) + f(x_2) + \ldots + f(x_n)\big]</m>.
 </p>
 
 <p>
-\\text{ Right Hand Rule: } <m>\ds\int_a^b f(x)\ dx \approx \dx\Big[f(x_2) + f(x_3) + \ldots + f(x_{n+1})\big]</m>.
+\text{ Right Hand Rule: } <m>\ds\int_a^b f(x)\ dx \approx \dx\Big[f(x_2) + f(x_3) + \ldots + f(x_{n+1})\big]</m>.
 </p>
 
 <p>
-\\text{ Trapezoidal Rule: } <m>\ds\int_a^b f(x)\ dx \approx \frac{\dx}2\Big[f(x_1) + 2f(x_2) + 2f(x_3) +\ldots + 2f(x_n)+ f(x_{n+1})\big]</m>.
+\text{ Trapezoidal Rule: } <m>\ds\int_a^b f(x)\ dx \approx \frac{\dx}2\Big[f(x_1) + 2f(x_2) + 2f(x_3) +\ldots + 2f(x_n)+ f(x_{n+1})\big]</m>.
 </p>
 
 <p>
-\\text{ Simpson's Rule: } <m>\ds\int_a^b f(x)\ dx \approx \frac{\dx}3\Big[f(x_1) + 4f(x_2) + 2f(x_3) +\ldots + 4f(x_n)+ f(x_{n+1})\big]</m> { (<m>n</m> even)}.
+\text{ Simpson's Rule: } <m>\ds\int_a^b f(x)\ dx \approx \frac{\dx}3\Big[f(x_1) + 4f(x_2) + 2f(x_3) +\ldots + 4f(x_n)+ f(x_{n+1})\big]</m> { (<m>n</m> even)}.
 </p>
 </insight></sidebyside>
 <p>
@@ -1152,13 +1152,13 @@ A second method is to use Error Analysis. While the details are beyond the scope
 <index><main>numerical integration</main><sub>Trapezoidal Rule!error bounds</sub></index><index><main>numerical integration</main><sub>Simpson's Rule!error bounds</sub></index>
 <li><p>Let <m>E_T</m> be the error in approximating <m>\ds \int_a^b f(x)\ dx</m> using the Trapezoidal Rule. 
 
-If <m>f</m> has a continuous 2<m>^\\text{ nd }</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\big|\fpp(x)\big|</m> on <m>[a,b]</m>, then
+If <m>f</m> has a continuous 2<m>^\text{ nd }</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\big|\fpp(x)\big|</m> on <m>[a,b]</m>, then
 <me>
   \ds E_T \leq \frac{(b-a)^3}{12n^2}M.
 </me></p></li>
 <li><p>Let <m>E_S</m> be the error in approximating <m>\ds \int_a^b f(x)\ dx</m> using Simpson's Rule. 
 
-If <m>f</m> has a continuous 4<m>^\\text{ th }</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\big|f\,^{(4)}\big|</m> on <m>[a,b]</m>, then
+If <m>f</m> has a continuous 4<m>^\text{ th }</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\big|f\,^{(4)}\big|</m> on <m>[a,b]</m>, then
 <me>
   E_S \leq \frac{(b-a)^5}{180n^4}M.
 </me></p></li>
@@ -1173,7 +1173,7 @@ There are some key things to note about this theorem.
 <ol>
 <li><p>The larger the interval, the larger the error. This should make sense intuitively.</p></li>
 <li><p>The error shrinks as more subintervals are used (i.e., as <m>n</m> gets larger).</p></li>
-<li><p>The error in Simpson's Rule has a term relating to the 4<m>^{\\text{ th } }</m> derivative of <m>f</m>. Consider a cubic polynomial: it's <m>4^{\\text{ th } }</m> derivative is 0. Therefore, the error in approximating the definite integral of a cubic polynomial with Simpson's Rule is 0 <mdash /> Simpson's Rule computes the exact answer!</p></li>
+<li><p>The error in Simpson's Rule has a term relating to the 4<m>^{\text{ th } }</m> derivative of <m>f</m>. Consider a cubic polynomial: it's <m>4^{\text{ th } }</m> derivative is 0. Therefore, the error in approximating the definite integral of a cubic polynomial with Simpson's Rule is 0 <mdash /> Simpson's Rule computes the exact answer!</p></li>
 </ol>
 
 <p>
@@ -1224,7 +1224,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 
 </figure>
 <p>
-We start by computing the <m>2^\\text{ nd }</m> derivative of <m>f(x) = e^{-x^2}</m>:
+We start by computing the <m>2^\text{ nd }</m> derivative of <m>f(x) = e^{-x^2}</m>:
 <me>
   \fpp(x) = e^{-x^2}(4x^2-2).
 </me>
@@ -1253,7 +1253,7 @@ We had earlier computed the exact answer, correct to 4 decimal places, to be 0.7
 </p>
 
 <p>
-We start by computing the <m>4^\\text{ th }</m> derivative of <m>f(x) = e^{-x^2}</m>:
+We start by computing the <m>4^\text{ th }</m> derivative of <m>f(x) = e^{-x^2}</m>:
 <me>
   f\,^{(4)}(x) = e^{-x^2}(16x^4-48x^2+12).
 </me>
@@ -1333,7 +1333,7 @@ The most difficult aspect of this problem is converting the given data into the 
 <table xml:id="fig_num8" >
 <caption>Speed data collected at 30 second intervals for <xref ref="ex_num8">Example</xref>.</caption>
 <tabular>
-<row><cell>Time</cell><cell>\\text{ Speed</cell></row>
+<row><cell>Time</cell><cell>\text{ Speed</cell></row>
 <row><cell>(mph) }</cell></row>
 <row bottom="minor"><cell></cell><cell></cell></row>
 <row><cell>0</cell><cell>0</cell></row>
@@ -1376,7 +1376,7 @@ Thus the distance traveled is approximately:
 <md>
   <mrow>  \int_0^{0.2}v(t)\ dt \amp \approx \frac{1}{360}\Big[f(x_1)+4f(x_2) + 2f(x_3) + \cdots + 4f(x_n)+f(x_{n+1})\Big]</mrow>
   <mrow>  \amp = \frac{1}{360}\Big[0+4\cdot25+2\cdot 22 + \cdots + 2\cdot40+4\cdot 23 + 0\Big]</mrow>
-  <mrow>  \amp \approx 6.2167 \ \\text{ miles. }</mrow>
+  <mrow>  \amp \approx 6.2167 \ \text{ miles. }</mrow>
 </md>
 </p>
 
