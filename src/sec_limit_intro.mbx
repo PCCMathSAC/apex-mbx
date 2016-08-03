@@ -2,111 +2,106 @@
 <title>An Introduction To Limits</title>
 
 
-<introduction>
-<p>
-We begin our study of <em>limits</em> by considering examples that demonstrate key concepts that will be explained as we progress.
-</p>
+    <introduction>
+        <p>We begin our study of <em>limits</em> by considering examples that demonstrate key concepts that will be explained as we progress.</p>
 
-<p>
-Consider the function <m>y = \frac{\sin x}{x}</m>. When <m>x</m> is near the value 1, what value (if any) is <m>y</m> near?
-</p>
+        <p>Consider the function <m>y = \frac{\sin x}{x}</m>. When <m>x</m> is near the value 1, what value (if any) is <m>y</m> near?</p>
 
-<p>
-While our question is not precisely formed (what constitutes <q>near the value 1</q>?), the answer does not seem difficult to find. One might think first to look at a graph of this function to approximate the appropriate <m>y</m> values. Consider <xref ref="fig_zoom_sinx_over_x">Figure</xref>, where <m>y = \frac{\sin x}{x}</m> is graphed. For values of <m>x</m> near 1, it seems that <m>y</m> takes on values near <m>0.85</m>. In fact, when <m>x=1</m>, then <m>y=\frac{\sin 1}{1} \approx 0.84</m>, so it makes sense that when <m>x</m> is <q>near</q> 1, <m>y</m> will be <q>near</q> <m>0.84</m>.
-</p>
-<figure xml:id="fig_zoom_sinx_over_x" >
-<caption><m>\sin(x)/x</m> near <m>x=1</m>.</caption>
+        <p>While our question is not precisely formed (what constitutes <q>near the value 1</q>?), the answer does not seem difficult to find. One might think first to look at a graph of this function to approximate the appropriate <m>y</m> values. Consider <xref ref="fig_zoom_sinx_over_x">Figure</xref>, where <m>y = \frac{\sin x}{x}</m> is graphed. For values of <m>x</m> near 1, it seems that <m>y</m> takes on values near <m>0.85</m>. In fact, when <m>x=1</m>, then <m>y=\frac{\sin 1}{1} \approx 0.84</m>, so it makes sense that when <m>x</m> is <q>near</q> 1, <m>y</m> will be <q>near</q> <m>0.84</m>.</p>
 
-<!-- START figures/sinx_over_x_1.tex -->
-<image><latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ytick={0,.2,...,1.1},ymin=.4,ymax=1.1,extra y ticks={.1,.3,...,.9},extra y tick labels={},xmin=.3,xmax=1.6,name=myplot]
-\addplot [{\colorone},smooth,thick] coordinates {(0.5,0.958851) (0.6,0.941071) (0.7,0.920311) (0.8,0.896695) (0.9,0.870363) (1.,0.841471) (1.1,0.810189) (1.2,0.776699) (1.3,0.741199) (1.4,0.703893) (1.5,0.664997)};
-\end{axis}
-\node [right] at (myplot.right of origin) {\scriptsize $x$};
-\node [above] at (myplot.above origin) {\scriptsize $y$};
-\end{tikzpicture}
-%\caption{A portion of $y=\frac{\sin x}{x}$}\label{fig:zoom_sinx_over_x}
-]]></latex-image-code></image><!-- figures/sinx_over_x_1.tex END -->
+        <figure xml:id="fig_zoom_sinx_over_x" >
+            <caption><m>\sin(x)/x</m> near <m>x=1</m>.</caption>
 
-</figure>
-<figure xml:id="fig_sinx_over_x" >
-<caption><m>\sin(x)/x</m> near <m>x=0</m>.</caption>
+            <!-- START figures/sinx_over_x_1.tex -->
+            <image>
+                <latex-image-code><![CDATA[
+                \begin{tikzpicture}
+                    \begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ytick={0,.2,...,1.1},ymin=.4,ymax=1.1,extra y ticks={.1,.3,...,.9},extra y tick labels={},xmin=.3,xmax=1.6,name=myplot]
+                        \addplot [{\colorone},smooth,thick] coordinates {(0.5,0.958851) (0.6,0.941071) (0.7,0.920311) (0.8,0.896695) (0.9,0.870363) (1.,0.841471) (1.1,0.810189) (1.2,0.776699) (1.3,0.741199) (1.4,0.703893) (1.5,0.664997)};
+                    \end{axis}
+                    \node [right] at (myplot.right of origin) {\scriptsize $x$};
+                    \node [above] at (myplot.above origin) {\scriptsize $y$};
+                \end{tikzpicture}
+                %\caption{A portion of $y=\frac{\sin x}{x}$}\label{fig:zoom_sinx_over_x}
+                ]]></latex-image-code>
+            </image><!-- figures/sinx_over_x_1.tex END -->
 
-<!-- START figures/sinx_over_x_2.tex -->
-<image><latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ytick={.8,.9,1},ymin=.75,ymax=1.05,extra y ticks={.1,.3,...,.9},extra y tick labels={},xmin=-1.1,xmax=1.2,name=myplot]
-\addplot [{\colorone},thick,smooth] coordinates {(-1.,0.841471) (-0.9,0.870363) (-0.8,0.896695) (-0.7,0.920311) (-0.6,0.941071) (-0.5,0.958851) (-0.4,0.973546) (-0.3,0.985067) (-0.2,0.993347) (-0.1,0.998334) (0,1.) (0.1,0.998334) (0.2,0.993347) (0.3,0.985067) (0.4,0.973546) (0.5,0.958851) (0.6,0.941071) (0.7,0.920311) (0.8,0.896695) (0.9,0.870363) (1.,0.841471) };
+        </figure>
 
-\end{axis}
-\node [right] at (myplot.right of origin) {\scriptsize $x$};
-\node [above] at (myplot.above origin) {\scriptsize $y$};
-\end{tikzpicture}
-%\caption{$y=\frac{\sin x}{x}$ on $[-1,1]$}\label{fig:sinx}
-]]></latex-image-code></image><!-- figures/sinx_over_x_2.tex END -->
+        <figure xml:id="fig_sinx_over_x" >
+        <caption><m>\sin(x)/x</m> near <m>x=0</m>.</caption>
 
-</figure>
-<p>
-Consider this again at a different value for <m>x</m>. When <m>x</m> is near 0, what value (if any) is <m>y</m> near? By considering <xref ref="fig_sinx_over_x">Figure</xref>, one can see that it seems that <m>y</m> takes on values near <m>1</m>. But what happens when <m>x=0</m>? We have
-<me>
-  y \rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\text{ ``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}}.
-</me>
-</p>
+        <!-- START figures/sinx_over_x_2.tex -->
+            <image>
+                <latex-image-code><![CDATA[
+                \begin{tikzpicture}
+                    \begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ytick={.8,.9,1},ymin=.75,ymax=1.05,extra y ticks={.1,.3,...,.9},extra y tick labels={},xmin=-1.1,xmax=1.2,name=myplot]
+                        \addplot [{\colorone},thick,smooth] coordinates {(-1.,0.841471) (-0.9,0.870363) (-0.8,0.896695) (-0.7,0.920311) (-0.6,0.941071) (-0.5,0.958851) (-0.4,0.973546) (-0.3,0.985067) (-0.2,0.993347) (-0.1,0.998334) (0,1.) (0.1,0.998334) (0.2,0.993347) (0.3,0.985067) (0.4,0.973546) (0.5,0.958851) (0.6,0.941071) (0.7,0.920311) (0.8,0.896695) (0.9,0.870363) (1.,0.841471) };
+                    \end{axis}
+                    \node [right] at (myplot.right of origin) {\scriptsize $x$};
+                    \node [above] at (myplot.above origin) {\scriptsize $y$};
+                \end{tikzpicture}
+                %\caption{$y=\frac{\sin x}{x}$ on $[-1,1]$}\label{fig:sinx}
+                ]]></latex-image-code>
+            </image><!-- figures/sinx_over_x_2.tex END -->
 
-<p>
-The expression <q><m>0/0</m></q> has no value; it is <em>indeterminate.</em> <index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index> Such an expression gives no information about what is going on with the function nearby. We cannot find out how <m>y</m> behaves near <m>x=0</m> for this function simply by letting <m>x=0</m>.
-</p>
+        </figure>
 
-<p>
-<em>Finding a limit</em> entails understanding how a function behaves near a particular value of <m>x</m>. Before continuing, it will be useful to establish some notation. Let <m>y=f(x)</m>; that is, let <m>y</m> be a function of <m>x</m> for some function <m>f</m>. The expression <q>the limit of <m>y</m> as <m>x</m> approaches 1</q> describes a number, often referred to as <m>L</m>, that <m>y</m> nears as <m>x</m> nears 1. We write all this as
-<me>
-  \lim_{x\to 1} y = \lim_{x\to 1} f(x) = L.
-</me>
-</p>
+        <p>Consider this again at a different value for <m>x</m>. When <m>x</m> is near <m>0</m>, what value (if any) is <m>y</m> near? By considering <xref ref="fig_sinx_over_x">Figure</xref>, one can see that it seems that <m>y</m> takes on values near <m>1</m>. But what happens when <m>x=0</m>? We have <me>y \rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\text{ ``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}}\text{.}</me></p>
 
-<p>
-This is not a complete definition (that will come in the next section); this is a pseudo-definition that will allow us to explore the idea of a limit. <index><main>limit</main><sub>pseudo-definition</sub></index>
-</p>
+        <p>The expression <q><m>0/0</m></q> has no value; it is <term>indeterminate</term>. Such an expression gives no information about what is going on with the function nearby. We cannot find out how <m>y</m> behaves near <m>x=0</m> for this function simply by letting <m>x=0</m>.<index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index>.</p>
 
-<p>
-Above, where <m>f(x) = \sin(x)/x</m>, we approximated
-<me>
-  \lim_{x\to 1} \frac{\sin x}{x} \approx 0.84  \text{ and }   \lim_{x\to 0}\frac{\sin x}{x} \approx 1.
-</me>
-</p>
+        <p><em>Finding a limit</em> entails understanding how a function behaves near a particular value of <m>x</m>. Before continuing, it will be useful to establish some notation. Let <m>y=f(x)</m>; that is, let <m>y</m> be a function of <m>x</m> for some function <m>f</m>. The expression <q>the limit of <m>y</m> as <m>x</m> approaches 1</q> describes a number, often referred to as <m>L</m>, that <m>y</m> nears as <m>x</m> nears 1. We write all this as <me>\lim_{x\to 1} y = \lim_{x\to 1} f(x) = L\text{.}</me></p>
 
-<p>
-(We <em>approximated</em> these limits, hence used the <q><m>\approx</m></q> symbol, since we are working with the pseudo-definition of a limit, not the actual definition.)
-</p>
+        <p>This is not a complete definition (that will come in the next section); this is a pseudo-definition that will allow us to explore the idea of a limit.<index><main>limit</main><sub>pseudo-definition</sub></index></p>
 
-<p>
-Once we have the true definition of a limit, we will find limits <em>analytically</em>; that is, exactly using a variety of mathematical tools. For now, we will <em>approximate</em> limits both graphically and numerically. Graphing a function can provide a good approximation, though often not very precise. Numerical methods can provide a more accurate approximation. We have already approximated limits graphically, so we now turn our attention to numerical approximations.
-</p>
+        <p>Above, where <m>f(x) = \sin(x)/x</m>, we approximated <me>\lim_{x\to 1} \frac{\sin x}{x} \approx 0.84 \text{ and } \lim_{x\to 0}\frac{\sin x}{x} \approx 1\text{.}</me> (We <em>approximated</em> these limits, hence used the <q><m>\approx</m></q> symbol, since we are working with the pseudo-definition of a limit, not the actual definition.)</p>
 
-<p>
-Consider again <m>\lim_{x\to 1}\sin (x)/x</m>. To approximate this limit numerically, we can create a table of <m>x</m> and <m>f(x)</m> values where <m>x</m> is <q>near</q> 1. This is done in <xref ref="table_sinx_1">Figure</xref>.
-</p>
+        <p>Once we have the true definition of a limit, we will find limits <em>analytically</em>; that is, exactly using a variety of mathematical tools. For now, we will <em>approximate</em> limits both graphically and numerically. Graphing a function can provide a good approximation, though often not very precise. Numerical methods can provide a more accurate approximation. We have already approximated limits graphically, so we now turn our attention to numerical approximations.</p>
 
-<p>
-Notice that for values of <m>x</m> near <m>1</m>, we have <m>\sin (x)/x</m> near <m>0.841</m>. The <m>x=1</m> row is in bold to highlight the fact that when considering limits, we are <em>not</em> concerned with the value of the function at that particular <m>x</m> value; we are only concerned with the values of the function when <m>x</m> is <em>near</em> 1.
-</p>
-<table xml:id="table_sinx_1" >
-<caption>Values of <m>\sin(x)/x</m> with <m>x</m> near 1.</caption>
-<tabular>
-<row><cell><m>x</m></cell><cell><m>\sin(x)/x</m></cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>0.9</cell><cell>0.870363</cell></row>
-<row><cell>0.99</cell><cell>0.844471</cell></row>
-<row><cell>0.999</cell><cell>0.841772</cell></row>
-<row><cell><em>1</em></cell><cell><em>0.841471</em></cell></row>
-<row><cell>1.001</cell><cell>0.84117</cell></row>
-<row><cell>1.01</cell><cell>0.838447</cell></row>
-<row><cell>1.1</cell><cell>0.810189</cell></row>
-</tabular>
-</table>
-<p>
-Now approximate <m>\lim_{x\to 0} \sin(x)/x</m> numerically. We already approximated the value of this limit as 1 graphically in <xref ref="fig_sinx_over_x">Figure</xref>. The table in <xref ref="table_sinx_2">Figure</xref> shows the value of <m>\sin(x)/x</m> for values of <m>x</m> near 0. Ten places after the decimal point are shown to highlight how close to 1 the value of <m>\sin(x)/x</m> gets as <m>x</m> takes on values very near 0. We include the <m>x=0</m> row in bold again to stress that we are not concerned with the value of our function at <m>x=0</m>, only on the behavior of the function <em>near</em> 0.
+        <p>Consider again <m>\lim_{x\to 1}\sin (x)/x</m>. To approximate this limit numerically, we can create a table of <m>x</m> and <m>f(x)</m> values where <m>x</m> is <q>near</q> 1. This is done in <xref ref="table_sinx_1" />.</p>
+
+        <p>Notice that for values of <m>x</m> near <m>1</m>, we have <m>\sin (x)/x</m> near <m>0.841</m>. The <m>x=1</m> row is in bold to highlight the fact that when considering limits, we are <em>not</em> concerned with the value of the function at that particular <m>x</m> value; we are only concerned with the values of the function when <m>x</m> is <em>near</em> 1.</p>
+
+        <table xml:id="table_sinx_1" >
+            <caption>Values of <m>\sin(x)/x</m> with <m>x</m> near 1.</caption>
+            <tabular>
+                <row bottom="medium">
+                    <cell><m>x</m></cell>
+                    <cell><m>\sin(x)/x</m></cell>
+                </row>
+                <row>
+                    <cell>0.9</cell>
+                    <cell>0.870363</cell>
+                </row>
+                <row>
+                    <cell>0.99</cell>
+                    <cell>0.844471</cell>
+                </row>
+                <row>
+                    <cell>0.999</cell>
+                    <cell>0.841772</cell>
+                </row>
+                <row>
+                    <cell><em>1</em></cell>
+                    <cell><em>0.841471</em></cell>
+                </row>
+                <row>
+                    <cell>1.001</cell>
+                    <cell>0.84117</cell>
+                </row>
+                <row>
+                    <cell>1.01</cell>
+                    <cell>0.838447</cell>
+                </row>
+                <row>
+                    <cell>1.1</cell>
+                    <cell>0.810189</cell>
+                </row>
+            </tabular>
+        </table>
+
+        <p>Now approximate <m>\lim_{x\to 0} \sin(x)/x</m> numerically. We already approximated the value of this limit as <m>1</m> graphically in <xref ref="fig_sinx_over_x">Figure</xref>. The table in <xref ref="table_sinx_2">Figure</xref> shows the value of <m>\sin(x)/x</m> for values of <m>x</m> near 0. Ten places after the decimal point are shown to highlight how close to 1 the value of <m>\sin(x)/x</m> gets as <m>x</m> takes on values very near 0. We include the <m>x=0</m> row in bold again to stress that we are not concerned with the value of our function at <m>x=0</m>, only on the behavior of the function <em>near</em> 0.
 </p>
 <table xml:id="table_sinx_2" >
 <caption>Values of <m>\sin(x)/x</m> with <m>x</m> near 0.</caption>
@@ -140,7 +135,8 @@ We now consider several examples that allow us explore different aspects of the 
 <caption>Graphically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
 
 <!-- START figures/fig_limit1.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=.25,ymax=.35,extra y tick labels={},xmin=2.3,xmax=3.7,name=myplot]
 \addplot [{\colorone},thick,smooth] coordinates {(2.5,0.321429) (2.61,0.314461) (2.72,0.308094) (2.83,0.302253) (2.94,0.296875) (3.05,0.291908) (3.16,0.287305) (3.27,0.283029) (3.38,0.279046) (3.49,0.275326)};
@@ -233,7 +229,8 @@ Again we graph <m>f(x)</m> and create a table of its values near <m>x=0</m> to a
 <caption>Graphically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
 
 <!-- START figures/fig_limit2.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.1,ymax=1.1,xmin=-1.1,xmax=1.1,name=myplot]
 %%\addplot [{\colorone},thick,smooth] coordinates {(-1.,0.) (-0.89,0.11) (-0.78,0.22) (-0.67,0.33) (-0.56,0.44) (-0.45,0.55) (-0.34,0.66) (-0.23,0.77) (-0.12,0.88) (-0.01,0.99) (0,1) (0.1,0.99) (0.21,0.9559) (0.32,0.8976) (0.43,0.8151) (0.54,0.7084) (0.65,0.5775) (0.76,0.4224) (0.87,0.2431) (1,0) 
@@ -311,7 +308,8 @@ A graph of <m>f(x)</m> around <m>x=1</m> and a table are given <xref ref="fig_no
 <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
 
 <!-- START figures/fig_nolimit1.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.1,ymax=3.2,xmin=-.1,xmax=2.1,name=myplot]
 
@@ -359,7 +357,8 @@ A graph and table of <m>f(x) = 1/(x-1)^2</m> are given in <xref ref="fig_nolimit
 <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
 
 <!-- START figures/fig_nolimit2.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=110,xmin=-.1,xmax=2.1,name=myplot]
 
@@ -433,7 +432,8 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
 <sidebyside><tabular>
 <row><cell>(a) 
 <!-- START figures/fig_nolimit3a.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 %\begin{mfigure}{O}
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=1.1,xmin=-1.1,xmax=1.1,name=myplot]
@@ -447,7 +447,8 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
 ]]></latex-image-code></image><!-- figures/fig_nolimit3a.tex END -->
 </cell><cell>(b) 
 <!-- START figures/fig_nolimit3b.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=1.1,xmin=-.11,xmax=.11,name=myplot]
 \addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.544021) (-0.099,0.625859) (-0.098,0.702784) (-0.097,0.773598) (-0.096,0.837061) (-0.095,0.891904) (-0.094,0.936853) (-0.093,0.970648) (-0.092,0.992071) (-0.091,0.999978) (-0.09,0.993333) (-0.089,0.971247) (-0.088,0.933026) (-0.087,0.878215) (-0.086,0.806651) (-0.085,0.718515) (-0.084,0.614387) (-0.083,0.495298) (-0.082,0.362779) (-0.081,0.218905) (-0.08,0.0663219) (-0.079,-0.0917281) (-0.078,-0.251415) (-0.077,-0.408347) (-0.076,-0.557627) (-0.075,-0.693952) (-0.074,-0.81175) (-0.073,-0.905374) (-0.072,-0.969337) (-0.071,-0.998614) (-0.07,-0.988987) (-0.069,-0.937442) (-0.068,-0.842593) (-0.067,-0.705118) (-0.066,-0.528174) (-0.065,-0.317743) (-0.064,-0.0828681) (-0.063,0.164304) (-0.062,0.408736) (-0.061,0.633044) (-0.06,0.818447) (-0.059,0.94617) (-0.058,0.999301) (-0.057,0.965066) (-0.056,0.837348) (-0.055,0.619211) (-0.054,0.325024) (-0.053,-0.0183676) (-0.052,-0.372047) (-0.051,-0.687679) (-0.05,-0.912945) (-0.049,-0.999926) (-0.048,-0.915928) (-0.047,-0.65528) (-0.046,-0.249359) (-0.045,0.229023) (-0.044,0.671421) (-0.043,0.953507) (-0.042,0.969509) (-0.041,0.67613) (-0.04,0.132352) (-0.039,-0.486679) (-0.038,-0.925763) (-0.037,-0.948132) (-0.036,-0.4764) (-0.035,0.292743) (-0.034,0.907558) (-0.033,0.896983) (-0.032,0.165166) (-0.031,-0.746068) (-0.03,-0.94053) (-0.029,-0.0746909) (-0.028,0.915507) (-0.027,0.614755) (-0.026,-0.690678) (-0.025,-0.745113) (-0.024,0.7352) (-0.023,0.482964) (-0.022,-0.995148) (-0.021,0.475171) (-0.02,0.262375) (-0.019,-0.70007) (-0.018,0.83773) (-0.017,-0.762217) (-0.016,0.325796) (-0.015,0.639018) (-0.014,-0.73662) (-0.013,-0.998945) (-0.012,-0.996711) (-0.011,-0.195822) (-0.01,0.506366) (-0.009,0.914944) (-0.008,0.61604) (-0.007,0.996362) (-0.006,0.161545) (-0.005,0.873297) (-0.004,0.970528) (-0.003,-0.318846) (-0.002,0.467772) (-0.001,-0.82688) (0,-0.85773) (0.001,0.82688) (0.002,-0.467772) (0.003,0.318846) (0.004,-0.970528) (0.005,-0.873297) (0.006,-0.161545) (0.007,-0.996362) (0.008,-0.61604) (0.009,-0.914944) (0.01,-0.506366) (0.011,0.195822) (0.012,0.996711) (0.013,0.998945) (0.014,0.73662) (0.015,-0.639018) (0.016,-0.325796) (0.017,0.762217) (0.018,-0.83773) (0.019,0.70007) (0.02,-0.262375) (0.021,-0.475171) (0.022,0.995148) (0.023,-0.482964) (0.024,-0.7352) (0.025,0.745113) (0.026,0.690678) (0.027,-0.614755) (0.028,-0.915507) (0.029,0.0746909) (0.03,0.94053) (0.031,0.746068) (0.032,-0.165166) (0.033,-0.896983) (0.034,-0.907558) (0.035,-0.292743) (0.036,0.4764) (0.037,0.948132) (0.038,0.925763) (0.039,0.486679) (0.04,-0.132352) (0.041,-0.67613) (0.042,-0.969509) (0.043,-0.953507) (0.044,-0.671421) (0.045,-0.229023) (0.046,0.249359) (0.047,0.65528) (0.048,0.915928) (0.049,0.999926) (0.05,0.912945) (0.051,0.687679) (0.052,0.372047) (0.053,0.0183676) (0.054,-0.325024) (0.055,-0.619211) (0.056,-0.837348) (0.057,-0.965066) (0.058,-0.999301) (0.059,-0.94617) (0.06,-0.818447) (0.061,-0.633044) (0.062,-0.408736) (0.063,-0.164304) (0.064,0.0828681) (0.065,0.317743) (0.066,0.528174) (0.067,0.705118) (0.068,0.842593) (0.069,0.937442) (0.07,0.988987) (0.071,0.998614) (0.072,0.969337) (0.073,0.905374) (0.074,0.81175) (0.075,0.693952) (0.076,0.557627) (0.077,0.408347) (0.078,0.251415) (0.079,0.0917281) (0.08,-0.0663219) (0.081,-0.218905) (0.082,-0.362779) (0.083,-0.495298) (0.084,-0.614387) (0.085,-0.718515) (0.086,-0.806651) (0.087,-0.878215) (0.088,-0.933026) (0.089,-0.971247) (0.09,-0.993333) (0.091,-0.999978) (0.092,-0.992071) (0.093,-0.970648) (0.094,-0.936853) (0.095,-0.891904) (0.096,-0.837061) (0.097,-0.773598) (0.098,-0.702784) (0.099,-0.625859) (0.1,-0.544021)
@@ -488,7 +489,8 @@ We have approximated limits of functions as <m>x</m> approached a particular num
 <caption>Interpreting a difference quotient as the slope of a secant line.</caption>
 
 <!-- START figures/fig_diff_quot1.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,name=myplot]
 \addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
@@ -543,7 +545,8 @@ For small values of <m>h</m>, i.e., values of <m>h</m> close to 0, we get averag
 <sidebyside><tabular>
 <row><cell>(a) 
 <!-- START figures/fig_diff_quot_smallha.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,name=myplot]
 \addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
@@ -557,7 +560,8 @@ For small values of <m>h</m>, i.e., values of <m>h</m> close to 0, we get averag
 ]]></latex-image-code></image><!-- figures/fig_diff_quot_smallha.tex END -->
 </cell><cell>(b) 
 <!-- START figures/fig_diff_quot_smallhb.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,name=myplot]
 \addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
@@ -574,7 +578,8 @@ For small values of <m>h</m>, i.e., values of <m>h</m> close to 0, we get averag
 <tabular>
 <row><cell>(c)
 <!-- START figures/fig_diff_quot_smallhc.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+    <latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,name=myplot]
 \addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
