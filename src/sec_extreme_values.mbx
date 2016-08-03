@@ -41,7 +41,7 @@ The function displayed in (a) has a maximum, but no minimum, as the interval ove
 <!-- START figures/fig_extreme1.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1, axis y line=middle,axis x line=middle,ymin=-.9,ymax=5.5,xmin=-2.2,xmax=2.2,name=myplot]
+\begin{axis}[width=\marginparwidth+25pt, ymin=-.9,ymax=5.5,xmin=-2.2,xmax=2.2,name=myplot]
 
 \addplot [thick,{\colorone},smooth,domain=-2:2] {-x^2+5};
 
@@ -68,7 +68,7 @@ The function displayed in (a) has a maximum, but no minimum, as the interval ove
 <!-- START figures/fig_extreme3.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1, axis y line=middle,axis x line=middle,ymin=-.9,ymax=5.5,xmin=-2.2,xmax=2.2,name=myplot]
+\begin{axis}[width=\marginparwidth+25pt, ymin=-.9,ymax=5.5,xmin=-2.2,xmax=2.2,name=myplot]
 
 \addplot [thick,{\colorone},smooth,domain=-2:2] {-x^2+5};
 
@@ -120,7 +120,7 @@ Consider <m>f(x) = 2x^3-9x^2</m> on <m>I=[-1,5]</m>, as graphed in <xref ref="fi
 <!-- START figures/fig_extval1.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=5,xtick={-1,5}, axis y line=middle,axis x line=middle,ymin=-31,ymax=31,xmin=-1.5,xmax=5.5,name=myplot]
+\begin{axis}[width=\marginparwidth+25pt,minor x tick num=5,xtick={-1,5}, ymin=-31,ymax=31,xmin=-1.5,xmax=5.5,name=myplot]
 
 \addplot [thick,{\colorone},smooth,domain=-1:5] {2*x^3-9*x^2};
 
@@ -190,10 +190,10 @@ Consider <m>f(x) = (3x^4-4x^3-12x^2+5)/5</m>, as shown in <xref ref="fig_extval2
 <!-- START figures/fig_extval2.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
 			xtick={-2,-1,1,2,3},% 
 			ytick={-6,-4,-2,0,2,4,6},
-			minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			%extra y ticks={-5,-3,...,7},%
 			ymin=-6.5,ymax=6.9,%
 			xmin=-2.2,xmax=3.2%
 ]
@@ -244,10 +244,10 @@ Approximate the relative extrema of <m>f(x) = (x-1)^{2/3}+2</m>, shown in <xref 
 <!-- START figures/fig_extval3.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
 			%xtick={-2,-1,1,2,3},% 
 			%ytick={-6,-4,-2,0,2,4,6},
-			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			%%extra y ticks={-5,-3,...,7},%
 			ymin=-.5,ymax=3.5,%
 			xmin=-.6,xmax=2.6%
 ]
@@ -312,10 +312,10 @@ Be careful to understand that this theorem states <q>All relative extrema occur 
 <!-- START figures/fig_extreme4.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
 			xtick={-1,1},% 
 			ytick={-1,1},
-			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			%%extra y ticks={-5,-3,...,7},%
 			ymin=-1.1,ymax=1.1,%
 			xmin=-1.1,xmax=1.1%
 ]
@@ -369,10 +369,10 @@ We follow the steps outlined in <xref ref="idea_extrema">Key Idea</xref>. We fir
 <!-- START figures/fig_extval4.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
 %			xtick={-1,1},% 
 %			ytick={-1,1},
-			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			%%extra y ticks={-5,-3,...,7},%
 			ymin=-7.5,ymax=45.5,%
 			xmin=-.4,xmax=3.3%
 ]
@@ -468,10 +468,10 @@ So we have three important <m>x</m> values to consider: <m>x= -4, 2</m> and <m>0
 <!-- START figures/fig_extval5.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
 %			xtick={-1,1},% 
 %			ytick={-1,1},
-			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			%%extra y ticks={-5,-3,...,7},%
 			ymin=-.9,ymax=25.5,%
 			xmin=-4.5,xmax=2.5%
 ]
@@ -533,10 +533,10 @@ From the table it is clear that the maximum value of <m>f</m> on <m>[-2,2]</m> i
 <!-- START figures/fig_extval6.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
 %			xtick={-1,1},% 
 %			ytick={-1,1},
-			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			%%extra y ticks={-5,-3,...,7},%
 			ymin=-1.1,ymax=1.1,%
 			xmin=-2.2,xmax=2.2%
 ]
@@ -576,12 +576,12 @@ A closed interval is not given, so we find the extreme values of <m>f</m> on its
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%width=\marginparwidth+25pt,
-tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+name=myplot,%
 			x=.37\marginparwidth,
 			y=.37\marginparwidth,
 %			xtick={-1,1},% 
 			ytick={1},
-			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			%%extra y ticks={-5,-3,...,7},%
 			ymin=-.2,ymax=1.1,%
 			xmin=-1.2,xmax=1.2%
 ]
@@ -704,10 +704,10 @@ In the following exercises, identify each of the marked points as being an absol
 <sidebyside><!-- START figures/fig_03_01_ex_06.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
 %			xtick={-2,-1,1,2},
 %			ytick={-1,1,2,3},
-%			minor y tick num=1,
+%			
 %			extra x ticks={-6.28,-3.14,3.14,6.28},%
 %			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
 			ymin=-2.5,ymax=3.5,%
@@ -750,10 +750,10 @@ In the following exercises, identify each of the marked points as being an absol
 <sidebyside><!-- START figures/fig_03_01_ex_07.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
 %			xtick={-2,-1,1,2},
 %			ytick={-1,1,2,3},
-%			minor y tick num=1,
+%			
 %			extra x ticks={-6.28,-3.14,3.14,6.28},%
 %			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
 			ymin=-2.5,ymax=2.5,%

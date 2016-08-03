@@ -91,7 +91,7 @@
 %\newcommand{\mycaption}[1]{\begin{center}\vskip -1.5\begin{tikzpicture}\draw (0,0) node [text width=\textwidth,align=center] {Figure \themyfigurecounter: #1};\end{tikzpicture}\end{center}}
 </macros>
 
-<latex-image-preamble>
+<latex-image-preamble><![CDATA[
 
 \usepackage{pgfplots}
 
@@ -105,7 +105,28 @@
 \newboolean{colorprint}
 \setboolean{colorprint}{true} 
 
-</latex-image-preamble>
+\pgfplotsset{firstcurvestyle/.style={color=blue,mark=none,thick,<->,solid}}
+\pgfplotsset{secondcurvestyle/.style={color=red,mark=none,thick,<->,dashed}}
+\pgfplotscreateplotcyclelist{curvestylelist}{%
+        firstcurvestyle\\%
+        secondcurvestyle\\%
+}
+
+\pgfplotsset{every axis/.append style = {
+    cycle list name = curvestylelist,
+    tick label style = {font = \scriptsize},
+    axis x line = middle,
+    axis y line = middle,
+    xlabel = {$x$},
+    ylabel = {$y$},
+    x label style = {font = \scriptsize},
+    y label style = {font = \scriptsize},
+    minor x tick num = 1,
+    minor y tick num = 1,
+    width = {ifthenelse(.9\linewidth>200pt,200pt,.88\linewidth)},
+}}
+
+]]></latex-image-preamble>
 
 <rename element="insight" lang="en-US">Key Idea</rename>
 

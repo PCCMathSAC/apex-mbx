@@ -35,7 +35,7 @@ The length of straight<ndash />line segments is easy to compute using the Distan
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,%
-tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+name=myplot,axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 			xtick=\empty,% 
@@ -43,7 +43,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 			extra x tick labels={$\frac{\pi}4$,$\frac{\pi}2$,$\frac{3\pi}{4}$,$\pi$},
 %			ytick={1},
 %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%minor y tick num=1,
+			%
 %			extra y ticks={1.8},%
 %			extra y tick labels={$y$},
 %			minor x tick num=4,
@@ -66,7 +66,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,%
-tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+name=myplot,axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 			xtick=\empty,% 
@@ -74,7 +74,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 			extra x tick labels={$\frac{\pi}4$,$\frac{\pi}2$,$\frac{3\pi}{4}$,$\pi$},
 %			ytick={1},
 %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%minor y tick num=1,
+			%
 			extra y ticks={.71},%
 			extra y tick labels={$\frac{\sqrt{2}}2$},
 %			minor x tick num=4,
@@ -113,7 +113,7 @@ In general, we can approximate the arc length of <m>y=f(x)</m> on <m>[a,b]</m> i
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,%
-tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+name=myplot,axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 			xtick=\empty,% 
@@ -121,7 +121,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 			extra x tick labels={$x_i$,$x_{i+1}$},
 			ytick=\empty,
 %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%minor y tick num=1,
+			%
 			extra y ticks={.48,1},%
 			extra y tick labels={$y_i$,$y_{i+1}$},
 %			minor x tick num=4,
@@ -221,7 +221,7 @@ We begin by finding <m>\fp(x)= \frac32x^{1/2}</m>. Using the formula, we find th
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,%
-tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+name=myplot,axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 %			xtick=\empty,% 
@@ -229,7 +229,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 %			extra x tick labels={$\frac{\pi}4$,$\frac{\pi}2$,$\frac{3\pi}{4}$,$\pi$},
 %			ytick={1},
 %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%minor y tick num=1,
+			%
 %			extra y ticks={1.8},%
 %			extra y tick labels={$y$},
 %			minor x tick num=4,
@@ -282,7 +282,7 @@ This function was chosen specifically because the resulting integral can be eval
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[width=\marginparwidth+25pt,%
-tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+name=myplot,axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 %			xtick=\empty,% 
@@ -290,7 +290,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 %			extra x tick labels={$\frac{\pi}4$,$\frac{\pi}2$,$\frac{3\pi}{4}$,$\pi$},
 %			ytick={1},
 %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%minor y tick num=1,
+			%
 %			extra y ticks={1.8},%
 %			extra y tick labels={$y$},
 %			minor x tick num=4,
@@ -387,7 +387,7 @@ We have already seen how a curve <m>y=f(x)</m> on <m>[a,b]</m> can be revolved a
 \begin{axis}%
 [
 width=\marginparwidth+25pt,%
-tick label style={font=\scriptsize},axis on top,
+axis on top,
 			axis y line=none,
 %			axis x line=none,
 %			axis z line=none,%
@@ -402,7 +402,7 @@ tick label style={font=\scriptsize},axis on top,
 			extra x ticks={.5,.9,1.4,1.9},
 			extra x tick labels={$a$,$x_i$,$x_{i+1}$,$b$},
 %			ytick={.1,1},
-%			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			%%extra y ticks={-5,-3,...,7},%
 			ymin=-1,ymax=1,%
 			xmin=.25,xmax=2.1,
 			zmin=-.2,zmax=1.2%
