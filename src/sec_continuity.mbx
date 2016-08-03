@@ -14,8 +14,8 @@ Let <m>f</m> be a function defined on an open interval <m>I</m> containing <m>c<
 </p>
 
 <ol>
-<li><m>f</m> is <b>continuous at <m>c</m></b> if <m>\ds \lim_{x\to c}f(x) = f(c)</m>.</li>
-<li><m>f</m> is <b>continuous on <m>I</m></b> if <m>f</m> is continuous at <m>c</m> for all values of <m>c</m> in <m>I</m>. If <m>f</m> is continuous on <m>(-\infty,\infty)</m>, we say <m>f</m> is <b>continuous everywhere</b>.</li>
+<li><p><m>f</m> is <em>continuous at <m>c</m></em> if <m>\ds \lim_{x\to c}f(x) = f(c)</m>.</p></li>
+<li><p><m>f</m> is <em>continuous on <m>I</m></em> if <m>f</m> is continuous at <m>c</m> for all values of <m>c</m> in <m>I</m>. If <m>f</m> is continuous on <m>(-\infty,\infty)</m>, we say <m>f</m> is <em>continuous everywhere</em>.</p></li>
 </ol>
 </statement>
 </definition>
@@ -24,10 +24,11 @@ A useful way to establish whether or not a function <m>f</m> is continuous at <m
 </p>
 
 <ol>
-<li><m>\ds \lim_{x\to c} f(x)</m> exists,</li>
-<li><m>f(c)</m> is defined, and</li>
-<li><m>\ds \lim_{x\to c} f(x) = f(c)</m>.</li>
+<li><p><m>\ds \lim_{x\to c} f(x)</m> exists,</p></li>
+<li><p><m>f(c)</m> is defined, and</p></li>
+<li><p><m>\ds \lim_{x\to c} f(x) = f(c)</m>.</p></li>
 </ol>
+
 <example xml:id="ex_contint1">
 <title>Finding intervals of continuity</title>
 <statement>
@@ -36,7 +37,26 @@ Let <m>f</m> be defined as shown in <xref ref="fig_continuous1">Figure</xref>. G
 </p>
 <figure xml:id="fig_continuous1" >
 <caption>A graph of <m>f</m> in <xref ref="ex_contint1">Example</xref>.</caption>
-<image width="73%" source="images/figContinuous1.png" />
+
+<!-- START figures/fig_continuous1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=1.7,xmin=-.4,xmax=3.4,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0.,1.5) (0.1,1.54) (0.2,1.56) (0.3,1.56) (0.4,1.54) (0.5,1.5)(0.6,1.44) (0.7,1.36) (0.8,1.26) (0.9,1.14) (1.,1.)};
+\addplot [{\colorone},smooth,thick] coordinates {(1.,1.) (2,1)};
+\addplot [{\colorone},smooth,thick] coordinates {(2.,1.) (2.1,1.09) (2.2,1.16) (2.3,1.21) (2.4,1.24) (2.5,1.25)
+(2.6,1.24) (2.7,1.21) (2.8,1.16) (2.9,1.09) (3.,1.)};
+\fill[white,draw=black,thick] (axis cs:1,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,1) circle (1pt);
+\fill[black,draw=black] (axis cs:0,1.5) circle (1pt);
+\fill[black,draw=black] (axis cs:3,1) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- figures/fig_continuous1.tex END -->
+
 </figure>
 </statement>
 <solution>
@@ -45,9 +65,9 @@ We proceed by examining the three criteria for continuity.
 </p>
 
 <ol>
-<li>The limits <m>\ds \lim_{x\to c} f(x)</m> exists for all <m>c</m> between 0 and 3.</li>
-<li><m>f(c)</m> is defined for all <m>c</m> between 0 and 3, <em>except for</em> <m>c=1</m>. We know immediately that <m>f</m> cannot be continuous at <m>x=1</m>.</li>
-<li>The limit <m>\ds \lim_{x\to c} f(x) = f(c)</m> for all <m>c</m> between 0 and 3, except, of course, for <m>c=1</m>.</li>
+<li><p>The limits <m>\ds \lim_{x\to c} f(x)</m> exists for all <m>c</m> between 0 and 3.</p></li>
+<li><p><m>f(c)</m> is defined for all <m>c</m> between 0 and 3, <em>except for</em> <m>c=1</m>. We know immediately that <m>f</m> cannot be continuous at <m>x=1</m>.</p></li>
+<li><p>The limit <m>\ds \lim_{x\to c} f(x) = f(c)</m> for all <m>c</m> between 0 and 3, except, of course, for <m>c=1</m>.</p></li>
 </ol>
 
 <p>
@@ -68,7 +88,37 @@ Give the intervals on which <m>f</m> is continuous.
 </p>
 <figure xml:id="fig_continuous2" >
 <caption>A graph of the step function in <xref ref="ex_contint2">Example</xref>.</caption>
-<image width="73%" source="images/figContinuous2.png" />
+
+<!-- START figures/fig_continuous2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-2.4,ymax=2.4,xmin=-2.4,xmax=3.4,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-2,-2) (-1,-2)};
+\addplot [{\colorone},smooth,thick] coordinates {(-1,-1) (0,-1)};
+\addplot [{\colorone},smooth,thick] coordinates {(0,0) (1,0)};
+\addplot [{\colorone},smooth,thick] coordinates {(1,1) (2,1)};
+\addplot [{\colorone},smooth,thick] coordinates {(2,2) (3,2)};
+\fill[white,draw=black] (axis cs:-1,-2) circle (1pt);
+\fill[black,draw=black] (axis cs:-2,-2) circle (1pt);
+
+\fill[white,draw=black] (axis cs:0,-1) circle (1pt);
+\fill[black,draw=black] (axis cs:-1,-1) circle (1pt);
+
+\fill[white,draw=black] (axis cs:1,0) circle (1pt);
+\fill[black,draw=black] (axis cs:0,0) circle (1pt);
+
+\fill[white,draw=black] (axis cs:2,1) circle (1pt);
+\fill[black,draw=black] (axis cs:1,1) circle (1pt);
+
+\fill[white,draw=black] (axis cs:3,2) circle (1pt);
+\fill[black,draw=black] (axis cs:2,2) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- figures/fig_continuous2.tex END -->
+
 </figure>
 </statement>
 <solution>
@@ -77,9 +127,9 @@ We examine the three criteria for continuity.
 </p>
 
 <ol>
-<li>The limits <m>\lim_{x\to c} f(x)</m> do not exist at the jumps from one <q>step</q> to the next, which occur at all integer values of <m>c</m>. Therefore the limits exist for all <m>c</m> except when <m>c</m> is an integer.</li>
-<li>The function is defined for all values of <m>c</m>.</li>
-<li>The limit <m>\ds \lim_{x\to c} f(x) = f(c)</m> for all values of <m>c</m> where the limit exist, since each step consists of just a line.</li>
+<li><p>The limits <m>\lim_{x\to c} f(x)</m> do not exist at the jumps from one <q>step</q> to the next, which occur at all integer values of <m>c</m>. Therefore the limits exist for all <m>c</m> except when <m>c</m> is an integer.</p></li>
+<li><p>The function is defined for all values of <m>c</m>.</p></li>
+<li><p>The limit <m>\ds \lim_{x\to c} f(x) = f(c)</m> for all values of <m>c</m> where the limit exist, since each step consists of just a line.</p></li>
 </ol>
 
 <p>
@@ -88,12 +138,9 @@ We conclude that <m>f</m> is continuous everywhere except at integer values of <
   \ldots, (-2,-1), (-1,0), (0,1), (1,2), \ldots.
 </me>
 </p>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
+
 <p>
 Our definition of continuity on an interval specifies the interval is an open interval. We can extend the definition of continuity to closed intervals by considering the appropriate one-sided limits at the endpoints.
 </p>
@@ -105,35 +152,29 @@ Let <m>f</m> be defined on the closed interval <m>[a,b]</m> for some real number
 </p>
 
 <ol>
-<li><m>f</m> is continuous on <m>(a,b)</m>,</li>
-<li><m>\ds \lim_{x\to a^+} f(x) = f(a)</m> and</li>
-<li><m>\ds \lim_{x\to b^-} f(x) = f(b)</m>.</li>
+<li><p><m>f</m> is continuous on <m>(a,b)</m>,</p></li>
+<li><p><m>\ds \lim_{x\to a^+} f(x) = f(a)</m> and</p></li>
+<li><p><m>\ds \lim_{x\to b^-} f(x) = f(b)</m>.</p></li>
 </ol>
 </statement>
 </definition>
 <p>
 We can make the appropriate adjustments to talk about continuity on half<ndash />open intervals such as <m>[a,b)</m> or <m>(a,b]</m> if necessary.
 </p>
+
 <example xml:id="ex_cont_funct1">
 <title>Determining intervals on which a function is continuous</title>
 <statement>
 <p>
 For each of the following functions, give the domain of the function and the interval(s) on which it is continuous.
 </p>
-<sidebyside>
-
-<ol>
-<li><m>f(x) = 1/x</m></li>
-<li><m>f(x) = \sin x</m></li>
-<li><m>f(x) = \sqrt{x}</m></li>
+<ol cols="2" >
+<li><p><m>f(x) = 1/x</m></p></li>
+<li><p><m>f(x) = \sin x</m></p></li>
+<li><p><m>f(x) = \sqrt{x}</m></p></li>
+<li><p><m>f(x) = \sqrt{1-x^2}</m></p></li>
+<li><p><m>f(x) = |x|</m></p></li>
 </ol>
-
-<ol>
-<li><m>f(x) = \sqrt{1-x^2}</m></li>
-<li><m>f(x) = |x|</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <solution>
 <p>
@@ -141,19 +182,16 @@ We examine each in turn.
 </p>
 
 <ol>
-<li>The domain of <m>f(x) = 1/x</m> is <m>(-\infty,0) \cup (0,\infty)</m>. As it is a rational function, we apply <xref ref="thm_poly_rat">Theorem</xref> to recognize that <m>f</m> is continuous on all of its domain.</li>
-<li>The domain of <m>f(x) = \sin x</m> is all real numbers, or <m>(-\infty,\infty)</m>. Applying <xref ref="thm_lim_continuous">Theorem</xref> shows that <m>\sin x</m> is continuous everywhere.</li>
-<li>The domain of <m>f(x) = \sqrt{x}</m> is <m>[0,\infty)</m>. Applying <xref ref="thm_lim_continuous">Theorem</xref> shows that <m>f(x) = \sqrt{x}</m> is continuous on its domain of <m>[0,\infty)</m>.</li>
-<li>The domain of <m>f(x) = \sqrt{1-x^2}</m> is <m>[-1,1]</m>. Applying <xref ref="thm_limit_algebra">Theorems</xref> and <xref ref="thm_lim_continuous"></xref> shows that <m>f</m> is continuous on all of its domain, <m>[-1,1]</m>.</li>
-<li>The domain of <m>f(x) = |x|</m> is <m>(-\infty,\infty)</m>. We can define the absolute value function as <m>\ds f(x) = \left\{\begin{array}{cc} -x \amp  x\lt 0 \\ x \amp  x\geq 0
-\end{array} \right.</m>. Each <q>piece</q> of this piecewise defined function is continuous on all of its domain, giving that <m>f</m> is continuous on <m>(-\infty,0)</m> and <m>[0,\infty)</m>. We cannot assume this implies that <m>f</m> is continuous on <m>(-\infty,\infty)</m>; we need to check that <m>\ds \lim_{x\to 0}f(x) = f(0)</m>, as <m>x=0</m> is the point where <m>f</m> transitions from one <q>piece</q> of its definition to the other. It is easy to verify that this is indeed true, hence we conclude that <m>f(x) = |x|</m> is continuous everywhere.</li>
+<li><p>The domain of <m>f(x) = 1/x</m> is <m>(-\infty,0) \cup (0,\infty)</m>. As it is a rational function, we apply <xref ref="thm_poly_rat">Theorem</xref> to recognize that <m>f</m> is continuous on all of its domain.</p></li>
+<li><p>The domain of <m>f(x) = \sin x</m> is all real numbers, or <m>(-\infty,\infty)</m>. Applying <xref ref="thm_lim_continuous">Theorem</xref> shows that <m>\sin x</m> is continuous everywhere.</p></li>
+<li><p>The domain of <m>f(x) = \sqrt{x}</m> is <m>[0,\infty)</m>. Applying <xref ref="thm_lim_continuous">Theorem</xref> shows that <m>f(x) = \sqrt{x}</m> is continuous on its domain of <m>[0,\infty)</m>.</p></li>
+<li><p>The domain of <m>f(x) = \sqrt{1-x^2}</m> is <m>[-1,1]</m>. Applying <xref ref="thm_limit_algebra">Theorems</xref> and <xref ref="thm_lim_continuous"></xref> shows that <m>f</m> is continuous on all of its domain, <m>[-1,1]</m>.</p></li>
+<li><p>The domain of <m>f(x) = |x|</m> is <m>(-\infty,\infty)</m>. We can define the absolute value function as <m>\ds f(x) = \left\{\begin{array}{cc} -x \amp  x\lt 0 \\ x \amp  x\geq 0
+\end{array} \right.</m>. Each <q>piece</q> of this piecewise defined function is continuous on all of its domain, giving that <m>f</m> is continuous on <m>(-\infty,0)</m> and <m>[0,\infty)</m>. We cannot assume this implies that <m>f</m> is continuous on <m>(-\infty,\infty)</m>; we need to check that <m>\ds \lim_{x\to 0}f(x) = f(0)</m>, as <m>x=0</m> is the point where <m>f</m> transitions from one <q>piece</q> of its definition to the other. It is easy to verify that this is indeed true, hence we conclude that <m>f(x) = |x|</m> is continuous everywhere.</p></li>
 </ol>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
+
 <p>
 Continuity is inherently tied to the properties of limits. Because of this, the properties of limits found in <xref ref="thm_limit_algebra">Theorems</xref> and <xref ref="thm_poly_rat"></xref> apply to continuity as well. Further, now knowing the definition of continuity we can re<ndash />read <xref ref="thm_lim_continuous">Theorem</xref> as giving a list of functions that are continuous on their domains. The following theorem states how continuous functions can be combined to form other continuous functions, followed by a theorem which formally lists functions that we know are continuous on their domains.
 </p>
@@ -166,13 +204,13 @@ Let <m>f</m> and <m>g</m> be continuous functions on an interval <m>I</m>, let <
 </p>
 
 <ol>
-<li>\text{Sums/Differences:}	<m>f\pm g</m></li>
-<li>\text{Constant Multiples:}	<m>c\cdot f</m></li>
-<li>\text{Products:}	<m>f\cdot g</m></li>
-<li>\text{Quotients:}	<m>f/g</m>  { (as long as <m>g\neq 0</m> on <m>I</m>)}</li>
-<li>\text{Powers:}	<m>f\,^n</m></li>
-<li>\text{Roots:}	<m>\sqrt[n]{f}</m>  \parbox[t]{150pt}{ (if <m>n</m> is even then <m>f\geq 0</m> on <m>I</m>; if <m>n</m> is odd, then true for all values of <m>f</m> on <m>I</m>.)}</li>
-<li>\text{Compositions:}\parbox[t]{185pt}{Adjust the definitions of <m>f</m> and <m>g</m> to: Let <m>f</m> be continuous on <m>I</m>, where the range of <m>f</m> on <m>I</m> is <m>J</m>, and let <m>g</m> be continuous on <m>J</m>. Then <m>g\circ f</m>, i.e., <m>g(f(x))</m>, is continuous on <m>I</m>.}</li>
+<li><p>\\text{ Sums/Differences: }	<m>f\pm g</m></p></li>
+<li><p>\\text{ Constant Multiples: }	<m>c\cdot f</m></p></li>
+<li><p>\\text{ Products: }	<m>f\cdot g</m></p></li>
+<li><p>\\text{ Quotients: }	<m>f/g</m>  { (as long as <m>g\neq 0</m> on <m>I</m>)}</p></li>
+<li><p>\\text{ Powers: }	<m>f\,^n</m></p></li>
+<li><p>\\text{ Roots: }	<m>\sqrt[n]{f}</m>  \parbox[t]{150pt}{ (if <m>n</m> is even then <m>f\geq 0</m> on <m>I</m>; if <m>n</m> is odd, then true for all values of <m>f</m> on <m>I</m>.)}</p></li>
+<li><p>\\text{ Compositions: }\parbox[t]{185pt}{Adjust the definitions of <m>f</m> and <m>g</m> to: Let <m>f</m> be continuous on <m>I</m>, where the range of <m>f</m> on <m>I</m> is <m>J</m>, and let <m>g</m> be continuous on <m>J</m>. Then <m>g\circ f</m>, i.e., <m>g(f(x))</m>, is continuous on <m>I</m>.}</p></li>
 </ol>
 </statement>
 </theorem>
@@ -183,51 +221,38 @@ Let <m>f</m> and <m>g</m> be continuous functions on an interval <m>I</m>, let <
 <p>
 The following functions are continuous on their domains. <index><main>continuous function</main><sub>properties</sub></index>
 </p>
-<sidebyside>
+<ol cols="2" >
+<li><p><m>\ds f(x) = \sin x</m></p></li>
+<li><p><m>\ds f(x) =  \tan x</m></p></li>
+<li><p><m>\ds f(x) =  \sec x</m></p></li>
+<li><p><m>\ds f(x) =  \ln x</m></p></li>
+<li><p><m>\ds f(x) =  a^x</m> (<m>a>0</m>)</p></li>
+<li><p><m>\ds f(x) = \cos x</m></p></li>
+<li><p><m>\ds f(x) =  \cot x</m></p></li>
+<li><p><m>\ds f(x) =  \csc x</m></p></li>
+<li><p><m>\ds f(x) =  \sqrt[n]{x}</m>, 
 
-<ol>
-<li><m>\ds f(x) = \sin x</m></li>
-<li><m>\ds f(x) =  \tan x</m></li>
-<li><m>\ds f(x) =  \sec x</m></li>
-<li><m>\ds f(x) =  \ln x</m></li>
-<li><m>\ds f(x) =  a^x</m> (<m>a>0</m>)</li>
+{ (where <m>n</m> is a positive integer)}</p></li>
 </ol>
-
-<ol>
-<li><m>\ds f(x) = \cos x</m></li>
-<li><m>\ds f(x) =  \cot x</m></li>
-<li><m>\ds f(x) =  \csc x</m></li>
-<li><m>\ds f(x) =  \sqrt[n]{x}</m>, 
-
-{ (where <m>n</m> is a positive integer)}</li>
-</ol>
-
-</sidebyside>
 </statement>
 </theorem>
 
 <p>
 We apply these theorems in the following Example.
 </p>
+
 <example xml:id="ex_cont_funct">
 <title>Determining intervals on which a function is continuous</title>
 <statement>
 <p>
 State the interval(s) on which each of the following functions is continuous.
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds f(x) = \sqrt{x-1} + \sqrt{5-x}</m></li>
-<li><m>\ds f(x) = x\sin x</m></li>
+<ol cols="2" >
+<li><p><m>\ds f(x) = \sqrt{x-1} + \sqrt{5-x}</m></p></li>
+<li><p><m>\ds f(x) = x\sin x</m></p></li>
+<li><p><m>\ds f(x) = \tan x</m></p></li>
+<li><p><m>\ds f(x) = \sqrt{\ln x}</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds f(x) = \tan x</m></li>
-<li><m>\ds f(x) = \sqrt{\ln x}</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <solution>
 <p>
@@ -235,27 +260,47 @@ We examine each in turn, applying <xref ref="thm_continuity_algebra">Theorems</x
 </p>
 
 <ol>
-<li>The square<ndash />root terms are continuous on the intervals <m>[1,\infty)</m> and <m>(-\infty,5]</m>, respectively. As <m>f</m> is continuous only where each term is continuous, <m>f</m> is continuous on <m>[1,5]</m>, the intersection of these two intervals. A graph of <m>f</m> is given in <xref ref="fig_continuous3">Figure</xref>.
+<li><p>The square<ndash />root terms are continuous on the intervals <m>[1,\infty)</m> and <m>(-\infty,5]</m>, respectively. As <m>f</m> is continuous only where each term is continuous, <m>f</m> is continuous on <m>[1,5]</m>, the intersection of these two intervals. A graph of <m>f</m> is given in <xref ref="fig_continuous3">Figure</xref>.
 			
 	<figure xml:id="fig_continuous3" >
 <caption>A graph of <m>f</m> in <xref ref="ex_cont_funct">Example</xref>(1).</caption>
-<image width="73%" source="images/figContinuous3.png" />
-</figure>
-</li>
-<li>The functions <m>y=x</m> and <m>y=\sin x</m> are each continuous everywhere, hence their product is, too.</li>
-<li><xref ref="thm_continuous_functions">Theorem</xref> states that <m>f(x) = \tan x</m> is continuous <q>on its domain.</q> Its domain includes all real numbers except odd multiples of <m>\pi/2</m>. Thus <m>f(x) = \tan x</m> is continuous on
+
+<!-- START figures/fig_continuous3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=3.2,xmin=-.4,xmax=5.4,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(1.,2.)(1.01,2.0975) (1.02,2.13642) (1.03,2.16569) (1.04,2.18997) (1.05,2.21107) (1.1,2.29107) (1.15,2.34944) (1.2,2.39657) (1.3,2.47126) (1.4,2.52982)
+(1.5,2.57794) (1.6,2.61851) (1.7,2.65325) (1.8,2.68328) (1.9,2.70936)
+(2.,2.73205) (2.1,2.75175) (2.2,2.76877) (2.3,2.78334) (2.4,2.79567) 
+(2.5,2.80588) (2.6,2.8141) (2.7,2.82042) (2.8,2.82488) (2.9,2.82754) 
+(3.,2.82843) (3.1,2.82754) (3.2,2.82488) (3.3,2.82042) (3.4,2.8141) (3.5,2.80588) (3.6,2.79567) (3.7,2.78334) (3.8,2.76877) (3.9,2.75175)(4.,2.73205) (4.1,2.70936) (4.2,2.68328) (4.3,2.65325) (4.4,2.61851)(4.5,2.57794) (4.6,2.52982) (4.7,2.47126) (4.8,2.39657) (4.85,2.34944) (4.9,2.29107) (4.95,2.21107) (4.96,2.18997) (4.97,2.16569) (4.98,2.13642) (4.99,2.0975)(5.,2.)
+};
+%\addplot [{\colorone},smooth] coordinates {(1.,1.) (2,1)};
+%\addplot [{\colorone},smooth] coordinates {(2.,1.) (2.1,1.09) (2.2,1.16) (2.3,1.21) (2.4,1.24) (2.5,1.25)
+%(2.6,1.24) (2.7,1.21) (2.8,1.16) (2.9,1.09) (3.,1.)};
+%\fill[white,draw=black] (axis cs:2,0) circle (1pt);
+\fill[black,draw=black] (axis cs:1,2) circle (1pt);
+\fill[black,draw=black] (axis cs:5,2) circle (1pt);
+%\fill[black,draw=black] (axis cs:3,1) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- figures/fig_continuous3.tex END -->
+
+</figure></p></li>
+<li><p>The functions <m>y=x</m> and <m>y=\sin x</m> are each continuous everywhere, hence their product is, too.</p></li>
+<li><p><xref ref="thm_continuous_functions">Theorem</xref> states that <m>f(x) = \tan x</m> is continuous <q>on its domain.</q> Its domain includes all real numbers except odd multiples of <m>\pi/2</m>. Thus <m>f(x) = \tan x</m> is continuous on
 <me>
   \ldots \left(-\frac{3\pi}{2},-\frac{\pi}2\right),\ \left(-\frac{\pi}2,\frac{\pi}2\right),\ \left(\frac{\pi}2,\frac{3\pi}2\right),\ldots,
 </me>
-or, equivalently, on <m>D = \{x\in \mathbb{R}\ |\ x\neq n\cdot \frac{\pi}2,\</m>n<m>\ \text{is an odd integer}  \}.</m></li>
-<li>The domain of <m>y = \sqrt{x}</m> is <m>[0,\infty)</m>. The range of <m>y=\ln x</m> is <m>(-\infty,\infty)</m>, but if we restrict its domain to <m>[1,\infty)</m> its range is <m>[0,\infty)</m>. So restricting <m>y = \ln x</m> to the domain of <m>[1,\infty)</m> restricts its output is <m>[0,\infty)</m>, on which <m>y = \sqrt{x}</m> is defined. Thus the domain of <m>f(x) = \sqrt{\ln x}</m> is <m>[1,\infty)</m>.</li>
+or, equivalently, on <m>D = \{x\in \mathbb{R}\ |\ x\neq n\cdot \frac{\pi}2,\</m>n<m>\ \\text{ is an odd integer }  \}.</m></p></li>
+<li><p>The domain of <m>y = \sqrt{x}</m> is <m>[0,\infty)</m>. The range of <m>y=\ln x</m> is <m>(-\infty,\infty)</m>, but if we restrict its domain to <m>[1,\infty)</m> its range is <m>[0,\infty)</m>. So restricting <m>y = \ln x</m> to the domain of <m>[1,\infty)</m> restricts its output is <m>[0,\infty)</m>, on which <m>y = \sqrt{x}</m> is defined. Thus the domain of <m>f(x) = \sqrt{\ln x}</m> is <m>[1,\infty)</m>.</p></li>
 </ol>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
+
 <p>
 A common way of thinking of a continuous function is that <q>its graph can be sketched without lifting your pencil.</q> That is, its graph forms a <q>continuous</q> curve, without holes, breaks or jumps.
 While beyond the scope of this text, this pseudo<ndash />definition glosses over some of the finer points of continuity. Very strange functions are continuous that one would be hard pressed to actually sketch by hand.
@@ -287,14 +332,15 @@ There is a technique that produces a good approximation of <m>c</m>. Let <m>d</m
 </p>
 
 <ol>
-<li><m>f(d) = 0</m> <ndash /> we got lucky and stumbled on the actual value. We stop as we found a root.</li>
-<li><m>f(d) \lt 0</m> Then we know there is a root of <m>f</m> on the interval <m>[d,b]</m> <ndash /> we have halved the size of our interval, hence are closer to a good approximation of the root.</li>
-<li><m>f(d) >0</m> Then we know there is a root of <m>f</m> on the interval <m>[a,d]</m> <ndash /> again,we have halved the size of our interval, hence are closer to a good approximation of the root.</li>
+<li><p><m>f(d) = 0</m> <mdash /> we got lucky and stumbled on the actual value. We stop as we found a root.</p></li>
+<li><p><m>f(d) \lt 0</m> Then we know there is a root of <m>f</m> on the interval <m>[d,b]</m> <mdash /> we have halved the size of our interval, hence are closer to a good approximation of the root.</p></li>
+<li><p><m>f(d) >0</m> Then we know there is a root of <m>f</m> on the interval <m>[a,d]</m> <mdash /> again,we have halved the size of our interval, hence are closer to a good approximation of the root.</p></li>
 </ol>
 
 <p>
 Successively applying this technique is called the <em>Bisection Method</em> <index><main>Bisection Method</main></index> of root finding. We continue until the interval is sufficiently small. We demonstrate this in the following example.
 </p>
+
 <example xml:id="ex_bisect_method">
 <title>Using the Bisection Method</title>
 <statement>
@@ -308,13 +354,33 @@ Consider the graph of <m>f(x) = x-\cos x</m>, shown in <xref ref="fig_xminuscosx
 </p>
 <figure xml:id="fig_xminuscosx" >
 <caption>Graphing a root of <m>f(x) = x-\cos x</m>.</caption>
-<image width="73%" source="images/figXMinusCosX.png" />
+
+<!-- START figures/fig_xminuscosx.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=4,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=.7,xmin=-.05,xmax=1.07,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0.,-1.) (0.05,-0.94875) (0.1,-0.895004) (0.15,-0.838771)(0.2,-0.780067) (0.25,-0.718912) (0.3,-0.655336) (0.35,-0.589373)(0.4,-0.521061) (0.45,-0.450447) (0.5,-0.377583) (0.55,-0.302525)(0.6,-0.225336) (0.65,-0.146084)(0.7,-0.0648422) (0.71,-0.0483619) (0.72,-0.0318057)(0.73,-0.0151744) (0.74,0.00153144) (0.75,0.0183111) (0.76,0.035164)(0.77,0.0520893) (0.78,0.0690865) (0.79,0.0861547) (0.8,0.103293)(0.85,0.190017) (0.9,0.27839) (0.95,0.368317) (1.,0.459698)
+};
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+%\spy [{\colortwo}] on (1,1) in node at (1.5,-2);
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- figures/fig_xminuscosx.tex END -->
+
 </figure>
 <ul>
-<li class="custom-list-style-type" label="Iteration 1:" ><m>f(0.7) \lt  0</m>, <m>f(0.9) > 0</m>, and <m>f(0.8) >0</m>. So replace <m>0.9</m> with <m>0.8</m> and repeat.</li>
-<li class="custom-list-style-type" label="Iteration 2:" ><m>f(0.7)\lt 0</m>, <m>f(0.8) > 0</m>, and at the midpoint, <m>0.75</m>, we have <m>f(0.75) >0</m>. So replace <m>0.8</m> with <m>0.75</m> and repeat. Note that we don't need to continue to check the endpoints, just the midpoint. Thus we put the rest of the iterations in <xref ref="table_rootfinding">Table</xref>.</li>
+<li>
+<title>Iteration 1:</title>
+<p>
+<m>f(0.7) \lt  0</m>, <m>f(0.9) > 0</m>, and <m>f(0.8) >0</m>. So replace <m>0.9</m> with <m>0.8</m> and repeat.</p></li>
+<li>
+<title>Iteration 2:</title>
+<p>
+<m>f(0.7)\lt 0</m>, <m>f(0.8) > 0</m>, and at the midpoint, <m>0.75</m>, we have <m>f(0.75) >0</m>. So replace <m>0.8</m> with <m>0.75</m> and repeat. Note that we don't need to continue to check the endpoints, just the midpoint. Thus we put the rest of the iterations in <xref ref="table_rootfinding">Table</xref>.</p></li>
 </ul>
-<figure xml:id="table_rootfinding" >
+<table xml:id="table_rootfinding" >
 <caption>Iterations of the Bisection Method of Root Finding</caption>
 <tabular>
 <row><cell>Iteration <hash /></cell><cell>Interval</cell><cell>Midpoint Sign</cell></row>
@@ -333,11 +399,11 @@ Consider the graph of <m>f(x) = x-\cos x</m>, shown in <xref ref="fig_xminuscosx
 <row><cell>12</cell><cell><m>[0.7390,0.7391]</m></cell><cell></cell></row>
 <row><cell></cell></row>
 </tabular>
-</figure>
+</table>
 <p>
-Notice that in the 12<m>^\text{th}</m> iteration we have the endpoints of the interval each starting with <m>0.739</m>. Thus we have narrowed the zero down to an accuracy of the first three places after the decimal. Using a computer, we have
+Notice that in the 12<m>^\\text{ th }</m> iteration we have the endpoints of the interval each starting with <m>0.739</m>. Thus we have narrowed the zero down to an accuracy of the first three places after the decimal. Using a computer, we have
 <me>
-  f(0.7390) = -0.00014, \quad f(0.7391) = 0.000024.
+  f(0.7390) = -0.00014,  f(0.7391) = 0.000024.
 </me>
 </p>
 
@@ -350,6 +416,7 @@ This type of exercise is rarely done by hand. Rather, it is simple to program a 
 </p>
 </solution>
 </example>
+
 <p>
 It is a simple matter to extend the Bisection Method to solve problems similar to <q>Find <m>x</m>, where <m>f(x) = 0</m>.</q> For instance, we can find <m>x</m>, where <m>f(x) = 1</m>.
 It actually works very well to define a new function <m>g</m> where <m>g(x) = f(x) - 1</m>. Then use the Bisection Method to solve <m>g(x)=0</m>.
@@ -373,7 +440,9 @@ In the next section we examine one more aspect of limits: limits that involve in
 </introduction>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
@@ -504,10 +573,10 @@ T
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, a graph of a function <m>f</m> is given along with a value <m>a</m>. Determine if <m>f</m> is continuous at <m>a</m>; if it is not, state why it is not.
@@ -517,10 +586,7 @@ In the following exercises, a graph of a function <m>f</m> is given along with a
 <p>
 <m>a = 1</m>
 </p>
-
-<p>
-<image width="80%" source="images/fig01_04_ex_05.png" />
-</p>
+<!-- START\1END -->
 </statement>
 <answer>
 <p>
@@ -534,10 +600,7 @@ No; <m>\ds \lim_{x\to 1} f(x) = 2</m>, while <m>f(1) = 1</m>.
 <p>
 <m>a = 1</m>
 </p>
-
-<p>
-<image width="80%" source="images/fig01_04_ex_06.png" />
-</p>
+<!-- START\1END -->
 </statement>
 <answer>
 <p>
@@ -551,10 +614,7 @@ No; <m>\ds \lim_{x\to 1} f(x)</m> does not exist.
 <p>
 <m>a = 1</m>
 </p>
-
-<p>
-<image width="80%" source="images/fig01_04_ex_07.png" />
-</p>
+<!-- START\1END -->
 </statement>
 <answer>
 <p>
@@ -568,10 +628,7 @@ No; <m>f(1)</m> does not exist.
 <p>
 <m>a = 0</m>
 </p>
-
-<p>
-<image width="80%" source="images/fig01_04_ex_08.png" />
-</p>
+<!-- START\1END -->
 </statement>
 <answer>
 <p>
@@ -585,10 +642,7 @@ Yes
 <p>
 <m>a = 1</m>
 </p>
-
-<p>
-<image width="80%" source="images/fig01_04_ex_09.png" />
-</p>
+<!-- START\1END -->
 </statement>
 <answer>
 <p>
@@ -602,10 +656,7 @@ Yes
 <p>
 <m>a = 4</m>
 </p>
-
-<p>
-<image width="80%" source="images/fig01_04_ex_10.png" />
-</p>
+<!-- START\1END -->
 </statement>
 <answer>
 <p>
@@ -617,20 +668,17 @@ Yes
 <exercise>
 <statement>
 <ol>
-<li><m>a = -2</m></li>
-<li><m>a=0</m></li>
-<li><m>a=2</m></li>
+<li><p><m>a = -2</m></p></li>
+<li><p><m>a=0</m></p></li>
+<li><p><m>a=2</m></p></li>
 </ol>
-
-<p>
-<image width="80%" source="images/fig01_04_ex_11.png" />
-</p>
+<!-- START\1END -->
 </statement>
 <answer>
 <ol>
-<li>No; <m>\ds \lim_{x\to -2}f(x) \neq f(-2)</m></li>
-<li>Yes</li>
-<li>No; <m>f(2)</m> is not defined.</li>
+<li><p>No; <m>\ds \lim_{x\to -2}f(x) \neq f(-2)</m></p></li>
+<li><p>Yes</p></li>
+<li><p>No; <m>f(2)</m> is not defined.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -647,14 +695,14 @@ In the following exercises, determine if <m>f</m> is continuous at the indicated
 </p>
 
 <ol>
-<li><m>x=0</m></li>
-<li><m>x=\pi</m></li>
+<li><p><m>x=0</m></p></li>
+<li><p><m>x=\pi</m></p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Yes</li>
-<li>Yes</li>
+<li><p>Yes</p></li>
+<li><p>Yes</p></li>
 </ol>
 </answer>
 </exercise>
@@ -669,14 +717,14 @@ x-2 \amp  \amp  x\geq 1
 </p>
 
 <ol>
-<li><m>x=0</m></li>
-<li><m>x=1</m></li>
+<li><p><m>x=0</m></p></li>
+<li><p><m>x=1</m></p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Yes</li>
-<li>No; the left and right hand limits at 1 are not equal.</li>
+<li><p>Yes</p></li>
+<li><p>No; the left and right hand limits at 1 are not equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -691,14 +739,14 @@ x-2 \amp  \amp  x\geq 1
 </p>
 
 <ol>
-<li><m>x=-1</m></li>
-<li><m>x=10</m></li>
+<li><p><m>x=-1</m></p></li>
+<li><p><m>x=10</m></p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Yes</li>
-<li>Yes</li>
+<li><p>Yes</p></li>
+<li><p>Yes</p></li>
 </ol>
 </answer>
 </exercise>
@@ -713,14 +761,14 @@ x-2 \amp  \amp  x\geq 1
 </p>
 
 <ol>
-<li><m>x=0</m></li>
-<li><m>x=8</m></li>
+<li><p><m>x=0</m></p></li>
+<li><p><m>x=8</m></p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>Yes</li>
-<li>No. <m>\lim_{x\to 8} f(x) = 16/5 \neq f(8) = 5</m>.</li>
+<li><p>Yes</p></li>
+<li><p>No. <m>\lim_{x\to 8} f(x) = 16/5 \neq f(8) = 5</m>.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -933,9 +981,9 @@ In the following exercises, use the Bisection Method to approximate, accurate to
 <answer>
 <p>
 Approximate root is <m>x=1.23</m>. The intervals used are:
-<m>[1,1.5] \quad [1,1.25] \quad [1.125,1.25]</m>
-<m>[1.1875,1.25]\quad [1.21875,1.25]\quad [1.234375,1.25]</m>
-<m>[1.234375,1.2421875]\quad [1.234375,1.2382813]</m>
+<m>[1,1.5]  [1,1.25]  [1.125,1.25]</m>
+<m>[1.1875,1.25] [1.21875,1.25] [1.234375,1.25]</m>
+<m>[1.234375,1.2421875] [1.234375,1.2382813]</m>
 </p>
 </answer>
 </exercise>
@@ -949,8 +997,8 @@ Approximate root is <m>x=1.23</m>. The intervals used are:
 <answer>
 <p>
 Approximate root is <m>x=0.52</m>. The intervals used are:
-<m>[0.5,0.55] \quad [0.5,0.525] \quad [0.5125,0.525]</m>
-<m>[0.51875,0.525]\quad [0.521875,0.525]</m>
+<m>[0.5,0.55]  [0.5,0.525]  [0.5125,0.525]</m>
+<m>[0.51875,0.525] [0.521875,0.525]</m>
 </p>
 </answer>
 </exercise>
@@ -964,8 +1012,8 @@ Approximate root is <m>x=0.52</m>. The intervals used are:
 <answer>
 <p>
 Approximate root is <m>x=0.69</m>. The intervals used are:
-<m>[0.65,0.7] \quad [0.675,0.7] \quad [0.6875,0.7]</m>
-<m>[0.6875,0.69375]\quad [0.690625,0.69375]</m>
+<m>[0.65,0.7]  [0.675,0.7]  [0.6875,0.7]</m>
+<m>[0.6875,0.69375] [0.690625,0.69375]</m>
 </p>
 </answer>
 </exercise>
@@ -979,8 +1027,8 @@ Approximate root is <m>x=0.69</m>. The intervals used are:
 <answer>
 <p>
 Approximate root is <m>x=0.78</m>. The intervals used are:
-<m>[0.7,0.8] \quad [0.75,0.8] \quad [0.775,0.8]</m>
-<m>[0.775,0.7875]\quad [0.78125,0.7875]</m>
+<m>[0.7,0.8]  [0.75,0.8]  [0.775,0.8]</m>
+<m>[0.775,0.7875] [0.78125,0.7875]</m>
 </p>
 
 <p>
@@ -988,10 +1036,10 @@ Approximate root is <m>x=0.78</m>. The intervals used are:
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Review</title>
 <exercise>
 <statement>
@@ -1001,26 +1049,19 @@ x^2-5 \amp  \amp  x\lt 5 \\
 5x \amp  \amp  x \geq 5
 \end{array} \right.</m>.
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 5^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 5^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 5^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 5^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 5} f(x)</m></p></li>
+<li><p><m>f(5)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 5} f(x)</m></li>
-<li><m>f(5)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li>20</li>
-<li>25</li>
-<li>Limit does not exist</li>
-<li>25</li>
+<li><p>20</p></li>
+<li><p>25</p></li>
+<li><p>Limit does not exist</p></li>
+<li><p>25</p></li>
 </ol>
 </answer>
 </exercise>
@@ -1032,8 +1073,8 @@ Numerically approximate the following limits:
 </p>
 
 <ol>
-<li><m>\ds \lim_{x\to -4/5^+} \frac{x^2-8.2 x-7.2}{x^2+5.8 x+4}</m></li>
-<li><m>\ds \lim_{x\to -4/5^-} \frac{x^2-8.2 x-7.2}{x^2+5.8 x+4}</m></li>
+<li><p><m>\ds \lim_{x\to -4/5^+} \frac{x^2-8.2 x-7.2}{x^2+5.8 x+4}</m></p></li>
+<li><p><m>\ds \lim_{x\to -4/5^-} \frac{x^2-8.2 x-7.2}{x^2+5.8 x+4}</m></p></li>
 </ol>
 </statement>
 <answer>
@@ -1063,6 +1104,6 @@ Answers will vary.
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

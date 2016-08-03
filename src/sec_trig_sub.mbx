@@ -18,6 +18,7 @@ We have since learned a number of integration techniques, including Substitution
 <p>
 We start by demonstrating this method in evaluating the integral in <xref ref="eq_trigsub1" />. After the example, we will generalize the method and give more examples.
 </p>
+
 <example xml:id="ex_trigsub1">
 <title>Using Trigonometric Substitution</title>
 <statement>
@@ -35,66 +36,106 @@ Setting <m>x=3\sin \theta</m> gives <m>dx = 3\cos\theta\ d\theta</m>. We are alm
 <md>
   <mrow>  \int_{-3}^3\sqrt{9-x^2}\ dx \amp = \int_{-\pi/2}^{\pi/2} \sqrt{9-9\sin^2\theta} (3\cos\theta)\ d\theta</mrow>
   <mrow>  \amp = \int_{-\pi/2}^{\pi/2} 3\sqrt{9\cos^2\theta} \cos\theta\ d\theta</mrow>
-  <mrow>  \amp =\int_{-\pi/2}^{\pi/2} 3|3\cos \theta| \cos\theta\ d\theta.
-		\end{mathrow}
-On $[-\pi/2,\pi/2]$, $\cos \theta$ is always positive, so we can drop the absolute value bars, then employ a power--reducing formula:
-\begin{mathrow}</mrow>
+  <mrow>  \amp =\int_{-\pi/2}^{\pi/2} 3|3\cos \theta| \cos\theta\ d\theta.</mrow>
+<intertext>On <m>[-\pi/2,\pi/2]</m>, <m>\cos \theta</m> is always positive, so we can drop the absolute value bars, then employ a power--reducing formula:</intertext>
 </md>
-</p>
 <md>
   <mrow>  \amp = \int_{-\pi/2}^{\pi/2} 9\cos^2 \theta\ d\theta</mrow>
   <mrow>  \amp = \int_{-\pi/2}^{\pi/2} \frac{9}{2}\big(1+\cos(2\theta)\big)\ d\theta</mrow>
   <mrow>  \amp  = \frac92 \big(\theta +\frac12\sin(2\theta)\big)\Bigg|_{-\pi/2}^{\pi/2}= \frac92\pi.</mrow>
 </md>
+</p>
+
 <p>
 This matches our answer from before.
 </p>
 </solution>
 </example>
+
 <p>
 We now describe in detail Trigonometric Substitution. This method excels when dealing with integrands that contain <m>\sqrt{a^2-x^2}</m>, <m>\sqrt{x^2-a^2}</m> and <m>\sqrt{x^2+a^2}</m>. The following Key Idea outlines the procedure for each case, followed by more examples. Each right triangle acts as a reference to help us understand the relationships between <m>x</m> and <m>\theta</m>.
 </p>
-<sidebyside>
-<keyidea xml:id="idea_trigsub">
+<sidebyside><insight xml:id="idea_trigsub">
 <title>Trigonometric Substitution</title>
 <ol>
-<li class="custom-list-style-type" label="(a)" >
+<li>
+<title>(a)</title>
+<p>
+
 <sidebyside>
-For integrands containing <m>\sqrt{a^2-x^2}</m>:<index><main>integration</main><sub>trig. subst.</sub></index><br />
-		Let <m>x=a\sin\theta</m>,   <m>dx = a\cos\theta\ d\theta</m><br />	
-	Thus <m>\theta = \sin^{-1}(x/a)</m>, for <m>-\pi/2\leq \theta\leq \pi/2</m>. <br />	
-	On this interval, <m>\cos\theta\geq 0</m>, so<br />	
+For integrands containing <m>\sqrt{a^2-x^2}</m>:<index><main>integration</main><sub>trig. subst.</sub></index>
+
+		Let <m>x=a\sin\theta</m>,   <m>dx = a\cos\theta\ d\theta</m>
+	
+	Thus <m>\theta = \sin^{-1}(x/a)</m>, for <m>-\pi/2\leq \theta\leq \pi/2</m>. 
+	
+	On this interval, <m>\cos\theta\geq 0</m>, so
+	
 	<m>\sqrt{a^2-x^2} = a\cos\theta</m>
-\vskip 0pt
-		<image width="73%" source="images/figtrigsub_intro1.png" />
-</sidebyside>
-</li>
-<li class="custom-list-style-type" label="(b)" >
-<sidebyside>
-For integrands containing <m>\sqrt{x^2+a^2}</m>:<br />
-		Let <m>x=a\tan\theta</m>,   <m>dx = a\sec^2\theta\ d\theta</m><br />	
-	Thus <m>\theta = \tan^{-1}(x/a)</m>, for <m>-\pi/2 \lt  \theta \lt  \pi/2</m>. <br />	
-	On this interval, <m>\sec\theta> 0</m>, so<br />	
+
+<!-- START figures/fig_trigsub_intro1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+		\draw [very thick] (0,0) -- node[below,pos=.5] { $\sqrt{a^2-x^2}$} (3,0) -- node [right,pos=.5] { $x$} (3,2) -- node [pos=.5,above] { $a$} (0,0);
+		\draw [thick] (2.7,0) -- (2.7,.3) -- (3,.3);
+		\draw (.75,.25) node {$\theta$};
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_trigsub_intro1.tex END --></sidebyside></p></li>
+<li>
+<title>(b)</title>
+<p>
+
+<sidebyside>For integrands containing <m>\sqrt{x^2+a^2}</m>:
+
+		Let <m>x=a\tan\theta</m>,   <m>dx = a\sec^2\theta\ d\theta</m>
+	
+	Thus <m>\theta = \tan^{-1}(x/a)</m>, for <m>-\pi/2 \lt  \theta \lt  \pi/2</m>. 
+	
+	On this interval, <m>\sec\theta> 0</m>, so
+	
 	<m>\sqrt{x^2+a^2} = a\sec\theta</m>
-\vskip 0pt
-		<image width="73%" source="images/figtrigsub_intro3.png" />
-</sidebyside>
-</li>
-<li class="custom-list-style-type" label="(c)" >
-<sidebyside>
-For integrands containing <m>\sqrt{x^2-a^2}</m>:<br />
-		Let <m>x=a\sec\theta</m>,   <m>dx = a\sec\theta\tan\theta\ d\theta</m><br />	
-	Thus <m>\theta = \sec^{-1}(x/a)</m>. If <m>x/a\geq 1</m>, then <m>0\leq\theta\lt \pi/2</m>; if <m>x/a \leq -1</m>, then <m>\pi/2\lt \theta\leq \pi</m>.<br />	
+
+<!-- START figures/fig_trigsub_intro3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+		\draw [very thick] (0,0) -- node[below,pos=.5] { $a$} (3,0) -- node [right,pos=.5] { $x$} (3,2) -- node [pos=.5,above,sloped] { $\sqrt{x^2+a^2}$} (0,0);
+		\draw [thick] (2.7,0) -- (2.7,.3) -- (3,.3);
+		\draw (.75,.25) node {$\theta$};
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_trigsub_intro3.tex END --></sidebyside></p></li>
+<li>
+<title>(c)</title>
+<p>
+
+<sidebyside>For integrands containing <m>\sqrt{x^2-a^2}</m>:
+
+		Let <m>x=a\sec\theta</m>,   <m>dx = a\sec\theta\tan\theta\ d\theta</m>
+	
+	Thus <m>\theta = \sec^{-1}(x/a)</m>. If <m>x/a\geq 1</m>, then <m>0\leq\theta\lt \pi/2</m>; if <m>x/a \leq -1</m>, then <m>\pi/2\lt \theta\leq \pi</m>.
+	
 	We restrict our work to where <m>x\geq a</m>, so <m>x/a\geq 1</m>, and <m>0\leq\theta\lt \pi/2</m>.
-	On this interval, <m>\tan\theta\geq 0</m>, so<br />	
+	On this interval, <m>\tan\theta\geq 0</m>, so
+	
 	<m>\sqrt{x^2-a^2} = a\tan\theta</m>
-\vskip 0pt
-		<image width="73%" source="images/figtrigsub_intro2.png" />
-</sidebyside>
-</li>
+
+<!-- START figures/fig_trigsub_intro2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+		\draw [very thick] (0,0) -- node[below,pos=.5] { $a$} (3,0) -- node [right,pos=.5] { $\sqrt{x^2-a^2}$} (3,2) -- node [pos=.5,above] { $x$} (0,0);
+		\draw [thick] (2.7,0) -- (2.7,.3) -- (3,.3);
+		\draw (.75,.25) node {$\theta$};
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_trigsub_intro2.tex END --></sidebyside></p></li>
 </ol>
-</keyidea>
+</insight>
 </sidebyside>
+
 <example xml:id="ex_trigsub3">
 <title>Using Trigonometric Substitution</title>
 <statement>
@@ -120,7 +161,7 @@ While the integration steps are over, we are not yet done. The original problem 
 <p>
 The reference triangle given in <xref ref="idea_trigsub">Key Idea</xref>(b) helps. With <m>x=\sqrt{5}\tan\theta</m>, we have
 <me>
-  \tan \theta = \frac x{\sqrt{5}}\quad \text{and} \quad \sec\theta = \frac{\sqrt{x^2+5}}{\sqrt{5}}.
+  \tan \theta = \frac x{\sqrt{5}} \\text{ and }  \sec\theta = \frac{\sqrt{x^2+5}}{\sqrt{5}}.
 </me>
 </p>
 
@@ -193,7 +234,7 @@ Thus
 <p>
 We are not yet done. Our original integral is given in terms of <m>x</m>, whereas our final answer, as given, is in terms of <m>\theta</m>. We need to rewrite our answer in terms of <m>x</m>. With <m>a=1/2</m>, and <m>x=\frac12\sec\theta</m>, the reference triangle in <xref ref="idea_trigsub">Key Idea</xref>(c) shows that
 <me>
-  \tan \theta = \sqrt{x^2-1/4}\Big/(1/2) = 2\sqrt{x^2-1/4}\quad \text{and} \quad \sec\theta = 2x.
+  \tan \theta = \sqrt{x^2-1/4}\Big/(1/2) = 2\sqrt{x^2-1/4} \\text{ and }  \sec\theta = 2x.
 </me>
 </p>
 
@@ -241,9 +282,11 @@ We need to rewrite our answer in terms of <m>x</m>. Using the reference triangle
 </p>
 </solution>
 </example>
+
 <p>
 Trigonometric Substitution can be applied in many situations, even those not of the form <m>\sqrt{a^2-x^2}</m>, <m>\sqrt{x^2-a^2}</m> or <m>\sqrt{x^2+a^2}</m>. In the following example, we apply it to an integral we already know how to handle.
 </p>
+
 <example xml:id="ex_trigsub5">
 <title>Using Trigonometric Substitution</title>
 <statement>
@@ -270,9 +313,11 @@ Since <m>x=\tan \theta</m>, <m>\theta = \tan^{-1}x</m>, and we conclude that <m>
 </p>
 </solution>
 </example>
+
 <p>
 The next example is similar to the previous one in that it does not involve a square<ndash />root. It shows how several techniques and identities can be combined to obtain a solution.
 </p>
+
 <example xml:id="ex_trigsub7">
 <title>Using Trigonometric Substitution</title>
 <statement>
@@ -284,17 +329,13 @@ Evaluate <m>\ds\int\frac1{(x^2+6x+10)^2}\ dx.</m>
 <p>
 We start by completing the square, then make the substitution <m>u=x+3</m>, followed by the trigonometric substitution of <m>u=\tan\theta</m>:
 <md>
-  <mrow>  \int \frac1{(x^2+6x+10)^2}\ dx =\int \frac1{\big((x+3)^2+1\big)^2}\ dx\amp = \int \frac1{(u^2+1)^2}\ du. 
-\end{mathrow}
-Now make the substitution $u=\tan\theta$, $du=\sec^2\theta\ d\theta$:
-\begin{mathrow}
-   \amp =	\int \frac1{(\tan^2\theta+1)^2}\sec^2\theta\ d\theta</mrow>
+  <mrow>  \int \frac1{(x^2+6x+10)^2}\ dx =\int \frac1{\big((x+3)^2+1\big)^2}\ dx\amp = \int \frac1{(u^2+1)^2}\ du.</mrow>
+<intertext>Now make the substitution <m>u=\tan\theta</m>, <m>du=\sec^2\theta\ d\theta</m>:</intertext>
+  <mrow>  \amp =	\int \frac1{(\tan^2\theta+1)^2}\sec^2\theta\ d\theta</mrow>
   <mrow>  \amp = \int\frac 1{(\sec^2\theta)^2}\sec^2\theta\ d\theta</mrow>
-  <mrow>  \amp = \int \cos^2\theta\ d\theta.
-	\end{mathrow}
-Applying a power reducing formula, we have
-\begin{mathrow}
-	\amp = \int \left(\frac12 +\frac12\cos(2\theta)\right)\ d\theta</mrow>
+  <mrow>  \amp = \int \cos^2\theta\ d\theta.</mrow>
+<intertext>Applying a power reducing formula, we have</intertext>
+  <mrow>  \amp = \int \left(\frac12 +\frac12\cos(2\theta)\right)\ d\theta</mrow>
   <mrow>  \amp = \frac12\theta + \frac14\sin(2\theta) + C.</mrow>
 </md>
 </p>
@@ -322,9 +363,11 @@ Stating our final result in one line,
 </p>
 </solution>
 </example>
+
 <p>
 Our last example returns us to definite integrals, as seen in our first example. Given a definite integral that can be evaluated using Trigonometric Substitution, we could first evaluate the corresponding indefinite integral (by changing from an integral in terms of <m>x</m> to one in terms of <m>\theta</m>, then converting back to <m>x</m>) and then evaluate using the original bounds. It is much more straightforward, though, to change the bounds as we substitute.
 </p>
+
 <example xml:id="ex_trigsub6">
 <title>Definite integration and Trigonometric Substitution</title>
 <statement>
@@ -366,30 +409,33 @@ So
 </p>
 </solution>
 </example>
+
 <p>
 The following equalities are very useful when evaluating integrals using Trigonometric Substitution.
 </p>
-<keyidea xml:id="idea_useful_trigsub">
+<insight xml:id="idea_useful_trigsub">
 <title>Useful Equalities with Trigonometric Substitution</title>
 <ol>
-<li><m>\sin(2\theta) = 2\sin\theta\cos\theta</m></li>
-<li><m>\cos(2\theta) = \cos^2\theta - \sin^2\theta = 2\cos^2\theta-1 = 1-2\sin^2\theta</m></li>
-<li><m>\ds \int \sec^3\theta\ d\theta = \frac12\Big(\sec \theta\tan \theta + \ln\big|\sec \theta+\tan \theta\big|\Big)+C</m></li>
-<li><m>\ds \int \cos^2\theta\ d\theta = \int \frac12\big(1+\cos(2\theta)\big)\ d\theta = \frac12\big(\theta+\sin\theta\cos\theta\big)+C.</m></li>
+<li><p><m>\sin(2\theta) = 2\sin\theta\cos\theta</m></p></li>
+<li><p><m>\cos(2\theta) = \cos^2\theta - \sin^2\theta = 2\cos^2\theta-1 = 1-2\sin^2\theta</m></p></li>
+<li><p><m>\ds \int \sec^3\theta\ d\theta = \frac12\Big(\sec \theta\tan \theta + \ln\big|\sec \theta+\tan \theta\big|\Big)+C</m></p></li>
+<li><p><m>\ds \int \cos^2\theta\ d\theta = \int \frac12\big(1+\cos(2\theta)\big)\ d\theta = \frac12\big(\theta+\sin\theta\cos\theta\big)+C.</m></p></li>
 </ol>
-</keyidea>
+</insight>
 <p>
 The next section introduces Partial Fraction Decomposition, which is an algebraic technique that turns <q>complicated</q> fractions into sums of <q>simpler</q> fractions, making integration easier.
 </p>
 </introduction>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
 <p>
-Trigonometric Substitution works on the same principles as Integration by Substitution, though it can feel <q><u></u></q>.
+Trigonometric Substitution works on the same principles as Integration by Substitution, though it can feel <q><fillin /></q>.
 </p>
 </statement>
 <answer>
@@ -402,7 +448,7 @@ backwards
 <exercise>
 <statement>
 <p>
-If one uses Trigonometric Substitution on an integrand containing <m>\sqrt{25-x^2}</m>, then one should set <m>x=</m><u></u>.
+If one uses Trigonometric Substitution on an integrand containing <m>\sqrt{25-x^2}</m>, then one should set <m>x=</m><fillin />.
 </p>
 </statement>
 <answer>
@@ -419,14 +465,14 @@ Consider the Pythagorean Identity <m>\sin^2\theta+\cos^2\theta = 1</m>.
 </p>
 
 <ol>
-<li>What identity is obtained when both sides are divided by <m>\cos^2\theta</m>?</li>
-<li>Use the new identity to simplify <m>9\tan^2\theta + 9.</m></li>
+<li><p>What identity is obtained when both sides are divided by <m>\cos^2\theta</m>?</p></li>
+<li><p>Use the new identity to simplify <m>9\tan^2\theta + 9.</m></p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li><m>\tan^2\theta + 1 = \sec^2\theta</m></li>
-<li><m>9\sec^2\theta</m>.</li>
+<li><p><m>\tan^2\theta + 1 = \sec^2\theta</m></p></li>
+<li><p><m>9\sec^2\theta</m>.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -443,10 +489,10 @@ Because we are considering <m>a>0</m> and <m>x=a\sin \theta</m>, which means <m>
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, apply Trigonometric Substitution to evaluate the indefinite integrals.
@@ -669,7 +715,7 @@ In the following exercises, evaluate the indefinite integrals. Some may be evalu
 </statement>
 <answer>
 <p>
-<m>-\frac1{\sqrt{x^2+9}}+C</m>  (Trig. Subst. is not needed)
+<m>-\frac1{\sqrt{x^2+9}}+C</m>(Trig. Subst. is not needed)
 </p>
 </answer>
 </exercise>
@@ -801,7 +847,7 @@ In the following exercises, evaluate the definite integrals by making the proper
 </statement>
 <answer>
 <p>
-<m>9\sin^{-1}(1/3)+\sqrt{8}</m>  Note: the new lower bound is <m>\theta=\sin^{-1}(-1/3)</m> and the new upper bound is <m>\theta=\sin^{-1}(1/3)</m>. The final answer comes with recognizing that <m>\sin^{-1}(-1/3)=-\sin^{-1}(1/3)</m> and that <m>\cos\big(\sin^{-1}(1/3)\big)=\cos\big(\sin^{-1}(-1/3)\big) = \sqrt{8}/3</m>.
+<m>9\sin^{-1}(1/3)+\sqrt{8}</m>Note: the new lower bound is <m>\theta=\sin^{-1}(-1/3)</m> and the new upper bound is <m>\theta=\sin^{-1}(1/3)</m>. The final answer comes with recognizing that <m>\sin^{-1}(-1/3)=-\sin^{-1}(1/3)</m> and that <m>\cos\big(\sin^{-1}(1/3)\big)=\cos\big(\sin^{-1}(-1/3)\big) = \sqrt{8}/3</m>.
 </p>
 </answer>
 </exercise>
@@ -818,6 +864,6 @@ In the following exercises, evaluate the definite integrals by making the proper
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

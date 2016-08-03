@@ -17,19 +17,20 @@ We begin with the Product Rule.
 <p>
 Let <m>f</m> and <m>g</m> be differentiable functions on an open interval <m>I</m>.<index><main>Power Rule</main><sub>differentiation</sub></index><index><main>derivative</main><sub>Product Rule</sub></index> Then <m>fg</m> is a differentiable function on <m>I</m>, and
 <me>
-  \frac{d}{dx}\Big(f(x)g(x)\Big) = f(x)g\primeskip'(x) + \fp(x)g(x).
+  \frac{d}{dx}\Big(f(x)g(x)\Big) = f(x)g'(x) + \fp(x)g(x).
 </me>
 </p>
 </statement>
 </theorem>
 
 <p>
-<em>Important:</em> <m>\ds\frac{d}{dx}\Big(f(x)g(x)\Big) \neq \fp(x)g\primeskip'(x)</m>! While this answer is simpler than the Product Rule, it is wrong.
+<em>Important:</em> <m>\ds\frac{d}{dx}\Big(f(x)g(x)\Big) \neq \fp(x)g'(x)</m>! While this answer is simpler than the Product Rule, it is wrong.
 </p>
 
 <p>
 We practice using this new rule in an example, followed by an example that demonstrates why this theorem is true.
 </p>
+
 <example xml:id="ex_prod1">
 <title>Using the Product Rule</title>
 <statement>
@@ -39,7 +40,7 @@ Use the Product Rule to compute the derivative of <m>y=5x^2\sin x</m>. Evaluate 
 </statement>
 <solution>
 <p>
-To make our use of the Product Rule explicit, let's set <m>f(x) = 5x^2</m> and <m>g(x) = \sin x</m>. We easily compute/recall that <m>\fp(x) = 10x</m> and <m>g\primeskip'(x) = \cos x</m>. Employing the rule, we have
+To make our use of the Product Rule explicit, let's set <m>f(x) = 5x^2</m> and <m>g(x) = \sin x</m>. We easily compute/recall that <m>\fp(x) = 10x</m> and <m>g'(x) = \cos x</m>. Employing the rule, we have
 <me>
   \frac{d}{dx}\Big(5x^2\sin x\Big) = 5x^2\cos x + 10x\sin x.
 </me>
@@ -48,7 +49,7 @@ To make our use of the Product Rule explicit, let's set <m>f(x) = 5x^2</m> and <
 <p>
 At <m>x=\pi/2</m>, we have
 <me>
-  y\primeskip'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos \left(\frac{\pi}2\right) + 10\frac{\pi}2 \sin\left(\frac{\pi}{2}\right) = 5\pi.
+  y'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos \left(\frac{\pi}2\right) + 10\frac{\pi}2 \sin\left(\frac{\pi}{2}\right) = 5\pi.
 </me>
 </p>
 
@@ -57,13 +58,31 @@ We graph <m>y</m> and its tangent line at <m>x=\pi/2</m>, which has a slope of <
 </p>
 <figure xml:id="fig_5xsquaredsinx" >
 <caption>A graph of <m>y = 5x^2\sin x</m> and its tangent line at <m>x=\pi/2</m>.</caption>
-<image width="73%" source="images/fig5xsquaredsinx.png" />
+
+<!-- START figures/fig_5xsquaredsinx.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=21,xmin=-0.1,xmax=3.5,xtick={1.57,3.14},xticklabels={$\frac{\pi}2$,$\pi$},name=myplot]
+\addplot [{\colorone},smooth,thick,domain=0:3.14] {5*(x^2)*sin(x*180/3.14)};
+\addplot [{\colortwo},smooth,thick,domain=0:2.2] {15.7*(x-1.57)+12.34};
+%\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
+%\filldraw (axis cs:-1,-1) circle (1pt);
+%\filldraw (axis cs:-1,3) circle (1pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_5xsquaredsinx.tex END -->
+
 </figure>
 </solution>
 </example>
+
 <p>
 We now investigate why the Product Rule is true.
 </p>
+
 <example xml:id="ex_prove_product">
 <title>A proof of the Product Rule</title>
 <statement>
@@ -82,49 +101,47 @@ By the limit definition, we have
 <p>
 We now do something a bit unexpected; add 0 to the numerator (so that nothing is changed) in the form of <m>-f(x+h)g(x)+f(x+h)g(x)</m>, then do some regrouping as shown.
 <md>
-  <mrow>  \frac{d}{dx}\Big(f(x)g(x)\Big) \amp =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h} \quad \text{ (now add 0 to the numerator)}</mrow>
-  <mrow>  \amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h} \quad \text{ (regroup)}</mrow>
+  <mrow>  \frac{d}{dx}\Big(f(x)g(x)\Big) \amp =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}  \\text{ (now add 0 to the numerator) }</mrow>
+  <mrow>  \amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h}  \\text{ (regroup) }</mrow>
   <mrow>  \amp =	\lim_{h\to0} \frac{\Big(f(x+h)g(x+h)-f(x+h)g(x)\Big)+\Big(f(x+h)g(x)-f(x)g(x)\Big)}{h}</mrow>
-  <mrow>  \amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}\quad\text{ (factor)}</mrow>
-  <mrow>  \amp =\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x)\quad\text{ (apply limits)}</mrow>
-  <mrow>  \amp =f(x)g\primeskip'(x) + \fp(x)g(x)</mrow>
+  <mrow>  \amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}\\text{ (factor) }</mrow>
+  <mrow>  \amp =\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x)\\text{ (apply limits) }</mrow>
+  <mrow>  \amp =f(x)g'(x) + \fp(x)g(x)</mrow>
 </md>
-</p>
-
-<p>
-\vskip-
 </p>
 </solution>
 </example>
+
 <p>
 It is often true that we can recognize that a theorem is true through its proof yet somehow doubt its applicability to real problems. In the following example, we compute the derivative of a product of functions in two ways to verify that the Product Rule is indeed <q>right.</q>
 </p>
+
 <example xml:id="ex_prod2">
 <title>Exploring alternate derivative methods</title>
 <statement>
 <p>
-Let <m>y = (x^2+3x+1)(2x^2-3x+1)</m>. Find <m>y\primeskip'</m> two ways: first, by expanding the given product and then taking the derivative, and second, by applying the Product Rule. Verify that both methods give the same answer.
+Let <m>y = (x^2+3x+1)(2x^2-3x+1)</m>. Find <m>y'</m> two ways: first, by expanding the given product and then taking the derivative, and second, by applying the Product Rule. Verify that both methods give the same answer.
 </p>
 </statement>
 <solution>
 <p>
-We first expand the expression for <m>y</m>; a little algebra shows that <m>y = 2x^4+3x^3-6x^2+1</m>. It is easy to compute <m>y\primeskip'</m>;
+We first expand the expression for <m>y</m>; a little algebra shows that <m>y = 2x^4+3x^3-6x^2+1</m>. It is easy to compute <m>y'</m>;
 <me>
-  y\primeskip' = 8x^3+9x^2-12x.
+  y' = 8x^3+9x^2-12x.
 </me>
 </p>
 
 <p>
 Now apply the Product Rule.
 <md>
-  <mrow>  y\primeskip' \amp = (x^2+3x+1)(4x-3)+(2x+3)(2x^2-3x+1)</mrow>
+  <mrow>  y' \amp = (x^2+3x+1)(4x-3)+(2x+3)(2x^2-3x+1)</mrow>
   <mrow>  \amp = \big(4x^3+9x^2-5x-3\big) + \big(4x^3-7x+3\big)</mrow>
   <mrow>  \amp  = 8x^3+9x^2-12x.</mrow>
 </md>
 </p>
 
 <p>
-The uninformed usually assume that <q>the derivative of the product is the product of the derivatives.</q> Thus we are tempted to say that <m>y\primeskip' = (2x+3)(4x-3) = 8x^2+6x-9</m>. Obviously this is not correct.
+The uninformed usually assume that <q>the derivative of the product is the product of the derivatives.</q> Thus we are tempted to say that <m>y' = (2x+3)(4x-3) = 8x^2+6x-9</m>. Obviously this is not correct.
 </p>
 </solution>
 </example>
@@ -133,18 +150,16 @@ The uninformed usually assume that <q>the derivative of the product is the produ
 <title>Using the Product Rule with a product of three functions</title>
 <statement>
 <p>
-Let <m>y = x^3\ln x\cos x</m>. Find <m>y\primeskip'.</m>
+Let <m>y = x^3\ln x\cos x</m>. Find <m>y'.</m>
 </p>
 </statement>
 <solution>
 <p>
 We have a product of three functions while the Product Rule only specifies how to handle a product of two functions. Our method of handling this problem is to simply group the latter two functions together, and consider <m>y = x^3\big(\ln x\cos x\big)</m>. Following the Product Rule, we have
 <md>
-  <mrow>  \yp \amp = (x^3)\big(\ln x\cos x\big)' + 3x^2\big(\ln x\cos x\big)
-\end{mathrow}
-To evaluate $\big(\ln x\cos x\big)'$, we apply the Product Rule again:
-\begin{mathrow}
-		\amp = (x^3)\big(\ln x(-\sin x) + \frac1x\cos x\big)+ 3x^2\big(\ln x\cos x\big)</mrow>
+  <mrow>  \yp \amp = (x^3)\big(\ln x\cos x\big)' + 3x^2\big(\ln x\cos x\big)</mrow>
+<intertext>To evaluate <m>\big(\ln x\cos x\big)'</m>, we apply the Product Rule again:</intertext>
+  <mrow>  \amp = (x^3)\big(\ln x(-\sin x) + \frac1x\cos x\big)+ 3x^2\big(\ln x\cos x\big)</mrow>
   <mrow>  \amp = x^3\ln x(-\sin x) + x^3\frac1x\cos x+ 3x^2\ln x\cos x</mrow>
 </md>
 </p>
@@ -154,9 +169,11 @@ Recognize the pattern in our answer above: when applying the Product Rule to a p
 </p>
 </solution>
 </example>
+
 <p>
 We consider one more example before discussing another derivative rule.
 </p>
+
 <example xml:id="ex_deriv_ln">
 <title>Using the Product Rule</title>
 <statement>
@@ -165,8 +182,8 @@ Find the derivatives of the following functions.
 </p>
 
 <ol>
-<li><m>f(x) = x\ln x</m></li>
-<li><m>g(x) = x\ln x - x</m>.</li>
+<li><p><m>f(x) = x\ln x</m></p></li>
+<li><p><m>g(x) = x\ln x - x</m>.</p></li>
 </ol>
 </statement>
 <solution>
@@ -175,12 +192,11 @@ Recalling that the derivative of <m>\ln x</m> is <m>1/x</m>, we use the Product 
 </p>
 
 <ol>
-<li><m>\ds \frac{d}{dx}\Big(x\ln x\Big) = x\cdot 1/x + 1\cdot \ln x = 1+\ln x</m>.</li>
-<li>Using the result from above, we compute
+<li><p><m>\ds \frac{d}{dx}\Big(x\ln x\Big) = x\cdot 1/x + 1\cdot \ln x = 1+\ln x</m>.</p></li>
+<li><p>Using the result from above, we compute
 <me>
   \ds \frac{d}{dx}\Big(x\ln x-x\Big) = 1+\ln x-1 = \ln x.
-</me>
-</li>
+</me></p></li>
 </ol>
 
 <p>
@@ -188,6 +204,7 @@ This seems significant; if the natural log function <m>\ln x</m> is an important
 </p>
 </solution>
 </example>
+
 <p>
 We have learned how to compute the derivatives of sums, differences, and products of functions. We now learn how to find the derivative of a quotient of functions.
 </p>
@@ -198,7 +215,7 @@ We have learned how to compute the derivatives of sums, differences, and product
 <p>
 Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, where <m>g(x) \neq 0</m> on <m>I</m>.<index><main>derivative</main><sub>Quotient Rule</sub></index><index><main>Quotient Rule</main></index> Then <m>f/g</m> is differentiable on <m>I</m>, and
 <me>
-  \frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) = \frac{g(x)\fp(x) - f(x)g\primeskip'(x)}{g(x)^2}.
+  \frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) = \frac{g(x)\fp(x) - f(x)g'(x)}{g(x)^2}.
 </me>
 </p>
 </statement>
@@ -207,7 +224,7 @@ Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, whe
 <p>
 The Quotient Rule is not hard to use, although it might be a bit tricky to remember. A useful mnemonic works as follows. Consider a fraction's numerator and denominator as <q>HI</q> and <q>LO</q>, respectively. Then
 <me>
-  \frac{d}{dx}\left(\frac{\text{HI} }{\text{LO} }\right) = \frac{\text{LO<m>\cdot</m> dHI -- HI<m>\cdot</m> dLO} }{\text{LOLO} },
+  \frac{d}{dx}\left(\frac{\\text{ HI } }{\\text{ LO } }\right) = \frac{\\text{ LO\(\cdot\) dHI -- HI\(\cdot\) dLO } }{\\text{ LOLO } },
 </me>
 read <q>low dee high minus high dee low, over low low.</q> Said fast, that phrase can roll off the tongue, making it easy to memorize. The <q>dee high</q> and <q>dee low</q> parts refer to the derivatives of the numerator and denominator, respectively.
 </p>
@@ -215,6 +232,7 @@ read <q>low dee high minus high dee low, over low low.</q> Said fast, that phras
 <p>
 Let's practice using the Quotient Rule.
 </p>
+
 <example xml:id="ex_quot1">
 <title>Using the Quotient Rule</title>
 <statement>
@@ -232,9 +250,11 @@ Directly applying the Quotient Rule gives:
 </p>
 </solution>
 </example>
+
 <p>
 The Quotient Rule allows us to fill in holes in our understanding of derivatives of the common trigonometric functions. We start with finding the derivative of the tangent function.
 </p>
+
 <example xml:id="ex_der_tan">
 <title>Using the Quotient Rule to find $\frac{d}{dx}\big(\tan x\big)$.</title>
 <statement>
@@ -259,10 +279,27 @@ This is a beautiful result. To confirm its truth, we can find the equation of th
 </p>
 <figure xml:id="fig_tanx" >
 <caption>A graph of <m>y=\tan x</m> along with its tangent line at <m>x=\pi/4</m>.</caption>
-<image width="73%" source="images/figtanx.png" />
+
+<!-- START figures/fig_tanx.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-11,ymax=11,xmin=-1.65,xmax=1.7,xtick={-1.57,-.785,.785,1.57},xticklabels={$-\frac{\pi}2$,$-\frac{\pi}2$,$\frac{\pi}4$,$\frac{\pi}2$},name=myplot]
+\addplot [{\colorone},smooth,thick,samples=50,domain=-1.5:1.5] {tan(x*180/3.14159)};
+\addplot [{\colortwo},smooth,thick,domain=-1.0:1.5] {2*(x-.785)+1};
+%\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
+%\filldraw (axis cs:-1,-1) circle (1pt);
+%\filldraw (axis cs:-1,3) circle (1pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_tanx.tex END -->
+
 </figure>
 </solution>
 </example>
+
 <p>
 We include this result in the following theorem about the derivatives of the trigonometric functions. Recall we found the derivative of <m>y=\sin x</m> in <xref ref="ex_deriv_sinx">Example</xref> and stated the derivative of the cosine function in <xref ref="thm_deriv_common">Theorem</xref>. The derivatives of the cotangent, cosecant and secant functions can all be computed directly using <xref ref="thm_deriv_common">Theorem</xref> and the Quotient Rule.
 </p>
@@ -270,27 +307,21 @@ We include this result in the following theorem about the derivatives of the tri
 <theorem xml:id="thm_deriv_trig">
 <title>Derivatives of Trigonometric Functions</title>
 <statement>
-<sidebyside>
-
-<ol>
-<li><m>\ds \frac{d}{dx}\big(\sin x\big) = \cos x</m><index><main>derivative</main><sub>trigonometric functions</sub></index></li>
-<li><m>\ds \frac{d}{dx}\big(\tan x\big) = \sec^2 x</m></li>
-<li><m>\ds \frac{d}{dx}\big(\sec x\big) = \sec x\tan x</m></li>
+<ol cols="2" >
+<li><p><m>\ds \frac{d}{dx}\big(\sin x\big) = \cos x</m><index><main>derivative</main><sub>trigonometric functions</sub></index></p></li>
+<li><p><m>\ds \frac{d}{dx}\big(\tan x\big) = \sec^2 x</m></p></li>
+<li><p><m>\ds \frac{d}{dx}\big(\sec x\big) = \sec x\tan x</m></p></li>
+<li><p><m>\ds \frac{d}{dx}\big(\cos x\big) = -\sin x</m></p></li>
+<li><p><m>\ds \frac{d}{dx}\big(\cot x\big) = -\csc^2 x</m></p></li>
+<li><p><m>\ds \frac{d}{dx}\big(\csc x\big) = -\csc x\cot x</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \frac{d}{dx}\big(\cos x\big) = -\sin x</m></li>
-<li><m>\ds \frac{d}{dx}\big(\cot x\big) = -\csc^2 x</m></li>
-<li><m>\ds \frac{d}{dx}\big(\csc x\big) = -\csc x\cot x</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 </theorem>
 
 <p>
 To remember the above, it may be helpful to keep in mind that the derivatives of the trigonometric functions that start with <q>c</q> have a minus sign in them.
 </p>
+
 <example xml:id="ex_prod_quot">
 <title>Exploring alternate derivative methods</title>
 <statement>
@@ -303,21 +334,23 @@ In <xref ref="ex_quot1">Example</xref> the derivative of <m>\ds f(x) = \frac{5x^
 We found in <xref ref="ex_quot1">Example</xref> that the <m>\ds \fp(x) = \frac{10x\sin x - 5x^2\cos x}{\sin^2 x}</m>. We now find <m>\fp</m> using the Product Rule, considering <m>f</m> as <m>f(x) = 5x^2\csc x</m>.
 <md>
   <mrow>  \fp(x) \amp = \frac{d}{dx}\Big(5x^2\csc x\Big)</mrow>
-  <mrow>  \amp =	\text{$5x^2(-\csc x\cot x) + 10x\csc x$} \text{ (now rewrite trig functions)}</mrow>
+  <mrow>  \amp =	$5x^2(-\csc x\cot x) + 10x\csc x$ \\text{ (now rewrite trig functions) }</mrow>
   <mrow>  \amp = 5x^2\cdot \frac{-1}{\sin x}\cdot \frac{\cos x}{\sin x} + \frac{10x}{\sin x}</mrow>
-  <mrow>  \amp =	\parbox{140pt}{$\ds\frac{-5x^2\cos x}{\sin ^2x}+\frac{10x}{\sin x}$} \text{ (get common denominator)}</mrow>
+  <mrow>  \amp =	\parbox{140pt}{$\ds\frac{-5x^2\cos x}{\sin ^2x}+\frac{10x}{\sin x}$} \\text{ (get common denominator) }</mrow>
   <mrow>  \amp = \frac{10x\sin x - 5x^2\cos x}{\sin^2x}</mrow>
 </md>
 </p>
 
 <p>
-Finding <m>\fp</m> using either method returned the same result. At first, the answers looked different, but some algebra verified they are the same. In general, there is not one final form that we seek; the immediate result from the Product Rule is fine. Work to <q>simplify\primeskip</q> your results into a form that is most readable and useful to you.
+Finding <m>\fp</m> using either method returned the same result. At first, the answers looked different, but some algebra verified they are the same. In general, there is not one final form that we seek; the immediate result from the Product Rule is fine. Work to <q>simplify</q> your results into a form that is most readable and useful to you.
 </p>
 </solution>
 </example>
+
 <p>
 The Quotient Rule gives other useful results, as show in the next example.
 </p>
+
 <example xml:id="ex_deriv_power">
 <title>Using the Quotient Rule to expand the Power Rule</title>
 <statement>
@@ -326,8 +359,8 @@ Find the derivatives of the following functions.
 </p>
 
 <ol>
-<li><m>\ds f(x) = \frac{1}{x}</m></li>
-<li><m>\ds f(x)= \frac{1}{x^n}</m>, where <m>n>0</m> is an integer.</li>
+<li><p><m>\ds f(x) = \frac{1}{x}</m></p></li>
+<li><p><m>\ds f(x)= \frac{1}{x^n}</m>, where <m>n>0</m> is an integer.</p></li>
 </ol>
 </statement>
 <solution>
@@ -336,20 +369,17 @@ We employ the Quotient Rule.
 </p>
 
 <ol>
-<li><m>\ds \fp(x) = \frac{x\cdot 0 - 1\cdot 1}{x^2} = -\frac{1}{x^2}</m>.</li>
-<li><m>\ds \fp(x) = \frac{x^n\cdot 0 - 1\cdot nx^{n-1}}{(x^n)^2} = -\frac{nx^{n-1}}{x^{2n}} = -\frac{n}{x^{n+1}}.</m></li>
+<li><p><m>\ds \fp(x) = \frac{x\cdot 0 - 1\cdot 1}{x^2} = -\frac{1}{x^2}</m>.</p></li>
+<li><p><m>\ds \fp(x) = \frac{x^n\cdot 0 - 1\cdot nx^{n-1}}{(x^n)^2} = -\frac{nx^{n-1}}{x^{2n}} = -\frac{n}{x^{n+1}}.</m></p></li>
 </ol>
-
-<p>
-\vskip-
-</p>
 </solution>
 </example>
+
 <p>
 The derivative of <m>\ds y=\frac{1}{x^n}</m> turned out to be rather nice. It gets better. Consider:
 <md>
-  <mrow>  \frac{d}{dx}\left(\frac{1}{x^n}\right) \amp = \parbox{60pt}{$\ds\frac{d}{dx}\Big(x^{-n}\Big)$} \text{ (apply result from <xref ref="ex_deriv_power">Example</xref>)}</mrow>
-  <mrow>  \amp = \parbox{60pt}{$\ds-\frac{n}{x^{n+1}}$}\text{ (rewrite algebraically)}</mrow>
+  <mrow>  \frac{d}{dx}\left(\frac{1}{x^n}\right) \amp = \parbox{60pt}{$\ds\frac{d}{dx}\Big(x^{-n}\Big)$} \\text{ (apply result from <xref ref="ex_deriv_power">Example</xref>) }</mrow>
+  <mrow>  \amp = \parbox{60pt}{$\ds-\frac{n}{x^{n+1}}$}\\text{ (rewrite algebraically) }</mrow>
   <mrow>  \amp = -nx^{-(n+1)}</mrow>
   <mrow>  \amp = -nx^{-n-1}.</mrow>
 </md>
@@ -374,6 +404,7 @@ Let <m>f(x) = x^n</m>, where <m>n\neq 0</m> is an integer.<index><main>derivativ
 <p>
 Taking the derivative of many functions is relatively straightforward. It is clear (with practice) what rules apply and in what order they should be applied. Other functions present multiple paths; different rules may be applied depending on how the function is treated. One of the beautiful things about calculus is that there is not <q>the</q> right way; each path, when applied correctly, leads to the same result, the derivative. We demonstrate this concept in an example.
 </p>
+
 <example xml:id="ex_multiple_deriv">
 <title>Exploring alternate derivative methods</title>
 <statement>
@@ -382,9 +413,9 @@ Let <m>\ds f(x) = \frac{x^2-3x+1}{x}</m>. Find <m>\fp(x)</m> in each of the foll
 </p>
 
 <ol>
-<li>By applying the Quotient Rule,</li>
-<li>by viewing <m>f</m> as <m>f(x) = \big(x^2-3x+1\big)\cdot x^{-1}</m> and applying the Product and Power Rules, and</li>
-<li>by <q>simplifying\primeskip</q> first through division.</li>
+<li><p>By applying the Quotient Rule,</p></li>
+<li><p>by viewing <m>f</m> as <m>f(x) = \big(x^2-3x+1\big)\cdot x^{-1}</m> and applying the Product and Power Rules, and</p></li>
+<li><p>by <q>simplifying</q> first through division.</p></li>
 </ol>
 
 <p>
@@ -393,31 +424,27 @@ Verify that all three methods give the same result.
 </statement>
 <solution>
 <ol>
-<li>Applying the Quotient Rule gives:
+<li><p>Applying the Quotient Rule gives:
 <me>
   \fp(x) = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2} = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2}.
-</me>
-</li>
-<li>By rewriting <m>f</m>, we can apply the Product and Power Rules as follows:
+</me></p></li>
+<li><p>By rewriting <m>f</m>, we can apply the Product and Power Rules as follows:
 <md>
   <mrow>  \fp(x) \amp =		\big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}</mrow>
   <mrow>  \amp =	-\frac{x^2-3x+1}{x^2}+\frac{2x-3}{x}</mrow>
   <mrow>  \amp = -\frac{x^2-3x+1}{x^2}+\frac{2x^2-3x}{x^2}</mrow>
   <mrow>  \amp = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2},</mrow>
 </md>
-the same result as above.</li>
-<li>As <m>x\neq 0</m>, we can divide through by <m>x</m> first, giving <m>\ds f(x) = x-3+\frac{1}x</m>. Now apply the Power Rule.
+the same result as above.</p></li>
+<li><p>As <m>x\neq 0</m>, we can divide through by <m>x</m> first, giving <m>\ds f(x) = x-3+\frac{1}x</m>. Now apply the Power Rule.
 <me>
   \fp(x) = 1-\frac{1}{x^2},
 </me>
-the same result as before.</li>
+the same result as before.</p></li>
 </ol>
-
-<p>
-\vskip-
-</p>
 </solution>
 </example>
+
 <p>
 <xref ref="ex_multiple_deriv">Example</xref> demonstrates three methods of finding \fp. One is hard pressed to argue for a <q>best method</q> as all three gave the same result without too much difficulty, although it is clear that using the Product Rule required more steps. Ultimately, the important principle to take away from this is: reduce the answer to a form that seems <q>simple</q> and easy to interpret. In that example, we saw different expressions for \fp, including: {
 <me>
@@ -433,7 +460,9 @@ In the next section we continue to learn rules that allow us to more easily comp
 </introduction>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
@@ -512,19 +541,28 @@ Answers will vary.
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises:
 </p>
 
 <ol>
-<li class="custom-list-style-type" label="(a)" >Use the Product Rule to differentiate the function.</li>
-<li class="custom-list-style-type" label="(b)" >Manipulate the function algebraically and differentiate without the Product Rule.</li>
-<li class="custom-list-style-type" label="(c)" >Show that the answers from (a) and (b) are equivalent.</li>
+<li>
+<title>(a)</title>
+<p>
+Use the Product Rule to differentiate the function.</p></li>
+<li>
+<title>(b)</title>
+<p>
+Manipulate the function algebraically and differentiate without the Product Rule.</p></li>
+<li>
+<title>(c)</title>
+<p>
+Show that the answers from (a) and (b) are equivalent.</p></li>
 </ol>
 <exercise>
 <statement>
@@ -534,9 +572,9 @@ In the following exercises:
 </statement>
 <answer>
 <ol>
-<li><m>\fp(x) = (x^2+3x) + x(2x+3)</m></li>
-<li><m>\fp(x) = 3x^2 + 6x</m></li>
-<li>They are equal.</li>
+<li><p><m>\fp(x) = (x^2+3x) + x(2x+3)</m></p></li>
+<li><p><m>\fp(x) = 3x^2 + 6x</m></p></li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -549,9 +587,9 @@ In the following exercises:
 </statement>
 <answer>
 <ol>
-<li><m>g'(x) = 4x(5x^3)+2x^2(15x^2)</m></li>
-<li><m>g'(x) = 50x^4</m></li>
-<li>They are equal.</li>
+<li><p><m>g'(x) = 4x(5x^3)+2x^2(15x^2)</m></p></li>
+<li><p><m>g'(x) = 50x^4</m></p></li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -564,9 +602,9 @@ In the following exercises:
 </statement>
 <answer>
 <ol>
-<li><m>h'(s) = 2(s+4) + (2s-1)(1)</m></li>
-<li><m>h'(s) = 4s + 7</m></li>
-<li>They are equal.</li>
+<li><p><m>h'(s) = 2(s+4) + (2s-1)(1)</m></p></li>
+<li><p><m>h'(s) = 4s + 7</m></p></li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -579,9 +617,9 @@ In the following exercises:
 </statement>
 <answer>
 <ol>
-<li><m>\fp(x) = 2x(3-x^3)+(x^2+5)(-3x^2)</m></li>
-<li><m>\fp(x) = -5x^4-15x^2+6x</m></li>
-<li>They are equal.</li>
+<li><p><m>\fp(x) = 2x(3-x^3)+(x^2+5)(-3x^2)</m></p></li>
+<li><p><m>\fp(x) = -5x^4-15x^2+6x</m></p></li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -590,9 +628,18 @@ In the following exercises:
 </p>
 
 <ol>
-<li class="custom-list-style-type" label="(a)" >Use the Quotient Rule to differentiate the function.</li>
-<li class="custom-list-style-type" label="(b)" >Manipulate the function algebraically and differentiate without the Quotient Rule.</li>
-<li class="custom-list-style-type" label="(c)" >Show that the answers from (a) and (b) are equivalent.</li>
+<li>
+<title>(a)</title>
+<p>
+Use the Quotient Rule to differentiate the function.</p></li>
+<li>
+<title>(b)</title>
+<p>
+Manipulate the function algebraically and differentiate without the Quotient Rule.</p></li>
+<li>
+<title>(c)</title>
+<p>
+Show that the answers from (a) and (b) are equivalent.</p></li>
 </ol>
 <exercise>
 <statement>
@@ -602,9 +649,9 @@ In the following exercises:
 </statement>
 <answer>
 <ol>
-<li><m>\fp(x) = \frac{x(2x)-(x^2+3)1}{x^2}</m></li>
-<li><m>\fp(x) = 1-\frac{3}{x^2}</m></li>
-<li>They are equal.</li>
+<li><p><m>\fp(x) = \frac{x(2x)-(x^2+3)1}{x^2}</m></p></li>
+<li><p><m>\fp(x) = 1-\frac{3}{x^2}</m></p></li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -617,9 +664,9 @@ In the following exercises:
 </statement>
 <answer>
 <ol>
-<li><m>g'(x) = \frac{2x^2(3x^2-4x)-(x^3-2x^2)(4x)}{4x^4}</m></li>
-<li><m>g'(x) = 1/2</m></li>
-<li>They are equal.</li>
+<li><p><m>g'(x) = \frac{2x^2(3x^2-4x)-(x^3-2x^2)(4x)}{4x^4}</m></p></li>
+<li><p><m>g'(x) = 1/2</m></p></li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -632,9 +679,9 @@ In the following exercises:
 </statement>
 <answer>
 <ol>
-<li><m>h'(s) = \frac{4s^3(0) - 3(12s^2)}{16s^6}</m></li>
-<li><m>h'(s) = -9/4s^{-4}</m></li>
-<li>They are equal.</li>
+<li><p><m>h'(s) = \frac{4s^3(0) - 3(12s^2)}{16s^6}</m></p></li>
+<li><p><m>h'(s) = -9/4s^{-4}</m></p></li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -647,9 +694,9 @@ In the following exercises:
 </statement>
 <answer>
 <ol>
-<li><m>\fp(t) = \frac{(t+1)(2t) - (t^2-1)(1)}{(t+1)^2}</m></li>
-<li><m>f(t) = t-1</m> when <m>t\neq -1</m>, so <m>\fp(t) = 1</m>.</li>
-<li>They are equal.</li>
+<li><p><m>\fp(t) = \frac{(t+1)(2t) - (t^2-1)(1)}{(t+1)^2}</m></p></li>
+<li><p><m>f(t) = t-1</m> when <m>t\neq -1</m>, so <m>\fp(t) = 1</m>.</p></li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -742,9 +789,9 @@ In the following exercises, compute the derivative of the given function.
 </statement>
 <answer>
 <ol>
-<li><m>\fp(x) = \frac{(x+2)(4x^3+6x^2)-(x^4+2x^3)(1)}{(x+2)^2}</m></li>
-<li><m>f(x) = x^3</m> when <m>x\neq -2</m>, so <m>\fp(x) = 3x^2</m>.</li>
-<li>They are equal.</li>
+<li><p><m>\fp(x) = \frac{(x+2)(4x^3+6x^2)-(x^4+2x^3)(1)}{(x+2)^2}</m></p></li>
+<li><p><m>f(x) = x^3</m> when <m>x\neq -2</m>, so <m>\fp(x) = 3x^2</m>.</p></li>
+<li><p>They are equal.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -1035,55 +1082,126 @@ In the following exercises, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>
 </p>
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig02_04_ex_42.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_02_04_ex_42.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,-3,3},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-3.5,xmax=3.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone}] {2*x+1};
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_02_04_ex_42.tex END --></sidebyside>
 </statement>
 <answer>
-<p>
-<image width="80%" source="images/fig02_04_ex_42a.png" />
-</p>
+<!-- START\1END -->
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig02_04_ex_43.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_02_04_ex_43.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,-3,3},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-3.5,xmax=3.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},domain=-3.5:-1] {3*x+6};
+\addplot [thick,{\colorone},domain=-1:3.5] {-x+2};
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_02_04_ex_43.tex END --></sidebyside>
 </statement>
 <answer>
-<p>
-<image width="80%" source="images/fig02_04_ex_43a.png" />
-</p>
+<!-- START\1END -->
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig02_04_ex_44.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_02_04_ex_44.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,4,3,5},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-2.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth] {x^3/3-2*x^2+x+5};
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_02_04_ex_44.tex END --></sidebyside>
 </statement>
 <answer>
-<p>
-<image width="80%" source="images/fig02_04_ex_44a.png" />
-</p>
+<!-- START\1END -->
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig02_04_ex_45.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_02_04_ex_45.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,4,3,5},
+%			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-10.9,ymax=10.9,%
+			xmin=-5.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-5.5:-1.08,samples=40] {-1/(x+1)-4};
+\addplot [thick,{\colorone},smooth,domain=-.92:5.5,samples=40] {-1/(x+1)+3};
+\draw [dashed,{\colorone}] (axis cs:-1,-10.5) -- (axis cs:-1,10.5);
+\draw [dashed,{\colorone}] (axis cs:-5.5,-4) -- (axis cs:5.5,-4);
+\draw [dashed,{\colorone}] (axis cs:-5.5,3) -- (axis cs:5.5,3);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_02_04_ex_45.tex END --></sidebyside>
 </statement>
 <answer>
-<p>
-<image width="80%" source="images/fig02_04_ex_45a.png" />
-</p>
+<!-- START\1END -->
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

@@ -25,30 +25,28 @@ Thus
 <p>
 This section teaches how to <em>decompose</em>
 <me>
-  \frac{1}{x^2-1}\quad  \text{into} \quad  \frac{1/2}{x-1}-\frac{1/2}{x+1}.
+  \frac{1}{x^2-1}  \\text{ into }   \frac{1/2}{x-1}-\frac{1/2}{x+1}.
 </me>
 </p>
 
 <p>
 We start with a rational function <m>f(x)=\frac{p(x)}{q(x)}</m>, where <m>p</m> and <m>q</m> do not have any common factors and the degree of <m>p</m> is less than the degree of <m>q</m>. It can be shown that any polynomial, and hence <m>q</m>, can be factored into a product of linear and irreducible quadratic terms. The following Key Idea states how to decompose a rational function into a sum of rational functions whose denominators are all of lower degree than <m>q</m>.
 </p>
-<keyidea xml:id="idea_partial_fraction">
+<insight xml:id="idea_partial_fraction">
 <title>Partial Fraction Decomposition</title>
 <p>
 Let <m>\ds \frac{p(x)}{q(x)}</m> be a rational function, where the degree of <m>p</m> is less than the degree of <m>q</m>.<index><main>integration</main><sub>partial fraction decomp.</sub></index>
 </p>
 
 <ol>
-<li><b>Linear Terms:</b> Let <m>(x-a)</m> divide <m>q(x)</m>, where <m>(x-a)^n</m> is the highest power of <m>(x-a)</m> that divides <m>q(x)</m>. Then the decomposition of <m>\frac{p(x)}{q(x)}</m> will contain the sum
+<li><p><em>Linear Terms:</em> Let <m>(x-a)</m> divide <m>q(x)</m>, where <m>(x-a)^n</m> is the highest power of <m>(x-a)</m> that divides <m>q(x)</m>. Then the decomposition of <m>\frac{p(x)}{q(x)}</m> will contain the sum
 <me>
   \frac{A_1}{(x-a)} + \frac{A_2}{(x-a)^2} + \cdots +\frac{A_n}{(x-a)^n}.
-</me>
-</li>
-<li><b>Quadratic Terms:</b> Let <m>x^2+bx+c</m> divide <m>q(x)</m>, where <m>(x^2+bx+c)^n</m> is the highest power of <m>x^2+bx+c</m> that divides <m>q(x)</m>. Then the decomposition of <m>\frac{p(x)}{q(x)}</m> will contain the sum
+</me></p></li>
+<li><p><em>Quadratic Terms:</em> Let <m>x^2+bx+c</m> divide <m>q(x)</m>, where <m>(x^2+bx+c)^n</m> is the highest power of <m>x^2+bx+c</m> that divides <m>q(x)</m>. Then the decomposition of <m>\frac{p(x)}{q(x)}</m> will contain the sum
 <me>
   \frac{B_1x+C_1}{x^2+bx+c}+\frac{B_2x+C_2}{(x^2+bx+c)^2}+\cdots+\frac{B_nx+C_n}{(x^2+bx+c)^n}.
-</me>
-</li>
+</me></p></li>
 </ol>
 
 <p>
@@ -56,13 +54,14 @@ To find the coefficients <m>A_i</m>, <m>B_i</m> and <m>C_i</m>:
 </p>
 
 <ol>
-<li>Multiply all fractions by <m>q(x)</m>, clearing the denominators. Collect like terms.</li>
-<li>Equate the resulting coefficients of the powers of <m>x</m> and solve the resulting system of linear equations.</li>
+<li><p>Multiply all fractions by <m>q(x)</m>, clearing the denominators. Collect like terms.</p></li>
+<li><p>Equate the resulting coefficients of the powers of <m>x</m> and solve the resulting system of linear equations.</p></li>
 </ol>
-</keyidea>
+</insight>
 <p>
 The following examples will demonstrate how to put this Key Idea into practice. <xref ref="ex_pf1">Example</xref> stresses the decomposition aspect of the Key Idea.
 </p>
+
 <example xml:id="ex_pf1">
 <title>Decomposing into partial fractions</title>
 <statement>
@@ -82,7 +81,7 @@ term in the decomposition.
 <p>
 As <m>(x-2)^3</m> divides the denominator, we will have the following terms in the decomposition:
 <me>
-  \frac{B}{x-2},\quad \frac{C}{(x-2)^2}\quad \text{and} \quad \frac{D}{(x-2)^3}.
+  \frac{B}{x-2}, \frac{C}{(x-2)^2} \\text{ and }  \frac{D}{(x-2)^3}.
 </me>
 </p>
 
@@ -93,7 +92,7 @@ The <m>x^2+x+2</m> term in the denominator results in a <m>\ds\frac{Ex+F}{x^2+x+
 <p>
 Finally, the <m>(x^2+x+7)^2</m> term results in the terms
 <me>
-  \frac{Gx+H}{x^2+x+7}\quad \text{and} \quad \frac{Ix+J}{(x^2+x+7)^2}.
+  \frac{Gx+H}{x^2+x+7} \\text{ and }  \frac{Ix+J}{(x^2+x+7)^2}.
 </me>
 </p>
 
@@ -132,10 +131,8 @@ To solve for <m>A</m> and <m>B</m>, first multiply through by <m>x^2-1 = (x-1)(x
   <mrow>  1 \amp = \frac{A(x-1)(x+1)}{x-1}+\frac{B(x-1)(x+1)}{x+1}</mrow>
   <mrow>  \amp = A(x+1) + B(x-1)</mrow>
   <mrow>  \amp = Ax+A + Bx-B</mrow>
-  <mrow>  \end{mathrow}
-Now collect like terms.
-\begin{mathrow}
-	\amp = (A+B)x + (A-B).</mrow>
+<intertext>Now collect like terms.</intertext>
+  <mrow>  \amp = (A+B)x + (A-B).</mrow>
 </md>
 </p>
 
@@ -176,10 +173,6 @@ Thus
   \frac{1}{x^2-1} = \frac{1/2}{x-1}-\frac{1/2}{x+1}.
 </me>
 </p>
-
-<p>
-\vskip-
-</p>
 </solution>
 </example>
 
@@ -187,7 +180,11 @@ Thus
 <title>Integrating using partial fractions</title>
 <statement>
 <p>
-Use partial fraction decomposition to integrate <m>\ds\int\frac{1}{(x-1)(x+2)^2}\ dx.</m>\begin{solution}
+Use partial fraction decomposition to integrate <m>\ds\int\frac{1}{(x-1)(x+2)^2}\ dx.</m>
+</p>
+</statement>
+<solution>
+<p>
 We decompose the integrand as follows, as described by <xref ref="idea_partial_fraction">Key Idea</xref>:
 <me>
   \frac{1}{(x-1)(x+2)^2} = \frac{A}{x-1} + \frac{B}{x+2} + \frac{C}{(x+2)^2}.
@@ -204,7 +201,7 @@ To solve for <m>A</m>, <m>B</m> and <m>C</m>, we multiply both sides by <m>(x-1)
 </p>
 <aside>
 <p>
-<b>Note:</b> <xref ref="eq_pf3">Equation</xref> offers a direct route to finding the values of <m>A</m>, <m>B</m> and <m>C</m>. Since the equation holds for all values of <m>x</m>, it holds in particular when <m>x=1</m>. However, when <m>x=1</m>, the right hand side simplifies to <m>A(1+2)^2 = 9A</m>. Since the left hand side is still 1, we have <m>1 = 9A</m>. Hence <m>A = 1/9</m>.
+<em>Note:</em> <xref ref="eq_pf3">Equation</xref> offers a direct route to finding the values of <m>A</m>, <m>B</m> and <m>C</m>. Since the equation holds for all values of <m>x</m>, it holds in particular when <m>x=1</m>. However, when <m>x=1</m>, the right hand side simplifies to <m>A(1+2)^2 = 9A</m>. Since the left hand side is still 1, we have <m>1 = 9A</m>. Hence <m>A = 1/9</m>.
 </p>
 
 <p>
@@ -222,14 +219,14 @@ We have
 </me>
 leading to the equations
 <me>
-  A+B = 0, \quad 4A+B+C = 0 \quad \text{and}  \quad 4A-2B-C = 1.
+  A+B = 0,  4A+B+C = 0  \\text{ and }   4A-2B-C = 1.
 </me>
 </p>
 
 <p>
 These three equations of three unknowns lead to a unique solution:
 <me>
-  A = 1/9,\quad B = -1/9 \quad \text{and}  \quad C = -1/3.
+  A = 1/9, B = -1/9  \\text{ and }   C = -1/3.
 </me>
 </p>
 
@@ -246,11 +243,7 @@ Each can be integrated with a simple substitution with <m>u=x-1</m> or <m>u=x+2<
   \int\frac{1}{(x-1)(x+2)^2}\ dx = \frac19\ln|x-1| -\frac19\ln|x+2| +\frac1{3(x+2)}+C.
 </me>
 </p>
-
-<p>
-\vskip-
-</p>
-</statement>
+</solution>
 </example>
 
 <example xml:id="ex_pf4">
@@ -277,21 +270,17 @@ for appropriate values of <m>A</m> and <m>B</m>. Clearing denominators, we have
 </p>
 <aside>
 <p>
-<b>Note:</b> The values of <m>A</m> and <m>B</m> can be quickly found using the technique described in the margin of <xref ref="ex_pf3">Example</xref>.
+<em>Note:</em> The values of <m>A</m> and <m>B</m> can be quickly found using the technique described in the margin of <xref ref="ex_pf3">Example</xref>.
 </p>
 </aside>
 <md>
   <mrow>  19x+30 \amp = A(x+3) + B(x-5)</mrow>
-  <mrow>  \amp = (A+B)x + (3A-5B).
-\end{mathrow}
-This implies that:
-\begin{mathrow}
-19\amp = A+B</mrow>
+  <mrow>  \amp = (A+B)x + (3A-5B).</mrow>
+<intertext>This implies that:</intertext>
+  <mrow>  19\amp = A+B</mrow>
   <mrow>  30\amp = 3A-5B.</mrow>
-  <mrow>  \end{mathrow}
-Solving this system of linear equations gives
-\begin{mathrow}
-125/8 \amp =A</mrow>
+<intertext>Solving this system of linear equations gives</intertext>
+  <mrow>  125/8 \amp =A</mrow>
   <mrow>  27/8 \amp =B.</mrow>
 </md>
 <p>
@@ -300,10 +289,6 @@ We can now integrate.
   <mrow>  \int \frac{x^3}{(x-5)(x+3)}\ dx \amp = \int\left(x+2+\frac{125/8}{x-5}+\frac{27/8}{x+3}\right)\ dx</mrow>
   <mrow>  \amp = \frac{x^2}2 + 2x + \frac{125}{8}\ln|x-5| + \frac{27}8\ln|x+3| + C.</mrow>
 </md>
-</p>
-
-<p>
-\vskip-
 </p>
 </solution>
 </example>
@@ -320,15 +305,11 @@ Use partial fraction decomposition to evaluate <m>\ds \int\frac{7x^2+31x+54}{(x+
 The degree of the numerator is less than the degree of the denominator so we begin by applying <xref ref="idea_partial_fraction">Key Idea</xref>. We have:
 <md>
   <mrow>  \frac{7x^2+31x+54}{(x+1)(x^2+6x+11)} \amp = \frac{A}{x+1} + \frac{Bx+C}{x^2+6x+11}.</mrow>
-  <mrow>  \end{mathrow}
-Now clear the denominators.
-\begin{mathrow}
-7x^2+31x+54 \amp = A(x^2+6x+11) + (Bx+C)(x+1)</mrow>
+<intertext>Now clear the denominators.</intertext>
+  <mrow>  7x^2+31x+54 \amp = A(x^2+6x+11) + (Bx+C)(x+1)</mrow>
   <mrow>  \amp = (A+B)x^2 + (6A+B+C)x + (11A+C).</mrow>
-  <mrow>  \end{mathrow}
-This implies that:
-\begin{mathrow}
-				7\amp =A+B</mrow>
+<intertext>This implies that:</intertext>
+  <mrow>  7\amp =A+B</mrow>
   <mrow>  31 \amp = 6A+B+C</mrow>
   <mrow>  54 \amp = 11A+C.</mrow>
 </md>
@@ -381,6 +362,7 @@ As with many other problems in calculus, it is important to remember that one is
 </p>
 </solution>
 </example>
+
 <p>
 Partial Fraction Decomposition is an important tool when dealing with rational functions. Note that at its heart, it is a technique of algebra, not calculus, as we are rewriting a fraction in a new form. Regardless, it is very useful in the realm of calculus as it lets us evaluate a certain set of <q>complicated</q> integrals.
 </p>
@@ -391,12 +373,14 @@ The next section introduces new functions, called the Hyperbolic Functions. They
 </introduction>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
 <p>
-Fill in the blank: Partial Fraction Decomposition is a method of rewriting <u></u> functions.
+Fill in the blank: Partial Fraction Decomposition is a method of rewriting <fillin /> functions.
 </p>
 </statement>
 <answer>
@@ -470,10 +454,10 @@ Decompose <m>\ds \frac{2x+5}{x^3+7x}</m> without solving for the coefficients, a
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, evaluate the indefinite integral.
@@ -783,6 +767,6 @@ In the following exercises, evaluate the definite integral.
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

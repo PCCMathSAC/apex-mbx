@@ -24,7 +24,7 @@ Now imagine driving a car and looking at the speedometer, which reads <q>60 mph.
 </p>
 
 <p>
-One could argue the <em>only</em> good approximation, given the information provided, would be based on <q>distance = rate <m>\times</m> time.</q> In this case, we assume a constant rate of 60 mph with a time of <m>5/60</m> hours. Hence we would approximate the distance traveled as 5 miles.
+One could argue the <em>only</em> good approximation, given the information provided, would be based on <q>distance = rate <times /> time.</q> In this case, we assume a constant rate of 60 mph with a time of <m>5/60</m> hours. Hence we would approximate the distance traveled as 5 miles.
 </p>
 
 <p>
@@ -38,13 +38,16 @@ Referring back to the falling amusement<ndash />park ride, knowing that at <m>t=
 <p>
 It is useful to recognize the <em>units</em> of the derivative function. If <m>y</m> is a function of <m>x</m>, i.e., <m>y=f(x)</m> for some function <m>f</m>, and <m>y</m> is measured in feet and <m>x</m> in seconds, then the units of <m>y' = \fp</m> are <q>feet per second,</q> commonly written as <q>ft/s.</q> In general, if <m>y</m> is measured in units <m>P</m> and <m>x</m> is measured in units <m>Q</m>, then <m>y'</m> will be measured in units <q><m>P</m> per <m>Q</m></q>, or <q><m>P/Q</m>.</q> Here we see the fraction<ndash />like behavior of the derivative in the notation:
 </p>
-the units of <m>\quad\ds \frac{dy}{dx}</m>  are \quad<m>\ds \frac{\text{units of <m>y</m>} }{\text{units of <m>x</m>} }</m>.
+
+<p>
+the units of <m>\ds \frac{dy}{dx}</m>are <m>\ds \frac{\\text{ units of \(y\) } }{\\text{ units of \(x\) } }</m>.
+</p>
 
 <example xml:id="ex_der_meaning1">
 <title>The meaning of the derivative: World Population</title>
 <statement>
 <p>
-Let <m>P(t)</m> represent the world population <m>t</m> minutes after 12:00 a.m., January 1, 2012. It is fairly accurate to say that <m>P(0) = 7,028,734,178</m> (<c>www.prb.org</c>). It is also fairly accurate to state that <m>P\primeskip'(0) = 156</m>; that is, at midnight on January 1, 2012, the population of the world was growing by about 156 <em>people per minute</em> (note the units). Twenty days later (or, 28,800 minutes later) we could reasonably assume the population grew by about <m>28,800\cdot156 = 4,492,800</m> people.
+Let <m>P(t)</m> represent the world population <m>t</m> minutes after 12:00 a.m., January 1, 2012. It is fairly accurate to say that <m>P(0) = 7,028,734,178</m> (<c>www.prb.org</c>). It is also fairly accurate to state that <m>P'(0) = 156</m>; that is, at midnight on January 1, 2012, the population of the world was growing by about 156 <em>people per minute</em> (note the units). Twenty days later (or, 28,800 minutes later) we could reasonably assume the population grew by about <m>28,800\cdot156 = 4,492,800</m> people.
 </p>
 </statement>
 </example>
@@ -57,14 +60,14 @@ The term <em>widget</em> is an economic term for a generic unit of manufacturing
 </p>
 
 <p>
-What do <m>P(1000) = 500</m> and <m>P\primeskip'(1000)=0.25</m> mean? Approximate <m>P(1100)</m>.
+What do <m>P(1000) = 500</m> and <m>P'(1000)=0.25</m> mean? Approximate <m>P(1100)</m>.
 </p>
 </statement>
 <solution>
 <p>
-The equation <m>P(1000)=500</m> means that selling 1,000 widgets returns a profit of <dollar />500. We interpret <m>P\primeskip'(1000) = 0.25</m> as meaning that the profit is increasing at rate of <dollar /><m>0.25</m> per widget (the units are <q>dollars per widget.</q>) Since we have no other information to use, our best approximation for <m>P(1100)</m> is:
+The equation <m>P(1000)=500</m> means that selling 1,000 widgets returns a profit of <dollar />500. We interpret <m>P'(1000) = 0.25</m> as meaning that the profit is increasing at rate of <dollar /><m>0.25</m> per widget (the units are <q>dollars per widget.</q>) Since we have no other information to use, our best approximation for <m>P(1100)</m> is:
 <me>
-  P(1100) \approx P(1000) + P\primeskip'(1000)\times100 = \text{\dollar500}  + 100\cdot0.25 = \text{\dollar525.}
+  P(1100) \approx P(1000) + P'(1000)\times100 = \\text{ \dollar500 }  + 100\cdot0.25 = \\text{ \dollar525. }
 </me>
 </p>
 
@@ -73,6 +76,7 @@ We approximate that selling 1,100 widgets returns a profit of <dollar />525.
 </p>
 </solution>
 </example>
+
 <p>
 The previous examples made use of an important approximation tool that we first used in our previous <q>driving a car at 60 mph</q> example at the beginning of this section. Five minutes after looking at the speedometer, our best approximation for distance traveled assumed the rate of change was constant. In <xref ref="ex_der_meaning1">Examples</xref> and <xref ref="ex_der_meaning2"></xref> we made similar approximations. We were given rate of change information which we used to approximate total change. Notationally, we would say that
 <me>
@@ -93,12 +97,11 @@ One of the most fundamental applications of the derivative is the study of motio
 </p>
 
 <p>
-Let's let <m>s(t)</m> measure the distance traveled, in feet, of an object after <m>t</m> seconds of travel. Then <m>s\primeskip'(t)</m> has units <q>feet per second,</q> and <m>s\primeskip'(t)</m> measures the <em>instantaneous rate of distance change</em> <ndash /> it measures <b>velocity</b>.<index><main>velocity</main></index>
+Let's let <m>s(t)</m> measure the distance traveled, in feet, of an object after <m>t</m> seconds of travel. Then <m>s'(t)</m> has units <q>feet per second,</q> and <m>s'(t)</m> measures the <em>instantaneous rate of distance change</em> <mdash /> it measures <em>velocity</em>.<index><main>velocity</main></index>
 </p>
 
 <p>
-Now consider <m>v(t)</m>, a velocity function. That is, at time <m>t</m>, <m>v(t)</m> gives the velocity of an object. The derivative of <m>v</m>, <m>v\primeskip'(t)</m>, gives the <em>instantaneous rate of velocity change</em> <ndash />
-<b>acceleration</b>. (We often think of acceleration in terms of cars: a car may <q>go from 0 to 60 in 4.8 seconds.</q> This is an <em>average</em> acceleration, a measurement of how quickly the velocity changed.) If velocity is measured in feet per second, and time is measured in seconds, then the units of acceleration (i.e., the units of <m>v\primeskip'(t)</m>) are <q>feet per second per second,</q> or <m>(</m>ft/s<m>)</m>/s. We often shorten this to <q>feet per second squared,</q> or ft/s<m>^2</m>, but this tends to obscure the meaning of the units.<index><main>acceleration</main></index>
+Now consider <m>v(t)</m>, a velocity function. That is, at time <m>t</m>, <m>v(t)</m> gives the velocity of an object. The derivative of <m>v</m>, <m>v'(t)</m>, gives the <em>instantaneous rate of velocity change</em> <mdash /> <em>acceleration</em>. (We often think of acceleration in terms of cars: a car may <q>go from 0 to 60 in 4.8 seconds.</q> This is an <em>average</em> acceleration, a measurement of how quickly the velocity changed.) If velocity is measured in feet per second, and time is measured in seconds, then the units of acceleration (i.e., the units of <m>v'(t)</m>) are <q>feet per second per second,</q> or <m>(</m>ft/s<m>)</m>/s. We often shorten this to <q>feet per second squared,</q> or ft/s<m>^2</m>, but this tends to obscure the meaning of the units.<index><main>acceleration</main></index>
 </p>
 
 <p>
@@ -112,17 +115,17 @@ A constant acceleration of 32<m>(</m>ft/s<m>)</m>/s means that the velocity chan
 <p>
 These ideas are so important we write them out as a Key Idea.
 </p>
-<keyidea xml:id="idea_motion">
+<insight xml:id="idea_motion">
 <title>The Derivative and Motion</title>
 <ol>
-<li>Let <m>s(t)</m> be the position function of an object. Then <m>s\primeskip'(t)</m> is the velocity function of the object.</li>
-<li>Let <m>v(t)</m> be the velocity function of an object. Then <m>v\primeskip'(t)</m> is the acceleration function of the object.</li>
+<li><p>Let <m>s(t)</m> be the position function of an object. Then <m>s'(t)</m> is the velocity function of the object.</p></li>
+<li><p>Let <m>v(t)</m> be the velocity function of an object. Then <m>v'(t)</m> is the acceleration function of the object.</p></li>
 </ol>
 
 <p>
 <index><main>derivative</main><sub>motion</sub></index><index><main>derivative</main><sub>velocity</sub></index><index><main>derivative</main><sub>acceleration</sub></index>
 </p>
-</keyidea>
+</insight>
 <p>
 We now consider the second interpretation of the derivative given in this section. This interpretation is not independent from the first by any means; many of the same concepts will be stressed, just from a slightly different perspective.
 </p>
@@ -138,6 +141,7 @@ Given a function <m>y=f(x)</m>, the difference quotient <m>\ds \frac{f(c+h)-f(c)
 <p>
 Lines have a constant rate of change, their slope. Nonlinear functions do not have a constant rate of change, but we can measure their <em>instantaneous rate of change</em> at a given <m>x</m> value <m>c</m> by computing <m>\fp(c)</m>. We can get an idea of how <m>f</m> is behaving by looking at the slopes of its tangent lines. We explore this idea in the following example.
 </p>
+
 <example xml:id="ex_der_meaning3">
 <title>Understanding the derivative: the rate of change</title>
 <statement>
@@ -146,7 +150,25 @@ Consider <m>f(x) = x^2</m> as shown in <xref ref="fig_xsquared">Figure</xref>. I
 </p>
 <figure xml:id="fig_xsquared" >
 <caption>A graph of <m>f(x)=x^2</m>.</caption>
-<image width="73%" source="images/figxsquared.png" />
+
+<!-- START figures/fig_xsquared.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,axis y line=middle,axis x line=middle,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.01) (0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16)
+(0.5,0.25) (0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.)(1.1,1.21) (1.2,1.44) (1.3,1.69) (1.4,1.96) (1.5,2.25) (1.6,2.56)(1.7,2.89) (1.8,3.24) (1.9,3.61) (2.,4.) (2.1,4.41) (2.2,4.84)(2.3,5.29) (2.4,5.76) (2.5,6.25) (2.6,6.76) (2.7,7.29) (2.8,7.84)(2.9,8.41) (3.,9.) (3.1,9.61) (3.2,10.2) (3.3,10.9) (3.4,11.6)(3.5,12.3) (3.6,13.) (3.7,13.7) (3.8,14.4) (3.9,15.2) (4.,16.)(4.1,16.8)};
+%\addplot [{\colortwo},domain=0:4]{2*(x-1)+1};
+%\addplot [{\colortwo},domain=1.5:4]{6*(x-3)+9};
+%\filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
+%\filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
+%\draw (axis cs:0,0) grid (axis cs:4,16);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_xsquared.tex END -->
+
 </figure>
 </statement>
 <solution>
@@ -155,7 +177,25 @@ We can answer this directly after the following section, where we learn to quick
 </p>
 <figure xml:id="fig_xsquaredwithgrid" >
 <caption>A graph of <m>f(x)=x^2</m> and tangent lines.</caption>
-<image width="73%" source="images/figxsquaredwithgrid.png" />
+
+<!-- START figures/fig_xsquaredwithgrid.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,axis y line=middle,axis x line=middle,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,name=myplot,grid=major]
+\addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.01) (0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16)
+(0.5,0.25) (0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.)(1.1,1.21) (1.2,1.44) (1.3,1.69) (1.4,1.96) (1.5,2.25) (1.6,2.56)(1.7,2.89) (1.8,3.24) (1.9,3.61) (2.,4.) (2.1,4.41) (2.2,4.84)(2.3,5.29) (2.4,5.76) (2.5,6.25) (2.6,6.76) (2.7,7.29) (2.8,7.84)(2.9,8.41) (3.,9.) (3.1,9.61) (3.2,10.2) (3.3,10.9) (3.4,11.6)(3.5,12.3) (3.6,13.) (3.7,13.7) (3.8,14.4) (3.9,15.2) (4.,16.)(4.1,16.8)};
+\addplot [{\colortwo},domain=0:4]{2*(x-1)+1};
+\addplot [{\colortwo},domain=1.5:4]{6*(x-3)+9};
+%\filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
+%\filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
+%\draw (axis cs:0,0) grid (axis cs:4,16);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_xsquaredwithgrid.tex END -->
+
 </figure>
 <p>
 With practice, one can fairly effectively sketch tangent lines to a curve at a particular point. In <xref ref="fig_xsquaredwithgrid">Figure</xref>, we have sketched the tangent lines to <m>f</m> at <m>x=1</m> and <m>x=3</m>, along with a grid to help us measure the slopes of these lines. At <m>x=1</m>, the slope is 2; at <m>x=3</m>, the slope is 6. Thus we can say not only is <m>f</m> growing faster at <m>x=3</m> than at <m>x=1</m>, it is growing <em>three times as fast</em>.
@@ -172,12 +212,52 @@ Use these graphs to find the slopes of the tangent lines to the graph of <m>f</m
 </p>
 <figure xml:id="fig_fwithderiv" >
 <caption>Graphs of <m>f</m> and <m>\fp</m> in <xref ref="ex_der_meaning4">Example</xref>, along with tangent lines in (b).</caption>
-<tabular>
-<row><cell><image width="73%" source="images/figfwithderiv.png" /></cell></row>
-<row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figfwithderivdots.png" /></cell></row>
-<row><cell>(b)</cell></row>
-</tabular>
+<sidebyside><figure>
+<caption>(a)</caption>
+
+<!-- START figures/fig_fwithderiv.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=4,axis y line=middle,axis x line=middle,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,name=myplot]
+\addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
+\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+\draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
+\draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_fwithderiv.tex END -->
+
+</figure>
+<figure>
+<caption>(b)</caption>
+
+<!-- START figures/fig_fwithderivdots.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=4,axis y line=middle,axis x line=middle,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,name=myplot]
+\addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
+\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+\addplot [domain=0:2,thick] {-1*(x-1)-2};
+\addplot [domain=1:3,thick] {4*(x-2)};
+\addplot [domain=2:4,thick] {3*(x-3)+4};
+\filldraw [{\colortwo}] (axis cs:1,-1) circle (1pt);
+\filldraw [{\colortwo}] (axis cs:2,4) circle (1pt);
+\filldraw [{\colortwo}] (axis cs:3,3) circle (1pt);
+\draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
+\draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_fwithderivdots.tex END -->
+
+</figure></sidebyside>
+
 </figure>
 </statement>
 <solution>
@@ -216,7 +296,21 @@ Consider again the graph of <m>f(x)</m> and its derivative <m>\fp(x)</m> in <xre
 </p>
 <figure xml:id="fig_fwithderivzoom3" >
 <caption>Zooming in on <m>f</m> at <m>x=3</m> for the function given in <xref ref="ex_der_meaning4">Examples</xref> and <xref ref="ex_der_meaning5"></xref>.</caption>
-<image width="73%" source="images/figfwithderivzoom3.png" />
+
+<!-- START figures/fig_fwithderivzoom3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=4,axis y line=middle,axis x line=middle,ymin=1.9,ymax=4.9,xmin=2.7,xmax=3.3,name=myplot]
+\addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
+%\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+\addplot [domain=2:4,thick] {3*(x-3)+4};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_fwithderivzoom3.tex END -->
+
 </figure>
 <p>
 While the tangent line to <m>f</m> was drawn in <xref ref="ex_der_meaning4">Example</xref>, it was not explicitly computed. Recall that the tangent line to <m>f</m> at <m>x=c</m> is <m>y = \fp(c)(x-c)+f(c)</m>. While <m>f</m> is not explicitly given, by the graph it looks like <m>f(3) = 4</m>. Recalling that <m>\fp(3) = 3</m>, we can compute the tangent line to be approximately <m>y = 3(x-3)+4.</m> It is often useful to leave the tangent line in point<ndash />slope form.
@@ -234,13 +328,14 @@ We approximate <m>f(3.1) \approx 4.3.</m>
 </p>
 </solution>
 </example>
+
 <p>
 To demonstrate the accuracy of the tangent line approximation, we now state that in <xref ref="ex_der_meaning5">Example</xref>, <m>f(x) = -x^3+7x^2-12x+4</m>. We can evaluate <m>f(3.1) = 4.279</m>. Had we known <m>f</m> all along, certainly we could have just made this computation. In reality, we often only know two things:
 </p>
 
 <ol>
-<li>What <m>f(c)</m> is, for some value of <m>c</m>, and</li>
-<li>what <m>\fp(c)</m> is.</li>
+<li><p>What <m>f(c)</m> is, for some value of <m>c</m>, and</p></li>
+<li><p>what <m>\fp(c)</m> is.</p></li>
 </ol>
 
 <p>
@@ -271,7 +366,9 @@ The importance of understanding the derivative cannot be understated. When <m>f<
 </subsection>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
@@ -311,10 +408,10 @@ Linear functions.
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <exercise>
 <statement>
@@ -323,16 +420,13 @@ Given <m>f(5)=10</m> and <m>\fp(5) = 2</m>, approximate <m>f(6)</m>.
 </p>
 </statement>
 <answer>
-<p>
-12
-</p>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
 <p>
-Given <m>P(100)=-67</m> and <m>P\primeskip'(100) = 5</m>, approximate <m>P(110)</m>.
+Given <m>P(100)=-67</m> and <m>P'(100) = 5</m>, approximate <m>P(110)</m>.
 </p>
 </statement>
 <answer>
@@ -384,7 +478,7 @@ Given <m>f(7)=26</m> and <m>f(8) = 22</m>, approximate <m>\fp(7)</m>.
 <exercise>
 <statement>
 <p>
-Given <m>H(0)=17</m> and <m>H(2) = 29</m>, approximate <m>H\primeskip'(2)</m>.
+Given <m>H(0)=17</m> and <m>H(2) = 29</m>, approximate <m>H'(2)</m>.
 </p>
 </statement>
 <answer>
@@ -397,7 +491,7 @@ Given <m>H(0)=17</m> and <m>H(2) = 29</m>, approximate <m>H\primeskip'(2)</m>.
 <exercise>
 <statement>
 <p>
-Let <m>V(x)</m> measure the volume, in decibels, measured inside a restaurant with <m>x</m> customers. What are the units of <m>V\primeskip'(x)</m>?
+Let <m>V(x)</m> measure the volume, in decibels, measured inside a restaurant with <m>x</m> customers. What are the units of <m>V'(x)</m>?
 </p>
 </statement>
 <answer>
@@ -410,7 +504,7 @@ decibels per person
 <exercise>
 <statement>
 <p>
-Let <m>v(t)</m> measure the velocity, in ft/s, of a car moving in a straight line <m>t</m> seconds after starting. What are the units of <m>v\primeskip'(t)</m>?
+Let <m>v(t)</m> measure the velocity, in ft/s, of a car moving in a straight line <m>t</m> seconds after starting. What are the units of <m>v'(t)</m>?
 </p>
 </statement>
 <answer>
@@ -423,7 +517,7 @@ ft/s<m>^2</m>
 <exercise>
 <statement>
 <p>
-The height <m>H</m>, in feet, of a river is recorded <m>t</m> hours after midnight, April 1. What are the units of <m>H\primeskip'(t)</m>?
+The height <m>H</m>, in feet, of a river is recorded <m>t</m> hours after midnight, April 1. What are the units of <m>H'(t)</m>?
 </p>
 </statement>
 <answer>
@@ -440,14 +534,14 @@ ft/h
 </p>
 
 <ol>
-<li>What are the units of <m>P\primeskip'(c)</m>?</li>
-<li>What is likely true of <m>P(0)</m>?</li>
+<li><p>What are the units of <m>P'(c)</m>?</p></li>
+<li><p>What is likely true of <m>P(0)</m>?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>thousands of dollars per car</li>
-<li>It is likely that <m>P(0)\lt 0</m>. That is, negative profit for not producing any cars.</li>
+<li><p>thousands of dollars per car</p></li>
+<li><p>It is likely that <m>P(0)\lt 0</m>. That is, negative profit for not producing any cars.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -459,16 +553,16 @@ ft/h
 </p>
 
 <ol>
-<li>What are the units of <m>T\primeskip'(h)</m>?</li>
-<li>Is <m>T\primeskip'(8)</m> likely greater than or less than 0? Why?</li>
-<li>Is <m>T(8)</m> likely greater than or less than 0? Why?</li>
+<li><p>What are the units of <m>T'(h)</m>?</p></li>
+<li><p>Is <m>T'(8)</m> likely greater than or less than 0? Why?</p></li>
+<li><p>Is <m>T(8)</m> likely greater than or less than 0? Why?</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li>degrees Fahrenheit per hour</li>
-<li>It is likely that <m>T\primeskip'(8)>0</m> since at 8 in the morning, the temperature is likely rising.</li>
-<li>It is very likely that <m>T(8)>0</m>, as at 8 in the morning on July 4, we would expect the temperature to be well above 0.</li>
+<li><p>degrees Fahrenheit per hour</p></li>
+<li><p>It is likely that <m>T'(8)>0</m> since at 8 in the morning, the temperature is likely rising.</p></li>
+<li><p>It is very likely that <m>T(8)>0</m>, as at 8 in the morning on July 4, we would expect the temperature to be well above 0.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -477,9 +571,36 @@ In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are 
 </p>
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig02_02_ex_15.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_02_02_ex_15.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-5.1,ymax=5.1,%
+			xmin=-4.5,xmax=4.3,%
+%			grid=major
+]
+
+\addplot [thick,{\colortwo},smooth,domain=-4.5:4.5] {.25*(x-1)^2+2};
+\addplot [thick,{\colorone},smooth,domain=-4.5:4.5] {.5*(x-1)};
+\draw (axis cs:3.9,2) node {\scriptsize $f(x)$};
+\draw (axis cs:3,4) node[] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\filldraw [fill=white] (axis cs:-3,1) circle (1.5pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_02_02_ex_15.tex END --></sidebyside>
 </statement>
 <answer>
 <p>
@@ -490,9 +611,36 @@ In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are 
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig02_02_ex_16.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_02_02_ex_16.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-5.1,ymax=5.1,%
+			xmin=-1.5,xmax=3.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-1.5:3.5] {x*(x-1)*(x-2)};
+\addplot [thick,{\colortwo},smooth,domain=-1.5:3.5] {3*x^2-6*x+2};
+\draw (axis cs:3,3) node {\scriptsize $f(x)$};
+\draw (axis cs:1.85,3) node[] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\filldraw [fill=white] (axis cs:-3,1) circle (1.5pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_02_02_ex_16.tex END --></sidebyside>
 </statement>
 <answer>
 <p>
@@ -503,9 +651,38 @@ In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are 
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig02_02_ex_17.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_02_02_ex_17.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-5.5,ymax=5.5,%
+			xmin=-5.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-5.5:-.1,samples=40] {1/x};
+\addplot [thick,{\colorone},smooth,domain=.1:5.5,samples=40] {1/x};
+\addplot [thick,{\colortwo},smooth,domain=-5.5:-.1,samples=40] {-1/x^2};
+\addplot [thick,{\colortwo},smooth,domain=.1:5.5,samples=40] {-1/x^2};
+\draw (axis cs:1.5,1.5) node {\scriptsize $f(x)$};
+\draw (axis cs:1.5,-2) node[] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\filldraw [fill=white] (axis cs:-3,1) circle (1.5pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_02_02_ex_17.tex END --></sidebyside>
 </statement>
 <answer>
 <p>
@@ -516,9 +693,38 @@ Either <m>g(x) = \fp(x)</m> or <m>f(x) = g'(x)</m> is acceptable. The actual ans
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig02_02_ex_18.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_02_02_ex_18.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-1.5,ymax=1.5,%
+			xmin=-4.5,xmax=4.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-4.5:4.5,samples=40] {sin(deg(3.14*x/2))};
+\addplot [thick,{\colortwo},smooth,domain=-4.5:4.5,samples=40] {cos(deg(3.14*x/2))};
+%\addplot [thick,{\colortwo},smooth,domain=-5.5:-.1,samples=40] {-1/x^2};
+%\addplot [thick,{\colortwo},smooth,domain=.1:5.5,samples=40] {-1/x^2};
+\draw (axis cs:1,1) node[above] {\scriptsize $f(x)$};
+\draw (axis cs:2,-1) node[below] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\filldraw [fill=white] (axis cs:-3,1) circle (1.5pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_02_02_ex_18.tex END --></sidebyside>
 </statement>
 <answer>
 <p>
@@ -526,10 +732,10 @@ Either <m>g(x) = \fp(x)</m> or <m>f(x) = g'(x)</m> is acceptable. The actual ans
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Review</title>
 <p>
 In the following exercises, use the definition to compute the derivatives of the following functions.
@@ -587,6 +793,6 @@ In the following exercises, numerically approximate the value of <m>\fp(x)</m> a
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

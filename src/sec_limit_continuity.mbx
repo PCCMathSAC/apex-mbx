@@ -12,9 +12,9 @@ In <xref ref="sec_limit_intro">Section</xref> we explored the three ways in whic
 </p>
 
 <ol>
-<li>The function approached different values from the left and right,</li>
-<li>The function grows without bound, and</li>
-<li>The function oscillates.</li>
+<li><p>The function approached different values from the left and right,</p></li>
+<li><p>The function grows without bound, and</p></li>
+<li><p>The function oscillates.</p></li>
 </ol>
 
 <p>
@@ -59,6 +59,7 @@ Practically speaking, when evaluating a left-hand limit, we consider only values
 <p>
 We practice evaluating left and right-hand limits through a series of examples.
 </p>
+
 <example xml:id="ex_onesidea">
 <title>Evaluating one sided limits</title>
 <statement>
@@ -66,26 +67,36 @@ We practice evaluating left and right-hand limits through a series of examples.
 Let <m>\ds f(x) = \left\{\begin{array}{cc} x \amp  0\leq x\leq 1 \\ 3-x \amp  1\lt x\lt 2
 \end{array} ,\right.</m> as shown in <xref ref="fig_onesided1">Figure</xref>. Find each of the following:
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-<li><m>\ds f(1)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>\ds f(1)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+<li><p><m>f(0)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
+<li><p><m>f(2)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
-<li><m>f(0)</m></li>
-<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
-<li><m>f(2)</m></li>
-</ol>
-
-</sidebyside>
 <figure xml:id="fig_onesided1" >
 <caption>A graph of <m>f</m> in <xref ref="ex_onesidea">Example</xref>.</caption>
-<image width="73%" source="images/figOneSidedLimits1.png" />
+
+<!-- START figures/fig_one_sidedlimit1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=2.4,xmin=-.4,xmax=2.4,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0,0) (1,1)};
+\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\addplot [{\colorone},smooth,thick] coordinates {(1,2) (2,1)};
+\fill[white,draw=black,thick] (axis cs:1,2) circle (1.5pt);
+\fill[white,draw=black,thick] (axis cs:2,1) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- figures/fig_one_sidedlimit1.tex END -->
+
 </figure>
 </statement>
 <solution>
@@ -94,21 +105,18 @@ For these problems, the visual aid of the graph is likely more effective in eval
 </p>
 
 <ol>
-<li>As <m>x</m> goes to 1 <em>from the left</em>, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 1^-} f(x) =1.</m></li>
-<li>As <m>x</m> goes to 1 <em>from the right</em>, we see that <m>f(x)</m> is approaching the value of 2. Recall that it does not matter that there is an <q>open circle</q> there; we are evaluating a limit, not the value of the function. Therefore <m>\ds \lim_{x\to 1^+} f(x)=2</m>.</li>
-<li><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 does not exist, as discussed in the first section. The function does not approach one particular value, but two different values from the left and the right.</li>
-<li>Using the definition and by looking at the graph we see that <m>f(1) = 1</m>.</li>
-<li>As <m>x</m> goes to 0 from the right, we see that <m>f(x)</m> is also approaching 0. Therefore <m>\ds \lim_{x\to 0^+} f(x)=0</m>. Note we cannot consider a left-hand limit at 0 as <m>f</m> is not defined for values of <m>x\lt 0</m>.</li>
-<li>Using the definition and the graph, <m>f(0) = 0</m>.</li>
-<li>As <m>x</m> goes to 2 from the left, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 2^-} f(x)=1.</m></li>
-<li>The graph and the definition of the function show that <m>f(2)</m> is not defined.</li>
+<li><p>As <m>x</m> goes to 1 <em>from the left</em>, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 1^-} f(x) =1.</m></p></li>
+<li><p>As <m>x</m> goes to 1 <em>from the right</em>, we see that <m>f(x)</m> is approaching the value of 2. Recall that it does not matter that there is an <q>open circle</q> there; we are evaluating a limit, not the value of the function. Therefore <m>\ds \lim_{x\to 1^+} f(x)=2</m>.</p></li>
+<li><p><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 does not exist, as discussed in the first section. The function does not approach one particular value, but two different values from the left and the right.</p></li>
+<li><p>Using the definition and by looking at the graph we see that <m>f(1) = 1</m>.</p></li>
+<li><p>As <m>x</m> goes to 0 from the right, we see that <m>f(x)</m> is also approaching 0. Therefore <m>\ds \lim_{x\to 0^+} f(x)=0</m>. Note we cannot consider a left-hand limit at 0 as <m>f</m> is not defined for values of <m>x\lt 0</m>.</p></li>
+<li><p>Using the definition and the graph, <m>f(0) = 0</m>.</p></li>
+<li><p>As <m>x</m> goes to 2 from the left, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 2^-} f(x)=1.</m></p></li>
+<li><p>The graph and the definition of the function show that <m>f(2)</m> is not defined.</p></li>
 </ol>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
+
 <p>
 Note how the left and right-hand limits were different at <m>x=1</m>. This, of course, causes <em>the</em> limit to not exist. The following theorem states what is fairly intuitive: <em>the</em> limit exists precisely when the left and right-hand limits are equal.
 </p>
@@ -123,7 +131,7 @@ Let <m>f</m> be a function defined on an open interval <m>I</m> containing <m>c<
 </me>
 if, and only if,
 <me>
-  \lim_{x\to c^-}f(x) = L \quad \text{and}  \quad \lim_{x\to c^+}f(x) = L.
+  \lim_{x\to c^-}f(x) = L  \\text{ and }   \lim_{x\to c^+}f(x) = L.
 </me>
 </p>
 </statement>
@@ -132,8 +140,9 @@ if, and only if,
 <p>
 The phrase <q>if, and only if</q> means the two statements are <em>equivalent</em>: they are either both true or both false. If the limit equals <m>L</m>, then the left and right hand limits both equal <m>L</m>. If the limit is not equal to <m>L</m>, then at least one of the left and right-hand limits is not equal to <m>L</m> (it may not even exist).
 			
-One thing to consider in <xref ref="ex_onesidea">Examples</xref> <ndash /> <xref ref="ex_onesided"></xref> is that the value of the function may/may not be equal to the value(s) of its left/right-hand limits, even when these limits agree.
+One thing to consider in <xref ref="ex_onesidea">Examples</xref> <mdash /> <xref ref="ex_onesided"></xref> is that the value of the function may/may not be equal to the value(s) of its left/right-hand limits, even when these limits agree.
 </p>
+
 <example xml:id="ex_onesideb">
 <title>Evaluating limits of a piecewise<ndash />defined function</title>
 <statement>
@@ -141,26 +150,36 @@ One thing to consider in <xref ref="ex_onesidea">Examples</xref> <ndash /> <xref
 Let <m>f(x) = \left\{\begin{array}{cc} 2-x \amp  0\lt x\lt 1 \\ (x-2)^2 \amp  1\lt x\lt 2
 \end{array} ,\right.</m> as shown in <xref ref="fig_onesidedb">Figure</xref>. Evaluate the following.
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-<li><m>\ds f(1)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>\ds f(1)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+<li><p><m>f(0)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
+<li><p><m>f(2)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
-<li><m>f(0)</m></li>
-<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
-<li><m>f(2)</m></li>
-</ol>
-
-</sidebyside>
 <figure xml:id="fig_onesidedb" >
 <caption>A graph of <m>f</m> from <xref ref="ex_onesideb">Example</xref></caption>
-<image width="73%" source="images/figOneSidedLimits2.png" />
+
+<!-- START figures/fig_one_sidedlimit2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=2.4,xmin=-.4,xmax=2.4,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0,2) (1,1)};
+\addplot [{\colorone},smooth,thick] coordinates {(1.,1.) (1.1,0.81) (1.2,0.64) (1.3,0.49) (1.4,0.36) (1.5,0.25) (1.6,0.16) (1.7,0.09) (1.8,0.04) (1.9,0.01) (2.,0.)};
+\fill[white,draw=black,thick] (axis cs:2,0) circle (1.5pt);
+\fill[white,draw=black,thick] (axis cs:0,2) circle (1.5pt);
+\fill[white,draw=black,thick] (axis cs:1,1) circle (1.5pt);
+%\fill[white,draw=black] (axis cs:2,1) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- figures/fig_one_sidedlimit2.tex END -->
+
 </figure>
 </statement>
 <solution>
@@ -169,19 +188,15 @@ Again we will evaluate each using both the definition of <m>f</m> and its graph.
 </p>
 
 <ol>
-<li>As <m>x</m> approaches 1 from the left, we see that <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1^-} f(x)=1.</m></li>
-<li>As <m>x</m> approaches 1 from the right, we see that again <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1+} f(x)=1</m>.</li>
-<li><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 exists and is 1, as <m>f</m> approaches 1 from both the right and left. Therefore <m>\ds \lim_{x\to 1} f(x)=1</m>.</li>
-<li><m>f(1)</m> is not defined. Note that 1 is not in the domain of <m>f</m> as defined by the problem, which is indicated on the graph by an open circle when <m>x=1</m>.</li>
-<li>As <m>x</m> goes to 0 from the right, <m>f(x)</m> approaches 2. So <m>\ds \lim_{x\to 0^+} f(x)=2</m>.</li>
-<li><m>f(0)</m>  is not defined as <m>0</m> is not in the domain of <m>f</m>.</li>
-<li>As <m>x</m> goes to 2 from the left, <m>f(x)</m> approaches 0. So <m>\ds \lim_{x\to 2^-} f(x)=0</m>.</li>
-<li><m>f(2)</m>  is not defined as 2 is not in the domain of <m>f</m>.</li>
+<li><p>As <m>x</m> approaches 1 from the left, we see that <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1^-} f(x)=1.</m></p></li>
+<li><p>As <m>x</m> approaches 1 from the right, we see that again <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1+} f(x)=1</m>.</p></li>
+<li><p><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 exists and is 1, as <m>f</m> approaches 1 from both the right and left. Therefore <m>\ds \lim_{x\to 1} f(x)=1</m>.</p></li>
+<li><p><m>f(1)</m> is not defined. Note that 1 is not in the domain of <m>f</m> as defined by the problem, which is indicated on the graph by an open circle when <m>x=1</m>.</p></li>
+<li><p>As <m>x</m> goes to 0 from the right, <m>f(x)</m> approaches 2. So <m>\ds \lim_{x\to 0^+} f(x)=2</m>.</p></li>
+<li><p><m>f(0)</m>  is not defined as <m>0</m> is not in the domain of <m>f</m>.</p></li>
+<li><p>As <m>x</m> goes to 2 from the left, <m>f(x)</m> approaches 0. So <m>\ds \lim_{x\to 2^-} f(x)=0</m>.</p></li>
+<li><p><m>f(2)</m>  is not defined as 2 is not in the domain of <m>f</m>.</p></li>
 </ol>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
 
@@ -192,22 +207,35 @@ Again we will evaluate each using both the definition of <m>f</m> and its graph.
 Let <m>f(x) = \left\{\begin{array}{cc} (x-1)^2 \amp  0\leq x\leq 2, x\neq 1\\ 1 \amp  x=1
 \end{array} ,\right.</m> as shown in <xref ref="fig_onesidedc">Figure</xref>. Evaluate the following.
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-<li><m>f(1)</m></li>
-</ol>
-
-</sidebyside>
 <figure xml:id="fig_onesidedc" >
 <caption>Graphing <m>f</m> in <xref ref="ex_onesidec">Example</xref></caption>
-<image width="73%" source="images/figOneSidedLimits3.png" />
+
+<!-- START figures/fig_one_sidedlimit3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=1.4,xmin=-.4,xmax=2.4,name=myplot]
+%\addplot [{\colorone},smooth] coordinates {(0,2) (1,1)};
+\addplot [{\colorone},smooth,thick] coordinates {(0.,1.) (0.1,0.81) (0.2,0.64) (0.3,0.49) (0.4,0.36) (0.5,0.25) (0.6,0.16) (0.7,0.09) (0.8,0.04) (0.9,0.01) (1.,0.) (1.1,0.01)
+(1.2,0.04) (1.3,0.09) (1.4,0.16) (1.5,0.25) (1.6,0.36) (1.7,0.49)
+(1.8,0.64) (1.9,0.81) (2.,1.)
+};
+\fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[white,draw=black,thick] (axis cs:1,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- figures/fig_one_sidedlimit3.tex END -->
+
 </figure>
 </statement>
 <solution>
@@ -224,19 +252,12 @@ It is clear by looking at the graph that both the left and right-hand limits of 
 Let <m>f(x) = \left\{\begin{array}{cc} x^2 \amp  0\leq x\leq 1 \\ 2-x \amp  1\lt x\leq 2
 \end{array} ,\right.</m> as shown in <xref ref="fig_onesidedd">Figure</xref>. Evaluate the following.
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-<li><m>f(1)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <solution>
 <p>
@@ -244,15 +265,35 @@ It is clear from the definition of the function and its graph that all of the fo
 </p>
 <figure xml:id="fig_onesidedd" >
 <caption>Graphing <m>f</m> in <xref ref="ex_onesided">Example</xref></caption>
-<image width="73%" source="images/figOneSidedLimits4.png" />
+
+<!-- START figures/fig_one_sidedlimit4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.4,ymax=1.4,xmin=-.4,xmax=2.4,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(2,0) (1,1)};
+\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16) (0.5,0.25)(0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.) };
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+%\fill[white,draw=black] (axis cs:2,1) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+]]></latex-image-code></image><!-- figures/fig_one_sidedlimit4.tex END -->
+
 </figure>
+<p>
 <me>
   \lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) =\lim_{x\to 1} f(x) =f(1) = 1.
 </me>
+</p>
 </solution>
 </example>
+
 <p>
-In <xref ref="ex_onesidea">Examples</xref> <ndash /> <xref ref="ex_onesided"></xref> we were asked to find both <m>\ds \lim_{x\to 1}f(x)</m> and <m>f(1)</m>. Consider the following table:
+In <xref ref="ex_onesidea">Examples</xref> <mdash /> <xref ref="ex_onesided"></xref> we were asked to find both <m>\ds \lim_{x\to 1}f(x)</m> and <m>f(1)</m>. Consider the following table:
 </p>
 <tabular>
 <row><cell></cell><cell><m>\ds \lim_{x\to 1}f(x)</m></cell><cell><m>f(1)</m> \vspace{2pt}</cell></row>
@@ -269,7 +310,9 @@ Only in <xref ref="ex_onesided">Example</xref> do both the function and the limi
 </introduction>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
@@ -322,244 +365,418 @@ T
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, evaluate each expression using the given graph of <m>f(x)</m>.
 </p>
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig01_04_ex_05.png" />
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-</ol>
+<sidebyside><!-- START figures/fig_01_04_ex_05.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.1,%
+			xmin=-.1,xmax=2.1%
+]
 
-<ol>
-<li><m>f(1)</m></li>
-<li><m>\ds \lim_{x\to 0^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
-</ol>
+\addplot [thick,{\colorone}] coordinates {(0.,1) (1,2)};
+\addplot [{\colorone},smooth,thick,domain=1:2] {2*(x-2)^2};
 
-</sidebyside>
+\fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
+\fill[white,draw=black] (axis cs:1,2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_01_04_ex_05.tex END -->
+
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+</ol></sidebyside>
 </statement>
 <answer>
 <ol>
-<li>2</li>
-<li>2</li>
-<li>2</li>
-<li>1</li>
-<li>As <m>f</m> is not defined for <m>x\lt 0</m>, this limit is not defined.</li>
-<li>1</li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>1</p></li>
+<li><p>As <m>f</m> is not defined for <m>x\lt 0</m>, this limit is not defined.</p></li>
+<li><p>1</p></li>
 </ol>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig01_04_ex_06.png" />
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-</ol>
+<sidebyside><!-- START figures/fig_01_04_ex_06.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.1,%
+			xmin=-.1,xmax=2.1%
+]
 
-<ol>
-<li><m>f(1)</m></li>
-<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 2^+} f(x)</m></li>
-</ol>
+\addplot [thick,{\colorone}] coordinates {(0.,0) (1,1)};
+\addplot [{\colorone},thick] coordinates {(1,2) (2,0)};
 
-</sidebyside>
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\fill[white,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:1,2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_01_04_ex_06.tex END -->
+
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2^+} f(x)</m></p></li>
+</ol></sidebyside>
 </statement>
 <answer>
 <ol>
-<li>1</li>
-<li>2</li>
-<li>Does not exist.</li>
-<li>2</li>
-<li>0</li>
-<li>As <m>f</m> is not defined for <m>x>2</m>, this limit is not defined.</li>
+<li><p>1</p></li>
+<li><p>2</p></li>
+<li><p>Does not exist.</p></li>
+<li><p>2</p></li>
+<li><p>0</p></li>
+<li><p>As <m>f</m> is not defined for <m>x>2</m>, this limit is not defined.</p></li>
 </ol>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig01_04_ex_07.png" />
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-</ol>
+<sidebyside><!-- START figures/fig_01_04_ex_07.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.1,%
+			xmin=-.1,xmax=2.1%
+]
 
-<ol>
-<li><m>f(1)</m></li>
-<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
-</ol>
+%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+\draw [thick,{\colorone}] (axis cs:0,0) parabola (axis cs:1,3);
+\draw [thick,{\colorone}] (axis cs:2,0) parabola (axis cs:1,3);
+\draw [{\colorone},dashed] (axis cs: 1,2.1) -- (axis cs:1,-.1);
 
-</sidebyside>
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+%\fill[white,draw=black] (axis cs:1,1) circle (1.5pt);
+%\fill[black,draw=black] (axis cs:1,2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_01_04_ex_07.tex END -->
+
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+</ol></sidebyside>
 </statement>
 <answer>
 <ol>
-<li>Does not exist.</li>
-<li>Does not exist.</li>
-<li>Does not exist.</li>
-<li>Not defined.</li>
-<li>0</li>
-<li>0</li>
+<li><p>Does not exist.</p></li>
+<li><p>Does not exist.</p></li>
+<li><p>Does not exist.</p></li>
+<li><p>Not defined.</p></li>
+<li><p>0</p></li>
+<li><p>0</p></li>
 </ol>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig01_04_ex_08.png" />
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
-</ol>
+<sidebyside><!-- START figures/fig_01_04_ex_08.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.1,%
+			xmin=-.1,xmax=2.1%
+]
 
-<ol>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-<li><m>f(1)</m></li>
-</ol>
+%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+\draw [thick,{\colorone}] (axis cs:1,0) parabola (axis cs:2,2);
+\draw [thick,{\colorone}] (axis cs:0,1) -- (axis cs:1,2);
 
-</sidebyside>
+\fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
+\fill[white,draw=black] (axis cs:1,2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
+\fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_01_04_ex_08.tex END -->
+
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
+</ol></sidebyside>
 </statement>
 <answer>
 <ol>
-<li>2</li>
-<li>0</li>
-<li>Does not exist.</li>
-<li>1</li>
+<li><p>2</p></li>
+<li><p>0</p></li>
+<li><p>Does not exist.</p></li>
+<li><p>1</p></li>
 </ol>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig01_04_ex_09.png" />
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
-</ol>
+<sidebyside><!-- START figures/fig_01_04_ex_09.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=2.1,%
+			xmin=-.1,xmax=2.1%
+]
 
-<ol>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-<li><m>f(1)</m></li>
-</ol>
+%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+\draw [thick,{\colorone}] (axis cs:1,2) parabola (axis cs:0,0);
+\draw [thick,{\colorone}] (axis cs:1,2) -- (axis cs:2,0);
 
-</sidebyside>
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\fill[black,draw=black] (axis cs:1,2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+%\fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
+%\fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_01_04_ex_09.tex END -->
+
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
+</ol></sidebyside>
 </statement>
 <answer>
 <ol>
-<li>2</li>
-<li>2</li>
-<li>2</li>
-<li>2</li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>2</p></li>
 </ol>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig01_04_ex_10.png" />
-<ol>
-<li><m>\ds \lim_{x\to 0^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
-</ol>
+<sidebyside><!-- START figures/fig_01_04_ex_10.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.5,ymax=4.5,%
+			xmin=-4.5,xmax=4.5%
+]
 
-<ol>
-<li><m>\ds \lim_{x\to 0} f(x)</m></li>
-<li><m>f(0)</m></li>
-</ol>
+%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+\addplot [thick,{\colorone},domain=-4:0] {4*cos(deg(x)*3.14159/4};
+\addplot [thick,{\colorone},domain=0:4]  {-4*cos(deg(x)*3.14159/4};
+%
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\fill[white,draw=black] (axis cs:0,4) circle (1.5pt);
+\fill[black,draw=black] (axis cs:-4,-4) circle (1.5pt);
+\fill[black,draw=black] (axis cs:4,4) circle (1.5pt);
+\fill[white,draw=black] (axis cs:0,-4) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_01_04_ex_10.tex END -->
 
-</sidebyside>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0} f(x)</m></p></li>
+<li><p><m>f(0)</m></p></li>
+</ol></sidebyside>
 </statement>
 <answer>
 <ol>
-<li>4</li>
-<li><m>-4</m></li>
-<li>Does not exist.</li>
-<li>0</li>
+<li><p>4</p></li>
+<li><p><m>-4</m></p></li>
+<li><p>Does not exist.</p></li>
+<li><p>0</p></li>
 </ol>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig01_04_ex_11.png" />
-<ol>
-<li><m>\ds \lim_{x\to -2^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to -2^+} f(x)</m></li>
-<li><m>\ds \lim_{x\to -2} f(x)</m></li>
-<li><m>f(-2)</m></li>
-</ol>
+<sidebyside><!-- START figures/fig_01_04_ex_11.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.5,ymax=4.5,%
+			xmin=-4.5,xmax=4.5%
+]
 
-<ol>
-<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 2^+} f(x)</m></li>
-<li><m>\ds \lim_{x\to 2} f(x)</m></li>
-<li><m>f(2)</m></li>
-</ol>
+%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+\addplot [thick,{\colorone}] coordinates {(-4,0) (-2,2) (0,0) (2,2) (4,0)}; 
+%\addplot [thick,{\colorone},domain=0:4]  {-4*cos(deg(x)*3.14159/4};
+%
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\fill[black,draw=black] (axis cs:-4,0) circle (1.5pt);
+\fill[black,draw=black] (axis cs:-2,0) circle (1.5pt);
+\fill[white,draw=black] (axis cs:-2,2) circle (1.5pt);
+\fill[white,draw=black] (axis cs:2,2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:4,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_01_04_ex_11.tex END -->
 
-</sidebyside>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to -2^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to -2^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to -2} f(x)</m></p></li>
+<li><p><m>f(-2)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2} f(x)</m></p></li>
+<li><p><m>f(2)</m></p></li>
+</ol></sidebyside>
 </statement>
 <answer>
 <ol>
-<li>2</li>
-<li>2</li>
-<li>2</li>
-<li>0</li>
-<li>2</li>
-<li>2</li>
-<li>2</li>
-<li>Not defined</li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>0</p></li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>Not defined</p></li>
 </ol>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
-<sidebyside>
-<image width="80%" source="images/fig01_04_ex_12.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_01_04_ex_12.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.5,ymax=4.5,%
+			xmin=-4.5,xmax=4.5%
+]
+\draw [thick,{\colorone}] (axis cs:-4,-4) -- (axis cs:-3,-4);
+\draw [thick,{\colorone}] (axis cs:-3,-3) -- (axis cs:-2,-3);
+\draw [thick,{\colorone}] (axis cs:-2,-2) -- (axis cs:-1,-2);
+\draw [thick,{\colorone}] (axis cs:-1,-1) -- (axis cs:0,-1);
+\draw [thick,{\colorone}] (axis cs:0,0) -- (axis cs:1,0);
+\draw [thick,{\colorone}] (axis cs:1,1) -- (axis cs:2,1);
+\draw [thick,{\colorone}] (axis cs:2,2) -- (axis cs:3,2);
+\draw [thick,{\colorone}] (axis cs:3,3) -- (axis cs:4,3);
+
+%
+\fill[black,draw=black] (axis cs:-4,-4) circle (1.5pt);
+\fill[white,draw=black] (axis cs:-3,-4) circle (1.5pt);
+\fill[black,draw=black] (axis cs:-3,-3) circle (1.5pt);
+\fill[white,draw=black] (axis cs:-2,-3) circle (1.5pt);
+\fill[black,draw=black] (axis cs:-2,-2) circle (1.5pt);
+\fill[white,draw=black] (axis cs:-1,-2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:-1,-1) circle (1.5pt);
+\fill[white,draw=black] (axis cs:0,-1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
+\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+\fill[white,draw=black] (axis cs:2,1) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
+\fill[white,draw=black] (axis cs:3,2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:3,3) circle (1.5pt);
+\fill[white,draw=black] (axis cs:4,3) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_01_04_ex_12.tex END --></sidebyside>
 <p>
 Let <m>-3\leq a\leq 3</m> be an integer.
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to a^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to a^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to a^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to a^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to a} f(x)</m></p></li>
+<li><p><m>f(a)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to a} f(x)</m></li>
-<li><m>f(a)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li><m>a-1</m></li>
-<li><m>a</m></li>
-<li>Does not exist.</li>
-<li><m>a</m></li>
+<li><p><m>a-1</m></p></li>
+<li><p><m>a</m></p></li>
+<li><p>Does not exist.</p></li>
+<li><p><m>a</m></p></li>
 </ol>
 </answer>
 </exercise>
@@ -575,26 +792,19 @@ In the following exercises, evaluate the given limits of the piecewise defined f
 \end{array} 
 	\right.</m>
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-<li><m>f(1)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li>2</li>
-<li><m>-4</m></li>
-<li>Does not exist.</li>
-<li>2</li>
+<li><p>2</p></li>
+<li><p><m>-4</m></p></li>
+<li><p>Does not exist.</p></li>
+<li><p>2</p></li>
 </ol>
 </answer>
 </exercise>
@@ -608,26 +818,19 @@ In the following exercises, evaluate the given limits of the piecewise defined f
 \end{array} 
 	\right.</m>
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 0^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0} f(x)</m></p></li>
+<li><p><m>f(0)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 0} f(x)</m></li>
-<li><m>f(0)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li><m>-1</m></li>
-<li>0</li>
-<li>Does not exist.</li>
-<li>0</li>
+<li><p><m>-1</m></p></li>
+<li><p>0</p></li>
+<li><p>Does not exist.</p></li>
+<li><p>0</p></li>
 </ol>
 </answer>
 </exercise>
@@ -642,34 +845,27 @@ In the following exercises, evaluate the given limits of the piecewise defined f
 \end{array} 
 	\right.</m>
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to -1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to -1^+} f(x)</m></li>
-<li><m>\ds \lim_{x\to -1} f(x)</m></li>
-<li><m>f(-1)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to -1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to -1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to -1} f(x)</m></p></li>
+<li><p><m>f(-1)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-<li><m>f(1)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>2</li>
-<li>2</li>
-<li>2</li>
-<li>2</li>
+<li><p>0</p></li>
+<li><p>0</p></li>
+<li><p>0</p></li>
+<li><p>0</p></li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>2</p></li>
+<li><p>2</p></li>
 </ol>
 </answer>
 </exercise>
@@ -683,26 +879,19 @@ In the following exercises, evaluate the given limits of the piecewise defined f
 \end{array} 
 	\right.</m>
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to \pi^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to \pi^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to \pi^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to \pi^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to \pi} f(x)</m></p></li>
+<li><p><m>f(\pi)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to \pi} f(x)</m></li>
-<li><m>f(\pi)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li><m>-1</m></li>
-<li>0</li>
-<li>Does not exist.</li>
-<li>0</li>
+<li><p><m>-1</m></p></li>
+<li><p>0</p></li>
+<li><p>Does not exist.</p></li>
+<li><p>0</p></li>
 </ol>
 </answer>
 </exercise>
@@ -720,26 +909,19 @@ In the following exercises, evaluate the given limits of the piecewise defined f
 <p>
 where <m>a</m> is a real number.
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to a^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to a^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to a^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to a^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to a} f(x)</m></p></li>
+<li><p><m>f(a)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to a} f(x)</m></li>
-<li><m>f(a)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li><m>1-\cos^2 a = \sin^2 a</m></li>
-<li><m>\sin^2 a</m></li>
-<li><m>\sin^2 a</m></li>
-<li><m>\sin ^2 a</m></li>
+<li><p><m>1-\cos^2 a = \sin^2 a</m></p></li>
+<li><p><m>\sin^2 a</m></p></li>
+<li><p><m>\sin^2 a</m></p></li>
+<li><p><m>\sin ^2 a</m></p></li>
 </ol>
 </answer>
 </exercise>
@@ -754,26 +936,19 @@ where <m>a</m> is a real number.
 \end{array} 
 	\right.</m>
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+<li><p><m>f(1)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 1} f(x)</m></li>
-<li><m>f(1)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li>2</li>
-<li>0</li>
-<li>Does not exist</li>
-<li>1</li>
+<li><p>2</p></li>
+<li><p>0</p></li>
+<li><p>Does not exist</p></li>
+<li><p>1</p></li>
 </ol>
 </answer>
 </exercise>
@@ -788,26 +963,19 @@ where <m>a</m> is a real number.
 \end{array} 
 	\right.</m>
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 2^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 2} f(x)</m></p></li>
+<li><p><m>f(2)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 2} f(x)</m></li>
-<li><m>f(2)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>3</li>
+<li><p>4</p></li>
+<li><p>4</p></li>
+<li><p>4</p></li>
+<li><p>3</p></li>
 </ol>
 </answer>
 </exercise>
@@ -825,26 +993,19 @@ where <m>a</m> is a real number.
 <p>
 where <m>a</m>, <m>b</m> and <m>c</m> are real numbers.
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to b^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to b^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to b^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to b^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to b} f(x)</m></p></li>
+<li><p><m>f(b)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to b} f(x)</m></li>
-<li><m>f(b)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li><m>c</m></li>
-<li><m>c</m></li>
-<li><m>c</m></li>
-<li><m>c</m></li>
+<li><p><m>c</m></p></li>
+<li><p><m>c</m></p></li>
+<li><p><m>c</m></p></li>
+<li><p><m>c</m></p></li>
 </ol>
 </answer>
 </exercise>
@@ -858,33 +1019,26 @@ where <m>a</m>, <m>b</m> and <m>c</m> are real numbers.
 \end{array} 
 	\right.</m>
 </p>
-<sidebyside>
-
-<ol>
-<li><m>\ds \lim_{x\to 0^-} f(x)</m></li>
-<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+<ol cols="2" >
+<li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+<li><p><m>\ds \lim_{x\to 0} f(x)</m></p></li>
+<li><p><m>f(0)</m></p></li>
 </ol>
-
-<ol>
-<li><m>\ds \lim_{x\to 0} f(x)</m></li>
-<li><m>f(0)</m></li>
-</ol>
-
-</sidebyside>
 </statement>
 <answer>
 <ol>
-<li><m>-1</m></li>
-<li><m>1</m></li>
-<li>Does not exist</li>
-<li><m>0</m></li>
+<li><p><m>-1</m></p></li>
+<li><p><m>1</m></p></li>
+<li><p>Does not exist</p></li>
+<li><p><m>0</m></p></li>
 </ol>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Review</title>
 <exercise>
 <statement>
@@ -951,6 +1105,6 @@ Approximate the limit numerically:
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

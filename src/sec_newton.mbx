@@ -10,19 +10,105 @@ Solving equations is one of the most important things we do in mathematics, yet 
 <p>
 Newton's Method is built around tangent lines. The main idea is that if <m>x</m> is sufficiently close to a root of <m>f(x)</m>, then the tangent line to the graph at <m>(x,f(x))</m> will cross the <m>x</m>-axis at a point closer to the root than <m>x</m>.
 </p>
-<figure xml:id="fig_newt1" >
+<sidebyside><!-- START figures/fig_newt1a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.45,2.52},
+			extra x tick labels={$x_0$,$x_1$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.3,xmax=2.7%
+]
+
+
+\addplot [thick, {\colorone},smooth,domain=-.3:3.2] {cos(deg(x))};
+
+\addplot [thick, {\colortwo},smooth,domain=.3:2.52] {-0.434*(x-.45)+.9};
+\draw [dashed] (axis cs:.45,.9) -- (axis cs:.45,0);
+\filldraw (axis cs:0.45,0.9) circle (1pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_newt1a.tex END -->
+ 
+ (a)
+
+<!-- START figures/fig_newt1b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.5,2.52,1.12},
+			extra x tick labels={$x_0$,$x_1$,$x_2$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.3,xmax=2.7%
+]
+
+
+\addplot [thick, {\colorone},smooth,domain=-.3:3.2] {cos(deg(x))};
+
+\addplot [thick, {\colortwo},smooth,domain=1.12:2.7] {-0.58*(x-2.52)-.813};
+\draw [dashed] (axis cs:2.52,0) -- (axis cs:2.52,-.813);
+\filldraw (axis cs:2.52,-.813) circle (1pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_newt1b.tex END -->
+ 
+ (b)</sidebyside>
+<!--
 <caption>Demonstrating the geometric concept behind Newton's Method.</caption>
-<tabular>
-<row><cell><image width="73%" source="images/fignewt1a.png" /></cell></row>
-<row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/fignewt1b.png" /></cell></row>
-<row><cell>(b)</cell></row>
-<row><cell><image width="73%" source="images/fignewt1c.png" /></cell></row>
-<row><cell>(c)</cell></row>
-</tabular>
-</figure>
+-->
+<sidebyside><!-- START figures/fig_newt1c.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.5,2.52,1.12,1.6},
+			extra x tick labels={$x_0$,$x_1$,$x_2$,$x_3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.3,xmax=2.7%
+]
+
+
+\addplot [thick, {\colorone},smooth,domain=-.3:3.2] {cos(deg(x))};
+
+\addplot [thick, {\colortwo},smooth,domain=.8:1.6] {-.9*(x-1.12)+.432};
+\draw [dashed] (axis cs:1.12,0) -- (axis cs:1.12,.432);
+\filldraw (axis cs:1.12,.432) circle (1pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_newt1c.tex END -->
+ 
+ (c)</sidebyside>
 <p>
-We start Newton's Method with an initial guess about roughly where the root is. Call this <m>x_0</m>. (See <xref ref="fig_newt1">Figure</xref>(a).) Draw the tangent line to the graph at <m>(x_0,f(x_0))</m> and see where it meets the <m>x</m>-axis. Call this point <m>x_1</m>. Then repeat the process <ndash /> draw the tangent line to the graph at <m>(x_1, f(x_1))</m> and see where it meets the <m>x</m>-axis. (See <xref ref="fig_newt1">Figure</xref>(b).) Call this point <m>x_2</m>. Repeat the process again to get <m>x_3</m>, <m>x_4</m>, etc. This sequence of points will often converge rather quickly to a root of <m>f</m>.
+We start Newton's Method with an initial guess about roughly where the root is. Call this <m>x_0</m>. (See <xref ref="fig_newt1">Figure</xref>(a).) Draw the tangent line to the graph at <m>(x_0,f(x_0))</m> and see where it meets the <m>x</m>-axis. Call this point <m>x_1</m>. Then repeat the process <mdash /> draw the tangent line to the graph at <m>(x_1, f(x_1))</m> and see where it meets the <m>x</m>-axis. (See <xref ref="fig_newt1">Figure</xref>(b).) Call this point <m>x_2</m>. Repeat the process again to get <m>x_3</m>, <m>x_4</m>, etc. This sequence of points will often converge rather quickly to a root of <m>f</m>.
 </p>
 
 <p>
@@ -63,31 +149,31 @@ In general, given an approximation <m>x_n</m>, we can find the next approximatio
 <p>
 We summarize this process as follows.
 </p>
-<keyidea xml:id="idea_Newton">
+<insight xml:id="idea_Newton">
 <title>Newton's Method</title>
 <p>
 Let <m>f</m> be a differentiable function on an interval <m>I</m> with a root in <m>I</m>. To approximate the value of the root, accurate to <m>d</m> decimal places:<index><main>Newton's Method</main></index>
 </p>
 
 <ol>
-<li>Choose a value <m>x_0</m> as an initial approximation of the root. (This is often done by looking at a graph of <m>f</m>.)</li>
-<li>Create successive approximations iteratively; given an approximation <m>x_n</m>, compute the next approximation <m>x_{n+1}</m> as
+<li><p>Choose a value <m>x_0</m> as an initial approximation of the root. (This is often done by looking at a graph of <m>f</m>.)</p></li>
+<li><p>Create successive approximations iteratively; given an approximation <m>x_n</m>, compute the next approximation <m>x_{n+1}</m> as
 <me>
   x_{n+1} = x_n - \frac{f(x_n)}{\fp(x_n)}.
-</me>
-</li>
-<li>Stop the iterations when successive approximations do not differ in the first <m>d</m> places after the decimal point.</li>
+</me></p></li>
+<li><p>Stop the iterations when successive approximations do not differ in the first <m>d</m> places after the decimal point.</p></li>
 </ol>
-</keyidea>
+</insight>
   
 <aside>
 <p>
-<b>Note:</b> Newton's Method is not infallible. The sequence of approximate values may not converge, or it may converge so slowly that one is <q>tricked</q> into thinking a certain approximation is better than it actually is. These issues will be discussed at the end of the section.
+<em>Note:</em> Newton's Method is not infallible. The sequence of approximate values may not converge, or it may converge so slowly that one is <q>tricked</q> into thinking a certain approximation is better than it actually is. These issues will be discussed at the end of the section.
 </p>
 </aside>
 <p>
 Let's practice Newton's Method with a concrete example.
 </p>
+
 <example xml:id="ex_newt2">
 <title>Using Newton's Method</title>
 <statement>
@@ -116,18 +202,49 @@ A graph of <m>f(x)</m> is given in <xref ref="fig_newt2">Figure</xref>. We can s
 </p>
 <figure xml:id="fig_newt2" >
 <caption>A graph of <m>f(x) = x^3-x^2-1</m> in <xref ref="ex_newt2">Example</xref>.</caption>
-<image width="73%" source="images/fignewt2.png" />
+
+<!-- START figures/fig_newt2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick=\empty,% 
+%			extra x ticks={.45,2.52},
+%			extra x tick labels={$x_0$,$x_1$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.5,ymax=.6,%
+			xmin=-0.1,xmax=1.6%
+]
+
+
+\addplot [thick, {\colorone},smooth,domain=-.05:1.58] {x^3-x^2-1};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_newt2.tex END -->
+
 </figure>
 </solution>
 </example>
+
 <p>
-We can automate this process on a calculator that has an <code class="inline">Ans</code> key that returns the result of the previous calculation. Start by pressing <code class="inline">1</code> and then <c>Enter</c>. (We have just entered our initial guess, <m>x_0=1</m>.) Now compute
+We can automate this process on a calculator that has an <c>Ans</c> key that returns the result of the previous calculation. Start by pressing <c>1</c> and then <c>Enter</c>. (We have just entered our initial guess, <m>x_0=1</m>.) Now compute
 <me>
-  \text{Ans}  - \frac{f(\text{Ans} )}{\fp(\text{Ans} )}
+  \\text{ Ans }  - \frac{f(\\text{ Ans } )}{\fp(\\text{ Ans } )}
 </me>
 by entering the following and repeatedly press the <c>Enter</c> key:
 </p>
-<code class="inline">Ans-(Ans^3-Ans^2-1)/(3*Ans^2-2*Ans)</code>
+
+<p>
+<c>Ans-(Ans^3-Ans^2-1)/(3*Ans^2-2*Ans)</c>
+</p>
+
 <p>
 Each time we press the <c>Enter</c> key, we are finding the successive approximations, <m>x_1</m>, <m>x_2</m>, <ellipsis />, and each one is getting closer to the root. In fact, once we get past around <m>x_7</m> or so, the approximations don't appear to be changing. They actually are changing, but the change is far enough to the right of the decimal point that it doesn't show up on the calculator's display. When this happens, we can be pretty confident that we have found an accurate approximation.
 </p>
@@ -135,6 +252,7 @@ Each time we press the <c>Enter</c> key, we are finding the successive approxima
 <p>
 Using a calculator in this manner makes the calculations simple; many iterations can be computed very quickly.
 </p>
+
 <example xml:id="ex_newt3">
 <title>Using Newton's Method to find where functions intersect</title>
 <statement>
@@ -152,7 +270,35 @@ So we rewrite <m>\cos x=x</m> as <m>\cos{x}-x=0</m>. Written this way, we are fi
 </p>
 <figure xml:id="fig_newt3" >
 <caption>A graph of <m>f(x)=\cos x-x</m> used to find an initial approximation of its root.</caption>
-<image width="73%" source="images/fignewt3.png" />
+
+<!-- START figures/fig_newt3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick=\empty,% 
+%			extra x ticks={.45,2.52},
+%			extra x tick labels={$x_0$,$x_1$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.1,xmax=1.1%
+]
+
+
+\addplot [thick, {\colorone},smooth] {cos(deg(x))-x};
+
+\addplot [dashed,thick,{\colortwo},smooth] {cos(deg(x))};
+\addplot [{\colortwo},thick,dashed,smooth] {x};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_newt3.tex END -->
+
 </figure>
 <p>
 We now compute <m>x_1</m>, <m>x_2</m>, etc. The formula for <m>x_1</m> is
@@ -171,7 +317,11 @@ Apply Newton's Method again to find <m>x_2</m>:
 <p>
 We can continue this way, but it is really best to automate this process. On a calculator with an Ans key, we would start by pressing 0.75, then <c>Enter</c>, inputting our initial approximation. We then enter:
 </p>
+
+<p>
 <c>Ans - (cos(Ans)-Ans)/(-sin(Ans)-1)</c>.
+</p>
+
 <p>
 Repeatedly pressing the <c>Enter</c> key gives successive approximations. We quickly find:
 <md>
@@ -185,6 +335,7 @@ Our approximations <m>x_2</m> and <m>x_3</m> did not differ for at least the fir
 </p>
 </solution>
 </example>
+
 <p>
 If you know how to program, you can translate the following pseudocode into your favorite language to perform the computation in this problem.
 </p>
@@ -194,7 +345,7 @@ while true
     oldx = x
     x = x - (cos(x)-x)/(-sin(x)-1)
     print x
-    if abs(x-oldx) <lt /> .0000000001
+    if abs(x-oldx) &lt; .0000000001
         break
 </pre>
 <p>
@@ -204,14 +355,40 @@ This code calculates <m>x_1</m>, <m>x_2</m>, etc., storing each result in the va
 </introduction>
 
 
-<subsection>
+<subsection xml:id="fig_newt4">
 <title>Convergence of Newton's Method</title>
 <p>
 What should one use for the initial guess, <m>x_0</m>? Generally, the closer to the actual root the initial guess is, the better. However, some initial guesses should be avoided. For instance, consider <xref ref="ex_newt2">Example</xref> where we sought the root to <m>f(x) = x^3-x^2-1</m>. Choosing <m>x_0=0</m> would have been a particularly poor choice. Consider <xref ref="fig_newt2a">Figure</xref>, where <m>f(x)</m> is graphed along with its tangent line at <m>x=0</m>. Since <m>\fp(0)=0</m>, the tangent line is horizontal and does not intersect the <m>x</m><ndash />axis. Graphically, we see that Newton's Method fails.
 </p>
 <figure xml:id="fig_newt2a" >
 <caption>A graph of <m>f(x) = x^3-x^2-1</m>, showing why an initial approximation of <m>x_0=0</m> with Newton's Method fails.</caption>
-<image width="73%" source="images/fignewt2a.png" />
+
+<!-- START figures/fig_newt2a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick=\empty,% 
+%			extra x ticks={.45,2.52},
+%			extra x tick labels={$x_0$,$x_1$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.5,ymax=.6,%
+			xmin=-0.6,xmax=1.6%
+]
+
+\addplot [thick,{\colortwo},domain=-.5:1.58] {-1};
+\addplot [thick, {\colorone},smooth,domain=-.5:1.58] {x^3-x^2-1};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_newt2a.tex END -->
+
 </figure>
 <p>
 We can also see analytically that it fails. Since
@@ -228,17 +405,100 @@ This problem can also occur if, for instance, it turns out that <m>\fp(x_5)=0</m
 <p>
 It is also possible for Newton's Method to not converge while each successive approximation is well defined. Consider <m>f(x) = x^{1/3}</m>, as shown in <xref ref="fig_newt4">Figure</xref>. It is clear that the root is <m>x=0</m>, but let's approximate this with <m>x_0=0.1</m>. <xref ref="fig_newt4">Figure</xref>(a) shows graphically the calculation of <m>x_1</m>; notice how it is farther from the root than <m>x_0</m>. <xref ref="fig_newt4">Figures</xref>(b) and (c) show the calculation of <m>x_2</m> and <m>x_3</m>, which are even farther away; our successive approximations are getting worse. (It turns out that in this particular example, each successive approximation is twice as far from the true answer as the previous approximation.)
 </p>
-<figure xml:id="fig_newt4" >
+<sidebyside><!-- START figures/fig_newt4a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick=\empty,% 
+			extra x ticks={.1},
+			extra x tick labels={$x_0$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.6,ymax=1.6,%
+			xmin=-1.6,xmax=1.6%
+]
+
+\addplot [thick,{\colorone},smooth] coordinates {(-1.5,-1.14) (-1.4,-1.12) (-1.3,-1.09) (-1.2,-1.06) (-1.1,-1.03) (-1.,-1.) (-0.9,-0.965) (-0.8,-0.928) (-0.7,-0.888) (-0.6,-0.843) (-0.5,-0.794) (-0.4,-0.737) (-0.3,-0.669) (-0.2,-0.585) (-0.1,-0.464) (-0.09,-0.448) (-0.08,-0.431) (-0.07,-0.412) (-0.06,-0.391) (-0.05,-0.368) (-0.04,-0.342) (-0.03,-0.311)(-0.02,-0.271) (-0.01,-0.215) (0,0) (0.01,0.215) (0.02,0.271)(0.03,0.311) (0.04,0.342) (0.05,0.368) (0.06,0.391) (0.07,0.412)(0.08,0.431) (0.09,0.448) (0.1,0.464) (0.2,0.585) (0.3,0.669) (0.4,0.737) (0.5,0.794)(0.6,0.843) (0.7,0.888) (0.8,0.928) (0.9,0.965) (1.,1.) (1.1,1.03)(1.2,1.06) (1.3,1.09) (1.4,1.12) (1.5,1.14)};
+\addplot [thick,{\colortwo},domain = -.2:.2] {1.547*(x-.1)+.464};
+\filldraw (axis cs:.1,0.464) circle (1pt);
+\draw [dashed] (axis cs:.1,0) -- (axis cs:.1,.464);
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_newt4a.tex END -->
+ 
+ (a)
+
+<!-- START figures/fig_newt4b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick=\empty,% 
+			extra x ticks={.1,-.2},
+			extra x tick labels={$x_0$,$x_1$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.6,ymax=1.6,%
+			xmin=-1.6,xmax=1.6%
+]
+
+\addplot [thick,{\colorone},smooth] coordinates {(-1.5,-1.14) (-1.4,-1.12) (-1.3,-1.09) (-1.2,-1.06) (-1.1,-1.03) (-1.,-1.) (-0.9,-0.965) (-0.8,-0.928) (-0.7,-0.888) (-0.6,-0.843) (-0.5,-0.794) (-0.4,-0.737) (-0.3,-0.669) (-0.2,-0.585) (-0.1,-0.464) (-0.09,-0.448) (-0.08,-0.431) (-0.07,-0.412) (-0.06,-0.391) (-0.05,-0.368) (-0.04,-0.342) (-0.03,-0.311)(-0.02,-0.271) (-0.01,-0.215) (0,0) (0.01,0.215) (0.02,0.271)(0.03,0.311) (0.04,0.342) (0.05,0.368) (0.06,0.391) (0.07,0.412)(0.08,0.431) (0.09,0.448) (0.1,0.464) (0.2,0.585) (0.3,0.669) (0.4,0.737) (0.5,0.794)(0.6,0.843) (0.7,0.888) (0.8,0.928) (0.9,0.965) (1.,1.) (1.1,1.03)(1.2,1.06) (1.3,1.09) (1.4,1.12) (1.5,1.14)};
+\addplot [thick,{\colortwo},domain = -.3:.4] {.975*(x+.2)-.585};
+\filldraw (axis cs:-.2,-.585) circle (1pt);
+\draw [dashed] (axis cs:-.2,0) -- (axis cs:-.2,-.585);
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_newt4b.tex END -->
+ 
+ (b)</sidebyside>
+<!--
 <caption>Newton's Method fails to find a root of <m>f(x) = x^{1/3}</m>, regardless of the choice of <m>x_0</m>.</caption>
-<tabular>
-<row><cell><image width="73%" source="images/fignewt4a.png" /></cell></row>
-<row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/fignewt4b.png" /></cell></row>
-<row><cell>(b)</cell></row>
-<row><cell><image width="73%" source="images/fignewt4c.png" /></cell></row>
-<row><cell>(c)</cell></row>
-</tabular>
-</figure>
+-->
+<sidebyside><!-- START figures/fig_newt4c.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick=\empty,% 
+			extra x ticks={.1,-.2,.4,-.8},
+			extra x tick labels={$x_0$,$x_1$,$x_2$,$x_3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.6,ymax=1.6,%
+			xmin=-1.6,xmax=1.6%
+]
+
+\addplot [thick,{\colorone},smooth] coordinates {(-1.5,-1.14) (-1.4,-1.12) (-1.3,-1.09) (-1.2,-1.06) (-1.1,-1.03) (-1.,-1.) (-0.9,-0.965) (-0.8,-0.928) (-0.7,-0.888) (-0.6,-0.843) (-0.5,-0.794) (-0.4,-0.737) (-0.3,-0.669) (-0.2,-0.585) (-0.1,-0.464) (-0.09,-0.448) (-0.08,-0.431) (-0.07,-0.412) (-0.06,-0.391) (-0.05,-0.368) (-0.04,-0.342) (-0.03,-0.311)(-0.02,-0.271) (-0.01,-0.215) (0,0) (0.01,0.215) (0.02,0.271)(0.03,0.311) (0.04,0.342) (0.05,0.368) (0.06,0.391) (0.07,0.412)(0.08,0.431) (0.09,0.448) (0.1,0.464) (0.2,0.585) (0.3,0.669) (0.4,0.737) (0.5,0.794)(0.6,0.843) (0.7,0.888) (0.8,0.928) (0.9,0.965) (1.,1.) (1.1,1.03)(1.2,1.06) (1.3,1.09) (1.4,1.12) (1.5,1.14)};
+\addplot [thick,{\colortwo},domain = -.8:.4] {.614*(x-.4)+.737};
+\filldraw (axis cs:.4,.737) circle (1pt);
+\draw [dashed] (axis cs:.4,0) -- (axis cs:.4,.737);
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_newt4c.tex END -->
+ 
+ (c)</sidebyside>
 <p>
 There is no <q>fix</q> to this problem; Newton's Method simply will not work and another method must be used.
 </p>
@@ -249,7 +509,9 @@ While Newton's Method does not always work, it does work <q>most of the time,</q
 </subsection>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
@@ -276,10 +538,10 @@ F
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, the roots of <m>f(x)</m> are known or are easily found. Use 5 iterations of Newton's Method with the given initial approximation to approximate the root. Compare it to the known value of the root.
@@ -482,6 +744,6 @@ The approximations alternate between <m>x=1</m>, <m>x=2</m> and <m>x=3</m>.
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

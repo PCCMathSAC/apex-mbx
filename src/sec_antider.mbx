@@ -6,12 +6,12 @@
 <p>
 Given a function <m>y=f(x)</m>, a <em>differential equation</em> is one that incorporates <m>y</m>, <m>x</m>, and the derivatives of <m>y</m>. For instance, a simple differential equation is:
 <me>
-  y\primeskip' = 2x.
+  y' = 2x.
 </me>
 </p>
 
 <p>
-Solving a differential equation amounts to finding a function <m>y</m> that satisfies the given equation. Take a moment and consider that equation; can you find a function <m>y</m> such that <m>y\primeskip' = 2x</m>?
+Solving a differential equation amounts to finding a function <m>y</m> that satisfies the given equation. Take a moment and consider that equation; can you find a function <m>y</m> such that <m>y' = 2x</m>?
 </p>
 
 <p>
@@ -23,7 +23,7 @@ And yet another?
 </p>
 
 <p>
-Hopefully one was able to come up with at least one solution: <m>y = x^2</m>. <q>Finding another</q> may have seemed impossible until one realizes that a function like <m>y=x^2+1</m> also has a derivative of <m>2x</m>. Once that discovery is made, finding <q>yet another</q> is not difficult; the function <m>y = x^2 + 123,456,789</m> also has a derivative of <m>2x</m>. The differential equation <m>y\primeskip' = 2x</m> has many solutions. This leads us to some definitions.
+Hopefully one was able to come up with at least one solution: <m>y = x^2</m>. <q>Finding another</q> may have seemed impossible until one realizes that a function like <m>y=x^2+1</m> also has a derivative of <m>2x</m>. Once that discovery is made, finding <q>yet another</q> is not difficult; the function <m>y = x^2 + 123,456,789</m> also has a derivative of <m>2x</m>. The differential equation <m>y' = 2x</m> has many solutions. This leads us to some definitions.
 </p>
 <definition xml:id="def_antider">
 <title>Antiderivatives and Indefinite Integrals</title>
@@ -70,9 +70,36 @@ Given a function <m>f</m> and one of its antiderivatives <m>F</m>, we know <em>a
 <p>
 Let's analyze this indefinite integral notation.<index><main>integration</main><sub>notation</sub></index>
 </p>
-<image width="73%" source="images/figanti1.png" />
+
 <p>
-<xref ref="fig_anti1">Figure</xref> shows the typical notation of the indefinite integral. The integration symbol, <m>\int</m>, is in reality an <q>elongated S,</q> representing <q>take the sum.</q> We will later see how <em>sums</em> and <em>antiderivatives</em> are related.
+
+<!-- START figures/fig_anti1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=latex]
+%\draw [thin,step=1cm] (0,0) grid  (3,3);
+\draw  (2,2) node {$\displaystyle \int f(x)\ dx=F(x)+C$};
+
+\draw [{\colorone}] (1,1) node [](a) {\scriptsize Integrand};
+\draw [{\colorone},->] (a) -- (1.1,1.75);
+
+\draw [{\colorone}] (0,3) node [text width=32pt,align=center] (b) {\scriptsize \centering Integration\\[-5pt] symbol};
+\draw [{\colorone},->] (b) -- (.6,2.1);
+
+\draw [{\colorone}] (2,3) node [text width=32pt,align=center] (c) {\scriptsize \centering Differential\\[-5pt] of $x$};
+\draw [{\colorone},->] (c) -- (1.7,2.3);
+
+\draw [{\colorone}] (2.5,1) node [text width=32pt,align=center] (c) {\scriptsize \centering One\\[-5pt] antiderivative};
+\draw [{\colorone},->] (c) -- (2.5,1.75);
+
+\draw [{\colorone}] (3.5,3) node [text width=35pt,align=center] (c) {\scriptsize \centering Constant of\\[-5pt] integration};
+\draw [{\colorone},->] (c) -- (3.45,2.3);
+
+
+
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_anti1.tex END -->
+
+\captionof{figure}{Understanding the indefinite integral notation.} <xref ref="fig_anti1">Figure</xref> shows the typical notation of the indefinite integral. The integration symbol, <m>\int</m>, is in reality an <q>elongated S,</q> representing <q>take the sum.</q> We will later see how <em>sums</em> and <em>antiderivatives</em> are related.
 </p>
 
 <p>
@@ -82,6 +109,7 @@ The function we want to find an antiderivative of is called the <em>integrand</e
 <p>
 Let's practice using this notation.
 </p>
+
 <example xml:id="ex_anti2">
 <title>Evaluating indefinite integrals</title>
 <statement>
@@ -100,12 +128,9 @@ The indefinite integral of <m>\sin x</m> is thus <m>-\cos x</m>, plus a constant
   \int \sin x \ dx = -\cos x + C.
 </me>
 </p>
-
-<p>
-\vskip-
-</p>
 </solution>
 </example>
+
 <p>
 A commonly asked question is <q>What happened to the <m>dx</m>?</q> The unenlightened response is <q>Don't worry about it. It just goes away.</q> A full understanding includes the following.
 </p>
@@ -121,7 +146,7 @@ presents us with a differential, <m>dy = \sin x\ dx</m>. It is asking: <q>What i
 <p>
 Letting <m>dy = \sin x\ dx</m>, rewrite
 <me>
-  \int \sin x \ dx \quad \text{as} \quad \int  dy.
+  \int \sin x \ dx  \\text{ as }  \int  dy.
 </me>
 </p>
 
@@ -136,6 +161,7 @@ Understanding all of this is more important later as we try to find antiderivati
 <p>
 Let's practice once more before stating integration rules.
 </p>
+
 <example xml:id="ex_anti3">
 <title>Evaluating indefinite integrals</title>
 <statement>
@@ -179,6 +205,7 @@ It is easy to verify our answer; take the derivative of <m>x^3+2x^3+5x+C</m> and
 </p>
 </solution>
 </example>
+
 <p>
 This final step of <q>verifying our answer</q> is important both practically and theoretically. In general, taking derivatives is easier than finding antiderivatives so checking our work is easy and vital as we learn.
 </p>
@@ -208,45 +235,42 @@ Differentiation <q>undoes</q> the work done by antidifferentiation.
 <theorem xml:id="thm_indef_alg">
 <title>Derivatives and Antiderivatives</title>
 <statement>
-<sidebyside>
-Common Differentiation Rules\rule[-2pt]{0pt}{1pt}
+<sidebyside>Common Differentiation Rules
 <ol>
-<li>\myrule<m>\frac{d}{dx}\big(cf(x) \big) = c\cdot \fp(x)</m></li>
-<li>\myrule<m>\frac{d}{dx}\big(f(x)\pm g(x) \big) =</m>
-\vskip .05\myrule<m>\fp(x)\pm g'(x)</m></li>
-<li><m>\frac{d}{dx}\big(C \big) = 0</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(x \big) = 1</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(x^n \big) = n\cdot x^{n-1}</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(\sin x \big) = \cos x</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(\cos x \big) = -\sin x</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(\tan x \big) = \sec^2 x</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(\csc x \big) = -\csc x\cot x</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(\sec x \big) = \sec x\tan x</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(\cot x \big) = -\csc^2 x</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(e^ x \big) = e^x</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(a^x \big) = \ln a\cdot a^x</m>\myrule</li>
-<li><m>\frac{d}{dx}\big(\ln x \big) = \frac1 x</m>\myrule</li>
+<li><p><m>\frac{d}{dx}\big(cf(x) \big) = c\cdot \fp(x)</m></p></li>
+<li><p><m>\frac{d}{dx}\big(f(x)\pm g(x) \big) =</m>
+<m>\fp(x)\pm g'(x)</m></p></li>
+<li><p><m>\frac{d}{dx}\big(C \big) = 0</m></p></li>
+<li><p><m>\frac{d}{dx}\big(x \big) = 1</m></p></li>
+<li><p><m>\frac{d}{dx}\big(x^n \big) = n\cdot x^{n-1}</m></p></li>
+<li><p><m>\frac{d}{dx}\big(\sin x \big) = \cos x</m></p></li>
+<li><p><m>\frac{d}{dx}\big(\cos x \big) = -\sin x</m></p></li>
+<li><p><m>\frac{d}{dx}\big(\tan x \big) = \sec^2 x</m></p></li>
+<li><p><m>\frac{d}{dx}\big(\csc x \big) = -\csc x\cot x</m></p></li>
+<li><p><m>\frac{d}{dx}\big(\sec x \big) = \sec x\tan x</m></p></li>
+<li><p><m>\frac{d}{dx}\big(\cot x \big) = -\csc^2 x</m></p></li>
+<li><p><m>\frac{d}{dx}\big(e^ x \big) = e^x</m></p></li>
+<li><p><m>\frac{d}{dx}\big(a^x \big) = \ln a\cdot a^x</m></p></li>
+<li><p><m>\frac{d}{dx}\big(\ln x \big) = \frac1 x</m></p></li>
 </ol>
-Common Indefinite Integral Rules\rule[-2pt]{0pt}{1pt}
+Common Indefinite Integral Rules
 <ol>
-<li>\myrule<m>\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx</m></li>
-<li>\myrule<m>\int \big(f(x)\pm g(x)\big)\ dx =</m>
-\vskip .05\myrule<m>\int f(x)\ dx\pm \int g(x)\ dx</m></li>
-<li><m>\int 0\ dx = C</m>\myrule</li>
-<li><m>\int 1\ dx = \int dx = x+C</m>\myrule</li>
-<li><m>\int x^n\ dx =\frac{1}{n+1}x^{n+1}+ C</m>  { (<m>n\neq -1</m>)}\myrule</li>
-<li><m>\int \cos x\ dx = \sin x+C</m>\myrule</li>
-<li><m>\int \sin x\ dx = -\cos x+C</m>\myrule</li>
-<li><m>\int \sec^2 x\ dx = \tan x+C</m>\myrule</li>
-<li><m>\int \csc x\cot  x\ dx = -\csc x+C</m>\myrule</li>
-<li><m>\int \sec x\tan x\ dx = \sec x+C</m>\myrule</li>
-<li><m>\int \csc^2 x\ dx = -\cot x+C</m>\myrule</li>
-<li><m>\int e^x\ dx = e^x+C</m>\myrule</li>
-<li><m>\int a^x\ dx = \frac{1}{\ln a}\cdot a^x+C</m>\myrule</li>
-<li><m>\int \frac{1}x\ dx = \ln |x|+C</m>\myrule</li>
-</ol>
-
-</sidebyside>
+<li><p><m>\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx</m></p></li>
+<li><p><m>\int \big(f(x)\pm g(x)\big)\ dx =</m>
+<m>\int f(x)\ dx\pm \int g(x)\ dx</m></p></li>
+<li><p><m>\int 0\ dx = C</m></p></li>
+<li><p><m>\int 1\ dx = \int dx = x+C</m></p></li>
+<li><p><m>\int x^n\ dx =\frac{1}{n+1}x^{n+1}+ C</m>  { (<m>n\neq -1</m>)}</p></li>
+<li><p><m>\int \cos x\ dx = \sin x+C</m></p></li>
+<li><p><m>\int \sin x\ dx = -\cos x+C</m></p></li>
+<li><p><m>\int \sec^2 x\ dx = \tan x+C</m></p></li>
+<li><p><m>\int \csc x\cot  x\ dx = -\csc x+C</m></p></li>
+<li><p><m>\int \sec x\tan x\ dx = \sec x+C</m></p></li>
+<li><p><m>\int \csc^2 x\ dx = -\cot x+C</m></p></li>
+<li><p><m>\int e^x\ dx = e^x+C</m></p></li>
+<li><p><m>\int a^x\ dx = \frac{1}{\ln a}\cdot a^x+C</m></p></li>
+<li><p><m>\int \frac{1}x\ dx = \ln |x|+C</m></p></li>
+</ol></sidebyside>
 </statement>
 </theorem>
 
@@ -255,30 +279,32 @@ We highlight a few important points from <xref ref="thm_indef_alg">Theorem</xref
 </p>
 
 <ul>
-<li>Rule <hash />1 states <m>\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx</m>. This is the Constant Multiple Rule: <index><main>Constant Multiple Rule</main><sub>of integration</sub></index> we can temporarily ignore constants when finding antiderivatives, just as we did when computing derivatives (i.e., <m>\frac{d}{dx}\big(3x^2\big)</m> is just as easy to compute as <m>\frac{d}{dx}\big(x^2\big)</m>). An example:
+<li><p>Rule <hash />1 states <m>\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx</m>. This is the Constant Multiple Rule: <index><main>Constant Multiple Rule</main><sub>of integration</sub></index> we can temporarily ignore constants when finding antiderivatives, just as we did when computing derivatives (i.e., <m>\frac{d}{dx}\big(3x^2\big)</m> is just as easy to compute as <m>\frac{d}{dx}\big(x^2\big)</m>). An example:
 <me>
   \int 5\cos x\ dx = 5\cdot\int \cos x\ dx = 5\cdot (\sin x+C) = 5\sin x + C.
 </me>
-In the last step we can consider the constant as also being multiplied by 5, but <q>5 times a constant</q> is still a constant, so we just write <q><m>C</m> </q>.</li>
-<li>Rule <hash />2 is the Sum/Difference Rule:<index><main>integration</main><sub>Sum/Difference Rule</sub></index><index><main>Sum/Difference Rule</main><sub>of integration</sub></index> we can split integrals apart when the integrand contains terms that are added/subtracted, as we did in <xref ref="ex_anti3">Example</xref>. So:
+In the last step we can consider the constant as also being multiplied by 5, but <q>5 times a constant</q> is still a constant, so we just write <q><m>C</m> </q>.</p></li>
+<li><p>Rule <hash />2 is the Sum/Difference Rule:<index><main>integration</main><sub>Sum/Difference Rule</sub></index><index><main>Sum/Difference Rule</main><sub>of integration</sub></index> we can split integrals apart when the integrand contains terms that are added/subtracted, as we did in <xref ref="ex_anti3">Example</xref>. So:
 <md>
   <mrow>  \int(3x^2+4x+5)\ dx \amp = \int 3x^2\ dx + \int 4x\ dx + \int 5\ dx</mrow>
   <mrow>  \amp = 3\int x^2\ dx + 4\int x\ dx + \int 5 \ dx</mrow>
   <mrow>  \amp = 3\cdot \frac13x^3 + 4\cdot \frac12x^2+5x+C</mrow>
   <mrow>  \amp = x^3+2x^2+5x+C</mrow>
 </md>
-In practice we generally do not write out all these steps, but we demonstrate them here for completeness.</li>
-<li>Rule <hash />5 is the Power Rule of indefinite integration.<index><main>integration</main><sub>Power Rule</sub></index><index><main>Power Rule</main><sub>integration</sub></index> There are two important things to keep in mind:
+In practice we generally do not write out all these steps, but we demonstrate them here for completeness.</p></li>
+<li><p>Rule <hash />5 is the Power Rule of indefinite integration.<index><main>integration</main><sub>Power Rule</sub></index><index><main>Power Rule</main><sub>integration</sub></index> There are two important things to keep in mind:
+</p>
+
 <ol>
-<li>Notice the restriction that <m>n\neq -1</m>. This is important: <m>\int \frac{1}{x}\ dx \neq</m> <q><m>\frac{1}{0}x^0+C</m></q>; rather, see Rule <hash />14.</li>
-<li>We are presenting antidifferentiation as the <q>inverse operation</q> of differentiation. Here is a useful quote to remember:
+<li><p>Notice the restriction that <m>n\neq -1</m>. This is important: <m>\int \frac{1}{x}\ dx \neq</m> <q><m>\frac{1}{0}x^0+C</m></q>; rather, see Rule <hash />14.</p></li>
+<li><p>We are presenting antidifferentiation as the <q>inverse operation</q> of differentiation. Here is a useful quote to remember:
 <blockquote>
 <q>Inverse operations do the opposite things in the opposite order.</q>
 </blockquote>
-When taking a derivative using the Power Rule, we <b>first</b> <em>multiply</em> by the power, then <b>second</b> <em>subtract</em> 1 from the power. To find the antiderivative, do the opposite things in the opposite order: <b>first</b> <em>add</em> one to the power, then <b>second</b> <em>divide</em> by the power.</li>
+When taking a derivative using the Power Rule, we <em>first</em> <em>multiply</em> by the power, then <em>second</em> <em>subtract</em> 1 from the power. To find the antiderivative, do the opposite things in the opposite order: <em>first</em> <em>add</em> one to the power, then <em>second</em> <em>divide</em> by the power.</p></li>
 </ol>
 </li>
-<li>Note that Rule <hash />14 incorporates the absolute value of <m>x</m>. The exercises will work the reader through why this is the case; for now, know the absolute value is important and cannot be ignored.</li>
+<li><p>Note that Rule <hash />14 incorporates the absolute value of <m>x</m>. The exercises will work the reader through why this is the case; for now, know the absolute value is important and cannot be ignored.</p></li>
 </ul>
 </introduction>
 
@@ -292,6 +318,7 @@ In <xref ref="sec_basic_diff_rules">Section</xref> we saw that the derivative of
 <p>
 We can find <em>the</em> answer if we provide more information with the question, as done in the following example. Often the additional information comes in the form of an <em>initial value</em>, a value of the function that one knows beforehand.
 </p>
+
 <example xml:id="ex_anti4">
 <title>Solving initial value problems</title>
 <statement>
@@ -305,12 +332,12 @@ We want to know a velocity function, <m>v(t)</m>. We know two things:
 </p>
 
 <ul>
-<li>The acceleration, i.e., <m>v\primeskip'(t)= -32</m>, and</li>
-<li>the velocity at a specific time, i.e., <m>v(3) = -10</m>.</li>
+<li><p>The acceleration, i.e., <m>v'(t)= -32</m>, and</p></li>
+<li><p>the velocity at a specific time, i.e., <m>v(3) = -10</m>.</p></li>
 </ul>
 
 <p>
-Using the first piece of information, we know that <m>v(t)</m> is an antiderivative of <m>v\primeskip'(t)=-32</m>. So we begin by finding the indefinite integral of <m>-32</m>:
+Using the first piece of information, we know that <m>v(t)</m> is an antiderivative of <m>v'(t)=-32</m>. So we begin by finding the indefinite integral of <m>-32</m>:
 <me>
   \int (-32)\ dt = -32t+C=v(t).
 </me>
@@ -333,7 +360,7 @@ Thus <m>v(t)= -32t+86</m>. We can use this equation to understand the motion of 
 <p>
 When did the object begin moving down? Immediately after <m>v(t) = 0</m>:
 <me>
-  -32t+86 = 0 \quad \Rightarrow\quad  t = \frac{43}{16}  \approx 2.69\text{s} .
+  -32t+86 = 0  \Rightarrow  t = \frac{43}{16}  \approx 2.69\\text{s} .
 </me>
 </p>
 
@@ -361,7 +388,7 @@ We start by finding <m>\fp(t)</m>, which is an antiderivative of <m>\fpp(t)</m>:
 <p>
 So <m>\fp(t) = \sin t+C</m> for the correct value of <m>C</m>. We are given that <m>\fp(0) = 3</m>, so:
 <me>
-  \fp(0) = 3 \quad \Rightarrow \quad \sin 0+C = 3 \quad \Rightarrow \quad C=3.
+  \fp(0) = 3  \Rightarrow  \sin 0+C = 3  \Rightarrow  C=3.
 </me>
 </p>
 
@@ -388,6 +415,7 @@ Thus <m>f(t) = -\cos t + 3t + 6</m>.
 </p>
 </solution>
 </example>
+
 <p>
 This section introduced antiderivatives and the indefinite integral. We found they are needed when finding a function given information about its derivative(s). For instance, we found a position function given a velocity function.
 </p>
@@ -398,7 +426,9 @@ In the next section, we will see how position and velocity are unexpectedly rela
 </subsection>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
@@ -442,7 +472,7 @@ Answers will vary.
 <exercise>
 <statement>
 <p>
-Fill in the blanks: <q>Inverse operations do the <u></u> things in the <u></u> order.</q>
+Fill in the blanks: <q>Inverse operations do the <fillin /> things in the <fillin /> order.</q>
 </p>
 </statement>
 <answer>
@@ -468,7 +498,7 @@ Answers will vary.
 <exercise>
 <statement>
 <p>
-The derivative of a position function is a <u></u> function.
+The derivative of a position function is a <fillin /> function.
 </p>
 </statement>
 <answer>
@@ -481,7 +511,7 @@ velocity
 <exercise>
 <statement>
 <p>
-The antiderivative of an acceleration function is a <u></u> function.
+The antiderivative of an acceleration function is a <fillin /> function.
 </p>
 </statement>
 <answer>
@@ -490,10 +520,10 @@ velocity
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, evaluate the given indefinite integral.
@@ -752,20 +782,20 @@ This problem investigates why <xref ref="thm_indef_alg">Theorem</xref> states th
 </p>
 
 <ol>
-<li>What is the domain of <m>y = \ln x</m>?</li>
-<li>Find <m>\frac{d}{dx}\big(\ln x\big)</m>.</li>
-<li>What is the domain of <m>y = \ln (-x)</m>?</li>
-<li>Find <m>\frac{d}{dx}\big(\ln (-x)\big)</m>.</li>
-<li>You should find that <m>1/x</m> has two types of antiderivatives, depending on whether <m>x>0</m> or <m>x\lt 0</m>. In one expression, give a formula for <m>\ds \int \frac{1}{x}\ dx</m> that takes these different domains into account, and explain your answer.</li>
+<li><p>What is the domain of <m>y = \ln x</m>?</p></li>
+<li><p>Find <m>\frac{d}{dx}\big(\ln x\big)</m>.</p></li>
+<li><p>What is the domain of <m>y = \ln (-x)</m>?</p></li>
+<li><p>Find <m>\frac{d}{dx}\big(\ln (-x)\big)</m>.</p></li>
+<li><p>You should find that <m>1/x</m> has two types of antiderivatives, depending on whether <m>x>0</m> or <m>x\lt 0</m>. In one expression, give a formula for <m>\ds \int \frac{1}{x}\ dx</m> that takes these different domains into account, and explain your answer.</p></li>
 </ol>
 </statement>
 <answer>
 <ol>
-<li><m>x>0</m></li>
-<li><m>1/x</m></li>
-<li><m>x\lt 0</m></li>
-<li><m>1/x</m></li>
-<li><m>\ln |x|+C</m>. Explanations will vary.</li>
+<li><p><m>x>0</m></p></li>
+<li><p><m>1/x</m></p></li>
+<li><p><m>x\lt 0</m></p></li>
+<li><p><m>1/x</m></p></li>
+<li><p><m>\ln |x|+C</m>. Explanations will vary.</p></li>
 </ol>
 </answer>
 </exercise>
@@ -915,10 +945,10 @@ In the following exercises, find <m>f(x)</m> described by the given initial valu
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Review</title>
 <exercise>
 <statement>
@@ -945,9 +975,6 @@ Given <m>y = x^2e^x\cos x</m>, find <m>dy</m>.
 </p>
 </answer>
 </exercise>
-<p>
-\addtocontents{toc}{
-</p>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

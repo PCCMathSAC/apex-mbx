@@ -16,16 +16,41 @@ While our question is not precisely formed (what constitutes <q>near the value 1
 </p>
 <figure xml:id="fig_zoom_sinx_over_x" >
 <caption><m>\sin(x)/x</m> near <m>x=1</m>.</caption>
-<image width="73%" source="images/figZoomSinXOverX.png" />
+
+<!-- START figures/sinx_over_x_1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ytick={0,.2,...,1.1},ymin=.4,ymax=1.1,extra y ticks={.1,.3,...,.9},extra y tick labels={},xmin=.3,xmax=1.6,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0.5,0.958851) (0.6,0.941071) (0.7,0.920311) (0.8,0.896695) (0.9,0.870363) (1.,0.841471) (1.1,0.810189) (1.2,0.776699) (1.3,0.741199) (1.4,0.703893) (1.5,0.664997)};
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+%\caption{A portion of $y=\frac{\sin x}{x}$}\label{fig:zoom_sinx_over_x}
+]]></latex-image-code></image><!-- figures/sinx_over_x_1.tex END -->
+
 </figure>
 <figure xml:id="fig_sinx_over_x" >
 <caption><m>\sin(x)/x</m> near <m>x=0</m>.</caption>
-<image width="73%" source="images/figSinXOverX.png" />
+
+<!-- START figures/sinx_over_x_2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ytick={.8,.9,1},ymin=.75,ymax=1.05,extra y ticks={.1,.3,...,.9},extra y tick labels={},xmin=-1.1,xmax=1.2,name=myplot]
+\addplot [{\colorone},thick,smooth] coordinates {(-1.,0.841471) (-0.9,0.870363) (-0.8,0.896695) (-0.7,0.920311) (-0.6,0.941071) (-0.5,0.958851) (-0.4,0.973546) (-0.3,0.985067) (-0.2,0.993347) (-0.1,0.998334) (0,1.) (0.1,0.998334) (0.2,0.993347) (0.3,0.985067) (0.4,0.973546) (0.5,0.958851) (0.6,0.941071) (0.7,0.920311) (0.8,0.896695) (0.9,0.870363) (1.,0.841471) };
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+%\caption{$y=\frac{\sin x}{x}$ on $[-1,1]$}\label{fig:sinx}
+]]></latex-image-code></image><!-- figures/sinx_over_x_2.tex END -->
+
 </figure>
 <p>
 Consider this again at a different value for <m>x</m>. When <m>x</m> is near 0, what value (if any) is <m>y</m> near? By considering <xref ref="fig_sinx_over_x">Figure</xref>, one can see that it seems that <m>y</m> takes on values near <m>1</m>. But what happens when <m>x=0</m>? We have
 <me>
-  y \rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\text{``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}}.
+  y \rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\\text{ ``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}}.
 </me>
 </p>
 
@@ -47,7 +72,7 @@ This is not a complete definition (that will come in the next section); this is 
 <p>
 Above, where <m>f(x) = \sin(x)/x</m>, we approximated
 <me>
-  \lim_{x\to 1} \frac{\sin x}{x} \approx 0.84 \quad \text{ and }  \quad \lim_{x\to 0}\frac{\sin x}{x} \approx 1.
+  \lim_{x\to 1} \frac{\sin x}{x} \approx 0.84  \\text{ and }   \lim_{x\to 0}\frac{\sin x}{x} \approx 1.
 </me>
 </p>
 
@@ -66,7 +91,7 @@ Consider again <m>\lim_{x\to 1}\sin (x)/x</m>. To approximate this limit numeric
 <p>
 Notice that for values of <m>x</m> near <m>1</m>, we have <m>\sin (x)/x</m> near <m>0.841</m>. The <m>x=1</m> row is in bold to highlight the fact that when considering limits, we are <em>not</em> concerned with the value of the function at that particular <m>x</m> value; we are only concerned with the values of the function when <m>x</m> is <em>near</em> 1.
 </p>
-<figure xml:id="table_sinx_1" >
+<table xml:id="table_sinx_1" >
 <caption>Values of <m>\sin(x)/x</m> with <m>x</m> near 1.</caption>
 <tabular>
 <row><cell><m>x</m></cell><cell><m>\sin(x)/x</m></cell></row>
@@ -74,16 +99,16 @@ Notice that for values of <m>x</m> near <m>1</m>, we have <m>\sin (x)/x</m> near
 <row><cell>0.9</cell><cell>0.870363</cell></row>
 <row><cell>0.99</cell><cell>0.844471</cell></row>
 <row><cell>0.999</cell><cell>0.841772</cell></row>
-<row><cell><b>1</b></cell><cell><b>0.841471</b></cell></row>
+<row><cell><em>1</em></cell><cell><em>0.841471</em></cell></row>
 <row><cell>1.001</cell><cell>0.84117</cell></row>
 <row><cell>1.01</cell><cell>0.838447</cell></row>
 <row><cell>1.1</cell><cell>0.810189</cell></row>
 </tabular>
-</figure>
+</table>
 <p>
 Now approximate <m>\lim_{x\to 0} \sin(x)/x</m> numerically. We already approximated the value of this limit as 1 graphically in <xref ref="fig_sinx_over_x">Figure</xref>. The table in <xref ref="table_sinx_2">Figure</xref> shows the value of <m>\sin(x)/x</m> for values of <m>x</m> near 0. Ten places after the decimal point are shown to highlight how close to 1 the value of <m>\sin(x)/x</m> gets as <m>x</m> takes on values very near 0. We include the <m>x=0</m> row in bold again to stress that we are not concerned with the value of our function at <m>x=0</m>, only on the behavior of the function <em>near</em> 0.
 </p>
-<figure xml:id="table_sinx_2" >
+<table xml:id="table_sinx_2" >
 <caption>Values of <m>\sin(x)/x</m> with <m>x</m> near 0.</caption>
 <tabular>
 <row><cell><m>x</m></cell><cell><m>\sin(x)/x</m></cell></row>
@@ -91,12 +116,12 @@ Now approximate <m>\lim_{x\to 0} \sin(x)/x</m> numerically. We already approxima
 <row><cell>-0.1</cell><cell>0.9983341665</cell></row>
 <row><cell>-0.01</cell><cell>0.9999833334</cell></row>
 <row><cell>-0.001</cell><cell>0.9999998333</cell></row>
-<row><cell><b>0</b></cell><cell><b>not defined</b></cell></row>
+<row><cell><em>0</em></cell><cell><em>not defined</em></cell></row>
 <row><cell>0.001</cell><cell>0.9999998333</cell></row>
 <row><cell>0.01</cell><cell>0.9999833334</cell></row>
 <row><cell>0.1</cell><cell>0.9983341665</cell></row>
 </tabular>
-</figure>
+</table>
 <p>
 This numerical method gives confidence to say that 1 is a good approximation of <m>\lim_{x\to 0} \sin(x)/x</m>; that is,
 <me>
@@ -113,9 +138,23 @@ We now consider several examples that allow us explore different aspects of the 
 </p>
 <figure xml:id="fig_limit1" >
 <caption>Graphically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
-<image width="73%" source="images/figlimit1.png" />
+
+<!-- START figures/fig_limit1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=.25,ymax=.35,extra y tick labels={},xmin=2.3,xmax=3.7,name=myplot]
+\addplot [{\colorone},thick,smooth] coordinates {(2.5,0.321429) (2.61,0.314461) (2.72,0.308094) (2.83,0.302253) (2.94,0.296875) (3.05,0.291908) (3.16,0.287305) (3.27,0.283029) (3.38,0.279046) (3.49,0.275326)};
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+%\captionof{figure}{Graphically and numerically approximating $\lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3}$ in Example \ref{ex_limit1}.}
+%\caption{Graphically and numerically approximating $\lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3}$ in Example \ref{ex_limit1}.}
+%\label{fig:limit1}
+]]></latex-image-code></image><!-- figures/fig_limit1.tex END -->
+
 </figure>
-<figure xml:id="table_limit1" >
+<table xml:id="table_limit1" >
 <caption>Numerically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
 <tabular>
 <row><cell><m>x</m></cell><cell><m>\frac{x^2-x-6}{6x^2-19x+3}</m></cell></row>
@@ -123,12 +162,13 @@ We now consider several examples that allow us explore different aspects of the 
 <row><cell>2.9</cell><cell>0.29878</cell></row>
 <row><cell>2.99</cell><cell>0.294569</cell></row>
 <row><cell>2.999</cell><cell>0.294163</cell></row>
-<row><cell><b>3</b></cell><cell><b>not defined</b></cell></row>
+<row><cell><em>3</em></cell><cell><em>not defined</em></cell></row>
 <row><cell>3.001</cell><cell>0.294073</cell></row>
 <row><cell>3.01</cell><cell>0.293669</cell></row>
 <row><cell>3.1</cell><cell>0.289773</cell></row>
 </tabular>
-</figure>
+</table>
+
 <example xml:id="ex_limit1">
 <title>Approximating the value of a limit</title>
 <statement>
@@ -154,19 +194,16 @@ The graph shows that when <m>x</m> is near 3, the value of <m>y</m> is very near
   \lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3} \approx 0.294.
 </me>
 </p>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
+
 <p>
 This example may bring up a few questions about approximating limits (and the nature of limits themselves).
 </p>
 
 <ol>
-<li>If a graph does not produce as good an approximation as a table, why bother with it?</li>
-<li>How many values of <m>x</m> in a table are <q>enough?</q> In the previous example, could we have just used <m>x=3.001</m> and found a fine approximation?</li>
+<li><p>If a graph does not produce as good an approximation as a table, why bother with it?</p></li>
+<li><p>How many values of <m>x</m> in a table are <q>enough?</q> In the previous example, could we have just used <m>x=3.001</m> and found a fine approximation?</p></li>
 </ol>
 
 <p>
@@ -176,6 +213,7 @@ Graphs are useful since they give a visual understanding concerning the behavior
 <p>
 Since tables and graphs are used only to <em>approximate</em> the value of a limit, there is not a firm answer to how many data points are <q>enough.</q> Include enough so that a trend is clear, and use values (when possible) both less than and greater than the value in question. In <xref ref="ex_limit1">Example</xref>, we used both values less than and greater than 3. Had we used just <m>x=3.001</m>, we might have been tempted to conclude that the limit had a value of <m>0.3</m>. While this is not far off, we could do better. Using values <q>on both sides of 3</q> helps us identify trends.
 </p>
+
 <example xml:id="ex_limit2">
 <title>Approximating the value of a limit</title>
 <statement>
@@ -193,9 +231,27 @@ Again we graph <m>f(x)</m> and create a table of its values near <m>x=0</m> to a
 </p>
 <figure xml:id="fig_limit2" >
 <caption>Graphically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
-<image width="73%" source="images/figlimit2.png" />
+
+<!-- START figures/fig_limit2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.1,ymax=1.1,xmin=-1.1,xmax=1.1,name=myplot]
+%%\addplot [{\colorone},thick,smooth] coordinates {(-1.,0.) (-0.89,0.11) (-0.78,0.22) (-0.67,0.33) (-0.56,0.44) (-0.45,0.55) (-0.34,0.66) (-0.23,0.77) (-0.12,0.88) (-0.01,0.99) (0,1) (0.1,0.99) (0.21,0.9559) (0.32,0.8976) (0.43,0.8151) (0.54,0.7084) (0.65,0.5775) (0.76,0.4224) (0.87,0.2431) (1,0) 
+%};
+\addplot [{\colorone},thick, smooth,domain=-1:0,samples=2] ({x},{x+1});
+\addplot [{\colorone},thick, smooth,domain=0:1,samples=15] ({x},{1-x^2});
+
+\filldraw [thick,fill=white] (axis cs:0,1) circle (1.5pt);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+%\caption{Graphically approximating $\lim_{x\to 0}f(x)$ in Example \ref{ex_limit2}.}\label{fig:limit2}
+]]></latex-image-code></image><!-- figures/fig_limit2.tex END -->
+
 </figure>
-<figure xml:id="table_limit2" >
+<table xml:id="table_limit2" >
 <caption>Numerically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
 <tabular>
 <row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
@@ -207,7 +263,7 @@ Again we graph <m>f(x)</m> and create a table of its values near <m>x=0</m> to a
 <row><cell>0.01</cell><cell>0.9999</cell></row>
 <row><cell>0.1</cell><cell>0.99</cell></row>
 </tabular>
-</figure>
+</table>
 <p>
 The table shown in <xref ref="table_limit2">Figure</xref> shows values of <m>f(x)</m> for values of <m>x</m> near 0. It is clear that as <m>x</m> takes on values very near 0, <m>f(x)</m> takes on values very near 1. It turns out that if we let <m>x=0</m> for either <q>piece</q> of <m>f(x)</m>, 1 is returned; this is significant and we'll return to this idea later.
 </p>
@@ -227,14 +283,15 @@ A function may not have a limit for all values of <m>x</m>. That is, we cannot s
 </p>
 
 <ol>
-<li>The function <m>f(x)</m> may approach different values on either side of <m>c</m>.</li>
-<li>The function may grow without upper or lower bound as <m>x</m> approaches <m>c</m>.</li>
-<li>The function may oscillate as <m>x</m> approaches <m>c</m>.</li>
+<li><p>The function <m>f(x)</m> may approach different values on either side of <m>c</m>.</p></li>
+<li><p>The function may grow without upper or lower bound as <m>x</m> approaches <m>c</m>.</p></li>
+<li><p>The function may oscillate as <m>x</m> approaches <m>c</m>.</p></li>
 </ol>
 
 <p>
 We'll explore each of these in turn.
 </p>
+
 <example xml:id="ex_no_limit1">
 <title>Different Values Approached From Left and Right</title>
 <statement>
@@ -252,9 +309,26 @@ A graph of <m>f(x)</m> around <m>x=1</m> and a table are given <xref ref="fig_no
 </p>
 <figure xml:id="fig_nolimit1" >
 <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
-<image width="73%" source="images/fignolimit1.png" />
+
+<!-- START figures/fig_nolimit1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.1,ymax=3.2,xmin=-.1,xmax=2.1,name=myplot]
+
+\addplot [{\colorone},smooth,thick] coordinates {(0.,3.) (0.1,2.81) (0.2,2.64) (0.3,2.49) (0.4,2.36) (0.5,2.25) (0.6,2.16) (0.7,2.09) (0.8,2.04) (0.9,2.01) (1,2)};
+\addplot [{\colorone},smooth,thick] coordinates {(1,1) (1.1,1.1) (1.2,1.2) (1.3,1.3) (1.4,1.4) (1.5,1.5) (1.6,1.6) (1.7,1.7) (1.8,1.8) (1.9,1.9) (2.,2.)
+};
+\filldraw [fill=white,draw={\colorone},thick] (axis cs:1,1) circle (1.5pt);
+\filldraw [fill={\colorone},{\colorone}] (axis cs:1,2) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+%\caption{of $f(x)$ in Example \ref{ex_no_limit1}.}\label{fig:nolimit1}
+]]></latex-image-code></image><!-- figures/fig_nolimit1.tex END -->
+
 </figure>
-<figure xml:id="table_nolimit1" >
+<table xml:id="table_nolimit1" >
 <caption>Values of <m>f(x)</m> near <m>x=1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
 <tabular>
 <row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
@@ -266,7 +340,7 @@ A graph of <m>f(x)</m> around <m>x=1</m> and a table are given <xref ref="fig_no
 <row><cell>1.01</cell><cell>1.01</cell></row>
 <row><cell>1.1</cell><cell>1.1</cell></row>
 </tabular>
-</figure>
+</table>
 </solution>
 </example>
 
@@ -283,9 +357,25 @@ A graph and table of <m>f(x) = 1/(x-1)^2</m> are given in <xref ref="fig_nolimit
 </p>
 <figure xml:id="fig_nolimit2" >
 <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
-<image width="73%" source="images/fignolimit2.png" />
+
+<!-- START figures/fig_nolimit2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=110,xmin=-.1,xmax=2.1,name=myplot]
+
+\addplot [{\colorone},smooth,thick] coordinates {(0.,1.) (0.05,1.10803) (0.1,1.23457) (0.15,1.38408) (0.2,1.5625)(0.25,1.77778) (0.3,2.04082) (0.35,2.36686) (0.4,2.77778)(0.45,3.30579) (0.5,4.) (0.55,4.93827) (0.6,6.25) (0.65,8.16327)(0.7,11.1111) (0.75,16.) (0.8,25.) (0.85,44.4444) (0.9,100.) };
+\addplot [{\colorone},smooth,thick] coordinates {(1.1,100.) (1.15,44.4444) (1.2,25.) (1.25,16.) (1.3,11.1111) (1.35,8.16327) (1.4,6.25) (1.45,4.93827) (1.5,4.) (1.55,3.30579) (1.6,2.77778) (1.65,2.36686) (1.7,2.04082) (1.75,1.77778) (1.8,1.5625) (1.85,1.38408) (1.9,1.23457) (1.95,1.10803) (2.,1.)};
+%\addplot [{\colorone},smooth] coordinates {(1,1) (1.1,1.1) (1.2,1.2) (1.3,1.3) (1.4,1.4) (1.5,1.5) (1.6,1.6) (1.7,1.7) (1.8,1.8) (1.9,1.9) (2.,2.)
+\draw [dashed,thick] (axis cs: 1,1) -- (axis cs: 1,100);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+%\caption{of $f(x)$ in Example \ref{ex_no_limit2}.}\label{fig:nolimit2}
+]]></latex-image-code></image><!-- figures/fig_nolimit2.tex END -->
+
 </figure>
-<figure xml:id="table_nolimit2" >
+<table xml:id="table_nolimit2" >
 <caption>Values of <m>f(x)</m> near <m>x=1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
 <tabular>
 <row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
@@ -297,11 +387,11 @@ A graph and table of <m>f(x) = 1/(x-1)^2</m> are given in <xref ref="fig_nolimit
 <row><cell>1.01</cell><cell>10000.</cell></row>
 <row><cell>1.1</cell><cell>100.</cell></row>
 </tabular>
-</figure>
+</table>
 <p>
 We can deduce this on our own, without the aid of the graph and table. If <m>x</m> is near 1, then <m>(x-1)^2</m> is very small, and:
 <me>
-  \frac{1}{\text{very small number} } = \text{very large number} .
+  \frac{1}{\\text{ very small number } } = \\text{ very large number } .
 </me>
 </p>
 
@@ -336,12 +426,41 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
 </p>
 </solution>
 </example>
-<p>
-\hskip -\marginparwidth
-</p>
-<sidebyside>
+
+<!--
+<caption>Observing that <m>f(x) = \sin(1/x)</m> has no limit as <m>x\to 0</m> in Example \ref{ex_no_limit3}.</caption>
+-->
+<sidebyside><tabular>
+<row><cell>(a) 
+<!-- START figures/fig_nolimit3a.tex -->
+<image><latex-image-code><![CDATA[
+%\begin{mfigure}{O}
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=1.1,xmin=-1.1,xmax=1.1,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-1.,-0.841471) (-0.95,-0.86873) (-0.9,-0.896192) (-0.85,-0.923256)(-0.8,-0.948985) (-0.75,-0.971938) (-0.7,-0.989903) (-0.65,-0.999477)(-0.6,-0.995408) (-0.55,-0.969556) (-0.5,-0.909297)(-0.49,-0.891559) (-0.48,-0.871503)(-0.47,-0.848917) (-0.46,-0.823572) (-0.45,-0.79522)(-0.44,-0.763597) (-0.43,-0.728419) (-0.42,-0.689385)(-0.41,-0.64618) (-0.4,-0.598472) (-0.39,-0.545923) (-0.38,-0.488189)(-0.37,-0.424935) (-0.36,-0.355842) (-0.35,-0.280629)(-0.34,-0.199077) (-0.33,-0.11106) (-0.32,-0.0165919)(-0.31,0.0841143) (-0.3,0.190568) (-0.29,0.301898) (-0.28,0.416722)(-0.27,0.532974) (-0.26,0.6477) (-0.25,0.756802) (-0.24,0.854753)(-0.23,0.93428) (-0.22,0.986099) (-0.21,0.998774) (-0.2,0.958924)(-0.19,0.852122) (-0.18,0.665102) (-0.17,0.390185) (-0.16,0.0331792)(-0.15,-0.374151) (-0.14,-0.757628) (-0.13,-0.986959)(-0.12,-0.887294) (-0.11,-0.327701) (-0.1,0.544021) (-0.09,0.993333)(-0.08,0.0663219) (-0.07,-0.988987) (-0.06,0.818447)(-0.05,-0.912945) (-0.04,0.132352) (-0.03,-0.94053) (-0.02,0.262375)(-0.01,0.506366)(0.01,-0.506366) (0.02,-0.262375) (0.03,0.94053) (0.04,-0.132352)(0.05,0.912945) (0.06,-0.818447) (0.07,0.988987) (0.08,-0.0663219)(0.09,-0.993333) (0.1,-0.544021) (0.11,0.327701) (0.12,0.887294)(0.13,0.986959) (0.14,0.757628) (0.15,0.374151) (0.16,-0.0331792)(0.17,-0.390185) (0.18,-0.665102) (0.19,-0.852122) (0.2,-0.958924)(0.21,-0.998774) (0.22,-0.986099) (0.23,-0.93428) (0.24,-0.854753)(0.25,-0.756802) (0.26,-0.6477) (0.27,-0.532974) (0.28,-0.416722)(0.29,-0.301898) (0.3,-0.190568) (0.31,-0.0841143) (0.32,0.0165919)(0.33,0.11106) (0.34,0.199077) (0.35,0.280629) (0.36,0.355842)(0.37,0.424935) (0.38,0.488189) (0.39,0.545923) (0.4,0.598472)(0.41,0.64618) (0.42,0.689385) (0.43,0.728419) (0.44,0.763597)(0.45,0.79522) (0.46,0.823572) (0.47,0.848917) (0.48,0.871503)(0.49,0.891559) (0.5,0.909297)(0.55,0.969556) (0.6,0.995408) (0.65,0.999477) (0.7,0.989903)(0.75,0.971938) (0.8,0.948985) (0.85,0.923256) (0.9,0.896192)(0.95,0.86873) (1.,0.841471) };
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+%\captionof{figure}{of $f(x)$ in Example \ref{ex_no_limit2}.}\label{fig:nolimit3a}
+%\end{mfigure}
+]]></latex-image-code></image><!-- figures/fig_nolimit3a.tex END -->
+</cell><cell>(b) 
+<!-- START figures/fig_nolimit3b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1.1,ymax=1.1,xmin=-.11,xmax=.11,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.544021) (-0.099,0.625859) (-0.098,0.702784) (-0.097,0.773598) (-0.096,0.837061) (-0.095,0.891904) (-0.094,0.936853) (-0.093,0.970648) (-0.092,0.992071) (-0.091,0.999978) (-0.09,0.993333) (-0.089,0.971247) (-0.088,0.933026) (-0.087,0.878215) (-0.086,0.806651) (-0.085,0.718515) (-0.084,0.614387) (-0.083,0.495298) (-0.082,0.362779) (-0.081,0.218905) (-0.08,0.0663219) (-0.079,-0.0917281) (-0.078,-0.251415) (-0.077,-0.408347) (-0.076,-0.557627) (-0.075,-0.693952) (-0.074,-0.81175) (-0.073,-0.905374) (-0.072,-0.969337) (-0.071,-0.998614) (-0.07,-0.988987) (-0.069,-0.937442) (-0.068,-0.842593) (-0.067,-0.705118) (-0.066,-0.528174) (-0.065,-0.317743) (-0.064,-0.0828681) (-0.063,0.164304) (-0.062,0.408736) (-0.061,0.633044) (-0.06,0.818447) (-0.059,0.94617) (-0.058,0.999301) (-0.057,0.965066) (-0.056,0.837348) (-0.055,0.619211) (-0.054,0.325024) (-0.053,-0.0183676) (-0.052,-0.372047) (-0.051,-0.687679) (-0.05,-0.912945) (-0.049,-0.999926) (-0.048,-0.915928) (-0.047,-0.65528) (-0.046,-0.249359) (-0.045,0.229023) (-0.044,0.671421) (-0.043,0.953507) (-0.042,0.969509) (-0.041,0.67613) (-0.04,0.132352) (-0.039,-0.486679) (-0.038,-0.925763) (-0.037,-0.948132) (-0.036,-0.4764) (-0.035,0.292743) (-0.034,0.907558) (-0.033,0.896983) (-0.032,0.165166) (-0.031,-0.746068) (-0.03,-0.94053) (-0.029,-0.0746909) (-0.028,0.915507) (-0.027,0.614755) (-0.026,-0.690678) (-0.025,-0.745113) (-0.024,0.7352) (-0.023,0.482964) (-0.022,-0.995148) (-0.021,0.475171) (-0.02,0.262375) (-0.019,-0.70007) (-0.018,0.83773) (-0.017,-0.762217) (-0.016,0.325796) (-0.015,0.639018) (-0.014,-0.73662) (-0.013,-0.998945) (-0.012,-0.996711) (-0.011,-0.195822) (-0.01,0.506366) (-0.009,0.914944) (-0.008,0.61604) (-0.007,0.996362) (-0.006,0.161545) (-0.005,0.873297) (-0.004,0.970528) (-0.003,-0.318846) (-0.002,0.467772) (-0.001,-0.82688) (0,-0.85773) (0.001,0.82688) (0.002,-0.467772) (0.003,0.318846) (0.004,-0.970528) (0.005,-0.873297) (0.006,-0.161545) (0.007,-0.996362) (0.008,-0.61604) (0.009,-0.914944) (0.01,-0.506366) (0.011,0.195822) (0.012,0.996711) (0.013,0.998945) (0.014,0.73662) (0.015,-0.639018) (0.016,-0.325796) (0.017,0.762217) (0.018,-0.83773) (0.019,0.70007) (0.02,-0.262375) (0.021,-0.475171) (0.022,0.995148) (0.023,-0.482964) (0.024,-0.7352) (0.025,0.745113) (0.026,0.690678) (0.027,-0.614755) (0.028,-0.915507) (0.029,0.0746909) (0.03,0.94053) (0.031,0.746068) (0.032,-0.165166) (0.033,-0.896983) (0.034,-0.907558) (0.035,-0.292743) (0.036,0.4764) (0.037,0.948132) (0.038,0.925763) (0.039,0.486679) (0.04,-0.132352) (0.041,-0.67613) (0.042,-0.969509) (0.043,-0.953507) (0.044,-0.671421) (0.045,-0.229023) (0.046,0.249359) (0.047,0.65528) (0.048,0.915928) (0.049,0.999926) (0.05,0.912945) (0.051,0.687679) (0.052,0.372047) (0.053,0.0183676) (0.054,-0.325024) (0.055,-0.619211) (0.056,-0.837348) (0.057,-0.965066) (0.058,-0.999301) (0.059,-0.94617) (0.06,-0.818447) (0.061,-0.633044) (0.062,-0.408736) (0.063,-0.164304) (0.064,0.0828681) (0.065,0.317743) (0.066,0.528174) (0.067,0.705118) (0.068,0.842593) (0.069,0.937442) (0.07,0.988987) (0.071,0.998614) (0.072,0.969337) (0.073,0.905374) (0.074,0.81175) (0.075,0.693952) (0.076,0.557627) (0.077,0.408347) (0.078,0.251415) (0.079,0.0917281) (0.08,-0.0663219) (0.081,-0.218905) (0.082,-0.362779) (0.083,-0.495298) (0.084,-0.614387) (0.085,-0.718515) (0.086,-0.806651) (0.087,-0.878215) (0.088,-0.933026) (0.089,-0.971247) (0.09,-0.993333) (0.091,-0.999978) (0.092,-0.992071) (0.093,-0.970648) (0.094,-0.936853) (0.095,-0.891904) (0.096,-0.837061) (0.097,-0.773598) (0.098,-0.702784) (0.099,-0.625859) (0.1,-0.544021)
+};
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_nolimit3b.tex END -->
+</cell></row>
+</tabular>
 <tabular>
-<row><cell><image width="73%" source="images/figNoLimit3a.png" /></cell><cell><image width="73%" source="images/figNoLimit3b.png" /></cell><cell>
+<row><cell>(c)
 <tabular>
 <row><cell><m>x</m></cell><cell><m>\sin(1/x)</m></cell></row>
 <row bottom="minor"><cell></cell><cell></cell></row>
@@ -356,32 +475,44 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
 <row><cell></cell></row>
 </tabular>
 </cell></row>
-<row><cell>(a)</cell><cell>(b)</cell><cell>(c)</cell></row>
-</tabular>
-</sidebyside>
+</tabular></sidebyside>
 </subsection>
 
 
-<subsection>
+<subsection xml:id="fig_diff_quot_small_h">
 <title>Limits of Difference Quotients</title>
 <p>
 We have approximated limits of functions as <m>x</m> approached a particular number. We will consider another important kind of limit after explaining a few key ideas.<index><main>limit</main><sub>difference quotient</sub></index>
 </p>
 <figure xml:id="fig_diffquot1" >
 <caption>Interpreting a difference quotient as the slope of a secant line.</caption>
-<image width="73%" source="images/figDiffQuot1.png" />
+
+<!-- START figures/fig_diff_quot1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
+\addplot [{\colortwo},smooth,thick] coordinates {(0,7.5) (6,22.5)};
+\fill[black] (axis cs:1,10) circle (1pt);
+\fill[black] (axis cs:5,20) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $f$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_diff_quot1.tex END -->
+
 </figure>
 <p>
 Let <m>f(x)</m> represent the position function, in feet, of some particle that is moving in a straight line, where <m>x</m> is measured in seconds. Let's say that when <m>x=1</m>, the particle is at position 10 ft., and when <m>x=5</m>, the particle is at 20 ft. Another way of expressing this is to say
 <me>
-  f(1)=10 \quad \text{ and }  \quad f(5) = 20.
+  f(1)=10  \\text{ and }   f(5) = 20.
 </me>
 </p>
 
 <p>
 Since the particle traveled 10 feet in 4 seconds, we can say the particle's <em>average velocity</em> was 2.5 ft/s. We write this calculation using a <q>quotient of differences,</q> or, a <em>difference quotient</em>:
 <me>
-  \frac{f(5) - f(1)}{5-1} = \frac{10}4 = 2.5 \text{ft/s} .
+  \frac{f(5) - f(1)}{5-1} = \frac{10}4 = 2.5 \\text{ ft/s } .
 </me>
 </p>
 
@@ -403,20 +534,60 @@ Let <m>f(x) = -1.5x^2+11.5x</m>; note that <m>f(1)=10</m> and <m>f(5) = 20</m>, 
 <p>
 For small values of <m>h</m>, i.e., values of <m>h</m> close to 0, we get average velocities over very short time periods and compute secant lines over small intervals. See <xref ref="fig_diff_quot_small_h">Figure</xref>. This leads us to wonder what the limit of the difference quotient is as <m>h</m> approaches 0. That is,
 <me>
-  \lim_{h\to 0} \frac{f(1+h)-f(1)}{h} = \text{ ? }
+  \lim_{h\to 0} \frac{f(1+h)-f(1)}{h} = \\text{ ? }
 </me>
 </p>
-<figure xml:id="fig_diff_quot_small_h" >
+<!--
 <caption>Secant lines of <m>f(x)</m> at <m>x=1</m> and <m>x=1+h</m>, for shrinking values of <m>h</m> (i.e., <m>h\rightarrow 0</m>).</caption>
-<tabular>
-<row><cell><image width="73%" source="images/figDiffQuotSmallha.png" /></cell></row>
-<row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figDiffQuotSmallhb.png" /></cell></row>
-<row><cell>(b)</cell></row>
-<row><cell><image width="73%" source="images/figDiffQuotSmallhc.png" /></cell></row>
-<row><cell>(c)</cell></row>
+-->
+<sidebyside><tabular>
+<row><cell>(a) 
+<!-- START figures/fig_diff_quot_smallha.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
+\addplot [{\colortwo},smooth,thick] coordinates {(0,4.5) (4,26.5)};
+\fill[black] (axis cs:1,10) circle (1pt);
+\fill[black] (axis cs:3,21) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $f$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_diff_quot_smallha.tex END -->
+</cell><cell>(b) 
+<!-- START figures/fig_diff_quot_smallhb.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
+\addplot [{\colortwo},smooth,thick] coordinates {(0,3) (3,24)};
+\fill[black] (axis cs:1,10) circle (1pt);
+\fill[black] (axis cs:2,17) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $f$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_diff_quot_smallhb.tex END -->
+</cell></row>
 </tabular>
-</figure>
+<tabular>
+<row><cell>(c)
+<!-- START figures/fig_diff_quot_smallhc.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[clip=false,width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
+\addplot [{\colortwo},smooth,thick] coordinates {(0,2.25) (2.5,21.625)};
+\fill[black] (axis cs:1,10) circle (1pt);
+\fill[black] (axis cs:1.5,13.875) circle (1pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $f$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_diff_quot_smallhc.tex END -->
+</cell></row>
+</tabular></sidebyside>
 <p>
 As we do not yet have a true definition of a limit nor an exact method for computing it, we settle for approximating the value. While we could graph the difference quotient (where the <m>x</m>-axis would represent <m>h</m> values and the <m>y</m>-axis would represent values of the difference quotient) we settle for making a table. See <xref ref="table_diff_quot_smallh">Figure</xref>. The table gives us reason to assume the value of the limit is about 8.5.
 </p>
@@ -424,26 +595,16 @@ As we do not yet have a true definition of a limit nor an exact method for compu
 <p>
 Proper understanding of limits is key to understanding calculus. With limits, we can accomplish seemingly impossible mathematical things, like adding up an infinite number of numbers (and not get infinity) and finding the slope of a line between two points, where the <q>two points</q> are actually the same point. These are not just mathematical curiosities; they allow us to link position, velocity and acceleration together, connect cross-sectional areas to volume, find the work done by a variable force, and much more.
 </p>
-<figure xml:id="table_diff_quot_smallh" >
-<caption>The difference quotient evaluated at values of <m>h</m> near 0.</caption>
-<tabular>
-<row><cell><m>h</m></cell><cell><m>\frac{f(1+h)-f(1)}{h}</m>\vspace{1pt}</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell><m>-0.5</m></cell><cell>9.25</cell></row>
-<row><cell><m>-0.1</m></cell><cell>8.65</cell></row>
-<row><cell><m>-0.01</m></cell><cell>8.515</cell></row>
-<row><cell>0.01</cell><cell>8.485</cell></row>
-<row><cell>0.1</cell><cell>8.35</cell></row>
-<row><cell>0.5</cell><cell>7.75</cell></row>
-</tabular>
-</figure>
+
 <p>
 In the next section we give the formal definition of the limit and begin our study of finding limits analytically. In the following exercises, we continue our introduction and approximate the value of limits.
 </p>
 </subsection>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
@@ -461,7 +622,7 @@ Answers will vary.
 <exercise>
 <statement>
 <p>
-An expression of the form <m>\frac00</m> is called <u></u>.
+An expression of the form <m>\frac00</m> is called <fillin />.
 </p>
 </statement>
 <answer>
@@ -509,10 +670,10 @@ Answers will vary.
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, approximate the given limits both numerically and graphically.
@@ -672,7 +833,7 @@ In the following exercises, a function <m>f</m> and a value <m>a</m> are given. 
 <exercise>
 <statement>
 <p>
-<m>f(x) = -7x+2</m>,  <m>a=3</m>
+<m>f(x) = -7x+2</m>,<m>a=3</m>
 </p>
 </statement>
 <answer>
@@ -693,7 +854,7 @@ The limit seems to be exactly 7.
 <exercise>
 <statement>
 <p>
-<m>f(x) = 9x+0.06</m>,  <m>a=-1</m>
+<m>f(x) = 9x+0.06</m>,<m>a=-1</m>
 </p>
 </statement>
 <answer>
@@ -714,7 +875,7 @@ The limit seems to be exactly 9.
 <exercise>
 <statement>
 <p>
-<m>f(x) = x^2+3x-7</m>,  <m>a=1</m>
+<m>f(x) = x^2+3x-7</m>,<m>a=1</m>
 </p>
 </statement>
 <answer>
@@ -735,7 +896,7 @@ The limit is approx. 5.
 <exercise>
 <statement>
 <p>
-<m>\displaystyle f(x) = \frac{1}{x+1}</m>,  <m>a=2</m>
+<m>\displaystyle f(x) = \frac{1}{x+1}</m>,<m>a=2</m>
 </p>
 </statement>
 <answer>
@@ -756,7 +917,7 @@ The limit is approx. <m>-0.11</m>.
 <exercise>
 <statement>
 <p>
-<m>\displaystyle f(x) = -4x^2+5x-1</m>,  <m>a=-3</m>
+<m>\displaystyle f(x) = -4x^2+5x-1</m>,<m>a=-3</m>
 </p>
 </statement>
 <answer>
@@ -777,7 +938,7 @@ The limit is approx. <m>29</m>.
 <exercise>
 <statement>
 <p>
-<m>\displaystyle f(x) =\ln x</m>,  <m>a=5</m>
+<m>\displaystyle f(x) =\ln x</m>,<m>a=5</m>
 </p>
 </statement>
 <answer>
@@ -798,7 +959,7 @@ The limit is approx. <m>0.2</m>.
 <exercise>
 <statement>
 <p>
-<m>\displaystyle f(x) =\sin x</m>,  <m>a=\pi</m>
+<m>\displaystyle f(x) =\sin x</m>,<m>a=\pi</m>
 </p>
 </statement>
 <answer>
@@ -819,7 +980,7 @@ The limit is approx. <m>-1</m>.
 <exercise>
 <statement>
 <p>
-<m>\displaystyle f(x) =\cos x</m>,  <m>a=\pi</m>
+<m>\displaystyle f(x) =\cos x</m>,<m>a=\pi</m>
 </p>
 </statement>
 <answer>
@@ -836,6 +997,6 @@ The limit is approx. <m>0.005</m>.
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

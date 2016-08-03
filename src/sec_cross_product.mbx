@@ -8,7 +8,7 @@
 </p>
 
 <p>
-Given two non<ndash />parallel, nonzero vectors <m>\vec u</m> and <m>\vec v</m> in space, it is very useful to find a vector <m>\vec w</m> that is perpendicular to both <m>\vec u</m> and <m>\vec v</m>. There is a operation, called the <b>cross product</b>, that creates such a vector. This section defines the cross product, then explores its properties and applications.
+Given two non<ndash />parallel, nonzero vectors <m>\vec u</m> and <m>\vec v</m> in space, it is very useful to find a vector <m>\vec w</m> that is perpendicular to both <m>\vec u</m> and <m>\vec v</m>. There is a operation, called the <em>cross product</em>, that creates such a vector. This section defines the cross product, then explores its properties and applications.
 </p>
 <definition xml:id="def_cross_product">
 <title>Cross Product</title>
@@ -29,6 +29,7 @@ This definition can be a bit cumbersome to remember. After an example we will gi
 <p>
 Let's practice using this definition by computing a cross product.
 </p>
+
 <example xml:id="ex_crossp1">
 <title>Computing a cross product</title>
 <statement>
@@ -53,33 +54,54 @@ We test whether or not <m>\crossp uv</m> is orthogonal to <m>\vec u</m> and <m>\
 <me>
   \big(\crossp uv\big) \cdot \vec u = \la -13,2,7\ra \cdot \la 2,-1,4\ra = 0,
 </me>
-</p>
 <me>
   \big(\crossp uv\big) \cdot \vec v = \la -13,2,7\ra \cdot \la 3,2,5 \ra = 0.
 </me>
+</p>
+
 <p>
 Since both dot products are zero, <m>\crossp uv</m> is indeed orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
 </p>
 </solution>
 </example>
+
 <p>
 A convenient method of computing the cross product starts with forming a particular <m>3\times 3</m> <em>matrix</em>, or rectangular array. The first row comprises the standard unit vectors <m>\vec i</m>, <m>\vec j</m>, and <m>\vec k</m>. The second and third rows are the vectors <m>\vec u</m> and <m>\vec v</m>, respectively. Using <m>\vec u</m> and <m>\vec v</m> from <xref ref="ex_crossp1">Example</xref>, we begin with:
 </p>
-<image width="73%" source="images/68d9ee080e3c4c8086d0f075efc42501c9f4a3cc.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[baseline=-3pt,>=stealth]
+\node at (0,0) {\(\begin{array}{ccc} \veci\amp \vecj\amp \veck \\  2\amp -1\amp 4\\3\amp 2\amp 5
+\end{array} \)};\end{tikzpicture}]]></latex-image-code>
+</image>
 <p>
 Now repeat the first two columns after the original three:
 </p>
-<image width="73%" source="images/0baa5bb98d070b2270b175d0ae1385f636d63753.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[baseline=-3pt,>=stealth]
+\node at (0,0) {\(\begin{array}{ccccc} \veci\amp \vecj\amp \veck\amp \veci\amp \vecj \\  2\amp -1\amp 4\amp 2\amp -1\\3\amp 2\amp 5\amp 3\amp 2
+\end{array} \)};\end{tikzpicture}]]></latex-image-code>
+</image>
 <p>
 This gives three full <q>upper left to lower right</q> diagonals, and three full <q>upper right to lower left</q> diagonals, as shown. Compute the products along each diagonal, then add the products on the right and subtract the products on the left:
 </p>
-<image width="73%" source="images/0363716c768681f550eef40540af8269bd37ee80.png" />
+<image>
+<latex-image-code><![CDATA[\begin{tikzpicture}[baseline=-3pt,>=stealth]
+\node at (0,0) {\(\begin{array}{ccccc} \ \veci\ \amp \ \vecj\ \amp \ \veck\ \amp \ \veci\ \amp \ \vecj\ \\  2\amp -1\amp 4\amp 2\amp -1\\3\amp 2\amp 5\amp 3\amp 2
+\end{array} \)};
+\draw[->,  thin] (-1.3,.4) -- (.5,-.8) node[below right] {\(-5\veci\)};
+\draw[->,  thin] (-.7,.4) -- (1.3,-.8) node[below right ] {12\vecj};
+\draw[->, thin] (0,.4) -- (2,-.8) node[below right] {4\veck};
+\draw[->, thin] (0,.4) -- (-2,-.8) node[below left] {\(-3\veck\)};
+\draw[->, thin] (.7,.4) -- (-1.3,-.8) node[below left ] {8\veci};
+\draw[->, thin] (1.3,.4) -- (-.5,-.8) node[below left] {10\vecj};\end{tikzpicture}]]></latex-image-code>
+</image>
 <me>
   \crossp uv = \big(-5\veci+12\vecj+4\veck\,\big) - \big(-3\veck+8\veci+10\vecj\,\big) = -13\veci+2\vecj+7\veck = \la -13,2,7\ra.
 </me>
 <p>
 We practice using this method.
 </p>
+
 <example xml:id="ex_crossp2">
 <title>Computing a cross product</title>
 <statement>
@@ -138,23 +160,23 @@ Let <m>\vecu</m>, <m>\vecv</m> and <m>\vecw</m> be vectors in <m>\mathbb{R}^3</m
 </p>
 
 <ol>
-<li>\text{<m>\crossp uv = -(\crossp vu)</m>} Anticommutative Property</li>
+<li><p>\\text{ \(\crossp uv = -(\crossp vu)\) } Anticommutative Property</p></li>
 <li>
 <ol>
-<li>\text{<m>(\vec u+\vec v)\times \vecw = \crossp uw+\crossp vw</m>} Distributive Properties</li>
-<li><m>\vec u \times (\vec v+\vec w) = \crossp uv+\crossp uw</m></li>
+<li><p>\\text{ \((\vec u+\vec v)\times \vecw = \crossp uw+\crossp vw\) } Distributive Properties</p></li>
+<li><p><m>\vec u \times (\vec v+\vec w) = \crossp uv+\crossp uw</m></p></li>
 </ol>
 </li>
-<li><m>c(\crossp uv) = (c\vecu) \times \vec v = \vecu \times (c\vecv)</m></li>
+<li><p><m>c(\crossp uv) = (c\vecu) \times \vec v = \vecu \times (c\vecv)</m></p></li>
 <li>
 <ol>
-<li>\text{<m>(\crossp uv)\cdot \vecu = 0</m>} Orthogonality Properties</li>
-<li><m>(\crossp uv)\cdot \vecv = 0</m></li>
+<li><p>\\text{ \((\crossp uv)\cdot \vecu = 0\) } Orthogonality Properties</p></li>
+<li><p><m>(\crossp uv)\cdot \vecv = 0</m></p></li>
 </ol>
 </li>
-<li><m>\crossp uu = \vec 0</m></li>
-<li><m>\crossp u0 = \vec 0</m></li>
-<li>\text{<m>\vecu \cdot (\vecv\times\vecw) = (\crossp uv)\cdot \vecw</m>} Triple Scalar Product</li>
+<li><p><m>\crossp uu = \vec 0</m></p></li>
+<li><p><m>\crossp u0 = \vec 0</m></p></li>
+<li><p>\\text{ \(\vecu \cdot (\vecv\times\vecw) = (\crossp uv)\cdot \vecw\) } Triple Scalar Product</p></li>
 </ol>
 </statement>
 </theorem>
@@ -167,8 +189,8 @@ We introduced the cross product as a way to find a vector orthogonal to two give
 Property 5 from the theorem is also left to the reader to prove in the Exercise section, but it reveals something more interesting than <q>the cross product of a vector with itself is <m>\vec 0</m>.</q> Let <m>\vec u</m> and <m>\vec v</m> be parallel vectors; that is, let there be a scalar <m>c</m> such that <m>\vecv = c\vecu</m>. Consider their cross product:
 <md>
   <mrow>  \crossp uv \amp = \vecu \times (c\vec u)</mrow>
-  <mrow>  \amp =	\text{$c(\crossp uu)$}\text{(by Property 3 of <xref ref="thm_cross_prod_prop">Theorem</xref>)}</mrow>
-  <mrow>  \amp = \text{$\vec 0$.}\text{(by Property 5 of <xref ref="thm_cross_prod_prop">Theorem</xref>)}</mrow>
+  <mrow>  \amp =	$c(\crossp uu)$\\text{ (by Property 3 of <xref ref="thm_cross_prod_prop">Theorem</xref>) }</mrow>
+  <mrow>  \amp = $\vec 0$.\\text{ (by Property 5 of <xref ref="thm_cross_prod_prop">Theorem</xref>) }</mrow>
 </md>
 </p>
 
@@ -192,7 +214,7 @@ where <m>\theta</m>, <m>0\leq \theta \leq \pi</m>, is the angle between <m>\vecu
 
 <aside>
 <p>
-<b>Note:</b> <xref ref="def_orthogonal">Definition</xref> (through <xref ref="thm_dot_product">Theorem</xref>) defines <m>\vec u</m> and <m>\vec v</m> to be orthogonal if <m>\vec u\cdot\vec v=0</m>. We could use <xref ref="thm_cross_product">Theorem</xref> to define <m>\vec u</m> and <m>\vec v</m> are parallel if <m>\vec u\times \vec v = 0</m>. By such a definition, <m>\vec 0</m> would be both orthogonal and parallel to every vector. Apparent paradoxes such as this are not uncommon in mathematics and can be very useful. (See also the marginal note on <xref ref="note_parallel">page</xref>.)
+<em>Note:</em> <xref ref="def_orthogonal">Definition</xref> (through <xref ref="thm_dot_product">Theorem</xref>) defines <m>\vec u</m> and <m>\vec v</m> to be orthogonal if <m>\vec u\cdot\vec v=0</m>. We could use <xref ref="thm_cross_product">Theorem</xref> to define <m>\vec u</m> and <m>\vec v</m> are parallel if <m>\vec u\times \vec v = 0</m>. By such a definition, <m>\vec 0</m> would be both orthogonal and parallel to every vector. Apparent paradoxes such as this are not uncommon in mathematics and can be very useful. (See also the marginal note on <xref ref="note_parallel">page</xref>.)
 </p>
 </aside>
 <p>
@@ -202,6 +224,7 @@ Note that this theorem makes a statement about the <em>magnitude</em> of the cro
 <p>
 We demonstrate the truth of this theorem in the following example.
 </p>
+
 <example xml:id="ex_crossp3">
 <title>The cross product and angles</title>
 <statement>
@@ -236,27 +259,114 @@ which allows us to verify the theorem exactly.
 </p>
 </solution>
 </example>
+
 <p>
-<b>Right Hand Rule</b>
+<em>Right Hand Rule</em>
 </p>
 
 <p>
-The anticommutative property of the cross product demonstrates that <m>\crossp uv</m> and <m>\crossp vu</m> differ only by a sign <ndash /> these vectors have the same magnitude but point in the opposite direction. When seeking a vector perpendicular to <m>\vec u</m> and <m>\vec v</m>, we essentially have two directions to choose from, one in the direction of <m>\crossp uv</m> and one in the direction of <m>\crossp vu</m>. Does it matter which we choose? How can we tell which one we will get without graphing, etc.?
+The anticommutative property of the cross product demonstrates that <m>\crossp uv</m> and <m>\crossp vu</m> differ only by a sign <mdash /> these vectors have the same magnitude but point in the opposite direction. When seeking a vector perpendicular to <m>\vec u</m> and <m>\vec v</m>, we essentially have two directions to choose from, one in the direction of <m>\crossp uv</m> and one in the direction of <m>\crossp vu</m>. Does it matter which we choose? How can we tell which one we will get without graphing, etc.?
 </p>
 
 <p>
-Another wonderful property of the cross product, as defined, is that it follows the <b>right hand rule.</b> Given <m>\vec u</m> and <m>\vec v</m> in <m>\mathbb{R}^3</m> with the same initial point, point the index finger of your right hand in the direction of <m>\vecu</m> and let your middle finger point in the direction of <m>\vecv</m> (much as we did when establishing the right hand rule for the 3-dimensional coordinate system). Your thumb will naturally extend in the direction of <m>\crossp uv</m>. One can <q>practice</q> this using <xref ref="fig_crossp_rhr">Figure</xref>. If you switch, and point the index finder in the direction of <m>\vecv</m> and the middle finger in the direction of <m>\vecu</m>, your thumb will now point in the opposite direction, allowing you to <q>visualize</q> the anticommutative property of the cross product.
+Another wonderful property of the cross product, as defined, is that it follows the <em>right hand rule.</em> Given <m>\vec u</m> and <m>\vec v</m> in <m>\mathbb{R}^3</m> with the same initial point, point the index finger of your right hand in the direction of <m>\vecu</m> and let your middle finger point in the direction of <m>\vecv</m> (much as we did when establishing the right hand rule for the 3-dimensional coordinate system). Your thumb will naturally extend in the direction of <m>\crossp uv</m>. One can <q>practice</q> this using <xref ref="fig_crossp_rhr">Figure</xref>. If you switch, and point the index finder in the direction of <m>\vecv</m> and the middle finger in the direction of <m>\vecu</m>, your thumb will now point in the opposite direction, allowing you to <q>visualize</q> the anticommutative property of the cross product.
 </p>
 <figure xml:id="fig_crossp_rhr" >
 <caption>Illustrating the Right Hand Rule of the cross product.</caption>
-\includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0044,
 3Dc2c=.78 .32 .53,
 3Dcoo=0 0 34,
 3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figcrossp_rhr.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figcrossp_rhr_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcrossp_rhr.asy in Chapter 10
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={};
+real[] myychoice={};
+real[] myzchoice={};
+defaultpen(0.5mm);
+pair xbounds=(-1.5,1.5);
+pair ybounds=(-1.5,1.5);
+pair zbounds=(-0.5,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+
+//Draw theplane z=(-2*x+5*y)/27;
+triple f(pair t) {
+  return (t.x,t.y,(-2*t.x+5*t.y)/27);
+}
+surface s=surface(f,(-1.5,-1.5),(1.5,1.5),8,8,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p,nolight,render(merge=true));
+
+
+// Draw vec{u}=<-1/5,1,1/5>
+draw((0,0,0)--(-1/5,1,1/5), blue,Arrow3(size=3mm));
+label("$\vec{u}$",(-1/5,1,1/5),N);
+
+// Draw  \vec{v}=<-6/5,3/5,1/5>
+draw((0,0,0)--(-6/5,3/5,1/5), blue,Arrow3(size=3mm));
+label("$\vec{v}$",(-6/5,3/5,1/5),N);
+
+// Draw the cross product of u and v <2,-5,27> but scale it as <2,-5,27>/25
+draw((0,0,0)--(2/25,-5/25,27/25), red,Arrow3(size=3mm));
+label("$\vec{u} \times \vec{v}$",(2/25,-5/25,27/25),NW);
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- figures/figcrossp_rhr_3D.asy END -->
+
 </figure>
 </subsection>
 
@@ -268,7 +378,7 @@ There are a number of ways in which the cross product is useful in mathematics, 
 </p>
 
 <p>
-<b>Area of a Parallelogram</b>
+<em>Area of a Parallelogram</em>
 </p>
 
 <p>
@@ -278,67 +388,201 @@ It is a standard geometry fact that the area of a parallelogram is <m>A = bh</m>
 </men>
 where the second equality comes from <xref ref="thm_cross_product">Theorem</xref>.
 </p>
-<figure xml:id="fig_crossp_parallelogram" >
+<table xml:id="fig_crossp_parallelogram" >
 <caption>Using the cross product to find the area of a parallelogram.</caption>
 <tabular>
-<row><cell><image width="73%" source="images/figcrossp_parallelogram1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_crossp_parallelogram1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[thick,scale=1.25]
+			\draw (0,0) -- node [below,pos=.5]  {\scriptsize $b$} (2,0) -- (3,1.5) -- (1,1.5) -- (0,0);
+			\draw [dashed] (1,1.5) -- (1,0) node [pos=.5,right] {\scriptsize$h$};
+			\draw (.8,0) -- (.8,.2) -- (1,.2);
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_crossp_parallelogram1.tex END -->
+</cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figcrossp_parallelogram2.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_crossp_parallelogram2.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[thick,scale=1.25,>=stealth]
+			\draw [->](0,0) -- node [below,pos=1]  {\scriptsize $\vec v$} (2,0);
+			\draw (2,0) -- (3,1.5) -- (1,1.5);
+			\draw (.3,.175) node {\scriptsize $\theta$};
+			\draw [->](0,0) -- (1,1.5) node [above] {\scriptsize $\vec u$};
+			\draw [dashed] (1,1.5) -- (1,0) node [pos=.5,right] {\scriptsize$h$};
+			\draw (.8,0) -- (.8,.2) -- (1,.2);
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_crossp_parallelogram2.tex END -->
+</cell></row>
 <row><cell>(b)</cell></row>
 <row><cell></cell></row>
 </tabular>
-</figure>
+</table>
 <p>
 We illustrate using Equation <xref ref="eq_crossp1" /> in the following example.
 <index><main>cross product</main><sub>applications!area of parallelogram</sub></index>
 </p>
+
 <example xml:id="ex_crossp4">
 <title>Finding the area of a parallelogram</title>
 <statement>
 <ol>
-<li>Find the area of the parallelogram defined by the vectors <m>\vecu = \la 2,1\ra</m> and <m>\vecv = \la 1,3\ra</m>.</li>
-<li>Verify that the points <m>A = (1,1,1)</m>, <m>B = (2,3,2)</m>, <m>C = (4,5,3)</m> and <m>D = (3,3,2)</m> are the vertices of a parallelogram. Find the area of the parallelogram.</li>
+<li><p>Find the area of the parallelogram defined by the vectors <m>\vecu = \la 2,1\ra</m> and <m>\vecv = \la 1,3\ra</m>.</p></li>
+<li><p>Verify that the points <m>A = (1,1,1)</m>, <m>B = (2,3,2)</m>, <m>C = (4,5,3)</m> and <m>D = (3,3,2)</m> are the vertices of a parallelogram. Find the area of the parallelogram.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li><line><xref ref="fig_crossp4">Figure</xref>(a) sketches the parallelogram defined by the vectors <m>\vec u</m> and <m>\vec v</m>. We have a slight problem in that our vectors exist in <m>\mathbb{R}^2</m>, not <m>\mathbb{R}^3</m>, and the cross product is only defined on vectors in <m>\mathbb{R}^3</m>. We skirt this issue by viewing <m>\vec u</m> and <m>\vecv</m> as vectors in the <m>x-y</m> plane of <m>\mathbb{R}^3</m>, and rewrite them as <m>\vec u = \la 2,1,0\ra</m> and <m>\vecv =\la 1,3,0\ra</m>. We can now compute the cross product. 
+<li><p><xref ref="fig_crossp4">Figure</xref>(a) sketches the parallelogram defined by the vectors <m>\vec u</m> and <m>\vec v</m>. We have a slight problem in that our vectors exist in <m>\mathbb{R}^2</m>, not <m>\mathbb{R}^3</m>, and the cross product is only defined on vectors in <m>\mathbb{R}^3</m>. We skirt this issue by viewing <m>\vec u</m> and <m>\vecv</m> as vectors in the <m>x-y</m> plane of <m>\mathbb{R}^3</m>, and rewrite them as <m>\vec u = \la 2,1,0\ra</m> and <m>\vecv =\la 1,3,0\ra</m>. We can now compute the cross product. 
 	It is easy to show that <m>\crossp uv = \la 0,0,5\ra</m>; therefore the area of the parallelogram is <m>A = \norm{\crossp uv} = 5</m>.
-	\begin{figure}
-
-	\begin{tabular}c
-	<image width="73%" source="images/figcrossp4b.png" />
-(a)</line>
-<line><figure xml:id="fig_crossp4" >
+	<figure xml:id="fig_crossp4" >
 <caption>Sketching the parallelograms in <xref ref="ex_crossp4">Example</xref>.</caption>
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+<sidebyside><figure>
+<caption>(a)</caption>
+
+<!-- START figures/fig_crossp4b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},
+			%minor x tick num=1,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={1,2,3,4,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=5.5,%
+			xmin=-.5,xmax=4.5%
+]
+
+\draw[thick,->,>=stealth] (axis cs:0,0) --(axis cs:2,1) node [right,] {\scriptsize $\vec u$};
+
+\draw[thick,->,>=stealth] (axis cs:0,0) --(axis cs:1,3) node [above] {\scriptsize $\vec v$};
+
+\draw[thick] (axis cs:2,1) --(axis cs:3,4) -- (axis cs: 1,3);
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_crossp4b.tex END -->
+
+</figure>
+<figure>
+<caption>(b)</caption>
+<!-- 
+ \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004,
 3Dc2c=.42 .87 .26,
 3Dcoo=61 60 63,
 3Droo=250,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figcrossp4a.png" />
-(b)
-	\end{tabular}
-</figure>
-</line>
-</li>
-<li>To show that the quadrilateral <m>ABCD</m> is a parallelogram (shown in <xref ref="fig_crossp4">Figure</xref>(b)), we need to show that the opposite sides are parallel. We can quickly show that <m>\vv{AB} =\vv{DC} = \la 1,2,1\ra</m> and <m>\vv{BC} = \vv{AD} = \la 2,2,1\ra</m>. We find the area by computing the magnitude of the cross product of <m>\vv{AB}</m> and <m>\vv{BC}</m>:
-<me>
-  \vv{AB} \times \vv{BC} = \la 0,1,-2\ra \quad \Rightarrow \quad \norm{\vv{AB}\times\vv{BC}} = \sqrt{5} \approx 2.236.
-</me>
-</li>
-</ol>
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
 
-<p>
-\vskip-
-</p>
+
+<!-- START figures/figcrossp4a_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcrossp4a.asy in Chapter 10
+// CAN'T FILL IT IN WITH ''fill'' (only in 2d)
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+//currentprojection=orthographic(4,4,2);
+currentprojection=orthographic(7.5,14,4);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={2,4};
+real[] myychoice={2,4};
+real[] myzchoice={2};
+defaultpen(0.5mm);
+pair xbounds=(-0.5,4.5);
+pair ybounds=(-0.5,4.5);
+pair zbounds=(-0.5,3.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the edges of the parallelogram with corners at (1,1,1),(2,3,2),(4,5,3),(3,3,2)
+draw((1,1,1)--(2,3,2)--(4,5,3)--(3,3,2)--cycle);
+label("A",(1,1,1),S);
+label("B",(2,3,2),N);
+label("C",(4,5,3),N);
+label("D",(3,3,2),W);
+
+// Fill in the parallelogram
+//I changed the viewpoint to (1,4,1), then added://Hartman comment
+ triple f(pair t) {return (1+t.x+2t.y,1+2t.x+2t.y,1+t.x+t.y);}
+surface s=surface(f,(0,0),(1,1),1,1);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.6),meshpen=p);
+
+
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- figures/figcrossp4a_3D.asy END -->
+
+</figure></sidebyside>
+
+</figure></p></li>
+<li><p>To show that the quadrilateral <m>ABCD</m> is a parallelogram (shown in <xref ref="fig_crossp4">Figure</xref>(b)), we need to show that the opposite sides are parallel. We can quickly show that <m>\vv{AB} =\vv{DC} = \la 1,2,1\ra</m> and <m>\vv{BC} = \vv{AD} = \la 2,2,1\ra</m>. We find the area by computing the magnitude of the cross product of <m>\vv{AB}</m> and <m>\vv{BC}</m>:
+<me>
+  \vv{AB} \times \vv{BC} = \la 0,1,-2\ra  \Rightarrow  \norm{\vv{AB}\times\vv{BC}} = \sqrt{5} \approx 2.236.
+</me></p></li>
+</ol>
 </solution>
 </example>
+
 <p>
 This application is perhaps more useful in finding the area of a triangle (in short, triangles are used more often than parallelograms). We illustrate this in the following example.
 </p>
+
 <example xml:id="ex_crossp5">
 <title>Area of a triangle</title>
 <statement>
@@ -352,7 +596,37 @@ We found the area of this triangle in <xref ref="ex_abc4">Example</xref> to be <
 </p>
 <figure xml:id="fig_crossp5" >
 <caption>Finding the area of a triangle in <xref ref="ex_crossp5">Example</xref>.</caption>
-<image width="73%" source="images/figcrossp5.png" />
+
+<!-- START figures/fig_crossp5.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3},% 
+%			extra x ticks={12.57},
+%			extra x tick labels={$4\pi$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=3.5,%
+			xmin=-.1,xmax=3.9%
+]
+
+\addplot [{\colorone},thick,fill={\coloronefill}] coordinates {(1,2) (2,3) (3,1) (1,2)};
+
+\draw (axis cs:1,2) node [left]{\scriptsize $A$} (axis cs:2,3) node [above] {\scriptsize $B$} (axis cs:3,1) node [below] {\scriptsize $C$};
+%
+%\filldraw [{\colortwo},fill={\colortwofill},thick] (axis cs: 0.0625,2.2) rectangle (axis cs:1.867,2.3);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_crossp5.tex END -->
+
 </figure>
 <p>
 We can choose any two sides of the triangle to use to form vectors; we choose <m>\vv{AB} = \la 1,1\ra</m> and <m>\vv{AC}=\la 2,-1\ra</m>. As in the previous example, we will rewrite these vectors with a third component of 0 so that we can apply the cross product. The area of the triangle is
@@ -366,28 +640,145 @@ We arrive at the same answer as before with less work.
 </p>
 </solution>
 </example>
+
 <p>
-<b>Volume of a Parallelepiped</b>
+<em>Volume of a Parallelepiped</em>
 </p>
 
 <p>
-The three dimensional analogue to the parallelogram is the <b>parallelepiped</b>. Each face is parallel to the face opposite face, as illustrated in <xref ref="fig_crossp_parallelepiped">Figure</xref>. By crossing <m>\vec v</m> and <m>\vec w</m>, one gets a vector whose magnitude is the area of the base. Dotting this vector with <m>\vecu</m> computes the volume of parallelepiped! (Up to a sign; take the absolute value.)
+The three dimensional analogue to the parallelogram is the <em>parallelepiped</em>. Each face is parallel to the face opposite face, as illustrated in <xref ref="fig_crossp_parallelepiped">Figure</xref>. By crossing <m>\vec v</m> and <m>\vec w</m>, one gets a vector whose magnitude is the area of the base. Dotting this vector with <m>\vecu</m> computes the volume of parallelepiped! (Up to a sign; take the absolute value.)
 </p>
 <aside>
 <p>
-<b>Note:</b> The word <q>parallelepiped</q> is pronounced <q>parallel<ndash />eh<ndash />pipe<ndash />ed.</q>
+<em>Note:</em> The word <q>parallelepiped</q> is pronounced <q>parallel<ndash />eh<ndash />pipe<ndash />ed.</q>
 </p>
 </aside>
   <figure xml:id="fig_crossp_parallelepiped" >
 <caption>A parallelepiped is the three dimensional analogue to the parallelogram.</caption>
-\includemedia[width=75pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=75pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
 3Dc2c=.84 .46 .26,
 3Dcoo=0 110 86,
 3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figcrosspparallelpiped.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figcrosspparallelpiped_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcrosspparallelpiped.asy in Chapter 10
+// NOT SHADED!!
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+//real[] myxchoice={};
+//real[] myychoice={};
+//real[] myzchoice={};
+defaultpen(0.5mm);
+//xaxis3("$x$",-0.5,1,black,OutTicks(myxchoice),Arrow3(size=3mm));
+//yaxis3("$y$",-1,1,black,OutTicks(myychoice),Arrow3(size=3mm));
+//zaxis3("$z$",-0.5,1.5,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+//Draw the parallelepiped with u=<1,1,0>, v=<-1,1,0>, w=<0,1,1>
+draw((0,0,0)--(1,1,0), Arrow3(size=3mm));// u
+label("$\vec{u}$",(1,1,0),W);
+draw((0,0,0)--(-1,1,0), Arrow3(size=3mm));// v
+label("$\vec{v}$",(-1,1,0),N);
+draw((0,0,0)--(0,1,1), Arrow3(size=3mm));// w
+label("$\vec{w}$",(0,1,1),W);
+//shifted u to get the other edges of the box
+draw((-1,1,0)--(0,2,0),blue);// u shifted to v
+draw((0,1,1)--(1,2,1),blue);// u shifted to w
+draw((-1,2,1)--(0,3,1),blue);// u shifted to v+w
+//shifted v to get the other edges of the box
+draw((1,1,0)--(0,2,0),blue);// v shifted to u
+draw((0,1,1)--(-1,2,1),blue);// v shifted to w
+draw((1,2,1)--(0,3,1),blue);// v shifted to u+w
+//shifted w to get the other edges of the box
+draw((1,1,0)--(1,2,1),blue);// w shifted to u
+draw((-1,1,0)--(-1,2,1),blue);// w shifted to v
+draw((0,2,0)--(0,3,1),blue);// w shifted to u+v
+
+
+
+
+// MIGHT BE ABLE TO USE THIS TO FILL IN THE 6 SIDES
+// Fill in the parallelogram
+//I changed the viewpoint to (1,4,1), then added://Hartman comment
+//triple f(pair t) {return (1+t.x+2t.y,1+2t.x+2t.y,1+t.x+t.y);}
+//surface s=surface(f,(0,0),(1,1),1,1);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(1),meshpen=p);
+
+//OR THIS FROM THE WEB????
+//http://tex.stackexchange.com/questions/137153/fill-a-region-between-two-coplanar-paths-in-asymptote
+//settings.outformat="pdf";
+//settings.render=0;
+//import three;
+//size(5cm);
+//path3 p =  (0,-2,-2)-- (0,2,-2) -- (0,2,2) -- (0,-2,2) -- (0,-2,-2) -- (0,-2,-2);
+//path3 q =  (0,-.25,-1.1) -- (0,.25,-1.1) -- (0,.25,1.1) -- (0,-.25,1.1) -- (0,-.25,-1.1);
+//draw(surface(p -- reverse(q) -- cycle), emissive(yellow));
+//draw(p ^^ q, black);
+
+//my try
+import three;
+path3 p =  (0,0,0)-- (1,1,0) -- (0,2,0) -- (-1,1,0); //Left
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (0,0,0)-- (1,1,0) -- (1,2,1) -- (0,1,1); //bottom
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (-1,1,0)-- (0,2,0) -- (0,3,1) -- (-1,2,1); //right
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (0,0,0)-- (-1,1,0) -- (-1,2,1) -- (0,1,1); //back
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (1,1,0)-- (0,2,0) -- (0,3,1) -- (1,2,1); //front
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+path3 p =  (0,1,1)-- (1,2,1) -- (0,3,1) -- (-1,2,1); //top
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.4)));
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- figures/figcrosspparallelpiped_3D.asy END -->
+
 </figure>
 <p>
 <index><main>cross product</main><sub>applications!volume of parallelepiped</sub></index>
@@ -403,9 +794,10 @@ Thus the volume of a parallelepiped defined by vectors <m>\vecu</m>, <m>\vecv</m
 <p>
 Note how this is the Triple Scalar Product, first seen in <xref ref="thm_cross_prod_prop">Theorem</xref>. Applying the identities given in the theorem shows that we can apply the Triple Scalar Product in any <q>order</q> we choose to find the volume. That is,
 <me>
-  V = |\vecu\cdot(\crossp vw)| = |\vec u\cdot (\crossp wv)| = |(\crossp uv)\cdot \vecw|,\quad \text{etc.}
+  V = |\vecu\cdot(\crossp vw)| = |\vec u\cdot (\crossp wv)| = |(\crossp uv)\cdot \vecw|, \\text{ etc. }
 </me>
 </p>
+
 <example xml:id="ex_crossp6">
 <title>Finding the volume of parallelepiped</title>
 <statement>
@@ -426,27 +818,133 @@ So the volume of the parallelepiped is 2 cubic units.
 </p>
 <figure xml:id="fig_crossp6" >
 <caption>A parallelepiped in <xref ref="ex_crossp6">Example</xref>.</caption>
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
 3Dc2c=4 4 2,
 3Dcoo=0 50 50,
 3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="73%" source="images/figcrossp6.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figcrossp6_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figcrossp6.asy in Chapter 10
+
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={1};
+real[] myychoice={2};
+real[] myzchoice={0.5,1};
+defaultpen(0.5mm);
+
+pair xbounds=(-1.5,1.5);
+pair ybounds=(0,3);
+pair zbounds=(-0.5,1.5);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the parallelepiped with u=<1,1,0>, v=<-1,1,0>, w=<0,1,1>
+draw((0,0,0)--(1,1,0), Arrow3(size=3mm));// u
+label("$\vec{u}$",(1,1,0),W);
+draw((0,0,0)--(-1,1,0), Arrow3(size=3mm));// v
+label("$\vec{v}$",(-1,1,0),N);
+draw((0,0,0)--(0,1,1), Arrow3(size=3mm));// w
+label("$\vec{w}$",(0,1,1),W);
+//shifted u to get the other edges of the box
+draw((-1,1,0)--(0,2,0),blue);// u shifted to v
+draw((0,1,1)--(1,2,1),blue);// u shifted to w
+draw((-1,2,1)--(0,3,1),blue);// u shifted to v+w
+//shifted v to get the other edges of the box
+draw((1,1,0)--(0,2,0),blue);// v shifted to u
+draw((0,1,1)--(-1,2,1),blue);// v shifted to w
+draw((1,2,1)--(0,3,1),blue);// v shifted to u+w
+//shifted w to get the other edges of the box
+draw((1,1,0)--(1,2,1),blue);// w shifted to u
+draw((-1,1,0)--(-1,2,1),blue);// w shifted to v
+draw((0,2,0)--(0,3,1),blue);// w shifted to u+v
+
+
+
+
+//my try at shading.
+import three;
+path3 p =  (0,0,0)-- (1,1,0) -- (0,2,0) -- (-1,1,0); //Left
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (0,0,0)-- (1,1,0) -- (1,2,1) -- (0,1,1); //bottom
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (-1,1,0)-- (0,2,0) -- (0,3,1) -- (-1,2,1); //right
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (0,0,0)-- (-1,1,0) -- (-1,2,1) -- (0,1,1); //back
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (1,1,0)-- (0,2,0) -- (0,3,1) -- (1,2,1); //front
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+path3 p =  (0,1,1)-- (1,2,1) -- (0,3,1) -- (-1,2,1); //top
+draw(surface(p -- cycle), emissive(rgb(.6,.6,1)+opacity(0.5)));
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-1,1,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+]]></asymptote></image><!-- figures/figcrossp6_3D.asy END -->
+
 </figure>
 </solution>
 </example>
+
 <p>
 While this application of the Triple Scalar Product is interesting, it is not used all that often: parallelepipeds are not a common shape in physics and engineering. The last application of the cross product is very applicable in engineering.
 </p>
 
 <p>
-<b>Torque</b>
+<em>Torque</em>
 </p>
 
 <p>
-<b>Torque</b> is a measure of the turning force applied to an object. A classic scenario involving torque is the application of a wrench to a bolt. When a force is applied to the wrench, the bolt turns. When we represent the force and wrench with vectors <m>\vec F</m> and <m>\vec \ell</m>, we see that the bolt moves (because of the threads) in a direction orthogonal to <m>\vec F</m> and <m>\vec \ell</m>. Torque is usually represented by the Greek letter <m>\tau</m>, or tau, and has units of N<m>\cdot</m>m, a Newton<ndash />meter, or ft<m>\cdot</m>lb, a foot<ndash />pound.<index><main>cross product</main><sub>applications!torque</sub></index>
+<em>Torque</em> is a measure of the turning force applied to an object. A classic scenario involving torque is the application of a wrench to a bolt. When a force is applied to the wrench, the bolt turns. When we represent the force and wrench with vectors <m>\vec F</m> and <m>\vec \ell</m>, we see that the bolt moves (because of the threads) in a direction orthogonal to <m>\vec F</m> and <m>\vec \ell</m>. Torque is usually represented by the Greek letter <m>\tau</m>, or tau, and has units of N<m>\cdot</m>m, a Newton<ndash />meter, or ft<m>\cdot</m>lb, a foot<ndash />pound.<index><main>cross product</main><sub>applications!torque</sub></index>
 </p>
 
 <p>
@@ -455,6 +953,7 @@ While a full understanding of torque is beyond the purposes of this book, when a
   \vec \tau = \crossp \ell F.
 </men>
 </p>
+
 <example xml:id="ex_crossp7">
 <title>Computing torque</title>
 <statement>
@@ -463,16 +962,45 @@ A lever of length 2ft makes an angle with the horizontal of <m>45^\circ</m>. Fin
 </p>
 <figure xml:id="fig_crossp7" >
 <caption>Showing a force being applied to a lever in <xref ref="ex_crossp7">Example</xref>.</caption>
-<image width="73%" source="images/figcrossp7.png" />
+
+<!-- START figures/fig_crossp7.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+	
+	
+	\draw [thick,->,rotate=45] (-2,0) -- (0,0) node [below,pos=.5] {\scriptsize $\vec\ell$};
+	\filldraw[black,rotate=45] (-2,0) circle (1.5pt);
+	\draw [rotate=45,->] (-1.8,0) arc (0:-270:.2);
+	\draw[rotate=45] (-.4,0) arc (180:90:.4);
+	\draw [rotate=0] (-.6,0) node {\scriptsize $90^\circ$};
+	\begin{scope}[shift={(-.05,.05)}]
+	\draw [thick,->,rotate=-45] (-1.5,0)node [left] {\scriptsize $\vec F$} -- (0,0);
+		\end{scope}
+	
+	\begin{scope}[shift={(3,0)}]
+		
+	\draw [thick,->,rotate=45] (-2,0) -- (0,0) node [below,pos=.5] {\scriptsize $\vec\ell$};
+	\filldraw[black,rotate=45] (-2,0) circle (1.5pt);
+	\draw [rotate=45,->] (-1.8,0) arc (0:-270:.2);
+	%\filldraw [black] (-2,0) circle (1.5pt);
+	\draw[rotate=45] (-.4,0) arc (180:120:.4);
+	\draw [rotate=15] (-.6,0) node {\scriptsize $60^\circ$};
+	\begin{scope}[shift={(-.05,.05)}]
+	\draw [thick,->,rotate=-15] (-1.5,0)node [above] {\scriptsize $\vec F$} -- (0,0);
+		\end{scope}
+	\end{scope}
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_crossp7.tex END -->
+
 </figure>
 <ol>
-<li>the force is perpendicular to the lever, and</li>
-<li>the force makes an angle of <m>60^\circ</m> with the lever, as shown in <xref ref="fig_crossp7">Figure</xref>.</li>
+<li><p>the force is perpendicular to the lever, and</p></li>
+<li><p>the force makes an angle of <m>60^\circ</m> with the lever, as shown in <xref ref="fig_crossp7">Figure</xref>.</p></li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li>We start by determining vectors for the force and lever arm. Since the lever arm makes a <m>45^\circ</m> angle with the horizontal and is 2ft long, we can state that <m>\vec \ell = 2\la \cos 45^\circ,\sin 45^\circ\ra = \la \sqrt2,\sqrt2\ra.</m>
+<li><p>We start by determining vectors for the force and lever arm. Since the lever arm makes a <m>45^\circ</m> angle with the horizontal and is 2ft long, we can state that <m>\vec \ell = 2\la \cos 45^\circ,\sin 45^\circ\ra = \la \sqrt2,\sqrt2\ra.</m>
 	
 	Since the force vector is perpendicular to the lever arm (as seen in the left hand side of <xref ref="fig_crossp7">Figure</xref>), we can conclude it is making an angle of <m>-45^\circ</m> with the horizontal. As it has a magnitude of 10lb, we can state <m>\vec F = 10\la \cos (-45^\circ), \sin(-45^\circ)\ra = \la 5\sqrt2,-5\sqrt2\ra.</m>
 	
@@ -484,8 +1012,8 @@ A lever of length 2ft makes an angle with the horizontal of <m>45^\circ</m>. Fin
 </md>
 This clearly has a magnitude of 20 ft-lb.
 	
-	We can view the force and lever arm vectors as lying <q>on the page</q>; our computation of <m>\vec\tau</m> shows that the torque goes <q>into the page.</q> This follows the Right Hand Rule of the cross product, and it also matches well with the example of the wrench turning the bolt. Turning a bolt clockwise moves it in.</li>
-<li>Our lever arm can still be represented by <m>\vec \ell = \la \sqrt2,\sqrt2\ra</m>. As our force vector makes a <m>60^\circ</m> angle with <m>\vec \ell</m>, we can see (referencing the right hand side of the figure) that <m>\vec F</m> makes a <m>-15^\circ</m> angle with the horizontal. Thus
+	We can view the force and lever arm vectors as lying <q>on the page</q>; our computation of <m>\vec\tau</m> shows that the torque goes <q>into the page.</q> This follows the Right Hand Rule of the cross product, and it also matches well with the example of the wrench turning the bolt. Turning a bolt clockwise moves it in.</p></li>
+<li><p>Our lever arm can still be represented by <m>\vec \ell = \la \sqrt2,\sqrt2\ra</m>. As our force vector makes a <m>60^\circ</m> angle with <m>\vec \ell</m>, we can see (referencing the right hand side of the figure) that <m>\vec F</m> makes a <m>-15^\circ</m> angle with the horizontal. Thus
 <md>
   <mrow>  \vec F = 10\la \cos-15^\circ,\sin-15^\circ\ra \amp = \la \frac{5(1+\sqrt3)}{\sqrt2},-\frac{5(1+\sqrt3)}{\sqrt2}\ra</mrow>
   <mrow>  \amp \approx \la 9.659,-2.588\ra.</mrow>
@@ -497,26 +1025,25 @@ We again make the third component 0 and take the cross product to find the torqu
   <mrow>  \amp = \la 0,0,-10\sqrt3\ra</mrow>
   <mrow>  \amp \approx \la 0,0,-17.321\ra.</mrow>
 </md>
-As one might expect, when the force and lever arm vectors <em>are</em> orthogonal, the magnitude of force is greater than when the vectors <em>are not</em> orthogonal.</li>
+As one might expect, when the force and lever arm vectors <em>are</em> orthogonal, the magnitude of force is greater than when the vectors <em>are not</em> orthogonal.</p></li>
 </ol>
-
-<p>
-\vskip-
-</p>
 </solution>
 </example>
+
 <p>
 While the cross product has a variety of applications (as noted in this chapter), its fundamental use is finding a vector perpendicular to two others. Knowing a vector is orthogonal to two others is of incredible importance, as it allows us to find the equations of lines and planes in a variety of contexts. The importance of the cross product, in some sense, relies on the importance of lines and planes, which see widespread use throughout engineering, physics and mathematics. We study lines and planes in the next two sections.
 </p>
 </subsection>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
 <p>
-The cross product of two vectors is a <u></u>, not a scalar.
+The cross product of two vectors is a <fillin />, not a scalar.
 </p>
 </statement>
 <answer>
@@ -533,7 +1060,7 @@ One can visualize the direction of <m>\vec u\times\vec v</m> using the
 </p>
 
 <p>
-<u></u> <u></u> <u></u>.
+<fillin /> <fillin /> <fillin />.
 </p>
 </statement>
 <answer>
@@ -572,7 +1099,7 @@ T
 <exercise>
 <statement>
 <p>
-<u></u> is a measure of the turning force applied to an object.
+<fillin /> is a measure of the turning force applied to an object.
 </p>
 </statement>
 <answer>
@@ -581,10 +1108,10 @@ Torque
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. Compute <m>\vec u\times\vec v</m> and show this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
@@ -592,7 +1119,7 @@ In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. C
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 3,2,-2\ra</m>,  <m>\vec v = \la 0,1,5\ra</m>
+<m>\vec u = \la 3,2,-2\ra</m>,<m>\vec v = \la 0,1,5\ra</m>
 </p>
 </statement>
 <answer>
@@ -605,7 +1132,7 @@ In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. C
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 5,-4,3\ra</m>,  <m>\vec v = \la 2,-5,1\ra</m>
+<m>\vec u = \la 5,-4,3\ra</m>,<m>\vec v = \la 2,-5,1\ra</m>
 </p>
 </statement>
 <answer>
@@ -618,7 +1145,7 @@ In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. C
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 4,-5,-5\ra</m>,  <m>\vec v = \la 3,3,4\ra</m>
+<m>\vec u = \la 4,-5,-5\ra</m>,<m>\vec v = \la 3,3,4\ra</m>
 </p>
 </statement>
 <answer>
@@ -631,7 +1158,7 @@ In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. C
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la -4,7,-10\ra</m>,  <m>\vec v = \la 4,4,1\ra</m>
+<m>\vec u = \la -4,7,-10\ra</m>,<m>\vec v = \la 4,4,1\ra</m>
 </p>
 </statement>
 <answer>
@@ -644,7 +1171,7 @@ In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. C
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 1,0,1\ra</m>,  <m>\vec v = \la 5,0,7\ra</m>
+<m>\vec u = \la 1,0,1\ra</m>,<m>\vec v = \la 5,0,7\ra</m>
 </p>
 </statement>
 <answer>
@@ -657,7 +1184,7 @@ In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. C
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 1,5,-4\ra</m>,  <m>\vec v = \la -2,-10,8\ra</m>
+<m>\vec u = \la 1,5,-4\ra</m>,<m>\vec v = \la -2,-10,8\ra</m>
 </p>
 </statement>
 <answer>
@@ -670,7 +1197,7 @@ In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. C
 <exercise>
 <statement>
 <p>
-<m>\vec u = \vec i</m>,  <m>\vec v = \vec j</m>
+<m>\vec u = \vec i</m>,<m>\vec v = \vec j</m>
 </p>
 </statement>
 <answer>
@@ -683,7 +1210,7 @@ In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. C
 <exercise>
 <statement>
 <p>
-<m>\vec u = \vec i</m>,  <m>\vec v = \vec k</m>
+<m>\vec u = \vec i</m>,<m>\vec v = \vec k</m>
 </p>
 </statement>
 <answer>
@@ -696,7 +1223,7 @@ In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. C
 <exercise>
 <statement>
 <p>
-<m>\vec u = \vec j</m>,  <m>\vec v = \vec k</m>
+<m>\vec u = \vec j</m>,<m>\vec v = \vec k</m>
 </p>
 </statement>
 <answer>
@@ -737,52 +1264,40 @@ In the following exercises, the magnitudes of vectors <m>\vec u</m> and <m>\vec 
 <exercise>
 <statement>
 <p>
-<m>\vnorm{u} = 2</m>,  <m>\vnorm{v} = 5</m>,  <m>\theta = 30^\circ</m>
+<m>\vnorm{u} = 2</m>,<m>\vnorm{v} = 5</m>,<m>\theta = 30^\circ</m>
 </p>
 </statement>
 <answer>
-<p>
-5
-</p>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
 <p>
-<m>\vnorm{u} = 3</m>,  <m>\vnorm{v} = 7</m>,  <m>\theta = \pi/2</m>
+<m>\vnorm{u} = 3</m>,<m>\vnorm{v} = 7</m>,<m>\theta = \pi/2</m>
 </p>
 </statement>
 <answer>
-<p>
-21
-</p>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
 <p>
-<m>\vnorm{u} = 3</m>,  <m>\vnorm{v} = 4</m>,  <m>\theta = \pi</m>
+<m>\vnorm{u} = 3</m>,<m>\vnorm{v} = 4</m>,<m>\theta = \pi</m>
 </p>
 </statement>
 <answer>
-<p>
-0
-</p>
 </answer>
 </exercise>
 
 <exercise>
 <statement>
 <p>
-<m>\vnorm{u} = 2</m>,  <m>\vnorm{v} = 5</m>,  <m>\theta = 5\pi/6</m>
+<m>\vnorm{u} = 2</m>,<m>\vnorm{v} = 5</m>,<m>\theta = 5\pi/6</m>
 </p>
 </statement>
 <answer>
-<p>
-5
-</p>
 </answer>
 </exercise>
 <p>
@@ -791,7 +1306,7 @@ In the following exercises, find the area of the parallelogram defined by the gi
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 1,1,2\ra</m>,  <m>\vec v = \la 2,0,3\ra</m>
+<m>\vec u = \la 1,1,2\ra</m>,<m>\vec v = \la 2,0,3\ra</m>
 </p>
 </statement>
 <answer>
@@ -804,7 +1319,7 @@ In the following exercises, find the area of the parallelogram defined by the gi
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la -2,1,5\ra</m>,  <m>\vec v = \la -1,3,1\ra</m>
+<m>\vec u = \la -2,1,5\ra</m>,<m>\vec v = \la -1,3,1\ra</m>
 </p>
 </statement>
 <answer>
@@ -817,7 +1332,7 @@ In the following exercises, find the area of the parallelogram defined by the gi
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 1,2\ra</m>,  <m>\vec v = \la 2,1\ra</m>
+<m>\vec u = \la 1,2\ra</m>,<m>\vec v = \la 2,1\ra</m>
 </p>
 </statement>
 <answer>
@@ -830,7 +1345,7 @@ In the following exercises, find the area of the parallelogram defined by the gi
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 2,0\ra</m>,  <m>\vec v = \la 0,3\ra</m>
+<m>\vec u = \la 2,0\ra</m>,<m>\vec v = \la 0,3\ra</m>
 </p>
 </statement>
 <answer>
@@ -927,7 +1442,7 @@ In the following exercises, find the volume of the parallelepiped defined by the
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 1,1,1\ra</m>,  <m>\vec v=\la 1,2,3\ra</m>,   <m>\vec w = \la 1,0,1\ra</m>
+<m>\vec u = \la 1,1,1\ra</m>,<m>\vec v=\la 1,2,3\ra</m>, <m>\vec w = \la 1,0,1\ra</m>
 </p>
 </statement>
 <answer>
@@ -940,7 +1455,7 @@ In the following exercises, find the volume of the parallelepiped defined by the
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la -1,2,1\ra</m>,  <m>\vec v=\la 2,2,1\ra</m>,   <m>\vec w = \la 3,1,3\ra</m>
+<m>\vec u = \la -1,2,1\ra</m>,<m>\vec v=\la 2,2,1\ra</m>, <m>\vec w = \la 3,1,3\ra</m>
 </p>
 </statement>
 <answer>
@@ -955,7 +1470,7 @@ In the following exercises, find a unit vector orthogonal to both <m>\vec u</m> 
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 1,1,1\ra</m>,  <m>\vec v=\la 2,0,1\ra</m>
+<m>\vec u = \la 1,1,1\ra</m>,<m>\vec v=\la 2,0,1\ra</m>
 </p>
 </statement>
 <answer>
@@ -968,7 +1483,7 @@ In the following exercises, find a unit vector orthogonal to both <m>\vec u</m> 
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 1,-2,1\ra</m>,  <m>\vec v=\la 3,2,1\ra</m>
+<m>\vec u = \la 1,-2,1\ra</m>,<m>\vec v=\la 3,2,1\ra</m>
 </p>
 </statement>
 <answer>
@@ -981,7 +1496,7 @@ In the following exercises, find a unit vector orthogonal to both <m>\vec u</m> 
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 5,0,2\ra</m>,  <m>\vec v=\la -3,0,7\ra</m>
+<m>\vec u = \la 5,0,2\ra</m>,<m>\vec v=\la -3,0,7\ra</m>
 </p>
 </statement>
 <answer>
@@ -994,7 +1509,7 @@ In the following exercises, find a unit vector orthogonal to both <m>\vec u</m> 
 <exercise>
 <statement>
 <p>
-<m>\vec u = \la 1,-2,1\ra</m>,  <m>\vec v=\la -2,4,-2\ra</m>
+<m>\vec u = \la 1,-2,1\ra</m>,<m>\vec v=\la -2,4,-2\ra</m>
 </p>
 </statement>
 <answer>
@@ -1091,6 +1606,6 @@ With <m>\vec u = \la u_1,u_2,u_3\ra</m>, we have
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

@@ -49,7 +49,7 @@ Return to the original integral and do some substitutions through algebra:
   <mrow>  \int (20x+30)(x^2+3x-5)^9\ dx 	\amp =	\int 10(2x+3)(x^2+3x-5)^9\ dx</mrow>
   <mrow>  \amp =\int 10(\underbrace{x^2+3x-5}_u)^9\underbrace{(2x+3)\ dx}_{du}</mrow>
   <mrow>  \amp =\int 10u^9\ du</mrow>
-  <mrow>  \amp = u^{10} + C \quad \text{\scriptsize (replace <m>u</m> with <m>x^2+3x-5</m>)}</mrow>
+  <mrow>  \amp = u^{10} + C  \\text{ \scriptsize (replace \(u\) with \(x^2+3x-5\)) }</mrow>
   <mrow>  \amp = (x^2+3x-5)^{10} +C</mrow>
 </md>
 </p>
@@ -61,28 +61,28 @@ One might well look at this and think <q>I (sort of) followed how that worked, b
 <p>
 We stated before that integration by substitution <q>undoes</q> the Chain Rule. Specifically, let <m>F(x)</m> and <m>g(x)</m> be differentiable functions and consider the derivative of their composition:
 <me>
-  \frac{d}{dx}\Big(F\big(g(x)\big)\Big) = \Fp(g(x))g\primeskip'(x).
+  \frac{d}{dx}\Big(F\big(g(x)\big)\Big) = \Fp(g(x))g'(x).
 </me>
 </p>
 
 <p>
 Thus
 <me>
-  \int \Fp(g(x))g\primeskip'(x)\ dx = F(g(x)) + C.
+  \int \Fp(g(x))g'(x)\ dx = F(g(x)) + C.
 </me>
 </p>
 
 <p>
 Integration by substitution works by recognizing the <q>inside</q> function <m>g(x)</m> and replacing it with a variable. By setting <m>u=g(x)</m>, we can rewrite the derivative as
 <me>
-  \frac{d}{dx}\Big(F\big(u\big)\Big) = \Fp(u)u\primeskip'.
+  \frac{d}{dx}\Big(F\big(u\big)\Big) = \Fp(u)u'.
 </me>
 </p>
 
 <p>
-Since <m>du = g\primeskip'(x)dx</m>, we can rewrite the above integral as
+Since <m>du = g'(x)dx</m>, we can rewrite the above integral as
 <me>
-  \int \Fp(g(x))g\primeskip'(x)\ dx = \int \Fp(u) du = F(u)+C = F(g(x))+ C.
+  \int \Fp(g(x))g'(x)\ dx = \int \Fp(u) du = F(u)+C = F(g(x))+ C.
 </me>
 </p>
 
@@ -96,14 +96,14 @@ This concept is important so we restate it in the context of a theorem.
 <p>
 Let <m>F</m> and <m>g</m> be differentiable functions, where the range of <m>g</m> is an interval <m>I</m> contained in the domain of <m>F</m>. Then <index><main>integration</main><sub>by substitution</sub></index>
 <me>
-  \int \Fp(g(x))g\primeskip'(x)\ dx = F(g(x)) + C.
+  \int \Fp(g(x))g'(x)\ dx = F(g(x)) + C.
 </me>
 </p>
 
 <p>
-If <m>u = g(x)</m>, then <m>du = g\primeskip'(x)dx</m> and
+If <m>u = g(x)</m>, then <m>du = g'(x)dx</m> and
 <me>
-  \int \Fp(g(x))g\primeskip'(x)\ dx = \int \Fp(u)\ du = F(u)+C = F(g(x))+C.
+  \int \Fp(g(x))g'(x)\ dx = \int \Fp(u)\ du = F(u)+C = F(g(x))+C.
 </me>
 </p>
 </statement>
@@ -112,6 +112,7 @@ If <m>u = g(x)</m>, then <m>du = g\primeskip'(x)dx</m> and
 <p>
 The point of substitution is to make the integration step easy. Indeed, the step <m>\int \Fp(u)\ du = F(u) + C</m> looks easy, as the antiderivative of the derivative of <m>F</m> is just <m>F</m>, plus a constant. The <q>work</q> involved is making the proper substitution. There is not a step<ndash />by<ndash />step process that one can memorize; rather, experience will be one's guide. To gain experience, we now embark on many examples.
 </p>
+
 <example xml:id="ex_sub1">
 <title>Integrating by substitution</title>
 <statement>
@@ -127,7 +128,7 @@ Knowing that substitution is related to the Chain Rule, we choose to let <m>u</m
 <p>
 Let <m>u = x^2+5</m>, hence <m>du = 2x\,dx</m>. The integrand has an <m>x\,dx</m> term, but not a <m>2x\,dx</m> term. (Recall that multiplication is commutative, so the <m>x</m> does not physically have to be next to <m>dx</m> for there to be an <m>x\,dx</m> term.) We can divide both sides of the <m>du</m> expression by 2:
 <me>
-  du = 2x\,dx \quad \Rightarrow \quad \frac12du = x\,dx.
+  du = 2x\,dx  \Rightarrow  \frac12du = x\,dx.
 </me>
 </p>
 
@@ -137,11 +138,12 @@ We can now substitute.
   <mrow>  \int x\sin(x^2+5)\ dx \amp = \int \sin(\underbrace{x^2+5}_u) \underbrace{x\ dx}_{\frac12du}</mrow>
   <mrow>  \amp = \int \frac12\sin u\ du</mrow>
 </md>
-</p>
 <md>
-  <mrow>  \amp = -\frac12\cos u + C \quad \text{\scriptsize (now replace <m>u</m> with <m>x^2+5</m>)}</mrow>
+  <mrow>  \amp = -\frac12\cos u + C  \\text{ \scriptsize (now replace \(u\) with \(x^2+5\)) }</mrow>
   <mrow>  \amp =-\frac12\cos(x^2+5) + C.</mrow>
 </md>
+</p>
+
 <p>
 Thus <m>\int x\sin(x^2+5)\ dx = -\frac12\cos(x^2+5)+C</m>. We can check our work by evaluating the derivative of the right hand side.
 </p>
@@ -171,10 +173,11 @@ We can again check our work through differentiation.
 </p>
 </solution>
 </example>
+
 <p>
 The previous example exhibited a common, and simple, type of substitution. The <q>inside</q> function was a linear function (in this case, <m>y = 5x</m>). When the inside function is linear, the resulting integration is very predictable, outlined here.
 </p>
-<keyidea xml:id="idea_linearsub">
+<insight xml:id="idea_linearsub">
 <title>Substitution With A Linear Function</title>
 <p>
 Consider <m>\int \Fp(ax+b)\ dx</m>, where <m>a\neq 0</m> and <m>b</m> are constants. Letting <m>u = ax+b</m> gives <m>du = a\cdot dx</m>, leading to the result
@@ -182,10 +185,11 @@ Consider <m>\int \Fp(ax+b)\ dx</m>, where <m>a\neq 0</m> and <m>b</m> are consta
   \int \Fp(ax+b)\ dx = \frac{1}{a}F(ax+b) + C.
 </me>
 </p>
-</keyidea>
+</insight>
 <p>
 Thus <m>\int \sin (7x-4)\ dx = -\frac17\cos(7x-4)+C</m>. Our next example can use <xref ref="idea_linearsub">Key Idea</xref>, but we will only employ it after going through all of the steps.
 </p>
+
 <example xml:id="ex_sub3">
 <title>Integrating by substituting a linear function</title>
 <statement>
@@ -209,9 +213,11 @@ Using <xref ref="idea_linearsub">Key Idea</xref> is faster, recognizing that <m>
 </p>
 </solution>
 </example>
+
 <p>
 Not all integrals that benefit from substitution have a clear <q>inside</q> function. Several of the following examples will demonstrate ways in which this occurs.
 </p>
+
 <example xml:id="ex_sub10">
 <title>Integrating by substitution</title>
 <statement>
@@ -238,9 +244,11 @@ One would do well to ask <q>What would happen if we let <m>u = \cos x</m>?</q> T
 </p>
 </solution>
 </example>
+
 <p>
 Our examples so far have required <q>basic substitution.</q> The next example demonstrates how substitutions can be made that often strike the new learner as being <q>nonstandard.</q>
 </p>
+
 <example xml:id="ex_sub4">
 <title>Integrating by substitution</title>
 <statement>
@@ -315,6 +323,7 @@ The final answer is interesting; the natural log of the natural log. Take the de
 <p>
 The next three examples will help fill in some missing pieces of our antiderivative knowledge. We know the antiderivatives of the sine and cosine functions; what about the other standard functions tangent, cotangent, secant and cosecant? We discover these next.
 </p>
+
 <example xml:id="ex_sub6">
 <title>Integration by substitution: antiderivatives of $\tan x$</title>
 <statement>
@@ -373,20 +382,15 @@ This may seem like it came out of left field, but it works beautifully. Consider
 <md>
   <mrow>  \int \sec x\ dx	\amp =	\int \sec x\cdot \frac{\sec x + \tan x}{\sec x + \tan x}\ dx</mrow>
   <mrow>  \amp = \int \frac{\sec^2 x + \sec x\tan x}{\sec x + \tan x}\ dx.</mrow>
-  <mrow>  \end{mathrow}
-Now let $u = \sec x+\tan x$; this means $du = (\sec x\tan x+ \sec^2 x)\ dx$, which is our numerator. Thus:
-\begin{mathrow}
-						\amp = \int \frac{du}{u}</mrow>
+<intertext>Now let <m>u = \sec x+\tan x</m>; this means <m>du = (\sec x\tan x+ \sec^2 x)\ dx</m>, which is our numerator. Thus:</intertext>
+  <mrow>  \amp = \int \frac{du}{u}</mrow>
   <mrow>  \amp = \ln |u| + C</mrow>
   <mrow>  \amp = \ln |\sec x+\tan x| + C.</mrow>
 </md>
 </p>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
+
 <p>
 We can use similar techniques to those used in <xref ref="ex_sub6">Examples</xref> and <xref ref="ex_sub7"></xref> to find antiderivatives of <m>\cot x</m> and <m>\csc x</m> (which the reader can explore in the exercises.) We summarize our results here.
 </p>
@@ -394,27 +398,22 @@ We can use similar techniques to those used in <xref ref="ex_sub6">Examples</xre
 <theorem xml:id="thm_triganti">
 <title>Antiderivatives of Trigonometric Functions</title>
 <statement>
-<sidebyside>
-<index><main>integration</main><sub>of trig. functions</sub></index>
-<ol>
-<li><m>\ds \int \sin x \ dx = -\cos x +C</m></li>
-<li><m>\ds\int \cos x\ dx = \sin x + C</m></li>
-<li><m>\ds \int \tan x\ dx = -\ln|\cos x|+C</m></li>
-</ol>
-
-<ol>
-<li><m>\ds \int \csc x \ dx = -\ln|\csc x+\cot x| +C</m></li>
-<li><m>\ds\int \sec x\ dx = \ln|\sec x+\tan x| + C</m></li>
-<li><m>\ds \int \cot x\ dx = \ln|\sin x|+C</m></li>
-</ol>
-
-</sidebyside>
+<sidebyside><index><main>integration</main><sub>of trig. functions</sub></index>
+	<ol cols="2" >
+<li><p><m>\ds \int \sin x \ dx = -\cos x +C</m></p></li>
+<li><p><m>\ds\int \cos x\ dx = \sin x + C</m></p></li>
+<li><p><m>\ds \int \tan x\ dx = -\ln|\cos x|+C</m></p></li>
+<li><p><m>\ds \int \csc x \ dx = -\ln|\csc x+\cot x| +C</m></p></li>
+<li><p><m>\ds\int \sec x\ dx = \ln|\sec x+\tan x| + C</m></p></li>
+<li><p><m>\ds \int \cot x\ dx = \ln|\sin x|+C</m></p></li>
+</ol></sidebyside>
 </statement>
 </theorem>
 
 <p>
 We explore one more common trigonometric integral.
 </p>
+
 <example xml:id="ex_sub8">
 <title>Integration by substitution: powers of $\cos x$ and $\sin x$</title>
 <statement>
@@ -440,10 +439,8 @@ The right hand side of this equation is not difficult to integrate. We have:
 <md>
   <mrow>  \int \cos^2x\ dx \amp = \int \frac{1+\cos(2x)}2\ dx</mrow>
   <mrow>  \amp =	\int \left( \frac12 + \frac12\cos(2x)\right)\ dx.</mrow>
-  <mrow>  \end{mathrow}
-Now use <xref ref="idea_linearsub">Key Idea</xref>:
-\begin{mathrow}
-									\amp = \frac12x + \frac12\frac{\sin(2x)}{2} + C \rule[-10pt]{0pt}{5pt}</mrow>
+<intertext>Now use <xref ref="idea_linearsub">Key Idea</xref>:</intertext>
+  <mrow>  \amp = \frac12x + \frac12\frac{\sin(2x)}{2} + C</mrow>
   <mrow>  \amp = \frac12x + \frac{\sin(2x)}4 + C.</mrow>
 </md>
 </p>
@@ -461,6 +458,7 @@ We'll make significant use of this power<ndash />reducing technique in future se
 <p>
 It is common to be reluctant to manipulate the integrand of an integral; at first, our grasp of integration is tenuous and one may think that working with the integrand will improperly change the results. Integration by substitution works using a different logic: as long as <em>equality</em> is maintained, the integrand can be manipulated so that its <em>form</em> is easier to deal with. The next two examples demonstrate common ways in which using algebra first makes the integration easier to perform.
 </p>
+
 <example xml:id="ex_sub9">
 <title>Integration by substitution: simplifying first</title>
 <statement>
@@ -487,10 +485,10 @@ We skip the specifics of the steps, but note that when <m>x^2+2x+1</m> is divide
 <p>
 Integrating <m>x+2</m> is simple. The fraction can be integrated by setting <m>u = x^2+2x+1</m>, giving <m>du = (2x+2)\ dx</m>. This is very similar to the numerator. Note that <m>du/2 = (x+1)\ dx</m> and then consider the following:
 <md>
-  <mrow>  \int \frac{x^3+4x^2+8x+5}{x^2+2x+1}\ dx \amp  = \int \left(x+2 + \frac{3x+3}{x^2+2x+1}\right)\ dx  \rule[-13pt]{0pt}{5pt}</mrow>
-  <mrow>  \amp = \int (x+2)\ dx + \int \frac{3(x+1)}{x^2+2x+1}\ dx  \rule[-13pt]{0pt}{5pt}</mrow>
-  <mrow>  \amp  = \frac12x^2+2x+C_1 + \int \frac{3}{u}\frac{du}{2}  \rule[-13pt]{0pt}{5pt}</mrow>
-  <mrow>  \amp = \frac12x^2+2x+C_1 + \frac32\ln|u| + C_2 \rule[-13pt]{0pt}{5pt}</mrow>
+  <mrow>  \int \frac{x^3+4x^2+8x+5}{x^2+2x+1}\ dx \amp  = \int \left(x+2 + \frac{3x+3}{x^2+2x+1}\right)\ dx</mrow>
+  <mrow>  \amp = \int (x+2)\ dx + \int \frac{3(x+1)}{x^2+2x+1}\ dx</mrow>
+  <mrow>  \amp  = \frac12x^2+2x+C_1 + \int \frac{3}{u}\frac{du}{2}</mrow>
+  <mrow>  \amp = \frac12x^2+2x+C_1 + \frac32\ln|u| + C_2</mrow>
   <mrow>  \amp = \frac12x^2+2x+\frac32\ln|x^2+2x+1| + C.</mrow>
 </md>
 </p>
@@ -531,7 +529,7 @@ This is a perfectly fine approach. We demonstrate how this can also be solved us
 <p>
 Let <m>u = \sqrt{x} = x^\frac12</m>; therefore
 <me>
-  du = \frac12x^{-\frac12}dx = \frac{1}{2\sqrt{x}}\ dx \quad \Rightarrow \quad 2du = \frac{1}{\sqrt{x}}\ dx.
+  du = \frac12x^{-\frac12}dx = \frac{1}{2\sqrt{x}}\ dx  \Rightarrow  2du = \frac{1}{\sqrt{x}}\ dx.
 </me>
 </p>
 
@@ -569,6 +567,7 @@ Applying the Chain Rule to this is not difficult; for instance,
 <p>
 We now explore how Substitution can be used to <q>undo</q> certain derivatives that are the result of the Chain Rule applied to Inverse Trigonometric functions. We begin with an example.
 </p>
+
 <example xml:id="ex_subst14">
 <title>Integrating by substitution: inverse trigonometric functions</title>
 <statement>
@@ -602,12 +601,9 @@ This can be integrated using Substitution. Set <m>u = x/5</m>, hence <m>du = dx/
   <mrow>  \amp = \frac15\tan^{-1}\left(\frac x5\right)+C</mrow>
 </md>
 </p>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
+
 <p>
 <xref ref="ex_subst14">Example</xref> demonstrates a general technique that can be applied to other integrands that result in inverse trigonometric functions. The results are summarized here.
 </p>
@@ -620,9 +616,9 @@ Let <m>a>0</m>.
 </p>
 
 <ol>
-<li><m>\ds \int \frac{1}{a^2+x^2}\ dx = \frac1a\tan^{-1}\left(\frac{x}{a}\right) + C</m></li>
-<li><m>\ds \int \frac{1}{\sqrt{a^2-x^2}}\ dx = \sin^{-1}\left(\frac{x}{a}\right)+C</m></li>
-<li><m>\ds \int \frac{1}{x\sqrt{x^2-a^2}}\ dx = \frac1a\sec^{-1}\left(\frac{|x|}{a}\right)+C</m></li>
+<li><p><m>\ds \int \frac{1}{a^2+x^2}\ dx = \frac1a\tan^{-1}\left(\frac{x}{a}\right) + C</m></p></li>
+<li><p><m>\ds \int \frac{1}{\sqrt{a^2-x^2}}\ dx = \sin^{-1}\left(\frac{x}{a}\right)+C</m></p></li>
+<li><p><m>\ds \int \frac{1}{x\sqrt{x^2-a^2}}\ dx = \frac1a\sec^{-1}\left(\frac{|x|}{a}\right)+C</m></p></li>
 </ol>
 </statement>
 </theorem>
@@ -630,13 +626,14 @@ Let <m>a>0</m>.
 <p>
 Let's practice using <xref ref="thm_int_inverse_trig">Theorem</xref>.
 </p>
+
 <example xml:id="ex_subst15">
 <title>Integrating by substitution: inverse trigonometric functions</title>
 <statement>
 <p>
 Evaluate the given indefinite integrals.
 <me>
-  \int \frac{1}{9+x^2}\ dx,\quad \int \frac{1}{x\sqrt{x^2-\frac{1}{100}}}\ dx\quad \text{ and } \quad  \int \frac{1}{\sqrt{5-x^2}}\ dx.
+  \int \frac{1}{9+x^2}\ dx, \int \frac{1}{x\sqrt{x^2-\frac{1}{100}}}\ dx \\text{ and }   \int \frac{1}{\sqrt{5-x^2}}\ dx.
 </me>
 </p>
 </statement>
@@ -646,21 +643,15 @@ Each can be answered using a straightforward application of <xref ref="thm_int_i
 </p>
 
 <p>
-<m>\ds \int \frac{1}{9+x^2}\ dx = \frac13\tan^{-1} \frac x3 + C</m>, as <m>a = 3</m>.
-</p>
-
-<p>
-<m>\ds \int  \frac{1}{x\sqrt{x^2-\frac{1}{100}}}\ dx = 10\sec^{-1}10x + C</m>, as <m>a = \frac1{10}</m>.
-</p>
-
-<p>
-<m>\ds \int \frac{1}{\sqrt{5-x^2}} = \sin^{-1}\frac{x}{\sqrt{5}}+C</m>, as <m>a = \sqrt{5}</m>.
+<m>\ds \int \frac{1}{9+x^2}\ dx = \frac13\tan^{-1} \frac x3 + C</m>, as <m>a = 3</m>.<m>\ds \int  \frac{1}{x\sqrt{x^2-\frac{1}{100}}}\ dx = 10\sec^{-1}10x + C</m>, as <m>a = \frac1{10}</m>.<m>\ds \int \frac{1}{\sqrt{5-x^2}} = \sin^{-1}\frac{x}{\sqrt{5}}+C</m>, as <m>a = \sqrt{5}</m>.
 </p>
 </solution>
 </example>
+
 <p>
 Most applications of <xref ref="thm_int_inverse_trig">Theorem</xref> are not as straightforward. The next examples show some common integrals that can still be approached with this theorem.
 </p>
+
 <example xml:id="ex_subst16">
 <title>Integrating by substitution: completing the square</title>
 <statement>
@@ -699,10 +690,6 @@ We can now integrate this using the arctangent rule. Technically, we need to sub
   \int \frac{1}{x^2-4x+13}\ dx = \int \frac{1}{(x-2)^2+9}\ dx = \frac13\tan^{-1}\frac{x-2}{3}+C.
 </me>
 </p>
-
-<p>
-\vskip -
-</p>
 </solution>
 </example>
 
@@ -727,9 +714,6 @@ The first integral is handled using a straightforward application of <xref ref="
 
 <p>
 <m>\ds \int \frac{4}{\sqrt{16-x^2}}\ dx = 4\sin^{-1}\frac{x}{4} + C</m>.
-</p>
-
-<p>
 <m>\ds \int\frac{x}{\sqrt{16-x^2}}\ dx</m>: Set <m>u = 16-x^2</m>, so <m>du = -2xdx</m> and <m>xdx = -du/2</m>. We have
 <md>
   <mrow>  \int\frac{x}{\sqrt{16-x^2}}\ dx \amp = \int\frac{-du/2}{\sqrt{u}}</mrow>
@@ -745,10 +729,6 @@ Combining these together, we have
   \int \frac{4-x}{\sqrt{16-x^2}}\ dx = 4\sin^{-1}\frac x4 + \sqrt{16-x^2}+C.
 </me>
 </p>
-
-<p>
-\vskip-
-</p>
 </solution>
 </example>
 </subsection>
@@ -761,9 +741,9 @@ This section has focused on evaluating indefinite integrals as we are learning a
 </p>
 
 <ol>
-<li>Start with a definite integral <m>\ds \int_a^b f(x)\ dx</m> that requires substitution.</li>
-<li>Ignore the bounds; use substitution to evaluate <m>\ds \int f(x)\ dx</m> and find an antiderivative <m>F(x)</m>.</li>
-<li>Evaluate <m>F(x)</m> at the bounds; that is, evaluate <m>F(x)\Big|_a^b = F(b) - F(a)</m>.</li>
+<li><p>Start with a definite integral <m>\ds \int_a^b f(x)\ dx</m> that requires substitution.</p></li>
+<li><p>Ignore the bounds; use substitution to evaluate <m>\ds \int f(x)\ dx</m> and find an antiderivative <m>F(x)</m>.</p></li>
+<li><p>Evaluate <m>F(x)</m> at the bounds; that is, evaluate <m>F(x)\Big|_a^b = F(b) - F(a)</m>.</p></li>
 </ol>
 
 <p>
@@ -771,7 +751,7 @@ This workflow works fine, but substitution offers an alternative that is powerfu
 </p>
 
 <p>
-At its heart, (using the notation of <xref ref="thm_subst">Theorem</xref>) substitution converts integrals of the form <m>\int \Fp(g(x))g\primeskip'(x)\ dx</m> into an integral of the form <m>\int \Fp(u)\ du</m> with the substitution of <m>u = g(x)</m>. The following theorem states how the bounds of a definite integral can be changed as the substitution is performed.
+At its heart, (using the notation of <xref ref="thm_subst">Theorem</xref>) substitution converts integrals of the form <m>\int \Fp(g(x))g'(x)\ dx</m> into an integral of the form <m>\int \Fp(u)\ du</m> with the substitution of <m>u = g(x)</m>. The following theorem states how the bounds of a definite integral can be changed as the substitution is performed.
 </p>
 
 <theorem xml:id="thm_subst_def_int">
@@ -780,7 +760,7 @@ At its heart, (using the notation of <xref ref="thm_subst">Theorem</xref>) subst
 <p>
 Let <m>F</m> and <m>g</m> be differentiable functions, where the range of <m>g</m> is an interval <m>I</m> that is contained in the domain of <m>F</m>. Then <index><main>integration</main><sub>definite!and substitution</sub></index><index><main>definite integral</main><sub>and substitution</sub></index>
 <me>
-  \int_a^b \Fp\big(g(x)\big)g\primeskip'(x)\ dx = \int_{g(a)}^{g(b)} \Fp(u)\ du.
+  \int_a^b \Fp\big(g(x)\big)g'(x)\ dx = \int_{g(a)}^{g(b)} \Fp(u)\ du.
 </me>
 </p>
 </statement>
@@ -789,6 +769,7 @@ Let <m>F</m> and <m>g</m> be differentiable functions, where the range of <m>g</
 <p>
 In effect, <xref ref="thm_subst_def_int">Theorem</xref> states that once you convert to integrating with respect to <m>u</m>, you do not need to switch back to evaluating with respect to <m>x</m>. A few examples will help one understand.
 </p>
+
 <example xml:id="ex_sub12">
 <title>Definite integrals and substitution: changing the bounds</title>
 <statement>
@@ -815,12 +796,65 @@ Notice how once we converted the integral to be in terms of <m>u</m>, we never w
 </p>
 <figure xml:id="fig_subst12" >
 <caption>Graphing the areas defined by the definite integrals of <xref ref="ex_sub12">Example</xref>.</caption>
-<tabular>
-<row><cell><image width="73%" source="images/figsubst12a.png" /></cell></row>
-<row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figsubst12b.png" /></cell></row>
-<row><cell>(b)</cell></row>
-</tabular>
+<figure>
+<caption>(a) &amp; &amp; (b)</caption>
+
+<!-- START figures/fig_subst12a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1,2,3,4,5},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:2] {cos(deg(3*x-1))} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-1.5:5.5,samples=50] {cos(deg(3*x-1))}; 
+\draw (axis cs:3.5,1.05) node {\scriptsize $y=\cos(3x-1)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_subst12a.tex END -->
+ &amp; &amp;
+<!-- START figures/fig_subst12b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1,2,3,4,5},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=-1:5] {cos(deg(x))/3} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-1.5:5.5] {cos(deg(x))/3}; 
+\draw (axis cs:3.5,.5) node {\scriptsize $y=\frac13\cos(u)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $u$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_subst12b.tex END -->
+
+</figure>
+
 </figure>
 <p>
 The graphs in <xref ref="fig_subst12">Figure</xref> tell more of the story. In (a) the area defined by the original integrand is shaded, whereas in (b) the area defined by the new integrand is shaded. In this particular situation, the areas look very similar; the new region is <q>shorter</q> but <q>wider,</q> giving the same area.
@@ -843,7 +877,7 @@ We saw the corresponding indefinite integral in <xref ref="ex_sub10">Example</xr
 <p>
 Let <m>u = g(x) = \cos x</m>, giving <m>du = -\sin x\ dx</m> and hence <m>\sin x\ dx = -du</m>. The new upper bound is <m>g(\pi/2) = 0</m>; the new lower bound is <m>g(0) = 1</m>. Note how the lower bound is actually larger than the upper bound now. We have
 <md>
-  <mrow>  \int_0^{\pi/2} \sin x\cos x\ dx \amp = \int_1^0 -u\ du \quad \text{\scriptsize (switch bounds \\amp  change sign)}</mrow>
+  <mrow>  \int_0^{\pi/2} \sin x\cos x\ dx \amp = \int_1^0 -u\ du  \\text{ \scriptsize (switch bounds \\amp  change sign) }</mrow>
   <mrow>  \amp =	\int_0^1 u\ du</mrow>
   <mrow>  \amp = \frac12u^2\Big|_0^1= 1/2.</mrow>
 </md>
@@ -854,25 +888,78 @@ In <xref ref="fig_subst13">Figure</xref> we have again graphed the two regions d
 </p>
 <figure xml:id="fig_subst13" >
 <caption>Graphing the areas defined by the definite integrals of <xref ref="ex_subst13">Example</xref>.</caption>
-<tabular>
-<row><cell><image width="73%" source="images/figsubst13a.png" /></cell></row>
-<row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figsubst13b.png" /></cell></row>
-<row><cell>(b)</cell></row>
-</tabular>
+<figure>
+<caption>(a) &amp; &amp; (b)</caption>
+
+<!-- START figures/fig_subst13a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1},% 
+			extra x ticks={1.57},
+			extra x tick labels={$\frac{\pi}{2}$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.6,ymax=1.1,%
+			xmin=-.5,xmax=2%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:1.57] {cos(deg(x))*sin(deg(x)} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:2] {cos(deg(x))*sin(deg(x)}; 
+\draw (axis cs:1.25,.6) node {\scriptsize $y=\sin x\cos x$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_subst13a.tex END -->
+ &amp; &amp;
+<!-- START figures/fig_subst13b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1},% 
+			extra x ticks={1.57},
+			extra x tick labels={$\frac{\pi}{2}$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.6,ymax=1.1,%
+			xmin=-.5,xmax=2%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:1] {x} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:1.1] {x}; 
+\draw (axis cs:1.25,1) node {\scriptsize $y=u$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $u$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_subst13b.tex END -->
+
 </figure>
-<p>
-\vskip-
-</p>
+
+</figure>
 </solution>
 </example>
+
 <p>
 Integration by substitution is a powerful and useful integration technique. The next section introduces another technique, called Integration by Parts. As substitution <q>undoes</q> the Chain Rule, integration by parts <q>undoes</q> the Product Rule. Together, these two techniques provide a strong foundation on which most other integration techniques are based.
 </p>
 </subsection>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
@@ -899,10 +986,10 @@ T
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, evaluate the indefinite integral to develop an understanding of Substitution.
@@ -1973,6 +2060,6 @@ In the following exercises, evaluate the definite integral.
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>

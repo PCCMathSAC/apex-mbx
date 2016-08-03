@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
 <docinfo>
+
 <macros>
-\renewcommand{\thepage}{A.\arabic{page}}
+%\renewcommand{\thepage}{A.\arabic{page}}
 \newcommand{\apex}{A\kern -1pt \lower -2pt\mbox{P}\kern -4pt \lower .7ex\mbox{E}\kern -1pt X}
 \newcommand{\colorlinecolor}{blue!95!black!30}
 \newcommand{\bwlinecolor}{black!30}
 \newcommand{\thelinecolor}{\colorlinecolor}
 \newcommand{\colornamesuffix}{}
-\newcommand{\includegraphics}[2][]{\includegraphics[#1]{#2\colornamesuffix}}
-\newcommand{\myincludegraphicsthreenostar}[3]{{
-				\includegraphics[#2]{#3} }}
-\newcommand{\myincludegraphicsthreestarred}[3]{{
-				\includegraphics[#2]{#3} }}
+%\newcommand{\apexincludegraphics}[2][]{\includegraphics[#1]{#2\colornamesuffix}}
+%\newcommand{\myincludegraphicsthreenostar}[3]{{
+%                               \apexincludegraphics[#2]{#3} }}
+%\newcommand{\myincludegraphicsthreestarred}[3]{{
+%                               \apexincludegraphics[#2]{#3} }}
 \newcommand{\linestyle}{[thick, \thelinecolor]}
-\newcommand{\exc}{\arabic{excounter}}
-\def\printexercisename{exercises/#1_#2_#3_#4 {#1 #2 #3 #4}}
-\newcommand{\readsection}[1]{.#2{#2}}
-\newcommand{\writeexercisestofile}[1]{\write\answrite{\noexpand\printanswers{exercises/0\thechapter_0\expandafter\readsection #1_exercises.tex} \noexpand } \write\answrite{} }
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ \ \ \ {#1}}{}}
-\renewcommand{\sectionmark}[1]{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+%\newcommand{\exc}{\arabic{excounter}}
+%\newcommand{\include}[1]{}
+%\def\printexercisename{exercises/#1_#2_#3_#4 {#1 #2 #3 #4}}
+%\newcommand{\readsection}[1]{.#2{#2}}
+%\newcommand{\writeexercisestofile}[1]{}
+%\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ \ \ \ {#1}}{}}
+%\renewcommand{\sectionmark}[1]{}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
 \newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
 \newcommand{\emx}{\end{array}\hskip -3pt\right]}
 \newcommand{\ds}{\displaystyle}
@@ -35,14 +37,14 @@
 \newcommand{\dy}{\Delta y}
 \newcommand{\ddz}{\Delta z}
 \newcommand{\thet}{\theta}
-\newcommand{\norm}[1]{||\ #1\ ||}
+\newcommand{\norm}[1]{||\ #1\ ||} 
 \newcommand{\vnorm}[1]{\norm{\vec #1}}
 \newcommand{\snorm}[1]{\left|\left|\ #1\ \right|\right|}
 \newcommand{\la}{\left\langle}
 \newcommand{\ra}{\right\rangle}
-\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2} 
 \newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
-\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2} 
 \newcommand{\veci}{\vec i}
 \newcommand{\vecj}{\vec j}
 \newcommand{\veck}{\vec k}
@@ -61,29 +63,51 @@
 \newcommand{\py}{\partial y}
 \newcommand{\pz}{\partial z}
 \newcommand{\pf}{\partial f}
-\newcommand{\underlinespace}{\underline{}}
+%\newcommand{\underlinespace}{\underline{}}
 \newcommand{\mathN}{\mathbb{N}}
 \newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
-\newcommand{\myrule}{\rule[-4pt]{0pt}{13pt}}
-\newcommand{\mmrule}{\rule[-10pt]{0pt}{15pt}}
-\newcommand{\myds}{\ds\mmrule}
+%\newcommand{\myrule}{\rule[-4pt]{0pt}{13pt}}
+%\newcommand{\mmrule}{\rule[-10pt]{0pt}{15pt}}
+%\newcommand{\myds}{\ds\mmrule}
 \newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
 \newcommand{\myint}[2]{\myds\int #1\ dx= {\ds #2}}
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\csch}{csch}
-\newcommand{\emph}[1]{\textbf{#1}}
+%\newcommand{\emph}[1]{\textbf{#1}}
 \newcommand{\primeskip}{\hskip.75pt}
 \newcommand{\plotlinecolor}{blue}
-\newcommand{\asyouread}[1]{\begin{tikzpicture}
-\node [preaction={fill=black,opacity=.5,transform canvas={xshift=1mm,yshift=-1mm}}, right color=black!30, left color=black!10] at (0,0) {\textcolor{white}{\textsf{\textit{AS YOU READ $\ldots$}}}}; 
-\end{tikzpicture}
-\begin{enumerate}
-#1
-\end{enumerate}
-}
-\renewcommand{\themyfigurecounter}{\thechapter.\arabic{myfigurecounter}}
-\newcommand{\mycaption}[1]{\begin{center}\vskip -1.5\begin{tikzpicture}\draw (0,0) node [text width=\textwidth,align=center] {Figure \themyfigurecounter: #1};\end{tikzpicture}\end{center}}
+\newcommand{\colorone}{blue}
+\newcommand{\colortwo}{red}
+\newcommand{\coloronefill}{blue!15!white}
+\newcommand{\colortwofill}{red!15!white}
+%\newcommand{\asyouread}[1]{\begin{tikzpicture}
+%\node [preaction={fill=black,opacity=.5,transform canvas={xshift=1mm,yshift=-1mm}}, right color=black!30, left color=black!10] at (0,0) {\textcolor{white}{\textsf{\textit{AS YOU READ $\ldots$}}}};
+%\end{tikzpicture}
+%\begin{enumerate}
+%#1
+%\end{enumerate}
+%}
+%\renewcommand{\themyfigurecounter}{\thechapter.\arabic{myfigurecounter}}
+%\newcommand{\mycaption}[1]{\begin{center}\vskip -1.5\begin{tikzpicture}\draw (0,0) node [text width=\textwidth,align=center] {Figure \themyfigurecounter: #1};\end{tikzpicture}\end{center}}
 </macros>
+
+<latex-image-preamble>
+
+\usepackage{pgfplots}
+
+\usetikzlibrary{positioning,matrix,arrows}
+
+\usetikzlibrary{shapes,decorations,shadows,fadings}
+
+\setlength{\marginparwidth}{215pt} 
+
+\usepackage{ifthen}
+\newboolean{colorprint}
+\setboolean{colorprint}{true} 
+
+</latex-image-preamble>
+
+<rename element="insight" lang="en-US">Key Idea</rename>
 
 </docinfo>
 
@@ -119,6 +143,8 @@
 <xi:include href="./chap_vvf.mbx" />
 
 <xi:include href="./chap_multi.mbx" />
+
+<xi:include href="./chapter13.mbx" />
 <backmatter>
 <index-part>
 <title>Index</title>

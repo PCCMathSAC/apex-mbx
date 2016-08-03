@@ -15,9 +15,9 @@ Let <m>z=f(x,y)</m> be defined on a set <m>S</m> containing the point <m>P=(x_0,
 </p>
 
 <ol>
-<li>If there is an open disk <m>D</m> containing <m>P</m> such that <m>f(x_0,y_0) \geq f(x,y)</m> for all <m>(x,y)</m> in <m>D</m>, then <m>f</m> has a <b>relative maximum</b> at <m>P</m>; if <m>f(x_0,y_0) \leq f(x,y)</m> for all <m>(x,y)</m> in <m>D</m>, then <m>f</m> has a <b>relative minimum</b> at <m>P</m>.</li>
-<li>If <m>f(x_0,y_0)\geq f(x,y)</m> for all <m>(x,y)</m> in <m>S</m>, then <m>f</m> has an <b>absolute maximum</b> at <m>P</m>; if <m>f(x_0,y_0)\leq f(x,y)</m> for all <m>(x,y)</m> in <m>S</m>, then <m>f</m> has an <b>absolute minimum</b> at <m>P</m>.</li>
-<li>If <m>f</m> has a relative maximum or minimum at <m>P</m>, then <m>f</m> has a <b>relative extrema</b> at <m>P</m>; if <m>f</m> has an absolute maximum or minimum at <m>P</m>, then <m>f</m> has a <b>absolute extrema</b> at <m>P</m>.</li>
+<li><p>If there is an open disk <m>D</m> containing <m>P</m> such that <m>f(x_0,y_0) \geq f(x,y)</m> for all <m>(x,y)</m> in <m>D</m>, then <m>f</m> has a <em>relative maximum</em> at <m>P</m>; if <m>f(x_0,y_0) \leq f(x,y)</m> for all <m>(x,y)</m> in <m>D</m>, then <m>f</m> has a <em>relative minimum</em> at <m>P</m>.</p></li>
+<li><p>If <m>f(x_0,y_0)\geq f(x,y)</m> for all <m>(x,y)</m> in <m>S</m>, then <m>f</m> has an <em>absolute maximum</em> at <m>P</m>; if <m>f(x_0,y_0)\leq f(x,y)</m> for all <m>(x,y)</m> in <m>S</m>, then <m>f</m> has an <em>absolute minimum</em> at <m>P</m>.</p></li>
+<li><p>If <m>f</m> has a relative maximum or minimum at <m>P</m>, then <m>f</m> has a <em>relative extrema</em> at <m>P</m>; if <m>f</m> has an absolute maximum or minimum at <m>P</m>, then <m>f</m> has a <em>absolute extrema</em> at <m>P</m>.</p></li>
 </ol>
 </statement>
 </definition>
@@ -32,8 +32,8 @@ Let <m>z = f(x,y)</m> be continuous on an open set <m>S</m>. A <term>critical po
 </p>
 
 <ul>
-<li><m>f_x(x_0,y_0) = 0</m> and <m>f_y(x_0,y_0) = 0</m>, or</li>
-<li><m>f_x(x_0,y_0)</m> and/or <m>f_y(x_0,y_0)</m> is undefined.</li>
+<li><p><m>f_x(x_0,y_0) = 0</m> and <m>f_y(x_0,y_0) = 0</m>, or</p></li>
+<li><p><m>f_x(x_0,y_0)</m> and/or <m>f_y(x_0,y_0)</m> is undefined.</p></li>
 </ul>
 </statement>
 </definition>
@@ -50,6 +50,7 @@ Let <m>z=f(x,y)</m> be defined on an open set <m>S</m> containing <m>P=(x_0,y_0)
 <p>
 Therefore, to find relative extrema, we find the critical points of <m>f</m> and determine which correspond to relative maxima, relative minima, or neither. The following examples demonstrate this process.
 </p>
+
 <example xml:id="ex_multi_extreme1">
 <title>Finding critical points and relative extrema</title>
 <statement>
@@ -61,14 +62,14 @@ Let <m>f(x,y) = x^2+y^2-xy-x-2</m>. Find the relative extrema of <m>f</m>.
 <p>
 We start by computing the partial derivatives of <m>f</m>:
 <me>
-  f_x(x,y) = 2x-y-1 \qquad \text{and} \qquad f_y(x,y) = 2y-x.
+  f_x(x,y) = 2x-y-1 \qquad \\text{ and } \qquad f_y(x,y) = 2y-x.
 </me>
 </p>
 
 <p>
 Each is never undefined. A critical point occurs when <m>f_x</m> and <m>f_y</m> are simultaneously 0, leading us to solve the following system of linear equations:
 <me>
-  2x-y-1 = 0\qquad \text{and} \qquad -x+2y = 0.
+  2x-y-1 = 0\qquad \\text{ and } \qquad -x+2y = 0.
 </me>
 </p>
 
@@ -77,14 +78,105 @@ This solution to this system is <m>x=2/3</m>, <m>y=1/3</m>. (Check that at <m>(2
 </p>
 <figure xml:id="fig_multi_extreme1" >
 <caption>The surface in <xref ref="ex_multi_extreme1">Example</xref> with its absolute minimum indicated.</caption>
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0046491301618516445,
 3Dc2c=0.6824884414672852 0.7120449542999268 0.16492848098278046,
 3Dcoo=-1.6988685131072998 -2.1742968559265137 37.693851470947266,
 3Droo=149.99999652386037,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figmulti_extreme1.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figmulti_extreme1_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figmulti_extreme13D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={2};
+real[] myychoice={2};
+real[] myzchoice={5};
+defaultpen(0.5mm);
+pair xbounds=(-3,3);
+pair ybounds=(-3,3);
+pair zbounds=(-1,6);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=x^2+y^2-xy-x-2
+triple f(pair t) {
+  return (t.x,t.y,t.x^2+t.y^2-t.x*t.y-t.x-2);
+}
+surface s=surface(f,(-1,-1),(2,2),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.7,.7,1)+opacity(.7),meshpen=p);
+
+//plot point on surface
+dotfactor=4;dot((2/3,1/3,-7/3));
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- figures/figmulti_extreme1_3D.asy END -->
+
 </figure>
 <p>
 The graph in <xref ref="fig_multi_extreme1">Figure</xref> shows <m>f</m> along with this critical point. It is clear from the graph that this is a relative minimum; further consideration of the function shows that this is actually the absolute minimum.
@@ -103,7 +195,7 @@ Let <m>f(x,y) = -\sqrt{x^2+y^2}+2</m>. Find the relative extrema of <m>f</m>.
 <p>
 We start by computing the partial derivatives of <m>f</m>:
 <me>
-  f_x(x,y) = \frac{-x}{\sqrt{x^2+y^2}}\qquad \text{and} \qquad f_y(x,y) = \frac{-y}{\sqrt{x^2+y^2}}.
+  f_x(x,y) = \frac{-x}{\sqrt{x^2+y^2}}\qquad \\text{ and } \qquad f_y(x,y) = \frac{-y}{\sqrt{x^2+y^2}}.
 </me>
 </p>
 
@@ -112,23 +204,116 @@ It is clear that <m>f_x=0</m> when <m>x=0</m> <ampersand /> <m>y\neq0</m>, and t
 </p>
 <figure xml:id="fig_multi_extreme2" >
 <caption>The surface in <xref ref="ex_multi_extreme2">Example</xref> with its absolute maximum indicated.</caption>
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.005137228406965733,
 3Dc2c=0.6936245560646057 0.5807817578315735 0.4261191189289093,
 3Dcoo=-10.144089698791504 -8.685287475585938 24.90442657470703,
 3Droo=150.00000093140036,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figmulti_extreme2.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figmulti_extreme2_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figmulti_extreme23D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4,4,2);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-2,2};
+real[] myychoice={-2,2};
+real[] myzchoice={2};
+defaultpen(0.5mm);
+pair xbounds=(-3,3);
+pair ybounds=(-3,3);
+pair zbounds=(-1,3);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=2-sqrt(x^2+y^2)
+triple f(pair t) {
+  return (t.x,t.y,2-sqrt(t.x^2+t.y^2));
+}
+surface s=surface(f,(-2,-2),(2,2),32,32);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//plot point on surface
+dotfactor=4;dot((0,0,2));
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- figures/figmulti_extreme2_3D.asy END -->
+
 </figure>
 <p>
 The surface of <m>f</m> is graphed in <xref ref="fig_multi_extreme2">Figure</xref> along with the point <m>(0,0,2)</m>. The graph shows that this point is the absolute maximum of <m>f</m>.
 </p>
 </solution>
 </example>
+
 <p>
 In each of the previous two examples, we found a critical point of <m>f</m> and then determined whether or not it was a relative (or absolute) maximum or minimum by graphing. It would be nice to be able to determine whether a critical point corresponded to a max or a min without a graph. Before we develop such a test, we do one more example that sheds more light on the issues our test needs to consider.
 </p>
+
 <example xml:id="ex_multi_extreme3">
 <title>Finding critical points and relative extrema</title>
 <statement>
@@ -140,15 +325,15 @@ Let <m>f(x,y) = x^3-3x-y^2+4y</m>. Find the relative extrema of <m>f</m>.
 <p>
 Once again we start by finding the partial derivatives of <m>f</m>:
 <me>
-  f_x(x,y) = 3x^2-3\qquad \text{and}  \qquad f_y(x,y) = -2y+4.
+  f_x(x,y) = 3x^2-3\qquad \\text{ and }  \qquad f_y(x,y) = -2y+4.
 </me>
 </p>
 
 <p>
 Each is always defined. Setting each equal to 0 and solving for <m>x</m> and <m>y</m>, we find
 <md>
-  <mrow>  f_x(x,y) = 0 \quad \amp \Rightarrow x=\pm 1</mrow>
-  <mrow>  f_y(x,y) = 0\quad \amp \Rightarrow y = 2.</mrow>
+  <mrow>  f_x(x,y) = 0  \amp \Rightarrow x=\pm 1</mrow>
+  <mrow>  f_y(x,y) = 0 \amp \Rightarrow y = 2.</mrow>
 </md>
 </p>
 
@@ -157,21 +342,113 @@ We have two critical points: <m>(-1,2)</m> and <m>(1,2)</m>. To determine if the
 </p>
 <figure xml:id="fig_multi_extreme3" >
 <caption>The surface in <xref ref="ex_multi_extreme3">Example</xref> with both critical points marked.</caption>
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0051372298039495945,
 3Dc2c=0.3608144223690033 0.8669211864471436 0.3438902795314789,
 3Dcoo=-26.171857833862305 -6.6333465576171875 36.54817199707031,
 3Droo=200.99999267271468,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="110%" source="images/figmulti_extreme3.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figmulti_extreme3_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figmulti_extreme33D.asy in Chapter 12
+
+size(300,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(3,10,9);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-1,1};
+real[] myychoice={2};
+real[] myzchoice={5};
+defaultpen(0.5mm);
+pair xbounds=(-1.5,2);
+pair ybounds=(-.5,3.5);
+pair zbounds=(-2,6);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=x^3-3x-y^2+4y
+triple f(pair t) {
+  return (t.x,t.y,t.x^3-3*t.x-t.y^2+4*t.y);
+}
+surface s=surface(f,(-2,1),(2,3),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//plot point on surface
+dotfactor=4;dot((-1,2,6));
+dot((1,2,2));
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- figures/figmulti_extreme3_3D.asy END -->
+
 </figure>
 <p>
 The critical point <m>(-1,2)</m> clearly corresponds to a relative maximum. However, the critical point at <m>(1,2)</m> is neither a maximum nor a minimum, displaying a different, interesting characteristic.
 </p>
 
 <p>
-If one walks parallel to the <m>y</m>-axis towards this critical point, then this point becomes a relative maximum along this path. But if one walks towards this point parallel to the <m>x</m>-axis, this point becomes a relative minimum along this path. A point that seems to act as both a max and a min is a <b>saddle point</b>. A formal definition follows.
+If one walks parallel to the <m>y</m>-axis towards this critical point, then this point becomes a relative maximum along this path. But if one walks towards this point parallel to the <m>x</m>-axis, this point becomes a relative minimum along this path. A point that seems to act as both a max and a min is a <em>saddle point</em>. A formal definition follows.
 </p>
 </solution>
 </example>
@@ -225,10 +502,10 @@ Let <m>z=f(x,y)</m> be differentiable on an open set containing <m>P = (x_0,y_0)
 </p>
 
 <ol>
-<li>If <m>D>0</m> and <m>f_{xx}(x_0,y_0)>0</m>, then <m>P</m> is a relative minimum of <m>f</m>.</li>
-<li>If <m>D>0</m> and <m>f_{xx}(x_0,y_0)\lt 0</m>, then <m>P</m> is a relative maximum of <m>f</m>.</li>
-<li>If <m>D\lt 0</m>, then <m>P</m> is a saddle point of <m>f</m>.</li>
-<li>If <m>D=0</m>, the test is inconclusive.</li>
+<li><p>If <m>D>0</m> and <m>f_{xx}(x_0,y_0)>0</m>, then <m>P</m> is a relative minimum of <m>f</m>.</p></li>
+<li><p>If <m>D>0</m> and <m>f_{xx}(x_0,y_0)\lt 0</m>, then <m>P</m> is a relative maximum of <m>f</m>.</p></li>
+<li><p>If <m>D\lt 0</m>, then <m>P</m> is a saddle point of <m>f</m>.</p></li>
+<li><p>If <m>D=0</m>, the test is inconclusive.</p></li>
 </ol>
 </statement>
 </theorem>
@@ -236,6 +513,7 @@ Let <m>z=f(x,y)</m> be differentiable on an open set containing <m>P = (x_0,y_0)
 <p>
 We first practice using this test with the function in the previous example, where we visually determined we had a relative maximum and a saddle point.
 </p>
+
 <example xml:id="ex_multi_extreme4">
 <title>Using the Second Derivative Test</title>
 <statement>
@@ -291,7 +569,7 @@ f_{xy} = 2x+1	 \amp  \amp  f_{yx} = 2x+1.
 <p>
 We find the critical points by finding where <m>f_x</m> and <m>f_y</m> are simultaneously 0 (they are both never undefined). Setting <m>f_x=0</m>, we have:
 <me>
-  f_x=0 \quad \Rightarrow \quad 2xy+y=0\quad \Rightarrow \quad y(2x+1)=0.
+  f_x=0  \Rightarrow  2xy+y=0 \Rightarrow  y(2x+1)=0.
 </me>
 </p>
 
@@ -303,7 +581,7 @@ This implies that for <m>f_x=0</m>, either <m>y=0</m> or <m>2x+1=0</m>.
 Assume <m>y=0</m> then consider <m>f_y=0</m>:
 <md>
   <mrow>  f_y \amp = 0</mrow>
-  <mrow>  x^2+2y+x \amp = 0,  \qquad \text{and since <m>y=0</m>, we have}</mrow>
+  <mrow>  x^2+2y+x \amp = 0,  \qquad \\text{ and since \(y=0\), we have }</mrow>
   <mrow>  x^2+x \amp = 0</mrow>
   <mrow>  x(x+1) \amp  = 0.</mrow>
 </md>
@@ -317,7 +595,7 @@ Thus if <m>y=0</m>, we have either <m>x=0</m> or <m>x=-1</m>, giving two critica
 Going back to <m>f_x</m>, now assume <m>2x+1=0</m>, i.e., that <m>x=-1/2</m>, then consider <m>f_y=0</m>:
 <md>
   <mrow>  f_y \amp = 0</mrow>
-  <mrow>  x^2+2y+x \amp = 0,  \qquad \text{and since <m>x=-1/2</m>, we have}</mrow>
+  <mrow>  x^2+2y+x \amp = 0,  \qquad \\text{ and since \(x=-1/2\), we have }</mrow>
   <mrow>  1/4+2y-1/2 \amp = 0</mrow>
   <mrow>  y\amp = 1/8.</mrow>
 </md>
@@ -344,17 +622,108 @@ At <m>(-1/2,1/8)</m>, <m>D>0</m> and <m>f_{xx} > 0</m>, so <m>(-1/2,1/8)</m> is 
 </p>
 <figure xml:id="fig_multi_extreme5" >
 <caption>Graphing <m>f</m> from <xref ref="ex_multi_extreme5">Example</xref> and its relative extrema.</caption>
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0.0,
 3Dortho=0.0046491301618516445,
 3Dc2c=0.7690940499305725 0.052982430905103683 0.636935830116272,
 3Dcoo=-7.478764533996582 19.195676803588867 15.916007995605469,
 3Droo=150.0000019671413,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figmulti_extreme5.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figmulti_extreme5_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figmulti_extreme53D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(24,.7,11.5);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-2};
+real[] myychoice={-0.2,0.2,0.4};
+real[] myzchoice={};
+defaultpen(0.5mm);
+pair xbounds=(-3,3);
+pair ybounds=(-0.3,0.5);
+pair zbounds=(-1,2);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=x^2y+y^2+xy
+triple f(pair t) {
+  return (t.x,t.y,t.x^2*t.y+t.y^2+t.x*t.y);
+}
+surface s=surface(f,(-2,-0.3),(1.5,0.5),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//plot point on surface
+dotfactor=4;dot((0,0,0));dot((-1,0,0));dot((-1/2,1/8,-.016));
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- figures/figmulti_extreme5_3D.asy END -->
+
 </figure>
 <p>
-<xref ref="fig_multi_extreme5">Figure</xref> shows a graph of <m>f</m> and the three critical points. Note how this function does not vary much near the critical points <ndash /> that is, visually it is difficult to determine whether a point is a saddle point or relative minimum (or even a critical point at all!). This is one reason why the Second Derivative Test is so important to have.
+<xref ref="fig_multi_extreme5">Figure</xref> shows a graph of <m>f</m> and the three critical points. Note how this function does not vary much near the critical points <mdash /> that is, visually it is difficult to determine whether a point is a saddle point or relative minimum (or even a critical point at all!). This is one reason why the Second Derivative Test is so important to have.
 </p>
 </solution>
 </example>
@@ -393,25 +762,149 @@ Let <m>f(x,y) = x^2-y^2+5</m> and let <m>S</m> be the triangle with vertices <m>
 <p>
 It can help to see a graph of <m>f</m> along with the set <m>S</m>. In <xref ref="fig_conopt1">Figure</xref>(a) the triangle defining <m>S</m> is shown in the <m>x</m>-<m>y</m> plane in a dashed line. Above it is the surface of <m>f</m>; we are only concerned with the portion of <m>f</m> enclosed by the <q>triangle</q> on its surface.
 </p>
-
-<p>
-\begin{figure}
-\begin{tabular}c
-</p>
 <figure xml:id="fig_conopt1" >
 <caption>Plotting the surface of <m>f</m> along with the restricted domain <m>S</m>.</caption>
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+<sidebyside><figure>
+<caption>(a)</caption>
+<!-- 
+ \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004952129442244768,
 3Dc2c=0.4829294979572296 -0.6089988350868225 0.6292055249214172,
 3Dcoo=16.360477447509766 -11.452425956726074 60.48027038574219,
 3Droo=150.000003217617,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figconopt1.png" />
-(a)
-<image width="100%" source="images/figconopt1b.png" />
-(b)
-\end{tabular}
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figconopt1_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figconopt1.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(5.6,-7.8,20.3);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-1,2};
+real[] myychoice={-2,1,2};
+real[] myzchoice={5};
+defaultpen(0.5mm);
+pair xbounds=(-1.5,3);
+pair ybounds=(-2.5,2.5);
+pair zbounds=(-1,10);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=x^2 - y^2 + 5
+triple f(pair t) {
+  return (t.x,t.y,t.x^2-t.y^2+5);
+}
+surface s=surface(f,(-1.5,-2.25),(2.25,1.75),16,16,vsplinetype=new splinetype[] {notaknot,notaknot,monotonic},usplinetype=new splinetype[] {notaknot,notaknot,monotonic});
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//Draw triangle in plane
+draw((-1,-2,0)--(0,1,0)--(2,-2,0)--cycle,red+dashed+linewidth(1));
+
+//Draw triangle on surface
+triple g(real t) {return (t,-2,t^2+1);}
+path3 mypath=graph(g,-1,2,operator ..); draw(mypath,red); //side 1
+triple g(real t) {return (t,3*t+1,t^2-(3*t+1)^2+5);}
+path3 mypath=graph(g,-1,0,operator ..); draw(mypath,red); //side 2
+triple g(real t) {return (t,-3*t/2+1,t^2-(-3*t/2+1)^2+5);}
+path3 mypath=graph(g,0,2,operator ..); draw(mypath,red); //side 3
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- figures/figconopt1_3D.asy END -->
+
+</figure>
+<figure>
+<caption>(b)</caption>
+
+<!-- START figures/fig_conopt1b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,2},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+			minor x tick num=1,
+			extra x ticks={-1,1},%
+			ymin=-2.5,ymax=1.5,%
+			xmin=-2.1,xmax=2.1%
+]
+
+%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+\draw [thick,{\colorone}] (axis cs:-1,-2)-- node [black,pos=.2,above,sloped] {\scriptsize $y=3x+1$} (axis cs:0,1)--node [black,pos=.6,below,sloped] {\scriptsize $y=-3/2x+1$} (axis cs:2,-2)--node [black,pos=.5,below,sloped] {\scriptsize $y=-2$}(axis cs:-1,-2);
+%\draw [thick,{\colorone}] (axis cs:-1,-2) -- (axis cs:2,-2);
+
+\fill[black,draw=black] (axis cs:-1,-2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,-2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
+%\fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
+%\fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_conopt1b.tex END -->
+
+</figure></sidebyside>
+
 </figure>
 <p>
 We begin by finding the critical points of <m>f</m>. With <m>f_x = 2x</m> and <m>f_y = -2y</m>, we find only one critical point, at <m>(0,0)</m>.
@@ -423,7 +916,6 @@ We now find the maximum and minimum values that <m>f</m> attains along the bound
 
 <p>
 Start with the bottom edge, along the line <m>y=-2</m>. If <m>y</m> is <m>-2</m>, then on the surface, we are considering points <m>f(x,-2)</m>; that is, our function reduces to <m>f(x,-2) = x^2-(-2)^2+5 = x^2+1=f_1(x)</m>. We want to maximize/minimize <m>f_1(x)=x^2+1</m> on the interval <m>[-1,2]</m>. To do so, we evaluate <m>f_1(x)</m> at its critical points and at the endpoints.
-\drawexampleline
 </p>
 
 <p>
@@ -501,22 +993,129 @@ One last point to test: the critical point of <m>f</m>, <m>(0,0)</m>. We find <m
 </p>
 <figure xml:id="fig_conopt1b" >
 <caption>The surface of <m>f</m> along with important points along the boundary of <m>S</m> and the interior.</caption>
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.00476991618052125,
 3Dc2c=0.2722506821155548 -0.5407805442810059 0.7958868741989136,
 3Dcoo=2.6561195850372314 25.95724868774414 7.351059436798096,
 3Droo=200.99999823503413,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figconopt1c.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figconopt1c_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figconopt1c3D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(2.6,-7.,24);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={-1,2};
+real[] myychoice={-2,1,2};
+real[] myzchoice={5};
+defaultpen(0.5mm);
+pair xbounds=(-1.5,3);
+pair ybounds=(-2.5,2.5);
+pair zbounds=(-1,10);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw surface z=x^2 - y^2 + 5
+triple f(pair t) {
+  return (t.x,t.y,t.x^2-t.y^2+5);
+}
+surface s=surface(f,(-1.5,-2.25),(2.25,1.75),16,16,Spline);
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//Draw triangle in plane
+draw((-1,-2,0)--(0,1,0)--(2,-2,0)--cycle,red+dashed+linewidth(1));
+
+//Draw triangle on surface
+triple g(real t) {return (t,-2,t^2+1);}
+path3 mypath=graph(g,-1,2,operator ..); draw(mypath,red); //side 1
+triple g(real t) {return (t,3*t+1,t^2-(3*t+1)^2+5);}
+path3 mypath=graph(g,-1,0,operator ..); draw(mypath,red); //side 2
+triple g(real t) {return (t,-3*t/2+1,t^2-(-3*t/2+1)^2+5);}
+path3 mypath=graph(g,0,2,operator ..); draw(mypath,red); //side 3
+
+//Dots at 7 points
+dotfactor=4;
+dot((-1,-2,2));dot((2,-2,5)); dot((0,1,4)); //at corner of triangles
+dot((0,0,5)); //maximum
+dot((0,-2,1)); //minimum
+dot((1.2,-0.8,5.8));dot((-3/8,-1/8,5.125)); //along edges of triangles
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- figures/figconopt1c_3D.asy END -->
+
 </figure>
 <p>
 We have evaluated <m>f</m> at a total of 7 different places, all shown in <xref ref="fig_conopt1b">Figure</xref>. We checked each vertex of the triangle twice, as each showed up as the endpoint of an interval twice. Of all the <m>z</m>-values found, the maximum is 5.8, found at <m>(1.2,-0.8)</m>; the minimum is 1, found at <m>(0,-2)</m>.
 </p>
 </solution>
 </example>
+
 <p>
-This portion of the text is entitled <q>Constrained Optimization</q> because we want to optimize a function (i.e., find its maximum and/or minimum values) subject to a <em>constraint</em> <ndash /> some limit to what values the function can attain. In the previous example, we constrained ourselves by considering a function only within the boundary of a triangle. This was largely arbitrary; the function and the boundary were chosen just as an example, with no real <q>meaning</q> behind the function or the chosen constraint.
+This portion of the text is entitled <q>Constrained Optimization</q> because we want to optimize a function (i.e., find its maximum and/or minimum values) subject to a <em>constraint</em> <mdash /> some limit to what values the function can attain. In the previous example, we constrained ourselves by considering a function only within the boundary of a triangle. This was largely arbitrary; the function and the boundary were chosen just as an example, with no real <q>meaning</q> behind the function or the chosen constraint.
 </p>
 
 <p>
@@ -526,6 +1125,7 @@ However, solving constrained optimization problems is a very important topic in 
 <p>
 We illustrate the technique once more with a classic problem.
 </p>
+
 <example xml:id="ex_conopt2">
 <title>Constrained Optimization</title>
 <statement>
@@ -560,7 +1160,7 @@ The constraint is applicable on the <m>w</m>-interval <m>[0,32.5]</m> as indicat
 <p>
 Finding the critical values of <m>V_1</m>, we take the derivative and set it equal to 0:
 <me>
-  V\,'_1(w) = 260w-12w^2 = 0 \quad \Rightarrow \quad w(260-12w)= 0 \quad \Rightarrow \quad w=0,\frac{260}{12}\approx 21.67.
+  V\,'_1(w) = 260w-12w^2 = 0  \Rightarrow  w(260-12w)= 0  \Rightarrow  w=0,\frac{260}{12}\approx 21.67.
 </me>
 </p>
 
@@ -569,20 +1169,122 @@ We found two critical values: when <m>w=0</m> and when <m>w=21.67</m>. We again 
 </p>
 <figure xml:id="fig_conopt2" >
 <caption>Graphing the volume of a box with girth <m>4w</m> and length <m>\ell</m>, subject to a size constraint.</caption>
-\includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.005153999198228121,
 3Dc2c=0.31346064805984497 -0.9024837017059326 0.2954072952270508,
 3Dcoo=45.312767028808594 65.24303436279297 62.16134262084961,
 3Droo=149.9999931723703,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figconopt2.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figconopt2_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figconopt23D.asy in Chapter 12
+
+size(200,200,IgnoreAspect);
+//size(200,200,Aspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(176,-2075,580);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+// setup and draw the axes
+real[] myxchoice={20};
+real[] myychoice={50,100};
+real[] myzchoice={20,40,60,80};
+defaultpen(0.5mm);
+pair xbounds=(-5,40);
+pair ybounds=(-2,150);
+//pair zbounds=(0,100000);
+pair zbounds=(0,100);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$w$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$\ell$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("\centering $V$\\ (in thousands)",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)),N);
+
+//Draw surface z=x^2*y
+triple f(pair t) {
+  return (t.x,t.y,t.x^2*t.y/1000);
+}
+surface s=surface(f,(0,0),(32.5,130),16,16,Spline);
+//s=crop(s,(-1,-1,-1),(33,135,100));
+pen p=rgb(0,0,.7);
+draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+//Draw path in plane
+draw((32.5,0,0)--(0,130,0),red+dashed+linewidth(1));
+
+//Draw path on surface
+triple g(real t) {return (t,130-4*t,t^2*(130-4*t)/1000);}
+path3 mypath=graph(g,0,32.5,operator ..); draw(mypath,red); //side 1
+
+
+//Dots at max point
+dotfactor=4; dot((21.67,43.33,19.4));
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+
+//Draw the surface z=1/(1+x^2+y^2)
+//triple f(pair t) {
+//  return (t.x,t.y,1/(1+(t.x)^2+(t.y)^2));
+//}
+//surface s=surface(f,(-2,-2),(2,2),8,8,Spline);
+//pen p=rgb(0,0,.7);
+//draw(s,rgb(.6,.6,1)+opacity(.7),meshpen=p);
+
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- figures/figconopt2_3D.asy END -->
+
 </figure>
 <p>
 The volume function <m>V(w,\ell)</m> is shown in <xref ref="fig_conopt2">Figure</xref> along with the constraint <m>\ell = 130-4w</m>. As done previously, the constraint is drawn dashed in the <m>x</m>-<m>y</m> plane and also along the surface of the function. The point where the volume is maximized is indicated.
 </p>
 </solution>
 </example>
+
 <p>
 It is hard to overemphasize the importance of optimization. In <q>the real world,</q> we routinely seek to make <em>something</em> better. By expressing the <em>something</em> as a mathematical function, <q>making <em>something</em> better</q> means <q>optimize <em>some function.</em></q>
 </p>
@@ -593,7 +1295,9 @@ The techniques shown here are only the beginning of an incredibly important fiel
 </subsection>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
@@ -646,10 +1350,10 @@ Answers will vary. A good answer will state that we are optimizing a function su
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, find the critical points of the given function. Use the Second Derivative Test to determine if each critical point corresponds to a relative maximum, minimum, or saddle point.
@@ -944,524 +1648,6 @@ Checking the value of <m>f</m> at <m>(-1,-1)</m>, <m>(1,1)</m>, <m>(3/4,3/4)</m>
 </p>
 </answer>
 </exercise>
-<p>
-{
-\appendix
+</exercisegroup>
 
-{
-</p>
-
-<p>
-\makeexercisesection{Solutions To Selected Problems}
-\qendheader
-\eendgeometry
-</p>
-
-<p>
-\phantomsection
-\cleardoublepage
-</p>
-</subsection>
-
-
-<subsection>
-<title>Differentiation Rules</title>
-<sidebyside>
-
-<ol>
-<li>\deriv{cx}c</li>
-<li>\deriv{u\pm v}{u'\pm v'}</li>
-<li>\deriv{u\cdot v}{uv'+ u'v}</li>
-<li>\deriv{\frac uv}{\frac{vu'-uv'}{v^2}}</li>
-<li>\deriv{u(v)}{u'(v)v'}</li>
-<li>\deriv{c}0</li>
-<li>\deriv{x}1</li>
-<li>\deriv{x^n}{nx^{n-1}}</li>
-<li>\deriv{e^x}{e^x}</li>
-</ol>
-
-<ol>
-<li>\deriv{a^x}{\ln a\cdot a^x}</li>
-<li>\deriv{\ln x}{\frac{1}x}</li>
-<li>\deriv{\log_a x}{\frac{1}{\ln a}\cdot \frac1x}</li>
-<li>\deriv{\sin x}{\cos x}</li>
-<li>\deriv{\cos x}{-\sin x}</li>
-<li>\deriv{\csc x}{-\csc x\cot x}</li>
-<li>\deriv{\sec x}{\sec x\tan x}</li>
-<li>\deriv{\tan x}{\sec^2 x}</li>
-<li>\deriv{\cot x}{-\csc^2 x}</li>
-</ol>
-
-<ol>
-<li>\deriv{\sin^{-1}x}{\frac{1}{\sqrt{1-x^2}}}</li>
-<li>\deriv{\cos^{-1}x}{\frac{-1}{\sqrt{1-x^2}}}</li>
-<li>\deriv{\csc^{-1}x}{\frac{-1}{|x|\sqrt{x^2-1}}}</li>
-<li>\deriv{\sec^{-1}x}{\frac{1}{|x|\sqrt{x^2-1}}}</li>
-<li>\deriv{\tan^{-1}x}{\frac{1}{1+x^2}}</li>
-<li>\deriv{\cot^{-1}x}{\frac{-1}{1+x^2}}</li>
-<li>\deriv{\cosh x}{\sinh x}</li>
-<li>\deriv{\sinh x}{\cosh x}</li>
-<li>\deriv{\tanh x}{\sech^2 x}</li>
-</ol>
-
-<ol>
-<li>\deriv{\sech x}{-\sech x\tanh x}</li>
-<li>\deriv{\csch x}{-\csch x\coth x}</li>
-<li>\deriv{\coth x}{-\csch^2 x}</li>
-<li>\deriv{\cosh^{-1}x}{\frac1{\sqrt{x^2-1}}}</li>
-<li>\deriv{\sinh^{-1}x}{\frac1{\sqrt{x^2+1}}}</li>
-<li>\deriv{\sech^{-1}x}{\frac{-1}{x\sqrt{1-x^2}}}</li>
-<li>\deriv{\csch^{-1}x}{\frac{-1}{|x|\sqrt{1+x^2}}}</li>
-<li>\deriv{\tanh^{-1}x}{\frac1{1-x^2}}</li>
-<li>\deriv{\coth^{-1}x}{\frac1{1-x^2}}</li>
-</ol>
-
-</sidebyside>
-</subsection>
-
-
-<subsection>
-<title>Integration Rules</title>
-<sidebyside>
-
-<ol>
-<li>\myint{c\cdot f(x)}{c\int f(x)<nbsp />dx}</li>
-<li><line>\myint{f(x)\pm g(x)}</line>
-<line><m>\ds \int f(x)\ dx \pm \int g(x)\ dx</m></line>
-</li>
-<li>\myint{0}C</li>
-<li>\myint{1}{x+C}</li>
-<li><line>\myint{x^n}{\frac{1}{n+1}x^{n+1}+C,  n\neq -1}</line>
-<line><m>\ n\neq -1</m></line>
-</li>
-<li>\myint{e^x}{e^x+C}</li>
-<li>\myint{a^x}{\frac{1}{\ln a}\cdot a^x+C}</li>
-<li>\myint{\frac{1}x}{\ln |x| + C}</li>
-<li>\myint{\cos x}{\sin x+C}</li>
-<li>\myint{\sin x}{-\cos x+C}</li>
-</ol>
-
-<ol>
-<li>\myint{\tan x}{-\ln |\cos x|+C}</li>
-<li>\myint{\sec x}{\ln |\sec x+\tan x|+C}</li>
-<li>\myint{\csc x}{-\ln |\csc x+\cot x|+C}</li>
-<li>\myint{\cot x}{\ln |\sin x|+C}</li>
-<li>\myint{\sec^2 x}{\tan x+C}</li>
-<li>\myint{\csc^2x}{-\cot x+C}</li>
-<li>\myint{\sec x\tan x}{\sec x+C}</li>
-<li>\myint{\csc x\cot x}{-\csc x+C}</li>
-<li>\myint{\cos^2x}{\frac12x+\frac14\sin\big(2x\big)+C}</li>
-<li>\myint{\sin^2x}{\frac12x-\frac14\sin\big(2x\big)+C}</li>
-<li>\myint{\frac{1}{x^2+a^2}}{\frac1a\tan^{-1}\left(\frac xa\right)+C}</li>
-</ol>
-
-<ol>
-<li>\myint{\frac{1}{\sqrt{a^2-x^2}}}{\sin^{-1}\left(\frac xa\right)+C}</li>
-<li>\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}a\right)+C}</li>
-<li>\myint{\cosh x}{\sinh x+C}</li>
-<li>\myint{\sinh x}{\cosh x+C}</li>
-<li>\myint{\tanh x}{\ln(\cosh x)+C}</li>
-<li>\myint{\coth x}{\ln |\sinh  x|+C}</li>
-<li>\myint{\frac{1}{\sqrt{x^2-a^2}}}{\ln\big|x+\sqrt{x^2-a^2}\big|+C}</li>
-<li>\myint{\frac{1}{\sqrt{x^2+a^2}}}{\ln\big|x+\sqrt{x^2+a^2}\big|+C}</li>
-<li>\myint{\frac{1}{a^2-x^2}}{\frac1{2a}\ln\left|\frac{a+x}{a-x}\right|+C}</li>
-<li>\myint{\frac{1}{x\sqrt{a^2-x^2}}}{\frac1a\ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C}</li>
-<li>\myint{\frac{1}{x\sqrt{x^2+a^2}}}{\frac1a\ln\left|\frac{x}{a+\sqrt{x^2+a^2}}\right|+C}</li>
-</ol>
-
-</sidebyside>
-<p>
-\begin{minipage}
-</p>
-</subsection>
-
-
-<subsection>
-<title>The Unit Circle</title>
-<p>
-<image width="73%" source="images/833be8423218b29ecf65ad631b2f84f2b3ceed02.png" />
-</p>
-
-<p>
-\end{minipage}
-\begin{minipage}
-</p>
-</subsection>
-
-
-<subsection>
-<title>Definitions of the Trigonometric Functions</title>
-<p>
-<b> Unit Circle Definition</b>
-</p>
-<sidebyside>
-\vskip 0in<image width="73%" source="images/d7afb1900fa60701de2aa6a4d16f06439328acb7.png" />
-\vskip 0in
-<tabular>
-<row><cell><m>\sin \theta = y</m></cell><cell><m>\cos \theta = x</m></cell></row>
-<row><cell></cell></row>
-<row><cell><m>\ds\csc \theta = \frac1y</m></cell><cell><m>\ds\sec \theta = \frac1x</m></cell></row>
-<row><cell></cell></row>
-<row><cell><m>\myrule\ds\tan \theta = \frac yx</m></cell><cell><m>\ds\cot \theta = \frac xy</m></cell></row>
-</tabular>
-</sidebyside>
-<p>
-<b> Right Triangle Definition</b>
-</p>
-<sidebyside>
-<image width="73%" source="images/d99627593c507cbb36ac9a61f5b5f5cbaf6ecbaa.png" />
-\vskip 0in
-<tabular>
-<row><cell><m>\ds\sin \theta = \frac{\text{O} }{\text{H} }</m></cell><cell><m>\ds\csc \theta = \frac{\text{H} }{\text{O} }</m></cell></row>
-<row><cell></cell></row>
-<row><cell><m>\ds\cos \theta = \frac{\text{A} }{\text{H} }</m></cell><cell><m>\ds\sec \theta = \frac{\text{H} }{\text{A} }</m></cell></row>
-<row><cell></cell></row>
-<row><cell><m>\ds\tan \theta = \frac{\text{O} }{\text{A} }</m></cell><cell><m>\ds\cot \theta = \frac{\text{A} }{\text{O} }</m></cell></row>
-<row><cell></cell></row>
-</tabular>
-</sidebyside>
-<p>
-\end{minipage}
-</p>
-</subsection>
-
-
-<subsection>
-<title>Common Trigonometric Identities</title>
-<sidebyside>
-<b>Pythagorean Identities</b>\vskip 5pt
-
-	<m>\ds \sin ^2x+\cos ^2x= 1</m>\vskip 5pt
-
-	<m>\ds \tan^2x+ 1 = \sec^2 x</m>\vskip 5pt
-
-	<m>\ds 1 + \cot^2x=\csc^2 x</m>\vskip 5pt
-<b>Cofunction Identities</b>\vskip 5pt
-<sidebyside>
-<m>\ds \sin\left(\frac{\pi}{2}-x\right) = \cos x</m>\vskip 5pt
-		<m>\ds \cos\left(\frac{\pi}{2}-x\right) = \sin x</m>\vskip 5pt
-		<m>\ds \tan\left(\frac{\pi}{2}-x\right) = \cot x</m>\vskip 5pt
-<m>\ds \csc\left(\frac{\pi}{2}-x\right) = \sec x</m>\vskip 5pt
-		<m>\ds \sec\left(\frac{\pi}{2}-x\right) = \csc x</m>\vskip 5pt
-		<m>\ds \cot\left(\frac{\pi}{2}-x\right) = \tan x</m>\vskip 5pt
-</sidebyside>
-<b>Double Angle Formulas</b>\vskip 5pt
-	<m>\sin 2x = 2\sin x\cos x</m> \vskip 5pt
-	<m>\cos 2x = \cos^2x - \sin^2 x</m>\vskip 5pt
-	<m>= 2\cos^2x-1</m>\vskip 5pt
-	<m>= 1-2\sin^2x</m>\vskip 5pt
-	<m>\ds\tan 2x = \frac{2\tan x}{1-\tan^2 x}</m>
-<b>Sum to Product Formulas</b>\vskip 5pt
-<m>\ds \sin x+\sin y = 2\sin \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)</m>\vskip 5pt
-<m>\ds \sin x-\sin y = 2\sin \left(\frac{x-y}2\right)\cos\left(\frac{x+y}2\right)</m>\vskip 5pt
-<m>\ds \cos x+\cos y = 2\cos \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)</m>\vskip 5pt
-<m>\ds \cos x-\cos y = -2\sin \left(\frac{x+y}2\right)\sin\left(\frac{x-y}2\right)</m>\vskip 5pt
-<b>Power<ndash />Reducing Formulas</b>\vskip 5pt
-<m>\ds \sin^2 x = \frac{1-\cos 2x}{2}</m>\vskip 5pt
-<m>\ds \cos^2 x = \frac{1+\cos 2x}{2}</m>\vskip 5pt
-<m>\ds \tan^2x = \frac{1-\cos 2x}{1+\cos 2x}</m>
-<b>Even/Odd Identities</b>\vskip 5pt
-<m>\sin(-x) = -\sin x</m>\vskip 5pt
-<m>\cos (-x) = \cos x</m>\vskip 5pt
-<m>\tan (-x) = -\tan x</m>\vskip 5pt
-<m>\csc(-x) = -\csc x</m>\vskip 5pt
-<m>\sec (-x) = \sec x</m>\vskip 5pt
-<m>\cot (-x) = -\cot x</m>\vskip 5pt
-<b>Product to Sum Formulas</b>\vskip 5pt
-<m>\ds \sin x\sin y = \frac12 \big(\cos(x-y) - \cos (x+y)\big)</m>\vskip 5pt
-<m>\ds \cos x\cos y = \frac12\big(\cos (x-y) +\cos (x+y)\big)</m>\vskip 5pt
-<m>\ds \sin x\cos y = \frac12 \big(\sin(x+y) + \sin (x-y)\big)</m>\vskip 5pt
-<b>Angle Sum/Difference Formulas</b>\vskip 5pt
-<m>\sin (x\pm y) = \sin x\cos y \pm \cos x\sin y</m>\vskip 5pt
-<m>\cos (x\pm y) = \cos x\cos y \mp \sin x\sin y</m>\vskip 5pt
-<m>\ds \tan (x\pm y) = \frac{\tan x\pm \tan y}{1\mp \tan x\tan y}</m>
-</sidebyside>
-</subsection>
-
-
-<subsection>
-<title>Areas and Volumes</title>
-<sidebyside>
-
-<sidebyside>
-<b>Triangles</b>\vskip 5pt
-		<m>h=a\sin \theta</m>\vskip 5pt
-		Area = <m>\frac12bh</m>\vskip 5pt
-		Law of Cosines:
-		
-		<m>c^2=a^2+b^2-2ab\cos \theta</m>\vskip 5pt
-\vskip 0pt
-			<image width="73%" source="images/458023b5c8ac24a0e3ebb3729c377b55a0c4dfc6.png" />
-</sidebyside>
-<sidebyside>
-<b>Right Circular Cone</b>\vskip 5pt
-		Volume = <m>\frac 13 \pi r^2h</m> \vskip 5pt
-		Surface Area =\vskip 3pt		
-		 <m>\pi r\sqrt{r^2+h^2} +\pi r^2</m>
-\vskip 0pt
-			<image width="73%" source="images/428a3ea6c73fb5b216240e260808f93805a85f0a.png" />
-</sidebyside>
-
-</sidebyside>
-<p>
-284a2085a4cd32f9302d089fc83c51e4495e9ce4END
-</p>
-<sidebyside>
-
-<sidebyside>
-<b>Right Circular Cylinder</b>\vskip 5pt
-		Volume = <m>\pi r^2h</m> \vskip 5pt
-		Surface Area =\vskip 3pt		
-		 <m>2\pi rh  +2\pi r^2</m>
-\vskip 0pt
-			<image width="73%" source="images/69e1cc0cf5b0711818a1d627bfdca54768596407.png" />
-</sidebyside>
-
-</sidebyside>
-<p>
-54044a855114514d700ac066bacbd7ea229726b1END
-</p>
-<sidebyside>
-
-<sidebyside>
-<b>Sphere</b>\vskip 5pt
-		Volume = <m>\frac43\pi r^3</m> \vskip 5pt
-		Surface Area =<m>4\pi r^2</m>
-\vskip 0pt
-			<image width="73%" source="images/c1e137425cd32492f8401f63b2ef44016b45dd88.png" />
-</sidebyside>
-
-</sidebyside>
-<p>
-1f42e20508d1eb4bee479f5d232f98c87b6cdf1END
-</p>
-<sidebyside>
-
-<sidebyside>
-<b>General Cone</b>\vskip 5pt
-		Area of Base = <m>A</m>\vskip 5pt
-		Volume = <m>\frac13Ah</m> \vskip 5pt
-\vskip 0pt
-			<image width="73%" source="images/9793875a2875de756bb6b893e87c9afc84229d3f.png" />
-</sidebyside>
-
-</sidebyside>
-<p>
-3c373198de27475a5acc1755d0b5e96f71cde7c4END
-</p>
-<sidebyside>
-
-<sidebyside>
-<b>General Right Cylinder</b>\vskip 5pt
-		Area of Base = <m>A</m>\vskip 5pt
-		Volume = <m>Ah</m> \vskip 5pt
-\vskip 0pt
-			<image width="73%" source="images/3bd734a50407431e961798a575a6935ac7cb5f91.png" />
-</sidebyside>
-
-</sidebyside>
-<p>
-<b> Algebra</b>
-<b> Factors and Zeros of Polynomials</b>
-</p>
-
-<p>
-Let <m>p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0</m> be a polynomial. If <m>p(a)=0</m>, then <m>a</m> is a <m>zero</m> of the polynomial and a solution
-of the equation <m>p(x)=0</m>. Furthermore, <m>(x-a)</m> is a <m>factor</m> of the polynomial.
-<b> Fundamental Theorem of Algebra</b>
-</p>
-
-<p>
-An <m>n</m>th degree polynomial has <m>n</m> (not necessarily distinct) zeros. Although all of these zeros may be imaginary, a real polynomial of odd degree
-must have at least one real zero.
-</p>
-
-<p>
-<b> Quadratic Formula</b>
-</p>
-
-<p>
-If <m>p(x) = ax^2 + bx + c</m>, and <m>0 \le b^2 - 4ac</m>, then the real zeros of <m>p</m> are <m>x=(-b\pm \sqrt{b^2-4ac})/2a</m>
-</p>
-
-<p>
-<b> Special Factors</b>
-</p>
-
-<p>
-<m>\begin{array}{ll}
-x^2 - a^2 = (x-a)(x+a) \qquad \qquad \qquad \amp  x^3 - a^3 = (x-a)(x^2+ax+a^2)\\	
-x^3 + a^3 = (x+a)(x^2-ax+a^2) \qquad \qquad \qquad \amp  x^4 - a^4 = (x^2-a^2)(x^2+a^2)\\
-\end{array}</m>
-</p>
-
-<p>
-<m>\begin{array}{l}
-(x+y)^n  =x^n + nx^{n-1}y+\frac{n(n-1)}{2!}x^{n-2}y^2+\cdots +nxy^{n-1}+y^n\\
-(x-y)^n  =x^n - nx^{n-1}y+\frac{n(n-1)}{2!}x^{n-2}y^2-\cdots \pm nxy^{n-1}\mp y^n
-\end{array}</m> <b> Binomial Theorem</b>
-</p>
-
-<p>
-<m>\begin{array}{ll}
-(x+y)^2 = x^2 + 2xy + y^2 \qquad \amp  (x-y)^2 = x^2 -2xy +y^2\\
-(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 \qquad  \amp  (x-y)^3 = x^3 -3x^2y + 3xy^2 -y^3\\
-(x+y)^4 = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4 \qquad  \amp  (x-y)^4 = x^4 - 4x^3y + 6x^2y^2 - 4xy^3 + y^4\\
-\end{array}</m> <b> Rational Zero Theorem</b>
-</p>
-
-<p>
-If <m>p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0</m> has integer coefficients, then every <m>rational</m> <m>zero</m> of <m>p</m> is of the form
-<m>x=r/s</m>, where <m>r</m> is a factor of <m>a_0</m> and <m>s</m> is a factor of <m>a_n</m>.
-</p>
-
-<p>
-<b> Factoring by Grouping</b>
-</p>
-
-<p>
-<m>ac x^3 + adx^2 + bcx + bd = ax^2(cs+d)+b(cx+d)=(ax^2+b)(cx+d)</m>
-</p>
-
-<p>
-<b> Arithmetic Operations</b>
-</p>
-
-<p>
-<m>\begin{array}{lll}
-ab+ac=a(b+c) \qquad \qquad \amp  \displaystyle \frac{a}{b}+\frac{c}{d} = \frac{ad+bc}{bd} \qquad \qquad \amp  \displaystyle \frac{a+b}{c} = \frac{a}{c} + \frac{b}{c}\\	\\
-\displaystyle\frac{\left(\displaystyle\frac{a}{b}\right)}{\left(\displaystyle\frac{c}{d}\right)}=\left(\frac{a}{b}\right)\left(\frac{d}{c}\right)=\frac{ad}{bc} 
-\amp \displaystyle \frac{\left(\displaystyle\frac{a}{b}\right)}{c} =\displaystyle \frac{a}{bc}
-\amp \displaystyle \frac{a}{\left(\displaystyle\frac{b}{c}\right)} =\displaystyle \frac{ac}{b}\\ \\
-a\left(\displaystyle\frac{b}{c}\right)= \displaystyle \frac{ab}{c}\amp \displaystyle\frac{a-b}{c-d}=\frac{b-a}{d-c}\amp \displaystyle\frac{ab+ac}{a}=b+c\\
-\end{array}</m> <b> Exponents and Radicals</b>
-</p>
-
-<p>
-<m>\begin{array}{llllll}
-a^0=1, \; \; a \ne 0 \quad \amp  (ab)^x=a^xb^x \quad \amp  a^xa^y = a^{x+y}\quad  \amp  \sqrt{a}=a^{1/2}   \amp \displaystyle \frac{a^x}{a^y}=a^{x-y}  \amp \sqrt[n]{a}=a^{1/n}\\
-\left(\displaystyle\frac{a}{b}\right)^x=\displaystyle\frac{a^x}{b^x} \amp \sqrt[n]{a^m}=a^{m/n} \amp  a^{-x}=\displaystyle\frac{1}{a^x} \amp  \sqrt[n]{ab}=\sqrt[n]{a}\sqrt[n]{b} \quad \amp 
-(a^x)^y=a^{xy} \quad\amp  \displaystyle\sqrt[n]{\frac{a}{b}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}
-\end{array}</m>
-</p>
-
-<p>
-<b> Additional Formulas</b>
-</p>
-</subsection>
-
-
-<subsection>
-<title>Summation Formulas:</title>
-<tabular>
-<row><cell><m>\ds \sum^n_{i=1}{c} = cn</m> \hskip 100pt<nbsp /></cell><cell><m>\ds\sum^n_{i=1}{i} = \frac{n(n+1)}{2}</m></cell></row>
-<row><cell><m>\ds\sum^n_{i=1}{i\hskip1pt^2} = \frac{n(n+1)(2n+1)}{6}</m></cell><cell><m>\ds\sum^n_{i=1}{i\hskip1pt^3}= \left(\frac{n(n+1)}{2}\right)^2</m></cell></row>
-<row><cell></cell></row>
-</tabular>
-</subsection>
-
-
-<subsection>
-<title>Trapezoidal Rule:</title>
-<p>
-<m>\ds
-\int_a^b{f(x)}\ dx  \approx \frac{\Delta x}{2}\big[f(x_1)+2f(x_2) + 2f(x_3) + ... + 2f(x_{n}) + f(x_{n+1})\big]</m>
-</p>
-
-<p>
-with <m>\displaystyle \text{Error}  \leq \frac{(b-a)^3}{12n^2}\big[ \max \big| f\,''(x)  \big|\big]</m>
-</p>
-</subsection>
-
-
-<subsection>
-<title>Simpson's Rule:</title>
-<p>
-<m>\ds\int_a^b{f(x)}\ dx  \approx  \frac{\Delta x}{3}\big[f(x_1)+4f(x_2) + 2f(x_3) + 4f(x_4) + ... + 2f(x_{n-1}) + 4f(x_{n}) + f(x_{n+1})\big]</m>
-</p>
-
-<p>
-with <m>\displaystyle \text{Error}  \leq \frac{(b-a)^5}{180n^4}\big[ \max \big| f\,^{(4)}(x)  \big|\big]</m>
-</p>
-<sidebyside>
-<b> Arc Length:</b><br />
-<m>\displaystyle
-L = \int_a^b{\sqrt{1+ f\,'(x)^2}}dx</m><br />
-<b> Surface of Revolution:</b>
-<br />
-<m>\displaystyle
-S = 2\pi \int_a^b{f(x) \sqrt{1+ f\,'(x)^2}}dx</m><br />
-{ (where <m>f(x)\geq 0</m>)}<br />
-
-<m>\displaystyle
-S = 2\pi \int_a^b{x \sqrt{1+ f\,'(x)^2}}dx</m><br />
-{ (where <m>a,b \geq 0</m>)}
-<b> Work Done by a Variable Force:</b><br />
-<m>\displaystyle
-W = \int_a^b{F(x)}dx</m>
-<b> Force Exerted by a Fluid:</b><br />
-<m>\displaystyle
-F = \int_a^b{w\,d(y)\,\ell(y)}dy</m>
-</sidebyside>
-</subsection>
-
-
-<subsection>
-<title>Taylor Series Expansion for <m>f(x)</m>:</title>
-<p>
-<m>\displaystyle p_n(x) = f(c) + f\,'(c)(x-c) + \frac{f\,''(c)}{2!}(x-c)^2 + \frac{f\,'''(c)}{3!}(x-c)^3 + ... + \frac{f\,^{(n)}(c)}{n!}(x-c)^n</m>
-</p>
-</subsection>
-
-
-<subsection>
-<title>Maclaurin Series Expansion for <m>f(x)</m>, where <m>c=0</m>:</title>
-<p>
-<m>\displaystyle p_n(x) = f(0) + f\,'(0)x + \frac{f\,''(0)}{2!}x^2 + \frac{f\,'''(0)}{3!}x^3 + ... + \frac{f\,^{(n)}(0)}{n!}x^n</m>
-</p>
-</subsection>
-
-
-<subsection>
-<title>Summary of Tests for Series:</title>
-<tabular>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Test</cell><cell>Series</cell><cell>\rule[-15pt]{0pt}{33pt}\text{ Condition(s) of Convergence}</cell><cell>\text{ Condition(s) of Divergence}</cell><cell>Comment</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell><m>n</m>th-Term</cell><cell>\rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=1}{a_n}}</m></cell><cell></cell><cell><m>\displaystyle{\lim_{n \to \infty} a_n \neq 0}</m></cell><cell>\text{This test cannot be used to show convergence.}</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Geometric Series</cell><cell>\rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=0}{r^n}}</m></cell><cell><m>\left| r \right| \lt  1</m></cell><cell><m>\left| r \right| \geq 1</m></cell><cell><m>\displaystyle{\text{Sum}  = \frac{1}{1-r}}</m></cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Telescoping Series</cell><cell>\rule[-15pt]{0pt}{33pt} <m>\displaystyle{\sum^\infty_{n=1}{(b_n-b_{n+a})}}</m></cell><cell><m>\displaystyle{\lim_{n \to \infty} b_n = L}</m></cell><cell></cell><cell><m>\displaystyle\text{Sum} = \left(\sum^a_{n=1}b_n\right) -L</m></cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell><m>p</m>-Series</cell><cell>\rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=1}{\frac{1}{(an+b)^p}}}</m></cell><cell><m>p>1</m></cell><cell><m>p\leq 1</m></cell><cell></cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Integral Test</cell><cell>\rule[-20pt]{0pt}{40pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m></cell><cell>\rule[-15pt]{0pt}{40pt}\text{<m>\displaystyle \int_1^\infty a(n)\ dn</m></cell></row>
-<row><cell>is convergent}</cell><cell>\text{<m>\displaystyle \int_1^\infty a(n)\ dn</m></cell></row>
-<row><cell>is divergent}</cell><cell>\text{<m>a_n = a(n)</m> must be continuous}</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Direct Comparison</cell><cell>\rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m></cell><cell>\text{<m>\displaystyle \sum_{n=0}^\infty b_n</m></cell></row>
-<row><cell>converges and</cell></row>
-<row><cell><m>0\leq a_n\leq b_n</m>}</cell><cell>\text{<m>\displaystyle \sum_{n=0}^\infty b_n</m></cell></row>
-<row><cell>diverges and</cell></row>
-<row><cell><m>0\leq b_n\leq a_n</m>}</cell><cell></cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Limit Comparison</cell><cell>\rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m></cell><cell>\text{<m>\displaystyle \sum_{n=0}^\infty b_n</m></cell></row>
-<row><cell>converges and</cell></row>
-<row><cell><m>\displaystyle \lim_{n\to\infty} a_n/b_n  \geq 0</m>}</cell><cell>\text{<m>\displaystyle \sum_{n=0}^\infty b_n</m></cell></row>
-<row><cell>diverges and</cell></row>
-<row><cell><m>\displaystyle \lim_{n\to\infty} a_n/b_n > 0</m>}</cell><cell>\text{ Also diverges if</cell></row>
-<row><cell><m>\displaystyle \lim_{n\to\infty} a_n/b_n=\infty</m>}</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Ratio Test</cell><cell>\rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m></cell><cell>\text{<m>\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n}  \lt  1</m>}</cell><cell>\text{<m>\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n} > 1</m>}</cell><cell>\text{ <m>\{a_n\}</m> must be positive</cell></row>
-<row><cell>Also diverges if</cell></row>
-<row><cell><m>\displaystyle \lim_{n\to\infty} a_{n+1}/a_n=\infty</m>}</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Root Test</cell><cell>\rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m></cell><cell>\text{<m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n}  \lt  1</m>}</cell><cell>\text{<m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n} > 1</m>}</cell><cell>\text{ <m>\{a_n\}</m> must be positive</cell></row>
-<row><cell>Also diverges if</cell></row>
-<row><cell><m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n}=\infty</m>}</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
-</tabular>
-</subsection>
-
-</section>
+</exercises></section>

@@ -4,7 +4,7 @@
 
 <introduction>
 <p>
-We are very familiar with <b>real valued functions</b>, that is, functions whose output is a real number. This section introduces <b>vector<ndash />valued functions</b> <ndash /> functions whose output is a vector.
+We are very familiar with <em>real valued functions</em>, that is, functions whose output is a real number. This section introduces <em>vector<ndash />valued functions</em> <mdash /> functions whose output is a vector.
 </p>
 <definition xml:id="def_vvf">
 <title>Vector<ndash />Valued Functions</title>
@@ -12,7 +12,7 @@ We are very familiar with <b>real valued functions</b>, that is, functions whose
 <p>
 A <term>vector<ndash />valued function</term> is a function of the form
 <me>
-  \vec r(t) = \la\, f(t),g(t)\,\ra \quad \text{or} \quad \vec r(t) = \la \,f(t),g(t),h(t)\,\ra,
+  \vec r(t) = \la\, f(t),g(t)\,\ra  \\text{ or }  \vec r(t) = \la \,f(t),g(t),h(t)\,\ra,
 </me>
 where <m>f</m>, <m>g</m> and <m>h</m> are real valued functions.
 </p>
@@ -24,25 +24,95 @@ The <term>domain</term> of <m>\vec r</m> is the set of all values of <m>t</m> fo
 </statement>
 </definition>
 <p>
-<b>Evaluating and Graphing Vector<ndash />Valued Functions</b>
+<em>Evaluating and Graphing Vector<ndash />Valued Functions</em>
 </p>
 
 <p>
-Evaluating a vector<ndash />valued function at a specific value of <m>t</m> is straightforward; simply evaluate each component function at that value of <m>t</m>. For instance, if <m>\vec r(t) = \la t^2,t^2+t-1\ra</m>, then <m>\vec r(-2) = \la 4,1\ra</m>. We can sketch this vector, as is done in <xref ref="fig_vvfintro1">Figure</xref>(a). Plotting lots of vectors is cumbersome, though, so generally we do not sketch the whole vector but just the terminal point. The <b>graph</b> of a vector<ndash />valued function is the set of all terminal points of <m>\vec r(t)</m>, where the initial point of each vector is always the origin. In <xref ref="fig_vvfintro1">Figure</xref>(b) we sketch the graph of <m>\vec r</m> ; we can indicate individual points on the graph with their respective vector, as shown.
+Evaluating a vector<ndash />valued function at a specific value of <m>t</m> is straightforward; simply evaluate each component function at that value of <m>t</m>. For instance, if <m>\vec r(t) = \la t^2,t^2+t-1\ra</m>, then <m>\vec r(-2) = \la 4,1\ra</m>. We can sketch this vector, as is done in <xref ref="fig_vvfintro1">Figure</xref>(a). Plotting lots of vectors is cumbersome, though, so generally we do not sketch the whole vector but just the terminal point. The <em>graph</em> of a vector<ndash />valued function is the set of all terminal points of <m>\vec r(t)</m>, where the initial point of each vector is always the origin. In <xref ref="fig_vvfintro1">Figure</xref>(b) we sketch the graph of <m>\vec r</m> ; we can indicate individual points on the graph with their respective vector, as shown.
 <index><main>vector<ndash />valued function</main><sub>graphing</sub></index>
 </p>
 <figure xml:id="fig_vvfintro1" >
 <caption>Sketching the graph of a vector<ndash />valued function.</caption>
-<tabular>
-<row><cell><image width="73%" source="images/figvvfintro1a.png" /></cell></row>
-<row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figvvfintro1.png" /></cell></row>
-<row><cell>(b)</cell></row>
-</tabular>
+<sidebyside><figure>
+<caption>(a)</caption>
+
+<!-- START figures/fig_vvfintro1a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-3.5,ymax=3.5,%
+			xmin=-.5,xmax=5.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+%\addplot [thick,{\colorone}, smooth,domain=-2.5:2.5] ({x^2},{x^2+x-1});
+
+%\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+
+\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node [black][pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_vvfintro1a.tex END -->
+
+</figure>
+<figure>
+<caption>(b)</caption>
+
+<!-- START figures/fig_vvfintro1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-3.5,ymax=3.5,%
+			xmin=-.5,xmax=5.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2.5:2.5] ({x^2},{x^2+x-1});
+
+\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+
+\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node[black] [pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_vvfintro1.tex END -->
+
+</figure></sidebyside>
+
 </figure>
 <p>
 Vector<ndash />valued functions are closely related to parametric equations of graphs. While in both methods we plot points <m>\big(x(t), y(t)\big)</m> or <m>\big(x(t),y(t),z(t)\big)</m> to produce a graph, in the context of vector<ndash />valued functions each such point represents a vector. The implications of this will be more fully realized in the next section as we apply calculus ideas to these functions.
 </p>
+
 <example xml:id="ex_vvf1">
 <title>Graphing vector<ndash />valued functions</title>
 <statement>
@@ -54,7 +124,7 @@ Graph <m>\ds \vec r(t) = \la t^3-t, \frac{1}{t^2+1}\ra</m>, for <m>-2\leq t\leq 
 <p>
 We start by making a table of <m>t</m>, <m>x</m> and <m>y</m> values as shown in <xref ref="fig_vvf1">Figure</xref>(a). Plotting these points gives an indication of what the graph looks like. In <xref ref="fig_vvf1">Figure</xref>(b), we indicate these points and sketch the full graph. We also highlight <m>\vec r(-1)</m> and <m>\vec r(2)</m> on the graph.
 </p>
-<figure xml:id="fig_vvf1" >
+<table xml:id="fig_vvf1" >
 <caption>Sketching the vector<ndash />valued function of <xref ref="ex_vvf1">Example</xref>.</caption>
 <tabular>
 <row><cell>
@@ -69,10 +139,49 @@ We start by making a table of <m>t</m>, <m>x</m> and <m>y</m> values as shown in
 </tabular>
 </cell></row>
 <row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figvvf1.png" /></cell></row>
+<row><cell>
+<!-- START figures/fig_vvf1.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=1.1,%
+			xmin=-7,xmax=7%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2:2] ({x^3-x},{1/(x^2+1)});
+
+
+\filldraw [black] (axis cs: -6,.2) circle (1.5pt);
+\filldraw [black] (axis cs: 6,.2) circle (1.5pt);
+\filldraw [black] (axis cs: 0,.5) circle (1.5pt);
+\filldraw [black] (axis cs: 0.,1) circle (1.5pt);
+
+
+\draw [->,thick,{\colortwo}] (axis cs:0,0)--(axis cs: 0,.5) node [,black,pos=.4,rotate=90,above] {\scriptsize $\vec r(-1)$};
+\draw [->,thick,{\colortwo}] (axis cs:0,0)--(axis cs: 6,.2) node [black,pos=.4,above] {\scriptsize $\vec r(2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_vvf1.tex END -->
+</cell></row>
 <row><cell>(b)</cell></row>
 </tabular>
-</figure>
+</table>
 </solution>
 </example>
 
@@ -89,14 +198,92 @@ We can again plot points, but careful consideration of this function is very rev
 </p>
 <figure xml:id="fig_vvf2" >
 <caption>The graph of <m>\vec r(t)</m> in <xref ref="ex_vvf2">Example</xref>.</caption>
-\includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+<!-- 
+ \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=1.5110919487882861,
 3Dortho=0.0044999998062849045,
 3Dc2c=0.6482614874839783 0.682218074798584 0.338135302066803,
 3Dcoo=1.5296688079833984 -8.776086807250977 69.70178985595703,
 3Droo=399.99999354879714,
-3Dlights=Headlamp,add3Djscript=asylabels.js]
-<image width="125%" source="images/figvvf2.png" />
+3Dlights=Headlamp,add3Djscript=asylabels.js] 
+ -->
+
+
+<!-- START figures/figvvf2_3D.asy -->
+<image><asymptote><![CDATA[
+import graph3;
+
+//ASY file for figvvf23D.asy in Chapter 11
+
+size(200,200,IgnoreAspect);
+//currentprojection=perspective(7,2,1);
+currentprojection=orthographic(4.5,4.5,20);
+defaultrender.merge=true;
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+
+// setup and draw the axes
+real[] myxchoice={-1,1};
+real[] myychoice={-1,1};
+real[] myzchoice={5,10};
+defaultpen(0.5mm);
+pair xbounds=(-1.5,1.5);
+pair ybounds=(-1.5,1.5);
+pair zbounds=(-0.5,15);
+
+xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+//Draw the helix <cos t,sin t,t> for t from 0 to 4pi
+triple g(real t) {return (cos(t),sin(t),t);}
+path3 mypath=graph(g,0,4*pi,operator ..); draw(mypath,blue);
+
+//Draw the vector for r(7pi/4)
+draw((0,0,0)--(0.707,-0.707,5.498),red+linewidth(2),Arrow3(size=3mm));
+label("$\vec{r}(7 \pi/4)$",(0.707,-0.707,5.498),W);
+
+
+
+
+
+// ////////////////////////////////////
+//    SAMPLE CODE
+
+// defaultpen(fontsize(10pt));
+
+//Draw the parabola z=y^2 for t from -2 to 2
+//triple g(real t) {return (0,t,t^2);}
+//path3 mypath=graph(g,-2,2,operator ..); draw(mypath,blue);
+
+//real f(pair z) {return -z.x^4+2*z.x^2-z.y^4+2*z.y^2;}
+//surface s=surface(f,(-1.5,-1.5),(1.5,1.5),Spline);
+
+//triple f(pair t) {
+//  return (cos(t.x)*1.5*cos(t.y),sin(t.x)*cos(t.y),sin(t.y));
+//}
+//surface s=surface(f,(0,0),(pi,2*pi),8,8,Spline);
+
+//triple g(real t) {return (t,t,-2*t^4+4*t^2);}
+//path3 mypath=graph(g,-2,2,operator ..);
+
+//pen p=rgb(0,0,1);
+//draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
+
+//draw(s,paleblue);
+//draw(s,lightblue,meshpen=black+thick(),nolight,render(merge=true));
+//draw(mypath,2bp+blue);
+]]></asymptote></image><!-- figures/figvvf2_3D.asy END -->
+
 </figure>
 </solution>
 </example>
@@ -113,8 +300,8 @@ Let <m>\vec r_1(t)=\la f_1(t),g_1(t)\ra</m> and <m>\vec r_2(t)=\la f_2(t),g_2(t)
 </p>
 
 <ol>
-<li><m>\vec r_1(t) \pm \vec r_2(t) = \la\, f_1(t)\pm f_2(t),g_1(t)\pm g_2(t)\,\ra</m>.</li>
-<li><m>c\vec r_1(t) = \la\, cf_1(t),cg_1(t)\,\ra</m>.</li>
+<li><p><m>\vec r_1(t) \pm \vec r_2(t) = \la\, f_1(t)\pm f_2(t),g_1(t)\pm g_2(t)\,\ra</m>.</p></li>
+<li><p><m>c\vec r_1(t) = \la\, cf_1(t),cg_1(t)\,\ra</m>.</p></li>
 </ol>
 
 <p>
@@ -126,6 +313,7 @@ A similar definition holds for vector<ndash />valued functions in <m>\mathbb{R}^
 <p>
 This definition states that we add, subtract and scale vector-valued functions component<ndash />wise. Combining vector<ndash />valued functions in this way can be very useful (as well as create interesting graphs).
 </p>
+
 <example xml:id="ex_vvf3">
 <title>Adding and scaling vector<ndash />valued functions.</title>
 <statement>
@@ -151,14 +339,113 @@ Adding <m>\vec r_1(t)</m> to <m>\vec r_2(t)</m> produces <m>\vec r(t) = \la\,\co
 </p>
 <figure xml:id="fig_vvf3" >
 <caption>Graphing the functions in <xref ref="ex_vvf3">Example</xref>.</caption>
-<tabular>
-<row><cell><image width="73%" source="images/figvvf3.png" /></cell></row>
-<row><cell>(a)</cell></row>
-<row><cell><image width="73%" source="images/figvvf3a.png" /></cell></row>
-<row><cell>(b)</cell></row>
-<row><cell><image width="73%" source="images/figvvf3b.png" /></cell></row>
-<row><cell>(c)</cell></row>
-</tabular>
+<sidebyside><figure>
+<caption>(a)</caption>
+
+<!-- START figures/fig_vvf3.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.9,xmax=4.9%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-10:10] ({.2*x},{.3*x});
+\addplot [thick,{\colorone}, smooth,domain=0:360] ({cos(x)},{sin(x)});
+%\addplot [thick,{\colorone}, smooth,domain=-10:10,samples=40] ({.2*x+cos(deg(x))},{.3*x+sin(deg(x))});
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_vvf3.tex END -->
+
+</figure>
+<figure>
+<caption>(b)</caption>
+
+<!-- START figures/fig_vvf3a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-20,-10,10,20},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.9,xmax=4.9%
+]
+
+
+%\addplot [thick,{\colorone}, smooth,domain=-10:10] ({.2*x},{.3*x});
+%\addplot [thick,{\colorone}, smooth,domain=0:360] ({cos(x)},{sin(x)});
+\addplot [thick,{\colorone}, smooth,domain=-10:10,samples=60] ({.2*x+cos(deg(x))},{.3*x+sin(deg(x))});
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_vvf3a.tex END -->
+
+</figure>
+<figure>
+<caption>(c)</caption>
+
+<!-- START figures/fig_vvf3b.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-20,-10,10,20},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-20.5,ymax=20.5,%
+			xmin=-24.5,xmax=24.5%
+]
+
+
+%\addplot [thick,{\colorone}, smooth,domain=-10:10] ({.2*x},{.3*x});
+%\addplot [thick,{\colorone}, smooth,domain=0:360] ({cos(x)},{sin(x)});
+\addplot [thick,{\colorone}, smooth,domain=-10:10,samples=60] ({.2*x+cos(deg(x))},{.3*x+sin(deg(x))});
+\addplot [thick,{\colorone}, smooth,domain=-10:10,samples=60] ({x+5*cos(deg(x))},{1.5*x+5*sin(deg(x))});
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_vvf3b.tex END -->
+
+</figure></sidebyside>
+
 </figure>
 <p>
 Multiplying <m>\vec r(t)</m> by 5 scales the function by 5, producing <m>5\vec r(t) =  \langle 5\cos t+1,5\sin t+1.5\rangle</m>, which is graphed in <xref ref="fig_vvf3">Figure</xref>(c) along with <m>\vec r(t)</m>. The new function is <q>5 times bigger</q> than <m>\vec r(t)</m>. Note how the graph of <m>5\vec r(t)</m> in (c) looks identical to the graph of <m>\vec r(t)</m> in <m>(b)</m>. This is due to the fact that the <m>x</m> and <m>y</m> bounds of the plot in <m>(c)</m> are exactly 5 times larger than the bounds in (b).
@@ -170,10 +457,54 @@ Multiplying <m>\vec r(t)</m> by 5 scales the function by 5, producing <m>5\vec r
 <title>Adding and scaling vector<ndash />valued functions.</title>
 <statement>
 <p>
-A <b>cycloid</b> is a graph traced by a point <m>p</m> on a rolling circle, as shown in <xref ref="fig_vvf4">Figure</xref>. Find an equation describing the cycloid, where the circle has radius 1.
+A <em>cycloid</em> is a graph traced by a point <m>p</m> on a rolling circle, as shown in <xref ref="fig_vvf4">Figure</xref>. Find an equation describing the cycloid, where the circle has radius 1.
 <index><main>cycloid</main></index>
 </p>
-<image width="73%" source="images/figvvf4.png" />
+
+<p>
+
+<!-- START figures/fig_vvf4.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth,scale=.5]
+%\begin{axis}[width=\marginparwidth+25pt,%
+%tick label style={font=\scriptsize},axis y line=none,axis x line=none,name=myplot,%
+			%%x=.37\marginparwidth,
+			%%y=.37\marginparwidth,
+			%%xtick={-6,-4,-2,2,4,6},
+			%%minor x tick num=4,% 
+%%			extra x ticks={.33},
+%%			extra x tick labels={$1/3$},
+			%%ytick={-3,-2,-1,1,2,3},
+			%%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			%ymin=-4.1,ymax=4.1,%
+			%xmin=-4.9,xmax=4.9%
+%]
+%
+%
+%\addplot [thick,{\colorone}, smooth,domain=0:360] ({cos(x)},{sin(x)});
+%
+%
+%
+%\end{axis}
+
+
+
+
+\draw [thick] (0,1) circle (1);
+\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+
+\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+\draw [thick] (-1,0) -- (15,0);
+%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+\draw [thick,white] (0,2.5) -- (1,2.5);
+%\node [right] at (myplot.right of origin) {\scriptsize $x$};
+%\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_vvf4.tex END -->
+
+\captionof{figure}{Tracing a cycloid.}
+</p>
 </statement>
 <solution>
 <p>
@@ -200,7 +531,47 @@ We now combine <m>\vec p</m> and <m>\vec c</m> together to form the equation of 
 <title>Displacement</title>
 <figure xml:id="fig_vvfa" >
 <caption>The cycloid in <xref ref="ex_vvf4">Example</xref>.</caption>
-<image width="73%" source="images/figvvf4a.png" />
+
+<!-- START figures/fig_vvf4a.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=14,%
+			xmin=-.5,xmax=16%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-1:16,samples=60] ({cos(deg(x))+x},{-sin(deg(x))+1});
+
+
+
+\end{axis}
+
+
+
+%
+%\draw [thick] (0,1) circle (1);
+%\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+%
+%\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+%\draw [thick] (-1,0) -- (15,0);
+%%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+%\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+%\draw [thick,white] (0,2.5) -- (1,2.5);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_vvf4a.tex END -->
+
 </figure>
 <p>
 A vector<ndash />valued function <m>\vec r(t)</m> is often used to describe the position of a moving object at time <m>t</m>. At <m>t=t_0</m>, the object is at <m>\vec r(t_0)</m>; at <m>t=t_1</m>, the object is at <m>\vec r(t_1)</m>. Knowing the locations <m>\vec r(t_0)</m> and <m>\vec r(t_1)</m> give no indication of the path taken between them, but often we only care about the difference of the locations, <m>\vec r(t_1)-\vec r(t_0)</m>, the <em>displacement</em>.<index><main>displacement</main></index><index><main>vector<ndash />valued function</main><sub>displacement</sub></index>
@@ -219,6 +590,7 @@ Let <m>\vec r(t)</m> be a vector<ndash />valued function and let <m>t_0\lt t_1</
 <p>
 When the displacement vector is drawn with initial point at <m>\vec r(t_0)</m>, its terminal point is <m>\vec r(t_1)</m>. We think of it as the vector which points from a starting position to an ending position.
 </p>
+
 <example xml:id="ex_vvf5">
 <title>Finding and graphing displacement vectors</title>
 <statement>
@@ -232,15 +604,58 @@ The function <m>\vec r(t)</m> traces out the unit circle, though at a different 
 </p>
 <figure xml:id="fig_vvf5" >
 <caption>Graphing the displacement of a position function in <xref ref="ex_vvf5">Example</xref>.</caption>
-<image width="73%" source="images/figvvf5.png" />
+
+<!-- START figures/fig_vvf5.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-6,-4,-2,2,4,6},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-1,1},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.32,xmax=1.32%
+]
+
+
+\addplot [thick,{\colorone}, smooth,domain=-90:90,samples=20] ({cos(x)},{sin(x)});
+
+\draw [thick,->,{\colortwo}] (axis cs: 0,-1) -- (axis cs:0,1) node [left,pos=.7,black]{\scriptsize $\vec d$};
+
+
+
+\end{axis}
+
+
+
+%
+%\draw [thick] (0,1) circle (1);
+%\filldraw (1,1) circle (2pt) node [right] {\scriptsize $p$};
+%
+%\draw [{\colorone},thick,domain=-1:14,smooth,samples=60] plot ({cos(\x r)+\x},{-sin(\x r)+1});
+%\draw [thick] (-1,0) -- (15,0);
+%%\draw [thick,->] (-.75,2.5) -- (.75,2.5);
+%\draw [thick,->] (-1.3,1) arc (180:90:1.3);
+%\draw [thick,white] (0,2.5) -- (1,2.5);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_vvf5.tex END -->
+
 </figure>
 <p>
 A graph of <m>\vec r(t)</m> on <m>[-1,1]</m> is given in <xref ref="fig_vvf5">Figure</xref>, along with the displacement vector <m>\vec d</m> on this interval.
 </p>
 </solution>
 </example>
+
 <p>
-Measuring displacement makes us contemplate related, yet very different, concepts. Considering the semi<ndash />circular path the object in <xref ref="ex_vvf5">Example</xref> took, we can quickly verify that the object ended up a distance of 2 units from its initial location. That is, we can compute <m>\vnorm{d} = 2</m>. However, measuring <em>distance from the starting point</em> is different from measuring <em>distance traveled</em>. Being a semi<ndash />circle, we can measure the distance traveled by this object as <m>\pi\approx 3.14</m> units. Knowing <em>distance from the starting point</em> allows us to compute <b>average rate of change.</b>
+Measuring displacement makes us contemplate related, yet very different, concepts. Considering the semi<ndash />circular path the object in <xref ref="ex_vvf5">Example</xref> took, we can quickly verify that the object ended up a distance of 2 units from its initial location. That is, we can compute <m>\vnorm{d} = 2</m>. However, measuring <em>distance from the starting point</em> is different from measuring <em>distance traveled</em>. Being a semi<ndash />circle, we can measure the distance traveled by this object as <m>\pi\approx 3.14</m> units. Knowing <em>distance from the starting point</em> allows us to compute <em>average rate of change.</em>
 </p>
 <definition xml:id="def_av_rate_of_change_vect">
 <title>Average Rate of Change</title>
@@ -249,7 +664,7 @@ Measuring displacement makes us contemplate related, yet very different, concept
 Let <m>\vec r(t)</m> be a vector<ndash />valued function, where each of its component functions is continuous on its domain, and let <m>t_0\lt t_1</m>. The <term>average rate of change</term> of <m>\vec r(t)</m> on <m>[t_0,t_1]</m> is
 <index><main>average rate of change</main></index><index><main>vector<ndash />valued function</main><sub>average rate of change</sub></index>
 <me>
-  \text{average rate of change}  = \frac{\vec r(t_1) - \vec r(t_0)}{t_1-t_0}.
+  \\text{ average rate of change }  = \frac{\vec r(t_1) - \vec r(t_0)}{t_1-t_0}.
 </me>
 </p>
 </statement>
@@ -286,18 +701,21 @@ As it took <q>3 times as long</q> to arrive at the same place, this average rate
 </p>
 </solution>
 </example>
+
 <p>
 We considered average rates of change in <xref ref="sec_limit_intro">Sections</xref> and <xref ref="sec_derivative"></xref> as we studied limits and derivatives. The same is true here; in the following section we apply calculus concepts to vector<ndash />valued functions as we find limits, derivatives, and integrals. Understanding the average rate of change will give us an understanding of the derivative; displacement gives us one application of integration.
 </p>
 </subsection>
 
 
-<subsection>
+<exercises>
+
+<exercisegroup>
 <title>Terms and Concepts</title>
 <exercise>
 <statement>
 <p>
-Vector<ndash />valued functions are closely related to <u></u><nbsp /><u></u> of graphs.
+Vector<ndash />valued functions are closely related to <fillin /><nbsp /><fillin /> of graphs.
 </p>
 </statement>
 <answer>
@@ -310,7 +728,7 @@ parametric equations
 <exercise>
 <statement>
 <p>
-When sketching vector<ndash />valued functions, technically one isn't graphing points, but rather <u></u>.
+When sketching vector<ndash />valued functions, technically one isn't graphing points, but rather <fillin />.
 </p>
 </statement>
 <answer>
@@ -323,7 +741,7 @@ vectors
 <exercise>
 <statement>
 <p>
-It can be useful to think of <u></u> as a vector that points from a starting position to an ending position.
+It can be useful to think of <fillin /> as a vector that points from a starting position to an ending position.
 </p>
 </statement>
 <answer>
@@ -332,10 +750,10 @@ displacement
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
+<exercisegroup>
 
-<subsection>
 <title>Problems</title>
 <p>
 In the following exercises, sketch the vector<ndash />valued function on the given interval.
@@ -347,9 +765,38 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_03.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_03.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-1,1,2,3,4},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.5,ymax=4.5,%
+			xmin=-.5,xmax=4.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2:2] ({x^2},{x^2-1});
+
+%\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+%
+%\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node[black] [pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_03.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -360,9 +807,39 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_04.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_04.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1,2,3,4},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-8.9,ymax=8.9,%
+			xmin=-.5,xmax=4.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2:2] ({x^2},{x^3});
+\draw [->,thick,{\colorone}] (axis cs: 1,-1) -- (axis cs:0.98,-.97);
+\draw [->,thick,{\colorone}] (axis cs: 0.98,.97) -- (axis cs: 1,1);
+%\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+%
+%\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node[black] [pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_04.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -373,9 +850,40 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_05.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_05.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={1,2,3,4},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1,2,3,4},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=10.5,%
+			xmin=-5.5,xmax=5.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-2:-.1] ({1/x},{1/x^2});
+\addplot [thick,{\colorone}, smooth,domain=.1:2] ({1/x},{1/x^2});
+\draw [->,thick,{\colorone}] (axis cs: -1,1) -- (axis cs:-1.01,1.02);
+\draw [->,thick,{\colorone}] (axis cs: 1.01,1.02) -- (axis cs: 1,1);
+%\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+%
+%\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node[black] [pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_05.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -386,9 +894,40 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_06.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_06.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={1,2,3,4},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1,2,3,4},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.5,xmax=4.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-6.28:6.28,samples=40] ({.1*x^2},{sin(deg(x))});
+%\addplot [thick,{\colorone}, smooth,domain=.1:2] ({1/x},{1/x^2});
+\draw [->,thick,{\colorone}] (axis cs: 0.1, -0.841471) -- (axis cs:0.09801, -0.836026);
+%\draw [->,thick,{\colorone}] (axis cs: 1.01,1.02) -- (axis cs: 1,1);
+%\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+%
+%\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node[black] [pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_06.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -399,9 +938,40 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_07.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_07.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.5,ymax=2.5,%
+			xmin=-3.5,xmax=3.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=0:6.28,samples=40] ({3*cos(deg(x))},{2*sin(deg(x))});
+%\addplot [thick,{\colorone}, smooth,domain=.1:2] ({1/x},{1/x^2});
+\draw [->,thick,{\colorone}] (axis cs: 1.62091, -1.68294) -- (axis cs:1.64607, -1.67205);
+%\draw [->,thick,{\colorone}] (axis cs: 1.01,1.02) -- (axis cs: 1,1);
+%\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+%
+%\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node[black] [pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_07.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -412,9 +982,40 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_08.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_08.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.5,ymax=2.5,%
+			xmin=-3.5,xmax=3.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=0:2,samples=40] ({3*sin(deg(3.14159*x))},{2*cos(deg(3.14159*x))});
+%\addplot [thick,{\colorone}, smooth,domain=.1:2] ({1/x},{1/x^2});
+\draw [->,thick,{\colorone}] (axis cs:1.64607, -1.67205)--(axis cs: 1.62091, -1.68294);
+%\draw [->,thick,{\colorone}] (axis cs: 1.01,1.02) -- (axis cs: 1,1);
+%\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+%
+%\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node[black] [pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_08.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -425,9 +1026,40 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_09.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_09.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.5,ymax=2.5,%
+			xmin=-3.5,xmax=3.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=0:6.28,samples=40] ({3*cos(deg(x))},{2*sin(deg(2*x))});
+%\addplot [thick,{\colorone}, smooth,domain=.1:2] ({1/x},{1/x^2});
+\draw [->,thick,{\colorone}] (axis cs:1.62091, -1.81859)--(axis cs: 1.64607, -1.83488);
+%\draw [->,thick,{\colorone}] (axis cs: 1.01,1.02) -- (axis cs: 1,1);
+%\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+%
+%\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node[black] [pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_09.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -438,9 +1070,41 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_10.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_10.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-3,-2,-1,1,2,3},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,-2,1,2},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-5.5,ymax=5.5,%
+			xmin=-11,xmax=11%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-1.4708:1.4708,samples=40] ({2*sec(deg(x))},{tan(deg(x))});
+\addplot [thick,{\colorone}, smooth,domain=1.6708:4.61239,samples=40] ({2*sec(deg(x))},{tan(deg(x))});
+%\addplot [thick,{\colorone}, smooth,domain=.1:2] ({1/x},{1/x^2});
+\draw [->,thick,{\colorone}] (axis cs:2.27899, 0.546302)--(axis cs: 2.29162, 0.559359);
+\draw [->,thick,{\colorone}] (axis cs: -2.02022, -0.1425477) -- (axis cs: -2.01744, -0.132358);
+%\draw [->,thick,] (axis cs:1,-1)--(axis cs: 0.9025,-1.0475);
+%
+%\draw [->,thick,{\colortwo}] (axis cs: 0,0) -- (axis cs:4,1) node[black] [pos=.5,above] {\scriptsize $\vec r(-2)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_10.tex END --></sidebyside>
 </answer>
 </exercise>
 <p>
@@ -453,9 +1117,71 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_11.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_11.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={145}{25},
+			name=myplot,
+			xtick={1},
+			%xlabel=$x$,ylabel=$y$,zlabel=$z$,
+			%ytick=\empty,
+			%ztick=\empty,
+			ymin=-.1,ymax=6.5,
+			xmin=-2.1,xmax=2.1,
+			zmin=-2.1, zmax=2.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:6.28,samples y=0,{\colorone},smooth,thick] ({2*cos(deg(x))},{x},{2*sin(deg(x))});
+
+%\addplot3 [no markers] coordinates {(0,0,0) (1,1,0)(0,2,0)(-1,1,0)(0,0,0)};
+
+%\addplot3 [no markers] coordinates {(0,1,1) (1,2,1)(0,3,1)(-1,2,1)(0,1,1)};
+
+%\filldraw [draw={\colorone},fill={\coloronefill},thick] (axis cs:0,1,1)--(axis cs:1,2,1)--(axis cs:0,3,1)--(axis cs:-1,2,1)--(axis cs:0,1,1);
+
+%\filldraw [draw={\colorone},fill={\coloronefill},thick] (axis cs:0,1,1)--(axis cs:0,0,0)--(axis cs:1,1,0)--(axis cs:0,2,0)-- (axis cs:0,3,1) -- (axis cs:-1,2,1)--(axis cs:0,1,1);%--(axis cs:0,1,1);
+
+%\draw [thick,{\colorone}] (axis cs: 0,1,1) -- (axis cs:1,2,1) -- (axis cs:0,3,1)  (axis cs:1,2,1) -- (axis cs:1,1,0);
+
+%\draw[thick,{\colorone},dashed] (axis cs:0,0,0) -- (axis cs:-1,1,0) -- (axis cs:0,2,0)  (axis cs:-1,1,0) -- (axis cs:-1,2,1);
+
+%\draw [very thick,black,->] (axis cs:0,0,0) -- (axis cs:1,1,0) node [left] {\scriptsize $\vec u$};
+%\draw [very thick,black,->,dashed](axis cs:0,0,0) -- (axis cs:-1,1,0) node [above,pos=.7] {\scriptsize $\vec v$};
+%\draw [very thick,black,->](axis cs:0,0,0) -- (axis cs:0,1,1) node [left,pos=.8] {\scriptsize $\vec w$};
+
+
+%\addplot3[domain=-.1:1,y domain=-.1:1,surf,faceted color=black!20,samples=10,black!10] {-.1*x+y+1};
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .7,.1,1.03) node [ left] {\scriptsize $\vec u$};
+%
+%\filldraw[black] (axis cs: .1,.1,1.09) circle (1pt);
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .1,.8,1.79) node [right] {\scriptsize $\vec v$};
+%
+
+%
+%\draw (axis cs: .5,.4,1.36) node  {\scriptsize $\theta$};
+
+%\draw (axis cs: 0,0,\pgfkeysvalueof{/pgfplots/zmax}) node [shift={(0,0,20pt)}]{\scriptsize $z$};
+
+%\draw (axis cs: 0,\pgfkeysvalueof{/pgfplots/ymax},0) node [shift={(0,2pt,0)}]{\scriptsize $y$};
+
+%\draw (axis cs: \pgfkeysvalueof{/pgfplots/xmax},0,0) node [shift={(6pt,0,0)}]{\scriptsize $x$};
+
+\end{axis}
+%\node [right] at (myplot.right of origin)[shift={(-20pt,-8pt)}] {\scriptsize $y$};
+%\node [above] at (myplot.above origin) [shift={(0,-5pt)}] {\scriptsize $z$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_11.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -466,9 +1192,71 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_12.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_12.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={145}{25},
+			name=myplot,
+			%xtick={1},
+			%xlabel=$x$,ylabel=$y$,zlabel=$z$,
+			%ytick=\empty,
+			%ztick=\empty,
+			ymin=-1.1,ymax=1.1,
+			xmin=-3.5,xmax=3.5,
+			zmin=-0.1, zmax=2.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:6.28,samples y=0,{\colorone},smooth,thick] ({3*cos(deg(x))},{sin(deg(x))},{x/3.14159});
+
+%\addplot3 [no markers] coordinates {(0,0,0) (1,1,0)(0,2,0)(-1,1,0)(0,0,0)};
+
+%\addplot3 [no markers] coordinates {(0,1,1) (1,2,1)(0,3,1)(-1,2,1)(0,1,1)};
+
+%\filldraw [draw={\colorone},fill={\coloronefill},thick] (axis cs:0,1,1)--(axis cs:1,2,1)--(axis cs:0,3,1)--(axis cs:-1,2,1)--(axis cs:0,1,1);
+
+%\filldraw [draw={\colorone},fill={\coloronefill},thick] (axis cs:0,1,1)--(axis cs:0,0,0)--(axis cs:1,1,0)--(axis cs:0,2,0)-- (axis cs:0,3,1) -- (axis cs:-1,2,1)--(axis cs:0,1,1);%--(axis cs:0,1,1);
+
+%\draw [thick,{\colorone}] (axis cs: 0,1,1) -- (axis cs:1,2,1) -- (axis cs:0,3,1)  (axis cs:1,2,1) -- (axis cs:1,1,0);
+
+%\draw[thick,{\colorone},dashed] (axis cs:0,0,0) -- (axis cs:-1,1,0) -- (axis cs:0,2,0)  (axis cs:-1,1,0) -- (axis cs:-1,2,1);
+
+%\draw [very thick,black,->] (axis cs:0,0,0) -- (axis cs:1,1,0) node [left] {\scriptsize $\vec u$};
+%\draw [very thick,black,->,dashed](axis cs:0,0,0) -- (axis cs:-1,1,0) node [above,pos=.7] {\scriptsize $\vec v$};
+%\draw [very thick,black,->](axis cs:0,0,0) -- (axis cs:0,1,1) node [left,pos=.8] {\scriptsize $\vec w$};
+
+
+%\addplot3[domain=-.1:1,y domain=-.1:1,surf,faceted color=black!20,samples=10,black!10] {-.1*x+y+1};
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .7,.1,1.03) node [ left] {\scriptsize $\vec u$};
+%
+%\filldraw[black] (axis cs: .1,.1,1.09) circle (1pt);
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .1,.8,1.79) node [right] {\scriptsize $\vec v$};
+%
+
+%
+%\draw (axis cs: .5,.4,1.36) node  {\scriptsize $\theta$};
+
+%\draw (axis cs: 0,0,\pgfkeysvalueof{/pgfplots/zmax}) node [shift={(0,0,20pt)}]{\scriptsize $z$};
+
+%\draw (axis cs: 0,\pgfkeysvalueof{/pgfplots/ymax},0) node [shift={(0,2pt,0)}]{\scriptsize $y$};
+
+%\draw (axis cs: \pgfkeysvalueof{/pgfplots/xmax},0,0) node [shift={(6pt,0,0)}]{\scriptsize $x$};
+
+\end{axis}
+%\node [right] at (myplot.right of origin)[shift={(-20pt,-8pt)}] {\scriptsize $y$};
+%\node [above] at (myplot.above origin) [shift={(0,-5pt)}] {\scriptsize $z$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_12.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -479,9 +1267,71 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_13.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_13.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={145}{25},
+			name=myplot,
+			%xtick={1},
+			%xlabel=$x$,ylabel=$y$,zlabel=$z$,
+			%ytick=\empty,
+			%ztick=\empty,
+			ymin=-1.1,ymax=1.1,
+			xmin=-1.1,xmax=1.1,
+			zmin=-1.1, zmax=1.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:6.28,samples y=0,{\colorone},smooth,thick] ({cos(deg(x))},{sin(deg(x))},{sin(deg(x))});
+
+%\addplot3 [no markers] coordinates {(0,0,0) (1,1,0)(0,2,0)(-1,1,0)(0,0,0)};
+
+%\addplot3 [no markers] coordinates {(0,1,1) (1,2,1)(0,3,1)(-1,2,1)(0,1,1)};
+
+%\filldraw [draw={\colorone},fill={\coloronefill},thick] (axis cs:0,1,1)--(axis cs:1,2,1)--(axis cs:0,3,1)--(axis cs:-1,2,1)--(axis cs:0,1,1);
+
+%\filldraw [draw={\colorone},fill={\coloronefill},thick] (axis cs:0,1,1)--(axis cs:0,0,0)--(axis cs:1,1,0)--(axis cs:0,2,0)-- (axis cs:0,3,1) -- (axis cs:-1,2,1)--(axis cs:0,1,1);%--(axis cs:0,1,1);
+
+%\draw [thick,{\colorone}] (axis cs: 0,1,1) -- (axis cs:1,2,1) -- (axis cs:0,3,1)  (axis cs:1,2,1) -- (axis cs:1,1,0);
+
+%\draw[thick,{\colorone},dashed] (axis cs:0,0,0) -- (axis cs:-1,1,0) -- (axis cs:0,2,0)  (axis cs:-1,1,0) -- (axis cs:-1,2,1);
+
+%\draw [very thick,black,->] (axis cs:0,0,0) -- (axis cs:1,1,0) node [left] {\scriptsize $\vec u$};
+%\draw [very thick,black,->,dashed](axis cs:0,0,0) -- (axis cs:-1,1,0) node [above,pos=.7] {\scriptsize $\vec v$};
+%\draw [very thick,black,->](axis cs:0,0,0) -- (axis cs:0,1,1) node [left,pos=.8] {\scriptsize $\vec w$};
+
+
+%\addplot3[domain=-.1:1,y domain=-.1:1,surf,faceted color=black!20,samples=10,black!10] {-.1*x+y+1};
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .7,.1,1.03) node [ left] {\scriptsize $\vec u$};
+%
+%\filldraw[black] (axis cs: .1,.1,1.09) circle (1pt);
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .1,.8,1.79) node [right] {\scriptsize $\vec v$};
+%
+
+%
+%\draw (axis cs: .5,.4,1.36) node  {\scriptsize $\theta$};
+
+%\draw (axis cs: 0,0,\pgfkeysvalueof{/pgfplots/zmax}) node [shift={(0,0,20pt)}]{\scriptsize $z$};
+
+%\draw (axis cs: 0,\pgfkeysvalueof{/pgfplots/ymax},0) node [shift={(0,2pt,0)}]{\scriptsize $y$};
+
+%\draw (axis cs: \pgfkeysvalueof{/pgfplots/xmax},0,0) node [shift={(6pt,0,0)}]{\scriptsize $x$};
+
+\end{axis}
+%\node [right] at (myplot.right of origin)[shift={(-20pt,-8pt)}] {\scriptsize $y$};
+%\node [above] at (myplot.above origin) [shift={(0,-5pt)}] {\scriptsize $z$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_13.tex END --></sidebyside>
 </answer>
 </exercise>
 
@@ -492,9 +1342,71 @@ In the following exercises, sketch the vector<ndash />valued function on the giv
 </p>
 </statement>
 <answer>
-<sidebyside>
-<image width="73%" source="images/fig11_01_ex_14.png" />
-</sidebyside>
+<sidebyside><!-- START figures/fig_11_01_ex_14.tex -->
+<image><latex-image-code><![CDATA[
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={155}{25},
+			name=myplot,
+			%xtick={1},
+			%xlabel=$x$,ylabel=$y$,zlabel=$z$,
+			%ytick=\empty,
+			%ztick=\empty,
+			ymin=-1.1,ymax=1.1,
+			xmin=-1.1,xmax=1.1,
+			zmin=-1.1, zmax=1.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:6.28,samples y=0,{\colorone},smooth,thick,samples=40] ({cos(deg(x))},{sin(deg(x))},{sin(deg(2*x))});
+
+%\addplot3 [no markers] coordinates {(0,0,0) (1,1,0)(0,2,0)(-1,1,0)(0,0,0)};
+
+%\addplot3 [no markers] coordinates {(0,1,1) (1,2,1)(0,3,1)(-1,2,1)(0,1,1)};
+
+%\filldraw [draw={\colorone},fill={\coloronefill},thick] (axis cs:0,1,1)--(axis cs:1,2,1)--(axis cs:0,3,1)--(axis cs:-1,2,1)--(axis cs:0,1,1);
+
+%\filldraw [draw={\colorone},fill={\coloronefill},thick] (axis cs:0,1,1)--(axis cs:0,0,0)--(axis cs:1,1,0)--(axis cs:0,2,0)-- (axis cs:0,3,1) -- (axis cs:-1,2,1)--(axis cs:0,1,1);%--(axis cs:0,1,1);
+
+%\draw [thick,{\colorone}] (axis cs: 0,1,1) -- (axis cs:1,2,1) -- (axis cs:0,3,1)  (axis cs:1,2,1) -- (axis cs:1,1,0);
+
+%\draw[thick,{\colorone},dashed] (axis cs:0,0,0) -- (axis cs:-1,1,0) -- (axis cs:0,2,0)  (axis cs:-1,1,0) -- (axis cs:-1,2,1);
+
+%\draw [very thick,black,->] (axis cs:0,0,0) -- (axis cs:1,1,0) node [left] {\scriptsize $\vec u$};
+%\draw [very thick,black,->,dashed](axis cs:0,0,0) -- (axis cs:-1,1,0) node [above,pos=.7] {\scriptsize $\vec v$};
+%\draw [very thick,black,->](axis cs:0,0,0) -- (axis cs:0,1,1) node [left,pos=.8] {\scriptsize $\vec w$};
+
+
+%\addplot3[domain=-.1:1,y domain=-.1:1,surf,faceted color=black!20,samples=10,black!10] {-.1*x+y+1};
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .7,.1,1.03) node [ left] {\scriptsize $\vec u$};
+%
+%\filldraw[black] (axis cs: .1,.1,1.09) circle (1pt);
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .1,.8,1.79) node [right] {\scriptsize $\vec v$};
+%
+
+%
+%\draw (axis cs: .5,.4,1.36) node  {\scriptsize $\theta$};
+
+%\draw (axis cs: 0,0,\pgfkeysvalueof{/pgfplots/zmax}) node [shift={(0,0,20pt)}]{\scriptsize $z$};
+
+%\draw (axis cs: 0,\pgfkeysvalueof{/pgfplots/ymax},0) node [shift={(0,2pt,0)}]{\scriptsize $y$};
+
+%\draw (axis cs: \pgfkeysvalueof{/pgfplots/xmax},0,0) node [shift={(6pt,0,0)}]{\scriptsize $x$};
+
+\end{axis}
+%\node [right] at (myplot.right of origin)[shift={(-20pt,-8pt)}] {\scriptsize $y$};
+%\node [above] at (myplot.above origin) [shift={(0,-5pt)}] {\scriptsize $z$};
+\end{tikzpicture}
+]]></latex-image-code></image><!-- figures/fig_11_01_ex_14.tex END --></sidebyside>
 </answer>
 </exercise>
 <p>
@@ -775,6 +1687,6 @@ In the following exercises, find the average rate of change of <m>\vec r(t)</m> 
 </p>
 </answer>
 </exercise>
-</subsection>
+</exercisegroup>
 
-</section>
+</exercises></section>
