@@ -111,6 +111,11 @@
         firstcurvestyle\\%
         secondcurvestyle\\%
 }
+% Redefine these to be empty to turn off axis discontinuities
+\pgfplotsset{xdiscontinuity/.style={axis x discontinuity=parallel}}
+\pgfplotsset{ydiscontinuity/.style={axis y discontinuity=crunch}}
+
+\pgfplotsset{hollowdot/.style={color=black,fill=white,only marks,mark=*}}
 
 \pgfplotsset{every axis/.append style = {
     cycle list name = curvestylelist,
