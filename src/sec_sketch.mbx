@@ -113,7 +113,7 @@ We place the values <m>x=(10\pm\sqrt{37})/9</m> and <m>x=10/9</m> on a number li
 <!-- START figures/fig_sketch1a.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-5.5,ymax=10.9,xmin=-1.2,xmax=3.2,name=myplot]
+\begin{axis}[ymin=-5.5,ymax=10.9,xmin=-1.2,xmax=3.2,]
 \addplot [{\colorone},thick] coordinates {(-.75,-4)(0.435,6.4) (1.11,4.55) (1.79,2.69) (2.7,9)};
 %\draw [{\colorone},thick](axis cs:-.75,-4) parabola [bend at end] (axis cs:0.435,6.4);
 %\draw [{\colorone},thick](axis cs:0.435,6.4) parabola [] (axis cs:1.11,4.55);
@@ -136,7 +136,7 @@ We place the values <m>x=(10\pm\sqrt{37})/9</m> and <m>x=10/9</m> on a number li
 <!-- START figures/fig_sketch1b.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-5.5,ymax=10.9,xmin=-1.2,xmax=3.2,name=myplot]
+\begin{axis}[ymin=-5.5,ymax=10.9,xmin=-1.2,xmax=3.2,]
 %\addplot [{\colorone},thick] coordinates {(-.75,-4)(0.435,6.4) (1.11,4.55) (1.79,2.69) (2.7,9)};
 \draw [{\colorone},thick](axis cs:-.75,-4) parabola [bend at end] (axis cs:0.435,6.4);
 \draw [{\colorone},thick](axis cs:0.435,6.4) parabola [] (axis cs:1.11,4.55);
@@ -159,7 +159,7 @@ We place the values <m>x=(10\pm\sqrt{37})/9</m> and <m>x=10/9</m> on a number li
 <!-- START figures/fig_sketch1.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-5.5,ymax=10.9,xmin=-1.2,xmax=3.2,name=myplot]
+\begin{axis}[ymin=-5.5,ymax=10.9,xmin=-1.2,xmax=3.2,]
 \addplot [{\colorone},smooth,thick,domain=-.6:2.8] {3*x^3-10*x^2+7*x+5};
 \filldraw [{\colorone}] (axis cs:0.435,6.4) circle (1pt);
 \filldraw [{\colorone}] (axis cs:1.11,4.55) circle (1pt);
@@ -244,7 +244,7 @@ We place the values <m>x=1/2</m>, <m>x=-2</m> and <m>x=3</m> on a number line as
 <!-- START figures/fig_sketch2a.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,minor y tick num = 4, ymin=-5.5,ymax=5.5,xmin=-5.2,xmax=5.2,name=myplot]
+\begin{axis}[minor y tick num = 4, ymin=-5.5,ymax=5.5,xmin=-5.2,xmax=5.2,]
 \addplot [{\colorone},thick] coordinates {(-5,1)(-2.1,5)};
 \addplot [{\colorone},thick] coordinates {(-1.9,-5) (.5,.36) (2.9,-5)};
 \addplot [{\colorone},thick] coordinates {(3.1,5) (5,1)};
@@ -266,7 +266,7 @@ We place the values <m>x=1/2</m>, <m>x=-2</m> and <m>x=3</m> on a number line as
 <!-- START figures/fig_sketch2b.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,minor y tick num = 4, ymin=-5.5,ymax=5.5,xmin=-5.2,xmax=5.2,name=myplot]
+\begin{axis}[minor y tick num = 4, ymin=-5.5,ymax=5.5,xmin=-5.2,xmax=5.2,]
 \draw [{\colorone},thick] (axis cs:-5,1.2) parabola (axis cs:-2,10);
 %\draw [{\colorone},thick] (axis cs:-2,-9) parabola [bend at end] (axis cs:.5,.36);
 %\draw [{\colorone},thick] (axis cs:.5,.36) parabola (axis cs:3,-9);
@@ -300,7 +300,7 @@ We place the values <m>x=1/2</m>, <m>x=-2</m> and <m>x=3</m> on a number line as
 <!-- START figures/fig_sketch2.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,minor y tick num = 4, ymin=-5.5,ymax=5.5,xmin=-5.2,xmax=5.2,name=myplot]
+\begin{axis}[minor y tick num = 4, ymin=-5.5,ymax=5.5,xmin=-5.2,xmax=5.2,]
 \addplot [thick,{\colorone},smooth,domain=-5:-2.1] {((x-2)*(x+1))/((x-3)*(x+2))};
 \addplot [thick,{\colorone},smooth,domain=-1.9:2.9] {((x-2)*(x+1))/((x-3)*(x+2))};
 \addplot [thick,{\colorone},smooth,domain=3.1:5] {((x-2)*(x+1))/((x-3)*(x+2))};
@@ -388,7 +388,7 @@ We place the critical points and possible points on a number line as shown in <x
 <!-- START figures/fig_sketch3a.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt, ymin=-3.1,ymax=8.1,xmin=-7.5,xmax=6.5,name=myplot]
+\begin{axis}[ ymin=-3.1,ymax=8.1,xmin=-7.5,xmax=6.5,]
 \addplot [thin,dashed] coordinates {(-7.5,5) (6.5,5)};
 \addplot [{\colorone},thick] coordinates {(-7,5.1) (-5.75,7.2) (-4., 7.5) (-1.31, 1.63) (-1,0) (0., -2.5) (1.064, -1.33) (2,0) (6,4.9)};
 \filldraw [{\colorone}] (axis cs:-5.75,7.2) circle (1pt);
@@ -414,7 +414,7 @@ We place the critical points and possible points on a number line as shown in <x
 <!-- START figures/fig_sketch3b.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt, ymin=-3.1,ymax=8.1,xmin=-7.5,xmax=6.5,name=myplot]
+\begin{axis}[ ymin=-3.1,ymax=8.1,xmin=-7.5,xmax=6.5,]
 \addplot [thin,dashed] coordinates {(-7.5,5) (6.5,5)};
 %\addplot [{\colorone},thick] coordinates {(-7,5.1) (-5.75,7.2) (-4., 7.5) (-1.31, 1.63) (-1,0) (0., -2.5) (1.064, -1.33) (2,0) (6,4.9)};
 \draw [{\colorone},thick]  (axis cs:-7,6.1)parabola (axis cs:-5.75,7.2);
@@ -449,7 +449,7 @@ We place the critical points and possible points on a number line as shown in <x
 <!-- START figures/fig_sketch3.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt, ymin=-3.1,ymax=8.1,xmin=-7.5,xmax=6.5,name=myplot]
+\begin{axis}[ ymin=-3.1,ymax=8.1,xmin=-7.5,xmax=6.5,]
 \addplot [thin,dashed] coordinates {(-7.5,5) (6.5,5)};
 \addplot [thick,{\colorone},smooth,domain=-7.5:6.5] {(5*(x-2)*(x+1))/(x^2+2*x+4)};
 

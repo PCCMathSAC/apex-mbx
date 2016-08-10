@@ -60,7 +60,7 @@ with <m>a=-1</m> and <m>b=1</m> as shown in <xref ref="fig_mvt1">Figure</xref>(a
 <!-- START figures/fig_mvt1.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-.6,ymax=3.9,xmin=-1.95,xmax=1.95,name=myplot]
+\begin{axis}[ymin=-.6,ymax=3.9,xmin=-1.95,xmax=1.95,]
 \addplot [{\colorone},smooth,thick] coordinates {(-4.+2,0.25) (-3.9+2,0.277008) (-3.8+2,0.308642) (-3.7+2,0.346021) 
 (-3.6+2,0.390625) (-3.5+2,0.444444) (-3.4+2,0.510204) (-3.3+2,0.591716) 
 (-3.2+2,0.694444) (-3.1+2,0.826446) (-3.+2,1.) (-2.9+2,1.23457) (-2.8+2,1.5625) 
@@ -96,7 +96,7 @@ with <m>a=-1</m> and <m>b=1</m> as shown in <xref ref="fig_mvt1">Figure</xref>(a
 <!-- START figures/fig_mvt2.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-.1,ymax=1.2,ytick={.5,1},xmin=-1.4,xmax=1.4,name=myplot]
+\begin{axis}[ymin=-.1,ymax=1.2,ytick={.5,1},xmin=-1.4,xmax=1.4,]
 \filldraw [fill={\colorone},draw={\colorone},thick] (axis cs:-1,1) circle (1pt);
 \filldraw [fill={\colorone},draw={\colorone},thick] (axis cs:1,1) circle (1pt);
 
@@ -162,8 +162,8 @@ Consider <xref ref="fig_mvt3">Figure</xref> where the graph of a function <m>f</
 <!-- START figures/fig_mvt3.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,%
-name=myplot,%
+\begin{axis}[%
+%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 			xtick={-1,1,2},% 
@@ -278,8 +278,8 @@ We have found 2 values <m>c</m> in <m>[-3,3]</m> where the instantaneous rate of
 <!-- START figures/fig_mvt4.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,%
-name=myplot,%
+\begin{axis}[%
+%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 			xtick={-3,-2,-1,1,2,3},% 

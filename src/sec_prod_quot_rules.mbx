@@ -62,7 +62,7 @@ We graph <m>y</m> and its tangent line at <m>x=\pi/2</m>, which has a slope of <
 <!-- START figures/fig_5xsquaredsinx.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-1.1,ymax=21,xmin=-0.1,xmax=3.5,xtick={1.57,3.14},xticklabels={$\frac{\pi}2$,$\pi$},name=myplot]
+\begin{axis}[ymin=-1.1,ymax=21,xmin=-0.1,xmax=3.5,xtick={1.57,3.14},xticklabels={$\frac{\pi}2$,$\pi$},]
 \addplot [{\colorone},smooth,thick,domain=0:3.14] {5*(x^2)*sin(x*180/3.14)};
 \addplot [{\colortwo},smooth,thick,domain=0:2.2] {15.7*(x-1.57)+12.34};
 %\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
@@ -283,7 +283,7 @@ This is a beautiful result. To confirm its truth, we can find the equation of th
 <!-- START figures/fig_tanx.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-11,ymax=11,xmin=-1.65,xmax=1.7,xtick={-1.57,-.785,.785,1.57},xticklabels={$-\frac{\pi}2$,$-\frac{\pi}2$,$\frac{\pi}4$,$\frac{\pi}2$},name=myplot]
+\begin{axis}[ymin=-11,ymax=11,xmin=-1.65,xmax=1.7,xtick={-1.57,-.785,.785,1.57},xticklabels={$-\frac{\pi}2$,$-\frac{\pi}2$,$\frac{\pi}4$,$\frac{\pi}2$},]
 \addplot [{\colorone},smooth,thick,samples=50,domain=-1.5:1.5] {tan(x*180/3.14159)};
 \addplot [{\colortwo},smooth,thick,domain=-1.0:1.5] {2*(x-.785)+1};
 %\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
@@ -1085,7 +1085,7 @@ In the following exercises, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>
 <sidebyside><!-- START figures/fig_02_04_ex_42.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
+\begin{axis}[%
 			xtick={-2,-1,1,2,-3,3},
 			ytick={-2,2,-4,4,-6,6},
 %			
@@ -1114,7 +1114,7 @@ In the following exercises, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>
 <sidebyside><!-- START figures/fig_02_04_ex_43.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
+\begin{axis}[%
 			xtick={-2,-1,1,2,-3,3},
 			ytick={-2,2,-4,4,-6,6},
 %			
@@ -1144,7 +1144,7 @@ In the following exercises, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>
 <sidebyside><!-- START figures/fig_02_04_ex_44.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
+\begin{axis}[%
 			xtick={-2,-1,1,2,4,3,5},
 			ytick={-2,2,-4,4,-6,6},
 %			
@@ -1174,7 +1174,7 @@ In the following exercises, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>
 <sidebyside><!-- START figures/fig_02_04_ex_45.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
+\begin{axis}[%
 %			xtick={-2,-1,1,2,4,3,5},
 %			ytick={-2,2,-4,4,-6,6},
 %			

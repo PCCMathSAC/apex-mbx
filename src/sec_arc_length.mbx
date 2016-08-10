@@ -34,8 +34,8 @@ The length of straight<ndash />line segments is easy to compute using the Distan
 <!-- START figures/fig_arcintroa.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,%
-name=myplot,axis on top,%
+\begin{axis}[%
+axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 			xtick=\empty,% 
@@ -65,8 +65,8 @@ name=myplot,axis on top,%
 <!-- START figures/fig_arcintrob.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,%
-name=myplot,axis on top,%
+\begin{axis}[%
+axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 			xtick=\empty,% 
@@ -112,8 +112,8 @@ In general, we can approximate the arc length of <m>y=f(x)</m> on <m>[a,b]</m> i
 <!-- START figures/fig_arcintrod.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,%
-name=myplot,axis on top,%
+\begin{axis}[%
+axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 			xtick=\empty,% 
@@ -220,8 +220,8 @@ We begin by finding <m>\fp(x)= \frac32x^{1/2}</m>. Using the formula, we find th
 <!-- START figures/fig_arc1.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,%
-name=myplot,axis on top,%
+\begin{axis}[%
+axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 %			xtick=\empty,% 
@@ -281,8 +281,8 @@ This function was chosen specifically because the resulting integral can be eval
 <!-- START figures/fig_arc2.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,%
-name=myplot,axis on top,%
+\begin{axis}[%
+axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
 %			xtick=\empty,% 
@@ -386,7 +386,7 @@ We have already seen how a curve <m>y=f(x)</m> on <m>[a,b]</m> can be revolved a
 \begin{tikzpicture}
 \begin{axis}%
 [
-width=\marginparwidth+25pt,%
+%
 axis on top,
 			axis y line=none,
 %			axis x line=none,
@@ -394,7 +394,6 @@ axis on top,
 			axis lines=center,
 			y dir=reverse,
 			view={10}{30},
-			name=myplot,
 %			%x=.37\marginparwidth,
 %			%y=.37\marginparwidth,
 			xtick=\empty,

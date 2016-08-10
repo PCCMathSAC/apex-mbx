@@ -26,7 +26,7 @@ Also note that as <m>x</m> gets very large, <m>f(x)</m> gets very, very small. W
 <!-- START figures/fig_oneoverxsquared.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-.1,ymax=110,xmin=-1.1,xmax=1.1,name=myplot]
+\begin{axis}[ymin=-.1,ymax=110,xmin=-1.1,xmax=1.1,]
 \addplot [{\colorone},smooth,thick] coordinates {(-1.,1.) (-0.95,1.10803) (-0.9,1.23457) (-0.85,1.38408) (-0.8,1.5625)(-0.75,1.77778) (-0.7,2.04082) (-0.65,2.36686) (-0.6,2.77778)(-0.55,3.30579) (-0.5,4.) (-0.49,4.16493) (-0.48,4.34028) (-0.47,4.52694) (-0.46,4.7259) (-0.45,4.93827) (-0.44,5.16529) (-0.43,5.40833)(-0.42,5.66893) (-0.41,5.94884) (-0.4,6.25) (-0.39,6.57462)
 (-0.38,6.92521) (-0.37,7.3046) (-0.36,7.71605) (-0.35,8.16327)(-0.34,8.65052) (-0.33,9.18274) (-0.32,9.76563) (-0.31,10.4058)(-0.3,11.1111) (-0.29,11.8906) (-0.28,12.7551) (-0.27,13.7174)(-0.26,14.7929) (-0.25,16.) (-0.24,17.3611) (-0.23,18.9036)(-0.22,20.6612) (-0.21,22.6757) (-0.2,25.) (-0.19,27.7008)(-0.18,30.8642) (-0.17,34.6021) (-0.16,39.0625) (-0.15,44.4444)(-0.14,51.0204) (-0.13,59.1716) (-0.12,69.4444) (-0.11,82.6446)(-0.1,100.)};
 \addplot [{\colorone},smooth,thick] coordinates { ((0.1,100.) (0.11,82.6446) (0.12,69.4444) (0.13,59.1716)(0.14,51.0204) (0.15,44.4444) (0.16,39.0625) (0.17,34.6021)(0.18,30.8642) (0.19,27.7008) (0.2,25.) (0.21,22.6757) (0.22,20.6612)(0.23,18.9036) (0.24,17.3611) (0.25,16.) (0.26,14.7929)(0.27,13.7174) (0.28,12.7551) (0.29,11.8906) (0.3,11.1111)(0.31,10.4058) (0.32,9.76563) (0.33,9.18274) (0.34,8.65052)(0.35,8.16327) (0.4,6.25) (0.45,4.93827)(0.5,4.) (0.55,3.30579) (0.6,2.77778) (0.65,2.36686) (0.7,2.04082)(0.75,1.77778) (0.8,1.5625) (0.85,1.38408) (0.9,1.23457)(0.95,1.10803) (1.,1.)
@@ -71,7 +71,7 @@ Find <m>\displaystyle \lim_{x\rightarrow 1}\frac1{(x-1)^2}</m> as shown in <xref
 <!-- START figures/fig_nolimit2.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-1,ymax=110,xmin=-.1,xmax=2.1,name=myplot]
+\begin{axis}[ymin=-1,ymax=110,xmin=-.1,xmax=2.1,]
 
 \addplot [{\colorone},smooth,thick] coordinates {(0.,1.) (0.05,1.10803) (0.1,1.23457) (0.15,1.38408) (0.2,1.5625)(0.25,1.77778) (0.3,2.04082) (0.35,2.36686) (0.4,2.77778)(0.45,3.30579) (0.5,4.) (0.55,4.93827) (0.6,6.25) (0.65,8.16327)(0.7,11.1111) (0.75,16.) (0.8,25.) (0.85,44.4444) (0.9,100.) };
 \addplot [{\colorone},smooth,thick] coordinates {(1.1,100.) (1.15,44.4444) (1.2,25.) (1.25,16.) (1.3,11.1111) (1.35,8.16327) (1.4,6.25) (1.45,4.93827) (1.5,4.) (1.55,3.30579) (1.6,2.77778) (1.65,2.36686) (1.7,2.04082) (1.75,1.77778) (1.8,1.5625) (1.85,1.38408) (1.9,1.23457) (1.95,1.10803) (2.,1.)};
@@ -116,7 +116,7 @@ It is easy to see that the function grows without bound near 0, but it does so i
 <!-- START figures/fig_oneoverx.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-55,ymax=55,xmin=-1.1,xmax=1.1,name=myplot]
+\begin{axis}[ymin=-55,ymax=55,xmin=-1.1,xmax=1.1,]
 \addplot [{\colorone},smooth,thick] coordinates {(-1.,-1.) (-0.95,-1.05263) (-0.9,-1.11111) (-0.85,-1.17647)(-0.8,-1.25) (-0.75,-1.33333) (-0.7,-1.42857) (-0.65,-1.53846)(-0.6,-1.66667) (-0.55,-1.81818) (-0.5,-2.) (-0.45,-2.22222)(-0.4,-2.5) (-0.35,-2.85714) (-0.3,-3.33333) (-0.25,-4.) (-0.245,-4.08163) (-0.24,-4.16667) (-0.235,-4.25532) (-0.23,-4.34783) (-0.225,-4.44444) (-0.22,-4.54545) (-0.215,-4.65116)
 (-0.21,-4.7619) (-0.205,-4.87805) (-0.2,-5.) (-0.195,-5.12821) 
 (-0.19,-5.26316) (-0.185,-5.40541) (-0.18,-5.55556) (-0.175,-5.71429) 
@@ -165,7 +165,7 @@ Vertical asymptotes occur where the function grows without bound; this can occur
 <!-- START figures/fig_multipleasymptotes.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-16,ymax=16,xmin=-6.1,xmax=6.1,name=myplot]
+\begin{axis}[ymin=-16,ymax=16,xmin=-6.1,xmax=6.1,]
 \addplot [{\colorone},smooth,thick] coordinates {(-6.,-0.5625) (-5.9,-0.574489) (-5.8,-0.587045) (-5.7,-0.600211)(-5.6,-0.614035) (-5.5,-0.628571) (-5.4,-0.643879) (-5.3,-0.660025)(-5.2,-0.677083) (-5.1,-0.695139) (-5.,-0.714286) (-4.9,-0.734633)
 (-4.8,-0.756303) (-4.7,-0.779436) (-4.6,-0.804196) (-4.5,-0.830769)(-4.4,-0.859375) (-4.3,-0.890269) (-4.2,-0.923754) (-4.1,-0.960187)(-4.,-1.) (-3.9,-1.04371) (-3.8,-1.09195) (-3.7,-1.14551)(-3.6,-1.20536) (-3.5,-1.27273) (-3.4,-1.34921) (-3.3,-1.43687)(-3.2,-1.53846) (-3.1,-1.65775) (-3.,-1.8) (-2.9,-1.97279)(-2.8,-2.1875) (-2.7,-2.46201) (-2.6,-2.82609) (-2.5,-3.33333)(-2.4,-4.09091) (-2.3,-5.34884) (-2.2,-7.85714) (-2.1,-15.3659) };
 
@@ -207,7 +207,7 @@ Canceling the common term, we get that <m>f(x)=x+1</m> for <m>x\not=1</m>. So th
 <!-- START figures/fig_noasy.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-.2,ymax=3.2,xmin=-1.2,xmax=2.2,name=myplot]
+\begin{axis}[ymin=-.2,ymax=3.2,xmin=-1.2,xmax=2.2,]
 \addplot [{\colorone},smooth,thick] coordinates {(-1,0) (2,3)};
 \fill[white,draw=black] (axis cs:1,2) circle (1pt);
 %\fill[black,draw=black] (axis cs:2,1) circle (1pt);
@@ -313,7 +313,7 @@ We will approximate the horizontal asymptotes by approximating the limits
 <!-- START figures/fig_hzasy1.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-.2,ymax=1.1,xmin=-21,xmax=21,name=myplot]
+\begin{axis}[ymin=-.2,ymax=1.1,xmin=-21,xmax=21,]
 \addplot [{\colorone},smooth,thick] coordinates {(-20.,0.990099) (-19.5,0.98959) (-19.,0.989041) (-18.5,0.988448)(-18.,0.987805) (-17.5,0.987107) (-17.,0.986348) (-16.5,0.98552) (-16.,0.984615) (-15.5,0.983623)(-15.,0.982533) (-14.5,0.98133) (-14.,0.98) (-13.5,0.978523) (-13.,0.976879) (-12.5,0.975039) (-12.,0.972973) (-11.5,0.970642)(-11.,0.968) (-10.5,0.964989) (-10.,0.961538) (-9.5,0.95756)
 (-9.,0.952941) (-8.5,0.947541) (-8.,0.941176) (-7.5,0.93361)(-7.,0.924528) (-6.5,0.913514) (-6.,0.9) (-5.5,0.883212)
 (-5.,0.862069) (-4.5,0.835052) (-4.,0.8) (-3.5,0.753846)(-3.,0.692308) (-2.5,0.609756) (-2.,0.5) (-1.5,0.36) (-1.,0.2)
@@ -369,7 +369,7 @@ Horizontal asymptotes can take on a variety of forms. <xref ref="fig_hzasy">Figu
 <!-- START figures/fig_hzasy2.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-1.1,ymax=1.1,xmin=-21,xmax=21,name=myplot]
+\begin{axis}[ymin=-1.1,ymax=1.1,xmin=-21,xmax=21,]
 \addplot [{\colorone},smooth,thick] coordinates {(-20.,-0.0498753) (-19.,-0.0524862) (-18.,-0.0553846)
 (-17.,-0.0586207) (-16.,-0.0622568) (-15.,-0.0663717)
 (-14.,-0.071066) (-13.,-0.0764706) (-12.,-0.0827586) 
@@ -393,7 +393,7 @@ Horizontal asymptotes can take on a variety of forms. <xref ref="fig_hzasy">Figu
 <!-- START figures/fig_hzasy3.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-1.1,ymax=1.1,xmin=-21,xmax=21,name=myplot]
+\begin{axis}[ymin=-1.1,ymax=1.1,xmin=-21,xmax=21,]
 \addplot [{\colorone},smooth,thick] coordinates {(-20.,-0.998752) (-19.,-0.998618) (-18.,-0.99846) (-17.,-0.998274)
 (-16.,-0.998053) (-15.,-0.997785) (-14.,-0.997459) (-13.,-0.997054)
 (-12.,-0.996546) (-11.,-0.995893) (-10.,-0.995037) (-9.,-0.993884)
@@ -416,7 +416,7 @@ Horizontal asymptotes can take on a variety of forms. <xref ref="fig_hzasy">Figu
 <!-- START figures/fig_hzasy4.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-.3,ymax=1.1,xmin=-21,xmax=21,name=myplot]
+\begin{axis}[ymin=-.3,ymax=1.1,xmin=-21,xmax=21,]
 \addplot [{\colorone},smooth,thick] coordinates {(-20.,0.0456473) (-19.5,0.0310533) (-19.,0.00788827)
 (-18.5,-0.0185125) (-18.,-0.0417215) (-17.5,-0.0557501) 
 (-17.,-0.0565528) (-16.5,-0.0431385) (-16.,-0.017994) 
@@ -578,7 +578,7 @@ Use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> to evaluate each of 
 <!-- START figures/fig_hzasy5.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-.6,ymax=.6,xmin=-41,xmax=2,name=myplot]
+\begin{axis}[ymin=-.6,ymax=.6,xmin=-41,xmax=2,]
 \addplot [{\colorone},smooth,thick] coordinates {(-40.,-0.0237347) (-39.,-0.0243097) (-38.,-0.024913) 
 (-37.,-0.0255469) (-36.,-0.0262137) (-35.,-0.0269161) 
 (-34.,-0.0276569) (-33.,-0.0284394) (-32.,-0.0292673) 
@@ -609,7 +609,7 @@ Use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> to evaluate each of 
 <!-- START figures/fig_hzasy6.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,minor y tick num = 4,ymin=-.55,ymax=.55,xmin=-1,xmax=41,name=myplot]
+\begin{axis}[minor y tick num = 4,ymin=-.55,ymax=.55,xmin=-1,xmax=41,]
 \addplot [{\colorone},smooth,thick] coordinates {(0.,-1.) (1.,-0.666667) (2.,-0.538462) (3.,-0.482759) (4.,-0.45098) 
 (5.,-0.43038) (6.,-0.415929) (7.,-0.405229) (8.,-0.396985) 
 (9.,-0.390438) (10.,-0.385113) (11.,-0.380697) (12.,-0.376975) 
@@ -637,7 +637,7 @@ Use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> to evaluate each of 
 <!-- START figures/fig_hzasy7.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ymin=-50,ymax=5,xmin=-5,xmax=41,name=myplot]
+\begin{axis}[ymin=-50,ymax=5,xmin=-5,xmax=41,]
 \addplot [{\colorone},smooth,thick] coordinates {(4.,-15.) (5.,-12.) (6.,-11.6667) (7.,-12.) (8.,-12.6) (9.,-13.3333) 
 (10.,-14.1429) (11.,-15.) (12.,-15.8889) (13.,-16.8) (14.,-17.7273) 
 (15.,-18.6667) (16.,-19.6154) (17.,-20.5714) (18.,-21.5333) 

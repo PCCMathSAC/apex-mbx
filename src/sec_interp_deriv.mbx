@@ -154,7 +154,7 @@ Consider <m>f(x) = x^2</m> as shown in <xref ref="fig_xsquared">Figure</xref>. I
 <!-- START figures/fig_xsquared.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,name=myplot]
+\begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,]
 \addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.01) (0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16)
 (0.5,0.25) (0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.)(1.1,1.21) (1.2,1.44) (1.3,1.69) (1.4,1.96) (1.5,2.25) (1.6,2.56)(1.7,2.89) (1.8,3.24) (1.9,3.61) (2.,4.) (2.1,4.41) (2.2,4.84)(2.3,5.29) (2.4,5.76) (2.5,6.25) (2.6,6.76) (2.7,7.29) (2.8,7.84)(2.9,8.41) (3.,9.) (3.1,9.61) (3.2,10.2) (3.3,10.9) (3.4,11.6)(3.5,12.3) (3.6,13.) (3.7,13.7) (3.8,14.4) (3.9,15.2) (4.,16.)(4.1,16.8)};
 %\addplot [{\colortwo},domain=0:4]{2*(x-1)+1};
@@ -181,7 +181,7 @@ We can answer this directly after the following section, where we learn to quick
 <!-- START figures/fig_xsquaredwithgrid.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,name=myplot,grid=major]
+\begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,grid=major]
 \addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.01) (0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16)
 (0.5,0.25) (0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.)(1.1,1.21) (1.2,1.44) (1.3,1.69) (1.4,1.96) (1.5,2.25) (1.6,2.56)(1.7,2.89) (1.8,3.24) (1.9,3.61) (2.,4.) (2.1,4.41) (2.2,4.84)(2.3,5.29) (2.4,5.76) (2.5,6.25) (2.6,6.76) (2.7,7.29) (2.8,7.84)(2.9,8.41) (3.,9.) (3.1,9.61) (3.2,10.2) (3.3,10.9) (3.4,11.6)(3.5,12.3) (3.6,13.) (3.7,13.7) (3.8,14.4) (3.9,15.2) (4.,16.)(4.1,16.8)};
 \addplot [{\colortwo},domain=0:4]{2*(x-1)+1};
@@ -218,7 +218,7 @@ Use these graphs to find the slopes of the tangent lines to the graph of <m>f</m
 <!-- START figures/fig_fwithderiv.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,minor y tick num=4,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,name=myplot]
+\begin{axis}[minor y tick num=4,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,]
 \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
 \addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
 \draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
@@ -237,7 +237,7 @@ Use these graphs to find the slopes of the tangent lines to the graph of <m>f</m
 <!-- START figures/fig_fwithderivdots.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,minor y tick num=4,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,name=myplot]
+\begin{axis}[minor y tick num=4,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,]
 \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
 \addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
 \addplot [domain=0:2,thick] {-1*(x-1)-2};
@@ -300,7 +300,7 @@ Consider again the graph of <m>f(x)</m> and its derivative <m>\fp(x)</m> in <xre
 <!-- START figures/fig_fwithderivzoom3.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}
-\begin{axis}[width=\marginparwidth+25pt,minor y tick num=4,ymin=1.9,ymax=4.9,xmin=2.7,xmax=3.3,name=myplot]
+\begin{axis}[minor y tick num=4,ymin=1.9,ymax=4.9,xmin=2.7,xmax=3.3,]
 \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
 %\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
 \addplot [domain=2:4,thick] {3*(x-3)+4};
@@ -574,7 +574,7 @@ In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are 
 <sidebyside><!-- START figures/fig_02_02_ex_15.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
+\begin{axis}[%
 %			xtick={-2,-1,1,2},
 %			ytick={-1,1,2,3},
 %			
@@ -614,7 +614,7 @@ In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are 
 <sidebyside><!-- START figures/fig_02_02_ex_16.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
+\begin{axis}[%
 %			xtick={-2,-1,1,2},
 %			ytick={-1,1,2,3},
 %			
@@ -654,7 +654,7 @@ In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are 
 <sidebyside><!-- START figures/fig_02_02_ex_17.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
+\begin{axis}[%
 %			xtick={-2,-1,1,2},
 %			ytick={-1,1,2,3},
 %			
@@ -696,7 +696,7 @@ Either <m>g(x) = \fp(x)</m> or <m>f(x) = g'(x)</m> is acceptable. The actual ans
 <sidebyside><!-- START figures/fig_02_02_ex_18.tex -->
 <image><latex-image-code><![CDATA[
 \begin{tikzpicture}[baseline=10pt]
-\begin{axis}[width=\marginparwidth+25pt,name=myplot,%
+\begin{axis}[%
 %			xtick={-2,-1,1,2},
 %			ytick={-1,1,2,3},
 %			
