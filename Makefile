@@ -107,6 +107,12 @@ images:
 	$(MB)/script/mbx -c latex-image -f svg -d $(IMAGESOUT) $(MAINFILE)
 #	$(MB)/script/mbx -c asymptote -f svg -d $(IMAGESOUT) $(MAINFILE)
 
+# make all the image files in pdf format
+pdfimages:
+	install -d $(IMAGESOUT)
+	-rm $(IMAGESOUT)/*.pdf
+	$(MB)/script/mbx -c latex-image -f pdf -d $(IMAGESOUT) $(MAINFILE)
+
 # for pdf output, a one-time prerequisite for LaTeX conversion of
 # problems living on a server, and image construction at server
 # our "webwork-tex" is a subdirectory of where the PDF is compiled
