@@ -9,28 +9,42 @@
 
         <p>While our question is not precisely formed (what constitutes <q>near the value 1</q>?), the answer does not seem difficult to find. One might think first to look at a graph of this function to approximate the appropriate <m>y</m> values. Consider <xref ref="fig_zoom_sinx_over_x">Figure</xref>, where <m>y = \frac{\sin x}{x}</m> is graphed. For values of <m>x</m> near 1, it seems that <m>y</m> takes on values near <m>0.85</m>. In fact, when <m>x=1</m>, then <m>y=\frac{\sin 1}{1} \approx 0.84</m>, so it makes sense that when <m>x</m> is <q>near</q> 1, <m>y</m> will be <q>near</q> <m>0.84</m>.</p>
 
-        <figure xml:id="fig_zoom_sinx_over_x" >
-            <caption><m>\sin(x)/x</m> near <m>x=1</m>.</caption>
+        <sidebyside>
+            <figure xml:id="fig_sinx_over_x_full" >
+                <caption><m>\sin(x)/x</m>.</caption>
+                <image xml:id="image_sinx_over_x_full">
+                    <latex-image-code><![CDATA[
+                    \begin{tikzpicture}[declare function = {func(\x) = (\x != 0) * (sin(x*180/pi)/x) + (\x == 0) * (1);}]
+                        \begin{axis}[]
+                            \addplot+[domain=-7:7,samples=50] {func(x)};
+                            \addplot[hollowdot] coordinates {(0,1)};
+                        \end{axis}
+                    \end{tikzpicture}
+                    ]]></latex-image-code>
+                </image>
+            </figure>
 
-            <!-- START figures/sinx_over_x_1.tex -->
-            <image>
-                <latex-image-code><![CDATA[
-                \begin{tikzpicture}
-                    \begin{axis}[xmin=.3, xmax=1.6, 
-                                 ymin=.4, ymax=1.1,
-                                 xtick={0.5,1,1.5},
-                                 ytick={0.6,0.8,1},
-                                 xdiscontinuity,
-                                 ydiscontinuity,
-                                ]
-                        \addplot+[domain=0.5:1.5] {sin(x*180/pi)/x};
-                    \end{axis}
-                \end{tikzpicture}
-                ]]></latex-image-code>
-            </image>
-            <!-- figures/sinx_over_x_1.tex END -->
-
-        </figure>
+            <figure xml:id="fig_zoom_sinx_over_x" >
+                <caption><m>\sin(x)/x</m> near <m>x=1</m>.</caption>
+                <!-- START figures/sinx_over_x_1.tex -->
+                <image xml:id="image_zoom_sinx_over_x">
+                    <latex-image-code><![CDATA[
+                    \begin{tikzpicture}
+                        \begin{axis}[xmin=.3, xmax=1.6, 
+                                    ymin=.4, ymax=1.1,
+                                    xtick={0.5,1,1.5},
+                                    ytick={0.6,0.8,1},
+                                    xdiscontinuity,
+                                    ydiscontinuity,
+                                    ]
+                            \addplot+[domain=0.5:1.5] {sin(x*180/pi)/x};
+                        \end{axis}
+                    \end{tikzpicture}
+                    ]]></latex-image-code>
+                </image>
+                <!-- figures/sinx_over_x_1.tex END -->
+            </figure>
+        </sidebyside>
 
         <figure xml:id="fig_sinx_over_x" >
         <caption><m>\sin(x)/x</m> near <m>x=0</m>.</caption>
@@ -55,9 +69,7 @@
 
         </figure>
 
-        <p>Consider this again at a different value for <m>x</m>. When <m>x</m> is near <m>0</m>, what value (if any) is <m>y</m> near? By considering <xref ref="fig_sinx_over_x">Figure</xref>, one can see that it seems that <m>y</m> takes on values near <m>1</m>. But what happens when <m>x=0</m>? We have <me>y \rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\text{ ``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}}\text{.}</me></p>
-
-        <p>The expression <q><m>0/0</m></q> has no value; it is <term>indeterminate</term>. Such an expression gives no information about what is going on with the function nearby. We cannot find out how <m>y</m> behaves near <m>x=0</m> for this function simply by letting <m>x=0</m>.<index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index>.</p>
+        <p>Consider this again at a different value for <m>x</m>. When <m>x</m> is near <m>0</m>, what value (if any) is <m>y</m> near? By considering <xref ref="fig_sinx_over_x">Figure</xref>, one can see that it seems that <m>y</m> takes on values near <m>1</m>. But what happens when <m>x=0</m>? We have <me>y \rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0}\text{.}</me>The expression <m>0/0</m> has no value; it is<index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index>  <term>indeterminate</term>. Such an expression gives no information about what is going on with the function nearby. We cannot find out how <m>y</m> behaves near <m>x=0</m> for this function simply by letting <m>x=0</m>.</p>
 
         <p><em>Finding a limit</em> entails understanding how a function behaves near a particular value of <m>x</m>. Before continuing, it will be useful to establish some notation. Let <m>y=f(x)</m>; that is, let <m>y</m> be a function of <m>x</m> for some function <m>f</m>. The expression <q>the limit of <m>y</m> as <m>x</m> approaches 1</q> describes a number, often referred to as <m>L</m>, that <m>y</m> nears as <m>x</m> nears 1. We write all this as <me>\lim_{x\to 1} y = \lim_{x\to 1} f(x) = L\text{.}</me></p>
 
@@ -67,7 +79,7 @@
 
         <p>Once we have the true definition of a limit, we will find limits <em>analytically</em>; that is, exactly using a variety of mathematical tools. For now, we will <em>approximate</em> limits both graphically and numerically. Graphing a function can provide a good approximation, though often not very precise. Numerical methods can provide a more accurate approximation. We have already approximated limits graphically, so we now turn our attention to numerical approximations.</p>
 
-        <p>Consider again <m>\lim_{x\to 1}\sin (x)/x</m>. To approximate this limit numerically, we can create a table of <m>x</m> and <m>f(x)</m> values where <m>x</m> is <q>near</q> 1. This is done in <xref ref="table_sinx_1" />.</p>
+        <p>Consider again <m>\lim_{x\to 1}\sin (x)/x</m>. To approximate this limit numerically, we can create a table of <m>x</m> and <m>f(x)</m> values where <m>x</m> is <q>near</q> 1. This is done in <xref ref="table_sinx_1">Table</xref>.</p>
 
         <p>Notice that for values of <m>x</m> near <m>1</m>, we have <m>\sin (x)/x</m> near <m>0.841</m>. The <m>x=1</m> row is included, but we stress the fact that when considering limits, we are <em>not</em> concerned with the value of the function at that particular <m>x</m> value; we are only concerned with the values of the function when <m>x</m> is <em>near</em> 1.</p>
 
@@ -91,8 +103,8 @@
                     <cell><m>0.841772</m></cell>
                 </row>
                 <row>
-                    <cell><em>1</em></cell>
-                    <cell><em>0.841471</em></cell>
+                    <cell><m>\textit{1}</m></cell>
+                    <cell><m>\textit{0.841471}</m></cell>
                 </row>
                 <row>
                     <cell><m>1.001</m></cell>
@@ -131,8 +143,8 @@
                     <cell><m>0.9999998333</m></cell>
                 </row>
                 <row>
-                    <cell><em>0</em></cell>
-                    <cell><em>not defined</em></cell>
+                    <cell><m>\textit{0}</m></cell>
+                    <cell><m>\textit{not defined}</m></cell>
                 </row>
                 <row>
                     <cell><m>0.001</m></cell>
