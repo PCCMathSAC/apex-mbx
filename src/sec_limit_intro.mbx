@@ -1,5 +1,5 @@
 <section xml:id="sec_limit_intro">
-<title>An Introduction To Limits</title>
+    <title>An Introduction To Limits</title>
 
 
     <introduction>
@@ -277,7 +277,7 @@
 <table xml:id="table_limit2" >
 <caption>Numerically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
 <tabular>
-<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
+    <row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
 <row bottom="minor"><cell></cell><cell></cell></row>
 <row><cell><m>-0.1</m></cell><cell><m>0.9</m></cell></row>
 <row><cell><m>-0.01</m></cell><cell><m>0.99</m></cell></row>
@@ -287,9 +287,12 @@
 <row><cell><m>0.1</m></cell><cell><m>0.99</m></cell></row>
 </tabular>
 </table>
-<p>
-The table shown in <xref ref="table_limit2">Figure</xref> shows values of <m>f(x)</m> for values of <m>x</m> near 0. It is clear that as <m>x</m> takes on values very near 0, <m>f(x)</m> takes on values very near 1. It turns out that if we let <m>x=0</m> for either <q>piece</q> of <m>f(x)</m>, 1 is returned; this is significant and we'll return to this idea later.
-</p>
+
+
+
+        <p>The table shown in <xref ref="table_limit2">Figure</xref> shows values of <m>f(x)</m> for values of <m>x</m> near <m>0</m>. It is clear that as <m>x</m> takes on values very near <m>0</m>, <m>f(x)</m> takes on values very near <m>1</m>. It turns out that if we let <m>x=0</m> for either <q>piece</q> of <m>f(x)</m>, <m>1</m> is returned; this is significant and we'll return to this idea later.</p>
+
+
 
 <p>
 The graph and table allow us to say that <m>\lim_{x\to 0}f(x) \approx 1</m>; in fact, we are probably very sure it <em>equals</em> 1.
@@ -318,13 +321,9 @@ We'll explore each of these in turn.
 <example xml:id="ex_no_limit1">
 <title>Different Values Approached From Left and Right</title>
 <statement>
-<p>
-Explore why <m>\ds\lim_{x\to 1} f(x)</m> does not exist, where
-<me>
-  f(x) = \left\{\begin{array}{cl} x^2-2x+3 \amp  x\leq 1 \\ x \amp  x>1
-\end{array} \right..
-</me>
-</p>
+
+<p>Explore why <m>\ds\lim_{x\to 1} f(x)</m> does not exist, where <me>f(x) = \begin{cases}x^2-2x+3 \amp  x\leq 1 \\ x \amp  x>1\text{.}\end{cases}</me></p>
+
 </statement>
 <solution>
 <p>
