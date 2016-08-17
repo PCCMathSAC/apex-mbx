@@ -477,14 +477,15 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
                      domain=-0.063661977:-0.045472841, % 1/(5 pi) to 1/(7 pi)
                      samples=97, % sample every pi/48 through phase
                     ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.045472841:-0.0106103295, % 1/(7 pi) to 1/(30 pi)
-                     samples=93, % sample every pi/2 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=0.0106103295:0.045472841, % 1/(30 pi) to 1/(7 pi)
-                     samples=93, % sample every pi/2 through phase
-                    ] {sin(1/x * 180 / pi)}; 
+            \draw [firstcurvestyle,color=blue,fill=blue] (axis cs:-0.045472841,-1) rectangle (axis cs:0.045472841,1);
+            %\addplot[firstcurvestyle,-,smooth,
+            %         domain=-0.045472841:-0.0106103295, % 1/(7 pi) to 1/(30 pi)
+            %         samples=93, % sample every pi/2 through phase
+            %        ] {sin(1/x * 180 / pi)}; 
+            %\addplot[firstcurvestyle,-,smooth,
+            %         domain=0.0106103295:0.045472841, % 1/(30 pi) to 1/(7 pi)
+            %         samples=93, % sample every pi/2 through phase
+            %        ] {sin(1/x * 180 / pi)}; 
             \addplot[firstcurvestyle,-,smooth,
                      domain=0.045472841:0.063661977, % 1/(7 pi) to 1/(5 pi)
                      samples=97, % sample every pi/48 through phase
@@ -531,13 +532,14 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
                      samples=145, % sample every pi/36 through phase
                     ] {sin(1/x * 180 / pi)}; 
             \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.024485376:-0.003183099, % 1/(13 pi) to 1/(100 pi)
-                     samples=523, % sample every pi/6 through phase
+                     domain=-0.024485376:-0.012732395, % 1/(13 pi) to 1/(25 pi)
+                     samples=73, % sample every pi/6 through phase
                     ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.0031830988618379:-0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
-                     samples=401, % sample every pi/2 through phase
-                    ] {sin(1/x * 180 / pi)}; 
+            \draw [firstcurvestyle,color=blue,fill=blue] (axis cs:-0.012732395,-1) rectangle (axis cs:0.012732395,1);
+            %\addplot[firstcurvestyle,-,smooth,
+            %         domain=-0.0031830988618379:-0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
+            %         samples=401, % sample every pi/2 through phase
+            %        ] {sin(1/x * 180 / pi)}; 
             \addplot[firstcurvestyle,leftarrow,
                      domain=0.100518911:0.063661977, % 1/(152/48 pi) to 1/(240/48 pi)
                      samples=89, % sample every pi/48 through phase
@@ -555,13 +557,13 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
                      samples=145, % sample every pi/36 through phase
                     ] {sin(1/x * 180 / pi)}; 
             \addplot[firstcurvestyle,-,smooth,
-                     domain=0.024485376:0.003183099, % 1/(13 pi) to 1/(100 pi)
-                     samples=523, % sample every pi/6 through phase
+                     domain=0.024485376:0.012732395, % 1/(13 pi) to 1/(25 pi)
+                     samples=73, % sample every pi/6 through phase
                     ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=0.0031830988618379:0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
-                     samples=401, % sample every pi/2 through phase
-                    ] {sin(1/x * 180 / pi)}; 
+            %\addplot[firstcurvestyle,-,smooth,
+            %         domain=0.0031830988618379:0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
+            %         samples=401, % sample every pi/2 through phase
+            %        ] {sin(1/x * 180 / pi)}; 
         \end{axis}
     \end{tikzpicture}
     ]]></latex-image-code>
