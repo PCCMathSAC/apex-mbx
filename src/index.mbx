@@ -106,16 +106,25 @@
 \setboolean{colorprint}{true} 
 
 \pgfplotsset{firstcurvestyle/.style={color=blue,mark=none,thick,<->,solid}}
-\pgfplotsset{secondcurvestyle/.style={color=red,mark=none,thick,<->,dashed}}
+\pgfplotsset{secondcurvestyle/.style={color=red,mark=none,thick,<->,dashdotdotted}}
+\pgfplotsset{asymptote/.style={color=black,mark=none,thick,<->,dashed}}
 \pgfplotscreateplotcyclelist{curvestylelist}{%
         firstcurvestyle\\%
         secondcurvestyle\\%
 }
+
+%To disable arrows, edit these and the above lines accordingly
+\pgfplotsset{leftarrow/.style={<-}}
+\pgfplotsset{rightarrow/.style={->}}
+
+
+
 % Redefine these to be empty to turn off axis discontinuities
 \pgfplotsset{xdiscontinuity/.style={axis x discontinuity=parallel}}
 \pgfplotsset{ydiscontinuity/.style={axis y discontinuity=crunch}}
 
 \pgfplotsset{hollowdot/.style={color=black,fill=white,only marks,mark=*}}
+\pgfplotsset{soliddot/.style={color=black,fill=black,only marks,mark=*}}
 
 \pgfplotsset{every axis/.append style = {
     cycle list name = curvestylelist,

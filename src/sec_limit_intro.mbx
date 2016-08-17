@@ -50,7 +50,7 @@
         <caption><m>\sin(x)/x</m> near <m>x=0</m>.</caption>
 
         <!-- START figures/sinx_over_x_2.tex -->
-            <image width="50%">
+            <image xml:id="sinx_over_x_2">
                 <latex-image-code><![CDATA[
                 \begin{tikzpicture}[declare function = {func(\x) = (\x != 0) * (sin(x*180/pi)/x) + (\x == 0) * (1);}]
                     \begin{axis}[xmin=-1.1,xmax=1.2,
@@ -171,7 +171,7 @@
             <caption>Graphically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
 
             <!-- START figures/fig_limit1.tex -->
-            <image>
+            <image xml:id="image_limit1">
                 <latex-image-code><![CDATA[
                 \begin{tikzpicture}
                     \begin{axis}[xmin=2.3,xmax=3.7,
@@ -259,7 +259,7 @@
                     <caption>Graphically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
 
                     <!-- START figures/fig_limit2.tex -->
-                    <image>
+                    <image xml:id="image_limit2">
                         <latex-image-code><![CDATA[
                         \begin{tikzpicture}[declare function = {func(\x) = (\x<0) * (x+1) + (\x>0) * (-x^2+1);}]
                             \begin{axis}[xmin=-1.1,xmax=1.1,
@@ -329,28 +329,27 @@ We'll explore each of these in turn.
 <p>
 A graph of <m>f(x)</m> around <m>x=1</m> and a table are given <xref ref="fig_nolimit1">Figures</xref> and <xref ref="table_nolimit1"></xref>, respectively. It is clear that as <m>x</m> approaches 1, <m>f(x)</m> does not seem to approach a single number. Instead, it seems as though <m>f(x)</m> approaches two different numbers. When considering values of <m>x</m> less than 1 (approaching 1 from the left), it seems that <m>f(x)</m> is approaching 2; when considering values of <m>x</m> greater than 1 (approaching 1 from the right), it seems that <m>f(x)</m> is approaching 1. Recognizing this behavior is important; we'll study this in greater depth later. Right now, it suffices to say that the limit does not exist since <m>f(x)</m> is not approaching one value as <m>x</m> approaches 1.
 </p>
-<figure xml:id="fig_nolimit1" >
-<caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
+                    <figure xml:id="fig_nolimit1" >
+                        <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
 
-<!-- START figures/fig_nolimit1.tex -->
-<image>
-    <latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[ymin=-.1,ymax=3.2,xmin=-.1,xmax=2.1,]
+                        <!-- START figures/fig_nolimit1.tex -->
+                        <image xml:id="image_nolimit1">
+                            <latex-image-code><![CDATA[
+                            \begin{tikzpicture}
+                                \begin{axis}[xmin=-.1,xmax=2.1,
+                                             ymin=-.1,ymax=3.2,
+                                            ]
+                                    \addplot[firstcurvestyle,leftarrow, domain=0:1] {x^2 - 2*x + 3};
+                                    \addplot[firstcurvestyle,rightarrow, domain=1:2] {x};
+                                    \addplot[soliddot] coordinates {(1,2)};
+                                    \addplot[hollowdot] coordinates {(1,1)};
+                                \end{axis}
+                            \end{tikzpicture}
+                            ]]></latex-image-code>
+                        </image>
+                        <!-- figures/fig_nolimit1.tex END -->
+                    </figure>
 
-\addplot [{\colorone},smooth,thick] coordinates {(0.,3.) (0.1,2.81) (0.2,2.64) (0.3,2.49) (0.4,2.36) (0.5,2.25) (0.6,2.16) (0.7,2.09) (0.8,2.04) (0.9,2.01) (1,2)};
-\addplot [{\colorone},smooth,thick] coordinates {(1,1) (1.1,1.1) (1.2,1.2) (1.3,1.3) (1.4,1.4) (1.5,1.5) (1.6,1.6) (1.7,1.7) (1.8,1.8) (1.9,1.9) (2.,2.)
-};
-\filldraw [fill=white,draw={\colorone},thick] (axis cs:1,1) circle (1.5pt);
-\filldraw [fill={\colorone},{\colorone}] (axis cs:1,2) circle (1.5pt);
-\end{axis}
-
-
-\end{tikzpicture}
-%\caption{of $f(x)$ in Example \ref{ex_no_limit1}.}\label{fig:nolimit1}
-]]></latex-image-code></image><!-- figures/fig_nolimit1.tex END -->
-
-</figure>
 <table xml:id="table_nolimit1" >
 <caption>Values of <m>f(x)</m> near <m>x=1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
 <tabular>
@@ -378,27 +377,26 @@ Explore why <m>\ds\lim_{x\to 1} 1/(x-1)^2</m> does not exist.
 <p>
 A graph and table of <m>f(x) = 1/(x-1)^2</m> are given in <xref ref="fig_nolimit2">Figures</xref> and <xref ref="table_nolimit2"></xref>, respectively. Both show that as <m>x</m> approaches 1, <m>f(x)</m> grows larger and larger.
 </p>
-<figure xml:id="fig_nolimit2" >
-<caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
+                    <figure xml:id="fig_nolimit2" >
+                        <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
 
-<!-- START figures/fig_nolimit2.tex -->
-<image>
-    <latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[ymin=-1,ymax=110,xmin=-.1,xmax=2.1,]
+                        <!-- START figures/fig_nolimit2.tex -->
+                        <image xml:id="image_nolimit2">
+                            <latex-image-code><![CDATA[
+                                \begin{tikzpicture}
+                                    \begin{axis}[xmin=-.1,xmax=2.1,
+                                                 ymin=-1,ymax=110
+                                                ]
+                                        \addplot[firstcurvestyle,domain=0:0.9] {1/(x - 1)^2};
+                                        \addplot[firstcurvestyle,domain=1.1:2] {1/(x - 1)^2};
+                                        \addplot[asymptote,rightarrow] coordinates {(1,1) (1,100)};
+                                    \end{axis}
+                                \end{tikzpicture}
+                            ]]></latex-image-code>
+                        </image>
+                        <!-- figures/fig_nolimit2.tex END -->
+                    </figure>
 
-\addplot [{\colorone},smooth,thick] coordinates {(0.,1.) (0.05,1.10803) (0.1,1.23457) (0.15,1.38408) (0.2,1.5625)(0.25,1.77778) (0.3,2.04082) (0.35,2.36686) (0.4,2.77778)(0.45,3.30579) (0.5,4.) (0.55,4.93827) (0.6,6.25) (0.65,8.16327)(0.7,11.1111) (0.75,16.) (0.8,25.) (0.85,44.4444) (0.9,100.) };
-\addplot [{\colorone},smooth,thick] coordinates {(1.1,100.) (1.15,44.4444) (1.2,25.) (1.25,16.) (1.3,11.1111) (1.35,8.16327) (1.4,6.25) (1.45,4.93827) (1.5,4.) (1.55,3.30579) (1.6,2.77778) (1.65,2.36686) (1.7,2.04082) (1.75,1.77778) (1.8,1.5625) (1.85,1.38408) (1.9,1.23457) (1.95,1.10803) (2.,1.)};
-%\addplot [{\colorone},smooth] coordinates {(1,1) (1.1,1.1) (1.2,1.2) (1.3,1.3) (1.4,1.4) (1.5,1.5) (1.6,1.6) (1.7,1.7) (1.8,1.8) (1.9,1.9) (2.,2.)
-\draw [dashed,thick] (axis cs: 1,1) -- (axis cs: 1,100);
-\end{axis}
-
-
-\end{tikzpicture}
-%\caption{of $f(x)$ in Example \ref{ex_no_limit2}.}\label{fig:nolimit2}
-]]></latex-image-code></image><!-- figures/fig_nolimit2.tex END -->
-
-</figure>
 <table xml:id="table_nolimit2" >
 <caption>Values of <m>f(x)</m> near <m>x=1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
 <tabular>
@@ -457,32 +455,118 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
 <sidebyside><tabular>
 <row><cell>(a) 
 <!-- START figures/fig_nolimit3a.tex -->
-<image>
+<image xml:id="image_nolimit3a">
     <latex-image-code><![CDATA[
-%\begin{mfigure}{O}
-\begin{tikzpicture}
-\begin{axis}[ymin=-1.1,ymax=1.1,xmin=-1.1,xmax=1.1,]
-\addplot [{\colorone},smooth,thick] coordinates {(-1.,-0.841471) (-0.95,-0.86873) (-0.9,-0.896192) (-0.85,-0.923256)(-0.8,-0.948985) (-0.75,-0.971938) (-0.7,-0.989903) (-0.65,-0.999477)(-0.6,-0.995408) (-0.55,-0.969556) (-0.5,-0.909297)(-0.49,-0.891559) (-0.48,-0.871503)(-0.47,-0.848917) (-0.46,-0.823572) (-0.45,-0.79522)(-0.44,-0.763597) (-0.43,-0.728419) (-0.42,-0.689385)(-0.41,-0.64618) (-0.4,-0.598472) (-0.39,-0.545923) (-0.38,-0.488189)(-0.37,-0.424935) (-0.36,-0.355842) (-0.35,-0.280629)(-0.34,-0.199077) (-0.33,-0.11106) (-0.32,-0.0165919)(-0.31,0.0841143) (-0.3,0.190568) (-0.29,0.301898) (-0.28,0.416722)(-0.27,0.532974) (-0.26,0.6477) (-0.25,0.756802) (-0.24,0.854753)(-0.23,0.93428) (-0.22,0.986099) (-0.21,0.998774) (-0.2,0.958924)(-0.19,0.852122) (-0.18,0.665102) (-0.17,0.390185) (-0.16,0.0331792)(-0.15,-0.374151) (-0.14,-0.757628) (-0.13,-0.986959)(-0.12,-0.887294) (-0.11,-0.327701) (-0.1,0.544021) (-0.09,0.993333)(-0.08,0.0663219) (-0.07,-0.988987) (-0.06,0.818447)(-0.05,-0.912945) (-0.04,0.132352) (-0.03,-0.94053) (-0.02,0.262375)(-0.01,0.506366)(0.01,-0.506366) (0.02,-0.262375) (0.03,0.94053) (0.04,-0.132352)(0.05,0.912945) (0.06,-0.818447) (0.07,0.988987) (0.08,-0.0663219)(0.09,-0.993333) (0.1,-0.544021) (0.11,0.327701) (0.12,0.887294)(0.13,0.986959) (0.14,0.757628) (0.15,0.374151) (0.16,-0.0331792)(0.17,-0.390185) (0.18,-0.665102) (0.19,-0.852122) (0.2,-0.958924)(0.21,-0.998774) (0.22,-0.986099) (0.23,-0.93428) (0.24,-0.854753)(0.25,-0.756802) (0.26,-0.6477) (0.27,-0.532974) (0.28,-0.416722)(0.29,-0.301898) (0.3,-0.190568) (0.31,-0.0841143) (0.32,0.0165919)(0.33,0.11106) (0.34,0.199077) (0.35,0.280629) (0.36,0.355842)(0.37,0.424935) (0.38,0.488189) (0.39,0.545923) (0.4,0.598472)(0.41,0.64618) (0.42,0.689385) (0.43,0.728419) (0.44,0.763597)(0.45,0.79522) (0.46,0.823572) (0.47,0.848917) (0.48,0.871503)(0.49,0.891559) (0.5,0.909297)(0.55,0.969556) (0.6,0.995408) (0.65,0.999477) (0.7,0.989903)(0.75,0.971938) (0.8,0.948985) (0.85,0.923256) (0.9,0.896192)(0.95,0.86873) (1.,0.841471) };
-\end{axis}
-
-
-\end{tikzpicture}
-%\captionof{figure}{of $f(x)$ in Example \ref{ex_no_limit2}.}\label{fig:nolimit3a}
-%\end{mfigure}
-]]></latex-image-code></image><!-- figures/fig_nolimit3a.tex END -->
+    \begin{tikzpicture}
+        \begin{axis}[xmin=-1.1,xmax=1.1,
+                     ymin=-1.1,ymax=1.1,
+                    ]
+            \addplot[firstcurvestyle,leftarrow,
+                     domain=-1.018591636:-0.318309886, % 1/(15/48 pi) to 1/(48/48 pi)
+                     samples=34, % sample every pi/48 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=-0.318309886:-0.106103295, % 1/pi to 1/(3 pi)
+                     samples=25, % sample every pi/12 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=-0.106103295:-0.063661977, % 1/(3 pi) to 1/(5 pi)
+                     samples=49, % sample every pi/24 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=-0.063661977:-0.045472841, % 1/(5 pi) to 1/(7 pi)
+                     samples=97, % sample every pi/48 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=-0.045472841:-0.0106103295, % 1/(7 pi) to 1/(30 pi)
+                     samples=93, % sample every pi/2 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=0.0106103295:0.045472841, % 1/(30 pi) to 1/(7 pi)
+                     samples=93, % sample every pi/2 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=0.045472841:0.063661977, % 1/(7 pi) to 1/(5 pi)
+                     samples=97, % sample every pi/48 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=0.063661977:0.106103295, % 1/(5 pi) to 1/(3 pi)
+                     samples=49, % sample every pi/24 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=0.106103295:0.318309886, % 1/(3 pi) to 1/pi
+                     samples=25, % sample every pi/12 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,rightarrow,
+                     domain=0.318309886:1.018591636, % 1/(48/48 pi) to 1/(15/48 pi)
+                     samples=34, % sample every pi/48 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+        \end{axis}
+    \end{tikzpicture}
+    ]]></latex-image-code>
+</image>
+<!-- figures/fig_nolimit3a.tex END -->
 </cell><cell>(b) 
 <!-- START figures/fig_nolimit3b.tex -->
-<image>
+<image xml:id="image_nolimit3b">
     <latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[ymin=-1.1,ymax=1.1,xmin=-.11,xmax=.11,]
-\addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.544021) (-0.099,0.625859) (-0.098,0.702784) (-0.097,0.773598) (-0.096,0.837061) (-0.095,0.891904) (-0.094,0.936853) (-0.093,0.970648) (-0.092,0.992071) (-0.091,0.999978) (-0.09,0.993333) (-0.089,0.971247) (-0.088,0.933026) (-0.087,0.878215) (-0.086,0.806651) (-0.085,0.718515) (-0.084,0.614387) (-0.083,0.495298) (-0.082,0.362779) (-0.081,0.218905) (-0.08,0.0663219) (-0.079,-0.0917281) (-0.078,-0.251415) (-0.077,-0.408347) (-0.076,-0.557627) (-0.075,-0.693952) (-0.074,-0.81175) (-0.073,-0.905374) (-0.072,-0.969337) (-0.071,-0.998614) (-0.07,-0.988987) (-0.069,-0.937442) (-0.068,-0.842593) (-0.067,-0.705118) (-0.066,-0.528174) (-0.065,-0.317743) (-0.064,-0.0828681) (-0.063,0.164304) (-0.062,0.408736) (-0.061,0.633044) (-0.06,0.818447) (-0.059,0.94617) (-0.058,0.999301) (-0.057,0.965066) (-0.056,0.837348) (-0.055,0.619211) (-0.054,0.325024) (-0.053,-0.0183676) (-0.052,-0.372047) (-0.051,-0.687679) (-0.05,-0.912945) (-0.049,-0.999926) (-0.048,-0.915928) (-0.047,-0.65528) (-0.046,-0.249359) (-0.045,0.229023) (-0.044,0.671421) (-0.043,0.953507) (-0.042,0.969509) (-0.041,0.67613) (-0.04,0.132352) (-0.039,-0.486679) (-0.038,-0.925763) (-0.037,-0.948132) (-0.036,-0.4764) (-0.035,0.292743) (-0.034,0.907558) (-0.033,0.896983) (-0.032,0.165166) (-0.031,-0.746068) (-0.03,-0.94053) (-0.029,-0.0746909) (-0.028,0.915507) (-0.027,0.614755) (-0.026,-0.690678) (-0.025,-0.745113) (-0.024,0.7352) (-0.023,0.482964) (-0.022,-0.995148) (-0.021,0.475171) (-0.02,0.262375) (-0.019,-0.70007) (-0.018,0.83773) (-0.017,-0.762217) (-0.016,0.325796) (-0.015,0.639018) (-0.014,-0.73662) (-0.013,-0.998945) (-0.012,-0.996711) (-0.011,-0.195822) (-0.01,0.506366) (-0.009,0.914944) (-0.008,0.61604) (-0.007,0.996362) (-0.006,0.161545) (-0.005,0.873297) (-0.004,0.970528) (-0.003,-0.318846) (-0.002,0.467772) (-0.001,-0.82688) (0,-0.85773) (0.001,0.82688) (0.002,-0.467772) (0.003,0.318846) (0.004,-0.970528) (0.005,-0.873297) (0.006,-0.161545) (0.007,-0.996362) (0.008,-0.61604) (0.009,-0.914944) (0.01,-0.506366) (0.011,0.195822) (0.012,0.996711) (0.013,0.998945) (0.014,0.73662) (0.015,-0.639018) (0.016,-0.325796) (0.017,0.762217) (0.018,-0.83773) (0.019,0.70007) (0.02,-0.262375) (0.021,-0.475171) (0.022,0.995148) (0.023,-0.482964) (0.024,-0.7352) (0.025,0.745113) (0.026,0.690678) (0.027,-0.614755) (0.028,-0.915507) (0.029,0.0746909) (0.03,0.94053) (0.031,0.746068) (0.032,-0.165166) (0.033,-0.896983) (0.034,-0.907558) (0.035,-0.292743) (0.036,0.4764) (0.037,0.948132) (0.038,0.925763) (0.039,0.486679) (0.04,-0.132352) (0.041,-0.67613) (0.042,-0.969509) (0.043,-0.953507) (0.044,-0.671421) (0.045,-0.229023) (0.046,0.249359) (0.047,0.65528) (0.048,0.915928) (0.049,0.999926) (0.05,0.912945) (0.051,0.687679) (0.052,0.372047) (0.053,0.0183676) (0.054,-0.325024) (0.055,-0.619211) (0.056,-0.837348) (0.057,-0.965066) (0.058,-0.999301) (0.059,-0.94617) (0.06,-0.818447) (0.061,-0.633044) (0.062,-0.408736) (0.063,-0.164304) (0.064,0.0828681) (0.065,0.317743) (0.066,0.528174) (0.067,0.705118) (0.068,0.842593) (0.069,0.937442) (0.07,0.988987) (0.071,0.998614) (0.072,0.969337) (0.073,0.905374) (0.074,0.81175) (0.075,0.693952) (0.076,0.557627) (0.077,0.408347) (0.078,0.251415) (0.079,0.0917281) (0.08,-0.0663219) (0.081,-0.218905) (0.082,-0.362779) (0.083,-0.495298) (0.084,-0.614387) (0.085,-0.718515) (0.086,-0.806651) (0.087,-0.878215) (0.088,-0.933026) (0.089,-0.971247) (0.09,-0.993333) (0.091,-0.999978) (0.092,-0.992071) (0.093,-0.970648) (0.094,-0.936853) (0.095,-0.891904) (0.096,-0.837061) (0.097,-0.773598) (0.098,-0.702784) (0.099,-0.625859) (0.1,-0.544021)
-};
-\end{axis}
-
-
-\end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_nolimit3b.tex END -->
+    \begin{tikzpicture}
+        \begin{axis}[xmin=-.11,xmax=.11,
+                     ymin=-1.1,ymax=1.1
+                    ]
+            \addplot[firstcurvestyle,leftarrow,
+                     domain=-0.100518911:-0.063661977, % 1/(152/48 pi) to 1/(240/48 pi)
+                     samples=89, % sample every pi/48 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=-0.063661977:-0.045472841, % 1/(5 pi) to 1/(7 pi)
+                     samples=25, % sample every pi/12 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=-0.045472841:-0.035367765, % 1/(7 pi) to 1/(9 pi)
+                     samples=49, % sample every pi/24 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=-0.035367765:-0.024485376, % 1/(9 pi) to 1/(13 pi)
+                     samples=145, % sample every pi/36 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=-0.024485376:-0.003183099, % 1/(13 pi) to 1/(100 pi)
+                     samples=523, % sample every pi/6 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=-0.0031830988618379:-0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
+                     samples=401, % sample every pi/2 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,leftarrow,
+                     domain=0.100518911:0.063661977, % 1/(152/48 pi) to 1/(240/48 pi)
+                     samples=89, % sample every pi/48 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=0.063661977:0.045472841, % 1/(5 pi) to 1/(7 pi)
+                     samples=25, % sample every pi/12 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=0.045472841:0.035367765, % 1/(7 pi) to 1/(9 pi)
+                     samples=49, % sample every pi/24 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=0.035367765:0.024485376, % 1/(9 pi) to 1/(13 pi)
+                     samples=145, % sample every pi/36 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=0.024485376:0.003183099, % 1/(13 pi) to 1/(100 pi)
+                     samples=523, % sample every pi/6 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+            \addplot[firstcurvestyle,-,smooth,
+                     domain=0.0031830988618379:0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
+                     samples=401, % sample every pi/2 through phase
+                    ] {sin(1/x * 180 / pi)}; 
+        \end{axis}
+    \end{tikzpicture}
+    ]]></latex-image-code>
+</image>
+<!-- figures/fig_nolimit3b.tex END -->
 </cell></row>
 </tabular>
 <tabular>
@@ -514,19 +598,21 @@ We have approximated limits of functions as <m>x</m> approached a particular num
 <caption>Interpreting a difference quotient as the slope of a secant line.</caption>
 
 <!-- START figures/fig_diff_quot1.tex -->
-<image>
+<image xml:id="image_diffquot1">
     <latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[clip=false,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,]
-\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
-\addplot [{\colortwo},smooth,thick] coordinates {(0,7.5) (6,22.5)};
-\fill[black] (axis cs:1,10) circle (1pt);
-\fill[black] (axis cs:5,20) circle (1pt);
-\end{axis}
-
-\node [above] at (myplot.above origin) {\scriptsize $f$};
-\end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_diff_quot1.tex END -->
+    \begin{tikzpicture}
+        \begin{axis}[xmin=-1,xmax=6.5,
+                     ymin=-1,ymax=25,
+                     ylabel={$f$},
+                    ]
+            \addplot+[domain=0:6] {-1.5*x^2+11.5*x};
+            \addplot+[domain=0:6] {2.5*(x-1)+10};
+            \addplot[soliddot] coordinates {(1,10) (5,20)};
+        \end{axis}
+    \end{tikzpicture}
+    ]]></latex-image-code>
+</image>
+<!-- figures/fig_diff_quot1.tex END -->
 
 </figure>
 <p>
@@ -570,52 +656,58 @@ For small values of <m>h</m>, i.e., values of <m>h</m> close to 0, we get averag
 <sidebyside><tabular>
 <row><cell>(a) 
 <!-- START figures/fig_diff_quot_smallha.tex -->
-<image>
+<image xml:id="image_diff_quot_smallha">
     <latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[clip=false,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,]
-\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
-\addplot [{\colortwo},smooth,thick] coordinates {(0,4.5) (4,26.5)};
-\fill[black] (axis cs:1,10) circle (1pt);
-\fill[black] (axis cs:3,21) circle (1pt);
-\end{axis}
-
-\node [above] at (myplot.above origin) {\scriptsize $f$};
-\end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_diff_quot_smallha.tex END -->
+    \begin{tikzpicture}
+        \begin{axis}[xmin=-1,xmax=6.5,
+                     ymin=-1,ymax=25,
+                     ylabel={$f$},
+                    ]
+            \addplot+[domain=0:6] {-1.5*x^2+11.5*x};
+            \addplot+[domain=0:3.5454] {5.5*(x-1)+10};
+            \addplot[soliddot] coordinates {(1,10) (3,21)};
+        \end{axis}
+    \end{tikzpicture}
+    ]]></latex-image-code>
+</image>
+<!-- figures/fig_diff_quot_smallha.tex END -->
 </cell><cell>(b) 
 <!-- START figures/fig_diff_quot_smallhb.tex -->
-<image>
+<image xml:id="image_diff_quot_smallhb">
     <latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[clip=false,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,]
-\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
-\addplot [{\colortwo},smooth,thick] coordinates {(0,3) (3,24)};
-\fill[black] (axis cs:1,10) circle (1pt);
-\fill[black] (axis cs:2,17) circle (1pt);
-\end{axis}
-
-\node [above] at (myplot.above origin) {\scriptsize $f$};
-\end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_diff_quot_smallhb.tex END -->
+    \begin{tikzpicture}
+        \begin{axis}[xmin=-1,xmax=6.5,
+                     ymin=-1,ymax=25,
+                     ylabel={$f$},
+                    ]
+            \addplot+[domain=0:6] {-1.5*x^2+11.5*x};
+            \addplot+[domain=0:3] {7*(x-1)+10};
+            \addplot[soliddot] coordinates {(1,10) (2,17)};
+        \end{axis}
+    \end{tikzpicture}
+    ]]></latex-image-code>
+</image>
+<!-- figures/fig_diff_quot_smallhb.tex END -->
 </cell></row>
 </tabular>
 <tabular>
 <row><cell>(c)
 <!-- START figures/fig_diff_quot_smallhc.tex -->
-<image>
+<image xml:id="image_diff_quot_smallhc">
     <latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[clip=false,ymin=-1,ymax=25,extra y tick labels={},xmin=-1,xmax=6.5,]
-\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.5,5.375) (1.,10.) (1.5,13.875) (2.,17.) (2.5,19.375)(3.,21.) (3.5,21.875) (4.,22.) (4.5,21.375) (5.,20.) (5.5,17.875)(6.,15.) };
-\addplot [{\colortwo},smooth,thick] coordinates {(0,2.25) (2.5,21.625)};
-\fill[black] (axis cs:1,10) circle (1pt);
-\fill[black] (axis cs:1.5,13.875) circle (1pt);
-\end{axis}
-
-\node [above] at (myplot.above origin) {\scriptsize $f$};
-\end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_diff_quot_smallhc.tex END -->
+    \begin{tikzpicture}
+        \begin{axis}[xmin=-1,xmax=6.5,
+                     ymin=-1,ymax=25,
+                     ylabel={$f$},
+                    ]
+            \addplot+[domain=0:6] {-1.5*x^2+11.5*x};
+            \addplot+[domain=0:2.80645] {7.75*(x-1)+10};
+            \addplot[soliddot] coordinates {(1,10) (1.5,13.875)};
+        \end{axis}
+    \end{tikzpicture}
+    ]]></latex-image-code>
+</image>
+<!-- figures/fig_diff_quot_smallhc.tex END -->
 </cell></row>
 </tabular></sidebyside>
 <p>

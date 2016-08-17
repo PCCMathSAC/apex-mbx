@@ -52,9 +52,13 @@ include Makefile.paths
 # the project distribution
 PRJSRC    = $(PRJ)/src
 OUTPUT    = $(PRJ)/output
+STYLE     = $(PRJ)/style
 
 # The project's main hub file
 MAINFILE  = $(PRJSRC)/index.mbx
+
+# The project's styling files
+CSS       = $(STYLE)/css/apex.css
 
 # These paths are subdirectories of
 # the Mathbook XML distribution
@@ -97,8 +101,9 @@ html:
 	-rm $(HTMLOUT)/*.html
 	-rm $(HTMLOUT)/knowl/*.html
 	cp -a $(IMAGESOUT) $(HTMLOUT)
+	cp $(CSS) $(HTMLOUT)
 	cd $(HTMLOUT); \
-	xsltproc -xinclude --stringparam webwork.server $(SERVER) --stringparam html.knowl.exercise.inline no --stringparam html.knowl.example no $(MBXSL)/mathbook-html.xsl $(MAINFILE)
+	xsltproc -xinclude --stringparam webwork.server $(SERVER) --stringparam html.knowl.exercise.inline no --stringparam html.knowl.example no --stringparam html.css.extra apex.css $(MBXSL)/mathbook-html.xsl $(MAINFILE)
 
 # make all the image files in svg format
 images:
