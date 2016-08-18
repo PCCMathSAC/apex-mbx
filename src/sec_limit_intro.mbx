@@ -167,63 +167,6 @@
 
         <p>We now consider several examples that allow us explore different aspects of the limit concept.</p>
 
-        <figure xml:id="fig_limit1" >
-            <caption>Graphically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
-
-            <!-- START figures/fig_limit1.tex -->
-            <image xml:id="image_limit1">
-                <latex-image-code><![CDATA[
-                \begin{tikzpicture}
-                    \begin{axis}[xmin=2.3,xmax=3.7,
-                                 ymin=.25,ymax=.35,
-                                 extra y tick labels={},
-                                ]
-                        \addplot+[domain=2.5:3.49] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
-                    \end{axis}
-                \end{tikzpicture}
-                ]]></latex-image-code>
-            </image>
-            <!-- figures/fig_limit1.tex END -->
-
-        </figure>
-
-        <table xml:id="table_limit1" >
-            <caption>Numerically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
-            <tabular>
-                <row bottom="medium">
-                    <cell><m>x</m></cell>
-                    <cell><m>\frac{x^2-x-6}{6x^2-19x+3}</m></cell></row>
-                <row>
-                    <cell><m>2.9</m></cell>
-                    <cell><m>0.29878</m></cell>
-                </row>
-                <row>
-                    <cell><m>2.99</m></cell>
-                    <cell><m>0.294569</m></cell>
-                </row>
-                <row>
-                    <cell><m>2.999</m></cell>
-                    <cell><m>0.294163</m></cell>
-                </row>
-                <row>
-                    <cell><em>3</em></cell>
-                    <cell><em>not defined</em></cell>
-                </row>
-                <row>
-                    <cell><m>3.001</m></cell>
-                    <cell><m>0.294073</m></cell>
-                </row>
-                <row>
-                    <cell><m>3.01</m></cell>
-                    <cell><m>0.293669</m></cell>
-                </row>
-                <row>
-                    <cell><m>3.1</m></cell>
-                    <cell><m>0.289773</m></cell>
-                </row>
-            </tabular>
-        </table>
-
         <example xml:id="ex_limit1">
             <title>Approximating the value of a limit</title>
             <statement>
@@ -231,6 +174,64 @@
             </statement>
             <solution>
                 <p>To graphically approximate the limit, graph <me>y = (x^2-x-6)/(6x^2-19x+3)</me> on a small interval that contains <m>3</m>. To numerically approximate the limit, create a table of values where the <m>x</m> values are near <m>3</m>. This is done in <xref ref="fig_limit1">Figures</xref> and <xref ref="table_limit1"></xref>, respectively.</p>
+                <sidebyside>
+                    <figure xml:id="fig_limit1" >
+                        <caption>Graphically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
+
+                        <!-- START figures/fig_limit1.tex -->
+                        <image xml:id="image_limit1">
+                            <latex-image-code><![CDATA[
+                            \begin{tikzpicture}
+                                \begin{axis}[xmin=2.3,xmax=3.7,
+                                             ymin=.25,ymax=.35,
+                                             extra y tick labels={},
+                                            ]
+                                    \addplot+[domain=2.5:3.49] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
+                                \end{axis}
+                            \end{tikzpicture}
+                            ]]></latex-image-code>
+                        </image>
+                        <!-- figures/fig_limit1.tex END -->
+
+                    </figure>
+
+                    <table xml:id="table_limit1" >
+                        <caption>Numerically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
+                        <tabular>
+                            <row bottom="medium">
+                                <cell><m>x</m></cell>
+                                <cell><m>\frac{x^2-x-6}{6x^2-19x+3}</m></cell></row>
+                            <row>
+                                <cell><m>2.9</m></cell>
+                                <cell><m>0.29878</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>2.99</m></cell>
+                                <cell><m>0.294569</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>2.999</m></cell>
+                                <cell><m>0.294163</m></cell>
+                            </row>
+                            <row>
+                                <cell><em>3</em></cell>
+                                <cell><em>not defined</em></cell>
+                            </row>
+                            <row>
+                                <cell><m>3.001</m></cell>
+                                <cell><m>0.294073</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>3.01</m></cell>
+                                <cell><m>0.293669</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>3.1</m></cell>
+                                <cell><m>0.289773</m></cell>
+                            </row>
+                        </tabular>
+                    </table>
+                </sidebyside>
 
                 <p>The graph shows that when <m>x</m> is near <m>3</m>, the value of <m>y</m> is very near <m>0.3</m>. By considering values of <m>x</m> near <m>3</m>, we see that <m>y=0.294</m> is a better approximation. The graph and the table imply that <me>\lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3} \approx 0.294\text{.}</me></p>
             </solution>
@@ -255,39 +256,61 @@
             <solution>
                 <p>Again we graph <m>f(x)</m> and create a table of its values near <m>x=0</m> to approximate the limit. Note that this is a piecewise defined function, so it behaves differently on either side of <m>0</m>. <xref ref="fig_limit2">Figure</xref> shows a graph of <m>f(x)</m>, and on either side of <m>0</m> it seems the <m>y</m> values approach <m>1</m>. Note that <m>f(0)</m> is not actually defined, as indicated in the graph with the open circle.</p>
 
-                <figure xml:id="fig_limit2" >
-                    <caption>Graphically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
+                <sidebyside>
+                    <figure xml:id="fig_limit2" >
+                        <caption>Graphically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
 
-                    <!-- START figures/fig_limit2.tex -->
-                    <image xml:id="image_limit2">
-                        <latex-image-code><![CDATA[
-                        \begin{tikzpicture}[declare function = {func(\x) = (\x<0) * (x+1) + (\x>0) * (-x^2+1);}]
-                            \begin{axis}[xmin=-1.1,xmax=1.1,
-                                         ymin=-.1,ymax=1.1,
-                                        ]
-                                \addplot+[domain=-1:1] {func(x)};
-                                \addplot[hollowdot] coordinates {(0,1)};
-                            \end{axis}
-                        \end{tikzpicture}
-                        ]]></latex-image-code>
-                    </image>
-                    <!-- figures/fig_limit2.tex END -->
+                        <!-- START figures/fig_limit2.tex -->
+                        <image xml:id="image_limit2">
+                            <latex-image-code><![CDATA[
+                            \begin{tikzpicture}[declare function = {func(\x) = (\x<0) * (x+1) + (\x>0) * (-x^2+1);}]
+                                \begin{axis}[xmin=-1.1,xmax=1.1,
+                                             ymin=-.1,ymax=1.1,
+                                            ]
+                                    \addplot+[domain=-1:1] {func(x)};
+                                    \addplot[hollowdot] coordinates {(0,1)};
+                                \end{axis}
+                            \end{tikzpicture}
+                            ]]></latex-image-code>
+                        </image>
+                        <!-- figures/fig_limit2.tex END -->
 
-                </figure>
-<table xml:id="table_limit2" >
-<caption>Numerically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
-<tabular>
-    <row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell><m>-0.1</m></cell><cell><m>0.9</m></cell></row>
-<row><cell><m>-0.01</m></cell><cell><m>0.99</m></cell></row>
-<row><cell><m>-0.001</m></cell><cell><m>0.999</m></cell></row>
-<row><cell><m>0.001</m></cell><cell><m>0.999999</m></cell></row>
-<row><cell><m>0.01</m></cell><cell><m>0.9999</m></cell></row>
-<row><cell><m>0.1</m></cell><cell><m>0.99</m></cell></row>
-</tabular>
-</table>
+                    </figure>
 
+                    <table xml:id="table_limit2" >
+                        <caption>Numerically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
+                        <tabular>
+                            <row bottom="medium">
+                                <cell><m>x</m></cell>
+                                <cell><m>f(x)</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>-0.1</m></cell>
+                                <cell><m>0.9</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>-0.01</m></cell>
+                                <cell><m>0.99</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>-0.001</m></cell>
+                                <cell><m>0.999</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>0.001</m></cell>
+                                <cell><m>0.999999</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>0.01</m></cell>
+                                <cell><m>0.9999</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>0.1</m></cell>
+                                <cell><m>0.99</m></cell>
+                            </row>
+                        </tabular>
+                    </table>
+                </sidebyside>
 
 
         <p>The table shown in <xref ref="table_limit2">Figure</xref> shows values of <m>f(x)</m> for values of <m>x</m> near <m>0</m>. It is clear that as <m>x</m> takes on values very near <m>0</m>, <m>f(x)</m> takes on values very near <m>1</m>. It turns out that if we let <m>x=0</m> for either <q>piece</q> of <m>f(x)</m>, <m>1</m> is returned; this is significant and we'll return to this idea later.</p>
@@ -302,7 +325,7 @@ The graph and table allow us to say that <m>\lim_{x\to 0}f(x) \approx 1</m>; in 
 </introduction>
 
 
-<subsection xml:id="fig_nolimit3">
+<subsection xml:id="subsec_nolimit3">
 <title>Identifying When Limits Do Not Exist</title>
 <p>
 A function may not have a limit for all values of <m>x</m>. That is, we cannot say <m>\lim_{x\to c}f(x)=L</m> for some numbers <m>L</m> for all values of <m>c</m>, for there may not be a number that <m>f(x)</m> is approaching. There are three ways in which a limit may fail to exist. <index><main>limit</main><sub>does not exist</sub></index>
@@ -329,40 +352,62 @@ We'll explore each of these in turn.
 <p>
 A graph of <m>f(x)</m> around <m>x=1</m> and a table are given <xref ref="fig_nolimit1">Figures</xref> and <xref ref="table_nolimit1"></xref>, respectively. It is clear that as <m>x</m> approaches 1, <m>f(x)</m> does not seem to approach a single number. Instead, it seems as though <m>f(x)</m> approaches two different numbers. When considering values of <m>x</m> less than 1 (approaching 1 from the left), it seems that <m>f(x)</m> is approaching 2; when considering values of <m>x</m> greater than 1 (approaching 1 from the right), it seems that <m>f(x)</m> is approaching 1. Recognizing this behavior is important; we'll study this in greater depth later. Right now, it suffices to say that the limit does not exist since <m>f(x)</m> is not approaching one value as <m>x</m> approaches 1.
 </p>
-                    <figure xml:id="fig_nolimit1" >
-                        <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
+                    <sidebyside>
+                        <figure xml:id="fig_nolimit1" >
+                            <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
 
-                        <!-- START figures/fig_nolimit1.tex -->
-                        <image xml:id="image_nolimit1">
-                            <latex-image-code><![CDATA[
-                            \begin{tikzpicture}
-                                \begin{axis}[xmin=-.1,xmax=2.1,
-                                             ymin=-.1,ymax=3.2,
-                                            ]
-                                    \addplot[firstcurvestyle,leftarrow, domain=0:1] {x^2 - 2*x + 3};
-                                    \addplot[firstcurvestyle,rightarrow, domain=1:2] {x};
-                                    \addplot[soliddot] coordinates {(1,2)};
-                                    \addplot[hollowdot] coordinates {(1,1)};
-                                \end{axis}
-                            \end{tikzpicture}
-                            ]]></latex-image-code>
-                        </image>
-                        <!-- figures/fig_nolimit1.tex END -->
-                    </figure>
+                            <!-- START figures/fig_nolimit1.tex -->
+                            <image xml:id="image_nolimit1">
+                                <latex-image-code><![CDATA[
+                                \begin{tikzpicture}
+                                    \begin{axis}[xmin=-.1,xmax=2.1,
+                                                 ymin=-.1,ymax=3.2,
+                                                ]
+                                        \addplot[firstcurvestyle,leftarrow, domain=0:1] {x^2 - 2*x + 3};
+                                        \addplot[firstcurvestyle,rightarrow, domain=1:2] {x};
+                                        \addplot[soliddot] coordinates {(1,2)};
+                                        \addplot[hollowdot] coordinates {(1,1)};
+                                    \end{axis}
+                                \end{tikzpicture}
+                                ]]></latex-image-code>
+                            </image>
+                            <!-- figures/fig_nolimit1.tex END -->
+                        </figure>
 
-<table xml:id="table_nolimit1" >
-<caption>Values of <m>f(x)</m> near <m>x=1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
-<tabular>
-<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell><m>0.9</m></cell><cell><m>2.01</m></cell></row>
-<row><cell><m>0.99</m></cell><cell><m>2.0001</m></cell></row>
-<row><cell><m>0.999</m></cell><cell><m>2.000001</m></cell></row>
-<row><cell><m>1.001</m></cell><cell><m>1.001</m></cell></row>
-<row><cell><m>1.01</m></cell><cell><m>1.01</m></cell></row>
-<row><cell><m>1.1</m></cell><cell><m>1.1</m></cell></row>
-</tabular>
-</table>
+                        <table xml:id="table_nolimit1" >
+                            <caption>Values of <m>f(x)</m> near <m>x=1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
+                            <tabular>
+                                <row bottom="medium">
+                                    <cell><m>x</m></cell>
+                                    <cell><m>f(x)</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>0.9</m></cell>
+                                    <cell><m>2.01</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>0.99</m></cell>
+                                    <cell><m>2.0001</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>0.999</m></cell>
+                                    <cell><m>2.000001</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>1.001</m></cell>
+                                    <cell><m>1.001</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>1.01</m></cell>
+                                    <cell><m>1.01</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>1.1</m></cell>
+                                    <cell><m>1.1</m></cell>
+                                </row>
+                            </tabular>
+                        </table>
+                    </sidebyside>
 </solution>
 </example>
 
@@ -377,39 +422,61 @@ Explore why <m>\ds\lim_{x\to 1} 1/(x-1)^2</m> does not exist.
 <p>
 A graph and table of <m>f(x) = 1/(x-1)^2</m> are given in <xref ref="fig_nolimit2">Figures</xref> and <xref ref="table_nolimit2"></xref>, respectively. Both show that as <m>x</m> approaches 1, <m>f(x)</m> grows larger and larger.
 </p>
-                    <figure xml:id="fig_nolimit2" >
-                        <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
+                    <sidebyside>
+                        <figure xml:id="fig_nolimit2" >
+                            <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
 
-                        <!-- START figures/fig_nolimit2.tex -->
-                        <image xml:id="image_nolimit2">
-                            <latex-image-code><![CDATA[
-                                \begin{tikzpicture}
-                                    \begin{axis}[xmin=-.1,xmax=2.1,
-                                                 ymin=-1,ymax=110
-                                                ]
-                                        \addplot[firstcurvestyle,domain=0:0.9] {1/(x - 1)^2};
-                                        \addplot[firstcurvestyle,domain=1.1:2] {1/(x - 1)^2};
-                                        \addplot[asymptote,rightarrow] coordinates {(1,1) (1,100)};
-                                    \end{axis}
-                                \end{tikzpicture}
-                            ]]></latex-image-code>
-                        </image>
-                        <!-- figures/fig_nolimit2.tex END -->
-                    </figure>
+                            <!-- START figures/fig_nolimit2.tex -->
+                            <image xml:id="image_nolimit2">
+                                <latex-image-code><![CDATA[
+                                    \begin{tikzpicture}
+                                        \begin{axis}[xmin=-.1,xmax=2.1,
+                                                     ymin=-1,ymax=110
+                                                    ]
+                                            \addplot[firstcurvestyle,domain=0:0.9] {1/(x - 1)^2};
+                                            \addplot[firstcurvestyle,domain=1.1:2] {1/(x - 1)^2};
+                                            \addplot[asymptote,rightarrow] coordinates {(1,1) (1,100)};
+                                        \end{axis}
+                                    \end{tikzpicture}
+                                ]]></latex-image-code>
+                            </image>
+                            <!-- figures/fig_nolimit2.tex END -->
+                        </figure>
 
-<table xml:id="table_nolimit2" >
-<caption>Values of <m>f(x)</m> near <m>x=1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
-<tabular>
-<row><cell><m>x</m></cell><cell><m>f(x)</m></cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell><m>0.9</m></cell><cell><m>100.</m></cell></row>
-<row><cell><m>0.99</m></cell><cell><m>10000.</m></cell></row>
-<row><cell><m>0.999</m></cell><cell><m>1.\times 10^6</m></cell></row>
-<row><cell><m>1.001</m></cell><cell><m>1.\times 10^6</m></cell></row>
-<row><cell><m>1.01</m></cell><cell><m>10000.</m></cell></row>
-<row><cell><m>1.1</m></cell><cell><m>100.</m></cell></row>
-</tabular>
-</table>
+                        <table xml:id="table_nolimit2" >
+                            <caption>Values of <m>f(x)</m> near <m>x=1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
+                            <tabular>
+                                <row bottom="medium">
+                                    <cell><m>x</m></cell>
+                                    <cell><m>f(x)</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>0.9</m></cell>
+                                    <cell><m>100.</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>0.99</m></cell>
+                                    <cell><m>10000.</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>0.999</m></cell>
+                                    <cell><m>1.\times 10^6</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>1.001</m></cell>
+                                    <cell><m>1.\times 10^6</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>1.01</m></cell>
+                                    <cell><m>10000.</m></cell>
+                                </row>
+                                <row>
+                                    <cell><m>1.1</m></cell>
+                                    <cell><m>100.</m></cell>
+                                </row>
+                            </tabular>
+                        </table>
+                    </sidebyside>
 <p>
 We can deduce this on our own, without the aid of the graph and table. If <m>x</m> is near 1, then <m>(x-1)^2</m> is very small, and:
 <me>
@@ -436,8 +503,170 @@ Explore why <m>\ds\lim_{x\to 0}\sin(1/x)</m> does not exist.
 </statement>
 <solution>
 <p>
-Two graphs of <m>f(x) = \sin(1/x)</m> are given in <xref ref="fig_nolimit3">Figures</xref>. <xref ref="fig_nolimit3">Figure</xref>(a) shows <m>f(x)</m> on the interval <m>[-1,1]</m>; notice how <m>f(x)</m> seems to oscillate near <m>x=0</m>. One might think that despite the oscillation, as <m>x</m> approaches 0, <m>f(x)</m> approaches 0. However, <xref ref="fig_nolimit3">Figure</xref>(b) zooms in on <m>\sin(1/x)</m>, on the interval <m>[-0.1,0.1]</m>. Here the oscillation is even more pronounced. Finally, in the table in <xref ref="fig_nolimit3">Figure</xref>(c), we see <m>\sin(x)/x</m> evaluated for values of <m>x</m> near 0. As <m>x</m> approaches 0, <m>f(x)</m> does not appear to approach any value.
+Two graphs of <m>f(x) = \sin(1/x)</m> are given in <xref ref="fig_nolimit3">Figure</xref>. <xref ref="fig_nolimit3a">Figure</xref> shows <m>f(x)</m> on the interval <m>[-1,1]</m>; notice how <m>f(x)</m> seems to oscillate near <m>x=0</m>. One might think that despite the oscillation, as <m>x</m> approaches 0, <m>f(x)</m> approaches 0. However, <xref ref="fig_nolimit3b">Figure</xref> zooms in on <m>\sin(1/x)</m>, on the interval <m>[-0.1,0.1]</m>. Here the oscillation is even more pronounced. Finally, in <xref ref="fig_nolimit3c">Table</xref>, we see <m>\sin(x)/x</m> evaluated for values of <m>x</m> near 0. As <m>x</m> approaches 0, <m>f(x)</m> does not appear to approach any value.
 </p>
+
+<sidebyside xml:id="fig_nolimit3">
+    <caption>Observing that <m>f(x)=\sin(1/x)</m> has no limit as <m>x\to0</m> in <xref ref="ex_no_limit3">Example</xref>.</caption>
+    <figure xml:id="fig_nolimit3a">
+        <caption />
+        <!-- START figures/fig_nolimit3a.tex -->
+        <image xml:id="image_nolimit3a">
+            <latex-image-code><![CDATA[
+            \begin{tikzpicture}
+                \begin{axis}[xmin=-1.1,xmax=1.1,
+                             ymin=-1.1,ymax=1.1,
+                            ]
+                    \addplot[firstcurvestyle,leftarrow,
+                            domain=-1.018591636:-0.318309886, % 1/(15/48 pi) to 1/(48/48 pi)
+                            samples=34, % sample every pi/48 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=-0.318309886:-0.106103295, % 1/pi to 1/(3 pi)
+                            samples=25, % sample every pi/12 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=-0.106103295:-0.063661977, % 1/(3 pi) to 1/(5 pi)
+                            samples=49, % sample every pi/24 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=-0.063661977:-0.045472841, % 1/(5 pi) to 1/(7 pi)
+                            samples=97, % sample every pi/48 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \draw [firstcurvestyle,color=blue,fill=blue] (axis cs:-0.045472841,-1) rectangle (axis cs:0.045472841,1);
+                    %\addplot[firstcurvestyle,-,smooth,
+                    %         domain=-0.045472841:-0.0106103295, % 1/(7 pi) to 1/(30 pi)
+                    %         samples=93, % sample every pi/2 through phase
+                    %        ] {sin(1/x * 180 / pi)}; 
+                    %\addplot[firstcurvestyle,-,smooth,
+                    %         domain=0.0106103295:0.045472841, % 1/(30 pi) to 1/(7 pi)
+                    %         samples=93, % sample every pi/2 through phase
+                    %        ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=0.045472841:0.063661977, % 1/(7 pi) to 1/(5 pi)
+                            samples=97, % sample every pi/48 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=0.063661977:0.106103295, % 1/(5 pi) to 1/(3 pi)
+                            samples=49, % sample every pi/24 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=0.106103295:0.318309886, % 1/(3 pi) to 1/pi
+                            samples=25, % sample every pi/12 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,rightarrow,
+                            domain=0.318309886:1.018591636, % 1/(48/48 pi) to 1/(15/48 pi)
+                            samples=34, % sample every pi/48 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                \end{axis}
+            \end{tikzpicture}
+            ]]></latex-image-code>
+        </image>
+        <!-- figures/fig_nolimit3a.tex END -->
+    </figure>
+    <figure xml:id="fig_nolimit3b">
+        <caption />
+        <!-- START figures/fig_nolimit3b.tex -->
+        <image xml:id="image_nolimit3b">
+            <latex-image-code><![CDATA[
+            \begin{tikzpicture}
+                \begin{axis}[xmin=-.11,xmax=.11,
+                             ymin=-1.1,ymax=1.1
+                            ]
+                    \addplot[firstcurvestyle,leftarrow,
+                            domain=-0.100518911:-0.063661977, % 1/(152/48 pi) to 1/(240/48 pi)
+                            samples=89, % sample every pi/48 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=-0.063661977:-0.045472841, % 1/(5 pi) to 1/(7 pi)
+                            samples=25, % sample every pi/12 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=-0.045472841:-0.035367765, % 1/(7 pi) to 1/(9 pi)
+                            samples=49, % sample every pi/24 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=-0.035367765:-0.024485376, % 1/(9 pi) to 1/(13 pi)
+                            samples=145, % sample every pi/36 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=-0.024485376:-0.012732395, % 1/(13 pi) to 1/(25 pi)
+                            samples=73, % sample every pi/6 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \draw [firstcurvestyle,color=blue,fill=blue] (axis cs:-0.012732395,-1) rectangle (axis cs:0.012732395,1);
+                    %\addplot[firstcurvestyle,-,smooth,
+                    %         domain=-0.0031830988618379:-0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
+                    %         samples=401, % sample every pi/2 through phase
+                    %        ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,leftarrow,
+                            domain=0.100518911:0.063661977, % 1/(152/48 pi) to 1/(240/48 pi)
+                            samples=89, % sample every pi/48 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=0.063661977:0.045472841, % 1/(5 pi) to 1/(7 pi)
+                            samples=25, % sample every pi/12 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=0.045472841:0.035367765, % 1/(7 pi) to 1/(9 pi)
+                            samples=49, % sample every pi/24 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=0.035367765:0.024485376, % 1/(9 pi) to 1/(13 pi)
+                            samples=145, % sample every pi/36 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    \addplot[firstcurvestyle,-,smooth,
+                            domain=0.024485376:0.012732395, % 1/(13 pi) to 1/(25 pi)
+                            samples=73, % sample every pi/6 through phase
+                            ] {sin(1/x * 180 / pi)}; 
+                    %\addplot[firstcurvestyle,-,smooth,
+                    %         domain=0.0031830988618379:0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
+                    %         samples=401, % sample every pi/2 through phase
+                    %        ] {sin(1/x * 180 / pi)}; 
+                \end{axis}
+            \end{tikzpicture}
+            ]]></latex-image-code>
+        </image>
+        <!-- figures/fig_nolimit3b.tex END -->
+    </figure>
+</sidebyside>
+
+<table xml:id="fig_nolimit3c">
+    <caption>Observing that <m>f(x)=\sin(1/x)</m> has no limit as <m>x\to0</m> in <xref ref="ex_no_limit3">Example</xref>.</caption>
+    <tabular>
+        <row bottom="medium">
+            <cell><m>x</m></cell>
+            <cell><m>\sin(1/x)</m></cell>
+        </row>
+        <row>
+            <cell><m>0.1</m></cell>
+            <cell><m>-0.544021</m></cell>
+        </row>
+        <row>
+            <cell><m>0.01</m></cell>
+            <cell><m>-0.506366</m></cell>
+        </row>
+        <row>
+            <cell><m>0.001</m></cell>
+            <cell><m>0.82688</m></cell>
+        </row>
+        <row>
+            <cell><m>0.0001</m></cell>
+            <cell><m>-0.305614</m></cell>
+        </row>
+        <row>
+            <cell><m>1.\times 10^{-5}</m></cell>
+            <cell><m>0.0357488</m></cell>
+        </row>
+        <row>
+            <cell><m>1.\times 10^{-6}</m></cell>
+            <cell><m>-0.349994</m></cell>
+        </row>
+        <row>
+            <cell><m>1.\times 10^{-7}</m></cell>
+            <cell><m>0.420548</m></cell>
+        </row>
+    </tabular>
+</table>
 
 <p>
 It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> takes on all values between <m>-1</m> and 1 infinite times! Because of this oscillation,
@@ -448,147 +677,8 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
 </p>
 </solution>
 </example>
-
-<!--
-<caption>Observing that <m>f(x) = \sin(1/x)</m> has no limit as <m>x\to 0</m> in Example \ref{ex_no_limit3}.</caption>
--->
-<sidebyside><tabular>
-<row><cell>(a) 
-<!-- START figures/fig_nolimit3a.tex -->
-<image xml:id="image_nolimit3a">
-    <latex-image-code><![CDATA[
-    \begin{tikzpicture}
-        \begin{axis}[xmin=-1.1,xmax=1.1,
-                     ymin=-1.1,ymax=1.1,
-                    ]
-            \addplot[firstcurvestyle,leftarrow,
-                     domain=-1.018591636:-0.318309886, % 1/(15/48 pi) to 1/(48/48 pi)
-                     samples=34, % sample every pi/48 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.318309886:-0.106103295, % 1/pi to 1/(3 pi)
-                     samples=25, % sample every pi/12 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.106103295:-0.063661977, % 1/(3 pi) to 1/(5 pi)
-                     samples=49, % sample every pi/24 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.063661977:-0.045472841, % 1/(5 pi) to 1/(7 pi)
-                     samples=97, % sample every pi/48 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \draw [firstcurvestyle,color=blue,fill=blue] (axis cs:-0.045472841,-1) rectangle (axis cs:0.045472841,1);
-            %\addplot[firstcurvestyle,-,smooth,
-            %         domain=-0.045472841:-0.0106103295, % 1/(7 pi) to 1/(30 pi)
-            %         samples=93, % sample every pi/2 through phase
-            %        ] {sin(1/x * 180 / pi)}; 
-            %\addplot[firstcurvestyle,-,smooth,
-            %         domain=0.0106103295:0.045472841, % 1/(30 pi) to 1/(7 pi)
-            %         samples=93, % sample every pi/2 through phase
-            %        ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=0.045472841:0.063661977, % 1/(7 pi) to 1/(5 pi)
-                     samples=97, % sample every pi/48 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=0.063661977:0.106103295, % 1/(5 pi) to 1/(3 pi)
-                     samples=49, % sample every pi/24 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=0.106103295:0.318309886, % 1/(3 pi) to 1/pi
-                     samples=25, % sample every pi/12 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,rightarrow,
-                     domain=0.318309886:1.018591636, % 1/(48/48 pi) to 1/(15/48 pi)
-                     samples=34, % sample every pi/48 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-        \end{axis}
-    \end{tikzpicture}
-    ]]></latex-image-code>
-</image>
-<!-- figures/fig_nolimit3a.tex END -->
-</cell><cell>(b) 
-<!-- START figures/fig_nolimit3b.tex -->
-<image xml:id="image_nolimit3b">
-    <latex-image-code><![CDATA[
-    \begin{tikzpicture}
-        \begin{axis}[xmin=-.11,xmax=.11,
-                     ymin=-1.1,ymax=1.1
-                    ]
-            \addplot[firstcurvestyle,leftarrow,
-                     domain=-0.100518911:-0.063661977, % 1/(152/48 pi) to 1/(240/48 pi)
-                     samples=89, % sample every pi/48 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.063661977:-0.045472841, % 1/(5 pi) to 1/(7 pi)
-                     samples=25, % sample every pi/12 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.045472841:-0.035367765, % 1/(7 pi) to 1/(9 pi)
-                     samples=49, % sample every pi/24 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.035367765:-0.024485376, % 1/(9 pi) to 1/(13 pi)
-                     samples=145, % sample every pi/36 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=-0.024485376:-0.012732395, % 1/(13 pi) to 1/(25 pi)
-                     samples=73, % sample every pi/6 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \draw [firstcurvestyle,color=blue,fill=blue] (axis cs:-0.012732395,-1) rectangle (axis cs:0.012732395,1);
-            %\addplot[firstcurvestyle,-,smooth,
-            %         domain=-0.0031830988618379:-0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
-            %         samples=401, % sample every pi/2 through phase
-            %        ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,leftarrow,
-                     domain=0.100518911:0.063661977, % 1/(152/48 pi) to 1/(240/48 pi)
-                     samples=89, % sample every pi/48 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=0.063661977:0.045472841, % 1/(5 pi) to 1/(7 pi)
-                     samples=25, % sample every pi/12 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=0.045472841:0.035367765, % 1/(7 pi) to 1/(9 pi)
-                     samples=49, % sample every pi/24 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=0.035367765:0.024485376, % 1/(9 pi) to 1/(13 pi)
-                     samples=145, % sample every pi/36 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            \addplot[firstcurvestyle,-,smooth,
-                     domain=0.024485376:0.012732395, % 1/(13 pi) to 1/(25 pi)
-                     samples=73, % sample every pi/6 through phase
-                    ] {sin(1/x * 180 / pi)}; 
-            %\addplot[firstcurvestyle,-,smooth,
-            %         domain=0.0031830988618379:0.0010610329539459, % 1/(100 pi) to 1/(300 pi)
-            %         samples=401, % sample every pi/2 through phase
-            %        ] {sin(1/x * 180 / pi)}; 
-        \end{axis}
-    \end{tikzpicture}
-    ]]></latex-image-code>
-</image>
-<!-- figures/fig_nolimit3b.tex END -->
-</cell></row>
-</tabular>
-<tabular>
-<row><cell>(c)
-<tabular>
-<row><cell><m>x</m></cell><cell><m>\sin(1/x)</m></cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell><m>0.1</m></cell><cell><m>-0.544021</m></cell></row>
-<row><cell><m>0.01</m></cell><cell><m>-0.506366</m></cell></row>
-<row><cell><m>0.001</m></cell><cell><m>0.82688</m></cell></row>
-<row><cell><m>0.0001</m></cell><cell><m>-0.305614</m></cell></row>
-<row><cell><m>1.\times 10^{-5}</m></cell><cell><m>0.0357488</m></cell></row>
-<row><cell><m>1.\times 10^{-6}</m></cell><cell><m>-0.349994</m></cell></row>
-<row><cell><m>1.\times 10^{-7}</m></cell><cell><m>0.420548</m></cell></row>
-<row><cell></cell></row>
-<row><cell></cell></row>
-</tabular>
-</cell></row>
-</tabular></sidebyside>
 </subsection>
+
 
 
 <subsection xml:id="fig_diff_quot_small_h">
