@@ -108,7 +108,7 @@
                 </row>
                 <row>
                     <cell><m>1.001</m></cell>
-                    <cell><m>0.84117</m></cell>
+                    <cell><m>0.841170</m></cell>
                 </row>
                 <row>
                     <cell><m>1.01</m></cell>
@@ -244,7 +244,7 @@
             <li><p>How many values of <m>x</m> in a table are <q>enough?</q> In the previous example, could we have just used <m>x=3.001</m> and found a fine approximation?</p></li>
         </ol>
 
-        <p>Graphs are useful since they give a visual understanding concerning the behavior of a function. Sometimes a function may act <q>erratically</q> near certain <m>x</m> values which is hard to discern numerically but very plain graphically. Since graphing utilities are very accessible, it makes sense to make proper use of them.</p>
+        <p>Graphs are useful since they give a visual understanding concerning the behavior of a function. Sometimes a function may act <q>erratically</q> near certain <m>x</m> values which is hard to discern numerically but very plain graphically (see <xref ref="ex_no_limit3">Example</xref>). Since graphing utilities are very accessible, it makes sense to make proper use of them.</p>
 
         <p>Since tables and graphs are used only to <em>approximate</em> the value of a limit, there is not a firm answer to how many data points are <q>enough.</q> Include enough so that a trend is clear, and use values (when possible) both less than and greater than the value in question. In <xref ref="ex_limit1">Example</xref>, we used both values less than and greater than <m>3</m>. Had we used just <m>x=3.001</m>, we might have been tempted to conclude that the limit had a value of <m>0.3</m>. While this is not far off, we could do better. Using values <q>on both sides of 3</q> helps us identify trends.</p>
 
@@ -321,7 +321,7 @@
 
     <subsection xml:id="subsec_nolimit3">
         <title>Identifying When Limits Do Not Exist</title>
-        <p>A function may not have a limit for all values of <m>x</m>. That is, we cannot say <m>\lim_{x\to c}f(x)=L</m> for some numbers <m>L</m> for all values of <m>c</m>, for there may not be a number that <m>f(x)</m> is approaching. There are three ways in which a limit may fail to exist. <index><main>limit</main><sub>does not exist</sub></index></p>
+        <p>A function may not have a limit for all values of <m>x</m>. That is, we cannot say <m>\lim_{x\to c}f(x)=L</m> (where  <m>L</m>  is some real number) for all values of <m>c</m>, for there may not be a number that <m>f(x)</m> is approaching. There are three ways in which a limit may fail to exist. <index><main>limit</main><sub>does not exist</sub></index></p>
 
         <ol>
             <li><p>The function <m>f(x)</m> may approach different values on either side of <m>c</m>.</p></li>
@@ -337,7 +337,7 @@
                 <p>Explore why <m>\ds\lim_{x\to 1} f(x)</m> does not exist, where <me>f(x) = \begin{cases}x^2-2x+3 \amp  x\leq 1 \\ x \amp  x>1\text{.}\end{cases}</me></p>
             </statement>
             <solution>
-                <p>A graph of <m>f(x)</m> around <m>x=1</m> and a table are given <xref ref="fig_nolimit1">Figure</xref> and <xref ref="table_nolimit1">Table</xref>, respectively. It is clear that as <m>x</m> approaches 1, <m>f(x)</m> does not seem to approach a single number. Instead, it seems as though <m>f(x)</m> approaches two different numbers. When considering values of <m>x</m> less than 1 (approaching 1 from the left), it seems that <m>f(x)</m> is approaching 2; when considering values of <m>x</m> greater than 1 (approaching 1 from the right), it seems that <m>f(x)</m> is approaching 1. Recognizing this behavior is important; we'll study this in greater depth later. Right now, it suffices to say that the limit does not exist since <m>f(x)</m> is not approaching one value as <m>x</m> approaches 1.</p>
+                <p>A graph of <m>f(x)</m> around <m>x=1</m> and a table are given <xref ref="fig_nolimit1">Figure</xref> and <xref ref="table_nolimit1">Table</xref>, respectively. It is clear that as <m>x</m> approaches <m>1</m>, <m>f(x)</m> does not seem to approach a single number. Instead, it seems as though <m>f(x)</m> approaches two different numbers. When considering values of <m>x</m> less than <m>1</m> (approaching <m>1</m> from the left), it seems that <m>f(x)</m> is approaching <m>2</m>; when considering values of <m>x</m> greater than <m>1</m> (approaching <m>1</m> from the right), it seems that <m>f(x)</m> is approaching <m>1</m>. Recognizing this behavior is important; we'll study this in greater depth later. Right now, it suffices to say that the limit does not exist since <m>f(x)</m> is approaching two <em>different</em> values as <m>x</m> approaches <m>1</m>.</p>
 
                 <sidebyside>
                     <figure xml:id="fig_nolimit1" >
@@ -462,7 +462,7 @@
                     </table>
                 </sidebyside>
 
-                <p>We can deduce this on our own, without the aid of the graph and table. If <m>x</m> is near 1, then <m>(x-1)^2</m> is very small, and: <me>\frac{1}{\text{ very small number } } = \text{ very large number } .</me></p>
+                <p>We can deduce this on our own, without the aid of the graph and table. If <m>x</m> is near 1, then <m>(x-1)^2</m> is very small, and: <me>\frac{1}{\text{ very small number } } = \text{ very large number }.</me></p>
 
                 <p>Since <m>f(x)</m> is not approaching a single number, we conclude that <me>\lim_{x\to 1}\frac{1}{(x-1)^2}</me> does not exist.</p>
             </solution>
@@ -670,15 +670,15 @@
 
         </figure>
 
-        <p>Let <m>f(x)</m> represent the position function, in feet, of some particle that is moving in a straight line, where <m>x</m> is measured in seconds. Let's say that when <m>x=1</m>, the particle is at position <m>10</m> ft., and when <m>x=5</m>, the particle is at <m>20</m> ft. Another way of expressing this is to say <blockquote><m>f(1)=10</m> and <m>f(5) = 20</m>.</blockquote> Since the particle traveled <m>10</m> feet in <m>4</m> seconds, we can say the particle's<index><main>average velocity</main></index><index><main>velocity</main><sub>average velocity</sub></index> <term>average velocity</term> was <m>2.5</m> ft/s. We write this calculation using a <q>quotient of differences,</q> or, a<index><main>difference quotient</main></index> <term>difference quotient</term>: <me>\frac{f(5) - f(1)}{5-1} = \frac{10}{4} = 2.5 \text{ ft/s }\text{.}</me></p>
+        <p>Let <m>f(x)</m> represent the position function, in feet, of some particle that is moving in a straight line, where <m>x</m> is measured in seconds. Let's say that when <m>x=1</m>, the particle is at position <m>10</m> ft., and when <m>x=5</m>, the particle is at <m>20</m> ft. Another way of expressing this is to say <blockquote><m>f(1)=10</m> and <m>f(5) = 20</m>.</blockquote> Since the particle traveled <m>10</m> feet in <m>4</m> seconds, we can say the particle's<index><main>average velocity</main></index><index><main>velocity</main><sub>average velocity</sub></index> <term>average velocity</term> was <m>2.5</m> ft/s. We write this calculation using a <q>quotient of differences,</q> or, a<index><main>difference quotient</main></index> <term>difference quotient</term>: <me>\frac{f(5) - f(1)}{5-1} \frac{\text{ ft}}{\text{s}} = \frac{10 \text{ ft}}{4\text{ s}} = 2.5 \text{ ft/s }\text{.}</me></p>
 
         <p>This difference quotient can be thought of as the familiar <q>rise over run</q> used to compute the slopes of lines. In fact, that is essentially what we are doing: given two points on the graph of <m>f</m>, we are finding the slope of the <em>secant line</em> through those two points. See <xref ref="fig_diffquot1">Figure</xref>.</p>
 
-        <p>Now consider finding the average speed on another time interval. We again start at <m>x=1</m>, but consider the position of the particle <m>h</m> seconds later. That is, consider the positions of the particle when <m>x=1</m> and when <m>x=1+h</m>. The difference quotient is now <me>\frac{f(1+h)-f(1)}{(1+h)-1} = \frac{f(1+h)-f(1)}{h}\text{.}</me></p>
+        <p>Now consider finding the average speed on another time interval. We again start at <m>x=1</m>, but consider the position of the particle <m>h</m> seconds later. That is, consider the positions of the particle when <m>x=1</m> and when <m>x=1+h</m>. The difference quotient (excluding units) is now <me>\frac{f(1+h)-f(1)}{(1+h)-1} = \frac{f(1+h)-f(1)}{h}\text{.}</me></p>
 
         <p>Let <m>f(x) = -1.5x^2+11.5x</m>; note that <m>f(1)=10</m> and <m>f(5) = 20</m>, as in our discussion. We can compute this difference quotient for all values of <m>h</m> (even negative values!) except <m>h=0</m>, for then we get <q>0/0,</q> the indeterminate form introduced earlier. For all values <m>h\neq 0</m>, the difference quotient computes the average velocity of the particle over an interval of time of length <m>h</m> starting at <m>x=1</m>.</p>
 
-        <p>For small values of <m>h</m>, i.e., values of <m>h</m> close to <m>0</m>, we get average velocities over very short time periods and compute secant lines over small intervals. See <xref ref="fig_diff_quot_small_h">Figure</xref>. This leads us to wonder what the limit of the difference quotient is as <m>h</m> approaches <m>0</m>. That is, <me>\lim_{h\to 0} \frac{f(1+h)-f(1)}{h} = \text{ ? }</me></p>
+        <p>For small values of <m>h</m>, i.e., values of <m>h</m> close to <m>0</m>, we get average velocities over very short time periods and compute secant lines over small intervals. See <xref ref="fig_diff_quot_small_h">Figure</xref>. This leads us to wonder what the limit of the difference quotient is as <m>h</m> approaches <m>0</m>? That is, <me>\lim_{h\to 0} \frac{f(1+h)-f(1)}{h} = \text{ ? }</me></p>
 
         <sidebyside>
             <caption>Secant lines of <m>f(x)</m> at <m>x=1</m> and <m>x=1+h</m>, for shrinking values of <m>h</m> (i.e., <m>h\rightarrow 0</m>).</caption>
@@ -2867,4 +2867,5 @@
            </exercise>
        </exercisegroup>
    </exercises>
+   
    </section>
