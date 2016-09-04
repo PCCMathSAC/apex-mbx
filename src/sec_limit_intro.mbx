@@ -1107,7 +1107,7 @@
                             @tabin=($a-0.1,$a-0.01,$a-0.001,$a+0.001,$a+0.01,$a+0.1);
                             @tabout=map{$f->eval(x=>$_)} @tabin;
                             $solgr=init_graph(-2,-1000,2,1000,axes=>[0,0],grid=>[4,10],size=>[400,400]);   
-                            if(0<-$c){
+                            if(0&lt;-$c){
                             add_functions($solgr,"$f for x in &lt;-2,-0.0001&gt; using color:blue and weight:2");
                             add_functions($solgr,"$f for x in &lt;0.0001,-$c) using color:blue and weight:2");
                             add_functions($solgr,"$f for x in (-$c,2&gt; using color:blue and weight:2");
@@ -1204,7 +1204,7 @@
                             @tabout=map{$f->eval(x=>$_)} @tabin;
                             $xmin=-abs($a)-2;$xmax=abs($a)+2;$xmid1=$c-0.01;$xmid2=$c+0.01;$ymin=-ceil(abs(Real($l)))-2;$ymax=ceil(abs(Real($l)))+2;
                             $solgr=init_graph($xmin,$ymin,$xmax,$ymax,axes=>[0,0],grid=>[$xmax-$xmin,$ymax-$ymin],size=>[400,400]);   
-                            if($a<$c){
+                            if($a&lt;$c){
                             add_functions($solgr,"$f for x in &lt;$xmin,$xmid1&gt; using color:blue and weight:2");
                             add_functions($solgr,"$f for x in &lt;$xmid2,$c) using color:blue and weight:2");
                             add_functions($solgr,"$f for x in ($c,$xmax&gt; using color:blue and weight:2");
@@ -1301,7 +1301,7 @@
                             @tabout=map{$f->eval(x=>$_)} @tabin;
                             $xmin=-abs($a)-2;$xmax=abs($a)+2;$xmid1=$c-0.01;$xmid2=$c+0.01;$ymin=-ceil(abs(Real($l)))-2;$ymax=ceil(abs(Real($l)))+2;
                             $solgr=init_graph($xmin,$ymin,$xmax,$ymax,axes=>[0,0],grid=>[$xmax-$xmin,$ymax-$ymin],size=>[400,400]);   
-                            if($a<$c){
+                            if($a&lt;$c){
                             add_functions($solgr,"$f for x in &lt;$xmin,$xmid1&gt; using color:blue and weight:2");
                             add_functions($solgr,"$f for x in &lt;$xmid2,$c) using color:blue and weight:2");
                             add_functions($solgr,"$f for x in ($c,$xmax&gt; using color:blue and weight:2");
@@ -1397,7 +1397,7 @@
                             @tabout=map{$f->eval(x=>$_)} @tabin;
                             $xmin=-abs($a)-2;$xmax=abs($a)+2;$xmid1=$c-0.01;$xmid2=$c+0.01;$ymin=-1000;$ymax=1000;
                             $solgr=init_graph($xmin,$ymin,$xmax,$ymax,axes=>[0,0],grid=>[$xmax-$xmin,10],size=>[400,400]);   
-                            if($a<$c){
+                            if($a&lt;$c){
                             add_functions($solgr,"$f for x in &lt;$xmin,$xmid1&gt; using color:blue and weight:2");
                             add_functions($solgr,"$f for x in &lt;$xmid2,$c) using color:blue and weight:2");
                             add_functions($solgr,"$f for x in ($c,$xmax&gt; using color:blue and weight:2");
