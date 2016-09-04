@@ -1,19 +1,13 @@
 <section xml:id="sec_shell_method">
 <title>The Shell Method</title>
-
-
 <introduction>
-<p>
-Often a given problem can be solved in more than one way. A particular method may be chosen out of convenience, personal preference, or perhaps necessity. Ultimately, it is good to have options.
-</p>
 
-<p>
-The previous section introduced the Disk and Washer Methods, which computed the volume of solids of revolution by integrating the cross<ndash />sectional area of the solid. This section develops another method of computing volume, the <em>Shell Method.</em> Instead of slicing the solid perpendicular to the axis of rotation creating cross-sections, we now slice it parallel to the axis of rotation, creating <q>shells.</q>
-</p>
+<p>Often a given problem can be solved in more than one way. A particular method may be chosen out of convenience, personal preference, or perhaps necessity. Ultimately, it is good to have options.</p>
 
-<p>
-Consider <xref ref="fig_shell_intro">Figure</xref>, where the region shown in (a) is rotated around the <m>y</m>-axis forming the solid shown in (b). A small slice of the region is drawn in (a), parallel to the axis of rotation. When the region is rotated, this thin slice forms a <em>cylindrical shell</em>, as pictured in part (c) of the figure. The previous section approximated a solid with lots of thin disks (or washers); we now approximate a solid with many thin cylindrical shells.
-</p>
+<p>The previous section introduced the Disk and Washer Methods, which computed the volume of solids of revolution by integrating the cross<ndash />sectional area of the solid. This section develops another method of computing volume, the <em>Shell Method.</em> Instead of slicing the solid perpendicular to the axis of rotation creating cross-sections, we now slice it parallel to the axis of rotation, creating <q>shells.</q></p>
+
+<p>Consider <xref ref="fig_shell_intro">Figure</xref>, where the region shown in (a) is rotated around the <m>y</m>-axis forming the solid shown in (b). A small slice of the region is drawn in (a), parallel to the axis of rotation. When the region is rotated, this thin slice forms a <em>cylindrical shell</em>, as pictured in part (c) of the figure. The previous section approximated a solid with lots of thin disks (or washers); we now approximate a solid with many thin cylindrical shells.</p>
+
 <figure xml:id="fig_shell_intro" >
 <caption>Introducing the Shell Method.</caption>
 <sidebyside><figure>
@@ -112,9 +106,10 @@ label("$\displaystyle y=\frac{1}{1+x^2}$",(.75,1,0));
 
 //pen p=rgb(0,0,1);
 //draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
-]]></asymptote></image><!-- figures/figshell_intro_b_3D.asy END -->
+]]></asymptote></image>
+<!-- figures/figshell_intro_b_3D.asy END -->
 
-</figure>
+<figure>
 <figure>
 <caption>(b)</caption>
 <!-- 
@@ -213,9 +208,10 @@ draw(s,emissive(rgb(.6,.6,1)+opacity(.5)),meshpen=p);
 
 //pen p=rgb(0,0,1);
 //draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
-]]></asymptote></image><!-- figures/figshell_intro_a_3D.asy END -->
+]]></asymptote></image>
+<!-- figures/figshell_intro_a_3D.asy END -->
 
-</figure>
+<figure>
 <figure>
 <caption>(c)</caption>
 <!-- 
@@ -357,38 +353,34 @@ draw(s,emissive(rgb(1,.6,.6)+opacity(.7)),meshpen=q);
 
 //pen p=rgb(0,0,1);
 //draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
-]]></asymptote></image><!-- figures/figshell_intro_d_3D.asy END -->
+]]></asymptote></image>
+<!-- figures/figshell_intro_d_3D.asy END -->
 
-</figure></sidebyside>
+<figure></sidebyside>
 
 </figure>
-<p>
-To compute the volume of one shell, first consider the paper label on a soup can with radius <m>r</m> and height <m>h</m>. What is the area of this label? A simple way of determining this is to cut the label and lay it out flat, forming a rectangle with height <m>h</m> and length <m>2\pi r</m>. Thus the area is <m>A = 2\pi rh</m>; see <xref ref="fig_soupcan">Figure</xref> (a).
-</p>
 
-<p>
-Do a similar process with a cylindrical shell, with height <m>h</m>, thickness <m>\Delta x</m>, and approximate radius <m>r</m>. Cutting the shell and laying it flat forms a rectangular solid with length <m>2\pi r</m>, height <m>h</m> and depth <m>\dx</m>. Thus the volume is <m>V \approx 2\pi rh\dx</m>; see <xref ref="fig_soupcan">Figure</xref> (b). (We say <q>approximately</q> since our radius was an approximation.)
-</p>
+<p>To compute the volume of one shell, first consider the paper label on a soup can with radius <m>r</m> and height <m>h</m>. What is the area of this label? A simple way of determining this is to cut the label and lay it out flat, forming a rectangle with height <m>h</m> and length <m>2\pi r</m>. Thus the area is <m>A = 2\pi rh</m>; see <xref ref="fig_soupcan">Figure</xref> (a).</p>
 
-<p>
-By breaking the solid into <m>n</m> cylindrical shells, we can approximate the volume of the solid as
+<p>Do a similar process with a cylindrical shell, with height <m>h</m>, thickness <m>\Delta x</m>, and approximate radius <m>r</m>. Cutting the shell and laying it flat forms a rectangular solid with length <m>2\pi r</m>, height <m>h</m> and depth <m>\dx</m>. Thus the volume is <m>V \approx 2\pi rh\dx</m>; see <xref ref="fig_soupcan">Figure</xref> (b). (We say <q>approximately</q> since our radius was an approximation.)</p>
+
+<p>By breaking the solid into <m>n</m> cylindrical shells, we can approximate the volume of the solid as
 <me>
   V = \sum_{i=1}^n 2\pi r_ih_i\dx_i,
 </me>
-where <m>r_i</m>, <m>h_i</m> and <m>\dx_i</m> are the radius, height and thickness of the <m>i\,^\text{ th }</m> shell, respectively.
-</p>
+where <m>r_i</m>, <m>h_i</m> and <m>\dx_i</m> are the radius, height and thickness of the <m>i\,^\text{ th }</m> shell, respectively.</p>
 
-<p>
-This is a Riemann Sum. Taking a limit as the thickness of the shells approaches 0 leads to a definite integral.
-</p>
+<p>This is a Riemann Sum. Taking a limit as the thickness of the shells approaches 0 leads to a definite integral.</p>
+
 <!--
 <caption>Determining the volume of a thin cylindrical shell.</caption>
 -->
 <figure>
 <caption>(a) &amp; (b)</caption>
-
 <!-- START figures/fig_shell_soupcan.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}[scale=.75]
 
 \begin{scope}[xscale=1.5]
@@ -413,10 +405,13 @@ This is a Riemann Sum. Taking a limit as the thickness of the shells approaches 
 \end{scope}
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_shell_soupcan.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_shell_soupcan.tex END -->
  &amp; 
 <!-- START figures/fig_shell_unwrapshell.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}[scale=.75]
 
 \begin{scope}[xscale=1.5]
@@ -455,48 +450,54 @@ This is a Riemann Sum. Taking a limit as the thickness of the shells approaches 
 \end{scope}
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_shell_unwrapshell.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_shell_unwrapshell.tex END -->
 
-</figure>
+<figure>
 <insight xml:id="idea_shell_method">
 <title>The Shell Method</title>
-<p>
-Let a solid be formed by revolving a region <m>R</m>, bounded by <m>x=a</m> and <m>x=b</m>, around a vertical axis. Let <m>r(x)</m> represent the distance from the axis of rotation to <m>x</m> (i.e., the radius of a sample shell) and let <m>h(x)</m> represent the height of the solid at <m>x</m> (i.e., the height of the shell). The volume of the solid is
+<p>Let a solid be formed by revolving a region <m>R</m>, bounded by <m>x=a</m> and <m>x=b</m>, around a vertical axis. Let <m>r(x)</m> represent the distance from the axis of rotation to <m>x</m> (i.e., the radius of a sample shell) and let <m>h(x)</m> represent the height of the solid at <m>x</m> (i.e., the height of the shell). The volume of the solid is
 <index><main>integration</main><sub>volume!Shell Method</sub></index><index><main>Shell Method</main></index>
 <me>
   V = 2\pi\int_a^b r(x)h(x)\ dx.
-</me>
-</p>
+</me></p>
+
 </insight>
-<p>
-<em>Special Cases:</em>
-</p>
+
+<p><em>Special Cases:</em></p>
 
 <ol>
-<li><p>When the region <m>R</m> is bounded above by <m>y=f(x)</m> and below by <m>y=g(x)</m>, then <m>h(x) = f(x)-g(x)</m>.</p></li>
-<li><p>When the axis of rotation is the <m>y</m>-axis (i.e., <m>x=0</m>) then <m>r(x) = x</m>.</p></li>
+<li>
+
+<p>When the region <m>R</m> is bounded above by <m>y=f(x)</m> and below by <m>y=g(x)</m>, then <m>h(x) = f(x)-g(x)</m>.</p>
+
+</li>
+<li>
+
+<p>When the axis of rotation is the <m>y</m>-axis (i.e., <m>x=0</m>) then <m>r(x) = x</m>.</p>
+
+</li>
 </ol>
 
-<p>
-Let's practice using the Shell Method.
-</p>
+<p>Let's practice using the Shell Method.</p>
 
 <example xml:id="ex_shell1">
 <title>Finding volume using the Shell Method</title>
 <statement>
-<p>
-Find the volume of the solid formed by rotating the region bounded by <m>y=0</m>, <m>y=1/(1+x^2)</m>, <m>x=0</m> and <m>x=1</m> about the <m>y</m>-axis.
-</p>
+
+<p>Find the volume of the solid formed by rotating the region bounded by <m>y=0</m>, <m>y=1/(1+x^2)</m>, <m>x=0</m> and <m>x=1</m> about the <m>y</m>-axis.</p>
+
 </statement>
 <solution>
-<p>
-This is the region used to introduce the Shell Method in <xref ref="fig_shell_intro">Figure</xref>, but is sketched again in <xref ref="fig_shell1">Figure</xref> for closer reference. A line is drawn in the region parallel to the axis of rotation representing a shell that will be carved out as the region is rotated about the <m>y</m>-axis. (This is the differential element.)
-</p>
+
+<p>This is the region used to introduce the Shell Method in <xref ref="fig_shell_intro">Figure</xref>, but is sketched again in <xref ref="fig_shell1">Figure</xref> for closer reference. A line is drawn in the region parallel to the axis of rotation representing a shell that will be carved out as the region is rotated about the <m>y</m>-axis. (This is the differential element.)</p>
+
 <figure xml:id="fig_shell1" >
 <caption>Graphing a region in <xref ref="ex_shell1">Example</xref>.</caption>
-
 <!-- START figures/fig_shell1.tex -->
-<image><latex-image-code><![CDATA[
+<image xml:id="img_shell1" >
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -530,48 +531,46 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_shell1.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_shell1.tex END -->
 
 </figure>
-<p>
-The distance this line is from the axis of rotation determines <m>r(x)</m>; as the distance from <m>x</m> to the <m>y</m>-axis is <m>x</m>, we have <m>r(x)=x</m>. The height of this line determines <m>h(x)</m>; the top of the line is at <m>y=1/(1+x^2)</m>, whereas the bottom of the line is at <m>y=0</m>. Thus <m>h(x) = 1/(1+x^2)-0 = 1/(1+x^2)</m>. The region is bounded from <m>x=0</m> to <m>x=1</m>, so the volume is
+
+<p>The distance this line is from the axis of rotation determines <m>r(x)</m>; as the distance from <m>x</m> to the <m>y</m>-axis is <m>x</m>, we have <m>r(x)=x</m>. The height of this line determines <m>h(x)</m>; the top of the line is at <m>y=1/(1+x^2)</m>, whereas the bottom of the line is at <m>y=0</m>. Thus <m>h(x) = 1/(1+x^2)-0 = 1/(1+x^2)</m>. The region is bounded from <m>x=0</m> to <m>x=1</m>, so the volume is
 <md>
   <mrow>  V 	\amp = 2\pi\int_0^1 \frac{x}{1+x^2}\ dx.</mrow>
 <intertext>This requires substitution. Let <m>u=1+x^2</m>, so <m>du = 2x\ dx</m>. We also change the bounds: <m>u(0) = 1</m> and <m>u(1) = 2</m>. Thus we have:</intertext>
   <mrow>  \amp = \pi\int_1^2 \frac{1}{u}\ du</mrow>
   <mrow>  \amp = \pi\ln u\Big|_1^2</mrow>
   <mrow>  \amp = \pi\ln 2 \approx 2.178 \ \text{ units } ^3.</mrow>
-</md>
-</p>
+</md></p>
 
-<p>
-Note: in order to find this volume using the Disk Method, two integrals would be needed to account for the regions above and below <m>y=1/2</m>.
-</p>
+<p>Note: in order to find this volume using the Disk Method, two integrals would be needed to account for the regions above and below <m>y=1/2</m>.</p>
+
 </solution>
 </example>
 
-<p>
-With the Shell Method, nothing special needs to be accounted for to compute the volume of a solid that has a hole in the middle, as demonstrated next.
-</p>
+<p>With the Shell Method, nothing special needs to be accounted for to compute the volume of a solid that has a hole in the middle, as demonstrated next.</p>
 
 <example xml:id="ex_shell2">
 <title>Finding volume using the Shell Method</title>
 <statement>
-<p>
-Find the volume of the solid formed by rotating the triangular region determined by the points <m>(0,1)</m>, <m>(1,1)</m> and <m>(1,3)</m> about the line <m>x=3</m>.
-</p>
+
+<p>Find the volume of the solid formed by rotating the triangular region determined by the points <m>(0,1)</m>, <m>(1,1)</m> and <m>(1,3)</m> about the line <m>x=3</m>.</p>
+
 </statement>
 <solution>
-<p>
-The region is sketched in <xref ref="fig_shell2">Figure</xref>(a) along with the differential element, a line within the region parallel to the axis of rotation. In part (b) of the figure, we see the shell traced out by the differential element, and in part (c) the whole solid is shown.
-</p>
+
+<p>The region is sketched in <xref ref="fig_shell2">Figure</xref>(a) along with the differential element, a line within the region parallel to the axis of rotation. In part (b) of the figure, we see the shell traced out by the differential element, and in part (c) the whole solid is shown.</p>
+
 <figure xml:id="fig_shell2" >
 <caption>Graphing a region in <xref ref="ex_shell2">Example</xref>.</caption>
 <sidebyside><figure>
 <caption>(a)</caption>
-
 <!-- START figures/fig_shell2a.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -610,12 +609,13 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_shell2a.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_shell2a.tex END -->
 
-</figure>
+<figure>
 <figure>
 (b)
-</figure>
+<figure>
 <figure>
 <caption>(c)</caption>
 <!-- 
@@ -738,49 +738,47 @@ draw(p3,blue+.4mm);
 
 //pen p=rgb(0,0,1);
 //draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
-]]></asymptote></image><!-- figures/figshell2c_3D.asy END -->
+]]></asymptote></image>
+<!-- figures/figshell2c_3D.asy END -->
 
-</figure></sidebyside>
+<figure></sidebyside>
 
 </figure>
-<p>
-The height of the differential element is the distance from <m>y=1</m> to <m>y=2x+1</m>, the line that connects the points <m>(0,1)</m> and <m>(1,3)</m>. Thus <m>h(x) = 2x+1-1 = 2x</m>. The radius of the shell formed by the differential element is the distance from <m>x</m> to <m>x=3</m>; that is, it is <m>r(x)=3-x</m>. The <m>x</m>-bounds of the region are <m>x=0</m> to <m>x=1</m>, giving
+
+<p>The height of the differential element is the distance from <m>y=1</m> to <m>y=2x+1</m>, the line that connects the points <m>(0,1)</m> and <m>(1,3)</m>. Thus <m>h(x) = 2x+1-1 = 2x</m>. The radius of the shell formed by the differential element is the distance from <m>x</m> to <m>x=3</m>; that is, it is <m>r(x)=3-x</m>. The <m>x</m>-bounds of the region are <m>x=0</m> to <m>x=1</m>, giving
 <md>
   <mrow>  V \amp =	2\pi\int_0^1 (3-x)(2x)\ dx</mrow>
   <mrow>  \amp = 2\pi\int_0^1 \big(6x-2x^2)\ dx</mrow>
   <mrow>  \amp = 2\pi\left(3x^2-\frac23x^3\right)\Big|_0^1</mrow>
   <mrow>  \amp = \frac{14}{3}\pi\approx 14.66 \ \text{ units } ^3.</mrow>
-</md>
-</p>
+</md></p>
+
 </solution>
 </example>
 
-<p>
-When revolving a region around a horizontal axis, we must consider the radius and height functions in terms of <m>y</m>, not <m>x</m>.
-</p>
+<p>When revolving a region around a horizontal axis, we must consider the radius and height functions in terms of <m>y</m>, not <m>x</m>.</p>
 
 <example xml:id="ex_shell3">
 <title>Finding volume using the Shell Method</title>
 <statement>
-<p>
-Find the volume of the solid formed by rotating the region given in <xref ref="ex_shell2">Example</xref> about the <m>x</m>-axis.
-</p>
+
+<p>Find the volume of the solid formed by rotating the region given in <xref ref="ex_shell2">Example</xref> about the <m>x</m>-axis.</p>
+
 </statement>
 <solution>
-<p>
-The region is sketched in <xref ref="fig_shell3">Figure</xref>(a) with a sample differential element. In part (b) of the figure the shell formed by the differential element is drawn, and the solid is sketched in (c). (Note that the triangular region looks <q>short and wide</q> here, whereas in the previous example the same region looked <q>tall and narrow.</q> This is because the bounds on the graphs are different.)
-</p>
 
-<p>
-The height of the differential element is an <m>x</m>-distance, between <m>x=\frac12y-\frac12</m> and <m>x=1</m>. Thus <m>h(y) = 1-(\frac12y-\frac12) = -\frac12y+\frac32.</m> The radius is the distance from <m>y</m> to the <m>x</m>-axis, so <m>r(y) =y</m>. The <m>y</m> bounds of the region are <m>y=1</m> and <m>y=3</m>, leading to the integral
-</p>
+<p>The region is sketched in <xref ref="fig_shell3">Figure</xref>(a) with a sample differential element. In part (b) of the figure the shell formed by the differential element is drawn, and the solid is sketched in (c). (Note that the triangular region looks <q>short and wide</q> here, whereas in the previous example the same region looked <q>tall and narrow.</q> This is because the bounds on the graphs are different.)</p>
+
+<p>The height of the differential element is an <m>x</m>-distance, between <m>x=\frac12y-\frac12</m> and <m>x=1</m>. Thus <m>h(y) = 1-(\frac12y-\frac12) = -\frac12y+\frac32.</m> The radius is the distance from <m>y</m> to the <m>x</m>-axis, so <m>r(y) =y</m>. The <m>y</m> bounds of the region are <m>y=1</m> and <m>y=3</m>, leading to the integral</p>
+
 <figure xml:id="fig_shell3" >
 <caption>Graphing a region in <xref ref="ex_shell3">Example</xref>.</caption>
 <sidebyside><figure>
 <caption>(a)</caption>
-
 <!-- START figures/fig_shell3a.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -813,9 +811,10 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_shell3a.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_shell3a.tex END -->
 
-</figure>
+<figure>
 <figure>
 <caption>(b)</caption>
 <!-- 
@@ -939,9 +938,10 @@ path3 p3=graph(g3,0,2*pi,operator ..);
 
 //pen p=rgb(0,0,1);
 //draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
-]]></asymptote></image><!-- figures/figshell3b_3D.asy END -->
+]]></asymptote></image>
+<!-- figures/figshell3b_3D.asy END -->
 
-</figure>
+<figure>
 <figure>
 <caption>(c)</caption>
 <!-- 
@@ -1065,9 +1065,10 @@ draw(p3,blue+.4mm);
 
 //pen p=rgb(0,0,1);
 //draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
-]]></asymptote></image><!-- figures/figshell3c_3D.asy END -->
+]]></asymptote></image>
+<!-- figures/figshell3c_3D.asy END -->
 
-</figure></sidebyside>
+<figure></sidebyside>
 
 </figure>
 <md>
@@ -1080,28 +1081,27 @@ draw(p3,blue+.4mm);
 </solution>
 </example>
 
-<p>
-At the beginning of this section it was stated that <q>it is good to have options.</q> The next example finds the volume of a solid rather easily with the Shell Method, but using the Washer Method would be quite a chore.
-</p>
+<p>At the beginning of this section it was stated that <q>it is good to have options.</q> The next example finds the volume of a solid rather easily with the Shell Method, but using the Washer Method would be quite a chore.</p>
 
 <example xml:id="ex_shell4">
 <title>Finding volume using the Shell Method</title>
 <statement>
-<p>
-Find the volume of the solid formed by revolving the region bounded by <m>y= \sin x</m> and the <m>x</m>-axis from <m>x=0</m> to <m>x=\pi</m> about the <m>y</m>-axis.
-</p>
+
+<p>Find the volume of the solid formed by revolving the region bounded by <m>y= \sin x</m> and the <m>x</m>-axis from <m>x=0</m> to <m>x=\pi</m> about the <m>y</m>-axis.</p>
+
 </statement>
 <solution>
-<p>
-The region and a differential element, the shell formed by this differential element, and the resulting solid are given in <xref ref="fig_shell4">Figure</xref>.
-</p>
+
+<p>The region and a differential element, the shell formed by this differential element, and the resulting solid are given in <xref ref="fig_shell4">Figure</xref>.</p>
+
 <figure xml:id="fig_shell4" >
 <caption>Graphing a region in <xref ref="ex_shell4">Example</xref>.</caption>
 <sidebyside><figure>
 <caption>(a)</caption>
-
 <!-- START figures/fig_shell4a.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -1137,9 +1137,10 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_shell4a.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_shell4a.tex END -->
 
-</figure>
+<figure>
 <figure>
 <caption>(b)</caption>
 <!-- 
@@ -1256,9 +1257,10 @@ path3 p3=graph(g3,0,2*pi,operator ..);
 
 //pen p=rgb(0,0,1);
 //draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
-]]></asymptote></image><!-- figures/figshell4c_3D.asy END -->
+]]></asymptote></image>
+<!-- figures/figshell4c_3D.asy END -->
 
-</figure>
+<figure>
 <figure>
 <caption>(c)</caption>
 <!-- 
@@ -1375,13 +1377,14 @@ draw(p3,blue+.4mm);
 
 //pen p=rgb(0,0,1);
 //draw(s,paleblue+opacity(.5),meshpen=p,render(merge=true));
-]]></asymptote></image><!-- figures/figshell4b_3D.asy END -->
+]]></asymptote></image>
+<!-- figures/figshell4b_3D.asy END -->
 
-</figure></sidebyside>
+<figure></sidebyside>
 
 </figure>
-<p>
-The radius of a sample shell is <m>r(x) = x</m>; the height of a sample shell is <m>h(x) = \sin x</m>, each from <m>x=0</m> to <m>x=\pi</m>. Thus the volume of the solid is
+
+<p>The radius of a sample shell is <m>r(x) = x</m>; the height of a sample shell is <m>h(x) = \sin x</m>, each from <m>x=0</m> to <m>x=\pi</m>. Thus the volume of the solid is
 <md>
   <mrow>  V \amp =	2\pi\int_0^{\pi} x\sin x\ dx.</mrow>
 <intertext>This requires Integration By Parts. Set <m>u=x</m> and <m>dv=\sin x\ dx</m>; we leave it to the reader to fill in the rest. We have:</intertext>
@@ -1389,47 +1392,56 @@ The radius of a sample shell is <m>r(x) = x</m>; the height of a sample shell is
   <mrow>  \amp = 2\pi\Big[\pi + \sin x \Big|_0^{\pi}\ \Big]</mrow>
   <mrow>  \amp = 2\pi\Big[\pi + 0 \Big]</mrow>
   <mrow>  \amp = 2\pi^2 \approx 19.74 \ \text{ units } ^3.</mrow>
-</md>
-</p>
+</md></p>
 
-<p>
-Note that in order to use the Washer Method, we would need to solve <m>y=\sin x</m> for <m>x</m>, requiring the use of the arcsine function. We leave it to the reader to verify that the outside radius function is <m>R(y) = \pi-\arcsin y</m> and the inside radius function is <m>r(y)=\arcsin y</m>. Thus the volume can be computed as
+<p>Note that in order to use the Washer Method, we would need to solve <m>y=\sin x</m> for <m>x</m>, requiring the use of the arcsine function. We leave it to the reader to verify that the outside radius function is <m>R(y) = \pi-\arcsin y</m> and the inside radius function is <m>r(y)=\arcsin y</m>. Thus the volume can be computed as
 <me>
   \pi\int_0^1 \Big[ (\pi-\arcsin y)^2-(\arcsin y)^2\Big]\ dy.
-</me>
-</p>
+</me></p>
 
-<p>
-This integral isn't terrible given that the <m>\arcsin^2 y</m> terms cancel, but it is more onerous than the integral created by the Shell Method.
-</p>
+<p>This integral isn't terrible given that the <m>\arcsin^2 y</m> terms cancel, but it is more onerous than the integral created by the Shell Method.</p>
+
 </solution>
 </example>
 
-<p>
-We end this section with a table summarizing the usage of the Washer and Shell Methods.
-</p>
+<p>We end this section with a table summarizing the usage of the Washer and Shell Methods.</p>
+
 <insight xml:id="idea_shell_and_washer">
 <title>Summary of the Washer and Shell Methods</title>
-<p>
-Let a region <m>R</m> be given with <m>x</m>-bounds <m>x=a</m> and <m>x=b</m> and <m>y</m>-bounds <m>y=c</m> and <m>y=d</m>.
-</p>
-<tabular>
-<row><cell></cell><cell>Washer Method</cell><cell></cell><cell>Shell Method</cell></row>
-<row><cell>\text{ Horizontal Axis }</cell><cell><m>\ds \pi\int_a^b \big(R(x)^2-r(x)^2\big)\ dx</m></cell><cell></cell><cell><m>\ds 2\pi\int_c^d r(y)h(y)\ dy</m></cell></row>
-<row><cell></cell></row>
-<row><cell>\text{ Vertical Axis }</cell><cell><m>\ds\pi \int_c^d\big(R(y)^2-r(y)^2\big)\ dy</m></cell><cell></cell><cell><m>\ds 2\pi\int_a^b r(x)h(x)\ dx</m></cell></row>
-</tabular>
-<p>
-<index><main>integration</main><sub>volume!Washer Method</sub></index><index><main>Washer Method</main></index><index><main>integration</main><sub>volume!Shell Method</sub></index><index><main>Shell Method</main></index>
-</p>
-</insight>
-<p>
-As in the previous section, the real goal of this section is not to be able to compute volumes of certain solids. Rather, it is to be able to solve a problem by first approximating, then using limits to refine the approximation to give the exact value. In this section, we approximate the volume of a solid by cutting it into thin cylindrical shells. By summing up the volumes of each shell, we get an approximation of the volume. By taking a limit as the number of equally spaced shells goes to infinity, our summation can be evaluated as a definite integral, giving the exact value.
-</p>
+<p>Let a region <m>R</m> be given with <m>x</m>-bounds <m>x=a</m> and <m>x=b</m> and <m>y</m>-bounds <m>y=c</m> and <m>y=d</m>.</p>
 
-<p>
-We use this same principle again in the next section, where we find the length of curves in the plane.
-</p>
+<tabular>
+<row>
+<cell></cell>
+<cell>Washer Method</cell>
+<cell></cell>
+<cell>Shell Method</cell>
+</row>
+<row>
+<cell>\text{ Horizontal Axis }</cell>
+<cell><m>\ds \pi\int_a^b \big(R(x)^2-r(x)^2\big)\ dx</m></cell>
+<cell></cell>
+<cell><m>\ds 2\pi\int_c^d r(y)h(y)\ dy</m></cell>
+</row>
+<row>
+<cell></cell>
+</row>
+<row>
+<cell>\text{ Vertical Axis }</cell>
+<cell><m>\ds\pi \int_c^d\big(R(y)^2-r(y)^2\big)\ dy</m></cell>
+<cell></cell>
+<cell><m>\ds 2\pi\int_a^b r(x)h(x)\ dx</m></cell>
+</row>
+</tabular>
+
+<p><index><main>integration</main><sub>volume!Washer Method</sub></index><index><main>Washer Method</main></index><index><main>integration</main><sub>volume!Shell Method</sub></index><index><main>Shell Method</main></index></p>
+
+</insight>
+
+<p>As in the previous section, the real goal of this section is not to be able to compute volumes of certain solids. Rather, it is to be able to solve a problem by first approximating, then using limits to refine the approximation to give the exact value. In this section, we approximate the volume of a solid by cutting it into thin cylindrical shells. By summing up the volumes of each shell, we get an approximation of the volume. By taking a limit as the number of equally spaced shells goes to infinity, our summation can be evaluated as a definite integral, giving the exact value.</p>
+
+<p>We use this same principle again in the next section, where we find the length of curves in the plane.</p>
+
 </introduction>
 
 
@@ -1437,69 +1449,108 @@ We use this same principle again in the next section, where we find the length o
 
 <exercisegroup>
 <title>Terms and Concepts</title>
-<exercise>
-<statement>
-<p>
-T/F: A solid of revolution is formed by revolving a shape around an axis.
-</p>
-</statement>
-<answer>
-<p>
-T
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>T/F: A solid of revolution is formed by revolving a shape around an axis.</p>
+      </statement>
+      <answer>
+        <p>T</p>
+      </answer>
+      <solution>
+        <p>T</p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-T/F: The Shell Method can only be used when the Washer Method fails.
-</p>
-</statement>
-<answer>
-<p>
-F
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>T/F: The Shell Method can only be used when the Washer Method fails.</p>
+      </statement>
+      <answer>
+        <p>F</p>
+      </answer>
+      <solution>
+        <p>F</p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-T/F: The Shell Method works by integrating cross<ndash />sectional areas of a solid.
-</p>
-</statement>
-<answer>
-<p>
-F
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>T/F: The Shell Method works by integrating cross<ndash />sectional areas of a solid.</p>
+      </statement>
+      <answer>
+        <p>F</p>
+      </answer>
+      <solution>
+        <p>F</p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-T/F: When finding the volume of a solid of revolution that was revolved around a vertical axis, the Shell Method integrates with respect to <m>x</m>.
-</p>
-</statement>
-<answer>
-<p>
-T
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>T/F: When finding the volume of a solid of revolution that was revolved around a vertical axis, the Shell Method integrates with respect to <m>x</m>.</p>
+      </statement>
+      <answer>
+        <p>T</p>
+      </answer>
+      <solution>
+        <p>T</p>
+      </solution>
+    </webwork>
+  </exercise>
 </exercisegroup>
 
 <exercisegroup>
-
 <title>Problems</title>
-<p>
-In the following exercises, a region of the Cartesian plane is shaded. Use the Shell Method to find the volume of the solid of revolution formed by revolving the region about the <m>y</m>-axis.
-</p>
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_07_02_ex_09.tex -->
-<image><latex-image-code><![CDATA[
+<p>In the following exercises, a region of the Cartesian plane is shaded. Use the Shell Method to find the volume of the solid of revolution formed by revolving the region about the <m>y</m>-axis.</p>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_07_02_ex_09.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -1534,19 +1585,32 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_07_02_ex_09.tex END --></sidebyside>
-</statement>
-<answer>
-<p>
-<m>9\pi/2</m> units<m>^3</m>
-</p>
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_07_02_ex_09.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <p><m>9\pi/2</m> units<m>^3</m></p>
+      </answer>
+      <solution>
+        <p><m>9\pi/2</m> units<m>^3</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_07_02_ex_06.tex -->
-<image><latex-image-code><![CDATA[
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_07_02_ex_06.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -1581,19 +1645,32 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_07_02_ex_06.tex END --></sidebyside>
-</statement>
-<answer>
-<p>
-<m>70\pi/3</m> units<m>^3</m>
-</p>
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_07_02_ex_06.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <p><m>70\pi/3</m> units<m>^3</m></p>
+      </answer>
+      <solution>
+        <p><m>70\pi/3</m> units<m>^3</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_07_02_ex_11.tex -->
-<image><latex-image-code><![CDATA[
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_07_02_ex_11.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -1628,19 +1705,32 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_07_02_ex_11.tex END --></sidebyside>
-</statement>
-<answer>
-<p>
-<m>\pi^2-2\pi</m> units<m>^3</m>
-</p>
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_07_02_ex_11.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <p><m>\pi^2-2\pi</m> units<m>^3</m></p>
+      </answer>
+      <solution>
+        <p><m>\pi^2-2\pi</m> units<m>^3</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_07_02_ex_08.tex -->
-<image><latex-image-code><![CDATA[
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_07_02_ex_08.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -1677,21 +1767,32 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_07_02_ex_08.tex END --></sidebyside>
-</statement>
-<answer>
-<p>
-<m>2\pi/15</m> units<m>^3</m>
-</p>
-</answer>
-</exercise>
-<p>
-In the following exercises, a region of the Cartesian plane is shaded. Use the Shell Method to find the volume of the solid of revolution formed by revolving the region about the <m>x</m>-axis.
-</p>
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_07_02_ex_05.tex -->
-<image><latex-image-code><![CDATA[
+]]></latex-image-code></image>
+<!-- figures/fig_07_02_ex_08.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <p><m>2\pi/15</m> units<m>^3</m></p>
+      </answer>
+      <solution>
+        <p><m>2\pi/15</m> units<m>^3</m></p>
+      </solution>
+    </webwork>
+  </exercise>
+<p>In the following exercises, a region of the Cartesian plane is shaded. Use the Shell Method to find the volume of the solid of revolution formed by revolving the region about the <m>x</m>-axis.</p>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_07_02_ex_05.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -1726,19 +1827,32 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_07_02_ex_05.tex END --></sidebyside>
-</statement>
-<answer>
-<p>
-<m>48\pi\sqrt{3}/5</m> units<m>^3</m>
-</p>
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_07_02_ex_05.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <p><m>48\pi\sqrt{3}/5</m> units<m>^3</m></p>
+      </answer>
+      <solution>
+        <p><m>48\pi\sqrt{3}/5</m> units<m>^3</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_07_02_ex_10.tex -->
-<image><latex-image-code><![CDATA[
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_07_02_ex_10.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -1773,19 +1887,32 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_07_02_ex_10.tex END --></sidebyside>
-</statement>
-<answer>
-<p>
-<m>350\pi/3</m> units<m>^3</m>
-</p>
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_07_02_ex_10.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <p><m>350\pi/3</m> units<m>^3</m></p>
+      </answer>
+      <solution>
+        <p><m>350\pi/3</m> units<m>^3</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_07_02_ex_07.tex -->
-<image><latex-image-code><![CDATA[
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_07_02_ex_07.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -1820,19 +1947,32 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_07_02_ex_07.tex END --></sidebyside>
-</statement>
-<answer>
-<p>
-<m>\pi^2/4</m> units<m>^3</m>
-</p>
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_07_02_ex_07.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <p><m>\pi^2/4</m> units<m>^3</m></p>
+      </answer>
+      <solution>
+        <p><m>\pi^2/4</m> units<m>^3</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_07_02_ex_04.tex -->
-<image><latex-image-code><![CDATA[
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_07_02_ex_04.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 axis on top,%
@@ -1869,166 +2009,500 @@ axis on top,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_07_02_ex_04.tex END --></sidebyside>
-</statement>
-<answer>
-<p>
-<m>\pi/6</m> units<m>^3</m>
-</p>
-</answer>
-</exercise>
-<p>
-In the following exercises, a region of the Cartesian plane is described. Use the Shell Method to find the volume of the solid of revolution formed by rotating the region about each of the given axes.
-</p>
-<exercise>
-<statement>
-<p>
-Region bounded by: <m>y=\sqrt{x}</m>, <m>y=0</m> and <m>x=1</m>.
-</p>
+]]></latex-image-code></image>
+<!-- figures/fig_07_02_ex_04.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <p><m>\pi/6</m> units<m>^3</m></p>
+      </answer>
+      <solution>
+        <p><m>\pi/6</m> units<m>^3</m></p>
+      </solution>
+    </webwork>
+  </exercise>
+<p>In the following exercises, a region of the Cartesian plane is described. Use the Shell Method to find the volume of the solid of revolution formed by rotating the region about each of the given axes.</p>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Region bounded by: <m>y=\sqrt{x}</m>, <m>y=0</m> and <m>x=1</m>.</p>
 
-<p>
-Rotate about:
-</p>
+<p>Rotate about:</p>
+
 <ol cols="2" >
-<li><p>the <m>y</m>-axis</p></li>
-<li><p><m>x=1</m></p></li>
-<li><p>the <m>x</m>-axis</p></li>
-<li><p><m>y=1</m></p></li>
-</ol>
-</statement>
-<answer>
-<ol>
-<li><p><m>4\pi/5</m></p></li>
-<li><p><m>8\pi/15</m></p></li>
-<li><p><m>\pi/2</m></p></li>
-<li><p><m>5\pi/6</m></p></li>
-</ol>
-</answer>
-</exercise>
+<li>
 
-<exercise>
-<statement>
-<p>
-Region bounded by: <m>y=4-x^2</m> and <m>y=0</m>.
-</p>
+<p>the <m>y</m>-axis</p>
 
-<p>
-Rotate about:
-</p>
+</li>
+<li>
+
+<p><m>x=1</m></p>
+
+</li>
+<li>
+
+<p>the <m>x</m>-axis</p>
+
+</li>
+<li>
+
+<p><m>y=1</m></p>
+
+</li>
+</ol>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>4\pi/5</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi/15</m></p>
+
+</li>
+<li>
+
+<p><m>\pi/2</m></p>
+
+</li>
+<li>
+
+<p><m>5\pi/6</m></p>
+
+</li>
+</ol>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>4\pi/5</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi/15</m></p>
+
+</li>
+<li>
+
+<p><m>\pi/2</m></p>
+
+</li>
+<li>
+
+<p><m>5\pi/6</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Region bounded by: <m>y=4-x^2</m> and <m>y=0</m>.</p>
+
+<p>Rotate about:</p>
+
 <ol cols="2" >
-<li><p><m>x=2</m></p></li>
-<li><p><m>x=-2</m></p></li>
-<li><p>the <m>x</m>-axis</p></li>
-<li><p><m>y=4</m></p></li>
-</ol>
-</statement>
-<answer>
-<ol>
-<li><p><m>128\pi/3</m></p></li>
-<li><p><m>128\pi/3</m></p></li>
-<li><p><m>512\pi/15</m></p></li>
-<li><p><m>256\pi/5</m></p></li>
-</ol>
-</answer>
-</exercise>
+<li>
 
-<exercise>
-<statement>
-<p>
-The triangle with vertices <m>(1,1)</m>, <m>(1,2)</m> and <m>(2,1)</m>.
-</p>
+<p><m>x=2</m></p>
 
-<p>
-Rotate about:
-</p>
+</li>
+<li>
+
+<p><m>x=-2</m></p>
+
+</li>
+<li>
+
+<p>the <m>x</m>-axis</p>
+
+</li>
+<li>
+
+<p><m>y=4</m></p>
+
+</li>
+</ol>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>128\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>128\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>512\pi/15</m></p>
+
+</li>
+<li>
+
+<p><m>256\pi/5</m></p>
+
+</li>
+</ol>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>128\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>128\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>512\pi/15</m></p>
+
+</li>
+<li>
+
+<p><m>256\pi/5</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>The triangle with vertices <m>(1,1)</m>, <m>(1,2)</m> and <m>(2,1)</m>.</p>
+
+<p>Rotate about:</p>
+
 <ol cols="2" >
-<li><p>the <m>y</m>-axis</p></li>
-<li><p><m>x=1</m></p></li>
-<li><p>the <m>x</m>-axis</p></li>
-<li><p><m>y=2</m></p></li>
-</ol>
-</statement>
-<answer>
-<ol>
-<li><p><m>4\pi/3</m></p></li>
-<li><p><m>\pi/3</m></p></li>
-<li><p><m>4\pi/3</m></p></li>
-<li><p><m>2\pi/3</m></p></li>
-</ol>
-</answer>
-</exercise>
+<li>
 
-<exercise>
-<statement>
-<p>
-Region bounded by <m>y=x^2-2x+2</m> and <m>y=2x-1</m>.
-</p>
+<p>the <m>y</m>-axis</p>
 
-<p>
-Rotate about:
-</p>
+</li>
+<li>
+
+<p><m>x=1</m></p>
+
+</li>
+<li>
+
+<p>the <m>x</m>-axis</p>
+
+</li>
+<li>
+
+<p><m>y=2</m></p>
+
+</li>
+</ol>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>4\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>4\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>2\pi/3</m></p>
+
+</li>
+</ol>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>4\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>4\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>2\pi/3</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Region bounded by <m>y=x^2-2x+2</m> and <m>y=2x-1</m>.</p>
+
+<p>Rotate about:</p>
+
 <ol cols="2" >
-<li><p>the <m>y</m>-axis</p></li>
-<li><p><m>x=1</m></p></li>
-<li><p><m>x=-1</m></p></li>
-</ol>
-</statement>
-<answer>
-<ol>
-<li><p><m>16\pi/3</m></p></li>
-<li><p><m>8\pi/3</m></p></li>
-<li><p><m>8\pi</m></p></li>
-</ol>
-</answer>
-</exercise>
+<li>
 
-<exercise>
-<statement>
-<p>
-Region bounded by <m>y=1/\sqrt{x^2+1}</m>, <m>x=1</m> and the <m>x</m> and <m>y</m>-axes.
-</p>
+<p>the <m>y</m>-axis</p>
 
-<p>
-Rotate about:
-</p>
+</li>
+<li>
+
+<p><m>x=1</m></p>
+
+</li>
+<li>
+
+<p><m>x=-1</m></p>
+
+</li>
+</ol>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>16\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi</m></p>
+
+</li>
+</ol>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>16\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Region bounded by <m>y=1/\sqrt{x^2+1}</m>, <m>x=1</m> and the <m>x</m> and <m>y</m>-axes.</p>
+
+<p>Rotate about:</p>
+
 <ol cols="2" >
-<li><p>the <m>y</m>-axis</p></li>
-<li><p><m>x=1</m></p></li>
-</ol>
-</statement>
-<answer>
-<ol>
-<li><p><m>2\pi(\sqrt{2}-1)</m></p></li>
-<li><p><m>2\pi(1-\sqrt{2}+\sinh^{-1} (1))</m></p></li>
-</ol>
-</answer>
-</exercise>
+<li>
 
-<exercise>
-<statement>
-<p>
-Region bounded by <m>y=2x</m>, <m>y=x</m> and <m>x=2</m>.
-</p>
+<p>the <m>y</m>-axis</p>
 
-<p>
-Rotate about:
-</p>
+</li>
+<li>
+
+<p><m>x=1</m></p>
+
+</li>
+</ol>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>2\pi(\sqrt{2}-1)</m></p>
+
+</li>
+<li>
+
+<p><m>2\pi(1-\sqrt{2}+\sinh^{-1} (1))</m></p>
+
+</li>
+</ol>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>2\pi(\sqrt{2}-1)</m></p>
+
+</li>
+<li>
+
+<p><m>2\pi(1-\sqrt{2}+\sinh^{-1} (1))</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Region bounded by <m>y=2x</m>, <m>y=x</m> and <m>x=2</m>.</p>
+
+<p>Rotate about:</p>
+
 <ol cols="2" >
-<li><p>the <m>y</m>-axis</p></li>
-<li><p><m>x=2</m></p></li>
-<li><p>the <m>x</m>-axis</p></li>
-<li><p><m>y=4</m></p></li>
+<li>
+
+<p>the <m>y</m>-axis</p>
+
+</li>
+<li>
+
+<p><m>x=2</m></p>
+
+</li>
+<li>
+
+<p>the <m>x</m>-axis</p>
+
+</li>
+<li>
+
+<p><m>y=4</m></p>
+
+</li>
 </ol>
-</statement>
-<answer>
-<ol>
-<li><p><m>16\pi/3</m></p></li>
-<li><p><m>8\pi/3</m></p></li>
-<li><p><m>8\pi</m></p></li>
-<li><p><m>8\pi</m></p></li>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>16\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi</m></p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>16\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi/3</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi</m></p>
+
+</li>
+<li>
+
+<p><m>8\pi</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
 </exercisegroup>
 
 </exercises></section>
