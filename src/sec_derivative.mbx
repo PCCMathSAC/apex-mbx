@@ -1,107 +1,105 @@
 <section xml:id="sec_derivative">
 <title>Instantaneous Rates of Change: The Derivative</title>
-
-
 <introduction>
-<p>
-A common amusement park ride lifts riders to a height then allows them to freefall a certain distance before safely stopping them. Suppose such a ride drops riders from a height of 150 feet. Students of physics may recall that the height (in feet) of the riders, <m>t</m> seconds after freefall (and ignoring air resistance, etc.) can be accurately modeled by <m>f(t) = -16t^2+150</m>.
-</p>
 
-<p>
-Using this formula, it is easy to verify that, without intervention, the riders will hit the ground at <m>t=2.5\sqrt{1.5} \approx 3.06</m> seconds. Suppose the designers of the ride decide to begin slowing the riders' fall after 2 seconds (corresponding to a height of 86 ft.). How fast will the riders be traveling at that time?
-</p>
+<p>A common amusement park ride lifts riders to a height then allows them to freefall a certain distance before safely stopping them. Suppose such a ride drops riders from a height of 150 feet. Students of physics may recall that the height (in feet) of the riders, <m>t</m> seconds after freefall (and ignoring air resistance, etc.) can be accurately modeled by <m>f(t) = -16t^2+150</m>.</p>
 
-<p>
-We have been given a <em>position</em> function, but what we want to compute is a velocity at a specific point in time, i.e., we want an <em>instantaneous velocity</em>. We do not currently know how to calculate this.
-</p>
+<p>Using this formula, it is easy to verify that, without intervention, the riders will hit the ground at <m>t=2.5\sqrt{1.5} \approx 3.06</m> seconds. Suppose the designers of the ride decide to begin slowing the riders' fall after 2 seconds (corresponding to a height of 86 ft.). How fast will the riders be traveling at that time?</p>
 
-<p>
-However, we do know from common experience how to calculate an <em>average velocity</em>. (If we travel 60 miles in 2 hours, we know we had an average velocity of 30 mph.) We looked at this concept in <xref ref="sec_limit_intro">Section</xref> when we introduced the difference quotient. We have
+<p>We have been given a <em>position</em> function, but what we want to compute is a velocity at a specific point in time, i.e., we want an <em>instantaneous velocity</em>. We do not currently know how to calculate this.</p>
+
+<p>However, we do know from common experience how to calculate an <em>average velocity</em>. (If we travel 60 miles in 2 hours, we know we had an average velocity of 30 mph.) We looked at this concept in <xref ref="sec_limit_intro">Section</xref> when we introduced the difference quotient. We have
 <me>
   \frac{\text{ change in distance } }{\text{ change in time } } = \frac{\text{ ``\ rise\ '' } }{\text{ run } } = \text{ average velocity } .
-</me>
-</p>
+</me></p>
 
-<p>
-We can approximate the instantaneous velocity at <m>t=2</m> by considering the average velocity over some time period containing <m>t=2</m>. If we make the time interval small, we will get a good approximation. (This fact is commonly used. For instance, high speed cameras are used to track fast moving objects. Distances are measured over a fixed number of frames to generate an accurate approximation of the velocity.)
-</p>
+<p>We can approximate the instantaneous velocity at <m>t=2</m> by considering the average velocity over some time period containing <m>t=2</m>. If we make the time interval small, we will get a good approximation. (This fact is commonly used. For instance, high speed cameras are used to track fast moving objects. Distances are measured over a fixed number of frames to generate an accurate approximation of the velocity.)</p>
 
-<p>
-Consider the interval from <m>t=2</m> to <m>t=3</m> (just before the riders hit the ground). On that interval, the average velocity is
+<p>Consider the interval from <m>t=2</m> to <m>t=3</m> (just before the riders hit the ground). On that interval, the average velocity is
 <me>
   \frac{f(3)-f(2)}{3-2} = \frac{f(3)-f(2)}{1} =-80\ \text{ ft/s } ,
 </me>
 where the minus sign indicates that the riders are moving <em>down</em>. By narrowing the interval we consider, we will likely get a better approximation of the instantaneous velocity. On <m>[2,2.5]</m> we have
 <me>
   \frac{f(2.5)-f(2)}{2.5-2} = \frac{f(2.5)-f(2)}{0.5} =-72\ \text{ ft/s } .
-</me>
-</p>
+</me></p>
 
-<p>
-We can do this for smaller and smaller intervals of time. For instance, over a time span of 1/10<m>^\text{ th }</m> of a second, i.e., on <m>[2,2.1]</m>, we have
+<p>We can do this for smaller and smaller intervals of time. For instance, over a time span of 1/10<m>^\text{ th }</m> of a second, i.e., on <m>[2,2.1]</m>, we have
 <me>
   \frac{f(2.1)-f(2)}{2.1-2} = \frac{f(2.1)-f(2)}{0.1} =-65.6\ \text{ ft/s } .
-</me>
-</p>
+</me></p>
 
-<p>
-Over a time span of 1/100<m>^\text{ th }</m> of a second, on <m>[2,2.01]</m>, the average velocity is
+<p>Over a time span of 1/100<m>^\text{ th }</m> of a second, on <m>[2,2.01]</m>, the average velocity is
 <me>
   \frac{f(2.01)-f(2)}{2.01-2} = \frac{f(2.01)-f(2)}{0.01} =-64.16\ \text{ ft/s } .
-</me>
-</p>
+</me></p>
 
-<p>
-What we are really computing is the average velocity on the interval <m>[2,2+h]</m> for small values of <m>h</m>. That is, we are computing
+<p>What we are really computing is the average velocity on the interval <m>[2,2+h]</m> for small values of <m>h</m>. That is, we are computing
 <me>
   \frac{f(2+h) - f(2)}{h}
 </me>
-where <m>h</m> is small.
-</p>
+where <m>h</m> is small.</p>
 
-<p>
-What we really want is for <m>h=0</m>, but this, of course, returns the familiar <q><m>0/0</m></q>
-indeterminate form. So we employ a limit, as we did in <xref ref="sec_limit_intro">Section</xref>.
-</p>
+<p>What we really want is for <m>h=0</m>, but this, of course, returns the familiar <q><m>0/0</m></q>
+indeterminate form. So we employ a limit, as we did in <xref ref="sec_limit_intro">Section</xref>.</p>
 
-<p>
-We can approximate the value of this limit numerically with small values of <m>h</m> as seen in <xref ref="table_falling">Figure</xref>. It looks as though the velocity is approaching <m>-64</m> ft/s. Computing the limit directly gives
+<p>We can approximate the value of this limit numerically with small values of <m>h</m> as seen in <xref ref="table_falling">Figure</xref>. It looks as though the velocity is approaching <m>-64</m> ft/s. Computing the limit directly gives
 <md>
   <mrow>  \lim_{h\to 0} \frac{f(2+h)-f(2)}{h} \amp = \lim_{h\to 0}\frac{-16(2+h)^2+150 - (-16(2)^2+150)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0}\frac{-64h-16h^2}{h}</mrow>
   <mrow>  \amp = \lim_{h\to 0}-64 -16h</mrow>
   <mrow>  \amp =-64.</mrow>
-</md>
-</p>
+</md></p>
+
 <table xml:id="table_falling" >
 <caption>Approximating the instantaneous velocity with average velocities over a small time period <m>h</m>.</caption>
 <tabular>
-<row><cell><m>h</m></cell><cell>\parbox[b]{75pt}{Average Velocity
+<row>
+<cell><m>h</m></cell>
+<cell>\parbox[b]{75pt}{Average Velocity
 
-ft/s}</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell><m>1</m></cell><cell><m>-80</m></cell></row>
-<row><cell><m>0.5</m></cell><cell><m>-72</m></cell></row>
-<row><cell><m>0.1</m></cell><cell><m>-65.6</m></cell></row>
-<row><cell><m>0.01</m></cell><cell><m>-64.16</m></cell></row>
-<row><cell><m>0.001</m></cell><cell><m>-64.016</m></cell></row>
+ft/s}</cell>
+</row>
+<row bottom="minor">
+<cell></cell>
+<cell></cell>
+</row>
+<row>
+<cell><m>1</m></cell>
+<cell><m>-80</m></cell>
+</row>
+<row>
+<cell><m>0.5</m></cell>
+<cell><m>-72</m></cell>
+</row>
+<row>
+<cell><m>0.1</m></cell>
+<cell><m>-65.6</m></cell>
+</row>
+<row>
+<cell><m>0.01</m></cell>
+<cell><m>-64.16</m></cell>
+</row>
+<row>
+<cell><m>0.001</m></cell>
+<cell><m>-64.016</m></cell>
+</row>
 </tabular>
 </table>
-<p>
-Graphically, we can view the average velocities we computed numerically as the slopes of secant lines on the graph of <m>f</m> going through the points <m>(2,f(2))</m> and <m>(2+h,f(2+h))</m>. In <xref ref="fig_derivfalling">Figure</xref>, the secant line corresponding to <m>h=1</m> is shown in three contexts. <xref ref="fig_derivfalling">Figure</xref>(a) shows a <q>zoomed out</q> version of <m>f</m> with its secant line. In (b), we zoom in around the points of intersection between <m>f</m> and the secant line. Notice how well this secant line approximates <m>f</m> between those two points <mdash /> it is a common practice to approximate functions with straight lines.
-</p>
 
-<p>
-As <m>h\to 0</m>, these secant lines approach the <em>tangent line</em>, a line that goes through the point <m>(2,f(2))</m> with the special slope of <m>-64</m>. In parts (c) and (d) of <xref ref="fig_derivfalling">Figure</xref>, we zoom in around the point <m>(2,86)</m>. In (c) we see the secant line, which approximates <m>f</m> well, but not as well the tangent line shown in (d).
-</p>
+<p>Graphically, we can view the average velocities we computed numerically as the slopes of secant lines on the graph of <m>f</m> going through the points <m>(2,f(2))</m> and <m>(2+h,f(2+h))</m>. In <xref ref="fig_derivfalling">Figure</xref>, the secant line corresponding to <m>h=1</m> is shown in three contexts. <xref ref="fig_derivfalling">Figure</xref>(a) shows a <q>zoomed out</q> version of <m>f</m> with its secant line. In (b), we zoom in around the points of intersection between <m>f</m> and the secant line. Notice how well this secant line approximates <m>f</m> between those two points <mdash /> it is a common practice to approximate functions with straight lines.</p>
+
+<p>As <m>h\to 0</m>, these secant lines approach the <em>tangent line</em>, a line that goes through the point <m>(2,f(2))</m> with the special slope of <m>-64</m>. In parts (c) and (d) of <xref ref="fig_derivfalling">Figure</xref>, we zoom in around the point <m>(2,86)</m>. In (c) we see the secant line, which approximates <m>f</m> well, but not as well the tangent line shown in (d).</p>
+
 <!--
 <caption>Parts (a), (b) and (c) show the secant line to <m>f(x)</m> with <m>h=1</m>, zoomed in different amounts. Part (d) shows the tangent line to <m>f</m> at <m>x=2</m>.</caption>
 -->
 <sidebyside><figure>
 <caption>(a) &amp; (b)</caption>
-
 <!-- START figures/fig_derivfalling.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[ymin=-50,ymax=160,xmin=-.5,xmax=3.49,]
 \addplot [{\colorone},smooth,thick] coordinates {(0.,150.) (0.1,149.84) (0.2,149.36) (0.3,148.56) (0.4,147.44) (0.5,146.) (0.6,144.24) (0.7,142.16) (0.8,139.76) (0.9,137.04)(1.,134.) (1.1,130.64) (1.2,126.96) (1.3,122.96) (1.4,118.64) (1.5,114.) (1.6,109.04) (1.7,103.76) (1.8,98.16) (1.9,92.24) (2.,86.) (2.1,79.44) (2.2,72.56) (2.3,65.36) (2.4,57.84) (2.5,50.) (2.6,41.84) (2.7,33.36) (2.8,24.56) (2.9,15.44) (3.,6.) (3.06,0) (3.1,-3.76) (3.2,-13.84) (3.3,-24.24) (3.4,-34.96) (3.5,-46.)};
@@ -115,10 +113,13 @@ As <m>h\to 0</m>, these secant lines approach the <em>tangent line</em>, a line 
 
 \end{tikzpicture}
 % this is the sqrt[x] on [0,5]
-]]></latex-image-code></image><!-- figures/fig_derivfalling.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_derivfalling.tex END -->
  &amp; 
 <!-- START figures/fig_derivfalling2.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[ymin=-10,ymax=129,xmin=1.8,xmax=3.4,]
 \addplot [{\colorone},smooth,thick] coordinates { (1.5,114.) (1.6,109.04) (1.7,103.76) (1.8,98.16) (1.9,92.24) (2.,86.) (2.1,79.44) (2.2,72.56) (2.3,65.36) (2.4,57.84) (2.5,50.) (2.6,41.84) (2.7,33.36) (2.8,24.56) (2.9,15.44) (3.,6.) (3.06,0) (3.1,-3.76) (3.2,-13.84) (3.3,-24.24) (3.4,-34.96) (3.5,-46.)};
@@ -132,13 +133,15 @@ As <m>h\to 0</m>, these secant lines approach the <em>tangent line</em>, a line 
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_derivfalling2.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_derivfalling2.tex END -->
 
 </figure>
 <figure>
-<caption>
-<!-- START figures/fig_derivfalling3.tex -->
-<image><latex-image-code><![CDATA[
+<caption><!-- START figures/fig_derivfalling3.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[ymin=-10,ymax=129,xmin=1.4,xmax=2.6,]
 \addplot [{\colorone},smooth,thick] coordinates { (1.4,118.64) (1.5,114.) (1.6,109.04) (1.7,103.76) (1.8,98.16) (1.9,92.24) (2.,86.) (2.1,79.44) (2.2,72.56) (2.3,65.36) (2.4,57.84) (2.5,50.) (2.6,41.84)  };
@@ -152,10 +155,13 @@ As <m>h\to 0</m>, these secant lines approach the <em>tangent line</em>, a line 
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_derivfalling3.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_derivfalling3.tex END -->
  &amp;
 <!-- START figures/fig_derivfalling4.tex -->
-<image><latex-image-code><![CDATA[
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[ymin=-10,ymax=129,xmin=1.4,xmax=2.6,]
 \addplot [{\colorone},smooth,thick] coordinates {(1.4,118.64) (1.5,114.) (1.6,109.04) (1.7,103.76) (1.8,98.16) (1.9,92.24) (2.,86.) (2.1,79.44) (2.2,72.56) (2.3,65.36) (2.4,57.84) (2.5,50.) (2.6,41.84)  };
@@ -166,79 +172,111 @@ As <m>h\to 0</m>, these secant lines approach the <em>tangent line</em>, a line 
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_derivfalling4.tex END -->
-</caption>
+]]></latex-image-code></image>
+<!-- figures/fig_derivfalling4.tex END --></caption>
 &amp;
 </figure>
 <figure>
 (c) &amp; (d)
 </figure></sidebyside>
-<p>
-We have just introduced a number of important concepts that we will flesh out more within this section. First, we formally define two of them.
-</p>
+
+<p>We have just introduced a number of important concepts that we will flesh out more within this section. First, we formally define two of them.</p>
+
 <definition xml:id="def_derivative_at_a_point">
 <title>Derivative at a Point</title>
 <statement>
-<p>
-Let <m>f</m> be a continuous function on an open interval <m>I</m> and let <m>c</m> be in <m>I</m>.<index><main>derivative</main><sub>at a point</sub></index> The <term>derivative of <m>f</m> at <m>c</m></term>, denoted <m>\fp(c)</m>, is
+
+<p>Let <m>f</m> be a continuous function on an open interval <m>I</m> and let <m>c</m> be in <m>I</m>.<index><main>derivative</main><sub>at a point</sub></index> The <term>derivative of <m>f</m> at <m>c</m></term>, denoted <m>\fp(c)</m>, is
 <me>
   \lim_{h\to 0}\frac{f(c+h)-f(c)}{h},
 </me>
-provided the limit exists. If the limit exists, we say that <term><m>f</m> is differentiable at <m>c</m></term>; if the limit does not exist, then <term><m>f</m> is not differentiable at <m>c</m></term>. If <m>f</m> is differentiable at every point in <m>I</m>, then <term><m>f</m> is differentiable on <m>I</m></term>.<index><main>differentiable</main></index>
-</p>
+provided the limit exists. If the limit exists, we say that <term><m>f</m> is differentiable at <m>c</m></term>; if the limit does not exist, then <term><m>f</m> is not differentiable at <m>c</m></term>. If <m>f</m> is differentiable at every point in <m>I</m>, then <term><m>f</m> is differentiable on <m>I</m></term>.<index><main>differentiable</main></index></p>
+
 </statement>
 </definition>
 
 <definition xml:id="def_tangent_line">
 <title>Tangent Line</title>
 <statement>
-<p>
-Let <m>f</m> be continuous on an open interval <m>I</m> and differentiable at <m>c</m>, for some <m>c</m> in <m>I</m>. The line with equation <m>\ell(x) = \fp(c)(x-c)+f(c)</m> is the <term>tangent line</term> to the graph of <m>f</m> at <m>c</m>; that is, it is the line through <m>(c,f(c))</m> whose slope is the derivative of <m>f</m> at <m>c</m>.<index><main>tangent line</main></index><index><main>derivative</main><sub>tangent line</sub></index>
-</p>
+
+<p>Let <m>f</m> be continuous on an open interval <m>I</m> and differentiable at <m>c</m>, for some <m>c</m> in <m>I</m>. The line with equation <m>\ell(x) = \fp(c)(x-c)+f(c)</m> is the <term>tangent line</term> to the graph of <m>f</m> at <m>c</m>; that is, it is the line through <m>(c,f(c))</m> whose slope is the derivative of <m>f</m> at <m>c</m>.<index><main>tangent line</main></index><index><main>derivative</main><sub>tangent line</sub></index></p>
+
 </statement>
 </definition>
-<p>
-Some examples will help us understand these definitions.
-</p>
+
+<p>Some examples will help us understand these definitions.</p>
 
 <example xml:id="ex_derv_point1">
 <title>Finding derivatives and tangent lines</title>
 <statement>
-<p>
-Let <m>f(x) = 3x^2+5x-7</m>. Find:
-</p>
+
+<p>Let <m>f(x) = 3x^2+5x-7</m>. Find:</p>
+
 <ol cols="2" >
-<li><p><m>\fp(1)</m></p></li>
-<li><p>The equation of the tangent line to the graph of <m>f</m> at <m>x=1</m>.</p></li>
-<li><p><m>\fp(3)</m></p></li>
-<li><p>The equation of the tangent line to the graph <m>f</m> at <m>x=3</m>.</p></li>
+<li>
+
+<p><m>\fp(1)</m></p>
+
+</li>
+<li>
+
+<p>The equation of the tangent line to the graph of <m>f</m> at <m>x=1</m>.</p>
+
+</li>
+<li>
+
+<p><m>\fp(3)</m></p>
+
+</li>
+<li>
+
+<p>The equation of the tangent line to the graph <m>f</m> at <m>x=3</m>.</p>
+
+</li>
 </ol>
 </statement>
 <solution>
 <ol>
-<li><p>We compute this directly using <xref ref="def_derivative_at_a_point">Definition</xref>.
+<li>
+
+<p>We compute this directly using <xref ref="def_derivative_at_a_point">Definition</xref>.
 <md>
   <mrow>  \fp(1) \amp =	\lim_{h\to 0} \frac{f(1+h)-f(1)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} \frac{3h^2+11h}{h}</mrow>
   <mrow>  \amp = 	\lim_{h\to 0}	3h+11=11.</mrow>
-</md></p></li>
-<li><p>The tangent line at <m>x=1</m> has slope <m>\fp(1)</m> and goes through the point <m>(1,f(1)) = (1,1)</m>. Thus the tangent line has equation, in point-slope form, <m>y = 11(x-1) + 1</m>. In slope-intercept form we have <m>y = 11x-10</m>.</p></li>
-<li><p>Again, using the definition,
+</md></p>
+
+</li>
+<li>
+
+<p>The tangent line at <m>x=1</m> has slope <m>\fp(1)</m> and goes through the point <m>(1,f(1)) = (1,1)</m>. Thus the tangent line has equation, in point-slope form, <m>y = 11(x-1) + 1</m>. In slope-intercept form we have <m>y = 11x-10</m>.</p>
+
+</li>
+<li>
+
+<p>Again, using the definition,
 <md>
   <mrow>  \fp(3) \amp =	\lim_{h\to 0} \frac{f(3+h)-f(3)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} \frac{3(3+h)^2+5(3+h)-7 - (3(3)^2+5(3)-7)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} \frac{3h^2+23h}{h}</mrow>
   <mrow>  \amp = \lim_{h\to 0} 3h+23</mrow>
   <mrow>  \amp = 23.</mrow>
-</md></p></li>
-<li><p>The tangent line at <m>x=3</m> has slope <m>23</m> and goes through the point <m>(3,f(3)) = (3,35)</m>. Thus the tangent line has equation <m>y=23(x-3)+35 = 23x-34</m>.</p></li>
+</md></p>
+
+</li>
+<li>
+
+<p>The tangent line at <m>x=3</m> has slope <m>23</m> and goes through the point <m>(3,f(3)) = (3,35)</m>. Thus the tangent line has equation <m>y=23(x-3)+35 = 23x-34</m>.</p>
+
+</li>
 </ol>
 <figure xml:id="fig_tangent1" >
 <caption>A graph of <m>f(x) = 3x^2+5x-7</m> and its tangent lines at <m>x=1</m> and <m>x=3</m>.</caption>
-
 <!-- START figures/fig_tangent1.tex -->
-<image><latex-image-code><![CDATA[
+<image xml:id="img_tangent1" >
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[ymin=-11,ymax=66,xmin=-.1,xmax=4.1,]
 \addplot [{\colorone},smooth,thick] coordinates {(0.,-7.) (0.1,-6.47) (0.2,-5.88) (0.3,-5.23) (0.4,-4.52) (0.5,-3.75)
@@ -255,54 +293,53 @@ Let <m>f(x) = 3x^2+5x-7</m>. Find:
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_tangent1.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_tangent1.tex END -->
 
 </figure>
-<p>
-A graph of <m>f</m> is given in <xref ref="fig_tangent1">Figure</xref> along with the tangent lines at <m>x=1</m> and <m>x=3</m>.
-</p>
+
+<p>A graph of <m>f</m> is given in <xref ref="fig_tangent1">Figure</xref> along with the tangent lines at <m>x=1</m> and <m>x=3</m>.</p>
+
 </solution>
 </example>
 
-<p>
-Another important line that can be created using information from the derivative is the <em>normal line.</em> It is perpendicular to the tangent line, hence its slope is the opposite<ndash />reciprocal of the tangent line's slope.
-</p>
+<p>Another important line that can be created using information from the derivative is the <em>normal line.</em> It is perpendicular to the tangent line, hence its slope is the opposite<ndash />reciprocal of the tangent line's slope.</p>
+
 <definition xml:id="def_normal_line">
 <title>Normal Line</title>
 <statement>
-<p>
-Let <m>f</m> be continuous on an open interval <m>I</m> and differentiable at <m>c</m>, for some <m>c</m> in <m>I</m>. The <term>normal line</term> to the graph of <m>f</m> at <m>c</m> is the line with equation
+
+<p>Let <m>f</m> be continuous on an open interval <m>I</m> and differentiable at <m>c</m>, for some <m>c</m> in <m>I</m>. The <term>normal line</term> to the graph of <m>f</m> at <m>c</m> is the line with equation
 <me>
   n(x) =\frac{-1}{\fp(c)}(x-c)+f(c),
 </me>
-where <m>\fp(c)\neq 0</m>. When <m>\fp(c)=0</m>, the normal line is the vertical line through <m>\big(c,f(c)\big)</m>; that is, <m>x=c</m>.<index><main>derivative</main><sub>normal line</sub></index><index><main>normal line</main></index>
-</p>
+where <m>\fp(c)\neq 0</m>. When <m>\fp(c)=0</m>, the normal line is the vertical line through <m>\big(c,f(c)\big)</m>; that is, <m>x=c</m>.<index><main>derivative</main><sub>normal line</sub></index><index><main>normal line</main></index></p>
+
 </statement>
 </definition>
 
 <example xml:id="ex_normal1">
 <title>Finding equations of normal lines</title>
 <statement>
-<p>
-Let <m>f(x) = 3x^2+5x-7</m>, as in <xref ref="ex_derv_point1">Example</xref>. Find the equations of the normal lines to the graph of <m>f</m> at <m>x=1</m> and <m>x=3</m>.
-</p>
+
+<p>Let <m>f(x) = 3x^2+5x-7</m>, as in <xref ref="ex_derv_point1">Example</xref>. Find the equations of the normal lines to the graph of <m>f</m> at <m>x=1</m> and <m>x=3</m>.</p>
+
 </statement>
 <solution>
-<p>
-In <xref ref="ex_derv_point1">Example</xref>, we found that <m>\fp(1)=11</m>. Hence at <m>x=1</m>, the normal line will have slope <m>-1/11</m>. An equation for the normal line is
+
+<p>In <xref ref="ex_derv_point1">Example</xref>, we found that <m>\fp(1)=11</m>. Hence at <m>x=1</m>, the normal line will have slope <m>-1/11</m>. An equation for the normal line is
 <me>
   n(x) = \frac{-1}{11}(x-1)+1.
-</me>
-</p>
+</me></p>
 
-<p>
-The normal line is plotted with <m>y=f(x)</m> in <xref ref="fig_normal1">Figure</xref>. Note how the line looks perpendicular to <m>f</m>. (A key word here is <q>looks.</q> Mathematically, we say that the normal line <em>is</em> perpendicular to <m>f</m> at <m>x=1</m> as the slope of the normal line is the opposite<ndash />reciprocal of the slope of the tangent line. However, normal lines may not always <em>look</em> perpendicular. The aspect ratio of the picture of the graph plays a big role in this.)
-</p>
+<p>The normal line is plotted with <m>y=f(x)</m> in <xref ref="fig_normal1">Figure</xref>. Note how the line looks perpendicular to <m>f</m>. (A key word here is <q>looks.</q> Mathematically, we say that the normal line <em>is</em> perpendicular to <m>f</m> at <m>x=1</m> as the slope of the normal line is the opposite<ndash />reciprocal of the slope of the tangent line. However, normal lines may not always <em>look</em> perpendicular. The aspect ratio of the picture of the graph plays a big role in this.)</p>
+
 <figure xml:id="fig_normal1" >
 <caption>A graph of <m>f(x)=3x^2+5x-7</m>, along with its normal line at <m>x=1</m>.</caption>
-
 <!-- START figures/fig_normal1.tex -->
-<image><latex-image-code><![CDATA[
+<image xml:id="img_normal1" >
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[x=1cm,y=1cm,%
 ymin=-.1,ymax=3.5,%
@@ -325,67 +362,58 @@ xmin=-0.1,xmax=4.3,%
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_normal1.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_normal1.tex END -->
 
 </figure>
-<p>
-We also found that <m>\fp(3) = 23</m>, so the normal line to the graph of <m>f</m> at <m>x=3</m> will have slope <m>-1/23</m>. An equation for the normal line is
+
+<p>We also found that <m>\fp(3) = 23</m>, so the normal line to the graph of <m>f</m> at <m>x=3</m> will have slope <m>-1/23</m>. An equation for the normal line is
 <me>
   n(x) = \frac{-1}{23}(x-3)+35.
-</me>
-</p>
+</me></p>
+
 </solution>
 </example>
 
-<p>
-Linear functions are easy to work with; many functions that arise in the course of solving real problems are not easy to work with. A common practice in mathematical problem solving is to approximate difficult functions with not<ndash />so<ndash />difficult functions. Lines are a common choice. It turns out that at any given point on the graph of a differentiable function <m>f</m>, the best linear approximation to <m>f</m> is its tangent line. That is one reason we'll spend considerable time finding tangent lines to functions.
-</p>
+<p>Linear functions are easy to work with; many functions that arise in the course of solving real problems are not easy to work with. A common practice in mathematical problem solving is to approximate difficult functions with not<ndash />so<ndash />difficult functions. Lines are a common choice. It turns out that at any given point on the graph of a differentiable function <m>f</m>, the best linear approximation to <m>f</m> is its tangent line. That is one reason we'll spend considerable time finding tangent lines to functions.</p>
 
-<p>
-One type of function that does not benefit from a tangent<ndash />line approximation is a line; it is rather simple to recognize that the tangent line to a line is the line itself. We look at this in the following example.
-</p>
+<p>One type of function that does not benefit from a tangent<ndash />line approximation is a line; it is rather simple to recognize that the tangent line to a line is the line itself. We look at this in the following example.</p>
 
 <example xml:id="ex_der_line">
 <title>Finding the Derivative of a Line</title>
 <statement>
-<p>
-Consider <m>f(x) = 3x+5</m>. Find the equation of the tangent line to <m>f</m> at <m>x=1</m> and <m>x=7</m>.
-</p>
+
+<p>Consider <m>f(x) = 3x+5</m>. Find the equation of the tangent line to <m>f</m> at <m>x=1</m> and <m>x=7</m>.</p>
+
 </statement>
 <solution>
-<p>
-We find the slope of the tangent line by using <xref ref="def_derivative_at_a_point">Definition</xref>.
+
+<p>We find the slope of the tangent line by using <xref ref="def_derivative_at_a_point">Definition</xref>.
 <md>
   <mrow>  \fp(1) \amp =	\lim_{h\to 0}\frac{f(1+h)-f(1)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} \frac{3(1+h)+5 - (3+5)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} \frac{3h}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} 3</mrow>
   <mrow>  \amp = 3.</mrow>
-</md>
-</p>
+</md></p>
 
-<p>
-We just found that <m>\fp(1) = 3</m>. That is, we found the <em>instantaneous rate of change</em> of <m>f(x) = 3x+5</m> is <m>3</m>. This is not surprising; lines are characterized by being the <em>only</em> functions with a <em>constant rate of change.</em> That rate of change is called the <em>slope</em> of the line. Since their rates of change are constant, their <em>instantaneous</em> rates of change are always the same; they are all the slope.
-</p>
+<p>We just found that <m>\fp(1) = 3</m>. That is, we found the <em>instantaneous rate of change</em> of <m>f(x) = 3x+5</m> is <m>3</m>. This is not surprising; lines are characterized by being the <em>only</em> functions with a <em>constant rate of change.</em> That rate of change is called the <em>slope</em> of the line. Since their rates of change are constant, their <em>instantaneous</em> rates of change are always the same; they are all the slope.</p>
 
-<p>
-So given a line <m>f(x) = ax+b</m>, the derivative at any point <m>x</m> will be <m>a</m>; that is, <m>\fp(x) = a</m>.
-</p>
+<p>So given a line <m>f(x) = ax+b</m>, the derivative at any point <m>x</m> will be <m>a</m>; that is, <m>\fp(x) = a</m>.</p>
 
-<p>
-It is now easy to see that the tangent line to the graph of <m>f</m> at <m>x=1</m> is just <m>f</m>, with the same being true for <m>x=7</m>.
-</p>
+<p>It is now easy to see that the tangent line to the graph of <m>f</m> at <m>x=1</m> is just <m>f</m>, with the same being true for <m>x=7</m>.</p>
+
 </solution>
 </example>
 
-<p>
-We often desire to find the tangent line to the graph of a function without knowing the actual derivative of the function. In these cases, the best we may be able to do is approximate the tangent line. We demonstrate this in the next example.
-</p>
+<p>We often desire to find the tangent line to the graph of a function without knowing the actual derivative of the function. In these cases, the best we may be able to do is approximate the tangent line. We demonstrate this in the next example.</p>
+
 <figure xml:id="fig_tangentsinx" >
 <caption><m>f(x) = \sin x</m> graphed with an approximation to its tangent line at <m>x=0</m>.</caption>
-
 <!-- START figures/fig_tangentsinx.tex -->
-<image><latex-image-code><![CDATA[
+<image xml:id="img_tangentsinx" >
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[xtick={-3.14,-1.57,1.57,3.14},xticklabels={$-\pi$,$-\frac{\pi}2$,$\frac{\pi}2$,$\pi$},ymin=-1.1,ymax=1.1,xmin=-3.5,xmax=3.5,]
 \addplot [{\colorone},smooth,thick] coordinates {(-3.5,0.351) (-3.4,0.256) (-3.3,0.158) (-3.2,0.0584) (-3.1,-0.0416) (-3.,-0.141) (-2.9,-0.239) (-2.8,-0.335) (-2.7,-0.427) (-2.6,-0.516) (-2.5,-0.598) (-2.4,-0.675) (-2.3,-0.746) (-2.2,-0.808) (-2.1,-0.863) (-2.,-0.909) (-1.9,-0.946) (-1.8,-0.974) (-1.7,-0.992) (-1.6,-1.) (-1.5,-0.997) (-1.4,-0.985) (-1.3,-0.964) (-1.2,-0.932) (-1.1,-0.891) (-1.,-0.841) (-0.9,-0.783) (-0.8,-0.717) (-0.7,-0.644) (-0.6,-0.565) 
@@ -398,134 +426,119 @@ We often desire to find the tangent line to the graph of a function without know
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_tangentsinx.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_tangentsinx.tex END -->
 
 </figure>
 
 <example xml:id="ex_der_num_approx">
 <title>Numerical Approximation of the Tangent Line</title>
 <statement>
-<p>
-Approximate the equation of the tangent line to the graph of <m>f(x)=\sin x</m> at <m>x=0</m>.
-</p>
+
+<p>Approximate the equation of the tangent line to the graph of <m>f(x)=\sin x</m> at <m>x=0</m>.</p>
+
 </statement>
 <solution>
-<p>
-In order to find the equation of the tangent line, we need a slope and a point. The point is given to us: <m>(0,\sin 0) = (0,0)</m>. To compute the slope, we need the derivative. This is where we will make an approximation. Recall that
+
+<p>In order to find the equation of the tangent line, we need a slope and a point. The point is given to us: <m>(0,\sin 0) = (0,0)</m>. To compute the slope, we need the derivative. This is where we will make an approximation. Recall that
 <me>
   \fp(0) \approx \frac{\sin(0+h)- \sin 0}{h}
 </me>
 for a small value of <m>h</m>. We choose (somewhat arbitrarily) to let <m>h=0.1</m>. Thus
 <me>
   \fp(0) \approx \frac{\sin(0.1)-\sin 0}{0.1} \approx 0.9983.
-</me>
-</p>
+</me></p>
 
-<p>
-Thus our approximation of the equation of the tangent line is <m>y = 0.9983(x-0) +0 = 0.9983x</m>; it is graphed in <xref ref="fig_tangentsinx">Figure</xref>. The graph seems to imply the approximation is rather good.
-</p>
+<p>Thus our approximation of the equation of the tangent line is <m>y = 0.9983(x-0) +0 = 0.9983x</m>; it is graphed in <xref ref="fig_tangentsinx">Figure</xref>. The graph seems to imply the approximation is rather good.</p>
+
 </solution>
 </example>
 
-<p>
-Recall from <xref ref="sec_limit_analytically">Section</xref> that <m>\ds \lim_{x\to 0}\frac{\sin x}x =1</m>, meaning for values of <m>x</m> near 0, <m>\sin x \approx x</m>. Since the slope of the line <m>y=x</m> is 1 at <m>x=0</m>, it should seem reasonable that <q>the slope of <m>f(x)=\sin x</m></q> is near 1 at <m>x=0</m>. In fact, since we <em>approximated</em> the value of the slope to be <m>0.9983</m>, we might guess the <em>actual value</em> is 1. We'll come back to this later.
-</p>
+<p>Recall from <xref ref="sec_limit_analytically">Section</xref> that <m>\ds \lim_{x\to 0}\frac{\sin x}x =1</m>, meaning for values of <m>x</m> near 0, <m>\sin x \approx x</m>. Since the slope of the line <m>y=x</m> is 1 at <m>x=0</m>, it should seem reasonable that <q>the slope of <m>f(x)=\sin x</m></q> is near 1 at <m>x=0</m>. In fact, since we <em>approximated</em> the value of the slope to be <m>0.9983</m>, we might guess the <em>actual value</em> is 1. We'll come back to this later.</p>
 
-<p>
-Consider again <xref ref="ex_derv_point1">Example</xref>. To find the derivative of <m>f</m> at <m>x=1</m>, we needed to evaluate a limit. To find the derivative of <m>f</m> at <m>x=3</m>, we needed to again evaluate a limit. We have this process:
-</p>
+<p>Consider again <xref ref="ex_derv_point1">Example</xref>. To find the derivative of <m>f</m> at <m>x=1</m>, we needed to evaluate a limit. To find the derivative of <m>f</m> at <m>x=3</m>, we needed to again evaluate a limit. We have this process:</p>
 <image>
-<latex-image-code><![CDATA[\begin{tikzpicture}[>=latex]
+<description></description>
+<latex-image-code><![CDATA[
+\begin{tikzpicture}[>=latex]
 		\draw (0,0) node (n1) [text width=60pt,align=center] {  input specific  number \(c\) } 
 					(3,0) node (n2) [draw,text width=60pt,align=center] {   do something to \(f\) and \(c\)}
 					(6,0) node (n3) [text width=60pt,align=center] {  return number  \(\fp(c)\)};
 		\draw [->] (n1) -- (n2);
 		\draw [->] (n2) -- (n3);\end{tikzpicture}]]></latex-image-code>
 </image>
-<p>
-This process describes a <em>function</em>; given one input (the value of <m>c</m>), we return exactly one output (the value of <m>\fp(c)</m>). The <q>do something</q> box is where the tedious work (taking limits) of this function occurs.
-</p>
+<p>This process describes a <em>function</em>; given one input (the value of <m>c</m>), we return exactly one output (the value of <m>\fp(c)</m>). The <q>do something</q> box is where the tedious work (taking limits) of this function occurs.</p>
 
-<p>
-Instead of applying this function repeatedly for different values of <m>c</m>, let us apply it just once to the variable <m>x</m>. We then take a limit just once. The process now looks like:
-</p>
+<p>Instead of applying this function repeatedly for different values of <m>c</m>, let us apply it just once to the variable <m>x</m>. We then take a limit just once. The process now looks like:</p>
 <image>
-<latex-image-code><![CDATA[\begin{tikzpicture}[>=latex]
+<description></description>
+<latex-image-code><![CDATA[
+\begin{tikzpicture}[>=latex]
 		\draw (0,0) node (n1) [text width=60pt,align=center] {  input variable \(x\) } 
 					(3,0) node (n2) [draw,text width=60pt,align=center] {   do something to \(f\) and \(x\)}
 					(6,0) node (n3) [text width=60pt,align=center] {  return function  \(\fp(x)\)};
 		\draw [->] (n1) -- (n2);
 		\draw [->] (n2) -- (n3);\end{tikzpicture}]]></latex-image-code>
 </image>
-<p>
-The output is the <q>derivative function,</q> <m>\fp(x)</m>. The <m>\fp(x)</m> function will take a number <m>c</m> as input and return the derivative of <m>f</m> at <m>c</m>. This calls for a definition.
-</p>
+<p>The output is the <q>derivative function,</q> <m>\fp(x)</m>. The <m>\fp(x)</m> function will take a number <m>c</m> as input and return the derivative of <m>f</m> at <m>c</m>. This calls for a definition.</p>
+
 <definition xml:id="def_the_derivative">
 <title>Derivative Function</title>
 <statement>
-<p>
-Let <m>f</m> be a differentiable function on an open interval <m>I</m>. The function
+
+<p>Let <m>f</m> be a differentiable function on an open interval <m>I</m>. The function
 <me>
   \fp(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
 </me>
-is <term>the derivative of <m>f</m></term>.<index><main>derivative</main><sub>as a function</sub></index><index><main>derivative</main><sub>notation</sub></index>
-</p>
+is <term>the derivative of <m>f</m></term>.<index><main>derivative</main><sub>as a function</sub></index><index><main>derivative</main><sub>notation</sub></index></p>
 
-<p>
-<term>Notation:</term>
-</p>
+<p><term>Notation:</term></p>
 
-<p>
-Let <m>y = f(x)</m>. The following notations all represent the derivative:
+<p>Let <m>y = f(x)</m>. The following notations all represent the derivative:
 <me>
   \fp(x)\ =\ y'\ =\ \frac{dy}{dx}\ =\ \frac{df}{dx}\ =\ \frac{d}{dx}(f)\ =\ \frac{d}{dx}(y).
-</me>
-</p>
+</me></p>
+
 </statement>
 </definition>
-<p>
-<em>Important:</em> The notation <m>\ds \frac{dy}{dx}</m> is one symbol; it is <em>not</em> the fraction <q><m>dy/dx</m></q>. The notation, while somewhat confusing at first, was chosen with care. A fraction<ndash />looking symbol was chosen because the derivative has many fraction<ndash />like properties. Among other places, we see these properties at work when we talk about the units of the derivative, when we discuss the Chain Rule, and when we learn about integration (topics that appear in later sections and chapters).
-</p>
 
-<p>
-Examples will help us understand this definition.
-</p>
+<p><em>Important:</em> The notation <m>\ds \frac{dy}{dx}</m> is one symbol; it is <em>not</em> the fraction <q><m>dy/dx</m></q>. The notation, while somewhat confusing at first, was chosen with care. A fraction<ndash />looking symbol was chosen because the derivative has many fraction<ndash />like properties. Among other places, we see these properties at work when we talk about the units of the derivative, when we discuss the Chain Rule, and when we learn about integration (topics that appear in later sections and chapters).</p>
+
+<p>Examples will help us understand this definition.</p>
 
 <example xml:id="ex_deriv1">
 <title>Finding the derivative of a function</title>
 <statement>
-<p>
-Let <m>f(x) = 3x^2+5x-7</m> as in <xref ref="ex_derv_point1">Example</xref>. Find <m>\fp(x)</m>.
-</p>
+
+<p>Let <m>f(x) = 3x^2+5x-7</m> as in <xref ref="ex_derv_point1">Example</xref>. Find <m>\fp(x)</m>.</p>
+
 </statement>
 <solution>
-<p>
-We apply <xref ref="def_the_derivative">Definition</xref>.
+
+<p>We apply <xref ref="def_the_derivative">Definition</xref>.
 <md>
   <mrow>  \fp(x) \amp = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} \frac{3(x+h)^2+5(x+h)-7-(3x^2+5x-7)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} \frac{3h^2 +6xh+5h}{h}</mrow>
   <mrow>  \amp = \lim_{h\to 0} 3h+6x+5</mrow>
   <mrow>  \amp = 6x+5</mrow>
-</md>
-</p>
+</md></p>
 
-<p>
-So <m>\fp(x) = 6x+5</m>. Recall earlier we found that <m>\fp(1) = 11</m> and <m>\fp(3) = 23</m>. Note our new computation of <m>\fp(x)</m> affirm these facts.
-</p>
+<p>So <m>\fp(x) = 6x+5</m>. Recall earlier we found that <m>\fp(1) = 11</m> and <m>\fp(3) = 23</m>. Note our new computation of <m>\fp(x)</m> affirm these facts.</p>
+
 </solution>
 </example>
 
 <example xml:id="ex_deriv2">
 <title>Finding the derivative of a function</title>
 <statement>
-<p>
-Let <m>\ds f(x) = \frac{1}{x+1}</m>. Find <m>\fp(x)</m>.
-</p>
+
+<p>Let <m>\ds f(x) = \frac{1}{x+1}</m>. Find <m>\fp(x)</m>.</p>
+
 </statement>
 <solution>
-<p>
-We apply <xref ref="def_the_derivative">Definition</xref>.
+
+<p>We apply <xref ref="def_the_derivative">Definition</xref>.
 <md>
   <mrow>  \fp(x) 	\amp = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0} \frac{\frac{1}{x+h+1}-\frac{1}{x+1}}{h}</mrow>
@@ -536,28 +549,26 @@ We apply <xref ref="def_the_derivative">Definition</xref>.
   <mrow>  \amp =	\lim_{h\to 0} \frac{-1}{(x+1)(x+h+1)}</mrow>
   <mrow>  \amp = \frac{-1}{(x+1)(x+1)}</mrow>
   <mrow>  \amp = \frac{-1}{(x+1)^2}</mrow>
-</md>
-</p>
+</md></p>
 
-<p>
-So <m>\ds\fp(x) = \frac{-1}{(x+1)^2}</m>. To practice using our notation, we could also state
+<p>So <m>\ds\fp(x) = \frac{-1}{(x+1)^2}</m>. To practice using our notation, we could also state
 <me>
   \ds \frac{d}{dx}\left(\frac{1}{x+1}\right) = \frac{-1}{(x+1)^2}.
-</me>
-</p>
+</me></p>
+
 </solution>
 </example>
 
 <example xml:id="ex_deriv_sinx">
 <title>Finding the derivative of a function</title>
 <statement>
-<p>
-Find the derivative of <m>f(x) = \sin x</m>.
-</p>
+
+<p>Find the derivative of <m>f(x) = \sin x</m>.</p>
+
 </statement>
 <solution>
-<p>
-Before applying <xref ref="def_the_derivative">Definition</xref>, note that once this is found, we can find the actual tangent line to <m>f(x) = \sin x</m> at <m>x=0</m>, whereas we settled for an approximation in <xref ref="ex_der_num_approx">Example</xref>.
+
+<p>Before applying <xref ref="def_the_derivative">Definition</xref>, note that once this is found, we can find the actual tangent line to <m>f(x) = \sin x</m> at <m>x=0</m>, whereas we settled for an approximation in <xref ref="ex_der_num_approx">Example</xref>.
 <md>
   <mrow>  \fp(x) \amp = \lim_{h\to 0} \frac{\sin(x+h)-\sin x}{h} \amp  \amp  \left(\text{\scriptsize \text{ Use trig identity \(\sin(x+h) = \sin x\cos h+\cos x\sin h\) }} \right)</mrow>
   <mrow>  \amp = \lim_{h\to 0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} \amp  \amp  \text{ \scriptsize (regroup) }</mrow>
@@ -565,43 +576,38 @@ Before applying <xref ref="def_the_derivative">Definition</xref>, note that once
   <mrow>  \amp = \lim_{h\to 0} \left(\frac{\sin x(\cos h-1)}{h} + \frac{\cos x\sin h}{h}\right) \amp  \amp  \left(\parbox{130pt}{\scriptsize use $\ds \lim_{h\to 0} \frac{\cos h-1}{h} = 0$ and $\ds \lim_{h\to 0} \frac{\sin h}{h} = 1$}\right)</mrow>
   <mrow>  \amp =	\sin x\cdot 0 + \cos x \cdot 1</mrow>
   <mrow>  \amp = \cos x\ !</mrow>
-</md>
-</p>
+</md></p>
 
-<p>
-We have found that when <m>f(x) = \sin x</m>, <m>\fp(x) = \cos x</m>. This should be somewhat surprising; the result of a tedious limit process and the sine function is a nice function. Then again, perhaps this is not entirely surprising. The sine function is periodic <mdash /> it repeats itself on regular intervals. Therefore its rate of change also repeats itself on the same regular intervals. We should have known the derivative would be periodic; we now know exactly which periodic function it is.
-</p>
+<p>We have found that when <m>f(x) = \sin x</m>, <m>\fp(x) = \cos x</m>. This should be somewhat surprising; the result of a tedious limit process and the sine function is a nice function. Then again, perhaps this is not entirely surprising. The sine function is periodic <mdash /> it repeats itself on regular intervals. Therefore its rate of change also repeats itself on the same regular intervals. We should have known the derivative would be periodic; we now know exactly which periodic function it is.</p>
 
-<p>
-Thinking back to <xref ref="ex_der_num_approx">Example</xref>, we can find the slope of the tangent line to <m>f(x)=\sin x</m> at <m>x=0</m> using our derivative. We approximated the slope as <m>0.9983</m>; we now know the slope is <em>exactly</em> <m>\cos 0 =1</m>.
-</p>
+<p>Thinking back to <xref ref="ex_der_num_approx">Example</xref>, we can find the slope of the tangent line to <m>f(x)=\sin x</m> at <m>x=0</m> using our derivative. We approximated the slope as <m>0.9983</m>; we now know the slope is <em>exactly</em> <m>\cos 0 =1</m>.</p>
+
 </solution>
 </example>
 
 <example xml:id="ex_not_diff">
 <title>Finding the derivative of a piecewise defined function</title>
 <statement>
-<p>
-Find the derivative of the absolute value function,
+
+<p>Find the derivative of the absolute value function,
 <me>
   f(x) = |x| = \left\{\begin{array}{cc} -x \amp  x\lt 0 \\ x \amp  x\geq 0
 \end{array} .\right.
-</me>
-</p>
+</me></p>
 
-<p>
-See <xref ref="fig_absolutevalue">Figure</xref>.
-</p>
+<p>See <xref ref="fig_absolutevalue">Figure</xref>.</p>
+
 </statement>
 <solution>
-<p>
-We need to evaluate <m>\ds \lim_{h\to0}\frac{f(x+h)-f(x)}{h}.</m> As <m>f</m> is piecewise<ndash />defined, we need to consider separately the limits when <m>x\lt 0</m> and when <m>x>0</m>.
-</p>
+
+<p>We need to evaluate <m>\ds \lim_{h\to0}\frac{f(x+h)-f(x)}{h}.</m> As <m>f</m> is piecewise<ndash />defined, we need to consider separately the limits when <m>x\lt 0</m> and when <m>x>0</m>.</p>
+
 <figure xml:id="fig_absolutevalue" >
 <caption>The absolute value function, <m>f(x) = |x|</m>. Notice how the slope of the lines (and hence the tangent lines) abruptly changes at <m>x=0</m>.</caption>
-
 <!-- START figures/fig_absolutevalue.tex -->
-<image><latex-image-code><![CDATA[
+<image xml:id="img_absolutevalue" >
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[ymin=-.2,ymax=1.1,xmin=-1.1,xmax=1.1,]
 \addplot [{\colorone},thick] coordinates {(-1,1) (0,0) (1,1)};
@@ -610,41 +616,36 @@ We need to evaluate <m>\ds \lim_{h\to0}\frac{f(x+h)-f(x)}{h}.</m> As <m>f</m> is
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_absolutevalue.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_absolutevalue.tex END -->
 
 </figure>
-<p>
-When <m>x\lt 0</m>:
+
+<p>When <m>x\lt 0</m>:
 <md>
   <mrow>  \frac{d}{dx}\big(-x\big) 	\amp = \lim_{h\to 0}\frac{-(x+h) - (-x)}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0}\frac{-h}{h}</mrow>
   <mrow>  \amp =	\lim_{h\to 0}-1</mrow>
   <mrow>  \amp =	-1.</mrow>
-</md>
-</p>
+</md></p>
 
-<p>
-When <m>x>0</m>, a similar computation shows that <m>\ds \frac{d}{dx}\big(x\big) = 1</m>.
-</p>
+<p>When <m>x>0</m>, a similar computation shows that <m>\ds \frac{d}{dx}\big(x\big) = 1</m>.</p>
 
-<p>
-We need to also find the derivative at <m>x=0</m>. By the definition of the derivative at a point, we have
+<p>We need to also find the derivative at <m>x=0</m>. By the definition of the derivative at a point, we have
 <me>
   \fp(0) = \lim_{h\to0}\frac{f(0+h)-f(0)}{h}.
-</me>
-</p>
+</me></p>
 
-<p>
-Since <m>x=0</m> is the point where our function's definition switches from one piece to other, we need to consider left and right-hand limits. Consider the following, where we compute the left and right hand limits side by side.
-</p>
+<p>Since <m>x=0</m> is the point where our function's definition switches from one piece to other, we need to consider left and right-hand limits. Consider the following, where we compute the left and right hand limits side by side.</p>
+
 <md>
   <mrow>  \lim_{h\to0^-}\frac{f(0+h)-f(0)}{h} \amp =</mrow>
   <mrow>  \lim_{h\to0^-}\frac{-h-0}{h} \amp =</mrow>
   <mrow>  \lim_{h\to0^-}-1 \amp  =-1</mrow>
 </md>
-<p>
-\rule{.5pt}{70pt}
-</p>
+
+<p>\rule{.5pt}{70pt}</p>
+
 <md>
   <mrow>  \lim_{h\to0^+}\frac{f(0+h)-f(0)}{h} \amp =</mrow>
   <mrow>  \lim_{h\to0^+}\frac{h-0}{h} \amp =</mrow>
@@ -652,9 +653,10 @@ Since <m>x=0</m> is the point where our function's definition switches from one 
 </md>
 <figure xml:id="fig_absolutevalueprime" >
 <caption>A graph of the derivative of <m>f(x) = |x|</m>.</caption>
-
 <!-- START figures/fig_absolutevalueprime.tex -->
-<image><latex-image-code><![CDATA[
+<image xml:id="img_absolutevalueprime" >
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[ymin=-1.4,ymax=1.4,xmin=-1.1,xmax=1.1,]
 \addplot [{\colorone},thick] coordinates {(-1,-1) (0,-1)};
@@ -666,48 +668,46 @@ Since <m>x=0</m> is the point where our function's definition switches from one 
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_absolutevalueprime.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_absolutevalueprime.tex END -->
 
 </figure>
-<p>
-The last lines of each column tell the story: the left and right hand limits are not equal. Therefore the limit does not exist at 0, and <m>f</m> is not differentiable at 0.
+
+<p>The last lines of each column tell the story: the left and right hand limits are not equal. Therefore the limit does not exist at 0, and <m>f</m> is not differentiable at 0.
 So we have
 <me>
   \fp(x) = \left\{\begin{array}{cc} -1 \amp  x\lt 0 \\ 1 \amp  x>0
 \end{array} .\right.
-</me>
-</p>
+</me></p>
 
-<p>
-At <m>x=0</m>, <m>\fp(x)</m> does not exist; there is a jump discontinuity at 0; see <xref ref="fig_absolutevalueprime">Figure</xref>. So <m>f(x) = |x|</m> is differentiable everywhere except at 0.
-</p>
+<p>At <m>x=0</m>, <m>\fp(x)</m> does not exist; there is a jump discontinuity at 0; see <xref ref="fig_absolutevalueprime">Figure</xref>. So <m>f(x) = |x|</m> is differentiable everywhere except at 0.</p>
+
 </solution>
 </example>
 
-<p>
-The point of non-differentiability came where the piecewise defined function switched from one piece to the other. Our next example shows that this does not always cause trouble.
-</p>
+<p>The point of non-differentiability came where the piecewise defined function switched from one piece to the other. Our next example shows that this does not always cause trouble.</p>
 
 <example xml:id="ex_diff_piecewise">
 <title>Finding the derivative of a piecewise defined function</title>
 <statement>
-<p>
-Find the derivative of <m>f(x)</m>, where <m>\ds f(x) = \left\{\begin{array}{cc} \sin x \amp  x\leq \pi/2 \\ 1 \amp  x>\pi/2
-\end{array} .\right.</m> See <xref ref="fig_piecewisesinx1">Figure</xref>.
-</p>
+
+<p>Find the derivative of <m>f(x)</m>, where <m>\ds f(x) = \left\{\begin{array}{cc} \sin x \amp  x\leq \pi/2 \\ 1 \amp  x>\pi/2
+\end{array} .\right.</m> See <xref ref="fig_piecewisesinx1">Figure</xref>.</p>
+
 </statement>
 <solution>
-<p>
-Using <xref ref="ex_deriv_sinx">Example</xref>, we know that when <m>x\lt \pi/2</m>, <m>\fp(x) = \cos x</m>. It is easy to verify that when <m>x>\pi/2</m>, <m>\fp(x) = 0</m>; consider:
+
+<p>Using <xref ref="ex_deriv_sinx">Example</xref>, we know that when <m>x\lt \pi/2</m>, <m>\fp(x) = \cos x</m>. It is easy to verify that when <m>x>\pi/2</m>, <m>\fp(x) = 0</m>; consider:
 <me>
   \lim_{h\to0}\frac{f(x+h) - f(x)}{h} = \lim_{h\to0}\frac{1-1}{h} = \lim_{h\to0}0 =0.
-</me>
-</p>
+</me></p>
+
 <figure xml:id="fig_piecewisesinx1" >
 <caption>A graph of <m>f(x)</m> as defined in <xref ref="ex_diff_piecewise">Example</xref>.</caption>
-
 <!-- START figures/fig_piecewisesinx1.tex -->
-<image><latex-image-code><![CDATA[
+<image xml:id="img_piecewisesinx1" >
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[xtick={1.57},xticklabels={$\frac{\pi}2$},ymin=-.4,ymax=1.4,xmin=-.1,xmax=2.1,]
 \addplot [{\colorone},smooth,thick] coordinates {(-0.1,-0.0998) (0.,0.) (0.1,0.0998) (0.2,0.199) (0.3,0.296)(0.4,0.389) (0.5,0.479) (0.6,0.565) (0.7,0.644) (0.8,0.717) (0.9,0.783) (1.,0.841) (1.1,0.891) (1.2,0.932) (1.3,0.964)(1.4,0.985) (1.5,0.997) (1.6,1) (1.7,1) (1.8,1) (1.9,1) (2.,1)
@@ -719,24 +719,21 @@ Using <xref ref="ex_deriv_sinx">Example</xref>, we know that when <m>x\lt \pi/2<
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_piecewisesinx1.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_piecewisesinx1.tex END -->
 
 </figure>
-<p>
-So far we have
+
+<p>So far we have
 <me>
   \fp(x) = \left\{\begin{array}{cc} \cos x \amp  x\lt \pi/2\\ 0 \amp  x>\pi/2
 \end{array} .\right.
-</me>
-</p>
+</me></p>
 
-<p>
-We still need to find <m>\fp(\pi/2)</m>. Notice at <m>x=\pi/2</m> that both pieces of <m>\fp</m> are 0, meaning we can state that <m>\fp(\pi/2)=0</m>.
-</p>
+<p>We still need to find <m>\fp(\pi/2)</m>. Notice at <m>x=\pi/2</m> that both pieces of <m>\fp</m> are 0, meaning we can state that <m>\fp(\pi/2)=0</m>.</p>
 
-<p>
-Being more rigorous, we can again evaluate the difference quotient limit at <m>x=\pi/2</m>, utilizing again left and right<ndash />hand limits:
-</p>
+<p>Being more rigorous, we can again evaluate the difference quotient limit at <m>x=\pi/2</m>, utilizing again left and right<ndash />hand limits:</p>
+
 <sidebyside><md>
   <mrow>  \lim_{h\to0^-}\frac{f(\pi/2+h)-f(\pi/2)}{h} \amp =</mrow>
   <mrow>  \lim_{h\to0^-}\frac{\sin(\pi/2+h)-\sin(\pi/2)}{h}\amp =</mrow>
@@ -753,9 +750,10 @@ Being more rigorous, we can again evaluate the difference quotient limit at <m>x
 </md></sidebyside>
 <figure xml:id="fig_piecewisecosx1" >
 <caption>A graph of <m>\fp(x)</m> in <xref ref="ex_diff_piecewise">Example</xref>.</caption>
-
 <!-- START figures/fig_piecewisecosx1.tex -->
-<image><latex-image-code><![CDATA[
+<image xml:id="img_piecewisecosx1" >
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[xtick={1.57},xticklabels={$\frac{\pi}2$},ymin=-.4,ymax=1.4,xmin=-.1,xmax=2.1,]
 \addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.995) (0.,1.) (0.1,0.995) (0.2,0.98) (0.3,0.955) (0.4,0.921)(0.5,0.878) (0.6,0.825) (0.7,0.765) (0.8,0.697) (0.9,0.622) (1.,0.54)(1.1,0.454) (1.2,0.362) (1.3,0.267) (1.4,0.17) (1.5,0.0707)(1.57,0)};
@@ -767,30 +765,26 @@ Being more rigorous, we can again evaluate the difference quotient limit at <m>x
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_piecewisecosx1.tex END -->
+]]></latex-image-code></image>
+<!-- figures/fig_piecewisecosx1.tex END -->
 
 </figure>
-<p>
-Since both the left and right hand limits are 0 at <m>x=\pi/2</m>, the limit exists and <m>\fp(\pi/2)</m> exists (and is 0). Therefore we can fully write <m>\fp</m> as
+
+<p>Since both the left and right hand limits are 0 at <m>x=\pi/2</m>, the limit exists and <m>\fp(\pi/2)</m> exists (and is 0). Therefore we can fully write <m>\fp</m> as
 <me>
   \fp(x) = \left\{\begin{array}{cc} \cos x \amp  x\leq\pi/2\\ 0 \amp  x>\pi/2
 \end{array} .\right.
-</me>
-</p>
+</me></p>
 
-<p>
-See <xref ref="fig_piecewisecosx1">Figure</xref> for a graph of this function.
-</p>
+<p>See <xref ref="fig_piecewisecosx1">Figure</xref> for a graph of this function.</p>
+
 </solution>
 </example>
 
-<p>
-Recall we pseudo<ndash />defined a continuous function as one in which we could sketch its graph without lifting our pencil. We can give a pseudo<ndash />definition for differentiability as well: it is a continuous function that does not have any <q>sharp corners.</q> One such sharp corner is shown in <xref ref="fig_absolutevalue">Figure</xref>. Even though the function <m>f</m> in <xref ref="ex_diff_piecewise">Example</xref> is piecewise<ndash />defined, the transition is <q>smooth</q> hence it is differentiable. Note how in the graph of <m>f</m> in <xref ref="fig_piecewisesinx1">Figure</xref> it is difficult to tell when <m>f</m> switches from one piece to the other; there is no <q>corner.</q>
-</p>
+<p>Recall we pseudo<ndash />defined a continuous function as one in which we could sketch its graph without lifting our pencil. We can give a pseudo<ndash />definition for differentiability as well: it is a continuous function that does not have any <q>sharp corners.</q> One such sharp corner is shown in <xref ref="fig_absolutevalue">Figure</xref>. Even though the function <m>f</m> in <xref ref="ex_diff_piecewise">Example</xref> is piecewise<ndash />defined, the transition is <q>smooth</q> hence it is differentiable. Note how in the graph of <m>f</m> in <xref ref="fig_piecewisesinx1">Figure</xref> it is difficult to tell when <m>f</m> switches from one piece to the other; there is no <q>corner.</q></p>
 
-<p>
-This section defined the derivative; in some sense, it answers the question of <q>What <em>is</em> the derivative?</q> The next section addresses the question <q>What does the derivative <em>mean</em>?</q>
-</p>
+<p>This section defined the derivative; in some sense, it answers the question of <q>What <em>is</em> the derivative?</q> The next section addresses the question <q>What does the derivative <em>mean</em>?</q></p>
+
 </introduction>
 
 
@@ -798,384 +792,818 @@ This section defined the derivative; in some sense, it answers the question of <
 
 <exercisegroup>
 <title>Terms and Concepts</title>
-<exercise>
-<statement>
-<p>
-T/F: Let <m>f</m> be a position function. The average rate of change on <m>[a,b]</m> is the slope of the line through the points <m>(a, f(a))</m> and <m>(b,f(b))</m>.
-</p>
-</statement>
-<answer>
-<p>
-T
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>T/F: Let <m>f</m> be a position function. The average rate of change on <m>[a,b]</m> is the slope of the line through the points <m>(a, f(a))</m> and <m>(b,f(b))</m>.</p>
+      </statement>
+      <answer>
+        <p>T</p>
+      </answer>
+      <solution>
+        <p>T</p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-T/F: The definition of the derivative of a function at a point involves taking a limit.
-</p>
-</statement>
-<answer>
-<p>
-T
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>T/F: The definition of the derivative of a function at a point involves taking a limit.</p>
+      </statement>
+      <answer>
+        <p>T</p>
+      </answer>
+      <solution>
+        <p>T</p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-In your own words, explain the difference between the average rate of change and instantaneous rate of change.
-</p>
-</statement>
-<answer>
-<p>
-Answers will vary.
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>In your own words, explain the difference between the average rate of change and instantaneous rate of change.</p>
+      </statement>
+      <answer>
+        <p>Answers will vary.</p>
+      </answer>
+      <solution>
+        <p>Answers will vary.</p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-In your own words, explain the difference between <xref ref="def_derivative_at_a_point">Definitions</xref> and <xref ref="def_the_derivative"></xref>.
-</p>
-</statement>
-<answer>
-<p>
-Answers will vary.
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>In your own words, explain the difference between <xref ref="def_derivative_at_a_point">Definitions</xref> and <xref ref="def_the_derivative"></xref>.</p>
+      </statement>
+      <answer>
+        <p>Answers will vary.</p>
+      </answer>
+      <solution>
+        <p>Answers will vary.</p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-Let <m>y=f(x)</m>. Give three different notations equivalent to <q><m>\fp(x)</m>.</q>
-</p>
-</statement>
-<answer>
-<p>
-Answers will vary.
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Let <m>y=f(x)</m>. Give three different notations equivalent to <q><m>\fp(x)</m>.</q></p>
+      </statement>
+      <answer>
+        <p>Answers will vary.</p>
+      </answer>
+      <solution>
+        <p>Answers will vary.</p>
+      </solution>
+    </webwork>
+  </exercise>
 </exercisegroup>
 
 <exercisegroup>
-
 <title>Problems</title>
-<p>
-In the following exercises, use the definition of the derivative to compute the derivative of the given function.
-</p>
-<exercise xml:id="exer_02_01_10">
-<statement>
-<p>
-<m>\ds f(x) = 6</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>\fp(x) = 0</m>
-</p>
-</answer>
-</exercise>
+<p>In the following exercises, use the definition of the derivative to compute the derivative of the given function.</p>
+  <exercise xml:id="exer_02_01_10">
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = 6</m></p>
+      </statement>
+      <answer>
+        <p><m>\fp(x) = 0</m></p>
+      </answer>
+      <solution>
+        <p><m>\fp(x) = 0</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-<m>\ds f(x) = 2x</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>\fp(x) = 2</m>
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = 2x</m></p>
+      </statement>
+      <answer>
+        <p><m>\fp(x) = 2</m></p>
+      </answer>
+      <solution>
+        <p><m>\fp(x) = 2</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-<m>\ds f(t) = 4-3t</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>\fp(t) = -3</m>
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(t) = 4-3t</m></p>
+      </statement>
+      <answer>
+        <p><m>\fp(t) = -3</m></p>
+      </answer>
+      <solution>
+        <p><m>\fp(t) = -3</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-<m>\ds g(x) = x^2</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>g'(x) = 2x</m>
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds g(x) = x^2</m></p>
+      </statement>
+      <answer>
+        <p><m>g'(x) = 2x</m></p>
+      </answer>
+      <solution>
+        <p><m>g'(x) = 2x</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-<m>\ds f(x) = 3x^2-x+4</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>\fp'(x) = 6x-1</m>
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = 3x^2-x+4</m></p>
+      </statement>
+      <answer>
+        <p><m>\fp'(x) = 6x-1</m></p>
+      </answer>
+      <solution>
+        <p><m>\fp'(x) = 6x-1</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-<m>\ds r(x) = \frac1x</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>r'(x) = \frac{-1}{x^2}</m>
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds r(x) = \frac1x</m></p>
+      </statement>
+      <answer>
+        <p><m>r'(x) = \frac{-1}{x^2}</m></p>
+      </answer>
+      <solution>
+        <p><m>r'(x) = \frac{-1}{x^2}</m></p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise xml:id="exer_02_01_16">
-<statement>
-<p>
-<m>\ds r(s) = \frac1{s-2}</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>r'(s) = \frac{-1}{(s-2)^2}</m>
-</p>
-</answer>
-</exercise>
-<p>
-In the following exercises, a function and an <m>x</m><ndash />value <m>c</m> are given. (Note: these functions are the same as those given in <xref ref="exer_02_01_10">Exercises</xref> through <xref ref="exer_02_01_16"></xref>.)
-</p>
+  <exercise xml:id="exer_02_01_16">
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds r(s) = \frac1{s-2}</m></p>
+      </statement>
+      <answer>
+        <p><m>r'(s) = \frac{-1}{(s-2)^2}</m></p>
+      </answer>
+      <solution>
+        <p><m>r'(s) = \frac{-1}{(s-2)^2}</m></p>
+      </solution>
+    </webwork>
+  </exercise>
+<p>In the following exercises, a function and an <m>x</m><ndash />value <m>c</m> are given. (Note: these functions are the same as those given in <xref ref="exer_02_01_10">Exercises</xref> through <xref ref="exer_02_01_16"></xref>.)</p>
 
 <ol>
 <li>
 <title>(a)</title>
-<p>
-Find  the tangent line to the  graph of  the function at <m>c</m>.</p></li>
+<p>Find  the tangent line to the  graph of  the function at <m>c</m>.</p>
+
+</li>
 <li>
 <title>(b)</title>
-<p>
-Find  the normal line to  the graph of the function at <m>c</m>.</p></li>
+<p>Find  the normal line to  the graph of the function at <m>c</m>.</p>
+
+</li>
 </ol>
-<exercise>
-<statement>
-<p>
-<m>\ds f(x) = 6</m>, at <m>x=-2</m>.
-</p>
-</statement>
-<answer>
-<ol>
-<li><p><m>y = 6</m></p></li>
-<li><p><m>x=-2</m></p></li>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = 6</m>, at <m>x=-2</m>.</p>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>y = 6</m></p>
+
+</li>
+<li>
+
+<p><m>x=-2</m></p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </answer>
+      <solution>
+        <ol>
+<li>
 
-<exercise>
-<statement>
-<p>
-<m>\ds f(x) = 2x</m>, at <m>x=3</m>.
-</p>
-</statement>
-<answer>
-<ol>
-<li><p><m>y = 2x</m></p></li>
-<li><p><m>y = -1/2x</m></p></li>
+<p><m>y = 6</m></p>
+
+</li>
+<li>
+
+<p><m>x=-2</m></p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-<m>\ds f(x) = 4-3x</m>, at <m>x=7</m>.
-</p>
-</statement>
-<answer>
-<ol>
-<li><p><m>y = -3x+4</m></p></li>
-<li><p><m>y = 1/3(x-7)-17</m></p></li>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = 2x</m>, at <m>x=3</m>.</p>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>y = 2x</m></p>
+
+</li>
+<li>
+
+<p><m>y = -1/2x</m></p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </answer>
+      <solution>
+        <ol>
+<li>
 
-<exercise>
-<statement>
-<p>
-<m>\ds g(x) = x^2</m>, at <m>x=2</m>.
-</p>
-</statement>
-<answer>
-<ol>
-<li><p><m>y = 4(x-2)+4</m></p></li>
-<li><p><m>y = -1/4(x-2)+4</m></p></li>
+<p><m>y = 2x</m></p>
+
+</li>
+<li>
+
+<p><m>y = -1/2x</m></p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-<m>\ds f(x) = 3x^2-x+4</m>, at <m>x=-1</m>.
-</p>
-</statement>
-<answer>
-<ol>
-<li><p><m>y = -7(x+1)+8</m></p></li>
-<li><p><m>y = 1/7(x+1)+8</m></p></li>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = 4-3x</m>, at <m>x=7</m>.</p>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>y = -3x+4</m></p>
+
+</li>
+<li>
+
+<p><m>y = 1/3(x-7)-17</m></p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </answer>
+      <solution>
+        <ol>
+<li>
 
-<exercise>
-<statement>
-<p>
-<m>\ds r(x) = \frac{1}{x}</m>, at <m>x=-2</m>.
-</p>
-</statement>
-<answer>
-<ol>
-<li><p><m>y = -1/4(x+2) - 1/2</m></p></li>
-<li><p><m>y = 4(x+2) - 1/2</m></p></li>
+<p><m>y = -3x+4</m></p>
+
+</li>
+<li>
+
+<p><m>y = 1/3(x-7)-17</m></p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-<m>\ds r(x) = \frac1{x-2}</m>, at <m>x=3</m>.
-</p>
-</statement>
-<answer>
-<ol>
-<li><p><m>y = -1(x-3)+1</m></p></li>
-<li><p><m>y = 1(x-3)+1</m></p></li>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds g(x) = x^2</m>, at <m>x=2</m>.</p>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>y = 4(x-2)+4</m></p>
+
+</li>
+<li>
+
+<p><m>y = -1/4(x-2)+4</m></p>
+
+</li>
 </ol>
-</answer>
-</exercise>
-<p>
-In the following exercises, a function <m>f</m> and an <m>x</m><ndash />value <m>a</m> are given. Approximate the equation of the tangent line to the graph of <m>f</m> at <m>x=a</m> by numerically approximating <m>\fp(a)</m>, using <m>h=0.1</m>.
-</p>
-<exercise>
-<statement>
-<p>
-<m>f(x) = x^2+2x+1</m>, <m>x=3</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>y=8.1(x-3)+16</m>
-</p>
-</answer>
-</exercise>
+      </answer>
+      <solution>
+        <ol>
+<li>
 
-<exercise>
-<statement>
-<p>
-<m>\ds f(x) = \frac{10}{x+1}</m>, <m>x=9</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>y=-0.099(x-9)+1</m>
-</p>
-</answer>
-</exercise>
+<p><m>y = 4(x-2)+4</m></p>
 
-<exercise>
-<statement>
-<p>
-<m>\ds f(x) = e^x</m>, <m>x=2</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>y=7.77(x-2)+e^2</m>, or <m>y = 7.77(x-2)+7.39</m>.
-</p>
-</answer>
-</exercise>
+</li>
+<li>
 
-<exercise>
-<statement>
-<p>
-<m>\ds f(x) = \cos x</m>, <m>x=0</m>
-</p>
-</statement>
-<answer>
-<p>
-<m>y=-0.05x+1</m>
-</p>
-</answer>
-</exercise>
+<p><m>y = -1/4(x-2)+4</m></p>
 
-<exercise>
-<statement>
-<p>
-The graph of <m>f(x)=x^2-1</m> is shown.
-</p>
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = 3x^2-x+4</m>, at <m>x=-1</m>.</p>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>y = -7(x+1)+8</m></p>
+
+</li>
+<li>
+
+<p><m>y = 1/7(x+1)+8</m></p>
+
+</li>
+</ol>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>y = -7(x+1)+8</m></p>
+
+</li>
+<li>
+
+<p><m>y = 1/7(x+1)+8</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds r(x) = \frac{1}{x}</m>, at <m>x=-2</m>.</p>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>y = -1/4(x+2) - 1/2</m></p>
+
+</li>
+<li>
+
+<p><m>y = 4(x+2) - 1/2</m></p>
+
+</li>
+</ol>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>y = -1/4(x+2) - 1/2</m></p>
+
+</li>
+<li>
+
+<p><m>y = 4(x+2) - 1/2</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds r(x) = \frac1{x-2}</m>, at <m>x=3</m>.</p>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>y = -1(x-3)+1</m></p>
+
+</li>
+<li>
+
+<p><m>y = 1(x-3)+1</m></p>
+
+</li>
+</ol>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>y = -1(x-3)+1</m></p>
+
+</li>
+<li>
+
+<p><m>y = 1(x-3)+1</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+<p>In the following exercises, a function <m>f</m> and an <m>x</m><ndash />value <m>a</m> are given. Approximate the equation of the tangent line to the graph of <m>f</m> at <m>x=a</m> by numerically approximating <m>\fp(a)</m>, using <m>h=0.1</m>.</p>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>f(x) = x^2+2x+1</m>, <m>x=3</m></p>
+      </statement>
+      <answer>
+        <p><m>y=8.1(x-3)+16</m></p>
+      </answer>
+      <solution>
+        <p><m>y=8.1(x-3)+16</m></p>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = \frac{10}{x+1}</m>, <m>x=9</m></p>
+      </statement>
+      <answer>
+        <p><m>y=-0.099(x-9)+1</m></p>
+      </answer>
+      <solution>
+        <p><m>y=-0.099(x-9)+1</m></p>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = e^x</m>, <m>x=2</m></p>
+      </statement>
+      <answer>
+        <p><m>y=7.77(x-2)+e^2</m>, or <m>y = 7.77(x-2)+7.39</m>.</p>
+      </answer>
+      <solution>
+        <p><m>y=7.77(x-2)+e^2</m>, or <m>y = 7.77(x-2)+7.39</m>.</p>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p><m>\ds f(x) = \cos x</m>, <m>x=0</m></p>
+      </statement>
+      <answer>
+        <p><m>y=-0.05x+1</m></p>
+      </answer>
+      <solution>
+        <p><m>y=-0.05x+1</m></p>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>The graph of <m>f(x)=x^2-1</m> is shown.</p>
 
 <ol>
-<li><p>Use the graph to approximate the slope of the tangent line to <m>f</m> at the following points: <m>(-1,0)</m>, <m>(0,-1)</m> and <m>(2,3)</m>.</p></li>
-<li><p>Using the definition, find <m>\fp(x)</m>.</p></li>
-<li><p>Find the slope of the tangent line at the points <m>(-1,0)</m>, <m>(0,-1)</m> and <m>(2,3)</m>.</p></li>
+<li>
+
+<p>Use the graph to approximate the slope of the tangent line to <m>f</m> at the following points: <m>(-1,0)</m>, <m>(0,-1)</m> and <m>(2,3)</m>.</p>
+
+</li>
+<li>
+
+<p>Using the definition, find <m>\fp(x)</m>.</p>
+
+</li>
+<li>
+
+<p>Find the slope of the tangent line at the points <m>(-1,0)</m>, <m>(0,-1)</m> and <m>(2,3)</m>.</p>
+
+</li>
 </ol>
 <!-- START\1END -->
-</statement>
-<answer>
-<ol>
-<li><p>Approximations will vary; they should match (c) closely.</p></li>
-<li><p><m>\fp(x) = 2x</m></p></li>
-<li><p>At <m>(-1,0)</m>, slope is <m>-2</m>. At <m>(0,-1)</m>, slope is 0. At <m>(2,3)</m>, slope is 4.</p></li>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p>Approximations will vary; they should match (c) closely.</p>
+
+</li>
+<li>
+
+<p><m>\fp(x) = 2x</m></p>
+
+</li>
+<li>
+
+<p>At <m>(-1,0)</m>, slope is <m>-2</m>. At <m>(0,-1)</m>, slope is 0. At <m>(2,3)</m>, slope is 4.</p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </answer>
+      <solution>
+        <ol>
+<li>
 
-<exercise>
-<statement>
-<p>
-The graph of <m>\ds f(x)=\frac{1}{x+1}</m> is shown.
-</p>
+<p>Approximations will vary; they should match (c) closely.</p>
+
+</li>
+<li>
+
+<p><m>\fp(x) = 2x</m></p>
+
+</li>
+<li>
+
+<p>At <m>(-1,0)</m>, slope is <m>-2</m>. At <m>(0,-1)</m>, slope is 0. At <m>(2,3)</m>, slope is 4.</p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>The graph of <m>\ds f(x)=\frac{1}{x+1}</m> is shown.</p>
 
 <ol>
-<li><p>Use the graph to approximate the slope of the tangent line to <m>f</m> at the following points: <m>(0,1)</m> and <m>(1,0.5)</m>.</p></li>
-<li><p>Using the definition, find <m>\fp(x)</m>.</p></li>
-<li><p>Find the slope of the tangent line at the points <m>(0,1)</m> and <m>(1,0.5)</m>.</p></li>
+<li>
+
+<p>Use the graph to approximate the slope of the tangent line to <m>f</m> at the following points: <m>(0,1)</m> and <m>(1,0.5)</m>.</p>
+
+</li>
+<li>
+
+<p>Using the definition, find <m>\fp(x)</m>.</p>
+
+</li>
+<li>
+
+<p>Find the slope of the tangent line at the points <m>(0,1)</m> and <m>(1,0.5)</m>.</p>
+
+</li>
 </ol>
 <!-- START\1END -->
-</statement>
-<answer>
-<ol>
-<li><p>Approximations will vary; they should match (c) closely.</p></li>
-<li><p><m>\fp(x) = -1/(x+1)^2</m></p></li>
-<li><p>At <m>(0,1)</m>, slope is <m>-1</m>. At <m>(1,0.5)</m>, slope is <m>-1/4</m>.</p></li>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p>Approximations will vary; they should match (c) closely.</p>
+
+</li>
+<li>
+
+<p><m>\fp(x) = -1/(x+1)^2</m></p>
+
+</li>
+<li>
+
+<p>At <m>(0,1)</m>, slope is <m>-1</m>. At <m>(1,0.5)</m>, slope is <m>-1/4</m>.</p>
+
+</li>
 </ol>
-</answer>
-</exercise>
-<p>
-In the following exercises, a graph of a function <m>f(x)</m> is given. Using the graph, sketch <m>\fp(x)</m>.
-</p>
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_02_01_ex_26.tex -->
-<image><latex-image-code><![CDATA[
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p>Approximations will vary; they should match (c) closely.</p>
+
+</li>
+<li>
+
+<p><m>\fp(x) = -1/(x+1)^2</m></p>
+
+</li>
+<li>
+
+<p>At <m>(0,1)</m>, slope is <m>-1</m>. At <m>(1,0.5)</m>, slope is <m>-1/4</m>.</p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+<p>In the following exercises, a graph of a function <m>f(x)</m> is given. Using the graph, sketch <m>\fp(x)</m>.</p>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_02_01_ex_26.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 			xtick={-2,-1,1,2,3,4},
@@ -1199,17 +1627,32 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_02_01_ex_26.tex END --></sidebyside>
-</statement>
-<answer>
-<!-- START\1END -->
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_02_01_ex_26.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <!-- START\1END -->
+      </answer>
+      <solution>
+        <!-- START\1END -->
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_02_01_ex_27.tex -->
-<image><latex-image-code><![CDATA[
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_02_01_ex_27.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 %			xtick={-2,-1,1,2,3,4},
@@ -1233,17 +1676,32 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_02_01_ex_27.tex END --></sidebyside>
-</statement>
-<answer>
-<!-- START\1END -->
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_02_01_ex_27.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <!-- START\1END -->
+      </answer>
+      <solution>
+        <!-- START\1END -->
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_02_01_ex_28.tex -->
-<image><latex-image-code><![CDATA[
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_02_01_ex_28.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 			xtick={-2,-1,1,2},
@@ -1267,17 +1725,32 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_02_01_ex_28.tex END --></sidebyside>
-</statement>
-<answer>
-<!-- START\1END -->
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_02_01_ex_28.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <!-- START\1END -->
+      </answer>
+      <solution>
+        <!-- START\1END -->
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<sidebyside><!-- START figures/fig_02_01_ex_29.tex -->
-<image><latex-image-code><![CDATA[
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <sidebyside><!-- START figures/fig_02_01_ex_29.tex -->
+<image>
+<description></description>
+<latex-image-code><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[%
 			xtick=\empty,
@@ -1301,114 +1774,352 @@ In the following exercises, a graph of a function <m>f(x)</m> is given. Using th
 
 
 \end{tikzpicture}
-]]></latex-image-code></image><!-- figures/fig_02_01_ex_29.tex END --></sidebyside>
-</statement>
-<answer>
-<!-- START\1END -->
-</answer>
-</exercise>
+]]></latex-image-code></image>
+<!-- figures/fig_02_01_ex_29.tex END --></sidebyside>
+      </statement>
+      <answer>
+        <!-- START\1END -->
+      </answer>
+      <solution>
+        <!-- START\1END -->
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-Using the graph of <m>g(x)</m> below, answer the following questions.
-</p>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Using the graph of <m>g(x)</m> below, answer the following questions.</p>
+
 <ol cols="2" >
-<li><p>Where is <m>g(x) > 0</m>?</p></li>
-<li><p>Where is <m>g(x) \lt  0</m>?</p></li>
-<li><p>Where is <m>g(x) = 0</m>?</p></li>
-<li><p>Where is <m>g'(x) \lt  0</m>?</p></li>
-<li><p>Where is <m>g'(x) > 0</m>?</p></li>
-<li><p>Where is <m>g'(x) = 0</m>?</p></li>
+<li>
+
+<p>Where is <m>g(x) > 0</m>?</p>
+
+</li>
+<li>
+
+<p>Where is <m>g(x) \lt  0</m>?</p>
+
+</li>
+<li>
+
+<p>Where is <m>g(x) = 0</m>?</p>
+
+</li>
+<li>
+
+<p>Where is <m>g'(x) \lt  0</m>?</p>
+
+</li>
+<li>
+
+<p>Where is <m>g'(x) > 0</m>?</p>
+
+</li>
+<li>
+
+<p>Where is <m>g'(x) = 0</m>?</p>
+
+</li>
 </ol>
 <!-- START\1END -->
-</statement>
-<answer>
-<ol>
-<li><p>Approximately on <m>(-1.5,1.5)</m>.</p></li>
-<li><p>Approximately on <m>(-\infty,-1.5) \cup (1.5,\infty)</m>.</p></li>
-<li><p>Approximately at <m>x=\pm 1.5</m>.</p></li>
-<li><p>On <m>(-\infty,-1) \cup (0,1)</m>.</p></li>
-<li><p>On <m>(-1,0) \cup (1,\infty)</m>.</p></li>
-<li><p>At <m>x=\pm 1</m>.</p></li>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p>Approximately on <m>(-1.5,1.5)</m>.</p>
+
+</li>
+<li>
+
+<p>Approximately on <m>(-\infty,-1.5) \cup (1.5,\infty)</m>.</p>
+
+</li>
+<li>
+
+<p>Approximately at <m>x=\pm 1.5</m>.</p>
+
+</li>
+<li>
+
+<p>On <m>(-\infty,-1) \cup (0,1)</m>.</p>
+
+</li>
+<li>
+
+<p>On <m>(-1,0) \cup (1,\infty)</m>.</p>
+
+</li>
+<li>
+
+<p>At <m>x=\pm 1</m>.</p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p>Approximately on <m>(-1.5,1.5)</m>.</p>
+
+</li>
+<li>
+
+<p>Approximately on <m>(-\infty,-1.5) \cup (1.5,\infty)</m>.</p>
+
+</li>
+<li>
+
+<p>Approximately at <m>x=\pm 1.5</m>.</p>
+
+</li>
+<li>
+
+<p>On <m>(-\infty,-1) \cup (0,1)</m>.</p>
+
+</li>
+<li>
+
+<p>On <m>(-1,0) \cup (1,\infty)</m>.</p>
+
+</li>
+<li>
+
+<p>At <m>x=\pm 1</m>.</p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
 </exercisegroup>
 
 <exercisegroup>
-
 <title>Review</title>
-<exercise>
-<statement>
-<p>
-Approximate <m>\ds \lim_{x\to 5}\frac{x^2+2 x-35}{x^2-10.5 x+27.5}</m>.
-</p>
-</statement>
-<answer>
-<p>
-Approximately 24.
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Approximate <m>\ds \lim_{x\to 5}\frac{x^2+2 x-35}{x^2-10.5 x+27.5}</m>.</p>
+      </statement>
+      <answer>
+        <p>Approximately 24.</p>
+      </answer>
+      <solution>
+        <p>Approximately 24.</p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-Use the Bisection Method to approximate, accurate to two decimal places, the root of <m>g(x) = x^3+x^2+x-1</m> on <m>[0.5,0.6]</m>.
-</p>
-</statement>
-<answer>
-<p>
-Approximately <m>0.54</m>.
-</p>
-</answer>
-</exercise>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Use the Bisection Method to approximate, accurate to two decimal places, the root of <m>g(x) = x^3+x^2+x-1</m> on <m>[0.5,0.6]</m>.</p>
+      </statement>
+      <answer>
+        <p>Approximately <m>0.54</m>.</p>
+      </answer>
+      <solution>
+        <p>Approximately <m>0.54</m>.</p>
+      </solution>
+    </webwork>
+  </exercise>
 
-<exercise>
-<statement>
-<p>
-Give intervals on which each of the following functions are continuous.
-</p>
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Give intervals on which each of the following functions are continuous.</p>
+
 <ol cols="2" >
-<li><p><m>\ds \frac{1}{e^x+1}</m></p></li>
-<li><p><m>\ds \frac{1}{x^2-1}</m></p></li>
-<li><p><m>\ds \sqrt{5-x}\phantom{\frac{1}{e^x+1}}</m></p></li>
-<li><p><m>\ds \sqrt{5-x^2}\phantom{\frac{1}{x^2-1}}</m></p></li>
-</ol>
-</statement>
-<answer>
-<ol>
-<li><p><m>(-\infty,\infty)</m></p></li>
-<li><p><m>(-\infty,-1)\cup (-1,1) \cup (1,\infty)</m></p></li>
-<li><p><m>(-\infty,5]</m></p></li>
-<li><p><m>[-5,5]</m></p></li>
-</ol>
-</answer>
-</exercise>
+<li>
 
-<exercise>
-<statement>
-<p>
-Use the graph of <m>f(x)</m> provided to answer the following.
-</p>
+<p><m>\ds \frac{1}{e^x+1}</m></p>
+
+</li>
+<li>
+
+<p><m>\ds \frac{1}{x^2-1}</m></p>
+
+</li>
+<li>
+
+<p><m>\ds \sqrt{5-x}\phantom{\frac{1}{e^x+1}}</m></p>
+
+</li>
+<li>
+
+<p><m>\ds \sqrt{5-x^2}\phantom{\frac{1}{x^2-1}}</m></p>
+
+</li>
+</ol>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p><m>(-\infty,\infty)</m></p>
+
+</li>
+<li>
+
+<p><m>(-\infty,-1)\cup (-1,1) \cup (1,\infty)</m></p>
+
+</li>
+<li>
+
+<p><m>(-\infty,5]</m></p>
+
+</li>
+<li>
+
+<p><m>[-5,5]</m></p>
+
+</li>
+</ol>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p><m>(-\infty,\infty)</m></p>
+
+</li>
+<li>
+
+<p><m>(-\infty,-1)\cup (-1,1) \cup (1,\infty)</m></p>
+
+</li>
+<li>
+
+<p><m>(-\infty,5]</m></p>
+
+</li>
+<li>
+
+<p><m>[-5,5]</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
+
+  <exercise>
+    <webwork seed="1">
+      <setup>
+        <var name="">
+          <static></static>
+        </var>
+        <pg-code>
+        </pg-code>
+      </setup>
+      <statement>
+        <p>Use the graph of <m>f(x)</m> provided to answer the following.</p>
+
 <ol cols="2" >
-<li><p><m>\ds \lim_{x\to-3^-} f(x) =</m>?</p></li>
-<li><p><m>\ds \lim_{x\to-3^+} f(x) =</m>?</p></li>
-<li><p><m>\ds \lim_{x\to-3} f(x) =</m>?</p></li>
-<li><p>Where is <m>f</m> continuous?</p></li>
+<li>
+
+<p><m>\ds \lim_{x\to-3^-} f(x) =</m>?</p>
+
+</li>
+<li>
+
+<p><m>\ds \lim_{x\to-3^+} f(x) =</m>?</p>
+
+</li>
+<li>
+
+<p><m>\ds \lim_{x\to-3} f(x) =</m>?</p>
+
+</li>
+<li>
+
+<p>Where is <m>f</m> continuous?</p>
+
+</li>
 </ol>
 <!-- START\1END -->
-</statement>
-<answer>
-<ol>
-<li><p>1</p></li>
-<li><p>3</p></li>
-<li><p>Does not exist</p></li>
-<li><p><m>(-\infty,-3)\cup (3,\infty)</m></p></li>
+      </statement>
+      <answer>
+        <ol>
+<li>
+
+<p>1</p>
+
+</li>
+<li>
+
+<p>3</p>
+
+</li>
+<li>
+
+<p>Does not exist</p>
+
+</li>
+<li>
+
+<p><m>(-\infty,-3)\cup (3,\infty)</m></p>
+
+</li>
 </ol>
-</answer>
-</exercise>
+      </answer>
+      <solution>
+        <ol>
+<li>
+
+<p>1</p>
+
+</li>
+<li>
+
+<p>3</p>
+
+</li>
+<li>
+
+<p>Does not exist</p>
+
+</li>
+<li>
+
+<p><m>(-\infty,-3)\cup (3,\infty)</m></p>
+
+</li>
+</ol>
+      </solution>
+    </webwork>
+  </exercise>
 </exercisegroup>
 
 </exercises></section>
