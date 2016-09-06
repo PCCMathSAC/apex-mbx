@@ -1,2670 +1,1743 @@
+
 <section xml:id="sec_limit_continuity">
-<title>One Sided Limits</title>
-<introduction>
+  <title>One Sided Limits</title>
+  <introduction>
+    <p>We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for evaluating them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave <q>nicely.</q> In this section we rigorously define what we mean by <q>nicely.</q></p>
 
-<p>We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for evaluating them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave <q>nicely.</q> In this section we rigorously define what we mean by <q>nicely.</q></p>
+    <p>In <xref ref="sec_limit_intro">Section</xref> we explored the three ways in which limits of functions failed to exist:</p>
 
-<p>In <xref ref="sec_limit_intro">Section</xref> we explored the three ways in which limits of functions failed to exist:</p>
+    <ol>
+      <li><p>The function approached different values from the left and right,</p></li>
 
-<ol>
-<li>
+      <li><p>The function grows without bound, and</p></li>
 
-<p>The function approached different values from the left and right,</p>
+      <li><p>The function oscillates.</p></li>
+    </ol>
 
-</li>
-<li>
+    <p>In this section we explore in depth the concepts behind <hash />1 by introducing the <em>one-sided limit</em>. We begin with formal definitions that are very similar to the definition of the limit given in <xref ref="sec_limit_def">Section</xref>, but the notation is slightly different and <q><m>x\neq c</m></q> is replaced with either <q><m>x\lt c</m></q> or <q><m>x>c</m>.</q></p>
 
-<p>The function grows without bound, and</p>
+    <definition xml:id="def_onesidedlimit">
+      <title>One Sided Limits</title>
+      <statement>
+        <p><term>Left-Hand Limit</term> <index><main>limit</main><sub>one sided</sub></index><index><main>limit</main><sub>right handed</sub></index><index><main>limit</main><sub>left handed</sub></index></p>
 
-</li>
-<li>
+        <p>Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>.
+          The <term>limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m> from the left, is <m>L</m></term>, or, <term>the left<ndash />hand limit of <m>f</m> at <m>c</m> is <m>L</m></term>, denoted by
+          <me>
+            \displaystyle \lim_{x\rightarrow c^-} f(x) = L,
+          </me>
+          means that given any <m>\epsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x\lt  c</m>,
+          if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.</p>
 
-<p>The function oscillates.</p>
+        <p><term>Right-Hand Limit</term></p>
 
-</li>
-</ol>
+        <p>Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>.
+          The <term>limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m> from the right, is <m>L</m></term>, or, <term>the right<ndash />hand limit of <m>f</m> at <m>c</m> is <m>L</m></term>, denoted by
+          <me>
+            \displaystyle \lim_{x\rightarrow c^+} f(x) = L,
+          </me>
+          means that given any <m>\epsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x> c</m>,
+          if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.</p>
+      </statement>
+    </definition>
 
-<p>In this section we explore in depth the concepts behind <hash />1 by introducing the <em>one-sided limit</em>. We begin with formal definitions that are very similar to the definition of the limit given in <xref ref="sec_limit_def">Section</xref>, but the notation is slightly different and <q><m>x\neq c</m></q> is replaced with either <q><m>x\lt c</m></q> or <q><m>x>c</m>.</q></p>
+    <p>Practically speaking, when evaluating a left-hand limit, we consider only values of <m>x</m> <q>to the left of <m>c</m>,</q> i.e., where <m>x\lt c</m>. The admittedly imperfect notation <m>x\to c^-</m> is used to imply that we look at values of <m>x</m> to the left of <m>c</m>. The notation has nothing to do with positive or negative values of either <m>x</m> or <m>c</m>. A similar statement holds for evaluating right-hand limits; there we consider only values of <m>x</m> to the right of <m>c</m>, i.e., <m>x>c</m>. We can use the theorems from previous sections to help us evaluate these limits; we just restrict our view to one side of <m>c</m>.</p>
 
-<definition xml:id="def_onesidedlimit">
-<title>One Sided Limits</title>
-<statement>
+    <p>We practice evaluating left and right-hand limits through a series of examples.</p>
 
-<p><term>Left-Hand Limit</term> <index><main>limit</main><sub>one sided</sub></index><index><main>limit</main><sub>right handed</sub></index><index><main>limit</main><sub>left handed</sub></index></p>
+    <example xml:id="ex_onesidea">
+      <title>Evaluating one sided limits</title>
+      <statement>
+        <p>Let <m>\ds f(x) = \left\{\begin{array}{cc} x \amp  0\leq x\leq 1 \\ 3-x \amp  1\lt x\lt 2
+          \end{array} ,\right.</m> as shown in <xref ref="fig_onesided1">Figure</xref>. Find each of the following:</p>
 
-<p>Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>.
-The <term>limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m> from the left, is <m>L</m></term>, or, <term>the left<ndash />hand limit of <m>f</m> at <m>c</m> is <m>L</m></term>, denoted by
-<me>
-  \displaystyle \lim_{x\rightarrow c^-} f(x) = L,
-</me>
-means that given any <m>\epsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x\lt  c</m>,
-if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.</p>
+        <ol cols="2" >
+          <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
 
-<p><term>Right-Hand Limit</term></p>
+          <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
 
-<p>Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>.
-The <term>limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m> from the right, is <m>L</m></term>, or, <term>the right<ndash />hand limit of <m>f</m> at <m>c</m> is <m>L</m></term>, denoted by
-<me>
-  \displaystyle \lim_{x\rightarrow c^+} f(x) = L,
-</me>
-means that given any <m>\epsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x> c</m>,
-if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.</p>
+          <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
 
-</statement>
-</definition>
+          <li><p><m>\ds f(1)</m></p></li>
 
-<p>Practically speaking, when evaluating a left-hand limit, we consider only values of <m>x</m> <q>to the left of <m>c</m>,</q> i.e., where <m>x\lt c</m>. The admittedly imperfect notation <m>x\to c^-</m> is used to imply that we look at values of <m>x</m> to the left of <m>c</m>. The notation has nothing to do with positive or negative values of either <m>x</m> or <m>c</m>. A similar statement holds for evaluating right-hand limits; there we consider only values of <m>x</m> to the right of <m>c</m>, i.e., <m>x>c</m>. We can use the theorems from previous sections to help us evaluate these limits; we just restrict our view to one side of <m>c</m>.</p>
+          <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
 
-<p>We practice evaluating left and right-hand limits through a series of examples.</p>
+          <li><p><m>f(0)</m></p></li>
 
-<example xml:id="ex_onesidea">
-<title>Evaluating one sided limits</title>
-<statement>
+          <li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
 
-<p>Let <m>\ds f(x) = \left\{\begin{array}{cc} x \amp  0\leq x\leq 1 \\ 3-x \amp  1\lt x\lt 2
-\end{array} ,\right.</m> as shown in <xref ref="fig_onesided1">Figure</xref>. Find each of the following:</p>
+          <li><p><m>f(2)</m></p></li>
+        </ol>
 
-<ol cols="2" >
-<li>
-
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds f(1)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 0^+} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>f(0)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 2^-} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>f(2)</m></p>
-
-</li>
-</ol>
-<figure xml:id="fig_onesided1" >
-<caption>A graph of <m>f</m> in <xref ref="ex_onesidea">Example</xref>.</caption>
-<!-- START figures/fig_one_sidedlimit1.tex -->
-<image xml:id="img_onesided1" >
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[ymin=-.4,ymax=2.4,xmin=-.4,xmax=2.4,]
-\addplot [{\colorone},smooth,thick] coordinates {(0,0) (1,1)};
-\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
-\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
-\addplot [{\colorone},smooth,thick] coordinates {(1,2) (2,1)};
-\fill[white,draw=black,thick] (axis cs:1,2) circle (1.5pt);
-\fill[white,draw=black,thick] (axis cs:2,1) circle (1.5pt);
-\end{axis}
+        <figure xml:id="fig_onesided1" >
+          <caption>A graph of <m>f</m> in <xref ref="ex_onesidea">Example</xref>.</caption>
+          <!-- START figures/fig_one_sidedlimit1.tex -->
+          <image xml:id="img_onesided1" >
+            <description></description>
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}
+              \begin{axis}[ymin=-.4,ymax=2.4,xmin=-.4,xmax=2.4,]
+              \addplot [{\colorone},smooth,thick] coordinates {(0,0) (1,1)};
+              \fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+              \fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+              \addplot [{\colorone},smooth,thick] coordinates {(1,2) (2,1)};
+              \fill[white,draw=black,thick] (axis cs:1,2) circle (1.5pt);
+              \fill[white,draw=black,thick] (axis cs:2,1) circle (1.5pt);
+              \end{axis}
 
 
-\end{tikzpicture}
-% this is the sqrt[x] on [0,5]
-]]></latex-image-code>
-</image>
-<!-- figures/fig_one_sidedlimit1.tex END -->
+              \end{tikzpicture}
+              % this is the sqrt[x] on [0,5]
+              ]]>
+            </latex-image-code>
+          </image>
+          <!-- figures/fig_one_sidedlimit1.tex END -->
+        </figure>
+      </statement>
+      <solution>
+        <p>For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using <m>f</m> itself. Therefore we will refer often to the graph.</p>
 
-</figure>
-</statement>
-<solution>
+        <ol>
+          <li><p>As <m>x</m> goes to 1 <em>from the left</em>, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 1^-} f(x) =1.</m></p></li>
 
-<p>For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using <m>f</m> itself. Therefore we will refer often to the graph.</p>
+          <li><p>As <m>x</m> goes to 1 <em>from the right</em>, we see that <m>f(x)</m> is approaching the value of 2. Recall that it does not matter that there is an <q>open circle</q> there; we are evaluating a limit, not the value of the function. Therefore <m>\ds \lim_{x\to 1^+} f(x)=2</m>.</p></li>
 
-<ol>
-<li>
+          <li><p><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 does not exist, as discussed in the first section. The function does not approach one particular value, but two different values from the left and the right.</p></li>
 
-<p>As <m>x</m> goes to 1 <em>from the left</em>, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 1^-} f(x) =1.</m></p>
+          <li><p>Using the definition and by looking at the graph we see that <m>f(1) = 1</m>.</p></li>
 
-</li>
-<li>
+          <li><p>As <m>x</m> goes to 0 from the right, we see that <m>f(x)</m> is also approaching 0. Therefore <m>\ds \lim_{x\to 0^+} f(x)=0</m>. Note we cannot consider a left-hand limit at 0 as <m>f</m> is not defined for values of <m>x\lt 0</m>.</p></li>
 
-<p>As <m>x</m> goes to 1 <em>from the right</em>, we see that <m>f(x)</m> is approaching the value of 2. Recall that it does not matter that there is an <q>open circle</q> there; we are evaluating a limit, not the value of the function. Therefore <m>\ds \lim_{x\to 1^+} f(x)=2</m>.</p>
+          <li><p>Using the definition and the graph, <m>f(0) = 0</m>.</p></li>
 
-</li>
-<li>
+          <li><p>As <m>x</m> goes to 2 from the left, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 2^-} f(x)=1.</m></p></li>
 
-<p><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 does not exist, as discussed in the first section. The function does not approach one particular value, but two different values from the left and the right.</p>
+          <li><p>The graph and the definition of the function show that <m>f(2)</m> is not defined.</p></li>
+        </ol>
+      </solution>
+    </example>
 
-</li>
-<li>
+    <p>Note how the left and right-hand limits were different at <m>x=1</m>. This, of course, causes <em>the</em> limit to not exist. The following theorem states what is fairly intuitive: <em>the</em> limit exists precisely when the left and right-hand limits are equal.</p>
 
-<p>Using the definition and by looking at the graph we see that <m>f(1) = 1</m>.</p>
+    <theorem xml:id="thm_leftrightlimits">
+      <title>Limits and One Sided Limits</title>
+      <statement>
+        <p>Let <m>f</m> be a function defined on an open interval <m>I</m> containing <m>c</m>. <index><main>limit</main><sub>does not exist</sub></index> Then
+          <me>
+            \lim_{x\to c}f(x) = L
+          </me>
+          if, and only if,
+          <me>
+            \lim_{x\to c^-}f(x) = L  \text{ and }   \lim_{x\to c^+}f(x) = L.
+          </me>
+        </p>
+      </statement>
+    </theorem>
 
-</li>
-<li>
-
-<p>As <m>x</m> goes to 0 from the right, we see that <m>f(x)</m> is also approaching 0. Therefore <m>\ds \lim_{x\to 0^+} f(x)=0</m>. Note we cannot consider a left-hand limit at 0 as <m>f</m> is not defined for values of <m>x\lt 0</m>.</p>
-
-</li>
-<li>
-
-<p>Using the definition and the graph, <m>f(0) = 0</m>.</p>
-
-</li>
-<li>
-
-<p>As <m>x</m> goes to 2 from the left, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 2^-} f(x)=1.</m></p>
-
-</li>
-<li>
-
-<p>The graph and the definition of the function show that <m>f(2)</m> is not defined.</p>
-
-</li>
-</ol>
-</solution>
-</example>
-
-<p>Note how the left and right-hand limits were different at <m>x=1</m>. This, of course, causes <em>the</em> limit to not exist. The following theorem states what is fairly intuitive: <em>the</em> limit exists precisely when the left and right-hand limits are equal.</p>
-
-<theorem xml:id="thm_leftrightlimits">
-<title>Limits and One Sided Limits</title>
-<statement>
-
-<p>Let <m>f</m> be a function defined on an open interval <m>I</m> containing <m>c</m>. <index><main>limit</main><sub>does not exist</sub></index> Then
-<me>
-  \lim_{x\to c}f(x) = L
-</me>
-if, and only if,
-<me>
-  \lim_{x\to c^-}f(x) = L  \text{ and }   \lim_{x\to c^+}f(x) = L.
-</me></p>
-
-</statement>
-</theorem>
-
-<p>The phrase <q>if, and only if</q> means the two statements are <em>equivalent</em>: they are either both true or both false. If the limit equals <m>L</m>, then the left and right hand limits both equal <m>L</m>. If the limit is not equal to <m>L</m>, then at least one of the left and right-hand limits is not equal to <m>L</m> (it may not even exist).
+    <p>The phrase <q>if, and only if</q> means the two statements are <em>equivalent</em>: they are either both true or both false. If the limit equals <m>L</m>, then the left and right hand limits both equal <m>L</m>. If the limit is not equal to <m>L</m>, then at least one of the left and right-hand limits is not equal to <m>L</m> (it may not even exist).
 			
-One thing to consider in <xref ref="ex_onesidea">Examples</xref> <mdash /> <xref ref="ex_onesided"></xref> is that the value of the function may/may not be equal to the value(s) of its left/right-hand limits, even when these limits agree.</p>
+      One thing to consider in <xref ref="ex_onesidea">Examples</xref> <mdash /> <xref ref="ex_onesided"></xref> is that the value of the function may/may not be equal to the value(s) of its left/right-hand limits, even when these limits agree.</p>
 
-<example xml:id="ex_onesideb">
-<title>Evaluating limits of a piecewise<ndash />defined function</title>
-<statement>
-
-<p>Let <m>f(x) = \left\{\begin{array}{cc} 2-x \amp  0\lt x\lt 1 \\ (x-2)^2 \amp  1\lt x\lt 2
-\end{array} ,\right.</m> as shown in <xref ref="fig_onesidedb">Figure</xref>. Evaluate the following.</p>
-
-<ol cols="2" >
-<li>
-
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds f(1)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 0^+} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>f(0)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 2^-} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>f(2)</m></p>
-
-</li>
-</ol>
-<figure xml:id="fig_onesidedb" >
-<caption>A graph of <m>f</m> from <xref ref="ex_onesideb">Example</xref></caption>
-<!-- START figures/fig_one_sidedlimit2.tex -->
-<image xml:id="img_onesidedb" >
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[ymin=-.4,ymax=2.4,xmin=-.4,xmax=2.4,]
-\addplot [{\colorone},smooth,thick] coordinates {(0,2) (1,1)};
-\addplot [{\colorone},smooth,thick] coordinates {(1.,1.) (1.1,0.81) (1.2,0.64) (1.3,0.49) (1.4,0.36) (1.5,0.25) (1.6,0.16) (1.7,0.09) (1.8,0.04) (1.9,0.01) (2.,0.)};
-\fill[white,draw=black,thick] (axis cs:2,0) circle (1.5pt);
-\fill[white,draw=black,thick] (axis cs:0,2) circle (1.5pt);
-\fill[white,draw=black,thick] (axis cs:1,1) circle (1.5pt);
-%\fill[white,draw=black] (axis cs:2,1) circle (1pt);
-\end{axis}
-
-
-\end{tikzpicture}
-% this is the sqrt[x] on [0,5]
-]]></latex-image-code>
-</image>
-<!-- figures/fig_one_sidedlimit2.tex END -->
-
-</figure>
-</statement>
-<solution>
-
-<p>Again we will evaluate each using both the definition of <m>f</m> and its graph.</p>
-
-<ol>
-<li>
-
-<p>As <m>x</m> approaches 1 from the left, we see that <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1^-} f(x)=1.</m></p>
-
-</li>
-<li>
-
-<p>As <m>x</m> approaches 1 from the right, we see that again <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1+} f(x)=1</m>.</p>
-
-</li>
-<li>
-
-<p><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 exists and is 1, as <m>f</m> approaches 1 from both the right and left. Therefore <m>\ds \lim_{x\to 1} f(x)=1</m>.</p>
-
-</li>
-<li>
-
-<p><m>f(1)</m> is not defined. Note that 1 is not in the domain of <m>f</m> as defined by the problem, which is indicated on the graph by an open circle when <m>x=1</m>.</p>
-
-</li>
-<li>
-
-<p>As <m>x</m> goes to 0 from the right, <m>f(x)</m> approaches 2. So <m>\ds \lim_{x\to 0^+} f(x)=2</m>.</p>
-
-</li>
-<li>
-
-<p><m>f(0)</m>  is not defined as <m>0</m> is not in the domain of <m>f</m>.</p>
-
-</li>
-<li>
-
-<p>As <m>x</m> goes to 2 from the left, <m>f(x)</m> approaches 0. So <m>\ds \lim_{x\to 2^-} f(x)=0</m>.</p>
-
-</li>
-<li>
-
-<p><m>f(2)</m>  is not defined as 2 is not in the domain of <m>f</m>.</p>
-
-</li>
-</ol>
-</solution>
-</example>
-
-<example xml:id="ex_onesidec">
-<title>Evaluating limits of a piecewise<ndash />defined function</title>
-<statement>
-
-<p>Let <m>f(x) = \left\{\begin{array}{cc} (x-1)^2 \amp  0\leq x\leq 2, x\neq 1\\ 1 \amp  x=1
-\end{array} ,\right.</m> as shown in <xref ref="fig_onesidedc">Figure</xref>. Evaluate the following.</p>
-
-<ol cols="2" >
-<li>
-
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>f(1)</m></p>
-
-</li>
-</ol>
-<figure xml:id="fig_onesidedc" >
-<caption>Graphing <m>f</m> in <xref ref="ex_onesidec">Example</xref></caption>
-<!-- START figures/fig_one_sidedlimit3.tex -->
-<image xml:id="img_onesidedc" >
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[ymin=-.4,ymax=1.4,xmin=-.4,xmax=2.4,]
-%\addplot [{\colorone},smooth] coordinates {(0,2) (1,1)};
-\addplot [{\colorone},smooth,thick] coordinates {(0.,1.) (0.1,0.81) (0.2,0.64) (0.3,0.49) (0.4,0.36) (0.5,0.25) (0.6,0.16) (0.7,0.09) (0.8,0.04) (0.9,0.01) (1.,0.) (1.1,0.01)
-(1.2,0.04) (1.3,0.09) (1.4,0.16) (1.5,0.25) (1.6,0.36) (1.7,0.49)
-(1.8,0.64) (1.9,0.81) (2.,1.)
-};
-\fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
-\fill[black,draw=black] (axis cs:2,1) circle (1.5pt);
-\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
-\fill[white,draw=black,thick] (axis cs:1,0) circle (1.5pt);
-\end{axis}
-
-
-\end{tikzpicture}
-% this is the sqrt[x] on [0,5]
-]]></latex-image-code>
-</image>
-<!-- figures/fig_one_sidedlimit3.tex END -->
-
-</figure>
-</statement>
-<solution>
-
-<p>It is clear by looking at the graph that both the left and right-hand limits of <m>f</m>, as <m>x</m> approaches 1, is 0. Thus it is also clear that <em>the</em> limit is 0; i.e., <m>\ds \lim_{x\to 1} f(x) = 0</m>. It is also clearly stated that <m>f(1) = 1</m>.</p>
-
-</solution>
-</example>
-
-<example xml:id="ex_onesided">
-<title>Evaluating limits of a piecewise<ndash />defined function</title>
-<statement>
-
-<p>Let <m>f(x) = \left\{\begin{array}{cc} x^2 \amp  0\leq x\leq 1 \\ 2-x \amp  1\lt x\leq 2
-\end{array} ,\right.</m> as shown in <xref ref="fig_onesidedd">Figure</xref>. Evaluate the following.</p>
-
-<ol cols="2" >
-<li>
-
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
-
-</li>
-<li>
-
-<p><m>f(1)</m></p>
-
-</li>
-</ol>
-</statement>
-<solution>
-
-<p>It is clear from the definition of the function and its graph that all of the following are equal:</p>
-
-<figure xml:id="fig_onesidedd" >
-<caption>Graphing <m>f</m> in <xref ref="ex_onesided">Example</xref></caption>
-<!-- START figures/fig_one_sidedlimit4.tex -->
-<image xml:id="img_onesidedd" >
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[ymin=-.4,ymax=1.4,xmin=-.4,xmax=2.4,]
-\addplot [{\colorone},smooth,thick] coordinates {(2,0) (1,1)};
-\addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16) (0.5,0.25)(0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.) };
-\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
-\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
-\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
-%\fill[white,draw=black] (axis cs:2,1) circle (1pt);
-\end{axis}
-
-
-\end{tikzpicture}
-% this is the sqrt[x] on [0,5]
-]]></latex-image-code>
-</image>
-<!-- figures/fig_one_sidedlimit4.tex END -->
-
-</figure>
-
-<p><me>
-  \lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) =\lim_{x\to 1} f(x) =f(1) = 1.
-</me></p>
-
-</solution>
-</example>
-
-<p>In <xref ref="ex_onesidea">Examples</xref> <mdash /> <xref ref="ex_onesided"></xref> we were asked to find both <m>\ds \lim_{x\to 1}f(x)</m> and <m>f(1)</m>. Consider the following table:</p>
-
-<tabular>
-<row>
-<cell></cell>
-<cell><m>\ds \lim_{x\to 1}f(x)</m></cell>
-<cell><m>f(1)</m> \vspace{2pt}</cell>
-</row>
-<row bottom="minor">
-<cell></cell>
-<cell></cell>
-<cell></cell>
-</row>
-<row>
-<cell><xref ref="ex_onesidea">Example</xref></cell>
-<cell>does not exist</cell>
-<cell><m>1</m></cell>
-</row>
-<row>
-<cell><xref ref="ex_onesideb">Example</xref></cell>
-<cell><m>1</m></cell>
-<cell>not defined</cell>
-</row>
-<row>
-<cell><xref ref="ex_onesidec">Example</xref></cell>
-<cell><m>0</m></cell>
-<cell><m>1</m></cell>
-</row>
-<row>
-<cell><xref ref="ex_onesided">Example</xref></cell>
-<cell><m>1</m></cell>
-<cell><m>1</m></cell>
-</row>
-<row>
-<cell></cell>
-</row>
-</tabular>
-
-<p>Only in <xref ref="ex_onesided">Example</xref> do both the function and the limit exist and agree. This seems <q>nice;</q> in fact, it seems <q>normal.</q> This is in fact an important situation which we explore in the next section, entitled <q>Continuity.</q> In short, a <em>continuous function</em> is one in which when a function approaches a value as <m>x\rightarrow c</m> (i.e., when <m>\ds \lim_{x\to c} f(x) = L</m>), it actually <em>attains</em> that value at <m>c</m>. Such functions behave nicely as they are very predictable.</p>
-
-</introduction>
-
-
-<exercises>
-
-<exercisegroup>
-<title>Terms and Concepts</title>
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
+    <example xml:id="ex_onesideb">
+      <title>Evaluating limits of a piecewise<ndash />defined function</title>
       <statement>
-        <p>What are the three ways in which a limit may fail to exist?</p>
+        <p>Let <m>f(x) = \left\{\begin{array}{cc} 2-x \amp  0\lt x\lt 1 \\ (x-2)^2 \amp  1\lt x\lt 2
+          \end{array} ,\right.</m> as shown in <xref ref="fig_onesidedb">Figure</xref>. Evaluate the following.</p>
+
+        <ol cols="2" >
+          <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+
+          <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+
+          <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+
+          <li><p><m>\ds f(1)</m></p></li>
+
+          <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+
+          <li><p><m>f(0)</m></p></li>
+
+          <li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
+
+          <li><p><m>f(2)</m></p></li>
+        </ol>
+
+        <figure xml:id="fig_onesidedb" >
+          <caption>A graph of <m>f</m> from <xref ref="ex_onesideb">Example</xref></caption>
+          <!-- START figures/fig_one_sidedlimit2.tex -->
+          <image xml:id="img_onesidedb" >
+            <description></description>
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}
+              \begin{axis}[ymin=-.4,ymax=2.4,xmin=-.4,xmax=2.4,]
+              \addplot [{\colorone},smooth,thick] coordinates {(0,2) (1,1)};
+              \addplot [{\colorone},smooth,thick] coordinates {(1.,1.) (1.1,0.81) (1.2,0.64) (1.3,0.49) (1.4,0.36) (1.5,0.25) (1.6,0.16) (1.7,0.09) (1.8,0.04) (1.9,0.01) (2.,0.)};
+              \fill[white,draw=black,thick] (axis cs:2,0) circle (1.5pt);
+              \fill[white,draw=black,thick] (axis cs:0,2) circle (1.5pt);
+              \fill[white,draw=black,thick] (axis cs:1,1) circle (1.5pt);
+              %\fill[white,draw=black] (axis cs:2,1) circle (1pt);
+              \end{axis}
+
+
+              \end{tikzpicture}
+              % this is the sqrt[x] on [0,5]
+              ]]>
+            </latex-image-code>
+          </image>
+          <!-- figures/fig_one_sidedlimit2.tex END -->
+        </figure>
       </statement>
-      <answer>
-        <p>The function approaches different values from the left and right; the function grows without bound; the function oscillates.</p>
-      </answer>
       <solution>
-        <p>The function approaches different values from the left and right; the function grows without bound; the function oscillates.</p>
-      </solution>
-    </webwork>
-  </exercise>
+        <p>Again we will evaluate each using both the definition of <m>f</m> and its graph.</p>
 
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
+        <ol>
+          <li><p>As <m>x</m> approaches 1 from the left, we see that <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1^-} f(x)=1.</m></p></li>
+
+          <li><p>As <m>x</m> approaches 1 from the right, we see that again <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1+} f(x)=1</m>.</p></li>
+
+          <li><p><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 exists and is 1, as <m>f</m> approaches 1 from both the right and left. Therefore <m>\ds \lim_{x\to 1} f(x)=1</m>.</p></li>
+
+          <li><p><m>f(1)</m> is not defined. Note that 1 is not in the domain of <m>f</m> as defined by the problem, which is indicated on the graph by an open circle when <m>x=1</m>.</p></li>
+
+          <li><p>As <m>x</m> goes to 0 from the right, <m>f(x)</m> approaches 2. So <m>\ds \lim_{x\to 0^+} f(x)=2</m>.</p></li>
+
+          <li><p><m>f(0)</m>  is not defined as <m>0</m> is not in the domain of <m>f</m>.</p></li>
+
+          <li><p>As <m>x</m> goes to 2 from the left, <m>f(x)</m> approaches 0. So <m>\ds \lim_{x\to 2^-} f(x)=0</m>.</p></li>
+
+          <li><p><m>f(2)</m>  is not defined as 2 is not in the domain of <m>f</m>.</p></li>
+        </ol>
+      </solution>
+    </example>
+
+    <example xml:id="ex_onesidec">
+      <title>Evaluating limits of a piecewise<ndash />defined function</title>
       <statement>
-        <p>T/F: If <m>\ds \lim_{x\to 1^-} f(x) = 5</m>, then <m>\ds \lim_{x\to 1} f(x) = 5</m></p>
+        <p>Let <m>f(x) = \left\{\begin{array}{cc} (x-1)^2 \amp  0\leq x\leq 2, x\neq 1\\ 1 \amp  x=1
+          \end{array} ,\right.</m> as shown in <xref ref="fig_onesidedc">Figure</xref>. Evaluate the following.</p>
+
+        <ol cols="2" >
+          <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+
+          <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+
+          <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+
+          <li><p><m>f(1)</m></p></li>
+        </ol>
+
+        <figure xml:id="fig_onesidedc" >
+          <caption>Graphing <m>f</m> in <xref ref="ex_onesidec">Example</xref></caption>
+          <!-- START figures/fig_one_sidedlimit3.tex -->
+          <image xml:id="img_onesidedc" >
+            <description></description>
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}
+              \begin{axis}[ymin=-.4,ymax=1.4,xmin=-.4,xmax=2.4,]
+              %\addplot [{\colorone},smooth] coordinates {(0,2) (1,1)};
+              \addplot [{\colorone},smooth,thick] coordinates {(0.,1.) (0.1,0.81) (0.2,0.64) (0.3,0.49) (0.4,0.36) (0.5,0.25) (0.6,0.16) (0.7,0.09) (0.8,0.04) (0.9,0.01) (1.,0.) (1.1,0.01)
+              (1.2,0.04) (1.3,0.09) (1.4,0.16) (1.5,0.25) (1.6,0.36) (1.7,0.49)
+              (1.8,0.64) (1.9,0.81) (2.,1.)
+              };
+              \fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
+              \fill[black,draw=black] (axis cs:2,1) circle (1.5pt);
+              \fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+              \fill[white,draw=black,thick] (axis cs:1,0) circle (1.5pt);
+              \end{axis}
+
+
+              \end{tikzpicture}
+              % this is the sqrt[x] on [0,5]
+              ]]>
+            </latex-image-code>
+          </image>
+          <!-- figures/fig_one_sidedlimit3.tex END -->
+        </figure>
       </statement>
-      <answer>
-        <p>F</p>
-      </answer>
       <solution>
-        <p>F</p>
+        <p>It is clear by looking at the graph that both the left and right-hand limits of <m>f</m>, as <m>x</m> approaches 1, is 0. Thus it is also clear that <em>the</em> limit is 0; i.e., <m>\ds \lim_{x\to 1} f(x) = 0</m>. It is also clearly stated that <m>f(1) = 1</m>.</p>
       </solution>
-    </webwork>
-  </exercise>
+    </example>
 
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
+    <example xml:id="ex_onesided">
+      <title>Evaluating limits of a piecewise<ndash />defined function</title>
       <statement>
-        <p>T/F: If <m>\ds \lim_{x\to 1^-} f(x) = 5</m>, then <m>\ds \lim_{x\to 1^+} f(x) = 5</m></p>
+        <p>Let <m>f(x) = \left\{\begin{array}{cc} x^2 \amp  0\leq x\leq 1 \\ 2-x \amp  1\lt x\leq 2
+          \end{array} ,\right.</m> as shown in <xref ref="fig_onesidedd">Figure</xref>. Evaluate the following.</p>
+
+        <ol cols="2" >
+          <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+
+          <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
+
+          <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
+
+          <li><p><m>f(1)</m></p></li>
+        </ol>
       </statement>
-      <answer>
-        <p>F</p>
-      </answer>
       <solution>
-        <p>F</p>
-      </solution>
-    </webwork>
-  </exercise>
+        <p>It is clear from the definition of the function and its graph that all of the following are equal:</p>
 
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p>T/F: If <m>\ds \lim_{x\to 1} f(x) = 5</m>, then <m>\ds \lim_{x\to 1^-} f(x) = 5</m></p>
-      </statement>
-      <answer>
-        <p>T</p>
-      </answer>
-      <solution>
-        <p>T</p>
-      </solution>
-    </webwork>
-  </exercise>
-</exercisegroup>
+        <figure xml:id="fig_onesidedd" >
+          <caption>Graphing <m>f</m> in <xref ref="ex_onesided">Example</xref></caption>
+          <!-- START figures/fig_one_sidedlimit4.tex -->
+          <image xml:id="img_onesidedd" >
+            <description></description>
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}
+              \begin{axis}[ymin=-.4,ymax=1.4,xmin=-.4,xmax=2.4,]
+              \addplot [{\colorone},smooth,thick] coordinates {(2,0) (1,1)};
+              \addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16) (0.5,0.25)(0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.) };
+              \fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+              \fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+              \fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+              %\fill[white,draw=black] (axis cs:2,1) circle (1pt);
+              \end{axis}
 
-<exercisegroup>
-<title>Problems</title>
-<p>In the following exercises, evaluate each expression using the given graph of <m>f(x)</m>.</p>
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <sidebyside><!-- START figures/fig_01_04_ex_05.tex -->
-<image>
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[%
-%			xtick={-2,-1,1,2,3},% 
-%			ytick={-6,-4,-2,0,2,4,6},
-%			
-%			extra y ticks={-5,-3,...,7},%
+
+              \end{tikzpicture}
+              % this is the sqrt[x] on [0,5]
+              ]]>
+            </latex-image-code>
+          </image>
+          <!-- figures/fig_one_sidedlimit4.tex END -->
+        </figure>
+
+        <p>
+          <me>
+            \lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) =\lim_{x\to 1} f(x) =f(1) = 1.
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <p>In <xref ref="ex_onesidea">Examples</xref> <mdash /> <xref ref="ex_onesided"></xref> we were asked to find both <m>\ds \lim_{x\to 1}f(x)</m> and <m>f(1)</m>. Consider the following table:</p>
+    <tabular>
+      <row>
+        <cell></cell>
+        <cell><m>\ds \lim_{x\to 1}f(x)</m></cell>
+        <cell><m>f(1)</m> \vspace{2pt}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><xref ref="ex_onesidea">Example</xref></cell>
+        <cell>does not exist</cell>
+        <cell><m>1</m></cell>
+      </row>
+      <row>
+        <cell><xref ref="ex_onesideb">Example</xref></cell>
+        <cell><m>1</m></cell>
+        <cell>not defined</cell>
+      </row>
+      <row>
+        <cell><xref ref="ex_onesidec">Example</xref></cell>
+        <cell><m>0</m></cell>
+        <cell><m>1</m></cell>
+      </row>
+      <row>
+        <cell><xref ref="ex_onesided">Example</xref></cell>
+        <cell><m>1</m></cell>
+        <cell><m>1</m></cell>
+      </row>
+      <row>
+        <cell></cell>
+      </row>
+    </tabular>
+    <p>Only in <xref ref="ex_onesided">Example</xref> do both the function and the limit exist and agree. This seems <q>nice;</q> in fact, it seems <q>normal.</q> This is in fact an important situation which we explore in the next section, entitled <q>Continuity.</q> In short, a <em>continuous function</em> is one in which when a function approaches a value as <m>x\rightarrow c</m> (i.e., when <m>\ds \lim_{x\to c} f(x) = L</m>), it actually <em>attains</em> that value at <m>c</m>. Such functions behave nicely as they are very predictable.</p>
+  </introduction>
+  <exercises>
+    <exercisegroup>
+      <title>Terms and Concepts</title>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p>What are the three ways in which a limit may fail to exist?</p>
+          </statement>
+          <answer>
+            <p>The function approaches different values from the left and right; the function grows without bound; the function oscillates.</p>
+          </answer>
+          <solution>
+            <p>The function approaches different values from the left and right; the function grows without bound; the function oscillates.</p>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p>T/F: If <m>\ds \lim_{x\to 1^-} f(x) = 5</m>, then <m>\ds \lim_{x\to 1} f(x) = 5</m></p>
+          </statement>
+          <answer>
+            <p>F</p>
+          </answer>
+          <solution>
+            <p>F</p>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p>T/F: If <m>\ds \lim_{x\to 1^-} f(x) = 5</m>, then <m>\ds \lim_{x\to 1^+} f(x) = 5</m></p>
+          </statement>
+          <answer>
+            <p>F</p>
+          </answer>
+          <solution>
+            <p>F</p>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p>T/F: If <m>\ds \lim_{x\to 1} f(x) = 5</m>, then <m>\ds \lim_{x\to 1^-} f(x) = 5</m></p>
+          </statement>
+          <answer>
+            <p>T</p>
+          </answer>
+          <solution>
+            <p>T</p>
+          </solution>
+        </webwork>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <title>Problems</title>
+      <p>In the following exercises, evaluate each expression using the given graph of <m>f(x)</m>.</p>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <sidebyside>
+              <!-- START figures/fig_01_04_ex_05.tex -->
+              <image>
+                <description></description>
+                <latex-image-code>
+                  <![CDATA[
+                  \begin{tikzpicture}
+                  \begin{axis}[%
+                  %			xtick={-2,-1,1,2,3},% 
+                  %			ytick={-6,-4,-2,0,2,4,6},
+                  %			
+                  %			extra y ticks={-5,-3,...,7},%
 			ymin=-.1,ymax=2.1,%
 			xmin=-.1,xmax=2.1%
-]
+                  ]
 
-\addplot [thick,{\colorone}] coordinates {(0.,1) (1,2)};
-\addplot [{\colorone},smooth,thick,domain=1:2] {2*(x-2)^2};
+                  \addplot [thick,{\colorone}] coordinates {(0.,1) (1,2)};
+                  \addplot [{\colorone},smooth,thick,domain=1:2] {2*(x-2)^2};
 
-\fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
-\fill[white,draw=black] (axis cs:1,2) circle (1.5pt);
-\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
-\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
-\end{axis}
+                  \fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:1,2) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+                  \end{axis}
 
 
-\end{tikzpicture}
-]]></latex-image-code>
-</image>
-<!-- figures/fig_01_04_ex_05.tex END -->
+                  \end{tikzpicture}
+                  ]]>
+                </latex-image-code>
+              </image>
+              <!-- figures/fig_01_04_ex_05.tex END -->
 
-<ol cols="2" >
-<li>
+              <ol cols="2" >
+                <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
+                <li><p><m>f(1)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+              </ol>
+            </sidebyside>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p><m>f(1)</m></p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>1</p></li>
 
-<p><m>\ds \lim_{x\to 0^-} f(x)</m></p>
+              <li><p>As <m>f</m> is not defined for <m>x\lt 0</m>, this limit is not defined.</p></li>
 
-</li>
-<li>
+              <li><p>1</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>2</p></li>
 
-<p><m>\ds \lim_{x\to 0^+} f(x)</m></p>
+              <li><p>2</p></li>
 
-</li>
-</ol></sidebyside>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>2</p></li>
 
-<p>2</p>
+              <li><p>1</p></li>
 
-</li>
-<li>
+              <li><p>As <m>f</m> is not defined for <m>x\lt 0</m>, this limit is not defined.</p></li>
 
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>1</p>
-
-</li>
-<li>
-
-<p>As <m>f</m> is not defined for <m>x\lt 0</m>, this limit is not defined.</p>
-
-</li>
-<li>
-
-<p>1</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>1</p>
-
-</li>
-<li>
-
-<p>As <m>f</m> is not defined for <m>x\lt 0</m>, this limit is not defined.</p>
-
-</li>
-<li>
-
-<p>1</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <sidebyside><!-- START figures/fig_01_04_ex_06.tex -->
-<image>
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[%
-%			xtick={-2,-1,1,2,3},% 
-%			ytick={-6,-4,-2,0,2,4,6},
-%			
-%			extra y ticks={-5,-3,...,7},%
+              <li><p>1</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <sidebyside>
+              <!-- START figures/fig_01_04_ex_06.tex -->
+              <image>
+                <description></description>
+                <latex-image-code>
+                  <![CDATA[
+                  \begin{tikzpicture}
+                  \begin{axis}[%
+                  %			xtick={-2,-1,1,2,3},% 
+                  %			ytick={-6,-4,-2,0,2,4,6},
+                  %			
+                  %			extra y ticks={-5,-3,...,7},%
 			ymin=-.1,ymax=2.1,%
 			xmin=-.1,xmax=2.1%
-]
+                  ]
 
-\addplot [thick,{\colorone}] coordinates {(0.,0) (1,1)};
-\addplot [{\colorone},thick] coordinates {(1,2) (2,0)};
+                  \addplot [thick,{\colorone}] coordinates {(0.,0) (1,1)};
+                  \addplot [{\colorone},thick] coordinates {(1,2) (2,0)};
 
-\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
-\fill[white,draw=black] (axis cs:1,1) circle (1.5pt);
-\fill[black,draw=black] (axis cs:1,2) circle (1.5pt);
-\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
-\end{axis}
+                  \fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:1,1) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:1,2) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+                  \end{axis}
 
 
-\end{tikzpicture}
-]]></latex-image-code>
-</image>
-<!-- figures/fig_01_04_ex_06.tex END -->
+                  \end{tikzpicture}
+                  ]]>
+                </latex-image-code>
+              </image>
+              <!-- figures/fig_01_04_ex_06.tex END -->
 
-<ol cols="2" >
-<li>
+              <ol cols="2" >
+                <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
+                <li><p><m>f(1)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 2^+} f(x)</m></p></li>
+              </ol>
+            </sidebyside>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>1</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p><m>f(1)</m></p>
+              <li><p>Does not exist.</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p><m>\ds \lim_{x\to 2^-} f(x)</m></p>
+              <li><p>0</p></li>
 
-</li>
-<li>
+              <li><p>As <m>f</m> is not defined for <m>x>2</m>, this limit is not defined.</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>1</p></li>
 
-<p><m>\ds \lim_{x\to 2^+} f(x)</m></p>
+              <li><p>2</p></li>
 
-</li>
-</ol></sidebyside>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist.</p></li>
 
-<p>1</p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
 
-<p>2</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>As <m>f</m> is not defined for <m>x>2</m>, this limit is not defined.</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>1</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>As <m>f</m> is not defined for <m>x>2</m>, this limit is not defined.</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <sidebyside><!-- START figures/fig_01_04_ex_07.tex -->
-<image>
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[%
-%			xtick={-2,-1,1,2,3},% 
-%			ytick={-6,-4,-2,0,2,4,6},
-%			
-%			extra y ticks={-5,-3,...,7},%
+              <li><p>As <m>f</m> is not defined for <m>x>2</m>, this limit is not defined.</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <sidebyside>
+              <!-- START figures/fig_01_04_ex_07.tex -->
+              <image>
+                <description></description>
+                <latex-image-code>
+                  <![CDATA[
+                  \begin{tikzpicture}
+                  \begin{axis}[%
+                  %			xtick={-2,-1,1,2,3},% 
+                  %			ytick={-6,-4,-2,0,2,4,6},
+                  %			
+                  %			extra y ticks={-5,-3,...,7},%
 			ymin=-.1,ymax=2.1,%
 			xmin=-.1,xmax=2.1%
-]
+                  ]
 
-%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
-%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
-\draw [thick,{\colorone}] (axis cs:0,0) parabola (axis cs:1,3);
-\draw [thick,{\colorone}] (axis cs:2,0) parabola (axis cs:1,3);
-\draw [{\colorone},dashed] (axis cs: 1,2.1) -- (axis cs:1,-.1);
+                  %\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+                  %\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+                  \draw [thick,{\colorone}] (axis cs:0,0) parabola (axis cs:1,3);
+                  \draw [thick,{\colorone}] (axis cs:2,0) parabola (axis cs:1,3);
+                  \draw [{\colorone},dashed] (axis cs: 1,2.1) -- (axis cs:1,-.1);
 
-\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
-%\fill[white,draw=black] (axis cs:1,1) circle (1.5pt);
-%\fill[black,draw=black] (axis cs:1,2) circle (1.5pt);
-\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
-\end{axis}
+                  \fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+                  %\fill[white,draw=black] (axis cs:1,1) circle (1.5pt);
+                  %\fill[black,draw=black] (axis cs:1,2) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+                  \end{axis}
 
 
-\end{tikzpicture}
-]]></latex-image-code>
-</image>
-<!-- figures/fig_01_04_ex_07.tex END -->
+                  \end{tikzpicture}
+                  ]]>
+                </latex-image-code>
+              </image>
+              <!-- figures/fig_01_04_ex_07.tex END -->
 
-<ol cols="2" >
-<li>
+              <ol cols="2" >
+                <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
+                <li><p><m>f(1)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+              </ol>
+            </sidebyside>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>Does not exist.</p></li>
 
-</li>
-<li>
+              <li><p>Does not exist.</p></li>
 
-<p><m>f(1)</m></p>
+              <li><p>Does not exist.</p></li>
 
-</li>
-<li>
+              <li><p>Not defined.</p></li>
 
-<p><m>\ds \lim_{x\to 2^-} f(x)</m></p>
+              <li><p>0</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>Does not exist.</p></li>
 
-<p><m>\ds \lim_{x\to 0^+} f(x)</m></p>
+              <li><p>Does not exist.</p></li>
 
-</li>
-</ol></sidebyside>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist.</p></li>
 
-<p>Does not exist.</p>
+              <li><p>Not defined.</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
 
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>Not defined.</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>Not defined.</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <sidebyside><!-- START figures/fig_01_04_ex_08.tex -->
-<image>
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[%
-%			xtick={-2,-1,1,2,3},% 
-%			ytick={-6,-4,-2,0,2,4,6},
-%			
-%			extra y ticks={-5,-3,...,7},%
+              <li><p>0</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <sidebyside>
+              <!-- START figures/fig_01_04_ex_08.tex -->
+              <image>
+                <description></description>
+                <latex-image-code>
+                  <![CDATA[
+                  \begin{tikzpicture}
+                  \begin{axis}[%
+                  %			xtick={-2,-1,1,2,3},% 
+                  %			ytick={-6,-4,-2,0,2,4,6},
+                  %			
+                  %			extra y ticks={-5,-3,...,7},%
 			ymin=-.1,ymax=2.1,%
 			xmin=-.1,xmax=2.1%
-]
+                  ]
 
-%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
-%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
-\draw [thick,{\colorone}] (axis cs:1,0) parabola (axis cs:2,2);
-\draw [thick,{\colorone}] (axis cs:0,1) -- (axis cs:1,2);
+                  %\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+                  %\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+                  \draw [thick,{\colorone}] (axis cs:1,0) parabola (axis cs:2,2);
+                  \draw [thick,{\colorone}] (axis cs:0,1) -- (axis cs:1,2);
 
-\fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
-\fill[white,draw=black] (axis cs:1,2) circle (1.5pt);
-\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
-\fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
-\fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
-\end{axis}
+                  \fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:1,2) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
+                  \end{axis}
 
 
-\end{tikzpicture}
-]]></latex-image-code>
-</image>
-<!-- figures/fig_01_04_ex_08.tex END -->
+                  \end{tikzpicture}
+                  ]]>
+                </latex-image-code>
+              </image>
+              <!-- figures/fig_01_04_ex_08.tex END -->
 
-<ol cols="2" >
-<li>
+              <ol cols="2" >
+                <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
+                <li><p><m>f(1)</m></p></li>
+              </ol>
+            </sidebyside>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
 
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
+              <li><p>Does not exist.</p></li>
 
-</li>
-<li>
+              <li><p>1</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>2</p></li>
 
-<p><m>f(1)</m></p>
+              <li><p>0</p></li>
 
-</li>
-</ol></sidebyside>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist.</p></li>
 
-<p>2</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>1</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>1</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <sidebyside><!-- START figures/fig_01_04_ex_09.tex -->
-<image>
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[%
-%			xtick={-2,-1,1,2,3},% 
-%			ytick={-6,-4,-2,0,2,4,6},
-%			
-%			extra y ticks={-5,-3,...,7},%
+              <li><p>1</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <sidebyside>
+              <!-- START figures/fig_01_04_ex_09.tex -->
+              <image>
+                <description></description>
+                <latex-image-code>
+                  <![CDATA[
+                  \begin{tikzpicture}
+                  \begin{axis}[%
+                  %			xtick={-2,-1,1,2,3},% 
+                  %			ytick={-6,-4,-2,0,2,4,6},
+                  %			
+                  %			extra y ticks={-5,-3,...,7},%
 			ymin=-.1,ymax=2.1,%
 			xmin=-.1,xmax=2.1%
-]
+                  ]
 
-%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
-%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
-\draw [thick,{\colorone}] (axis cs:1,2) parabola (axis cs:0,0);
-\draw [thick,{\colorone}] (axis cs:1,2) -- (axis cs:2,0);
+                  %\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+                  %\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+                  \draw [thick,{\colorone}] (axis cs:1,2) parabola (axis cs:0,0);
+                  \draw [thick,{\colorone}] (axis cs:1,2) -- (axis cs:2,0);
 
-\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
-\fill[black,draw=black] (axis cs:1,2) circle (1.5pt);
-\fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
-%\fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
-%\fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
-\end{axis}
+                  \fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:1,2) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:2,0) circle (1.5pt);
+                  %\fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
+                  %\fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
+                  \end{axis}
 
 
-\end{tikzpicture}
-]]></latex-image-code>
-</image>
-<!-- figures/fig_01_04_ex_09.tex END -->
+                  \end{tikzpicture}
+                  ]]>
+                </latex-image-code>
+              </image>
+              <!-- figures/fig_01_04_ex_09.tex END -->
 
-<ol cols="2" >
-<li>
+              <ol cols="2" >
+                <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
+                <li><p><m>f(1)</m></p></li>
+              </ol>
+            </sidebyside>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>2</p></li>
 
-<p><m>f(1)</m></p>
+              <li><p>2</p></li>
 
-</li>
-</ol></sidebyside>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>2</p></li>
 
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <sidebyside><!-- START figures/fig_01_04_ex_10.tex -->
-<image>
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[%
+              <li><p>2</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <sidebyside>
+              <!-- START figures/fig_01_04_ex_10.tex -->
+              <image>
+                <description></description>
+                <latex-image-code>
+                  <![CDATA[
+                  \begin{tikzpicture}
+                  \begin{axis}[%
 			xtick={-4,...,-1,1,2,...,4},% 
-%			ytick={-6,-4,-2,0,2,4,6},
-%			
-%			extra y ticks={-5,-3,...,7},%
+                  %			ytick={-6,-4,-2,0,2,4,6},
+                  %			
+                  %			extra y ticks={-5,-3,...,7},%
 			ymin=-4.5,ymax=4.5,%
 			xmin=-4.5,xmax=4.5%
-]
+                  ]
 
-%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
-%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
-\addplot [thick,{\colorone},domain=-4:0] {4*cos(deg(x)*3.14159/4};
-\addplot [thick,{\colorone},domain=0:4]  {-4*cos(deg(x)*3.14159/4};
-%
-\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
-\fill[white,draw=black] (axis cs:0,4) circle (1.5pt);
-\fill[black,draw=black] (axis cs:-4,-4) circle (1.5pt);
-\fill[black,draw=black] (axis cs:4,4) circle (1.5pt);
-\fill[white,draw=black] (axis cs:0,-4) circle (1.5pt);
-\end{axis}
+                  %\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+                  %\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+                  \addplot [thick,{\colorone},domain=-4:0] {4*cos(deg(x)*3.14159/4};
+                  \addplot [thick,{\colorone},domain=0:4]  {-4*cos(deg(x)*3.14159/4};
+                  %
+                  \fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:0,4) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:-4,-4) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:4,4) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:0,-4) circle (1.5pt);
+                  \end{axis}
 
 
-\end{tikzpicture}
-]]></latex-image-code>
-</image>
-<!-- figures/fig_01_04_ex_10.tex END -->
+                  \end{tikzpicture}
+                  ]]>
+                </latex-image-code>
+              </image>
+              <!-- figures/fig_01_04_ex_10.tex END -->
 
-<ol cols="2" >
-<li>
+              <ol cols="2" >
+                <li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 0^-} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 0} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 0^+} f(x)</m></p>
+                <li><p><m>f(0)</m></p></li>
+              </ol>
+            </sidebyside>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>4</p></li>
 
-</li>
-<li>
+              <li><p><m>-4</m></p></li>
 
-<p><m>\ds \lim_{x\to 0} f(x)</m></p>
+              <li><p>Does not exist.</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>4</p></li>
 
-<p><m>f(0)</m></p>
+              <li><p><m>-4</m></p></li>
 
-</li>
-</ol></sidebyside>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist.</p></li>
 
-<p>4</p>
-
-</li>
-<li>
-
-<p><m>-4</m></p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>4</p>
-
-</li>
-<li>
-
-<p><m>-4</m></p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <sidebyside><!-- START figures/fig_01_04_ex_11.tex -->
-<image>
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[%
+              <li><p>0</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <sidebyside>
+              <!-- START figures/fig_01_04_ex_11.tex -->
+              <image>
+                <description></description>
+                <latex-image-code>
+                  <![CDATA[
+                  \begin{tikzpicture}
+                  \begin{axis}[%
 			xtick={-4,...,-1,1,2,...,4},% 
-%			ytick={-6,-4,-2,0,2,4,6},
-%			
-%			extra y ticks={-5,-3,...,7},%
+                  %			ytick={-6,-4,-2,0,2,4,6},
+                  %			
+                  %			extra y ticks={-5,-3,...,7},%
 			ymin=-4.5,ymax=4.5,%
 			xmin=-4.5,xmax=4.5%
-]
+                  ]
 
-%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
-%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
-\addplot [thick,{\colorone}] coordinates {(-4,0) (-2,2) (0,0) (2,2) (4,0)}; 
-%\addplot [thick,{\colorone},domain=0:4]  {-4*cos(deg(x)*3.14159/4};
-%
-\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
-\fill[black,draw=black] (axis cs:-4,0) circle (1.5pt);
-\fill[black,draw=black] (axis cs:-2,0) circle (1.5pt);
-\fill[white,draw=black] (axis cs:-2,2) circle (1.5pt);
-\fill[white,draw=black] (axis cs:2,2) circle (1.5pt);
-\fill[black,draw=black] (axis cs:4,0) circle (1.5pt);
-\end{axis}
+                  %\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+                  %\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+                  \addplot [thick,{\colorone}] coordinates {(-4,0) (-2,2) (0,0) (2,2) (4,0)}; 
+                  %\addplot [thick,{\colorone},domain=0:4]  {-4*cos(deg(x)*3.14159/4};
+                  %
+                  \fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:-4,0) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:-2,0) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:-2,2) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:2,2) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:4,0) circle (1.5pt);
+                  \end{axis}
 
 
-\end{tikzpicture}
-]]></latex-image-code>
-</image>
-<!-- figures/fig_01_04_ex_11.tex END -->
+                  \end{tikzpicture}
+                  ]]>
+                </latex-image-code>
+              </image>
+              <!-- figures/fig_01_04_ex_11.tex END -->
 
-<ol cols="2" >
-<li>
+              <ol cols="2" >
+                <li><p><m>\ds \lim_{x\to -2^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to -2^-} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to -2^+} f(x)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to -2} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to -2^+} f(x)</m></p>
+                <li><p><m>f(-2)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to -2} f(x)</m></p>
+                <li><p><m>\ds \lim_{x\to 2^+} f(x)</m></p></li>
 
-</li>
-<li>
+                <li><p><m>\ds \lim_{x\to 2} f(x)</m></p></li>
 
-<p><m>f(-2)</m></p>
+                <li><p><m>f(2)</m></p></li>
+              </ol>
+            </sidebyside>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p><m>\ds \lim_{x\to 2^-} f(x)</m></p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
 
-<p><m>\ds \lim_{x\to 2^+} f(x)</m></p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p><m>\ds \lim_{x\to 2} f(x)</m></p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>Not defined</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>2</p></li>
 
-<p><m>f(2)</m></p>
+              <li><p>2</p></li>
 
-</li>
-</ol></sidebyside>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>2</p></li>
 
-<p>2</p>
+              <li><p>0</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p>2</p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p>2</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>Not defined</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>Not defined</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <sidebyside><!-- START figures/fig_01_04_ex_12.tex -->
-<image>
-<description></description>
-<latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[%
+              <li><p>Not defined</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <sidebyside>
+              <!-- START figures/fig_01_04_ex_12.tex -->
+              <image>
+                <description></description>
+                <latex-image-code>
+                  <![CDATA[
+                  \begin{tikzpicture}
+                  \begin{axis}[%
 			xtick={-4,...,-1,1,2,...,4},% 
-%			ytick={-6,-4,-2,0,2,4,6},
-%			
-%			extra y ticks={-5,-3,...,7},%
+                  %			ytick={-6,-4,-2,0,2,4,6},
+                  %			
+                  %			extra y ticks={-5,-3,...,7},%
 			ymin=-4.5,ymax=4.5,%
 			xmin=-4.5,xmax=4.5%
-]
-\draw [thick,{\colorone}] (axis cs:-4,-4) -- (axis cs:-3,-4);
-\draw [thick,{\colorone}] (axis cs:-3,-3) -- (axis cs:-2,-3);
-\draw [thick,{\colorone}] (axis cs:-2,-2) -- (axis cs:-1,-2);
-\draw [thick,{\colorone}] (axis cs:-1,-1) -- (axis cs:0,-1);
-\draw [thick,{\colorone}] (axis cs:0,0) -- (axis cs:1,0);
-\draw [thick,{\colorone}] (axis cs:1,1) -- (axis cs:2,1);
-\draw [thick,{\colorone}] (axis cs:2,2) -- (axis cs:3,2);
-\draw [thick,{\colorone}] (axis cs:3,3) -- (axis cs:4,3);
+                  ]
+                  \draw [thick,{\colorone}] (axis cs:-4,-4) -- (axis cs:-3,-4);
+                  \draw [thick,{\colorone}] (axis cs:-3,-3) -- (axis cs:-2,-3);
+                  \draw [thick,{\colorone}] (axis cs:-2,-2) -- (axis cs:-1,-2);
+                  \draw [thick,{\colorone}] (axis cs:-1,-1) -- (axis cs:0,-1);
+                  \draw [thick,{\colorone}] (axis cs:0,0) -- (axis cs:1,0);
+                  \draw [thick,{\colorone}] (axis cs:1,1) -- (axis cs:2,1);
+                  \draw [thick,{\colorone}] (axis cs:2,2) -- (axis cs:3,2);
+                  \draw [thick,{\colorone}] (axis cs:3,3) -- (axis cs:4,3);
 
-%
-\fill[black,draw=black] (axis cs:-4,-4) circle (1.5pt);
-\fill[white,draw=black] (axis cs:-3,-4) circle (1.5pt);
-\fill[black,draw=black] (axis cs:-3,-3) circle (1.5pt);
-\fill[white,draw=black] (axis cs:-2,-3) circle (1.5pt);
-\fill[black,draw=black] (axis cs:-2,-2) circle (1.5pt);
-\fill[white,draw=black] (axis cs:-1,-2) circle (1.5pt);
-\fill[black,draw=black] (axis cs:-1,-1) circle (1.5pt);
-\fill[white,draw=black] (axis cs:0,-1) circle (1.5pt);
-\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
-\fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
-\fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
-\fill[white,draw=black] (axis cs:2,1) circle (1.5pt);
-\fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
-\fill[white,draw=black] (axis cs:3,2) circle (1.5pt);
-\fill[black,draw=black] (axis cs:3,3) circle (1.5pt);
-\fill[white,draw=black] (axis cs:4,3) circle (1.5pt);
-\end{axis}
+                  %
+                  \fill[black,draw=black] (axis cs:-4,-4) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:-3,-4) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:-3,-3) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:-2,-3) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:-2,-2) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:-1,-2) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:-1,-1) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:0,-1) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:1,1) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:2,1) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:3,2) circle (1.5pt);
+                  \fill[black,draw=black] (axis cs:3,3) circle (1.5pt);
+                  \fill[white,draw=black] (axis cs:4,3) circle (1.5pt);
+                  \end{axis}
 
 
-\end{tikzpicture}
-]]></latex-image-code>
-</image>
-<!-- figures/fig_01_04_ex_12.tex END --></sidebyside>
+                  \end{tikzpicture}
+                  ]]>
+                </latex-image-code>
+              </image>
+              <!-- figures/fig_01_04_ex_12.tex END -->
+            </sidebyside>
 
-<p>Let <m>-3\leq a\leq 3</m> be an integer.</p>
+            <p>Let <m>-3\leq a\leq 3</m> be an integer.</p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to a^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to a^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to a^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to a} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to a^+} f(x)</m></p>
+              <li><p><m>f(a)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p><m>a-1</m></p></li>
 
-</li>
-<li>
+              <li><p><m>a</m></p></li>
 
-<p><m>\ds \lim_{x\to a} f(x)</m></p>
+              <li><p>Does not exist.</p></li>
 
-</li>
-<li>
+              <li><p><m>a</m></p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p><m>a-1</m></p></li>
 
-<p><m>f(a)</m></p>
+              <li><p><m>a</m></p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist.</p></li>
 
-<p><m>a-1</m></p>
-
-</li>
-<li>
-
-<p><m>a</m></p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p><m>a</m></p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p><m>a-1</m></p>
-
-</li>
-<li>
-
-<p><m>a</m></p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p><m>a</m></p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-<p>In the following exercises, evaluate the given limits of the piecewise defined functions <m>f</m>.</p>
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p><m>\ds f(x) = \left\{\begin{array}{ccc}
+              <li><p><m>a</m></p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <p>In the following exercises, evaluate the given limits of the piecewise defined functions <m>f</m>.</p>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
 	x+1 \amp  \amp  x\leq 1 \\
 	x^2-5 \amp  \amp  x>1
-\end{array} 
+              \end{array} 
 	\right.</m></p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
+              <li><p><m>f(1)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p><m>-4</m></p></li>
 
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
+              <li><p>Does not exist.</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>2</p></li>
 
-<p><m>f(1)</m></p>
+              <li><p><m>-4</m></p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist.</p></li>
 
-<p>2</p>
-
-</li>
-<li>
-
-<p><m>-4</m></p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p><m>-4</m></p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p><m>\ds f(x) = \left\{\begin{array}{ccc}
+              <li><p>2</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
 	2x^2+5x-1 \amp  \amp  x\lt 0 \\
 	\sin x \amp  \amp  x\geq 0
-\end{array} 
+              \end{array} 
 	\right.</m></p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 0^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to 0} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 0^+} f(x)</m></p>
+              <li><p><m>f(0)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p><m>-1</m></p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
 
-<p><m>\ds \lim_{x\to 0} f(x)</m></p>
+              <li><p>Does not exist.</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p><m>-1</m></p></li>
 
-<p><m>f(0)</m></p>
+              <li><p>0</p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist.</p></li>
 
-<p><m>-1</m></p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p><m>-1</m></p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p><m>\ds f(x) = \left\{\begin{array}{ccc}
+              <li><p>0</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
 	x^2-1 \amp  \amp  x\lt -1 \\
 	x^3+1 \amp  \amp  -1\leq x\leq 1\\
 	x^2+1 \amp  \amp  x>1
-\end{array} 
+              \end{array} 
 	\right.</m></p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to -1^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to -1^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to -1^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to -1} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to -1^+} f(x)</m></p>
+              <li><p><m>f(-1)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to -1} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
 
-<p><m>f(-1)</m></p>
+              <li><p><m>f(1)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>0</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
 
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
+              <li><p>0</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
 
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>0</p></li>
 
-<p><m>f(1)</m></p>
+              <li><p>0</p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>0</p></li>
 
-<p>0</p>
+              <li><p>0</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p>0</p>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>2</p></li>
 
-<p>0</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>2</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p><m>\ds f(x) = \left\{\begin{array}{ccc}
+              <li><p>2</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
 	\cos x \amp  \amp  x\lt \pi \\
 	\sin x \amp  \amp  x\geq \pi
-\end{array} 
+              \end{array} 
 	\right.</m></p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to \pi^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to \pi^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to \pi^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to \pi} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to \pi^+} f(x)</m></p>
+              <li><p><m>f(\pi)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p><m>-1</m></p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
 
-<p><m>\ds \lim_{x\to \pi} f(x)</m></p>
+              <li><p>Does not exist.</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p><m>-1</m></p></li>
 
-<p><m>f(\pi)</m></p>
+              <li><p>0</p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist.</p></li>
 
-<p><m>-1</m></p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p><m>-1</m></p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>Does not exist.</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p><m>\ds f(x) = \left\{\begin{array}{ccc}
+              <li><p>0</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
 	1-\cos^2 x \amp  \amp  x\lt a \\
 	\sin^2 x \amp  \amp  x\geq a
-\end{array} ,
+              \end{array} ,
 	\right.</m></p>
 
-<p>where <m>a</m> is a real number.</p>
+            <p>where <m>a</m> is a real number.</p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to a^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to a^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to a^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to a} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to a^+} f(x)</m></p>
+              <li><p><m>f(a)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p><m>1-\cos^2 a = \sin^2 a</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\sin^2 a</m></p></li>
 
-<p><m>\ds \lim_{x\to a} f(x)</m></p>
+              <li><p><m>\sin^2 a</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\sin ^2 a</m></p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p><m>1-\cos^2 a = \sin^2 a</m></p></li>
 
-<p><m>f(a)</m></p>
+              <li><p><m>\sin^2 a</m></p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p><m>\sin^2 a</m></p></li>
 
-<p><m>1-\cos^2 a = \sin^2 a</m></p>
-
-</li>
-<li>
-
-<p><m>\sin^2 a</m></p>
-
-</li>
-<li>
-
-<p><m>\sin^2 a</m></p>
-
-</li>
-<li>
-
-<p><m>\sin ^2 a</m></p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p><m>1-\cos^2 a = \sin^2 a</m></p>
-
-</li>
-<li>
-
-<p><m>\sin^2 a</m></p>
-
-</li>
-<li>
-
-<p><m>\sin^2 a</m></p>
-
-</li>
-<li>
-
-<p><m>\sin ^2 a</m></p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p><m>\ds f(x) = \left\{\begin{array}{ccc}
+              <li><p><m>\sin ^2 a</m></p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
 	x+1 \amp  \amp  x\lt 1 \\
 	1  \amp  \amp  x=1\\
 	x-1 \amp  \amp  x>1
-\end{array} 
+              \end{array} 
 	\right.</m></p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 1^+} f(x)</m></p>
+              <li><p><m>f(1)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>2</p></li>
 
-</li>
-<li>
+              <li><p>0</p></li>
 
-<p><m>\ds \lim_{x\to 1} f(x)</m></p>
+              <li><p>Does not exist</p></li>
 
-</li>
-<li>
+              <li><p>1</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>2</p></li>
 
-<p><m>f(1)</m></p>
+              <li><p>0</p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist</p></li>
 
-<p>2</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>Does not exist</p>
-
-</li>
-<li>
-
-<p>1</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>2</p>
-
-</li>
-<li>
-
-<p>0</p>
-
-</li>
-<li>
-
-<p>Does not exist</p>
-
-</li>
-<li>
-
-<p>1</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p><m>\ds f(x) = \left\{\begin{array}{ccc}
+              <li><p>1</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
 	x^2 \amp  \amp  x\lt 2 \\
 	x+1  \amp  \amp  x=2\\
 	-x^2+2x+4 \amp  \amp  x>2
-\end{array} 
+              \end{array} 
 	\right.</m></p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 2^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to 2^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to 2} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 2^+} f(x)</m></p>
+              <li><p><m>f(2)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p>4</p></li>
 
-</li>
-<li>
+              <li><p>4</p></li>
 
-<p><m>\ds \lim_{x\to 2} f(x)</m></p>
+              <li><p>4</p></li>
 
-</li>
-<li>
+              <li><p>3</p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p>4</p></li>
 
-<p><m>f(2)</m></p>
+              <li><p>4</p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>4</p></li>
 
-<p>4</p>
-
-</li>
-<li>
-
-<p>4</p>
-
-</li>
-<li>
-
-<p>4</p>
-
-</li>
-<li>
-
-<p>3</p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p>4</p>
-
-</li>
-<li>
-
-<p>4</p>
-
-</li>
-<li>
-
-<p>4</p>
-
-</li>
-<li>
-
-<p>3</p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p><m>\ds f(x) = \left\{\begin{array}{ccc}
+              <li><p>3</p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
 	a(x-b)^2+c \amp  \amp  x\lt b \\
 	a(x-b)+c \amp  \amp  x\geq b
-\end{array} 
+              \end{array} 
 	\right.,</m></p>
 
-<p>where <m>a</m>, <m>b</m> and <m>c</m> are real numbers.</p>
+            <p>where <m>a</m>, <m>b</m> and <m>c</m> are real numbers.</p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to b^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to b^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to b^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to b} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to b^+} f(x)</m></p>
+              <li><p><m>f(b)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p><m>c</m></p></li>
 
-</li>
-<li>
+              <li><p><m>c</m></p></li>
 
-<p><m>\ds \lim_{x\to b} f(x)</m></p>
+              <li><p><m>c</m></p></li>
 
-</li>
-<li>
+              <li><p><m>c</m></p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p><m>c</m></p></li>
 
-<p><m>f(b)</m></p>
+              <li><p><m>c</m></p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p><m>c</m></p></li>
 
-<p><m>c</m></p>
-
-</li>
-<li>
-
-<p><m>c</m></p>
-
-</li>
-<li>
-
-<p><m>c</m></p>
-
-</li>
-<li>
-
-<p><m>c</m></p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p><m>c</m></p>
-
-</li>
-<li>
-
-<p><m>c</m></p>
-
-</li>
-<li>
-
-<p><m>c</m></p>
-
-</li>
-<li>
-
-<p><m>c</m></p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p><m>\ds f(x) = \left\{\begin{array}{ccc}
+              <li><p><m>c</m></p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
 	\frac{|x|}{x} \amp  \amp  x\neq 0 \\
 	0 \amp  \amp  x=0
-\end{array} 
+              \end{array} 
 	\right.</m></p>
 
-<ol cols="2" >
-<li>
+            <ol cols="2" >
+              <li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 0^-} f(x)</m></p>
+              <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
 
-</li>
-<li>
+              <li><p><m>\ds \lim_{x\to 0} f(x)</m></p></li>
 
-<p><m>\ds \lim_{x\to 0^+} f(x)</m></p>
+              <li><p><m>f(0)</m></p></li>
+            </ol>
+          </statement>
+          <answer>
+            <ol>
+              <li><p><m>-1</m></p></li>
 
-</li>
-<li>
+              <li><p><m>1</m></p></li>
 
-<p><m>\ds \lim_{x\to 0} f(x)</m></p>
+              <li><p>Does not exist</p></li>
 
-</li>
-<li>
+              <li><p><m>0</m></p></li>
+            </ol>
+          </answer>
+          <solution>
+            <ol>
+              <li><p><m>-1</m></p></li>
 
-<p><m>f(0)</m></p>
+              <li><p><m>1</m></p></li>
 
-</li>
-</ol>
-      </statement>
-      <answer>
-        <ol>
-<li>
+              <li><p>Does not exist</p></li>
 
-<p><m>-1</m></p>
-
-</li>
-<li>
-
-<p><m>1</m></p>
-
-</li>
-<li>
-
-<p>Does not exist</p>
-
-</li>
-<li>
-
-<p><m>0</m></p>
-
-</li>
-</ol>
-      </answer>
-      <solution>
-        <ol>
-<li>
-
-<p><m>-1</m></p>
-
-</li>
-<li>
-
-<p><m>1</m></p>
-
-</li>
-<li>
-
-<p>Does not exist</p>
-
-</li>
-<li>
-
-<p><m>0</m></p>
-
-</li>
-</ol>
-      </solution>
-    </webwork>
-  </exercise>
-</exercisegroup>
-
-<exercisegroup>
-<title>Review</title>
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p>Evaluate the limit: <m>\ds \lim_{x\to -1} \frac{x^2+5 x+4}{x^2-3 x-4}</m>.</p>
-      </statement>
-      <answer>
-        <p><m>-3/5</m></p>
-      </answer>
-      <solution>
-        <p><m>-3/5</m></p>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p>Evaluate the limit: <m>\ds \lim_{x\to -4} \frac{x^2-16}{x^2-4 x-32}</m>.</p>
-      </statement>
-      <answer>
-        <p><m>2/3</m></p>
-      </answer>
-      <solution>
-        <p><m>2/3</m></p>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p>Evaluate the limit: <m>\ds \lim_{x\to -6} \frac{x^2-15 x+54}{x^2-6 x}</m>.</p>
-      </statement>
-      <answer>
-        <p><m>2.5</m></p>
-      </answer>
-      <solution>
-        <p><m>2.5</m></p>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p>Approximate the limit numerically: <m>\ds \lim_{x\to 0.4} \frac{x^2-4.4 x+1.6}{x^2-0.4 x}</m>.</p>
-      </statement>
-      <answer>
-        <p><m>-9</m></p>
-      </answer>
-      <solution>
-        <p><m>-9</m></p>
-      </solution>
-    </webwork>
-  </exercise>
-
-  <exercise>
-    <webwork seed="1">
-      <setup>
-        <var name="">
-          <static></static>
-        </var>
-        <pg-code>
-        </pg-code>
-      </setup>
-      <statement>
-        <p>Approximate the limit numerically:
-<m>\ds \lim_{x\to 0.2} \frac{x^2+5.8 x-1.2}{x^2-4.2 x+0.8}</m>.</p>
-      </statement>
-      <answer>
-        <p><m>-1.63</m></p>
-      </answer>
-      <solution>
-        <p><m>-1.63</m></p>
-      </solution>
-    </webwork>
-  </exercise>
-</exercisegroup>
-
-</exercises></section>
+              <li><p><m>0</m></p></li>
+            </ol>
+          </solution>
+        </webwork>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <title>Review</title>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Evaluate the limit: <m>\ds \lim_{x\to -1} \frac{x^2+5 x+4}{x^2-3 x-4}</m>.</p>
+          </statement>
+          <answer>
+            <p><m>-3/5</m></p>
+          </answer>
+          <solution>
+            <p><m>-3/5</m></p>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Evaluate the limit: <m>\ds \lim_{x\to -4} \frac{x^2-16}{x^2-4 x-32}</m>.</p>
+          </statement>
+          <answer>
+            <p><m>2/3</m></p>
+          </answer>
+          <solution>
+            <p><m>2/3</m></p>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Evaluate the limit: <m>\ds \lim_{x\to -6} \frac{x^2-15 x+54}{x^2-6 x}</m>.</p>
+          </statement>
+          <answer>
+            <p><m>2.5</m></p>
+          </answer>
+          <solution>
+            <p><m>2.5</m></p>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Approximate the limit numerically: <m>\ds \lim_{x\to 0.4} \frac{x^2-4.4 x+1.6}{x^2-0.4 x}</m>.</p>
+          </statement>
+          <answer>
+            <p><m>-9</m></p>
+          </answer>
+          <solution>
+            <p><m>-9</m></p>
+          </solution>
+        </webwork>
+      </exercise>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="">
+              <static></static>
+            </var>
+            <pg-code>
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Approximate the limit numerically:
+              <m>\ds \lim_{x\to 0.2} \frac{x^2+5.8 x-1.2}{x^2-4.2 x+0.8}</m>.</p>
+          </statement>
+          <answer>
+            <p><m>-1.63</m></p>
+          </answer>
+          <solution>
+            <p><m>-1.63</m></p>
+          </solution>
+        </webwork>
+      </exercise>
+    </exercisegroup>
+  </exercises>
+</section>
