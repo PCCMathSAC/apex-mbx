@@ -419,92 +419,311 @@
       <title>Terms and Concepts</title>
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>What is wrong with the following <q>definition</q> of a limit?</p>
 
             <blockquote>
-            <q>The limit of <m>f(x)</m>, as <m>x</m> approaches <m>a</m>, is <m>K</m></q> means that given any <m>\delta>0</m> there exists <m>\epsilon>0</m> such that whenever <m>|f(x)-K|\lt  \epsilon</m>, we have <m>|x-a|\lt \delta</m>.
+            <q>The limit of <m>f(x)</m>, as <m>x</m> approaches <m>a</m>, is <m>K</m></q> means that given any <m>\delta>0</m> there exists <m>\varepsilon>0</m> such that whenever <m>\abs{f(x)-K}\lt\varepsilon</m>, we have <m>\abs{x-a}\lt \delta</m>.
             </blockquote>
+
+            <p>
+              <var form="essay" />
+            </p>
           </statement>
+
           <answer>
-            <p><m>\epsilon</m> should be given first, and the restriction <m>|x-a|\lt \delta</m> implies <m>|f(x)-K|\lt  \epsilon</m>, not the other way around.</p>
+            <p><m>\varepsilon</m> should be given first, and the restriction <m>\abs{x-a}\lt \delta</m> implies <m>\abs{f(x)-K}\lt\varepsilon</m>, not the other way around.</p>
           </answer>
+
           <solution>
-            <p><m>\epsilon</m> should be given first, and the restriction <m>|x-a|\lt \delta</m> implies <m>|f(x)-K|\lt  \epsilon</m>, not the other way around.</p>
+            <p><m>\varepsilon</m> should be given first, and the restriction <m>\abs{x-a}\lt \delta</m> implies <m>\abs{f(x)-K}\lt\varepsilon</m>, not the other way around.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$whichfirst">
+              <set>
+                <member><m>x</m>-tolerance</member>
+                <member correct="yes"><m>y</m>-tolerance</member>
+              </set>
             </var>
             <pg-code>
+              $limitequalsvalue=PopUp(['?','x-tolerance','y-tolerance'],'y-tolerance');
             </pg-code>
           </setup>
           <statement>
-            <p>Which is given first in establishing a limit, the <m>x</m><ndash />tolerance or the <m>y</m><ndash />tolerance?</p>
+            <p>Which is given first in establishing a limit, the <m>x</m>-tolerance or the <m>y</m>-tolerance?</p>
+
+            <p><var name="$limitequalsvalue" form="popup"/> is given first.</p>
           </statement>
           <answer>
-            <p>The <m>y</m><ndash />tolerance.</p>
+            <p><m>y</m>-tolerance</p>
           </answer>
           <solution>
-            <p>The <m>y</m><ndash />tolerance.</p>
+            <p>The <m>y</m><ndash />tolerance is given first.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$ispositive">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $ispositive=PopUp(['?','True','False'],'True');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: <m>\epsilon</m> must always be positive.</p>
+            <p>True or False? <m>\varepsilon</m> must always be positive.
+               <var name="$ispositive" form="popup"/>
+            </p>
           </statement>
           <answer>
-            <p>T</p>
+            <p>True</p>
           </answer>
           <solution>
-            <p>T</p>
+            <p>True</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$ispositive">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $ispositive=PopUp(['?','True','False'],'True');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: <m>\delta</m> must always be positive.</p>
+            <p>True or False? <m>\delta</m> must always be positive.
+               <var name="$ispositive" form="popup"/>
+            </p>
           </statement>
           <answer>
-            <p>T</p>
+            <p>True</p>
           </answer>
           <solution>
-            <p>T</p>
+            <p>True</p>
           </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises, prove the given limit using an <m>\epsilon - \delta</m> proof.</p>
+
+      <introduction>
+        <p>In the following exercises, prove the given limit using an <m>\varepsilon</m>-<m>\delta</m> proof.</p>
+      </introduction>
+
+      <exercise>
+        <webwork seed="1">
+          <statement>
+            <p>Prove that <m>\lim\limits_{x\to5}(3-x)=-2</m>.</p>
+          </statement>
+          <answer>
+            <p>Answers will vary in style and certain details.</p>
+          </answer>
+          <solution>
+            <p>Let <m>\varepsilon>0</m> be given. We wish to find <m>\delta>0</m> such that when <m>\abs{x-5}\lt\delta</m>, <m>\abs{f(x)-(-2)}\lt\varepsilon</m>.</p>
+
+            <p>First, some preliminary investigation to find a suitable <m>\delta</m>. Consider <m>\abs{f(x)-(-2)}\lt\varepsilon</m>:<md>
+                <mrow>\abs{f(x)+2}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{(3-x)+2}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{5-x}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x-5}\amp\lt\varepsilon</mrow>
+            </md>Since we want to start with <m>\abs{x-5}\lt\delta</m>, this suggests we let <m>\delta=\varepsilon</m>.</p>
+
+            <p>Now we can apply the definition.<md>
+                <mrow>\abs{x-5}\amp\lt\delta</mrow>
+                <mrow>\abs{x-5}\amp\lt\varepsilon</mrow>
+                <mrow>-\varepsilon\lt x-5\amp\lt\varepsilon</mrow>
+                <mrow>-\varepsilon\lt (x-3)-2\amp\lt\varepsilon</mrow>
+                <mrow>\varepsilon\gt(-x+3)-(-2)\gt\amp-\varepsilon</mrow>
+                <mrow>\abs{(3-x)-(-2)}\amp\lt\varepsilon\text{.}</mrow>
+            </md>In other words, <m>\abs{x-5}\lt\delta</m> implies <m>\abs{(3-x)-(-2)}\lt\varepsilon</m>. This is what we needed to prove.</p>
+          </solution>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <statement>
+            <p>Prove that <m>\lim\limits_{x\to3}(x^2-3)=6</m>.</p>
+          </statement>
+          <answer>
+            <p>Answers will vary in style and certain details.</p>
+          </answer>
+          <solution>
+            <p>Let <m>\varepsilon>0</m> be given. We wish to find <m>\delta>0</m> such that when <m>\abs{x-3}\lt\delta</m>, <m>\abs{f(x)-6}\lt\varepsilon</m>.</p>
+
+            <p>First, some preliminary investigation to find a suitable <m>\delta</m>. Consider <m>\abs{f(x)-6}\lt\varepsilon</m>:<md>
+                <mrow>\abs{\left(x^2-3\right)-6}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x^2-9}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x-3}\cdot\abs{x+3}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x-3}\amp\lt\frac{\varepsilon}{\abs{x+3}}</mrow>
+            </md>Since <m>x</m> is near <m>3</m>, we can safely assume that, for instance, <m>2\lt x\lt 4</m>. Thus<md>
+                <mrow>2+3\lt x+3\lt4+3</mrow>
+                <mrow>5\lt x+3\lt 7</mrow>
+                <mrow>\frac{1}{7}\lt\frac{1}{x+3}\lt\frac{1}{5}</mrow>
+                <mrow>\frac{\varepsilon}{7}\lt\frac{\varepsilon}{x+3}\lt\frac{\varepsilon}{5}</mrow>
+            </md>Since we need to begin the actual proof with <m>\abs{x-3}\lt\delta</m>, this suggests that we take <m>\delta=\frac{\varepsilon}{7}</m>. </p>
+
+            <p>Now we can apply the definition.<md>
+                <mrow>\abs{x-3}\amp\lt\delta</mrow>
+                <mrow>\abs{x-3}\amp\lt\frac{\varepsilon}{7}</mrow>
+                <mrow>\abs{x-3}\amp\lt\frac{\varepsilon}{\abs{x+3}}</mrow>
+                <mrow>\abs{x-3}\cdot\abs{x+3}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x^2-9}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{\left(x^2-3\right)-6}\amp\lt\varepsilon</mrow>
+            </md>In other words, <m>\abs{x-3}\lt\delta</m> implies <m>\abs{\left(x^2-3\right)-6}\lt\varepsilon</m>. This is what we needed to prove.</p>
+          </solution>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <statement>
+            <p>Prove that <m>\lim\limits_{x\to4}(x^2+x-5)=15</m>.</p>
+          </statement>
+          <answer>
+            <p>Answers will vary in style and certain details.</p>
+          </answer>
+          <solution>
+            <p>Let <m>\varepsilon>0</m> be given. We wish to find <m>\delta>0</m> such that when <m>\abs{x-4}\lt\delta</m>, <m>\abs{f(x)-15}\lt\varepsilon</m>.</p>
+
+            <p>First, some preliminary investigation to find a suitable <m>\delta</m>. Consider <m>\abs{f(x)-15}\lt\varepsilon</m>:<md>
+                <mrow>\abs{\left(x^2+x-5\right)-15}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x^2+x-20}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x-4}\cdot\abs{x+5}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x-4}\amp\lt\frac{\varepsilon}{\abs{x+5}}</mrow>
+            </md>Since <m>x</m> is near <m>4</m>, we can safely assume that, for instance, <m>3\lt x\lt 5</m>. Thus<md>
+                <mrow>3+5\amp\lt x+5\lt5+5</mrow>
+                <mrow>8\amp\lt x+5\lt 10</mrow>
+                <mrow>\frac{1}{10}\amp\lt\frac{1}{x+5}\lt\frac{1}{8}</mrow>
+                <mrow>\frac{\varepsilon}{10}\amp\lt\frac{\varepsilon}{x+5}\lt\frac{\varepsilon}{8}</mrow>
+            </md>Since we need to begin the actual proof with <m>\abs{x-4}\lt\delta</m>, this suggests that we take <m>\delta=\frac{\varepsilon}{10}</m>. </p>
+
+            <p>Now we can apply the definition.<md>
+                <mrow>\abs{x-4}\amp\lt\delta</mrow>
+                <mrow>\abs{x-4}\amp\lt\frac{\varepsilon}{10}</mrow>
+                <mrow>\abs{x-4}\amp\lt\frac{\varepsilon}{\abs{x+5}}</mrow>
+                <mrow>\abs{x-4}\cdot\abs{x+5}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x^2+x-20}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{\left(x^2+x-5\right)-15}\amp\lt\varepsilon</mrow>
+            </md>In other words, <m>\abs{x-4}\lt\delta</m> implies <m>\abs{\left(x^2+x-5\right)-15}\lt\varepsilon</m>. This is what we needed to prove.</p>
+          </solution>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <statement>
+            <p>Prove that <m>\lim\limits_{x\to2}(x^3-1)=7</m>.</p>
+          </statement>
+          <answer>
+            <p>Answers will vary in style and certain details.</p>
+          </answer>
+          <solution>
+            <p>Let <m>\varepsilon>0</m> be given. We wish to find <m>\delta>0</m> such that when <m>\abs{x-2}\lt\delta</m>, <m>\abs{f(x)-7}\lt\varepsilon</m>.</p>
+
+            <p>First, some preliminary investigation to find a suitable <m>\delta</m>. Consider <m>\abs{f(x)-7}\lt\varepsilon</m>:<md>
+                <mrow>\abs{\left(x^3-1\right)-7}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x^3-8}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x-2}\cdot\abs{x^2+2x+4}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x-2}\amp\lt\frac{\varepsilon}{\abs{x^2+2x+4}}</mrow>
+            </md>Since <m>x</m> is near <m>2</m>, we can safely assume that, for instance, <m>1\lt x\lt 3</m>. Thus<md>
+                <mrow>1^2+2(1)+4\amp\lt x^2+2x+4\lt3^2+2(3)+4</mrow>
+                <mrow>7\amp\lt x^2+2x+4\lt 19</mrow>
+                <mrow>\frac{1}{19}\amp\lt\frac{1}{x^2+2x+4}\lt\frac{1}{7}</mrow>
+                <mrow>\frac{\varepsilon}{19}\amp\lt\frac{\varepsilon}{x^2+2x+4}\lt\frac{\varepsilon}{7}</mrow>
+            </md>Since we need to begin the actual proof with <m>\abs{x-2}\lt\delta</m>, this suggests that we take <m>\delta=\frac{\varepsilon}{19}</m>. </p>
+
+            <p>Now we can apply the definition.<md>
+                <mrow>\abs{x-2}\amp\lt\delta</mrow>
+                <mrow>\abs{x-2}\amp\lt\frac{\varepsilon}{19}</mrow>
+                <mrow>\abs{x-2}\amp\lt\frac{\varepsilon}{\abs{x^2+2x+4}}</mrow>
+                <mrow>\abs{x-2}\cdot\abs{x^2+2x+4}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{x^3-8}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{\left(x^3-1\right)-7}\amp\lt\varepsilon</mrow>
+            </md>In other words, <m>\abs{x-2}\lt\delta</m> implies <m>\abs{\left(x^3-1\right)-7}\lt\varepsilon</m>. This is what we needed to prove.</p>
+          </solution>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <statement>
+            <p>Prove that <m>\lim\limits_{x\to2}5=5</m>.</p>
+          </statement>
+          <answer>
+            <p>Answers will vary in style and certain details.</p>
+          </answer>
+          <solution>
+            <p>Let <m>\varepsilon>0</m> be given. We wish to find <m>\delta>0</m> such that when <m>\abs{x-2}\lt\delta</m>, <m>\abs{f(x)-5}\lt\varepsilon</m>.</p>
+
+            <p>First, some preliminary investigation to find a suitable <m>\delta</m>. Consider <m>\abs{f(x)-5}\lt\varepsilon</m>:<md>
+                <mrow>\abs{5-5}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{0}\amp\lt\varepsilon</mrow>
+            </md>Well, this is just plain true no matter what <m>\varepsilon</m> is (as long as its positive). So it really doesn't matter what <m>\delta</m> is.</p> 
+
+            <p>Now we can apply the definition.<md>
+                <mrow>\abs{x-2}\amp\lt\delta</mrow>
+                <mrow>\abs{0}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{5-5}\amp\lt\varepsilon</mrow>
+            </md>In other words, <m>\abs{x-2}\lt\delta</m> (vacuously) implies <m>\abs{5-5}\lt\varepsilon</m>. This is what we needed to prove.</p>
+          </solution>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <statement>
+            <p>Prove that <m>\lim\limits_{x\to0}(e^{2x}-1)=0</m>.</p>
+          </statement>
+          <answer>
+            <p>Answers will vary in style and certain details.</p>
+          </answer>
+          <solution>
+            <p>Let <m>\varepsilon>0</m> be given. We wish to find <m>\delta>0</m> such that when <m>\abs{x-0}\lt\delta</m>, <m>\abs{f(x)-0}\lt\varepsilon</m>.</p>
+
+            <p>First, some preliminary investigation to find a suitable <m>\delta</m>. Consider <m>\abs{f(x)-0}\lt\varepsilon</m>:<md>
+                <mrow>\abs{\left(e^{2x}-1\right)-0}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{e^{2x}-1}\amp\lt\varepsilon</mrow>
+                <mrow>-\varepsilon\amp\lt e^{2x}-1\lt\varepsilon</mrow>
+                <mrow>1-\varepsilon\amp\lt e^{2x}\lt1+\varepsilon</mrow>
+                <mrow>\ln(1-\varepsilon)\amp\lt 2x\lt\ln(1+\varepsilon)</mrow>
+                <mrow>\frac{1}{2}\ln(1-\varepsilon)\amp\lt x\lt\frac{1}{2}\ln(1+\varepsilon)</mrow>
+                <mrow>\frac{1}{2}\ln(1-\varepsilon)\amp\lt x-0\lt\frac{1}{2}\ln(1+\varepsilon)</mrow>
+            </md>Since we will need to start with <m>\abs{x-0}\lt\delta</m>, this suggests we take <m>\delta=\min\left\{\frac{1}{2}\abs{\ln(1-\varepsilon)},\frac{1}{2}\ln(1+\varepsilon)\right\}=\frac{1}{2}\ln(1+\varepsilon)</m>.</p>
+
+            <p>Now we can apply the definition.<md>
+                <mrow>\abs{x-0}\amp\lt\delta</mrow>
+                <mrow>\abs{x}\amp\lt\frac{1}{2}\ln(1+\varepsilon)\lt\frac{1}{2}\abs{\ln(1-\varepsilon)}</mrow>
+                <mrow>\frac{1}{2}\ln(1-\varepsilon)\amp\lt x\lt\frac{1}{2}\ln(1+\varepsilon)</mrow>
+                <mrow>\ln(1-\varepsilon)\amp\lt 2x\lt\ln(1+\varepsilon)</mrow>
+                <mrow>1-\varepsilon\amp\lt e^{2x}\lt1+\varepsilon</mrow>
+                <mrow>-\varepsilon\amp\lt e^{2x}-1\lt\varepsilon</mrow>
+                <mrow>\abs{e^{2x}-1}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{\left(e^{2x}-1\right)-0}\amp\lt\varepsilon</mrow>
+            </md>In other words, <m>\abs{x-0}\lt\delta</m> implies <m>\abs{\left(e^{2x}-1\right)-0}\lt\varepsilon</m>. This is what we needed to prove.</p>
+          </solution>
+        </webwork>
+      </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -515,448 +734,32 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\displaystyle \lim_{x\to 5} 3-x = -2</m></p>
+            <p>Prove that <m>\displaystyle \lim_{x\to 0} \sin(x)= 0</m>.</p>
           </statement>
+          <hint>
+            <p>Use the fact that <m>\abs{\sin(x)} \leq \abs{x}</m>, with equality only when <m>x=0</m>.</p>
+          </hint>
           <answer>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-5|\lt \delta</m>, <m>|f(x)-(-2)|\lt \epsilon</m>.</p>
-
-            <p>Consider <m>|f(x)-(-2)|\lt \epsilon</m>:
-              <md>
-                <mrow>|f(x) + 2 | \lt  \epsilon</mrow>
-                <mrow>|(3-x) + 2 |\lt \epsilon</mrow>
-                <mrow>| 5-x | \lt  \epsilon</mrow>
-                <mrow>-\epsilon \lt  5-x \lt  \epsilon</mrow>
-                <mrow>-\epsilon \lt  x-5 \lt  \epsilon.</mrow>
-              </md>
-            </p>
-
-            <p>This implies we can let <m>\delta =\epsilon</m>. Then:
-              <md>
-                <mrow>|x-5|\lt \delta</mrow>
-                <mrow>-\delta \lt  x-5 \lt  \delta</mrow>
-                <mrow>-\epsilon \lt  x-5 \lt  \epsilon</mrow>
-                <mrow>-\epsilon \lt  (x-3)-2 \lt  \epsilon</mrow>
-                <mrow>-\epsilon \lt  (-x+3)-(-2) \lt  \epsilon</mrow>
-                <mrow>|3-x - (-2)| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
+            <p>Answers will vary in style and certain details.</p>
           </answer>
           <solution>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-5|\lt \delta</m>, <m>|f(x)-(-2)|\lt \epsilon</m>.</p>
+            <p>Let <m>\varepsilon>0</m> be given. We wish to find <m>\delta>0</m> such that when <m>\abs{x-0}\lt\delta</m>, <m>\abs{f(x)-0}\lt\varepsilon</m>.</p>
 
-            <p>Consider <m>|f(x)-(-2)|\lt \epsilon</m>:
-              <md>
-                <mrow>|f(x) + 2 | \lt  \epsilon</mrow>
-                <mrow>|(3-x) + 2 |\lt \epsilon</mrow>
-                <mrow>| 5-x | \lt  \epsilon</mrow>
-                <mrow>-\epsilon \lt  5-x \lt  \epsilon</mrow>
-                <mrow>-\epsilon \lt  x-5 \lt  \epsilon.</mrow>
-              </md>
-            </p>
+            <p>First, some preliminary investigation to find a suitable <m>\delta</m>. Consider <m>\abs{f(x)-0}\lt\varepsilon</m>:<md>
+                <mrow>\abs{\sin(x)-0}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{\sin(x)}\amp\lt\varepsilon</mrow>
+            </md>Using the hint that <m>\abs{\sin(x)} \leq \abs{x}</m>, then if <m>\abs{x}\lt0</m>, it is automatic that <m>\abs{\sin(x)}\lt0</m>. This suggests we take <m>\delta=\varepsilon</m>.</p>
 
-            <p>This implies we can let <m>\delta =\epsilon</m>. Then:
-              <md>
-                <mrow>|x-5|\lt \delta</mrow>
-                <mrow>-\delta \lt  x-5 \lt  \delta</mrow>
-                <mrow>-\epsilon \lt  x-5 \lt  \epsilon</mrow>
-                <mrow>-\epsilon \lt  (x-3)-2 \lt  \epsilon</mrow>
-                <mrow>-\epsilon \lt  (-x+3)-(-2) \lt  \epsilon</mrow>
-                <mrow>|3-x - (-2)| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
+            <p>Now we can apply the definition.<md>
+                <mrow>\abs{x-0}\amp\lt\delta</mrow>
+                <mrow>\abs{x}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{\sin(x)}\amp\lt\varepsilon</mrow>
+                <mrow>\abs{\sin(x)-0}\amp\lt\varepsilon</mrow>
+            </md>In other words, <m>\abs{x-0}\lt\delta</m> implies <m>\abs{\sin(x)-0}\lt\varepsilon</m>. This is what we needed to prove.</p>
           </solution>
         </webwork>
       </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\displaystyle \lim_{x\to 3} x^2-3 = 6</m></p>
-          </statement>
-          <answer>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-3|\lt \delta</m>, <m>|f(x)-6|\lt \epsilon</m>.</p>
 
-            <p>Consider <m>|f(x)-6|\lt \epsilon</m>, keeping in mind we want to make a statement about <m>|x-3|</m>:
-              <md>
-                <mrow>|f(x) -6 | \lt  \epsilon</mrow>
-                <mrow>|x^2-3 -6 |\lt \epsilon</mrow>
-                <mrow>| x^2-9 | \lt  \epsilon</mrow>
-                <mrow>| x-3 |\cdot|x+3| \lt  \epsilon</mrow>
-                <mrow>| x-3 | \lt  \epsilon/|x+3|</mrow>
-              </md>
-            </p>
-
-            <p>Since <m>x</m> is near 3, we can safely assume that, for instance, <m>2\lt x\lt 4</m>. Thus
-              <md>
-                <mrow>2+3\lt x+3\lt 4+3</mrow>
-                <mrow>5 \lt  x+3 \lt  7</mrow>
-                <mrow>\frac{1}{7} \lt  \frac{1}{x+3} \lt  \frac{1}{5}</mrow>
-                <mrow>\frac{\epsilon}{7} \lt  \frac{\epsilon}{x+3} \lt  \frac{\epsilon}{5}</mrow>
-              </md>
-            </p>
-
-            <p>Let <m>\delta =\frac{\epsilon}{7}</m>. Then:
-              <md>
-                <mrow>|x-3|\lt \delta</mrow>
-                <mrow>|x-3| \lt  \frac{\epsilon}7</mrow>
-                <mrow>|x-3| \lt  \frac{\epsilon}{x+3}</mrow>
-                <mrow>|x-3|\cdot|x+3| \lt  \frac{\epsilon}{x+3}\cdot|x+3|</mrow>
-              </md>
-            </p>
-
-            <p>Assuming <m>x</m> is near 3, <m>x+3</m> is positive and we can drop the absolute value signs on the right.
-              <md>
-                <mrow>|x-3|\cdot|x+3| \lt  \frac{\epsilon}{x+3}\cdot(x+3)</mrow>
-                <mrow>|x^2-9| \lt  \epsilon</mrow>
-                <mrow>|(x^2-3) - 6| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
-          </answer>
-          <solution>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-3|\lt \delta</m>, <m>|f(x)-6|\lt \epsilon</m>.</p>
-
-            <p>Consider <m>|f(x)-6|\lt \epsilon</m>, keeping in mind we want to make a statement about <m>|x-3|</m>:
-              <md>
-                <mrow>|f(x) -6 | \lt  \epsilon</mrow>
-                <mrow>|x^2-3 -6 |\lt \epsilon</mrow>
-                <mrow>| x^2-9 | \lt  \epsilon</mrow>
-                <mrow>| x-3 |\cdot|x+3| \lt  \epsilon</mrow>
-                <mrow>| x-3 | \lt  \epsilon/|x+3|</mrow>
-              </md>
-            </p>
-
-            <p>Since <m>x</m> is near 3, we can safely assume that, for instance, <m>2\lt x\lt 4</m>. Thus
-              <md>
-                <mrow>2+3\lt x+3\lt 4+3</mrow>
-                <mrow>5 \lt  x+3 \lt  7</mrow>
-                <mrow>\frac{1}{7} \lt  \frac{1}{x+3} \lt  \frac{1}{5}</mrow>
-                <mrow>\frac{\epsilon}{7} \lt  \frac{\epsilon}{x+3} \lt  \frac{\epsilon}{5}</mrow>
-              </md>
-            </p>
-
-            <p>Let <m>\delta =\frac{\epsilon}{7}</m>. Then:
-              <md>
-                <mrow>|x-3|\lt \delta</mrow>
-                <mrow>|x-3| \lt  \frac{\epsilon}7</mrow>
-                <mrow>|x-3| \lt  \frac{\epsilon}{x+3}</mrow>
-                <mrow>|x-3|\cdot|x+3| \lt  \frac{\epsilon}{x+3}\cdot|x+3|</mrow>
-              </md>
-            </p>
-
-            <p>Assuming <m>x</m> is near 3, <m>x+3</m> is positive and we can drop the absolute value signs on the right.
-              <md>
-                <mrow>|x-3|\cdot|x+3| \lt  \frac{\epsilon}{x+3}\cdot(x+3)</mrow>
-                <mrow>|x^2-9| \lt  \epsilon</mrow>
-                <mrow>|(x^2-3) - 6| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\displaystyle \lim_{x\to 4} x^2+x-5 = 15</m></p>
-          </statement>
-          <answer>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-4|\lt \delta</m>, <m>|f(x)-15|\lt \epsilon</m>.</p>
-
-            <p>Consider <m>|f(x)-15|\lt \epsilon</m>, keeping in mind we want to make a statement about <m>|x-4|</m>:
-              <md>
-                <mrow>|f(x) -15 | \lt  \epsilon</mrow>
-                <mrow>|x^2+x-5 -15 |\lt \epsilon</mrow>
-                <mrow>| x^2+x-20 | \lt  \epsilon</mrow>
-                <mrow>| x-4 |\cdot|x+5| \lt  \epsilon</mrow>
-                <mrow>| x-4 | \lt  \epsilon/|x+5|</mrow>
-              </md>
-            </p>
-
-            <p>Since <m>x</m> is near 4, we can safely assume that, for instance, <m>3\lt x\lt 5</m>. Thus
-              <md>
-                <mrow>3+5\lt x+5\lt 5+5</mrow>
-                <mrow>8 \lt  x+5 \lt  10</mrow>
-                <mrow>\frac{1}{10} \lt  \frac{1}{x+5} \lt  \frac{1}{8}</mrow>
-                <mrow>\frac{\epsilon}{10} \lt  \frac{\epsilon}{x+5} \lt  \frac{\epsilon}{8}</mrow>
-              </md>
-            </p>
-
-            <p>Let <m>\delta =\frac{\epsilon}{10}</m>. Then:
-              <md>
-                <mrow>|x-4|\lt \delta</mrow>
-                <mrow>|x-4| \lt  \frac{\epsilon}{10}</mrow>
-                <mrow>|x-4| \lt  \frac{\epsilon}{x+5}</mrow>
-                <mrow>|x-4|\cdot|x+5| \lt  \frac{\epsilon}{x+5}\cdot|x+5|</mrow>
-              </md>
-            </p>
-
-            <p>Assuming <m>x</m> is near 4, <m>x+5</m> is positive and we can drop the absolute value signs on the right.
-              <md>
-                <mrow>|x-4|\cdot|x+5| \lt  \frac{\epsilon}{x+5}\cdot(x+5)</mrow>
-                <mrow>|x^2+x-20| \lt  \epsilon</mrow>
-                <mrow>|(x^2+x-5) -15| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
-          </answer>
-          <solution>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-4|\lt \delta</m>, <m>|f(x)-15|\lt \epsilon</m>.</p>
-
-            <p>Consider <m>|f(x)-15|\lt \epsilon</m>, keeping in mind we want to make a statement about <m>|x-4|</m>:
-              <md>
-                <mrow>|f(x) -15 | \lt  \epsilon</mrow>
-                <mrow>|x^2+x-5 -15 |\lt \epsilon</mrow>
-                <mrow>| x^2+x-20 | \lt  \epsilon</mrow>
-                <mrow>| x-4 |\cdot|x+5| \lt  \epsilon</mrow>
-                <mrow>| x-4 | \lt  \epsilon/|x+5|</mrow>
-              </md>
-            </p>
-
-            <p>Since <m>x</m> is near 4, we can safely assume that, for instance, <m>3\lt x\lt 5</m>. Thus
-              <md>
-                <mrow>3+5\lt x+5\lt 5+5</mrow>
-                <mrow>8 \lt  x+5 \lt  10</mrow>
-                <mrow>\frac{1}{10} \lt  \frac{1}{x+5} \lt  \frac{1}{8}</mrow>
-                <mrow>\frac{\epsilon}{10} \lt  \frac{\epsilon}{x+5} \lt  \frac{\epsilon}{8}</mrow>
-              </md>
-            </p>
-
-            <p>Let <m>\delta =\frac{\epsilon}{10}</m>. Then:
-              <md>
-                <mrow>|x-4|\lt \delta</mrow>
-                <mrow>|x-4| \lt  \frac{\epsilon}{10}</mrow>
-                <mrow>|x-4| \lt  \frac{\epsilon}{x+5}</mrow>
-                <mrow>|x-4|\cdot|x+5| \lt  \frac{\epsilon}{x+5}\cdot|x+5|</mrow>
-              </md>
-            </p>
-
-            <p>Assuming <m>x</m> is near 4, <m>x+5</m> is positive and we can drop the absolute value signs on the right.
-              <md>
-                <mrow>|x-4|\cdot|x+5| \lt  \frac{\epsilon}{x+5}\cdot(x+5)</mrow>
-                <mrow>|x^2+x-20| \lt  \epsilon</mrow>
-                <mrow>|(x^2+x-5) -15| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\displaystyle \lim_{x\to 2} x^3-1 = 7</m></p>
-          </statement>
-          <answer>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-2|\lt \delta</m>, <m>|f(x)-7|\lt \epsilon</m>.</p>
-
-            <p>Consider <m>|f(x)-7|\lt \epsilon</m>, keeping in mind we want to make a statement about <m>|x-2|</m>:
-              <md>
-                <mrow>|f(x) -7 | \lt  \epsilon</mrow>
-                <mrow>|x^3-1 -7 |\lt \epsilon</mrow>
-                <mrow>| x^3-8 | \lt  \epsilon</mrow>
-                <mrow>| x-2 |\cdot|x^2+2x+4| \lt  \epsilon</mrow>
-                <mrow>| x-3 | \lt  \epsilon/|x^2+2x+4|</mrow>
-              </md>
-            </p>
-
-            <p>Since <m>x</m> is near 2, we can safely assume that, for instance, <m>1\lt x\lt 3</m>. Thus
-              <md>
-                <mrow>1^2+2\cdot1+4\lt x^2+2x+4\lt 3^2+2\cdot3+4</mrow>
-                <mrow>7 \lt  x^2+2x+4 \lt  19</mrow>
-                <mrow>\frac{1}{19} \lt  \frac{1}{x^2+2x+4} \lt  \frac{1}{7}</mrow>
-                <mrow>\frac{\epsilon}{19} \lt  \frac{\epsilon}{x^2+2x+4} \lt  \frac{\epsilon}{7}</mrow>
-              </md>
-            </p>
-
-            <p>Let <m>\delta =\frac{\epsilon}{19}</m>. Then:
-              <md>
-                <mrow>|x-2|\lt \delta</mrow>
-                <mrow>|x-2| \lt  \frac{\epsilon}{19}</mrow>
-                <mrow>|x-2| \lt  \frac{\epsilon}{x^2+2x+4}</mrow>
-                <mrow>|x-2|\cdot|x^2+2x+4| \lt  \frac{\epsilon}{x^2+2x+4}\cdot|x^2+2x+4|</mrow>
-              </md>
-            </p>
-
-            <p>Assuming <m>x</m> is near 2, <m>x^2+2x+4</m> is positive and we can drop the absolute value signs on the right.
-              <md>
-                <mrow>|x-2|\cdot|x^2+2x+4| \lt  \frac{\epsilon}{x^2+2x+4}\cdot(x^2+2x+4)</mrow>
-                <mrow>|x^3-8| \lt  \epsilon</mrow>
-                <mrow>|(x^3-1) - 7| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
-          </answer>
-          <solution>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-2|\lt \delta</m>, <m>|f(x)-7|\lt \epsilon</m>.</p>
-
-            <p>Consider <m>|f(x)-7|\lt \epsilon</m>, keeping in mind we want to make a statement about <m>|x-2|</m>:
-              <md>
-                <mrow>|f(x) -7 | \lt  \epsilon</mrow>
-                <mrow>|x^3-1 -7 |\lt \epsilon</mrow>
-                <mrow>| x^3-8 | \lt  \epsilon</mrow>
-                <mrow>| x-2 |\cdot|x^2+2x+4| \lt  \epsilon</mrow>
-                <mrow>| x-3 | \lt  \epsilon/|x^2+2x+4|</mrow>
-              </md>
-            </p>
-
-            <p>Since <m>x</m> is near 2, we can safely assume that, for instance, <m>1\lt x\lt 3</m>. Thus
-              <md>
-                <mrow>1^2+2\cdot1+4\lt x^2+2x+4\lt 3^2+2\cdot3+4</mrow>
-                <mrow>7 \lt  x^2+2x+4 \lt  19</mrow>
-                <mrow>\frac{1}{19} \lt  \frac{1}{x^2+2x+4} \lt  \frac{1}{7}</mrow>
-                <mrow>\frac{\epsilon}{19} \lt  \frac{\epsilon}{x^2+2x+4} \lt  \frac{\epsilon}{7}</mrow>
-              </md>
-            </p>
-
-            <p>Let <m>\delta =\frac{\epsilon}{19}</m>. Then:
-              <md>
-                <mrow>|x-2|\lt \delta</mrow>
-                <mrow>|x-2| \lt  \frac{\epsilon}{19}</mrow>
-                <mrow>|x-2| \lt  \frac{\epsilon}{x^2+2x+4}</mrow>
-                <mrow>|x-2|\cdot|x^2+2x+4| \lt  \frac{\epsilon}{x^2+2x+4}\cdot|x^2+2x+4|</mrow>
-              </md>
-            </p>
-
-            <p>Assuming <m>x</m> is near 2, <m>x^2+2x+4</m> is positive and we can drop the absolute value signs on the right.
-              <md>
-                <mrow>|x-2|\cdot|x^2+2x+4| \lt  \frac{\epsilon}{x^2+2x+4}\cdot(x^2+2x+4)</mrow>
-                <mrow>|x^3-8| \lt  \epsilon</mrow>
-                <mrow>|(x^3-1) - 7| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\displaystyle \lim_{x\to 2} 5 = 5</m></p>
-          </statement>
-          <answer>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-2|\lt \delta</m>, <m>|f(x)-5|\lt \epsilon</m>. However, since <m>f(x)=5</m>, a constant function, the latter inequality is simply <m>|5-5|\lt \epsilon</m>, which is always true. Thus we can choose any <m>\delta</m> we like; we arbitrarily choose <m>\delta =\epsilon</m>.</p>
-          </answer>
-          <solution>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-2|\lt \delta</m>, <m>|f(x)-5|\lt \epsilon</m>. However, since <m>f(x)=5</m>, a constant function, the latter inequality is simply <m>|5-5|\lt \epsilon</m>, which is always true. Thus we can choose any <m>\delta</m> we like; we arbitrarily choose <m>\delta =\epsilon</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\displaystyle \lim_{x\to 0} e^{2x}-1 = 0</m></p>
-          </statement>
-          <answer>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-0|\lt \delta</m>, <m>|f(x)-0|\lt \epsilon</m>.</p>
-
-            <p>Consider <m>|f(x)-0|\lt \epsilon</m>, keeping in mind we want to make a statement about <m>|x-0|</m> (i.e., <m>|x|</m>):
-              <md>
-                <mrow>|f(x) -0 | \lt  \epsilon</mrow>
-                <mrow>|e^{2x}-1 |\lt \epsilon</mrow>
-                <mrow>-\epsilon\lt  e^{2x}-1 \lt  \epsilon</mrow>
-                <mrow>1-\epsilon\lt  e^{2x} \lt  1+\epsilon</mrow>
-                <mrow>\ln (1-\epsilon) \lt  2x \lt  \ln (1+\epsilon)</mrow>
-                <mrow>\frac{\ln (1-\epsilon)}{2} \lt  x \lt  \frac{\ln (1+\epsilon)}{2}</mrow>
-              </md>
-            </p>
-
-            <p>Let <m>\delta = \min\left\{\left|\frac{\ln(1-\epsilon)}{2}\right|,\frac{\ln(1+\epsilon)}{2}\right\}=\frac{\ln(1+\epsilon)}{2}.</m></p>
-
-            <p>Thus:
-              <md>
-                <mrow>|x| \lt  \delta</mrow>
-                <mrow>|x| \lt \frac{\ln(1+\epsilon)}{2}\lt \left|\frac{\ln(1-\epsilon)}{2}\right|</mrow>
-                <mrow>\frac{\ln(1-\epsilon)}{2} \lt  x \lt  \frac{\ln(1+\epsilon)}{2}</mrow>
-                <mrow>\ln(1-\epsilon)\lt  2x \lt  \ln(1+\epsilon)</mrow>
-                <mrow>1-\epsilon \lt  e^{2x} \lt  1+\epsilon</mrow>
-                <mrow>-\epsilon \lt  e^{2x}-1 \lt  \epsilon</mrow>
-                <mrow>|e^{2x}-1-(0)| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
-          </answer>
-          <solution>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-0|\lt \delta</m>, <m>|f(x)-0|\lt \epsilon</m>.</p>
-
-            <p>Consider <m>|f(x)-0|\lt \epsilon</m>, keeping in mind we want to make a statement about <m>|x-0|</m> (i.e., <m>|x|</m>):
-              <md>
-                <mrow>|f(x) -0 | \lt  \epsilon</mrow>
-                <mrow>|e^{2x}-1 |\lt \epsilon</mrow>
-                <mrow>-\epsilon\lt  e^{2x}-1 \lt  \epsilon</mrow>
-                <mrow>1-\epsilon\lt  e^{2x} \lt  1+\epsilon</mrow>
-                <mrow>\ln (1-\epsilon) \lt  2x \lt  \ln (1+\epsilon)</mrow>
-                <mrow>\frac{\ln (1-\epsilon)}{2} \lt  x \lt  \frac{\ln (1+\epsilon)}{2}</mrow>
-              </md>
-            </p>
-
-            <p>Let <m>\delta = \min\left\{\left|\frac{\ln(1-\epsilon)}{2}\right|,\frac{\ln(1+\epsilon)}{2}\right\}=\frac{\ln(1+\epsilon)}{2}.</m></p>
-
-            <p>Thus:
-              <md>
-                <mrow>|x| \lt  \delta</mrow>
-                <mrow>|x| \lt \frac{\ln(1+\epsilon)}{2}\lt \left|\frac{\ln(1-\epsilon)}{2}\right|</mrow>
-                <mrow>\frac{\ln(1-\epsilon)}{2} \lt  x \lt  \frac{\ln(1+\epsilon)}{2}</mrow>
-                <mrow>\ln(1-\epsilon)\lt  2x \lt  \ln(1+\epsilon)</mrow>
-                <mrow>1-\epsilon \lt  e^{2x} \lt  1+\epsilon</mrow>
-                <mrow>-\epsilon \lt  e^{2x}-1 \lt  \epsilon</mrow>
-                <mrow>|e^{2x}-1-(0)| \lt  \epsilon,</mrow>
-              </md>
-              which is what we wanted to prove.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\displaystyle \lim_{x\to 0} \sin x= 0</m> (Hint: use the fact that <m>|\sin x| \leq |x|</m>, with equality only when <m>x=0</m>.)</p>
-          </statement>
-          <answer>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-0|\lt \delta</m>, <m>|f(x)-0|\lt \epsilon</m>. In simpler terms, we want to show that when <m>|x|\lt \delta</m>, <m>|\sin x| \lt  \epsilon</m>.</p>
-
-            <p>Set <m>\delta = \epsilon</m>. We start with assuming that <m>|x|\lt \delta</m>. Using the hint, we have that <m>|\sin x | \lt  |x| \lt  \delta = \epsilon</m>. Hence if <m>|x|\lt \delta</m>, we know immediately that <m>|\sin x| \lt  \epsilon</m>.</p>
-          </answer>
-          <solution>
-            <p>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-0|\lt \delta</m>, <m>|f(x)-0|\lt \epsilon</m>. In simpler terms, we want to show that when <m>|x|\lt \delta</m>, <m>|\sin x| \lt  \epsilon</m>.</p>
-
-            <p>Set <m>\delta = \epsilon</m>. We start with assuming that <m>|x|\lt \delta</m>. Using the hint, we have that <m>|\sin x | \lt  |x| \lt  \delta = \epsilon</m>. Hence if <m>|x|\lt \delta</m>, we know immediately that <m>|\sin x| \lt  \epsilon</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
     </exercisegroup>
   </exercises>
 </section>
