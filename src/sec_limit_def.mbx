@@ -37,18 +37,18 @@ The definition we describe in this section comes from formalizing <xref ref="lim
 
 <dl width="narrow">
 <li xml:id="lim_def_3p">
-<title>3<m>^\prime</m></title>
+<title>3<m>'</m></title>
 <p>
 If <m>x</m> is within a certain <em>tolerance level</em> of <m>c</m>, then the corresponding value <m>y=f(x)</m> is within a certain <em>tolerance level</em> of <m>L</m>.</p></li>
 </dl>
 
 <p>
-The traditional notation for the <m>x</m>-tolerance is the lowercase Greek letter delta, or <m>\delta</m>, and the <m>y</m>-tolerance is denoted by lowercase epsilon, or <m>\epsilon</m>. One more rephrasing of <xref ref="lim_def_3p">3<m>^\prime</m></xref> nearly gets us to the actual definition:
+The traditional notation for the <m>x</m>-tolerance is the lowercase Greek letter delta, or <m>\delta</m>, and the <m>y</m>-tolerance is denoted by lowercase epsilon, or <m>\epsilon</m>. One more rephrasing of <xref ref="lim_def_3p" autoname="title"></xref> nearly gets us to the actual definition:
 </p>
 
 <dl width="narrow">
 <li xml:id="lim_def_3pp">
-<title>3<m>''.</m></title>
+<title>3<m>''</m></title>
 <p>
 If <m>x</m> is within <m>\delta</m> units of <m>c</m>, then the corresponding value of <m>y</m> is within <m>\epsilon</m> units of <m>L</m>.</p></li>
 </dl>
@@ -61,7 +61,7 @@ We can write <q><m>x</m> is within <m>\delta</m> units of <m>c</m></q> mathemati
 </p>
 
 <p>
-Letting the symbol <q><m>\Longrightarrow</m></q> represent the word <q>implies,</q> we can rewrite <xref ref="lim_def_3pp">3<m>''</m></xref> as
+Letting the symbol <q><m>\Longrightarrow</m></q> represent the word <q>implies,</q> we can rewrite <xref ref="lim_def_3pp" autoname="title"></xref> as
 <me>
   |x - c| \lt  \delta \Longrightarrow  |y - L| \lt  \epsilon 
 \qquad \textrm{or}  \qquad c - \delta \lt  x \lt  c + \delta \Longrightarrow L - \epsilon \lt  y \lt  L + \epsilon.
@@ -97,9 +97,24 @@ if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.<index><main
 <p>
 Note the order in which <m>\epsilon</m> and <m>\delta</m> are given. In the definition, the <m>y</m>-tolerance <m>\epsilon</m> is given <em>first</em> and then the limit will exist <em>if</em> we can find an <m>x</m>-tolerance <m>\delta</m> that works.
 </p>
+<p><em>Note: In some classes, you will not go over the <m>\epsilon-\delta</m> proofs in great detail. In that case, you should only read <xref ref="ex_compute_lim1">Example</xref>. Instead, the following (less formal) definition will suffice:</em></p>
+<definition xml:id="def_limit2">
+<title>The Limit of a Function <m>f</m> (Arbitrarily/sufficiently Close)</title>
+<statement>
+<p>
+Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>. The <term>limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, is <m>L</m></term>, denoted by
+<me>
+  \displaystyle \lim_{x\rightarrow c} f(x) = L,
+</me>
+means that given the <m>y</m> values of the function will get arbitrarily close to <m>L</m> as long as <m>x</m> is sufficiently close to <m>c</m>.<index><main>limit</main><sub>definition</sub></index>
+</p>
+</statement>
+</definition>
+
+
 
 <p>
-An example will help us understand this definition. Note that the explanation is long, but it will take one through all steps necessary to understand the ideas.
+An example will help us understand these definition(s). Note that the explanation is long, but it will take one through all steps necessary to understand the ideas.
 </p>
 
 <example xml:id="ex_compute_lim1">
@@ -124,8 +139,8 @@ Before we use the formal definition, let's try some numerical tolerances. What i
 </p>
 
 <p>
-So, what is the desired <m>x</m> tolerance? Remember, we want to find a symmetric interval of <m>x</m> values, namely
-<m>4 - \delta \lt  x \lt  4 + \delta</m>. The lower bound of <m>2.25</m> is <m>1.75</m> units from 4; the upper bound of 6.25 is 2.25 units from 4. We need the smaller of these two distances. Why? Since <m>1.75 \lt 2.25</m>, we have <m>-1.75 \lt x-4 \lt 1.75 \lt 2.25 \Longrightarrow |x-4|\lt 1.75</m>. Therefore we must have <m>\delta \leq 1.75</m>. See <xref ref="fig_choose_e_d">Figure</xref>.
+So, what is the desired <m>x</m> tolerance? <!--Remember, we want to find a symmetric interval of <m>x</m> values, namely
+<m>4 - \delta \lt  x \lt  4 + \delta</m>.--> The lower bound for <m>x</m> of <m>2.25</m> is <m>1.75</m> units from 4; the upper bound of 6.25 is 2.25 units from 4. We need the smaller of these two distances. Why? Since <m>1.75 \lt 2.25</m>, we have <m>-1.75 \lt x-4 \lt 1.75 \lt 2.25 \Longrightarrow |x-4|\lt 1.75</m>. Therefore we must have <m>\delta \leq 1.75</m>. See <xref ref="fig_choose_e_d">Figure</xref>.
 </p>
 <figure xml:id="fig_choose_e_d" >
 <caption>Illustrating the <m>\epsilon-\delta</m> process.</caption>
@@ -237,7 +252,7 @@ Since we want this last interval to describe an <m>x</m> tolerance around 4, we 
 </p>
 
 <p>
-Since <m>\epsilon > 0</m>, we have <m>4\epsilon - \epsilon^2, 4\epsilon + \epsilon^2</m>, the minimum is <m>\delta \leq 4\epsilon - \epsilon^2</m>. That's the formula: given an <m>\epsilon</m>, set <m>\delta \leq 4\epsilon-\epsilon^2</m>.
+Since <m>\epsilon > 0</m>, we have <m>4\epsilon - \epsilon^2 \lt 4\epsilon + \epsilon^2</m>, the minimum is <m>\delta \leq 4\epsilon - \epsilon^2</m>. That's the formula: given an <m>\epsilon</m>, set <m>\delta \leq 4\epsilon-\epsilon^2</m>.
 </p>
 
 <p>
@@ -374,8 +389,7 @@ we actually start by assuming
 </ol>
 
 <p>
-When we have properly done this, the <em>something</em> on the <q>greater than</q> side of the inequality becomes our <m>\delta</m>. We can refer to this as the <q>scratch<ndash />work</q> phase of our proof. Once we have <m>\delta</m>, we can formally start with <m>|x-c|\lt \delta</m> and use algebraic manipulations to conclude that <m>|f(x)-L|\lt \epsilon</m>, usually by using the same steps of our <q>scratch<ndash />work</q> in reverse order.
-</p>
+When we have properly done this, the <em>something</em> on the <q>greater than</q> side of the inequality becomes our <m>\delta</m>. We can refer to this as the <q>scratch<ndash />work</q> phase of our proof. Once we have <m>\delta</m>, we can formally start with <m>|x-c|\lt \delta</m> and use algebraic manipulations to conclude that <m>|f(x)-L|\lt \epsilon</m>, usually by using the same steps of our <q>scratch<ndash />work</q> in reverse order.</p>
 
 <p>
 We highlight this process in the following example.
@@ -395,8 +409,10 @@ We start our scratch<ndash />work by considering <m>|f(x) - (-1)| \lt  \epsilon<
   <mrow>  |f(x)-(-1)| \amp \lt  \epsilon</mrow>
   <mrow>  |x^3-2x + 1|\amp \lt  \epsilon \amp  \text{ (Now factor) }</mrow>
   <mrow>  |(x-1)(x^2+x-1)|\amp \lt  \epsilon</mrow>
-  <mrow>  |x-1| \amp \lt \frac{\epsilon}{|x^2+x-1|}.</mrow>
 </md>
+<men xml:id ="eq_lim4">
+  |x-1|  \lt \frac{\epsilon}{|x^2+x-1|\text{.}}
+</men>
 </p>
 
 <p>
