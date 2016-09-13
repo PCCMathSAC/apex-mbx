@@ -1,273 +1,181 @@
-
 <section xml:id="sec_limit_def">
-<title>Epsilon-Delta Definition of a Limit</title>
+    <title>Epsilon-Delta Definition of a Limit</title>
 
+    <introduction>
+        <p>This section introduces the formal definition of a limit. Many refer to this as <q>the epsilon<ndash />delta,</q> definition, referring to the letters <m>\varepsilon</m> and <m>\delta</m> of the Greek alphabet.</p>
 
-<introduction>
-<p>
-This section introduces the formal definition of a limit. Many refer to this as <q>the epsilon<ndash />delta,</q> definition, referring to the letters <m>\epsilon</m> and <m>\delta</m> of the Greek alphabet.
-</p>
+        <p>Before we give the actual definition, let's consider a few informal ways of describing a limit. Given a function <m>y=f(x)</m> and an <m>x</m>-value, <m>c</m>, we say that <q>the limit of the function <m>f</m>, as <m>x</m> approaches <m>c</m>, is a value <m>L</m></q>:</p>
 
-<p>
-Before we give the actual definition, let's consider a few informal ways of describing a limit. Given a function <m>y=f(x)</m> and an <m>x</m>-value, <m>c</m>, we say that <q>the limit of the function <m>f</m>, as <m>x</m> approaches <m>c</m>, is a value<nbsp /><m>L</m></q>:
-</p>
+        <dl width="narrow">
+            <li>
+                <title>1</title>
+                <p>if <q><m>y</m> tends to <m>L</m></q> as <q><m>x</m> tends to <m>c</m>.</q></p>
+            </li>
+            <li>
+                <title>2</title>
+                <p>if <q><m>y</m> approaches <m>L</m></q> as <q><m>x</m> approaches <m>c</m>.</q></p>
+            </li>
+            <li xml:id="lim_def_3">
+                <title>3</title>
+                <p>if <q><m>y</m> is near <m>L</m></q> whenever <q><m>x</m> is near <m>c</m>.</q></p>
+            </li>
+        </dl>
 
-<dl width="narrow">
-<li>
-<title>1</title>
-<p>
-if <q><m>y</m> tends to <m>L</m></q> as <q><m>x</m> tends to <m>c</m>.</q></p></li>
-<li>
-<title>2</title>
-<p>
-if <q><m>y</m> approaches <m>L</m></q> as <q><m>x</m> approaches <m>c</m>.</q></p></li>
-<li xml:id="lim_def_3">
-<title>3</title>
-<p>
-if <q><m>y</m> is near <m>L</m></q> whenever <q><m>x</m> is near <m>c</m>.</q></p></li>
-</dl>
+        <p>The problem with these definitions is that the words <q>tends,</q> <q>approach,</q> and especially <q>near</q> are not exact. In what way does the variable <m>x</m> tend to, or approach, <m>c</m>? How near do <m>x</m> and <m>y</m> have to be to <m>c</m> and <m>L</m>, respectively?</p>
 
-<p>
-The problem with these definitions is that the words <q>tends,</q> <q>approach,</q> and especially <q>near</q> are not exact. In what way does the variable <m>x</m> tend to, or approach, <m>c</m>? How near do <m>x</m> and <m>y</m> have to be to <m>c</m> and <m>L</m>, respectively?
-</p>
+        <p>The definition we describe in this section comes from formalizing <xref ref="lim_def_3" autoname="title" />. A quick restatement gets us closer to what we want:</p>
 
-<p>
-The definition we describe in this section comes from formalizing <xref ref="lim_def_3" autoname="title"></xref>. A quick restatement gets us closer to what we want:
-</p>
+        <dl width="narrow">
+            <li xml:id="lim_def_3p">
+                <title>3′</title>
+                <p>If <m>x</m> is within a certain <em>tolerance level</em> of <m>c</m>, then the corresponding value <m>y=f(x)</m> is within a certain <em>tolerance level</em> of <m>L</m>.</p>
+            </li>
+        </dl>
 
-<dl width="narrow">
-<li xml:id="lim_def_3p">
-<title>3<m>'</m></title>
-<p>
-If <m>x</m> is within a certain <em>tolerance level</em> of <m>c</m>, then the corresponding value <m>y=f(x)</m> is within a certain <em>tolerance level</em> of <m>L</m>.</p></li>
-</dl>
+        <p>The traditional notation for the <m>x</m>-tolerance is the lowercase Greek letter delta, or <m>\delta</m>, and the <m>y</m>-tolerance is denoted by lowercase epsilon, or <m>\varepsilon</m>. One more rephrasing of <xref ref="lim_def_3p" autoname="title" /> nearly gets us to the actual definition:</p>
 
-<p>
-The traditional notation for the <m>x</m>-tolerance is the lowercase Greek letter delta, or <m>\delta</m>, and the <m>y</m>-tolerance is denoted by lowercase epsilon, or <m>\epsilon</m>. One more rephrasing of <xref ref="lim_def_3p" autoname="title"></xref> nearly gets us to the actual definition:
-</p>
+        <dl width="narrow">
+            <li xml:id="lim_def_3pp">
+                <title>3″</title>
+                <p>If <m>x</m> is within <m>\delta</m> units of <m>c</m>, then the corresponding value of <m>y</m> is within <m>\varepsilon</m> units of <m>L</m>.</p>
+            </li>
+        </dl>
 
-<dl width="narrow">
-<li xml:id="lim_def_3pp">
-<title>3<m>''</m></title>
-<p>
-If <m>x</m> is within <m>\delta</m> units of <m>c</m>, then the corresponding value of <m>y</m> is within <m>\epsilon</m> units of <m>L</m>.</p></li>
-</dl>
+        <p>We can write <q><m>x</m> is within <m>\delta</m> units of <m>c</m></q> mathematically as <me>\abs{x-c} \lt  \delta\text{,}</me> which is equivalent to <me>c-\delta \lt  x \lt  c+\delta\text{.}</me></p>
 
-<p>
-We can write <q><m>x</m> is within <m>\delta</m> units of <m>c</m></q> mathematically as
-<me>
-  |x-c| \lt  \delta, \qquad \text{ which is equivalent to } \qquad c-\delta \lt  x \lt  c+\delta.
-</me>
-</p>
+        <p>Letting the symbol <q><m>\implies</m></q> represent the word <q>implies,</q> we can rewrite <xref ref="lim_def_3pp" autoname="title" /> as <me>\abs{x - c} \lt  \delta \implies  \abs{y - L} \lt  \varepsilon \qquad \text{ or }  \qquad c - \delta \lt  x \lt  c + \delta \implies L - \varepsilon \lt  y \lt  L + \varepsilon.</me></p>
 
-<p>
-Letting the symbol <q><m>\Longrightarrow</m></q> represent the word <q>implies,</q> we can rewrite <xref ref="lim_def_3pp" autoname="title"></xref> as
-<me>
-  |x - c| \lt  \delta \Longrightarrow  |y - L| \lt  \epsilon 
-\qquad \textrm{or}  \qquad c - \delta \lt  x \lt  c + \delta \Longrightarrow L - \epsilon \lt  y \lt  L + \epsilon.
-</me>
-</p>
+        <p>The point is that <m>\delta</m> and <m>\varepsilon</m>, being tolerances, can be any positive (but typically small) values. Finally, we have the formal definition of the limit with the notation seen in the previous section.</p>
 
-<p>
-The point is that <m>\delta</m> and <m>\epsilon</m>, being tolerances, can be any positive (but typically small) values. Finally, we have the formal definition of the limit with the notation seen in the previous section.
-</p>
-<definition xml:id="def_limit">
-<title>The Limit of a Function <m>f</m></title>
-<statement>
-<p>
-Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>. The <term>limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, is <m>L</m></term>, denoted by
-<me>
-  \displaystyle \lim_{x\rightarrow c} f(x) = L,
-</me>
-means that given any <m>\epsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x\neq c</m>,
-if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.<index><main>limit</main><sub>definition</sub></index>
-</p>
-</statement>
-</definition>
-<p>
-(Mathematicians often enjoy writing ideas without using any words. Here is the wordless definition of the limit:
-</p>
+        <definition xml:id="def_limit">
+            <title>The Limit of a Function <m>f</m></title>
+            <statement>
+                <p>Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>. The <term>limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, is <m>L</m></term>, denoted by <me>\lim_{x\to c} f(x) = L\text{,}</me> means that given any <m>\varepsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x\neq c</m>, if <m>\abs{x - c} \lt  \delta</m>, then <m>\abs{f(x) - L} \lt  \varepsilon</m>.<index><main>limit</main><sub>definition</sub></index></p>
+            </statement>
+        </definition>
 
-<p>
-<m>\displaystyle \lim_{x\rightarrow c} f(x) = L \iff</m>
-<m>\forall \, \epsilon > 0, \exists \, \delta > 0 \; s.t. \;
-0\lt |x - c| \lt  \delta \Longrightarrow |f(x) - L| \lt  \epsilon</m>.\text{)}
-</p>
+        <p>(Mathematicians often enjoy writing ideas without using any words. Here is the wordless definition of the limit:<md>
+        <mrow>\lim_{x\to c} f(x) = L</mrow>
+        <mrow>\iff</mrow>
+        <mrow>\forall \, \varepsilon > 0, \exists \, \delta > 0 \text{ s.t. }0\lt \abs{x - c} \lt  \delta \implies \abs{f(x) - L} \lt  \varepsilon\text{.)}</mrow>
+        </md></p>
 
-<p>
-Note the order in which <m>\epsilon</m> and <m>\delta</m> are given. In the definition, the <m>y</m>-tolerance <m>\epsilon</m> is given <em>first</em> and then the limit will exist <em>if</em> we can find an <m>x</m>-tolerance <m>\delta</m> that works.
-</p>
-<p><em>Note: In some classes, you will not go over the <m>\epsilon-\delta</m> proofs in great detail. In that case, you should only read <xref ref="ex_compute_lim1">Example</xref>. Instead, the following (less formal) definition will suffice:</em></p>
-<definition xml:id="def_limit2">
-<title>The Limit of a Function <m>f</m> (Arbitrarily/sufficiently Close)</title>
-<statement>
-<p>
-Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>. The <term>limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, is <m>L</m></term>, denoted by
-<me>
-  \displaystyle \lim_{x\rightarrow c} f(x) = L,
-</me>
-means that given the <m>y</m> values of the function will get arbitrarily close to <m>L</m> as long as <m>x</m> is sufficiently close to <m>c</m>.<index><main>limit</main><sub>definition</sub></index>
-</p>
-</statement>
-</definition>
+        <p>Note the order in which <m>\varepsilon</m> and <m>\delta</m> are given. In the definition, the <m>y</m>-tolerance <m>\varepsilon</m> is given <em>first</em> and then the limit will exist <em>if</em> we can find an <m>x</m>-tolerance <m>\delta</m> that works.</p>
 
+        <p>An example will help us understand this definition. Note that the explanation is long, but it will take one through all steps necessary to understand the ideas.</p>
 
+        <example xml:id="ex_compute_lim1">
+            <title>Evaluating a limit using the definition</title>
+            <statement>
+                <p>Show that <m>\lim\limits_{x\to 4} \sqrt{x} = 2</m>.</p>
+            </statement>
+            <solution>
+                <p>Before we use the formal definition, let's try some numerical tolerances. What if the <m>y</m> tolerance is <m>0.5</m>, or <m>\varepsilon =0.5</m>? How close to <m>4</m> does <m>x</m> have to be so that <m>y</m> is within <m>0.5</m> units of <m>2</m>, i.e., <m>1.5 \lt  y \lt  2.5</m>? In this case, we can proceed as follows:<md>
+                <mrow>1.5 \amp\lt  y \lt  2.5</mrow>
+                <mrow>1.5 \amp\lt  \sqrt{x} \lt  2.5 \amp\amp \text{ (Let } y=\sqrt{x} \text{)}</mrow>
+                <mrow>1.5^2 \amp\lt  x \lt  2.5^2\amp\amp \text{(Square the inequality)}</mrow>
+                <mrow>2.25  \amp\lt  x \lt  6.25</mrow>
+                <mrow>2.25-4 \amp\lt  x-4 \lt  6.25-4\amp\amp \text{(Subtract }4\text{ from both sides)}</mrow>
+                <mrow>-1.75 \amp\lt  x-4 \lt  2.25</mrow>
+                </md></p>
 
-<p>
-An example will help us understand these definition(s). Note that the explanation is long, but it will take one through all steps necessary to understand the ideas.
-</p>
+                <p>So, what is the desired <m>x</m> tolerance? Remember, we want to find a <m>\delta</m> so that <m>\abs{x-4}</m> is smaller than <m>\delta</m>. Since <m>1.75\lt2.25</m>, then if we require <m>\abs{x-4}\lt 1.75</m>, then we have <m>-1.75 \lt x-4 \lt 1.75 \lt 2.25 \implies \abs{x-4}\lt 1.75</m>. Therefore we must have <m>\delta \leq 1.75</m>. See <xref ref="fig_choose_e_d">Figure</xref>.</p>
 
-<example xml:id="ex_compute_lim1">
-<title>Evaluating a limit using the definition</title>
-<statement>
-<p>
-Show that <m>\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2</m>.
-</p>
-</statement>
-<solution>
-<p>
-Before we use the formal definition, let's try some numerical tolerances. What if the <m>y</m> tolerance is 0.5, or <m>\epsilon =0.5</m>? How close to 4 does <m>x</m> have to be so that <m>y</m> is within 0.5 units of 2, i.e., <m>1.5 \lt  y \lt  2.5</m>? In this case, we can proceed as follows:
-<md>
+                <sidebyside xml:id="fig_choose_e_d"> 
+                    <caption>Illustrating the <m>\varepsilon-\delta</m> process. With <m>\varepsilon=0.5</m>, we pick any <m>\delta \lt  1.75</m>.</caption>
 
-  <mrow>1.5  \lt  y \lt  2.5 \amp</mrow>
-  <mrow>1.5 \lt  \sqrt{x} \lt  2.5 \amp \qquad\textrm{ (Let } y=\sqrt{x} )</mrow>
-  <mrow>1.5^2 \lt  x \lt  2.5^2\amp \qquad \textrm{(Square the inequality)}</mrow>
-  <mrow>2.25  \lt  x \lt  6.25 \amp </mrow>
-  <mrow>2.25-4 \lt  x-4 \lt  6.25-4\amp \qquad \textrm{(Subtract 4 from both sides)}</mrow>
-  <mrow>-1.75 \lt  x-4 \lt  2.25 \amp </mrow>
-</md>
-</p>
+                    <figure>
+                        <!-- START figures/fig_limit_proof1a.tex -->
+                        <image xml:id="img_limit_proof1a">
+                            <description></description>
+                            <latex-image-code><![CDATA[
+                                \begin{tikzpicture}
+                                    \begin{axis}[xmin=-.1,xmax=7.1,
+                                                ymin=-.1,ymax=3.1,
+                                                xtick={2,4,6},
+                                                ytick={1,2},]
+                                        \addplot+[->,domain=0:2.64575] ({x^2},{x});
+                                        \addplot[soliddot] coordinates {(4,2)};
+                                        \addplot[guideline] coordinates {(0,1.5) (2.25,1.5)};
+                                        \addplot[guideline] coordinates {(0,2.5) (6.25,2.5)};
+                                        \draw (axis cs:-.1,1.75) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\varepsilon = .5$};
+                                        \draw (axis cs:-.1,2.25) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\varepsilon = .5$};
+                                        \addplot[soliddot] coordinates {(2.25,1.5)};
+                                        \addplot[soliddot] coordinates {(6.25,2.5)};
+                                        \draw (axis cs:4,1) node [text width = 80pt,align=center] {\footnotesize Choose $\varepsilon>0$. Then ...};
+                                    \end{axis}
+                                \end{tikzpicture}
+                            ]]></latex-image-code>
+                        </image>
+                        <!-- figures/fig_limit_proof1a.tex END -->
+                    </figure>
 
-<p>
-So, what is the desired <m>x</m> tolerance? <!--Remember, we want to find a symmetric interval of <m>x</m> values, namely
-<m>4 - \delta \lt  x \lt  4 + \delta</m>.--> The lower bound for <m>x</m> of <m>2.25</m> is <m>1.75</m> units from 4; the upper bound of 6.25 is 2.25 units from 4. We need the smaller of these two distances. Why? Since <m>1.75 \lt 2.25</m>, we have <m>-1.75 \lt x-4 \lt 1.75 \lt 2.25 \Longrightarrow |x-4|\lt 1.75</m>. Therefore we must have <m>\delta \leq 1.75</m>. See <xref ref="fig_choose_e_d">Figure</xref>.
-</p>
-<figure xml:id="fig_choose_e_d" >
-<caption>Illustrating the <m>\epsilon-\delta</m> process.</caption>
+                    <figure>
+                        <!-- START figures/fig_limit_proof1b.tex --> 
+                        <image xml:id="img_limit_proof1b">
+                            <description></description>
+                            <latex-image-code><![CDATA[
+                                \begin{tikzpicture}
+                                    \begin{axis}[xmin=-.1,xmax=7.1,
+                                                ymin=-.1,ymax=3.1,
+                                                xtick={2,4,6},
+                                                ytick={1,2},]
+                                        \addplot+[->,domain=0:2.64575] ({x^2},{x});
+                                        \addplot[soliddot] coordinates {(4,2)};
+                                        \addplot[guideline] coordinates {(0,1.5) (2.25,1.5)};
+                                        \addplot[guideline] coordinates {(0,2.5) (6.25,2.5)};
+                                        \addplot[guideline] coordinates {(2.25,0) (2.25,1.5)};
+                                        \addplot[guideline] coordinates {(6.25,0) (6.25,2.5)};
+                                        \draw (axis cs:-.1,1.75) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\varepsilon = .5$};
+                                        \draw (axis cs:-.1,2.25) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\varepsilon = .5$};
+                                        \addplot[soliddot] coordinates {(2.25,1.5)};
+                                        \addplot[soliddot] coordinates {(6.25,2.5)};
+                                        \draw (axis cs:3.125,.1) node [above,align=center,text width = 45pt] {\tiny width\\[-2pt] = 1.75\\[-3pt] $\overbrace{\rule{30pt}{0pt}}$};
+                                        \draw (axis cs:5.125,.1) node [above,align=center,text width = 45pt] {\tiny width\\[-2pt] = 2.25\\[-3pt] $\overbrace{\rule{39pt}{0pt}}$};
+                                        \draw (axis cs:4.3,1.35)	node [align=center,text width = 80pt] {\footnotesize ... choose $\delta$ smaller than each of these};
+                                        \draw [->,thin] (axis cs:4,1) -- (axis cs:3,.8);
+                                        \draw [->,thin] (axis cs:4,1) -- (axis cs:5,.8);
+                                    \end{axis}
+                                \end{tikzpicture}
+                            ]]></latex-image-code>
+                        </image>
+                        <!-- figures/fig_limit_proof1a.tex END --> 
+                    </figure>
+                </sidebyside>
 
-<!-- START figures/fig_limit_proof1a.tex -->
-<image><latex-image-code><![CDATA[
-\begin{tikzpicture}
-\begin{axis}[ymin=-.1,ymax=3.1,xmin=-.1,xmax=7.1,xtick={2,4,6},ytick={1,2},]
-\addplot [{\colorone},thick,smooth] coordinates {(0.,0.) (0.05,0.223607) (0.1,0.316228) (0.15,0.387298) (0.2,0.447214) (0.25,0.5) (0.5,0.707107) (0.75,0.866025) (1.,1.) (1.25,1.11803) (1.5,1.22474) (1.75,1.32288) (2.,1.41421) (2.25,1.5)(2.5,1.58114) (2.75,1.65831) (3.,1.73205) (3.25,1.80278)(3.5,1.87083) (3.75,1.93649) (4.,2.) (4.25,2.06155) (4.5,2.12132)(4.75,2.17945) (5.,2.23607) (5.25,2.29129) (5.5,2.34521) (5.75,2.39792) (6.,2.44949) (6.25,2.5)(6.5,2.54951) (6.75,2.59808) (7.,2.64575) 
-};
-\fill[black] (axis cs:4,2) circle (1pt);
-\draw[thin,dashed,thick,{\colortwo}] (axis cs:0,1.5) -- (axis cs:2.25,1.5);
-\draw[thin,dashed,thick,{\colortwo}] (axis cs:0,2.5) -- (axis cs:6.25,2.5);
-\draw (axis cs:-.1,1.75) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\epsilon = .5$};
-\draw (axis cs:-.1,2.25) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\epsilon = .5$};
-\fill[{\colortwo}] (axis cs:2.25,1.5) circle (1pt);
-\fill[{\colortwo}] (axis cs:6.25,2.5) circle (1pt);
-\draw (axis cs:4,1) node [text width = 80pt,align=center] {\footnotesize Choose $\epsilon>0$. Then ...};
-\end{axis}
-%\fill[{\colortwo}] (1,1) circle (1pt);
+                <p>Given the <m>y</m> tolerance <m>\varepsilon =0.5</m>, we have found an <m>x</m> tolerance, <m>\delta \leq 1.75</m>, such that whenever <m>x</m> is within <m>\delta</m> units of <m>4</m>, then <m>y</m> is within <m>\varepsilon</m> units of <m>2</m>. That's what we were trying to find.</p>
 
+                <p>Let's try another value of <m>\varepsilon</m>.</p>
 
-\end{tikzpicture}
-% this is the sqrt[x] on [0,5]
-]]></latex-image-code></image><!-- figures/fig_limit_proof1a.tex END -->
+                <p>What if the <m>y</m> tolerance is <m>0.01</m>, i.e., <m>\varepsilon =0.01</m>? How close to <m>4</m> does <m>x</m> have to be in order for <m>y</m> to be within <m>0.01</m> units of <m>2</m> (or <m>1.99 \lt  y \lt  2.01</m>)? Again, we just square these values to get <m>1.99^2 \lt  x \lt  2.01^2</m>, or <md>
+                <mrow>3.9601 \lt  x \lt  4.0401</mrow>
+                <mrow>-0.0399\lt  x-4 \lt  0.0401</mrow>
+                </md></p>
 
+                <p>What is the desired <m>x</m> tolerance? In this case we must have <m>\delta \leq 0.0399</m>, which is the minimum distance from <m>4</m> of the two bounds given above.</p>
 
-		
-          <!-- START figures/fig_limit_proof1b.tex -->
-          <image xml:id="img_limit_proof1b" >
-            <description></description>
-            <latex-image-code>
-              <![CDATA[
-              \begin{tikzpicture}[>=stealth]
-              \begin{axis}[ymin=-.1,ymax=3.1,xmin=-.1,xmax=7.1,xtick={2,4,6},ytick={1,2},]
-              \addplot [{\colorone},smooth,thick] coordinates {(0.,0.) (0.05,0.223607) (0.1,0.316228) (0.15,0.387298) (0.2,0.447214) (0.25,0.5) (0.5,0.707107) (0.75,0.866025) (1.,1.) (1.25,1.11803) (1.5,1.22474) (1.75,1.32288) (2.,1.41421) (2.25,1.5)(2.5,1.58114) (2.75,1.65831) (3.,1.73205) (3.25,1.80278)(3.5,1.87083) (3.75,1.93649) (4.,2.) (4.25,2.06155) (4.5,2.12132)(4.75,2.17945) (5.,2.23607) (5.25,2.29129) (5.5,2.34521) (5.75,2.39792) (6.,2.44949) (6.25,2.5)(6.5,2.54951) (6.75,2.59808) (7.,2.64575) 
-              };
-              \fill[black] (axis cs:4,2) circle (1pt);
-              \draw[thin,dashed,gray,thick] (axis cs:0,1.5) -- (axis cs:2.25,1.5);
-              \draw[thin,dashed,gray,thick] (axis cs:0,2.5) -- (axis cs:6.25,2.5);
-              \draw[thin,dashed,{\colortwo},thick] (axis cs:2.25,0) -- (axis cs:2.25,1.5);
-              \draw[thin,dashed,{\colortwo},thick] (axis cs:6.25,0) -- (axis cs:6.25,2.5);
-              \draw (axis cs:-.1,1.75) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\epsilon = .5$};
-              \draw (axis cs:-.1,2.25) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\epsilon = .5$};
-              \fill[{\colortwo}] (axis cs:2.25,1.5) circle (1pt);
-              \fill[{\colortwo}] (axis cs:6.25,2.5) circle (1pt);
-              \draw (axis cs:3.125,.1) node [above,align=center,text width = 45pt] {\tiny width\\[-2pt] = 1.75\\[-3pt] $\overbrace{\rule{30pt}{0pt}}$};
-              \draw (axis cs:5.125,.1) node [above,align=center,text width = 45pt] {\tiny width\\[-2pt] = 2.25\\[-3pt] $\overbrace{\rule{39pt}{0pt}}$};
-              \draw (axis cs:4.3,1.35)	node [align=center,text width = 80pt] {\footnotesize ... choose $\delta$ smaller than each of these};
-              \draw [->,thin] (axis cs:4,1) -- (axis cs:3,.8);
-              \draw [->,thin] (axis cs:4,1) -- (axis cs:5,.8);
-              \end{axis}
-              %\fill[{\colortwo}] (1,1) circle (1pt);
+                <p>What we have so far: if <m>\varepsilon =0.5</m>, then <m>\delta \leq 1.75</m> and if <m>\varepsilon = 0.01</m>, then <m>\delta \leq 0.0399</m>. A pattern is not easy to see, so we switch to general <m>\varepsilon</m> try to determine <m>\delta</m> symbolically. We start by assuming <m>y=\sqrt{x}</m> is within <m>\varepsilon</m> units of <m>2</m>:<md>
+                <mrow>\abs{y - 2}\amp \lt  \varepsilon</mrow>
+                <mrow>-\varepsilon \amp\lt  y - 2 \lt  \varepsilon\amp\amp \text{(Definition of absolute value)}</mrow>
+                <mrow>-\varepsilon \amp\lt  \sqrt{x} - 2 \lt  \varepsilon  \amp\amp (y=\sqrt{x})</mrow>
+                <mrow>2 - \varepsilon \amp\lt  \sqrt{x} \lt  2+ \varepsilon \amp\amp \text{(Add 2)}</mrow>
+                <mrow>(2 - \varepsilon)^2 \amp\lt  x \lt  (2+ \varepsilon) ^2 \amp\amp \text{(Square all)}</mrow>
+                <mrow>4 - 4\varepsilon + \varepsilon^2 \amp\lt  x \lt  4 + 4\varepsilon + \varepsilon^2 \amp\amp \text{(Expand)}</mrow>
+                <mrow>4 - 4\varepsilon + \varepsilon^2 -4 \amp\lt  x-4 \lt  4 + 4\varepsilon + \varepsilon^2-4\amp\amp \text{(Subtract 4)}</mrow>
+                <mrow>-4\varepsilon + \varepsilon^2 \lt  x-4 \amp\lt   4\varepsilon + \varepsilon^2\amp\amp \text{(Simplify)}</mrow>
+                </md></p>
+                <p>We choose the smaller of these two distances from the number <m>4</m>:<me>\delta \leq \min\{4\varepsilon - \varepsilon^2, 4\varepsilon + \varepsilon^2\}\text{.}</me></p>
 
+                <p>Since <m>\varepsilon > 0</m>, we have <m>4\varepsilon - \varepsilon^2 \lt 4\varepsilon + \varepsilon^2</m>, the minimum is <m>\delta \leq 4\varepsilon - \varepsilon^2</m>. That's the formula: given an <m>\varepsilon</m>, set <m>\delta \leq 4\varepsilon-\varepsilon^2</m>.</p>
 
-              \end{tikzpicture}
-              % this is the sqrt[x] on [0,5]
-              ]]>
-            </latex-image-code>
-          </image>
-          <!-- figures/fig_limit_proof1b.tex END -->
+                <p>We can check this for our previous values. If <m>\varepsilon=0.5</m>, the formula gives <m>\delta \leq 4(0.5) - (0.5)^2 = 1.75</m> and when <m>\varepsilon=0.01</m>, the formula gives <m>\delta \leq 4(0.01) - (0.01)^2 = 0.399</m>.</p>
 
-
-		\text{ With \(\epsilon=0.5\), we pick any \(\delta \lt  1.75\). }
-</figure>
-<p>
-Given the <m>y</m> tolerance <m>\epsilon =0.5</m>, we have found an <m>x</m> tolerance, <m>\delta \leq 1.75</m>, such that whenever <m>x</m> is within <m>\delta</m> units of 4, then <m>y</m> is within <m>\epsilon</m> units of 2. That's what we were trying to find.
-</p>
+                <p>So given any <m>\varepsilon >0</m>, set <m>\delta \leq 4\varepsilon - \varepsilon^2</m>. Then if <m>\abs{x-4}\lt \delta</m> (and <m>x\neq 4</m>), then <m>\abs{f(x) - 2} \lt  \varepsilon</m>, satisfying the definition of the limit. We have shown formally (and finally!) that <m>\displaystyle \lim_{x\to 4} \sqrt{x} = 2</m>.</p>
+            </solution>
+        </example>
 
 <p>
-Let's try another value of <m>\epsilon</m>.
-</p>
-
-<p>
-What if the <m>y</m> tolerance is 0.01, i.e., <m>\epsilon =0.01</m>? How close to 4 does <m>x</m> have to be in order for <m>y</m> to be within 0.01 units of 2 (or <m>1.99 \lt  y \lt  2.01</m>)? Again, we just square these values to get
-<m>1.99^2 \lt  x \lt  2.01^2</m>, or
-<md>
-  <mrow>3.9601 \lt  x \lt  4.0401</mrow>
-  <mrow>-0.0399\lt  x-4 \lt  0.0401</mrow>
-</md>
-</p>
-
-<p>
-What is the desired <m>x</m> tolerance? In this case we must have <m>\delta \leq 0.0399</m>, which is the minimum distance from 4 of the two bounds given above.
-</p>
-
-<p>
-What we have so far: if <m>\epsilon =0.5</m>, then <m>\delta \leq 1.75</m> and if <m>\epsilon = 0.01</m>, then <m>\delta \leq 0.0399</m>. A pattern is not easy to see, so we switch to general <m>\epsilon</m> try to determine <m>\delta</m> symbolically. We start by assuming <m>y=\sqrt{x}</m> is within <m>\epsilon</m> units of 2:
-<md>
-  <mrow>  |y - 2| \lt  \epsilon \amp</mrow>
-  <mrow>  -\epsilon \lt  y - 2 \lt  \epsilon\amp  \qquad \textrm{(Definition of absolute value)}</mrow>
-  <mrow>  -\epsilon \lt  \sqrt{x} - 2 \lt  \epsilon  \amp \qquad (y=\sqrt{x})</mrow>
-  <mrow>  2 - \epsilon \lt  \sqrt{x} \lt  2+ \epsilon \amp \qquad \textrm{ (Add 2)}</mrow>
-  <mrow>  (2 - \epsilon)^2 \lt  x \lt  (2+ \epsilon) ^2 \amp \qquad \textrm{ (Square all)}</mrow>
-  <mrow>  4 - 4\epsilon + \epsilon^2 \lt  x \lt  4 + 4\epsilon + \epsilon^2 \amp \qquad \textrm{ (Expand)}</mrow>
-  <mrow>  4 - 4\epsilon + \epsilon^2 -4 \lt  x-4 \lt  4 + 4\epsilon + \epsilon^2-4\amp \qquad \textrm{ (Subtract 4)}</mrow>
-  <mrow>   - 4\epsilon + \epsilon^2 \lt  x-4 \lt   4\epsilon + \epsilon^2\amp \qquad \textrm{ (Simplify)}</mrow>
- <!-- <mrow>  4 - (4\epsilon - \epsilon^2) \lt  x \lt  4 + (4\epsilon + \epsilon^2). \amp \qquad \textrm{ (Rewrite in the desired form)}</mrow> -->
-</md>
-</p>
-<!--
-<p>
-The <q>desired form</q> in the last step is <q><m>4-\textit{something} \lt  x \lt  4 +\textit{something}</m>.</q>
-Since we want this last interval to describe an <m>x</m> tolerance around 4, we have that either <m>\delta \leq 4\epsilon - \epsilon^2</m> or <m>\delta \leq 4\epsilon + \epsilon^2</m>, whichever is smaller:-->
-<p>We choose the smaller of these two distances from the number <m>4</m>:
-<me>
-  \delta \leq \min\{4\epsilon - \epsilon^2, 4\epsilon + \epsilon^2\}.
-</me>
-</p>
-
-<p>
-Since <m>\epsilon > 0</m>, we have <m>4\epsilon - \epsilon^2 \lt 4\epsilon + \epsilon^2</m>, the minimum is <m>\delta \leq 4\epsilon - \epsilon^2</m>. That's the formula: given an <m>\epsilon</m>, set <m>\delta \leq 4\epsilon-\epsilon^2</m>.
-</p>
-
-<p>
-We can check this for our previous values. If <m>\epsilon=0.5</m>, the formula gives
-<m>\delta \leq 4(0.5) - (0.5)^2 = 1.75</m> and when <m>\epsilon=0.01</m>, the formula gives <m>\delta \leq 4(0.01) - (0.01)^2 = 0.399</m>.
-</p>
-
-<p>
-So given any <m>\epsilon >0</m>, set <m>\delta \leq 4\epsilon - \epsilon^2</m>. Then if <m>|x-4|\lt \delta</m> (and <m>x\neq 4</m>), then <m>|f(x) - 2| \lt  \epsilon</m>, satisfying the definition of the limit. We have shown formally (and finally!) that <m>\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2</m>.
-</p>
-</solution>
-</example>
-
-<p>
-The previous example was a little long in that we sampled a few specific cases of <m>\epsilon</m> before handling the general case. Normally this is not done. The previous example is also a bit unsatisfying in that <m>\sqrt{4}=2</m>; why work so hard to prove something so obvious? Many <m>\epsilon</m>-<m>\delta</m> proofs are long and difficult to do. In this section, we will focus on examples where the answer is, frankly, obvious, because the non<ndash />obvious examples are even harder. In the next section we will learn some theorems that allow us to evaluate limits <em>analytically</em>, that is, without using the <m>\epsilon</m>-<m>\delta</m> definition.
+The previous example was a little long in that we sampled a few specific cases of <m>\varepsilon</m> before handling the general case. Normally this is not done. The previous example is also a bit unsatisfying in that <m>\sqrt{4}=2</m>; why work so hard to prove something so obvious? Many <m>\varepsilon</m>-<m>\delta</m> proofs are long and difficult to do. In this section, we will focus on examples where the answer is, frankly, obvious, because the non<ndash />obvious examples are even harder. In the next section we will learn some theorems that allow us to evaluate limits <em>analytically</em>, that is, without using the <m>\varepsilon</m>-<m>\delta</m> definition.
 </p>
 
 <example xml:id="ex_compute_lim2">
@@ -279,56 +187,56 @@ Show that <m>\displaystyle \lim_{x\rightarrow 2} x^2 = 4</m>.
 </statement>
 <solution>
 <p>
-Let's do this example symbolically from the start. Let <m>\epsilon > 0</m> be given; we want <m>|y-4| \lt  \epsilon</m>, i.e., <m>|x^2-4| \lt  \epsilon</m>. How do we find <m>\delta</m> such that when <m>|x-2| \lt  \delta</m>, we are guaranteed that <m>|x^2-4|\lt \epsilon</m>?
+Let's do this example symbolically from the start. Let <m>\varepsilon > 0</m> be given; we want <m>|y-4| \lt  \varepsilon</m>, i.e., <m>|x^2-4| \lt  \varepsilon</m>. How do we find <m>\delta</m> such that when <m>|x-2| \lt  \delta</m>, we are guaranteed that <m>|x^2-4|\lt \varepsilon</m>?
 </p>
 
 <p>
 This is a bit trickier than the previous example, but let's start by noticing that
 <m>|x^2-4| = |x-2|\cdot|x+2|</m>. Consider:
 <men xml:id="eq_limit1" >
-  |x^2-4| \lt  \epsilon \Longrightarrow |x-2|\cdot|x+2| \lt  \epsilon \Longrightarrow |x-2| \lt  \frac{\epsilon}{|x+2|}.
+  |x^2-4| \lt  \varepsilon \Longrightarrow |x-2|\cdot|x+2| \lt  \varepsilon \Longrightarrow |x-2| \lt  \frac{\varepsilon}{|x+2|}.
 </men>
 </p>
 
 <p>
-Could we not set <m>\displaystyle \delta = \frac{\epsilon}{|x+2|}</m>?
+Could we not set <m>\displaystyle \delta = \frac{\varepsilon}{|x+2|}</m>?
 </p>
 
 <p>
-We are close to an answer, but the catch is that <m>\delta</m> must be a <em>constant</em> value (so it can't contain <m>x</m>). There is a way to work around this, but we do have to make an assumption. Remember that <m>\epsilon</m> is supposed to be a small number, which implies that <m>\delta</m> will also be a small value. In particular, we can (probably) assume that <m>\delta \lt  1</m>. If this is true, then <m>|x-2| \lt  \delta</m> would imply that <m>|x-2| \lt  1</m>, giving <m>1 \lt  x \lt  3</m>.
+We are close to an answer, but the catch is that <m>\delta</m> must be a <em>constant</em> value (so it can't contain <m>x</m>). There is a way to work around this, but we do have to make an assumption. Remember that <m>\varepsilon</m> is supposed to be a small number, which implies that <m>\delta</m> will also be a small value. In particular, we can (probably) assume that <m>\delta \lt  1</m>. If this is true, then <m>|x-2| \lt  \delta</m> would imply that <m>|x-2| \lt  1</m>, giving <m>1 \lt  x \lt  3</m>.
 </p>
 
 <p>
-Now, back to the fraction <m>\displaystyle \frac{\epsilon}{|x+2|}</m>. If <m>1\lt x\lt 3</m>, then <m>3\lt x+2\lt 5</m> (add 2 to all terms in the inequality). Taking reciprocals, we have
+Now, back to the fraction <m>\displaystyle \frac{\varepsilon}{|x+2|}</m>. If <m>1\lt x\lt 3</m>, then <m>3\lt x+2\lt 5</m> (add 2 to all terms in the inequality). Taking reciprocals, we have
 <md>
   <mrow>  \frac15 \lt \amp  \frac1{|x+2|} \lt  \frac 13 \amp  \text{ which implies }</mrow>
   <mrow>  \frac15 \lt \amp  \frac1{|x+2|} \amp  \text{ which implies }</mrow>
-  <mrow>  \frac\epsilon5\lt \amp \frac{\epsilon}{|x+2|}.</mrow>
+  <mrow>  \frac\varepsilon5\lt \amp \frac{\varepsilon}{|x+2|}.</mrow>
 </md>
 </p>
 
 <p>
 This suggests that we set
-<m>\displaystyle \delta \leq \frac{\epsilon}{5}</m>. To see why, let consider what follows when we assume <m>|x-2|\lt \delta</m>:
+<m>\displaystyle \delta \leq \frac{\varepsilon}{5}</m>. To see why, let consider what follows when we assume <m>|x-2|\lt \delta</m>:
 <md>
   <mrow>  |x - 2| \amp \lt  \delta \amp</mrow>
-  <mrow>  |x - 2| \amp \lt  \frac{\epsilon}{5}\amp   \text{ (Our choice of \(\delta\)) }</mrow>
-  <mrow>  |x - 2|\cdot|x + 2| \amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\amp   \text{ (Multiply by \(|x+2|\)) }</mrow>
-  <mrow>  |x^2 - 4|\amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\amp   \text{ (Combine left side) }</mrow>
-  <mrow>  |x^2 - 4|\amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\lt  |x + 2|\cdot\frac{\epsilon}{|x+2|}=\epsilon \amp   
+  <mrow>  |x - 2| \amp \lt  \frac{\varepsilon}{5}\amp   \text{ (Our choice of \(\delta\)) }</mrow>
+  <mrow>  |x - 2|\cdot|x + 2| \amp \lt  |x + 2|\cdot\frac{\varepsilon}{5}\amp   \text{ (Multiply by \(|x+2|\)) }</mrow>
+  <mrow>  |x^2 - 4|\amp \lt  |x + 2|\cdot\frac{\varepsilon}{5}\amp   \text{ (Combine left side) }</mrow>
+  <mrow>  |x^2 - 4|\amp \lt  |x + 2|\cdot\frac{\varepsilon}{5}\lt  |x + 2|\cdot\frac{\varepsilon}{|x+2|}=\varepsilon \amp   
 \text{ (Using (1.2.4) as long as \(\delta \lt 1\)) }</mrow>
 </md>
 </p>
 
 <p>
-We have arrived at <m>|x^2 - 4|\lt \epsilon</m> as desired. Note again, in order to make this happen we needed <m>\delta</m> to first be less than 1. That is a safe assumption; we want <m>\epsilon</m> to be arbitrarily small, forcing <m>\delta</m> to also be small.
+We have arrived at <m>|x^2 - 4|\lt \varepsilon</m> as desired. Note again, in order to make this happen we needed <m>\delta</m> to first be less than 1. That is a safe assumption; we want <m>\varepsilon</m> to be arbitrarily small, forcing <m>\delta</m> to also be small.
 </p>
 
 <p>
-We have also picked <m>\delta</m> to be smaller than <q>necessary.</q> We could get by with a slightly larger <m>\delta</m>, as shown in <xref ref="fig_limit_eover5">Figure</xref>. The dashed outer lines show the boundaries defined by our choice of <m>\epsilon</m>. The dotted inner lines show the boundaries defined by setting <m>\delta = \epsilon/5</m>. Note how these dotted lines are within the dashed lines. That is perfectly fine; by choosing <m>x</m> within the dotted lines we are guaranteed that <m>f(x)</m> will be within <m>\epsilon</m> of 4.
+We have also picked <m>\delta</m> to be smaller than <q>necessary.</q> We could get by with a slightly larger <m>\delta</m>, as shown in <xref ref="fig_limit_eover5">Figure</xref>. The dashed outer lines show the boundaries defined by our choice of <m>\varepsilon</m>. The dotted inner lines show the boundaries defined by setting <m>\delta = \varepsilon/5</m>. Note how these dotted lines are within the dashed lines. That is perfectly fine; by choosing <m>x</m> within the dotted lines we are guaranteed that <m>f(x)</m> will be within <m>\varepsilon</m> of 4.
 </p>
 <figure xml:id="fig_limit_eover5" >
-<caption>Choosing <m>\delta = \epsilon/5</m> in <xref ref="ex_compute_lim2">Example</xref>.</caption>
+<caption>Choosing <m>\delta = \varepsilon/5</m> in <xref ref="ex_compute_lim2">Example</xref>.</caption>
 
 <!-- START figures/fig_limit_proof2a.tex -->
 <image><latex-image-code><![CDATA[
@@ -345,13 +253,13 @@ We have also picked <m>\delta</m> to be smaller than <q>necessary.</q> We could 
 \draw[thin,dashed,thick,{\colortwo}] (axis cs:1.73,0) -- (axis cs:1.73,3);
 \draw[dotted,ultra thick,gray] (axis cs:2.2,0) -- (axis cs:2.2,4.84);
 \draw[dotted,ultra thick,gray] (axis cs:1.8,0) -- (axis cs:1.8,3.24);
-\draw (axis cs:-.1,4.5) node [right]{\scriptsize$\left.\rule{0pt}{12pt}\right\}\epsilon$};
+\draw (axis cs:-.1,4.5) node [right]{\scriptsize$\left.\rule{0pt}{12pt}\right\}\varepsilon$};
 \draw (axis cs:2.1,2.15) node [above] {\scriptsize$\delta$};
 \draw (axis cs:2.1,2.05) node [above,scale=.35] {$\overbrace{\phantom{..........}}$};
 \draw (axis cs:2.3,4.5)  -- (axis cs: 3.2,4.5);
 \draw (axis cs:2.3,4.3)  -- (axis cs: 2.5,4.3);
-\draw (axis cs:2.75,4.7) node [align=center]{\scriptsize length of $\epsilon$};
-\draw (axis cs:2.75,3.9) node [align=center,text width=35pt]{\scriptsize length of\\[-2pt] $\delta=\epsilon/5$};
+\draw (axis cs:2.75,4.7) node [align=center]{\scriptsize length of $\varepsilon$};
+\draw (axis cs:2.75,3.9) node [align=center,text width=35pt]{\scriptsize length of\\[-2pt] $\delta=\varepsilon/5$};
 \fill[{\colortwo}] (axis cs:1.73,3) circle (1pt);
 \fill[{\colortwo}] (axis cs:2.24,5) circle (1pt);
 \end{axis}
@@ -364,8 +272,8 @@ We have also picked <m>\delta</m> to be smaller than <q>necessary.</q> We could 
 
 </figure>
 <p>
-In summary, given <m>\epsilon > 0</m>, set <m>\delta=\leq\epsilon/5</m>. Then <m>|x - 2| \lt  \delta</m> implies
-<m>|x^2 - 4|\lt  \epsilon</m> (i.e. <m>|y - 4|\lt  \epsilon</m>) as desired. This shows that <m>\displaystyle \lim_{x\rightarrow 2} x^2 = 4</m>. <xref ref="fig_limit_eover5">Figure</xref> gives a visualization of this; by restricting <m>x</m> to values within <m>\delta = \epsilon/5</m> of 2, we see that <m>f(x)</m> is within <m>\epsilon</m> of <m>4</m>.
+In summary, given <m>\varepsilon > 0</m>, set <m>\delta=\leq\varepsilon/5</m>. Then <m>|x - 2| \lt  \delta</m> implies
+<m>|x^2 - 4|\lt  \varepsilon</m> (i.e. <m>|y - 4|\lt  \varepsilon</m>) as desired. This shows that <m>\displaystyle \lim_{x\rightarrow 2} x^2 = 4</m>. <xref ref="fig_limit_eover5">Figure</xref> gives a visualization of this; by restricting <m>x</m> to values within <m>\delta = \varepsilon/5</m> of 2, we see that <m>f(x)</m> is within <m>\varepsilon</m> of <m>4</m>.
 </p>
 </solution>
 </example>
@@ -376,7 +284,7 @@ Make note of the general pattern exhibited in these last two examples. In some s
 
 <ol>
 <li><p>start with <m>|x-c|\lt \delta</m> and conclude that</p></li>
-<li><p><m>|f(x)-L|\lt \epsilon</m>,</p></li>
+<li><p><m>|f(x)-L|\lt \varepsilon</m>,</p></li>
 </ol>
 
 <p>
@@ -384,12 +292,12 @@ we actually start by assuming
 </p>
 
 <ol>
-<li><p><m>|f(x)-L|\lt \epsilon</m>, then perform some algebraic manipulations to give an inequality of the form</p></li>
+<li><p><m>|f(x)-L|\lt \varepsilon</m>, then perform some algebraic manipulations to give an inequality of the form</p></li>
 <li><p><m>|x-c|\lt</m> <em>something</em>.</p></li>
 </ol>
 
 <p>
-When we have properly done this, the <em>something</em> on the <q>greater than</q> side of the inequality becomes our <m>\delta</m>. We can refer to this as the <q>scratch<ndash />work</q> phase of our proof. Once we have <m>\delta</m>, we can formally start with <m>|x-c|\lt \delta</m> and use algebraic manipulations to conclude that <m>|f(x)-L|\lt \epsilon</m>, usually by using the same steps of our <q>scratch<ndash />work</q> in reverse order.</p>
+When we have properly done this, the <em>something</em> on the <q>greater than</q> side of the inequality becomes our <m>\delta</m>. We can refer to this as the <q>scratch<ndash />work</q> phase of our proof. Once we have <m>\delta</m>, we can formally start with <m>|x-c|\lt \delta</m> and use algebraic manipulations to conclude that <m>|f(x)-L|\lt \varepsilon</m>, usually by using the same steps of our <q>scratch<ndash />work</q> in reverse order.</p>
 
 <p>
 We highlight this process in the following example.
@@ -404,19 +312,19 @@ Prove that <m>\ds \lim_{x\rightarrow 1}x^3-2x = -1</m>.
 </statement>
 <solution>
 <p>
-We start our scratch<ndash />work by considering <m>|f(x) - (-1)| \lt  \epsilon</m>:
+We start our scratch<ndash />work by considering <m>|f(x) - (-1)| \lt  \varepsilon</m>:
 <md>
-  <mrow>  |f(x)-(-1)| \amp \lt  \epsilon</mrow>
-  <mrow>  |x^3-2x + 1|\amp \lt  \epsilon \amp  \text{ (Now factor) }</mrow>
-  <mrow>  |(x-1)(x^2+x-1)|\amp \lt  \epsilon</mrow>
+  <mrow>  |f(x)-(-1)| \amp \lt  \varepsilon</mrow>
+  <mrow>  |x^3-2x + 1|\amp \lt  \varepsilon \amp  \text{ (Now factor) }</mrow>
+  <mrow>  |(x-1)(x^2+x-1)|\amp \lt  \varepsilon</mrow>
 </md>
 <men xml:id ="eq_lim4">
-  |x-1|  \lt \frac{\epsilon}{|x^2+x-1|\text{.}}
+  |x-1|  \lt \frac{\varepsilon}{|x^2+x-1|\text{.}}
 </men>
 </p>
 
 <p>
-We are at the phase of saying that <m>|x-1|\lt</m> <em>something</em>, where <em>something</em><m>=\epsilon/|x^2+x-1|</m>. We want to turn that <em>something</em> into <m>\delta</m>.
+We are at the phase of saying that <m>|x-1|\lt</m> <em>something</em>, where <em>something</em><m>=\varepsilon/|x^2+x-1|</m>. We want to turn that <em>something</em> into <m>\delta</m>.
 </p>
 
 <p>
@@ -431,27 +339,27 @@ Since <m>x</m> is approaching 1, we are safe to assume that <m>x</m> is between 
 </p>
 
 <p>
-In Equation <xref ref="eq_lim4" />, we wanted <m>|x-1|\lt \epsilon/|x^2+x-1|</m>. The above shows that given any <m>x</m> in <m>[0,2]</m>, we know that
+In Equation <xref ref="eq_lim4" />, we wanted <m>|x-1|\lt \varepsilon/|x^2+x-1|</m>. The above shows that given any <m>x</m> in <m>[0,2]</m>, we know that
 <md>
   <mrow>  x^2+x-1 \amp \lt  5 \amp \text{ which implies that }</mrow>
   <mrow>  \frac15 \amp \lt  \frac{1}{x^2+x-1} \amp \text{ which implies that }</mrow>
-  <mrow>  \frac{\epsilon}5 \amp \lt  \frac{\epsilon}{x^2+x-1}.</mrow>
+  <mrow>  \frac{\varepsilon}5 \amp \lt  \frac{\varepsilon}{x^2+x-1}.</mrow>
 </md>
 </p>
 
 <p>
-So we set <m>\delta \leq \epsilon/5</m>. This ends our scratch<ndash />work, and we begin the formal proof (which also helps us understand why this was a good choice of <m>\delta</m>).
+So we set <m>\delta \leq \varepsilon/5</m>. This ends our scratch<ndash />work, and we begin the formal proof (which also helps us understand why this was a good choice of <m>\delta</m>).
 </p>
 
 <p>
-Given <m>\epsilon</m>, let <m>\delta \leq \epsilon/5</m>. We want to show that when <m>|x-1|\lt \delta</m>, then <m>|(x^3-2x)-(-1)|\lt \epsilon</m>. We start with <m>|x-1|\lt \delta</m>:
+Given <m>\varepsilon</m>, let <m>\delta \leq \varepsilon/5</m>. We want to show that when <m>|x-1|\lt \delta</m>, then <m>|(x^3-2x)-(-1)|\lt \varepsilon</m>. We start with <m>|x-1|\lt \delta</m>:
 <md>
   <mrow>  |x-1| \amp \lt  \delta</mrow>
-  <mrow>  |x-1| \amp \lt  \frac{\epsilon}5</mrow>
-  <mrow>  |x-1| \amp \lt  \frac\epsilon5 \lt  \frac{\epsilon}{|x^2+x-1|} \amp  \text{ (for \(x\) near 1, from Equation (1.2.11)) }</mrow>
-  <mrow>  |x-1|\cdot |x^2+x-1| \amp \lt  \epsilon</mrow>
-  <mrow>  |x^3-2x+1| \amp \lt  \epsilon</mrow>
-  <mrow>  |(x^3-2x)-(-1)| \amp \lt \epsilon,</mrow>
+  <mrow>  |x-1| \amp \lt  \frac{\varepsilon}5</mrow>
+  <mrow>  |x-1| \amp \lt  \frac\varepsilon5 \lt  \frac{\varepsilon}{|x^2+x-1|} \amp  \text{ (for \(x\) near 1, from Equation (1.2.11)) }</mrow>
+  <mrow>  |x-1|\cdot |x^2+x-1| \amp \lt  \varepsilon</mrow>
+  <mrow>  |x^3-2x+1| \amp \lt  \varepsilon</mrow>
+  <mrow>  |(x^3-2x)-(-1)| \amp \lt \varepsilon,</mrow>
 </md>
 which is what we wanted to show. Thus <m>\ds \lim_{x\to 1}x^3-2x = -1</m>.
 </p>
@@ -471,24 +379,24 @@ Prove that <m>\displaystyle \lim_{x\rightarrow 0} e^x = 1</m>.
 </statement>
 <solution>
 <p>
-Symbolically, we want to take the equation <m>|e^x - 1| \lt  \epsilon</m> and unravel it to the form <m>|x-0| \lt  \delta</m>. Here is our scratch<ndash />work:
+Symbolically, we want to take the equation <m>|e^x - 1| \lt  \varepsilon</m> and unravel it to the form <m>|x-0| \lt  \delta</m>. Here is our scratch<ndash />work:
 <md>
-  <mrow>  |e^x - 1| \lt  \epsilon\amp</mrow>
-  <mrow>  -\epsilon \lt  e^x - 1 \lt  \epsilon\amp  \qquad \textrm{(Definition of absolute value)}</mrow>
-  <mrow>  1-\epsilon \lt  e^x \lt  1+\epsilon \amp  \qquad \textrm{(Add 1)}</mrow>
-  <mrow>  \ln(1-\epsilon) \lt  x \lt  \ln(1+\epsilon) \amp  \qquad \textrm{(Take natural logs)}</mrow>
+  <mrow>  |e^x - 1| \lt  \varepsilon\amp</mrow>
+  <mrow>  -\varepsilon \lt  e^x - 1 \lt  \varepsilon\amp  \qquad \textrm{(Definition of absolute value)}</mrow>
+  <mrow>  1-\varepsilon \lt  e^x \lt  1+\varepsilon \amp  \qquad \textrm{(Add 1)}</mrow>
+  <mrow>  \ln(1-\varepsilon) \lt  x \lt  \ln(1+\varepsilon) \amp  \qquad \textrm{(Take natural logs)}</mrow>
 </md>
 </p>
 
 <p>
-Making the safe assumption that <m>\epsilon\lt 1</m> ensures the last inequality is valid (i.e., so that <m>\ln (1-\epsilon)</m> is defined). We can then set <m>\delta</m> to be the minimum of <m>|\ln(1-\epsilon)|</m> and <m>\ln(1+\epsilon)</m>; i.e.,
+Making the safe assumption that <m>\varepsilon\lt 1</m> ensures the last inequality is valid (i.e., so that <m>\ln (1-\varepsilon)</m> is defined). We can then set <m>\delta</m> to be the minimum of <m>|\ln(1-\varepsilon)|</m> and <m>\ln(1+\varepsilon)</m>; i.e.,
 <me>
-  \delta = \min\{|\ln(1-\epsilon)|, \ln(1+\epsilon)\} = \ln(1+\epsilon).
+  \delta = \min\{|\ln(1-\varepsilon)|, \ln(1+\varepsilon)\} = \ln(1+\varepsilon).
 </me>
 </p>
 <aside>
 <p>
-<em>Note:</em> Recall <m>\ln 1= 0</m> and <m>\ln x\lt 0</m> when <m>0\lt x\lt 1</m>. So <m>\ln (1-\epsilon) \lt 0</m>, hence we consider its absolute value.
+<em>Note:</em> Recall <m>\ln 1= 0</m> and <m>\ln x\lt 0</m> when <m>0\lt x\lt 1</m>. So <m>\ln (1-\varepsilon) \lt 0</m>, hence we consider its absolute value.
 </p>
 </aside>
 <p>
@@ -496,16 +404,16 @@ Now, we work through the actual the proof:
 <md>
   <mrow>  |x - 0|\amp \lt \delta</mrow>
   <mrow>  -\delta \amp \lt  x \lt  \delta \amp   \textrm{(Definition of absolute value)}</mrow>
-  <mrow>  -\ln(1+\epsilon) \amp \lt  x \lt  \ln(1+\epsilon). \amp</mrow>
-  <mrow>  \ln(1-\epsilon) \amp \lt  x \lt  \ln(1+\epsilon). \amp  \text{ (since \(\ln(1-\epsilon) \lt  -\ln(1+\epsilon)\)) }</mrow>
-<intertext>The above line is true by our choice of <m>\delta</m> and by the fact that since <m>|\ln(1-\epsilon)|>\ln(1+\epsilon)</m> and <m>\ln(1-\epsilon)\lt 0</m>, we know <m>\ln(1-\epsilon) \lt  -\ln(1+\epsilon )</m>.</intertext>
-  <mrow>  1-\epsilon \amp \lt  e^x \lt  1+\epsilon \amp   \textrm{(Exponentiate)}</mrow>
-  <mrow>  -\epsilon \amp \lt  e^x - 1 \lt  \epsilon \amp   \textrm{(Subtract 1)}</mrow>
+  <mrow>  -\ln(1+\varepsilon) \amp \lt  x \lt  \ln(1+\varepsilon). \amp</mrow>
+  <mrow>  \ln(1-\varepsilon) \amp \lt  x \lt  \ln(1+\varepsilon). \amp  \text{ (since \(\ln(1-\varepsilon) \lt  -\ln(1+\varepsilon)\)) }</mrow>
+<intertext>The above line is true by our choice of <m>\delta</m> and by the fact that since <m>|\ln(1-\varepsilon)|>\ln(1+\varepsilon)</m> and <m>\ln(1-\varepsilon)\lt 0</m>, we know <m>\ln(1-\varepsilon) \lt  -\ln(1+\varepsilon )</m>.</intertext>
+  <mrow>  1-\varepsilon \amp \lt  e^x \lt  1+\varepsilon \amp   \textrm{(Exponentiate)}</mrow>
+  <mrow>  -\varepsilon \amp \lt  e^x - 1 \lt  \varepsilon \amp   \textrm{(Subtract 1)}</mrow>
 </md>
 </p>
 
 <p>
-In summary, given <m>\epsilon > 0</m>, let <m>\delta = \ln(1+\epsilon)</m>. Then <m>|x - 0| \lt  \delta</m> implies <m>|e^x - 1|\lt  \epsilon</m> as desired. We have shown that <m>\displaystyle \lim_{x\rightarrow 0} e^x = 1</m>.
+In summary, given <m>\varepsilon > 0</m>, let <m>\delta = \ln(1+\varepsilon)</m>. Then <m>|x - 0| \lt  \delta</m> implies <m>|e^x - 1|\lt  \varepsilon</m> as desired. We have shown that <m>\displaystyle \lim_{x\rightarrow 0} e^x = 1</m>.
 </p>
 </solution>
 </example>
