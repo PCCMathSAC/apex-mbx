@@ -26,7 +26,7 @@
 
         <dl width="narrow">
             <li xml:id="lim_def_3p">
-                <title>3′</title>
+                <title>3&#8242;</title>
                 <p>If <m>x</m> is within a certain <em>tolerance level</em> of <m>c</m>, then the corresponding value <m>y=f(x)</m> is within a certain <em>tolerance level</em> of <m>L</m>.</p>
             </li>
         </dl>
@@ -35,7 +35,7 @@
 
         <dl width="narrow">
             <li xml:id="lim_def_3pp">
-                <title>3″</title>
+                <title>3&#8243;</title>
                 <p>If <m>x</m> is within <m>\delta</m> units of <m>c</m>, then the corresponding value of <m>y</m> is within <m>\varepsilon</m> units of <m>L</m>.</p>
             </li>
         </dl>
@@ -291,7 +291,7 @@
                 <mrow>\abs{x-1} \amp \lt  \delta</mrow>
                 <mrow>\abs{x-1} \amp \lt  \frac{\varepsilon}{5}</mrow>
                 <mrow>\abs{x-1} \amp \lt  \frac{\varepsilon}{5} \lt  \frac{\varepsilon}{\abs{x^2+x-1}} \amp\amp  \text{(for }x\text{ near 1, from }<xref ref="eq_lim5">Equation</xref>\text{)}</mrow>
-                <mrow>\abs{x-1}\cdot \abs{x^2+x-1} \amp \lt  \varepsilon</mrow>
+                <mrow>\abs{x-1}\cdot \abs{x^2+x-1} \amp \lt  \varepsilon \amp \amp \text{ After multiplying both sides by} \abs{x^2+x-1}</mrow>
                 <mrow>\abs{x^3-2x+1} \amp \lt  \varepsilon</mrow>
                 <mrow>\abs{(x^3-2x)-(-1)} \amp \lt \varepsilon,</mrow>
                 </md>which is what we wanted to show. Thus <m>\lim\limits_{x\to 1}x^3-2x = -1</m>.</p>
@@ -306,8 +306,8 @@
                 <p>Prove that <m>\lim\limits_{x\to 0} e^x = 1</m>.</p>
             </statement>
             <solution>
-                <p>Symbolically, we want to take the equation <m>\abs{e^x - 1} \lt  \varepsilon</m> and unravel it to the form <m>\abs{x-0} \lt  \delta</m>. Here is our scratch-work:<md>
-                <mrow>\abs{e^x - 1} \amp\lt  \varepsilo</mrow>
+                <p>Symbolically, we want to take the inequality <m>\abs{e^x - 1} \lt  \varepsilon</m> and unravel it to the form <m>\abs{x-0} \lt  \delta</m>. Here is our scratch-work:<md>
+                <mrow>\abs{e^x - 1} \amp\lt  \varepsilon</mrow>
                 <mrow> -\varepsilon \amp\lt  e^x - 1 \lt  \varepsilon\amp\amp \text{(Definition of absolute value)}</mrow>
                 <mrow> 1-\varepsilon \amp\lt  e^x \lt  1+\varepsilon \amp\amp \text{(Add 1)}</mrow>
                 <mrow> \ln(1-\varepsilon) \amp\lt  x \lt  \ln(1+\varepsilon) \amp\amp \text{(Take natural logs)}</mrow>
@@ -316,8 +316,7 @@
                 <p>Making the safe assumption that <m>\varepsilon\lt 1</m> ensures the last inequality is valid (i.e., so that <m>\ln (1-\varepsilon)</m> is defined). We can then set <m>\delta</m> to be the minimum of <m>\abs{\ln(1-\varepsilon)}</m> and <m>\ln(1+\varepsilon)</m>; i.e.,<me>\delta = \min\{\abs{\ln(1-\varepsilon)}, \ln(1+\varepsilon)\} = \ln(1+\varepsilon).</me></p>
 
                 <aside>
-                    <p>Recall <m>\ln 1= 0</m> and <m>\ln x\lt 0</m> when <m>0\lt x\lt 1</m>. So <m>\ln (1-\varepsilon) \lt 0</m>, hence we consider its absolute value.
-</p>
+                    <p>Recall <m>\ln 1= 0</m> and <m>\ln x\lt 0</m> when <m>0\lt x\lt 1</m>. So <m>\ln (1-\varepsilon) \lt 0</m>, hence we consider its absolute value. Also, examining a graph of <m>y=\ln(x)</m>, we can see that the graph increases more slowly to the right of <m>x=1</m> than it does to the left of <m>x=1</m> (a concept we will explore further in later sections). This means that <m>\ln(1+\varepsilon)\lt \abs{\ln(1-\varepsilon)}.</m></p>
                 </aside>
 
                 <p>Now, we work through the actual the proof:<md>
@@ -333,6 +332,7 @@
                 <p>In summary, given <m>\varepsilon > 0</m>, let <m>\delta = \ln(1+\varepsilon)</m>. Then <m>\abs{x - 0} \lt  \delta</m> implies <m>\abs{e^x - 1}\lt  \varepsilon</m> as desired. We have shown that <m>\lim\limits_{x\to 0} e^x = 1</m>.</p>
             </solution>
         </example>
+
 
         <p>We note that we could actually show that <m>\lim_{x\to c} e^x = e^c</m> for any constant <m>c</m>. We do this by factoring out <m>e^c</m> from both sides, leaving us to show <m>\lim_{x\to c} e^{x-c} = 1</m> instead. By using the substitution <m>u=x-c</m>, this reduces to showing <m>\lim_{u\to 0} e^u = 1</m> which we just did in the last example. As an added benefit, this shows that in fact the function <m>f(x)=e^x</m> is <em>continuous</em> at all values of <m>x</m>, an important concept we will define in <xref ref="sec_continuity">Section</xref>.</p>
 
