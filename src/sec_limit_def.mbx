@@ -26,7 +26,7 @@
 
         <dl width="narrow">
             <li xml:id="lim_def_3p">
-                <title>3&#8242;</title>
+                <title>3′</title>
                 <p>If <m>x</m> is within a certain <em>tolerance level</em> of <m>c</m>, then the corresponding value <m>y=f(x)</m> is within a certain <em>tolerance level</em> of <m>L</m>.</p>
             </li>
         </dl>
@@ -35,7 +35,7 @@
 
         <dl width="narrow">
             <li xml:id="lim_def_3pp">
-                <title>3&#8243;</title>
+                <title>3″</title>
                 <p>If <m>x</m> is within <m>\delta</m> units of <m>c</m>, then the corresponding value of <m>y</m> is within <m>\varepsilon</m> units of <m>L</m>.</p>
             </li>
         </dl>
@@ -183,26 +183,26 @@
             <solution>
                 <p>Let's do this example symbolically from the start. Let <m>\varepsilon > 0</m> be given; we want <m>\abs{y-4} \lt  \varepsilon</m>, i.e., <m>\abs{x^2-4} \lt  \varepsilon</m>. How do we find <m>\delta</m> such that when <m>\abs{x-2} \lt  \delta</m>, we are guaranteed that <m>\abs{x^2-4}\lt \varepsilon</m>?</p>
 
-                <p>This is a bit trickier than the previous example, but let's start by noticing that <m>\abs{x^2-4} = \abs{x-2}\cdot\abs{x+2}</m>. Consider: <men xml:id="eq_limit1" >\abs{x^2-4} \lt  \varepsilon \implies \abs{x-2}\cdot\abs{x+2} \lt  \varepsilon \implies \abs{x-2} \lt  \frac{\varepsilon}{\abs{x+2}}\text{.}</men></p>
+                <p>This is a bit trickier than the previous example, but let's start by noticing that <m>\abs{x^2-4} = \abs{x-2}\cdot\abs{x+2}</m>. Consider: <me>\abs{x^2-4} \lt  \varepsilon \implies \abs{x-2}\cdot\abs{x+2} \lt  \varepsilon \implies \abs{x-2} \lt  \frac{\varepsilon}{\abs{x+2}}\text{.}</me></p>
 
                 <p>Could we not set <m>\delta = \frac{\varepsilon}{\abs{x+2}}</m>?</p>
 
                 <p>We are close to an answer, but the catch is that <m>\delta</m> must be a <em>constant</em> value (so it can't depend on <m>x</m>). There is a way to work around this, but we do have to make an assumption. Remember that <m>\varepsilon</m> is supposed to be a small number, which implies that <m>\delta</m> will also be a small value. In particular, we can (probably) assume that <m>\delta \lt  1</m>. If this is true, then <m>\abs{x-2} \lt  \delta</m> would imply that <m>\abs{x-2} \lt  1</m>, giving <m>1 \lt  x \lt  3</m>.</p>
 
-                <p>Now, back to the fraction <m>\frac{\varepsilon}{\abs{x+2}}</m>. If <m>1\lt x\lt 3</m>, then <m>3\lt x+2\lt 5</m> (add <m>2</m> to all terms in the inequality). Taking reciprocals, we have<me>\frac15 \lt \frac1{\abs{x+2}} \lt  \frac 13\text{,}</me> which implies <me>\frac15 \lt \frac1{\abs{x+2}}\text{,}</me> which implies <me>\frac\varepsilon5\lt \frac{\varepsilon}{\abs{x+2}}\text{.}</me></p>
+                <p>Now, back to the fraction <m>\frac{\varepsilon}{\abs{x+2}}</m>. If <m>1\lt x\lt 3</m>, then <m>3\lt x+2\lt 5</m> (add <m>2</m> to all terms in the inequality). Taking reciprocals, we have<me>\frac15 \lt \frac1{\abs{x+2}} \lt  \frac 13\text{,}</me> which implies <me>\frac15 \lt \frac1{\abs{x+2}}\text{,}</me> which implies <men xml:id="eq_limit1">\frac\varepsilon5\lt \frac{\varepsilon}{\abs{x+2}}\text{.}</men></p>
 
                 <p>This suggests that we set <m>\delta \leq \frac{\varepsilon}{5}</m>. To see why, let consider what follows when we assume <m>\abs{x-2}\lt \delta</m>:<md>
                 <mrow>\abs{x-2}\amp\lt\delta</mrow>
                 <mrow>\abs{x-2}\amp\lt\frac{\varepsilon}{5}\amp\amp\text{(Our choice of }\delta\text{)}</mrow>
                 <mrow>\abs{x-2}\cdot\abs{x+2}\amp\lt\abs{x+2}\cdot\frac{\varepsilon}{5}\amp\amp\text{(Multiply by }\abs{x+2}\text{)}</mrow>
-                <mrow>\abs{x^2-4}\amp\lt\abs{x+2}\cdot\frac{\varepsilon}{5}\amp\amp\text{(Combine left side)}</mrow>
-                <mrow>\abs{x^2-4}\amp\lt\abs{x+2}\cdot\frac{\varepsilon}{5}</mrow>
-                <mrow>\amp\lt\abs{x+2}\cdot\frac{\varepsilon}{\abs{x+2}}=\varepsilon\amp\amp\text{(Using }<xref ref="eq_limit1">Equation</xref>\text{ as long as }\delta \lt 1\text{)}</mrow>
+                <mrow>\abs{x^2-4}\amp\lt\abs{x+2}\cdot\frac{\varepsilon}{5}\amp\amp\text{(Simplify left side)}</mrow>
+                <mrow>\abs{x^2-4}\amp\lt\abs{x+2}\cdot\frac{\varepsilon}{\abs{x+2}}\amp\amp\text{(}<xref ref="eq_limit1">Inequality</xref>, \delta \lt 1\text{)}</mrow>
+                <mrow>\abs{x^2-4}\amp\lt\varepsilon</mrow>
                 </md></p>
 
                 <p>We have arrived at <m>\abs{x^2-4}\lt \varepsilon</m> as desired. Note again, in order to make this happen we needed <m>\delta</m> to first be less than <m>1</m>. That is a safe assumption; we want <m>\varepsilon</m> to be arbitrarily small, forcing <m>\delta</m> to also be small.</p>
 
-                <p>We have also picked <m>\delta</m> to be smaller than <q>necessary.</q> We could get by with a slightly larger <m>\delta</m>, as shown in <xref ref="fig_limit_eover5">Figure</xref>. The dashed outer lines show the boundaries defined by our choice of <m>\varepsilon</m>. The dotted inner lines show the boundaries defined by setting <m>\delta = \varepsilon/5</m>. Note how these dotted lines are within the dashed lines. That is perfectly fine; by choosing <m>x</m> within the dotted lines we are guaranteed that <m>f(x)</m> will be within <m>\varepsilon</m> of <m>4</m>.</p>
+                <p>We have also picked <m>\delta</m> to be smaller than <q>necessary.</q> We could get by with a slightly larger <m>\delta</m>, as shown in <xref ref="fig_limit_eover5">Figure</xref>. The outer lines show the boundaries defined by our choice of <m>\varepsilon</m>. The inner lines show the boundaries defined by setting <m>\delta = \varepsilon/5</m>. Note how these dotted lines are within the dashed lines. That is perfectly fine; by choosing <m>x</m> within the dotted lines we are guaranteed that <m>f(x)</m> will be within <m>\varepsilon</m> of <m>4</m>.</p>
 
                 <figure xml:id="fig_limit_eover5" >
                     <caption>Choosing <m>\delta = \varepsilon/5</m> in <xref ref="ex_compute_lim2">Example</xref>.</caption>
@@ -211,30 +211,24 @@
                     <image xml:id="img_limit_eover5">
                         <latex-image-code><![CDATA[
                             \begin{tikzpicture}
-                                \begin{axis}[xmin=1.3,xmax=3.3,
+                                \begin{axis}[xmin=0,xmax=4,
                                             ymin=2,ymax=6,
                                             xtick={2},
-                                            ytick={4},]
+                                            ytick={4},
+                                            ydiscontinuity]
                                     \addplot+[domain=0:2.5] {x^2};
                                     \addplot[soliddot] coordinates {(2,4)};
-                                    \addplot[guidelines] coordinates {(0,3) (1.73,3)};
-                                    \addplot[guidelines] coordinates {(0,5) (2.24,5)};
-                                    \addplot[guidelines] coordinates {(2.24,0) (2.24,5)};
-                                    \addplot[guidelines] coordinates {(1.73,0) (1.73,3)};
-                                    \addplot[guidelines,dotted] coordinates {(2.2,0) (2.2,4.84)};
-                                    \addplot[guidelines,dotted] coordinates {(1.8,0) (1.8,3.24)};
-            
-                                    \draw (axis cs:-.1,4.5) node [right]{\scriptsize$\left.\rule{0pt}{12pt}\right\}\varepsilon$};
-                                    \draw (axis cs:2.1,2.15) node [above] {\scriptsize$\delta$};
-                                    \draw (axis cs:2.1,2.05) node [above,scale=.35] {$\overbrace{\phantom{..........}}$};
-                                    \draw (axis cs:2.3,4.5)  -- (axis cs: 3.2,4.5);
-                                    \draw (axis cs:2.3,4.3)  -- (axis cs: 2.5,4.3);
-                                    \draw (axis cs:2.75,4.7) node [align=center]{\scriptsize length of $\varepsilon$};
-                                    \draw (axis cs:2.75,3.9) node [align=center,text width=35pt]{\scriptsize length of\\[-2pt] $\delta=\varepsilon/5$};
-                                    \fill[{\colortwo}] (axis cs:1.73,3) circle (1pt);
-                                    \fill[{\colortwo}] (axis cs:2.24,5) circle (1pt);
-                                    \end{axis}
-
+                                    \addplot[soliddot] coordinates {(1.73,3)};
+                                    \addplot[soliddot] coordinates {(2.24,5)};
+                                    \addplot[guideline] coordinates {(0,3) (1.73,3)};
+                                    \addplot[guideline] coordinates {(0,5) (2.24,5)};
+                                    \addplot[guideline,dashed] coordinates {(2.24,0) (2.24,5)};
+                                    \addplot[guideline,dashed] coordinates {(1.73,0) (1.73,3)};
+                                    \addplot[guideline,dotted] coordinates {(2.2,0) (2.2,4.84)};
+                                    \addplot[guideline,dotted] coordinates {(1.8,0) (1.8,3.24)};
+                                    \addplot[guideline,|->] coordinates {(0.2,4) (0.2,5)} node [below right]{$\varepsilon$};
+                                    \addplot[guideline,<-|] coordinates {(2.2,2.2) (2,2.2)} node [above right]{$\delta=\varepsilon/5$};
+                                \end{axis}
                             \end{tikzpicture}
                         ]]></latex-image-code>
                     </image>
@@ -249,10 +243,10 @@
         <p>Make note of the general pattern exhibited in these last two examples. In some sense, each starts out <q>backwards.</q> That is, while we want to<ol>
         <li><p>start with <m>\abs{x-c}\lt \delta</m> and conclude that</p></li>
         <li><p><m>\abs{f(x)-L}\lt \varepsilon</m>,</p></li>
-        </ol>we actually start by assuming<ol>
-        <li><p><m>\abs{f(x)-L}\lt \varepsilon</m>, then perform some algebraic manipulations to give an inequality of the form</p></li>
+        </ol>we actually start by doing what is essentially some <q>scratch-work</q> first:<ol>
+        <li>assume <p><m>\abs{f(x)-L}\lt \varepsilon</m>, then perform some algebraic manipulations to give an inequality of the form</p></li>
         <li><p><m>\abs{x-c}\lt</m> <em>something</em>.</p></li>
-        </ol>When we have properly done this, the <em>something</em> on the <q>greater than</q> side of the inequality becomes our <m>\delta</m>. We can refer to this as the <q>scratch-work</q> phase of our proof. Once we have <m>\delta</m>, we can formally start with <m>\abs{x-c}\lt \delta</m> and use algebraic manipulations to conclude that <m>\abs{f(x)-L}\lt \varepsilon</m>, usually by using the same steps of our <q>scratch-work</q> in reverse order.</p>
+        </ol>When we have properly done this, the <em>something</em> on the <q>greater than</q> side of the inequality becomes our <m>\delta</m>. We can refer to this as the <q>scratch-work</q> phase of our proof. Once we have <m>\delta</m>, we can formally start the actual proof with <m>\abs{x-c}\lt \delta</m> and use algebraic manipulations to conclude that <m>\abs{f(x)-L}\lt \varepsilon</m>, usually by using the same steps of our <q>scratch-work</q> in reverse order.</p>
 
         <p>We highlight this process in the following example.</p>
 
@@ -266,7 +260,7 @@
                 <mrow number="no">\abs{f(x)-(-1)} \amp \lt  \varepsilon</mrow>
                 <mrow number="no">\abs{x^3-2x + 1}\amp \lt  \varepsilon \amp\amp  \text{(Now factor)}</mrow>
                 <mrow number="no">\abs{(x-1)(x^2+x-1)}\amp \lt  \varepsilon</mrow>
-                <mrow xml:id ="eq_lim4">\abs{x-1}\lt\frac{\varepsilon}{\abs{x^2+x-1}\text{.}}</mrow>
+                <mrow xml:id ="eq_lim4">\abs{x-1}\amp\lt\frac{\varepsilon}{\abs{x^2+x-1}\text{.}}</mrow>
                 </mdn></p>
 
                 <p>We are at the phase of saying that <m>\abs{x-1}\lt</m> <em>something</em>, where <em>something</em><m>=\varepsilon/\abs{x^2+x-1}</m>. We want to turn that <em>something</em> into <m>\delta</m>.</p>
@@ -279,7 +273,7 @@
                 <mrow>  -1\amp \lt  x^2+x-1\lt 5\text{.}\amp\amp \text{(subtracted 1 from each part)}</mrow>
                 </md></p>
 
-                <p>In <xref ref="eq_lim4">Equation</xref>, we wanted <m>\abs{x-1}\lt \varepsilon/\abs{x^2+x-1}</m>. The above shows that given any <m>x</m> in <m>[0,2]</m>, we know that<mdn>
+                <p>In <xref ref="eq_lim4">Inequality</xref>, we wanted <m>\abs{x-1}\lt \varepsilon/\abs{x^2+x-1}</m>. The above shows that given any <m>x</m> in <m>[0,2]</m>, we know that<mdn>
                 <mrow number="no">  x^2+x-1 \amp \lt  5 \amp\amp \text{which implies that}</mrow>
                 <mrow number="no">  \frac15 \amp \lt  \frac{1}{x^2+x-1} \amp\amp \text{which implies that}</mrow>
                 <mrow xml:id="eq_lim5">  \frac{\varepsilon}5 \amp \lt  \frac{\varepsilon}{x^2+x-1}\text{.}</mrow>
@@ -290,8 +284,8 @@
                 <p>Given <m>\varepsilon</m>, let <m>\delta \leq \varepsilon/5</m>. We want to show that when <m>\abs{x-1}\lt \delta</m>, then <m>\abs{(x^3-2x)-(-1)}\lt \varepsilon</m>. We start with <m>\abs{x-1}\lt \delta</m>:<md>
                 <mrow>\abs{x-1} \amp \lt  \delta</mrow>
                 <mrow>\abs{x-1} \amp \lt  \frac{\varepsilon}{5}</mrow>
-                <mrow>\abs{x-1} \amp \lt  \frac{\varepsilon}{5} \lt  \frac{\varepsilon}{\abs{x^2+x-1}} \amp\amp  \text{(for }x\text{ near 1, from }<xref ref="eq_lim5">Equation</xref>\text{)}</mrow>
-                <mrow>\abs{x-1}\cdot \abs{x^2+x-1} \amp \lt  \varepsilon \amp \amp \text{ After multiplying both sides by} \abs{x^2+x-1}</mrow>
+                <mrow>\abs{x-1} \amp \lt  \frac{\varepsilon}{\abs{x^2+x-1}} \amp\amp  \text{(}<xref ref="eq_lim5">Inequality</xref>, x\text{ near 1)}</mrow>
+                <mrow>\abs{x-1}\cdot \abs{x^2+x-1} \amp \lt  \varepsilon</mrow>
                 <mrow>\abs{x^3-2x+1} \amp \lt  \varepsilon</mrow>
                 <mrow>\abs{(x^3-2x)-(-1)} \amp \lt \varepsilon,</mrow>
                 </md>which is what we wanted to show. Thus <m>\lim\limits_{x\to 1}x^3-2x = -1</m>.</p>
@@ -307,7 +301,7 @@
             </statement>
             <solution>
                 <p>Symbolically, we want to take the inequality <m>\abs{e^x - 1} \lt  \varepsilon</m> and unravel it to the form <m>\abs{x-0} \lt  \delta</m>. Here is our scratch-work:<md>
-                <mrow>\abs{e^x - 1} \amp\lt  \varepsilon</mrow>
+                <mrow>\amp\abs{e^x - 1}\lt  \varepsilon</mrow>
                 <mrow> -\varepsilon \amp\lt  e^x - 1 \lt  \varepsilon\amp\amp \text{(Definition of absolute value)}</mrow>
                 <mrow> 1-\varepsilon \amp\lt  e^x \lt  1+\varepsilon \amp\amp \text{(Add 1)}</mrow>
                 <mrow> \ln(1-\varepsilon) \amp\lt  x \lt  \ln(1+\varepsilon) \amp\amp \text{(Take natural logs)}</mrow>
@@ -316,11 +310,11 @@
                 <p>Making the safe assumption that <m>\varepsilon\lt 1</m> ensures the last inequality is valid (i.e., so that <m>\ln (1-\varepsilon)</m> is defined). We can then set <m>\delta</m> to be the minimum of <m>\abs{\ln(1-\varepsilon)}</m> and <m>\ln(1+\varepsilon)</m>; i.e.,<me>\delta = \min\{\abs{\ln(1-\varepsilon)}, \ln(1+\varepsilon)\} = \ln(1+\varepsilon).</me></p>
 
                 <aside>
-                    <p>Recall <m>\ln 1= 0</m> and <m>\ln x\lt 0</m> when <m>0\lt x\lt 1</m>. So <m>\ln (1-\varepsilon) \lt 0</m>, hence we consider its absolute value. Also, examining a graph of <m>y=\ln(x)</m>, we can see that the graph increases more slowly to the right of <m>x=1</m> than it does to the left of <m>x=1</m> (a concept we will explore further in later sections). This means that <m>\ln(1+\varepsilon)\lt \abs{\ln(1-\varepsilon)}.</m></p>
+                    <p>Recall <m>\ln (1-\varepsilon)</m> is negative because <m>1-\varepsilon\lt1</m>. So <m>\abs{\ln(1-\varepsilon)}=-\ln(1-\varepsilon)=\ln\left(\frac{1}{1-\varepsilon}\right)</m>. So to determine which is smaller between <m>\abs{\ln(1-\varepsilon)}</m> and <m>\ln(1+\varepsilon)</m> amounts to determining which is smaller between <m>\frac{1}{1-\varepsilon}</m> and <m>1+\varepsilon</m>. But <m>(1+\varepsilon)/\left(\frac{1}{1-\varepsilon}\right)=(1+\varepsilon)(1-\varepsilon)=1-\varepsilon^2\lt1</m>, so <m>(1+\varepsilon)\lt\frac{1}{1-\varepsilon}</m>. And therefore <m>\ln(1+\varepsilon)\lt\abs{\ln(1-\varepsilon)}</m>.</p>
                 </aside>
 
                 <p>Now, we work through the actual the proof:<md>
-                <mrow>\abs{x - 0}\amp \lt \delta</mrow>
+                <mrow>\amp\abs{x - 0}\lt \delta</mrow>
                 <mrow>  -\delta \amp \lt  x \lt  \delta \amp\amp   \text{(Definition of absolute value)}</mrow>
                 <mrow>  -\ln(1+\varepsilon) \amp \lt  x \lt  \ln(1+\varepsilon)</mrow>
                 <mrow>  \ln(1-\varepsilon) \amp \lt  x \lt  \ln(1+\varepsilon)\text{.}\amp \amp  \text{(since \(\ln(1-\varepsilon) \lt  -\ln(1+\varepsilon)\)) }</mrow>
@@ -334,11 +328,11 @@
         </example>
 
 
-        <p>We note that we could actually show that <m>\lim_{x\to c} e^x = e^c</m> for any constant <m>c</m>. We do this by factoring out <m>e^c</m> from both sides, leaving us to show <m>\lim_{x\to c} e^{x-c} = 1</m> instead. By using the substitution <m>u=x-c</m>, this reduces to showing <m>\lim_{u\to 0} e^u = 1</m> which we just did in the last example. As an added benefit, this shows that in fact the function <m>f(x)=e^x</m> is <em>continuous</em> at all values of <m>x</m>, an important concept we will define in <xref ref="sec_continuity">Section</xref>.</p>
+        <p>We note that we could actually show that <m>\lim\limits_{x\to c} e^x = e^c</m> for any constant <m>c</m>. We do this by factoring out <m>e^c</m> from both sides, leaving us to show <m>\lim\limits_{x\to c} e^{x-c} = 1</m> instead. By using the substitution <m>u=x-c</m>, this reduces to showing <m>\lim\limits_{u\to 0} e^u = 1</m> which we just did in the last example. As an added benefit, this shows that in fact the function <m>f(x)=e^x</m> is <em>continuous</em> at all values of <m>x</m>, an important concept we will define in <xref ref="sec_continuity">Section</xref>.</p>
 
-        <p>This formal definition of the limit is not an easy concept grasp. Our examples are actually <q>easy</q> examples, using <q>simple</q> functions like polynomials, square<ndash />roots and exponentials. It is very difficult to prove, using the techniques given above, that <m>\lim\limits_{x\to 0}(\sin x)/x = 1</m>, as we approximated in the previous section.</p>
+        <p>This formal definition of the limit is not an easy concept grasp. Our examples are actually <q>easy</q> examples, using <q>simple</q> functions like polynomials, square<ndash />roots and exponentials. It is very difficult to prove, using the techniques given above, that <m>\lim\limits_{x\to 0}(\sin x)/x = 1</m>, as we approximated in <xref ref="sec_limit_intro">Section</xref>.</p>
 
-        <p>There is hope. The next section shows how one can evaluate complicated limits using certain basic limits as building blocks. While limits are an incredibly important part of calculus (and hence much of higher mathematics), rarely are limits evaluated using the definition. Rather, the techniques of the following section are employed.</p>
+        <p>There is hope. <xref ref="sec_limit_analytically">Section</xref> shows how one can evaluate complicated limits using certain basic limits as building blocks. While limits are an incredibly important part of calculus (and hence much of higher mathematics), rarely are limits evaluated using the definition. Rather, the techniques of <xref ref="sec_limit_analytically">Section</xref> are employed.</p>
 
 
   <exercises>
@@ -460,6 +454,7 @@
         <webwork seed="1">
           <statement>
             <p>Prove that <m>\lim\limits_{x\to5}(3-x)=-2</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
           <answer>
             <p>Answers will vary in style and certain details.</p>
@@ -490,6 +485,7 @@
         <webwork seed="1">
           <statement>
             <p>Prove that <m>\lim\limits_{x\to3}(x^2-3)=6</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
           <answer>
             <p>Answers will vary in style and certain details.</p>
@@ -525,6 +521,7 @@
         <webwork seed="1">
           <statement>
             <p>Prove that <m>\lim\limits_{x\to4}(x^2+x-5)=15</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
           <answer>
             <p>Answers will vary in style and certain details.</p>
@@ -560,6 +557,7 @@
         <webwork seed="1">
           <statement>
             <p>Prove that <m>\lim\limits_{x\to2}(x^3-1)=7</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
           <answer>
             <p>Answers will vary in style and certain details.</p>
@@ -595,6 +593,7 @@
         <webwork seed="1">
           <statement>
             <p>Prove that <m>\lim\limits_{x\to2}5=5</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
           <answer>
             <p>Answers will vary in style and certain details.</p>
@@ -620,6 +619,7 @@
         <webwork seed="1">
           <statement>
             <p>Prove that <m>\lim\limits_{x\to0}(e^{2x}-1)=0</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
           <answer>
             <p>Answers will vary in style and certain details.</p>
@@ -662,6 +662,7 @@
           </setup>
           <statement>
             <p>Prove that <m>\displaystyle \lim_{x\to 0} \sin(x)= 0</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
           <hint>
             <p>Use the fact that <m>\abs{\sin(x)} \leq \abs{x}</m>, with equality only when <m>x=0</m>.</p>
