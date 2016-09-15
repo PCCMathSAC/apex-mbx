@@ -539,7 +539,7 @@
       </me>
     </p>
 
-    <p>Let <m>\abs{}\Delta D\abs{}</m> represent the length of the longest diagonal of rectangular solids in the subdivision of <m>D</m>. As <m>\abs{}\Delta D\abs{}\to 0</m>, the volume of each solid goes to 0, as do each of <m>\dx_i</m>, <m>\dy_i</m> and <m>\ddz_i</m>, for all <m>i</m>. Our calculus experience tells us that taking a limit as <m>\abs{}\Delta D\abs{}\to 0</m> turns our approximation of <m>V</m> into an exact calculation of <m>V</m>. Before we state this result in a theorem, we use a definition to define some terms.</p>
+    <p>Let <m>\norm{\Delta D}</m> represent the length of the longest diagonal of rectangular solids in the subdivision of <m>D</m>. As <m>\norm{\Delta D}\to 0</m>, the volume of each solid goes to 0, as do each of <m>\dx_i</m>, <m>\dy_i</m> and <m>\ddz_i</m>, for all <m>i</m>. Our calculus experience tells us that taking a limit as <m>\norm{\Delta D}\to 0</m> turns our approximation of <m>V</m> into an exact calculation of <m>V</m>. Before we state this result in a theorem, we use a definition to define some terms.</p>
 
     <definition xml:id="def_triple_integral">
       <title>Triple Integrals, Iterated Integration (Part I)</title>
@@ -576,7 +576,7 @@
         <ol>
           <li><p>The volume <m>V</m> of <m>D</m> is
               <me>
-                V = \iiint_D\ dV = \lim_{\abs{}\Delta D\abs{}\to0} \sum_{i=1}^n \Delta V_i = \lim_{\abs{}\Delta D\abs{}\to0} \sum_{i=1}^n \dx_i\dy_i\ddz_i.
+                V = \iiint_D\ dV = \lim_{\norm{\Delta D}\to0} \sum_{i=1}^n \Delta V_i = \lim_{\norm{\Delta D}\to0} \sum_{i=1}^n \dx_i\dy_i\ddz_i.
               </me>
             </p></li>
 
@@ -3136,9 +3136,9 @@
 
     <p>Let <m>h(x,y,z)</m> a continuous function of three variables, defined over some space region <m>D</m>. We can partition <m>D</m> into <m>n</m> rectangular<ndash />solid subregions, each with dimensions <m>\dx_i\times\dy_i\times\ddz_i</m>. Let <m>(x_i,y_i,z_i)</m> be some point in the <m>i^{\,\text{ th } }</m> subregion, and consider the product <m>h(x_i,y_i,z_i)\dx_i\dy_i\ddz_i</m>. It is the product of a function value (that's the <m>h(x_i,y_i,z_i)</m> part) and a small volume <m>\Delta V_i</m> (that's the <m>\dx_i\dy_i\ddz_i</m> part). One of the simplest understanding of this type of product is when <m>h</m> describes the density of an object, for then <m>h\times\text{ volume } =\text{ mass }</m>.</p>
 
-    <p>We can sum up all <m>n</m> products over <m>D</m>. Again letting <m>\abs{}\Delta D\abs{}</m> represent the length of the longest diagonal of the <m>n</m> rectangular solids in the partition, we can take the limit of the sums of products as <m>\abs{}\Delta D\abs{}\to 0</m>. That is, we can find
+    <p>We can sum up all <m>n</m> products over <m>D</m>. Again letting <m>\norm{\Delta D}</m> represent the length of the longest diagonal of the <m>n</m> rectangular solids in the partition, we can take the limit of the sums of products as <m>\norm{\Delta D}\to 0</m>. That is, we can find
       <me>
-        S = \lim_{\abs{}\Delta D\abs{}\to 0} \sum_{i=1}^n h(x_i,y_i,z_i)\Delta V_i=\lim_{\abs{}\Delta D\abs{}\to 0} \sum_{i=1}^n h(x_i,y_i,z_i)\dx_i\dy_i\ddz_i.
+        S = \lim_{\norm{\Delta D}\to 0} \sum_{i=1}^n h(x_i,y_i,z_i)\Delta V_i=\lim_{\norm{\Delta D}\to 0} \sum_{i=1}^n h(x_i,y_i,z_i)\dx_i\dy_i\ddz_i.
       </me>
     </p>
 
@@ -3152,7 +3152,7 @@
         <p>Let <m>w=h(x,y,z)</m> be a continuous function over a closed, bounded space region <m>D</m>, and let <m>\Delta D</m> be any partition of <m>D</m> into <m>n</m> rectangular solids with volume <m>\Delta V_i</m>. The <term>triple integral of <m>h</m> over <m>D</m></term> is
           <index><main>integration</main><sub>triple</sub></index><index><main>triple integral</main></index><index><main>iterated integration</main></index>
           <me>
-            \iiint_Dh(x,y,z)\ dV = \lim_{\abs{}\Delta D\abs{}\to 0}\sum_{i=1}^n h(x_i,y_i,z_i)\Delta V_i.
+            \iiint_Dh(x,y,z)\ dV = \lim_{\norm{\Delta D}\to 0}\sum_{i=1}^n h(x_i,y_i,z_i)\Delta V_i.
           </me>
         </p>
       </statement>
@@ -3183,7 +3183,7 @@
           <index><main>integration</main><sub>triple</sub></index><index><main>triple integral</main></index><index><main>iterated integration</main></index></p>
 
         <ol>
-          <li><p>The limit <m>\ds \lim_{\abs{}\Delta D\abs{}\to 0}\sum_{i=1}^n h(x_i,y_i,z_i)\Delta V_i</m> exists.</p></li>
+          <li><p>The limit <m>\ds \lim_{\norm{\Delta D}\to 0}\sum_{i=1}^n h(x_i,y_i,z_i)\Delta V_i</m> exists.</p></li>
 
           <li><p>If <m>D</m> is defined as the region bounded by the planes <m>x=a</m> and <m>x=b</m>, the cylinders <m>y=g_1(x)</m> and <m>y=g_2(x)</m>, and the surfaces <m>z=f_1(x,y)</m> and <m>z=f_2(x,y)</m>, where <m>a\lt b</m>, <m>g_1(x)\leq g_2(x)</m> and <m>f_1(x,y)\leq f_2(x,y)</m> on <m>D</m>, then
               <me>
