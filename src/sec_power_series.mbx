@@ -56,7 +56,7 @@
       </solution>
     </example>
 
-    <p>We introduced power series as a type of function, where a value of <m>x</m> is given and the sum of a series is returned. Of course, not every series converges. For instance, in part 1 of <xref ref="ex_ps1">Example</xref>, we recognized the series <m>\ds \sum_{n=0}^\infty x^n</m> as a geometric series in <m>x</m>. <xref ref="thm_geom_series">Theorem</xref> states that this series converges only when <m>|x|\lt 1</m>.</p>
+    <p>We introduced power series as a type of function, where a value of <m>x</m> is given and the sum of a series is returned. Of course, not every series converges. For instance, in part 1 of <xref ref="ex_ps1">Example</xref>, we recognized the series <m>\ds \sum_{n=0}^\infty x^n</m> as a geometric series in <m>x</m>. <xref ref="thm_geom_series">Theorem</xref> states that this series converges only when <m>\abs{x}\lt 1</m>.</p>
 
     <p>This raises the question: <q>For what values of <m>x</m> will a given power series converge?,</q> which leads us to a theorem and definition.</p>
 
@@ -97,7 +97,7 @@
     <theorem xml:id="thm_abs_power">
       <title>The Radius of Convergence of a Series and Absolute Convergence</title>
       <statement>
-        <p>The series <m>\ds \sum_{n=0}^\infty a_n(x-c)^n</m> and <m>\ds \sum_{n=0}^\infty \big|a_n(x-c)^n\big|</m> have the same radius of convergence <m>R</m>.</p>
+        <p>The series <m>\ds \sum_{n=0}^\infty a_n(x-c)^n</m> and <m>\ds \sum_{n=0}^\infty \abs{a_n(x-c)^n}</m> have the same radius of convergence <m>R</m>.</p>
       </statement>
     </theorem>
 
@@ -112,21 +112,21 @@
       </statement>
       <solution>
         <ol>
-          <li><p>We apply the Ratio Test to the series <m>\ds \sum_{n=0}^\infty \left|\frac{x^n}{n!}\right|</m>:
+          <li><p>We apply the Ratio Test to the series <m>\ds \sum_{n=0}^\infty \abs{\frac{x^n}{n!}}</m>:
               <md>
-                <mrow>\lim_{n\to\infty} \frac{\big|x^{n+1}/(n+1)!\big|}{\big|x^n/n!\big|} \amp = \lim_{n\to\infty} \left|\frac{x^{n+1}}{x^n}\cdot\frac{n!}{(n+1)!}\right|</mrow>
-                <mrow>\amp = \lim_{n\to\infty} \left|\frac x{n+1}\right|</mrow>
+                <mrow>\lim_{n\to\infty} \frac{\abs{x^{n+1}/(n+1)!}}{\abs{x^n/n!}} \amp = \lim_{n\to\infty} \abs{\frac{x^{n+1}}{x^n}\cdot\frac{n!}{(n+1)!}}</mrow>
+                <mrow>\amp = \lim_{n\to\infty} \abs{\frac x{n+1}}</mrow>
                 <mrow>\amp = 0 \text{ for all }  x.</mrow>
               </md>
               The Ratio Test shows us that regardless of the choice of <m>x</m>, the series converges. Therefore the radius of convergence is <m>R=\infty</m>, and the interval of convergence is <m>(-\infty,\infty)</m>.</p></li>
 
-          <li><p>We apply the Ratio Test to the series <m>\ds \sum_{n=1}^\infty \left|(-1)^{n+1}\frac{x^n}{n}\right| = \sum_{n=1}^\infty \left|\frac{x^n}{n}\right|</m>:
+          <li><p>We apply the Ratio Test to the series <m>\ds \sum_{n=1}^\infty \abs{(-1)^{n+1}\frac{x^n}{n}} = \sum_{n=1}^\infty \abs{\frac{x^n}{n}}</m>:
               <md>
-                <mrow>\lim_{n\to\infty} \frac{\big|x^{n+1}/(n+1)\big|}{\big|x^n/n\big|} \amp = \lim_{n\to\infty} \left|\frac{x^{n+1}}{x^n}\cdot \frac{n}{n+1}\right|</mrow>
-                <mrow>\amp = \lim_{n\to\infty} |x|\frac{n}{n+1}</mrow>
-                <mrow>\amp = |x|.</mrow>
+                <mrow>\lim_{n\to\infty} \frac{\abs{x^{n+1}/(n+1)}}{\abs{x^n/n}} \amp = \lim_{n\to\infty} \abs{\frac{x^{n+1}}{x^n}\cdot \frac{n}{n+1}}</mrow>
+                <mrow>\amp = \lim_{n\to\infty} \abs{x}\frac{n}{n+1}</mrow>
+                <mrow>\amp = \abs{x}.</mrow>
               </md>
-              The Ratio Test states a series converges if the limit of <m>|a_{n+1}/a_n| = L\lt 1</m>. We found the limit above to be <m>|x|</m>; therefore, the power series converges when <m>|x| \lt 1</m>, or when <m>x</m> is in <m>(-1,1)</m>. Thus the radius of convergence is <m>R=1</m>.
+              The Ratio Test states a series converges if the limit of <m>\abs{a_{n+1}/a_n} = L\lt 1</m>. We found the limit above to be <m>\abs{x}</m>; therefore, the power series converges when <m>\abs{x} \lt 1</m>, or when <m>x</m> is in <m>(-1,1)</m>. Thus the radius of convergence is <m>R=1</m>.
 	
 	
 	To determine the interval of convergence, we need to check the endpoints of <m>(-1,1)</m>. When <m>x=-1</m>, we have the opposite of the Harmonic Series:
@@ -138,12 +138,12 @@
 	
 	When <m>x=1</m>, we have the series <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac{(1)^n}{n}</m>, which is the Alternating Harmonic Series, which converges. Therefore the interval of convergence is <m>(-1,1]</m>.</p></li>
 
-          <li><p>We apply the Ratio Test to the series <m>\ds\sum_{n=0}^\infty \big|2^n(x-3)^n\big|</m>:
+          <li><p>We apply the Ratio Test to the series <m>\ds\sum_{n=0}^\infty \abs{2^n(x-3)^n}</m>:
               <md>
-                <mrow>\lim_{n\to\infty} \frac{\big| 2^{n+1}(x-3)^{n+1}\big|}{\big|2^n(x-3)^n\big|} \amp = \lim_{n\to\infty} \left|\frac{2^{n+1}}{2^n}\cdot\frac{(x-3)^{n+1}}{(x-3)^n}\right|</mrow>
-                <mrow>\amp =\lim_{n\to\infty} \big|2(x-3)\big|.</mrow>
+                <mrow>\lim_{n\to\infty} \frac{\abs{ 2^{n+1}(x-3)^{n+1}}}{\abs{2^n(x-3)^n}} \amp = \lim_{n\to\infty} \abs{\frac{2^{n+1}}{2^n}\cdot\frac{(x-3)^{n+1}}{(x-3)^n}}</mrow>
+                <mrow>\amp =\lim_{n\to\infty} \abs{2(x-3)}.</mrow>
               </md>
-              According to the Ratio Test, the series converges when <m>\big|2(x-3)\big|\lt 1 \implies \big|x-3\big| \lt  1/2</m>. The series is centered at 3, and <m>x</m> must be within <m>1/2</m> of 3 in order for the series to converge. Therefore the radius of convergence is <m>R=1/2</m>, and we know that the series converges absolutely for all <m>x</m> in <m>(3-1/2,3+1/2) = (2.5, 3.5)</m>.
+              According to the Ratio Test, the series converges when <m>\abs{2(x-3)}\lt 1 \implies \abs{x-3} \lt  1/2</m>. The series is centered at 3, and <m>x</m> must be within <m>1/2</m> of 3 in order for the series to converge. Therefore the radius of convergence is <m>R=1/2</m>, and we know that the series converges absolutely for all <m>x</m> in <m>(3-1/2,3+1/2) = (2.5, 3.5)</m>.
 
               We check for convergence at the endpoints to find the interval of convergence. When <m>x=2.5</m>, we have:
               <md>
@@ -152,9 +152,9 @@
               </md>
               which diverges. A similar process shows that the series also diverges at <m>x=3.5</m>. Therefore the interval of convergence is <m>(2.5, 3.5)</m>.</p></li>
 
-          <li><p>We apply the Ratio Test to <m>\ds \sum_{n=0}^\infty \big|n!x^n\big|</m>:
+          <li><p>We apply the Ratio Test to <m>\ds \sum_{n=0}^\infty \abs{n!x^n}</m>:
               <md>
-                <mrow>\lim_{n\to\infty} \frac{\big| (n+1)!x^{n+1}\big|}{\big|n!x^n\big|} \amp = \lim_{n\to\infty} \big|(n+1)x\big|</mrow>
+                <mrow>\lim_{n\to\infty} \frac{\abs{ (n+1)!x^{n+1}}}{\abs{n!x^n}} \amp = \lim_{n\to\infty} \abs{(n+1)x}</mrow>
                 <mrow>\amp = \infty\ \text{ for all \(x\), except \(x=0\). }</mrow>
               </md>
               The Ratio Test shows that the series diverges for all <m>x</m> except <m>x=0</m>. Therefore the radius of convergence is <m>R=0</m>.</p></li>
@@ -205,7 +205,7 @@
         <ol>
           <li><p><m>\ds \fp(x) = \sum_{n=1}^\infty nx^{n-1} = 1+2x+3x^2+4x^3+\cdots.</m>
 
-              In <xref ref="ex_ps1">Example</xref>, we recognized that <m>\ds \sum_{n=0}^\infty x^n</m> is a geometric series in <m>x</m>. We know that such a geometric series converges when <m>|x|\lt 1</m>; that is, the interval of convergence is <m>(-1,1)</m>.
+              In <xref ref="ex_ps1">Example</xref>, we recognized that <m>\ds \sum_{n=0}^\infty x^n</m> is a geometric series in <m>x</m>. We know that such a geometric series converges when <m>\abs{x}\lt 1</m>; that is, the interval of convergence is <m>(-1,1)</m>.
 
               To determine the interval of convergence of <m>\fp(x)</m>, we consider the endpoints of <m>(-1,1)</m>:
               <me>
@@ -233,7 +233,7 @@
 
     <p>The previous example showed how to take the derivative and indefinite integral of a power series without motivation for why we care about such operations. We may care for the sheer mathematical enjoyment <q>that we can</q>, which is motivation enough for many. However, we would be remiss to not recognize that we can learn a great deal from taking derivatives and indefinite integrals.</p>
 
-    <p>Recall that <m>\ds f(x) = \sum_{n=0}^\infty x^n</m> in <xref ref="ex_ps3">Example</xref> is a geometric series. According to <xref ref="thm_geom_series">Theorem</xref>, this series converges to <m>1/(1-x)</m> when <m>|x|\lt 1</m>. Thus we can say
+    <p>Recall that <m>\ds f(x) = \sum_{n=0}^\infty x^n</m> in <xref ref="ex_ps3">Example</xref> is a geometric series. According to <xref ref="thm_geom_series">Theorem</xref>, this series converges to <m>1/(1-x)</m> when <m>\abs{x}\lt 1</m>. Thus we can say
       <me>
         f(x) = \sum_{n=0}^\infty x^n = \frac 1{1-x}, \text{ on }  (-1,1).
       </me>
@@ -245,19 +245,19 @@
       </men>
       while integrating the function <m>f(x) = 1/(1-x)</m> gives
       <men xml:id="eq_ps3b" >
-        F(x)  = -\ln|1-x| + C_2.
+        F(x)  = -\ln\abs{1-x} + C_2.
       </men>
     </p>
 
     <p>Equating Equations <xref ref="eq_ps3a" /> and <xref ref="eq_ps3b" />, we have
       <me>
-        F(x) = C_1+\sum_{n=0}^\infty \frac{x^{n+1}}{n+1} = -\ln|1-x| + C_2.
+        F(x) = C_1+\sum_{n=0}^\infty \frac{x^{n+1}}{n+1} = -\ln\abs{1-x} + C_2.
       </me>
     </p>
 
     <p>Letting <m>x=0</m>, we have <m>F(0) = C_1 = C_2</m>. This implies that we can drop the constants and conclude
       <me>
-        \sum_{n=0}^\infty \frac{x^{n+1}}{n+1} = -\ln|1-x|.
+        \sum_{n=0}^\infty \frac{x^{n+1}}{n+1} = -\ln\abs{1-x}.
       </me>
     </p>
 

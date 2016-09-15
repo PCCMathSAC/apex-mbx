@@ -30,7 +30,7 @@
       </me>
     </p>
 
-    <p><xref ref="thm_geom_series">Theorem</xref> states that geometric series converge when <m>|r|\lt 1</m> and gives the sum: <m>\ds \sum_{n=0}^\infty r^n = \frac1{1-r}</m>. When <m>r=-1/2</m> as above, we find
+    <p><xref ref="thm_geom_series">Theorem</xref> states that geometric series converge when <m>\abs{r}\lt 1</m> and gives the sum: <m>\ds \sum_{n=0}^\infty r^n = \frac1{1-r}</m>. When <m>r=-1/2</m> as above, we find
       <me>
         \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n = \frac1{1-(-1/2)} = \frac 1{3/2} = \frac23.
       </me>
@@ -108,7 +108,7 @@
       <statement>
         <p>Determine if the Alternating Series Test applies to each of the following series.</p>
 
-        <p><m>\ds 1.\ \sum_{n=1}^\infty (-1)^{n+1}\frac1n\qquad 2.\ \sum_{n=1}^\infty (-1)^n\frac{\ln n}{n}\qquad 3.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{|\sin n|}{n^2}</m></p>
+        <p><m>\ds 1.\ \sum_{n=1}^\infty (-1)^{n+1}\frac1n\qquad 2.\ \sum_{n=1}^\infty (-1)^n\frac{\ln n}{n}\qquad 3.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{\abs{\sin n}}{n^2}</m></p>
       </statement>
       <solution>
         <ol>
@@ -126,7 +126,7 @@
 	
 	The important lesson here is that as before, if a series fails to meet the criteria of the Alternating Series Test on only a finite number of terms, we can still apply the test.</p></li>
 
-          <li><p>The underlying sequence is <m>\{a_n\} = |\sin n|/n</m>. This sequence is positive and approaches <m>0</m> as <m>n\to\infty</m>. However, it is not a decreasing sequence; the value of <m>|\sin n|</m> oscillates between <m>0</m> and <m>1</m> as <m>n\to\infty</m>. We cannot remove a finite number of terms to make <m>\{a_n\}</m> decreasing, therefore we cannot apply the Alternating Series Test.
+          <li><p>The underlying sequence is <m>\{a_n\} = \abs{\sin n}/n</m>. This sequence is positive and approaches <m>0</m> as <m>n\to\infty</m>. However, it is not a decreasing sequence; the value of <m>\abs{\sin n}</m> oscillates between <m>0</m> and <m>1</m> as <m>n\to\infty</m>. We cannot remove a finite number of terms to make <m>\{a_n\}</m> decreasing, therefore we cannot apply the Alternating Series Test.
 	
 	Keep in mind that this does not mean we conclude the series diverges; in fact, it does converge. We are just unable to conclude this based on <xref ref="thm_alt_series_test">Theorem</xref>.</p></li>
         </ol>
@@ -150,7 +150,7 @@
           <index><main>series</main><sub>alternating!Approximation Theorem</sub></index></p>
 
         <ol>
-          <li><p><m>|S_n-L| \lt  a_{n+1}</m>, and</p></li>
+          <li><p><m>\abs{S_n-L} \lt  a_{n+1}</m>, and</p></li>
 
           <li><p><m>L</m> is between <m>S_n</m> and <m>S_{n+1}</m>.</p></li>
         </ol>
@@ -179,7 +179,7 @@
                 <mrow>n \amp \geq \sqrt[3]{1000}</mrow>
                 <mrow>n \amp \geq 10.</mrow>
               </md>
-              Let <m>L</m> be the sum of this series. By Part 1 of the theorem, <m>|S_9-L|\lt a_{10} = 1/1000</m>. We can compute <m>S_9=0.902116</m>, which our theorem states is within <m>0.001</m> of the total sum. 
+              Let <m>L</m> be the sum of this series. By Part 1 of the theorem, <m>\abs{S_9-L}\lt a_{10} = 1/1000</m>. We can compute <m>S_9=0.902116</m>, which our theorem states is within <m>0.001</m> of the total sum. 
 	
 	We can use Part 2 of the theorem to obtain an even more accurate result. As we know the <m>10^\text{ th }</m> term of the series is <m>-1/1000</m>, we can easily compute <m>S_{10} = 0.901116</m>. Part 2 of the theorem states that <m>L</m> is between <m>S_9</m> and <m>S_{10}</m>, so <m>0.901116 \lt L\lt 0.902116</m>.</p></li>
 
@@ -209,10 +209,10 @@
       <title>Absolute and Conditional Convergence</title>
       <statement>
         <ol>
-          <li><p>A series <m>\ds \sum_{n=1}^\infty a_n</m> <em>converges absolutely</em> if <m>\ds \sum_{n=1}^\infty |a_n|</m> converges.
+          <li><p>A series <m>\ds \sum_{n=1}^\infty a_n</m> <em>converges absolutely</em> if <m>\ds \sum_{n=1}^\infty \abs{a_n}</m> converges.
 	<index><main>convergence</main><sub>absolute</sub></index><index><main>convergence</main><sub>conditional</sub></index><index><main>series</main><sub>absolute convergence</sub></index><index><main>series</main><sub>conditional convergence</sub></index></p></li>
 
-          <li><p>A series <m>\ds \sum_{n=1}^\infty a_n</m> <em>converges conditionally</em> if <m>\ds \sum_{n=1}^\infty a_n</m> converges but <m>\ds \sum_{n=1}^\infty |a_n|</m> diverges.</p></li>
+          <li><p>A series <m>\ds \sum_{n=1}^\infty a_n</m> <em>converges conditionally</em> if <m>\ds \sum_{n=1}^\infty a_n</m> converges but <m>\ds \sum_{n=1}^\infty \abs{a_n}</m> diverges.</p></li>
         </ol>
       </statement>
     </definition>
@@ -234,7 +234,7 @@
         <ol>
           <li><p>We can show the series
               <me>
-                \ds \sum_{n=1}^\infty \left|(-1)^n\frac{n+3}{n^2+2n+5}\right|= \sum_{n=1}^\infty \frac{n+3}{n^2+2n+5}
+                \ds \sum_{n=1}^\infty \abs{(-1)^n\frac{n+3}{n^2+2n+5}}= \sum_{n=1}^\infty \frac{n+3}{n^2+2n+5}
               </me>
               diverges using the Limit Comparison Test, comparing with <m>1/n</m>. 
 	
@@ -242,7 +242,7 @@
 
           <li><p>We can show the series
               <me>
-                \ds \sum_{n=1}^\infty \left|(-1)^n\frac{n^2+2n+5}{2^n}\right|=\sum_{n=1}^\infty \frac{n^2+2n+5}{2^n}
+                \ds \sum_{n=1}^\infty \abs{(-1)^n\frac{n^2+2n+5}{2^n}}=\sum_{n=1}^\infty \frac{n^2+2n+5}{2^n}
               </me>
               converges using the Ratio Test. 
 	
@@ -250,7 +250,7 @@
 
           <li><p>The series
               <me>
-                \ds \sum_{n=3}^\infty \left|(-1)^n\frac{3n-3}{5n-10}\right| = \sum_{n=3}^\infty \frac{3n-3}{5n-10}
+                \ds \sum_{n=3}^\infty \abs{(-1)^n\frac{3n-3}{5n-10}} = \sum_{n=3}^\infty \frac{3n-3}{5n-10}
               </me>
               diverges using the <m>n^\text{ th }</m> Term Test, so it does not converge absolutely. 
 	
@@ -261,7 +261,7 @@
       </solution>
     </example>
 
-    <p>Knowing that a series converges absolutely allows us to make two important statements, given in the following theorem. The first is that absolute convergence is <q>stronger</q> than regular convergence. That is, just because {\small<m>\ds \sum_{n=1}^\infty a_n</m>} converges, we cannot conclude that {\small<m>\ds \sum_{n=1}^\infty |a_n|</m>} will converge, but knowing a series converges absolutely tells us that {\small<m>\ds \sum_{n=1}^\infty a_n</m>} will converge.</p>
+    <p>Knowing that a series converges absolutely allows us to make two important statements, given in the following theorem. The first is that absolute convergence is <q>stronger</q> than regular convergence. That is, just because {\small<m>\ds \sum_{n=1}^\infty a_n</m>} converges, we cannot conclude that {\small<m>\ds \sum_{n=1}^\infty \abs{a_n}</m>} will converge, but knowing a series converges absolutely tells us that {\small<m>\ds \sum_{n=1}^\infty a_n</m>} will converge.</p>
 
     <p>One reason this is important is that our convergence tests all require that the underlying sequence of terms be positive. By taking the absolute value of the terms of a series where not all terms are positive, we are often able to apply an appropriate test and determine absolute convergence. This, in turn, determines that the series we are given also converges.</p>
 
@@ -370,7 +370,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Give an example of a series where <m>\ds \sum_{n=0}^\infty a_n</m> converges but <m>\ds \sum_{n=0}^\infty |a_n|</m> does not.</p>
+            <p>Give an example of a series where <m>\ds \sum_{n=0}^\infty a_n</m> converges but <m>\ds \sum_{n=0}^\infty \abs{a_n}</m> does not.</p>
           </statement>
           <answer>
             <p>Many examples exist; one common example is <m>a_n = (-1)^n/n</m>.</p>
@@ -412,7 +412,7 @@
 
         <li>
           <title>(b)</title>
-          <p>Determine if <m>\ds \sum_{n=0}^\infty |a_n|</m> converges or diverges.</p></li>
+          <p>Determine if <m>\ds \sum_{n=0}^\infty \abs{a_n}</m> converges or diverges.</p></li>
 
         <li>
           <title>(c)</title>
@@ -1030,7 +1030,7 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, a convergent alternating series is given along with its sum and a value of <m>\epsilon</m>. Use <xref ref="thm_alt_series_approx">Theorem</xref> to find <m>n</m> such that the <m>n^\text{ th }</m> partial sum of the series is within <m>\epsilon</m> of the sum of the series.</p>
+      <p>In the following exercises, a convergent alternating series is given along with its sum and a value of <m>\varepsilon</m>. Use <xref ref="thm_alt_series_approx">Theorem</xref> to find <m>n</m> such that the <m>n^\text{ th }</m> partial sum of the series is within <m>\varepsilon</m> of the sum of the series.</p>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1041,7 +1041,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^4} = \frac{7\pi^4}{720}</m>, <m>\epsilon = 0.001</m></p>
+            <p><m>\ds \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^4} = \frac{7\pi^4}{720}</m>, <m>\varepsilon = 0.001</m></p>
           </statement>
           <answer>
             <p><m>n=5</m></p>
@@ -1061,7 +1061,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{n!} = \frac1e</m>, <m>\epsilon = 0.0001</m></p>
+            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{n!} = \frac1e</m>, <m>\varepsilon = 0.0001</m></p>
           </statement>
           <answer>
             <p><m>n=7</m></p>
@@ -1081,13 +1081,13 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{2n+1}=\frac{\pi}4</m>, <m>\epsilon = 0.001</m></p>
+            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{2n+1}=\frac{\pi}4</m>, <m>\varepsilon = 0.001</m></p>
           </statement>
           <answer>
-            <p>Using the theorem, we find <m>n=499</m> guarantees the sum is within <m>0.001</m> of <m>\pi/4</m>. (Convergence is actually faster, as the sum is within <m>\epsilon</m> of <m>\pi/24</m> when <m>n\geq 249</m>.)</p>
+            <p>Using the theorem, we find <m>n=499</m> guarantees the sum is within <m>0.001</m> of <m>\pi/4</m>. (Convergence is actually faster, as the sum is within <m>\varepsilon</m> of <m>\pi/24</m> when <m>n\geq 249</m>.)</p>
           </answer>
           <solution>
-            <p>Using the theorem, we find <m>n=499</m> guarantees the sum is within <m>0.001</m> of <m>\pi/4</m>. (Convergence is actually faster, as the sum is within <m>\epsilon</m> of <m>\pi/24</m> when <m>n\geq 249</m>.)</p>
+            <p>Using the theorem, we find <m>n=499</m> guarantees the sum is within <m>0.001</m> of <m>\pi/4</m>. (Convergence is actually faster, as the sum is within <m>\varepsilon</m> of <m>\pi/24</m> when <m>n\geq 249</m>.)</p>
           </solution>
         </webwork>
       </exercise>
@@ -1101,7 +1101,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{(2n)!}=\cos 1</m>, <m>\epsilon = 10^{-8}</m></p>
+            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{(2n)!}=\cos 1</m>, <m>\varepsilon = 10^{-8}</m></p>
           </statement>
           <answer>
             <p><m>n=5</m> (<m>(2n)!>10^8</m> when <m>n\geq 6</m>)</p>
