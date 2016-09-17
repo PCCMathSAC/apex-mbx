@@ -833,7 +833,7 @@
 
     <p>Consider <xref ref="fig_planes_dist">Figure</xref>, where a plane with normal vector <m>\vec n</m> is sketched containing a point <m>P</m> and a point <m>Q</m>, not on the plane, is given. We measure the distance from <m>Q</m> to the plane by measuring the length of the projection of <m>\vv{PQ}</m> onto <m>\vec n</m>. That is, we want:
       <men xml:id="eq_plane_dist" >
-        \snorm{\text{ proj } _{\,\vec n}\,{\vv{PQ}}} = \snorm{\frac{\vec n\cdot \vv{PQ}}{\vnorm n^2}\vec n} = \frac{|\vec n\cdot \vv{PQ}|}{\vnorm n}
+        \snorm{\text{ proj } _{\,\vec n}\,{\vv{PQ}}} = \snorm{\frac{\vec n\cdot \vv{PQ}}{\vnorm n^2}\vec n} = \frac{\abs{\vec n\cdot \vv{PQ}}}{\vnorm n}
       </men>
     </p>
 
@@ -954,7 +954,7 @@
       <title>Distance from a Point to a Plane</title>
       <p>Let a plane with normal vector <m>\vec n</m> be given, and let <m>Q</m> be a point. The distance <m>h</m> from <m>Q</m> to the plane is
         <me>
-          h = \frac{|\vec n\cdot \vv{PQ}|}{\vnorm n},
+          h = \frac{\abs{\vec n\cdot \vv{PQ}}}{\vnorm n},
         </me>
         where <m>P</m> is any point in the plane.
         <index><main>planes</main><sub>distance between point and plane</sub></index><index><main>distance</main><sub>between point and plane</sub></index></p>
@@ -970,9 +970,9 @@
 
         <p>The distance <m>h</m> from <m>Q</m> to the plane is given by <xref ref="idea_planes_dist">Key Idea</xref>:
           <md>
-            <mrow>h \amp = \frac{|\vec n\cdot \vv{PQ}|}{\vnorm n}</mrow>
-            <mrow>\amp = \frac{|\la 2,-5,6\ra \cdot \la 2,1,2.5\ra|}{\norm{\la 2,-5,6\ra}}</mrow>
-            <mrow>\amp = \frac{ |14|}{\sqrt{65}}</mrow>
+            <mrow>h \amp = \frac{\abs{\vec n\cdot \vv{PQ}}}{\vnorm n}</mrow>
+            <mrow>\amp = \frac{\abs{\la 2,-5,6\ra \cdot \la 2,1,2.5\ra}}{\norm{\la 2,-5,6\ra}}</mrow>
+            <mrow>\amp = \frac{ \abs{14}}{\sqrt{65}}</mrow>
             <mrow>\amp \approx 1.74.</mrow>
           </md>
         </p>

@@ -24,7 +24,7 @@
           <md>
             <mrow>\int_{-3}^3\sqrt{9-x^2}\ dx \amp = \int_{-\pi/2}^{\pi/2} \sqrt{9-9\sin^2\theta} (3\cos\theta)\ d\theta</mrow>
             <mrow>\amp = \int_{-\pi/2}^{\pi/2} 3\sqrt{9\cos^2\theta} \cos\theta\ d\theta</mrow>
-            <mrow>\amp =\int_{-\pi/2}^{\pi/2} 3|3\cos \theta| \cos\theta\ d\theta.</mrow>
+            <mrow>\amp =\int_{-\pi/2}^{\pi/2} 3\abs{3\cos \theta} \cos\theta\ d\theta.</mrow>
             <intertext>On <m>[-\pi/2,\pi/2]</m>, <m>\cos \theta</m> is always positive, so we can drop the absolute value bars, then employ a power--reducing formula:</intertext>
           </md>
           <md>
@@ -164,7 +164,7 @@
             <mrow>\int \frac{1}{\sqrt{5+x^2}}\ dx \amp = \int \frac{1}{\sqrt{5+5\tan^2\theta}}\sqrt{5}\sec^2\theta\ d\theta</mrow>
             <mrow>\amp = \int \frac{\sqrt{5}\sec^2\theta}{\sqrt{5}\sec\theta} \ d\theta</mrow>
             <mrow>\amp = \int \sec\theta\ d\theta</mrow>
-            <mrow>\amp = \ln\big|\sec\theta+\tan\theta\big|+C.</mrow>
+            <mrow>\amp = \ln\abs{\sec\theta+\tan\theta}+C.</mrow>
           </md>
         </p>
 
@@ -178,16 +178,16 @@
 
         <p>This gives
           <md>
-            <mrow>\int \frac{1}{\sqrt{5+x^2}}\ dx \amp = \ln\big|\sec\theta+\tan\theta\big|+C</mrow>
-            <mrow>\amp = \ln\left|\frac{\sqrt{x^2+5}}{\sqrt{5}}+ \frac x{\sqrt{5}}\right|+C.</mrow>
+            <mrow>\int \frac{1}{\sqrt{5+x^2}}\ dx \amp = \ln\abs{\sec\theta+\tan\theta}+C</mrow>
+            <mrow>\amp = \ln\abs{\frac{\sqrt{x^2+5}}{\sqrt{5}}+ \frac x{\sqrt{5}}}+C.</mrow>
           </md>
         </p>
 
         <p>We can leave this answer as is, or we can use a logarithmic identity to simplify it. Note:
           <md>
-            <mrow>\ln\left|\frac{\sqrt{x^2+5}}{\sqrt{5}}+ \frac x{\sqrt{5}}\right|+C \amp = \ln\left|\frac{1}{\sqrt{5}}\big(\sqrt{x^2+5}+ x\big)\right|+C</mrow>
-            <mrow>\amp = \ln\left|\frac{1}{\sqrt{5}}\right| + \ln\big|\sqrt{x^2+5}+ x\big|+C</mrow>
-            <mrow>\amp =	\ln\big|\sqrt{x^2+5}+ x\big|+C,</mrow>
+            <mrow>\ln\abs{\frac{\sqrt{x^2+5}}{\sqrt{5}}+ \frac x{\sqrt{5}}}+C \amp = \ln\abs{\frac{1}{\sqrt{5}}\big(\sqrt{x^2+5}+ x\big)}+C</mrow>
+            <mrow>\amp = \ln\abs{\frac{1}{\sqrt{5}}} + \ln\abs{\sqrt{x^2+5}+ x}+C</mrow>
+            <mrow>\amp =	\ln\abs{\sqrt{x^2+5}+ x}+C,</mrow>
           </md>
           where the <m>\ln\big(1/\sqrt{5}\big)</m> term is absorbed into the constant <m>C</m>. (In <xref ref="sec_hyperbolic">Section</xref> we will learn another way of approaching this problem.)</p>
       </solution>
@@ -221,15 +221,15 @@
 
         <p>We integrated <m>\sec^3\theta</m> in <xref ref="ex_trigint6">Example</xref>, finding its antiderivatives to be
           <me>
-            \int \sec^3\theta\ d\theta = \frac12\Big(\sec \theta\tan \theta + \ln|\sec \theta+\tan \theta|\Big)+C.
+            \int \sec^3\theta\ d\theta = \frac12\Big(\sec \theta\tan \theta + \ln\abs{\sec \theta+\tan \theta}\Big)+C.
           </me>
         </p>
 
         <p>Thus
           <md>
             <mrow>\int \sqrt{4x^2-1}\ dx \amp =\frac12\int \big(\sec^3\theta - \sec\theta\big)\ d\theta</mrow>
-            <mrow>\amp = \frac12\left(\frac12\Big(\sec \theta\tan \theta + \ln|\sec \theta+\tan \theta|\Big) -\ln|\sec \theta + \tan\theta|\right) + C</mrow>
-            <mrow>\amp = \frac14\left(\sec\theta\tan\theta -\ln|\sec\theta+\tan\theta|\right)+C.</mrow>
+            <mrow>\amp = \frac12\left(\frac12\Big(\sec \theta\tan \theta + \ln\abs{\sec \theta+\tan \theta}\Big) -\ln\abs{\sec \theta + \tan\theta}\right) + C</mrow>
+            <mrow>\amp = \frac14\left(\sec\theta\tan\theta -\ln\abs{\sec\theta+\tan\theta}\right)+C.</mrow>
           </md>
         </p>
 
@@ -241,15 +241,15 @@
 
         <p>Thus
           <md>
-            <mrow>\frac14\Big(\sec\theta\tan\theta -\ln\big|\sec\theta+\tan\theta\big|\Big)+C \amp =
-				\frac14\Big(2x\cdot 2\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C</mrow>
-            <mrow>\amp = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C.</mrow>
+            <mrow>\frac14\Big(\sec\theta\tan\theta -\ln\abs{\sec\theta+\tan\theta}\Big)+C \amp =
+				\frac14\Big(2x\cdot 2\sqrt{x^2-1/4} - \ln\abs{2x + 2\sqrt{x^2-1/4}}\Big)+C</mrow>
+            <mrow>\amp = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\abs{2x + 2\sqrt{x^2-1/4}}\Big)+C.</mrow>
           </md>
         </p>
 
         <p>The final answer is given in the last line above, repeated here:
           <me>
-            \int \sqrt{4x^2-1}\ dx = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C.
+            \int \sqrt{4x^2-1}\ dx = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\abs{2x + 2\sqrt{x^2-1/4}}\Big)+C.
           </me>
         </p>
       </solution>
@@ -363,13 +363,13 @@
 
         <p>We encountered this indefinite integral in <xref ref="ex_trigsub2">Example</xref> where we found
           <me>
-            \int \tan^2\theta\sec\theta \ d\theta = \frac12\big(\sec\theta\tan\theta-\ln|\sec\theta+\tan\theta|\big).
+            \int \tan^2\theta\sec\theta \ d\theta = \frac12\big(\sec\theta\tan\theta-\ln\abs{\sec\theta+\tan\theta}\big).
           </me>
         </p>
 
         <p>So
           <md>
-            <mrow>25\int_0^{\pi/4} \tan^2\theta\sec\theta\ d\theta \amp = \frac{25}2\big(\sec\theta\tan\theta-\ln|\sec\theta+\tan\theta|\big)\Bigg|_0^{\pi/4}</mrow>
+            <mrow>25\int_0^{\pi/4} \tan^2\theta\sec\theta\ d\theta \amp = \frac{25}2\big(\sec\theta\tan\theta-\ln\abs{\sec\theta+\tan\theta}\big)\Bigg|_0^{\pi/4}</mrow>
             <mrow>\amp = \frac{25}2\big(\sqrt2-\ln(\sqrt2+1)\big)</mrow>
             <mrow>\amp \approx 6.661.</mrow>
           </md>
@@ -386,7 +386,7 @@
 
         <li><p><m>\cos(2\theta) = \cos^2\theta - \sin^2\theta = 2\cos^2\theta-1 = 1-2\sin^2\theta</m></p></li>
 
-        <li><p><m>\ds \int \sec^3\theta\ d\theta = \frac12\Big(\sec \theta\tan \theta + \ln\big|\sec \theta+\tan \theta\big|\Big)+C</m></p></li>
+        <li><p><m>\ds \int \sec^3\theta\ d\theta = \frac12\Big(\sec \theta\tan \theta + \ln\abs{\sec \theta+\tan \theta}\Big)+C</m></p></li>
 
         <li><p><m>\ds \int \cos^2\theta\ d\theta = \int \frac12\big(1+\cos(2\theta)\big)\ d\theta = \frac12\big(\theta+\sin\theta\cos\theta\big)+C.</m></p></li>
       </ol>
@@ -481,7 +481,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Why does <xref ref="idea_trigsub">Key Idea</xref>(a) state that <m>\sqrt{a^2-x^2} = a\cos\theta</m>, and not <m>|a\cos\theta|</m>?</p>
+            <p>Why does <xref ref="idea_trigsub">Key Idea</xref>(a) state that <m>\sqrt{a^2-x^2} = a\cos\theta</m>, and not <m>\abs{a\cos\theta}</m>?</p>
           </statement>
           <answer>
             <p>Because we are considering <m>a>0</m> and <m>x=a\sin \theta</m>, which means <m>\theta = \sin^{-1}(x/a)</m>. The arcsine function has a domain of <m>-\pi/2\leq \theta \leq \pi/2</m>; on this domain, <m>\cos \theta \geq 0</m>, so <m>a\cos\theta</m> is always non-negative, allowing us to drop the absolute value signs.</p>
@@ -508,10 +508,10 @@
             <p><m>\ds \int \sqrt{x^2+1}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac12\left(x\sqrt{x^2+1}+\ln |\sqrt{x^2+1}+x|\right) + C</m></p>
+            <p><m>\frac12\left(x\sqrt{x^2+1}+\ln \abs{\sqrt{x^2+1}+x}\right) + C</m></p>
           </answer>
           <solution>
-            <p><m>\frac12\left(x\sqrt{x^2+1}+\ln |\sqrt{x^2+1}+x|\right) + C</m></p>
+            <p><m>\frac12\left(x\sqrt{x^2+1}+\ln \abs{\sqrt{x^2+1}+x}\right) + C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -528,10 +528,10 @@
             <p><m>\ds \int \sqrt{x^2+4}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>2\left(\frac x4\sqrt{x^2+4}+\ln |\frac{\sqrt{x^2+4}}2+\frac x2|\right) + C</m></p>
+            <p><m>2\left(\frac x4\sqrt{x^2+4}+\ln \abs{\frac{\sqrt{x^2+4}}2+\frac x2}\right) + C</m></p>
           </answer>
           <solution>
-            <p><m>2\left(\frac x4\sqrt{x^2+4}+\ln |\frac{\sqrt{x^2+4}}2+\frac x2|\right) + C</m></p>
+            <p><m>2\left(\frac x4\sqrt{x^2+4}+\ln \abs{\frac{\sqrt{x^2+4}}2+\frac x2}\right) + C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -588,10 +588,10 @@
             <p><m>\ds \int \sqrt{x^2-1}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac12x\sqrt{x^2-1}-\frac12\ln|x+\sqrt{x^2-1}|+C</m></p>
+            <p><m>\frac12x\sqrt{x^2-1}-\frac12\ln\abs{x+\sqrt{x^2-1}}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac12x\sqrt{x^2-1}-\frac12\ln|x+\sqrt{x^2-1}|+C</m></p>
+            <p><m>\frac12x\sqrt{x^2-1}-\frac12\ln\abs{x+\sqrt{x^2-1}}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -608,10 +608,10 @@
             <p><m>\ds \int \sqrt{x^2-16}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac12x\sqrt{x^2-16}-8\ln\left|\frac x4+\frac{\sqrt{x^2-16}}4\right|+C</m></p>
+            <p><m>\frac12x\sqrt{x^2-16}-8\ln\abs{\frac x4+\frac{\sqrt{x^2-16}}4}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac12x\sqrt{x^2-16}-8\ln\left|\frac x4+\frac{\sqrt{x^2-16}}4\right|+C</m></p>
+            <p><m>\frac12x\sqrt{x^2-16}-8\ln\abs{\frac x4+\frac{\sqrt{x^2-16}}4}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -628,10 +628,10 @@
             <p><m>\ds \int \sqrt{4x^2+1}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>x\sqrt{x^2+1/4}+\frac14\ln|2\sqrt{x^2+1/4}+2x| + C = \frac12x\sqrt{4x^2+1}+\frac14\ln|\sqrt{4x^2+1}+2x|+C</m></p>
+            <p><m>x\sqrt{x^2+1/4}+\frac14\ln\abs{2\sqrt{x^2+1/4}+2x} + C = \frac12x\sqrt{4x^2+1}+\frac14\ln\abs{\sqrt{4x^2+1}+2x}+C</m></p>
           </answer>
           <solution>
-            <p><m>x\sqrt{x^2+1/4}+\frac14\ln|2\sqrt{x^2+1/4}+2x| + C = \frac12x\sqrt{4x^2+1}+\frac14\ln|\sqrt{4x^2+1}+2x|+C</m></p>
+            <p><m>x\sqrt{x^2+1/4}+\frac14\ln\abs{2\sqrt{x^2+1/4}+2x} + C = \frac12x\sqrt{4x^2+1}+\frac14\ln\abs{\sqrt{4x^2+1}+2x}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -668,10 +668,10 @@
             <p><m>\ds \int \sqrt{16x^2-1}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>4\left(\frac12x\sqrt{x^2-1/16}-\frac1{32}\ln|4x+4\sqrt{x^2-1/16}|\right)+C = \frac12x\sqrt{16x^2-1}-\frac18\ln|4x+\sqrt{16x^2-1}|+C</m></p>
+            <p><m>4\left(\frac12x\sqrt{x^2-1/16}-\frac1{32}\ln\abs{4x+4\sqrt{x^2-1/16}}\right)+C = \frac12x\sqrt{16x^2-1}-\frac18\ln\abs{4x+\sqrt{16x^2-1}}+C</m></p>
           </answer>
           <solution>
-            <p><m>4\left(\frac12x\sqrt{x^2-1/16}-\frac1{32}\ln|4x+4\sqrt{x^2-1/16}|\right)+C = \frac12x\sqrt{16x^2-1}-\frac18\ln|4x+\sqrt{16x^2-1}|+C</m></p>
+            <p><m>4\left(\frac12x\sqrt{x^2-1/16}-\frac1{32}\ln\abs{4x+4\sqrt{x^2-1/16}}\right)+C = \frac12x\sqrt{16x^2-1}-\frac18\ln\abs{4x+\sqrt{16x^2-1}}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -688,10 +688,10 @@
             <p><m>\ds \int \frac8{\sqrt{x^2+2}}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>8\ln\left|\frac{\sqrt{x^2+2}}{\sqrt{2}}+\frac x{\sqrt{2}}\right|+C</m>; with <xref ref="sec_hyperbolic">Section</xref>, we can state the answer as <m>8\sinh^{-1}(x/\sqrt{2})+C</m>.</p>
+            <p><m>8\ln\abs{\frac{\sqrt{x^2+2}}{\sqrt{2}}+\frac x{\sqrt{2}}}+C</m>; with <xref ref="sec_hyperbolic">Section</xref>, we can state the answer as <m>8\sinh^{-1}(x/\sqrt{2})+C</m>.</p>
           </answer>
           <solution>
-            <p><m>8\ln\left|\frac{\sqrt{x^2+2}}{\sqrt{2}}+\frac x{\sqrt{2}}\right|+C</m>; with <xref ref="sec_hyperbolic">Section</xref>, we can state the answer as <m>8\sinh^{-1}(x/\sqrt{2})+C</m>.</p>
+            <p><m>8\ln\abs{\frac{\sqrt{x^2+2}}{\sqrt{2}}+\frac x{\sqrt{2}}}+C</m>; with <xref ref="sec_hyperbolic">Section</xref>, we can state the answer as <m>8\sinh^{-1}(x/\sqrt{2})+C</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -728,10 +728,10 @@
             <p><m>\ds \int \frac5{\sqrt{x^2-8}}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>5\ln\left|\frac{x}{\sqrt{8}}+\frac{\sqrt{x^2-8}}{\sqrt{8}}\right|+C</m></p>
+            <p><m>5\ln\abs{\frac{x}{\sqrt{8}}+\frac{\sqrt{x^2-8}}{\sqrt{8}}}+C</m></p>
           </answer>
           <solution>
-            <p><m>5\ln\left|\frac{x}{\sqrt{8}}+\frac{\sqrt{x^2-8}}{\sqrt{8}}\right|+C</m></p>
+            <p><m>5\ln\abs{\frac{x}{\sqrt{8}}+\frac{\sqrt{x^2-8}}{\sqrt{8}}}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -849,10 +849,10 @@
             <p><m>\ds \int \frac {5x^2}{\sqrt{x^2-10}}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac52x\sqrt{x^2-10}+25\ln\left|\frac{x}{\sqrt{10}}+\frac{\sqrt{x^2-10}}{\sqrt{10}}\right|+C</m></p>
+            <p><m>\frac52x\sqrt{x^2-10}+25\ln\abs{\frac{x}{\sqrt{10}}+\frac{\sqrt{x^2-10}}{\sqrt{10}}}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac52x\sqrt{x^2-10}+25\ln\left|\frac{x}{\sqrt{10}}+\frac{\sqrt{x^2-10}}{\sqrt{10}}\right|+C</m></p>
+            <p><m>\frac52x\sqrt{x^2-10}+25\ln\abs{\frac{x}{\sqrt{10}}+\frac{\sqrt{x^2-10}}{\sqrt{10}}}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -929,10 +929,10 @@
             <p><m>\ds \int \frac{x^2}{\sqrt{x^2+3}}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac12x\sqrt{x^2+3}-\frac32\ln\left|\frac{\sqrt{x^2+3}}{\sqrt{3}}+\frac x{\sqrt{3}}\right|+C</m></p>
+            <p><m>\frac12x\sqrt{x^2+3}-\frac32\ln\abs{\frac{\sqrt{x^2+3}}{\sqrt{3}}+\frac x{\sqrt{3}}}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac12x\sqrt{x^2+3}-\frac32\ln\left|\frac{\sqrt{x^2+3}}{\sqrt{3}}+\frac x{\sqrt{3}}\right|+C</m></p>
+            <p><m>\frac12x\sqrt{x^2+3}-\frac32\ln\abs{\frac{\sqrt{x^2+3}}{\sqrt{3}}+\frac x{\sqrt{3}}}+C</m></p>
           </solution>
         </webwork>
       </exercise>

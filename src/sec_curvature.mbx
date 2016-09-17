@@ -433,13 +433,13 @@
         <ol>
           <li><p>If <m>C</m> is defined by <m>y=f(x)</m>, then
               <me>
-                \kappa = \frac{|\fp'(x)|}{\Big(1+\big(\fp(x)\big)^2\Big)^{3/2}}.
+                \kappa = \frac{\abs{\fp'(x)}}{\Big(1+\big(\fp(x)\big)^2\Big)^{3/2}}.
               </me>
             </p></li>
 
           <li><p>If <m>C</m> is defined as a vector<ndash />valued function in the plane, <m>\vec r(t) = \la x(t), y(t)\ra</m>, then
               <me>
-                \kappa = \frac{|x'y''-x''y'|}{\big((x')^2+(y')^2\big)^{3/2}}.
+                \kappa = \frac{\abs{x'y''-x''y'}}{\big((x')^2+(y')^2\big)^{3/2}}.
               </me>
             </p></li>
 
@@ -465,7 +465,7 @@
 
         <p>We compute <m>\kappa</m> using the second part of <xref ref="thm_curvature_formulas">Theorem</xref>.
           <md>
-            <mrow>\kappa \amp = \frac{|(-r\sin t)(-r\sin t) - (-r\cos t)(r\cos t)|}{\big( (-r\sin t)^2+(r\cos t)^2\big)^{3/2}}</mrow>
+            <mrow>\kappa \amp = \frac{\abs{(-r\sin t)(-r\sin t) - (-r\cos t)(r\cos t)}}{\big( (-r\sin t)^2+(r\cos t)^2\big)^{3/2}}</mrow>
             <mrow>\amp = \frac{r^2(\sin^2t+\cos^2t)}{\big(r^2(\sin^2t+\cos^2t)\big)^{3/2}}</mrow>
             <mrow>\amp = \frac{r^2}{r^3} = \frac1r.</mrow>
           </md>
@@ -558,7 +558,7 @@
       <solution>
         <p>We use the first formula found in <xref ref="thm_curvature_formulas">Theorem</xref>.
           <md>
-            <mrow>\kappa(x) \amp = \frac{|2|}{\big(1+(2x)^2\big)^{3/2}}</mrow>
+            <mrow>\kappa(x) \amp = \frac{\abs{2}}{\big(1+(2x)^2\big)^{3/2}}</mrow>
             <mrow>\amp = \frac2{\big(1+4x^2\big)^{3/2}}.</mrow>
           </md>
         </p>
@@ -1135,12 +1135,12 @@
             <p><m>C</m> is defined by <m>y = x^3-x</m>; points given at <m>x=0</m> and <m>x=1/2</m>.</p>
           </statement>
           <answer>
-            <p><m>\kappa = \frac{|6x|}{\left(1+(3x^2-1)^2\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{6x}}{\left(1+(3x^2-1)^2\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 0</m>, <m>\kappa(1/2) = \frac{192}{17\sqrt{17}} \approx 2.74</m>.</p>
           </answer>
           <solution>
-            <p><m>\kappa = \frac{|6x|}{\left(1+(3x^2-1)^2\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{6x}}{\left(1+(3x^2-1)^2\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 0</m>, <m>\kappa(1/2) = \frac{192}{17\sqrt{17}} \approx 2.74</m>.</p>
           </solution>
@@ -1159,12 +1159,12 @@
             <p><m>C</m> is defined by <m>\ds y = \frac1{x^2+1}</m>; points given at <m>x=0</m> and <m>x=2</m>.</p>
           </statement>
           <answer>
-            <p><m>\kappa = \frac{\left|\frac{6x^2-2}{(x^2+1)^3}\right|}{\left(1+\frac{4x^2}{(x^2+1)^4}\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{\frac{6x^2-2}{(x^2+1)^3}}}{\left(1+\frac{4x^2}{(x^2+1)^4}\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 2</m>, <m>\kappa(2) = \frac{2750}{641\sqrt{641}} \approx 0.169</m>.</p>
           </answer>
           <solution>
-            <p><m>\kappa = \frac{\left|\frac{6x^2-2}{(x^2+1)^3}\right|}{\left(1+\frac{4x^2}{(x^2+1)^4}\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{\frac{6x^2-2}{(x^2+1)^3}}}{\left(1+\frac{4x^2}{(x^2+1)^4}\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 2</m>, <m>\kappa(2) = \frac{2750}{641\sqrt{641}} \approx 0.169</m>.</p>
           </solution>
@@ -1183,12 +1183,12 @@
             <p><m>C</m> is defined by <m>\ds y = \cos x</m>; points given at <m>x=0</m> and <m>x=\pi/2</m>.</p>
           </statement>
           <answer>
-            <p><m>\kappa = \frac{|\cos x|}{\left(1+\sin^2x\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{\cos x}}{\left(1+\sin^2x\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 1</m>, <m>\kappa(\pi/2) = 0</m></p>
           </answer>
           <solution>
-            <p><m>\kappa = \frac{|\cos x|}{\left(1+\sin^2x\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{\cos x}}{\left(1+\sin^2x\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 1</m>, <m>\kappa(\pi/2) = 0</m></p>
           </solution>
@@ -1231,12 +1231,12 @@
             <p><m>C</m> is defined by <m>\ds \vrt = \la \cos t, \sin (2t)\ra</m>; points given at <m>t=0</m> and <m>t=\pi/4</m>.</p>
           </statement>
           <answer>
-            <p><m>\kappa = \frac{|2\cos t\cos(2t)+4\sin t\sin(2t)|}{\left(4\cos^2(2t)+\sin^2t\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{2\cos t\cos(2t)+4\sin t\sin(2t)}}{\left(4\cos^2(2t)+\sin^2t\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 1/4</m>, <m>\kappa(\pi/4) = 8</m></p>
           </answer>
           <solution>
-            <p><m>\kappa = \frac{|2\cos t\cos(2t)+4\sin t\sin(2t)|}{\left(4\cos^2(2t)+\sin^2t\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{2\cos t\cos(2t)+4\sin t\sin(2t)}}{\left(4\cos^2(2t)+\sin^2t\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 1/4</m>, <m>\kappa(\pi/4) = 8</m></p>
           </solution>
@@ -1279,12 +1279,12 @@
             <p><m>C</m> is defined by <m>\ds \vrt = \la t^2-1,t^3-t\ra</m>; points given at <m>t=0</m> and <m>t=5</m>.</p>
           </statement>
           <answer>
-            <p><m>\kappa = \frac{|6t^2+2|}{\left(4t^2+(3t^2-1)^2\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{6t^2+2}}{\left(4t^2+(3t^2-1)^2\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 2</m>, <m>\kappa(5) = \frac{19}{1394\sqrt{1394}}\approx 0.0004</m></p>
           </answer>
           <solution>
-            <p><m>\kappa = \frac{|6t^2+2|}{\left(4t^2+(3t^2-1)^2\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{6t^2+2}}{\left(4t^2+(3t^2-1)^2\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 2</m>, <m>\kappa(5) = \frac{19}{1394\sqrt{1394}}\approx 0.0004</m></p>
           </solution>
@@ -1303,12 +1303,12 @@
             <p><m>C</m> is defined by <m>\ds \vrt = \la \tan t,\sec t\ra</m>; points given at <m>t=0</m> and <m>t=\pi/6</m>.</p>
           </statement>
           <answer>
-            <p><m>\kappa = \frac{|\sec^3t|}{\left(\sec^4t+\sec^2t\tan^2t\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{\sec^3t}}{\left(\sec^4t+\sec^2t\tan^2t\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 1</m>, <m>\kappa(\pi/6) = \frac{3\sqrt{3}}{5\sqrt{5}}\approx 0.465</m></p>
           </answer>
           <solution>
-            <p><m>\kappa = \frac{|\sec^3t|}{\left(\sec^4t+\sec^2t\tan^2t\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{\sec^3t}}{\left(\sec^4t+\sec^2t\tan^2t\right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 1</m>, <m>\kappa(\pi/6) = \frac{3\sqrt{3}}{5\sqrt{5}}\approx 0.465</m></p>
           </solution>

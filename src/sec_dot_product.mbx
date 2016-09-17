@@ -497,7 +497,7 @@
     </definition>
 
     <aside>
-      <p><em>Note:</em> The term <em>perpendicular</em> originally referred to lines. As mathematics progressed, the concept of <q>being at right angles to</q> was applied to other objects, such as vectors and planes, and the term <em>orthogonal</em> was introduced. It is especially used when discussing objects that are hard, or impossible, to visualize: two vectors in 5-dimensional space are orthogonal if their dot product is 0. It is not wrong to say they are <em>perpendicular</em>, but common convention gives preference to the word <em>orthogonal</em>.</p>
+      <p>The term <em>perpendicular</em> originally referred to lines. As mathematics progressed, the concept of <q>being at right angles to</q> was applied to other objects, such as vectors and planes, and the term <em>orthogonal</em> was introduced. It is especially used when discussing objects that are hard, or impossible, to visualize: two vectors in 5-dimensional space are orthogonal if their dot product is 0. It is not wrong to say they are <em>perpendicular</em>, but common convention gives preference to the word <em>orthogonal</em>.</p>
     </aside>
 
     <example xml:id="ex_dotp8">
@@ -1155,9 +1155,9 @@
     <p>Consider <xref ref="fig_dotpwork">Figure</xref>, where a force <m>\vec F</m> is being applied to an object moving in the direction of <m>\vec d</m>. (The distance the object travels is the magnitude of <m>\vec d</m>.) The work done is the amount of force in the direction of <m>\vec d</m>, <m>\norm{\proj Fd}</m>, times <m>\vnorm d</m>:
       <md>
         <mrow>\norm{\proj Fd}\cdot\vnorm d \amp = \snorm{\frac{\dotp Fd}{\dotp dd}\vec d}\cdot \vnorm d</mrow>
-        <mrow>\amp = \left|\frac{\dotp Fd}{\vnorm d^2}\right|\cdot \vnorm d\cdot\vnorm d</mrow>
-        <mrow>\amp = \frac{\left|\dotp Fd\right|}{\vnorm d^2}\vnorm d^2</mrow>
-        <mrow>\amp = \left|\dotp Fd\right|.</mrow>
+        <mrow>\amp = \abs{\frac{\dotp Fd}{\vnorm d^2}}\cdot \vnorm d\cdot\vnorm d</mrow>
+        <mrow>\amp = \frac{\abs{\dotp Fd}}{\vnorm d^2}\vnorm d^2</mrow>
+        <mrow>\amp = \abs{\dotp Fd}.</mrow>
       </md>
     </p>
 

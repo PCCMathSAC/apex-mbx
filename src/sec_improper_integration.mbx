@@ -168,7 +168,7 @@
             </p></li>
 
           <li><p><m>\begin{aligned}\int_1^\infty \frac1x\ dx \amp  = \lim_{b\to\infty}\int_1^b\frac1x\ dx \\
-						\amp = \lim_{b\to\infty} \ln |x|\Big|_1^b \\
+						\amp = \lim_{b\to\infty} \ln \abs{x}\Big|_1^b \\
 						\amp = \lim_{b\to\infty} \ln (b)\\
 						\amp = \infty.
               \end{aligned}</m>
@@ -411,7 +411,7 @@
             It turns out that the region does have a finite area even though it has no upper bound (strange things can occur in mathematics when considering the infinite).
 
             <aside>
-              <p><em>Note:</em> In <xref ref="def_imp_int2">Definition</xref>, <m>c</m> can be one of the endpoints (<m>a</m> or <m>b</m>). In that case, there is only one limit to consider as part of the definition.</p>
+              <p>In <xref ref="def_imp_int2">Definition</xref>, <m>c</m> can be one of the endpoints (<m>a</m> or <m>b</m>). In that case, there is only one limit to consider as part of the definition.</p>
             </aside>
 
             <figure xml:id="fig_impint3" >
@@ -567,8 +567,8 @@
 
               \addplot [{\colortwo},thick,smooth] coordinates {(.05,4.47)(0.1,3.162)(0.15,2.582)(0.2,2.236)(0.25,2.)(0.3,1.826)(0.35,1.69)(0.4,1.581)(0.45,1.491)(0.5,1.414)(0.55,1.348)(0.6,1.291)(0.65,1.24)(0.7,1.195)(0.75,1.155)(0.8,1.118)(0.85,1.085)(0.9,1.054)(0.95,1.026)(1.,1.)(1.05,0.9759)(1.1,0.9535)(1.15,0.9325)(1.2,0.9129)(1.25,0.8944)(1.3,0.8771)(1.35,0.8607)(1.4,0.8452)(1.45,0.8305)(1.5,0.8165)(1.55,0.8032)(1.6,0.7906)(1.65,0.7785)(1.7,0.767)(1.75,0.7559)(1.8,0.7454)(1.85,0.7352)(1.9,0.7255)(1.95,0.7161)(2.,0.7071)};
 
-              \draw (axis cs:.7,5) node {\scriptsize $\ds f(x)=\frac{1}{x\,^q}$};
-              \draw (axis cs:.35,.8) node {\scriptsize $\ds f(x)=\frac{1}{x\,^p}$};
+              \draw (axis cs:.7,5) node {\scriptsize $\ds f(x)=\frac{1}{x^q}$};
+              \draw (axis cs:.35,.8) node {\scriptsize $\ds f(x)=\frac{1}{x^p}$};
               \draw (axis cs:1.5,3) node {\scriptsize $p<1<q$};
               \end{axis}
 
@@ -601,7 +601,7 @@
     <p>A basic technique in determining convergence of improper integrals is to compare an integrand whose convergence is unknown to an integrand whose convergence is known. We often use integrands of the form <m>1/x^p</m> to compare to as their convergence on certain intervals is known. This is described in the following theorem.</p>
 
     <aside>
-      <p><em>Note:</em> We used the upper and lower bound of <q>1</q> in <xref ref="idea_impint1">Key Idea</xref> for convenience. It can be replaced by any <m>a</m> where <m>a>0</m>.</p>
+      <p>We used the upper and lower bound of <q>1</q> in <xref ref="idea_impint1">Key Idea</xref> for convenience. It can be replaced by any <m>a</m> where <m>a>0</m>.</p>
     </aside>
 
     <theorem xml:id="thm_impint_comparison">
@@ -1258,7 +1258,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{-2}^1 \frac{1}{\sqrt{|x|}} \ dx</m></p>
+            <p><m>\ds \int_{-2}^1 \frac{1}{\sqrt{\abs{x}}} \ dx</m></p>
           </statement>
           <answer>
             <p><m>2+2\sqrt{2}</m></p>

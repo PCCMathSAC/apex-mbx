@@ -46,11 +46,11 @@
     <definition xml:id="def_limit_of_infinity">
       <title>Limit of Infinity, $\infty$</title>
       <statement>
-        <p>We say <m>\ds \lim_{x\rightarrow c} f(x)=\infty</m> if for every <m>M>0</m> there exists <m>\delta>0</m> such that for all <m>x\neq c</m>, if <m>|x-c|\lt \delta</m>, then <m>f(x)\geq M</m>. <index><main>limit</main><sub>of infinity</sub></index></p>
+        <p>We say <m>\ds \lim_{x\rightarrow c} f(x)=\infty</m> if for every <m>M>0</m> there exists <m>\delta>0</m> such that for all <m>x\neq c</m>, if <m>\abs{x-c}\lt \delta</m>, then <m>f(x)\geq M</m>. <index><main>limit</main><sub>of infinity</sub></index></p>
       </statement>
     </definition>
 
-    <p>This is just like the <m>\epsilon</m><ndash /><m>\delta</m> definition from <xref ref="sec_limit_def">Section</xref>. In that definition, given any (small) value <m>\epsilon</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>) then <m>f(x)</m> is guaranteed to be within <m>\epsilon</m> of <m>f(c)</m>. Here, given any (large) value <m>M</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>), then <m>f(x)</m> will be at least as large as <m>M</m>. In other words, if we get close enough to <m>c</m>, then we can make <m>f(x)</m> as large as we want. We can define limits equal to <m>-\infty</m> in a similar way.</p>
+    <p>This is just like the <m>\varepsilon</m><ndash /><m>\delta</m> definition from <xref ref="sec_limit_def">Section</xref>. In that definition, given any (small) value <m>\varepsilon</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>) then <m>f(x)</m> is guaranteed to be within <m>\varepsilon</m> of <m>f(c)</m>. Here, given any (large) value <m>M</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>), then <m>f(x)</m> will be at least as large as <m>M</m>. In other words, if we get close enough to <m>c</m>, then we can make <m>f(x)</m> as large as we want. We can define limits equal to <m>-\infty</m> in a similar way.</p>
 
     <p>It is important to note that by saying <m>\ds \lim_{x\to c}f(x) = \infty</m> we are implicitly stating that <em>the</em> limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, <em>does not exist.</em> A limit only exists when <m>f(x)</m> approaches an actual numeric value. We use the concept of limits that approach infinity because it is helpful and descriptive.</p>
 
@@ -85,9 +85,9 @@
         </figure>
       </statement>
       <solution>
-        <p>In <xref ref="ex_no_limit2">Example</xref> of <xref ref="sec_limit_intro">Section</xref>, by inspecting values of <m>x</m> close to 1 we concluded that this limit does not exist. That is, it cannot equal any real number. But the limit could be infinite. And in fact, we see that the function does appear to be growing larger and larger, as <m>f(.99)=10^4</m>, <m>f(.999)=10^6</m>, <m>f(.9999)=10^8</m>. A similar thing happens on the other side of 1. In general, let a <q>large</q> value <m>M</m> be given. Let <m>\delta=1/\sqrt{M}</m>. If <m>x</m> is within <m>\delta</m> of 1, i.e., if <m>|x-1|\lt 1/\sqrt{M}</m>, then:
+        <p>In <xref ref="ex_no_limit2">Example</xref> of <xref ref="sec_limit_intro">Section</xref>, by inspecting values of <m>x</m> close to 1 we concluded that this limit does not exist. That is, it cannot equal any real number. But the limit could be infinite. And in fact, we see that the function does appear to be growing larger and larger, as <m>f(.99)=10^4</m>, <m>f(.999)=10^6</m>, <m>f(.9999)=10^8</m>. A similar thing happens on the other side of 1. In general, let a <q>large</q> value <m>M</m> be given. Let <m>\delta=1/\sqrt{M}</m>. If <m>x</m> is within <m>\delta</m> of 1, i.e., if <m>\abs{x-1}\lt 1/\sqrt{M}</m>, then:
           <md>
-            <mrow>|x-1| \amp \lt  \frac{1}{\sqrt{M}}</mrow>
+            <mrow>\abs{x-1} \amp \lt  \frac{1}{\sqrt{M}}</mrow>
             <mrow>(x-1)^2 \amp \lt  \frac{1}{M}</mrow>
             <mrow>\frac{1}{(x-1)^2} \amp > M,</mrow>
           </md>
@@ -253,9 +253,9 @@
       <title>Limits at Infinity and Horizontal Asymptote</title>
       <statement>
         <ol>
-          <li><p>We say <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M>0</m> such that if <m>x\geq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.<index><main>limit</main><sub>at infinity</sub></index><index><main>asymptote</main><sub>horizontal</sub></index></p></li>
+          <li><p>We say <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> if for every <m>\varepsilon>0</m> there exists <m>M>0</m> such that if <m>x\geq M</m>, then <m>\abs{f(x)-L}\lt \varepsilon</m>.<index><main>limit</main><sub>at infinity</sub></index><index><main>asymptote</main><sub>horizontal</sub></index></p></li>
 
-          <li><p>We say <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M\lt 0</m> such that if <m>x\leq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.</p></li>
+          <li><p>We say <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m> if for every <m>\varepsilon>0</m> there exists <m>M\lt 0</m> such that if <m>x\leq M</m>, then <m>\abs{f(x)-L}\lt \varepsilon</m>.</p></li>
 
           <li><p>If <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> or <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m>, we say that <m>y=L</m> is a <em>horizontal asymptote</em> of <m>f</m>.</p></li>
         </ol>
@@ -469,7 +469,7 @@
       <!-- figures/fig_hzasy4.tex END -->
     </figure>
 
-    <p>We can analytically evaluate limits at infinity for rational functions once we understand <m>\ds\lim_{x\rightarrow\infty} 1/x</m>. As <m>x</m> gets larger and larger, the <m>1/x</m> gets smaller and smaller, approaching 0. We can, in fact, make <m>1/x</m> as small as we want by choosing a large enough value of <m>x</m>. Given <m>\epsilon</m>, we can make <m>1/x\lt \epsilon</m> by choosing <m>x>1/\epsilon</m>. Thus we have <m>\lim_{x\rightarrow\infty} 1/x=0</m>.</p>
+    <p>We can analytically evaluate limits at infinity for rational functions once we understand <m>\ds\lim_{x\rightarrow\infty} 1/x</m>. As <m>x</m> gets larger and larger, the <m>1/x</m> gets smaller and smaller, approaching 0. We can, in fact, make <m>1/x</m> as small as we want by choosing a large enough value of <m>x</m>. Given <m>\varepsilon</m>, we can make <m>1/x\lt \varepsilon</m> by choosing <m>x>1/\varepsilon</m>. Thus we have <m>\lim_{x\rightarrow\infty} 1/x=0</m>.</p>
 
     <p>It is now not much of a jump to conclude the following:
       <me>
@@ -525,7 +525,7 @@
 
     <p>With care, we can quickly evaluate limits at infinity for a large number of functions by considering the largest powers of <m>x</m>. For instance, consider again <m>\ds\lim_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},</m> graphed in <xref ref="fig_hzasy">Figure</xref>(b). When <m>x</m> is very large, <m>x^2+1 \approx x^2</m>. Thus
       <me>
-        \sqrt{x^2+1}\approx \sqrt{x^2} = |x|, \text{ and }  \frac{x}{\sqrt{x^2+1}} \approx \frac{x}{|x|}.
+        \sqrt{x^2+1}\approx \sqrt{x^2} = \abs{x}, \text{ and }  \frac{x}{\sqrt{x^2+1}} \approx \frac{x}{\abs{x}}.
       </me>
     </p>
 
@@ -693,7 +693,7 @@
 
       <li><p>found accessible ways to approximate their values numerically and graphically,</p></li>
 
-      <li><p>developed a not<ndash />so<ndash />easy method of proving the value of a limit (<m>\epsilon</m>-<m>\delta</m> proofs),</p></li>
+      <li><p>developed a not<ndash />so<ndash />easy method of proving the value of a limit (<m>\varepsilon</m>-<m>\delta</m> proofs),</p></li>
 
       <li><p>explored when limits do not exist,</p></li>
 
@@ -1881,7 +1881,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Use an <m>\epsilon-\delta</m> proof to show that</p>
+            <p>Use an <m>\varepsilon-\delta</m> proof to show that</p>
 
             <p><m>\ds \lim_{x\to 1} 5x-2=3</m>.</p>
           </statement>

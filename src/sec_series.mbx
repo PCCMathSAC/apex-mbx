@@ -212,9 +212,9 @@
         <p>Consider the geometric series <m>\ds \sum_{n=0}^\infty r^n</m>.</p>
 
         <ol>
-          <li><p>The <m>n^\text{ th }</m> partial sum is: <m>\ds S_n = \frac{1-r\,^{n+1}}{1-r}</m>.</p></li>
+          <li><p>The <m>n^\text{ th }</m> partial sum is: <m>\ds S_n = \frac{1-r^{n+1}}{1-r}</m>.</p></li>
 
-          <li><p>The series converges if, and only if, <m>|r| \lt  1</m>. When <m>|r|\lt 1</m>, 
+          <li><p>The series converges if, and only if, <m>\abs{r} \lt  1</m>. When <m>\abs{r}\lt 1</m>, 
               <index><main>series</main><sub>geometric</sub></index><index><main>geometric series</main></index><index><main>convergence</main><sub>of geometric series</sub></index><index><main>divergence</main><sub>of geometric series</sub></index>
               <me>
                 \sum_{n=0}^\infty r^n = \frac{1}{1-r}.
@@ -295,7 +295,7 @@
 
             </p></li>
 
-          <li><p>Since <m>|r| = 1/2 \lt  1</m>, this series converges, and by <xref ref="thm_geom_series">Theorem</xref>,
+          <li><p>Since <m>\abs{r} = 1/2 \lt  1</m>, this series converges, and by <xref ref="thm_geom_series">Theorem</xref>,
               <me>
                 \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n = \frac{1}{1-(-1/2)} = \frac23.
               </me>
@@ -444,7 +444,7 @@
     </theorem>
 
     <aside>
-      <p><em>Note:</em> <xref ref="thm_pseries">Theorem</xref> assumes that <m>an+b\neq 0</m> for all <m>n</m>. If <m>an+b=0</m> for some <m>n</m>, then of course the series does not converge regardless of <m>p</m> as not all of the terms of the sequence are defined.</p>
+      <p><xref ref="thm_pseries">Theorem</xref> assumes that <m>an+b\neq 0</m> for all <m>n</m>. If <m>an+b=0</m> for some <m>n</m>, then of course the series does not converge regardless of <m>p</m> as not all of the terms of the sequence are defined.</p>
     </aside>
 
     <example xml:id="ex_series6">

@@ -229,7 +229,7 @@
     </definition>
 
     <aside>
-      <p><em>Note:</em> The symbol <q><m>\nabla</m></q> is named <q>nabla,</q> derived from the Greek name of a Jewish harp. Oddly enough, in mathematics the expression <m>\nabla f</m> is pronounced <q>del <m>f</m>.</q></p>
+      <p>The symbol <q><m>\nabla</m></q> is named <q>nabla,</q> derived from the Greek name of a Jewish harp. Oddly enough, in mathematics the expression <m>\nabla f</m> is pronounced <q>del <m>f</m>.</q></p>
     </aside>
 
     <p>To simplify notation, we often express the gradient as <m>\nabla f = \la f_x, f_y\ra</m>. The gradient allows us to compute directional derivatives in terms of a dot product.</p>
@@ -314,9 +314,9 @@
           </me>
         </p>
 
-        <p>Thus the direction of maximal increase is <m>\la 1/4, -3/4\ra</m>. In this direction, the instantaneous rate of <m>z</m> change is <m>||\la 1/4,-3/4\ra|| = \sqrt{10}/4 \approx 0.79.</m></p>
+        <p>Thus the direction of maximal increase is <m>\la 1/4, -3/4\ra</m>. In this direction, the instantaneous rate of <m>z</m> change is <m>\norm{\la 1/4,-3/4\ra} = \sqrt{10}/4 \approx 0.79.</m></p>
 
-        <p><xref ref="fig_direct2">Figure</xref> shows the surface plotted from two different perspectives. In each, the gradient is drawn at <m>P</m> with a dashed line (because of the nature of this surface, the gradient points <q>into</q> the surface). Let <m>\vec u = \la u_1, u_2\ra</m> be the unit vector in the direction of <m>\nabla f</m> at <m>P</m>. Each graph of the figure also contains the vector <m>\la u_1, u_2, ||\nabla f\,||\ra</m>. This vector has a <q>run</q> of 1 (because in the <m>x</m>-<m>y</m> plane it moves 1 unit) and a <q>rise</q> of <m>||\nabla f\,||</m>, hence we can think of it as a vector with slope of <m>||\nabla f\,||</m> in the direction of <m>\nabla f</m>, helping us visualize how <q>steep</q> the surface is in its steepest direction.</p>
+        <p><xref ref="fig_direct2">Figure</xref> shows the surface plotted from two different perspectives. In each, the gradient is drawn at <m>P</m> with a dashed line (because of the nature of this surface, the gradient points <q>into</q> the surface). Let <m>\vec u = \la u_1, u_2\ra</m> be the unit vector in the direction of <m>\nabla f</m> at <m>P</m>. Each graph of the figure also contains the vector <m>\la u_1, u_2, \norm{\nabla f\,}\ra</m>. This vector has a <q>run</q> of 1 (because in the <m>x</m>-<m>y</m> plane it moves 1 unit) and a <q>rise</q> of <m>\norm{\nabla f\,}</m>, hence we can think of it as a vector with slope of <m>\norm{\nabla f\,}</m> in the direction of <m>\nabla f</m>, helping us visualize how <q>steep</q> the surface is in its steepest direction.</p>
 
         <figure xml:id="fig_direct2" >
         <caption>Graphing the surface and important directions in <xref ref="ex_direct2">Example</xref>.</caption>
@@ -763,12 +763,12 @@
           <md>
             <mrow>\int \frac{1}{2x}\frac{dx}{dt}\ dt \amp =\int \frac{1}{4y}\frac{dy}{dt}\ dt</mrow>
             <mrow>\int \frac{1}{2x}\ dx \amp =\int\frac{1}{4y}\ dy</mrow>
-            <mrow>\frac 12\ln|x| \amp = \frac14\ln|y| +C_1</mrow>
-            <mrow>2\ln|x| \amp = \ln|y| +C_1</mrow>
-            <mrow>\ln |x^2| \amp = \ln|y|+C_1</mrow>
+            <mrow>\frac 12\ln\abs{x} \amp = \frac14\ln\abs{y} +C_1</mrow>
+            <mrow>2\ln\abs{x} \amp = \ln\abs{y} +C_1</mrow>
+            <mrow>\ln \abs{x^2} \amp = \ln\abs{y}+C_1</mrow>
             <intertext>Now raise both sides as a power of <m>e</m>:</intertext>
-            <mrow>x^2 \amp = e^{\ln |y|+C_1}</mrow>
-            <mrow>x^2 \amp = e^{\ln |y|}e^{C_1}\qquad \text{(Note that \(e^{C_1}\) is just a constant.)}</mrow>
+            <mrow>x^2 \amp = e^{\ln \abs{y}+C_1}</mrow>
+            <mrow>x^2 \amp = e^{\ln \abs{y}}e^{C_1}\qquad \text{(Note that \(e^{C_1}\) is just a constant.)}</mrow>
             <mrow>x^2 \amp = yC_2</mrow>
             <mrow>\frac1{C_2}x^2 \amp =y   \qquad \text{ (Note that \(1/C_2\) is just a constant.) }</mrow>
             <mrow>Cx^2 \amp = y.</mrow>

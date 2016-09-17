@@ -1273,7 +1273,7 @@
 
           <li><p>Let <m>E_T</m> be the error in approximating <m>\ds \int_a^b f(x)\ dx</m> using the Trapezoidal Rule. 
 
-              If <m>f</m> has a continuous 2<m>^\text{ nd }</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\big|\fpp(x)\big|</m> on <m>[a,b]</m>, then
+              If <m>f</m> has a continuous 2<m>^\text{ nd }</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\abs{\fpp(x)}</m> on <m>[a,b]</m>, then
               <me>
                 \ds E_T \leq \frac{(b-a)^3}{12n^2}M.
               </me>
@@ -1281,7 +1281,7 @@
 
           <li><p>Let <m>E_S</m> be the error in approximating <m>\ds \int_a^b f(x)\ dx</m> using Simpson's Rule. 
 
-              If <m>f</m> has a continuous 4<m>^\text{ th }</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\big|f\,^{(4)}\big|</m> on <m>[a,b]</m>, then
+              If <m>f</m> has a continuous 4<m>^\text{ th }</m> derivative on <m>[a,b]</m> and <m>M</m> is any upper bound of <m>\abs{f^{(4)}}</m> on <m>[a,b]</m>, then
               <me>
                 E_S \leq \frac{(b-a)^5}{180n^4}M.
               </me>
@@ -1371,11 +1371,11 @@
 
         <p>We start by computing the <m>4^\text{ th }</m> derivative of <m>f(x) = e^{-x^2}</m>:
           <me>
-            f\,^{(4)}(x) = e^{-x^2}(16x^4-48x^2+12).
+            f^{(4)}(x) = e^{-x^2}(16x^4-48x^2+12).
           </me>
         </p>
 
-        <p><xref ref="fig_num7b">Figure</xref> shows a graph of <m>f\,^{(4)}(x)</m> on <m>[0,1]</m>. It is clear that the largest value of <m>f\,^{(4)}</m>, in absolute value, is 12. Thus we let <m>M=12</m> and apply the error formula from <xref ref="thm_numerical_error">Theorem</xref>.
+        <p><xref ref="fig_num7b">Figure</xref> shows a graph of <m>f^{(4)}(x)</m> on <m>[0,1]</m>. It is clear that the largest value of <m>f^{(4)}</m>, in absolute value, is 12. Thus we let <m>M=12</m> and apply the error formula from <xref ref="thm_numerical_error">Theorem</xref>.
           <me>
             E_s = \frac{(1-0)^5}{180\cdot 4^4}\cdot 12 = 0.00026.
           </me>
@@ -2145,14 +2145,14 @@
             <ol>
               <li><p><m>n=161</m> (using <m>\max\big(\fpp(x)\big)=1</m>)</p></li>
 
-              <li><p><m>n=12</m>	(using <m>\max\big(f\,^{(4)}(x)\big)=1</m>)</p></li>
+              <li><p><m>n=12</m>	(using <m>\max\big(f^{(4)}(x)\big)=1</m>)</p></li>
             </ol>
           </answer>
           <solution>
             <ol>
               <li><p><m>n=161</m> (using <m>\max\big(\fpp(x)\big)=1</m>)</p></li>
 
-              <li><p><m>n=12</m>	(using <m>\max\big(f\,^{(4)}(x)\big)=1</m>)</p></li>
+              <li><p><m>n=12</m>	(using <m>\max\big(f^{(4)}(x)\big)=1</m>)</p></li>
             </ol>
           </solution>
         </webwork>
@@ -2173,14 +2173,14 @@
             <ol>
               <li><p><m>n=150</m> (using <m>\max\big(\fpp(x)\big)=1</m>)</p></li>
 
-              <li><p><m>n=18</m>	(using <m>\max\big(f\,^{(4)}(x)\big)=7</m>)</p></li>
+              <li><p><m>n=18</m>	(using <m>\max\big(f^{(4)}(x)\big)=7</m>)</p></li>
             </ol>
           </answer>
           <solution>
             <ol>
               <li><p><m>n=150</m> (using <m>\max\big(\fpp(x)\big)=1</m>)</p></li>
 
-              <li><p><m>n=18</m>	(using <m>\max\big(f\,^{(4)}(x)\big)=7</m>)</p></li>
+              <li><p><m>n=18</m>	(using <m>\max\big(f^{(4)}(x)\big)=7</m>)</p></li>
             </ol>
           </solution>
         </webwork>
@@ -2201,14 +2201,14 @@
             <ol>
               <li><p><m>n=1004</m> (using <m>\max\big(\fpp(x)\big)=39</m>)</p></li>
 
-              <li><p><m>n=62</m>	(using <m>\max\big(f\,^{(4)}(x)\big)=800</m>)</p></li>
+              <li><p><m>n=62</m>	(using <m>\max\big(f^{(4)}(x)\big)=800</m>)</p></li>
             </ol>
           </answer>
           <solution>
             <ol>
               <li><p><m>n=1004</m> (using <m>\max\big(\fpp(x)\big)=39</m>)</p></li>
 
-              <li><p><m>n=62</m>	(using <m>\max\big(f\,^{(4)}(x)\big)=800</m>)</p></li>
+              <li><p><m>n=62</m>	(using <m>\max\big(f^{(4)}(x)\big)=800</m>)</p></li>
             </ol>
           </solution>
         </webwork>
@@ -2229,14 +2229,14 @@
             <ol>
               <li><p><m>n=5591</m> (using <m>\max\big(\fpp(x)\big)=300</m>)</p></li>
 
-              <li><p><m>n=46</m>	(using <m>\max\big(f\,^{(4)}(x)\big)=24</m>)</p></li>
+              <li><p><m>n=46</m>	(using <m>\max\big(f^{(4)}(x)\big)=24</m>)</p></li>
             </ol>
           </answer>
           <solution>
             <ol>
               <li><p><m>n=5591</m> (using <m>\max\big(\fpp(x)\big)=300</m>)</p></li>
 
-              <li><p><m>n=46</m>	(using <m>\max\big(f\,^{(4)}(x)\big)=24</m>)</p></li>
+              <li><p><m>n=46</m>	(using <m>\max\big(f^{(4)}(x)\big)=24</m>)</p></li>
             </ol>
           </solution>
         </webwork>
