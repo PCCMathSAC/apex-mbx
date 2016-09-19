@@ -1,4 +1,3 @@
-
 <section xml:id="sec_limit_analytically">
   <title>Finding Limits Analytically</title>
   <introduction>
@@ -610,115 +609,65 @@
       <title>Terms and Concepts</title>
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p>Explain in your own words, without using <m>\varepsilon</m>-<m>\delta</m> formality, why <m>\ds \lim_{x\to c} b = b</m>.</p>
+            <p>Explain in your own words, without using <m>\varepsilon</m><ndash /><m>\delta</m> formality, why <m>\lim\limits_{x\to c}b=b</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <answer>
-            <p>Answers will vary.</p>
-          </answer>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p>Explain in your own words, without using <m>\varepsilon</m>-<m>\delta</m> formality, why <m>\ds \lim_{x\to c} x = c</m>.</p>
+            <p>Explain in your own words, without using <m>\varepsilon</m><ndash /><m>\delta</m> formality, why <m>\lim\limits_{x\to c}x=c</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <answer>
-            <p>Answers will vary.</p>
-          </answer>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p>What does the text mean when it says that certain functions' <q>behavior is `nice' in terms of limits</q>? What, in particular, is <q>nice</q>?</p>
+            <p>What does the text mean when it says that certain functions' <q>behavior is <sq>nice</sq> in terms of limits</q>? What, in particular, is <q>nice</q>?</p>
+            <p><var form="essay" /></p>
           </statement>
-          <answer>
-            <p>Answers will vary.</p>
-          </answer>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Sketch a graph that visually demonstrates the Squeeze Theorem.</p>
-          </statement>
-          <answer>
-            <p>Answers will vary.</p>
-          </answer>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
-        </webwork>
+        <statement>
+          <p>Sketch a graph that visually demonstrates the Squeeze Theorem.</p>
+        </statement>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>You are given the following information:</p>
-
             <ol>
-              <li><p><m>\ds \lim_{x\to 1} f(x) = 0</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 1} g(x) = 0</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 1} f(x)/g(x) = 2</m></p></li>
+              <li><p><m>\lim\limits_{x\to 1}f(x)=0</m></p></li>
+              <li><p><m>\lim\limits_{x\to 1}g(x)=0</m></p></li>
+              <li><p><m>\lim\limits_{x\to 1}\frac{f(x)}{g(x)}=2</m></p></li>
             </ol>
-
             <p>What can be said about the relative sizes of <m>f(x)</m> and <m>g(x)</m> as <m>x</m> approaches 1?</p>
+            <p><var form="essay" /></p>
           </statement>
-          <answer>
-            <p>As <m>x</m> is near 1, both <m>f</m> and <m>g</m> are near 0, but <m>f</m> is approximately twice the size of <m>g</m>. (I.e., <m>f(x) \approx 2g(x)</m>.)</p>
-          </answer>
           <solution>
-            <p>As <m>x</m> is near 1, both <m>f</m> and <m>g</m> are near 0, but <m>f</m> is approximately twice the size of <m>g</m>. (I.e., <m>f(x) \approx 2g(x)</m>.)</p>
+            <p>As <m>x</m> is near <m>1</m>, both <m>f</m> and <m>g</m> are near <m>0</m>, but <m>f</m> is approximately twice the size of <m>g</m>. (That is, <m>f(x)\approx2g(x)</m>.)</p>
           </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
       <title>Problems</title>
       <p>In the following exercises, use the following information to evaluate the given limit, when possible. If it is not possible to determine the limit, state why not.</p>
@@ -967,44 +916,91 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, evaluate the given limit.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, evaluate the given limit.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>3</static>
+            </var>
+            <var name="$b">
+              <static>-3</static>
+            </var>
+            <var name="$c">
+              <static>7</static>
+            </var>
+            <var name="$f">
+              <static>x^2-3x+7</static>
+            </var>
+            <var name="$L">
+              <static>7</static>
             </var>
             <pg-code>
+              $a=random(2,8,1);
+              $b=non_zero_random(-5,5,1);
+              $c=non_zero_random(-9,9,1);
+              if($envir{problemSeed}==1){$a=3;$b=-3;$c=7};
+              $f=Formula("x^2+$b x+$c")->reduce;
+              $L=$f->eval(x=>$a);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to3}x^2-3x+7</m></p>
+            <p><m>\lim\limits_{x\to<var name="$a" />}\left(<var name="$f" />\right)=</m><var name="$L" width="10" /></p>
           </statement>
-          <answer>
-            <p><m>7</m></p>
-          </answer>
           <solution>
-            <p><m>7</m></p>
+            <p><md>
+              <mrow>\lim\limits_{x\to<var name="$a" />}\left(<var name="$f" />\right)\amp=\lim\limits_{x\to<var name="$a" />}x^2+\lim\limits_{x\to<var name="$a" />}<var name="$b" />x+\lim\limits_{x\to<var name="$a" />}<var name="$c" /></mrow>
+              <mrow>\amp=\left(\lim\limits_{x\to<var name="$a" />}x\right)^2+\lim\limits_{x\to<var name="$a" />}<var name="$b" />x+\lim\limits_{x\to<var name="$a" />}<var name="$a" /></mrow>
+              <mrow>\amp=\left(<var name="$a" />\right)^2+<var name="$b" />\left(<var name="$a" />\right)+<var name="$c" /></mrow>
+              <mrow>\amp=<var name="$L" /></mrow>
+            </md></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$b">
+              <static>3</static>
+            </var>
+            <var name="$c">
+              <static>5</static>
+            </var>
+            <var name="$n">
+              <static>7</static>
+            </var>
+            <var name="$f">
+              <static>\left(\frac{x-3}{x-5}\right)^7</static>
+            </var>
+            <var name="$L">
+              <static>\left(\frac{\pi-3}{\pi-5}\right)^7</static>
             </var>
             <pg-code>
+              $b=non_zero_random(-5,5,1);
+              do{$c=non_zero_random(-9,9,1);}until($b!=$c);
+              $n=random(3,9,1);
+              if($envir{problemSeed}==1){$b=3;$c=5;$n=7};
+              $f=Formula("((x-$b)/(x-$c))^($n)")->reduce;
+              $L=$f->substitute(x=>Formula("pi"));
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to\pi}\left(\frac{x-3}{x-5}\right)^7</m></p>
+            <p><m>\lim\limits_{x\to\pi}<var name="$f" /></m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <answer>
-            <p><m>-0.000000015\approx 0</m></p>
-          </answer>
           <solution>
-            <p><m>-0.000000015\approx 0</m></p>
+            <p><md>
+              <mrow>\lim\limits_{x\to\pi}<var name="$f" />\amp=\left(\lim\limits_{x\to\pi}\frac{x-<var name="$b" />}{x-<var name="$c" />}\right)^{<var name="$n" />}</mrow>
+              <mrow>\amp=\left(\frac{\lim\limits_{x\to\pi}(x-<var name="$b" />)}{\lim\limits_{x\to\pi}(x-<var name="$c" />)}\right)^{<var name="$n" />}</mrow>
+              <mrow>\amp=\left(\frac{\lim\limits_{x\to\pi}x-\lim\limits_{x\to\pi}<var name="$b" />}{\lim\limits_{x\to\pi}x-\lim\limits_{x\to\pi}<var name="$c" />}\right)^{<var name="$n" />}</mrow>
+              <mrow>\amp=<var name="$L" /></mrow>
+            </md></p>
           </solution>
         </webwork>
       </exercise>
