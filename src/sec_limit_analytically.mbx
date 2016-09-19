@@ -2,9 +2,9 @@
 <section xml:id="sec_limit_analytically">
   <title>Finding Limits Analytically</title>
   <introduction>
-    <p>In <xref ref="sec_limit_intro">Section</xref> we explored the concept of the limit without a strict definition, meaning we could only make approximations. In the previous section we gave the definition of the limit and demonstrated how to use it to verify our approximations were correct. Thus far, our method of finding a limit is 1) make a really good approximation either graphically or numerically, and 2) verify our approximation is correct using a <m>\epsilon</m>-<m>\delta</m> proof.</p>
+    <p>In <xref ref="sec_limit_intro">Section</xref> we explored the concept of the limit without a strict definition, meaning we could only make approximations. In the previous section we gave the definition of the limit and demonstrated how to use it to verify our approximations were correct. Thus far, our method of finding a limit is 1) make a really good approximation either graphically or numerically, and 2) verify our approximation is correct using a <m>\varepsilon</m>-<m>\delta</m> proof.</p>
 
-    <p>Recognizing that <m>\epsilon</m>-<m>\delta</m> proofs are cumbersome, this section gives a series of theorems which allow us to find limits much more quickly and intuitively.</p>
+    <p>Recognizing that <m>\varepsilon</m>-<m>\delta</m> proofs are cumbersome, this section gives a series of theorems which allow us to find limits much more quickly and intuitively.</p>
 
     <p>Suppose that <m>\lim_{x\to 2} f(x)=2</m> and <m>\lim_{x\to 2} g(x) = 3</m>. What is <m>\lim_{x\to 2}(f(x)+g(x))</m>? Intuition tells us that the limit should be 5, as we expect limits to behave in a nice way. The following theorem states that already established limits do behave nicely.</p>
 
@@ -13,39 +13,41 @@
       <statement>
         <p>Let <m>b</m>, <m>c</m>, <m>L</m> and <m>K</m> be real numbers, let <m>n</m> be a positive integer, and let <m>f</m> and <m>g</m> be functions with the following limits: <index><main>limit</main><sub>properties</sub></index>
           <me>
-            \lim_{x\to c}f(x) = L \textit{ and\ } \lim_{x\to c} g(x) = K.
+            \lim_{x\to c}f(x) = L \textit{ and } \lim_{x\to c} g(x) = K.
           </me>
         </p>
 
         <p>The following limits hold.</p>
 
-        <ol>
-          <li><p>\text{ Constants: } <m>\displaystyle \lim_{x\to c} b = b</m></p></li>
+        <dl>
+          <li><title>Constants:</title><p> <m>\displaystyle \lim_{x\to c} b = b</m></p></li>
 
-          <li><p>\text{ Identity }						<m>\displaystyle \lim_{x\to c} x = c</m></p></li>
+          <li><title>Identity</title><p><m>\displaystyle \lim_{x\to c} x = c</m></p></li>
 
-          <li><p>\text{ Sums/Differences: } <m>\displaystyle \lim_{x\to c}(f(x)\pm g(x)) = L\pm K</m></p></li>
+          <li><title>Sums/Differences:</title><p> <m>\displaystyle \lim_{x\to c}(f(x)\pm g(x)) = L\pm K</m></p></li>
 
-          <li><p>\text{ Scalar Multiples: }	<m>\displaystyle \lim_{x\to c} b\cdot f(x) = bL</m></p></li>
+          <li><title>Scalar Multiples:</title><p>	<m>\displaystyle \lim_{x\to c} b\cdot f(x) = bL</m></p></li>
 
-          <li><p>\text{ Products: }	<m>\displaystyle \lim_{x\to c} f(x)\cdot g(x) = LK</m></p></li>
+          <li><title>Products:</title><p>	<m>\displaystyle \lim_{x\to c} f(x)\cdot g(x) = LK</m></p></li>
 
-          <li><p>\text{ Quotients: } <m>\displaystyle \lim_{x\to c} f(x)/g(x) = L/K</m>, (<m>K\neq 0)</m></p></li>
+          <li><title>Quotients:</title><p> <m>\displaystyle \lim_{x\to c} f(x)/g(x) = L/K</m>, (<m>K\neq 0)</m></p></li>
 
-          <li><p>\text{ Powers: } 	<m>\displaystyle \lim_{x\to c} f(x)^n = L^n</m></p></li>
+          <li><title>Powers:</title><p> 	<m>\displaystyle \lim_{x\to c} f(x)^n = L^n</m></p></li>
 
-          <li><p>\text{ Roots: }		\parbox[t]{185pt}{<m>\displaystyle \lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}</m>}</p></li>
+          <li><title>Roots:</title><p>	<m>\displaystyle \lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}</m></p></li>
+          <li>(If <m>n</m> is even, <m>L</m> must be non-negative.)</li>
 
-          <li><p>\text{ Compositions: } \parbox[t]{200pt}{Adjust our previously given limit situation to:
+          <li><title>Compositions:</title><p> Adjust our previously given limit situation to:
               <me>
-                \lim_{x\to c}f(x) = L,\ \lim_{x\to L} g(x) = K \textit{ and\ } g(L)=K .
+                \lim_{x\to c}f(x) = L,\ \lim_{x\to L} g(x) = M \textit{ and } g(L)=M .
               </me>
-              Then <m>\ds \lim_{x\to c}g(f(x)) = K</m>.}</p></li>
-        </ol>
+              Then <m>\ds \lim_{x\to c}g(f(x)) = M</m>.</p></li>
+              <li>In other words, <m>\ds \lim_{x\to c}g(f(x)) = g \left(\lim_{x\to c} f(x) \right)=g(L)</m>, provided that <m>g(L)</m> is defined.</li>
+        </dl>
       </statement>
     </theorem>
-
-    <p>We make a note about Property <hash />8: when <m>n</m> is even, <m>L</m> must be greater than 0. If <m>n</m> is odd, then the statement is true for all <m>L</m>.</p>
+    <!--
+    <p>We make a note about Property <hash />8: when <m>n</m> is even, <m>L</m> must be greater than 0. If <m>n</m> is odd, then the statement is true for all <m>L</m>.</p>-->
 
     <p>We apply the theorem to an example.</p>
 
@@ -54,7 +56,7 @@
       <statement>
         <p>Let
           <me>
-            \lim_{x\to 2} f(x)=2,\lim_{x\to 2} g(x) = 3 \textit{ and \ } p(x) = 3x^2-5x+7.
+            \lim_{x\to 2} f(x)=2,\lim_{x\to 2} g(x) = 3 \textit{ and  } p(x) = 3x^2-5x+7.
           </me>
         </p>
 
@@ -72,7 +74,7 @@
         <ol>
           <li><p>Using the Sum/Difference rule, we know that <m>\ds \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5</m>.</p></li>
 
-          <li><p>Using the Scalar Multiple and Sum/Difference rules, we find that <m>\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.</m></p></li>
+          <li><p>Using the Scalar Multiple, Sum/Difference and Power rules, we find that <m>\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.</m></p></li>
 
           <li><p>Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
               <md>
@@ -118,7 +120,8 @@
         <p>Using <xref ref="thm_poly_rat">Theorem</xref>, we can quickly state that
           <md>
             <mrow>\lim_{x\to -1}\frac{3x^2-5x+1}{x^4-x^2+3} \amp = \frac{3(-1)^2-5(-1)+1}{(-1)^4-(-1)^2+3}</mrow>
-            <mrow>\amp = \frac{9}{3} =3.</mrow>
+            <mrow>\amp = \frac{9}{3} </mrow>
+            <mrow>\amp =3.</mrow>
           </md>
         </p>
       </solution>
@@ -138,21 +141,21 @@
         <p>Let <m>c</m> be a real number in the domain of the given function and let <m>n</m> be a positive integer. The following limits hold:</p>
 
         <ol cols="3" >
-          <li><p><m>\ds \lim_{x\to c} \sin x = \sin c</m></p></li>
+          <li><p><m>\ds \lim_{x\to c} \fi{\sin}{x} = \fi{\sin}{c}</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to c} \cos x = \cos c</m></p></li>
+          <li><p><m>\ds \lim_{x\to c} \fi{\cos}{x} = \cos c</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to c} \tan x = \tan c</m></p></li>
+          <li><p><m>\ds \lim_{x\to c} \fi{\tan}{x}= \fi{\tan}{c}</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to c} \csc x = \csc c</m></p></li>
+          <li><p><m>\ds \lim_{x\to c} \fi{\csc}{x} = \fi{\csc}{c}</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to c} \sec x = \sec c</m></p></li>
+          <li><p><m>\ds \lim_{x\to c} \fi{\sec}{x} = \fi{\sec}{c}</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to c} \cot x = \cot c</m></p></li>
+          <li><p><m>\ds \lim_{x\to c} \fi{\cot}{x} = \fi{\cot}{c}</m></p></li>
 
           <li><p><m>\ds \lim_{x\to c} a^x = a^c</m> (<m>a>0</m>)</p></li>
 
-          <li><p><m>\ds \lim_{x\to c} \ln x = \ln c</m></p></li>
+          <li><p><m>\ds \lim_{x\to c} \fi{\ln}{x} = \fi{\ln}{c}</m></p></li>
 
           <li><p><m>\ds \lim_{x\to c} \sqrt[n]{x} = \sqrt[n]{c}</m></p></li>
         </ol>
@@ -165,52 +168,52 @@
         <p>Evaluate the following limits.</p>
 
         <ol cols="2" >
-          <li><p><m>\ds \lim_{x\to \pi} \cos x</m></p></li>
+          <li><p><m>\ds \lim_{x\to \pi} \fi{\cos}{x}</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to 3} (\sec^2x - \tan^2 x)</m></p></li>
+          <li><p><m>\ds \lim_{x\to 3} (\fi{\sec^2}{x} - \fi{\tan^2}{x})</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to \pi/2} \cos x\sin x</m></p></li>
+          <li><p><m>\ds \lim_{x\to \pi/2} \fi{\cos}{x}\fi{\sin}{x}</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to 1} e^{\ln x}</m></p></li>
+          <li><p><m>\ds \lim_{x\to 1} e^{\fi{\ln}{x}}</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to 0} \frac{\sin x}{x}</m></p></li>
+          <li><p><m>\ds \lim_{x\to 0} \frac{\fi{\sin}{x}}{x}</m></p></li>
         </ol>
       </statement>
       <solution>
         <ol>
-          <li><p>This is a straightforward application of <xref ref="thm_lim_continuous">Theorem</xref>. <m>\ds \lim_{x\to \pi} \cos x = \cos \pi = -1</m>.</p></li>
+          <li><p>This is a straightforward application of <xref ref="thm_lim_continuous">Theorem</xref>. <m>\ds \lim_{x\to \pi} \fi{\cos}{x} = \cos \pi = -1</m>.</p></li>
 
           <li><p>We can approach this in at least two ways. First, by directly applying <xref ref="thm_lim_continuous">Theorem</xref>, we have:
               <me>
-                \lim_{x\to 3} (\sec^2x - \tan^2 x) = \sec^23-\tan^23.
+                \lim_{x\to 3} (\fi{\sec^2}{x} - \fi{\tan^2}{x}) = \fi{\sec^2}{3}-\fi{\tan^2}{3}.
               </me>
               Using the Pythagorean Theorem, this last expression is 1; therefore
               <me>
-                \lim_{x\to 3} (\sec^2x - \tan^2 x) = 1.
+                \lim_{x\to 3} (\fi{\sec^2}{x} - \fi{\tan^2}{x}) = 1.
               </me>
               We can also use the Pythagorean Theorem from the start.
               <me>
-                \lim_{x\to 3} (\sec^2x - \tan^2 x) = \lim_{x\to 3} 1 = 1,
+                \lim_{x\to 3} (\fi{\sec^2}{x} - \fi{\tan^2}{x}) = \lim_{x\to 3} 1 = 1,
               </me>
               using the Constant limit rule. Either way, we find the limit is 1.</p></li>
 
           <li><p>Applying the Product limit rule of <xref ref="thm_limit_algebra">Theorem</xref> and <xref ref="thm_lim_continuous">Theorem</xref> gives
               <me>
-                \ds \lim_{x\to \pi/2} \cos x\sin x = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.
+                \ds \lim_{x\to \pi/2} \fi{\cos}{x}\fi{\sin}{x} = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.
               </me>
             </p></li>
 
-          <li><p>Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <m>e^{\ln x} = x</m> and evaluate <m>\ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.</m> 
+          <li><p>Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <m>e^{\fi{\ln}{x}} = x</m> and evaluate <m>\ds \lim_{x\to 1} e^{\fi{\ln}{x}} = \lim_{x\to 1} x = 1.</m> 
 
-              We can also use the limit Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>. Using <xref ref="thm_lim_continuous">Theorem</xref>, we have <m>\ds \lim_{x\to 1}\ln x = \ln 1 = 0</m> and <m>\ds\lim_{x\to 0} e^x= e^0=1</m>, satisfying the conditions of the Composition Rule. Applying this rule,
+              We can also use the limit Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>. Using <xref ref="thm_lim_continuous">Theorem</xref>, we have <m>\ds \lim_{x\to 1}\fi{\ln}{x} = \ln 1 = 0</m> and <m>\ds\lim_{x\to 0} e^x= e^0=1</m>, satisfying the conditions of the Composition Rule. Applying this rule,
               <me>
-                \ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.
+                \ds \lim_{x\to 1} e^{\fi{\ln}{x}} = e^{\lim_{x\to 1} \fi{\ln}{x}}=e^{\fi{\ln}{1}}  = e^0 = 1.
               </me>
               Both approaches are valid, giving the same result.</p></li>
 
           <li><p>We encountered this limit in <xref ref="sec_limit_intro">Section</xref>. Applying our theorems, we attempt to find the limit as
               <me>
-                \lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\text{ ``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}}.
+                 \lim_{x\to 0}\frac{\fi{\sin}{x}}{x}\rightarrow \frac{\sin 0}{0} \text{ Which is of the form } \frac{0}{0}
               </me>
               This, of course, violates a condition of <xref ref="thm_limit_algebra">Theorem</xref>, as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.</p></li>
         </ol>
@@ -226,7 +229,7 @@
     </p>
 
     <p>If <m>f</m> and <m>h</m> have the same limit at <m>c</m>, and <m>g</m> is always <q>squeezed</q> between them, then <m>g</m> must have the same limit as well. That is what the Squeeze Theorem states.</p>
-
+    <todo>Alex, add a squeeze theorem graph</todo>
     <theorem xml:id="thm_sqz">
       <title>Squeeze Theorem</title>
       <statement>
@@ -252,14 +255,14 @@
 
     <p>It can take some work to figure out appropriate functions by which to <q>squeeze</q> the given function of which you are trying to evaluate a limit. However, that is generally the only place work is necessary; the theorem makes the <q>evaluating the limit part</q> very simple.</p>
 
-    <p>We use the Squeeze Theorem in the following example to finally prove that <m>\ds \lim_{x\to 0} \frac{\sin x}{x} = 1</m>.</p>
+    <p>We use the Squeeze Theorem in the following example to finally prove that <m>\ds \lim_{x\to 0} \frac{\fi{\sin}{x}}{x} = 1</m>.</p>
 
     <example xml:id="ex_limit_sinx_prove">
       <title>Using the Squeeze Theorem</title>
       <statement>
         <p>Use the Squeeze Theorem to show that
           <me>
-            \ds \lim_{x\to 0} \frac{\sin x}{x} = 1.
+            \ds \lim_{x\to 0} \frac{\fi{\sin}{x}}{x} = 1.
           </me>
         </p>
       </statement>
@@ -294,6 +297,7 @@
         <p><xref ref="fig_squeeze_sinx">Figure</xref> shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is <m>\frac12\tan\theta</m>; the area of the sector is <m>\theta/2</m>; the area of the triangle contained inside the sector is <m>\frac12\sin\theta</m>. It is then clear from the diagram that</p>
 
         <figure>
+          <todo>Fix the captions and ampersands on this figure (they were horizontal in the pdf)</todo>
           <caption><m>\ds \frac{\tan \theta}{2}</m> &amp; <m>\geq</m> &amp; <m>\ds \frac{\theta}{2}</m> &amp; <m>\geq</m> &amp; <m>\ds \frac{\sin \theta}{2}</m></caption>
           <!-- START figures/fig_squeeze1a.tex -->
           <image xml:id="img_squeeze1a" >
@@ -356,7 +360,7 @@
           </image>
           <!-- figures/fig_squeeze1c.tex END -->
         </figure>
-
+        <aside> <p>Recall that the area of a sector of a circle is <m>\frac{1}{2}r^2 \theta</m> with <m>\theta</m> measured in radians. </p></aside>
         <p>Multiply all terms by <m>\ds\frac{2}{\sin \theta}</m>, giving
           <me>
             \frac{1}{\cos\theta} \geq \frac{\theta}{\sin \theta} \geq 1.
@@ -389,7 +393,52 @@
 
     <p>Two notes about the previous example are worth mentioning. First, one might be discouraged by this application, thinking <q>I would <em>never</em> have come up with that on my own. This is too hard!</q> Don't be discouraged; within this text we will guide you in your use of the Squeeze Theorem. As one gains mathematical maturity, clever proofs like this are easier and easier to create.</p>
 
-    <p>Second, this limit tells us more than just that as <m>x</m> approaches 0, <m>\sin(x)/x</m> approaches 1. Both <m>x</m> and <m>\sin x</m> are approaching 0, but the <em>ratio</em> of <m>x</m> and <m>\sin x</m> approaches 1, meaning that they are approaching 0 in essentially the same way. Another way of viewing this is: for small <m>x</m>, the functions <m>y=x</m> and <m>y=\sin x</m> are essentially indistinguishable.</p>
+    <p>Second, this limit tells us more than just that as <m>x</m> approaches 0, <m>\sin(x)/x</m> approaches 1. Both <m>x</m> and <m>\fi{\sin}{x}</m> are approaching 0, but the <em>ratio</em> of <m>x</m> and <m>\fi{\sin}{x}</m> approaches 1, meaning that they are approaching 0 in essentially the same way. Another way of viewing this is: for small <m>x</m>, the functions <m>y=x</m> and <m>y=\fi{\sin}{x}</m> are essentially indistinguishable.</p>
+    <todo>Ajust widths so the captions make sense and pictures sit horizontal</todo>
+    <sidebyside>
+      <figure xml:id="fig_sinx_vs_x" >
+        <caption><m>\sin(x) \text{ and }x</m> near <m>0</m>.</caption>
+        <image xml:id="img_sinx_vs_x_">
+         <latex-image-code>
+            <![CDATA[
+                                \begin{tikzpicture}
+                                    \begin{axis}[xmin=-1.2, xmax=1.2, 
+                                                ymin=-1.2, ymax=1.2,
+                                                xtick={-0.5,0.5},
+                                                ytick={-0.5,0.5},
+                                                ]
+                                        \addplot+[domain=-1:1] {sin(deg(x))} node[below,pos=1] {$\sin(x)$};
+                                        \addplot+[domain=-1:1] {x} node[above,pos=1] {$x$};
+                                    \end{axis}
+                                \end{tikzpicture}
+                                ]]>
+          </latex-image-code>
+        </image>
+
+      </figure>
+
+      <figure xml:id="fig_sinx_vs_x_zoom" >
+         <caption><m>\sin(x) \text{ and }x</m> zoomed in futher toward <m>0</m>.</caption>
+        <image xml:id="img_sinx_vs_x_zoom">
+          <latex-image-code>
+            <![CDATA[
+                                \begin{tikzpicture}
+                                    \begin{axis}[xmin=-0.7, xmax=0.7, 
+                                                ymin=-0.7, ymax=0.7,
+                                                xtick={-0.25,0.25},
+                                                ytick={-0.25,0.25},
+                                                ]
+                                        \addplot+[domain=-0.5:0.5] {sin(deg(x))} node[below,pos=1] {$\sin(x)$};
+                                        \addplot+[domain=-0.5:0.5] {x} node[above,pos=1] {$x$};
+                                    \end{axis}
+                                \end{tikzpicture}
+                                ]]>
+          </latex-image-code>
+        </image>
+        <!-- figures/sinx_over_x_1.tex END -->
+      </figure>
+    </sidebyside>
+
 
     <p>We include this special limit, along with three others, in the following theorem.</p>
 
@@ -397,9 +446,9 @@
       <title>Special Limits</title>
       <statement>
         <ol cols="2" >
-          <li><p><m>\ds \lim_{x\to 0} \frac{\sin x}{x} = 1</m></p></li>
+          <li><p><m>\ds \lim_{x\to 0} \frac{\fi{\sin}{x}}{x} = 1</m></p></li>
 
-          <li><p><m>\ds \lim_{x\to 0} \frac{\cos x-1}{x} = 0</m></p></li>
+          <li><p><m>\ds \lim_{x\to 0} \frac{\fi{\cos}{x}-1}{x} = 0</m></p></li>
 
           <li><p><m>\ds \lim_{x\to 0} (1+x)^\frac1x = e</m></p></li>
 
@@ -408,12 +457,13 @@
       </statement>
     </theorem>
 
-    <p>A short word on how to interpret the latter three limits. We know that as <m>x</m> goes to 0, <m>\cos x</m> goes to 1. So, in the second limit, both the numerator and denominator are approaching 0. However, since the limit is 0, we can interpret this as saying that <q><m>\cos x</m> is approaching 1 faster than <m>x</m> is approaching 0.</q></p>
+    <p>A short word on how to interpret the latter three limits. We know that as <m>x</m> goes to 0, <m>\fi{\cos}{x}</m> goes to 1. So, in the second limit, both the numerator and denominator are approaching 0. However, since the limit is 0, we can interpret this as saying that <q><m>\fi{\cos}{x}</m> is approaching 1 faster than <m>x</m> is approaching 0.</q></p>
 
     <p>In the third limit, inside the parentheses we have an expression that is approaching 1 (though never equaling 1), and we know that 1 raised to any power is still 1. At the same time, the power is growing toward infinity. What happens to a number near 1 raised to a very large power? In this particular case, the result approaches Euler's number, <m>e</m>, approximately <m>2.718.</m></p>
 
     <p>In the fourth limit, we see that as <m>x\to 0</m>, <m>e^x</m> approaches 1 <q>just as fast</q> as <m>x\to 0</m>, resulting in a limit of 1.</p>
 
+    <p>The special limits stated in <xref ref="thm_special_limits" >Theorem </xref> are called <em>indeterminate forms</em> <index><main>limit</main><sub>indeterminate form</sub></index>, in this case they are of the form <m>0/0</m>, except the third limit which is of a different form. You'll learn techniques to find these limits exactly using calculus in <xref ref="sec_lhopitals_rule">Section</xref>.</p>
     <p>Our final theorem for this section will be motivated by the following example.</p>
 
     <example xml:id="ex_limit_onept">
@@ -428,7 +478,7 @@
       <solution>
         <p>We begin by attempting to apply <xref ref="thm_lim_continuous">Theorem</xref> and substituting 1 for <m>x</m> in the quotient. This gives:
           <me>
-            \lim_{x\to 1}\frac{x^2-1}{x-1} = \frac{1^2-1}{1-1} = \raisebox{8pt}{\text{ ``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}},
+            \lim_{x\to 1}\frac{x^2-1}{x-1} = \frac{1^2-1}{1-1} = \text{ Which is of the form } \frac{0}{0}
           </me>
           and indeterminate form. We cannot apply the theorem.</p>
 
@@ -445,11 +495,11 @@
               \fill[white,draw=black,thick] (axis cs:1,2) circle (1.5pt);
               %\draw[thin,dashed,{\colortwo}] (axis cs:0,1.5) -- (axis cs:2.25,1.5);
               %\draw[thin,dashed,{\colortwo}] (axis cs:0,2.5) -- (axis cs:6.25,2.5);
-              %\draw (axis cs:-.1,1.75) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\epsilon = .5$};
-              %\draw (axis cs:-.1,2.25) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\epsilon = .5$};
+              %\draw (axis cs:-.1,1.75) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\varepsilon = .5$};
+              %\draw (axis cs:-.1,2.25) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\varepsilon = .5$};
               %\fill[{\colortwo}] (axis cs:2.25,1.5) circle (1pt);
               %\fill[{\colortwo}] (axis cs:6.25,2.5) circle (1pt);
-              %\draw (axis cs:4,1) node [text width = 80pt,align=center] {\footnotesize Choose $\epsilon>0$. Then ...};
+              %\draw (axis cs:4,1) node [text width = 80pt,align=center] {\footnotesize Choose $\varepsilon>0$. Then ...};
               \end{axis}
               %\fill[{\colortwo}] (1,1) circle (1pt);
 
@@ -470,7 +520,7 @@
 
         <p>The function is not defined when <m>x=1</m>, but for all other <m>x</m>,
           <me>
-            \frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = \frac{\mbox{\sout{\((x-1)\)}} (x+1)}{\mbox{\sout{\(x-1\)}} }= x+1.
+            \frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = \frac{\cancel{(x-1)}(x+1)}{\cancel{(x-1)} }= x+1, \quad \text{if } x \neq 1
           </me>
         </p>
 
@@ -479,6 +529,13 @@
             \lim_{x\to 1}\frac{x^2-1}{x-1}=2.
           </me>
         </p>
+        <p>In the future, we will write 
+          <md>
+            <mrow>\lim_{x \to 1} \frac{x^2-1}{x-1} \amp =\lim_{x \to 1} x+1 </mrow>
+          <mrow>\amp =2,</mrow>
+          </md>
+        </p>
+        
       </solution>
     </example>
 
@@ -515,7 +572,8 @@
           <md>
             <mrow>\lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} \amp = \lim_{x\to 3}\frac{(x-3)(x^2+x-2)}{(x-3)(2 x^2+9 x-5)}</mrow>
             <mrow>\amp =	\lim_{x\to 3} \frac{(x^2+x-2)}{(2 x^2+9 x-5)}</mrow>
-            <mrow>\amp = \frac{10}{40} = \frac14.</mrow>
+            <mrow>\amp = \frac{10}{40} = </mrow>
+            <mrow>\amp \frac{1}{4.}</mrow>
           </md>
         </p>
       </solution>
@@ -536,8 +594,8 @@
             <mrow>\amp =	\lim_{h\to 0}\frac{-1.5(1+2h+h^2) + 11.5+11.5h - 10}{h}</mrow>
             <mrow>\amp =	\lim_{h\to 0}\frac{-1.5h^2 +8.5h}{h}</mrow>
             <mrow>\amp = 	\lim_{h\to 0}\frac{h(-1.5h+8.5)}h</mrow>
-            <mrow>\amp =	\lim_{h\to 0}(-1.5h+8.5)  (\text{ using <xref ref="thm_limit_allbut1">Theorem</xref>, as \(h\neq 0\) } )</mrow>
-            <mrow>\amp = 	8.5  (\text{ using <xref ref="thm_lim_continuous">Theorem</xref> } )</mrow>
+            <mrow>\amp =	\lim_{h\to 0}(-1.5h+8.5)  \quad (\text{using } <xref ref="thm_limit_allbut1">Theorem</xref>, \text{ as } h\neq 0  )</mrow>
+            <mrow>\amp = 	8.5  \quad (\text{using } <xref ref="thm_lim_continuous">Theorem</xref>  )</mrow>
           </md>
         </p>
 
@@ -560,7 +618,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Explain in your own words, without using <m>\epsilon</m>-<m>\delta</m> formality, why <m>\ds \lim_{x\to c} b = b</m>.</p>
+            <p>Explain in your own words, without using <m>\varepsilon</m>-<m>\delta</m> formality, why <m>\ds \lim_{x\to c} b = b</m>.</p>
           </statement>
           <answer>
             <p>Answers will vary.</p>
@@ -580,7 +638,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Explain in your own words, without using <m>\epsilon</m>-<m>\delta</m> formality, why <m>\ds \lim_{x\to c} x = c</m>.</p>
+            <p>Explain in your own words, without using <m>\varepsilon</m>-<m>\delta</m> formality, why <m>\ds \lim_{x\to c} x = c</m>.</p>
           </statement>
           <answer>
             <p>Answers will vary.</p>
@@ -811,7 +869,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to6}f(x)g(x)-f\,^2(x)+g^2(x)</m></p>
+            <p><m>\ds \lim_{x\to6}f(x)g(x)-f^2(x)+g^2(x)</m></p>
           </statement>
           <answer>
             <p><m>-45</m></p>
@@ -960,7 +1018,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to\pi/4}\cos x\sin x</m></p>
+            <p><m>\ds \lim_{x\to\pi/4}\fi{\cos}{x}\fi{\sin}{x}</m></p>
           </statement>
           <answer>
             <p><m>1/2</m></p>
@@ -980,7 +1038,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to0}\ln x</m></p>
+            <p><m>\ds \lim_{x\to0}\fi{\ln}{x}</m></p>
           </statement>
           <answer>
             <p>Limit does not exist</p>
@@ -1020,7 +1078,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to\pi/6} \csc x</m></p>
+            <p><m>\ds \lim_{x\to\pi/6} \fi{\csc}{x}</m></p>
           </statement>
           <answer>
             <p><m>2</m></p>
@@ -1241,7 +1299,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to0} \sin x\cos\left(\frac{1}{x^2}\right)</m></p>
+            <p><m>\ds \lim_{x\to0} \fi{\sin}{x}\cos\left(\frac{1}{x^2}\right)</m></p>
           </statement>
           <answer>
             <p><m>0</m></p>
@@ -1362,7 +1420,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to0}\frac{\sin x}{x}</m>, where <m>x</m> is measured in degrees, not radians.</p>
+            <p><m>\ds \lim_{x\to0}\frac{\fi{\sin}{x}}{x}</m>, where <m>x</m> is measured in degrees, not radians.</p>
           </statement>
           <answer>
             <p><m>\pi/180</m></p>

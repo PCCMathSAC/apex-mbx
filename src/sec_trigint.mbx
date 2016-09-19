@@ -234,7 +234,7 @@
     </p>
 
     <example xml:id="ex_trigint4">
-      <title>Integrating products of $\sin(mx)$ and $\cos(nx)$</title>
+      <title>Integrating products of <m>\sin(mx)</m> and <m>\cos(nx)</m></title>
       <statement>
         <p>Evaluate <m>\ds\int\sin(5x)\cos(2x)\ dx</m>.</p>
       </statement>
@@ -356,10 +356,10 @@
             <intertext>This new integral also requires applying rule <hash />3 of <xref ref="idea_trig_int_2">Key Idea</xref>:</intertext>
             <mrow>\amp = \sec x\tan x - \int \sec x \big(\sec^2 x-1\big)\ dx</mrow>
             <mrow>\amp =	\sec x\tan x - \int \sec^3x\ dx + \int \sec x\ dx</mrow>
-            <mrow>\amp = \sec x\tan x -\int \sec^3x\ dx + \ln|\sec x+\tan x|</mrow>
+            <mrow>\amp = \sec x\tan x -\int \sec^3x\ dx + \ln\abs{\sec x+\tan x}</mrow>
             <intertext>In previous applications of Integration by Parts, we have seen where the original integral has reappeared in our work. We resolve this by adding <m>\int \sec^3x\ dx</m> to both sides, giving:</intertext>
-            <mrow>2\int \sec^3x\ dx \amp = \sec x\tan x + \ln|\sec x+\tan x|</mrow>
-            <mrow>\int \sec^3x\ dx \amp = \frac12\Big(\sec x\tan x + \ln|\sec x+\tan x|\Big)+C</mrow>
+            <mrow>2\int \sec^3x\ dx \amp = \sec x\tan x + \ln\abs{\sec x+\tan x}</mrow>
+            <mrow>\int \sec^3x\ dx \amp = \frac12\Big(\sec x\tan x + \ln\abs{\sec x+\tan x}\Big)+C</mrow>
           </md>
         </p>
       </solution>
@@ -879,10 +879,10 @@
             <p><m>\ds \int \sec^5x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac14\tan x\sec^3x + \frac38\left(\sec x \tan x+\ln |\sec x+\tan x|\right)  +C</m></p>
+            <p><m>\frac14\tan x\sec^3x + \frac38\left(\sec x \tan x+\ln \abs{\sec x+\tan x}\right)  +C</m></p>
           </answer>
           <solution>
-            <p><m>\frac14\tan x\sec^3x + \frac38\left(\sec x \tan x+\ln |\sec x+\tan x|\right)  +C</m></p>
+            <p><m>\frac14\tan x\sec^3x + \frac38\left(\sec x \tan x+\ln \abs{\sec x+\tan x}\right)  +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -899,10 +899,10 @@
             <p><m>\ds \int \tan^2x\sec x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac12\left(\sec x\tan x-\ln |\sec x+\tan x|\right)  +C</m></p>
+            <p><m>\frac12\left(\sec x\tan x-\ln \abs{\sec x+\tan x}\right)  +C</m></p>
           </answer>
           <solution>
-            <p><m>\frac12\left(\sec x\tan x-\ln |\sec x+\tan x|\right)  +C</m></p>
+            <p><m>\frac12\left(\sec x\tan x-\ln \abs{\sec x+\tan x}\right)  +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -919,10 +919,10 @@
             <p><m>\ds \int \tan^2x\sec^3x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac14\tan x\sec^3x -\frac18\left(\sec x\tan x+\ln|\sec x+\tan x|\right)  +C</m></p>
+            <p><m>\frac14\tan x\sec^3x -\frac18\left(\sec x\tan x+\ln\abs{\sec x+\tan x}\right)  +C</m></p>
           </answer>
           <solution>
-            <p><m>\frac14\tan x\sec^3x -\frac18\left(\sec x\tan x+\ln|\sec x+\tan x|\right)  +C</m></p>
+            <p><m>\frac14\tan x\sec^3x -\frac18\left(\sec x\tan x+\ln\abs{\sec x+\tan x}\right)  +C</m></p>
           </solution>
         </webwork>
       </exercise>

@@ -216,7 +216,7 @@
     <definition xml:id="def_seq_limit">
       <title>Limit of a Sequence, Convergent, Divergent</title>
       <statement>
-        <p>Let <m>\{a_n\}</m> be a sequence and let <m>L</m> be a real number. Given any <m>\epsilon>0</m>, if an <m>m</m> can be found such that <m>|a_n-L|\lt \epsilon</m> for all <m>n>m</m>, then we say the <term>limit of <m>\{a_n\}</m>, as <m>n</m> approaches infinity, is <m>L</m></term>, denoted
+        <p>Let <m>\{a_n\}</m> be a sequence and let <m>L</m> be a real number. Given any <m>\varepsilon>0</m>, if an <m>m</m> can be found such that <m>\abs{a_n-L}\lt \varepsilon</m> for all <m>n>m</m>, then we say the <term>limit of <m>\{a_n\}</m>, as <m>n</m> approaches infinity, is <m>L</m></term>, denoted
           <me>
             \lim_{n\to\infty}a_n = L.
           </me>
@@ -228,7 +228,7 @@
 
     <p>This definition states, informally, that if the limit of a sequence is <m>L</m>, then if you go far enough out along the sequence, all subsequent terms will be <em>really close</em> to <m>L</m>. Of course, the terms <q>far enough</q> and <q>really close</q> are subjective terms, but hopefully the intent is clear.</p>
 
-    <p>This definition is reminiscent of the <m>\epsilon</m><ndash /><m>\delta</m> proofs of <xref ref="chapter_limits">Chapter</xref>. In that chapter we developed other tools to evaluate limits apart from the formal definition; we do so here as well.</p>
+    <p>This definition is reminiscent of the <m>\varepsilon</m><ndash /><m>\delta</m> proofs of <xref ref="chapter_limits">Chapter</xref>. In that chapter we developed other tools to evaluate limits apart from the formal definition; we do so here as well.</p>
 
     <theorem xml:id="thm_seq_limit">
       <title>Limit of a Sequence</title>
@@ -397,7 +397,7 @@
     <theorem xml:id="thm_abs_val_seq">
       <title>Absolute Value Theorem</title>
       <statement>
-        <p>Let <m>\{a_n\}</m> be a sequence. If <m>\ds \lim_{n\to\infty} |a_n| = 0</m>, then <m>\ds \lim_{n\to\infty} a_n = 0</m><index><main>Absolute Value Theorem</main></index><index><main>limit</main><sub>Absolute Value Theorem</sub></index><index><main>sequence</main><sub>Absolute Value Theorem</sub></index></p>
+        <p>Let <m>\{a_n\}</m> be a sequence. If <m>\ds \lim_{n\to\infty} \abs{a_n} = 0</m>, then <m>\ds \lim_{n\to\infty} a_n = 0</m><index><main>Absolute Value Theorem</main></index><index><main>limit</main><sub>Absolute Value Theorem</sub></index><index><main>sequence</main><sub>Absolute Value Theorem</sub></index></p>
       </statement>
     </theorem>
 
@@ -410,9 +410,9 @@
       </statement>
       <solution>
         <ol>
-          <li><p>This appeared in <xref ref="ex_seq4">Example</xref>. We want to apply <xref ref="thm_abs_val_seq">Theorem</xref>, so consider the limit of <m>\{|a_n|\}</m>:
+          <li><p>This appeared in <xref ref="ex_seq4">Example</xref>. We want to apply <xref ref="thm_abs_val_seq">Theorem</xref>, so consider the limit of <m>\{\abs{a_n}\}</m>:
               <md>
-                <mrow>\lim_{n\to\infty} |a_n| \amp = \lim_{n\to\infty} \left|\frac{(-1)^n}{n}\right|</mrow>
+                <mrow>\lim_{n\to\infty} \abs{a_n} \amp = \lim_{n\to\infty} \abs{\frac{(-1)^n}{n}}</mrow>
                 <mrow>\amp = \lim_{n\to\infty} \frac{1}{n}</mrow>
                 <mrow>\amp = 0.</mrow>
               </md>
@@ -420,7 +420,7 @@
 
           <li><p>Because of the alternating nature of this sequence (i.e., every other term is multiplied by <m>-1</m>), we cannot simply look at the limit <m>\ds \lim_{x\to\infty} \frac{(-1)^x(x+1)}{x}</m>. We can try to apply the techniques of <xref ref="thm_abs_val_seq">Theorem</xref>:
               <md>
-                <mrow>\lim_{n\to\infty} |a_n| \amp = \lim_{n\to\infty} \left|\frac{(-1)^n(n+1)}{n}\right|</mrow>
+                <mrow>\lim_{n\to\infty} \abs{a_n} \amp = \lim_{n\to\infty} \abs{\frac{(-1)^n(n+1)}{n}}</mrow>
                 <mrow>\amp = \lim_{n\to\infty} \frac{n+1}{n}</mrow>
                 <mrow>\amp = 1.</mrow>
               </md>
@@ -462,7 +462,7 @@
                 <!-- figures/fig_seq5.tex END -->
               </figure>
 
-              Since we know that the signs of the terms alternate <em>and</em> we know that the limit of <m>|a_n|</m> is 1, we know that as <m>n</m> approaches infinity, the terms will alternate between values close to 1 and <m>-1</m>, meaning the sequence diverges. A plot of this sequence is given in <xref ref="fig_seq5">Figure</xref>.</p></li>
+              Since we know that the signs of the terms alternate <em>and</em> we know that the limit of <m>\abs{a_n}</m> is 1, we know that as <m>n</m> approaches infinity, the terms will alternate between values close to 1 and <m>-1</m>, meaning the sequence diverges. A plot of this sequence is given in <xref ref="fig_seq5">Figure</xref>.</p></li>
         </ol>
       </solution>
     </example>
@@ -633,7 +633,7 @@
       </solution>
     </example>
 
-    <p>The previous example produces some interesting concepts. First, we can recognize that the sequence <m>\ds\left\{1/n\right\}</m> converges to 0. This says, informally, that <q>most</q> of the terms of the sequence are <q>really close</q> to 0. This implies that the sequence is bounded, using the following logic. First, <q>most</q> terms are near 0, so we could find some sort of bound on these terms (using <xref ref="def_seq_limit">Definition</xref>, the bound is <m>\epsilon</m>). That leaves a <q>few</q> terms that are not near 0 (i.e., a <em>finite</em> number of terms). A finite list of numbers is always bounded.</p>
+    <p>The previous example produces some interesting concepts. First, we can recognize that the sequence <m>\ds\left\{1/n\right\}</m> converges to 0. This says, informally, that <q>most</q> of the terms of the sequence are <q>really close</q> to 0. This implies that the sequence is bounded, using the following logic. First, <q>most</q> terms are near 0, so we could find some sort of bound on these terms (using <xref ref="def_seq_limit">Definition</xref>, the bound is <m>\varepsilon</m>). That leaves a <q>few</q> terms that are not near 0 (i.e., a <em>finite</em> number of terms). A finite list of numbers is always bounded.</p>
 
     <p>This logic implies that if a sequence converges, it must be bounded. This is indeed true, as stated by the following theorem.</p>
 
@@ -646,7 +646,7 @@
     </theorem>
 
     <aside>
-      <p><em>Note:</em> Keep in mind what <xref ref="thm_converge_bounded">Theorem</xref> does <em>not</em> say. It does not say that bounded sequences must converge, nor does it say that if a sequence does not converge, it is not bounded.</p>
+      <p>Keep in mind what <xref ref="thm_converge_bounded">Theorem</xref> does <em>not</em> say. It does not say that bounded sequences must converge, nor does it say that if a sequence does not converge, it is not bounded.</p>
     </aside>
 
     <p>In <xref ref="ex_seq6">Example</xref> we saw the sequence <m>\ds \{b_n\} = \left\{\left(1+1/n\right)^{n}\right\}</m>, where it was stated that <m>\ds \lim_{n\to\infty} b_n = e</m>. (Note that this is simply restating part of <xref ref="thm_special_limits">Theorem</xref>.) Even though it may be difficult to intuitively grasp the behavior of this sequence, we know immediately that it is bounded.</p>
@@ -676,7 +676,7 @@
     </definition>
 
     <aside>
-      <p><em>Note:</em> It is sometimes useful to call a monotonically increasing sequence <em>strictly increasing</em> if <m>a_n \lt  a_{n+1}</m> for all <m>n</m>; i.e, we remove the possibility that subsequent terms are equal.</p>
+      <p>It is sometimes useful to call a monotonically increasing sequence <em>strictly increasing</em> if <m>a_n \lt  a_{n+1}</m> for all <m>n</m>; i.e, we remove the possibility that subsequent terms are equal.</p>
 
       <p>A similar statement holds for <em>strictly decreasing.</em></p>
     </aside>
@@ -1187,11 +1187,11 @@
       <p>In the following exercises, use the following information to determine the limit of the given sequences.</p>
 
       <ul>
-        <li><p>\text{<m>\ds \{a_n\} = \left\{\frac{2^n-20}{2^n}\right\}</m>;}  <m>\ds \lim_{n\to\infty} a_n = 1</m></p></li>
+        <li><p><m>\ds \{a_n\} = \left\{\frac{2^n-20}{2^n}\right\}</m>;  <m>\ds \lim_{n\to\infty} a_n = 1</m></p></li>
 
-        <li><p>\text{<m>\ds \{b_n\} = \left\{\left(1+\frac{2}{n}\right)^n\right\}</m>;}  <m>\ds \lim_{n\to\infty} b_n = e^2</m></p></li>
+        <li><p><m>\ds \{b_n\} = \left\{\left(1+\frac{2}{n}\right)^n\right\}</m>;  <m>\ds \lim_{n\to\infty} b_n = e^2</m></p></li>
 
-        <li><p>\text{<m>\ds \{c_n\} = \left\{\sin (3/n)\right\}</m>;}  <m>\ds \lim_{n\to\infty} c_n = 0</m></p></li>
+        <li><p><m>\ds \{c_n\} = \left\{\sin (3/n)\right\}</m>;  <m>\ds \lim_{n\to\infty} c_n = 0</m></p></li>
       </ul>
 
       <exercise>
@@ -1730,13 +1730,13 @@
           </setup>
           <statement>
             <p>Prove <xref ref="thm_abs_val_seq">Theorem</xref>; that is,
-		use the definition of the limit of a sequence to show that if <m>\ds\lim_{n\to\infty} |a_n| = 0</m>, then <m>\ds \lim_{n\to\infty} a_n = 0</m>.</p>
+		use the definition of the limit of a sequence to show that if <m>\ds\lim_{n\to\infty} \abs{a_n} = 0</m>, then <m>\ds \lim_{n\to\infty} a_n = 0</m>.</p>
           </statement>
           <answer>
-            <p>Let <m>\{a_n\}</m> be given such that <m>\ds\lim_{n\to\infty} |a_n| = 0</m>. By the definition of the limit of a sequence, given any <m>\epsilon >0</m>, there is a <m>m</m> such that for all <m>n>m, |\ |a_n| - 0| \lt \epsilon</m>. Since <m>|\ |a_n|-0| = |a_n - 0|</m>, this directly implies that for all <m>n>m</m>, <m>|a_n - 0| \lt  \epsilon</m>, meaning that <m>\ds\lim_{n\to\infty} a_n = 0</m>.</p>
+            <p>Let <m>\{a_n\}</m> be given such that <m>\ds\lim_{n\to\infty} \abs{a_n} = 0</m>. By the definition of the limit of a sequence, given any <m>\varepsilon >0</m>, there is a <m>m</m> such that for all <m>n>m, \abs{\ }a_n\abs{ - 0} \lt \varepsilon</m>. Since <m>\abs{\ }a_n\abs{-0} = \abs{a_n - 0}</m>, this directly implies that for all <m>n>m</m>, <m>\abs{a_n - 0} \lt  \varepsilon</m>, meaning that <m>\ds\lim_{n\to\infty} a_n = 0</m>.</p>
           </answer>
           <solution>
-            <p>Let <m>\{a_n\}</m> be given such that <m>\ds\lim_{n\to\infty} |a_n| = 0</m>. By the definition of the limit of a sequence, given any <m>\epsilon >0</m>, there is a <m>m</m> such that for all <m>n>m, |\ |a_n| - 0| \lt \epsilon</m>. Since <m>|\ |a_n|-0| = |a_n - 0|</m>, this directly implies that for all <m>n>m</m>, <m>|a_n - 0| \lt  \epsilon</m>, meaning that <m>\ds\lim_{n\to\infty} a_n = 0</m>.</p>
+            <p>Let <m>\{a_n\}</m> be given such that <m>\ds\lim_{n\to\infty} \abs{a_n} = 0</m>. By the definition of the limit of a sequence, given any <m>\varepsilon >0</m>, there is a <m>m</m> such that for all <m>n>m, \abs{\ }a_n\abs{ - 0} \lt \varepsilon</m>. Since <m>\abs{\ }a_n\abs{-0} = \abs{a_n - 0}</m>, this directly implies that for all <m>n>m</m>, <m>\abs{a_n - 0} \lt  \varepsilon</m>, meaning that <m>\ds\lim_{n\to\infty} a_n = 0</m>.</p>
           </solution>
         </webwork>
       </exercise>

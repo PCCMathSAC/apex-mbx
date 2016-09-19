@@ -282,7 +282,7 @@
     </example>
 
     <example xml:id="ex_ibp5">
-      <title>Integrating using Integration by Parts: antiderivative of $\ln x$</title>
+      <title>Integrating using Integration by Parts: antiderivative of <m>\ln x</m></title>
       <statement>
         <p>Evaluate <m>\displaystyle \int \ln x\,dx</m>.</p>
       </statement>
@@ -320,7 +320,7 @@
     </example>
 
     <example xml:id="ex_ibp6">
-      <title>Integrating using Int. by Parts: antiderivative of $\arctan x$</title>
+      <title>Integrating using Int. by Parts: antiderivative of <m>\arctan x</m></title>
       <statement>
         <p>Evaluate <m>\displaystyle \int \arctan x  \,dx</m>.</p>
       </statement>
@@ -337,7 +337,7 @@
           </me>
         </p>
 
-        <p>The integral on the right evaluates to <m>\ln|u|+C</m>, which becomes <m>\ln(1+x^2)+C</m>. Therefore, the answer is
+        <p>The integral on the right evaluates to <m>\ln\abs{u}+C</m>, which becomes <m>\ln(1+x^2)+C</m>. Therefore, the answer is
           <me>
             \int \arctan x\ dx = x\arctan x - \ln(1+x^2) + C.
           </me>
@@ -783,10 +783,10 @@
             <p><m>\ds \int \tan^{-1} (2x)\ dx</m></p>
           </statement>
           <answer>
-            <p><m>x \tan ^{-1}(2 x)-\frac{1}{4} \ln \left|4 x^2+1\right|+C</m></p>
+            <p><m>x \tan ^{-1}(2 x)-\frac{1}{4} \ln \abs{4 x^2+1}+C</m></p>
           </answer>
           <solution>
-            <p><m>x \tan ^{-1}(2 x)-\frac{1}{4} \ln \left|4 x^2+1\right|+C</m></p>
+            <p><m>x \tan ^{-1}(2 x)-\frac{1}{4} \ln \abs{4 x^2+1}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -845,10 +845,10 @@
             <p><m>\ds \int x\ln x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{1}{2} x^2 \ln |x|-\frac{x^2}{4}+C</m></p>
+            <p><m>\frac{1}{2} x^2 \ln \abs{x}-\frac{x^2}{4}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{1}{2} x^2 \ln |x|-\frac{x^2}{4}+C</m></p>
+            <p><m>\frac{1}{2} x^2 \ln \abs{x}-\frac{x^2}{4}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -865,10 +865,10 @@
             <p><m>\ds \int (x-2)\ln x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>-\frac{x^2}{4}+\frac{1}{2} x^2 \ln |x|+2 x-2 x \ln |x|+C</m></p>
+            <p><m>-\frac{x^2}{4}+\frac{1}{2} x^2 \ln \abs{x}+2 x-2 x \ln \abs{x}+C</m></p>
           </answer>
           <solution>
-            <p><m>-\frac{x^2}{4}+\frac{1}{2} x^2 \ln |x|+2 x-2 x \ln |x|+C</m></p>
+            <p><m>-\frac{x^2}{4}+\frac{1}{2} x^2 \ln \abs{x}+2 x-2 x \ln \abs{x}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -885,10 +885,10 @@
             <p><m>\ds \int x\ln (x-1)\ dx</m></p>
           </statement>
           <answer>
-            <p><m>-\frac{x^2}{4}+\frac{1}{2} x^2 \ln |x-1|-\frac{x}{2}-\frac{1}{2} \ln |x-1|+C</m></p>
+            <p><m>-\frac{x^2}{4}+\frac{1}{2} x^2 \ln \abs{x-1}-\frac{x}{2}-\frac{1}{2} \ln \abs{x-1}+C</m></p>
           </answer>
           <solution>
-            <p><m>-\frac{x^2}{4}+\frac{1}{2} x^2 \ln |x-1|-\frac{x}{2}-\frac{1}{2} \ln |x-1|+C</m></p>
+            <p><m>-\frac{x^2}{4}+\frac{1}{2} x^2 \ln \abs{x-1}-\frac{x}{2}-\frac{1}{2} \ln \abs{x-1}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -925,10 +925,10 @@
             <p><m>\ds \int x^2\ln x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{1}{3} x^3 \ln |x|-\frac{x^3}{9}+C</m></p>
+            <p><m>\frac{1}{3} x^3 \ln \abs{x}-\frac{x^3}{9}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{1}{3} x^3 \ln |x|-\frac{x^3}{9}+C</m></p>
+            <p><m>\frac{1}{3} x^3 \ln \abs{x}-\frac{x^3}{9}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -945,10 +945,10 @@
             <p><m>\ds \int \left(\ln x\right)^2\ dx</m></p>
           </statement>
           <answer>
-            <p><m>2 x+x \left(\ln |x|\right)^2-2 x \ln |x|+C</m></p>
+            <p><m>2 x+x \left(\ln \abs{x}\right)^2-2 x \ln \abs{x}+C</m></p>
           </answer>
           <solution>
-            <p><m>2 x+x \left(\ln |x|\right)^2-2 x \ln |x|+C</m></p>
+            <p><m>2 x+x \left(\ln \abs{x}\right)^2-2 x \ln \abs{x}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -965,10 +965,10 @@
             <p><m>\ds \int \left(\ln (x+1)\right)^2\ dx</m></p>
           </statement>
           <answer>
-            <p><m>2 x+x \left(\ln |x+1|\right)+\left(\ln |x+1|\right)^2-</m> <m>2 x \ln |x+1|-2 \ln |x+1|+2+C</m></p>
+            <p><m>2 x+x \left(\ln \abs{x+1}\right)+\left(\ln \abs{x+1}\right)^2-</m> <m>2 x \ln \abs{x+1}-2 \ln \abs{x+1}+2+C</m></p>
           </answer>
           <solution>
-            <p><m>2 x+x \left(\ln |x+1|\right)+\left(\ln |x+1|\right)^2-</m> <m>2 x \ln |x+1|-2 \ln |x+1|+2+C</m></p>
+            <p><m>2 x+x \left(\ln \abs{x+1}\right)+\left(\ln \abs{x+1}\right)^2-</m> <m>2 x \ln \abs{x+1}-2 \ln \abs{x+1}+2+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -985,10 +985,10 @@
             <p><m>\ds \int x\sec^2x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>x \tan (x)+\ln |\cos (x)|+C</m></p>
+            <p><m>x \tan (x)+\ln \abs{\cos (x)}+C</m></p>
           </answer>
           <solution>
-            <p><m>x \tan (x)+\ln |\cos (x)|+C</m></p>
+            <p><m>x \tan (x)+\ln \abs{\cos (x)}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1005,10 +1005,10 @@
             <p><m>\ds \int x\csc^2x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\ln |\sin (x)|-x \cot (x)+C</m></p>
+            <p><m>\ln \abs{\sin (x)}-x \cot (x)+C</m></p>
           </answer>
           <solution>
-            <p><m>\ln |\sin (x)|-x \cot (x)+C</m></p>
+            <p><m>\ln \abs{\sin (x)}-x \cot (x)+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1085,10 +1085,10 @@
             <p><m>\ds \int x\sec x\tan x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>x\sec x-\ln |\sec x+\tan x|+C</m></p>
+            <p><m>x\sec x-\ln \abs{\sec x+\tan x}+C</m></p>
           </answer>
           <solution>
-            <p><m>x\sec x-\ln |\sec x+\tan x|+C</m></p>
+            <p><m>x\sec x-\ln \abs{\sec x+\tan x}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1105,10 +1105,10 @@
             <p><m>\ds \int x\csc x\cot x\ dx</m></p>
           </statement>
           <answer>
-            <p><m>-x\csc x-\ln |\csc x+\cot x|+C</m></p>
+            <p><m>-x\csc x-\ln \abs{\csc x+\cot x}+C</m></p>
           </answer>
           <solution>
-            <p><m>-x\csc x-\ln |\csc x+\cot x|+C</m></p>
+            <p><m>-x\csc x-\ln \abs{\csc x+\cot x}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1166,10 +1166,10 @@
             <p><m>\ds \int \ln(\sqrt{x})\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{1}{2} x \ln |x|-\frac{x}{2}+C</m></p>
+            <p><m>\frac{1}{2} x \ln \abs{x}-\frac{x}{2}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{1}{2} x \ln |x|-\frac{x}{2}+C</m></p>
+            <p><m>\frac{1}{2} x \ln \abs{x}-\frac{x}{2}+C</m></p>
           </solution>
         </webwork>
       </exercise>

@@ -13,13 +13,13 @@
         <ol>
           <li><p>The <em>Taylor Series of <m>f(x)</m>, centered at <m>c</m></em> is
               <me>
-                \sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n.
+                \sum_{n=0}^\infty \frac{f^{(n)}(c)}{n!}(x-c)^n.
               </me>
             </p></li>
 
           <li><p>Setting <m>c=0</m> gives the <em>Maclaurin Series of <m>f(x)</m></em>:
               <me>
-                \sum_{n=0}^\infty \frac{f\,^{(n)}(0)}{n!}x^n.
+                \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n.
               </me>
             </p></li>
         </ol>
@@ -29,7 +29,7 @@
     <p>The difference between a Taylor polynomial and a Taylor series is the former is a polynomial, containing only a finite number of terms, whereas the latter is a series, a summation of an infinite set of terms. When creating the Taylor polynomial of degree <m>n</m> for a function <m>f(x)</m> at <m>x=c</m>, we needed to evaluate <m>f</m>, and the first <m>n</m> derivatives of <m>f</m>, at <m>x=c</m>. When creating the Taylor series of <m>f</m>, it helps to find a pattern that describes the <m>n^\text{ th }</m> derivative of <m>f</m> at <m>x=c</m>. We demonstrate this in the next two examples.</p>
 
     <example xml:id="ex_ts1">
-      <title>The Maclaurin series of $f(x) = \cos x$</title>
+      <title>The Maclaurin series of <m>f(x) = \cos x</m></title>
       <statement>
         <p>Find the Maclaurin series of <m>f(x)=\cos x</m>.</p>
       </statement>
@@ -60,39 +60,39 @@
               <cell><m>\fp''(0) = 0</m></cell>
             </row>
             <row>
-              <cell><m>f\,^{(4)}(x) = \cos x</m></cell>
+              <cell><m>f^{(4)}(x) = \cos x</m></cell>
               <cell><m>\Rightarrow</m></cell>
-              <cell><m>f\,^{(4)}(0) = 1</m></cell>
+              <cell><m>f^{(4)}(0) = 1</m></cell>
             </row>
             <row>
-              <cell><m>f\,^{(5)}(x) = -\sin x</m></cell>
+              <cell><m>f^{(5)}(x) = -\sin x</m></cell>
               <cell><m>\Rightarrow</m></cell>
-              <cell><m>f\,^{(5)}(0) = 0</m></cell>
+              <cell><m>f^{(5)}(0) = 0</m></cell>
             </row>
             <row>
-              <cell><m>f\,^{(6)}(x) = -\cos x</m></cell>
+              <cell><m>f^{(6)}(x) = -\cos x</m></cell>
               <cell><m>\Rightarrow</m></cell>
-              <cell><m>f\,^{(6)}(0) = -1</m></cell>
+              <cell><m>f^{(6)}(0) = -1</m></cell>
             </row>
             <row>
-              <cell><m>f\,^{(7)}(x) = \sin x</m></cell>
+              <cell><m>f^{(7)}(x) = \sin x</m></cell>
               <cell><m>\Rightarrow</m></cell>
-              <cell><m>f\,^{(7)}(0) = 0</m></cell>
+              <cell><m>f^{(7)}(0) = 0</m></cell>
             </row>
             <row>
-              <cell><m>f\,^{(8)}(x) = \cos x</m></cell>
+              <cell><m>f^{(8)}(x) = \cos x</m></cell>
               <cell><m>\Rightarrow</m></cell>
-              <cell><m>f\,^{(8)}(0) = 1</m></cell>
+              <cell><m>f^{(8)}(0) = 1</m></cell>
             </row>
             <row>
-              <cell><m>f\,^{(9)}(x) = -\sin x</m></cell>
+              <cell><m>f^{(9)}(x) = -\sin x</m></cell>
               <cell><m>\Rightarrow</m></cell>
-              <cell><m>f\,^{(9)}(0) = 0</m></cell>
+              <cell><m>f^{(9)}(0) = 0</m></cell>
             </row>
           </tabular>
         </table>
 
-        <p>Notice how <m>f\,^{(n)}(0)=0</m> when <m>n</m> is odd, <m>f\,^{(n)}(0)=1</m> when <m>n</m> is divisible by <m>4</m>, and <m>f\,^{(n)}(0)=-1</m> when <m>n</m> is even but not divisible by 4. Thus the Maclaurin series of <m>\cos x</m> is
+        <p>Notice how <m>f^{(n)}(0)=0</m> when <m>n</m> is odd, <m>f^{(n)}(0)=1</m> when <m>n</m> is divisible by <m>4</m>, and <m>f^{(n)}(0)=-1</m> when <m>n</m> is even but not divisible by 4. Thus the Maclaurin series of <m>\cos x</m> is
           <me>
             1-\frac{x^2}2+\frac{x^4}{4!}-\frac{x^6}{6!}+\frac{x^8}{8!} - \cdots
           </me>
@@ -107,14 +107,14 @@
     </example>
 
     <example xml:id="ex_ts2">
-      <title>The Taylor series of $f(x)=\ln x$ at $x=1$</title>
+      <title>The Taylor series of <m>f(x)=\ln x</m> at <m>x=1</m></title>
       <statement>
         <p>Find the Taylor series of <m>f(x) = \ln x</m> centered at <m>x=1</m>.</p>
       </statement>
       <solution>
         <p><xref ref="fig_ts2">Figure</xref> shows the <m>n^\text{ th }</m> derivative of <m>\ln x</m> evaluated at <m>x=1</m> for <m>n=0,\ldots,5</m>, along with an expression for the <m>n^\text{ th }</m> term:
           <me>
-            f\,^{(n)}(1) = (-1)^{n+1}(n-1)! \text{ for \(n\geq 1\). }
+            f^{(n)}(1) = (-1)^{n+1}(n-1)! \text{ for \(n\geq 1\). }
           </me>
         </p>
 
@@ -144,14 +144,14 @@
               <cell><m>\fp''(1) = 2</m></cell>
             </row>
             <row>
-              <cell><m>f\,^{(4)}(x) = -6/x^4</m></cell>
+              <cell><m>f^{(4)}(x) = -6/x^4</m></cell>
               <cell><m>\Rightarrow</m></cell>
-              <cell><m>f\,^{(4)}(1) = -6</m></cell>
+              <cell><m>f^{(4)}(1) = -6</m></cell>
             </row>
             <row>
-              <cell><m>f\,^{(5)}(x) = 24/x^5</m></cell>
+              <cell><m>f^{(5)}(x) = 24/x^5</m></cell>
               <cell><m>\Rightarrow</m></cell>
-              <cell><m>f\,^{(5)}(1) = 24</m></cell>
+              <cell><m>f^{(5)}(1) = 24</m></cell>
             </row>
             <row>
               <cell><m>\ \vdots</m></cell>
@@ -159,9 +159,9 @@
               <cell><m>\ \vdots</m></cell>
             </row>
             <row>
-              <cell><m>f\,^{(n)}(x) =</m></cell>
+              <cell><m>f^{(n)}(x) =</m></cell>
               <cell><m>\Rightarrow</m></cell>
-              <cell><m>f\,^{(n)}(1) =</m></cell>
+              <cell><m>f^{(n)}(1) =</m></cell>
             </row>
             <row>
               <cell><m>\ds \frac{(-1)^{n+1}(n-1)!}{x^n}</m></cell>
@@ -183,7 +183,7 @@
 
     <p><xref ref="thm_taylorthm">Theorem</xref> states that the error between a function <m>f(x)</m> and its <m>n^\text{ th }</m><ndash />degree Taylor polynomial <m>p_n(x)</m> is <m>R_n(x)</m>, where
       <me>
-        \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|(x-c)^{(n+1)}\big|.
+        \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{(x-c)^{(n+1)}}.
       </me>
     </p>
 
@@ -196,7 +196,7 @@
           If <m>\ds\lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m> in <m>I</m>, then
           <index><main>Taylor Series</main><sub>equality with generating function</sub></index>
           <me>
-            f(x) = \sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n\ \text{ on \(I\). }
+            f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(c)}{n!}(x-c)^n\ \text{ on \(I\). }
           </me>
         </p>
       </statement>
@@ -212,17 +212,17 @@
       <solution>
         <p>Given a value <m>x</m>, the magnitude of the error term <m>R_n(x)</m> is bounded by
           <me>
-            \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{n+1}\big|.
+            \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{x^{n+1}}.
           </me>
         </p>
 
         <p>Since all derivatives of <m>\cos x</m> are <m>\pm \sin x</m> or <m>\pm\cos x</m>, whose magnitudes are bounded by <m>1</m>, we can state
           <me>
-            \big|R_n(x)\big| \leq \frac{1}{(n+1)!}\big|x^{n+1}\big|
+            \abs{R_n(x)} \leq \frac{1}{(n+1)!}\abs{x^{n+1}}
           </me>
           which implies
           <men xml:id="eq_coseqtaylor" >
-            -\frac{|x^{n+1}|}{(n+1)!} \leq R_n(x) \leq\frac{|x^{n+1}|}{(n+1)!}.
+            -\frac{\abs{x^{n+1}}}{(n+1)!} \leq R_n(x) \leq\frac{\abs{x^{n+1}}}{(n+1)!}.
           </men>
         </p>
 
@@ -263,7 +263,7 @@
           <mrow>\fp'(x) \amp = k(k-1)(1+x)^{k-2} \amp  \fp'(0) \amp =k(k-1)</mrow>
           <mrow>\fp''(x) \amp = k(k-1)(k-2)(1+x)^{k-3} \amp  \fp''(0) \amp =k(k-1)(k-2)</mrow>
           <mrow>\amp \vdots \amp  \amp \vdots</mrow>
-          <mrow>f\,^{(n)}(x) \amp = k(k-1)\cdots\big(k-(n-1)\big)(1+x)^{k-n} \amp  f\,^{(n)}(0) \amp =k(k-1)\cdots\big(k-(n-1)\big)</mrow>
+          <mrow>f^{(n)}(x) \amp = k(k-1)\cdots\big(k-(n-1)\big)(1+x)^{k-n} \amp  f^{(n)}(0) \amp =k(k-1)\cdots\big(k-(n-1)\big)</mrow>
         </md>
         <p>Thus the Maclaurin series for <m>f(x) = (1+x)^k</m> is
           <me>
@@ -277,13 +277,13 @@
           </me>
           we apply the Ratio Test:
           <md>
-            <mrow>\lim_{n\to\infty}\frac{|a_{n+1}|}{|a_n|}\amp =\lim_{n\to\infty} \left|\frac{k(k-1)\cdots(k-n)}{(n+1)!}x^{n+1}\right|\Bigg/\left|\frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n\right|</mrow>
-            <mrow>\amp =\lim_{n\to\infty} \left|\frac{k-n}{n}x\right|</mrow>
-            <mrow>\amp = |x|.</mrow>
+            <mrow>\lim_{n\to\infty}\frac{\abs{a_{n+1}}}{\abs{a_n}}\amp =\lim_{n\to\infty} \abs{\frac{k(k-1)\cdots(k-n)}{(n+1)!}x^{n+1}}\Bigg/\abs{\frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n}</mrow>
+            <mrow>\amp =\lim_{n\to\infty} \abs{\frac{k-n}{n}x}</mrow>
+            <mrow>\amp = \abs{x}.</mrow>
           </md>
         </p>
 
-        <p>The series converges absolutely when the limit of the Ratio Test is less than 1; therefore, we have absolute convergence when <m>|x|\lt 1</m>.</p>
+        <p>The series converges absolutely when the limit of the Ratio Test is less than 1; therefore, we have absolute convergence when <m>\abs{x}\lt 1</m>.</p>
 
         <p>While outside the scope of this text, the interval of convergence depends on the value of <m>k</m>. When <m>k>0</m>, the interval of convergence is <m>[-1,1]</m>. When <m>-1\lt k\lt 0</m>, the interval of convergence is <m>[-1,1)</m>. If <m>k\leq -1</m>, the interval of convergence is <m>(-1,1)</m>.</p>
       </solution>
@@ -359,15 +359,15 @@
       <theorem xml:id="thm_series_alg">
         <title>Algebra of Power Series</title>
         <statement>
-          <p>Let <m>\ds f(x) = \sum_{n=0}^\infty a_nx^n</m> and <m>\ds g(x) = \sum_{n=0}^\infty b_nx^n</m> converge absolutely for <m>|x|\lt R</m>, and let <m>h(x)</m> be continuous.
+          <p>Let <m>\ds f(x) = \sum_{n=0}^\infty a_nx^n</m> and <m>\ds g(x) = \sum_{n=0}^\infty b_nx^n</m> converge absolutely for <m>\abs{x}\lt R</m>, and let <m>h(x)</m> be continuous.
             <index><main>power series</main><sub>algebra of</sub></index></p>
 
           <ol>
-            <li><p><m>\ds f(x)\pm g(x) = \sum_{n=0}^\infty (a_n\pm b_n)x^n</m>   for <m>|x|\lt R</m>.</p></li>
+            <li><p><m>\ds f(x)\pm g(x) = \sum_{n=0}^\infty (a_n\pm b_n)x^n</m>   for <m>\abs{x}\lt R</m>.</p></li>
 
-            <li><p><m>\ds 	f(x)g(x) = \left(\sum_{n=0}^\infty a_nx^n\right)\left(\sum_{n=0}^\infty b_nx^n\right) = \sum_{n=0}^\infty\big(a_0b_n+a_1b_{n-1}+\ldots a_nb_0\big)x^n</m> for <m>|x|\lt R</m>.</p></li>
+            <li><p><m>\ds 	f(x)g(x) = \left(\sum_{n=0}^\infty a_nx^n\right)\left(\sum_{n=0}^\infty b_nx^n\right) = \sum_{n=0}^\infty\big(a_0b_n+a_1b_{n-1}+\ldots a_nb_0\big)x^n</m> for <m>\abs{x}\lt R</m>.</p></li>
 
-            <li><p><m>\ds f\big(h(x)\big) = \sum_{n=0}^\infty a_n\big(h(x)\big)^n</m>   for <m>|h(x)|\lt R</m>.</p></li>
+            <li><p><m>\ds f\big(h(x)\big) = \sum_{n=0}^\infty a_n\big(h(x)\big)^n</m>   for <m>\abs{h(x)}\lt R</m>.</p></li>
           </ol>
         </statement>
       </theorem>
@@ -434,7 +434,7 @@
         <p>While this is not strictly a power series, it is a series that allows us to study the function <m>\ln(\sqrt{x})</m>. Since the interval of convergence of <m>\ln x</m> is <m>(0,2]</m>, and the range of <m>\sqrt{x}</m> on <m>(0,4]</m> is <m>(0,2]</m>, the interval of convergence of this series expansion of <m>\ln(\sqrt{x})</m> is <m>(0,4]</m>.</p>
 
         <aside>
-          <p><em>Note:</em> In <xref ref="ex_ts6">Example</xref>, one could create a series for <m>\ln(\sqrt{x})</m> by simply recognizing that <m>\ln(\sqrt{x}) = \ln (x^{1/2}) = 1/2\ln x</m>, and hence multiplying the Taylor series for <m>\ln x</m> by <m>1/2</m>. This example was chosen to demonstrate other aspects of series, such as the fact that the interval of convergence changes.</p>
+          <p>In <xref ref="ex_ts6">Example</xref>, one could create a series for <m>\ln(\sqrt{x})</m> by simply recognizing that <m>\ln(\sqrt{x}) = \ln (x^{1/2}) = 1/2\ln x</m>, and hence multiplying the Taylor series for <m>\ln x</m> by <m>1/2</m>. This example was chosen to demonstrate other aspects of series, such as the fact that the interval of convergence changes.</p>
         </aside>
       </solution>
     </example>
@@ -641,14 +641,14 @@
             <p><m>f(x) = 1/(1-x)</m>;<m>c=0</m></p>
           </statement>
           <answer>
-            <p>The <m>n^\text{ th }</m> derivative of <m>1/(1-x)</m> is <m>f\,^{(n)}(x) = (n)!/(1-x)^{n+1}</m>, which evaluates to <m>n!</m> at <m>x=0</m>.</p>
+            <p>The <m>n^\text{ th }</m> derivative of <m>1/(1-x)</m> is <m>f^{(n)}(x) = (n)!/(1-x)^{n+1}</m>, which evaluates to <m>n!</m> at <m>x=0</m>.</p>
 
             <p>The Taylor series starts <m>1+x+x^2+x^3+\cdots</m>;</p>
 
             <p>the Taylor series is <m>\ds \sum_{n=0}^\infty x^n</m></p>
           </answer>
           <solution>
-            <p>The <m>n^\text{ th }</m> derivative of <m>1/(1-x)</m> is <m>f\,^{(n)}(x) = (n)!/(1-x)^{n+1}</m>, which evaluates to <m>n!</m> at <m>x=0</m>.</p>
+            <p>The <m>n^\text{ th }</m> derivative of <m>1/(1-x)</m> is <m>f^{(n)}(x) = (n)!/(1-x)^{n+1}</m>, which evaluates to <m>n!</m> at <m>x=0</m>.</p>
 
             <p>The Taylor series starts <m>1+x+x^2+x^3+\cdots</m>;</p>
 
@@ -671,9 +671,9 @@
           <answer>
             <p>The derivative of <m>\tan^{-1}x</m> is <m>1/(1+x^2)</m>. Taking successive derivatives using the Quotient Rule, the derivatives of <m>\tan^{-1}x</m> fall into two categories in terms of their evaluation at <m>x=0</m>.</p>
 
-            <p>When <m>n</m> is even, <m>\ds f\,^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}</m>, where <m>p(x)</m> is a polynomial such that <m>p(0) = 0</m>. Hence <m>f\,^{(n)}(0) = 0</m> when <m>n</m> is even.</p>
+            <p>When <m>n</m> is even, <m>\ds f^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}</m>, where <m>p(x)</m> is a polynomial such that <m>p(0) = 0</m>. Hence <m>f^{(n)}(0) = 0</m> when <m>n</m> is even.</p>
 
-            <p>When <m>n</m> is odd, <m>\ds f\,^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}</m>, where <m>p(x)</m> is a polynomial such that <m>p(0) = (n-1)!</m>. Hence <m>f\,^{(n)}(0) = (-1)^{(n-1)/2}(n-1)!</m> when <m>n</m> is odd. (The unusual power of <m>(-1)</m> is such that every other odd term is negative.)</p>
+            <p>When <m>n</m> is odd, <m>\ds f^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}</m>, where <m>p(x)</m> is a polynomial such that <m>p(0) = (n-1)!</m>. Hence <m>f^{(n)}(0) = (-1)^{(n-1)/2}(n-1)!</m> when <m>n</m> is odd. (The unusual power of <m>(-1)</m> is such that every other odd term is negative.)</p>
 
             <p>The Taylor series starts <m>x-\frac13x^3+\frac15x^5+\cdots</m>; by reindexing to only obtain odd powers of <m>x</m>, we get</p>
 
@@ -682,9 +682,9 @@
           <solution>
             <p>The derivative of <m>\tan^{-1}x</m> is <m>1/(1+x^2)</m>. Taking successive derivatives using the Quotient Rule, the derivatives of <m>\tan^{-1}x</m> fall into two categories in terms of their evaluation at <m>x=0</m>.</p>
 
-            <p>When <m>n</m> is even, <m>\ds f\,^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}</m>, where <m>p(x)</m> is a polynomial such that <m>p(0) = 0</m>. Hence <m>f\,^{(n)}(0) = 0</m> when <m>n</m> is even.</p>
+            <p>When <m>n</m> is even, <m>\ds f^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}</m>, where <m>p(x)</m> is a polynomial such that <m>p(0) = 0</m>. Hence <m>f^{(n)}(0) = 0</m> when <m>n</m> is even.</p>
 
-            <p>When <m>n</m> is odd, <m>\ds f\,^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}</m>, where <m>p(x)</m> is a polynomial such that <m>p(0) = (n-1)!</m>. Hence <m>f\,^{(n)}(0) = (-1)^{(n-1)/2}(n-1)!</m> when <m>n</m> is odd. (The unusual power of <m>(-1)</m> is such that every other odd term is negative.)</p>
+            <p>When <m>n</m> is odd, <m>\ds f^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}</m>, where <m>p(x)</m> is a polynomial such that <m>p(0) = (n-1)!</m>. Hence <m>f^{(n)}(0) = (-1)^{(n-1)/2}(n-1)!</m> when <m>n</m> is odd. (The unusual power of <m>(-1)</m> is such that every other odd term is negative.)</p>
 
             <p>The Taylor series starts <m>x-\frac13x^3+\frac15x^5+\cdots</m>; by reindexing to only obtain odd powers of <m>x</m>, we get</p>
 
@@ -754,14 +754,14 @@
             <p><m>f(x) = e^{-x}</m>;<m>c=0</m></p>
           </statement>
           <answer>
-            <p><m>f\,^{(n)}(x) = (-1)^ne^{-x}</m>; at <m>x=0</m>, <m>f\,^{(n)}(0)=-1</m> when <m>n</m> is odd and <m>f\,^{(n)}(0)=1</m> when <m>n</m> is even.</p>
+            <p><m>f^{(n)}(x) = (-1)^ne^{-x}</m>; at <m>x=0</m>, <m>f^{(n)}(0)=-1</m> when <m>n</m> is odd and <m>f^{(n)}(0)=1</m> when <m>n</m> is even.</p>
 
             <p>The Taylor series starts <m>1-x+\frac12x^2-\frac1{3!}x^3+\cdots</m>;</p>
 
             <p>the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^n\frac{x^n}{n!}</m>.</p>
           </answer>
           <solution>
-            <p><m>f\,^{(n)}(x) = (-1)^ne^{-x}</m>; at <m>x=0</m>, <m>f\,^{(n)}(0)=-1</m> when <m>n</m> is odd and <m>f\,^{(n)}(0)=1</m> when <m>n</m> is even.</p>
+            <p><m>f^{(n)}(x) = (-1)^ne^{-x}</m>; at <m>x=0</m>, <m>f^{(n)}(0)=-1</m> when <m>n</m> is odd and <m>f^{(n)}(0)=1</m> when <m>n</m> is even.</p>
 
             <p>The Taylor series starts <m>1-x+\frac12x^2-\frac1{3!}x^3+\cdots</m>;</p>
 
@@ -782,14 +782,14 @@
             <p><m>f(x) = \ln(1+x)</m>;<m>c=0</m></p>
           </statement>
           <answer>
-            <p><m>f\,^{(n)}(x) = (-1)^{n+1}\frac{(n-1)!}{(1+x)^n}</m>; at <m>x=0</m>, <m>f\,^{(n)}(0)=(-1)^{n+1}(n-1)!</m></p>
+            <p><m>f^{(n)}(x) = (-1)^{n+1}\frac{(n-1)!}{(1+x)^n}</m>; at <m>x=0</m>, <m>f^{(n)}(0)=(-1)^{n+1}(n-1)!</m></p>
 
             <p>The Taylor series starts <m>x-\frac{x^2}2+\frac{x^3}3-\frac{x^4}4+\cdots</m>;</p>
 
             <p>the Taylor series is <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac{x^n}{n}</m>.</p>
           </answer>
           <solution>
-            <p><m>f\,^{(n)}(x) = (-1)^{n+1}\frac{(n-1)!}{(1+x)^n}</m>; at <m>x=0</m>, <m>f\,^{(n)}(0)=(-1)^{n+1}(n-1)!</m></p>
+            <p><m>f^{(n)}(x) = (-1)^{n+1}\frac{(n-1)!}{(1+x)^n}</m>; at <m>x=0</m>, <m>f^{(n)}(0)=(-1)^{n+1}(n-1)!</m></p>
 
             <p>The Taylor series starts <m>x-\frac{x^2}2+\frac{x^3}3-\frac{x^4}4+\cdots</m>;</p>
 
@@ -810,14 +810,14 @@
             <p><m>f(x) = x/(x+1)</m>;<m>c=1</m></p>
           </statement>
           <answer>
-            <p><m>f\,^{(n)}(x) = (-1)^{n+1}\frac{n!}{(x+1)^{n+1}}</m>; at <m>x=1</m>, <m>f\,^{(n)}(1)=(-1)^{n+1}\frac{n!}{2^{n+1}}</m></p>
+            <p><m>f^{(n)}(x) = (-1)^{n+1}\frac{n!}{(x+1)^{n+1}}</m>; at <m>x=1</m>, <m>f^{(n)}(1)=(-1)^{n+1}\frac{n!}{2^{n+1}}</m></p>
 
             <p>The Taylor series starts <m>\frac12+\frac14(x-1)-\frac18(x-1)^2+\frac1{16}(x-1)^3\cdots</m>;</p>
 
             <p>the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^{n+1}\frac{(x-1)^n}{2^{n+1}}</m>.</p>
           </answer>
           <solution>
-            <p><m>f\,^{(n)}(x) = (-1)^{n+1}\frac{n!}{(x+1)^{n+1}}</m>; at <m>x=1</m>, <m>f\,^{(n)}(1)=(-1)^{n+1}\frac{n!}{2^{n+1}}</m></p>
+            <p><m>f^{(n)}(x) = (-1)^{n+1}\frac{n!}{(x+1)^{n+1}}</m>; at <m>x=1</m>, <m>f^{(n)}(1)=(-1)^{n+1}\frac{n!}{2^{n+1}}</m></p>
 
             <p>The Taylor series starts <m>\frac12+\frac14(x-1)-\frac18(x-1)^2+\frac1{16}(x-1)^3\cdots</m>;</p>
 
@@ -871,17 +871,17 @@
           <answer>
             <p>Given a value <m>x</m>, the magnitude of the error term <m>R_n(x)</m> is bounded by
               <me>
-                \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|,
+                \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{x^{(n+1)}},
               </me>
               where <m>z</m> is between <m>0</m> and <m>x</m>.</p>
 
-            <p>If <m>x>0</m>, then <m>z\lt x</m> and <m>f\,^{(n+1)}(z) =e^z\lt e^x</m>. If <m>x\lt 0</m>, then <m>x\lt z\lt 0</m> and <m>f\,^{(n+1)}(z) =e^z\lt 1</m>. So given a fixed <m>x</m> value, let <m>M = \max\{e^x,1\}</m>; <m>f\,^{(n)}(z)\lt M.</m> This allows us to state
+            <p>If <m>x>0</m>, then <m>z\lt x</m> and <m>f^{(n+1)}(z) =e^z\lt e^x</m>. If <m>x\lt 0</m>, then <m>x\lt z\lt 0</m> and <m>f^{(n+1)}(z) =e^z\lt 1</m>. So given a fixed <m>x</m> value, let <m>M = \max\{e^x,1\}</m>; <m>f^{(n)}(z)\lt M.</m> This allows us to state
               <me>
-                \big|R_n(x)\big| \leq \frac{M}{(n+1)!}\big|x^{(n+1)}\big|.
+                \abs{R_n(x)} \leq \frac{M}{(n+1)!}\abs{x^{(n+1)}}.
               </me>
             </p>
 
-            <p>For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{M}{(n+1)!}\big|x^{(n+1)}\big|= 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
+            <p>For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{M}{(n+1)!}\abs{x^{(n+1)}}= 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
               <me>
                 e^x = \sum_{n=0}^\infty \frac{x^{n}}{n!} \text{ for all \(x\) } .
               </me>
@@ -890,17 +890,17 @@
           <solution>
             <p>Given a value <m>x</m>, the magnitude of the error term <m>R_n(x)</m> is bounded by
               <me>
-                \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|,
+                \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{x^{(n+1)}},
               </me>
               where <m>z</m> is between <m>0</m> and <m>x</m>.</p>
 
-            <p>If <m>x>0</m>, then <m>z\lt x</m> and <m>f\,^{(n+1)}(z) =e^z\lt e^x</m>. If <m>x\lt 0</m>, then <m>x\lt z\lt 0</m> and <m>f\,^{(n+1)}(z) =e^z\lt 1</m>. So given a fixed <m>x</m> value, let <m>M = \max\{e^x,1\}</m>; <m>f\,^{(n)}(z)\lt M.</m> This allows us to state
+            <p>If <m>x>0</m>, then <m>z\lt x</m> and <m>f^{(n+1)}(z) =e^z\lt e^x</m>. If <m>x\lt 0</m>, then <m>x\lt z\lt 0</m> and <m>f^{(n+1)}(z) =e^z\lt 1</m>. So given a fixed <m>x</m> value, let <m>M = \max\{e^x,1\}</m>; <m>f^{(n)}(z)\lt M.</m> This allows us to state
               <me>
-                \big|R_n(x)\big| \leq \frac{M}{(n+1)!}\big|x^{(n+1)}\big|.
+                \abs{R_n(x)} \leq \frac{M}{(n+1)!}\abs{x^{(n+1)}}.
               </me>
             </p>
 
-            <p>For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{M}{(n+1)!}\big|x^{(n+1)}\big|= 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
+            <p>For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{M}{(n+1)!}\abs{x^{(n+1)}}= 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
               <me>
                 e^x = \sum_{n=0}^\infty \frac{x^{n}}{n!} \text{ for all \(x\) } .
               </me>
@@ -925,13 +925,13 @@
 
             <p>Given a value <m>x</m>, the magnitude of the error term <m>R_n(x)</m> is bounded by
               <me>
-                \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|.
+                \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{x^{(n+1)}}.
               </me>
             </p>
 
             <p>Since all derivatives of <m>\sin x</m> are <m>\pm \cos x</m> or <m>\pm\sin x</m>, whose magnitudes are bounded by <m>1</m>, we can state
               <me>
-                \big|R_n(x)\big| \leq \frac{1}{(n+1)!}\big|x^{(n+1)}\big|.
+                \abs{R_n(x)} \leq \frac{1}{(n+1)!}\abs{x^{(n+1)}}.
               </me>
             </p>
 
@@ -946,13 +946,13 @@
 
             <p>Given a value <m>x</m>, the magnitude of the error term <m>R_n(x)</m> is bounded by
               <me>
-                \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|.
+                \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{x^{(n+1)}}.
               </me>
             </p>
 
             <p>Since all derivatives of <m>\sin x</m> are <m>\pm \cos x</m> or <m>\pm\sin x</m>, whose magnitudes are bounded by <m>1</m>, we can state
               <me>
-                \big|R_n(x)\big| \leq \frac{1}{(n+1)!}\big|x^{(n+1)}\big|.
+                \abs{R_n(x)} \leq \frac{1}{(n+1)!}\abs{x^{(n+1)}}.
               </me>
             </p>
 
@@ -979,17 +979,17 @@
           <answer>
             <p>Given a value <m>x</m>, the magnitude of the error term <m>R_n(x)</m> is bounded by
               <me>
-                \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|(x-1)^{(n+1)}\big|,
+                \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{(x-1)^{(n+1)}},
               </me>
               where <m>z</m> is between <m>1</m> and <m>x</m>.</p>
 
-            <p>Note that <m>\big|f\,^{(n+1)}(x)\big| = \frac{n!}{x^{n+1}}</m>.</p>
+            <p>Note that <m>\abs{f^{(n+1)}(x)} = \frac{n!}{x^{n+1}}</m>.</p>
 
             <p>We consider the cases when <m>x>1</m> and when <m>x\lt 1</m> separately.</p>
 
-            <p>If <m>x>1</m>, then <m>1\lt z\lt x</m> and <m>f\,^{(n+1)}(z) =\frac{n!}{z^{n+1}}\lt n!</m>. Thus
+            <p>If <m>x>1</m>, then <m>1\lt z\lt x</m> and <m>f^{(n+1)}(z) =\frac{n!}{z^{n+1}}\lt n!</m>. Thus
               <me>
-                \big|R_n(x)\big| \leq \frac{n!}{(n+1)!}\big|(x-1)^{(n+1)}\big|= \frac{(x-1)^{n+1}}{n+1}.
+                \abs{R_n(x)} \leq \frac{n!}{(n+1)!}\abs{(x-1)^{(n+1)}}= \frac{(x-1)^{n+1}}{n+1}.
               </me>
             </p>
 
@@ -999,15 +999,15 @@
               </me>
             </p>
 
-            <p>If <m>0\lt x\lt 1</m>, then <m>x\lt z\lt 1</m> and <m>f\,^{(n+1)}(z) =\frac{n!}{z^{n+1}}\lt \frac{n!}{x^{n+1}}</m>. Thus
+            <p>If <m>0\lt x\lt 1</m>, then <m>x\lt z\lt 1</m> and <m>f^{(n+1)}(z) =\frac{n!}{z^{n+1}}\lt \frac{n!}{x^{n+1}}</m>. Thus
               <me>
-                \big|R_n(x)\big| \leq \frac{n!/x^{n+1}}{(n+1)!}\big|(x-1)^{(n+1)}\big| = \frac{x^{n+1}}{n+1}(1-x)^{n+1}.
+                \abs{R_n(x)} \leq \frac{n!/x^{n+1}}{(n+1)!}\abs{(x-1)^{(n+1)}} = \frac{x^{n+1}}{n+1}(1-x)^{n+1}.
               </me>
             </p>
 
             <p>Since <m>0\lt x\lt 1</m>, <m>x^{n+1}\lt 1</m> and <m>(1-x)^{n+1}\lt 1</m>. We can then extend the inequality from above to state
               <me>
-                \big|R_n(x)\big| \leq \frac{x^{n+1}}{n+1}(1-x)^{n+1}\lt \frac1{n+1}.
+                \abs{R_n(x)} \leq \frac{x^{n+1}}{n+1}(1-x)^{n+1}\lt \frac1{n+1}.
               </me>
             </p>
 
@@ -1020,17 +1020,17 @@
           <solution>
             <p>Given a value <m>x</m>, the magnitude of the error term <m>R_n(x)</m> is bounded by
               <me>
-                \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|(x-1)^{(n+1)}\big|,
+                \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{(x-1)^{(n+1)}},
               </me>
               where <m>z</m> is between <m>1</m> and <m>x</m>.</p>
 
-            <p>Note that <m>\big|f\,^{(n+1)}(x)\big| = \frac{n!}{x^{n+1}}</m>.</p>
+            <p>Note that <m>\abs{f^{(n+1)}(x)} = \frac{n!}{x^{n+1}}</m>.</p>
 
             <p>We consider the cases when <m>x>1</m> and when <m>x\lt 1</m> separately.</p>
 
-            <p>If <m>x>1</m>, then <m>1\lt z\lt x</m> and <m>f\,^{(n+1)}(z) =\frac{n!}{z^{n+1}}\lt n!</m>. Thus
+            <p>If <m>x>1</m>, then <m>1\lt z\lt x</m> and <m>f^{(n+1)}(z) =\frac{n!}{z^{n+1}}\lt n!</m>. Thus
               <me>
-                \big|R_n(x)\big| \leq \frac{n!}{(n+1)!}\big|(x-1)^{(n+1)}\big|= \frac{(x-1)^{n+1}}{n+1}.
+                \abs{R_n(x)} \leq \frac{n!}{(n+1)!}\abs{(x-1)^{(n+1)}}= \frac{(x-1)^{n+1}}{n+1}.
               </me>
             </p>
 
@@ -1040,15 +1040,15 @@
               </me>
             </p>
 
-            <p>If <m>0\lt x\lt 1</m>, then <m>x\lt z\lt 1</m> and <m>f\,^{(n+1)}(z) =\frac{n!}{z^{n+1}}\lt \frac{n!}{x^{n+1}}</m>. Thus
+            <p>If <m>0\lt x\lt 1</m>, then <m>x\lt z\lt 1</m> and <m>f^{(n+1)}(z) =\frac{n!}{z^{n+1}}\lt \frac{n!}{x^{n+1}}</m>. Thus
               <me>
-                \big|R_n(x)\big| \leq \frac{n!/x^{n+1}}{(n+1)!}\big|(x-1)^{(n+1)}\big| = \frac{x^{n+1}}{n+1}(1-x)^{n+1}.
+                \abs{R_n(x)} \leq \frac{n!/x^{n+1}}{(n+1)!}\abs{(x-1)^{(n+1)}} = \frac{x^{n+1}}{n+1}(1-x)^{n+1}.
               </me>
             </p>
 
             <p>Since <m>0\lt x\lt 1</m>, <m>x^{n+1}\lt 1</m> and <m>(1-x)^{n+1}\lt 1</m>. We can then extend the inequality from above to state
               <me>
-                \big|R_n(x)\big| \leq \frac{x^{n+1}}{n+1}(1-x)^{n+1}\lt \frac1{n+1}.
+                \abs{R_n(x)} \leq \frac{x^{n+1}}{n+1}(1-x)^{n+1}\lt \frac1{n+1}.
               </me>
             </p>
 
@@ -1075,16 +1075,16 @@
           <answer>
             <p>Given a value <m>x</m>, the magnitude of the error term <m>R_n(x)</m> is bounded by
               <me>
-                \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|,
+                \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{x^{(n+1)}},
               </me>
               where <m>z</m> is between <m>0</m> and <m>x</m>.</p>
 
-            <p>Note that <m>\big|f\,^{(n+1)}(x)\big| = \frac{(n+1)!}{(1-x)^{n+2}}</m>.</p>
+            <p>Note that <m>\abs{f^{(n+1)}(x)} = \frac{(n+1)!}{(1-x)^{n+2}}</m>.</p>
 
-            <p>If <m>0\lt x\lt 1</m>, then <m>0\lt z\lt x</m> and <m>f\,^{(n+1)}(z) =\frac{(n+1)!}{(1-z)^{n+2}}\lt \frac{(n+1)!}{(1-x)^{n+2}}</m>.
+            <p>If <m>0\lt x\lt 1</m>, then <m>0\lt z\lt x</m> and <m>f^{(n+1)}(z) =\frac{(n+1)!}{(1-z)^{n+2}}\lt \frac{(n+1)!}{(1-x)^{n+2}}</m>.
               Thus
               <me>
-                \big|R_n(x)\big| \leq \frac{(n+1)!}{(1-x)^{n+2}}\frac{1}{(n+1)!}\big|x^{n+1}\big|= \frac{(x-1)^{n+1}}{n+1}.
+                \abs{R_n(x)} \leq \frac{(n+1)!}{(1-x)^{n+2}}\frac{1}{(n+1)!}\abs{x^{n+1}}= \frac{(x-1)^{n+1}}{n+1}.
               </me>
             </p>
 
@@ -1101,16 +1101,16 @@
           <solution>
             <p>Given a value <m>x</m>, the magnitude of the error term <m>R_n(x)</m> is bounded by
               <me>
-                \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|,
+                \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{x^{(n+1)}},
               </me>
               where <m>z</m> is between <m>0</m> and <m>x</m>.</p>
 
-            <p>Note that <m>\big|f\,^{(n+1)}(x)\big| = \frac{(n+1)!}{(1-x)^{n+2}}</m>.</p>
+            <p>Note that <m>\abs{f^{(n+1)}(x)} = \frac{(n+1)!}{(1-x)^{n+2}}</m>.</p>
 
-            <p>If <m>0\lt x\lt 1</m>, then <m>0\lt z\lt x</m> and <m>f\,^{(n+1)}(z) =\frac{(n+1)!}{(1-z)^{n+2}}\lt \frac{(n+1)!}{(1-x)^{n+2}}</m>.
+            <p>If <m>0\lt x\lt 1</m>, then <m>0\lt z\lt x</m> and <m>f^{(n+1)}(z) =\frac{(n+1)!}{(1-z)^{n+2}}\lt \frac{(n+1)!}{(1-x)^{n+2}}</m>.
               Thus
               <me>
-                \big|R_n(x)\big| \leq \frac{(n+1)!}{(1-x)^{n+2}}\frac{1}{(n+1)!}\big|x^{n+1}\big|= \frac{(x-1)^{n+1}}{n+1}.
+                \abs{R_n(x)} \leq \frac{(n+1)!}{(1-x)^{n+2}}\frac{1}{(n+1)!}\abs{x^{n+1}}= \frac{(x-1)^{n+1}}{n+1}.
               </me>
             </p>
 

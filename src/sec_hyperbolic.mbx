@@ -425,7 +425,7 @@
 
       <li><p><m>\ds\int \tanh x\ dx = \ln(\cosh x) +C</m></p></li>
 
-      <li><p><m>\ds\int \coth x\ dx = \ln|\sinh x\,|+C</m></p></li>
+      <li><p><m>\ds\int \coth x\ dx = \ln\abs{\sinh x\,}+C</m></p></li>
     </ol>
 
     <p>We practice using <xref ref="idea_hyperbolic_identities">Key Idea</xref>.</p>
@@ -773,15 +773,15 @@
       <ol cols="2" >
         <li><p><m>\ds\cosh^{-1}x=\ln\big(x+\sqrt{x^2-1}\big);\ x\geq1</m><index><main>hyperbolic function</main><sub>inverse!logarithmic def.</sub></index></p></li>
 
-        <li><p><m>\ds\tanh^{-1}x = \frac12\ln\left(\frac{1+x}{1-x}\right);\ |x|\lt 1</m></p></li>
+        <li><p><m>\ds\tanh^{-1}x = \frac12\ln\left(\frac{1+x}{1-x}\right);\ \abs{x}\lt 1</m></p></li>
 
         <li><p><m>\ds \sech^{-1}x = \ln\left(\frac{1+\sqrt{1-x^2}}x\right);\ 0\lt x\leq1</m></p></li>
 
         <li><p><m>\ds\sinh^{-1}x = \ln\big(x+\sqrt{x^2+1}\big)</m></p></li>
 
-        <li><p><m>\ds\coth^{-1}x = \frac12\ln\left(\frac{x+1}{x-1}\right);\ |x|>1</m></p></li>
+        <li><p><m>\ds\coth^{-1}x = \frac12\ln\left(\frac{x+1}{x-1}\right);\ \abs{x}>1</m></p></li>
 
-        <li><p><m>\ds\csch^{-1}x = \ln\left(\frac1x+\frac{\sqrt{1+x^2}}{|x|}\right);\ x\neq0</m></p></li>
+        <li><p><m>\ds\csch^{-1}x = \ln\left(\frac1x+\frac{\sqrt{1+x^2}}{\abs{x}}\right);\ x\neq0</m></p></li>
       </ol>
     </insight>
     </sidebyside>
@@ -795,13 +795,13 @@
 
         <li><p><m>\ds\frac{d}{dx}\big(\sinh^{-1} x\big) = \frac{1}{\sqrt{x^2+1}}</m></p></li>
 
-        <li><p><m>\ds\frac{d}{dx}\big(\tanh^{-1} x\big) = \frac{1}{1-x^2};\ |x|\lt 1</m></p></li>
+        <li><p><m>\ds\frac{d}{dx}\big(\tanh^{-1} x\big) = \frac{1}{1-x^2};\ \abs{x}\lt 1</m></p></li>
 
         <li><p><m>\ds\frac{d}{dx}\big(\sech^{-1} x\big) = \frac{-1}{x\sqrt{1-x^2}}; 0\lt x\lt 1</m></p></li>
 
-        <li><p><m>\ds\frac{d}{dx}\big(\csch^{-1} x\big) = \frac{-1}{|x|\sqrt{1+x^2}};\ x\neq0</m></p></li>
+        <li><p><m>\ds\frac{d}{dx}\big(\csch^{-1} x\big) = \frac{-1}{\abs{x}\sqrt{1+x^2}};\ x\neq0</m></p></li>
 
-        <li><p><m>\ds\frac{d}{dx}\big(\coth^{-1} x\big) = \frac{1}{1-x^2};\ |x|>1</m></p></li>
+        <li><p><m>\ds\frac{d}{dx}\big(\coth^{-1} x\big) = \frac{1}{1-x^2};\ \abs{x}>1</m></p></li>
       </ol>
     </insight>
 
@@ -810,17 +810,17 @@
     <insight xml:id="idea_hyperbolic_inverse_integrals">
       <title>Integrals Involving Inverse Hyperbolic Functions</title>
       <ol>
-        <li><p>\text{<m>\ds\int \frac{1}{\sqrt{x^2-a^2}}\ dx</m>} \text{<m>\ds=\qquad \cosh^{-1}\left(\frac xa\right)+C;\ 0\lt a\lt x</m>} <m>\ds=\ln\Big|x+\sqrt{x^2-a^2}\Big|+C</m><index><main>integration</main><sub>inverse hyper.</sub></index><index><main>hyperbolic function</main><sub>inverse!integration</sub></index></p></li>
+        <li><p><m>\ds\int \frac{1}{\sqrt{x^2-a^2}}\ dx</m> \text{<m>\ds=\qquad \cosh^{-1}\left(\frac xa\right)+C;\ 0\lt a\lt x</m>} <m>\ds=\ln\Big\abs{x+\sqrt{x^2-a^2}\Big}+C</m><index><main>integration</main><sub>inverse hyper.</sub></index><index><main>hyperbolic function</main><sub>inverse!integration</sub></index></p></li>
 
-        <li><p>\text{<m>\ds\int \frac{1}{\sqrt{x^2+a^2}}\ dx</m>} \text{<m>\ds=\qquad \sinh^{-1}\left(\frac xa\right)+C;\ a>0</m>} <m>\ds=\ln\Big|x+\sqrt{x^2+a^2}\Big|+C</m></p></li>
+        <li><p><m>\ds\int \frac{1}{\sqrt{x^2+a^2}}\ dx</m> \text{<m>\ds=\qquad \sinh^{-1}\left(\frac xa\right)+C;\ a>0</m>} <m>\ds=\ln\Big\abs{x+\sqrt{x^2+a^2}\Big}+C</m></p></li>
 
-        <li><p>\text{<m>\ds\int \frac{1}{a^2-x^2}\ dx</m>} \text{<m>\ds=\qquad \left\{\begin{array}{ccc} \frac1a\tanh^{-1}\left(\frac xa\right)+C \amp  \amp  x^2\lt a^2 \\ \\
+        <li><p><m>\ds\int \frac{1}{a^2-x^2}\ dx</m> \text{<m>\ds=\qquad \left\{\begin{array}{ccc} \frac1a\tanh^{-1}\left(\frac xa\right)+C \amp  \amp  x^2\lt a^2 \\ \\
             \frac1a\coth^{-1}\left(\frac xa\right)+C \amp  \amp  a^2\lt x^2
-            \end{array} \right.</m>} <m>\ds=\frac1{2a}\ln\left|\frac{a+x}{a-x}\right|+C</m></p></li>
+            \end{array} \right.</m>} <m>\ds=\frac1{2a}\ln\abs{\frac{a+x}{a-x}}+C</m></p></li>
 
-        <li><p>\text{<m>\ds\int \frac{1}{x\sqrt{a^2-x^2}}\ dx</m>} \text{<m>\ds=\qquad -\frac1a\sech^{-1}\left(\frac xa\right)+C;\ 0\lt x\lt a</m>} <m>\ds= \frac1a \ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C</m></p></li>
+        <li><p><m>\ds\int \frac{1}{x\sqrt{a^2-x^2}}\ dx</m> \text{<m>\ds=\qquad -\frac1a\sech^{-1}\left(\frac xa\right)+C;\ 0\lt x\lt a</m>} <m>\ds= \frac1a \ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C</m></p></li>
 
-        <li><p>\text{<m>\ds\int \frac{1}{x\sqrt{x^2+a^2}}\ dx</m>} \text{<m>\ds=\qquad -\frac1a\csch^{-1}\left|\frac xa\right| + C;\ x\neq 0,\ a>0</m>}<m>\ds= \frac1a \ln\left|\frac{x}{a+\sqrt{a^2+x^2}}\right|+C</m></p></li>
+        <li><p><m>\ds\int \frac{1}{x\sqrt{x^2+a^2}}\ dx</m> \text{<m>\ds=\qquad -\frac1a\csch^{-1}\abs{\frac xa} + C;\ x\neq 0,\ a>0</m>}<m>\ds= \frac1a \ln\abs{\frac{x}{a+\sqrt{a^2+x^2}}}+C</m></p></li>
       </ol>
     </insight>
 
@@ -855,10 +855,10 @@
                 <mrow>\amp = \left\{\begin{array}{ccc} -\tanh^{-1}\left(x\right)+C \amp  \amp  x^2\lt 1 \\ \\
                 -\coth^{-1}\left(x\right)+C \amp  \amp  1\lt x^2
                 \end{array} \right.</mrow>
-                <mrow>\amp =-\frac12\ln\left|\frac{x+1}{x-1}\right|+C</mrow>
-                <mrow>\amp =\frac12\ln\left|\frac{x-1}{x+1}\right|+C.</mrow>
+                <mrow>\amp =-\frac12\ln\abs{\frac{x+1}{x-1}}+C</mrow>
+                <mrow>\amp =\frac12\ln\abs{\frac{x-1}{x+1}}+C.</mrow>
               </md>
-              We should note that this exact problem was solved at the beginning of <xref ref="sec_partial_fraction">Section</xref>. In that example the answer was given as <m>\frac12\ln|x-1|-\frac12\ln|x+1|+C.</m> Note that this is equivalent to the answer given in <xref ref="eq_hf3">Equation</xref>, as <m>\ln(a/b) = \ln a - \ln b</m>.</p></li>
+              We should note that this exact problem was solved at the beginning of <xref ref="sec_partial_fraction">Section</xref>. In that example the answer was given as <m>\frac12\ln\abs{x-1}-\frac12\ln\abs{x+1}+C.</m> Note that this is equivalent to the answer given in <xref ref="eq_hf3">Equation</xref>, as <m>\ln(a/b) = \ln a - \ln b</m>.</p></li>
 
           <li><p>This requires a substitution, then item <hash />2 of <xref ref="idea_hyperbolic_inverse_integrals">Key Idea</xref> can be applied.
 
@@ -867,7 +867,7 @@
                 <mrow>\int \frac{1}{\sqrt{9x^2+10}}\ dx \amp = \frac13\int\frac{1}{\sqrt{u^2+10}}\ du.</mrow>
                 <intertext>Note <m>a^2=10</m>, hence <m>a = \sqrt{10}.</m> Now apply the integral rule.</intertext>
                 <mrow>\amp = \frac13 \sinh^{-1}\left(\frac{3x}{\sqrt{10}}\right) + C</mrow>
-                <mrow>\amp = \frac13 \ln \Big|3x+\sqrt{9x^2+10}\Big|+C.</mrow>
+                <mrow>\amp = \frac13 \ln \Big\abs{3x+\sqrt{9x^2+10}\Big}+C.</mrow>
               </md>
             </p></li>
         </ol>
@@ -894,7 +894,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>In <xref ref="idea_hyperbolic_identities">Key Idea</xref>, the equation <m>\ds \int \tanh x\ dx = \ln (\cosh x)+C</m> is given. Why is <q><m>\ln |\cosh x|</m></q> not used <mdash /> i.e., why are absolute values not necessary?</p>
+            <p>In <xref ref="idea_hyperbolic_identities">Key Idea</xref>, the equation <m>\ds \int \tanh x\ dx = \ln (\cosh x)+C</m> is given. Why is <q><m>\ln \abs{\cosh x}</m></q> not used <mdash /> i.e., why are absolute values not necessary?</p>
           </statement>
           <answer>
             <p>Because <m>\cosh x</m> is always positive.</p>
@@ -1124,7 +1124,7 @@
             <p>Let <m>u = \cosh x</m>; <m>du = (\sinh x) dx</m></p>
 
             <p><m>\begin{aligned}\amp = \int \frac{1}{u}\ du \\
-											\amp = \ln |u| + C \\
+											\amp = \ln \abs{u} + C \\
 											\amp = \ln (\cosh x) + C.
               \end{aligned}</m></p>
           </answer>
@@ -1134,7 +1134,7 @@
             <p>Let <m>u = \cosh x</m>; <m>du = (\sinh x) dx</m></p>
 
             <p><m>\begin{aligned}\amp = \int \frac{1}{u}\ du \\
-											\amp = \ln |u| + C \\
+											\amp = \ln \abs{u} + C \\
 											\amp = \ln (\cosh x) + C.
               \end{aligned}</m></p>
           </solution>
@@ -1150,22 +1150,22 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int \coth x\ dx  = \ln |\sinh x| + C</m></p>
+            <p><m>\ds \int \coth x\ dx  = \ln \abs{\sinh x} + C</m></p>
           </statement>
           <answer>
             <p><m>\begin{aligned}\int \coth x\ dx \amp = \int \frac{\cosh x}{\sinh x}\ dx\\
 											\text{ Let \(u = \sinh x\); \(du = (\cosh x) dx\) }  	\\
 											\amp = \int \frac{1}{u}\ du \\
-											\amp = \ln |u| + C \\
-											\amp = \ln |\sinh x| + C.
+											\amp = \ln \abs{u} + C \\
+											\amp = \ln \abs{\sinh x} + C.
               \end{aligned}</m></p>
           </answer>
           <solution>
             <p><m>\begin{aligned}\int \coth x\ dx \amp = \int \frac{\cosh x}{\sinh x}\ dx\\
 											\text{ Let \(u = \sinh x\); \(du = (\cosh x) dx\) }  	\\
 											\amp = \int \frac{1}{u}\ du \\
-											\amp = \ln |u| + C \\
-											\amp = \ln |\sinh x| + C.
+											\amp = \ln \abs{u} + C \\
+											\amp = \ln \abs{\sinh x} + C.
               \end{aligned}</m></p>
           </solution>
         </webwork>
@@ -1608,12 +1608,12 @@
           <answer>
             <p><m>\left\{\begin{array}{ccc} \frac13\tanh^{-1}\left(\frac x3\right)+C \amp  \amp  x^2\lt 9 \\ \\
               \frac13\coth^{-1}\left(\frac x3\right)+C \amp  \amp  9\lt x^2
-              \end{array} \right. = \frac12\ln |x+1| - \frac12\ln |x-1|+C</m></p>
+              \end{array} \right. = \frac12\ln \abs{x+1} - \frac12\ln \abs{x-1}+C</m></p>
           </answer>
           <solution>
             <p><m>\left\{\begin{array}{ccc} \frac13\tanh^{-1}\left(\frac x3\right)+C \amp  \amp  x^2\lt 9 \\ \\
               \frac13\coth^{-1}\left(\frac x3\right)+C \amp  \amp  9\lt x^2
-              \end{array} \right. = \frac12\ln |x+1| - \frac12\ln |x-1|+C</m></p>
+              \end{array} \right. = \frac12\ln \abs{x+1} - \frac12\ln \abs{x-1}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1670,10 +1670,10 @@
             <p><m>\ds \int \frac{1}{x^4-16}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{1}{16}\tan^{-1}(x/2)+\frac{1}{32}\ln |x-2|+\frac1{32}\ln|x+2|+C</m></p>
+            <p><m>\frac{1}{16}\tan^{-1}(x/2)+\frac{1}{32}\ln \abs{x-2}+\frac1{32}\ln\abs{x+2}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{1}{16}\tan^{-1}(x/2)+\frac{1}{32}\ln |x-2|+\frac1{32}\ln|x+2|+C</m></p>
+            <p><m>\frac{1}{16}\tan^{-1}(x/2)+\frac{1}{32}\ln \abs{x-2}+\frac1{32}\ln\abs{x+2}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1690,10 +1690,10 @@
             <p><m>\ds \int \frac{1}{x^2+x}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\ln x- \ln|x+1|+C</m></p>
+            <p><m>\ln x- \ln\abs{x+1}+C</m></p>
           </answer>
           <solution>
-            <p><m>\ln x- \ln|x+1|+C</m></p>
+            <p><m>\ln x- \ln\abs{x+1}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1750,10 +1750,10 @@
             <p><m>\ds \int \tanh^{-1}x \ dx</m></p>
           </statement>
           <answer>
-            <p><m>x\tanh^{-1}x+1/2\ln|x^2-1|+C</m></p>
+            <p><m>x\tanh^{-1}x+1/2\ln\abs{x^2-1}+C</m></p>
           </answer>
           <solution>
-            <p><m>x\tanh^{-1}x+1/2\ln|x^2-1|+C</m></p>
+            <p><m>x\tanh^{-1}x+1/2\ln\abs{x^2-1}+C</m></p>
           </solution>
         </webwork>
       </exercise>

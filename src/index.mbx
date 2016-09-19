@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
 <docinfo>
-
 <macros>
 \newcommand{\apex}{A\kern -1pt \lower -2pt\mbox{P}\kern -4pt \lower .7ex\mbox{E}\kern -1pt X}
 \newcommand{\colorlinecolor}{blue!95!black!30}
@@ -61,6 +60,14 @@
 \newcommand{\coloronefill}{blue!15!white}
 \newcommand{\colortwofill}{red!15!white}
 \newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+
+%  evaluate a function
+%  Usage: \fe{function-name}{input}
+\newcommand{\fe}[2]{#1\mathopen{}\left(#2\right)\mathclose{}}
+
+%  add parentheses to an implied function, e.g. sin x becomes sin(x)
+%  Usage: \fi{function-name}{input}
+\newcommand{\fi}[2]{#1\mathopen{}\left(#2\right)\mathclose{}}
 </macros>
 
 <latex-image-preamble><![CDATA[
@@ -74,6 +81,7 @@
 \setlength{\marginparwidth}{215pt} 
 
 \usepackage{ifthen}
+
 \newboolean{colorprint}
 \setboolean{colorprint}{true} 
 
@@ -153,6 +161,7 @@
 <xi:include href="./chap_multi.mbx" />
 
 <xi:include href="./chapter13.mbx" />
+
 <backmatter>
 <index-part>
 <title>Index</title>

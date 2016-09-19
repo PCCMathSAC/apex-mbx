@@ -13,7 +13,7 @@
     <p>Thus
       <md>
         <mrow>\int\frac{1}{x^2-1}\ dx \amp = \int\frac{1/2}{x-1}\ dx - \int\frac{1/2}{x+1}\ dx</mrow>
-        <mrow>\amp = \frac12\ln|x-1| - \frac12\ln|x+1| + C.</mrow>
+        <mrow>\amp = \frac12\ln\abs{x-1} - \frac12\ln\abs{x+1} + C.</mrow>
       </md>
     </p>
 
@@ -166,7 +166,7 @@
         </p>
 
         <aside>
-          <p><em>Note:</em> <xref ref="eq_pf3">Equation</xref> offers a direct route to finding the values of <m>A</m>, <m>B</m> and <m>C</m>. Since the equation holds for all values of <m>x</m>, it holds in particular when <m>x=1</m>. However, when <m>x=1</m>, the right hand side simplifies to <m>A(1+2)^2 = 9A</m>. Since the left hand side is still 1, we have <m>1 = 9A</m>. Hence <m>A = 1/9</m>.</p>
+          <p><xref ref="eq_pf3">Equation</xref> offers a direct route to finding the values of <m>A</m>, <m>B</m> and <m>C</m>. Since the equation holds for all values of <m>x</m>, it holds in particular when <m>x=1</m>. However, when <m>x=1</m>, the right hand side simplifies to <m>A(1+2)^2 = 9A</m>. Since the left hand side is still 1, we have <m>1 = 9A</m>. Hence <m>A = 1/9</m>.</p>
 
           <p>Likewise, the equality holds when <m>x=-2</m>; this leads to the equation <m>1=-3C</m>. Thus <m>C = -1/3</m>.</p>
 
@@ -197,7 +197,7 @@
 
         <p>Each can be integrated with a simple substitution with <m>u=x-1</m> or <m>u=x+2</m> (or by directly applying <xref ref="idea_linearsub">Key Idea</xref> as the denominators are linear functions). The end result is
           <me>
-            \int\frac{1}{(x-1)(x+2)^2}\ dx = \frac19\ln|x-1| -\frac19\ln|x+2| +\frac1{3(x+2)}+C.
+            \int\frac{1}{(x-1)(x+2)^2}\ dx = \frac19\ln\abs{x-1} -\frac19\ln\abs{x+2} +\frac1{3(x+2)}+C.
           </me>
         </p>
       </solution>
@@ -222,7 +222,7 @@
           for appropriate values of <m>A</m> and <m>B</m>. Clearing denominators, we have</p>
 
         <aside>
-          <p><em>Note:</em> The values of <m>A</m> and <m>B</m> can be quickly found using the technique described in the margin of <xref ref="ex_pf3">Example</xref>.</p>
+          <p>The values of <m>A</m> and <m>B</m> can be quickly found using the technique described in the margin of <xref ref="ex_pf3">Example</xref>.</p>
         </aside>
 
         <md>
@@ -238,7 +238,7 @@
         <p>We can now integrate.
           <md>
             <mrow>\int \frac{x^3}{(x-5)(x+3)}\ dx \amp = \int\left(x+2+\frac{125/8}{x-5}+\frac{27/8}{x+3}\right)\ dx</mrow>
-            <mrow>\amp = \frac{x^2}2 + 2x + \frac{125}{8}\ln|x-5| + \frac{27}8\ln|x+3| + C.</mrow>
+            <mrow>\amp = \frac{x^2}2 + 2x + \frac{125}{8}\ln\abs{x-5} + \frac{27}8\ln\abs{x+3} + C.</mrow>
           </md>
         </p>
       </solution>
@@ -269,7 +269,7 @@
           </me>
         </p>
 
-        <p>The first term of this new integrand is easy to evaluate; it leads to a <m>5\ln|x+1|</m> term. The second term is not hard, but takes several steps and uses substitution techniques.</p>
+        <p>The first term of this new integrand is easy to evaluate; it leads to a <m>5\ln\abs{x+1}</m> term. The second term is not hard, but takes several steps and uses substitution techniques.</p>
 
         <p>The integrand <m>\ds \frac{2x-1}{x^2+6x+11}</m> has a quadratic in the denominator and a linear term in the numerator. This leads us to try substitution. Let <m>u = x^2+6x+11</m>, so <m>du = (2x+6)\ dx</m>. The numerator is <m>2x-1</m>, not <m>2x+6</m>, but we can get a <m>2x+6</m> term in the numerator by adding 0 in the form of <q><m>7-7</m>.</q>
           <md>
@@ -278,7 +278,7 @@
           </md>
         </p>
 
-        <p>We can now integrate the first term with substitution, leading to a <m>\ln|x^2+6x+11|</m> term. The final term can be integrated using arctangent. First, complete the square in the denominator:
+        <p>We can now integrate the first term with substitution, leading to a <m>\ln\abs{x^2+6x+11}</m> term. The final term can be integrated using arctangent. First, complete the square in the denominator:
           <me>
             \frac{7}{x^2+6x+11} = \frac{7}{(x+3)^2+2}.
           </me>
@@ -294,7 +294,7 @@
           <md>
             <mrow>\int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\ dx \amp = \int\left(\frac{5}{x+1} + \frac{2x-1}{x^2+6x+11}\right)\ dx</mrow>
             <mrow>\amp = \int\frac{5}{x+1}\ dx  + \int\frac{2x+6}{x^2+6x+11}\ dx -\int\frac{7}{x^2+6x+11}\ dx</mrow>
-            <mrow>\amp = 5\ln|x+1|+ \ln|x^2+6x+11| -\frac{7}{\sqrt{2}}\tan^{-1}\left(\frac{x+3}{\sqrt{2}}\right)+C.</mrow>
+            <mrow>\amp = 5\ln\abs{x+1}+ \ln\abs{x^2+6x+11} -\frac{7}{\sqrt{2}}\tan^{-1}\left(\frac{x+3}{\sqrt{2}}\right)+C.</mrow>
           </md>
         </p>
 
@@ -446,10 +446,10 @@
             <p><m>\ds \int \frac{7x+7}{x^2+3x-10}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>3 \ln |x-2|+4 \ln |x+5|+C</m></p>
+            <p><m>3 \ln \abs{x-2}+4 \ln \abs{x+5}+C</m></p>
           </answer>
           <solution>
-            <p><m>3 \ln |x-2|+4 \ln |x+5|+C</m></p>
+            <p><m>3 \ln \abs{x-2}+4 \ln \abs{x+5}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -466,10 +466,10 @@
             <p><m>\ds \int \frac{7x-2}{x^2+x}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>9 \ln |x+1|-2 \ln |x|+C</m></p>
+            <p><m>9 \ln \abs{x+1}-2 \ln \abs{x}+C</m></p>
           </answer>
           <solution>
-            <p><m>9 \ln |x+1|-2 \ln |x|+C</m></p>
+            <p><m>9 \ln \abs{x+1}-2 \ln \abs{x}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -486,10 +486,10 @@
             <p><m>\ds \int \frac{-4}{3x^2-12}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{1}{3} (\ln |x+2|-\ln |x-2|)+C</m></p>
+            <p><m>\frac{1}{3} (\ln \abs{x+2}-\ln \abs{x-2})+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{1}{3} (\ln |x+2|-\ln |x-2|)+C</m></p>
+            <p><m>\frac{1}{3} (\ln \abs{x+2}-\ln \abs{x-2})+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -506,10 +506,10 @@
             <p><m>\ds \int \frac{x+7}{(x+5)^2}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\ln |x+5|-\frac{2}{x+5}+C</m></p>
+            <p><m>\ln \abs{x+5}-\frac{2}{x+5}+C</m></p>
           </answer>
           <solution>
-            <p><m>\ln |x+5|-\frac{2}{x+5}+C</m></p>
+            <p><m>\ln \abs{x+5}-\frac{2}{x+5}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -526,10 +526,10 @@
             <p><m>\ds \int \frac{-3x-20}{(x+8)^2}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>-\frac{4}{x+8}-3 \ln |x+8|+C</m></p>
+            <p><m>-\frac{4}{x+8}-3 \ln \abs{x+8}+C</m></p>
           </answer>
           <solution>
-            <p><m>-\frac{4}{x+8}-3 \ln |x+8|+C</m></p>
+            <p><m>-\frac{4}{x+8}-3 \ln \abs{x+8}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -546,10 +546,10 @@
             <p><m>\ds \int \frac{9x^2+11x+7}{x(x+1)^2}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{5}{x+1}+7 \ln |x|+2 \ln |x+1|+C</m></p>
+            <p><m>\frac{5}{x+1}+7 \ln \abs{x}+2 \ln \abs{x+1}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{5}{x+1}+7 \ln |x|+2 \ln |x+1|+C</m></p>
+            <p><m>\frac{5}{x+1}+7 \ln \abs{x}+2 \ln \abs{x+1}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -566,10 +566,10 @@
             <p><m>\ds \int \frac{-12x^2-x+33}{(x-1)(x+3)(3-2x)}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>-\ln |2x-3|+5 \ln |x-1|+2 \ln |x+3|+C</m></p>
+            <p><m>-\ln \abs{2x-3}+5 \ln \abs{x-1}+2 \ln \abs{x+3}+C</m></p>
           </answer>
           <solution>
-            <p><m>-\ln |2x-3|+5 \ln |x-1|+2 \ln |x+3|+C</m></p>
+            <p><m>-\ln \abs{2x-3}+5 \ln \abs{x-1}+2 \ln \abs{x+3}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -586,12 +586,12 @@
             <p><m>\ds \int \frac{94x^2-10x}{(7x+3)(5x-1)(3x-1)}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>-\frac{1}{5} \ln |5x-1|+\frac{2}{3} \ln |3 x-1|+\frac{3}{7} \ln |7 \
-              x+3|+C</m></p>
+            <p><m>-\frac{1}{5} \ln \abs{5x-1}+\frac{2}{3} \ln \abs{3 x-1}+\frac{3}{7} \ln \abs{7 \
+              x+3}+C</m></p>
           </answer>
           <solution>
-            <p><m>-\frac{1}{5} \ln |5x-1|+\frac{2}{3} \ln |3 x-1|+\frac{3}{7} \ln |7 \
-              x+3|+C</m></p>
+            <p><m>-\frac{1}{5} \ln \abs{5x-1}+\frac{2}{3} \ln \abs{3 x-1}+\frac{3}{7} \ln \abs{7 \
+              x+3}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -608,10 +608,10 @@
             <p><m>\ds \int \frac{x^2+x+1}{x^2+x-2}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>x+\ln |x-1|-\ln |x+2|+C</m></p>
+            <p><m>x+\ln \abs{x-1}-\ln \abs{x+2}+C</m></p>
           </answer>
           <solution>
-            <p><m>x+\ln |x-1|-\ln |x+2|+C</m></p>
+            <p><m>x+\ln \abs{x-1}-\ln \abs{x+2}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -628,10 +628,10 @@
             <p><m>\ds \int \frac{x^3}{x^2-x-20}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{x^2}{2}+x+\frac{125}{9} \ln |x-5|+\frac{64}{9} \ln |x+4|-\frac{35}{2}+C</m></p>
+            <p><m>\frac{x^2}{2}+x+\frac{125}{9} \ln \abs{x-5}+\frac{64}{9} \ln \abs{x+4}-\frac{35}{2}+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{x^2}{2}+x+\frac{125}{9} \ln |x-5|+\frac{64}{9} \ln |x+4|-\frac{35}{2}+C</m></p>
+            <p><m>\frac{x^2}{2}+x+\frac{125}{9} \ln \abs{x-5}+\frac{64}{9} \ln \abs{x+4}-\frac{35}{2}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -668,10 +668,10 @@
             <p><m>\ds \int \frac{1}{x^3+2x^2+3x}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{1}{6} \left(-\ln \left|x^2+2 x+3\right|+2 \ln |x|-\sqrt{2} \tan ^{-1}\left(\frac{x+1}{\sqrt{2}}\right)\right)+C</m></p>
+            <p><m>\frac{1}{6} \left(-\ln \abs{x^2+2 x+3}+2 \ln \abs{x}-\sqrt{2} \tan ^{-1}\left(\frac{x+1}{\sqrt{2}}\right)\right)+C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{1}{6} \left(-\ln \left|x^2+2 x+3\right|+2 \ln |x|-\sqrt{2} \tan ^{-1}\left(\frac{x+1}{\sqrt{2}}\right)\right)+C</m></p>
+            <p><m>\frac{1}{6} \left(-\ln \abs{x^2+2 x+3}+2 \ln \abs{x}-\sqrt{2} \tan ^{-1}\left(\frac{x+1}{\sqrt{2}}\right)\right)+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -688,11 +688,11 @@
             <p><m>\ds \int \frac{x^2+x+5}{x^2+4x+10}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>-\frac{3}{2} \ln \left|x^2+4 x+10\right|+x+\frac{\tan \
+            <p><m>-\frac{3}{2} \ln \abs{x^2+4 x+10}+x+\frac{\tan \
               ^{-1}\left(\frac{x+2}{\sqrt{6}}\right)}{\sqrt{6}}+C</m></p>
           </answer>
           <solution>
-            <p><m>-\frac{3}{2} \ln \left|x^2+4 x+10\right|+x+\frac{\tan \
+            <p><m>-\frac{3}{2} \ln \abs{x^2+4 x+10}+x+\frac{\tan \
               ^{-1}\left(\frac{x+2}{\sqrt{6}}\right)}{\sqrt{6}}+C</m></p>
           </solution>
         </webwork>
@@ -710,10 +710,10 @@
             <p><m>\ds \int \frac{12x^2+21x+3}{(x+1)(3x^2+5x-1)}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\ln \left|3 x^2+5 x-1\right|+2 \ln |x+1|+C</m></p>
+            <p><m>\ln \abs{3 x^2+5 x-1}+2 \ln \abs{x+1}+C</m></p>
           </answer>
           <solution>
-            <p><m>\ln \left|3 x^2+5 x-1\right|+2 \ln |x+1|+C</m></p>
+            <p><m>\ln \abs{3 x^2+5 x-1}+2 \ln \abs{x+1}+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -730,10 +730,10 @@
             <p><m>\ds \int \frac{6x^2+8x-4}{(x-3)(x^2+6x+10)}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>2\ln |x-3| +2\ln |x^2+6x+10| -4\tan^{-1}(x+3) +C</m></p>
+            <p><m>2\ln \abs{x-3} +2\ln \abs{x^2+6x+10} -4\tan^{-1}(x+3) +C</m></p>
           </answer>
           <solution>
-            <p><m>2\ln |x-3| +2\ln |x^2+6x+10| -4\tan^{-1}(x+3) +C</m></p>
+            <p><m>2\ln \abs{x-3} +2\ln \abs{x^2+6x+10} -4\tan^{-1}(x+3) +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -750,10 +750,10 @@
             <p><m>\ds \int \frac{2x^2+x+1}{(x+1)(x^2+9)}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{9}{10} \ln \left|x^2+9\right|+\frac{1}{5} \ln |x+1|-\frac{4}{15} \tan ^{-1}\left(\frac{x}{3}\right) +C</m></p>
+            <p><m>\frac{9}{10} \ln \abs{x^2+9}+\frac{1}{5} \ln \abs{x+1}-\frac{4}{15} \tan ^{-1}\left(\frac{x}{3}\right) +C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{9}{10} \ln \left|x^2+9\right|+\frac{1}{5} \ln |x+1|-\frac{4}{15} \tan ^{-1}\left(\frac{x}{3}\right) +C</m></p>
+            <p><m>\frac{9}{10} \ln \abs{x^2+9}+\frac{1}{5} \ln \abs{x+1}-\frac{4}{15} \tan ^{-1}\left(\frac{x}{3}\right) +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -770,11 +770,11 @@
             <p><m>\ds \int \frac{x^2-20x-69}{(x-7)(x^2+2x+17)}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{1}{2} \left(3 \ln \left|x^2+2 x+17\right|-4 \ln |x-7|+\tan \
+            <p><m>\frac{1}{2} \left(3 \ln \abs{x^2+2 x+17}-4 \ln \abs{x-7}+\tan \
               ^{-1}\left(\frac{x+1}{4}\right)\right) +C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{1}{2} \left(3 \ln \left|x^2+2 x+17\right|-4 \ln |x-7|+\tan \
+            <p><m>\frac{1}{2} \left(3 \ln \abs{x^2+2 x+17}-4 \ln \abs{x-7}+\tan \
               ^{-1}\left(\frac{x+1}{4}\right)\right) +C</m></p>
           </solution>
         </webwork>
@@ -792,11 +792,11 @@
             <p><m>\ds \int \frac{9x^2-60x+33}{(x-9)(x^2-2x+11)}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>3 \left(\ln \left|x^2-2 x+11\right|+\ln |x-9|\right)+3 \
+            <p><m>3 \left(\ln \abs{x^2-2 x+11}+\ln \abs{x-9}\right)+3 \
               \sqrt{\frac{2}{5}} \tan ^{-1}\left(\frac{x-1}{\sqrt{10}}\right) +C</m></p>
           </answer>
           <solution>
-            <p><m>3 \left(\ln \left|x^2-2 x+11\right|+\ln |x-9|\right)+3 \
+            <p><m>3 \left(\ln \abs{x^2-2 x+11}+\ln \abs{x-9}\right)+3 \
               \sqrt{\frac{2}{5}} \tan ^{-1}\left(\frac{x-1}{\sqrt{10}}\right) +C</m></p>
           </solution>
         </webwork>
@@ -814,11 +814,11 @@
             <p><m>\ds \int \frac{6x^2+45x+121}{(x+2)(x^2+10x+27)}\ dx</m></p>
           </statement>
           <answer>
-            <p><m>\frac{1}{2} \ln \left|x^2+10 x+27\right|+5 \ln |x+2|-6 \sqrt{2} \tan \
+            <p><m>\frac{1}{2} \ln \abs{x^2+10 x+27}+5 \ln \abs{x+2}-6 \sqrt{2} \tan \
               ^{-1}\left(\frac{x+5}{\sqrt{2}}\right) +C</m></p>
           </answer>
           <solution>
-            <p><m>\frac{1}{2} \ln \left|x^2+10 x+27\right|+5 \ln |x+2|-6 \sqrt{2} \tan \
+            <p><m>\frac{1}{2} \ln \abs{x^2+10 x+27}+5 \ln \abs{x+2}-6 \sqrt{2} \tan \
               ^{-1}\left(\frac{x+5}{\sqrt{2}}\right) +C</m></p>
           </solution>
         </webwork>

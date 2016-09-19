@@ -17,7 +17,7 @@
           <me>
             \lim_{t\to c} \vec r(t) = \vec L,
           </me>
-          means that given any <m>\epsilon>0</m>, there exists a <m>\delta>0</m> such that for all <m>t\neq c</m>, if <m>|t-c| \lt \delta</m>, we have <m>\norm{\vec r(t) - \vec L} \lt  \epsilon.</m>
+          means that given any <m>\varepsilon>0</m>, there exists a <m>\delta>0</m> such that for all <m>t\neq c</m>, if <m>\abs{t-c} \lt \delta</m>, we have <m>\norm{\vec r(t) - \vec L} \lt  \varepsilon.</m>
           <index><main>vector<ndash />valued function</main><sub>limits</sub></index><index><main>limit</main><sub>of vector<ndash />valued functions</sub></index></p>
       </statement>
     </definition>
@@ -679,13 +679,13 @@
 
           <li><p><m>\ds \frac{d}{dt}\Big(c\vec r(t)\Big) = c\vrp(t)</m></p></li>
 
-          <li><p>\text{<m>\ds \frac{d}{dt}\Big(f(t)\vec r(t)\Big) = \fp(t)\vec r(t) + f(t)\vrp(t)</m>} <em>Product Rule</em></p></li>
+          <li><p><m>\ds \frac{d}{dt}\Big(f(t)\vec r(t)\Big) = \fp(t)\vec r(t) + f(t)\vrp(t)</m> <em>Product Rule</em></p></li>
 
-          <li><p>\text{<m>\ds \frac{d}{dt}\Big(\vec r(t)\cdot \vec s(t) \Big) = \vrp(t)\cdot \vec s(t) + \vec r(t)\cdot \vec s\,'(t)</m>} <em>Product Rule</em></p></li>
+          <li><p><m>\ds \frac{d}{dt}\Big(\vec r(t)\cdot \vec s(t) \Big) = \vrp(t)\cdot \vec s(t) + \vec r(t)\cdot \vec s\,'(t)</m> <em>Product Rule</em></p></li>
 
-          <li><p>\text{<m>\ds \frac{d}{dt}\Big(\vec r(t)\times \vec s(t) \Big) = \vrp(t)\times \vec s(t) + \vec r(t)\times \vec s\,'(t)</m>} <em>Product Rule</em></p></li>
+          <li><p><m>\ds \frac{d}{dt}\Big(\vec r(t)\times \vec s(t) \Big) = \vrp(t)\times \vec s(t) + \vec r(t)\times \vec s\,'(t)</m> <em>Product Rule</em></p></li>
 
-          <li><p>\text{<m>\ds \frac{d}{dt}\Big(\vec r\big(f(t)\big)\Big) = \vrp\big(f(t)\big)\fp(t)</m>}  <em>Chain Rule</em></p></li>
+          <li><p><m>\ds \frac{d}{dt}\Big(\vec r\big(f(t)\big)\Big) = \vrp\big(f(t)\big)\fp(t)</m>  <em>Chain Rule</em></p></li>
         </ol>
       </statement>
     </theorem>
@@ -2038,10 +2038,10 @@
             <p><m>\vec r(0) = \la 1,2\ra</m>.</p>
           </statement>
           <answer>
-            <p><m>\vec r(t) = \la \ln |t+1| + 1, -\ln |\cos t| + 2\ra</m></p>
+            <p><m>\vec r(t) = \la \ln \abs{t+1} + 1, -\ln \abs{\cos t} + 2\ra</m></p>
           </answer>
           <solution>
-            <p><m>\vec r(t) = \la \ln |t+1| + 1, -\ln |\cos t| + 2\ra</m></p>
+            <p><m>\vec r(t) = \la \ln \abs{t+1} + 1, -\ln \abs{\cos t} + 2\ra</m></p>
           </solution>
         </webwork>
       </exercise>
