@@ -937,7 +937,7 @@
             <var name="$f">
               <static>x^2-3x+7</static>
             </var>
-            <var name="$L">
+            <var name="$L" category="number">
               <static>7</static>
             </var>
             <pg-code>
@@ -978,7 +978,7 @@
             <var name="$f">
               <static>\left(\frac{x-3}{x-5}\right)^7</static>
             </var>
-            <var name="$L">
+            <var name="$L" category="number">
               <static>\left(\frac{\pi-3}{\pi-5}\right)^7</static>
             </var>
             <pg-code>
@@ -1004,126 +1004,203 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>\pi/4</static>
+            </var>
+            <var name="$L" category="number">
+              <static>\sqrt{3}/4</static>
+            </var>
+            <var name="$l" category="number">
+              <static>\sqrt{2}/2</static>
+            </var>
+            <var name="$r" category="number">
+              <static>\sqrt{2}/2</static>
             </var>
             <pg-code>
+              $d=list_random(3,4,6);
+              if($envir{problemSeed}==1){$d=4;};
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $a=Formula("pi/$d");
+              %f=(3=>Formula("sqrt(3)/4"),4=>Formula("1/2"),6=>Formula("sqrt(3)/4"));
+              $L=$f{$d};
+              %p=(3=>Formula("1/2"),4=>Formula("sqrt(2)/2"),6=>Formula("sqrt(3)/2"));
+              $l=$p{$d};
+              $r=$p{$d**2/2-5.5*$d+18};
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to\pi/4}\fi{\cos}{x}\fi{\sin}{x}</m></p>
+            <p><m>\lim\limits_{x\to<var name="$a" />}\cos(x)\sin(x)</m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <answer>
-            <p><m>1/2</m></p>
-          </answer>
           <solution>
-            <p><m>1/2</m></p>
+            <p><md>
+              <mrow>\lim_{x\to<var name="$a" />}\cos(x)\sin(x)\amp=\lim_{x\to<var name="$a" />}\cos(x)\cdot\lim_{x\to<var name="$a" />}\sin(x)</mrow>
+              <mrow>\amp=\cos\mathopen{}\left(<var name="$a" />\right)\mathclose{}\cdot\sin\mathopen{}\left(<var name="$a" />\right)\mathclose{}</mrow>
+              <mrow>\amp=<var name="$l" />\cdot<var name="$r" /></mrow>
+              <mrow>\amp=<var name="$L" /></mrow>
+            </md></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer" category="number">
+              <static>\text{DNE}</static>
             </var>
             <pg-code>
+              $L=Compute("DNE");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to0}\fi{\ln}{x}</m></p>
+            <p><m>\lim\limits_{x\to0}\ln(x)</m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <answer>
-            <p>Limit does not exist</p>
-          </answer>
           <solution>
-            <p>Limit does not exist</p>
+            <p>This limit does not exist for at least two reasons. For one reason, <m>\ln(x)</m> can be arbitrarily large negative if you allow <m>x</m> to be positive and close enough to <m>0</m>. Also, since <m>\ln(x)</m> is undefined for negative <m>x</m> and <m>\lim\limits_{x\to0}\ln(x)</m> is an expression that depends on outputs of <m>\ln</m> using inputs <em>both</em> slightly smaller <em>and</em> slightly larger than <m>0</m>, we cannot hope to give meaning to <m>\lim\limits_{x\to0}\ln(x)</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>3</static>
+            </var>
+            <var name="$b">
+              <static>4</static>
+            </var>
+            <var name="$c">
+              <static>8</static>
+            </var>
+            <var name="$f">
+              <static>4^{x^3-8x}</static>
+            </var>
+            <var name="$L">
+              <static>64</static>
             </var>
             <pg-code>
+              $a=random(2,4,1);
+              do{$b=random(2,4,1);}until($a!=$b);
+              $c=$a**2-random(1,2,1);
+              if($envir{problemSeed}==1){$a=3;$b=4;$c=8;};
+              $f=Formula("($b)^(x^3-$c x)");
+              $L=$f->eval(x=>$a);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to3}4^{x^3-8x}</m></p>
+            <p><m>\lim\limits_{x\to<var name="$a" />}<var name="$f" /></m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <answer>
-            <p><m>64</m></p>
-          </answer>
           <solution>
-            <p><m>64</m></p>
+            <p><md>
+              <mrow>\lim\limits_{x\to<var name="$a" />}<var name="$f" />\amp=<var name="$b" />^{\lim\limits_{x\to<var name="$a" />}\left(x^3-<var name="$c" />x\right)}</mrow>
+              <mrow>\amp=<var name="$b" />^{\lim\limits_{x\to<var name="$a" />}x^3-\lim\limits_{x\to<var name="$a" />}<var name="$c" />x}</mrow>
+              <mrow>\amp=<var name="$b" />^{\left(\lim\limits_{x\to<var name="$a" />}x\right)^3-<var name="$c" />\lim\limits_{x\to<var name="$a" />}x}</mrow>
+              <mrow>\amp=<var name="$b" />^{<var name="$a" />^3-<var name="$c" />\cdot<var name="$a" />}</mrow>
+              <mrow>\amp=<var name="$L" /></mrow>
+            </md></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>\pi/6</static>
+            </var>
+            <var name="$L" category="number">
+              <static>2</static>
             </var>
             <pg-code>
+              $d=list_random(3,4,6);
+              if($envir{problemSeed}==1){$d=6;};
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $a=Formula("pi/$d");
+              %f=(3=>Formula("2sqrt(3)/3"),4=>Formula("sqrt(2)"),6=>Formula("2"));
+              $L=$f{$d};
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to\pi/6} \fi{\csc}{x}</m></p>
+            <p><m>\lim\limits_{x\to<var name="$a" />}\csc(x)</m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <answer>
-            <p><m>2</m></p>
-          </answer>
           <solution>
-            <p><m>2</m></p>
+            <p><md>
+              <mrow>\lim_{x\to<var name="$a" />}\csc(x)\amp=\csc\mathopen{}\left(<var name="$a" />\right)\mathclose{}</mrow>
+              <mrow>\amp=<var name="$L" /></mrow>
+            </md></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>3</static>
+            </var>
+            <var name="$b">
+              <static>5</static>
+            </var>
+            <var name="$c">
+              <static>5</static>
+            </var>
+            <var name="$d">
+              <static>2</static>
+            </var>
+            <var name="$e">
+              <static>2</static>
+            </var>
+            <var name="$f">
+              <static>x^2+3x+5</static>
+            </var>
+            <var name="$g">
+              <static>5x^2-2x-2</static>
+            </var>
+            <var name="$r">
+              <static>\frac{x^2+3x+5}{5x^2-2x-2}</static>
+            </var>
+            <var name="$L" category="number">
+              <static>\frac{\pi^2+3\pi+5}{5\pi^2-2\pi-3}</static>
             </var>
             <pg-code>
+              #ensure rational function doesn't reduce
+              do{$a=non_zero_random(-5,5,1);
+              $b=non_zero_random(-5,5,1);
+              $c=random(2,5,1);
+              do{$d=non_zero_random(-5,5,1);}until($d!=-$a*$c);
+              $e=non_zero_random(-5,5,1);
+              }until((($b*$c+$e)/(-$a*$c-$d))**2+$a*(($b*$c+$e)/(-$a*$c-$d))+$b);
+              if($envir{problemSeed}==1){$a=3;$b=5;$c=5;$d=2;$e=2};
+              $f=Formula("x^2+$a x+$b")->reduce;
+              $g=Formula("$c x^2-$d x-$e")->reduce;
+              $r=$f/$g;
+              $L=$r->substitute(x=>Formula("pi"));
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to0} \ln(1+x)</m></p>
+            <p><m>\lim\limits_{x\to\pi}<var name="$r" /></m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <answer>
-            <p><m>0</m></p>
-          </answer>
           <solution>
-            <p><m>0</m></p>
+            <p><md>
+              <mrow>\lim\limits_{x\to\pi}<var name="$f" />\amp=\frac{\lim\limits_{x\to\pi}\left(<var name="$f" />\right)}{\lim\limits_{x\to\pi}\left(<var name="$g" />\right)}</mrow>
+              <mrow>\amp=\frac{\lim\limits_{x\to\pi}x^2+\lim\limits_{x\to\pi}(<var name="$a" />x)+\lim\limits_{x\to\pi}(<var name="$b" />)}{\lim\limits_{x\to\pi}(<var name="$c" />x^2)+\lim\limits_{x\to\pi}(-<var name="$d" />x)+\lim\limits_{x\to\pi}-<var name="$e" />}</mrow>
+              <mrow>\amp=\frac{\lim\limits_{x\to\pi}x^2+<var name="$a" />\lim\limits_{x\to\pi}x+\lim\limits_{x\to\pi}(<var name="$b" />)}{<var name="$c" />\lim\limits_{x\to\pi}x^2-<var name="$d" />\lim\limits_{x\to\pi}x-\lim\limits_{x\to\pi}<var name="$e" />}</mrow>
+              <mrow>\amp=<var name="$L" /></mrow>
+            </md></p>
           </solution>
         </webwork>
       </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\ds \lim_{x\to\pi}\frac{x^2+3x+5}{5x^2-2x-3}</m></p>
-          </statement>
-          <answer>
-            <p><m>\frac{\pi^2+3\pi+5}{5\pi^2-2\pi-3} \approx 0.6064</m></p>
-          </answer>
-          <solution>
-            <p><m>\frac{\pi^2+3\pi+5}{5\pi^2-2\pi-3} \approx 0.6064</m></p>
-          </solution>
-        </webwork>
-      </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
