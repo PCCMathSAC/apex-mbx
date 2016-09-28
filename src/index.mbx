@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
 <docinfo>
+
+        <latex-preamble>
+            <package>cancel</package>
+        </latex-preamble>
+
 <macros>
 \newcommand{\apex}{A\kern -1pt \lower -2pt\mbox{P}\kern -4pt \lower .7ex\mbox{E}\kern -1pt X}
 \newcommand{\colorlinecolor}{blue!95!black!30}
@@ -86,12 +91,14 @@
 \setboolean{colorprint}{true} 
 
 \pgfplotsset{firstcurvestyle/.style={color=blue,mark=none,thick,<->,solid}}
-\pgfplotsset{secondcurvestyle/.style={color=red,mark=none,thick,<->,dashdotdotted}}
+\pgfplotsset{secondcurvestyle/.style={color=red,mark=none,thick,<->,dashdotted}}
+\pgfplotsset{thirdcurvestyle/.style={color=magenta,mark=none,thick,<->,dashdotdotted}}
 \pgfplotsset{asymptote/.style={color=black,mark=none,thick,<->,dashed}}
 \pgfplotsset{guideline/.style={color=black,mark=none,-}}
 \pgfplotscreateplotcyclelist{curvestylelist}{%
         firstcurvestyle\\%
         secondcurvestyle\\%
+        thirdcurvestyle\\%
 }
 
 %To disable arrows, edit these and the above lines accordingly

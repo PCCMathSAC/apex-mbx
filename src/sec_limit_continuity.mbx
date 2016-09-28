@@ -2,19 +2,19 @@
 <section xml:id="sec_limit_continuity">
   <title>One Sided Limits</title>
   <introduction>
-    <p>We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for evaluating them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave <q>nicely.</q> In this section we rigorously define what we mean by <q>nicely.</q></p>
+    <p>We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for evaluating them. <xref ref="sec_limit_analytically">Section</xref> gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave <q>nicely.</q> In this section we rigorously define what we mean by <q>nicely.</q></p>
 
     <p>In <xref ref="sec_limit_intro">Section</xref> we explored the three ways in which limits of functions failed to exist:</p>
 
     <ol>
-      <li><p>The function approached different values from the left and right,</p></li>
+      <li xml:id="lim_DNE_lr"><p>The function approached different values from the left and right.</p></li>
 
-      <li><p>The function grows without bound, and</p></li>
+      <li><p>The function grows without bound.</p></li>
 
       <li><p>The function oscillates.</p></li>
     </ol>
 
-    <p>In this section we explore in depth the concepts behind <hash />1 by introducing the <em>one-sided limit</em>. We begin with formal definitions that are very similar to the definition of the limit given in <xref ref="sec_limit_def">Section</xref>, but the notation is slightly different and <q><m>x\neq c</m></q> is replaced with either <q><m>x\lt c</m></q> or <q><m>x>c</m>.</q></p>
+    <p>In this section we explore in depth the concepts behind <xref ref="lim_DNE_lr" /> by introducing the <em>one-sided limit</em>. We begin with formal definitions that are very similar to the definition of the limit given in <xref ref="sec_limit_def">Section</xref>, but the notation is slightly different and <q><m>x\neq c</m></q> is replaced with either <q><m>x\lt c</m></q> or <q><m>x>c</m>.</q></p>
 
     <definition xml:id="def_onesidedlimit">
       <title>One Sided Limits</title>
@@ -28,6 +28,7 @@
           </me>
           means that given any <m>\varepsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x\lt  c</m>,
           if <m>\abs{x - c} \lt  \delta</m>, then <m>\abs{f(x) - L} \lt  \varepsilon</m>.</p>
+          <todo>Think about whether absolute values are needed here?</todo>
 
         <p><term>Right-Hand Limit</term></p>
 
@@ -100,6 +101,7 @@
 
         <ol>
           <li><p>As <m>x</m> goes to 1 <em>from the left</em>, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 1^-} f(x) =1.</m></p></li>
+          <aside>We could of course evaluate this limit symbolically by examining the defintion of <m>f</m>. Since we are approaching <m>1</m> from the left, we would choose the first <q>piece</q> of the function, that is the one with domain <m>0 \leq x \leq 1</m>. So <m>\ds \lim_{x\to 1^-} x =1.</m></aside>
 
           <li><p>As <m>x</m> goes to 1 <em>from the right</em>, we see that <m>f(x)</m> is approaching the value of 2. Recall that it does not matter that there is an <q>open circle</q> there; we are evaluating a limit, not the value of the function. Therefore <m>\ds \lim_{x\to 1^+} f(x)=2</m>.</p></li>
 
@@ -368,9 +370,6 @@
           <statement>
             <p>What are the three ways in which a limit may fail to exist?</p>
           </statement>
-          <answer>
-            <p>The function approaches different values from the left and right; the function grows without bound; the function oscillates.</p>
-          </answer>
           <solution>
             <p>The function approaches different values from the left and right; the function grows without bound; the function oscillates.</p>
           </solution>
@@ -388,9 +387,6 @@
           <statement>
             <p>T/F: If <m>\ds \lim_{x\to 1^-} f(x) = 5</m>, then <m>\ds \lim_{x\to 1} f(x) = 5</m></p>
           </statement>
-          <answer>
-            <p>F</p>
-          </answer>
           <solution>
             <p>F</p>
           </solution>
@@ -408,9 +404,6 @@
           <statement>
             <p>T/F: If <m>\ds \lim_{x\to 1^-} f(x) = 5</m>, then <m>\ds \lim_{x\to 1^+} f(x) = 5</m></p>
           </statement>
-          <answer>
-            <p>F</p>
-          </answer>
           <solution>
             <p>F</p>
           </solution>
@@ -428,9 +421,6 @@
           <statement>
             <p>T/F: If <m>\ds \lim_{x\to 1} f(x) = 5</m>, then <m>\ds \lim_{x\to 1^-} f(x) = 5</m></p>
           </statement>
-          <answer>
-            <p>T</p>
-          </answer>
           <solution>
             <p>T</p>
           </solution>
@@ -497,21 +487,6 @@
               </ol>
             </figure>
           </statement>
-          <answer>
-            <ol>
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>1</p></li>
-
-              <li><p>As <m>f</m> is not defined for <m>x\lt 0</m>, this limit is not defined.</p></li>
-
-              <li><p>1</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>2</p></li>
@@ -586,21 +561,6 @@
               </ol>
             </figure>
           </statement>
-          <answer>
-            <ol>
-              <li><p>1</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>As <m>f</m> is not defined for <m>x>2</m>, this limit is not defined.</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>1</p></li>
@@ -678,21 +638,6 @@
               </ol>
             </figure>
           </statement>
-          <answer>
-            <ol>
-              <li><p>Does not exist.</p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>Not defined.</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>0</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>Does not exist.</p></li>
@@ -766,17 +711,6 @@
               </ol>
             </figure>
           </statement>
-          <answer>
-            <ol>
-              <li><p>2</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>1</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>2</p></li>
@@ -846,17 +780,6 @@
               </ol>
             </figure>
           </statement>
-          <answer>
-            <ol>
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>2</p></li>
@@ -926,17 +849,6 @@
               </ol>
             </figure>
           </statement>
-          <answer>
-            <ol>
-              <li><p>4</p></li>
-
-              <li><p><m>-4</m></p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>0</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>4</p></li>
@@ -1015,25 +927,6 @@
               </ol>
             </figure>
           </statement>
-          <answer>
-            <ol>
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>Not defined</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>2</p></li>
@@ -1128,17 +1021,6 @@
               <li><p><m>f(a)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p><m>a-1</m></p></li>
-
-              <li><p><m>a</m></p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p><m>a</m></p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p><m>a-1</m></p></li>
@@ -1179,17 +1061,6 @@
               <li><p><m>f(1)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p>2</p></li>
-
-              <li><p><m>-4</m></p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>2</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>2</p></li>
@@ -1229,17 +1100,6 @@
               <li><p><m>f(0)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p><m>-1</m></p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>0</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p><m>-1</m></p></li>
@@ -1288,25 +1148,6 @@
               <li><p><m>f(1)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p>0</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>0</p></li>
@@ -1354,17 +1195,6 @@
               <li><p><m>f(\pi)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p><m>-1</m></p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>0</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p><m>-1</m></p></li>
@@ -1406,17 +1236,6 @@
               <li><p><m>f(a)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p><m>1-\cos^2 a = \sin^2 a</m></p></li>
-
-              <li><p><m>\sin^2 a</m></p></li>
-
-              <li><p><m>\sin^2 a</m></p></li>
-
-              <li><p><m>\sin ^2 a</m></p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p><m>1-\cos^2 a = \sin^2 a</m></p></li>
@@ -1457,17 +1276,6 @@
               <li><p><m>f(1)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p>2</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>Does not exist</p></li>
-
-              <li><p>1</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>2</p></li>
@@ -1508,17 +1316,6 @@
               <li><p><m>f(2)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p>4</p></li>
-
-              <li><p>4</p></li>
-
-              <li><p>4</p></li>
-
-              <li><p>3</p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p>4</p></li>
@@ -1560,17 +1357,6 @@
               <li><p><m>f(b)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p><m>c</m></p></li>
-
-              <li><p><m>c</m></p></li>
-
-              <li><p><m>c</m></p></li>
-
-              <li><p><m>c</m></p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p><m>c</m></p></li>
@@ -1610,17 +1396,6 @@
               <li><p><m>f(0)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <ol>
-              <li><p><m>-1</m></p></li>
-
-              <li><p><m>1</m></p></li>
-
-              <li><p>Does not exist</p></li>
-
-              <li><p><m>0</m></p></li>
-            </ol>
-          </answer>
           <solution>
             <ol>
               <li><p><m>-1</m></p></li>
@@ -1649,9 +1424,6 @@
           <statement>
             <p>Evaluate the limit: <m>\ds \lim_{x\to -1} \frac{x^2+5 x+4}{x^2-3 x-4}</m>.</p>
           </statement>
-          <answer>
-            <p><m>-3/5</m></p>
-          </answer>
           <solution>
             <p><m>-3/5</m></p>
           </solution>
@@ -1669,9 +1441,6 @@
           <statement>
             <p>Evaluate the limit: <m>\ds \lim_{x\to -4} \frac{x^2-16}{x^2-4 x-32}</m>.</p>
           </statement>
-          <answer>
-            <p><m>2/3</m></p>
-          </answer>
           <solution>
             <p><m>2/3</m></p>
           </solution>
@@ -1689,9 +1458,6 @@
           <statement>
             <p>Evaluate the limit: <m>\ds \lim_{x\to -6} \frac{x^2-15 x+54}{x^2-6 x}</m>.</p>
           </statement>
-          <answer>
-            <p><m>2.5</m></p>
-          </answer>
           <solution>
             <p><m>2.5</m></p>
           </solution>
@@ -1709,9 +1475,6 @@
           <statement>
             <p>Approximate the limit numerically: <m>\ds \lim_{x\to 0.4} \frac{x^2-4.4 x+1.6}{x^2-0.4 x}</m>.</p>
           </statement>
-          <answer>
-            <p><m>-9</m></p>
-          </answer>
           <solution>
             <p><m>-9</m></p>
           </solution>
@@ -1730,9 +1493,6 @@
             <p>Approximate the limit numerically:
               <m>\ds \lim_{x\to 0.2} \frac{x^2+5.8 x-1.2}{x^2-4.2 x+0.8}</m>.</p>
           </statement>
-          <answer>
-            <p><m>-1.63</m></p>
-          </answer>
           <solution>
             <p><m>-1.63</m></p>
           </solution>
