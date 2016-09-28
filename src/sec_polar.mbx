@@ -129,7 +129,7 @@
     </figure>
 
     <insight xml:id="idea_polarconvert">
-      <title>\parbox[t]{185pt}{Converting Between Rectangular and Polar Coordinates}</title>
+      <title>Converting Between Rectangular and Polar Coordinates</title>
       <p>Given the polar point <m>P(r,\theta)</m>, the rectangular coordinates are determined by
         <me>
           x=r\cos \theta\qquad y=r\sin \theta.
@@ -1376,9 +1376,6 @@
           <statement>
             <p>In your own words, describe how to plot the polar point <m>P(r,\theta)</m>.</p>
           </statement>
-          <answer>
-            <p>Answers will vary.</p>
-          </answer>
           <solution>
             <p>Answers will vary.</p>
           </solution>
@@ -1396,9 +1393,6 @@
           <statement>
             <p>T/F: When plotting a point with polar coordinate <m>P(r,\theta)</m>, <m>r</m> must be positive.</p>
           </statement>
-          <answer>
-            <p>F</p>
-          </answer>
           <solution>
             <p>F</p>
           </solution>
@@ -1416,9 +1410,6 @@
           <statement>
             <p>T/F: Every point in the Cartesian plane can be represented by a polar coordinate.</p>
           </statement>
-          <answer>
-            <p>T</p>
-          </answer>
           <solution>
             <p>T</p>
           </solution>
@@ -1436,9 +1427,6 @@
           <statement>
             <p>T/F: Every point in the Cartesian plane can be represented uniquely by a polar coordinate.</p>
           </statement>
-          <answer>
-            <p>F</p>
-          </answer>
           <solution>
             <p>F</p>
           </solution>
@@ -1469,26 +1457,6 @@
               <li><p><m>D=P(1,\pi/4)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <figure>
-              <image xml:id="img_polar7bX" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[scale=.5]
-	\foreach \x in {1,2}
-	{\draw (0,0) circle (\x);
-		\draw (\x,0) node [below right] { \(\x\)};
-	}
-	\draw [thick,->,>=stealth] (0,0) node [below] { \(O\)} -- (2.5,0);
-	\filldraw (xyz polar cs: angle=0,radius=2) circle (2pt) node [above right] { \(A\)}
-	      (xyz polar cs: angle=180,radius=1)circle (2pt) node [right] { \(B\)}
-				(xyz polar cs: angle=90,radius=-2)circle (2pt) node [right] { \(C\)}
-				(xyz polar cs: angle=45,radius=1)circle (2pt) node [right] { \(D\)};\end{tikzpicture}]]>
-                </latex-image-code>
-              </image>
-            </figure>
-          </answer>
           <solution>
             <figure>
               <image xml:id="img_polar7bX1" >
@@ -1533,26 +1501,6 @@
               <li><p><m>D=P(1/2,5\pi/6)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <figure>
-              <image xml:id="img_polar7bX2" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[scale=.5]
-	\foreach \x in {1,2}
-	{\draw (0,0) circle (\x);
-		\draw (\x,0) node [below right] { \(\x\)};
-	}
-	\draw [thick,->,>=stealth] (0,0) node [below] { \(O\)} -- (2.5,0);
-	\filldraw (xyz polar cs: angle=180,radius=2) circle (2pt) node [above] { \(A\)}
-	      (xyz polar cs: angle=180,radius=1)circle (2pt) node [above] { \(B\)}
-				(xyz polar cs: angle=114.6,radius=1)circle (2pt) node [right] { \(C\)}
-				(xyz polar cs: angle=150,radius=.5)circle (2pt) node [right] { \(D\)};\end{tikzpicture}]]>
-                </latex-image-code>
-              </image>
-            </figure>
-          </answer>
           <solution>
             <figure>
               <image xml:id="img_polar7bX3" >
@@ -1608,15 +1556,6 @@
               </latex-image-code>
             </image>
           </statement>
-          <answer>
-            <p><m>A=P(2.5,\pi/4)</m> and <m>P(-2.5,5\pi/4)</m>;</p>
-
-            <p><m>B=P(-1,5\pi/6)</m> and <m>P(1,11\pi/6)</m>;</p>
-
-            <p><m>C=P(3,4\pi/3)</m> and <m>P(-3,\pi/3)</m>;</p>
-
-            <p><m>D=P(1.5,2\pi/3)</m> and <m>P(-1.5,5\pi/3)</m>;</p>
-          </answer>
           <solution>
             <p><m>A=P(2.5,\pi/4)</m> and <m>P(-2.5,5\pi/4)</m>;</p>
 
@@ -1661,15 +1600,6 @@
               </latex-image-code>
             </image>
           </statement>
-          <answer>
-            <p><m>A=P(2,\pi/6)</m> and <m>P(-2,-5\pi/6)</m>;</p>
-
-            <p><m>B=P(1,-\pi/3)</m> and <m>P(-1,2\pi/3)</m>;</p>
-
-            <p><m>C=P(2,3\pi/4)</m> and <m>P(-2,-\pi/4)</m>;</p>
-
-            <p><m>D=P(2.5,\pi)</m> and <m>P(2.5,-\pi)</m>;</p>
-          </answer>
           <solution>
             <p><m>A=P(2,\pi/6)</m> and <m>P(-2,-5\pi/6)</m>;</p>
 
@@ -1703,15 +1633,6 @@
               <li><p><m>D=(-2,1)</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <p><m>A=(\sqrt{2},\sqrt{2})</m></p>
-
-            <p><m>B=(\sqrt{2},-\sqrt{2})</m></p>
-
-            <p><m>C=P(\sqrt{5},-0.46)</m></p>
-
-            <p><m>D=P(\sqrt{5},2.68)</m></p>
-          </answer>
           <solution>
             <p><m>A=(\sqrt{2},\sqrt{2})</m></p>
 
@@ -1745,15 +1666,6 @@
               <li><p><m>D=(1,-\sqrt{3})</m></p></li>
             </ol>
           </statement>
-          <answer>
-            <p><m>A=(-3,0)</m></p>
-
-            <p><m>B=(-1/2,\sqrt{3}/2)</m></p>
-
-            <p><m>C=P(4,\pi/2)</m></p>
-
-            <p><m>D=P(2,-\pi/3)</m></p>
-          </answer>
           <solution>
             <p><m>A=(-3,0)</m></p>
 
@@ -1778,44 +1690,6 @@
           <statement>
             <p><m>r=2</m>,<m>0\leq \theta\leq \pi/2</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_11.tex -->
-              <image xml:id="img_09_04_ex_11" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={-3,-2,-1,1,2,3},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-.5,ymax=2.1,%
-			xmin=-.5,xmax=2.6%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:90] ({2*cos(x)},{2*sin(x)});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_11.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_11.tex -->
@@ -1868,44 +1742,6 @@
           <statement>
             <p><m>\theta=\pi/6</m>,<m>-1\leq r\leq 2</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_12.tex -->
-              <image xml:id="img_09_04_ex_12" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={-3,-2,-1,1,2,3},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-2.1,ymax=2.1,%
-			xmin=-2.5,xmax=2.5%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=-.866:1.73] ({x},{.577*x});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_12.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_12.tex -->
@@ -1958,44 +1794,6 @@
           <statement>
             <p><m>r=1-\cos \theta</m>,<m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_13.tex -->
-              <image xml:id="img_09_04_ex_13" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={-3,-2,-1,1,2,3},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-2.1,ymax=2.1,%
-			xmin=-2.5,xmax=2.5%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:360] ({cos(x)*(1-cos(x))},{sin(x)*(1-cos(x))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_13.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_13.tex -->
@@ -2048,44 +1846,6 @@
           <statement>
             <p><m>r=2+\sin \theta</m>,<m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_14.tex -->
-              <image xml:id="img_09_04_ex_14" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={-3,-2,-1,1,2,3},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-2.6,ymax=3.6,%
-			xmin=-3.7,xmax=3.7%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:360,samples=40] ({cos(x)*(2+sin(x))},{sin(x)*(2+sin(x))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_14.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_14.tex -->
@@ -2138,44 +1898,6 @@
           <statement>
             <p><m>r=2-\sin \theta</m>,<m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_15.tex -->
-              <image xml:id="img_09_04_ex_15" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={-3,-2,-1,1,2,3},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-3.6,ymax=2.6,%
-			xmin=-3.7,xmax=3.7%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:360] ({cos(x)*(2-sin(x))},{sin(x)*(2-sin(x))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_15.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_15.tex -->
@@ -2228,44 +1950,6 @@
           <statement>
             <p><m>r=1-2\sin \theta</m>,<m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_16.tex -->
-              <image xml:id="img_09_04_ex_16" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={-3,-2,-1,1,2,3},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-3.6,ymax=2.6,%
-			xmin=-3.7,xmax=3.7%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:360,samples=40] ({cos(x)*(1-2*sin(x))},{sin(x)*(1-2*sin(x))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_16.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_16.tex -->
@@ -2318,44 +2002,6 @@
           <statement>
             <p><m>r=1+2\sin \theta</m>,<m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_17.tex -->
-              <image xml:id="img_09_04_ex_17" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={-3,-2,-1,1,2,3},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-2.6,ymax=3.6,%
-			xmin=-3.7,xmax=3.7%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:360,samples=40] ({cos(x)*(1+2*sin(x))},{sin(x)*(1+2*sin(x))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_17.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_17.tex -->
@@ -2408,44 +2054,6 @@
           <statement>
             <p><m>r=\cos(2\theta)</m>,<m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_18.tex -->
-              <image xml:id="img_09_04_ex_18" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			ytick={-1,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-1.1,ymax=1.1,%
-			xmin=-1.3,xmax=1.3%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({cos(x)*(cos(2*x))},{sin(x)*(cos(2*x))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_18.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_18.tex -->
@@ -2498,44 +2106,6 @@
           <statement>
             <p><m>r=\sin(3\theta)</m>,<m>[0,\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_19.tex -->
-              <image xml:id="img_09_04_ex_19" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			ytick={-1,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-1.1,ymax=1.1,%
-			xmin=-1.3,xmax=1.3%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:180,samples=60] ({cos(x)*(sin(3*x))},{sin(x)*(sin(3*x))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_19.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_19.tex -->
@@ -2588,44 +2158,6 @@
           <statement>
             <p><m>r=\cos(\theta/3)</m>,<m>[0,3\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_20.tex -->
-              <image xml:id="img_09_04_ex_20" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			ytick={-1,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-1.1,ymax=1.1,%
-			xmin=-1.3,xmax=1.3%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:540,samples=60] ({cos(x)*(cos(x/3))},{sin(x)*(cos(x/3))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_20.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_20.tex -->
@@ -2678,44 +2210,6 @@
           <statement>
             <p><m>r=\cos(2\theta/3)</m>,<m>[0,6\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_21.tex -->
-              <image xml:id="img_09_04_ex_21" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			ytick={-1,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-1.1,ymax=1.1,%
-			xmin=-1.3,xmax=1.3%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:1080,samples=120] ({cos(x)*(cos(2*x/3))},{sin(x)*(cos(2*x/3))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_21.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_21.tex -->
@@ -2768,44 +2262,6 @@
           <statement>
             <p><m>r=\theta/2</m>,<m>[0,4\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_22.tex -->
-              <image xml:id="img_09_04_ex_22" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={-1,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-5.9,ymax=4.9,%
-			xmin=-6.5,xmax=6.5%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:720,samples=60] ({cos(x)*(x*3.14/360)},{sin(x)*(x*3.14/360)});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_22.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_22.tex -->
@@ -2858,44 +2314,6 @@
           <statement>
             <p><m>r=3\sin(\theta)</m>,<m>[0,\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_23.tex -->
-              <image xml:id="img_09_04_ex_23" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			ytick={2,3,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-.9,ymax=3.9,%
-			xmin=-2.9,xmax=2.9%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:180,samples=60] ({cos(x)*(3*sin(x))},{sin(x)*(3*sin(x))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_23.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_23.tex -->
@@ -2948,44 +2366,6 @@
           <statement>
             <p><m>r=\cos\theta\sin\theta</m>,<m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_24.tex -->
-              <image xml:id="img_09_04_ex_24" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={2,3,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-1.1,ymax=1.1,%
-			xmin=-1.3,xmax=1.3%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=0:360,samples=60] ({cos(x)*(cos(x)*sin(x))},{sin(x)*(cos(x)*sin(x))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_24.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_24.tex -->
@@ -3038,44 +2418,6 @@
           <statement>
             <p><m>r=\theta^2-(\pi/2)^2</m>,<m>[-\pi,\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_25.tex -->
-              <image xml:id="img_09_04_ex_25" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={2,3,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-3.75,ymax=3.75,%
-			xmin=-8.1,xmax=.9%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=-3.14:3.14,samples=60] ({cos(deg(x))*(x^2-2.4674)},{sin(deg(x))*(x^2-2.4674)});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_25.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_25.tex -->
@@ -3128,44 +2470,6 @@
           <statement>
             <p><m>\ds r=\frac{3}{5\sin\theta-\cos\theta}</m>,<m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_26.tex -->
-              <image xml:id="img_09_04_ex_26" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={2,3,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-4.9,ymax=4.96,%
-			xmin=-5.9,xmax=5.9%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=.1:3,samples=20] ({cos(deg(x))*(3/(5*sin(deg(x))-cos(deg(x)))},{sin(deg(x))*(3/(5*sin(deg(x))-cos(deg(x)))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_26.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_26.tex -->
@@ -3218,44 +2522,6 @@
           <statement>
             <p><m>\ds r=\frac{-2}{3\cos\theta-2\sin\theta}</m>,<m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_27.tex -->
-              <image xml:id="img_09_04_ex_27" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={2,3,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-4.9,ymax=4.96,%
-			xmin=-5.9,xmax=5.9%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=.1:3,samples=20] ({cos(deg(x))*(-2/(3*cos(deg(x))-2*sin(deg(x)))},{sin(deg(x))*(-2/(3*cos(deg(x))-2*sin(deg(x)))});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_27.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_27.tex -->
@@ -3308,44 +2574,6 @@
           <statement>
             <p><m>\ds r=3\sec \theta</m>,<m>(-\pi/2,\pi/2)</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_28.tex -->
-              <image xml:id="img_09_04_ex_28" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={2,3,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-4.9,ymax=4.96,%
-			xmin=-5.9,xmax=5.9%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=-5:5,samples=10] ({3},{x});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_28.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_28.tex -->
@@ -3398,44 +2626,6 @@
           <statement>
             <p><m>\ds r=3\csc \theta</m>,<m>(0,\pi)</m></p>
           </statement>
-          <answer>
-            <figure>
-              <!-- START figures/fig_09_04_ex_29.tex -->
-              <image xml:id="img_09_04_ex_29" >
-                <description></description>
-                <latex-image-code>
-                  <![CDATA[
-                  \begin{tikzpicture}[>=stealth]
-                  \begin{axis}[%
-                  %
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			%xtick={1,2,-1,-2},
-			%minor x tick num=4,% 
-                  %			extra x ticks={.33},
-                  %			extra x tick labels={$1/3$},
-			%ytick={2,3,1},
-			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
-			ymin=-4.9,ymax=4.96,%
-			xmin=-5.9,xmax=5.9%
-                  ]
-
-                  %\draw (axis cs:4,-1) node (A) {}
-			%(axis cs:4,3) node (B) {} ;
-                  %\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
-                  \addplot [thick,{\colorone}, smooth,domain=-5:5,samples=10] ({x},{4});
-
-                  \end{axis}
-
-
-
-                  \end{tikzpicture}
-                  ]]>
-                </latex-image-code>
-              </image>
-              <!-- figures/fig_09_04_ex_29.tex END -->
-            </figure>
-          </answer>
           <solution>
             <figure>
               <!-- START figures/fig_09_04_ex_29.tex -->
@@ -3489,9 +2679,6 @@
           <statement>
             <p><m>r=2\cos\theta</m></p>
           </statement>
-          <answer>
-            <p><m>(x-1)^2+y^2=1</m></p>
-          </answer>
           <solution>
             <p><m>(x-1)^2+y^2=1</m></p>
           </solution>
@@ -3509,9 +2696,6 @@
           <statement>
             <p><m>r=-4\sin\theta</m></p>
           </statement>
-          <answer>
-            <p><m>x^2+(y+2)^2=4</m></p>
-          </answer>
           <solution>
             <p><m>x^2+(y+2)^2=4</m></p>
           </solution>
@@ -3529,9 +2713,6 @@
           <statement>
             <p><m>r=\cos\theta+\sin\theta</m></p>
           </statement>
-          <answer>
-            <p><m>(x-1/2)^2+(y-1/2)^2=1/2</m></p>
-          </answer>
           <solution>
             <p><m>(x-1/2)^2+(y-1/2)^2=1/2</m></p>
           </solution>
@@ -3549,9 +2730,6 @@
           <statement>
             <p><m>\ds r=\frac{7}{5\sin\theta-2\cos\theta}</m></p>
           </statement>
-          <answer>
-            <p><m>y=2/5x+7/5</m></p>
-          </answer>
           <solution>
             <p><m>y=2/5x+7/5</m></p>
           </solution>
@@ -3569,9 +2747,6 @@
           <statement>
             <p><m>\ds r=\frac{3}{\cos\theta}</m></p>
           </statement>
-          <answer>
-            <p><m>x=3</m></p>
-          </answer>
           <solution>
             <p><m>x=3</m></p>
           </solution>
@@ -3589,9 +2764,6 @@
           <statement>
             <p><m>\ds r=\frac{4}{\sin\theta}</m></p>
           </statement>
-          <answer>
-            <p><m>y=4</m></p>
-          </answer>
           <solution>
             <p><m>y=4</m></p>
           </solution>
@@ -3609,9 +2781,6 @@
           <statement>
             <p><m>\ds r=\tan\theta</m></p>
           </statement>
-          <answer>
-            <p><m>x^4+x^2y^2x^2-y^2=0</m></p>
-          </answer>
           <solution>
             <p><m>x^4+x^2y^2x^2-y^2=0</m></p>
           </solution>
@@ -3629,9 +2798,6 @@
           <statement>
             <p><m>\ds r=2</m></p>
           </statement>
-          <answer>
-            <p><m>x^2+y^2=4</m></p>
-          </answer>
           <solution>
             <p><m>x^2+y^2=4</m></p>
           </solution>
@@ -3649,9 +2815,6 @@
           <statement>
             <p><m>\ds \theta=\pi/6</m></p>
           </statement>
-          <answer>
-            <p><m>y=x/\sqrt{3}</m></p>
-          </answer>
           <solution>
             <p><m>y=x/\sqrt{3}</m></p>
           </solution>
@@ -3670,9 +2833,6 @@
           <statement>
             <p><m>\ds y=x</m></p>
           </statement>
-          <answer>
-            <p><m>\theta=\pi/4</m></p>
-          </answer>
           <solution>
             <p><m>\theta=\pi/4</m></p>
           </solution>
@@ -3690,9 +2850,6 @@
           <statement>
             <p><m>\ds y=4x+7</m></p>
           </statement>
-          <answer>
-            <p><m>r=7/(\sin\theta-4\cos\theta)</m></p>
-          </answer>
           <solution>
             <p><m>r=7/(\sin\theta-4\cos\theta)</m></p>
           </solution>
@@ -3710,9 +2867,6 @@
           <statement>
             <p><m>\ds x=5</m></p>
           </statement>
-          <answer>
-            <p><m>r=5\sec \theta</m></p>
-          </answer>
           <solution>
             <p><m>r=5\sec \theta</m></p>
           </solution>
@@ -3730,9 +2884,6 @@
           <statement>
             <p><m>\ds y=5</m></p>
           </statement>
-          <answer>
-            <p><m>r=5\csc \theta</m></p>
-          </answer>
           <solution>
             <p><m>r=5\csc \theta</m></p>
           </solution>
@@ -3750,9 +2901,6 @@
           <statement>
             <p><m>\ds x=y^2</m></p>
           </statement>
-          <answer>
-            <p><m>r=\cos\theta/\sin^2\theta</m></p>
-          </answer>
           <solution>
             <p><m>r=\cos\theta/\sin^2\theta</m></p>
           </solution>
@@ -3770,9 +2918,6 @@
           <statement>
             <p><m>\ds x^2y=1</m></p>
           </statement>
-          <answer>
-            <p><m>r=1/\sqrt[3]{\cos^2\theta\sin\theta}</m></p>
-          </answer>
           <solution>
             <p><m>r=1/\sqrt[3]{\cos^2\theta\sin\theta}</m></p>
           </solution>
@@ -3790,9 +2935,6 @@
           <statement>
             <p><m>\ds x^2+y^2=7</m></p>
           </statement>
-          <answer>
-            <p><m>r=\sqrt{7}</m></p>
-          </answer>
           <solution>
             <p><m>r=\sqrt{7}</m></p>
           </solution>
@@ -3810,9 +2952,6 @@
           <statement>
             <p><m>\ds (x+1)^2+y^2=1</m></p>
           </statement>
-          <answer>
-            <p><m>r=-2\cos\theta</m></p>
-          </answer>
           <solution>
             <p><m>r=-2\cos\theta</m></p>
           </solution>
@@ -3831,9 +2970,6 @@
           <statement>
             <p><m>r=\sin(2\theta)</m> and <m>r=\cos\theta</m> on <m>[0,\pi]</m></p>
           </statement>
-          <answer>
-            <p><m>P(\sqrt{3}/2,\pi/6)</m>, <m>P(0,\pi/2)</m>, <m>P(-\sqrt{3}/2,5\pi/6)</m></p>
-          </answer>
           <solution>
             <p><m>P(\sqrt{3}/2,\pi/6)</m>, <m>P(0,\pi/2)</m>, <m>P(-\sqrt{3}/2,5\pi/6)</m></p>
           </solution>
@@ -3851,9 +2987,6 @@
           <statement>
             <p><m>r=\cos(2\theta)</m> and <m>r=\cos\theta</m> on <m>[0,\pi]</m></p>
           </statement>
-          <answer>
-            <p><m>P(1,0)</m>, <m>P(0,\pi/2)=P(0,\pi/4)</m>, <m>P(-1/2,\pi/3)</m></p>
-          </answer>
           <solution>
             <p><m>P(1,0)</m>, <m>P(0,\pi/2)=P(0,\pi/4)</m>, <m>P(-1/2,\pi/3)</m></p>
           </solution>
@@ -3871,9 +3004,6 @@
           <statement>
             <p><m>r=2\cos\theta</m> and <m>r=2\sin\theta</m> on <m>[0,\pi]</m></p>
           </statement>
-          <answer>
-            <p><m>P(0,0)=P(0,\pi/2)</m>, <m>P(\sqrt{2},\pi/4)</m></p>
-          </answer>
           <solution>
             <p><m>P(0,0)=P(0,\pi/2)</m>, <m>P(\sqrt{2},\pi/4)</m></p>
           </solution>
@@ -3891,9 +3021,6 @@
           <statement>
             <p><m>r=\sin\theta</m> and <m>r=\sqrt{3}+3\sin\theta</m> on <m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <p><m>P(\sqrt{3}/2,\pi/3)=P(-\sqrt{3}/2,4\pi/3)</m>, <m>P(\sqrt{3}/2,2\pi/3)=P(-\sqrt{3}/2,5\pi/3)</m>, <m>P(0,\pi/2)</m></p>
-          </answer>
           <solution>
             <p><m>P(\sqrt{3}/2,\pi/3)=P(-\sqrt{3}/2,4\pi/3)</m>, <m>P(\sqrt{3}/2,2\pi/3)=P(-\sqrt{3}/2,5\pi/3)</m>, <m>P(0,\pi/2)</m></p>
           </solution>
@@ -3911,9 +3038,6 @@
           <statement>
             <p><m>r=\sin(3\theta)</m> and <m>r=\cos(3\theta)</m> on <m>[0,\pi]</m></p>
           </statement>
-          <answer>
-            <p><m>P(\sqrt{2}/2,\pi/12)</m>, <m>P(-\sqrt{2}/2,5\pi/12)</m>, <m>P(\sqrt{2}/2,3\pi/4)</m></p>
-          </answer>
           <solution>
             <p><m>P(\sqrt{2}/2,\pi/12)</m>, <m>P(-\sqrt{2}/2,5\pi/12)</m>, <m>P(\sqrt{2}/2,3\pi/4)</m></p>
           </solution>
@@ -3931,9 +3055,6 @@
           <statement>
             <p><m>r=3\cos\theta</m> and <m>r=1+\cos\theta</m> on <m>[-\pi,\pi]</m></p>
           </statement>
-          <answer>
-            <p><m>P(3/2,\pi/3)</m>, <m>P(3/2,-\pi/3)</m></p>
-          </answer>
           <solution>
             <p><m>P(3/2,\pi/3)</m>, <m>P(3/2,-\pi/3)</m></p>
           </solution>
@@ -3951,9 +3072,6 @@
           <statement>
             <p><m>r=1</m> and <m>r=2\sin(2\theta)</m> on <m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <p>For all points, <m>r=1</m>; <m>\theta = \pi/12,\ 5\pi/12,\ 7\pi/12,\ 11\pi/12,\ 13\pi/12,\ 17\pi/12,\ 19\pi/12,\ 23\pi/12</m>.</p>
-          </answer>
           <solution>
             <p>For all points, <m>r=1</m>; <m>\theta = \pi/12,\ 5\pi/12,\ 7\pi/12,\ 11\pi/12,\ 13\pi/12,\ 17\pi/12,\ 19\pi/12,\ 23\pi/12</m>.</p>
           </solution>
@@ -3971,9 +3089,6 @@
           <statement>
             <p><m>r=1-\cos\theta</m> and <m>r=1+\sin\theta</m> on <m>[0,2\pi]</m></p>
           </statement>
-          <answer>
-            <p><m>P(0,0)=P(0,3\pi/2)</m>, <m>P(1+\sqrt{2}/2,3\pi/4)</m>, <m>P(1-\sqrt{2}/2,7\pi/4)</m></p>
-          </answer>
           <solution>
             <p><m>P(0,0)=P(0,3\pi/2)</m>, <m>P(1+\sqrt{2}/2,3\pi/4)</m>, <m>P(1-\sqrt{2}/2,7\pi/4)</m></p>
           </solution>
@@ -3991,9 +3106,6 @@
           <statement>
             <p>Pick a integer value for <m>n</m>, where <m>n\neq 2,3</m>, and use technology to plot <m>\ds r=\sin\left(\frac mn\theta\right)</m> for three different integer values of <m>m</m>. Sketch these and determine a minimal interval on which the entire graph is shown.</p>
           </statement>
-          <answer>
-            <p>Answers will vary. If <m>m</m> and <m>n</m> do not have any common factors, then an interval of <m>2n\pi</m> is needed to sketch the entire graph.</p>
-          </answer>
           <solution>
             <p>Answers will vary. If <m>m</m> and <m>n</m> do not have any common factors, then an interval of <m>2n\pi</m> is needed to sketch the entire graph.</p>
           </solution>
@@ -4011,9 +3123,6 @@
           <statement>
             <p>Create your own polar function, <m>r=f(\theta)</m> and sketch it. Describe why the graph looks as it does.</p>
           </statement>
-          <answer>
-            <p>Answers will vary.</p>
-          </answer>
           <solution>
             <p>Answers will vary.</p>
           </solution>
