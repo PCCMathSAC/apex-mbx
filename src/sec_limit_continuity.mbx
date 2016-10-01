@@ -924,217 +924,315 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$g">
+              <static>\begin{cases}x+1\amp x\leq1\\x^2-5\amp x\gt1\end{cases}</static>
+            </var>
+            <var name="$a">
+              <static>1</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>2</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>-4</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>2</static>
             </var>
             <pg-code>
+              $a=random(-2,4,1);
+              $b=non_zero_random(-5,5,1);
+              do{$c=non_zero_random(-5,5,1);}until($a+$b!=$a**2+$c);
+              if($envir{problemSeed}==1){$a=1;$b=1;$c=-5};
+              @f=(Formula("x+$b")->reduce,Formula("x^2+$c")->reduce);
+              Context("PiecewiseFunction");
+              $g=PiecewiseFunction("x &lt;= $a" => "$f[0]", "x > $a" => "$f[1]");
+              @L=($f[0]->eval(x=>$a),$f[1]->eval(x=>$a));
+              $L[2]=($L[0]==$L[1])?$L[0]:Compute("DNE");
+              $L[3]=$g->eval(x=>$a);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-	x+1 \amp  \amp  x\leq 1 \\
-	x^2-5 \amp  \amp  x>1
-              \end{array} 
-	\right.</m></p>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
 
-            <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+            <p><m>f(x) = <var name="$g" /></m></p>
 
-              <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
-
-              <li><p><m>f(1)</m></p></li>
-            </ol>
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^-} f(x)=</m><var name="$L[0]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^+} f(x)=</m><var name="$L[1]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />} f(x)=</m><var name="$L[2]" width="10" /></p></li>
+              <li><p><m>f(<var name="$a" />)=</m><var name="$L[3]" width="10" /></p></li>
+            </ol></p>
           </statement>
           <solution>
-            <ol>
-              <li><p>2</p></li>
-
-              <li><p><m>-4</m></p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>2</p></li>
-            </ol>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$g">
+              <static>\begin{cases}2x^2+5x-1\amp x\lt0\\\sin(x)\amp x\geq0\end{cases}</static>
+            </var>
+            <var name="$a">
+              <static>0</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>-1</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>0</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>0</static>
             </var>
             <pg-code>
+              $a=random(-2,4,1);
+              $b=non_zero_random(-2,2,1);
+              $c=non_zero_random(-5,5,1);
+              $d=non_zero_random(-5,5,1);
+              if($envir{problemSeed}==1){$a=0;$b=2;$c=5;$d=-1;};
+              @f=(Formula("$b x^2 + $c x+$d")->reduce,Formula("sin(x-$a)")->reduce);
+              Context("PiecewiseFunction");
+              $g=PiecewiseFunction("x &lt; $a" => "$f[0]", "x >= $a" => "$f[1]");
+              @L=($f[0]->eval(x=>$a),$f[1]->eval(x=>$a));
+              $L[2]=($L[0]==$L[1])?$L[0]:Compute("DNE");
+              $L[3]=$g->eval(x=>$a);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-	2x^2+5x-1 \amp  \amp  x\lt 0 \\
-	\sin(x) \amp  \amp  x\geq 0
-              \end{array} 
-	\right.</m></p>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
 
-            <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
+            <p><m>f(x) = <var name="$g" /></m></p>
 
-              <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 0} f(x)</m></p></li>
-
-              <li><p><m>f(0)</m></p></li>
-            </ol>
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^-} f(x)=</m><var name="$L[0]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^+} f(x)=</m><var name="$L[1]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />} f(x)=</m><var name="$L[2]" width="10" /></p></li>
+              <li><p><m>f(<var name="$a" />)=</m><var name="$L[3]" width="10" /></p></li>
+            </ol></p>
           </statement>
           <solution>
-            <ol>
-              <li><p><m>-1</m></p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>0</p></li>
-            </ol>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$g">
+              <static>\begin{cases}x^2-1\amp x\lt-1\\x^3+1\amp -1\leq x\leq1\\x^2+1\amp x\gt1\end{cases}</static>
+            </var>
+            <var name="$a">
+              <static>-1</static>
+            </var>
+            <var name="$b">
+              <static>1</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>0</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>0</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>0</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>0</static>
+            </var>
+            <var name="$L[4]" category="number">
+              <static>2</static>
+            </var>
+            <var name="$L[5]" category="number">
+              <static>2</static>
+            </var>
+            <var name="$L[6]" category="number">
+              <static>2</static>
+            </var>
+            <var name="$L[7]" category="number">
+              <static>2</static>
             </var>
             <pg-code>
+              $a=random(-3,-1,1);
+              $b=$a+random(4,5,1);
+              if($envir{problemSeed}==1){$a=-1;$b=1;};
+              @f=(Formula("x^2 + ($a+1) x+($a)^3+1-($a)^2-($a+1)*$a")->reduce,Formula("x^3+1")->reduce,Formula("x^2 + ($b-1) x+($b)^3+1-($b)^2-($b-1)*$b")->reduce);
+              Context("PiecewiseFunction");
+              $g=PiecewiseFunction("x &lt; $a" => "$f[0]", "$a &lt;= x &lt;= $b" => "$f[1]", "x > $b" => $f[2]);
+              @L=($f[0]->eval(x=>$a),$f[1]->eval(x=>$a));
+              $L[2]=($L[0]==$L[1])?$L[0]:Compute("DNE");
+              $L[3]=$g->eval(x=>$a);
+              ($L[4],$L[5])=($f[1]->eval(x=>$b),$f[2]->eval(x=>$b));
+              $L[6]=($L[4]==$L[5])?$L[4]:Compute("DNE");
+              $L[7]=$g->eval(x=>$b);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-	x^2-1 \amp  \amp  x\lt -1 \\
-	x^3+1 \amp  \amp  -1\leq x\leq 1\\
-	x^2+1 \amp  \amp  x>1
-              \end{array} 
-	\right.</m></p>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
 
-            <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to -1^-} f(x)</m></p></li>
+            <p><m>f(x) = <var name="$g" /></m></p>
 
-              <li><p><m>\ds \lim_{x\to -1^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to -1} f(x)</m></p></li>
-
-              <li><p><m>f(-1)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
-
-              <li><p><m>f(1)</m></p></li>
-            </ol>
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^-} f(x)=</m><var name="$L[0]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^+} f(x)=</m><var name="$L[1]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />} f(x)=</m><var name="$L[2]" width="10" /></p></li>
+              <li><p><m>f(<var name="$a" />)=</m><var name="$L[3]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$b" />^-} f(x)=</m><var name="$L[4]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$b" />^+} f(x)=</m><var name="$L[5]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$b" />} f(x)=</m><var name="$L[6]" width="10" /></p></li>
+              <li><p><m>f(<var name="$b" />)=</m><var name="$L[7]" width="10" /></p></li>
+            </ol></p>
           </statement>
           <solution>
-            <ol>
-              <li><p>0</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-
-              <li><p>2</p></li>
-            </ol>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f[0]">
+              <static>\cos(x)</static>
+            </var>
+            <var name="$f[1]">
+              <static>\sin(x)</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>-1</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>0</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>0</static>
             </var>
             <pg-code>
+              @f=($envir{problemSeed}%2==1)?(Formula("cos(x)"),Formula("sin(x)")):(Formula("sin(x)"),Formula("cos(x)"));
+              @L=($f[0]->eval(x=>pi),$f[1]->eval(x=>pi));
+              $L[2]=($L[0]==$L[1])?$L[0]:Compute("DNE");
+              $L[3]=$L[1];
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-	\cos x \amp  \amp  x\lt \pi \\
-	\sin(x) \amp  \amp  x\geq \pi
-              \end{array} 
-	\right.</m></p>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
 
-            <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to \pi^-} f(x)</m></p></li>
+            <p><m>f(x) = \begin{cases}<var name="$f[0]" />\amp x\lt\pi\\<var name="$f[1]" />\amp x\geq\pi\end{cases}</m></p>
 
-              <li><p><m>\ds \lim_{x\to \pi^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to \pi} f(x)</m></p></li>
-
-              <li><p><m>f(\pi)</m></p></li>
-            </ol>
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to\pi^-} f(x)=</m><var name="$L[0]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to\pi^+} f(x)=</m><var name="$L[1]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to\pi} f(x)=</m><var name="$L[2]" width="10" /></p></li>
+              <li><p><m>f(\pi)=</m><var name="$L[3]" width="10" /></p></li>
+            </ol></p>
           </statement>
           <solution>
-            <ol>
-              <li><p><m>-1</m></p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>Does not exist.</p></li>
-
-              <li><p>0</p></li>
-            </ol>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$L[0]" category="number">
+              <static>1-\cos^2(a)</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>\sin^2(a)</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>1-\cos^2(a),\text{ which equals }\sin^2(a)</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>\sin^2(a)</static>
             </var>
             <pg-code>
+              Context()->variables->add(a=>'Real');
+              @L=(Formula("1-cos^2(a)"),Formula("sin^2(a)"),OneOf(Formula("1-cos^2(a)"),Formula("sin^2(a)")),Formula("sin^2(a)"));
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-	1-\cos^2 x \amp  \amp  x\lt a \\
-	\sin^2 x \amp  \amp  x\geq a
-              \end{array} ,
-	\right.</m></p>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
+
+            <p><m>f(x) = \begin{cases}1-\cos^2(x)\amp x&lt;a\\\sin^2(x)\amp x\geq a\end{cases}</m></p>
 
             <p>where <m>a</m> is a real number.</p>
 
-            <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to a^-} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to a^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to a} f(x)</m></p></li>
-
-              <li><p><m>f(a)</m></p></li>
-            </ol>
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to a^-} f(x)=</m><var name="$L[0]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to a^+} f(x)=</m><var name="$L[1]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to a} f(x)=</m><var name="$L[2]" width="10" /></p></li>
+              <li><p><m>f(a)=</m><var name="$L[3]" width="10" /></p></li>
+            </ol></p>
           </statement>
           <solution>
-            <ol>
-              <li><p><m>1-\cos^2 a = \sin^2 a</m></p></li>
-
-              <li><p><m>\sin^2 a</m></p></li>
-
-              <li><p><m>\sin^2 a</m></p></li>
-
-              <li><p><m>\sin ^2 a</m></p></li>
-            </ol>
           </solution>
         </webwork>
       </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
+          <setup>
+            <var name="$g">
+              <static>\begin{cases}x+1\amp x\lt1\\1\amp x=1\\x-1\amp x\gt1\end{cases}</static>
+            </var>
+            <var name="$a">
+              <static>1</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>2</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>0</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>1</static>
+            </var>
+            <pg-code>
+              $a=random(-3,3,1);
+              @y=map{$_-2}NchooseK(5,3);
+              if($envir{problemSeed}==1){$a=1;@y=(1,0,-1);};
+              @f=(Formula("x+$y[0]")->reduce,Formula("x+$y[1]")->reduce,Formula("x+$y[2]")->reduce);
+              Context("PiecewiseFunction");
+              $g=PiecewiseFunction("x &lt; $a" => "$f[0]", "x = $a" => "$f[1]", "x > $a" => $f[2]);
+              @L=($f[0]->eval(x=>$a),$f[2]->eval(x=>$a));
+              $L[2]=($L[0]==$L[1])?$L[0]:Compute("DNE");
+              $L[3]=$g->eval(x=>$a);
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
+
+            <p><m>f(x) = <var name="$g" /></m></p>
+
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^-} f(x)=</m><var name="$L[0]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^+} f(x)=</m><var name="$L[1]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />} f(x)=</m><var name="$L[2]" width="10" /></p></li>
+              <li><p><m>f(<var name="$a" />)=</m><var name="$L[3]" width="10" /></p></li>
+            </ol></p>
+          </statement>
+          <solution>
+          </solution>
+        </webwork>
+      </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1175,6 +1273,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
