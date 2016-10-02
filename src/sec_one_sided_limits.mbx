@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_one_sided_limits">
-  <title>One Sided Limits</title>
+  <title>One-Sided Limits</title>
   <introduction>
     <p>We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for evaluating them. <xref ref="sec_limit_analytically">Section</xref> gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave <q>nicely.</q> In this section we rigorously define what we mean by <q>nicely.</q></p>
 
@@ -1171,41 +1171,53 @@
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$g">
+              <static>\begin{cases}x^2\amp x\lt2\\x+1\amp x=2\\-x^2+2x+4\amp x\gt2\end{cases}</static>
+            </var>
+            <var name="$a">
+              <static>2</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>4</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>4</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>4</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>3</static>
             </var>
             <pg-code>
+              $a=random(-3,3,1);
+              @y=map{$_-2}NchooseK(5,2);
+              if($envir{problemSeed}==1){$a=2;@y=(4,3);};
+              @f=(Formula("x^2+($y[0]-2*$a)x+($y[0]-($a)^2-($y[0]-2*$a)*$a)")->reduce->reduce,Formula("x+($y[1]-$a)")->reduce,Formula("-x^2+$a*x+$y[0]")->reduce);
+              Context("PiecewiseFunction");
+              $g=PiecewiseFunction("x &lt; $a" => "$f[0]", "x = $a" => "$f[1]", "x > $a" => $f[2]);
+              @L=($f[0]->eval(x=>$a),$f[2]->eval(x=>$a));
+              $L[2]=($L[0]==$L[1])?$L[0]:Compute("DNE");
+              $L[3]=$g->eval(x=>$a);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-	x+1 \amp  \amp  x\lt 1 \\
-	1  \amp  \amp  x=1\\
-	x-1 \amp  \amp  x>1
-              \end{array} 
-	\right.</m></p>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
 
-            <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to 1^-} f(x)</m></p></li>
+            <p><m>f(x) = <var name="$g" /></m></p>
 
-              <li><p><m>\ds \lim_{x\to 1^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 1} f(x)</m></p></li>
-
-              <li><p><m>f(1)</m></p></li>
-            </ol>
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^-} f(x)=</m><var name="$L[0]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^+} f(x)=</m><var name="$L[1]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />} f(x)=</m><var name="$L[2]" width="10" /></p></li>
+              <li><p><m>f(<var name="$a" />)=</m><var name="$L[3]" width="10" /></p></li>
+            </ol></p>
           </statement>
           <solution>
-            <ol>
-              <li><p>2</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p>Does not exist</p></li>
-
-              <li><p>1</p></li>
-            </ol>
           </solution>
         </webwork>
       </exercise>
@@ -1213,210 +1225,241 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$L[0]" category="number">
+              <static>c</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>c</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>c</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>c</static>
             </var>
             <pg-code>
+              Context()->variables->add(c=>'Real');
+              $L=Formula("c");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-	x^2 \amp  \amp  x\lt 2 \\
-	x+1  \amp  \amp  x=2\\
-	-x^2+2x+4 \amp  \amp  x>2
-              \end{array} 
-	\right.</m></p>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
 
-            <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to 2^-} f(x)</m></p></li>
+            <p><m>f(x) = \begin{cases}a(x-b)^2+c\amp x\lt b\\a(x-b)+c\amp x\geq b\end{cases}</m></p>
 
-              <li><p><m>\ds \lim_{x\to 2^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 2} f(x)</m></p></li>
-
-              <li><p><m>f(2)</m></p></li>
-            </ol>
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to b^-} f(x)=</m><var name="$L" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to b^+} f(x)=</m><var name="$L" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to b} f(x)=</m><var name="$L" width="10" /></p></li>
+              <li><p><m>f(b)=</m><var name="$L" width="10" /></p></li>
+            </ol></p>
           </statement>
           <solution>
-            <ol>
-              <li><p>4</p></li>
-
-              <li><p>4</p></li>
-
-              <li><p>4</p></li>
-
-              <li><p>3</p></li>
-            </ol>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$L[0]" category="number">
+              <static>-1</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>1</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>0</static>
             </var>
             <pg-code>
+              @L=(-1,1,Compute("DNE"),0);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-	a(x-b)^2+c \amp  \amp  x\lt b \\
-	a(x-b)+c \amp  \amp  x\geq b
-              \end{array} 
-	\right.,</m></p>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
 
-            <p>where <m>a</m>, <m>b</m> and <m>c</m> are real numbers.</p>
+            <p><m>f(x) = \begin{cases}\frac{\abs{x}}{x}\amp x\neq0\\0\amp x=0\end{cases}</m></p>
 
-            <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to b^-} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to b^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to b} f(x)</m></p></li>
-
-              <li><p><m>f(b)</m></p></li>
-            </ol>
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to 0^-} f(x)=</m><var name="$L[0]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to 0^+} f(x)=</m><var name="$L[1]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to 0} f(x)=</m><var name="$L[2]" width="10" /></p></li>
+              <li><p><m>f(0)=</m><var name="$L[3]" width="10" /></p></li>
+            </ol></p>
           </statement>
           <solution>
-            <ol>
-              <li><p><m>c</m></p></li>
-
-              <li><p><m>c</m></p></li>
-
-              <li><p><m>c</m></p></li>
-
-              <li><p><m>c</m></p></li>
-            </ol>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-	\frac{\abs{x}}{x} \amp  \amp  x\neq 0 \\
-	0 \amp  \amp  x=0
-              \end{array} 
-	\right.</m></p>
-
-            <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
-
-              <li><p><m>\ds \lim_{x\to 0} f(x)</m></p></li>
-
-              <li><p><m>f(0)</m></p></li>
-            </ol>
-          </statement>
-          <solution>
-            <ol>
-              <li><p><m>-1</m></p></li>
-
-              <li><p><m>1</m></p></li>
-
-              <li><p>Does not exist</p></li>
-
-              <li><p><m>0</m></p></li>
-            </ol>
           </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Review</title>
+      <introduction>
+        <p>The following exercises are review from prior sections.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$r">
+              <static>\frac{x^2+5x+4}{x^2-3x-4}</static>
+            </var>
+            <var name="$a">
+              <static>-1</static>
+            </var>
+            <var name="$L" category="number">
+              <static>-\frac{3}{5}</static>
             </var>
             <pg-code>
+              ($a,$b,$c)=map{($_+1)*random(-1,1,2)}NchooseK(9,3);
+              if($envir{problemSeed}==1){$a=-1;$b=-4;$c=4;};
+              $f=Formula("x^2-($a+$b)x+$a*$b")->reduce;
+              $g=Formula("x^2-($a+$c)x+$a*$c")->reduce;
+              $r=$f/$g;
+              Context("Fraction");
+              $L=Fraction($a-$b,$a-$c);
             </pg-code>
           </setup>
           <statement>
-            <p>Evaluate the limit: <m>\ds \lim_{x\to -1} \frac{x^2+5 x+4}{x^2-3 x-4}</m>.</p>
+            <p>Use limit theorems to evaluate the limit.</p>
+            <p><m>\lim\limits_{x\to<var name="$a" />}<var name="$r" /></m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>-3/5</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$r">
+              <static>\frac{x^2-16}{x^2-4x-32}</static>
+            </var>
+            <var name="$a">
+              <static>-4</static>
+            </var>
+            <var name="$L" category="number">
+              <static>\frac{2}{3}</static>
             </var>
             <pg-code>
+              ($a,$b,$c)=map{($_+1)*random(-1,1,2)}NchooseK(9,3);
+              if($envir{problemSeed}==1){$a=-4;$b=4;$c=8;};
+              $f=Formula("x^2-($a+$b)x+$a*$b")->reduce;
+              $g=Formula("x^2-($a+$c)x+$a*$c")->reduce;
+              $r=$f/$g;
+              Context("Fraction");
+              $L=Fraction($a-$b,$a-$c);
             </pg-code>
           </setup>
           <statement>
-            <p>Evaluate the limit: <m>\ds \lim_{x\to -4} \frac{x^2-16}{x^2-4 x-32}</m>.</p>
+            <p>Use limit theorems to evaluate the limit.</p>
+            <p><m>\lim\limits_{x\to<var name="$a" />}<var name="$r" /></m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>2/3</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <pg-macros>
+              <macro-file>PGchoicemacros.pl</macro-file>
+            </pg-macros>
+            <var name="$r">
+              <static>\frac{x^2-15x+54}{x^2-6x}</static>
+            </var>
+            <var name="$a">
+              <static>-6</static>
+            </var>
+            <var name="$L" category="number">
+              <static>\frac{5}{2}</static>
             </var>
             <pg-code>
+              @a=map{($_-9)}NchooseK(18,4);
+              if($envir{problemSeed}==1){@a=(-6,6,9,0)};
+              $f=Formula("x^2-($a[1]+$a[2])x+$a[1]*$a[2]")->reduce;
+              $g=Formula("x^2-($a[1]+$a[3])x+$a[1]*$a[3]")->reduce;
+              $r=$f/$g;
+              Context("Fraction");
+              $L=Fraction($a[0]-$a[2],$a[0]-$a[3]);
             </pg-code>
           </setup>
           <statement>
-            <p>Evaluate the limit: <m>\ds \lim_{x\to -6} \frac{x^2-15 x+54}{x^2-6 x}</m>.</p>
+            <p>Use limit theorems to evaluate the limit.</p>
+            <p><m>\lim\limits_{x\to<var name="$a[0]" />}<var name="$r" /></m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>2.5</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$r">
+              <static>\frac{x^2-4.4x+1.6}{x^2-0.4x}</static>
+            </var>
+            <var name="$a">
+              <static>0.4</static>
+            </var>
+            <var name="$L" category="number">
+              <static>-9</static>
             </var>
             <pg-code>
+              ($a,$b,$c)=map{$_*random(-1,1,2)/10}NchooseK(99,3);
+              if($envir{problemSeed}==1){$a=0.4;$b=4;$c=0;};
+              $f=Formula("x^2-($a+$b)x+$a*$b")->reduce;
+              $g=Formula("x^2-($a+$c)x+$a*$c")->reduce;
+              $r=$f/$g;
+              $L=Real(($a-$b)/($a-$c));
             </pg-code>
           </setup>
           <statement>
-            <p>Approximate the limit numerically: <m>\ds \lim_{x\to 0.4} \frac{x^2-4.4 x+1.6}{x^2-0.4 x}</m>.</p>
+            <p>Approximate the limit numerically.</p>
+            <p><m>\lim\limits_{x\to<var name="$a" />}<var name="$r" /></m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>-9</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$r">
+              <static>\frac{x^2+5.8x-1.2}{x^2-4.2x+0.8}</static>
+            </var>
+            <var name="$a">
+              <static>0.2</static>
+            </var>
+            <var name="$L" category="number">
+              <static>-1.63</static>
             </var>
             <pg-code>
+              ($a,$b,$c)=map{$_*random(-1,1,2)/10}NchooseK(99,3);
+              if($envir{problemSeed}==1){$a=0.2;$b=-6;$c=4;};
+              $f=Formula("x^2-($a+$b)x+$a*$b")->reduce;
+              $g=Formula("x^2-($a+$c)x+$a*$c")->reduce;
+              $r=$f/$g;
+              $L=Real(($a-$b)/($a-$c));
             </pg-code>
           </setup>
           <statement>
-            <p>Approximate the limit numerically:
-              <m>\ds \lim_{x\to 0.2} \frac{x^2+5.8 x-1.2}{x^2-4.2 x+0.8}</m>.</p>
+            <p>Approximate the limit numerically.</p>
+            <p><m>\lim\limits_{x\to<var name="$a" />}<var name="$r" /></m></p>
+            <p><var name="$L" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>-1.63</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
