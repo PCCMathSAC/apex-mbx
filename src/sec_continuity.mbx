@@ -494,183 +494,199 @@
     <todo>Talk with Greg about moving limits involving infinity to be before continuity. If so, remove this next sentence.</todo>
     <p>In the next section we examine one more aspect of limits: limits that involve infinity.</p>
   </introduction>
+
   <exercises>
     <exercisegroup>
       <title>Terms and Concepts</title>
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>In your own words, describe what it means for a function to be continuous.</p>
+
+            <p><var form="essay" /></p>   
           </statement>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>In your own words, describe what the Intermediate Value Theorem states.</p>
+
+            <p><var form="essay" /></p>   
           </statement>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>What is a <q>root</q> of a function?</p>
+
+            <p><var form="essay" /></p>   
           </statement>
           <solution>
             <p>A root of a function <m>f</m> is a value <m>c</m> such that <m>f(c)=0</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Given functions <m>f</m> and <m>g</m> on an interval <m>I</m>, how can the Bisection Method be used to find a value <m>c</m> where <m>f(c) = g(c)</m>?</p>
+
+            <p><var form="essay" /></p>   
           </statement>
           <solution>
             <p>Consider the function <m>h(x) = g(x) - f(x)</m>, and use the Bisection Method to find a root of <m>h</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$TF">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $TF=PopUp(['?','True','False'],'False');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F:	If <m>f</m> is defined on an open interval containing <m>c</m>, and <m>\ds \lim_{x\to c}f(x)</m> exists, then <m>f</m> is continuous at <m>c</m>.</p>
+            <p>True or False? If <m>f</m> is defined on an open interval containing <m>c</m>, and <m>\lim\limits_{x\to c}f(x)</m> exists, then <m>f</m> is continuous at <m>c</m>. <var name="$TF" form="popup"/></p>
           </statement>
           <solution>
-            <p>F</p>
+            <p><var name="$TF" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$TF">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $TF=PopUp(['?','True','False'],'True');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>f</m> is continuous at <m>c</m>, then <m>\ds \lim_{x\to c}f(x)</m> exists.</p>
+            <p>True or False? If <m>f</m> is continuous at <m>c</m>, then <m>\lim\limits_{x\to c}f(x)</m> exists. <var name="$TF" form="popup"/></p>
           </statement>
           <solution>
-            <p>T</p>
+            <p><var name="$TF" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$TF">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $TF=PopUp(['?','True','False'],'True');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>f</m> is continuous at <m>c</m>, then <m>\ds \lim_{x\to c^+}f(x) = f(c)</m>.</p>
+            <p>True or False? If <m>f</m> is continuous at <m>c</m>, then <m>\lim\limits_{x\to c^+}f(x) = f(c)</m>. <var name="$TF" form="popup"/></p>
           </statement>
           <solution>
-            <p>T</p>
+            <p><var name="$TF" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$TF">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $TF=PopUp(['?','True','False'],'False');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>f</m> is continuous on <m>[a,b]</m>, then <m>\ds\lim_{x\to a^-}f(x) = f(a)</m>.</p>
+            <p>True or False? If <m>f</m> is continuous on <m>[a,b]</m>, then <m>\lim\limits_{x\to a^-}f(x) = f(a)</m>. <var name="$TF" form="popup"/></p>
           </statement>
           <solution>
-            <p>F</p>
+            <p><var name="$TF" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$TF">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $TF=PopUp(['?','True','False'],'False');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>f</m> is continuous on <m>[0,1)</m> and <m>[1,2)</m>, then <m>f</m> is continuous on <m>[0,2)</m>.</p>
+            <p>True or False? If <m>f</m> is continuous on <m>[0,1)</m> and <m>[1,2)</m>, then <m>f</m> is continuous on <m>[0,2)</m>. <var name="$TF" form="popup"/></p>
           </statement>
           <solution>
-            <p>F</p>
+            <p><var name="$TF" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$TF">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $TF=PopUp(['?','True','False'],'True');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: The sum of continuous functions is also continuous.</p>
+            <p>True or False? The sum of continuous functions is also continuous. <var name="$TF" form="popup"/></p>
           </statement>
           <solution>
-            <p>T</p>
+            <p><var name="$TF" /></p>
           </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises, a graph of a function <m>f</m> is given along with a value <m>a</m>. Determine if <m>f</m> is continuous at <m>a</m>; if it is not, state why it is not.</p>
+      <introduction>
+        <p>In the following exercises, a graph of a function <m>f</m> is given along with a value <m>a</m>. Determine if <m>f</m> is continuous at <m>a</m>; if it is not, state why it is not.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -816,7 +832,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, determine if <m>f</m> is continuous at the indicated values. If not, explain why.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, determine if <m>f</m> is continuous at the indicated values. If not, explain why.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -937,7 +958,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, give the intervals on which the given function is continuous.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, give the intervals on which the given function is continuous.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1125,75 +1151,81 @@
           </solution>
         </webwork>
       </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Let <m>f</m> be continuous on <m>[1,5]</m> where <m>f(1) = -2</m> and <m>f(5) = -10</m>. Does a value <m>1\lt c\lt 5</m> exist such that <m>f(c) = -9</m>? Why/why not?</p>
-          </statement>
-          <solution>
-            <p>Yes, by the Intermediate Value Theorem.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Let <m>g</m> be continuous on <m>[-3,7]</m> where <m>g(0) = 0</m> and <m>g(2) = 25</m>. Does a value <m>-3\lt c\lt 7</m> exist such that <m>g(c) = 15</m>? Why/why not?</p>
-          </statement>
-          <solution>
-            <p>Yes, by the Intermediate Value Theorem. In fact, we can be more specific and state such a value <m>c</m> exists in <m>(0,2)</m>, not just in <m>(-3,7)</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Let <m>f</m> be continuous on <m>[-1,1]</m> where <m>f(-1) = -10</m> and <m>f(1) = 10</m>. Does a value <m>-1\lt c\lt 1</m> exist such that <m>f(c) = 11</m>? Why/why not?</p>
-          </statement>
-          <solution>
-            <p>We cannot say; the Intermediate Value Theorem only applies to function values between <m>-10</m> and 10; as 11 is outside this range, we do not know.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Let <m>h</m> be a function on <m>[-1,1]</m> where <m>h(-1) = -10</m> and <m>h(1) = 10</m>. Does a value <m>-1\lt c\lt 1</m> exist such that <m>h(c) = 0</m>? Why/why not?</p>
-          </statement>
-          <solution>
-            <p>We cannot say; the Intermediate Value Theorem only applies to continuous functions. As we do know know if <m>h</m> is continuous, we cannot say.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <p>In the following exercises, use the Bisection Method to approximate, accurate to two decimal places, the value of the root of the given function in the given interval.</p>
+    </exercisegroup>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Let <m>f</m> be continuous on <m>[1,5]</m> where <m>f(1) = -2</m> and <m>f(5) = -10</m>. Does a value <m>1\lt c\lt 5</m> exist such that <m>f(c) = -9</m>? Why/why not?</p>
+        </statement>
+        <solution>
+          <p>Yes, by the Intermediate Value Theorem.</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Let <m>g</m> be continuous on <m>[-3,7]</m> where <m>g(0) = 0</m> and <m>g(2) = 25</m>. Does a value <m>-3\lt c\lt 7</m> exist such that <m>g(c) = 15</m>? Why/why not?</p>
+        </statement>
+        <solution>
+          <p>Yes, by the Intermediate Value Theorem. In fact, we can be more specific and state such a value <m>c</m> exists in <m>(0,2)</m>, not just in <m>(-3,7)</m>.</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Let <m>f</m> be continuous on <m>[-1,1]</m> where <m>f(-1) = -10</m> and <m>f(1) = 10</m>. Does a value <m>-1\lt c\lt 1</m> exist such that <m>f(c) = 11</m>? Why/why not?</p>
+        </statement>
+        <solution>
+          <p>We cannot say; the Intermediate Value Theorem only applies to function values between <m>-10</m> and 10; as 11 is outside this range, we do not know.</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Let <m>h</m> be a function on <m>[-1,1]</m> where <m>h(-1) = -10</m> and <m>h(1) = 10</m>. Does a value <m>-1\lt c\lt 1</m> exist such that <m>h(c) = 0</m>? Why/why not?</p>
+        </statement>
+        <solution>
+          <p>We cannot say; the Intermediate Value Theorem only applies to continuous functions. As we do know know if <m>h</m> is continuous, we cannot say.</p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, use the Bisection Method to approximate, accurate to two decimal places, the value of the root of the given function in the given interval.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1274,8 +1306,11 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Review</title>
+      <introduction>
+        <p>The following exercises are review from prior sections.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
