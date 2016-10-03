@@ -583,7 +583,7 @@
     <example xml:id="ex_limit_allbut1">
       <title>Evaluating a limit using <xref ref="thm_limit_allbut1">Theorem</xref></title>
       <statement>
-        <p>Evaluate <m>\lim\limits_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15}</m>.</p>
+        <p>Evaluate <m>\lim\limits_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15 \text{.}}</m></p>
       </statement>
       <solution>
         <p>We begin by applying <xref ref="thm_lim_continuous">Theorem</xref> and substituting <m>3</m> for <m>x</m>. This returns the familiar indeterminate form of <q>0/0</q>. Since the numerator and denominator are each polynomials, we know that <m>(x-3)</m> is factor of each. Using whatever method is most comfortable to you, factor out <m>(x-3)</m> from each (using polynomial division, synthetic division, a computer algebra system, etc.). We find that
@@ -594,7 +594,32 @@
             <mrow>\lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} \amp = \lim_{x\to 3}\frac{(x-3)\left(x^2+x-2\right)}{(x-3)\left(2 x^2+9 x-5\right)}</mrow>
             <mrow>\amp =\lim_{x\to 3} \frac{x^2+x-2}{2 x^2+9 x-5}</mrow>
             <mrow>\amp = \frac{10}{40}</mrow>
-            <mrow>\amp = \frac{1}{4}\text{.}</mrow>
+            <mrow>\amp = \frac{1}{4\text{.}}</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+  
+    <example xml:id="ex_limit_allbut2">
+      <title>Evaluating a limit using <xref ref="thm_limit_allbut1">Theorem</xref></title>
+      <statement>
+        <p>Evaluate <m>\lim\limits_{x\to 9} \frac{\sqrt{x}-3}{x-9 \text{.}}</m></p>
+      </statement>
+      <solution>
+        <p>We begin by trying to apply the <xref ref="quotient-limit-rule" autoname="title"/> limit rule,  but the denominator evaluates to zero. In fact, this limit is of the indeterminate form <m>0/0</m>. Instead, we will do some algebra. In this case, we multiply the numerator and denominator by the conjugate of the numerator.
+          <md>
+           <mrow>\frac{\sqrt{x}-3}{x-9} \amp = \frac{\sqrt{x}-3}{x-9} \cdot \frac{(\sqrt{x}+3)}{(\sqrt{x}+3)}</mrow>
+           <mrow>\amp= \frac{x-9}{(x-9)(\sqrt{x}+3)}</mrow>
+          </md>
+          We can cancel the <m>(x-9)</m> factors as long as <m>x\neq 9</m>. Using <xref ref="thm_limit_allbut1">Theorem</xref> we conclude:
+          <md>
+            <mrow>\lim_{x\to 9} \frac{\sqrt{x}-3}{x-9} \amp =\lim_{x\to 9} \frac{x-9}{(x-9)(\sqrt{x}+3)} </mrow>
+            <mrow>\amp = \lim_{x\to 9 }\frac{1}{\sqrt{x}+3}</mrow>
+            <mrow>\amp = \frac{1}{\lim_{x\to 9}\sqrt{x}+\lim_{x \to 9}3}</mrow>
+            <mrow>\amp = \frac{1}{\sqrt{\lim_{x\to 9}x}+3}</mrow>
+            <mrow>\amp = \frac{1}{\sqrt{3+3}}</mrow>
+            <mrow>\amp = \frac{1}{6\text{.}}</mrow>
           </md>
         </p>
       </solution>
