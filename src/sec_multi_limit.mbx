@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_multi_limit">
   <title>Limits and Continuity of Multivariable Functions</title>
@@ -241,9 +242,9 @@
 
   <subsection>
     <title>Limits</title>
-    <p>Recall a pseudo<ndash />definition of the limit of a function of one variable: <q><m>\ds \lim_{x\to c}f(x) = L</m></q> means that if <m>x</m> is <q>really close</q> to <m>c</m>, then <m>f(x)</m> is <q>really close</q> to <m>L</m>. A similar pseudo<ndash />definition holds for functions of two variables. We'll say that</p>
+    <p>Recall a pseudo<ndash />definition of the limit of a function of one variable: <q><m>\lim\limits_{x\to c}f(x) = L</m></q> means that if <m>x</m> is <q>really close</q> to <m>c</m>, then <m>f(x)</m> is <q>really close</q> to <m>L</m>. A similar pseudo<ndash />definition holds for functions of two variables. We'll say that</p>
 
-    <p><q><m>\ds \lim_{(x,y)\to (x_0,y_0)} f(x,y) = L</m></q></p>
+    <p><q><m>\lim\limits_{(x,y)\to (x_0,y_0)} f(x,y) = L</m></q></p>
 
     <p>means <q>if the point <m>(x,y)</m> is really close to the point <m>(x_0,y_0)</m>, then <m>f(x,y)</m> is really close to <m>L</m>.</q> The formal definition is given below.</p>
 
@@ -253,7 +254,7 @@
         <p>Let <m>S</m> be an open set containing <m>(x_0,y_0)</m>, and let <m>f</m> be a function of two variables defined on <m>S</m>, except possibly at <m>(x_0,y_0)</m>.
           The <term>limit</term> of <m>f(x,y)</m> as <m>(x,y)</m> approaches <m>(x_0,y_0)</m> is <m>L</m>, denoted
           <me>
-            \ds \lim_{(x,y)\to (x_0,y_0)} f(x,y) = L,
+            \lim\limits_{(x,y)\to (x_0,y_0)} f(x,y) = L,
           </me>
           means that given any <m>\varepsilon>0</m>, there exists <m>\delta>0</m> such that for all <m>(x,y)\neq (x_0,y_0)</m>, if <m>(x,y)</m> is in the open disk centered at <m>(x_0,y_0)</m> with radius <m>\delta</m>, then <m>\abs{f(x,y) - L}\lt \varepsilon.</m>
           <index><main>limit</main><sub>of multivariable function</sub></index><index><main>multivariable function</main><sub>limit</sub></index></p>
@@ -410,19 +411,19 @@
           <index><main>limit</main><sub>of multivariable function</sub></index><index><main>limit</main><sub>properties</sub></index><index><main>multivariable function</main><sub>limit</sub></index></p>
 
         <ol>
-          <li><p>Constants:  <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b = b</m></p></li>
+          <li><p>Constants:  <m>\lim\limits_{(x,y)\to (x_0,y_0)} b = b</m></p></li>
 
-          <li><p>Identity 	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} x = x_0</m>; <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} y = y_0</m></p></li>
+          <li><p>Identity 	<m>\lim\limits_{(x,y)\to (x_0,y_0)} x = x_0</m>; <m>\lim\limits_{(x,y)\to (x_0,y_0)} y = y_0</m></p></li>
 
-          <li><p>Sums/Differences:  <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)}\big(f(x,y)\pm g(x,y)\big) = L\pm K</m></p></li>
+          <li><p>Sums/Differences:  <m>\lim\limits_{(x,y)\to (x_0,y_0)}\big(f(x,y)\pm g(x,y)\big) = L\pm K</m></p></li>
 
-          <li><p>Scalar Multiples: 	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} b\cdot f(x,y) = bL</m></p></li>
+          <li><p>Scalar Multiples: 	<m>\lim\limits_{(x,y)\to (x_0,y_0)} b\cdot f(x,y) = bL</m></p></li>
 
-          <li><p>Products: 	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)\cdot g(x,y) = LK</m></p></li>
+          <li><p>Products: 	<m>\lim\limits_{(x,y)\to (x_0,y_0)} f(x,y)\cdot g(x,y) = LK</m></p></li>
 
-          <li><p>Quotients:  <m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)/g(x,y) = L/K</m>, (<m>K\neq 0)</m></p></li>
+          <li><p>Quotients:  <m>\lim\limits_{(x,y)\to (x_0,y_0)} f(x,y)/g(x,y) = L/K</m>, (<m>K\neq 0)</m></p></li>
 
-          <li><p>Powers:  	<m>\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)^n = L^n</m></p></li>
+          <li><p>Powers:  	<m>\lim\limits_{(x,y)\to (x_0,y_0)} f(x,y)^n = L^n</m></p></li>
         </ol>
       </statement>
     </theorem>
@@ -460,7 +461,7 @@
 
     <p>That is, the limit is <m>L</m> if and only if <m>f(x)</m> approaches <m>L</m> when <m>x</m> approaches <m>c</m> from <em>either</em> direction, the left or the right.</p>
 
-    <p>In the plane, there are infinite directions from which <m>(x,y)</m> might approach <m>(x_0,y_0)</m>. In fact, we do not have to restrict ourselves to approaching <m>(x_0,y_0)</m> from a particular direction, but rather we can approach that point along a path that is not a straight line. It is possible to arrive at different limiting values by approaching <m>(x_0,y_0)</m> along different paths. If this happens, we say that <m>\ds \lim_{(x,y)\to(x_0,y_0) } f(x,y)</m> does not exist (this is analogous to the left and right hand limits of single variable functions not being equal).</p>
+    <p>In the plane, there are infinite directions from which <m>(x,y)</m> might approach <m>(x_0,y_0)</m>. In fact, we do not have to restrict ourselves to approaching <m>(x_0,y_0)</m> from a particular direction, but rather we can approach that point along a path that is not a straight line. It is possible to arrive at different limiting values by approaching <m>(x_0,y_0)</m> along different paths. If this happens, we say that <m>\lim\limits_{(x,y)\to(x_0,y_0) } f(x,y)</m> does not exist (this is analogous to the left and right hand limits of single variable functions not being equal).</p>
 
     <p>Our theorems tell us that we can evaluate most limits quite simply, without worrying about paths. When indeterminate forms arise, the limit may or may not exist. If it does exist, it can be difficult to prove this as we need to show the same limiting value is obtained regardless of the path chosen. The case where the limit does not exist is often easier to deal with, for we can often pick two paths along which the limit is different.</p>
 
@@ -468,14 +469,14 @@
       <title>Showing limits do not exist</title>
       <statement>
         <ol>
-          <li><p>Show <m>\ds \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}</m> does not exist by finding the limits along the lines <m>y=mx</m>.</p></li>
+          <li><p>Show <m>\lim\limits_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}</m> does not exist by finding the limits along the lines <m>y=mx</m>.</p></li>
 
-          <li><p>Show <m>\ds \lim_{(x,y)\to (0,0)} \frac{\sin(xy)}{x+y}</m> does not exist by finding the limit along the path <m>y=-\sin x</m>.</p></li>
+          <li><p>Show <m>\lim\limits_{(x,y)\to (0,0)} \frac{\sin(xy)}{x+y}</m> does not exist by finding the limit along the path <m>y=-\sin x</m>.</p></li>
         </ol>
       </statement>
       <solution>
         <ol>
-          <li><p>Evaluating <m>\ds \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}</m> along the lines <m>y=mx</m> means replace all <m>y</m>'s with <m>mx</m> and evaluating the resulting limit:
+          <li><p>Evaluating <m>\lim\limits_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}</m> along the lines <m>y=mx</m> means replace all <m>y</m>'s with <m>mx</m> and evaluating the resulting limit:
               <md>
                 <mrow>\lim_{(x,mx)\to (0,0)} \frac{3x(mx)}{x^2+(mx)^2} \amp =\lim_{x\to 0} \frac{3mx^2}{x^2(m^2+1)}</mrow>
                 <mrow>\amp = \lim_{x\to 0} \frac{3m}{m^2+1}</mrow>
@@ -483,12 +484,12 @@
               </md>
               While the limit exists for each choice of <m>m</m>, we get a <em>different</em> limit for each choice of <m>m</m>. That is, along different lines we get differing limiting values, meaning <em>the</em> limit does not exist.</p></li>
 
-          <li><p>Let <m>f(x,y) = \frac{\sin(xy)}{x+y}</m>. We are to show that <m>\ds \lim_{(x,y)\to (0,0)} f(x,y)</m> does not exist by finding the limit along the path <m>y=-\sin x</m>. First, however, consider the limits found along the lines <m>y=mx</m> as done above.
+          <li><p>Let <m>f(x,y) = \frac{\sin(xy)}{x+y}</m>. We are to show that <m>\lim\limits_{(x,y)\to (0,0)} f(x,y)</m> does not exist by finding the limit along the path <m>y=-\sin x</m>. First, however, consider the limits found along the lines <m>y=mx</m> as done above.
               <md>
                 <mrow>\lim_{(x,mx)\to (0,0)} \frac{\sin\big(x(mx)\big)}{x+mx} \amp = \lim_{x\to 0} \frac{\sin (mx^2)}{x(m+1)}</mrow>
                 <mrow>\amp = \lim_{x\to 0} \frac{\sin(mx^2)}{x}\cdot\frac1{m+1}.</mrow>
               </md>
-              By applying L'H&#xf4;pital's Rule, we can show this limit is 0 <em>except</em> when <m>m=-1</m>, that is, along the line <m>y=-x</m>. This line is not in the domain of <m>f</m>, so we have found the following fact: along every line <m>y=mx</m> in the domain of <m>f</m>, <m>\ds \lim_{(x,y)\to(0,0)} f(x,y)=0</m>. 
+              By applying L'H&#xf4;pital's Rule, we can show this limit is 0 <em>except</em> when <m>m=-1</m>, that is, along the line <m>y=-x</m>. This line is not in the domain of <m>f</m>, so we have found the following fact: along every line <m>y=mx</m> in the domain of <m>f</m>, <m>\lim\limits_{(x,y)\to(0,0)} f(x,y)=0</m>. 
 
 	
 	Now consider the limit along the path <m>y=-\sin x</m>:
@@ -501,7 +502,7 @@
                 <mrow>\amp = \lim_{x\to 0}\frac{-\sin\big(-x\sin x\big)(-\sin x-x\cos x)^2+\cos\big(-x\sin x\big)(-2\cos x+x\sin x)}{\sin x}</mrow>
                 <mrow>\amp = \text{ ``2/0'' }  \Rightarrow \text{ the limit does not exist. }</mrow>
               </md>
-              Step back and consider what we have just discovered. Along any line <m>y=mx</m> in the domain of the <m>f(x,y)</m>, the limit is 0. However, along the path <m>y=-\sin x</m>, which lies in the domain of  <m>f(x,y)</m> for all <m>x\neq 0</m>, the limit does not exist. Since the limit is not the same along every path to <m>(0,0)</m>, we say <m>\ds \lim_{(x,y)\to (0,0)}\frac{\sin(xy)}{x+y}</m> does not exist.</p></li>
+              Step back and consider what we have just discovered. Along any line <m>y=mx</m> in the domain of the <m>f(x,y)</m>, the limit is 0. However, along the path <m>y=-\sin x</m>, which lies in the domain of  <m>f(x,y)</m> for all <m>x\neq 0</m>, the limit does not exist. Since the limit is not the same along every path to <m>(0,0)</m>, we say <m>\lim\limits_{(x,y)\to (0,0)}\frac{\sin(xy)}{x+y}</m> does not exist.</p></li>
         </ol>
       </solution>
     </example>
@@ -509,7 +510,7 @@
     <example xml:id="ex_multilimit5">
       <title>Finding a limit</title>
       <statement>
-        <p>Let <m>\ds f(x,y) = \frac{5x^2y^2}{x^2+y^2}</m>. Find <m>\ds\lim_{(x,y)\to (0,0)}  f(x,y) .</m></p>
+        <p>Let <m>\ds f(x,y) = \frac{5x^2y^2}{x^2+y^2}</m>. Find <m>\lim\limits_{(x,y)\to (0,0)}  f(x,y) .</m></p>
       </statement>
       <solution>
         <p>It is relatively easy to show that along any line <m>y=mx</m>, the limit is 0. This is not enough to prove that the limit exists, as demonstrated in the previous example, but it tells us that if the limit does exist then it must be 0.</p>
@@ -528,7 +529,7 @@
           </md>
         </p>
 
-        <p>Thus if <m>\sqrt{(x-0)^2+(y-0)^2}\lt \delta</m> then <m>\abs{f(x,y)-0}\lt \varepsilon</m>, which is what we wanted to show. Thus <m>\ds \lim_{(x,y)\to(0,0)} \frac{5x^2y^2}{x^2+y^2} = 0</m>.</p>
+        <p>Thus if <m>\sqrt{(x-0)^2+(y-0)^2}\lt \delta</m> then <m>\abs{f(x,y)-0}\lt \varepsilon</m>, which is what we wanted to show. Thus <m>\lim\limits_{(x,y)\to(0,0)} \frac{5x^2y^2}{x^2+y^2} = 0</m>.</p>
       </solution>
     </example>
   </subsection>
@@ -543,7 +544,7 @@
         <p>Let a function <m>f(x,y)</m> be defined on an open disk <m>B</m> containing the point <m>(x_0,y_0)</m>.</p>
 
         <ol>
-          <li><p><m>f</m> is <em>continuous</em> at <m>(x_0,y_0)</m> if <m>\ds\lim_{(x,y)\to(x_0,y_0)} f(x,y) = f(x_0,y_0)</m>.
+          <li><p><m>f</m> is <em>continuous</em> at <m>(x_0,y_0)</m> if <m>\lim\limits_{(x,y)\to(x_0,y_0)} f(x,y) = f(x_0,y_0)</m>.
 	<index><main>continuous function</main></index><index><main>multivariable function</main><sub>continuity</sub></index></p></li>
 
           <li><p><m>f</m> is <em>continuous on <m>B</m></em> if <m>f</m> is continuous at all points in <m>B</m>. If <m>f</m> is continuous at all points in <m>\mathbb{R}^2</m>, we say that <m>f</m> is <em>continuous everywhere</em>.</p></li>
@@ -559,15 +560,15 @@
           \end{array}  \right.</m>. Is <m>f</m> continuous at <m>(0,0)</m>? Is <m>f</m> continuous everywhere?</p>
       </statement>
       <solution>
-        <p>To determine if <m>f</m> is continuous at <m>(0,0)</m>, we need to compare <m>\ds\lim_{(x,y)\to (0,0)} f(x,y)</m> to <m>f(0,0)</m>.</p>
+        <p>To determine if <m>f</m> is continuous at <m>(0,0)</m>, we need to compare <m>\lim\limits_{(x,y)\to (0,0)} f(x,y)</m> to <m>f(0,0)</m>.</p>
 
         <p>Applying the definition of <m>f</m>, we see that <m>f(0,0) = \cos 0 = 1</m>.</p>
 
-        <p>We now consider the limit <m>\ds \lim_{(x,y)\to (0,0)} f(x,y)</m>. Substituting <m>0</m> for <m>x</m> and <m>y</m> in <m>(\cos y\sin x)/x</m> returns the indeterminate form <q>0/0</q>, so we need to do more work to evaluate this limit.</p>
+        <p>We now consider the limit <m>\lim\limits_{(x,y)\to (0,0)} f(x,y)</m>. Substituting <m>0</m> for <m>x</m> and <m>y</m> in <m>(\cos y\sin x)/x</m> returns the indeterminate form <q>0/0</q>, so we need to do more work to evaluate this limit.</p>
 
-        <p>Consider two related limits: <m>\ds \lim_{(x,y)\to (0,0)} \cos y</m> and <m>\ds \lim_{(x,y)\to(0,0)} \frac{\sin x}x</m>. The first limit does not contain <m>x</m>, and since <m>\cos y</m> is continuous,
+        <p>Consider two related limits: <m>\lim\limits_{(x,y)\to (0,0)} \cos y</m> and <m>\lim\limits_{(x,y)\to(0,0)} \frac{\sin x}x</m>. The first limit does not contain <m>x</m>, and since <m>\cos y</m> is continuous,
           <me>
-            \ds \lim_{(x,y)\to (0,0)} \cos y =\lim_{y\to 0} \cos y = \cos 0 = 1.
+            \lim\limits_{(x,y)\to (0,0)} \cos y =\lim_{y\to 0} \cos y = \cos 0 = 1.
           </me>
         </p>
 
@@ -586,7 +587,7 @@
           </md>
         </p>
 
-        <p>We have found that <m>\ds \lim_{(x,y)\to (0,0)} \frac{\cos y\sin x}{x} = f(0,0)</m>, so <m>f</m> is continuous at <m>(0,0)</m>.</p>
+        <p>We have found that <m>\lim\limits_{(x,y)\to (0,0)} \frac{\cos y\sin x}{x} = f(0,0)</m>, so <m>f</m> is continuous at <m>(0,0)</m>.</p>
 
         <p>A similar analysis shows that <m>f</m> is continuous at all points in <m>\mathbb{R}^2</m>. As long as <m>x\neq0</m>, we can evaluate the limit directly; when <m>x=0</m>, a similar analysis shows that the limit is <m>\cos y</m>. Thus we can say that <m>f</m> is continuous everywhere. A graph of <m>f</m> is given in <xref ref="fig_multicont1">Figure</xref>. Notice how it has no breaks, jumps, etc.</p>
 
@@ -759,7 +760,7 @@
               </me>
               means that given any <m>\varepsilon >0</m>, there is a <m>\delta >0</m> such that for all  <m>(x,y,z)\neq(x_0,y_0,z_0)</m>, if <m>(x,y,z)</m> is in the open ball centered at <m>(x_0,y_0,z_0)</m> with radius <m>\delta</m>, then <m>\abs{f(x,y,z) - L}\lt  \varepsilon</m>.</p></li>
 
-          <li><p>Let <m>f(x,y,z)</m> be defined on an open ball <m>B</m> containing <m>(x_0,y_0,z_0)</m>. <m>f</m> is <em>continuous</em> at <m>(x_0,y_0,z_0)</m> if <m>\ds \lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = f(x_0,y_0,z_0)</m>.</p></li>
+          <li><p>Let <m>f(x,y,z)</m> be defined on an open ball <m>B</m> containing <m>(x_0,y_0,z_0)</m>. <m>f</m> is <em>continuous</em> at <m>(x_0,y_0,z_0)</m> if <m>\lim\limits_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = f(x_0,y_0,z_0)</m>.</p></li>
         </ol>
       </statement>
     </definition>
@@ -803,7 +804,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Use your own words to describe (informally) what <m>\ds \lim_{(x,y)\to (1,2)} f(x,y) = 17</m> means.</p>
+            <p>Use your own words to describe (informally) what <m>\lim\limits_{(x,y)\to (1,2)} f(x,y) = 17</m> means.</p>
           </statement>
           <solution>
             <p>Answers will vary. One answer is <q>As <m>(x,y)</m> gets close to <m>(1,2)</m>, <m>f(x,y)</m> gets close to 17.</q></p>
@@ -1132,7 +1133,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{(x,y)\to(0,0)} \frac{x^2-y^2}{x^2+y^2}</m></p>
+            <p><m>\lim\limits_{(x,y)\to(0,0)} \frac{x^2-y^2}{x^2+y^2}</m></p>
 
             <ol>
               <li><p>Along the path <m>y=0</m>.</p></li>
@@ -1161,7 +1162,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{(x,y)\to(0,0)} \frac{x+y}{x-y}</m></p>
+            <p><m>\lim\limits_{(x,y)\to(0,0)} \frac{x+y}{x-y}</m></p>
 
             <ol>
               <li><p>Along the path <m>y=mx</m>.</p></li>
@@ -1186,7 +1187,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{(x,y)\to(0,0)} \frac{xy-y^2}{y^2+x}</m></p>
+            <p><m>\lim\limits_{(x,y)\to(0,0)} \frac{xy-y^2}{y^2+x}</m></p>
 
             <ol>
               <li><p>Along the path <m>y=mx</m>.</p></li>
@@ -1215,7 +1216,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{(x,y)\to(0,0)} \frac{\sin(x^2)}{y}</m></p>
+            <p><m>\lim\limits_{(x,y)\to(0,0)} \frac{\sin(x^2)}{y}</m></p>
 
             <ol>
               <li><p>Along the path <m>y=mx</m>.</p></li>
@@ -1255,7 +1256,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{(x,y)\to(1,2)} \frac{x+y-3}{x^2-1}</m></p>
+            <p><m>\lim\limits_{(x,y)\to(1,2)} \frac{x+y-3}{x^2-1}</m></p>
 
             <ol>
               <li><p>Along the path <m>y=2</m>.</p></li>
@@ -1296,7 +1297,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{(x,y)\to(\pi,\pi/2)} \frac{\sin x}{\cos y}</m></p>
+            <p><m>\lim\limits_{(x,y)\to(\pi,\pi/2)} \frac{\sin x}{\cos y}</m></p>
 
             <ol>
               <li><p>Along the path <m>x=\pi</m>.</p></li>

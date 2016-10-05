@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_int_comp_tests">
   <title>Integral and Comparison Tests</title>
@@ -302,11 +303,11 @@
           <index><main>series</main><sub>Limit Comparison Test</sub></index><index><main>Limit Comparison Test</main><sub>for series</sub></index><index><main>convergence</main><sub>Limit Comparison Test</sub></index><index><main>divergence</main><sub>Limit Comparison Test</sub></index></p>
 
         <ol>
-          <li><p>If <m>\ds\lim_{n\to\infty} \frac{a_n}{b_n} = L</m>, where <m>L</m> is a positive real number, then <m>\ds \sum_{n=1}^\infty a_n</m> and <m>\ds \sum_{n=1}^\infty b_n</m> either both converge or both diverge.</p></li>
+          <li><p>If <m>\lim\limits_{n\to\infty} \frac{a_n}{b_n} = L</m>, where <m>L</m> is a positive real number, then <m>\ds \sum_{n=1}^\infty a_n</m> and <m>\ds \sum_{n=1}^\infty b_n</m> either both converge or both diverge.</p></li>
 
-          <li><p>If <m>\ds\lim_{n\to\infty} \frac{a_n}{b_n} = 0</m>, then if <m>\ds \sum_{n=1}^\infty b_n</m> converges, then so does <m>\ds \sum_{n=1}^\infty a_n</m>.</p></li>
+          <li><p>If <m>\lim\limits_{n\to\infty} \frac{a_n}{b_n} = 0</m>, then if <m>\ds \sum_{n=1}^\infty b_n</m> converges, then so does <m>\ds \sum_{n=1}^\infty a_n</m>.</p></li>
 
-          <li><p>If <m>\ds\lim_{n\to\infty} \frac{a_n}{b_n} = \infty</m>, then if <m>\ds \sum_{n=1}^\infty b_n</m> diverges, then so does <m>\ds \sum_{n=1}^\infty a_n</m>.</p></li>
+          <li><p>If <m>\lim\limits_{n\to\infty} \frac{a_n}{b_n} = \infty</m>, then if <m>\ds \sum_{n=1}^\infty b_n</m> diverges, then so does <m>\ds \sum_{n=1}^\infty a_n</m>.</p></li>
         </ol>
       </statement>
     </theorem>
@@ -891,7 +892,7 @@
             <p><m>\ds \sum_{n=1}^\infty \sin\big(1/n\big)</m></p>
           </statement>
           <solution>
-            <p>Diverges; compare to <m>\ds \sum_{n=1}^\infty \frac {1}{n}</m>. Just as <m>\ds \lim_{n\to0}\frac{\sin n}{n} = 1</m>, <m>\ds\lim_{n\to\infty}\frac{\sin(1/n)}{1/n} = 1</m>.</p>
+            <p>Diverges; compare to <m>\ds \sum_{n=1}^\infty \frac {1}{n}</m>. Just as <m>\lim\limits_{n\to0}\frac{\sin n}{n} = 1</m>, <m>\lim\limits_{n\to\infty}\frac{\sin(1/n)}{1/n} = 1</m>.</p>
           </solution>
         </webwork>
       </exercise>

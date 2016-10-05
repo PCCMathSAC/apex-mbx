@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_limits_infty">
   <title>Limits Involving Infinity</title>
   <introduction>
-    <p>In <xref ref="def_limit">Definition</xref> we stated that in the equation <m>\ds \lim_{x\to c}f(x) = L</m>, both <m>c</m> and <m>L</m> were numbers. In this section we relax that definition a bit by considering situations when it makes sense to let <m>c</m> and/or <m>L</m> be <q>infinity.</q></p>
+    <p>In <xref ref="def_limit">Definition</xref> we stated that in the equation <m>\lim\limits_{x\to c}f(x) = L</m>, both <m>c</m> and <m>L</m> were numbers. In this section we relax that definition a bit by considering situations when it makes sense to let <m>c</m> and/or <m>L</m> be <q>infinity.</q></p>
 
     <p>As a motivating example, consider <m>f(x) = 1/x^2</m>, as shown in <xref ref="fig_oneoverxsquared">Figure</xref>. Note how, as <m>x</m> approaches 0, <m>f(x)</m> grows very, very large. It seems appropriate, and descriptive, to state that
       <me>
@@ -46,18 +47,18 @@
     <definition xml:id="def_limit_of_infinity">
       <title>Limit of Infinity, <m>\infty</m></title>
       <statement>
-        <p>We say <m>\ds \lim_{x\rightarrow c} f(x)=\infty</m> if for every <m>M>0</m> there exists <m>\delta>0</m> such that for all <m>x\neq c</m>, if <m>\abs{x-c}\lt \delta</m>, then <m>f(x)\geq M</m>. <index><main>limit</main><sub>of infinity</sub></index></p>
+        <p>We say <m>\lim\limits_{x\rightarrow c} f(x)=\infty</m> if for every <m>M>0</m> there exists <m>\delta>0</m> such that for all <m>x\neq c</m>, if <m>\abs{x-c}\lt \delta</m>, then <m>f(x)\geq M</m>. <index><main>limit</main><sub>of infinity</sub></index></p>
       </statement>
     </definition>
 
     <p>This is just like the <m>\varepsilon</m><ndash /><m>\delta</m> definition from <xref ref="sec_limit_def">Section</xref>. In that definition, given any (small) value <m>\varepsilon</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>) then <m>f(x)</m> is guaranteed to be within <m>\varepsilon</m> of <m>f(c)</m>. Here, given any (large) value <m>M</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>), then <m>f(x)</m> will be at least as large as <m>M</m>. In other words, if we get close enough to <m>c</m>, then we can make <m>f(x)</m> as large as we want. We can define limits equal to <m>-\infty</m> in a similar way.</p>
 
-    <p>It is important to note that by saying <m>\ds \lim_{x\to c}f(x) = \infty</m> we are implicitly stating that <em>the</em> limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, <em>does not exist.</em> A limit only exists when <m>f(x)</m> approaches an actual numeric value. We use the concept of limits that approach infinity because it is helpful and descriptive.</p>
+    <p>It is important to note that by saying <m>\lim\limits_{x\to c}f(x) = \infty</m> we are implicitly stating that <em>the</em> limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, <em>does not exist.</em> A limit only exists when <m>f(x)</m> approaches an actual numeric value. We use the concept of limits that approach infinity because it is helpful and descriptive.</p>
 
     <example xml:id="ex_inflim1">
       <title>Evaluating limits involving infinity</title>
       <statement>
-        <p>Find <m>\displaystyle \lim_{x\rightarrow 1}\frac1{(x-1)^2}</m> as shown in <xref ref="fig_inflim1">Figure</xref>.</p>
+        <p>Find <m>\lim\limits_{x\rightarrow 1}\frac1{(x-1)^2}</m> as shown in <xref ref="fig_inflim1">Figure</xref>.</p>
 
         <figure xml:id="fig_inflim1" >
           <caption>Observing infinite limit as <m>x\to 1</m> in <xref ref="ex_inflim1">Example</xref>.</caption>
@@ -91,20 +92,20 @@
             <mrow>(x-1)^2 \amp \lt  \frac{1}{M}</mrow>
             <mrow>\frac{1}{(x-1)^2} \amp > M,</mrow>
           </md>
-          which is what we wanted to show. So we may say <m>\ds\lim_{x\rightarrow 1}1/{(x-1)^2}=\infty</m>.</p>
+          which is what we wanted to show. So we may say <m>\lim\limits_{x\rightarrow 1}1/{(x-1)^2}=\infty</m>.</p>
       </solution>
     </example>
 
     <example xml:id="ex_inflim2">
       <title>Evaluating limits involving infinity</title>
       <statement>
-        <p>Find <m>\displaystyle\lim_{x\rightarrow 0}\frac1x</m>, as shown in <xref ref="fig_oneoverx">Figure</xref>.</p>
+        <p>Find <m>\lim\limits_{x\rightarrow 0}\frac1x</m>, as shown in <xref ref="fig_oneoverx">Figure</xref>.</p>
       </statement>
       <solution>
-        <p>It is easy to see that the function grows without bound near 0, but it does so in different ways on different sides of 0. Since its behavior is not consistent, we cannot say that <m>\ds \lim_{x\to 0}\frac{1}{x}=\infty</m>. However, we can make a statement about one<ndash />sided limits. We can state that <m>\ds \lim_{x\rightarrow 0^+}\frac1x=\infty</m> and <m>\ds \lim_{x\rightarrow 0^-}\frac1x=-\infty</m>.</p>
+        <p>It is easy to see that the function grows without bound near 0, but it does so in different ways on different sides of 0. Since its behavior is not consistent, we cannot say that <m>\lim\limits_{x\to 0}\frac{1}{x}=\infty</m>. However, we can make a statement about one<ndash />sided limits. We can state that <m>\lim\limits_{x\rightarrow 0^+}\frac1x=\infty</m> and <m>\lim\limits_{x\rightarrow 0^-}\frac1x=-\infty</m>.</p>
 
         <figure xml:id="fig_oneoverx" >
-          <caption>Evaluating <m>\ds\lim_{x\rightarrow 0}\frac1x</m>.</caption>
+          <caption>Evaluating <m>\lim\limits_{x\rightarrow 0}\frac1x</m>.</caption>
           <!-- START figures/fig_oneoverx.tex -->
           <image xml:id="img_oneoverx" >
             <description></description>
@@ -217,7 +218,7 @@
       <!-- figures/fig_noasy.tex END -->
     </figure>
 
-    <p>The above example may seem a little contrived. Another example demonstrating this important concept is <m>f(x)= (\sin x)/x</m>. We have considered this function several times in the previous sections. We found that <m>\ds \lim_{x\to0}\frac{\sin x}{x}=1</m>; i.e., there is no vertical asymptote. No simple algebraic cancellation makes this fact obvious; we used the Squeeze Theorem in <xref ref="sec_limit_analytically">Section</xref> to prove this.</p>
+    <p>The above example may seem a little contrived. Another example demonstrating this important concept is <m>f(x)= (\sin x)/x</m>. We have considered this function several times in the previous sections. We found that <m>\lim\limits_{x\to0}\frac{\sin x}{x}=1</m>; i.e., there is no vertical asymptote. No simple algebraic cancellation makes this fact obvious; we used the Squeeze Theorem in <xref ref="sec_limit_analytically">Section</xref> to prove this.</p>
 
     <p>If the denominator is 0 at a certain point but the numerator is not, then there will usually be a vertical asymptote at that point. On the other hand, if the numerator and denominator are both zero at that point, then there may or may not be a vertical asymptote at that point. This case where the numerator and denominator are both zero returns us to an important topic.</p>
   </subsection>
@@ -253,16 +254,16 @@
       <title>Limits at Infinity and Horizontal Asymptote</title>
       <statement>
         <ol>
-          <li><p>We say <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> if for every <m>\varepsilon>0</m> there exists <m>M>0</m> such that if <m>x\geq M</m>, then <m>\abs{f(x)-L}\lt \varepsilon</m>.<index><main>limit</main><sub>at infinity</sub></index><index><main>asymptote</main><sub>horizontal</sub></index></p></li>
+          <li><p>We say <m>\lim\limits_{x\rightarrow\infty} f(x)=L</m> if for every <m>\varepsilon>0</m> there exists <m>M>0</m> such that if <m>x\geq M</m>, then <m>\abs{f(x)-L}\lt \varepsilon</m>.<index><main>limit</main><sub>at infinity</sub></index><index><main>asymptote</main><sub>horizontal</sub></index></p></li>
 
-          <li><p>We say <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m> if for every <m>\varepsilon>0</m> there exists <m>M\lt 0</m> such that if <m>x\leq M</m>, then <m>\abs{f(x)-L}\lt \varepsilon</m>.</p></li>
+          <li><p>We say <m>\lim\limits_{x\rightarrow-\infty} f(x)=L</m> if for every <m>\varepsilon>0</m> there exists <m>M\lt 0</m> such that if <m>x\leq M</m>, then <m>\abs{f(x)-L}\lt \varepsilon</m>.</p></li>
 
-          <li><p>If <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> or <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m>, we say that <m>y=L</m> is a <em>horizontal asymptote</em> of <m>f</m>.</p></li>
+          <li><p>If <m>\lim\limits_{x\rightarrow\infty} f(x)=L</m> or <m>\lim\limits_{x\rightarrow-\infty} f(x)=L</m>, we say that <m>y=L</m> is a <em>horizontal asymptote</em> of <m>f</m>.</p></li>
         </ol>
       </statement>
     </definition>
 
-    <p>We can also define limits such as <m>\ds\lim_{x\rightarrow\infty}f(x)=\infty</m> by combining this definition with <xref ref="def_limit_of_infinity">Definition</xref>.</p>
+    <p>We can also define limits such as <m>\lim\limits_{x\rightarrow\infty}f(x)=\infty</m> by combining this definition with <xref ref="def_limit_of_infinity">Definition</xref>.</p>
 
     <example xml:id="ex_hzasy1">
       <title>Approximating horizontal asymptotes</title>
@@ -469,7 +470,7 @@
       <!-- figures/fig_hzasy4.tex END -->
     </figure>
 
-    <p>We can analytically evaluate limits at infinity for rational functions once we understand <m>\ds\lim_{x\rightarrow\infty} 1/x</m>. As <m>x</m> gets larger and larger, the <m>1/x</m> gets smaller and smaller, approaching 0. We can, in fact, make <m>1/x</m> as small as we want by choosing a large enough value of <m>x</m>. Given <m>\varepsilon</m>, we can make <m>1/x\lt \varepsilon</m> by choosing <m>x>1/\varepsilon</m>. Thus we have <m>\lim_{x\rightarrow\infty} 1/x=0</m>.</p>
+    <p>We can analytically evaluate limits at infinity for rational functions once we understand <m>\lim\limits_{x\rightarrow\infty} 1/x</m>. As <m>x</m> gets larger and larger, the <m>1/x</m> gets smaller and smaller, approaching 0. We can, in fact, make <m>1/x</m> as small as we want by choosing a large enough value of <m>x</m>. Given <m>\varepsilon</m>, we can make <m>1/x\lt \varepsilon</m> by choosing <m>x>1/\varepsilon</m>. Thus we have <m>\lim_{x\rightarrow\infty} 1/x=0</m>.</p>
 
     <p>It is now not much of a jump to conclude the following:
       <me>
@@ -510,11 +511,11 @@
           where any of the coefficients may be 0 except for <m>a_n</m> and <m>b_m</m>.</p>
 
         <ol>
-          <li><p>If <m>n=m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = \frac{a_n}{b_m}</m>.</p></li>
+          <li><p>If <m>n=m</m>, then <m>\lim\limits_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = \frac{a_n}{b_m}</m>.</p></li>
 
-          <li><p>If <m>n\lt m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = 0</m>.</p></li>
+          <li><p>If <m>n\lt m</m>, then <m>\lim\limits_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = 0</m>.</p></li>
 
-          <li><p>If <m>n>m</m>, then <m>\ds\lim_{x\rightarrow\infty} f(x)</m> and <m>\lim_{x\rightarrow-\infty} f(x)</m> are both infinite.</p></li>
+          <li><p>If <m>n>m</m>, then <m>\lim\limits_{x\rightarrow\infty} f(x)</m> and <m>\lim_{x\rightarrow-\infty} f(x)</m> are both infinite.</p></li>
         </ol>
       </statement>
     </theorem>
@@ -523,7 +524,7 @@
 
     <p>Intuitively, as <m>x</m> gets very large, all the terms in the numerator are small in comparison to <m>a_nx^n</m>, and likewise all the terms in the denominator are small compared to <m>b_nx^m</m>. If <m>n=m</m>, looking only at these two important terms, we have <m>(a_nx^n)/(b_nx^m)</m>. This reduces to <m>a_n/b_m</m>. If <m>n\lt m</m>, the function behaves like <m>a_n/(b_mx^{m-n})</m>, which tends toward 0. If <m>n>m</m>, the function behaves like <m>a_nx^{n-m}/b_m</m>, which will tend to either <m>\infty</m> or <m>-\infty</m> depending on the values of <m>n</m>, <m>m</m>, <m>a_n</m>, <m>b_m</m> and whether you are looking for <m>\lim_{x\rightarrow\infty} f(x)</m> or <m>\lim_{x\rightarrow-\infty} f(x)</m>.</p>
 
-    <p>With care, we can quickly evaluate limits at infinity for a large number of functions by considering the largest powers of <m>x</m>. For instance, consider again <m>\ds\lim_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},</m> graphed in <xref ref="fig_hzasy">Figure</xref>(b). When <m>x</m> is very large, <m>x^2+1 \approx x^2</m>. Thus
+    <p>With care, we can quickly evaluate limits at infinity for a large number of functions by considering the largest powers of <m>x</m>. For instance, consider again <m>\lim\limits_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},</m> graphed in <xref ref="fig_hzasy">Figure</xref>(b). When <m>x</m> is very large, <m>x^2+1 \approx x^2</m>. Thus
       <me>
         \sqrt{x^2+1}\approx \sqrt{x^2} = \abs{x}, \text{ and }  \frac{x}{\sqrt{x^2+1}} \approx \frac{x}{\abs{x}}.
       </me>
@@ -556,11 +557,11 @@
         <p>Use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> to evaluate each of the following limits.</p>
 
         <ol cols="2" >
-          <li><p><m>\displaystyle\lim_{x\rightarrow-\infty}\frac{x^2+2x-1}{x^3+1}</m></p></li>
+          <li><p><m>\lim\limits_{x\rightarrow-\infty}\frac{x^2+2x-1}{x^3+1}</m></p></li>
 
-          <li><p><m>\displaystyle\lim_{x\rightarrow\infty}\frac{x^2+2x-1}{1-x-3x^2}</m></p></li>
+          <li><p><m>\lim\limits_{x\rightarrow\infty}\frac{x^2+2x-1}{1-x-3x^2}</m></p></li>
 
-          <li><p><m>\displaystyle\lim_{x\rightarrow\infty}\frac{x^2-1}{3-x}</m></p></li>
+          <li><p><m>\lim\limits_{x\rightarrow\infty}\frac{x^2-1}{3-x}</m></p></li>
         </ol>
       </statement>
       <solution>
@@ -722,7 +723,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>\ds \lim_{x\to 5} f(x) = \infty</m>, then we are implicitly stating that the limit exists.</p>
+            <p>T/F: If <m>\lim\limits_{x\to 5} f(x) = \infty</m>, then we are implicitly stating that the limit exists.</p>
           </statement>
           <solution>
             <p>F</p>
@@ -739,7 +740,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>\ds \lim_{x\to \infty} f(x) = 5</m>, then we are implicitly stating that the limit exists.</p>
+            <p>T/F: If <m>\lim\limits_{x\to \infty} f(x) = 5</m>, then we are implicitly stating that the limit exists.</p>
           </statement>
           <solution>
             <p>T</p>
@@ -756,7 +757,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>\ds \lim_{x\to 1^-} f(x) = -\infty</m>, then <m>\ds \lim_{x\to 1^+} f(x) = \infty</m></p>
+            <p>T/F: If <m>\lim\limits_{x\to 1^-} f(x) = -\infty</m>, then <m>\lim\limits_{x\to 1^+} f(x) = \infty</m></p>
           </statement>
           <solution>
             <p>F</p>
@@ -773,7 +774,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>\ds \lim_{x\to 5} f(x) = \infty</m>, then <m>f</m> has a vertical asymptote at <m>x=5</m>.</p>
+            <p>T/F: If <m>\lim\limits_{x\to 5} f(x) = \infty</m>, then <m>f</m> has a vertical asymptote at <m>x=5</m>.</p>
           </statement>
           <solution>
             <p>T</p>
@@ -841,7 +842,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Let <m>\ds \lim_{x\to 7} f(x) = \infty</m>. Explain how we know that <m>f</m> is/is not continuous at <m>x=7</m>.</p>
+            <p>Let <m>\lim\limits_{x\to 7} f(x) = \infty</m>. Explain how we know that <m>f</m> is/is not continuous at <m>x=7</m>.</p>
           </statement>
           <solution>
             <p>The limit of <m>f</m> as <m>x</m> approaches 7 does not exist, hence <m>f</m> is not continuous. (Note: <m>f</m> could be defined at 7!)</p>
@@ -865,9 +866,9 @@
             <p><m>\ds f(x) = \frac{1}{(x+1)^2}</m></p>
 
             <ol>
-              <li><p><m>\ds \lim_{x\to -1^-} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to -1^-} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to -1^+} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to -1^+} f(x)</m></p></li>
             </ol>
 
             <!-- START\1END -->
@@ -896,21 +897,21 @@
             <ol cols="2" >
               <li>
                 <title>(a)</title>
-                <p><m>\ds \lim_{x\to 3^-} f(x)</m></p></li>
+                <p><m>\lim\limits_{x\to 3^-} f(x)</m></p></li>
 
               <li>
                 <title>(b)</title>
-                <p><m>\ds \lim_{x\to 3^+} f(x)</m></p></li>
+                <p><m>\lim\limits_{x\to 3^+} f(x)</m></p></li>
 
               <li>
                 <title>(c)</title>
-                <p><m>\ds \lim_{x\to 3} f(x)</m></p></li>
+                <p><m>\lim\limits_{x\to 3} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to 5^-} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to 5^-} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to 5^+} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to 5^+} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to 5} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to 5} f(x)</m></p></li>
             </ol>
 
             <!-- START\1END -->
@@ -945,13 +946,13 @@
             <p><m>\ds f(x) = \frac{1}{e^x+1}</m></p>
 
             <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to -\infty} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to -\infty} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to \infty} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to \infty} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to 0^-} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to 0^-} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to 0^+} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to 0^+} f(x)</m></p></li>
             </ol>
 
             <!-- START\1END -->
@@ -982,9 +983,9 @@
             <p><m>\ds f(x) = x^2\sin (\pi x)</m></p>
 
             <ol>
-              <li><p><m>\ds \lim_{x\to -\infty} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to -\infty} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to \infty} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to \infty} f(x)</m></p></li>
             </ol>
 
             <!-- START\1END -->
@@ -1011,9 +1012,9 @@
             <p><m>\ds f(x) = \cos (x)</m></p>
 
             <ol>
-              <li><p><m>\ds \lim_{x\to -\infty} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to -\infty} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to \infty} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to \infty} f(x)</m></p></li>
             </ol>
 
             <!-- START\1END -->
@@ -1040,9 +1041,9 @@
             <p><m>\ds f(x) = 2^x+10</m></p>
 
             <ol>
-              <li><p><m>\ds \lim_{x\to -\infty} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to -\infty} f(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to \infty} f(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to \infty} f(x)</m></p></li>
             </ol>
 
             <!-- START\1END -->
@@ -1061,15 +1062,15 @@
       <ol>
         <li>
           <title>(a)</title>
-          <p><m>\ds \lim_{x\to 3^-} f(x)</m></p></li>
+          <p><m>\lim\limits_{x\to 3^-} f(x)</m></p></li>
 
         <li>
           <title>(b)</title>
-          <p><m>\ds \lim_{x\to 3^+} f(x)</m></p></li>
+          <p><m>\lim\limits_{x\to 3^+} f(x)</m></p></li>
 
         <li>
           <title>(c)</title>
-          <p><m>\ds \lim_{x\to 3} f(x)</m></p></li>
+          <p><m>\lim\limits_{x\to 3} f(x)</m></p></li>
       </ol>
 
       <exercise>
@@ -1472,7 +1473,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to\infty} \frac{x^3+2x^2+1}{x-5}</m></p>
+            <p><m>\lim\limits_{x\to\infty} \frac{x^3+2x^2+1}{x-5}</m></p>
           </statement>
           <solution>
             <p><m>\infty</m></p>
@@ -1489,7 +1490,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to\infty} \frac{x^3+2x^2+1}{5-x}</m></p>
+            <p><m>\lim\limits_{x\to\infty} \frac{x^3+2x^2+1}{5-x}</m></p>
           </statement>
           <solution>
             <p><m>-\infty</m></p>
@@ -1506,7 +1507,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to-\infty} \frac{x^3+2x^2+1}{x^2-5}</m></p>
+            <p><m>\lim\limits_{x\to-\infty} \frac{x^3+2x^2+1}{x^2-5}</m></p>
           </statement>
           <solution>
             <p><m>-\infty</m></p>
@@ -1523,7 +1524,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \lim_{x\to-\infty} \frac{x^3+2x^2+1}{5-x^2}</m></p>
+            <p><m>\lim\limits_{x\to-\infty} \frac{x^3+2x^2+1}{5-x^2}</m></p>
           </statement>
           <solution>
             <p><m>\infty</m></p>
@@ -1545,7 +1546,7 @@
           <statement>
             <p>Use an <m>\varepsilon-\delta</m> proof to show that</p>
 
-            <p><m>\ds \lim_{x\to 1} 5x-2=3</m>.</p>
+            <p><m>\lim\limits_{x\to 1} 5x-2=3</m>.</p>
           </statement>
           <solution>
             <p>Solution omitted.</p>
@@ -1562,16 +1563,16 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Let <m>\ds \lim_{x\to2} f(x) = 3</m> and <m>\ds \lim_{x\to2} g(x) = -1</m>. Evaluate the following limits.</p>
+            <p>Let <m>\lim\limits_{x\to2} f(x) = 3</m> and <m>\lim\limits_{x\to2} g(x) = -1</m>. Evaluate the following limits.</p>
 
             <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to2}(f+g)(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to2}(f+g)(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to2}(fg)(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to2}(fg)(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to2}(f/g)(x)</m></p></li>
+              <li><p><m>\lim\limits_{x\to2}(f/g)(x)</m></p></li>
 
-              <li><p><m>\ds \lim_{x\to2}f(x)^{g(x)}</m></p></li>
+              <li><p><m>\lim\limits_{x\to2}f(x)^{g(x)}</m></p></li>
             </ol>
           </statement>
           <solution>
@@ -1618,7 +1619,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Evaluate the limit: <m>\ds \lim_{x\to e} \ln x</m>.</p>
+            <p>Evaluate the limit: <m>\lim\limits_{x\to e} \ln x</m>.</p>
           </statement>
           <solution>
           </solution>

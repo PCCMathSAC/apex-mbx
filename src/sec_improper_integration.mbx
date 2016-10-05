@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_improper_integration">
   <title>Improper Integration</title>
@@ -370,7 +371,7 @@
           <mrow>\amp =  \lim_{b\to\infty}\left(-\frac{\ln x}{x}\Big|_1^b +\int_1^b \frac{1}{x^2} \ dx \right)</mrow>
           <mrow>\amp =  \lim_{b\to\infty} \left.\left(-\frac{\ln x}{x} -\frac1x\right)\right|_1^b</mrow>
           <mrow>\amp =	\lim_{b\to\infty} \left(-\frac{\ln b}{b}-\frac1b - \left(-\ln 1-1\right)\right).</mrow>
-          <intertext>The <m>1/b</m> and <m>\ln 1</m> terms go to 0, leaving <m>\ds \lim_{b\to\infty} -\frac{\ln b}b + 1.</m> We need to evaluate <m>\ds \lim_{b\to\infty} \frac{\ln b}{b}</m> with l'H\^opital's Rule. We have:</intertext>
+          <intertext>The <m>1/b</m> and <m>\ln 1</m> terms go to 0, leaving <m>\lim\limits_{b\to\infty} -\frac{\ln b}b + 1.</m> We need to evaluate <m>\lim\limits_{b\to\infty} \frac{\ln b}{b}</m> with l'H\^opital's Rule. We have:</intertext>
           <mrow>\lim_{b\to\infty}\frac{\ln b}b \amp \stackrel{\ \text{ by LHR }  \ }{=} \lim_{b\to\infty} \frac{1/b}{1}</mrow>
           <mrow>\amp = 0.</mrow>
           <intertext>Thus the improper integral evaluates as:</intertext>
@@ -758,7 +759,7 @@
 
         <p>The immediate evaluation of this limit returns <m>\infty/\infty</m>, an indeterminate form. Using l'H&#xf4;pital's Rule seems appropriate, but in this situation, it does not lead to useful results. (We encourage the reader to employ l'H&#xf4;pital's Rule at least once to verify this.)</p>
 
-        <p>The trouble is the square root function. To get rid of it, we employ the following fact: If <m>\ds \lim_{x\to c} f(x) = L</m>, then <m>\ds\lim_{x\to c} f(x)^2 = L^2.</m> (This is true when either <m>c</m> or <m>L</m> is <m>\infty</m>.) So we consider now the limit
+        <p>The trouble is the square root function. To get rid of it, we employ the following fact: If <m>\lim\limits_{x\to c} f(x) = L</m>, then <m>\lim\limits_{x\to c} f(x)^2 = L^2.</m> (This is true when either <m>c</m> or <m>L</m> is <m>\infty</m>.) So we consider now the limit
           <me>
             \lim_{x\to\infty} \frac{x^2}{x^2+2x+5}.
           </me>
@@ -851,7 +852,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>If <m>\ds \lim_{b\to \infty} \int_0^b f(x)\ dx</m> exists, then the integral <m>\ds \int_0^\infty f(x)\ dx</m> is said to <fillin />.</p>
+            <p>If <m>\lim\limits_{b\to \infty} \int_0^b f(x)\ dx</m> exists, then the integral <m>\ds \int_0^\infty f(x)\ dx</m> is said to <fillin />.</p>
           </statement>
           <solution>
             <p>converge</p>

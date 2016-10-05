@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_derivative">
   <title>Instantaneous Rates of Change: The Derivative</title>
@@ -442,7 +443,7 @@
       </solution>
     </example>
 
-    <p>Recall from <xref ref="sec_limit_analytically">Section</xref> that <m>\ds \lim_{x\to 0}\frac{\sin x}x =1</m>, meaning for values of <m>x</m> near 0, <m>\sin x \approx x</m>. Since the slope of the line <m>y=x</m> is 1 at <m>x=0</m>, it should seem reasonable that <q>the slope of <m>f(x)=\sin x</m></q> is near 1 at <m>x=0</m>. In fact, since we <em>approximated</em> the value of the slope to be <m>0.9983</m>, we might guess the <em>actual value</em> is 1. We'll come back to this later.</p>
+    <p>Recall from <xref ref="sec_limit_analytically">Section</xref> that <m>\lim\limits_{x\to 0}\frac{\sin x}x =1</m>, meaning for values of <m>x</m> near 0, <m>\sin x \approx x</m>. Since the slope of the line <m>y=x</m> is 1 at <m>x=0</m>, it should seem reasonable that <q>the slope of <m>f(x)=\sin x</m></q> is near 1 at <m>x=0</m>. In fact, since we <em>approximated</em> the value of the slope to be <m>0.9983</m>, we might guess the <em>actual value</em> is 1. We'll come back to this later.</p>
 
     <p>Consider again <xref ref="ex_derv_point1">Example</xref>. To find the derivative of <m>f</m> at <m>x=1</m>, we needed to evaluate a limit. To find the derivative of <m>f</m> at <m>x=3</m>, we needed to again evaluate a limit. We have this process:</p>
     <image xml:id="img_tangentsinxX" >
@@ -556,7 +557,7 @@
             <mrow>\fp(x) \amp = \lim_{h\to 0} \frac{\sin(x+h)-\sin x}{h} \amp  \amp  \left(\text{\scriptsize \text{ Use trig identity \(\sin(x+h) = \sin x\cos h+\cos x\sin h\) }} \right)</mrow>
             <mrow>\amp = \lim_{h\to 0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} \amp  \amp  \text{ \scriptsize (regroup) }</mrow>
             <mrow>\amp = \lim_{h\to 0} \frac{\sin x(\cos h-1) + \cos x\sin h}{h} \amp  \amp  \text{ \scriptsize (split into two fractions) }</mrow>
-            <mrow>\amp = \lim_{h\to 0} \left(\frac{\sin x(\cos h-1)}{h} + \frac{\cos x\sin h}{h}\right) \amp  \amp  \left(\scriptsize use $\ds \lim_{h	o 0} \frac{\cos h-1}{h} = 0$ and $\ds \lim_{h	o 0} \frac{\sin h}{h} = 1$\right)</mrow>
+            <mrow>\amp = \lim_{h\to 0} \left(\frac{\sin x(\cos h-1)}{h} + \frac{\cos x\sin h}{h}\right) \amp  \amp  \left(\scriptsize use $\lim\limits_{h	o 0} \frac{\cos h-1}{h} = 0$ and $\lim\limits_{h	o 0} \frac{\sin h}{h} = 1$\right)</mrow>
             <mrow>\amp =	\sin x\cdot 0 + \cos x \cdot 1</mrow>
             <mrow>\amp = \cos x\ !</mrow>
           </md>
@@ -581,7 +582,7 @@
         <p>See <xref ref="fig_absolutevalue">Figure</xref>.</p>
       </statement>
       <solution>
-        <p>We need to evaluate <m>\ds \lim_{h\to0}\frac{f(x+h)-f(x)}{h}.</m> As <m>f</m> is piecewise<ndash />defined, we need to consider separately the limits when <m>x\lt 0</m> and when <m>x>0</m>.</p>
+        <p>We need to evaluate <m>\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}.</m> As <m>f</m> is piecewise<ndash />defined, we need to consider separately the limits when <m>x\lt 0</m> and when <m>x>0</m>.</p>
 
         <figure xml:id="fig_absolutevalue" >
           <caption>The absolute value function, <m>f(x) = \abs{x}</m>. Notice how the slope of the lines (and hence the tangent lines) abruptly changes at <m>x=0</m>.</caption>
@@ -1540,7 +1541,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Approximate <m>\ds \lim_{x\to 5}\frac{x^2+2 x-35}{x^2-10.5 x+27.5}</m>.</p>
+            <p>Approximate <m>\lim\limits_{x\to 5}\frac{x^2+2 x-35}{x^2-10.5 x+27.5}</m>.</p>
           </statement>
           <solution>
             <p>Approximately 24.</p>
@@ -1612,11 +1613,11 @@
             <p>Use the graph of <m>f(x)</m> provided to answer the following.</p>
 
             <ol cols="2" >
-              <li><p><m>\ds \lim_{x\to-3^-} f(x) =</m>?</p></li>
+              <li><p><m>\lim\limits_{x\to-3^-} f(x) =</m>?</p></li>
 
-              <li><p><m>\ds \lim_{x\to-3^+} f(x) =</m>?</p></li>
+              <li><p><m>\lim\limits_{x\to-3^+} f(x) =</m>?</p></li>
 
-              <li><p><m>\ds \lim_{x\to-3} f(x) =</m>?</p></li>
+              <li><p><m>\lim\limits_{x\to-3} f(x) =</m>?</p></li>
 
               <li><p>Where is <m>f</m> continuous?</p></li>
             </ol>

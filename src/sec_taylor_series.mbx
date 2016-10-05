@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_taylor_series">
   <title>Taylor Series</title>
@@ -193,7 +194,7 @@
       <title>Function and Taylor Series Equality</title>
       <statement>
         <p>Let <m>f(x)</m> have derivatives of all orders at <m>x=c</m>, let <m>R_n(x)</m> be as stated in <xref ref="thm_taylorthm">Theorem</xref>, and let <m>I</m> be an interval on which the Taylor series of <m>f(x)</m> converges.
-          If <m>\ds\lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m> in <m>I</m>, then
+          If <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m> in <m>I</m>, then
           <index><main>Taylor Series</main><sub>equality with generating function</sub></index>
           <me>
             f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(c)}{n!}(x-c)^n\ \text{ on \(I\). }
@@ -226,7 +227,7 @@
           </men>
         </p>
 
-        <p>For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0</m>. Applying the Squeeze Theorem to Equation <xref ref="eq_coseqtaylor" />, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
+        <p>For any <m>x</m>, <m>\lim\limits_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0</m>. Applying the Squeeze Theorem to Equation <xref ref="eq_coseqtaylor" />, we conclude that <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
           <me>
             \cos x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!} \text{ for all \(x\) } .
           </me>
@@ -778,7 +779,7 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, show that the Taylor series for <m>f(x)</m>, as given in <xref ref="idea_common_taylor">Key Idea</xref>, is equal to <m>f(x)</m> by applying <xref ref="thm_function_series_equality">Theorem</xref>; that is, show <m>\ds \lim_{n\to\infty}R_n(x) =0</m>.</p>
+      <p>In the following exercises, show that the Taylor series for <m>f(x)</m>, as given in <xref ref="idea_common_taylor">Key Idea</xref>, is equal to <m>f(x)</m> by applying <xref ref="thm_function_series_equality">Theorem</xref>; that is, show <m>\lim\limits_{n\to\infty}R_n(x) =0</m>.</p>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -804,7 +805,7 @@
               </me>
             </p>
 
-            <p>For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{M}{(n+1)!}\abs{x^{(n+1)}}= 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
+            <p>For any <m>x</m>, <m>\lim\limits_{n\to\infty} \frac{M}{(n+1)!}\abs{x^{(n+1)}}= 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
               <me>
                 e^x = \sum_{n=0}^\infty \frac{x^{n}}{n!} \text{ for all \(x\) } .
               </me>
@@ -839,7 +840,7 @@
               </me>
             </p>
 
-            <p>For any <m>x</m>, <m>\ds\lim_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
+            <p>For any <m>x</m>, <m>\lim\limits_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
               <me>
                 \sin x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n+1}}{(2n+1)!} \text{ for all \(x\) } .
               </me>
@@ -894,7 +895,7 @@
               </me>
             </p>
 
-            <p>As <m>n\to\infty</m>, <m>1/(n+1)\to0</m>. Thus by the Squeeze Theorem, we conclude that <m>\ds \lim_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
+            <p>As <m>n\to\infty</m>, <m>1/(n+1)\to0</m>. Thus by the Squeeze Theorem, we conclude that <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
               <me>
                 \ln x = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^{n}}{n} \text{ for all \(0\lt x\leq 2\) } .
               </me>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_sequences">
   <title>Sequences</title>
@@ -222,7 +223,7 @@
           </me>
         </p>
 
-        <p>If <m>\ds\lim_{n\to\infty} a_n</m> exists, we say the sequence <term>converges</term>; otherwise, the sequence <term>diverges</term>.<index><main>limit</main><sub>of sequence</sub></index><index><main>sequences</main><sub>limit</sub></index><index><main>convergence</main><sub>of sequence</sub></index><index><main>divergence</main><sub>of sequence</sub></index><index><main>sequences</main><sub>convergent</sub></index><index><main>sequences</main><sub>divergent</sub></index></p>
+        <p>If <m>\lim\limits_{n\to\infty} a_n</m> exists, we say the sequence <term>converges</term>; otherwise, the sequence <term>diverges</term>.<index><main>limit</main><sub>of sequence</sub></index><index><main>sequences</main><sub>limit</sub></index><index><main>convergence</main><sub>of sequence</sub></index><index><main>divergence</main><sub>of sequence</sub></index><index><main>sequences</main><sub>convergent</sub></index><index><main>sequences</main><sub>divergent</sub></index></p>
       </statement>
     </definition>
 
@@ -235,18 +236,18 @@
       <statement>
         <p>Let <m>\{a_n\}</m> be a sequence and let <m>f(x)</m> be a function whose domain contains the positive real numbers where <m>f(n) = a_n</m> for all <m>n</m> in <m>\mathbb{N}</m>.</p>
 
-        <p>If <m>\ds \lim_{x\to\infty} f(x) = L</m>, then <m>\ds\lim_{n\to\infty} a_n = L</m>.</p>
+        <p>If <m>\lim\limits_{x\to\infty} f(x) = L</m>, then <m>\lim\limits_{n\to\infty} a_n = L</m>.</p>
       </statement>
     </theorem>
 
     <p><xref ref="thm_seq_limit">Theorem</xref> allows us, in certain cases, to apply the tools developed in <xref ref="chapter_limits">Chapter</xref> to limits of sequences. Note two things <em>not</em> stated by the theorem:</p>
 
     <ol>
-      <li><p>If <m>\ds \lim_{x\to\infty}f(x)</m> does not exist, we cannot conclude that <m>\ds\lim_{n\to\infty} a_n</m> does not exist. It may, or may not, exist. For instance, we can define a sequence <m>\{a_n\} = \{\cos(2\pi n)\}</m>. Let <m>f(x) = \cos (2\pi x)</m>. Since the cosine function oscillates over the real numbers, the limit <m>\ds \lim_{x\to\infty}f(x)</m> does not exist. 
+      <li><p>If <m>\lim\limits_{x\to\infty}f(x)</m> does not exist, we cannot conclude that <m>\lim\limits_{n\to\infty} a_n</m> does not exist. It may, or may not, exist. For instance, we can define a sequence <m>\{a_n\} = \{\cos(2\pi n)\}</m>. Let <m>f(x) = \cos (2\pi x)</m>. Since the cosine function oscillates over the real numbers, the limit <m>\lim\limits_{x\to\infty}f(x)</m> does not exist. 
 		
-		However, for every positive integer <m>n</m>, <m>\cos(2\pi n) = 1</m>, so <m>\ds \lim_{n\to\infty} a_n = 1</m>.</p></li>
+		However, for every positive integer <m>n</m>, <m>\cos(2\pi n) = 1</m>, so <m>\lim\limits_{n\to\infty} a_n = 1</m>.</p></li>
 
-      <li><p>If we cannot find a function <m>f(x)</m> whose domain contains the positive real numbers where <m>f(n) = a_n</m> for all <m>n</m> in <m>\mathbb{N}</m>, we cannot conclude <m>\ds\lim_{n\to\infty} a_n</m> does not exist. It may, or may not, exist.</p></li>
+      <li><p>If we cannot find a function <m>f(x)</m> whose domain contains the positive real numbers where <m>f(n) = a_n</m> for all <m>n</m> in <m>\mathbb{N}</m>, we cannot conclude <m>\lim\limits_{n\to\infty} a_n</m> does not exist. It may, or may not, exist.</p></li>
     </ol>
 
     <example xml:id="ex_seq4">
@@ -260,7 +261,7 @@
       </statement>
       <solution>
         <ol>
-          <li><p>Using <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref>, we can state that <m>\ds\lim_{x\to\infty} \frac{3x^2-2x+1}{x^2-1000} = 3</m>. (We could have also directly applied l'H&#xf4;pital's Rule.) Thus the sequence <m>\{a_n\}</m> converges, and its limit is 3. A scatter plot of every 5 values of <m>a_n</m> is given in <xref ref="fig_seq4">Figure</xref> (a). The values of <m>a_n</m> vary widely near <m>n=30</m>, ranging from about <m>-73</m> to <m>125</m>, but as <m>n</m> grows, the values approach 3.
+          <li><p>Using <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref>, we can state that <m>\lim\limits_{x\to\infty} \frac{3x^2-2x+1}{x^2-1000} = 3</m>. (We could have also directly applied l'H&#xf4;pital's Rule.) Thus the sequence <m>\{a_n\}</m> converges, and its limit is 3. A scatter plot of every 5 values of <m>a_n</m> is given in <xref ref="fig_seq4">Figure</xref> (a). The values of <m>a_n</m> vary widely near <m>n=30</m>, ranging from about <m>-73</m> to <m>125</m>, but as <m>n</m> grows, the values approach 3.
 
               <figure xml:id="fig_seq4" >
               <caption>Scatter plots of the sequences in <xref ref="ex_seq4">Example</xref>.</caption>
@@ -380,11 +381,11 @@
 
             </p></li>
 
-          <li><p>The limit <m>\ds\lim_{x\to\infty}\cos x</m> does not exist, as <m>\cos x</m> oscillates (and takes on every value in <m>[-1,1]</m> infinitely many times). Thus we cannot apply <xref ref="thm_seq_limit">Theorem</xref>. 
+          <li><p>The limit <m>\lim\limits_{x\to\infty}\cos x</m> does not exist, as <m>\cos x</m> oscillates (and takes on every value in <m>[-1,1]</m> infinitely many times). Thus we cannot apply <xref ref="thm_seq_limit">Theorem</xref>. 
 
               The fact that the cosine function oscillates strongly hints that <m>\cos n</m>, when <m>n</m> is restricted to <m>\mathbb{N}</m>, will also oscillate. <xref ref="fig_seq4">Figure</xref> (b), where the sequence is plotted, shows that this is true. Because only discrete values of cosine are plotted, it does not bear strong resemblance to the familiar cosine wave.
 
-              We conclude that <m>\ds\lim_{n\to\infty}a_n</m> does not exist.</p></li>
+              We conclude that <m>\lim\limits_{n\to\infty}a_n</m> does not exist.</p></li>
 
           <li><p>We cannot actually apply <xref ref="thm_seq_limit">Theorem</xref> here, as the function <m>f(x) = (-1)^x/x</m> is not well defined. (What does <m>(-1)^{\sqrt{2}}</m> mean? In actuality, there is an answer, but it involves <em>complex analysis</em>, beyond the scope of this text.) So for now we say that we cannot determine the limit. (But we will be able to very soon.) By looking at the plot in <xref ref="fig_seq4">Figure</xref> (c), we would like to conclude that the sequence converges to 0. That is true, but at this point we are unable to decisively say so.</p></li>
         </ol>
@@ -397,7 +398,7 @@
     <theorem xml:id="thm_abs_val_seq">
       <title>Absolute Value Theorem</title>
       <statement>
-        <p>Let <m>\{a_n\}</m> be a sequence. If <m>\ds \lim_{n\to\infty} \abs{a_n} = 0</m>, then <m>\ds \lim_{n\to\infty} a_n = 0</m><index><main>Absolute Value Theorem</main></index><index><main>limit</main><sub>Absolute Value Theorem</sub></index><index><main>sequence</main><sub>Absolute Value Theorem</sub></index></p>
+        <p>Let <m>\{a_n\}</m> be a sequence. If <m>\lim\limits_{n\to\infty} \abs{a_n} = 0</m>, then <m>\lim\limits_{n\to\infty} a_n = 0</m><index><main>Absolute Value Theorem</main></index><index><main>limit</main><sub>Absolute Value Theorem</sub></index><index><main>sequence</main><sub>Absolute Value Theorem</sub></index></p>
       </statement>
     </theorem>
 
@@ -416,9 +417,9 @@
                 <mrow>\amp = \lim_{n\to\infty} \frac{1}{n}</mrow>
                 <mrow>\amp = 0.</mrow>
               </md>
-              Since this limit is 0, we can apply <xref ref="thm_abs_val_seq">Theorem</xref> and state that <m>\ds\lim_{n\to\infty} a_n=0</m>.</p></li>
+              Since this limit is 0, we can apply <xref ref="thm_abs_val_seq">Theorem</xref> and state that <m>\lim\limits_{n\to\infty} a_n=0</m>.</p></li>
 
-          <li><p>Because of the alternating nature of this sequence (i.e., every other term is multiplied by <m>-1</m>), we cannot simply look at the limit <m>\ds \lim_{x\to\infty} \frac{(-1)^x(x+1)}{x}</m>. We can try to apply the techniques of <xref ref="thm_abs_val_seq">Theorem</xref>:
+          <li><p>Because of the alternating nature of this sequence (i.e., every other term is multiplied by <m>-1</m>), we cannot simply look at the limit <m>\lim\limits_{x\to\infty} \frac{(-1)^x(x+1)}{x}</m>. We can try to apply the techniques of <xref ref="thm_abs_val_seq">Theorem</xref>:
               <md>
                 <mrow>\lim_{n\to\infty} \abs{a_n} \amp = \lim_{n\to\infty} \abs{\frac{(-1)^n(n+1)}{n}}</mrow>
                 <mrow>\amp = \lim_{n\to\infty} \frac{n+1}{n}</mrow>
@@ -472,17 +473,17 @@
     <theorem xml:id="thm_seq_properties">
       <title>Properties of the Limits of Sequences</title>
       <statement>
-        <p>Let <m>\{a_n\}</m> and <m>\{b_n\}</m> be sequences such that <m>\ds \lim_{n\to\infty} a_n = L</m>, <m>\ds \lim_{n\to\infty} b_n = K</m>, and let <m>c</m> be a real number.</p>
+        <p>Let <m>\{a_n\}</m> and <m>\{b_n\}</m> be sequences such that <m>\lim\limits_{n\to\infty} a_n = L</m>, <m>\lim\limits_{n\to\infty} b_n = K</m>, and let <m>c</m> be a real number.</p>
 
         <ol cols="2" >
-          <li><p><m>\ds \lim_{n\to\infty} (a_n\pm b_n) = L\pm K</m>
+          <li><p><m>\lim\limits_{n\to\infty} (a_n\pm b_n) = L\pm K</m>
               <index><main>sequences</main><sub>limit properties</sub></index></p></li>
 
-          <li><p><m>\ds \lim_{n\to\infty} (a_n\cdot b_n) = L\cdot K</m></p></li>
+          <li><p><m>\lim\limits_{n\to\infty} (a_n\cdot b_n) = L\cdot K</m></p></li>
 
-          <li><p><m>\ds \lim_{n\to\infty} (a_n/b_n) = L/K</m>, <m>K\neq 0</m></p></li>
+          <li><p><m>\lim\limits_{n\to\infty} (a_n/b_n) = L/K</m>, <m>K\neq 0</m></p></li>
 
-          <li><p><m>\ds \lim_{n\to\infty} c\cdot a_n = c\cdot L</m></p></li>
+          <li><p><m>\lim\limits_{n\to\infty} c\cdot a_n = c\cdot L</m></p></li>
         </ol>
       </statement>
     </theorem>
@@ -493,26 +494,26 @@
         <p>Let the following sequences, and their limits, be given:</p>
 
         <ul>
-          <li><p><m>\ds \{a_n\} = \left\{\frac{n+1}{n^2}\right\}</m>, and <m>\ds \lim_{n\to\infty} a_n = 0</m>;</p></li>
+          <li><p><m>\ds \{a_n\} = \left\{\frac{n+1}{n^2}\right\}</m>, and <m>\lim\limits_{n\to\infty} a_n = 0</m>;</p></li>
 
-          <li><p><m>\ds \{b_n\} = \left\{\left(1+\frac1n\right)^{n}\right\}</m>, and <m>\ds \lim_{n\to\infty} b_n = e</m>; and</p></li>
+          <li><p><m>\ds \{b_n\} = \left\{\left(1+\frac1n\right)^{n}\right\}</m>, and <m>\lim\limits_{n\to\infty} b_n = e</m>; and</p></li>
 
-          <li><p><m>\ds \{c_n\} = \big\{n\cdot \sin (5/n)\big\}</m>, and <m>\ds \lim_{n\to\infty} c_n = 5</m>.</p></li>
+          <li><p><m>\ds \{c_n\} = \big\{n\cdot \sin (5/n)\big\}</m>, and <m>\lim\limits_{n\to\infty} c_n = 5</m>.</p></li>
         </ul>
 
         <p>Evaluate the following limits.</p>
 
-        <p>1. <m>\ds \lim_{n\to\infty} (a_n+b_n)</m>  2. <m>\ds \lim_{n\to\infty} (b_n\cdot c_n)</m>  3. <m>\ds \lim_{n\to\infty} (1000\cdot a_n)</m></p>
+        <p>1. <m>\lim\limits_{n\to\infty} (a_n+b_n)</m>  2. <m>\lim\limits_{n\to\infty} (b_n\cdot c_n)</m>  3. <m>\lim\limits_{n\to\infty} (1000\cdot a_n)</m></p>
       </statement>
       <solution>
         <p>We will use <xref ref="thm_seq_properties">Theorem</xref> to answer each of these.</p>
 
         <ol>
-          <li><p>Since <m>\ds \lim_{n\to\infty} a_n = 0</m> and <m>\ds \lim_{n\to\infty} b_n = e</m>, we conclude that <m>\ds \lim_{n\to\infty} (a_n+b_n) = 0+e = e.</m> So even though we are adding something to each term of the sequence <m>b_n</m>, we are adding something so small that the final limit is the same as before.</p></li>
+          <li><p>Since <m>\lim\limits_{n\to\infty} a_n = 0</m> and <m>\lim\limits_{n\to\infty} b_n = e</m>, we conclude that <m>\lim\limits_{n\to\infty} (a_n+b_n) = 0+e = e.</m> So even though we are adding something to each term of the sequence <m>b_n</m>, we are adding something so small that the final limit is the same as before.</p></li>
 
-          <li><p>Since <m>\ds \lim_{n\to\infty} b_n = e</m> and <m>\ds \lim_{n\to\infty} c_n = 5</m>, we conclude that <m>\ds \lim_{n\to\infty} (b_n\cdot c_n) = e\cdot 5 = 5e.</m></p></li>
+          <li><p>Since <m>\lim\limits_{n\to\infty} b_n = e</m> and <m>\lim\limits_{n\to\infty} c_n = 5</m>, we conclude that <m>\lim\limits_{n\to\infty} (b_n\cdot c_n) = e\cdot 5 = 5e.</m></p></li>
 
-          <li><p>Since <m>\ds \lim_{n\to\infty} a_n = 0</m>, we have <m>\ds \lim_{n\to\infty} 1000a_n =1000\cdot 0 = 0</m>. It does not matter that we multiply each term by 1000; the sequence still approaches 0. (It just takes longer to get close to 0.)</p></li>
+          <li><p>Since <m>\lim\limits_{n\to\infty} a_n = 0</m>, we have <m>\lim\limits_{n\to\infty} 1000a_n =1000\cdot 0 = 0</m>. It does not matter that we multiply each term by 1000; the sequence still approaches 0. (It just takes longer to get close to 0.)</p></li>
         </ol>
       </solution>
     </example>
@@ -649,7 +650,7 @@
       <p>Keep in mind what <xref ref="thm_converge_bounded">Theorem</xref> does <em>not</em> say. It does not say that bounded sequences must converge, nor does it say that if a sequence does not converge, it is not bounded.</p>
     </aside>
 
-    <p>In <xref ref="ex_seq6">Example</xref> we saw the sequence <m>\ds \{b_n\} = \left\{\left(1+1/n\right)^{n}\right\}</m>, where it was stated that <m>\ds \lim_{n\to\infty} b_n = e</m>. (Note that this is simply restating part of <xref ref="thm_special_limits">Theorem</xref>.) Even though it may be difficult to intuitively grasp the behavior of this sequence, we know immediately that it is bounded.</p>
+    <p>In <xref ref="ex_seq6">Example</xref> we saw the sequence <m>\ds \{b_n\} = \left\{\left(1+1/n\right)^{n}\right\}</m>, where it was stated that <m>\lim\limits_{n\to\infty} b_n = e</m>. (Note that this is simply restating part of <xref ref="thm_special_limits">Theorem</xref>.) Even though it may be difficult to intuitively grasp the behavior of this sequence, we know immediately that it is bounded.</p>
 
     <p>Another interesting concept to come out of <xref ref="ex_seq3">Example</xref> again involves the sequence <m>\{1/n\}</m>. We stated, without proof, that the terms of the sequence were decreasing. That is, that <m>a_{n+1} \lt  a_n</m> for all <m>n</m>. (This is easy to show. Clearly <m>n \lt  n+1</m>. Taking reciprocals flips the inequality: <m>1/n > 1/(n+1)</m>. This is the same as <m>a_n > a_{n+1}</m>.) Sequences that either steadily increase or decrease are important, so we give this property a name.</p>
 
@@ -918,7 +919,7 @@
       <title>Bounded Monotonic Sequences are Convergent</title>
       <statement>
         <ol>
-          <li><p>Let <m>\{a_n\}</m> be a bounded, monotonic sequence. Then <m>\{a_n\}</m> converges; i.e., <m>\ds \lim_{n \to\infty}a_n</m> exists.</p></li>
+          <li><p>Let <m>\{a_n\}</m> be a bounded, monotonic sequence. Then <m>\{a_n\}</m> converges; i.e., <m>\lim\limits_{n \to\infty}a_n</m> exists.</p></li>
 
           <li><p>Let <m>\{a_n\}</m> be a monotonically increasing sequence that is bounded above. Then <m>\{a_n\}</m> converges.</p></li>
 
@@ -1150,11 +1151,11 @@
       <p>In the following exercises, use the following information to determine the limit of the given sequences.</p>
 
       <ul>
-        <li><p><m>\ds \{a_n\} = \left\{\frac{2^n-20}{2^n}\right\}</m>;  <m>\ds \lim_{n\to\infty} a_n = 1</m></p></li>
+        <li><p><m>\ds \{a_n\} = \left\{\frac{2^n-20}{2^n}\right\}</m>;  <m>\lim\limits_{n\to\infty} a_n = 1</m></p></li>
 
-        <li><p><m>\ds \{b_n\} = \left\{\left(1+\frac{2}{n}\right)^n\right\}</m>;  <m>\ds \lim_{n\to\infty} b_n = e^2</m></p></li>
+        <li><p><m>\ds \{b_n\} = \left\{\left(1+\frac{2}{n}\right)^n\right\}</m>;  <m>\lim\limits_{n\to\infty} b_n = e^2</m></p></li>
 
-        <li><p><m>\ds \{c_n\} = \left\{\sin (3/n)\right\}</m>;  <m>\ds \lim_{n\to\infty} c_n = 0</m></p></li>
+        <li><p><m>\ds \{c_n\} = \left\{\sin (3/n)\right\}</m>;  <m>\lim\limits_{n\to\infty} c_n = 0</m></p></li>
       </ul>
 
       <exercise>
@@ -1615,10 +1616,10 @@
           </setup>
           <statement>
             <p>Prove <xref ref="thm_abs_val_seq">Theorem</xref>; that is,
-		use the definition of the limit of a sequence to show that if <m>\ds\lim_{n\to\infty} \abs{a_n} = 0</m>, then <m>\ds \lim_{n\to\infty} a_n = 0</m>.</p>
+		use the definition of the limit of a sequence to show that if <m>\lim\limits_{n\to\infty} \abs{a_n} = 0</m>, then <m>\lim\limits_{n\to\infty} a_n = 0</m>.</p>
           </statement>
           <solution>
-            <p>Let <m>\{a_n\}</m> be given such that <m>\ds\lim_{n\to\infty} \abs{a_n} = 0</m>. By the definition of the limit of a sequence, given any <m>\varepsilon >0</m>, there is a <m>m</m> such that for all <m>n>m, \abs{\ }a_n\abs{ - 0} \lt \varepsilon</m>. Since <m>\abs{\ }a_n\abs{-0} = \abs{a_n - 0}</m>, this directly implies that for all <m>n>m</m>, <m>\abs{a_n - 0} \lt  \varepsilon</m>, meaning that <m>\ds\lim_{n\to\infty} a_n = 0</m>.</p>
+            <p>Let <m>\{a_n\}</m> be given such that <m>\lim\limits_{n\to\infty} \abs{a_n} = 0</m>. By the definition of the limit of a sequence, given any <m>\varepsilon >0</m>, there is a <m>m</m> such that for all <m>n>m, \abs{\ }a_n\abs{ - 0} \lt \varepsilon</m>. Since <m>\abs{\ }a_n\abs{-0} = \abs{a_n - 0}</m>, this directly implies that for all <m>n>m</m>, <m>\abs{a_n - 0} \lt  \varepsilon</m>, meaning that <m>\lim\limits_{n\to\infty} a_n = 0</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1632,7 +1633,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Let <m>\{a_n\}</m> and <m>\{b_n\}</m> be sequences such that <m>\ds\lim_{n\to\infty} a_n = L</m> and <m>\ds\lim_{n\to\infty} b_n = K</m>.</p>
+            <p>Let <m>\{a_n\}</m> and <m>\{b_n\}</m> be sequences such that <m>\lim\limits_{n\to\infty} a_n = L</m> and <m>\lim\limits_{n\to\infty} b_n = K</m>.</p>
 
             <ol>
               <li><p>Show that if <m>a_n\lt b_n</m> for all <m>n</m>, then <m>L\leq K</m>.</p></li>
@@ -1659,7 +1660,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Prove the Squeeze Theorem for sequences: Let <m>\{a_n\}</m> and <m>\{b_n\}</m> be such that <m>\ds\lim_{n\to\infty} a_n = L</m> and <m>\ds\lim_{n\to\infty} b_n = L</m>, and let <m>\{c_n\}</m> be such that <m>a_n\leq c_n\leq b_n</m> for all <m>n</m>. Then <m>\ds\lim_{n\to\infty} c_n = L</m></p>
+            <p>Prove the Squeeze Theorem for sequences: Let <m>\{a_n\}</m> and <m>\{b_n\}</m> be such that <m>\lim\limits_{n\to\infty} a_n = L</m> and <m>\lim\limits_{n\to\infty} b_n = L</m>, and let <m>\{c_n\}</m> be such that <m>a_n\leq c_n\leq b_n</m> for all <m>n</m>. Then <m>\lim\limits_{n\to\infty} c_n = L</m></p>
           </statement>
           <solution>
             <p>Left to reader</p>
