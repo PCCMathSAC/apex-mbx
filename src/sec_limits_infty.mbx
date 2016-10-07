@@ -241,7 +241,7 @@
     <p>An indeterminate form indicates that one needs to do more work in order to compute the limit. That work may be algebraic (such as factoring and canceling), it may involve using trigonometric identities or logarithm rules, or it may require a tool such as the Squeeze Theorem.
       In a later section we will learn a technique called l'Hospital's Rule that provides another way to handle indeterminate forms.</p>
 
-    <p>Some other common indeterminate forms are <m>\infty-\infty</m>, <m>\infty\cdot 0</m>, <m>\infty/\infty</m>, <m>0^0</m>, <m>\infty^0</m> and <m>1^{\infty}</m>. Again, keep in mind that these are the <q>blind</q> results of <!--evaluating a limit (I find this misleading, evaluating the limit means finding the value)--> directly substituting <m>c</m> into the expression, and each, in and of itself, has no meaning. The expression <m>\infty-\infty</m> does not really mean <q>subtract infinity from infinity.</q> Rather, it means <q>One quantity is subtracted from the other, but both are growing without bound.</q> What is the result? It is possible to get every value between <m>-\infty</m> and <m>\infty</m></p>
+    <p>Some other common indeterminate forms are <m>\infty-\infty</m>, <m>\infty\cdot 0</m>, <m>\infty/\infty</m>, <m>0^0</m>, <m>\infty^0</m> and <m>1^{\infty}</m>. Again, keep in mind that these are the <q>blind</q> results of directly substituting <m>c</m> into the expression, and each, in and of itself, has no meaning. The expression <m>\infty-\infty</m> does not really mean <q>subtract infinity from infinity.</q> Rather, it means <q>One quantity is subtracted from the other, but both are growing without bound.</q> What is the result? It is possible to get every value between <m>-\infty</m> and <m>\infty</m></p>
 
     <p>Note that <m>1/0</m> and <m>\infty/0</m> are not indeterminate forms, though they are not exactly valid mathematical expressions, either. In each, the function is growing without bound, indicating that the limit will be <m>\infty</m>, <m>-\infty</m>, or simply not exist if the left- and right-hand limits do not match.</p>
   </subsection>
@@ -370,7 +370,7 @@
     <!--
     <caption>Considering different types of horizontal asymptotes.</caption>
     -->
-
+    <todo>Sort out figure numbering here. Maybe avoid manually coding (a),(b),(c) and just given them individual figure numbers?</todo>
     <figure>
       <caption>(a) &amp; (b) &amp; (c)</caption>
       <!-- START figures/fig_hzasy2.tex -->
@@ -488,8 +488,8 @@
       </me>
     </p>
 
-    <p>A good way of approaching this is to divide through the numerator and denominator by <m>x^3</m> (hence dividing by 1), which is the largest power of <m>x</m> to appear in the <!--function--> denominator. Doing this, we get
-    <!--I always instruct students to use the dominating term in the denominator. That makes it easier to think about the limit when the numerator has a higher degree than the denominator. For example, if you do \lim_{x\to \infty} (x^3+1)/x^2=\lim_{x\to \infty} (1+1/x^3)/(1/x) it gets messy because now you have a form of 1/\infty. But if you do \lim_{x\to \infty} (x+1/x^2)/1, now you have /infinity/1 instead. Either way you end up in a situation where you cannot evaluate the limit using the laws presented thus far. I commented out the original and changed it to my wording. Worth changing?-->
+    <p>A good way of approaching this is to divide through the numerator and denominator by <m>x^3</m> (hence dividing by 1), which is the largest power of <m>x</m> to appear in the denominator. Doing this, we get
+ 
       <md>
         <mrow>\lim_{x\rightarrow\infty}\frac{x^3+2x+1}{4x^3-2x^2+9} \amp =
         \lim_{x\rightarrow\infty}\frac{1/x^3}{1/x^3}\cdot\frac{x^3+2x+1}{4x^3-2x^2+9}</mrow>
@@ -525,7 +525,7 @@
       </statement>
     </theorem>
 
-    <p>We can see why this is true. If the highest power of <m>x</m> is the same in both the numerator and denominator (i.e. <m>n=m</m>), we will be in a situation like the example above, where we will divide by <m>x^n</m> and in the limit all the terms will approach 0 except for <m>a_nx^n/x^n</m> and <m>b_mx^m/x^n</m>. Since <m>n=m</m>, this will leave us with the limit <m>a_n/b_m</m>. If <m>n\lt m</m>, then after dividing through by <m>x^m</m>, all the terms in the numerator will approach 0 in the limit, leaving us with <m>0/b_m</m> or 0. If <m>n>m</m>, and we try dividing through by <!--<m>x^n</m>--> <m>x^m</m>, we end up with <!--all the terms in the denominator tending toward 0, while the <m>x^n</m> term in the numerator does not approach 0. This is indicative of some sort of infinite limit--> the denominator tending to <m>b_m</m> while the numerator tends to <m>\infty</m> .</p>
+    <p>We can see why this is true. If the highest power of <m>x</m> is the same in both the numerator and denominator (i.e. <m>n=m</m>), we will be in a situation like the example above, where we will divide by <m>x^n</m> and in the limit all the terms will approach 0 except for <m>a_nx^n/x^n</m> and <m>b_mx^m/x^n</m>. Since <m>n=m</m>, this will leave us with the limit <m>a_n/b_m</m>. If <m>n\lt m</m>, then after dividing through by <m>x^m</m>, all the terms in the numerator will approach 0 in the limit, leaving us with <m>0/b_m</m> or 0. If <m>n>m</m>, and we try dividing through by <m>x^m</m>, we end up with the denominator tending to <m>b_m</m> while the numerator tends to <m>\infty</m> .</p>
 
     <p>Intuitively, as <m>x</m> gets very large, all the terms in the numerator are small in comparison to <m>a_nx^n</m>, and likewise all the terms in the denominator are small compared to <m>b_nx^m</m>. If <m>n=m</m>, looking only at these two important terms, we have <m>(a_nx^n)/(b_nx^m)</m>. This reduces to <m>a_n/b_m</m>. If <m>n\lt m</m>, the function behaves like <m>a_n/(b_mx^{m-n})</m>, which tends toward 0. If <m>n>m</m>, the function behaves like <m>a_nx^{n-m}/b_m</m>, which will tend to either <m>\infty</m> or <m>-\infty</m> depending on the values of <m>n</m>, <m>m</m>, <m>a_n</m>, <m>b_m</m> and whether you are looking for <m>\lim_{x\rightarrow\infty} f(x)</m> or <m>\lim_{x\rightarrow-\infty} f(x)</m>.</p>
 
@@ -555,11 +555,11 @@
         <p>Use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> to evaluate each of the following limits.</p>
 
         <ol cols="2" >
-          <li><p><m>\lim\limits_{x\rightarrow-\infty}\frac{x^2+2x-1}{x^3+1}</m></p></li>
+          <li><p><me>\lim\limits_{x\rightarrow-\infty}\frac{x^2+2x-1}{x^3+1}</me></p></li>
 
-          <li><p><m>\lim\limits_{x\rightarrow\infty}\frac{x^2+2x-1}{1-x-3x^2}</m></p></li>
+          <li><p><me>\lim\limits_{x\rightarrow\infty}\frac{x^2+2x-1}{1-x-3x^2}</me></p></li>
 
-          <li><p><m>\lim\limits_{x\rightarrow\infty}\frac{x^2-1}{3-x}</m></p></li>
+          <li><p><me>\lim\limits_{x\rightarrow\infty}\frac{x^2-1}{3-x}</me></p></li>
         </ol>
       </statement>
       <solution>
@@ -567,13 +567,13 @@
           <li><p>The highest power of <m>x</m> is in the denominator.  Therefore, the limit is 0; see <xref ref="fig_hzasy3">Figure</xref>(a).</p></li>
 
           <li><p>The highest power of <m>x</m> is <m>x^2</m>, which occurs in both the numerator and denominator.  The limit is therefore the ratio of the coefficients of <m>x^2</m>, which is <m>-1/3</m>. See <xref ref="fig_hzasy3">Figure</xref>(b).
-
+            
               <figure xml:id="fig_hzasy3" >
               <caption>Visualizing the functions in <xref ref="ex_hzasy3">Example</xref>.</caption>
+              <todo>Sort out figure numbering here (text is getting cut off). Again, maybe avoid the (a), (b), (c) </todo>
               <sidebyside>
                 <figure>
-                  <caption>[10pt]
-	(a)</caption>
+                  <caption>(a)</caption>
                   <!-- START figures/fig_hzasy5.tex -->
                   <image xml:id="img_hzasy5" >
                     <description></description>
@@ -608,8 +608,7 @@
                 </figure>
 
                 <figure>
-                  <caption>[10pt]
-	(b)</caption>
+                  <caption>(b)</caption>
                   <!-- START figures/fig_hzasy6.tex -->
                   <image xml:id="img_hzasy6" >
                     <description></description>
@@ -641,8 +640,7 @@
                 </figure>
 
                 <figure>
-                  <caption>[10pt]
-	(c)</caption>
+                  <caption>(c)</caption>
                   <!-- START figures/fig_hzasy7.tex -->
                   <image xml:id="img_hzasy7" >
                     <description></description>
@@ -682,7 +680,7 @@
       </solution>
     </example>
 
-    <p>With care, we can quickly evaluate limits at infinity for a large number of functions by considering the "dominating terms" of <m>f(x)</m>. For instance, consider again <m>\lim\limits_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},</m> graphed in <xref ref="fig_hzasy">Figure</xref>(b). When <m>x</m> is very large, <m>x^2+1 \approx x^2</m>. Thus
+    <p>With care, we can quickly evaluate limits at infinity for a large number of functions by considering the long run behaviour using<q>dominant terms</q> of <m>f(x)</m>. For instance, consider again <m>\lim\limits_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},</m> graphed in <xref ref="fig_hzasy">Figure</xref>(b). The dominant terms are <m>x</m> in the numerator and <m>\sqrt{x^2}</m> in the denominator. When <m>x</m> is very large, <m>x^2+1 \approx x^2</m>. Thus
       <me>
         \sqrt{x^2+1}\approx \sqrt{x^2} = \abs{x}, \text{ and }  \frac{x}{\sqrt{x^2+1}} \approx \frac{x}{\abs{x}}.
       </me>
@@ -691,7 +689,7 @@
     <p>This expression is 1 when <m>x</m> is positive and <m>-1</m> when <m>x</m> is negative. Hence we get asymptotes of <m>y=1</m> and <m>y=-1</m>, respectively. We will show this more formally in the next example. </p>
 
     <example xml:id="ex_hzasy4">
-      <title>Finding a limit using "dominating terms"</title>
+      <title>Finding a limit using dominant terms</title>
       <statement>
         <p>Confirm analytically that <m>y=1</m> and <m>y=-1</m> are the horizontal asymptote of <m>\lim\limits_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},</m> as graphed in <xref ref="fig_hzasy">Figure</xref>(b).</p>
       </statement>
