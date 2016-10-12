@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_derivative">
+  <todo>Match up graph styles to be consistent with macros Alex created.</todo>
   <title>Instantaneous Rates of Change: The Derivative</title>
   <introduction>
     <p>A common amusement park ride lifts riders to a height then allows them to freefall a certain distance before safely stopping them. Suppose such a ride drops riders from a height of 150 feet. Students of physics may recall that the height (in feet) of the riders, <m>t</m> seconds after freefall (and ignoring air resistance, etc.) can be accurately modeled by <m>f(t) = -16t^2+150</m>.</p>
 
-    <p>Using this formula, it is easy to verify that, without intervention, the riders will hit the ground at <m>t=2.5\sqrt{1.5} \approx 3.06</m> seconds. Suppose the designers of the ride decide to begin slowing the riders' fall after 2 seconds (corresponding to a height of 86 ft.). How fast will the riders be traveling at that time?</p>
+    <p>Using this formula, it is easy to verify that, without intervention, the riders will hit the ground when <m>f(t)=0</m> so at <m>t=2.5\sqrt{1.5} \approx 3.06</m> seconds. Suppose the designers of the ride decide to begin slowing the riders' fall after 2 seconds (corresponding to a height of <m>f(2)=86</m> ft.). How fast will the riders be traveling at that time?</p>
 
     <p>We have been given a <em>position</em> function, but what we want to compute is a velocity at a specific point in time, i.e., we want an <em>instantaneous velocity</em>. We do not currently know how to calculate this.</p>
 
     <p>However, we do know from common experience how to calculate an <em>average velocity</em>. (If we travel 60 miles in 2 hours, we know we had an average velocity of 30 mph.) We looked at this concept in <xref ref="sec_limit_intro">Section</xref> when we introduced the difference quotient. We have
       <me>
-        \frac{\text{ change in distance } }{\text{ change in time } } = \frac{\text{ ``\ rise\ '' } }{\text{ run } } = \text{ average velocity } .
+        \frac{\text{ change in distance } }{\text{ change in time } } = \frac{\text{ ``rise''}}{\text{run}} = \text{average velocity}.
       </me>
     </p>
 
@@ -19,23 +20,25 @@
 
     <p>Consider the interval from <m>t=2</m> to <m>t=3</m> (just before the riders hit the ground). On that interval, the average velocity is
       <me>
-        \frac{f(3)-f(2)}{3-2} = \frac{f(3)-f(2)}{1} =-80\ \text{ ft/s } ,
+        \frac{f(3)-f(2)}{3-2} = \frac{6-86}{1} =-80\ \text{ ft/s } ,
       </me>
-      where the minus sign indicates that the riders are moving <em>down</em>. By narrowing the interval we consider, we will likely get a better approximation of the instantaneous velocity. On <m>[2,2.5]</m> we have
+      where the minus sign indicates that the riders are moving <em>down</em>. <aside><p>In the above calculation, we left off the units until the end of the problem. You should always be sure that you label your answer with the correct units. For example, if <m>g(x)</m> gave you the cost (in $) of producing <m>x</m> widgets, the units on the difference quotient would be $/widget.</p></aside>By narrowing the interval we consider, we will likely get a better approximation of the instantaneous velocity. 
+      
+      On <m>[2,2.5]</m> we have
       <me>
-        \frac{f(2.5)-f(2)}{2.5-2} = \frac{f(2.5)-f(2)}{0.5} =-72\ \text{ ft/s } .
+        \frac{f(2.5)-f(2)}{2.5-2} = \frac{50-86}{0.5} =-72\ \text{ ft/s } .
       </me>
     </p>
 
     <p>We can do this for smaller and smaller intervals of time. For instance, over a time span of 1/10<m>^\text{ th }</m> of a second, i.e., on <m>[2,2.1]</m>, we have
       <me>
-        \frac{f(2.1)-f(2)}{2.1-2} = \frac{f(2.1)-f(2)}{0.1} =-65.6\ \text{ ft/s } .
+        \frac{f(2.1)-f(2)}{2.1-2} = \frac{79.44-86}{0.1} =-65.6\ \text{ ft/s } .
       </me>
     </p>
 
     <p>Over a time span of 1/100<m>^\text{ th }</m> of a second, on <m>[2,2.01]</m>, the average velocity is
       <me>
-        \frac{f(2.01)-f(2)}{2.01-2} = \frac{f(2.01)-f(2)}{0.01} =-64.16\ \text{ ft/s } .
+        \frac{f(2.01)-f(2)}{2.01-2} = \frac{85.3584-86}{0.01} =-64.16\ \text{ ft/s } .
       </me>
     </p>
 
@@ -48,9 +51,11 @@
     <p>What we really want is for <m>h=0</m>, but this, of course, returns the familiar <q><m>0/0</m></q>
       indeterminate form. So we employ a limit, as we did in <xref ref="sec_limit_intro">Section</xref>.</p>
 
-    <p>We can approximate the value of this limit numerically with small values of <m>h</m> as seen in <xref ref="table_falling">Figure</xref>. It looks as though the velocity is approaching <m>-64</m> ft/s. Computing the limit directly gives
+    <p>We can approximate the value of this limit numerically with small values of <m>h</m> as seen in <xref ref="table_falling" autoname="title"/>. It looks as though the velocity is approaching <m>-64</m> ft/s. Computing the limit directly gives
       <md>
         <mrow>\lim_{h\to 0} \frac{f(2+h)-f(2)}{h} \amp = \lim_{h\to 0}\frac{-16(2+h)^2+150 - (-16(2)^2+150)}{h}</mrow>
+        <mrow>\amp = \lim_{h\to 0}\frac{-16(4+4h+h^2)+150 - 86}{h}</mrow>
+        <mrow>\amp = \lim_{h\to 0}\frac{-64-64h-16h^2+64}{h}</mrow>
         <mrow>\amp =	\lim_{h\to 0}\frac{-64h-16h^2}{h}</mrow>
         <mrow>\amp = \lim_{h\to 0}-64 -16h</mrow>
         <mrow>\amp =-64.</mrow>
@@ -93,114 +98,117 @@
       </tabular>
     </table>
 
-    <p>Graphically, we can view the average velocities we computed numerically as the slopes of secant lines on the graph of <m>f</m> going through the points <m>(2,f(2))</m> and <m>(2+h,f(2+h))</m>. In <xref ref="fig_derivfalling">Figure</xref>, the secant line corresponding to <m>h=1</m> is shown in three contexts. <xref ref="fig_derivfalling">Figure</xref>(a) shows a <q>zoomed out</q> version of <m>f</m> with its secant line. In (b), we zoom in around the points of intersection between <m>f</m> and the secant line. Notice how well this secant line approximates <m>f</m> between those two points <mdash /> it is a common practice to approximate functions with straight lines.</p>
+    <p>Graphically, we can view the average velocities we computed numerically as the slopes of secant lines on the graph of <m>f</m> going through the points <m>(2,f(2))</m> and <m>(2+h,f(2+h))</m>. In <xref ref="fig_derivfalling">Figure</xref><ndash/><xref ref="fig_derivfalling3">Figure</xref>, the secant line corresponding to <m>h=1</m> is shown in three contexts. <xref ref="fig_derivfalling">Figure</xref> shows a <q>zoomed out</q> version of <m>f</m> with its secant line. In <xref ref="fig_derivfalling2"> Figure </xref>, we zoom in around the points of intersection between <m>f</m> and the secant line. Notice how well this secant line approximates <m>f</m> between those two points <mdash /> it is a common practice to approximate functions with straight lines.</p>
 
-    <p>As <m>h\to 0</m>, these secant lines approach the <em>tangent line</em>, a line that goes through the point <m>(2,f(2))</m> with the special slope of <m>-64</m>. In parts (c) and (d) of <xref ref="fig_derivfalling">Figure</xref>, we zoom in around the point <m>(2,86)</m>. In (c) we see the secant line, which approximates <m>f</m> well, but not as well the tangent line shown in (d).</p>
+    <p>As <m>h\to 0</m>, these secant lines approach the <em>tangent line</em>, a line that goes through the point <m>(2,f(2))</m> with the special slope of <m>-64</m>. In <xref ref="fig_derivfalling3">Figure</xref> and <xref ref="fig_derivfalling4">Figure</xref>, we zoom in around the point <m>(2,86)</m>. We see the secant line, which approximates <m>f</m> well, but not as well the tangent line shown in <xref ref="fig_derivfalling4">Figure</xref>.</p>
 
     <!--
     <caption>Parts (a), (b) and (c) show the secant line to <m>f(x)</m> with <m>h=1</m>, zoomed in different amounts. Part (d) shows the tangent line to <m>f</m> at <m>x=2</m>.</caption>
     -->
+    <todo>Decide on caption structure. I think this is good. Can the side by side go 2 by 2, or should I do two side by sides?. </todo>
 
     <sidebyside>
-      <figure>
-        <caption>(a) &amp; (b)</caption>
+      <figure xml:id="fig_derivfalling">
+         <caption>The function <m>f(x)</m> and its secant line corresponding to <m>t=2</m> and <m>t=3</m>.</caption>
+        <image xml:id="img_derivfalling">
         <!-- START figures/fig_derivfalling.tex -->
-        <image xml:id="img_derivfalling" >
           <description></description>
           <latex-image-code>
-            <![CDATA[
-            \begin{tikzpicture}
-            \begin{axis}[ymin=-50,ymax=160,xmin=-.5,xmax=3.49,]
-            \addplot [{\colorone},smooth,thick] coordinates {(0.,150.) (0.1,149.84) (0.2,149.36) (0.3,148.56) (0.4,147.44) (0.5,146.) (0.6,144.24) (0.7,142.16) (0.8,139.76) (0.9,137.04)(1.,134.) (1.1,130.64) (1.2,126.96) (1.3,122.96) (1.4,118.64) (1.5,114.) (1.6,109.04) (1.7,103.76) (1.8,98.16) (1.9,92.24) (2.,86.) (2.1,79.44) (2.2,72.56) (2.3,65.36) (2.4,57.84) (2.5,50.) (2.6,41.84) (2.7,33.36) (2.8,24.56) (2.9,15.44) (3.,6.) (3.06,0) (3.1,-3.76) (3.2,-13.84) (3.3,-24.24) (3.4,-34.96) (3.5,-46.)};
-            %\addplot [domain=2.1:4.1] {-104*(x-3)+56};
-            \addplot [{\colortwo},domain=1:3.5,thick] {-80*(x-2)+86};
-            \filldraw [black] (axis cs:2,86) circle (1pt);
-            \filldraw [black] (axis cs:3,6) circle (1pt);
-            \end{axis}
-
-
-
-            \end{tikzpicture}
-            % this is the sqrt[x] on [0,5]
-            ]]>
+             <![CDATA[
+                          \begin{tikzpicture}
+                              \begin{axis}[xmin=-.5,xmax=3.49,
+                                           ymin=-50,ymax=160,
+                                           xlabel={$t$},
+                                          ]
+                                  \addplot[{\colorone},thick,domain=0:3.06] {-16*x^2+150};
+                                  \addplot [<->,{\colortwo},domain=1.5:3.2,thick] {-80*(x-2)+86};
+                                  \addplot[soliddot,{\colortwo}] coordinates{(2,86) (3,6)};
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
           </latex-image-code>
         </image>
         <!-- figures/fig_derivfalling.tex END -->
-         &amp; 
+        </figure>
+
+        
+        <figure xml:id="fig_derivfalling2">
+          <caption>The function <m>f(x)</m> and a secant line corresponding to <m>t=2</m> and <m>t=3</m>, zoomed in near <m>t=2</m>.</caption>
+          <image xml:id="img_derivfalling2">
         <!-- START figures/fig_derivfalling2.tex -->
-        <image xml:id="img_derivfalling2" >
+        
           <description></description>
           <latex-image-code>
             <![CDATA[
             \begin{tikzpicture}
-            \begin{axis}[ymin=-10,ymax=129,xmin=1.8,xmax=3.4,]
-            \addplot [{\colorone},smooth,thick] coordinates { (1.5,114.) (1.6,109.04) (1.7,103.76) (1.8,98.16) (1.9,92.24) (2.,86.) (2.1,79.44) (2.2,72.56) (2.3,65.36) (2.4,57.84) (2.5,50.) (2.6,41.84) (2.7,33.36) (2.8,24.56) (2.9,15.44) (3.,6.) (3.06,0) (3.1,-3.76) (3.2,-13.84) (3.3,-24.24) (3.4,-34.96) (3.5,-46.)};
-            \addplot [{\colortwo},domain=1.8:3.2,thick] {-80*(x-2)+86};
-            %\addplot [] {-104*(x-3)+56};
-            %\addplot [{\colortwo}] {-112*(x-3)+56};
-            \filldraw [black] (axis cs:2,86) circle (1pt);
-            \filldraw [black] (axis cs:3,6) circle (1pt);
-            \end{axis}
-
-
-
-            \end{tikzpicture}
-            ]]>
+         
+                              \begin{axis}[ymin=0,ymax=129,
+                                           xmin=1.8,xmax=3.4,
+                                           xlabel={$t$},
+                                           xdiscontinuity,
+                                           ydiscontinuity,
+                                          ]
+                                  \addplot[{\colorone},thick,domain=0:3.06] {-16*x^2+150};
+                                  \addplot [{\colortwo},domain=1.1:3.1,thick] {-80*(x-2)+86}; 
+                                  \addplot[soliddot,{\colortwo}] coordinates{(2,86) (3,6)};
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
           </latex-image-code>
         </image>
         <!-- figures/fig_derivfalling2.tex END -->
       </figure>
 
-      <figure>
-        <caption><!-- START figures/fig_derivfalling3.tex -->
+      <figure xml:id="fig_derivfalling3">
+        <caption>The function <m>f(x)</m> with the same secant line, zoomed in further.</caption>
         <image xml:id="img_derivfalling3" >
           <description></description>
           <latex-image-code>
             <![CDATA[
             \begin{tikzpicture}
-            \begin{axis}[ymin=-10,ymax=129,xmin=1.4,xmax=2.6,]
-            \addplot [{\colorone},smooth,thick] coordinates { (1.4,118.64) (1.5,114.) (1.6,109.04) (1.7,103.76) (1.8,98.16) (1.9,92.24) (2.,86.) (2.1,79.44) (2.2,72.56) (2.3,65.36) (2.4,57.84) (2.5,50.) (2.6,41.84)  };
-            \addplot [{\colortwo},domain=1.42:2.6,thick] {-80*(x-2)+86};
-            %\addplot [] {-104*(x-3)+56};
-            %\addplot [{\colortwo}] {-112*(x-3)+56};
-            \filldraw [black] (axis cs:2,86) circle (1pt);
-            %\filldraw [black] (axis cs:4,-56) circle (1pt);
-            \end{axis}
-
-
-
-            \end{tikzpicture}
-            ]]>
+                          \begin{axis}[ymin=0,ymax=129,
+                                       xmin=1.4,xmax=2.6,
+                                       xlabel={$t$},
+                                       xdiscontinuity,
+                                       ydiscontinuity,
+                                          ]
+                                  \addplot[{\colorone},thick,domain=0:3.06] {-16*x^2+150};
+                                  \addplot [{\colortwo},domain=1.4:2.6,thick] {-80*(x-2)+86};  
+                                  \addplot[soliddot, {\colortwo}] coordinates{(2,86)};
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
           </latex-image-code>
         </image>
         <!-- figures/fig_derivfalling3.tex END -->
-         &amp;
+        </figure>
+
+        <figure xml:id="fig_derivfalling4">
+          <caption>The function <m>f(x)</m> with its tangent line at <m>t=2</m>.</caption>
         <!-- START figures/fig_derivfalling4.tex -->
         <image xml:id="img_derivfalling4" >
           <description></description>
           <latex-image-code>
-            <![CDATA[
-            \begin{tikzpicture}
-            \begin{axis}[ymin=-10,ymax=129,xmin=1.4,xmax=2.6,]
-            \addplot [{\colorone},smooth,thick] coordinates {(1.4,118.64) (1.5,114.) (1.6,109.04) (1.7,103.76) (1.8,98.16) (1.9,92.24) (2.,86.) (2.1,79.44) (2.2,72.56) (2.3,65.36) (2.4,57.84) (2.5,50.) (2.6,41.84)  };
-            \addplot [{\colortwo},domain=1.42:2.6,thick] {-64*(x-2)+86};
-            \filldraw [black] (axis cs:2,86) circle (1pt);
-            \end{axis}
-
-
-
-            \end{tikzpicture}
-            ]]>
+           <![CDATA[
+                          \begin{tikzpicture}
+                              \begin{axis}[xmin=-.5,xmax=3.49,
+                                           ymin=-50,ymax=160,
+                                           xlabel={$t$},
+                                          ]
+                                  \addplot[{\colorone},thick,domain=0:3.06] {-16*x^2+150};
+                                  \addplot [<->,{\colortwo},domain=1:3.1,thick] {-64*(x-2)+86};
+                                  \addplot[soliddot, {\colortwo}] coordinates{(2,86)};
+                                  
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
           </latex-image-code>
         </image>
-        <!-- figures/fig_derivfalling4.tex END --></caption>
-        &amp;
-      </figure>
 
-      <figure>
-        (c) &amp; (d)
-      </figure>
-    </sidebyside>
+      </figure> 
+
+      </sidebyside>
+    
 
     <p>We have just introduced a number of important concepts that we will flesh out more within this section. First, we formally define two of them.</p>
 
@@ -245,8 +253,11 @@
               <md>
                 <mrow>\fp(1) \amp =	\lim_{h\to 0} \frac{f(1+h)-f(1)}{h}</mrow>
                 <mrow>\amp =	\lim_{h\to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h}</mrow>
+                 <mrow>\amp = \lim_{h\to 0} \frac{3(1+2h+h^2)+5+5h-7 - 1}{h}</mrow>
+                 <mrow>\amp = \lim_{h\to 0} \frac{3+6h+3h^2+5+5h-8}{h}</mrow>
                 <mrow>\amp =	\lim_{h\to 0} \frac{3h^2+11h}{h}</mrow>
-                <mrow>\amp = 	\lim_{h\to 0}	3h+11=11.</mrow>
+                <mrow>\amp = 	\lim_{h\to 0}	3h+11</mrow>
+                <mrow>\amp = 11.</mrow>
               </md>
             </p></li>
 
@@ -256,6 +267,8 @@
               <md>
                 <mrow>\fp(3) \amp =	\lim_{h\to 0} \frac{f(3+h)-f(3)}{h}</mrow>
                 <mrow>\amp =	\lim_{h\to 0} \frac{3(3+h)^2+5(3+h)-7 - (3(3)^2+5(3)-7)}{h}</mrow>
+                <mrow>\amp =  \lim_{h\to 0} \frac{3(9+6h+h^2)+15+3h-7 - 35}{h}</mrow>
+                <mrow>\amp =  \lim_{h\to 0} \frac{27+18h+3h^2+15+3h-42}{h}</mrow>
                 <mrow>\amp =	\lim_{h\to 0} \frac{3h^2+23h}{h}</mrow>
                 <mrow>\amp = \lim_{h\to 0} 3h+23</mrow>
                 <mrow>\amp = 23.</mrow>
@@ -271,24 +284,18 @@
           <image xml:id="img_tangent1" >
             <description></description>
             <latex-image-code>
-              <![CDATA[
-              \begin{tikzpicture}
-              \begin{axis}[ymin=-11,ymax=66,xmin=-.1,xmax=4.1,]
-              \addplot [{\colorone},smooth,thick] coordinates {(0.,-7.) (0.1,-6.47) (0.2,-5.88) (0.3,-5.23) (0.4,-4.52) (0.5,-3.75)
-              (0.6,-2.92) (0.7,-2.03) (0.8,-1.08) (0.9,-0.07) (1.,1.) (1.1,2.13) (1.2,3.32) (1.3,4.57) (1.4,5.88) (1.5,7.25) (1.6,8.68) (1.7,10.17) (1.8,11.72) (1.9,13.33) (2.,15.) (2.1,16.73) (2.2,18.52) (2.3,20.37) (2.4,22.28) (2.5,24.25) (2.6,26.28) (2.7,28.37) (2.8,30.52) (2.9,32.73) (3.,35.) (3.1,37.33) (3.2,39.72) (3.3,42.17) (3.4,44.68) 
-              (3.5,47.25) (3.6,49.88) (3.7,52.57) (3.8,55.32) (3.9,58.13) (4.,61.)};
-              \addplot [{\colortwo},domain=.1:2.2,thick] {11*(x-1)+1};
-              \addplot [{\colortwo},domain=1.8:3.8,thick] {23*(x-3)+35};
-              %\addplot [] {-104*(x-3)+56};
-              %\addplot [{\colortwo}] {-112*(x-3)+56};
-              \filldraw [black] (axis cs:1,1) circle (1pt);
-              \filldraw [black] (axis cs:3,35) circle (1pt);
-              \end{axis}
-
-
-
-              \end{tikzpicture}
-              ]]>
+               <![CDATA[
+                          \begin{tikzpicture}
+                              \begin{axis}[ymin=-11,ymax=66,
+                                           xmin=-1,xmax=4.1,
+                                          ]
+                                  \addplot [<->,{\colorone},thick,domain=-1:4]{3*x^2+5*x-7};
+                                  \addplot [<->,{\colortwo},domain=0:4,thick] {11*(x-1)+1};
+                                  \addplot [<->,{\colortwo},domain=1.8:3.8,thick] {23*(x-3)+35};
+                                  \addplot[<->,soliddot,{\colortwo}] coordinates{(1,1) (3,35)};
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
             </latex-image-code>
           </image>
           <!-- figures/fig_tangent1.tex END -->
@@ -323,7 +330,7 @@
           </me>
         </p>
 
-        <p>The normal line is plotted with <m>y=f(x)</m> in <xref ref="fig_normal1">Figure</xref>. Note how the line looks perpendicular to <m>f</m>. (A key word here is <q>looks.</q> Mathematically, we say that the normal line <em>is</em> perpendicular to <m>f</m> at <m>x=1</m> as the slope of the normal line is the opposite<ndash />reciprocal of the slope of the tangent line. However, normal lines may not always <em>look</em> perpendicular. The aspect ratio of the picture of the graph plays a big role in this.)</p>
+        <p>The normal line is plotted with <m>y=f(x)</m> in <xref ref="fig_normal1">Figure</xref>. Note how the line looks perpendicular to <m>f</m>. (A key word here is <q>looks.</q> Mathematically, we say that the normal line <em>is</em> perpendicular to <m>f</m> at <m>x=1</m> as the slope of the normal line is the opposite<ndash />reciprocal of the slope of the tangent line. However, normal lines may not always <em>look</em> perpendicular. The aspect ratio of the picture of the graph plays a big role in this. When using graphing software, there is usually an option called <q>Zoom Square</q> that keeps the aspect ratio <m>1:1</m>)</p>
 
         <figure xml:id="fig_normal1" >
           <caption>A graph of <m>f(x)=3x^2+5x-7</m>, along with its normal line at <m>x=1</m>.</caption>
@@ -331,30 +338,19 @@
           <image xml:id="img_normal1" >
             <description></description>
             <latex-image-code>
-              <![CDATA[
-              \begin{tikzpicture}
-              \begin{axis}[x=1cm,y=1cm,%
-              ymin=-.1,ymax=3.5,%
-              xmin=-0.1,xmax=4.3,%
-              ]
-              \addplot [{\colorone},smooth,thick] coordinates {(0.,-7.) (0.1,-6.47) (0.2,-5.88) (0.3,-5.23) (0.4,-4.52) (0.5,-3.75)
-              (0.6,-2.92) (0.7,-2.03) (0.8,-1.08) (0.9,-0.07) (1.,1.) (1.1,2.13) (1.2,3.32) (1.3,4.57) (1.4,5.88) (1.5,7.25) (1.6,8.68) (1.7,10.17) (1.8,11.72) (1.9,13.33) (2.,15.) (2.1,16.73) (2.2,18.52) (2.3,20.37) (2.4,22.28) (2.5,24.25) (2.6,26.28) (2.7,28.37) (2.8,30.52) (2.9,32.73) (3.,35.) (3.1,37.33) (3.2,39.72) (3.3,42.17) (3.4,44.68) 
-              (3.5,47.25) (3.6,49.88) (3.7,52.57) (3.8,55.32) (3.9,58.13) (4.,61.)};
-              %\addplot [{\colortwo},domain=.1:2.2,thick,dashed] {11*(x-1)+1};
-              %\addplot [{\colortwo},domain=1.8:3.8,thick,dashed] {23*(x-3)+35};
 
-              %\addplot [{\colortwo},domain=2.2:3.5,thick] {(-1/23)*(x-3)+35};
-              \addplot [{\colortwo},domain=.2:2.5,thick] {(-1/11)*(x-1)+1};
-              %\addplot [] {-104*(x-3)+56};
-              %\addplot [{\colortwo}] {-112*(x-3)+56};
-              \filldraw [black] (axis cs:1,1) circle (1pt);
-              \filldraw [black] (axis cs:3,35) circle (1pt);
-              \end{axis}
-
-
-
-              \end{tikzpicture}
-              ]]>
+               <![CDATA[
+                          \begin{tikzpicture}
+                              \begin{axis}[ymin=-.1,ymax=3.5,
+                                           xmin=-0.1,xmax=4.3,
+                                          ]
+                                  \addplot [<->,{\colorone},thick,domain=0.9:1.2]{3*x^2+5*x-7};
+                                   \addplot [<->,{\colortwo},domain=2.2:3.5,thick] {(-1/23)*(x-3)+35};
+                                   \addplot [<->,{\colortwo},domain=.2:2.5,thick] {(-1/11)*(x-1)+1};
+                                  \addplot[soliddot,{\colortwo}] coordinates{(1,1) (3,35)};
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
             </latex-image-code>
           </image>
           <!-- figures/fig_normal1.tex END -->
@@ -399,25 +395,26 @@
     <p>We often desire to find the tangent line to the graph of a function without knowing the actual derivative of the function. In these cases, the best we may be able to do is approximate the tangent line. We demonstrate this in the next example.</p>
 
     <figure xml:id="fig_tangentsinx" >
-      <caption><m>f(x) = \sin x</m> graphed with an approximation to its tangent line at <m>x=0</m>.</caption>
+      <caption><m>f(x) = \sin(x)</m> graphed with an approximation to its tangent line at <m>x=0</m>.</caption>
       <!-- START figures/fig_tangentsinx.tex -->
       <image xml:id="img_tangentsinx" >
         <description></description>
         <latex-image-code>
+
           <![CDATA[
-          \begin{tikzpicture}
-          \begin{axis}[xtick={-3.14,-1.57,1.57,3.14},xticklabels={$-\pi$,$-\frac{\pi}2$,$\frac{\pi}2$,$\pi$},ymin=-1.1,ymax=1.1,xmin=-3.5,xmax=3.5,]
-          \addplot [{\colorone},smooth,thick] coordinates {(-3.5,0.351) (-3.4,0.256) (-3.3,0.158) (-3.2,0.0584) (-3.1,-0.0416) (-3.,-0.141) (-2.9,-0.239) (-2.8,-0.335) (-2.7,-0.427) (-2.6,-0.516) (-2.5,-0.598) (-2.4,-0.675) (-2.3,-0.746) (-2.2,-0.808) (-2.1,-0.863) (-2.,-0.909) (-1.9,-0.946) (-1.8,-0.974) (-1.7,-0.992) (-1.6,-1.) (-1.5,-0.997) (-1.4,-0.985) (-1.3,-0.964) (-1.2,-0.932) (-1.1,-0.891) (-1.,-0.841) (-0.9,-0.783) (-0.8,-0.717) (-0.7,-0.644) (-0.6,-0.565) 
-          (-0.5,-0.479) (-0.4,-0.389) (-0.3,-0.296) (-0.2,-0.199) (-0.1,-0.0998) (0,0) (0.1,0.0998) (0.2,0.199) (0.3,0.296) (0.4,0.389) (0.5,0.479) (0.6,0.565) (0.7,0.644) (0.8,0.717) (0.9,0.783)(1.,0.841) (1.1,0.891) (1.2,0.932) (1.3,0.964) (1.4,0.985) (1.5,0.997) (1.6,1.) (1.7,0.992) (1.8,0.974) (1.9,0.946) (2.,0.909) (2.1,0.863) (2.2,0.808) (2.3,0.746) (2.4,0.675) (2.5,0.598) (2.6,0.516) (2.7,0.427) (2.8,0.335) (2.9,0.239) (3.,0.141) (3.1,0.0416) (3.2,-0.0584) (3.3,-0.158) (3.4,-0.256) (3.5,-0.351)};
-          \addplot [{\colortwo},domain=-1:1,thick] {.9983*x};
-          \filldraw [black] (axis cs:0,0) circle (1pt);
-
-          \end{axis}
-
-
-
-          \end{tikzpicture}
-          ]]>
+                          \begin{tikzpicture}
+                              \begin{axis}[ymin=-1.1,ymax=1.1,
+                                           xmin=-3.5,xmax=3.5,
+                                           xtick={-3.14,-1.57,1.57,3.14},
+                                           xticklabels={$-\pi$,$-\frac{\pi}2$,$\frac{\pi}2$,$\pi$}
+                                          ]
+                                  \addplot [<->,{\colorone},thick,domain=-3.5:3.5,samples=100]{sin(deg(x))};
+                                  \addplot [<->,{\colortwo},domain=-1:1,thick] {.9983*x};
+                                  \addplot [soliddot,{\colortow}] coordinates{(0,0)};
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
+        
         </latex-image-code>
       </image>
       <!-- figures/fig_tangentsinx.tex END -->
@@ -426,7 +423,7 @@
     <example xml:id="ex_der_num_approx">
       <title>Numerical Approximation of the Tangent Line</title>
       <statement>
-        <p>Approximate the equation of the tangent line to the graph of <m>f(x)=\sin x</m> at <m>x=0</m>.</p>
+        <p>Approximate the equation of the tangent line to the graph of <m>f(x)=\sin(x)</m> at <m>x=0</m>.</p>
       </statement>
       <solution>
         <p>In order to find the equation of the tangent line, we need a slope and a point. The point is given to us: <m>(0,\sin 0) = (0,0)</m>. To compute the slope, we need the derivative. This is where we will make an approximation. Recall that
@@ -443,7 +440,7 @@
       </solution>
     </example>
 
-    <p>Recall from <xref ref="sec_limit_analytically">Section</xref> that <m>\lim\limits_{x\to 0}\frac{\sin x}x =1</m>, meaning for values of <m>x</m> near 0, <m>\sin x \approx x</m>. Since the slope of the line <m>y=x</m> is 1 at <m>x=0</m>, it should seem reasonable that <q>the slope of <m>f(x)=\sin x</m></q> is near 1 at <m>x=0</m>. In fact, since we <em>approximated</em> the value of the slope to be <m>0.9983</m>, we might guess the <em>actual value</em> is 1. We'll come back to this later.</p>
+    <p>Recall from <xref ref="sec_limit_analytically">Section</xref> that <m>\lim\limits_{x\to 0}\frac{\sin(x)}x =1</m>, meaning for values of <m>x</m> near 0, <m>\sin(x) \approx x</m>. Since the slope of the line <m>y=x</m> is 1 at <m>x=0</m>, it should seem reasonable that <q>the slope of <m>f(x)=\sin(x)</m></q> is near 1 at <m>x=0</m>. In fact, since we <em>approximated</em> the value of the slope to be <m>0.9983</m>, we might guess the <em>actual value</em> is 1. We'll come back to this later.</p>
 
     <p>Consider again <xref ref="ex_derv_point1">Example</xref>. To find the derivative of <m>f</m> at <m>x=1</m>, we needed to evaluate a limit. To find the derivative of <m>f</m> at <m>x=3</m>, we needed to again evaluate a limit. We have this process:</p>
     <image xml:id="img_tangentsinxX" >
@@ -549,23 +546,30 @@
     <example xml:id="ex_deriv_sinx">
       <title>Finding the derivative of a function</title>
       <statement>
-        <p>Find the derivative of <m>f(x) = \sin x</m>.</p>
+        <p>Find the derivative of <m>f(x) = \sin(x)</m>.</p>
       </statement>
       <solution>
-        <p>Before applying <xref ref="def_the_derivative">Definition</xref>, note that once this is found, we can find the actual tangent line to <m>f(x) = \sin x</m> at <m>x=0</m>, whereas we settled for an approximation in <xref ref="ex_der_num_approx">Example</xref>.
+        <p>Before applying <xref ref="def_the_derivative">Definition</xref>, note that once this is found, we can find the actual tangent line to <m>f(x) = \sin(x)</m> at <m>x=0</m>, whereas we settled for an approximation in <xref ref="ex_der_num_approx">Example</xref>.
           <md>
-            <mrow>\fp(x) \amp = \lim_{h\to 0} \frac{\sin(x+h)-\sin x}{h} \amp  \amp  \left(\text{\scriptsize \text{ Use trig identity \(\sin(x+h) = \sin x\cos h+\cos x\sin h\) }} \right)</mrow>
-            <mrow>\amp = \lim_{h\to 0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} \amp  \amp  \text{ \scriptsize (regroup) }</mrow>
-            <mrow>\amp = \lim_{h\to 0} \frac{\sin x(\cos h-1) + \cos x\sin h}{h} \amp  \amp  \text{ \scriptsize (split into two fractions) }</mrow>
-            <mrow>\amp = \lim_{h\to 0} \left(\frac{\sin x(\cos h-1)}{h} + \frac{\cos x\sin h}{h}\right) \amp  \amp  \left(\scriptsize use $\lim\limits_{h	o 0} \frac{\cos h-1}{h} = 0$ and $\lim\limits_{h	o 0} \frac{\sin h}{h} = 1$\right)</mrow>
-            <mrow>\amp =	\sin x\cdot 0 + \cos x \cdot 1</mrow>
-            <mrow>\amp = \cos x\ !</mrow>
+            <mrow>\fp(x) \amp = \lim_{h\to 0} \frac{\sin(x+h)-\sin(x)}{h} \amp  \amp \text{Definition of derivative.} </mrow>
+            <mrow>\amp = \lim_{h\to 0} \frac{\sin(x)\cos(h)+\cos(x)\sin(h)-\sin(x)}{h} \amp \amp \text{Applied Trig Identity *} </mrow>
+            
+            <mrow>\amp = \lim_{h\to 0} \frac{\sin(x)(\cos(h)-1) + \cos(x)\sin(h)}{h} \amp  \amp \text{Regrouped and factored } </mrow>
+            <mrow>\amp = \lim_{h\to 0} \left(\frac{\sin(x)(\cos(h)-1)}{h} + \frac{\cos(x)\sin(h)}{h}\right) \amp  \amp  \text{Split into two fractions}</mrow>
+            <mrow>\amp = \lim_{h\to 0} \sin(x) \cdot \lim_{h\to 0}\frac{\cos(h)-1}{h} +  \lim_{h\to 0}\cos(x)\cdot  \lim_{h\to 0}\frac{\sin(h)}{h} \amp  \amp  \text{Applied product/sum limit rules}</mrow>
+            <mrow>\amp =	\sin(x)\cdot 0 + \cos(x) \cdot 1 \amp \amp  \text{Applied } <xref ref="thm_special_limits">Theorem </xref></mrow>
+            
+            <mrow>\amp = \cos(x)\ !</mrow>
+           
           </md>
+
+          <todo>I'm sure there is some sort of footnote symbol or something that I don't know how to use. Putting the whole identity in the mrow makes it flow out of the box. </todo>
+          <aside><m>*\sin(x+h) = \sin(x)\cos(h)+\cos(x)\sin(h)</m></aside>
         </p>
 
-        <p>We have found that when <m>f(x) = \sin x</m>, <m>\fp(x) = \cos x</m>. This should be somewhat surprising; the result of a tedious limit process and the sine function is a nice function. Then again, perhaps this is not entirely surprising. The sine function is periodic <mdash /> it repeats itself on regular intervals. Therefore its rate of change also repeats itself on the same regular intervals. We should have known the derivative would be periodic; we now know exactly which periodic function it is.</p>
+        <p>We have found that when <m>f(x) = \sin(x)</m>, <m>\fp(x) = \cos(x)</m>. This should be somewhat surprising; the result of a tedious limit process on the sine function is a nice function. Then again, perhaps this is not entirely surprising. The sine function is periodic <mdash /> it repeats itself on regular intervals. Therefore its rate of change also repeats itself on the same regular intervals. We should have known the derivative would be periodic; we now know exactly which periodic function it is.</p>
 
-        <p>Thinking back to <xref ref="ex_der_num_approx">Example</xref>, we can find the slope of the tangent line to <m>f(x)=\sin x</m> at <m>x=0</m> using our derivative. We approximated the slope as <m>0.9983</m>; we now know the slope is <em>exactly</em> <m>\cos 0 =1</m>.</p>
+        <p>Thinking back to <xref ref="ex_der_num_approx">Example</xref>, we can find the slope of the tangent line to <m>f(x)=\sin(x)</m> at <m>x=0</m> using our derivative. We approximated the slope as <m>0.9983</m>; we now know the slope is <em>exactly</em> <m>\cos(0) =1</m>.</p>
       </solution>
     </example>
 
@@ -593,11 +597,9 @@
               <![CDATA[
               \begin{tikzpicture}
               \begin{axis}[ymin=-.2,ymax=1.1,xmin=-1.1,xmax=1.1,]
-              \addplot [{\colorone},thick] coordinates {(-1,1) (0,0) (1,1)};
+              \addplot [{\colorone},thick, domain=-1:0,<-]{-x};
+              \addplot [{\colorone},thick, domain=0:1,->]{x};
               \end{axis}
-
-
-
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -623,17 +625,25 @@
         </p>
 
         <p>Since <m>x=0</m> is the point where our function's definition switches from one piece to other, we need to consider left and right-hand limits. Consider the following, where we compute the left and right hand limits side by side.</p>
+        <sidebyside>
+          <p>
         <md>
-          <mrow>\lim_{h\to0^-}\frac{f(0+h)-f(0)}{h} \amp =</mrow>
-          <mrow>\lim_{h\to0^-}\frac{-h-0}{h} \amp =</mrow>
-          <mrow>\lim_{h\to0^-}-1 \amp  =-1</mrow>
+          <mrow>\amp\lim_{h\to0^-}\frac{f(0+h)-f(0)}{h} </mrow>
+          <mrow>\amp= \lim_{h\to0^-}\frac{-h-0}{h} </mrow>
+          <mrow>\amp=\lim_{h\to0^-}-1 </mrow>
+          <mrow>\amp  =-1</mrow>
         </md>
-        <p>\rule{.5pt}{70pt}</p>
+        </p>
+
+        <p>
         <md>
-          <mrow>\lim_{h\to0^+}\frac{f(0+h)-f(0)}{h} \amp =</mrow>
-          <mrow>\lim_{h\to0^+}\frac{h-0}{h} \amp =</mrow>
-          <mrow>\lim_{h\to0^+}1 \amp  =1</mrow>
+          <mrow>\amp \lim_{h\to0^+}\frac{f(0+h)-f(0)}{h} </mrow>
+          <mrow>\amp =\lim_{h\to0^+}\frac{h-0}{h} </mrow>
+          <mrow>\amp =\lim_{h\to0^+}1</mrow>
+            <mrow>\amp  =1</mrow>
         </md>
+        </p>
+</sidebyside>
 
         <figure xml:id="fig_absolutevalueprime" >
           <caption>A graph of the derivative of <m>f(x) = \abs{x}</m>.</caption>
@@ -641,19 +651,16 @@
           <image xml:id="img_absolutevalueprime" >
             <description></description>
             <latex-image-code>
-              <![CDATA[
-              \begin{tikzpicture}
-              \begin{axis}[ymin=-1.4,ymax=1.4,xmin=-1.1,xmax=1.1,]
-              \addplot [{\colorone},thick] coordinates {(-1,-1) (0,-1)};
-              \addplot [{\colorone},thick] coordinates {(0,1) (1,1)};
-              \filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
-              \filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
-              \end{axis}
 
-
-
-              \end{tikzpicture}
-              ]]>
+                <![CDATA[
+                          \begin{tikzpicture}
+                              \begin{axis}[ymin=-1.4,ymax=1.4,xmin=-1.1,xmax=1.1]
+                                  \addplot [<-,{\colorone},thick,domain=-1:0]{1};
+                                  \addplot [->,{\colorone},thick,domain=0:1]{-1};
+                                  \addplot[hollowdot] coordinates{(0,-1) (0,1)};
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
             </latex-image-code>
           </image>
           <!-- figures/fig_absolutevalueprime.tex END -->
@@ -662,7 +669,7 @@
         <p>The last lines of each column tell the story: the left and right hand limits are not equal. Therefore the limit does not exist at 0, and <m>f</m> is not differentiable at 0.
           So we have
           <me>
-            \fp(x) = \left\{\begin{array}{cc} -1 \amp  x\lt 0 \\ 1 \amp  x>0
+            \fp(x) = \left\{\begin{array}{cc} -1 \amp  x\lt 0 \\ 1 \amp  x \gt 0
             \end{array} .\right.
           </me>
         </p>
@@ -676,11 +683,11 @@
     <example xml:id="ex_diff_piecewise">
       <title>Finding the derivative of a piecewise defined function</title>
       <statement>
-        <p>Find the derivative of <m>f(x)</m>, where <m>\ds f(x) = \left\{\begin{array}{cc} \sin x \amp  x\leq \pi/2 \\ 1 \amp  x>\pi/2
+        <p>Find the derivative of <m>f(x)</m>, where <m>\ds f(x) = \left\{\begin{array}{cc} \sin(x) \amp  x\leq \pi/2 \\ 1 \amp  x\gt\pi/2
           \end{array} .\right.</m> See <xref ref="fig_piecewisesinx1">Figure</xref>.</p>
       </statement>
       <solution>
-        <p>Using <xref ref="ex_deriv_sinx">Example</xref>, we know that when <m>x\lt \pi/2</m>, <m>\fp(x) = \cos x</m>. It is easy to verify that when <m>x>\pi/2</m>, <m>\fp(x) = 0</m>; consider:
+        <p>Using <xref ref="ex_deriv_sinx">Example</xref>, we know that when <m>x\lt \pi/2</m>, <m>\fp(x) = \cos(x)</m>. It is easy to verify that when <m>x>\pi/2</m>, <m>\fp(x) = 0</m>; consider:
           <me>
             \lim_{h\to0}\frac{f(x+h) - f(x)}{h} = \lim_{h\to0}\frac{1-1}{h} = \lim_{h\to0}0 =0.
           </me>
@@ -692,19 +699,17 @@
           <image xml:id="img_piecewisesinx1" >
             <description></description>
             <latex-image-code>
-              <![CDATA[
-              \begin{tikzpicture}
-              \begin{axis}[xtick={1.57},xticklabels={$\frac{\pi}2$},ymin=-.4,ymax=1.4,xmin=-.1,xmax=2.1,]
-              \addplot [{\colorone},smooth,thick] coordinates {(-0.1,-0.0998) (0.,0.) (0.1,0.0998) (0.2,0.199) (0.3,0.296)(0.4,0.389) (0.5,0.479) (0.6,0.565) (0.7,0.644) (0.8,0.717) (0.9,0.783) (1.,0.841) (1.1,0.891) (1.2,0.932) (1.3,0.964)(1.4,0.985) (1.5,0.997) (1.6,1) (1.7,1) (1.8,1) (1.9,1) (2.,1)
-              };
-              %\filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
-              %\filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
-              \end{axis}
-
-
-
-              \end{tikzpicture}
-              ]]>
+                <![CDATA[
+                          \begin{tikzpicture}
+                              \begin{axis}[ymin=-.4,ymax=1.4,
+                                           xmin=-.1,xmax=2.1,
+                                           xtick={1.57},xticklabels={$\frac{\pi}2$},
+                                          ]
+                                  \addplot [{\colorone},thick,domain=-.1:1.5705,samples=100]{sin(deg(x))};
+                                  \addplot [{\colorone},domain=1.5705:2,thick] {1};
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
             </latex-image-code>
           </image>
           <!-- figures/fig_piecewisesinx1.tex END -->
@@ -712,7 +717,7 @@
 
         <p>So far we have
           <me>
-            \fp(x) = \left\{\begin{array}{cc} \cos x \amp  x\lt \pi/2\\ 0 \amp  x>\pi/2
+            \fp(x) = \left\{\begin{array}{cc} \cos(x) \amp  x\lt \pi/2\\ 0 \amp  x>\pi/2
             \end{array} .\right.
           </me>
         </p>
@@ -722,20 +727,23 @@
         <p>Being more rigorous, we can again evaluate the difference quotient limit at <m>x=\pi/2</m>, utilizing again left and right<ndash />hand limits:</p>
 
         <sidebyside>
+          <p>
           <md>
-            <mrow>\lim_{h\to0^-}\frac{f(\pi/2+h)-f(\pi/2)}{h} \amp =</mrow>
-            <mrow>\lim_{h\to0^-}\frac{\sin(\pi/2+h)-\sin(\pi/2)}{h}\amp =</mrow>
-            <mrow>\lim_{h\to0^-}{ \frac{\sin(\frac{\pi}{2})\cos(h)+\sin(h)\cos(\frac{\pi}{2})-\sin(\frac{\pi}{2})}{h}}\amp =</mrow>
-            <mrow>\lim_{h\to0^-}\frac{1\cdot\cos(h)+\sin(h)\cdot 0-1}{h} \amp =</mrow>
-            <mrow>0</mrow>
+            <mrow>\amp \lim_{h\to0^-}\frac{f(\pi/2+h)-f(\pi/2)}{h} </mrow>
+            <mrow>\amp =\lim_{h\to0^-}\frac{\sin(\pi/2+h)-\sin(\pi/2)}{h}</mrow>
+            <mrow>\amp =\lim_{h\to0^-}{ \frac{\sin(\frac{\pi}{2})\cos(h)+\sin(h)\cos(\frac{\pi}{2})-\sin(\frac{\pi}{2})}{h}}</mrow>
+            <mrow>\amp =\lim_{h\to0^-}\frac{1\cdot\cos(h)+\sin(h)\cdot 0-1}{h} </mrow>
+            <mrow>\amp =0</mrow>
           </md>
-          \rule{.5pt}{100pt}
+          </p>
+         <p>
           <md>
-            <mrow>\lim_{h\to0^+}\frac{f(\pi/2+h)-f(\pi/2)}{h} \amp =</mrow>
-            <mrow>\lim_{h\to0^+}\frac{1-1}{h}\amp =</mrow>
-            <mrow>\lim_{h\to0^+}\frac{0}{h}\amp =</mrow>
-            <mrow>0\amp</mrow>
+            <mrow>\amp \lim_{h\to0^+}\frac{f(\pi/2+h)-f(\pi/2)}{h}</mrow>
+            <mrow>\amp =\lim_{h\to0^+}\frac{1-1}{h}</mrow>
+            <mrow>\amp =\lim_{h\to0^+}\frac{0}{h}</mrow>
+            <mrow>\amp =0</mrow>
           </md>
+          </p>
         </sidebyside>
 
         <figure xml:id="fig_piecewisecosx1" >
@@ -744,19 +752,18 @@
           <image xml:id="img_piecewisecosx1" >
             <description></description>
             <latex-image-code>
-              <![CDATA[
-              \begin{tikzpicture}
-              \begin{axis}[xtick={1.57},xticklabels={$\frac{\pi}2$},ymin=-.4,ymax=1.4,xmin=-.1,xmax=2.1,]
-              \addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.995) (0.,1.) (0.1,0.995) (0.2,0.98) (0.3,0.955) (0.4,0.921)(0.5,0.878) (0.6,0.825) (0.7,0.765) (0.8,0.697) (0.9,0.622) (1.,0.54)(1.1,0.454) (1.2,0.362) (1.3,0.267) (1.4,0.17) (1.5,0.0707)(1.57,0)};
-              \addplot [{\colorone},thick] coordinates {(1.57,0) (2.,0) };
-              %\filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
-              %\filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
-              \end{axis}
 
-
-
-              \end{tikzpicture}
-              ]]>
+               <![CDATA[
+                          \begin{tikzpicture}
+                              \begin{axis}[ymin=-.4,ymax=1.4,
+                                           xmin=-.1,xmax=2.1,
+                                           xtick={1.57},xticklabels={$\frac{\pi}2$},]
+                                  \addplot [{\colorone},thick,domain=-.1:1.57,samples=100]{cos(deg(x))};
+                                  \addplot [{\colorone},domain=1.57:2,thick] {0};
+                              \end{axis}
+                          \end{tikzpicture}
+                          ]]>
+             
             </latex-image-code>
           </image>
           <!-- figures/fig_piecewisecosx1.tex END -->
@@ -764,7 +771,7 @@
 
         <p>Since both the left and right hand limits are 0 at <m>x=\pi/2</m>, the limit exists and <m>\fp(\pi/2)</m> exists (and is 0). Therefore we can fully write <m>\fp</m> as
           <me>
-            \fp(x) = \left\{\begin{array}{cc} \cos x \amp  x\leq\pi/2\\ 0 \amp  x>\pi/2
+            \fp(x) = \left\{\begin{array}{cc} \cos(x) \amp  x\leq\pi/2\\ 0 \amp  x \gt \pi/2
             \end{array} .\right.
           </me>
         </p>
@@ -773,7 +780,7 @@
       </solution>
     </example>
 
-    <p>Recall we pseudo<ndash />defined a continuous function as one in which we could sketch its graph without lifting our pencil. We can give a pseudo<ndash />definition for differentiability as well: it is a continuous function that does not have any <q>sharp corners.</q> One such sharp corner is shown in <xref ref="fig_absolutevalue">Figure</xref>. Even though the function <m>f</m> in <xref ref="ex_diff_piecewise">Example</xref> is piecewise<ndash />defined, the transition is <q>smooth</q> hence it is differentiable. Note how in the graph of <m>f</m> in <xref ref="fig_piecewisesinx1">Figure</xref> it is difficult to tell when <m>f</m> switches from one piece to the other; there is no <q>corner.</q></p>
+    <p>Recall we pseudo<ndash />defined a continuous function as one in which we could sketch its graph without lifting our pencil. We can give a pseudo<ndash />definition for differentiability as well: it is a continuous function that does not have any <q>sharp corners</q> or a vertical tangent line. One such sharp corner is shown in <xref ref="fig_absolutevalue">Figure</xref>. Even though the function <m>f</m> in <xref ref="ex_diff_piecewise">Example</xref> is piecewise<ndash />defined, the transition is <q>smooth</q> hence it is differentiable. Note how in the graph of <m>f</m> in <xref ref="fig_piecewisesinx1">Figure</xref> it is difficult to tell when <m>f</m> switches from one piece to the other; there is no <q>corner.</q></p>
 
     <p>This section defined the derivative; in some sense, it answers the question of <q>What <em>is</em> the derivative?</q> The next section addresses the question <q>What does the derivative <em>mean</em>?</q></p>
   </introduction>
@@ -1209,7 +1216,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \cos x</m>, <m>x=0</m></p>
+            <p><m>\ds f(x) = \cos(x)</m>, <m>x=0</m></p>
           </statement>
           <solution>
             <p><m>y=-0.05x+1</m></p>
