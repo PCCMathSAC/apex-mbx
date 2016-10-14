@@ -705,145 +705,380 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=1;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(1,2,1,2,0.5,0)};
+              $left=Formula("(($b[1]-$b[0])/(1-0))*(x-0)+$b[0]");
+              $right=Formula("(x-1)*(x-1.5)*$b[5]/((2-1)*(2-1.5))+(x-1)*(x-2)*$b[4]/((1.5-1)*(1.5-2))+(x-1.5)*(x-2)*$b[3]/((1-1.5)*(1-2))");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist");
+              if($b[2]==Compute("DNE")){$correct=$choices[3];}
+                elsif($left->eval(x=>1)!=$right->eval(x=>1)){$correct=$choices[2];}
+                elsif($left->eval(x=>1)!=$b[2]){$correct=$choices[4];}
+                else{$correct=$choices[1];};
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,1> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1,2> using color:blue and weight:2");
+              $graph->stamps(open_circle(1,$b[1],'blue'));
+              $graph->stamps(open_circle(1,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 1</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>No; <m>\lim\limits_{x\to 1} f(x) = 2</m>, while <m>f(1) = 1</m>.</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member>Yes.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=1;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(0,1,2,2,1,0)};
+              $left=Formula("(($b[1]-$b[0])/(1-0))*(x-0)+$b[0]");
+              $right=Formula("(($b[5]-$b[3])/(2-1))*(x-1)+$b[3]");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist");
+              if($b[2]==Compute("DNE")){$correct=$choices[3];}
+                elsif($left->eval(x=>1)!=$right->eval(x=>1)){$correct=$choices[2];}
+                elsif($left->eval(x=>1)!=$b[2]){$correct=$choices[4];}
+                else{$correct=$choices[1];};
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,1> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1,2> using color:blue and weight:2");
+              $graph->stamps(open_circle(1,$b[1],'blue'));
+              $graph->stamps(open_circle(1,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 1</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>No; <m>\lim\limits_{x\to 1} f(x)</m> does not exist.</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member correct="yes">No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=1;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(0,Compute("INF"),Compute("DNE"),Compute("INF"),1,0)};
+              $left=Formula("1/cos(x*pi/2)-1");
+              $right=Formula("-1/cos(x*pi/2)-1");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist");
+              if($b[2]==Compute("DNE")){$correct=$choices[3];}
+                elsif($left->eval(x=>1)!=$right->eval(x=>1)){$correct=$choices[2];}
+                elsif($left->eval(x=>1)!=$b[2]){$correct=$choices[4];}
+                else{$correct=$choices[1];};
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,0.9> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1.1,2> using color:blue and weight:2");
+              $graph->moveTo(1,0);
+              $graph->arrowTo(1,2.5,'gray',1,'dashed');
+              do{$graph->stamps(open_circle(1,$b[1],'blue'));}unless($b[1]==Compute("INF") or $b[1]==Compute("-INF"));
+              do{$graph->stamps(open_circle(1,$b[3],'blue'));}unless($b[3]==Compute("INF") or $b[3]==Compute("-INF"));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 1</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>No; <m>f(1)</m> does not exist.</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member>Yes.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=0;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(1,2,1,0,0.5,2)};
+              $left=Formula("(($b[1]-$b[0])/(1-0))*(x-0)+$b[0]");
+              $right=Formula("(x-1)*(x-1.5)*$b[5]/((2-1)*(2-1.5))+(x-1)*(x-2)*$b[4]/((1.5-1)*(1.5-2))+(x-1.5)*(x-2)*$b[3]/((1-1.5)*(1-2))");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist");
+              $correct=$choices[1];
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,1> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1,2> using color:blue and weight:2");
+              $graph->stamps(open_circle(1,$b[1],'blue'));
+              $graph->stamps(open_circle(1,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 0</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>Yes</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=1;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(0,2,2,2,1.5,0)};
+              $right=Formula("(($b[1]-$b[0])/(1-2))*(x-2)+$b[0]");
+              $left=Formula("(x-0.5)*(x-1)*$b[5]/((0-0.5)*(0-1))+(x-0)*(x-1)*$b[4]/((0.5-0)*(0.5-1))+(x-0)*(x-0.5)*$b[3]/((1-0)*(1-0.5))");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist");
+              if($b[2]==Compute("DNE")){$correct=$choices[3];}
+                elsif($left->eval(x=>1)!=$right->eval(x=>1)){$correct=$choices[2];}
+                elsif($left->eval(x=>1)!=$b[2]){$correct=$choices[4];}
+                else{$correct=$choices[1];};
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,1> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1,2> using color:blue and weight:2");
+              $graph->stamps(open_circle(1,$b[1],'blue'));
+              $graph->stamps(open_circle(1,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 1</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>Yes</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=4;
+              for my$i(0..4){$b[$i]=random(-4,4,1)};
+              if($envir{problemSeed}==1){@b=(-4,0,0,-4,0)};
+              $left=Formula("$b[1]+sin((x+2)*pi/4)*($b[1]-$b[0])");
+              $right=Formula("$b[4]-sin((x+2)*pi/4)*($b[4]-$b[3])");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist");
+              $correct=$choices[1];
+              $answer=PopUp(~~@choices,$correct);
+              $ymin=min($b[0],$b[1]-$b[0],$b[3],$b[4]-$b[3])-1;
+              $ymax=max($b[0],$b[1]-$b[0],$b[3],$b[4]-$b[3])+1;
+              $graph=init_graph(-5,$ymin,5,$ymax,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",-4..4);
+              $graph->v_ticks(0,"black",$ymin..$ymax);
+              for my$i(-4..4){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));};
+              for my$i($ymin..$ymax){$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;-4,0> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;0,4> using color:blue and weight:2");
+              $graph->stamps(open_circle(0,$b[1]-$b[0],'blue'));
+              $graph->stamps(open_circle(0,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(0,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(-4,$b[0],'blue'));
+              $graph->stamps(closed_circle(4,$b[4]-$b[3],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 4</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>Yes</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer1">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
+            </var>
+            <var name="$answer2">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
+            </var>
+            <var name="$answer3">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member correct="yes">No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              @a=(-2,0,2);
+              for my$i(0..10){$b[$i]=random(-4,4,1)};
+              @j=map{$_*3+2}NchooseK(3,3);
+              $b[$j[0]]=Compute("DNE");$b[$j[0]+1]=$b[$j[0]-1];
+              do{$b[$j[1]-1]=random(-4,4,1)}until($b[$j[1]-1]!=$b[$j[1]]);$b[$j[1]+1]=$b[$j[1]-1];
+              $b[$j[2]-1]=$b[$j[2]];$b[$j[2]+1]=$b[$j[2]];
+              if($envir{problemSeed}==1){@b=(0,2,0,2,0,0,0,2,Compute("DNE"),2,0)};
+              for my$i(0..3){$f[$i]=Formula("($b[3*$i+1]-$b[3*$i])/2*(x-(2*$i-4))+$b[3*$i]");}
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to a does not exist.","No; f(a) is not defined.","No; the limit of f(x) as x goes to a does not equal f(a) even though both exist");
+              for my$i(0..2){if($b[3*$i+2]==Compute("DNE")){$correct[$i]=$choices[3];}
+                elsif($f[$i]->eval(x=>(2*$i-2))!=$f[$i+1]->eval(x=>(2*$i-2))){$correct[$i]=$choices[2];}
+                elsif($f[$i]->eval(x=>(2*$i-2))!=$b[3*$i+2]){$correct[$i]=$choices[4];}
+                else{$correct[$i]=$choices[1];};
+                $answer[$i]=PopUp(~~@choices,$correct[$i]);
+              };
+              $graph=init_graph(-5,-5,5,5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",-4..4);
+              $graph->v_ticks(0,"black",-4..4);
+              for my$i(-4..4){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$f[0] for x in &lt;-4,-2> using color:blue and weight:2");
+              add_functions($graph,"$f[1] for x in &lt;-2,0> using color:blue and weight:2");
+              add_functions($graph,"$f[2] for x in &lt;0,2> using color:blue and weight:2");
+              add_functions($graph,"$f[3] for x in &lt;2,4> using color:blue and weight:2");
+              $graph->stamps(open_circle(-2,$b[1],'blue'));
+              $graph->stamps(open_circle(0,$b[4],'blue'));
+              $graph->stamps(open_circle(2,$b[7],'blue'));
+              do{$graph->stamps(closed_circle(-2,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              do{$graph->stamps(closed_circle(0,$b[5],'blue'));}unless($b[5]==Compute("DNE"));
+              do{$graph->stamps(closed_circle(2,$b[8],'blue'));}unless($b[8]==Compute("DNE"));
+              $graph->stamps(closed_circle(-4,$b[0],'blue'));
+              $graph->stamps(closed_circle(4,$b[10],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <ol>
-              <li><p><m>a = -2</m></p></li>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a[0]" /></m>, <m>a=<var name="$a[1]" /></m>, and <m>a=<var name="$a[2]" /></m>?</p>
 
-              <li><p><m>a=0</m></p></li>
+            <image pg-name="$graph" />
 
-              <li><p><m>a=2</m></p></li>
-            </ol>
+            <p>At <m>a=<var name="$a[0]" /></m>: <var name="$answer[0]" form="popup" /></p>
+            <p>At <m>a=<var name="$a[1]" /></m>: <var name="$answer[1]" form="popup" /></p>
+            <p>At <m>a=<var name="$a[2]" /></m>: <var name="$answer[2]" form="popup" /></p>
 
-            <!-- START\1END -->
           </statement>
           <solution>
-            <ol>
-              <li><p>No; <m>\lim\limits_{x\to -2}f(x) \neq f(-2)</m></p></li>
-
-              <li><p>Yes</p></li>
-
-              <li><p>No; <m>f(2)</m> is not defined.</p></li>
-            </ol>
+            <p>At <m>a=<var name="$a[0]" /></m>: <var name="$answer[0]"/></p>
+            <p>At <m>a=<var name="$a[1]" /></m>: <var name="$answer[1]"/></p>
+            <p>At <m>a=<var name="$a[2]" /></m>: <var name="$answer[2]"/></p>
           </solution>
         </webwork>
       </exercise>
