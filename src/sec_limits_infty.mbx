@@ -548,362 +548,552 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$truefalse">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $truefalse=PopUp(['?','True','False'],'False');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>\lim\limits_{x\to 5} f(x) = \infty</m>, then we are implicitly stating that the limit exists.</p>
+            <p>True or False? If <m>\lim\limits_{x\to 5} f(x) = \infty</m>, then we are implicitly stating that the limit exists. <var name="$truefalse" form="popup"/></p>
           </statement>
           <solution>
-            <p>F</p>
+            <p><var name="$truefalse" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$truefalse">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $truefalse=PopUp(['?','True','False'],'True');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>\lim\limits_{x\to \infty} f(x) = 5</m>, then we are implicitly stating that the limit exists.</p>
+            <p>True or False? If <m>\lim\limits_{x\to 5} f(x) = 5</m>, then we are implicitly stating that the limit exists. <var name="$truefalse" form="popup"/></p>
           </statement>
           <solution>
-            <p>T</p>
+            <p><var name="$truefalse" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$truefalse">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $truefalse=PopUp(['?','True','False'],'False');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>\lim\limits_{x\to 1^-} f(x) = -\infty</m>, then <m>\lim\limits_{x\to 1^+} f(x) = \infty</m></p>
+            <p>True or False? If <m>\lim\limits_{x\to 1^-} f(x) = -\infty</m>, then <m>\lim\limits_{x\to 1^+} f(x) = \infty</m>. <var name="$truefalse" form="popup"/></p>
           </statement>
           <solution>
-            <p>F</p>
+            <p><var name="$truefalse" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$truefalse">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $truefalse=PopUp(['?','True','False'],'True');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: If <m>\lim\limits_{x\to 5} f(x) = \infty</m>, then <m>f</m> has a vertical asymptote at <m>x=5</m>.</p>
+            <p>True or False? If <m>\lim\limits_{x\to 5} f(x) = \infty</m>, then <m>f</m> has a vertical asymptote at <m>x=5</m>. <var name="$truefalse" form="popup"/></p>
           </statement>
           <solution>
-            <p>T</p>
+            <p><var name="$truefalse" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$truefalse">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $truefalse=PopUp(['?','True','False'],'True');
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: <m>\infty/0</m> is not an indeterminate form.</p>
+            <p>True or False? <m>\infty/0</m> is not an indeterminate form. <var name="$truefalse" form="popup"/></p>
           </statement>
           <solution>
-            <p>T</p>
+            <p><var name="$truefalse" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p>List 5 indeterminate forms.</p>
+            <p>List five indeterminate forms.</p>
+
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Construct a function with a vertical asymptote at <m>x=5</m> and a horizontal asymptote at <m>y=5</m>.</p>
+
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p>Let <m>\lim\limits_{x\to 7} f(x) = \infty</m>. Explain how we know that <m>f</m> is/is not continuous at <m>x=7</m>.</p>
+            <p>Let <m>\lim\limits_{x\to 7} f(x) = \infty</m>. Explain how we know that <m>f</m> is or is not continuous at <m>x=7</m>.</p>
+
+            <p><var form="essay" /></p>
           </statement>
           <solution>
-            <p>The limit of <m>f</m> as <m>x</m> approaches 7 does not exist, hence <m>f</m> is not continuous. (Note: <m>f</m> could be defined at 7!)</p>
+            <p>The limit of <m>f</m> as <m>x</m> approaches <m>7</m> does not exist, hence <m>f</m> is not continuous. (Note: <m>f</m> could be defined at <m>7</m>!)</p>
           </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises, evaluate the given limits using the graph of the function.</p>
+      <introduction>
+        <p>In the following exercises, evaluate the given limits using the graph of the function.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\frac{1}{(x+1)^2}</static>
+            </var>
+            <var name="$a">
+              <static>-1</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>\infty</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>\infty</static>
             </var>
             <pg-code>
+              $a=non_zero_random(-3,3,1);
+              $b=non_zero_random(-1,1,2);
+              $n=random(2,5,1);
+              if($envir{problemSeed}==1){$a=-1;$b=1;$n=2;};
+              $f=Formula("$b/(x-$a)^($n)")->reduce;
+              $L[0]=($f->eval(x=>$a-1)>0)?Compute("inf"):Compute("-inf");
+              $L[1]=($f->eval(x=>$a+1)>0)?Compute("inf"):Compute("-inf");
+              for my$i(0,1){$ev[$i]=$L[$i]->cmp()->withPostFilter(AnswerHints(Compute("DNE")=> "Technically correct, but this question is asking for more specific information."));};
+              $xmin=min(-1,$a-2);$xmax=max(1,$a+2);
+              $gr=init_graph($xmin,-50,$xmax,50,axes=>[0,0],size=>[400,400]);
+              $gr->h_ticks(0,"black",(-3..3));
+              $gr->v_ticks(0,"black",map{$_*10}(-5..5));
+              for my$i(-3..3){$gr->lb(new Label($i,-0.05,"$i",'black','center','top'));};
+              for my$i(map{$_*10}(-5..5)){$gr->lb(new Label(-0.05,$i,"$i",'black','right','middle'));};
+              $e=1/50**(1/$n);
+              $below=$a-$e;
+              $above=$a+$e;
+              add_functions($gr, "$f for x in &lt;$xmin,$below> using color:blue and weight:2");
+              add_functions($gr, "$f for x in &lt;$above,$xmax> using color:blue and weight:2");
+              $gr->moveTo($a,-50);
+              $gr->lineTo($a,50,'gray',1,'dashed');
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{1}{(x+1)^2}</m></p>
+            <p><m>f(x) = <var name="$f" /></m> has the graph:</p>
 
-            <ol>
-              <li><p><m>\lim\limits_{x\to -1^-} f(x)</m></p></li>
+            <p><image pg-name="$gr" /></p>
 
-              <li><p><m>\lim\limits_{x\to -1^+} f(x)</m></p></li>
-            </ol>
-
-            <!-- START\1END -->
-          </statement>
-          <solution>
-            <ol>
-              <li><p><m>\infty</m></p></li>
-
-              <li><p><m>\infty</m></p></li>
-            </ol>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\ds f(x) = \frac{1}{(x-3)(x-5)^2}</m>.</p>
-
-            <ol cols="2" >
+            <p>Use the graph of <m>f</m> to find:</p>
+            <p><ol>
               <li>
-                <title>(a)</title>
-                <p><m>\lim\limits_{x\to 3^-} f(x)</m></p></li>
-
+                <p><m>\lim\limits_{x\to <var name="$a" />^-} f(x)=</m><var name="$L[0]" evaluator="$ev[0]" width="10"/></p>
+              </li>
               <li>
-                <title>(b)</title>
-                <p><m>\lim\limits_{x\to 3^+} f(x)</m></p></li>
+                <p><m>\lim\limits_{x\to <var name="$a" />^+} f(x)=</m><var name="$L[1]" evaluator="$ev[1]" width="10"/></p>
+              </li>
+            </ol></p>
+          </statement>
+        </webwork>
+      </exercise>
 
+      <exercise>
+        <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
+          <setup>
+            <var name="$f">
+              <static>\frac{1}{(x-3)(x-5)^2}</static>
+            </var>
+            <var name="$a[0]">
+              <static>3</static>
+            </var>
+            <var name="$a[1]">
+              <static>5</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>-\infty</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>\infty</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>\infty</static>
+            </var>
+            <var name="$L[4]" category="number">
+              <static>\infty</static>
+            </var>
+            <var name="$L[5]" category="number">
+              <static>\infty</static>
+            </var>
+            <pg-code>
+              @a=map{$_+1}NchooseK(9,2);
+              if($envir{problemSeed}==1){$a[0]=3;$a[1]=5;};
+              $f=Formula("1/((x-$a[0])(x-$a[1])^(2))")->reduce;
+              $L[0]=($f->eval(x=>$a[0]-0.1)>0)?Compute("inf"):Compute("-inf");
+              $L[1]=($f->eval(x=>$a[0]+0.1)>0)?Compute("inf"):Compute("-inf");
+              $L[3]=($f->eval(x=>$a[1]-0.1)>0)?Compute("inf"):Compute("-inf");
+              $L[4]=($f->eval(x=>$a[1]+0.1)>0)?Compute("inf"):Compute("-inf");
+              for my$i(2,5){$L[$i]=($L[$i-2]==$L[$i-1])?$L[$i-2]:Compute("DNE");};
+              for my$i(0..5){$ev[$i]=($L[$i]==Compute("DNE"))?$L[$i]->cmp():$L[$i]->cmp()->withPostFilter(AnswerHints(Compute("DNE")=> "Technically correct, but this question is asking for more specific information."));};
+              $xmin=min(0,@a)-1;$xmax=max(@a)+1;
+              $gr=init_graph($xmin,-50,$xmax,50,axes=>[0,0],size=>[400,400]);
+              $gr->h_ticks(0,"black",($xmin..$xmax));
+              $gr->v_ticks(0,"black",map{$_*10}(-5..5));
+              for my$i($xmin..$xmax){$gr->lb(new Label($i,-0.05,"$i",'black','center','top'));};
+              for my$i(map{$_*10}(-5..5)){$gr->lb(new Label(-0.05,$i,"$i",'black','right','middle'));};
+              $e[0]=1/(50*($a[1]-$a[0])^2)/2;
+              $e[1]=sqrt(1/(50*abs($a[1]-$a[0])))/2;
+              $below[0]=min(@a)-$e[0];
+              $above[0]=min(@a)+$e[0];
+              $below[1]=max(@a)-$e[1];
+              $above[1]=max(@a)+$e[1];
+              add_functions($gr, "$f for x in &lt;$xmin,$below[0]> using color:blue and weight:2");
+              add_functions($gr, "$f for x in &lt;$above[0],$below[1]> using color:blue and weight:2");
+              add_functions($gr, "$f for x in &lt;$above[1],$xmax> using color:blue and weight:2");
+              $gr->moveTo($a[0],-50);
+              $gr->lineTo($a[0],50,'gray',1,'dashed');
+              $gr->moveTo($a[1],-50);
+              $gr->lineTo($a[1],50,'gray',1,'dashed');
+            </pg-code>
+          </setup>
+          <statement>
+            <p><m>f(x) = <var name="$f" /></m> has the graph:</p>
+
+            <p><image pg-name="$gr" /></p>
+
+            <p>Use the graph of <m>f</m> to find:</p>
+            <p><ol>
               <li>
-                <title>(c)</title>
-                <p><m>\lim\limits_{x\to 3} f(x)</m></p></li>
-
-              <li><p><m>\lim\limits_{x\to 5^-} f(x)</m></p></li>
-
-              <li><p><m>\lim\limits_{x\to 5^+} f(x)</m></p></li>
-
-              <li><p><m>\lim\limits_{x\to 5} f(x)</m></p></li>
-            </ol>
-
-            <!-- START\1END -->
+                <p><m>\lim\limits_{x\to <var name="$a[0]" />^-} f(x)=</m><var name="$L[0]" evaluator="$ev[0]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to <var name="$a[0]" />^+} f(x)=</m><var name="$L[1]" evaluator="$ev[1]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to <var name="$a[0]" />} f(x)=</m><var name="$L[2]" evaluator="$ev[2]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to <var name="$a[1]" />^-} f(x)=</m><var name="$L[3]" evaluator="$ev[3]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to <var name="$a[1]" />^+} f(x)=</m><var name="$L[4]" evaluator="$ev[4]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to <var name="$a[1]" />} f(x)=</m><var name="$L[5]" evaluator="$ev[5]" width="10"/></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>-\infty</m></p></li>
-
-              <li><p><m>\infty</m></p></li>
-
-              <li><p>Limit does not exist</p></li>
-
-              <li><p><m>\infty</m></p></li>
-
-              <li><p><m>\infty</m></p></li>
-
-              <li><p><m>\infty</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\frac{1}{e^x+1}</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>1</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>0</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>0.5</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>0.5</static>
             </var>
             <pg-code>
+              $b=random(-1,1,2);
+              if($envir{problemSeed}==1){$b=1;};
+              $f=Formula("1/(e^($b*x)+1)")->reduce;
+              $L[0]=($b>0)?1:0;
+              $L[1]=($b>0)?0:1;
+              $L[2]=$f->eval(x=>0);
+              $L[3]=$f->eval(x=>0);
+              $xmin=-11;$xmax=11;
+              $gr=init_graph($xmin,-1,$xmax,2,axes=>[0,0],size=>[400,400]);
+              $gr->h_ticks(0,"black",(-10,-5,0,5,10));
+              $gr->v_ticks(0,"black",(-1,-0.5,0,0.5,1,1.5,2));
+              for my$i(-10,-5,0,5,10){$gr->lb(new Label($i,-0.05,"$i",'black','center','top'));};
+              for my$i(-1,-0.5,0,0.5,1,1.5,2){$gr->lb(new Label(-0.05,$i,"$i",'black','right','middle'));};
+              add_functions($gr, "$f for x in &lt;$xmin,$xmax> using color:blue and weight:2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{1}{e^x+1}</m></p>
+            <p><m>f(x) = <var name="$f" /></m> has the graph:</p>
 
-            <ol cols="2" >
-              <li><p><m>\lim\limits_{x\to -\infty} f(x)</m></p></li>
+            <p><image pg-name="$gr" /></p>
 
-              <li><p><m>\lim\limits_{x\to \infty} f(x)</m></p></li>
-
-              <li><p><m>\lim\limits_{x\to 0^-} f(x)</m></p></li>
-
-              <li><p><m>\lim\limits_{x\to 0^+} f(x)</m></p></li>
-            </ol>
-
-            <!-- START\1END -->
+            <p>Use the graph of <m>f</m> to find:</p>
+            <p><ol>
+              <li>
+                <p><m>\lim\limits_{x\to-\infty} f(x)=</m><var name="$L[0]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to\infty} f(x)=</m><var name="$L[1]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to 0^{-}} f(x)=</m><var name="$L[2]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to 0^{+}} f(x)=</m><var name="$L[3]" width="10"/></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>1</m></p></li>
-
-              <li><p><m>0</m></p></li>
-
-              <li><p><m>1/2</m></p></li>
-
-              <li><p><m>1/2</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>x^2\sin(\pi x)</static>
+            </var>
+            <var name="$a">
+              <static>0</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>0</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>0</static>
             </var>
             <pg-code>
+              $a=random(-5,5,1);
+              $n=random(1,4,2);
+              if($envir{problemSeed}==1){$a=0;$n=2;};
+              $f=Formula("x^($n)*sin(pi x)")->reduce;
+              $L[0]=Compute("DNE");
+              $L[1]=Compute("DNE");
+              $L[2]=0;
+              $L[3]=0;
+              $xmin=-11;$xmax=11;
+              $gr=init_graph($xmin,-10**($n),$xmax,10**($n),axes=>[0,0],size=>[400,400]);
+              $gr->h_ticks(0,"black",(-10,-5,0,5,10));
+              $gr->v_ticks(0,"black",map{$_*10**($n)/2}(-2..2));
+              for my$i(-10,-5,0,5,10){$gr->lb(new Label($i,-0.05,"$i",'black','center','top'));};
+              for my$i(map{$_*10**($n)/2}(-2..2)){$gr->lb(new Label(-0.05,$i,"$i",'black','right','middle'));};
+              for my$i(-10..10){my$low=$i-0.5;my$high=$i+0.5;add_functions($gr, "$f for x in &lt;$low,$high> using color:blue and weight:2");};
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = x^2\sin (\pi x)</m></p>
+            <p><m>f(x) = <var name="$f" /></m> has the graph:</p>
 
-            <ol>
-              <li><p><m>\lim\limits_{x\to -\infty} f(x)</m></p></li>
+            <p><image pg-name="$gr" /></p>
 
-              <li><p><m>\lim\limits_{x\to \infty} f(x)</m></p></li>
-            </ol>
-
-            <!-- START\1END -->
+            <p>Use the graph of <m>f</m> to find:</p>
+            <p><ol>
+              <li>
+                <p><m>\lim\limits_{x\to-\infty} f(x)=</m><var name="$L[0]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to\infty} f(x)=</m><var name="$L[1]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to <var name="$a" />^{-}} f(x)=</m><var name="$L[2]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to <var name="$a" />^{+}} f(x)=</m><var name="$L[3]" width="10"/></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p>Limit does not exist</p></li>
-
-              <li><p>Limit does not exist</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\cos(x)</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>\text{DNE}</static>
             </var>
             <pg-code>
+              $f=list_random(Formula("sin(x)"),Formula("cos(x)"));
+              if($envir{problemSeed}==1){$f=Formula("cos(x)")};
+              $L[0]=Compute("DNE");
+              $L[1]=Compute("DNE");
+              $xmin=-14;$xmax=14;
+              $gr=init_graph($xmin,-1.2,$xmax,1.2,axes=>[0,0],size=>[400,400]);
+              $gr->h_ticks(0,"black",map{$_*pi/2}(-8..8));
+              $gr->v_ticks(0,"black",map{$_/2}(-2..2));
+              for my$i(-4,-3,-2,2,3,4){$gr->lb(new Label($i*pi,-0.05,"${i}pi",'black','center','top'));};
+              $gr->lb(new Label(-pi,-0.05,"-pi",'black','center','top'));
+              $gr->lb(new Label(pi,-0.05,"pi",'black','center','top'));
+              for my$i(map{$_/2}(-2..2)){$gr->lb(new Label(-0.05,$i,"$i",'black','right','middle'));};
+              for my$i(-4..4){my$low=($i-0.5)*pi;my$high=($i+0.5)*pi;add_functions($gr, "$f for x in &lt;$low,$high> using color:blue and weight:2");};
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \cos (x)</m></p>
+            <p><m>f(x) = <var name="$f" /></m> has the graph:</p>
 
-            <ol>
-              <li><p><m>\lim\limits_{x\to -\infty} f(x)</m></p></li>
+            <p><image pg-name="$gr" /></p>
 
-              <li><p><m>\lim\limits_{x\to \infty} f(x)</m></p></li>
-            </ol>
-
-            <!-- START\1END -->
+            <p>Use the graph of <m>f</m> to find:</p>
+            <p><ol>
+              <li>
+                <p><m>\lim\limits_{x\to-\infty} f(x)=</m><var name="$L[0]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to\infty} f(x)=</m><var name="$L[1]" width="10"/></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p>Limit does not exist</p></li>
-
-              <li><p>Limit does not exist</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>2^x+10</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>10</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>\infty</static>
             </var>
             <pg-code>
+              $b=random(1.5,2.5,0.1);
+              $c=non_zero_random(-12,12,1);
+              $n=random(-1,1,2);
+              if($envir{problemSeed}==1){$b=2;$c=10;$n=1;};
+              $f=Formula("($b)^($n x)+$c")->reduce;
+              $L[0]=($n>0)?$c:Compute("inf");
+              $L[1]=($n>0)?Compute("inf"):$c;
+              $xmin=-11;$xmax=11;
+              $gr=init_graph($xmin,-10,$xmax,160,axes=>[0,0],size=>[400,400]);
+              $gr->h_ticks(0,"black",(-10,-5,0,5,10));
+              $gr->v_ticks(0,"black",(50,100,150));
+              for my$i(-10,-5,0,5,10){$gr->lb(new Label($i,-0.05,"$i",'black','center','top'));};
+              for my$i(50,100,150){$gr->lb(new Label(-0.05,$i,"$i",'black','right','middle'));};
+              $low=($n>0)?$xmin:ln(160-$c)/ln($b)/$n;
+              $high=($n>0)?ln(160-$c)/ln($b)/$n:$xmax;
+              add_functions($gr, "$f for x in &lt;$low,$high> using color:blue and weight:2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = 2^x+10</m></p>
+            <p><m>f(x) = <var name="$f" /></m> has the graph:</p>
 
-            <ol>
-              <li><p><m>\lim\limits_{x\to -\infty} f(x)</m></p></li>
+            <p><image pg-name="$gr" /></p>
 
-              <li><p><m>\lim\limits_{x\to \infty} f(x)</m></p></li>
-            </ol>
-
-            <!-- START\1END -->
+            <p>Use the graph of <m>f</m> to find:</p>
+            <p><ol>
+              <li>
+                <p><m>\lim\limits_{x\to-\infty} f(x)=</m><var name="$L[0]" width="10"/></p>
+              </li>
+              <li>
+                <p><m>\lim\limits_{x\to\infty} f(x)=</m><var name="$L[1]" width="10"/></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>10</m></p></li>
-
-              <li><p><m>\infty</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, numerically approximate the following limits:</p>
+    </exercisegroup>
 
-      <ol>
-        <li>
-          <title>(a)</title>
-          <p><m>\lim\limits_{x\to 3^-} f(x)</m></p></li>
-
-        <li>
-          <title>(b)</title>
-          <p><m>\lim\limits_{x\to 3^+} f(x)</m></p></li>
-
-        <li>
-          <title>(c)</title>
-          <p><m>\lim\limits_{x\to 3} f(x)</m></p></li>
-      </ol>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, numerically approximate the following limits:<ol>
+          <li>
+            <p><m>\lim\limits_{x\to 3^-} f(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lim\limits_{x\to 3^+} f(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lim\limits_{x\to 3} f(x)</m></p>
+          </li>
+        </ol></p>
+      </introduction>
 
       <exercise>
         <webwork seed="1">
@@ -976,6 +1166,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1045,6 +1236,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1114,6 +1306,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1191,7 +1384,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, identify the horizontal and vertical asymptotes, if any, of the given function.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, identify the horizontal and vertical asymptotes, if any, of the given function.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1209,6 +1407,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1226,6 +1425,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1243,6 +1443,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1260,6 +1461,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1277,6 +1479,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1294,7 +1497,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, evaluate the given limit.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, evaluate the given limit.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1312,6 +1520,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1329,6 +1538,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1346,6 +1556,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1364,8 +1575,11 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Review</title>
+      <introduction>
+        <p>The following exercises are review from prior sections.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1385,6 +1599,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1420,6 +1635,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1441,6 +1657,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
