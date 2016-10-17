@@ -259,75 +259,91 @@
         <p>State the interval(s) on which each of the following functions is continuous.</p>
 
         <ol cols="2" >
-          <li><p><m>\ds f(x) = \sqrt{x-1} + \sqrt{5-x}</m></p></li>
+          <li xml:id="it_cont_funct_sqrt"><p><m>f(x) = \sqrt{x-1} + \sqrt{5-x}</m></p></li>
 
-          <li><p><m>\ds f(x) = x\sin(x)</m></p></li>
+          <li><p><m>f(x) = x\sin(x)</m></p></li>
 
-          <li><p><m>\ds f(x) = \tan(x)</m></p></li>
+          <li><p><m>f(x) = \tan(x)</m></p></li>
 
-          <li><p><m>\ds f(x) = \sqrt{\ln(x)}</m></p></li>
+          <li><p><m>f(x) = \sqrt{\ln(x)}</m></p></li>
         </ol>
       </statement>
       <solution>
         <p>We examine each in turn, applying <xref ref="thm_continuity_algebra">Theorems</xref> and <xref ref="thm_continuous_functions"></xref> as appropriate.</p>
 
         <ol>
-          <li><p>The square root terms are continuous on the intervals <m>[1,\infty)</m> and <m>(-\infty,5]</m>, respectively. As <m>f</m> is continuous only where each term is continuous, <m>f</m> is continuous on <m>[1,5]</m>, the intersection of these two intervals. A graph of <m>f</m> is given in <xref ref="fig_continuous3">Figure</xref>.
+          <li>
+            <p>The square root terms are continuous on the intervals <m>[1,\infty)</m> and <m>(-\infty,5]</m>, respectively. As <m>f</m> is continuous only where each term is continuous, <m>f</m> is continuous on <m>[1,5]</m>, the intersection of these two intervals. A graph of <m>f</m> is given in <xref ref="fig_continuous3">Figure</xref>.</p>
 
-              <figure xml:id="fig_continuous3" >
-                <caption>A graph of <m>f</m> in <xref ref="ex_cont_funct">Example</xref>(1).</caption>
+            <figure xml:id="fig_continuous3" >
+              <caption>A graph of <m>f</m> in <xref ref="ex_cont_funct">Example</xref> <xref ref="it_cont_funct_sqrt">Part</xref></caption>
                 <!-- START figures/fig_continuous3.tex -->
                 <image xml:id="img_continuous3" >
                   <description></description>
                   <latex-image-code>
                     <![CDATA[
                     \begin{tikzpicture}
-                    \begin{axis}[ymin=-.4,ymax=3.2,xmin=-.4,xmax=5.4,]
-                    \addplot [{\colorone},smooth,thick] coordinates {(1.,2.)(1.01,2.0975) (1.02,2.13642) (1.03,2.16569) (1.04,2.18997) (1.05,2.21107) (1.1,2.29107) (1.15,2.34944) (1.2,2.39657) (1.3,2.47126) (1.4,2.52982)
-                    (1.5,2.57794) (1.6,2.61851) (1.7,2.65325) (1.8,2.68328) (1.9,2.70936)
-                    (2.,2.73205) (2.1,2.75175) (2.2,2.76877) (2.3,2.78334) (2.4,2.79567) 
-                    (2.5,2.80588) (2.6,2.8141) (2.7,2.82042) (2.8,2.82488) (2.9,2.82754) 
-                    (3.,2.82843) (3.1,2.82754) (3.2,2.82488) (3.3,2.82042) (3.4,2.8141) (3.5,2.80588) (3.6,2.79567) (3.7,2.78334) (3.8,2.76877) (3.9,2.75175)(4.,2.73205) (4.1,2.70936) (4.2,2.68328) (4.3,2.65325) (4.4,2.61851)(4.5,2.57794) (4.6,2.52982) (4.7,2.47126) (4.8,2.39657) (4.85,2.34944) (4.9,2.29107) (4.95,2.21107) (4.96,2.18997) (4.97,2.16569) (4.98,2.13642) (4.99,2.0975)(5.,2.)
-                    };
-                    %\addplot [{\colorone},smooth] coordinates {(1.,1.) (2,1)};
-                    %\addplot [{\colorone},smooth] coordinates {(2.,1.) (2.1,1.09) (2.2,1.16) (2.3,1.21) (2.4,1.24) (2.5,1.25)
-                    %(2.6,1.24) (2.7,1.21) (2.8,1.16) (2.9,1.09) (3.,1.)};
-                    %\fill[white,draw=black] (axis cs:2,0) circle (1pt);
-                    \fill[black,draw=black] (axis cs:1,2) circle (1pt);
-                    \fill[black,draw=black] (axis cs:5,2) circle (1pt);
-                    %\fill[black,draw=black] (axis cs:3,1) circle (1pt);
-                    \end{axis}
-
-
+                        \begin{axis}[xmin=-.4,xmax=5.4,
+                                    ymin=-.4,ymax=3.2,]
+                            \addplot+[-,domain=0:180] ({3+2*cos(x)},{sqrt(2+2*cos(x))+sqrt(2-2*cos(x))});
+                            \addplot[soliddot] coordinates {(1,2) (5,2)};
+                        \end{axis}
                     \end{tikzpicture}
-                    % this is the sqrt[x] on [0,5]
                     ]]>
                   </latex-image-code>
                 </image>
                 <!-- figures/fig_continuous3.tex END -->
               </figure>
 
-            </p></li>
+            </li>
 
-          <li><p>The functions <m>y=x</m> and <m>y=\sin(x)</m> are each continuous everywhere, hence their product is, too.</p></li>
+          <li>
+            <p>The functions <m>y=x</m> and <m>y=\sin(x)</m> are each continuous everywhere, hence their product is, too.</p>
+          </li>
 
-          <li><p><xref ref="thm_continuous_functions">Theorem</xref> states that <m>f(x) = \tan x</m> is continuous <q>on its domain.</q> Its domain includes all real numbers except odd multiples of <m>\pi/2</m>. Thus <m>f(x) = \tan x</m> is continuous on
-              <me>
-                \ldots \left(-\frac{3\pi}{2},-\frac{\pi}2\right),\ \left(-\frac{\pi}2,\frac{\pi}2\right),\ \left(\frac{\pi}2,\frac{3\pi}2\right),\ldots,
-              </me>
-              or, equivalently, on <m>D = \{x\in \mathbb{R}\ |\ x\neq (2n+1)\cdot \frac{\pi}2,\text{ where }n \text{ is an integer }  \}.</m></p></li>
+          <li>
+            <p><xref ref="thm_continuous_functions">Theorem</xref> states that <m>f(x) = \tan(x)</m> is continuous <em>on its domain</em>. Its domain includes all real numbers except odd multiples of <m>\pi/2</m>. Thus <m>f(x) = \tan(x)</m> is continuous on<me>
+              \ldots,\left(-\frac{3\pi}{2},-\frac{\pi}2\right),\left(-\frac{\pi}2,\frac{\pi}2\right),\left(\frac{\pi}2,\frac{3\pi}2\right),\ldots
+            </me>or, equivalently, on <m>D = \left\{x\in \mathbb{R}\mid x\neq (2n+1)\cdot \frac{\pi}2,\text{ where }n \text{ is an integer }  \right\}.</m></p>
+          </li>
 
-          <li><p>The domain of <m>y = \sqrt{x}</m> is <m>[0,\infty)</m>. The range of <m>y=\ln(x)</m> is <m>(-\infty,\infty)</m>, but if we restrict its domain to <m>[1,\infty)</m> its range is <m>[0,\infty)</m>. So restricting <m>y = \ln(x)</m> to the domain of <m>[1,\infty)</m> restricts its output is <m>[0,\infty)</m>, on which <m>y = \sqrt{x}</m> is defined. Thus the domain of <m>f(x) = \sqrt{\ln(x)}</m> is <m>[1,\infty)</m>.</p></li>
-          <todo>Re-think this explanation. It is clunky.</todo>
+          <li>
+            <p>The range of <m>y=\ln(x)</m> is <m>(-\infty,\infty)</m> which includes invalid input for <m>\sqrt{\phantom{x}}</m>. We must restrict the domain to <m>I=[1,\infty)</m> in order to have <m>\ln(x)</m> produce output in <m>J=[0,\infty)</m>, which can then be used as valid input into <m>\sqrt{\phantom{x}}</m>. Since <m>\ln(\phantom{x})</m> is continuous on <m>I</m> and <m>\sqrt{\phantom{x}}</m> is continuous on <m>J</m>, <m>f(x) = \sqrt{\ln(x)}</m> is continuos on <m>I=[1,\infty)</m>.</p>
+          </li>
         </ol>
       </solution>
     </example>
 
-    <p>A common way of thinking of a continuous function is that <q>its graph can be sketched without lifting your pencil.</q> That is, its graph forms a <q>continuous</q> curve, without holes, breaks or jumps.
-      While beyond the scope of this text, this pseudo-definition glosses over some of the finer points of continuity. Very strange functions are continuous that one would be hard pressed to actually sketch by hand.</p>
+    <p>A common way of thinking of a continuous function is that <q>its graph can be sketched without lifting your pencil.</q> That is, its graph forms a <q>continuous</q> curve, without holes, breaks or jumps. This pseudo-definition glosses over some of the finer points of continuity that are beyond the scope of this text. Very strange functions are continuous that one would be hard pressed to actually sketch by hand.</p>
 
-    <p>This intuitive notion of continuity does help us understand another important concept as follows. Suppose <m>f</m> is defined on <m>[1,2]</m> and <m>f(1) = -10</m> and <m>f(2) = 5</m>. If <m>f</m> is continuous on <m>[1,2]</m> (i.e., its graph can be sketched as a continuous curve from <m>(1,-10)</m> to <m>(2,5)</m>) then we know intuitively that somewhere on <m>[1,2]</m> <m>f</m> must be equal to <m>-9</m>, and <m>-8</m>, and <m>-7,\ -6,\ \ldots,\ 0,\ 1/2,</m> etc. In short, <m>f</m> takes on all <em>intermediate</em> values between <m>-10</m> and <m>5</m>. It may take on more values; <m>f</m> may actually equal 6 at some time, for instance, but we are guaranteed all values between <m>-10</m> and 5.</p>
-    <todo>Insert a graph here illustrating the intermediate value theorem</todo>
+    <p>However this intuitive notion of continuity does help us understand another important concept as follows. Suppose <m>f</m> is defined on <m>[1,2]</m>, and <m>f(1) = -10</m> and <m>f(2) = 5</m>. If <m>f</m> is continuous on <m>[1,2]</m> (i.e., its graph can be sketched as a continuous curve from <m>(1,-10)</m> to <m>(2,5)</m>) then we know intuitively that somewhere on the interval <m>[1,2]</m> <m>f</m> must be equal to <m>-9</m>, and <m>-8</m>, and <m>-7,-6,\ldots,0,1/2,</m> etc. In short, <m>f</m> takes on all <em>intermediate</em> values between <m>-10</m> and <m>5</m>. It may take on more values; <m>f</m> may actually equal <m>6</m> at some time, for instance, but we are guaranteed all values between <m>-10</m> and <m>5</m>.</p>
+
+    <figure xml:id="fig_intermediate_value" >
+      <caption>Illustration of the Intermediate Value Theorem: the output <m>3</m> is in between <m>-10</m> and <m>5</m>, and therefore any continuous function on <m>[1,2]</m> with <m>f(1) = -10</m> and <m>f(2) = 5</m> will achieve the output <m>3</m> somewhere in <m>[1,2]</m>.</caption>
+      <image xml:id="img_intermediate_value" >
+        <description></description>
+        <latex-image-code>
+          <![CDATA[
+            \begin{tikzpicture}
+              \begin{axis}[xmin=0.5,xmax=2.5,
+                           ymin=-15,ymax=10,
+                           minor ytick={-15,-14,...,10}]
+                \addplot+[-,smooth] coordinates {(1,-10) (1.5,-7) (1.8,3) (2,5)};
+                \addplot+[-,smooth] coordinates {(1,-10) (1.2,6) (1.5,3) (2,5)};
+                \addplot+[-,smooth] coordinates {(1,-10) (1.1,-12) (1.2,-5) (1.3,-7) (1.4,0) (1.5,-3) (1.6,3) (1.7,0) (1.8,5) (1.9,3) (2,5)};
+                \addplot[soliddot] coordinates {(1,-10) (2,5)};
+                \addplot[guideline] coordinates {(1,-10) (0.5,-10)};
+                \addplot[guideline] coordinates {(2,5) (0.5,5)};
+                \addplot[guideline] coordinates {(1.8,0) (1.8,3) (0.5,3)};
+                \addplot[guideline] coordinates {(1.5,0) (1.5,3) (0.5,3)};
+                \addplot[guideline] coordinates {(1.6,0) (1.6,3) (0.5,3)};
+              \end{axis}
+            \end{tikzpicture}
+          ]]>
+        </latex-image-code>
+      </image>
+    </figure>
+
     <p>While this notion seems intuitive, it is not trivial to prove and its importance is profound. Therefore the concept is stated in the form of a theorem.</p>
 
     <theorem xml:id="thm_IVT">
@@ -337,19 +353,23 @@
       </statement>
     </theorem>
 
-    <p>One important application of the Intermediate Value Theorem is root finding. Given a function <m>f</m>, we are often interested in finding values of <m>x</m> where <m>f(x) = 0</m>. These roots may be very difficult to find exactly. Good approximations can be found through successive applications of this theorem. Suppose through direct computation we find that <m>f(a) \lt 0</m> and <m>f(b)>0</m>, where <m>a\lt b</m>. The Intermediate Value Theorem states that there is a <m>c</m> in <m>[a,b]</m> such that <m>f(c) = 0</m>. The theorem does not give us any clue as to where that value is in the interval <m>[a,b]</m>, just that it exists.</p>
+    <p>One important application of the <xref ref="thm_IVT" autoname="title" /> is root finding. Given a function <m>f</m>, we are often interested in finding values of <m>x</m> where <m>f(x) = 0</m>. These roots may be very difficult to find exactly. Good approximations can be found through successive applications of this theorem. Suppose through direct computation we find that <m>f(a) \lt 0</m> and <m>f(b)>0</m>, where <m>a\lt b</m>. The <xref ref="thm_IVT" autoname="title" /> states that there is a <m>c</m> in <m>[a,b]</m> such that <m>f(c) = 0</m>. The theorem does not give us any clue as to where that value is in the interval <m>[a,b]</m>, just that it exists.</p>
 
-    <p>There is a technique that produces a good approximation of <m>c</m>. Let <m>d</m> be the midpoint of the interval <m>[a,b]</m>, with <m>f(a) \lt 0 \text{ and }f(b) \gt 0</m> and consider <m>f(d)</m>. There are three possibilities:</p>
+    <p>There is a technique that produces a good approximation of <m>c</m>. Let <m>d</m> be the midpoint of the interval <m>[a,b]</m>, with <m>f(a) \lt 0</m> and <m>f(b) \gt 0</m> and consider <m>f(d)</m>. There are three possibilities:<ol>
+      <li>
+        <p><m>f(d) = 0</m> <mdash /> we got lucky and stumbled on the actual value. We stop as we found a root.</p>
+      </li>
 
-    <ol>
-      <li><p><m>f(d) = 0</m> <mdash /> we got lucky and stumbled on the actual value. We stop as we found a root.</p></li>
+      <li>
+        <p><m>f(d) \lt 0</m>. Then we know there is a root of <m>f</m> on the interval <m>[d,b]</m> <mdash /> we have halved the size of our interval, hence are closer to a good approximation of the root.</p>
+      </li>
 
-      <li><p><m>f(d) \lt 0</m> Then we know there is a root of <m>f</m> on the interval <m>[d,b]</m> <mdash /> we have halved the size of our interval, hence are closer to a good approximation of the root.</p></li>
+      <li>
+        <p><m>f(d) >0</m>. Then we know there is a root of <m>f</m> on the interval <m>[a,d]</m> <mdash /> again,we have halved the size of our interval, hence are closer to a good approximation of the root.</p>
+      </li>
+    </ol></p>
 
-      <li><p><m>f(d) >0</m> Then we know there is a root of <m>f</m> on the interval <m>[a,d]</m> <mdash /> again,we have halved the size of our interval, hence are closer to a good approximation of the root.</p></li>
-    </ol>
-
-    <p>Successively applying this technique is called the <em>Bisection Method</em> <index><main>Bisection Method</main></index> of root finding. We continue until the interval is sufficiently small. We demonstrate this in the following example.</p>
+    <p>Successively applying this technique is called the <term>Bisection Method</term> <index><main>Bisection Method</main></index> of root finding. We continue until the interval is sufficiently small. We demonstrate this in the following example.</p>
 
     <example xml:id="ex_bisect_method">
       <title>Using the Bisection Method</title>
@@ -367,30 +387,31 @@
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[minor x tick num=4,ymin=-1.1,ymax=.7,xmin=-.05,xmax=1.07,]
-              \addplot [{\colorone},smooth,thick] coordinates {(0.,-1.) (0.05,-0.94875) (0.1,-0.895004) (0.15,-0.838771)(0.2,-0.780067) (0.25,-0.718912) (0.3,-0.655336) (0.35,-0.589373)(0.4,-0.521061) (0.45,-0.450447) (0.5,-0.377583) (0.55,-0.302525)(0.6,-0.225336) (0.65,-0.146084)(0.7,-0.0648422) (0.71,-0.0483619) (0.72,-0.0318057)(0.73,-0.0151744) (0.74,0.00153144) (0.75,0.0183111) (0.76,0.035164)(0.77,0.0520893) (0.78,0.0690865) (0.79,0.0861547) (0.8,0.103293)(0.85,0.190017) (0.9,0.27839) (0.95,0.368317) (1.,0.459698)
-              };
-              \end{axis}
-
-
-              %\spy [{\colortwo}] on (1,1) in node at (1.5,-2);
+                \begin{axis}[minor xtick={0,0.1,...,1},
+                            xmin=-.05,xmax=1.07,
+                            ymin=-1.1,ymax=.7]
+                    \addplot+[domain=0:1] {x - cos(deg(x))};
+                    \addplot[guideline] coordinates {(0.7,0) (0.7,-0.0648)};
+                    \addplot[guideline] coordinates {(0.9,0) (0.9,0.278)};
+                \end{axis}
               \end{tikzpicture}
-              % this is the sqrt[x] on [0,5]
               ]]>
             </latex-image-code>
           </image>
           <!-- figures/fig_xminuscosx.tex END -->
         </figure>
 
-        <ul>
+        <dl>
           <li>
             <title>Iteration 1:</title>
-            <p><m>f(0.7) \lt  0</m>, <m>f(0.9) > 0</m>, and <m>f(0.8) >0</m>. So replace <m>0.9</m> with <m>0.8</m> and repeat.</p></li>
+            <p><m>f(0.7) \lt  0</m>, <m>f(0.9) > 0</m>, and <m>f(0.8) >0</m>. So replace <m>0.9</m> with <m>0.8</m> and repeat.</p>
+          </li>
 
           <li>
             <title>Iteration 2:</title>
-            <p><m>f(0.7)\lt 0</m>, <m>f(0.8) > 0</m>, and at the midpoint, <m>0.75</m>, we have <m>f(0.75) >0</m>. So replace <m>0.8</m> with <m>0.75</m> and repeat. Note that we don't need to continue to check the endpoints, just the midpoint. Thus we put the rest of the iterations in <xref ref="table_rootfinding">Table</xref>.</p></li>
-        </ul>
+            <p><m>f(0.7)\lt 0</m>, <m>f(0.8) > 0</m>, and at the midpoint, <m>0.75</m>, we have <m>f(0.75) >0</m>. So replace <m>0.8</m> with <m>0.75</m> and repeat. Note that we don't need to continue to check the endpoints, just the midpoint. Thus we put the rest of the iterations in <xref ref="table_rootfinding">Table</xref>.</p>
+          </li>
+        </dl>
 
         <table xml:id="table_rootfinding" >
           <caption>Iterations of the Bisection Method of Root Finding</caption>
@@ -407,62 +428,62 @@
             </row>
             <row>
               <cell><m>1</m></cell>
-              <cell><m>[0.7,0.9]</m></cell>
+              <cell><m>[\highlight{0.7},0.9]</m></cell>
               <cell><m>f(0.8) >0</m></cell>
             </row>
             <row>
               <cell><m>2</m></cell>
-              <cell><m>[0.7,0.8]</m></cell>
+              <cell><m>[\highlight{0.7},0.8]</m></cell>
               <cell><m>f(0.75) >0</m></cell>
             </row>
             <row>
               <cell><m>3</m></cell>
-              <cell><m>[0.7,0.75]</m></cell>
+              <cell><m>[\highlight{0.7},\highlight{0.75}]</m></cell>
               <cell><m>f(0.725)\lt 0</m></cell>
             </row>
             <row>
               <cell><m>4</m></cell>
-              <cell><m>[0.725,0.75]</m></cell>
+              <cell><m>[0.725,\highlight{0.75}]</m></cell>
               <cell><m>f(0.7375)\lt 0</m></cell>
             </row>
             <row>
               <cell><m>5</m></cell>
-              <cell><m>[0.7375,0.75]</m></cell>
+              <cell><m>[\highlight{0.7375},\highlight{0.75}]</m></cell>
               <cell><m>f(0.7438)>0</m></cell>
             </row>
             <row>
               <cell><m>6</m></cell>
-              <cell><m>[0.7375,0.7438]</m></cell>
+              <cell><m>[\highlight{0.7375},0.7438]</m></cell>
               <cell><m>f(0.7407)>0</m></cell>
             </row>
             <row>
               <cell><m>7</m></cell>
-              <cell><m>[0.7375,0.7407]</m></cell>
+              <cell><m>[\highlight{0.7375},0.7407]</m></cell>
               <cell><m>f(0.7391)>0</m></cell>
             </row>
             <row>
               <cell><m>8</m></cell>
-              <cell><m>[0.7375,0.7391]</m></cell>
+              <cell><m>[\highlight{0.7375},\highlight{0.7391}]</m></cell>
               <cell><m>f(0.7383)\lt 0</m></cell>
             </row>
             <row>
               <cell><m>9</m></cell>
-              <cell><m>[0.7383,0.7391]</m></cell>
+              <cell><m>[0.7383,\highlight{0.7391}]</m></cell>
               <cell><m>f(0.7387)\lt 0</m></cell>
             </row>
             <row>
               <cell><m>10</m></cell>
-              <cell><m>[0.7387,0.7391]</m></cell>
+              <cell><m>[0.7387,\highlight{0.7391}]</m></cell>
               <cell><m>f(0.7389)\lt 0</m></cell>
             </row>
             <row>
               <cell><m>11</m></cell>
-              <cell><m>[0.7389,0.7391]</m></cell>
+              <cell><m>[0.7389,\highlight{0.7391}]</m></cell>
               <cell><m>f(0.7390)\lt 0</m></cell>
             </row>
             <row>
               <cell><m>12</m></cell>
-              <cell><m>[0.7390,0.7391]</m></cell>
+              <cell><m>[0.7390,\highlight{0.7391}]</m></cell>
               <cell></cell>
             </row>
             <row>
@@ -471,29 +492,22 @@
           </tabular>
         </table>
 
-        <p>Notice that in the 12<m>^\text{ th }</m> iteration we have the endpoints of the interval each starting with <m>0.739</m>. Thus we have narrowed the zero down to an accuracy of the first three places after the decimal. Using a computer, we have
-          <me>
-            f(0.7390) = -0.00014,  f(0.7391) = 0.000024.
-          </me>
-        </p>
+        <p>Notice that in the 12th iteration we have the endpoints of the interval each starting with <m>0.739</m>. Thus we have narrowed the zero down to an accuracy of the first three places after the decimal. Using a computer, we have<me>f(0.7390) = -0.00014,  f(0.7391) = 0.000024.</me></p>
 
-        <p>Either endpoint of the interval gives a good approximation of where <m>f</m> is 0. The Intermediate Value Theorem states that the actual zero is still within this interval. While we do not know its exact value, we know it starts with <m>0.739</m>.</p>
+        <p>Either endpoint of the interval gives a good approximation of where <m>f</m> is <m>0</m>. The <xref ref="thm_IVT" /> states that the actual zero is still within this interval. While we do not know its exact value, we know it starts with <m>0.739</m>.</p>
 
-        <p>This type of exercise is rarely done by hand. Rather, it is simple to program a computer to run such an algorithm and stop when the endpoints differ by a preset small amount. One of the authors did write such a program and found the zero of <m>f</m>, accurate to 10 places after the decimal, to be 0.7390851332. While it took a few minutes to write the program, it took less than a thousandth of a second for the program to run the necessary 35 iterations. In less than 8 hundredths of a second, the zero was calculated to 100 decimal places (with less than 200 iterations).</p>
+        <p>This type of exercise is rarely done by hand. Rather, it is simple to program a computer to run such an algorithm and stop when the endpoints differ by a preset small amount. One of the authors did write such a program and found the zero of <m>f</m> to be <m>0.7390851332</m> , accurate to <m>10</m> places after the decimal. While it took a few minutes to write the program, it took less than a thousandth of a second for the program to run the necessary <m>35</m> iterations. In less than <m>8</m> hundredths of a second, the zero was calculated to <m>100</m> decimal places (with less than <m>200</m> iterations).</p>
+        <todo>Is this a place to demonstrate an algorithm like this in Sage?</todo>
       </solution>
     </example>
 
-    <p>It is a simple matter to extend the Bisection Method to solve problems similar to <q>Find <m>x</m>, where <m>f(x) = 0</m>.</q> For instance, we can find <m>x</m>, where <m>f(x) = 1</m>.
-      It actually works very well to define a new function <m>g</m> where <m>g(x) = f(x) - 1</m>. Then use the Bisection Method to solve <m>g(x)=0</m>.</p>
+    <p>It is a simple matter to extend the Bisection Method to solve problems similar to <q>Find <m>x</m>, where <m>f(x) = 0</m>.</q> For instance, we can find <m>x</m>, where <m>f(x) = 1</m>. It actually works very well to define a new function <m>g</m> where <m>g(x) = f(x) - 1</m>. Then use the Bisection Method to solve <m>g(x)=0</m>.</p>
 
     <p>Similarly, given two functions <m>f</m> and <m>g</m>, we can use the Bisection Method to solve <m>f(x) = g(x)</m>. Once again, create a new function <m>h</m> where <m>h(x) = f(x)-g(x)</m> and solve <m>h(x) = 0</m>.</p>
 
     <p>In <xref ref="sec_newton">Section</xref> another equation solving method will be introduced, called Newton's Method. In many cases, Newton's Method is much faster. It relies on more advanced mathematics, though, so we will wait before introducing it.</p>
 
     <p>This section formally defined what it means to be a continuous function. <q>Most</q> functions that we deal with are continuous, so often it feels odd to have to formally define this concept. Regardless, it is important, and forms the basis of the next chapter.</p>
-
-    <todo>Talk with Greg about moving limits involving infinity to be before continuity. If so, remove this next sentence.</todo>
-    <p>In the next section we examine one more aspect of limits: limits that involve infinity.</p>
   </introduction>
 
   <exercises>
@@ -691,145 +705,379 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.</member>
+              </set>
             </var>
             <pg-code>
+              $a=1;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(1,2,1,2,0.5,0)};
+              $left=Formula("(($b[1]-$b[0])/(1-0))*(x-0)+$b[0]");
+              $right=Formula("(x-1)*(x-1.5)*$b[5]/((2-1)*(2-1.5))+(x-1)*(x-2)*$b[4]/((1.5-1)*(1.5-2))+(x-1.5)*(x-2)*$b[3]/((1-1.5)*(1-2))");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist.");
+              if($b[2]==Compute("DNE")){$correct=$choices[3];}
+                elsif($left->eval(x=>1)!=$right->eval(x=>1)){$correct=$choices[2];}
+                elsif($left->eval(x=>1)!=$b[2]){$correct=$choices[4];}
+                else{$correct=$choices[1];};
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,1> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1,2> using color:blue and weight:2");
+              $graph->stamps(open_circle(1,$b[1],'blue'));
+              $graph->stamps(open_circle(1,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 1</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>No; <m>\lim\limits_{x\to 1} f(x) = 2</m>, while <m>f(1) = 1</m>.</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member>Yes.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=1;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(0,1,2,2,1,0)};
+              $left=Formula("(($b[1]-$b[0])/(1-0))*(x-0)+$b[0]");
+              $right=Formula("(($b[5]-$b[3])/(2-1))*(x-1)+$b[3]");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist.");
+              if($b[2]==Compute("DNE")){$correct=$choices[3];}
+                elsif($left->eval(x=>1)!=$right->eval(x=>1)){$correct=$choices[2];}
+                elsif($left->eval(x=>1)!=$b[2]){$correct=$choices[4];}
+                else{$correct=$choices[1];};
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,1> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1,2> using color:blue and weight:2");
+              $graph->stamps(open_circle(1,$b[1],'blue'));
+              $graph->stamps(open_circle(1,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 1</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>No; <m>\lim\limits_{x\to 1} f(x)</m> does not exist.</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member correct="yes">No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=1;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(0,Compute("INF"),Compute("DNE"),Compute("INF"),1,0)};
+              $left=Formula("1/cos(x*pi/2)-1");
+              $right=Formula("-1/cos(x*pi/2)-1");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist.");
+              if($b[2]==Compute("DNE")){$correct=$choices[3];}
+                elsif($left->eval(x=>1)!=$right->eval(x=>1)){$correct=$choices[2];}
+                elsif($left->eval(x=>1)!=$b[2]){$correct=$choices[4];}
+                else{$correct=$choices[1];};
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,0.9> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1.1,2> using color:blue and weight:2");
+              $graph->moveTo(1,0);
+              $graph->arrowTo(1,2.5,'gray',1,'dashed');
+              do{$graph->stamps(open_circle(1,$b[1],'blue'));}unless($b[1]==Compute("INF") or $b[1]==Compute("-INF"));
+              do{$graph->stamps(open_circle(1,$b[3],'blue'));}unless($b[3]==Compute("INF") or $b[3]==Compute("-INF"));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 1</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>No; <m>f(1)</m> does not exist.</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member>Yes.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=0;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(1,2,1,0,0.5,2)};
+              $left=Formula("(($b[1]-$b[0])/(1-0))*(x-0)+$b[0]");
+              $right=Formula("(x-1)*(x-1.5)*$b[5]/((2-1)*(2-1.5))+(x-1)*(x-2)*$b[4]/((1.5-1)*(1.5-2))+(x-1.5)*(x-2)*$b[3]/((1-1.5)*(1-2))");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist.");
+              $correct=$choices[1];
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,1> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1,2> using color:blue and weight:2");
+              $graph->stamps(open_circle(1,$b[1],'blue'));
+              $graph->stamps(open_circle(1,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 0</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>Yes</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=1;
+              for my$i(0..5){$b[$i]=random(0,2,0.5)};
+              if($envir{problemSeed}==1){@b=(0,2,2,2,1.5,0)};
+              $right=Formula("(($b[1]-$b[0])/(1-2))*(x-2)+$b[0]");
+              $left=Formula("(x-0.5)*(x-1)*$b[5]/((0-0.5)*(0-1))+(x-0)*(x-1)*$b[4]/((0.5-0)*(0.5-1))+(x-0)*(x-0.5)*$b[3]/((1-0)*(1-0.5))");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist.");
+              if($b[2]==Compute("DNE")){$correct=$choices[3];}
+                elsif($left->eval(x=>1)!=$right->eval(x=>1)){$correct=$choices[2];}
+                elsif($left->eval(x=>1)!=$b[2]){$correct=$choices[4];}
+                else{$correct=$choices[1];};
+              $answer=PopUp(~~@choices,$correct);
+              $graph=init_graph(-0.5,-0.5,2.5,2.5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",0.5,1,1.5,2);
+              $graph->v_ticks(0,"black",0.5,1,1.5,2);
+              for my$i(0.5,1,1.5,2){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;0,1> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;1,2> using color:blue and weight:2");
+              $graph->stamps(open_circle(1,$b[1],'blue'));
+              $graph->stamps(open_circle(1,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(1,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(0,$b[0],'blue'));
+              $graph->stamps(closed_circle(2,$b[5],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 1</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>Yes</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              $a=4;
+              for my$i(0..4){$b[$i]=random(-4,4,1)};
+              if($envir{problemSeed}==1){@b=(-4,0,0,-4,0)};
+              $left=Formula("$b[1]+sin((x+2)*pi/4)*($b[1]-$b[0])");
+              $right=Formula("$b[4]-sin((x+2)*pi/4)*($b[4]-$b[3])");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to $a does not exist.","No; f($a) is not defined.","No; the limit of f(x) as x goes to $a does not equal f($a) even though both exist.");
+              $correct=$choices[1];
+              $answer=PopUp(~~@choices,$correct);
+              $ymin=min($b[0],$b[1]-$b[0],$b[3],$b[4]-$b[3])-1;
+              $ymax=max($b[0],$b[1]-$b[0],$b[3],$b[4]-$b[3])+1;
+              $graph=init_graph(-5,$ymin,5,$ymax,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",-4..4);
+              $graph->v_ticks(0,"black",$ymin..$ymax);
+              for my$i(-4..4){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));};
+              for my$i($ymin..$ymax){$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$left for x in &lt;-4,0> using color:blue and weight:2");
+              add_functions($graph,"$right for x in &lt;0,4> using color:blue and weight:2");
+              $graph->stamps(open_circle(0,$b[1]-$b[0],'blue'));
+              $graph->stamps(open_circle(0,$b[3],'blue'));
+              do{$graph->stamps(closed_circle(0,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              $graph->stamps(closed_circle(-4,$b[0],'blue'));
+              $graph->stamps(closed_circle(4,$b[4]-$b[3],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>a = 4</m></p>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=<var name="$a" /></m>?</p>
 
-            <!-- START\1END -->
+            <image pg-name="$graph" />
+
+            <p><var name="$answer" form="popup" /></p>
+
           </statement>
           <solution>
-            <p>Yes</p>
+            <p><var name="$answer"/></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer1">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
+            </var>
+            <var name="$answer2">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
+            </var>
+            <var name="$answer3">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member correct="yes">No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
+              </set>
             </var>
             <pg-code>
+              for my$i(0..10){$b[$i]=random(-4,4,1)};
+              @j=map{$_*3+2}NchooseK(3,3);
+              $b[$j[0]]=Compute("DNE");$b[$j[0]+1]=$b[$j[0]-1];
+              do{$b[$j[1]-1]=random(-4,4,1)}until($b[$j[1]-1]!=$b[$j[1]]);$b[$j[1]+1]=$b[$j[1]-1];
+              $b[$j[2]-1]=$b[$j[2]];$b[$j[2]+1]=$b[$j[2]];
+              if($envir{problemSeed}==1){@b=(0,2,0,2,0,0,0,2,Compute("DNE"),2,0)};
+              for my$i(0..3){$f[$i]=Formula("($b[3*$i+1]-$b[3*$i])/2*(x-(2*$i-4))+$b[3*$i]");}
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to a does not exist.","No; f(a) is not defined.","No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.");
+              for my$i(0..2){if($b[3*$i+2]==Compute("DNE")){$correct[$i]=$choices[3];}
+                elsif($f[$i]->eval(x=>(2*$i-2))!=$f[$i+1]->eval(x=>(2*$i-2))){$correct[$i]=$choices[2];}
+                elsif($f[$i]->eval(x=>(2*$i-2))!=$b[3*$i+2]){$correct[$i]=$choices[4];}
+                else{$correct[$i]=$choices[1];};
+                $answer[$i]=PopUp(~~@choices,$correct[$i]);
+              };
+              $graph=init_graph(-5,-5,5,5,axes=>[0,0],size=>[400,400]);
+              $graph->h_ticks(0,"black",-4..4);
+              $graph->v_ticks(0,"black",-4..4);
+              for my$i(-4..4){$graph->lb(new Label($i,-0.05,"$i",'black','center','top'));$graph->lb(new Label(-0.05,$i,"$i",'black','right','middle'))};
+              add_functions($graph,"$f[0] for x in &lt;-4,-2> using color:blue and weight:2");
+              add_functions($graph,"$f[1] for x in &lt;-2,0> using color:blue and weight:2");
+              add_functions($graph,"$f[2] for x in &lt;0,2> using color:blue and weight:2");
+              add_functions($graph,"$f[3] for x in &lt;2,4> using color:blue and weight:2");
+              $graph->stamps(open_circle(-2,$b[1],'blue'));
+              $graph->stamps(open_circle(0,$b[4],'blue'));
+              $graph->stamps(open_circle(2,$b[7],'blue'));
+              do{$graph->stamps(closed_circle(-2,$b[2],'blue'));}unless($b[2]==Compute("DNE"));
+              do{$graph->stamps(closed_circle(0,$b[5],'blue'));}unless($b[5]==Compute("DNE"));
+              do{$graph->stamps(closed_circle(2,$b[8],'blue'));}unless($b[8]==Compute("DNE"));
+              $graph->stamps(closed_circle(-4,$b[0],'blue'));
+              $graph->stamps(closed_circle(4,$b[10],'blue'));
             </pg-code>
           </setup>
           <statement>
-            <ol>
-              <li><p><m>a = -2</m></p></li>
+            <p>Is <m>f</m> in the graph below continuous at <m>a=-2</m>, <m>a=0</m>, and <m>a=2</m>?</p>
 
-              <li><p><m>a=0</m></p></li>
+            <image pg-name="$graph" />
 
-              <li><p><m>a=2</m></p></li>
-            </ol>
+            <p>At <m>a=-2</m>: <var name="$answer[0]" form="popup" /></p>
+            <p>At <m>a=0</m>: <var name="$answer[1]" form="popup" /></p>
+            <p>At <m>a=2</m>: <var name="$answer[2]" form="popup" /></p>
 
-            <!-- START\1END -->
           </statement>
           <solution>
-            <ol>
-              <li><p>No; <m>\lim\limits_{x\to -2}f(x) \neq f(-2)</m></p></li>
-
-              <li><p>Yes</p></li>
-
-              <li><p>No; <m>f(2)</m> is not defined.</p></li>
-            </ol>
+            <p>At <m>a=-2</m>: <var name="$answer[0]"/></p>
+            <p>At <m>a=0</m>: <var name="$answer[1]"/></p>
+            <p>At <m>a=2</m>: <var name="$answer[2]"/></p>
           </solution>
         </webwork>
       </exercise>
@@ -842,120 +1090,191 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer[0]">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.</member>
+              </set>
+            </var>
+            <var name="$answer[1]">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.</member>
+              </set>
             </var>
             <pg-code>
+              Context("PiecewiseFunction");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to a does not exist.","No; f(a) is not defined.","No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.");
+              @answer=(PopUp(~~@choices,1),PopUp(~~@choices,1));
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc} 
-              1		\amp  \amp  x=0\\
-              \frac{\sin(x)}{x} \amp  \amp  x>0
-              \end{array} \right.</m></p>
-
-            <ol>
-              <li><p><m>x=0</m></p></li>
-
-              <li><p><m>x=\pi</m></p></li>
-            </ol>
+            <p>Determine if <m>f</m> is continuous at <m>0</m> and <m>\pi</m>.</p> 
+            <p><me>f(x)=\begin{cases}1\amp x=0\\\frac{\sin(x)}{x}\amp x\neq0\end{cases}</me></p>
+            <p>At <m>a=0</m>: <var name="$answer[0]" form="popup" /></p>
+            <p>At <m>a=\pi</m>: <var name="$answer[1]" form="popup" /></p>
           </statement>
           <solution>
-            <ol>
-              <li><p>Yes</p></li>
-
-              <li><p>Yes</p></li>
-            </ol>
+            <p>At <m>a=0</m>: <var name="$answer[0]" /></p>
+            <p>At <m>a=\pi</m>: <var name="$answer[1]" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\begin{cases}x^3-x^2\amp x\lt1\\x-2\amp x\geq1\end{cases}</static>
+            </var>
+            <var name="$answer[0]">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.</member>
+              </set>
+            </var>
+            <var name="$answer[1]">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.</member>
+              </set>
             </var>
             <pg-code>
+              Context("PiecewiseFunction");
+              for my$i(0..3){$b[$i]=non_zero_random(-2,2,1)};
+              if($envir{problemSeed}==1){@b=(1,-1,1,-2)};
+              $left=Formula("$b[0]x^3+$b[1]x^2")->reduce;
+              $right=Formula("$b[2]x+$b[3]")->reduce;
+              $f=PiecewiseFunction("x&lt;1" => "$left","x>=1"=>"$right");
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to a does not exist.","No; f(a) is not defined.","No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.");
+              $correct[1]=($left->eval(x=>$a[1])==$right->eval(x=>$a[1]))?1:4;
+              @answer=(PopUp(~~@choices,1),PopUp(~~@choices,$correct[1]));
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc} 
-              x^3-x		\amp  \amp  x\lt 1\\
-              x-2 \amp  \amp  x\geq 1
-              \end{array} \right.</m></p>
-
-            <ol>
-              <li><p><m>x=0</m></p></li>
-
-              <li><p><m>x=1</m></p></li>
-            </ol>
+            <p>Determine if <m>f</m> is continuous at <m>0</m> and <m>1</m>.</p> 
+            <p><me>f(x)=<var name="$f" /></me></p>
+            <p>At <m>a=0</m>: <var name="$answer[0]" form="popup" /></p>
+            <p>At <m>a=1</m>: <var name="$answer[1]" form="popup" /></p>
           </statement>
           <solution>
-            <ol>
-              <li><p>Yes</p></li>
-
-              <li><p>No; the left and right hand limits at 1 are not equal.</p></li>
-            </ol>
+            <p>At <m>a=0</m>: <var name="$answer[0]" /></p>
+            <p>At <m>a=1</m>: <var name="$answer[1]" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a[0]">
+              <static>-1</static>
+            </var>
+            <var name="$a[3]">
+              <static>10</static>
+            </var>
+            <var name="$f">
+              <static>\begin{cases}\frac{x^2+5x+4}{x^2+3x+2}\amp x\neq1\\3\amp x=-1\end{cases}</static>
+            </var>
+            <var name="$answer[0]">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.</member>
+              </set>
+            </var>
+            <var name="$answer[1]">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.</member>
+              </set>
             </var>
             <pg-code>
+              @a=map{$_-10}NchooseK(20,4);
+              Context("PiecewiseFunction");
+              if($envir{problemSeed}==1){@a=(-1,-4,-2,10)};
+              $f=PiecewiseFunction("x!=$a[0]" => Formula("(x^2-($a[0]+$a[1])x+($a[0]*$a[1]))/(x^2-($a[0]+$a[2])x+($a[0]*$a[2]))")->reduce,"x=$a[0]"=>Real(($a[0]-$a[1])/($a[0]-$a[2])));
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to a does not exist.","No; f(a) is not defined.","No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.");
+              @answer=(PopUp(~~@choices,1),PopUp(~~@choices,1));
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc} 
-              \frac{x^2+5x+4}{x^2+3x+2}		\amp  \amp   x\neq -1\\
-              3 \amp  \amp  x=-1
-              \end{array} \right.</m></p>
-
-            <ol>
-              <li><p><m>x=-1</m></p></li>
-
-              <li><p><m>x=10</m></p></li>
-            </ol>
+            <p>Determine if <m>f</m> is continuous at <m><var name="$a[0]" /></m> and <m><var name="$a[3]" /></m>.</p> 
+            <p><me>f(x)=<var name="$f" /></me></p>
+            <p>At <m>a=<var name="$a[0]" /></m>: <var name="$answer[0]" form="popup" /></p>
+            <p>At <m>a=<var name="$a[3]" /></m>: <var name="$answer[1]" form="popup" /></p>
           </statement>
           <solution>
-            <ol>
-              <li><p>Yes</p></li>
-
-              <li><p>Yes</p></li>
-            </ol>
+            <p>At <m>a=<var name="$a[0]" /></m>: <var name="$answer[0]" /></p>
+            <p>At <m>a=<var name="$a[3]" /></m>: <var name="$answer[1]" /></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>PGchoicemacros.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a[0]">
+              <static>0</static>
+            </var>
+            <var name="$a[1]">
+              <static>8</static>
+            </var>
+            <var name="$f">
+              <static>\begin{cases}\frac{x^2-64}{x^2-11x+24}\amp x\neq8\\5\amp x=8\end{cases}</static>
+            </var>
+            <var name="$answer[0]">
+              <set>
+                <member correct="yes">Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.</member>
+              </set>
+            </var>
+            <var name="$answer[1]">
+              <set>
+                <member>Yes.</member>
+                <member>No; the limit of f(x) as x goes to a does not exist.</member>
+                <member>No; f(a) is not defined.</member>
+                <member correct="yes">No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.</member>
+              </set>
             </var>
             <pg-code>
+              @a=map{$_-12}NchooseK(24,6);
+              Context("PiecewiseFunction");
+              if($envir{problemSeed}==1){@a=(0,8,-8,3,5,0)};
+              $f=PiecewiseFunction("x!=$a[1]" => Formula("(x^2-($a[1]+$a[2])x+($a[1]*$a[2]))/(x^2-($a[1]+$a[3])x+($a[1]*$a[3]))")->reduce,"x=$a[1]"=>$a[4]);
+              @choices=('?','Yes.',"No; the limit of f(x) as x goes to a does not exist.","No; f(a) is not defined.","No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.");
+              $correct[1]=($a[4]==($a[1]-$a[2])/($a[1]-$a[3]))?1:4;
+              @answer=(PopUp(~~@choices,1),PopUp(~~@choices,$correct[1]));
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \left\{\begin{array}{ccc}
-              \frac{x^2-64}{x^2-11 x+24}		\amp  \amp   x\neq 8\\
-              5 \amp  \amp  x=8
-              \end{array} \right.</m></p>
-
-            <ol>
-              <li><p><m>x=0</m></p></li>
-
-              <li><p><m>x=8</m></p></li>
-            </ol>
+            <p>Determine if <m>f</m> is continuous at <m><var name="$a[0]" /></m> and <m><var name="$a[1]" /></m>.</p> 
+            <p><me>f(x)=<var name="$f" /></me></p>
+            <p>At <m>a=<var name="$a[0]" /></m>: <var name="$answer[0]" form="popup" /></p>
+            <p>At <m>a=<var name="$a[1]" /></m>: <var name="$answer[1]" form="popup" /></p>
           </statement>
           <solution>
-            <ol>
-              <li><p>Yes</p></li>
-
-              <li><p>No. <m>\lim_{x\to 8} f(x) = 16/5 \neq f(8) = 5</m>.</p></li>
-            </ol>
+            <p>At <m>a=<var name="$a[0]" /></m>: <var name="$answer[0]" /></p>
+            <p>At <m>a=<var name="$a[1]" /></m>: <var name="$answer[1]" /></p>
           </solution>
         </webwork>
       </exercise>
@@ -968,254 +1287,333 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>x^2-3x+9</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(-\infty,\infty)</static>
             </var>
             <pg-code>
+              $a=random(-9,9,1);
+              $b=non_zero_random(-9,9,1);
+              if($envir{problemSeed}==1){$a=-3;$b=9;};
+              $f=Formula("x^2+$a x+$b")->reduce;
+              $interval=Interval("(-inf,inf)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2-3x+9</m></p>
+            <p>On what interval or union of intervals is <m>f(x)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
           <solution>
-            <p><m>(-\infty,\infty)</m></p>
+            <p>Since <m>f</m> is a polynomial function, it is continuous on <m>(-\infty,\infty)</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\sqrt{x^2-4}</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(-\infty,2]U[2,infty)</static>
             </var>
             <pg-code>
+              $a=random(1,5,1);
+              if($envir{problemSeed}==1){$a=2;};
+              $f=Formula("sqrt(x^2-$a**2)")->reduce;
+              $interval=Interval("(-inf,-$a]U[$a,inf)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds g(x) = \sqrt{x^2-4}</m></p>
+            <p>On what interval or union of intervals is <m>f(x)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
           <solution>
-            <p><m>(-\infty,-2]\cup [2,\infty)</m></p>
+            <p>The domain of <m>f</m> is <m><var name="$interval" /></m>, and since <m>f</m> is a composition of continuous functions on that domain, it is continuous on <m><var name="$interval" /></m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f1">
+              <static>\sqrt{1-x}</static>
+            </var>
+            <var name="$f2">
+              <static>\sqrt{x+1}</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>[-1,1]</static>
+            </var>
+            <var name="$a">
+              <static>1</static>
+            </var>
+            <var name="$b">
+              <static>1</static>
             </var>
             <pg-code>
+              $a=random(1,5,1);
+              $b=random(1,5,1);
+              if($envir{problemSeed}==1){$a=1;$b=1};
+              $f1=Formula("sqrt($a-x)");
+              $f2=Formula("sqrt(x+$b)");
+              $f=$f1+$f2;
+              $interval=Interval("[-$b,$a]");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds h(k) = \sqrt{1-k}+\sqrt{k+1}</m></p>
+            <p>On what interval or union of intervals is <m>f(x)=<var name="$f1" />+<var name="$f2" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
           <solution>
-            <p><m>[-1,1]</m></p>
+            <p>The domain of <m><var name="$f1" /></m> is <m>(-\infty,<var name="$a" />]</m>, and the domain of <m><var name="$f2" /></m> is <m>[-<var name="$b" />,\infty)</m>. So the domain of <m>f</m> is <m><var name="$interval" /></m>. And since <m>f</m> is the sum of two compositions of continuous functions, it is continuous on <m><var name="$interval" /></m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\sqrt{5t^2-30-x}</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(-\infty,-\sqrt{6}]\cup[\sqrt{6},\infty)</static>
             </var>
             <pg-code>
+              $a=random(2,5,1);
+              $b=random(2,9,1);
+              if($envir{problemSeed}==1){$a=5;$b=6};
+              Context()->variables->are(t=>'Real');
+              $f=Formula("sqrt($a t^2-$a*$b)")->reduce;
+              $interval=Compute("(-inf,-sqrt($b)]U[-sqrt($b),inf)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(t) = \sqrt{5t^2-30}</m></p>
+            <p>On what interval or union of intervals is <m>f(t)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
-          <solution>
-            <p><m>(-\infty,-\sqrt{6}]\cup [\sqrt{6},\infty)</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\frac{1}{\sqrt{1-t^2}</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(-1,1)</static>
             </var>
             <pg-code>
+              $a=random(1,9,1);
+              if($envir{problemSeed}==1){$a=1};
+              Context()->variables->are(t=>'Real');
+              $f=Formula("1/sqrt($a**2-t^2)")->reduce;
+              $interval=Compute("(-$a,$a)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds g(t) = \frac{1}{\sqrt{1-t^2}}</m></p>
+            <p>On what interval or union of intervals is <m>g(t)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
-          <solution>
-            <p><m>(-1,1)</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\frac{1}{1+x^2}</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(-\infty,\infty)</static>
             </var>
             <pg-code>
+              $a=random(1,9,1);
+              $b=random(1,9,1);
+              if($envir{problemSeed}==1){$a=1;$b=1;};
+              Context()->variables->are(t=>'Real');
+              $f=Formula("1/($a+$b*t^2)")->reduce;
+              $interval=Compute("(-inf,inf)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds g(x) = \frac{1}{1+x^2}</m></p>
+            <p>On what interval or union of intervals is <m>g(t)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
-          <solution>
-            <p><m>(-\infty,\infty)</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>e^x</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(-\infty,\infty)</static>
             </var>
             <pg-code>
+              $b=list_random(2..9,Formula("e"),Formula("pi"));
+              if($envir{problemSeed}==1){$b=Formula("e");};
+              $f=Formula("$b^x")->reduce;
+              $interval=Compute("(-inf,inf)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = e^x</m></p>
+            <p>On what interval or union of intervals is <m>f(t)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
-          <solution>
-            <p><m>(-\infty,\infty)</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\ln(s)</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(0,\infty)</static>
             </var>
             <pg-code>
+              Context()->variables->are(s=>'Real');
+              $b=list_random(2..9,Formula("e"),Formula("pi"));
+              if($envir{problemSeed}==1){$b=Formula("e");};
+              $f=($b==Formula("e"))?'\ln(s)':"\log_{$b}(s)";
+              $interval=Compute("(0,inf)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds g(s) = \ln s</m></p>
+            <p>On what interval or union of intervals is <m>g(s)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
-          <solution>
-            <p><m>(0,\infty)</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\cos(t)</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(-\infty,\infty)</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              $f=list_random(Formula("cos(t)"),Formula("sin(t)"));
+              if($envir{problemSeed}==1){$f=Formula("cos(t)");};
+              $interval=Compute("(-inf,inf)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds h(t) = \cos t</m></p>
+            <p>On what interval or union of intervals is <m>h(t)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
-          <solution>
-            <p><m>(-\infty,\infty)</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\sqrt{1-e^k}</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(-\infty,0]</static>
             </var>
             <pg-code>
+              $a=random(1,9,1);
+              if($envir{problemSeed}==1){$a=1};
+              Context()->variables->are(k=>'Real');
+              $f=Formula("sqrt($a-e^k)");
+              $interval=($a==1)?Compute("(-inf,0]"):Compute("(-inf,ln($a)]");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(k) = \sqrt{1-e^k}</m></p>
+            <p>On what interval or union of intervals is <m>f(k)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
-          <solution>
-            <p><m>(-\infty,0]</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\sin\mathopen{}\left(e^x+x^2\right)\mathclose{}</static>
+            </var>
+            <var name="$interval" category="interval">
+              <static>(-\infty,\infty)</static>
             </var>
             <pg-code>
+              $a=list_random('sin','cos');
+              $b=list_random(2,3,'e');
+              $n=random(2,5,1);
+              if($envir{problemSeed}==1){$a='sin';$b='e';$n=2;};
+              $f=Formula("$a($b^x+x^($n))");
+              $interval=Compute("(-inf,inf)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \sin(e^x+x^2)</m></p>
+            <p>On what interval or union of intervals is <m>f(x)=<var name="$f" /></m> continuous?</p>
+            <p><var name="$interval" width="20"/></p>
           </statement>
-          <solution>
-            <p><m>(-\infty,\infty)</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
 
     <exercise>
       <webwork seed="1">
-        <setup>
-          <var name="">
-            <static></static>
-          </var>
-          <pg-code>
-          </pg-code>
-        </setup>
         <statement>
           <p>Let <m>f</m> be continuous on <m>[1,5]</m> where <m>f(1) = -2</m> and <m>f(5) = -10</m>. Does a value <m>1\lt c\lt 5</m> exist such that <m>f(c) = -9</m>? Why/why not?</p>
+
+          <p><var form="essay" /></p>   
         </statement>
         <solution>
           <p>Yes, by the Intermediate Value Theorem.</p>
         </solution>
       </webwork>
     </exercise>
+
     <exercise>
       <webwork seed="1">
-        <setup>
-          <var name="">
-            <static></static>
-          </var>
-          <pg-code>
-          </pg-code>
-        </setup>
         <statement>
           <p>Let <m>g</m> be continuous on <m>[-3,7]</m> where <m>g(0) = 0</m> and <m>g(2) = 25</m>. Does a value <m>-3\lt c\lt 7</m> exist such that <m>g(c) = 15</m>? Why/why not?</p>
+
+          <p><var form="essay" /></p>   
         </statement>
         <solution>
           <p>Yes, by the Intermediate Value Theorem. In fact, we can be more specific and state such a value <m>c</m> exists in <m>(0,2)</m>, not just in <m>(-3,7)</m>.</p>
         </solution>
       </webwork>
     </exercise>
+
     <exercise>
       <webwork seed="1">
-        <setup>
-          <var name="">
-            <static></static>
-          </var>
-          <pg-code>
-          </pg-code>
-        </setup>
         <statement>
           <p>Let <m>f</m> be continuous on <m>[-1,1]</m> where <m>f(-1) = -10</m> and <m>f(1) = 10</m>. Does a value <m>-1\lt c\lt 1</m> exist such that <m>f(c) = 11</m>? Why/why not?</p>
+
+          <p><var form="essay" /></p>   
         </statement>
         <solution>
           <p>We cannot say; the Intermediate Value Theorem only applies to function values between <m>-10</m> and 10; as 11 is outside this range, we do not know.</p>
         </solution>
       </webwork>
     </exercise>
+
     <exercise>
       <webwork seed="1">
-        <setup>
-          <var name="">
-            <static></static>
-          </var>
-          <pg-code>
-          </pg-code>
-        </setup>
         <statement>
           <p>Let <m>h</m> be a function on <m>[-1,1]</m> where <m>h(-1) = -10</m> and <m>h(1) = 10</m>. Does a value <m>-1\lt c\lt 1</m> exist such that <m>h(c) = 0</m>? Why/why not?</p>
+
+          <p><var form="essay" /></p>   
         </statement>
         <solution>
           <p>We cannot say; the Intermediate Value Theorem only applies to continuous functions. As we do know know if <m>h</m> is continuous, we cannot say.</p>
@@ -1230,80 +1628,333 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>x^2+2x-4</static>
+            </var>
+            <var name="$in[0]">
+              <static>[1,1.5]</static>
             </var>
             <pg-code>
+              Context("Interval"); 
+              Context()->flags->set(tolType=>'absolute',tolerance=>0.00000005);
+              do{$b=non_zero_random(-9,9,1);$c=non_zero_random(-9,9,1);}until($b**2>4*$c and int(sqrt(abs($b**2-4*$c)))!=sqrt(abs($b**2-4*$c)));
+              if($envir{problemSeed}==1){$b=2;$c=-4;};
+              $f=Formula("x^2+$b x+$c")->reduce;
+              $left=floor((-$b+sqrt($b**2-4*$c))/2);
+              $right=$left+1;
+              $mid=($left+$right)/2;
+              ($l[0],$r[0])=($f->eval(x=>$mid)>0)?($left,$mid):($mid,$right);
+              $in[0]=Compute("[$l[0],$r[0]]");
+              for my$i(1..7){$m[$i-1]=($l[$i-1]+$r[$i-1])/2;
+                ($l[$i],$r[$i])=($f->eval(x=>$m[$i-1])>0)?($l[$i-1],$m[$i-1]):($m[$i-1],$r[$i-1]);
+                $popup[$i-1]=($f->eval(x=>$m[$i-1])>0)?PopUp(['?','&lt;','>'],'>'):PopUp(['?','&lt;','>'],'&lt;');
+                $in[$i]=Compute("[$l[$i],$r[$i]]");
+              };
+              $z=Real(($l[7]+$r[7])/2)->with(tolType=>'absolute',tolerance=>0.01);
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2+2x-4</m> on <m>[1,1.5]</m>.</p>
-          </statement>
-          <solution>
-            <p>Approximate root is <m>x=1.23</m>. The intervals used are:
-              <m>[1,1.5]  [1,1.25]  [1.125,1.25]</m>
-              <m>[1.1875,1.25] [1.21875,1.25] [1.234375,1.25]</m>
-              <m>[1.234375,1.2421875] [1.234375,1.2382813]</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>f(x) = \sin(x) - 1/2</m> on <m>[0.5,0.55]</m></p>
-          </statement>
-          <solution>
-            <p>Approximate root is <m>x=0.52</m>. The intervals used are:
-              <m>[0.5,0.55]  [0.5,0.525]  [0.5125,0.525]</m>
-              <m>[0.51875,0.525] [0.521875,0.525]</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>f(x) = e^x - 2</m> on <m>[0.65,0.7]</m>.</p>
-          </statement>
-          <solution>
-            <p>Approximate root is <m>x=0.69</m>. The intervals used are:
-              <m>[0.65,0.7]  [0.675,0.7]  [0.6875,0.7]</m>
-              <m>[0.6875,0.69375] [0.690625,0.69375]</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>f(x) = \cos(x) -\sin(x)</m> on <m>[0.7,0.8]</m>.</p>
-          </statement>
-          <solution>
-            <p>Approximate root is <m>x=0.78</m>. The intervals used are:
-              <m>[0.7,0.8]  [0.75,0.8]  [0.775,0.8]</m>
-              <m>[0.775,0.7875] [0.78125,0.7875]</m></p>
+            <p>Use the Bisection Method to zero in on the root for <m>f(x)=<var name="$f" /></m> in the interval <m><var name="$in[0]" /></m>.</p>
 
-            <p>(A few more steps show that <m>0.79</m> is better as the root is <m>\pi/4 \approx 0.78539</m>.)</p>
-          </solution>
+            <table>
+              <tabular>
+                <row bottom="medium">
+                  <cell>Iteration</cell>
+                  <cell>Interval</cell>
+                  <cell>Midpoint Sign</cell>
+                </row>
+                <row>
+                  <cell>1</cell>
+                  <cell><m><var name="$in[0]" /></m></cell>
+                  <cell><var name="$popup[0]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>2</cell>
+                  <cell><var name="$in[1]" width="20"/></cell>
+                  <cell><var name="$popup[1]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>3</cell>
+                  <cell><var name="$in[2]" width="20"/></cell>
+                  <cell><var name="$popup[2]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>4</cell>
+                  <cell><var name="$in[3]" width="20"/></cell>
+                  <cell><var name="$popup[3]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>5</cell>
+                  <cell><var name="$in[4]" width="20"/></cell>
+                  <cell><var name="$popup[4]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>6</cell>
+                  <cell><var name="$in[5]" width="20"/></cell>
+                  <cell><var name="$popup[5]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>7</cell>
+                  <cell><var name="$in[6]" width="20"/></cell>
+                  <cell><var name="$popup[6]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>8</cell>
+                  <cell><var name="$in[7]" width="20"/></cell>
+                  <cell></cell>
+                </row>
+              </tabular>
+            </table>
+            <p>So to two decimal places, the zero is <var name="$z" width="10" />.</p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$f">
+              <static>\sin(x)-\frac{1}{2}</static>
+            </var>
+            <var name="$in[0]">
+              <static>[0.5,0.55]</static>
+            </var>
+            <pg-code>
+              Context("Interval"); 
+              Context()->flags->set(tolType=>'absolute',tolerance=>0.00000005,reduceConstants=>0);
+              $b=random(2,6,1);
+              if($envir{problemSeed}==1){$b=2;};
+              $f=Compute("sin(x)-1/$b");
+              $root=asin(1/$b);
+              ($l[0],$r[0])=(floor(20*$root)/20,floor(20*$root)/20+0.05);
+              $in[0]=Compute("[$l[0],$r[0]]");
+              for my$i(1..7){$m[$i-1]=($l[$i-1]+$r[$i-1])/2;
+                ($l[$i],$r[$i])=($f->eval(x=>$m[$i-1])>0)?($l[$i-1],$m[$i-1]):($m[$i-1],$r[$i-1]);
+                $popup[$i-1]=($f->eval(x=>$m[$i-1])>0)?PopUp(['?','&lt;','>'],'>'):PopUp(['?','&lt;','>'],'&lt;');
+                $in[$i]=Compute("[$l[$i],$r[$i]]");
+              };
+              $z=Real(($l[7]+$r[7])/2)->with(tolType=>'absolute',tolerance=>0.001);
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Use the Bisection Method to zero in on the root for <m>f(x)=<var name="$f" /></m> in the interval <m><var name="$in[0]" /></m>.</p>
+
+            <table>
+              <tabular>
+                <row bottom="medium">
+                  <cell>Iteration</cell>
+                  <cell>Interval</cell>
+                  <cell>Midpoint Sign</cell>
+                </row>
+                <row>
+                  <cell>1</cell>
+                  <cell><m><var name="$in[0]" /></m></cell>
+                  <cell><var name="$popup[0]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>2</cell>
+                  <cell><var name="$in[1]" width="20"/></cell>
+                  <cell><var name="$popup[1]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>3</cell>
+                  <cell><var name="$in[2]" width="20"/></cell>
+                  <cell><var name="$popup[2]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>4</cell>
+                  <cell><var name="$in[3]" width="20"/></cell>
+                  <cell><var name="$popup[3]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>5</cell>
+                  <cell><var name="$in[4]" width="20"/></cell>
+                  <cell><var name="$popup[4]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>6</cell>
+                  <cell><var name="$in[5]" width="20"/></cell>
+                  <cell><var name="$popup[5]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>7</cell>
+                  <cell><var name="$in[6]" width="20"/></cell>
+                  <cell><var name="$popup[6]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>8</cell>
+                  <cell><var name="$in[7]" width="20"/></cell>
+                  <cell></cell>
+                </row>
+              </tabular>
+            </table>
+            <p>So to three decimal places, the zero is <var name="$z" width="10" />.</p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$f">
+              <static>e^x-2</static>
+            </var>
+            <var name="$in[0]">
+              <static>[0.65,0.7]</static>
+            </var>
+            <pg-code>
+              Context("Interval"); 
+              Context()->flags->set(tolType=>'absolute',tolerance=>0.00000005);
+              $b=random(1.5,3,0.1);
+              if($envir{problemSeed}==1){$b=2;};
+              $f=Compute("e^x-$b");
+              $root=ln($b);
+              ($l[0],$r[0])=(floor(20*$root)/20,floor(20*$root)/20+0.05);
+              $in[0]=Compute("[$l[0],$r[0]]");
+              for my$i(1..7){$m[$i-1]=($l[$i-1]+$r[$i-1])/2;
+                ($l[$i],$r[$i])=($f->eval(x=>$m[$i-1])>0)?($l[$i-1],$m[$i-1]):($m[$i-1],$r[$i-1]);
+                $popup[$i-1]=($f->eval(x=>$m[$i-1])>0)?PopUp(['?','&lt;','>'],'>'):PopUp(['?','&lt;','>'],'&lt;');
+                $in[$i]=Compute("[$l[$i],$r[$i]]");
+              };
+              $z=Real(($l[7]+$r[7])/2)->with(tolType=>'absolute',tolerance=>0.001);
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Use the Bisection Method to zero in on the root for <m>f(x)=<var name="$f" /></m> in the interval <m><var name="$in[0]" /></m>.</p>
+
+            <table>
+              <tabular>
+                <row bottom="medium">
+                  <cell>Iteration</cell>
+                  <cell>Interval</cell>
+                  <cell>Midpoint Sign</cell>
+                </row>
+                <row>
+                  <cell>1</cell>
+                  <cell><m><var name="$in[0]" /></m></cell>
+                  <cell><var name="$popup[0]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>2</cell>
+                  <cell><var name="$in[1]" width="20"/></cell>
+                  <cell><var name="$popup[1]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>3</cell>
+                  <cell><var name="$in[2]" width="20"/></cell>
+                  <cell><var name="$popup[2]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>4</cell>
+                  <cell><var name="$in[3]" width="20"/></cell>
+                  <cell><var name="$popup[3]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>5</cell>
+                  <cell><var name="$in[4]" width="20"/></cell>
+                  <cell><var name="$popup[4]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>6</cell>
+                  <cell><var name="$in[5]" width="20"/></cell>
+                  <cell><var name="$popup[5]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>7</cell>
+                  <cell><var name="$in[6]" width="20"/></cell>
+                  <cell><var name="$popup[6]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>8</cell>
+                  <cell><var name="$in[7]" width="20"/></cell>
+                  <cell></cell>
+                </row>
+              </tabular>
+            </table>
+            <p>So to three decimal places, the zero is <var name="$z" width="10" />.</p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$f">
+              <static>\cos(x)-\sin(x)</static>
+            </var>
+            <var name="$in[0]">
+              <static>[0.7,0.8]</static>
+            </var>
+            <pg-code>
+              Context("Interval"); 
+              Context()->flags->set(tolType=>'absolute',tolerance=>0.00000005);
+              if($envir{problemSeed}==1){$b=2;};
+              $f=Compute("cos(x)-sin(x)");
+              $root=pi/4;
+              ($l[0],$r[0])=(floor(10*$root)/10,floor(10*$root)/10+0.1);
+              $in[0]=Compute("[$l[0],$r[0]]");
+              for my$i(1..7){$m[$i-1]=($l[$i-1]+$r[$i-1])/2;
+                ($l[$i],$r[$i])=($f->eval(x=>$m[$i-1])&lt;0)?($l[$i-1],$m[$i-1]):($m[$i-1],$r[$i-1]);
+                $popup[$i-1]=($f->eval(x=>$m[$i-1])>0)?PopUp(['?','&lt;','>'],'>'):PopUp(['?','&lt;','>'],'&lt;');
+                $in[$i]=Compute("[$l[$i],$r[$i]]");
+              };
+              $z=Real(($l[7]+$r[7])/2)->with(tolType=>'absolute',tolerance=>0.001);
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Use the Bisection Method to zero in on the root for <m>f(x)=<var name="$f" /></m> in the interval <m><var name="$in[0]" /></m>.</p>
+
+            <table>
+              <tabular>
+                <row bottom="medium">
+                  <cell>Iteration</cell>
+                  <cell>Interval</cell>
+                  <cell>Midpoint Sign</cell>
+                </row>
+                <row>
+                  <cell>1</cell>
+                  <cell><m><var name="$in[0]" /></m></cell>
+                  <cell><var name="$popup[0]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>2</cell>
+                  <cell><var name="$in[1]" width="20"/></cell>
+                  <cell><var name="$popup[1]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>3</cell>
+                  <cell><var name="$in[2]" width="20"/></cell>
+                  <cell><var name="$popup[2]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>4</cell>
+                  <cell><var name="$in[3]" width="20"/></cell>
+                  <cell><var name="$popup[3]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>5</cell>
+                  <cell><var name="$in[4]" width="20"/></cell>
+                  <cell><var name="$popup[4]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>6</cell>
+                  <cell><var name="$in[5]" width="20"/></cell>
+                  <cell><var name="$popup[5]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>7</cell>
+                  <cell><var name="$in[6]" width="20"/></cell>
+                  <cell><var name="$popup[6]" form="popup" /></cell>
+                </row>
+                <row>
+                  <cell>8</cell>
+                  <cell><var name="$in[7]" width="20"/></cell>
+                  <cell></cell>
+                </row>
+              </tabular>
+            </table>
+            <p>So to three decimal places, the zero is <var name="$z" width="10" />.</p>
+          </statement>
         </webwork>
       </exercise>
     </exercisegroup>
@@ -1315,101 +1966,195 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$g">
+              <static>\begin{cases}x^2-5\amp x\lt5\\5x\amp x\geq5\end{cases}</static>
+            </var>
+            <var name="$a">
+              <static>5</static>
+            </var>
+            <var name="$L[0]" category="number">
+              <static>20</static>
+            </var>
+            <var name="$L[1]" category="number">
+              <static>25</static>
+            </var>
+            <var name="$L[2]" category="number">
+              <static>\text{DNE}</static>
+            </var>
+            <var name="$L[3]" category="number">
+              <static>25</static>
             </var>
             <pg-code>
+              $a=random(-2,10,1);
+              $b=non_zero_random(-5,5,1);
+              if($envir{problemSeed}==1){$a=5;$b=-5;};
+              @f=(Formula("x^2+$b")->reduce,Formula("$a x")->reduce);
+              Context("PiecewiseFunction");
+              $g=PiecewiseFunction("x &lt; $a" => "$f[0]", "x >= $a" => "$f[1]");
+              @L=($f[0]->eval(x=>$a),$f[1]->eval(x=>$a));
+              $L[2]=($L[0]==$L[1])?$L[0]:Compute("DNE");
+              $L[3]=$g->eval(x=>$a);
             </pg-code>
           </setup>
           <statement>
-            <p>Let <m>\ds f(x)= \left\{\begin{array}{ccc}
-              x^2-5 \amp  \amp  x\lt 5 \\
-              5x \amp  \amp  x \geq 5
-              \end{array} \right.</m>.</p>
+            <p>Evaluate the given limits of the piecewise defined function.</p>
 
-            <ol cols="2" >
-              <li><p><m>\lim\limits_{x\to 5^-} f(x)</m></p></li>
+            <p><m>f(x) =<var name="$g" /></m></p>
 
-              <li><p><m>\lim\limits_{x\to 5^+} f(x)</m></p></li>
-
-              <li><p><m>\lim\limits_{x\to 5} f(x)</m></p></li>
-
-              <li><p><m>f(5)</m></p></li>
-            </ol>
+            <p><ol cols="2" >
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^-} f(x)=</m><var name="$L[0]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^+} f(x)=</m><var name="$L[1]" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />} f(x)=</m><var name="$L[2]" width="10" /></p></li>
+              <li><p><m>f(<var name="$a" />)=</m><var name="$L[3]" width="10" /></p></li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p>20</p></li>
-
-              <li><p>25</p></li>
-
-              <li><p>Limit does not exist</p></li>
-
-              <li><p>25</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\frac{x^2-8.2x-7.2}{x^2+5.8x+4}</static>
+            </var>
+            <var name="$a">
+              <static>-0.8</static>
+            </var>
+            <var name="$l" category="number">
+              <static>-\frac{7}{3}</static>
+            </var>
+            <var name="$tabin[0]">
+              <static>-0/9</static>
+            </var>
+            <var name="$tabin[1]">
+              <static>-0.81</static>
+            </var>
+            <var name="$tabin[2]">
+              <static>-0.801</static>
+            </var>
+            <var name="$tabin[3]">
+              <static>-0.799</static>
+            </var>
+            <var name="$tabin[4]">
+              <static>-0.79</static>
+            </var>
+            <var name="$tabin[5]">
+              <static>-0.7</static>
+            </var>
+            <var name="$tabout[0]">
+              <static>-2.41463</static>
+            </var>
+            <var name="$tabout[1]">
+              <static>-2.34129</static>
+            </var>
+            <var name="$tabout[2]">
+              <static>-2.33413</static>
+            </var>
+            <var name="$tabout[3]">
+              <static>-2.33254</static>
+            </var>
+            <var name="$tabout[4]">
+              <static>-2.32542</static>
+            </var>
+            <var name="$tabout[5]">
+              <static>-2.25581</static>
             </var>
             <pg-code>
+              do{$b=random(-1,1,2)*random(6,9,1);
+              $c=non_zero_random(-5,5,1);
+              }until($b!=$c);
+              do{$a=non_zero_random(-5,5,0.1);}until($a!=$c);
+              if ($envir{problemSeed}==1){$a=-0.8;$b=9;$c=-5};
+              $f=Formula("(x^2-($a+$b)x+$a*$b)/(x^2-($a+$c)x+$a*$c)")->reduce;
+              $l=Real(($a-$b)/($a-$c));
+              @tabin=($a-0.1,$a-0.01,$a-0.001,$a+0.001,$a+0.01,$a+0.1);
+              @tabout=map{$f->eval(x=>$_)} @tabin;
             </pg-code>
           </setup>
           <statement>
-            <p>Numerically approximate the following limits:</p>
-
-            <ol>
-              <li><p><m>\lim\limits_{x\to -4/5^+} \frac{x^2-8.2 x-7.2}{x^2+5.8 x+4}</m></p></li>
-
-              <li><p><m>\lim\limits_{x\to -4/5^-} \frac{x^2-8.2 x-7.2}{x^2+5.8 x+4}</m></p></li>
-            </ol>
+            <p>Numerically approximate the following limits.</p>
+            <p><ol>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^{+}}\left(<var name="$f" />\right)=</m><var name="$l" width="10" /></p></li>
+              <li><p><m>\lim\limits_{x\to <var name="$a" />^{-}}\left(<var name="$f" />\right)=</m><var name="$l" width="10" /></p></li>
+            </ol></p>
           </statement>
           <solution>
-            <tabular>
-              <row>
-                <cell><m>x</m></cell>
-                <cell><m>f(x)</m></cell>
-              </row>
-              <row bottom="minor">
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell><m>-0.81</m></cell>
-                <cell><m>-2.34129</m></cell>
-              </row>
-              <row>
-                <cell><m>-0.801</m></cell>
-                <cell><m>-2.33413</m></cell>
-              </row>
-              <row>
-                <cell><m>-0.79</m></cell>
-                <cell><m>-2.32542</m></cell>
-              </row>
-              <row>
-                <cell><m>-0.799</m></cell>
-                <cell><m>-2.33254</m></cell>
-              </row>
-            </tabular>
-            <p>The top two lines give an approximation of the limit from the left: <m>-2.33</m>. The bottom two lines give an approximation from the right: <m>-2.33</m> as well.</p>
+            <p>For a numerical approximation, make a table:</p>
+
+            <table>
+              <tabular>
+                <row bottom="medium">
+                  <cell><m>x</m></cell>
+                  <cell><m>
+                  <var name="$f" />
+                  </m></cell>
+                </row>
+                <row>
+                  <cell><m>
+                  <var name="$tabin[0]" />
+                  </m></cell>
+                  <cell><m>
+                  <var name="$tabout[0]" />
+                  </m></cell>
+                </row>
+                <row>
+                  <cell><m>
+                  <var name="$tabin[1]" />
+                  </m></cell>
+                  <cell><m>
+                  <var name="$tabout[1]" />
+                  </m></cell>
+                </row>
+                <row>
+                  <cell><m>
+                  <var name="$tabin[2]" />
+                  </m></cell>
+                  <cell><m>
+                  <var name="$tabout[2]" />
+                  </m></cell>
+                </row>
+                <row>
+                  <cell><m>
+                  <var name="$tabin[3]" />
+                  </m></cell>
+                  <cell><m>
+                  <var name="$tabout[3]" />
+                  </m></cell>
+                </row>
+                <row>
+                  <cell><m>
+                  <var name="$tabin[4]" />
+                  </m></cell>
+                  <cell><m>
+                  <var name="$tabout[4]" />
+                  </m></cell>
+                </row>
+                <row>
+                  <cell><m>
+                  <var name="$tabin[5]" />
+                  </m></cell>
+                  <cell><m>
+                  <var name="$tabout[5]" />
+                  </m></cell>
+                </row>
+              </tabular>
+            </table>
+
+            <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m> (whether slightly above or slightly below), that <m><var name="$f" /></m> is close to <m><var name="$l" /></m>. So
+              <me>
+                \lim_{x\to <var name="$a" />^{+}}\left(<var name="$f" />\right)=\lim_{x\to <var name="$a" />^{-}}\left(<var name="$f" />\right)=<var name="$l" />\text{.}
+              </me>
+            </p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Give an example of function <m>f(x)</m> for which <m>\lim\limits_{x\to 0} f(x)</m> does not exist.</p>
+
+            <p><var form="essay" /></p>   
           </statement>
           <solution>
             <p>Answers will vary.</p>
