@@ -3,7 +3,7 @@
 <section xml:id="sec_interp_deriv">
   <title>Interpretations of the Derivative</title>
   <introduction>
-    <p>The previous section defined the derivative of a function and gave examples of how to compute it using its definition (i.e., using limits). The section also started with a brief motivation for this definition, that is, finding the instantaneous velocity of a falling object given its position function. The next section will give us more accessible tools for computing the derivative, tools that are easier to use than repeated use of limits.</p>
+    <p><xref ref="sec_derivative">Section</xref> defined the derivative of a function and gave examples of how to compute it using its definition (i.e., using limits). The section also started with a brief motivation for this definition, that is, finding the instantaneous velocity of a falling object given its position function. <xref ref="sec_basic_diff_rules">Section</xref> will give us more accessible tools for computing the derivative; tools that are easier to use than repeated use of limits.</p>
 
     <p>This section falls in between the <q>What is the definition of the derivative?</q> and <q>How do I compute the derivative?</q> sections. Here we are concerned with <q>What does the derivative mean?</q>, or perhaps, when read with the right emphasis, <q>What <em>is</em> the derivative?</q> We offer two interconnected interpretations of the derivative, hopefully explaining why we care about it and why it is worthy of study.<index><main>derivative</main><sub>interpretation</sub></index></p>
   </introduction>
@@ -14,9 +14,10 @@
 
     <p>Now imagine driving a car and looking at the speedometer, which reads <q>60 mph.</q> Five minutes later, you wonder how far you have traveled. Certainly, lots of things could have happened in those 5 minutes; you could have intentionally sped up significantly, you might have come to a complete stop, you might have slowed to 20 mph as you passed through construction. But suppose that you know, as the driver, none of these things happened. You know you maintained a fairly consistent speed over those 5 minutes. What is a good approximation of the distance traveled?</p>
 
-    <p>One could argue the <em>only</em> good approximation, given the information provided, would be based on <q>distance = rate <times /> time.</q> In this case, we assume a constant rate of 60 mph with a time of <m>5/60</m> hours. Hence we would approximate the distance traveled as 5 miles.</p>
+    <p>One could argue the <em>only</em> good approximation, given the information provided, would be based on <q>distance = rate <times /> time.</q> In this case, we assume a constant rate of 60 mph with a time of <m>5</m> minutes or <m>5/60</m> hours. Hence we would approximate the distance traveled as 5 miles.</p>
 
-    <p>Referring back to the falling amusement<ndash />park ride, knowing that at <m>t=2</m> the velocity was <m>-64</m> ft/s, we could reasonably assume that 1 second later the riders' height would have dropped by about 64 feet. Knowing that the riders were <em>accelerating</em> as they fell would inform us that this is an <em>under<ndash />approximation</em>. If all we knew was that <m>f(2) = 86</m> and <m>\fp(2) = -64</m>, we'd know that we'd have to stop the riders quickly otherwise they would hit the ground!</p>
+    <p>Referring back to the falling amusement<ndash />park ride, knowing that at <m>t=2</m> the velocity was <m>-64</m> ft/s, we could reasonably approximate that 1 second later the riders' height would have dropped by about 64 feet. Knowing that the riders were <em>accelerating</em> as they fell would inform us that this is an <em>under<ndash />approximation</em>. If all we knew was that <m>f(2) = 86</m> and <m>\fp(2) = -64</m>, we'd know that we'd have to stop the riders quickly otherwise they would hit the ground!</p>
+    <p>In both of these cases, we are using the instantaneous rate of change to predict future values of the output. </p>
   </subsection>
 
   <subsection>
@@ -40,10 +41,13 @@
         <p>What do <m>P(1000) = 500</m> and <m>P'(1000)=0.25</m> mean? Approximate <m>P(1100)</m>.</p>
       </statement>
       <solution>
-        <p>The equation <m>P(1000)=500</m> means that selling 1,000 widgets returns a profit of <dollar />500. We interpret <m>P'(1000) = 0.25</m> as meaning that the profit is increasing at rate of <dollar /><m>0.25</m> per widget (the units are <q>dollars per widget.</q>) Since we have no other information to use, our best approximation for <m>P(1100)</m> is:
-          <me>
-            P(1100) \approx P(1000) + P'(1000)\times100 = \text{ \dollar500 }  + 100\cdot0.25 = \text{ \dollar525. }
-          </me>
+        <p>The equation <m>P(1000)=500</m> means that selling 1,000 widgets returns a profit of <dollar />500. We interpret <m>P'(1000) = 0.25</m> as meaning that when we are selling 1000 widgets, the profit is increasing at rate of <dollar /><m>0.25</m> per widget (the units are <q>dollars per widget.</q>) Since we have no other information to use, our best approximation for <m>P(1100)</m> is:
+          <md>
+            <mrow> P(1100) \amp \approx P(1000) + P'(1000)\times100 </mrow>
+            <mrow>\amp= \text{ \$ 500 }  + (100 \text{ widgets })\cdot \text{\$} 0.25 /\text{widget}</mrow>
+            <mrow>\amp= \text{ \$ 525. }</mrow>
+           
+          </md>
         </p>
 
         <p>We approximate that selling 1,100 widgets returns a profit of <dollar />525.</p>
@@ -56,29 +60,30 @@
       </me>
     </p>
 
-    <p>This approximation is best when <m>h</m> is <q>small.</q> <q>Small</q> is a relative term; when dealing with the world population, <m>h=</m> 22 days = 28,800 minutes is small in comparison to years. When manufacturing widgets, 100 widgets is small when one plans to manufacture thousands.</p>
+    <p>This approximation is best when <m>h</m> is <q>small.</q> Small is a relative term; when dealing with the world population, <m>h=</m> 22 days = 28,800 minutes is small in comparison to years. When manufacturing widgets, 100 widgets is small when one plans to manufacture thousands.</p>
   </subsection>
 
   <subsection>
     <title>The Derivative and Motion</title>
     <p>One of the most fundamental applications of the derivative is the study of motion. Let <m>s(t)</m> be a position function, where <m>t</m> is time and <m>s(t)</m> is distance. For instance, <m>s</m> could measure the height of a projectile or the distance an object has traveled.</p>
+    <aside><p>Using <m>s(t)</m> to represent position is a fairly common mathematical convention. It is also common to use <m>s</m> to represent arc length.</p></aside>
 
-    <p>Let's let <m>s(t)</m> measure the distance traveled, in feet, of an object after <m>t</m> seconds of travel. Then <m>s'(t)</m> has units <q>feet per second,</q> and <m>s'(t)</m> measures the <em>instantaneous rate of distance change</em> <mdash /> it measures <em>velocity</em>.<index><main>velocity</main></index></p>
+    <p>Let's let <m>s(t)</m> measure the distance traveled, in feet, of an object after <m>t</m> seconds of travel. Then <m>s'(t)</m> has units <q>feet per second,</q> and <m>s'(t)</m> measures the <em>instantaneous rate of distance change with repsect to time</em> <mdash /> it measures <em>velocity</em>.<index><main>velocity</main></index></p>
 
-    <p>Now consider <m>v(t)</m>, a velocity function. That is, at time <m>t</m>, <m>v(t)</m> gives the velocity of an object. The derivative of <m>v</m>, <m>v'(t)</m>, gives the <em>instantaneous rate of velocity change</em> <mdash /> <em>acceleration</em>. (We often think of acceleration in terms of cars: a car may <q>go from 0 to 60 in 4.8 seconds.</q> This is an <em>average</em> acceleration, a measurement of how quickly the velocity changed.) If velocity is measured in feet per second, and time is measured in seconds, then the units of acceleration (i.e., the units of <m>v'(t)</m>) are <q>feet per second per second,</q> or <m>(</m>ft/s<m>)</m>/s. We often shorten this to <q>feet per second squared,</q> or ft/s<m>^2</m>, but this tends to obscure the meaning of the units.<index><main>acceleration</main></index></p>
+    <p>Now consider <m>v(t)</m>, a velocity function. That is, at time <m>t</m>, <m>v(t)</m> gives the velocity of an object. The derivative of <m>v</m>, <m>v'(t)</m>, gives the <em>instantaneous rate of velocity change with respect to time</em> <mdash /> <em>acceleration</em>. (We often think of acceleration in terms of cars: a car may <q>go from 0 to 60 in 4.8 seconds.</q> This is an <em>average</em> acceleration, a measurement of how quickly the velocity changed.) If velocity is measured in feet per second, and time is measured in seconds, then the units of acceleration (i.e., the units of <m>v'(t)</m>) are <q>feet per second per second,</q> or <m>(</m>ft/s<m>)</m>/s. We often shorten this to <q>feet per second squared,</q> or ft/s<m>^2</m>, but this tends to obscure the meaning of the units.<index><main>acceleration</main></index></p>
 
     <p>Perhaps the most well known acceleration is that of gravity. In this text, we use <m>g=32</m>ft/s<m>^2</m> or <m>g=9.8</m>m/s<m>^2</m>. What do these numbers mean?</p>
 
-    <p>A constant acceleration of 32<m>(</m>ft/s<m>)</m>/s means that the velocity changes by 32ft/s each second. For instance, let <m>v(t)</m> measures the velocity of a ball thrown straight up into the air, where <m>v</m> has units ft/s and <m>t</m> is measured in seconds. The ball will have a positive velocity while traveling upwards and a negative velocity while falling down. The acceleration is thus <m>-32</m>ft/s<m>^2</m>. If <m>v(1) = 20</m>ft/s, then when <m>t=2</m>, the velocity will have decreased by 32ft/s; that is, <m>v(2) = -12</m>ft/s. We can continue: <m>v(3) = -44</m>ft/s, and we can also figure that <m>v(0) = 52</m>ft/s.</p>
+    <p>A constant acceleration of 32<m>(</m>ft/s<m>)</m>/s means that the velocity changes by 32ft/s each second. For instance, let <m>v(t)</m> measure the velocity of a ball thrown straight up into the air, where <m>v</m> has units ft/s and <m>t</m> is measured in seconds. The ball will have a positive velocity while traveling upwards and a negative velocity while falling down. The acceleration is thus <m>-32</m>ft/s<m>^2</m>. If <m>v(1) = 20</m>ft/s, then <m>1</m> second later, the velocity will have decreased by 32ft/s; that is, <m>v(2) = -12</m>ft/s. We can continue: <m>v(3) = -44</m>ft/s. Working backward, we can also figure that <m>v(0) = 52</m>ft/s.</p>
 
     <p>These ideas are so important we write them out as a Key Idea.</p>
 
     <insight xml:id="idea_motion">
       <title>The Derivative and Motion</title>
       <ol>
-        <li><p>Let <m>s(t)</m> be the position function of an object. Then <m>s'(t)</m> is the velocity function of the object.</p></li>
+        <li><p>Let <m>s(t)</m> be the position function of an object. Then <m>s'(t)=v(t)</m> is the velocity function of the object.</p></li>
 
-        <li><p>Let <m>v(t)</m> be the velocity function of an object. Then <m>v'(t)</m> is the acceleration function of the object.</p></li>
+        <li><p>Let <m>v(t)</m> be the velocity function of an object. Then <m>v'(t)=a(t)</m> is the acceleration function of the object.</p></li>
       </ol>
 
       <p><index><main>derivative</main><sub>motion</sub></index><index><main>derivative</main><sub>velocity</sub></index><index><main>derivative</main><sub>acceleration</sub></index></p>
@@ -89,14 +94,14 @@
 
   <subsection>
     <title>Interpretation of the Derivative <hash />2: The Slope of the Tangent Line</title>
-    <p>Given a function <m>y=f(x)</m>, the difference quotient <m>\ds \frac{f(c+h)-f(c)}{h}</m> gives a change in <m>y</m> values divided by a change in <m>x</m> values; i.e., it is a measure of the <q>rise over run,</q> or <q>slope,</q> of the line that goes through two points on the graph of <m>f</m>: <m>\big(c, f(c)\big)</m> and <m>\big(c+h,f(c+h)\big)</m>. As <m>h</m> shrinks to 0, these two points come close together; in the limit we find <m>\fp(c)</m>, the slope of a special line called the tangent line that intersects <m>f</m> only once near <m>x=c</m>.</p>
+    <p>Given a function <m>y=f(x)</m>, the difference quotient <m>\ds \frac{f(c+h)-f(c)}{h}</m> gives a change in <m>y</m> values divided by a change in <m>x</m> values; i.e., it is a measure of the <q>rise over run,</q> or <q>slope,</q> of the secant line that goes through two points on the graph of <m>f</m>: <m>\big(c, f(c)\big)</m> and <m>\big(c+h,f(c+h)\big)</m>. As <m>h</m> shrinks to 0, these two points come close together; in the limit we find <m>\fp(c)</m>, the slope of a special line called the tangent line that intersects <m>f</m> only once near <m>x=c</m>.</p>
 
     <p>Lines have a constant rate of change, their slope. Nonlinear functions do not have a constant rate of change, but we can measure their <em>instantaneous rate of change</em> at a given <m>x</m> value <m>c</m> by computing <m>\fp(c)</m>. We can get an idea of how <m>f</m> is behaving by looking at the slopes of its tangent lines. We explore this idea in the following example.</p>
 
     <example xml:id="ex_der_meaning3">
       <title>Understanding the derivative: the rate of change</title>
       <statement>
-        <p>Consider <m>f(x) = x^2</m> as shown in <xref ref="fig_xsquared">Figure</xref>. It is clear that at <m>x=3</m> the function is growing faster than at <m>x=1</m>, as it is steeper at <m>x=3</m>. How much faster is it growing?</p>
+        <p>Consider <m>f(x) = x^2</m> as shown in <xref ref="fig_xsquared">Figure</xref>. It is clear that at <m>x=3</m> the function is growing faster than at <m>x=1</m>, as it is steeper at <m>x=3</m>. How much faster is it growing at <m>3</m> compared to <m>1</m>?</p>
 
         <figure xml:id="fig_xsquared" >
           <caption>A graph of <m>f(x)=x^2</m>.</caption>
@@ -107,16 +112,8 @@
               <![CDATA[
               \begin{tikzpicture}
               \begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,]
-              \addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.01) (0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16)
-              (0.5,0.25) (0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.)(1.1,1.21) (1.2,1.44) (1.3,1.69) (1.4,1.96) (1.5,2.25) (1.6,2.56)(1.7,2.89) (1.8,3.24) (1.9,3.61) (2.,4.) (2.1,4.41) (2.2,4.84)(2.3,5.29) (2.4,5.76) (2.5,6.25) (2.6,6.76) (2.7,7.29) (2.8,7.84)(2.9,8.41) (3.,9.) (3.1,9.61) (3.2,10.2) (3.3,10.9) (3.4,11.6)(3.5,12.3) (3.6,13.) (3.7,13.7) (3.8,14.4) (3.9,15.2) (4.,16.)(4.1,16.8)};
-              %\addplot [{\colortwo},domain=0:4]{2*(x-1)+1};
-              %\addplot [{\colortwo},domain=1.5:4]{6*(x-3)+9};
-              %\filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
-              %\filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
-              %\draw (axis cs:0,0) grid (axis cs:4,16);
+              \addplot[{\colorone},thick,domain=0:4] {x^2};
               \end{axis}
-
-
 
               \end{tikzpicture}
               ]]>
@@ -126,23 +123,22 @@
         </figure>
       </statement>
       <solution>
-        <p>We can answer this directly after the following section, where we learn to quickly compute derivatives. For now, we will answer graphically, by considering the slopes of the respective tangent lines.</p>
+        <p>We can answer this exactly (and quickly) after <xref ref="sec_basic_diff_rules">Section</xref>, where we learn to quickly compute derivatives. For now, we will answer graphically, by considering the slopes of the respective tangent lines. </p>
+        <aside><p>Since tangent lines only intersect the function once near <m>c</m>, we will draw short tangent line segments instead of full tangent lines. </p></aside>
 
         <figure xml:id="fig_xsquaredwithgrid" >
-          <caption>A graph of <m>f(x)=x^2</m> and tangent lines.</caption>
+          <caption>A graph of <m>f(x)=x^2</m> and tangent line segments.</caption>
           <!-- START figures/fig_xsquaredwithgrid.tex -->
           <image xml:id="img_xsquaredwithgrid" >
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,grid=major]
-              \addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.01) (0.,0.) (0.1,0.01) (0.2,0.04) (0.3,0.09) (0.4,0.16)
-              (0.5,0.25) (0.6,0.36) (0.7,0.49) (0.8,0.64) (0.9,0.81) (1.,1.)(1.1,1.21) (1.2,1.44) (1.3,1.69) (1.4,1.96) (1.5,2.25) (1.6,2.56)(1.7,2.89) (1.8,3.24) (1.9,3.61) (2.,4.) (2.1,4.41) (2.2,4.84)(2.3,5.29) (2.4,5.76) (2.5,6.25) (2.6,6.76) (2.7,7.29) (2.8,7.84)(2.9,8.41) (3.,9.) (3.1,9.61) (3.2,10.2) (3.3,10.9) (3.4,11.6)(3.5,12.3) (3.6,13.) (3.7,13.7) (3.8,14.4) (3.9,15.2) (4.,16.)(4.1,16.8)};
+              \begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-.1,xmax=4.3,grid=both]
+             \addplot[->,{\colorone},thick,domain=0:4] {x^2};
               \addplot [{\colortwo},domain=0:4]{2*(x-1)+1};
-              \addplot [{\colortwo},domain=1.5:4]{6*(x-3)+9};
-              %\filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
-              %\filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
+              \addplot [{\colortwo},domain=1.5:4.2]{6*(x-3)+9};
+              \addplot[soliddot,{\colortwo}] coordinates{(1,1) (3,9)};
               %\draw (axis cs:0,0) grid (axis cs:4,16);
               \end{axis}
 
@@ -162,69 +158,38 @@
     <example xml:id="ex_der_meaning4">
       <title>Understanding the graph of the derivative</title>
       <statement>
-        <p>Consider the graph of <m>f(x)</m> and its derivative, <m>\fp(x)</m>, in <xref ref="fig_fwithderiv">Figure</xref>(a).
+        <p>Consider the graph of <m>f(x)</m> and its derivative, <m>\fp(x)</m>, in <xref ref="fig_fwithderiv">Figure</xref>.
           Use these graphs to find the slopes of the tangent lines to the graph of <m>f</m> at <m>x=1</m>, <m>x=2</m>, and <m>x=3</m>.</p>
-
-        <figure xml:id="fig_fwithderiv" >
-        <caption>Graphs of <m>f</m> and <m>\fp</m> in <xref ref="ex_der_meaning4">Example</xref>, along with tangent lines in (b).</caption>
-        <sidebyside>
-          <figure>
-            <caption>(a)</caption>
-            <!-- START figures/fig_fwithderiv.tex -->
-            <image xml:id="img_fwithderiv" >
-              <description></description>
-              <latex-image-code>
-                <![CDATA[
-                \begin{tikzpicture}
-                \begin{axis}[minor y tick num=4,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,]
-                \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
-                \addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
-                \draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
-                \draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
-                \end{axis}
-
-
-
-                \end{tikzpicture}
-                ]]>
-              </latex-image-code>
-            </image>
-            <!-- figures/fig_fwithderiv.tex END -->
-          </figure>
-
-          <figure>
-            <caption>(b)</caption>
-            <!-- START figures/fig_fwithderivdots.tex -->
-            <image xml:id="img_fwithderivdots" >
-              <description></description>
-              <latex-image-code>
-                <![CDATA[
-                \begin{tikzpicture}
-                \begin{axis}[minor y tick num=4,ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49,]
-                \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
-                \addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
-                \addplot [domain=0:2,thick] {-1*(x-1)-2};
-                \addplot [domain=1:3,thick] {4*(x-2)};
-                \addplot [domain=2:4,thick] {3*(x-3)+4};
-                \filldraw [{\colortwo}] (axis cs:1,-1) circle (1pt);
-                \filldraw [{\colortwo}] (axis cs:2,4) circle (1pt);
-                \filldraw [{\colortwo}] (axis cs:3,3) circle (1pt);
-                \draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
-                \draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
-
-                \end{axis}
+      
+                    <figure width="50%" xml:id="fig_fwithderiv">
+                      <caption>Graphs of <m>f</m> and <m>\fp</m> in <xref ref="ex_der_meaning4">Example</xref>.</caption>
+                        <!-- START figures/fig_fwithderiv.tex -->
+                        <image xml:id="img_fwithderiv" >
+                          <description></description>
+                          <latex-image-code>
+                            <![CDATA[
+                            \begin{tikzpicture}
+                              \begin{axis}[minor y tick num=4,
+                                           minor x tick num=0,
+                                           xtick={1,2,3},
+                                           ymin=-8.9,ymax=5.9,
+                                           xmin=-.1,xmax=3.49, 
+                                           grid=both]
+                              \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
+                              \addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+                              \draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
+                              \draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
+                              \end{axis}
 
 
 
-                \end{tikzpicture}
-                ]]>
-              </latex-image-code>
-            </image>
-            <!-- figures/fig_fwithderivdots.tex END -->
-          </figure>
-        </sidebyside>
+                            \end{tikzpicture}
+                            ]]>
+                          </latex-image-code>
+                        </image>
+                        <!-- figures/fig_fwithderiv.tex END -->
+                    </figure>  
 
-        </figure>
       </statement>
       <solution>
         <p>To find the appropriate slopes of tangent lines to the graph of <m>f</m>, we need to look at the corresponding values of <m>\fp</m>.</p>
@@ -235,7 +200,37 @@
 
         <p>The slope of the tangent line to <m>f</m> at <m>x=3</m> is <m>\fp(3)</m>; this looks to be about <m>3</m>.</p>
 
-        <p>Using these slopes, the tangent lines to <m>f</m> are sketched in <xref ref="fig_fwithderiv">Figure</xref>(b). Included on the graph of <m>\fp</m> in this figure are filled circles where <m>x=1</m>, <m>x=2</m> and <m>x=3</m> to help better visualize the <m>y</m> value of <m>\fp</m> at those points.</p>
+        <p>Using these slopes, the tangent lines to <m>f</m> are sketched in <xref ref="fig_fwithderivdots">Figure</xref>. Included on the graph of <m>\fp</m> in this figure are points where <m>x=1</m>, <m>x=2</m> and <m>x=3</m> to help better visualize the <m>y</m> value of <m>\fp</m> at those points.</p>
+
+        <figure width="50%"  xml:id="fig_fwithderivdots" >
+                        <caption></caption>
+                        <!-- START figures/fig_fwithderivdots.tex -->
+                        <image>
+                          <description></description>
+                          <latex-image-code>
+                            <![CDATA[
+                            \begin{tikzpicture}
+                            \begin{axis}[,minor y tick num=4, minor x tick num=0, ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49, xtick={1,2,3}, grid=both]
+                            \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
+                            \addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+                            \addplot [domain=0:2,thick] {-1*(x-1)-2};
+                            \addplot [domain=1:3,thick] {4*(x-2)};
+                            \addplot [domain=2:4,thick] {3*(x-3)+4};
+                            \addplot[soliddot,{\colorone}] coordinates{(1,-2) (2,0) (3,4)};
+                            \addplot[soliddot,{\colortwo}] coordinates{(1,-1) (2,4) (3,3)};
+                            \draw (axis cs:3.4,3.5) node {\scriptsize $f(x)$};
+                            \draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
+
+                            \end{axis}
+
+
+
+                            \end{tikzpicture}
+                            ]]>
+                          </latex-image-code>
+                        </image>
+                        <!-- figures/fig_fwithderivdots.tex END -->
+                    </figure>
       </solution>
     </example>
 
@@ -255,11 +250,18 @@
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[minor y tick num=4,ymin=1.9,ymax=4.9,xmin=2.7,xmax=3.3,]
-              \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
-              %\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
-              \addplot [domain=2:4,thick] {3*(x-3)+4};
-              \end{axis}
+                \begin{axis}[minor y tick num=4,
+                            ymin=1.9,ymax=4.9,
+                            xmin=2.7,xmax=3.3, 
+                            xdiscontinuity,
+                            ydiscontinuity,
+                            grid=major]
+                \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
+                %\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+                \addplot [domain=2:4,thick] {3*(x-3)+4};
+                 \addplot[soliddot,{\colorone}] coordinates{(3,4)};
+                 \draw (axis cs:3.2,4.25) node {\scriptsize $f(x)$};
+                \end{axis}
 
 
 
@@ -273,9 +275,12 @@
         <p>While the tangent line to <m>f</m> was drawn in <xref ref="ex_der_meaning4">Example</xref>, it was not explicitly computed. Recall that the tangent line to <m>f</m> at <m>x=c</m> is <m>y = \fp(c)(x-c)+f(c)</m>. While <m>f</m> is not explicitly given, by the graph it looks like <m>f(3) = 4</m>. Recalling that <m>\fp(3) = 3</m>, we can compute the tangent line to be approximately <m>y = 3(x-3)+4.</m> It is often useful to leave the tangent line in point<ndash />slope form.</p>
 
         <p>To use the tangent line to approximate <m>f(3.1)</m>, we simply evaluate <m>y</m> at <m>3.1</m> instead of <m>f</m>.
-          <me>
-            f(3.1) \approx y(3.1) = 3(3.1-3)+4 = .1*3+4 = 4.3.
-          </me>
+          <md>
+            <mrow>f(3.1) \amp \approx y(3.1) </mrow>
+            <mrow>\amp= 3(3.1-3)+4 </mrow>
+            <mrow>\amp= 0.1\cdot3+4 </mrow>
+            <mrow>\amp = 4.3.</mrow>
+          </md>
         </p>
 
         <p>We approximate <m>f(3.1) \approx 4.3.</m></p>
@@ -299,9 +304,10 @@
     </p>
 
     <p>If we know <m>f(c)</m> and <m>\fp(c)</m> for some value <m>x=c</m>, then computing the tangent line at <m>(c,f(c))</m> is easy: <m>y(x) = \fp(c)(x-c)+f(c)</m>. In <xref ref="ex_der_meaning5">Example</xref>, we used the tangent line to approximate a value of <m>f</m>. Let's use the tangent line at <m>x=c</m> to approximate a value of <m>f</m> near <m>x=c</m>; i.e., compute <m>y(c+h)</m> to approximate <m>f(c+h)</m>, assuming again that <m>h</m> is <q>small.</q> Note:
-      <me>
-        y(c+h) = \fp(c)\big((c+h)-c\big)+f(c) = \fp(c)\cdot h + f(c).
-      </me>
+      <md>
+        <mrow> y(c+h) \amp = \fp(c)\left((c+h)-c\right)+f(c)</mrow>
+        <mrow>\amp = \fp(c)\cdot h + f(c).</mrow>
+      </md>
     </p>
 
     <p>This is the exact same approximation method used above! Not only does it make intuitive sense, as explained above, it makes analytical sense, as this approximation method is simply using a tangent line to approximate a function's value.</p>
