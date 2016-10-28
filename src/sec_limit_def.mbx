@@ -5,9 +5,7 @@
 
         <p>This section introduces the formal definition of a limit. Many refer to this as <q>the epsilon<ndash />delta,</q> definition, referring to the letters <m>\varepsilon</m> and <m>\delta</m> of the Greek alphabet.</p>
 
-        <p>Before we give the actual definition, let's consider a few informal ways of describing a limit. Given a function <m>y=f(x)</m> and an <m>x</m>-value, <m>c</m>, we say that <q>the limit of the function <m>f</m>, as <m>x</m> approaches <m>c</m>, is a value <m>L</m></q>:</p>
-
-        <dl width="narrow">
+        <p>Before we give the actual definition, let's consider a few informal ways of describing a limit. Given a function <m>y=f(x)</m> and an <m>x</m>-value, <m>c</m>, we say that <q>the limit of the function <m>f</m>, as <m>x</m> approaches <m>c</m>, is a value <m>L</m></q>:<dl width="narrow">
             <li>
                 <title>1</title>
                 <p>if <q><m>y</m> tends to <m>L</m></q> as <q><m>x</m> tends to <m>c</m>.</q></p>
@@ -20,27 +18,23 @@
                 <title>3</title>
                 <p>if <q><m>y</m> is near <m>L</m></q> whenever <q><m>x</m> is near <m>c</m>.</q></p>
             </li>
-        </dl>
+        </dl></p>
 
         <p>The problem with these definitions is that the words <q>tends,</q> <q>approach,</q> and especially <q>near</q> are not exact. In what way does the variable <m>x</m> tend to, or approach, <m>c</m>? How near do <m>x</m> and <m>y</m> have to be to <m>c</m> and <m>L</m>, respectively?</p>
 
-        <p>The definition we describe in this section comes from formalizing <xref ref="lim_def_3" autoname="title" />. A quick restatement gets us closer to what we want:</p>
-
-        <dl width="narrow">
+        <p>The definition we describe in this section comes from formalizing <xref ref="lim_def_3" autoname="title" />. A quick restatement gets us closer to what we want:<dl width="narrow">
             <li xml:id="lim_def_3p">
                 <title>3′</title>
                 <p>If <m>x</m> is within a certain <em>tolerance level</em> of <m>c</m>, then the corresponding value <m>y=f(x)</m> is within a certain <em>tolerance level</em> of <m>L</m>.</p>
             </li>
-        </dl>
+        </dl></p>
 
-        <p>The traditional notation for the <m>x</m>-tolerance is the lowercase Greek letter delta, or <m>\delta</m>, and the <m>y</m>-tolerance is denoted by lowercase epsilon, or <m>\varepsilon</m>. One more rephrasing of <xref ref="lim_def_3p" autoname="title" /> nearly gets us to the actual definition:</p>
-
-        <dl width="narrow">
+        <p>The traditional notation for the <m>x</m>-tolerance is the lowercase Greek letter delta, or <m>\delta</m>, and the <m>y</m>-tolerance is denoted by lowercase epsilon, or <m>\varepsilon</m>. One more rephrasing of <xref ref="lim_def_3p" autoname="title" /> nearly gets us to the actual definition:<dl width="narrow">
             <li xml:id="lim_def_3pp">
                 <title>3″</title>
                 <p>If <m>x</m> is within <m>\delta</m> units of <m>c</m>, then the corresponding value of <m>y</m> is within <m>\varepsilon</m> units of <m>L</m>.</p>
             </li>
-        </dl>
+        </dl></p>
 
         <p>We can write <q><m>x</m> is within <m>\delta</m> units of <m>c</m></q> mathematically as <me>\abs{x-c} \lt  \delta\text{,}</me> which is equivalent to <me>c-\delta \lt  x \lt  c+\delta\text{.}</me></p>
 
@@ -346,7 +340,7 @@
             <p>What is wrong with the following <q>definition</q> of a limit?</p>
 
             <blockquote>
-            <q>The limit of <m>f(x)</m>, as <m>x</m> approaches <m>a</m>, is <m>K</m></q> means that given any <m>\delta>0</m> there exists <m>\varepsilon>0</m> such that whenever <m>\abs{f(x)-K}\lt\varepsilon</m>, we have <m>\abs{x-a}\lt \delta</m>.
+                <p><q>The limit of <m>f(x)</m>, as <m>x</m> approaches <m>a</m>, is <m>K</m></q> means that given any <m>\delta>0</m> there exists <m>\varepsilon>0</m> such that whenever <m>\abs{f(x)-K}\lt\varepsilon</m>, we have <m>\abs{x-a}\lt \delta</m>.</p>
             </blockquote>
 
             <p><var form="essay" /></p>
@@ -363,8 +357,8 @@
           <setup>
             <var name="$whichfirst">
               <set>
-                <member><m>x</m>-tolerance</member>
-                <member correct="yes"><m>y</m>-tolerance</member>
+                <member>x\text{-tolerance}</member>
+                <member correct="yes">y\text{-tolerance}</member>
               </set>
             </var>
             <pg-code>
@@ -427,8 +421,8 @@
       </exercise>
     </exercisegroup>
 
+    <todo>Resolve this exercisegroup's introduction instructions and their repetition in each exercise.</todo>
     <exercisegroup>
-      <todo>Resolve this exercisegroup's introduction instructions and their repetition in each exercise.</todo>
 
       <introduction>
         <p>In the following exercises, prove the given limit using an <m>\varepsilon</m>-<m>\delta</m> proof.</p>

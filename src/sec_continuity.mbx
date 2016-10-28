@@ -2,7 +2,7 @@
 
 <section xml:id="sec_continuity">
   <title>Continuity</title>
-  <introduction>
+  <!--<introduction>-->
     <p>As we have studied limits, we have gained the intuition that limits measure <q>where a function is heading.</q> That is, if <m>\lim\limits_{x\to 1} f(x) = 3</m>, then as <m>x</m> is close to <m>1</m>, <m>f(x)</m> is close to <m>3</m>. We have seen, though, that this is not necessarily a good indicator of what <m>f(1)</m> actually is. This can be problematic; functions can tend to one value but attain another. This section focuses on functions that <em>do not</em> exhibit such behavior.</p>
 
     <definition xml:id="def_continuous">
@@ -122,7 +122,9 @@
         </ol></p>
       </statement>
     </definition>
-    <aside><p><xref ref="def_right_continuity">Item</xref> in <xref ref="def_closed_continuity">Definition </xref> indicates that the function is continuous <em>from the right</em> at <m>a</m>, while <xref ref="def_left_continuity">Item</xref> indicates that the function is continuous <em>from the left</em> at <m>b</m>.</p></aside>
+    <aside>
+      <p><xref ref="def_right_continuity">Item</xref> in <xref ref="def_closed_continuity">Definition </xref> indicates that the function is continuous <em>from the right</em> at <m>a</m>, while <xref ref="def_left_continuity">Item</xref> indicates that the function is continuous <em>from the left</em> at <m>b</m>.</p>
+    </aside>
     <p>We can make the appropriate adjustments to talk about continuity on half-open intervals such as <m>[a,b)</m> or <m>(a,b]</m> if necessary.</p>
 
     <example xml:id="ex_cont_funct1">
@@ -141,9 +143,7 @@
         </ol></p>
       </statement>
       <solution>
-        <p>We examine each in turn.</p>
-
-        <ol>
+        <p>We examine each in turn.<ol>
           <li><p>The domain of <m>f(x) = 1/x</m> is <m>(-\infty,0) \cup (0,\infty)</m>. As it is a rational function, we apply <xref ref="thm_poly_rat">Theorem</xref> to recognize that <m>f</m> is continuous on all of its domain.</p></li>
 
           <li><p>The domain of <m>f(x) = \sin(x)</m> is all real numbers, or <m>(-\infty,\infty)</m>. Applying <xref ref="thm_lim_continuous">Theorem</xref> shows that <m>\sin(x)</m> is continuous everywhere.</p></li>
@@ -153,7 +153,7 @@
           <li><p>The domain of <m>f(x) = \sqrt{1-x^2}</m> is <m>[-1,1]</m>. Applying <xref ref="thm_limit_algebra">Theorems</xref> and <xref ref="thm_lim_continuous"></xref> shows that <m>f</m> is continuous on all of its domain, <m>[-1,1]</m>.</p></li>
 
           <li><p>The domain of <m>f(x) = \abs{x}</m> is <m>(-\infty,\infty)</m>. We can define the absolute value function as <m>f(x) = \begin{cases}-x \amp  x\lt 0 \\ x \amp  x\geq 0\end{cases}</m>. Each <q>piece</q> of this piecewise defined function is continuous on all of its domain, giving that <m>f</m> is continuous on <m>(-\infty,0)</m> and <m>[0,\infty)</m>. We cannot assume this implies that <m>f</m> is continuous on <m>(-\infty,\infty)</m>; we need to check that <m>\lim\limits_{x\to 0}f(x) = f(0)</m>, as <m>x=0</m> is the point where <m>f</m> transitions from one <q>piece</q> of its definition to the other. It is easy to verify that this is indeed true, hence we conclude that <m>f(x) = \abs{x}</m> is continuous everywhere.</p></li>
-        </ol>
+        </ol></p>
       </solution>
     </example>
 
@@ -162,9 +162,7 @@
     <theorem xml:id="thm_continuity_algebra">
       <title>Properties of Continuous Functions</title>
       <statement>
-        <p>Let <m>f</m> and <m>g</m> be continuous functions on an interval <m>I</m>, let <m>c</m> be a real number and let <m>n</m> be a positive integer. The following functions are continuous on <m>I</m>.</p>
-
-        <dl>
+        <p>Let <m>f</m> and <m>g</m> be continuous functions on an interval <m>I</m>, let <m>c</m> be a real number and let <m>n</m> be a positive integer. The following functions are continuous on <m>I</m>.<dl>
           <li>
             <title>Sums/Difference</title>
             <p><m>f\pm g</m></p>
@@ -200,17 +198,15 @@
               <title>Compositions</title>
               <p>Adjust the definitions of <m>f</m> and <m>g</m> to: Let <m>f</m> be continuous on <m>I</m>, where the range of <m>f</m> on <m>I</m> is <m>J</m>, and let <m>g</m> be continuous on <m>J</m>. Then <m>g\circ f</m>, i.e., <m>g(f(x))</m>, is continuous on <m>I</m>.</p>
           </li>
-          <todo>Is there a better way to phrase this?</todo>
-        </dl>
+        </dl></p>
       </statement>
     </theorem>
+    <todo>Is there a better way to phrase this last part?</todo>
 
     <theorem xml:id="thm_continuous_functions">
       <title>Continuous Functions</title>
       <statement>
-        <p>The following functions are continuous on their domains. <index><main>continuous function</main><sub>properties</sub></index></p>
-
-        <ol cols="2" >
+        <p>The following functions are continuous on their domains. <index><main>continuous function</main><sub>properties</sub></index><ol cols="2" >
           <li>
             <p><m>f(x) = \sin(x)</m></p>
           </li>
@@ -247,7 +243,7 @@
             <p><m>f(x) =  \sqrt[n]{x}</m></p>
             <p>(where <m>n</m> is a positive integer)</p>
           </li>
-        </ol>
+        </ol></p>
       </statement>
     </theorem>
 
@@ -256,9 +252,7 @@
     <example xml:id="ex_cont_funct">
       <title>Determining intervals on which a function is continuous</title>
       <statement>
-        <p>State the interval(s) on which each of the following functions is continuous.</p>
-
-        <ol cols="2" >
+        <p>State the interval(s) on which each of the following functions is continuous.<ol cols="2" >
           <li xml:id="it_cont_funct_sqrt"><p><m>f(x) = \sqrt{x-1} + \sqrt{5-x}</m></p></li>
 
           <li><p><m>f(x) = x\sin(x)</m></p></li>
@@ -266,12 +260,10 @@
           <li><p><m>f(x) = \tan(x)</m></p></li>
 
           <li><p><m>f(x) = \sqrt{\ln(x)}</m></p></li>
-        </ol>
+        </ol></p>
       </statement>
       <solution>
-        <p>We examine each in turn, applying <xref ref="thm_continuity_algebra">Theorems</xref> and <xref ref="thm_continuous_functions"></xref> as appropriate.</p>
-
-        <ol>
+        <p>We examine each in turn, applying <xref ref="thm_continuity_algebra">Theorems</xref> and <xref ref="thm_continuous_functions"></xref> as appropriate.<ol>
           <li>
             <p>The square root terms are continuous on the intervals <m>[1,\infty)</m> and <m>(-\infty,5]</m>, respectively. As <m>f</m> is continuous only where each term is continuous, <m>f</m> is continuous on <m>[1,5]</m>, the intersection of these two intervals. A graph of <m>f</m> is given in <xref ref="fig_continuous3">Figure</xref>.</p>
 
@@ -310,7 +302,7 @@
           <li>
             <p>The range of <m>y=\ln(x)</m> is <m>(-\infty,\infty)</m> which includes invalid input for <m>\sqrt{\phantom{x}}</m>. We must restrict the domain to <m>I=[1,\infty)</m> in order to have <m>\ln(x)</m> produce output in <m>J=[0,\infty)</m>, which can then be used as valid input into <m>\sqrt{\phantom{x}}</m>. Since <m>\ln(\phantom{x})</m> is continuous on <m>I</m> and <m>\sqrt{\phantom{x}}</m> is continuous on <m>J</m>, <m>f(x) = \sqrt{\ln(x)}</m> is continuos on <m>I=[1,\infty)</m>.</p>
           </li>
-        </ol>
+        </ol></p>
       </solution>
     </example>
 
@@ -401,7 +393,7 @@
           <!-- figures/fig_xminuscosx.tex END -->
         </figure>
 
-        <dl>
+        <p><dl>
           <li>
             <title>Iteration 1:</title>
             <p><m>f(0.7) \lt  0</m>, <m>f(0.9) > 0</m>, and <m>f(0.8) >0</m>. So replace <m>0.9</m> with <m>0.8</m> and repeat.</p>
@@ -411,7 +403,7 @@
             <title>Iteration 2:</title>
             <p><m>f(0.7)\lt 0</m>, <m>f(0.8) > 0</m>, and at the midpoint, <m>0.75</m>, we have <m>f(0.75) >0</m>. So replace <m>0.8</m> with <m>0.75</m> and repeat. Note that we don't need to continue to check the endpoints, just the midpoint. Thus we put the rest of the iterations in <xref ref="table_rootfinding">Table</xref>.</p>
           </li>
-        </dl>
+        </dl></p>
 
         <table xml:id="table_rootfinding" >
           <caption>Iterations of the Bisection Method of Root Finding</caption>
@@ -497,9 +489,9 @@
         <p>Either endpoint of the interval gives a good approximation of where <m>f</m> is <m>0</m>. The <xref ref="thm_IVT" /> states that the actual zero is still within this interval. While we do not know its exact value, we know it starts with <m>0.739</m>.</p>
 
         <p>This type of exercise is rarely done by hand. Rather, it is simple to program a computer to run such an algorithm and stop when the endpoints differ by a preset small amount. One of the authors did write such a program and found the zero of <m>f</m> to be <m>0.7390851332</m> , accurate to <m>10</m> places after the decimal. While it took a few minutes to write the program, it took less than a thousandth of a second for the program to run the necessary <m>35</m> iterations. In less than <m>8</m> hundredths of a second, the zero was calculated to <m>100</m> decimal places (with less than <m>200</m> iterations).</p>
-        <todo>Is this a place to demonstrate an algorithm like this in Sage?</todo>
       </solution>
     </example>
+    <todo>Is the above a place to demonstrate an algorithm like this in Sage?</todo>
 
     <p>It is a simple matter to extend the Bisection Method to solve problems similar to <q>Find <m>x</m>, where <m>f(x) = 0</m>.</q> For instance, we can find <m>x</m>, where <m>f(x) = 1</m>. It actually works very well to define a new function <m>g</m> where <m>g(x) = f(x) - 1</m>. Then use the Bisection Method to solve <m>g(x)=0</m>.</p>
 
@@ -508,7 +500,7 @@
     <p>In <xref ref="sec_newton">Section</xref> another equation solving method will be introduced, called Newton's Method. In many cases, Newton's Method is much faster. It relies on more advanced mathematics, though, so we will wait before introducing it.</p>
 
     <p>This section formally defined what it means to be a continuous function. <q>Most</q> functions that we deal with are continuous, so often it feels odd to have to formally define this concept. Regardless, it is important, and forms the basis of the next chapter.</p>
-  </introduction>
+  <!--</introduction>-->
 
   <exercises>
     <exercisegroup>

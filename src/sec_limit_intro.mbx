@@ -271,13 +271,11 @@
       </solution>
     </example>
 
-    <p>This example may bring up a few questions about approximating limits (and the nature of limits themselves).</p>
+    <p>This example may bring up a few questions about approximating limits (and the nature of limits themselves).<ol>
+        <li><p>If a graph does not produce as good an approximation as a table, why bother with it?</p></li>
 
-    <ol>
-      <li><p>If a graph does not produce as good an approximation as a table, why bother with it?</p></li>
-
-      <li><p>How many values of <m>x</m> in a table are <q>enough?</q> In the previous example, could we have just used <m>x=3.001</m> and found a fine approximation?</p></li>
-    </ol>
+        <li><p>How many values of <m>x</m> in a table are <q>enough?</q> In the previous example, could we have just used <m>x=3.001</m> and found a fine approximation?</p></li>
+    </ol></p>
 
     <p>Graphs are useful since they give a visual understanding concerning the behavior of a function. Sometimes a function may act <q>erratically</q> near certain <m>x</m> values which is hard to discern numerically but very plain graphically (see <xref ref="ex_no_limit3">Example</xref>). Since graphing utilities are very accessible, it makes sense to make proper use of them.</p>
 
@@ -360,17 +358,13 @@
 
   <subsection xml:id="subsec_nolimit3">
     <title>Identifying When Limits Do Not Exist</title>
-    <p>A function may not have a limit for all values of <m>x</m>. That is, we cannot say <m>\lim_{x\to c}f(x)=L</m> (where  <m>L</m>  is some real number) for all values of <m>c</m>, for there may not be a number that <m>f(x)</m> is approaching. There are three ways in which a limit may fail to exist. <index><main>limit</main><sub>does not exist</sub></index></p>
-
-    <ol>
+    <p>A function may not have a limit for all values of <m>x</m>. That is, we cannot say <m>\lim_{x\to c}f(x)=L</m> (where  <m>L</m>  is some real number) for all values of <m>c</m>, for there may not be a number that <m>f(x)</m> is approaching. There are three ways in which a limit may fail to exist. <index><main>limit</main><sub>does not exist</sub></index><ol>
       <li><p>The function <m>f(x)</m> may approach different values on either side of <m>c</m>.</p></li>
 
       <li><p>The function may grow without upper or lower bound as <m>x</m> approaches <m>c</m>.</p></li>
 
       <li><p>The function may oscillate as <m>x</m> approaches <m>c</m>.</p></li>
-    </ol>
-
-    <p>We'll explore each of these in turn.</p>
+    </ol>We'll explore each of these in turn.</p>
 
     <example xml:id="ex_no_limit1">
       <title>Different Values Approached From Left and Right</title>
@@ -726,7 +720,11 @@
       <!-- figures/fig_diff_quot1.tex END -->
     </figure>
 
-    <p>Let <m>f(x)</m> represent the position function, in feet, of some particle that is moving in a straight line, where <m>x</m> is measured in seconds. Let's say that when <m>x=1</m>, the particle is at position <m>10</m> ft., and when <m>x=5</m>, the particle is at <m>20</m> ft. Another way of expressing this is to say <blockquote><m>f(1)=10</m> and <m>f(5) = 20</m>.</blockquote> Since the particle traveled <m>10</m> feet in <m>4</m> seconds, we can say the particle's<index><main>average velocity</main></index><index><main>velocity</main><sub>average velocity</sub></index> <term>average velocity</term> was <m>2.5</m> ft/s. We write this calculation using a <q>quotient of differences,</q> or, a<index><main>difference quotient</main></index> <term>difference quotient</term>:
+    <p>Let <m>f(x)</m> represent the position function, in feet, of some particle that is moving in a straight line, where <m>x</m> is measured in seconds. Let's say that when <m>x=1</m>, the particle is at position <m>10</m> ft., and when <m>x=5</m>, the particle is at <m>20</m> ft. Another way of expressing this is to say</p>
+
+    <blockquote><p><m>f(1)=10</m> and <m>f(5) = 20</m>.</p></blockquote>
+
+    <p>Since the particle traveled <m>10</m> feet in <m>4</m> seconds, we can say the particle's<index><main>average velocity</main></index><index><main>velocity</main><sub>average velocity</sub></index> <term>average velocity</term> was <m>2.5</m> ft/s. We write this calculation using a <q>quotient of differences,</q> or, a<index><main>difference quotient</main></index> <term>difference quotient</term>:
       <me>
         \frac{f(5) - f(1)}{5-1} \frac{\text{ ft}}{\text{s}} = \frac{10 \text{ ft}}{4\text{ s}} = 2.5 \text{ ft/s }\text{.}
       </me>
@@ -937,8 +935,8 @@
         </webwork>
       </exercise>
     </exercisegroup>
+    <todo>Resolve this exercisegroup's introduction instructions and their repetition in each exercise.</todo>
     <exercisegroup>
-      <todo>Resolve this exercisegroup's introduction instructions and their repetition in each exercise.</todo>
       <introduction>
         <p>In the following exercises, approximate the given limits both numerically and graphically.</p>
       </introduction>
@@ -2425,7 +2423,6 @@
           </solution>
         </webwork>
       </exercise>
-      <todo>Uncomment these exercises once there is no longer a need to keep version 3.0 numbering consistent with version 4.0 numbering.</todo>
       <!--<exercise>
         <webwork seed="1">
           <setup>
@@ -2615,8 +2612,9 @@
         </webwork>
       </exercise>-->
     </exercisegroup>
+    <todo>Uncomment the above exercises once there is no longer a need to keep version 3.0 numbering consistent with version 4.0 numbering.</todo>
+    <todo>Resolve this exercisegroup's introduction instructions and their repetition in each exercise.</todo>
     <exercisegroup>
-      <todo>Resolve this exercisegroup's introduction instructions and their repetition in each exercise.</todo>
       <introduction>
         <p>In the following exercises, a function <m>f</m> and a value <m>a</m> are given. Approximate the limit of the difference quotient, <m>\lim\limits_{h\to 0}\frac{f(a+h)-f(a)}{h}</m>, using <m>h = \pm 0.1, \pm 0.01</m>.</p>
       </introduction>
