@@ -2,7 +2,7 @@
 
 <section xml:id="sec_limit_analytically">
   <title>Finding Limits Analytically</title>
-  <introduction>
+  <!--<introduction>-->
     <p>In <xref ref="sec_limit_intro">Section</xref> we explored the concept of the limit without a strict definition, meaning we could only make approximations. In the previous section we gave the definition of the limit and demonstrated how to use it to verify our approximations were correct. Thus far, our method of finding a limit is <ol>
       <li>make a really good approximation either graphically or numerically, and</li>
       <li>verify our approximation is correct using a <m>\varepsilon</m><ndash /><m>\delta</m> proof.</li>
@@ -21,9 +21,7 @@
           </md>
         </p>
 
-        <p>The following limits hold.</p>
-
-        <dl>
+        <p>The following limits hold.<dl>
           <li xml:id="constant-limit-rule">
             <title>Constant</title>
             <p><m>\lim\limits_{x\to c} b = b</m></p>
@@ -73,7 +71,7 @@
             </ol> then <m>\lim\limits_{x\to c}g(f(x)) = K</m>.</p>
           </li>
 
-        </dl>
+        </dl></p>
       </statement>
     </theorem>
 
@@ -99,7 +97,7 @@
         </ol></p>
       </statement>
       <solution>
-        <ol>
+        <p><ol>
           <li>
             <p>Using the <xref ref="sum-difference-limit-rule" autoname="title" /> rule, we know that <m>\lim_{x\to 2}(f(x) + g(x)) = 2+3 =5</m>.</p>
           </li>
@@ -118,7 +116,7 @@
               </md>
             </p>
           </li>
-        </ol>
+        </ol></p>
       </solution>
     </example>
 
@@ -131,13 +129,11 @@
     <theorem xml:id="thm_poly_rat">
       <title>Limits of Polynomial and Rational Functions</title>
       <statement>
-        <p>Let <m>p(x)</m> and <m>q(x)</m> be polynomials and <m>c</m> a real number. Then:</p>
-
-        <ol>
+        <p>Let <m>p(x)</m> and <m>q(x)</m> be polynomials and <m>c</m> a real number. Then:<ol>
           <li><p><m>\lim\limits_{x\to c} p(x) = p(c)</m></p></li>
 
           <li><p><m>\lim\limits_{x\to c} \frac{p(x)}{q(x)} = \frac{p(c)}{q(c)}</m>, when <m>q(c) \neq 0</m>.</p></li>
-        </ol>
+        </ol></p>
       </statement>
     </theorem>
 
@@ -171,9 +167,7 @@
     <theorem xml:id="thm_lim_continuous">
       <title>Special Limits</title>
       <statement>
-        <p>Let <m>c</m> be a real number in the domain of the given function and let <m>n</m> be a positive integer. The following limits hold:</p>
-
-        <ol cols="2" >
+        <p>Let <m>c</m> be a real number in the domain of the given function and let <m>n</m> be a positive integer. The following limits hold:<ol cols="2" >
           <li>
             <p><m>\lim\limits_{x\to c}\sin(x) = \sin(c)</m></p>
           </li>
@@ -210,16 +204,14 @@
             <p><m>\lim\limits_{x\to c}\sqrt[n]{x} = \sqrt[n]{c}</m></p>
             <p>(follows from <xref ref="identity-limit-rule" autoname="title"/> and <xref ref="root-limit-rule" autoname="title"/> rules)</p>
           </li>
-        </ol>
+        </ol></p>
       </statement>
     </theorem>
 
     <example xml:id="ex_limit_1">
       <title>Evaluating limits analytically</title>
       <statement>
-        <p>Evaluate the following limits.</p>
-
-        <ol cols="2" >
+        <p>Evaluate the following limits.<ol cols="2" >
           <li>
             <p><m>\lim\limits_{x\to \pi} \cos(x)</m></p>
           </li>
@@ -239,10 +231,10 @@
           <li>
             <p><m>\lim\limits_{x\to 0} \dfrac{\sin(x)}{x}</m></p>
           </li>
-        </ol>
+        </ol></p>
       </statement>
       <solution>
-        <ol>
+        <p><ol>
           <li>
             <p>This is a straightforward application of <xref ref="thm_lim_continuous">Theorem</xref>. <m>\lim\limits_{x\to \pi} \cos(x) = \cos(\pi) = -1</m>.</p>
           </li>
@@ -288,7 +280,7 @@
               </me>
             which is of the form <m>\frac{0}{0}</m>. This, of course, violates a condition of the <xref ref="quotient-limit-rule" autoname="title"/>, as the limit of the denominator is not allowed to be <m>0</m>. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.</p>
           </li>
-        </ol>
+        </ol></p>
       </solution>
     </example>
 
@@ -389,7 +381,9 @@
 
         <p><xref ref="fig_squeeze_sinx">Figure</xref> shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is <m>\frac{1}{2}\tan(\theta)</m>; the area of the sector is <m>\theta/2</m>; the area of the triangle contained inside the sector is <m>\frac{1}{2}\sin\theta</m>. It is then clear from <xref ref="fig_squeeze1">Figure</xref> that <me>\frac{\tan(\theta)}{2}\geq\frac{\theta}{2}\geq\frac{\sin(\theta)}{2}\text{.}</me></p> 
 
-        <aside>You may need to recall that the area of a sector of a circle is <m>\frac{1}{2}r^2 \theta</m> with <m>\theta</m> measured in radians.</aside>
+        <aside>
+          <p>You may need to recall that the area of a sector of a circle is <m>\frac{1}{2}r^2 \theta</m> with <m>\theta</m> measured in radians.</p>
+        </aside>
 
         <sidebyside xml:id="fig_squeeze1">
           <caption>Bounding the sector between two triangles</caption>
@@ -478,7 +472,7 @@
     <theorem xml:id="thm_special_limits">
       <title>Special Limits</title>
       <statement>
-        <ol cols="2" >
+        <p><ol cols="2" >
           <li>
             <p><m>\lim\limits_{x\to 0} \dfrac{\sin(x)}{x} = 1</m></p>
           </li>
@@ -494,7 +488,7 @@
           <li>
             <p><m>\lim\limits_{x\to 0} \dfrac{e^x-1}{x} = 1</m></p>
           </li>
-        </ol>
+        </ol></p>
       </statement>
     </theorem>
 
@@ -607,13 +601,10 @@
         <p>Evaluate <me>\lim\limits_{x\to 9} \frac{\sqrt{x}-3}{x-9}\text{.}</me></p>
       </statement>
       <solution>
-        <p>We begin by trying to apply the <xref ref="quotient-limit-rule" autoname="title" /> limit rule,  but the denominator evaluates to zero. In fact, this limit is of the indeterminate form <m>0/0</m>. We will do some algebra to resolve the indeterminate form. In this case, we multiply the numerator and denominator by the conjugate of the numerator.</p>
-          <md>
+        <p>We begin by trying to apply the <xref ref="quotient-limit-rule" autoname="title" /> limit rule,  but the denominator evaluates to zero. In fact, this limit is of the indeterminate form <m>0/0</m>. We will do some algebra to resolve the indeterminate form. In this case, we multiply the numerator and denominator by the conjugate of the numerator.<md>
            <mrow>\frac{\sqrt{x}-3}{x-9} \amp = \frac{\sqrt{x}-3}{x-9} \cdot \frac{\left(\sqrt{x}+3\right)}{\left(\sqrt{x}+3\right)}</mrow>
            <mrow>\amp= \frac{x-9}{(x-9)(\sqrt{x}+3)}</mrow>
-          </md>
-          <p>
-          We can cancel the <m>(x-9)</m> factors as long as <m>x\neq 9</m>. Using <xref ref="thm_limit_allbut1">Theorem</xref> we conclude:
+          </md>We can cancel the <m>(x-9)</m> factors as long as <m>x\neq 9</m>. Using <xref ref="thm_limit_allbut1">Theorem</xref> we conclude:
           <md>
             <mrow>\lim_{x\to 9} \frac{\sqrt{x}-3}{x-9} \amp =\lim_{x\to 9} \frac{x-9}{(x-9)\left(\sqrt{x}+3\right)} </mrow>
             <mrow>\amp = \lim_{x\to 9 }\frac{1}{\sqrt{x}+3}</mrow>
@@ -647,7 +638,7 @@
     </example>
 
     <p>This section contains several valuable tools for evaluating limits. One of the main results of this section is <xref ref="thm_lim_continuous">Theorem</xref>; it states that many functions that we use regularly behave in a very nice, predictable way. In the next section we give a name to this nice behavior; we label such functions as <term>continuous.</term> Defining that term will require us to look again at what a limit is and what causes limits to not exist.</p>
-  </introduction>
+  <!--</introduction>-->
   <exercises>
     <exercisegroup>
       <title>Terms and Concepts</title>
@@ -700,12 +691,11 @@
         <title>Limit of <m>0/0</m></title>
         <webwork seed="1">
           <statement>
-            <p>You are given the following information:</p>
-            <ol>
+            <p>You are given the following information:<ol>
               <li><p><m>\lim\limits_{x\to 1}f(x)=0</m></p></li>
               <li><p><m>\lim\limits_{x\to 1}g(x)=0</m></p></li>
               <li><p><m>\lim\limits_{x\to 1}\frac{f(x)}{g(x)}=2</m></p></li>
-            </ol>
+            </ol></p>
             <p>What can be said about the relative sizes of <m>f(x)</m> and <m>g(x)</m> as <m>x</m> approaches 1?</p>
             <p><var form="essay" /></p>
           </statement>
@@ -716,8 +706,8 @@
       </exercise>
     </exercisegroup>
 
+    <todo>Resolve the repeated instructions in the exercises in this exercisegroup.</todo>
     <exercisegroup>
-      <todo>Resolve the repeated instructions in the exercises in this exercisegroup.</todo>
       <introduction>
         <p>In the following exercises, use the following information to evaluate the given limit, when possible. If it is not possible to determine the limit, state why not.<md>
           <mrow>\lim\limits_{x\to9}f(x)\amp=6\amp\lim\limits_{x\to6}f(x)\amp=9\amp f(9)\amp=6</mrow>
@@ -1095,8 +1085,8 @@
       </exercise>
     </exercisegroup>
 
+    <todo>Resolve duplicate instructions in these exercisegroup exercises</todo>
     <exercisegroup>
-      <todo>Resolve duplicate instructions in these exercisegroup exercises</todo>
       <introduction>
         <p>In the following exercises, use limit theorems to evaluate the given limit.</p>
       </introduction>
@@ -1817,9 +1807,7 @@
       <title>Composition</title>
       <webwork seed="1">
         <statement>
-          <p>Let <m>f(x)=0</m> and <m>g(x)=\frac{x}{x}</m>.</p>
-
-          <ol>
+          <p>Let <m>f(x)=0</m> and <m>g(x)=\frac{x}{x}</m>.<ol>
             <li><p>Explain why <m>\lim\limits_{x\to2}f(x)=0</m>.</p>
                 <p><var form="essay" /></p></li>
 
@@ -1831,10 +1819,10 @@
 
             <li><p>Explain why the previous statement does not violate the Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>.</p>
                 <p><var form="essay" /></p></li>
-          </ol>
+          </ol></p>
         </statement>
         <solution>
-          <ol>
+          <p><ol>
             <li><p>Apply Part 1 of <xref ref="thm_limit_algebra">Theorem</xref>.</p></li>
 
             <li><p>Apply <xref ref="thm_limit_allbut1">Theorem</xref>; <m>g(x)=\frac{x}{x}</m> is the same as <m>g(x)=1</m> everywhere except at <m>x=0</m>. Thus <m>\lim\limits_{x\to0}g(x)=\lim_{x\to0}1=1</m>.</p></li>
@@ -1842,7 +1830,7 @@
             <li><p>The function <m>f</m> always gives output <m>0</m>, so <m>g(f(x))</m> is never defined as <m>g</m> is not defined for an input of <m>0</m>. Therefore the limit does not exist.</p></li>
 
             <li><p>The Composition Rule requires that <m>\lim\limits_{x\to0}g(x)</m> be equal to <m>g(0)</m>. They are not equal, so the conditions of the Composition Rule are not satisfied, and hence the rule is not violated.</p></li>
-          </ol>
+          </ol></p>
         </solution>
       </webwork>
     </exercise>
