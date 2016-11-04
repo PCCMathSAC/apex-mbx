@@ -71,7 +71,7 @@
         </figure>
       </statement>
       <solution>
-        <p>In <xref ref="ex_no_limit2">Example</xref> of <xref ref="sec_limit_intro">Section</xref>, by inspecting values of <m>x</m> close to <m>1</m> we concluded that this limit does not exist. That is, it cannot equal any real number. But the limit could be infinite. And in fact, we see that the function does appear to be growing larger and larger, as <m>f(.99)=10^4</m>, <m>f(.999)=10^6</m>, <m>f(.9999)=10^8</m>. A similar thing happens on the other side of <m>1</m>. From the graph and the numeric information, we could state <m>\lim \limits_{x \to 1}1/(x-1)^2=\infty.</m> We can prove this by using <xref ref="def_limit_of_infinity">Definition </xref></p>
+        <p>In <xref ref="ex_no_limit2">Example</xref> of <xref ref="sec_limit_intro">Section</xref>, by inspecting values of <m>x</m> close to <m>1</m> we concluded that this limit does not exist. That is, it cannot equal any real number. But the limit could be infinite. And in fact, we see that the function does appear to be growing larger and larger, as <m>f(.99)=10^4</m>, <m>f(.999)=10^6</m>, <m>f(.9999)=10^8</m>. A similar thing happens on the other side of <m>1</m>. From the graph and the numeric information, we could state <m>\lim \limits_{x \to 1}1/(x-1)^2=\infty</m>. We can prove this by using <xref ref="def_limit_of_infinity">Definition </xref></p>
          <p>In general, let a <q>large</q> value <m>M</m> be given. Let <m>\delta=1/\sqrt{M}</m>. If <m>x</m> is within <m>\delta</m> of <m>1</m>, i.e., if <m>\abs{x-1}\lt 1/\sqrt{M}</m>, then:<md>
             <mrow>\abs{x-1} \amp \lt  \frac{1}{\sqrt{M}}</mrow>
             <mrow>(x-1)^2 \amp \lt  \frac{1}{M}</mrow>
@@ -181,7 +181,7 @@
       <!-- figures/fig_noasy.tex END -->
     </figure>
 
-    <p>The above example may seem a little contrived. Another example demonstrating this important concept is <m>f(x)= (\sin x)/x</m>. We have considered this function several times in the previous sections. We found that <m>\lim\limits_{x\to0}\frac{\sin x}{x}=1</m>; i.e., there is no vertical asymptote. No simple algebraic cancellation makes this fact obvious; we used the <xref ref="thm_sqz" /> in <xref ref="sec_limit_analytically">Section</xref> to prove this.</p>
+    <p>The above example may seem a little contrived. Another example demonstrating this important concept is <m>f(x)= (\sin(x) )/x</m>. We have considered this function several times in the previous sections. We found that <m>\lim\limits_{x\to0}\frac{\sin(x) }{x}=1</m>; i.e., there is no vertical asymptote. No simple algebraic cancellation makes this fact obvious; we used the <xref ref="thm_sqz" /> in <xref ref="sec_limit_analytically">Section</xref> to prove this.</p>
 
     <p>If the denominator is <m>0</m> at a certain point but the numerator is not, then there will usually be a vertical asymptote at that point. On the other hand, if the numerator and denominator are both zero at that point, then there may or may not be a vertical asymptote at that point. This case where the numerator and denominator are both zero returns us to an important topic.</p>
   </subsection>
@@ -190,7 +190,7 @@
     <title>Indeterminate Forms</title>
     <p><index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index></p>
 
-    <p>We have seen how the limits <m>\lim\limits_{x\to 0}\frac{\sin x}{x}</m> and <m>\lim\limits_{x\to1}\frac{x^2-1}{x-1}</m> each return the indeterminate form <m>0/0</m> when we blindly plug in <m>x=0</m> and <m>x=1</m>, respectively. However, <m>0/0</m> is not a valid arithmetical expression. It gives no indication that the respective limits are <m>1</m> and <m>2</m>.</p>
+    <p>We have seen how the limits <m>\lim\limits_{x\to 0}\frac{\sin(x) }{x}</m> and <m>\lim\limits_{x\to1}\frac{x^2-1}{x-1}</m> each return the indeterminate form <m>0/0</m> when we blindly plug in <m>x=0</m> and <m>x=1</m>, respectively. However, <m>0/0</m> is not a valid arithmetical expression. It gives no indication that the respective limits are <m>1</m> and <m>2</m>.</p>
 
     <p>With a little cleverness, one can come up with <m>0/0</m> expressions which have a limit of <m>\infty</m>, 0, or any other real number. That is why this expression is called <term>indeterminate</term>.</p>
 
@@ -228,7 +228,7 @@
         <p>Approximate the horizontal asymptote(s) of <m>f(x)=\frac{x^2}{x^2+4}</m>.</p>
       </statement>
       <solution>
-        <p>We will approximate the horizontal asymptotes by approximating the limits <m>\lim\limits_{x\to-\infty} \frac{x^2}{x^2+4}</m> and <m>\lim\limits_{x\to\infty} \frac{x^2}{x^2+4}.</m></p>
+        <p>We will approximate the horizontal asymptotes by approximating the limits <m>\lim\limits_{x\to-\infty} \frac{x^2}{x^2+4}</m> and <m>\lim\limits_{x\to\infty} \frac{x^2}{x^2+4}</m>.</p>
 
         <aside>
           <p>A rational function can have at most <em>one</em> horizontal asymptote. So we could get away with only taking <m>x \to \infty</m></p>.
@@ -518,7 +518,7 @@
       </solution>
     </example>
 
-    <p>With care, we can quickly evaluate limits at infinity for a large number of functions by considering the long run behaviour using<q>dominant terms</q> of <m>f(x)</m>. For instance, consider again <m>\lim\limits_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},</m> graphed in <xref ref="fig_hzasyb">Figure</xref>. The dominant terms are <m>x</m> in the numerator and <m>\sqrt{x^2}</m> in the denominator. When <m>x</m> is very large, <m>x^2+1 \approx x^2</m>. Thus<md>
+    <p>With care, we can quickly evaluate limits at infinity for a large number of functions by considering the long run behaviour using<q>dominant terms</q> of <m>f(x)</m>. For instance, consider again <m>\lim\limits_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}}</m>, graphed in <xref ref="fig_hzasyb">Figure</xref>. The dominant terms are <m>x</m> in the numerator and <m>\sqrt{x^2}</m> in the denominator. When <m>x</m> is very large, <m>x^2+1 \approx x^2</m>. Thus<md>
         <mrow>\sqrt{x^2+1}\amp\approx \sqrt{x^2}= \abs{x}\amp\frac{x}{\sqrt{x^2+1}}\amp \approx \frac{x}{\abs{x}}\text{.}</mrow>
     </md></p>
 
@@ -527,7 +527,7 @@
     <example xml:id="ex_hzasy4">
       <title>Finding a limit using dominant terms</title>
       <statement>
-        <p>Confirm analytically that <m>y=1</m> and <m>y=-1</m> are the horizontal asymptote of <m>\lim\limits_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},</m> as graphed in <xref ref="fig_hzasyb">Figure</xref>.</p>
+        <p>Confirm analytically that <m>y=1</m> and <m>y=-1</m> are the horizontal asymptote of <m>\lim\limits_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}}</m>, as graphed in <xref ref="fig_hzasyb">Figure</xref>.</p>
       </statement>
       <solution>
         <p> The dominating term of <m>f</m> in the denominator is <m>\sqrt{x^2}=\abs{x}</m> so divide the numerator and denominator of <m>f</m> by <m>\sqrt{x^2}</m>, then take limits.<md>

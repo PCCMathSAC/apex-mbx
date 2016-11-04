@@ -187,7 +187,7 @@
       <statement>
         <p>Let <m>\vec u</m> and <m>\vec v</m> be vectors in <m>\mathbb{R}^3</m>. Then
           <me>
-            \norm{\crossp uv} = \vnorm u\, \vnorm v \sin\theta,
+            \norm{\crossp uv} = \vnorm u\, \vnorm v \sin(\theta) ,
           </me>
           where <m>\theta</m>, <m>0\leq \theta \leq \pi</m>, is the angle between <m>\vecu</m> and <m>\vecv</m>.
           <index><main>vectors</main><sub>cross product</sub></index><index><main>cross product</main><sub>properties</sub></index></p>
@@ -216,9 +216,9 @@
           </md>
         </p>
 
-        <p>Our work in <xref ref="ex_crossp2">Example</xref> showed that <m>\crossp uv = \la -9,-7,5\ra</m>, hence <m>\norm{\crossp uv} = \sqrt{155}.</m> Is <m>\norm{\crossp uv} = \vnorm u\, \vnorm v\sin\theta</m>? Using numerical approximations, we find:
+        <p>Our work in <xref ref="ex_crossp2">Example</xref> showed that <m>\crossp uv = \la -9,-7,5\ra</m>, hence <m>\norm{\crossp uv} = \sqrt{155}</m>. Is <m>\norm{\crossp uv} = \vnorm u\, \vnorm v\sin(\theta)</m>? Using numerical approximations, we find:
           <md>
-            <mrow>\norm{\crossp uv} \amp =\sqrt{155}  \amp  \vnorm u\,\vnorm v \sin\theta \amp  = \sqrt{46}\sqrt{6}\sin 0.8471</mrow>
+            <mrow>\norm{\crossp uv} \amp =\sqrt{155}  \amp  \vnorm u\,\vnorm v \sin(\theta) \amp  = \sqrt{46}\sqrt{6}\sin(0.8471) </mrow>
             <mrow>\amp \approx 12.45. \amp  \amp \approx 12.45.</mrow>
           </md>
         </p>
@@ -346,9 +346,9 @@
 
     <p><em>Area of a Parallelogram</em></p>
 
-    <p>It is a standard geometry fact that the area of a parallelogram is <m>A = bh</m>, where <m>b</m> is the length of the base and <m>h</m> is the height of the parallelogram, as illustrated in <xref ref="fig_crossp_parallelogram">Figure</xref>(a). As shown when defining the Parallelogram Law of vector addition, two vectors <m>\vecu</m> and <m>\vecv</m> define a parallelogram when drawn from the same initial point, as illustrated in <xref ref="fig_crossp_parallelogram">Figure</xref>(b). Trigonometry tells us that <m>h = \vnorm u \sin \theta</m>, hence the area of the parallelogram is
+    <p>It is a standard geometry fact that the area of a parallelogram is <m>A = bh</m>, where <m>b</m> is the length of the base and <m>h</m> is the height of the parallelogram, as illustrated in <xref ref="fig_crossp_parallelogram">Figure</xref>(a). As shown when defining the Parallelogram Law of vector addition, two vectors <m>\vecu</m> and <m>\vecv</m> define a parallelogram when drawn from the same initial point, as illustrated in <xref ref="fig_crossp_parallelogram">Figure</xref>(b). Trigonometry tells us that <m>h = \vnorm u \sin(\theta)</m>, hence the area of the parallelogram is
       <men xml:id="eq_crossp1" >
-        A = \vnorm u\,\vnorm v\sin\theta = \norm{\crossp uv},
+        A = \vnorm u\,\vnorm v\sin(\theta) = \norm{\crossp uv},
       </men>
       where the second equality comes from <xref ref="thm_cross_product">Theorem</xref>.</p>
 
@@ -994,9 +994,9 @@
       </statement>
       <solution>
         <ol>
-          <li><p>We start by determining vectors for the force and lever arm. Since the lever arm makes a <m>45^\circ</m> angle with the horizontal and is 2ft long, we can state that <m>\vec \ell = 2\la \cos 45^\circ,\sin 45^\circ\ra = \la \sqrt2,\sqrt2\ra.</m>
+          <li><p>We start by determining vectors for the force and lever arm. Since the lever arm makes a <m>45^\circ</m> angle with the horizontal and is 2ft long, we can state that <m>\vec \ell = 2\la \cos(45^\circ) ,\sin(45^\circ) \ra = \la \sqrt2,\sqrt2\ra</m>.
 	
-	Since the force vector is perpendicular to the lever arm (as seen in the left hand side of <xref ref="fig_crossp7">Figure</xref>), we can conclude it is making an angle of <m>-45^\circ</m> with the horizontal. As it has a magnitude of 10lb, we can state <m>\vec F = 10\la \cos (-45^\circ), \sin(-45^\circ)\ra = \la 5\sqrt2,-5\sqrt2\ra.</m>
+	Since the force vector is perpendicular to the lever arm (as seen in the left hand side of <xref ref="fig_crossp7">Figure</xref>), we can conclude it is making an angle of <m>-45^\circ</m> with the horizontal. As it has a magnitude of 10lb, we can state <m>\vec F = 10\la \cos(-45^\circ), \sin(-45^\circ)\ra = \la 5\sqrt2,-5\sqrt2\ra</m>.
 	
 	Using Equation <xref ref="eq_crossp3" /> to find the torque requires a cross product. We again let the third component of each vector be 0  and compute the cross product:
               <md>

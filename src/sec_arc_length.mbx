@@ -13,14 +13,14 @@
 
     <p>In this section, we address a related question: Given a curve, what is its length? This is often referred to as <em>arc length</em>.</p>
 
-    <p>Consider the graph of <m>y=\sin x</m> on <m>[0,\pi]</m> given in <xref ref="fig_arcintro">Figure</xref> (a). How long is this curve? That is, if we were to use a piece of string to exactly match the shape of this curve, how long would the string be?</p>
+    <p>Consider the graph of <m>y=\sin(x)</m> on <m>[0,\pi]</m> given in <xref ref="fig_arcintro">Figure</xref> (a). How long is this curve? That is, if we were to use a piece of string to exactly match the shape of this curve, how long would the string be?</p>
 
     <p>As we have done in the past, we start by approximating; later, we will refine our answer using limits to get an exact solution.</p>
 
     <p>The length of straight<ndash />line segments is easy to compute using the Distance Formula. We can approximate the length of the given curve by approximating the curve with straight lines and measuring their lengths.</p>
 
     <table xml:id="fig_arcintro" >
-      <caption>Graphing <m>y=\sin x</m> on <m>[0,\pi]</m> and approximating the curve with line segments.</caption>
+      <caption>Graphing <m>y=\sin(x)</m> on <m>[0,\pi]</m> and approximating the curve with line segments.</caption>
       <tabular>
         <row>
           <cell>
@@ -114,7 +114,7 @@
       </tabular>
     </table>
 
-    <p>In <xref ref="fig_arcintro">Figure</xref> (b), the curve <m>y=\sin x</m> has been approximated with 4 line segments (the interval <m>[0,\pi]</m> has been divided into 4 equally<ndash />lengthed subintervals). It is clear that these four line segments approximate <m>y=\sin x</m> very well on the first and last subinterval, though not so well in the middle. Regardless, the sum of the lengths of the line segments is <m>3.79</m>, so we approximate the arc length of <m>y=\sin x</m> on <m>[0,\pi]</m> to be <m>3.79</m>.</p>
+    <p>In <xref ref="fig_arcintro">Figure</xref> (b), the curve <m>y=\sin(x)</m> has been approximated with 4 line segments (the interval <m>[0,\pi]</m> has been divided into 4 equally<ndash />lengthed subintervals). It is clear that these four line segments approximate <m>y=\sin(x)</m> very well on the first and last subinterval, though not so well in the middle. Regardless, the sum of the lengths of the line segments is <m>3.79</m>, so we approximate the arc length of <m>y=\sin(x)</m> on <m>[0,\pi]</m> to be <m>3.79</m>.</p>
 
     <p>In general, we can approximate the arc length of <m>y=f(x)</m> on <m>[a,b]</m> in the following manner. Let <m>a=x_1 \lt  x_2 \lt  \ldots \lt  x_n\lt  x_{n+1}=b</m> be a partition of <m>[a,b]</m> into <m>n</m> subintervals. Let <m>\dx_i</m> represent the length of the <m>i^\text{ th }</m> subinterval <m>[x_i,x_{i+1}]</m>.</p>
 
@@ -176,7 +176,7 @@
     </figure>
 
     <p><xref ref="fig_arcintro2">Figure</xref> zooms in on the <m>i^\text{ th }</m> subinterval where <m>y=f(x)</m> is approximated by a straight line segment. The dashed lines show that we can view this line segment as they hypotenuse of a right triangle whose sides have length <m>\dx_i</m> and <m>\dy_i</m>. Using the Pythagorean Theorem, the length of this line segment is
-      <m>\ds \sqrt{\dx_i^2 + \Delta y_i^2}.</m> Summing over all subintervals gives an arc length approximation
+      <m>\ds \sqrt{\dx_i^2 + \Delta y_i^2}</m>. Summing over all subintervals gives an arc length approximation
       <me>
         L \approx \sum_{i=1}^n \sqrt{\dx_i^2 + \Delta y_i^2}.
       </me>
@@ -269,7 +269,7 @@
     <example xml:id="ex_arc2">
       <title>Finding arc length</title>
       <statement>
-        <p>Find the arc length of <m>\ds f(x) =\frac18x^2-\ln x</m> from <m>x=1</m> to <m>x=2</m>.</p>
+        <p>Find the arc length of <m>\ds f(x) =\frac18x^2-\ln(x)</m> from <m>x=1</m> to <m>x=2</m>.</p>
       </statement>
       <solution>
         <p>This function was chosen specifically because the resulting integral can be evaluated exactly. We begin by finding <m>\fp(x) = x/4-1/x</m>. The arc length is
@@ -281,13 +281,13 @@
           </md>
           <md>
             <mrow>\amp = \int_1^2 \left(\frac x4 + \frac1x\right) \ dx</mrow>
-            <mrow>\amp =  \left(\frac{x^2}8 + \ln x\right)\Bigg|_1^2</mrow>
-            <mrow>\amp =	\frac38+\ln 2 \approx 1.07 \ \text{ units } .</mrow>
+            <mrow>\amp =  \left(\frac{x^2}8 + \ln(x) \right)\Bigg|_1^2</mrow>
+            <mrow>\amp =	\frac38+\ln(2) \approx 1.07 \ \text{ units } .</mrow>
           </md>
         </p>
 
         <figure xml:id="fig_arc2" >
-          <caption>A graph of <m>f(x) =\frac18x^2-\ln x</m> from <xref ref="ex_arc2">Example</xref>.</caption>
+          <caption>A graph of <m>f(x) =\frac18x^2-\ln(x)</m> from <xref ref="ex_arc2">Example</xref>.</caption>
           <!-- START figures/fig_arc2.tex -->
           <image xml:id="img_arc2" >
             <description></description>
@@ -340,19 +340,19 @@
       <solution>
         <p>This is somewhat of a mathematical curiosity; in <xref ref="ex_ftc4">Example</xref> we found the area under one <q>hump</q> of the sine curve is 2 square units; now we are measuring its arc length.</p>
 
-        <p>The setup is straightforward: <m>f(x) = \sin x</m> and <m>\fp(x) = \cos x</m>. Thus
+        <p>The setup is straightforward: <m>f(x) = \sin(x)</m> and <m>\fp(x) = \cos(x)</m>. Thus
           <me>
-            L = \int_0^\pi \sqrt{1+\cos^2x}\ dx.
+            L = \int_0^\pi \sqrt{1+\cos^2(x) }\ dx.
           </me>
         </p>
 
         <p>This integral <em>cannot</em> be evaluated in terms of elementary functions so we will approximate it with Simpson's Method with <m>n=4</m>.</p>
 
         <figure xml:id="fig_arc3" >
-          <caption>A table of values of <m>y=\sqrt{1+\cos^2x}</m> to evaluate a definite integral in <xref ref="ex_arc3">Example</xref>.</caption>
+          <caption>A table of values of <m>y=\sqrt{1+\cos^2(x) }</m> to evaluate a definite integral in <xref ref="ex_arc3">Example</xref>.</caption>
           <me>
             \begin{array}{cc}
-            x \amp  \sqrt{1+\cos^2x} \\ \hline
+            x \amp  \sqrt{1+\cos^2(x) } \\ \hline
              0 \amp  \sqrt{2} \\
              \pi/4 \amp  \sqrt{3/2} \\
              \pi/2 \amp  1 \\
@@ -362,9 +362,9 @@
           </me>
         </figure>
 
-        <p><xref ref="fig_arc3">Figure</xref> gives <m>\sqrt{1+\cos^2x}</m> evaluated at 5 evenly spaced points in <m>[0,\pi]</m>. Simpson's Rule then states that
+        <p><xref ref="fig_arc3">Figure</xref> gives <m>\sqrt{1+\cos^2(x) }</m> evaluated at 5 evenly spaced points in <m>[0,\pi]</m>. Simpson's Rule then states that
           <md>
-            <mrow>\int_0^\pi \sqrt{1+\cos^2x}\ dx \amp \approx	\frac{\pi-0}{4\cdot 3}\left(\sqrt{2}+4\sqrt{3/2}+2(1)+4\sqrt{3/2}+\sqrt{2}\right)</mrow>
+            <mrow>\int_0^\pi \sqrt{1+\cos^2(x) }\ dx \amp \approx	\frac{\pi-0}{4\cdot 3}\left(\sqrt{2}+4\sqrt{3/2}+2(1)+4\sqrt{3/2}+\sqrt{2}\right)</mrow>
             <mrow>\amp =3.82918.</mrow>
           </md>
         </p>
@@ -637,10 +637,10 @@
     <example xml:id="ex_sa1">
       <title>Finding surface area of a solid of revolution</title>
       <statement>
-        <p>Find the surface area of the solid formed by revolving <m>y=\sin x</m> on <m>[0,\pi]</m> around the <m>x</m>-axis, as shown in <xref ref="fig_sa1">Figure</xref>.</p>
+        <p>Find the surface area of the solid formed by revolving <m>y=\sin(x)</m> on <m>[0,\pi]</m> around the <m>x</m>-axis, as shown in <xref ref="fig_sa1">Figure</xref>.</p>
 
         <figure xml:id="fig_sa1" >
-          <caption>Revolving <m>y=\sin x</m> on <m>[0,\pi]</m> about the <m>x</m>-axis.</caption>
+          <caption>Revolving <m>y=\sin(x)</m> on <m>[0,\pi]</m> about the <m>x</m>-axis.</caption>
           <!-- 
            \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
           3Droll=121.00092658103458,
@@ -752,9 +752,9 @@
       <solution>
         <p>The setup is relatively straightforward. Using <xref ref="idea_surface_area">Key Idea</xref>, we have the surface area <m>SA</m> is:
           <md>
-            <mrow>SA  \amp =	2\pi\int_0^\pi \sin x\sqrt{1+\cos^2x}\ dx</mrow>
-            <mrow>\amp =	-2\pi\frac12\left.\left(\sinh^{-1}(\cos x)+\cos x\sqrt{1+\cos^2x}\right)\right|_0^\pi</mrow>
-            <mrow>\amp = 2\pi\left(\sqrt{2}+\sinh^{-1} 1\right)</mrow>
+            <mrow>SA  \amp =	2\pi\int_0^\pi \sin(x) \sqrt{1+\cos^2(x) }\ dx</mrow>
+            <mrow>\amp =	-2\pi\frac12\left.\left(\sinh^{-1}(\cos(x) )+\cos(x) \sqrt{1+\cos^2(x) }\right)\right|_0^\pi</mrow>
+            <mrow>\amp = 2\pi\left(\sqrt{2}+\sinh^{-1}(1) \right)</mrow>
             <mrow>\amp \approx 14.42\ \text{ units } ^2.</mrow>
           </md>
         </p>
@@ -996,7 +996,7 @@
                 <mrow>SA \amp = 2\pi\int_0^1 x^2\sqrt{1+(2x)^2}\ dx.</mrow>
                 <intertext>Like the integral in <xref ref="ex_sa1">Example</xref>, this requires Trigonometric Substitution.</intertext>
                 <mrow>\amp = \left.\frac{\pi}{32}\left(2(8x^3+x)\sqrt{1+4x^2}-\sinh^{-1}(2x)\right)\right|_0^1</mrow>
-                <mrow>\amp =\frac{\pi}{32}\left(18\sqrt{5}-\sinh^{-1}2\right)</mrow>
+                <mrow>\amp =\frac{\pi}{32}\left(18\sqrt{5}-\sinh^{-1}(2) \right)</mrow>
                 <mrow>\amp \approx 3.81\ \text{ units } ^2.</mrow>
               </md>
               The solid formed by revolving <m>y=x^2</m> around the <m>x</m>-axis is graphed in <xref ref="fig_sa2">Figure</xref> (a).</p></li>
@@ -1290,7 +1290,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \cosh x</m> on <m>[-\ln 2, \ln 2]</m>.</p>
+            <p><m>\ds f(x) = \cosh(x)</m> on <m>[-\ln(2) , \ln(2) ]</m>.</p>
           </statement>
           <solution>
             <p><m>3/2</m></p>
@@ -1307,7 +1307,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \frac12\big(e^x+e^{-x}\big)</m> on <m>[0, \ln 5]</m>.</p>
+            <p><m>\ds f(x) = \frac12\big(e^x+e^{-x}\big)</m> on <m>[0, \ln(5) ]</m>.</p>
           </statement>
           <solution>
             <p><m>12/5</m></p>
@@ -1341,10 +1341,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \ln \big(\sin x\big)</m> on <m>[\pi/6, \pi/2]</m>.</p>
+            <p><m>\ds f(x) = \ln\big(\sin(x) \big)</m> on <m>[\pi/6, \pi/2]</m>.</p>
           </statement>
           <solution>
-            <p><m>-\ln (2-\sqrt{3}) \approx 1.31696</m></p>
+            <p><m>-\ln(2-\sqrt{3}) \approx 1.31696</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1358,10 +1358,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \ln \big(\cos x\big)</m> on <m>[0, \pi/4]</m>.</p>
+            <p><m>\ds f(x) = \ln\big(\cos(x) \big)</m> on <m>[0, \pi/4]</m>.</p>
           </statement>
           <solution>
-            <p><m>\sinh^{-1} 1</m></p>
+            <p><m>\sinh^{-1}(1)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1427,7 +1427,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \ln x</m> on <m>[1, e]</m>.</p>
+            <p><m>\ds f(x) = \ln(x)</m> on <m>[1, e]</m>.</p>
           </statement>
           <solution>
             <p><m>\int_1^e \sqrt{1+\frac1{x^2}}\ dx</m></p>
@@ -1495,10 +1495,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \sec x</m> on <m>[-\pi/4,\pi/4]</m>.</p>
+            <p><m>\ds f(x) = \sec(x)</m> on <m>[-\pi/4,\pi/4]</m>.</p>
           </statement>
           <solution>
-            <p><m>\int_{-\pi/4}^{\pi/4} \sqrt{1+\sec^2x\tan^2x}\ dx</m></p>
+            <p><m>\int_{-\pi/4}^{\pi/4} \sqrt{1+\sec^2(x) \tan^2(x) }\ dx</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1564,7 +1564,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \ln x</m> on <m>[1, e]</m>.</p>
+            <p><m>\ds f(x) = \ln(x)</m> on <m>[1, e]</m>.</p>
           </statement>
           <solution>
             <p><m>2.1300</m></p>
@@ -1632,7 +1632,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \sec x</m> on <m>[-\pi/4,\pi/4]</m>.</p>
+            <p><m>\ds f(x) = \sec(x)</m> on <m>[-\pi/4,\pi/4]</m>.</p>
           </statement>
           <solution>
             <p><m>1.7625</m></p>

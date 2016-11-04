@@ -554,8 +554,8 @@
             <mrow>V 	\amp = 2\pi\int_0^1 \frac{x}{1+x^2}\ dx.</mrow>
             <intertext>This requires substitution. Let <m>u=1+x^2</m>, so <m>du = 2x\ dx</m>. We also change the bounds: <m>u(0) = 1</m> and <m>u(1) = 2</m>. Thus we have:</intertext>
             <mrow>\amp = \pi\int_1^2 \frac{1}{u}\ du</mrow>
-            <mrow>\amp = \pi\ln u\Big|_1^2</mrow>
-            <mrow>\amp = \pi\ln 2 \approx 2.178 \ \text{ units } ^3.</mrow>
+            <mrow>\amp = \pi\ln(u) \Big|_1^2</mrow>
+            <mrow>\amp = \pi\ln(2) \approx 2.178 \ \text{ units } ^3.</mrow>
           </md>
         </p>
 
@@ -785,7 +785,7 @@
       <solution>
         <p>The region is sketched in <xref ref="fig_shell3">Figure</xref>(a) with a sample differential element. In part (b) of the figure the shell formed by the differential element is drawn, and the solid is sketched in (c). (Note that the triangular region looks <q>short and wide</q> here, whereas in the previous example the same region looked <q>tall and narrow.</q> This is because the bounds on the graphs are different.)</p>
 
-        <p>The height of the differential element is an <m>x</m>-distance, between <m>x=\frac12y-\frac12</m> and <m>x=1</m>. Thus <m>h(y) = 1-(\frac12y-\frac12) = -\frac12y+\frac32.</m> The radius is the distance from <m>y</m> to the <m>x</m>-axis, so <m>r(y) =y</m>. The <m>y</m> bounds of the region are <m>y=1</m> and <m>y=3</m>, leading to the integral</p>
+        <p>The height of the differential element is an <m>x</m>-distance, between <m>x=\frac12y-\frac12</m> and <m>x=1</m>. Thus <m>h(y) = 1-(\frac12y-\frac12) = -\frac12y+\frac32</m>. The radius is the distance from <m>y</m> to the <m>x</m>-axis, so <m>r(y) =y</m>. The <m>y</m> bounds of the region are <m>y=1</m> and <m>y=3</m>, leading to the integral</p>
 
         <figure xml:id="fig_shell3" >
         <caption>Graphing a region in <xref ref="ex_shell3">Example</xref>.</caption>
@@ -1115,7 +1115,7 @@
     <example xml:id="ex_shell4">
       <title>Finding volume using the Shell Method</title>
       <statement>
-        <p>Find the volume of the solid formed by revolving the region bounded by <m>y= \sin x</m> and the <m>x</m>-axis from <m>x=0</m> to <m>x=\pi</m> about the <m>y</m>-axis.</p>
+        <p>Find the volume of the solid formed by revolving the region bounded by <m>y= \sin(x)</m> and the <m>x</m>-axis from <m>x=0</m> to <m>x=\pi</m> about the <m>y</m>-axis.</p>
       </statement>
       <solution>
         <p>The region and a differential element, the shell formed by this differential element, and the resulting solid are given in <xref ref="fig_shell4">Figure</xref>.</p>
@@ -1422,18 +1422,18 @@
 
         </figure>
 
-        <p>The radius of a sample shell is <m>r(x) = x</m>; the height of a sample shell is <m>h(x) = \sin x</m>, each from <m>x=0</m> to <m>x=\pi</m>. Thus the volume of the solid is
+        <p>The radius of a sample shell is <m>r(x) = x</m>; the height of a sample shell is <m>h(x) = \sin(x)</m>, each from <m>x=0</m> to <m>x=\pi</m>. Thus the volume of the solid is
           <md>
-            <mrow>V \amp =	2\pi\int_0^{\pi} x\sin x\ dx.</mrow>
-            <intertext>This requires Integration By Parts. Set <m>u=x</m> and <m>dv=\sin x\ dx</m>; we leave it to the reader to fill in the rest. We have:</intertext>
-            <mrow>\amp = 2\pi\Big[-x\cos x\Big|_0^{\pi} +\int_0^{\pi}\cos x\ dx \Big]</mrow>
-            <mrow>\amp = 2\pi\Big[\pi + \sin x \Big|_0^{\pi}\ \Big]</mrow>
+            <mrow>V \amp =	2\pi\int_0^{\pi} x\sin(x) \ dx.</mrow>
+            <intertext>This requires Integration By Parts. Set <m>u=x</m> and <m>dv=\sin(x) \ dx</m>; we leave it to the reader to fill in the rest. We have:</intertext>
+            <mrow>\amp = 2\pi\Big[-x\cos(x) \Big|_0^{\pi} +\int_0^{\pi}\cos(x) \ dx \Big]</mrow>
+            <mrow>\amp = 2\pi\Big[\pi + \sin(x) \Big|_0^{\pi}\ \Big]</mrow>
             <mrow>\amp = 2\pi\Big[\pi + 0 \Big]</mrow>
             <mrow>\amp = 2\pi^2 \approx 19.74 \ \text{ units } ^3.</mrow>
           </md>
         </p>
 
-        <p>Note that in order to use the Washer Method, we would need to solve <m>y=\sin x</m> for <m>x</m>, requiring the use of the arcsine function. We leave it to the reader to verify that the outside radius function is <m>R(y) = \pi-\arcsin y</m> and the inside radius function is <m>r(y)=\arcsin y</m>. Thus the volume can be computed as
+        <p>Note that in order to use the Washer Method, we would need to solve <m>y=\sin(x)</m> for <m>x</m>, requiring the use of the arcsine function. We leave it to the reader to verify that the outside radius function is <m>R(y) = \pi-\arcsin y</m> and the inside radius function is <m>r(y)=\arcsin y</m>. Thus the volume can be computed as
           <me>
             \pi\int_0^1 \Big[ (\pi-\arcsin y)^2-(\arcsin y)^2\Big]\ dy.
           </me>
@@ -1713,7 +1713,7 @@
 
                   \addplot [ {\coloronefill},fill={\coloronefill}, samples=50,domain=0:1.57] {cos(deg(x))}--(axis cs:0,0);
 
-                  \addplot [smooth,thick, {\colorone}, samples=50,domain=0:1.57] {cos(deg(x)} node [shift={(-20pt,50pt)} ,black] {\scriptsize $y=\cos x$};
+                  \addplot [smooth,thick, {\colorone}, samples=50,domain=0:1.57] {cos(deg(x)} node [shift={(-20pt,50pt)} ,black] {\scriptsize $y=\cos(x) $};
 
 
                   %\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
@@ -1960,7 +1960,7 @@
 
                   \addplot [ {\coloronefill},fill={\coloronefill}, samples=50,domain=0:1.57] {cos(deg(x))}--(axis cs:0,0);
 
-                  \addplot [smooth,thick, {\colorone}, samples=50,domain=0:1.57] {cos(deg(x)} node [shift={(-20pt,50pt)} ,black] {\scriptsize $y=\cos x$};
+                  \addplot [smooth,thick, {\colorone}, samples=50,domain=0:1.57] {cos(deg(x)} node [shift={(-20pt,50pt)} ,black] {\scriptsize $y=\cos(x) $};
 
 
                   %\addplot [smooth,thick, {\colorone},samples=40,domain=1:3] {.25*(x-3)^2+1} node [shift={(-20pt,40pt)} ,black] {\scriptsize $y=\frac14(x-3)^2+1$};
@@ -2215,7 +2215,7 @@
             <ol>
               <li><p><m>2\pi(\sqrt{2}-1)</m></p></li>
 
-              <li><p><m>2\pi(1-\sqrt{2}+\sinh^{-1} (1))</m></p></li>
+              <li><p><m>2\pi(1-\sqrt{2}+\sinh^{-1}(1))</m></p></li>
             </ol>
           </solution>
         </webwork>

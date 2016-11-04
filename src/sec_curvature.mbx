@@ -249,7 +249,7 @@
     <theorem xml:id="thm_arclengthparam">
       <title>Arc Length Parameter</title>
       <statement>
-        <p>Let <m>\vec r(s)</m> be a vector<ndash />valued function. The parameter <m>s</m> is the arc length parameter if, and only if, <m>\norm{\vrp(s)} = 1.</m><index><main>arc length parameter</main></index></p>
+        <p>Let <m>\vec r(s)</m> be a vector<ndash />valued function. The parameter <m>s</m> is the arc length parameter if, and only if, <m>\norm{\vrp(s)} = 1</m>.<index><main>arc length parameter</main></index></p>
       </statement>
     </theorem>
   </introduction>
@@ -458,7 +458,7 @@
     <example xml:id="ex_curvature2">
       <title>Finding the curvature of a circle</title>
       <statement>
-        <p>Find the curvature of a circle with radius <m>r</m>, defined by <m>\vec c(t) = \la r\cos t,r\sin t\ra</m>.
+        <p>Find the curvature of a circle with radius <m>r</m>, defined by <m>\vec c(t) = \la r\cos(t) ,r\sin(t) \ra</m>.
           <index><main>curvature</main><sub>of circle</sub></index></p>
       </statement>
       <solution>
@@ -466,8 +466,8 @@
 
         <p>We compute <m>\kappa</m> using the second part of <xref ref="thm_curvature_formulas">Theorem</xref>.
           <md>
-            <mrow>\kappa \amp = \frac{\abs{(-r\sin t)(-r\sin t) - (-r\cos t)(r\cos t)}}{\big( (-r\sin t)^2+(r\cos t)^2\big)^{3/2}}</mrow>
-            <mrow>\amp = \frac{r^2(\sin^2t+\cos^2t)}{\big(r^2(\sin^2t+\cos^2t)\big)^{3/2}}</mrow>
+            <mrow>\kappa \amp = \frac{\abs{(-r\sin(t) )(-r\sin(t) ) - (-r\cos(t) )(r\cos(t) )}}{\big( (-r\sin(t) )^2+(r\cos(t) )^2\big)^{3/2}}</mrow>
+            <mrow>\amp = \frac{r^2(\sin^2(t) +\cos^2(t) )}{\big(r^2(\sin^2(t) +\cos^2(t) )\big)^{3/2}}</mrow>
             <mrow>\amp = \frac{r^2}{r^3} = \frac1r.</mrow>
           </md>
         </p>
@@ -621,7 +621,7 @@
           <!-- figures/fig_curvature3.tex END -->
         </figure>
 
-        <p>At the vertex (<m>x=0</m>), the curvature is <m>\kappa = 2</m>. At <m>x=1</m>, the curvature is <m>\kappa = 2/(5)^{3/2} \approx 0.179.</m> So at <m>x=0</m>, the curvature of <m>y=x^2</m> is that of a circle of radius <m>1/2</m>; at <m>x=1</m>, the curvature is that of a circle with radius <m>\approx 1/0.179 \approx 5.59</m>. This is illustrated in <xref ref="fig_curvature3">Figure</xref>. At <m>x=3</m>, the curvature is <m>0.009</m>; the graph is nearly straight as the curvature is very close to 0.</p>
+        <p>At the vertex (<m>x=0</m>), the curvature is <m>\kappa = 2</m>. At <m>x=1</m>, the curvature is <m>\kappa = 2/(5)^{3/2} \approx 0.179</m>. So at <m>x=0</m>, the curvature of <m>y=x^2</m> is that of a circle of radius <m>1/2</m>; at <m>x=1</m>, the curvature is that of a circle with radius <m>\approx 1/0.179 \approx 5.59</m>. This is illustrated in <xref ref="fig_curvature3">Figure</xref>. At <m>x=3</m>, the curvature is <m>0.009</m>; the graph is nearly straight as the curvature is very close to 0.</p>
       </solution>
     </example>
 
@@ -1040,10 +1040,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 7\cos t,7\sin t\ra</m></p>
+            <p><m>\vrt = \la 7\cos(t) ,7\sin(t) \ra</m></p>
           </statement>
           <solution>
-            <p><m>s = 7t</m>, so <m>\vec r(s)  = \la 7\cos (s/7), 7\sin (s/7)\ra</m></p>
+            <p><m>s = 7t</m>, so <m>\vec r(s)  = \la 7\cos(s/7), 7\sin(s/7)\ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1057,10 +1057,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 3\cos t,3\sin t, 2t\ra</m></p>
+            <p><m>\vrt = \la 3\cos(t) ,3\sin(t) , 2t\ra</m></p>
           </statement>
           <solution>
-            <p><m>s = \sqrt{13}t</m>, so <m>\vec r(s)  = \la 3\cos (s/\sqrt{13}), 3\sin (s/\sqrt{13}), 2s/\sqrt{13}\ra</m></p>
+            <p><m>s = \sqrt{13}t</m>, so <m>\vec r(s)  = \la 3\cos(s/\sqrt{13}), 3\sin(s/\sqrt{13}), 2s/\sqrt{13}\ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1074,10 +1074,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 5\cos t,13\sin t, 12\cos t\ra</m></p>
+            <p><m>\vrt = \la 5\cos(t) ,13\sin(t) , 12\cos(t) \ra</m></p>
           </statement>
           <solution>
-            <p><m>s = 13t</m>, so <m>\vec r(s)  = \la 5\cos (s/13), 13\sin (s/13), 12\cos (s/13)\ra</m></p>
+            <p><m>s = 13t</m>, so <m>\vec r(s)  = \la 5\cos(s/13), 13\sin(s/13), 12\cos(s/13)\ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1141,10 +1141,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>C</m> is defined by <m>\ds y = \cos x</m>; points given at <m>x=0</m> and <m>x=\pi/2</m>.</p>
+            <p><m>C</m> is defined by <m>\ds y = \cos(x)</m>; points given at <m>x=0</m> and <m>x=\pi/2</m>.</p>
           </statement>
           <solution>
-            <p><m>\kappa = \frac{\abs{\cos x}}{\left(1+\sin^2x\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{\cos(x) }}{\left(1+\sin^2(x) \right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 1</m>, <m>\kappa(\pi/2) = 0</m></p>
           </solution>
@@ -1179,10 +1179,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>C</m> is defined by <m>\ds \vrt = \la \cos t, \sin (2t)\ra</m>; points given at <m>t=0</m> and <m>t=\pi/4</m>.</p>
+            <p><m>C</m> is defined by <m>\ds \vrt = \la \cos(t) , \sin(2t)\ra</m>; points given at <m>t=0</m> and <m>t=\pi/4</m>.</p>
           </statement>
           <solution>
-            <p><m>\kappa = \frac{\abs{2\cos t\cos(2t)+4\sin t\sin(2t)}}{\left(4\cos^2(2t)+\sin^2t\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{2\cos(t) \cos(2t)+4\sin(t) \sin(2t)}}{\left(4\cos^2(2t)+\sin^2(t) \right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 1/4</m>, <m>\kappa(\pi/4) = 8</m></p>
           </solution>
@@ -1198,7 +1198,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>C</m> is defined by <m>\ds \vrt = \la \cos^2 t, \sin t\cos t\ra</m>; points given at <m>t=0</m> and <m>t=\pi/3</m>.</p>
+            <p><m>C</m> is defined by <m>\ds \vrt = \la \cos^2(t) , \sin(t) \cos(t) \ra</m>; points given at <m>t=0</m> and <m>t=\pi/3</m>.</p>
           </statement>
           <solution>
             <p><m>\kappa = 2</m>;</p>
@@ -1236,10 +1236,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>C</m> is defined by <m>\ds \vrt = \la \tan t,\sec t\ra</m>; points given at <m>t=0</m> and <m>t=\pi/6</m>.</p>
+            <p><m>C</m> is defined by <m>\ds \vrt = \la \tan(t) ,\sec(t) \ra</m>; points given at <m>t=0</m> and <m>t=\pi/6</m>.</p>
           </statement>
           <solution>
-            <p><m>\kappa = \frac{\abs{\sec^3t}}{\left(\sec^4t+\sec^2t\tan^2t\right)^{3/2}}</m>;</p>
+            <p><m>\kappa = \frac{\abs{\sec^3(t) }}{\left(\sec^4(t) +\sec^2(t) \tan^2(t) \right)^{3/2}}</m>;</p>
 
             <p><m>\kappa(0) = 1</m>, <m>\kappa(\pi/6) = \frac{3\sqrt{3}}{5\sqrt{5}}\approx 0.465</m></p>
           </solution>
@@ -1293,7 +1293,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>C</m> is defined by <m>\ds \vrt = \la 3\cos t,3\sin t, 2t\ra</m>; points given at <m>t=0</m> and <m>t=\pi/2</m>.</p>
+            <p><m>C</m> is defined by <m>\ds \vrt = \la 3\cos(t) ,3\sin(t) , 2t\ra</m>; points given at <m>t=0</m> and <m>t=\pi/2</m>.</p>
           </statement>
           <solution>
             <p><m>\kappa = \frac{3}{13}</m>;</p>
@@ -1312,7 +1312,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>C</m> is defined by <m>\ds \vrt = \la 5\cos t,13\sin t, 12\cos t\ra</m>; points given at <m>t=0</m> and <m>t=\pi/2</m>.</p>
+            <p><m>C</m> is defined by <m>\ds \vrt = \la 5\cos(t) ,13\sin(t) , 12\cos(t) \ra</m>; points given at <m>t=0</m> and <m>t=\pi/2</m>.</p>
           </statement>
           <solution>
             <p><m>\kappa = \frac{1}{13}</m>;</p>
@@ -1349,7 +1349,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds y=\sin x</m></p>
+            <p><m>\ds y=\sin(x)</m></p>
           </statement>
           <solution>
             <p>maximized at <m>x=\ldots -3\pi/2, -\pi/2, \pi/2, \ldots</m></p>
@@ -1401,7 +1401,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>y=\tan x</m>, at <m>x=\pi/4</m></p>
+            <p><m>y=\tan(x)</m>, at <m>x=\pi/4</m></p>
           </statement>
           <solution>
             <p>radius of curvature is <m>5\sqrt{5}/4</m>.</p>
@@ -1435,7 +1435,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos t, \sin (3t)\ra</m>, at <m>t=0</m></p>
+            <p><m>\vrt = \la \cos(t) , \sin(3t)\ra</m>, at <m>t=0</m></p>
           </statement>
           <solution>
             <p>radius of curvature is <m>9</m>.</p>
@@ -1452,7 +1452,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 5\cos (3 t), t\ra</m>, at <m>t=0</m></p>
+            <p><m>\vrt = \la 5\cos(3 t), t\ra</m>, at <m>t=0</m></p>
           </statement>
           <solution>
             <p>radius of curvature is <m>1/45</m>.</p>
@@ -1473,7 +1473,7 @@
             <p><m>\vrt = \la t,t^2\ra</m>, at <m>t=0</m></p>
           </statement>
           <solution>
-            <p><m>x^2+(y-1/2)^2 = 1/4</m>, or <m>\vec c(t) = \la 1/2\cos t, 1/2\sin t+ 1/2\ra</m></p>
+            <p><m>x^2+(y-1/2)^2 = 1/4</m>, or <m>\vec c(t) = \la 1/2\cos(t) , 1/2\sin(t) + 1/2\ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1487,10 +1487,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 3\cos t, \sin t\ra</m>, at <m>t=0</m></p>
+            <p><m>\vrt = \la 3\cos(t) , \sin(t) \ra</m>, at <m>t=0</m></p>
           </statement>
           <solution>
-            <p><m>(x-8/3)^2+y^2 = 1/9</m>, or <m>\vec c(t) = \la \frac13\cos t+\frac83, \frac13\sin t\ra</m></p>
+            <p><m>(x-8/3)^2+y^2 = 1/9</m>, or <m>\vec c(t) = \la \frac13\cos(t) +\frac83, \frac13\sin(t) \ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1504,10 +1504,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 3\cos t, \sin t\ra</m>, at <m>t=\pi/2</m></p>
+            <p><m>\vrt = \la 3\cos(t) , \sin(t) \ra</m>, at <m>t=\pi/2</m></p>
           </statement>
           <solution>
-            <p><m>x^2+(y+8)^2 = 81</m>, or <m>\vec c(t) = \la 9\cos t, 9\sin t-8\ra</m></p>
+            <p><m>x^2+(y+8)^2 = 81</m>, or <m>\vec c(t) = \la 9\cos(t) , 9\sin(t) -8\ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1524,7 +1524,7 @@
             <p><m>\vrt = \la t^2-t,t^2+t\ra</m>, at <m>t=0</m></p>
           </statement>
           <solution>
-            <p><m>(x-1/2)^2+(y-1/2)^2 = 1/2</m>, or <m>\vec c(t) = \la \frac{\sqrt{2}}{2}\cos t+\frac12, \frac{\sqrt{2}}{2}\sin t+\frac12\ra</m></p>
+            <p><m>(x-1/2)^2+(y-1/2)^2 = 1/2</m>, or <m>\vec c(t) = \la \frac{\sqrt{2}}{2}\cos(t) +\frac12, \frac{\sqrt{2}}{2}\sin(t) +\frac12\ra</m></p>
           </solution>
         </webwork>
       </exercise>

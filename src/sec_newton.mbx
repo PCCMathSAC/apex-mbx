@@ -3,7 +3,7 @@
 <section xml:id="sec_newton">
   <title>Newton's Method</title>
   <introduction>
-    <p>Solving equations is one of the most important things we do in mathematics, yet we are surprisingly limited in what we can solve analytically. For instance, equations as simple as <m>x^5+x+1=0</m> or <m>\cos x =x</m> cannot be solved by algebraic methods in terms of familiar functions. Fortunately, there are methods that can give us <em>approximate</em> solutions to equations like these. These methods can usually give an approximation correct to as many decimal places as we like. In <xref ref="sec_continuity">Section</xref> we learned about the Bisection Method. This section focuses on another technique (which generally works faster), called Newton's Method.</p>
+    <p>Solving equations is one of the most important things we do in mathematics, yet we are surprisingly limited in what we can solve analytically. For instance, equations as simple as <m>x^5+x+1=0</m> or <m>\cos(x) =x</m> cannot be solved by algebraic methods in terms of familiar functions. Fortunately, there are methods that can give us <em>approximate</em> solutions to equations like these. These methods can usually give an approximation correct to as many decimal places as we like. In <xref ref="sec_continuity">Section</xref> we learned about the Bisection Method. This section focuses on another technique (which generally works faster), called Newton's Method.</p>
 
     <p>Newton's Method is built around tangent lines. The main idea is that if <m>x</m> is sufficiently close to a root of <m>f(x)</m>, then the tangent line to the graph at <m>(x,f(x))</m> will cross the <m>x</m>-axis at a point closer to the root than <m>x</m>.</p>
 
@@ -202,7 +202,7 @@
           </md>
         </p>
 
-        <p>We performed 5 iterations of Newton's Method to find a root accurate to the first 3 places after the decimal; our final approximation is <m>1.465.</m> The exact value of the root, to six decimal places, is <m>1.465571</m>; It turns out that our <m>x_5</m> is accurate to more than just 3 decimal places.</p>
+        <p>We performed 5 iterations of Newton's Method to find a root accurate to the first 3 places after the decimal; our final approximation is <m>1.465</m>. The exact value of the root, to six decimal places, is <m>1.465571</m>; It turns out that our <m>x_5</m> is accurate to more than just 3 decimal places.</p>
 
         <p>A graph of <m>f(x)</m> is given in <xref ref="fig_newt2">Figure</xref>. We can see from the graph that our initial approximation of <m>x_0=1</m> was not particularly accurate; a closer guess would have been <m>x_0=1.5</m>. Our choice was based on ease of initial calculation, and shows that Newton's Method can be robust enough that we do not have to make a very accurate initial approximation.</p>
 
@@ -258,15 +258,15 @@
     <example xml:id="ex_newt3">
       <title>Using Newton's Method to find where functions intersect</title>
       <statement>
-        <p>Use Newton's Method to approximate a solution to <m>\cos{x} = x</m>, accurate to 5 places after the decimal.</p>
+        <p>Use Newton's Method to approximate a solution to <m>\cos(x) = x</m>, accurate to 5 places after the decimal.</p>
       </statement>
       <solution>
         <p>Newton's Method provides a method of solving <m>f(x) = 0</m>; it is not (directly) a method for solving equations like <m>f(x) = g(x)</m>. However, this is not a problem; we can rewrite the latter equation as <m>f(x) - g(x)=0</m> and then use Newton's Method.</p>
 
-        <p>So we rewrite <m>\cos x=x</m> as <m>\cos{x}-x=0</m>. Written this way, we are finding a root of <m>f(x)=\cos{x}-x</m>. We compute <m>\fp(x)=-\sin{x} - 1</m>. Next we need a starting value, <m>x_0</m>. Consider <xref ref="fig_newt3">Figure</xref>, where <m>f(x) = \cos x-x</m> is graphed. It seems that <m>x_0=0.75</m> is pretty close to the root, so we will use that as our <m>x_0</m>. (The figure also shows the graphs of <m>y=\cos x</m> and <m>y=x</m>, drawn with dashed lines. Note how they intersect at the same <m>x</m> value as when <m>f(x) = 0</m>.)</p>
+        <p>So we rewrite <m>\cos(x) =x</m> as <m>\cos(x) -x=0</m>. Written this way, we are finding a root of <m>f(x)=\cos(x) -x</m>. We compute <m>\fp(x)=-\sin(x) - 1</m>. Next we need a starting value, <m>x_0</m>. Consider <xref ref="fig_newt3">Figure</xref>, where <m>f(x) = \cos(x) -x</m> is graphed. It seems that <m>x_0=0.75</m> is pretty close to the root, so we will use that as our <m>x_0</m>. (The figure also shows the graphs of <m>y=\cos(x)</m> and <m>y=x</m>, drawn with dashed lines. Note how they intersect at the same <m>x</m> value as when <m>f(x) = 0</m>.)</p>
 
         <figure xml:id="fig_newt3" >
-          <caption>A graph of <m>f(x)=\cos x-x</m> used to find an initial approximation of its root.</caption>
+          <caption>A graph of <m>f(x)=\cos(x) -x</m> used to find an initial approximation of its root.</caption>
           <!-- START figures/fig_newt3.tex -->
           <image xml:id="img_newt3" >
             <description></description>
@@ -569,7 +569,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \cos x</m>, <m>x_0=1.5</m></p>
+            <p><m>f(x) = \cos(x)</m>, <m>x_0=1.5</m></p>
           </statement>
           <solution>
             <p><m>x_0=1.5</m>, <m>x_1=1.5709148</m>, <m>x_2=1.5707963</m>, <m>x_3=1.5707963</m>, <m>x_4=1.5707963</m>, <m>x_5=1.5707963</m></p>
@@ -586,7 +586,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \sin x</m>, <m>x_0=1</m></p>
+            <p><m>f(x) = \sin(x)</m>, <m>x_0=1</m></p>
           </statement>
           <solution>
             <p><m>x_0=1</m>, <m>x_1=-0.55740772</m>, <m>x_2=0.065936452</m>, <m>x_3=-0.000095721919</m>, <m>x_4=2.9235662*10^{-13}</m>, <m>x_5=0</m></p>
@@ -637,7 +637,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \ln x</m>, <m>x_0=2</m></p>
+            <p><m>f(x) = \ln(x)</m>, <m>x_0=2</m></p>
           </statement>
           <solution>
             <p><m>x_0=2</m>, <m>x_1=0.6137056389</m>, <m>x_2=0.9133412072</m>, <m>x_3=0.9961317034</m>, <m>x_4=0.9999925085</m>, <m>x_5=1</m></p>
@@ -706,7 +706,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2\cos x + (x-1)\sin x</m> on <m>(-3,3)</m></p>
+            <p><m>f(x) = x^2\cos(x) + (x-1)\sin(x)</m> on <m>(-3,3)</m></p>
           </statement>
           <solution>
             <p>roots are: <m>x=-2.165</m>, <m>x=0</m>, <m>x=0.525</m> and <m>x=1.813</m></p>
@@ -724,7 +724,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2</m>, <m>g(x) = \cos x</m></p>
+            <p><m>f(x) = x^2</m>, <m>g(x) = \cos(x)</m></p>
           </statement>
           <solution>
             <p><m>x=\pm 0.824</m>,</p>
@@ -741,7 +741,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2-1</m>, <m>g(x) = \sin x</m></p>
+            <p><m>f(x) = x^2-1</m>, <m>g(x) = \sin(x)</m></p>
           </statement>
           <solution>
             <p><m>x=-0.637</m>, <m>x=1.410</m></p>
@@ -758,7 +758,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = e^{x^2}</m>, <m>g(x) = \cos x</m></p>
+            <p><m>f(x) = e^{x^2}</m>, <m>g(x) = \cos(x)</m></p>
           </statement>
           <solution>
             <p><m>x=\pm 0.743</m></p>
@@ -775,7 +775,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x</m>, <m>g(x) = \tan x</m> on <m>[-6,6]</m></p>
+            <p><m>f(x) = x</m>, <m>g(x) = \tan(x)</m> on <m>[-6,6]</m></p>
           </statement>
           <solution>
             <p><m>x=\pm 4.493</m>, <m>x=0</m></p>

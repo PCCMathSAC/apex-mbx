@@ -109,25 +109,25 @@
       <statement>
         <p>Determine if the Alternating Series Test applies to each of the following series.</p>
 
-        <p><m>\ds 1.\ \sum_{n=1}^\infty (-1)^{n+1}\frac1n\qquad 2.\ \sum_{n=1}^\infty (-1)^n\frac{\ln n}{n}\qquad 3.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{\abs{\sin n}}{n^2}</m></p>
+        <p><m>\ds 1.\ \sum_{n=1}^\infty (-1)^{n+1}\frac1n\qquad 2.\ \sum_{n=1}^\infty (-1)^n\frac{\ln(n) }{n}\qquad 3.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{\abs{\sin(n) }}{n^2}</m></p>
       </statement>
       <solution>
         <ol>
           <li><p>This is the Alternating Harmonic Series as seen previously. The underlying sequence is <m>\{a_n\} = \{1/n\}</m>, which is positive, decreasing, and approaches 0 as <m>n\to\infty</m>. Therefore we can apply the Alternating Series Test and conclude this series converges. 
 	
-	While the test does not state what the series converges to, we will see later that <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac1n=\ln2.</m></p></li>
+	While the test does not state what the series converges to, we will see later that <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac1n=\ln(2)</m>.</p></li>
 
-          <li><p>The underlying sequence is <m>\{a_n\} = \{\ln n/n\}</m>. This is positive and approaches 0 as <m>n\to\infty</m> (use L'H&#xf4;pital's Rule). However, the sequence is not decreasing for all <m>n</m>. It is straightforward to compute <m>a_1=0</m>, <m>a_2\approx0.347</m>, <m>a_3\approx 0.366</m>, and <m>a_4\approx 0.347</m>: the sequence is increasing for at least the first 3 terms. 
+          <li><p>The underlying sequence is <m>\{a_n\} = \{\ln(n) /n\}</m>. This is positive and approaches 0 as <m>n\to\infty</m> (use L'H&#xf4;pital's Rule). However, the sequence is not decreasing for all <m>n</m>. It is straightforward to compute <m>a_1=0</m>, <m>a_2\approx0.347</m>, <m>a_3\approx 0.366</m>, and <m>a_4\approx 0.347</m>: the sequence is increasing for at least the first 3 terms. 
 	
 	We do not immediately conclude that we cannot apply the Alternating Series Test. Rather, consider the long<ndash />term behavior of <m>\{a_n\}</m>. Treating <m>a_n=a(n)</m> as a continuous function of <m>n</m> defined on <m>[1,\infty)</m>, we can take its derivative:
               <me>
-                a'(n) = \frac{1-\ln n}{n^2}.
+                a'(n) = \frac{1-\ln(n) }{n^2}.
               </me>
-              The derivative is negative for all <m>n\geq 3</m> (actually, for all <m>n>e</m>), meaning <m>a(n)=a_n</m> is decreasing on <m>[3,\infty)</m>. We can apply the Alternating Series Test to the series when we start with <m>n=3</m> and conclude that <m>\ds \sum_{n=3}^\infty(-1)^n\frac{\ln n}{n}</m> converges; adding the terms with <m>n=1</m> and <m>n=2</m> do not change the convergence (i.e., we apply <xref ref="thm_series_behavior">Theorem</xref>).
+              The derivative is negative for all <m>n\geq 3</m> (actually, for all <m>n>e</m>), meaning <m>a(n)=a_n</m> is decreasing on <m>[3,\infty)</m>. We can apply the Alternating Series Test to the series when we start with <m>n=3</m> and conclude that <m>\ds \sum_{n=3}^\infty(-1)^n\frac{\ln(n) }{n}</m> converges; adding the terms with <m>n=1</m> and <m>n=2</m> do not change the convergence (i.e., we apply <xref ref="thm_series_behavior">Theorem</xref>).
 	
 	The important lesson here is that as before, if a series fails to meet the criteria of the Alternating Series Test on only a finite number of terms, we can still apply the test.</p></li>
 
-          <li><p>The underlying sequence is <m>\{a_n\} = \abs{\sin n}/n</m>. This sequence is positive and approaches <m>0</m> as <m>n\to\infty</m>. However, it is not a decreasing sequence; the value of <m>\abs{\sin n}</m> oscillates between <m>0</m> and <m>1</m> as <m>n\to\infty</m>. We cannot remove a finite number of terms to make <m>\{a_n\}</m> decreasing, therefore we cannot apply the Alternating Series Test.
+          <li><p>The underlying sequence is <m>\{a_n\} = \abs{\sin(n) }/n</m>. This sequence is positive and approaches <m>0</m> as <m>n\to\infty</m>. However, it is not a decreasing sequence; the value of <m>\abs{\sin(n) }</m> oscillates between <m>0</m> and <m>1</m> as <m>n\to\infty</m>. We cannot remove a finite number of terms to make <m>\{a_n\}</m> decreasing, therefore we cannot apply the Alternating Series Test.
 	
 	Keep in mind that this does not mean we conclude the series diverges; in fact, it does converge. We are just unable to conclude this based on <xref ref="thm_alt_series_test">Theorem</xref>.</p></li>
         </ol>
@@ -162,14 +162,14 @@
 
     <p>Moreover, Part 2 of the theorem states that since <m>S_{13} \approx 0.8252</m> and <m>S_{14}\approx 0.8201</m>, we know the sum <m>L</m> lies between <m>0.8201</m> and <m>0.8252</m>. One use of this is the knowledge that <m>S_{14}</m> is accurate to two places after the decimal.</p>
 
-    <p>Some alternating series converge slowly. In <xref ref="ex_alt1">Example</xref> we determined the series <m>\ds\sum_{n=1}^\infty (-1)^{n+1}\frac{\ln n}{n}</m> converged. With <m>n=1001</m>, we find <m>\ln n/n \approx 0.0069</m>, meaning that <m>S_{1000} \approx 0.1633</m> is accurate to one, maybe two, places after the decimal. Since <m>S_{1001} \approx 0.1564</m>, we know the sum <m>L</m> is <m>0.1564\leq L\leq0.1633</m>.</p>
+    <p>Some alternating series converge slowly. In <xref ref="ex_alt1">Example</xref> we determined the series <m>\ds\sum_{n=1}^\infty (-1)^{n+1}\frac{\ln(n) }{n}</m> converged. With <m>n=1001</m>, we find <m>\ln(n) /n \approx 0.0069</m>, meaning that <m>S_{1000} \approx 0.1633</m> is accurate to one, maybe two, places after the decimal. Since <m>S_{1001} \approx 0.1564</m>, we know the sum <m>L</m> is <m>0.1564\leq L\leq0.1633</m>.</p>
 
     <example xml:id="ex_alt_series_approx">
       <title>Approximating the sum of convergent alternating series</title>
       <statement>
         <p>Approximate the sum of the following series, accurate to within <m>0.001</m>.</p>
 
-        <p><m>\ds 1.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{1}{n^3}\qquad 2.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{\ln n}{n}</m>.</p>
+        <p><m>\ds 1.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{1}{n^3}\qquad 2.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{\ln(n) }{n}</m>.</p>
       </statement>
       <solution>
         <ol>
@@ -184,7 +184,7 @@
 	
 	We can use Part 2 of the theorem to obtain an even more accurate result. As we know the <m>10^\text{ th }</m> term of the series is <m>-1/1000</m>, we can easily compute <m>S_{10} = 0.901116</m>. Part 2 of the theorem states that <m>L</m> is between <m>S_9</m> and <m>S_{10}</m>, so <m>0.901116 \lt L\lt 0.902116</m>.</p></li>
 
-          <li><p>We want to find <m>n</m> where <m>\ln (n)/n \lt  0.001</m>. We start by solving <m>\ln (n)/n = 0.001</m> for <m>n</m>. This cannot be solved algebraically, so we will use Newton's Method to approximate a solution. 
+          <li><p>We want to find <m>n</m> where <m>\ln(n)/n \lt  0.001</m>. We start by solving <m>\ln(n)/n = 0.001</m> for <m>n</m>. This cannot be solved algebraically, so we will use Newton's Method to approximate a solution. 
 	
 	Let <m>f(x) = \ln(x)/x-0.001</m>; we want to know where <m>f(x) = 0</m>. We make a guess that <m>x</m> must be <q>large,</q> so our initial guess will be <m>x_1=1000</m>. Recall how Newton's Method works: given an approximate solution <m>x_n</m>, our next approximation <m>x_{n+1}</m> is given by
               <me>
@@ -292,7 +292,7 @@
 
     <p>As an example, consider the Alternating Harmonic Series once more. We have stated that
       <me>
-        \sum_{n=1}^\infty (-1)^{n+1}\frac1n = 1-\frac12+\frac13-\frac14+\frac15-\frac16+\frac17\cdots = \ln 2,
+        \sum_{n=1}^\infty (-1)^{n+1}\frac1n = 1-\frac12+\frac13-\frac14+\frac15-\frac16+\frac17\cdots = \ln(2) ,
       </me>
     </p>
 
@@ -308,11 +308,11 @@
       <md>
         <mrow>\left(1-\frac12\right)-\frac14+\left(\frac13-\frac16\right)-\frac18+\left(\frac15-\frac1{10}\right)-\frac1{12}+\cdots \amp =</mrow>
         <mrow>\frac12-\frac14+\frac16-\frac18+\frac1{10}-\frac{1}{12}+\cdots \amp =</mrow>
-        <mrow>\frac12\left(1-\frac12+\frac13-\frac14+\frac15-\frac16+\cdots\right) \amp  = \frac12\ln 2.</mrow>
+        <mrow>\frac12\left(1-\frac12+\frac13-\frac14+\frac15-\frac16+\cdots\right) \amp  = \frac12\ln(2) .</mrow>
       </md>
     </p>
 
-    <p>By rearranging the terms of the series, we have arrived at a different sum! (One could <em>try</em> to argue that the Alternating Harmonic Series does not actually converge to <m>\ln 2</m>, because rearranging the terms of the series <em>shouldn't</em> change the sum. However, the Alternating Series Test proves this series converges to <m>L</m>, for some number <m>L</m>, and if the rearrangement does not change the sum, then <m>L = L/2</m>, implying <m>L=0</m>. But the Alternating Series Approximation Theorem quickly shows that <m>L>0</m>. The only conclusion is that the rearrangement <em>did</em> change the sum.) This is an incredible result.</p>
+    <p>By rearranging the terms of the series, we have arrived at a different sum! (One could <em>try</em> to argue that the Alternating Harmonic Series does not actually converge to <m>\ln(2)</m>, because rearranging the terms of the series <em>shouldn't</em> change the sum. However, the Alternating Series Test proves this series converges to <m>L</m>, for some number <m>L</m>, and if the rearrangement does not change the sum, then <m>L = L/2</m>, implying <m>L=0</m>. But the Alternating Series Approximation Theorem quickly shows that <m>L>0</m>. The only conclusion is that the rearrangement <em>did</em> change the sum.) This is an incredible result.</p>
 
     <p>We end here our study of tests to determine convergence. The back cover of this text contains a table summarizing the tests that one may find useful.</p>
 
@@ -331,7 +331,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Why is <m>\ds\sum_{n=1}^\infty \sin n</m> not an alternating series?</p>
+            <p>Why is <m>\ds\sum_{n=1}^\infty \sin(n)</m> not an alternating series?</p>
           </statement>
           <solution>
             <p>The signs of the terms do not alternate; in the given series, some terms are negative and the others positive, but they do not necessarily alternate.</p>
@@ -533,7 +533,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=1}^\infty \frac{(-1)^{n}}{\ln n+1}</m></p>
+            <p><m>\ds \sum_{n=1}^\infty \frac{(-1)^{n}}{\ln(n) +1}</m></p>
           </statement>
           <solution>
             <ol>
@@ -556,7 +556,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=2}^\infty (-1)^n\frac{n}{\ln n }</m></p>
+            <p><m>\ds \sum_{n=2}^\infty (-1)^n\frac{n}{\ln(n) }</m></p>
           </statement>
           <solution>
             <ol>
@@ -602,7 +602,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=1}^\infty \cos \big(\pi n\big)</m></p>
+            <p><m>\ds \sum_{n=1}^\infty \cos\big(\pi n\big)</m></p>
           </statement>
           <solution>
             <ol>
@@ -625,7 +625,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=1}^\infty \frac{\sin\big((n+1/2)\pi\big)}{n\ln n}</m></p>
+            <p><m>\ds \sum_{n=1}^\infty \frac{\sin\big((n+1/2)\pi\big)}{n\ln(n) }</m></p>
           </statement>
           <solution>
             <ol>
@@ -789,12 +789,12 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=1}^\infty \frac{(-1)^n}{\ln (n+1)}</m>, <m>n=5</m></p>
+            <p><m>\ds \sum_{n=1}^\infty \frac{(-1)^n}{\ln(n+1)}</m>, <m>n=5</m></p>
           </statement>
           <solution>
             <p><m>S_5 = -1.1906</m>; <m>S_{6} = -0.6767</m>;</p>
 
-            <p><m>\ds -1.1906 \leq \sum_{n=1}^\infty \frac{(-1)^n}{\ln (n+1)} \leq -0.6767</m></p>
+            <p><m>\ds -1.1906 \leq \sum_{n=1}^\infty \frac{(-1)^n}{\ln(n+1)} \leq -0.6767</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -917,7 +917,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{(2n)!}=\cos 1</m>, <m>\varepsilon = 10^{-8}</m></p>
+            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{(2n)!}=\cos(1)</m>, <m>\varepsilon = 10^{-8}</m></p>
           </statement>
           <solution>
             <p><m>n=5</m> (<m>(2n)!>10^8</m> when <m>n\geq 6</m>)</p>

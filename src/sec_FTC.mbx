@@ -61,14 +61,14 @@
     <example xml:id="ex_ftc2">
       <title>Using the Fundamental Theorem of Calculus, Part 1</title>
       <statement>
-        <p>Let <m>\ds F(x) = \int_{-5}^x (t^2+\sin t)\ dt</m>. What is <m>\Fp(x)</m>?</p>
+        <p>Let <m>\ds F(x) = \int_{-5}^x (t^2+\sin(t) )\ dt</m>. What is <m>\Fp(x)</m>?</p>
       </statement>
       <solution>
-        <p>Using the Fundamental Theorem of Calculus, we have <m>\Fp(x) = x^2+\sin x</m>.</p>
+        <p>Using the Fundamental Theorem of Calculus, we have <m>\Fp(x) = x^2+\sin(x)</m>.</p>
       </solution>
     </example>
 
-    <p>This simple example reveals something incredible: <m>F(x)</m> is an antiderivative of <m>x^2+\sin x</m>! Therefore, <m>F(x) = \frac13x^3-\cos x+C</m> for some value of <m>C</m>. (We can find <m>C</m>, but generally we do not care. We know that <m>F(-5)=0</m>, which allows us to compute <m>C</m>. In this case, <m>C=\cos(-5)+\frac{125}3</m>.)</p>
+    <p>This simple example reveals something incredible: <m>F(x)</m> is an antiderivative of <m>x^2+\sin(x)</m>! Therefore, <m>F(x) = \frac13x^3-\cos(x) +C</m> for some value of <m>C</m>. (We can find <m>C</m>, but generally we do not care. We know that <m>F(-5)=0</m>, which allows us to compute <m>C</m>. In this case, <m>C=\cos(-5)+\frac{125}3</m>.)</p>
 
     <p>We have done more than found a complicated way of computing an antiderivative. Consider a function <m>f</m> defined on an open interval containing <m>a</m>, <m>b</m> and <m>c</m>. Suppose we want to compute <m>\int_a^b f(t)\ dt</m>. First, let <m>F(x) = \int_c^x f(t)\ dt</m>. Using the properties of the definite integral found in <xref ref="thm_defintprop">Theorem</xref>, we know
       <md>
@@ -123,23 +123,23 @@
       <statement>
         <p>Evaluate the following definite integrals.
           <me>
-            1.\ \int_{-2}^2 x^3\ dx  2.\ \int_0^\pi \sin x\ dx \qquad 3.\ \int_0^5 e^t\ dt \qquad 4.\ \int_4^9 \sqrt{u}\ du\qquad 5.\ \int_1^5 2\ dx
+            1.\ \int_{-2}^2 x^3\ dx  2.\ \int_0^\pi \sin(x) \ dx \qquad 3.\ \int_0^5 e^t\ dt \qquad 4.\ \int_4^9 \sqrt{u}\ du\qquad 5.\ \int_1^5 2\ dx
           </me>
         </p>
       </statement>
       <solution>
         <ol>
-          <li><p><m>\ds \int_{-2}^2 x^3\ dx = \left.\frac14x^4\right|_{-2}^2 = \left(\frac142^4\right) - \left(\frac14(-2)^4\right) = 0.</m></p></li>
+          <li><p><m>\ds \int_{-2}^2 x^3\ dx = \left.\frac14x^4\right|_{-2}^2 = \left(\frac142^4\right) - \left(\frac14(-2)^4\right) = 0</m>.</p></li>
 
-          <li><p><m>\ds \int_0^\pi \sin x\ dx = -\cos x\Big|_0^\pi = -\cos \pi- \big(-\cos 0\big) = 1+1=2.</m> 
+          <li><p><m>\ds \int_0^\pi \sin(x) \ dx = -\cos(x) \Big|_0^\pi = -\cos(\pi) - \big(-\cos(0) \big) = 1+1=2</m>. 
 
               (This is interesting; it says that the area under one <q>hump</q> of a sine curve is 2.)</p></li>
 
-          <li><p><m>\ds \int_0^5e^t\ dt = e^t\Big|_0^5 = e^5 - e^0 = e^5-1 \approx 147.41.</m></p></li>
+          <li><p><m>\ds \int_0^5e^t\ dt = e^t\Big|_0^5 = e^5 - e^0 = e^5-1 \approx 147.41</m>.</p></li>
 
-          <li><p><m>\ds \int_4^9 \sqrt{u}\ du = \int_4^9 u^\frac12\ du = \left.\frac23u^\frac32\right|_4^9 = \frac23\left(9^\frac32-4^\frac32\right) = \frac23\big(27-8\big) =\frac{38}3.</m></p></li>
+          <li><p><m>\ds \int_4^9 \sqrt{u}\ du = \int_4^9 u^\frac12\ du = \left.\frac23u^\frac32\right|_4^9 = \frac23\left(9^\frac32-4^\frac32\right) = \frac23\big(27-8\big) =\frac{38}3</m>.</p></li>
 
-          <li><p><m>\ds \int_1^5 2\ dx = 2x\Big|_1^5 = 2(5)-2=2(5-1)=8.</m> 
+          <li><p><m>\ds \int_1^5 2\ dx = 2x\Big|_1^5 = 2(5)-2=2(5-1)=8</m>. 
 
               This integral is interesting; the integrand is a constant function, hence we are finding the area of a rectangle with width <m>(5-1)=4</m> and height 2. Notice how the evaluation of the definite integral led to <m>2(4)=8</m>. 
 
@@ -209,15 +209,15 @@
     <example xml:id="ex_ftc11">
       <title>The FTC, Part 1, and the Chain Rule</title>
       <statement>
-        <p>Find the derivative of <m>\ds F(x) = \int_2^{x^2} \ln t\ dt</m>.</p>
+        <p>Find the derivative of <m>\ds F(x) = \int_2^{x^2} \ln(t) \ dt</m>.</p>
       </statement>
       <solution>
-        <p>We can view <m>F(x)</m> as being the function <m>\ds G(x) = \int_2^x \ln t\ dt</m> composed with <m>g(x) = x^2</m>; that is, <m>F(x) = G\big(g(x)\big)</m>. The Fundamental Theorem of Calculus states that <m>G'(x) = \ln x</m>. The Chain Rule gives us
+        <p>We can view <m>F(x)</m> as being the function <m>\ds G(x) = \int_2^x \ln(t) \ dt</m> composed with <m>g(x) = x^2</m>; that is, <m>F(x) = G\big(g(x)\big)</m>. The Fundamental Theorem of Calculus states that <m>G'(x) = \ln(x)</m>. The Chain Rule gives us
           <md>
             <mrow>F'(x) \amp = G'\big(g(x)\big) g'(x)</mrow>
-            <mrow>\amp = \ln (g(x)) g'(x)</mrow>
-            <mrow>\amp = \ln (x^2) 2x</mrow>
-            <mrow>\amp =2x\ln x^2</mrow>
+            <mrow>\amp = \ln(g(x)) g'(x)</mrow>
+            <mrow>\amp = \ln(x^2) 2x</mrow>
+            <mrow>\amp =2x\ln(x^2) </mrow>
           </md>
         </p>
 
@@ -230,12 +230,12 @@
     <example xml:id="ex_ftc12">
       <title>The FTC, Part 1, and the Chain Rule</title>
       <statement>
-        <p>Find the derivative of <m>\ds F(x) = \int_{\cos x}^5 t^3\ dt.</m></p>
+        <p>Find the derivative of <m>\ds F(x) = \int_{\cos(x) }^5 t^3\ dt.</m></p>
       </statement>
       <solution>
-        <p>Note that <m>\ds F(x) = -\int_5^{\cos x} t^3\ dt</m>. Viewed this way, the derivative of <m>F</m> is straightforward:
+        <p>Note that <m>\ds F(x) = -\int_5^{\cos(x) } t^3\ dt</m>. Viewed this way, the derivative of <m>F</m> is straightforward:
           <me>
-            F'(x) = \sin x \cos^3 x.
+            F'(x) = \sin(x) \cos^3(x) .
           </me>
         </p>
       </solution>
@@ -593,23 +593,23 @@
     <example xml:id="ex_ftc8">
       <title>Using the Mean Value Theorem</title>
       <statement>
-        <p>Consider <m>\int_0^\pi \sin x\ dx</m>. Find a value <m>c</m> guaranteed by the Mean Value Theorem.</p>
+        <p>Consider <m>\int_0^\pi \sin(x) \ dx</m>. Find a value <m>c</m> guaranteed by the Mean Value Theorem.</p>
       </statement>
       <solution>
-        <p>We first need to evaluate <m>\int_0^\pi \sin x\ dx</m>. (This was previously done in <xref ref="ex_ftc4">Example</xref>.)
+        <p>We first need to evaluate <m>\int_0^\pi \sin(x) \ dx</m>. (This was previously done in <xref ref="ex_ftc4">Example</xref>.)
           <me>
-            \int_0^\pi\sin x\ dx =	-\cos x \Big|_0^\pi = 2.
+            \int_0^\pi\sin(x) \ dx =	-\cos(x) \Big|_0^\pi = 2.
           </me>
         </p>
 
-        <p>Thus we seek a value <m>c</m> in <m>[0,\pi]</m> such that <m>\pi\sin c =2</m>.
+        <p>Thus we seek a value <m>c</m> in <m>[0,\pi]</m> such that <m>\pi\sin(c) =2</m>.
           <me>
-            \pi\sin c = 2\ \ \Rightarrow\ \ \sin c = 2/\pi\ \ \Rightarrow\ \ c = \arcsin(2/\pi) \approx 0.69.
+            \pi\sin(c) = 2\ \ \Rightarrow\ \ \sin(c) = 2/\pi\ \ \Rightarrow\ \ c = \arcsin(2/\pi) \approx 0.69.
           </me>
         </p>
 
         <figure xml:id="fig_ftc8" >
-          <caption>A graph of <m>y=\sin x</m> on <m>[0,\pi]</m> and the rectangle guaranteed by the Mean Value Theorem.</caption>
+          <caption>A graph of <m>y=\sin(x)</m> on <m>[0,\pi]</m> and the rectangle guaranteed by the Mean Value Theorem.</caption>
           <!-- START figures/fig_ftc8.tex -->
           <image xml:id="img_ftc8" >
             <description></description>
@@ -626,7 +626,7 @@
 			ytick={1},
 			%
 			extra y ticks={.637},%
-			extra y tick labels={$\sin 0.69$},
+			extra y tick labels={$\sin(0.69) $},
               %			minor x tick num=4,
 			ymin=-.25,ymax=1.25,%
 			xmin=-.5,xmax=3.5%
@@ -646,7 +646,7 @@
           <!-- figures/fig_ftc8.tex END -->
         </figure>
 
-        <p>In <xref ref="fig_ftc8">Figure</xref> <m>\sin x</m> is sketched along with a rectangle with height <m>\sin (0.69)</m>. The area of the rectangle is the same as the area under <m>\sin x</m> on <m>[0,\pi]</m>.</p>
+        <p>In <xref ref="fig_ftc8">Figure</xref> <m>\sin(x)</m> is sketched along with a rectangle with height <m>\sin(0.69)</m>. The area of the rectangle is the same as the area under <m>\sin(x)</m> on <m>[0,\pi]</m>.</p>
       </solution>
     </example>
 
@@ -936,7 +936,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\int_{\pi/2}^\pi \cos x\ dx</m></p>
+            <p><m>\ds\int_{\pi/2}^\pi \cos(x) \ dx</m></p>
           </statement>
           <solution>
             <p><m>1</m></p>
@@ -953,7 +953,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\int_{0}^{\pi/4} \sec^2 x\ dx</m></p>
+            <p><m>\ds\int_{0}^{\pi/4} \sec^2(x) \ dx</m></p>
           </statement>
           <solution>
             <p><m>1</m></p>
@@ -990,7 +990,7 @@
             <p><m>\ds\int_{-1}^{1} 5^x \ dx</m></p>
           </statement>
           <solution>
-            <p><m>(5-1/5)/\ln 5</m></p>
+            <p><m>(5-1/5)/\ln(5)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1021,7 +1021,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\int_{0}^{\pi} (2\cos x - 2\sin x) \ dx</m></p>
+            <p><m>\ds\int_{0}^{\pi} (2\cos(x) - 2\sin(x) ) \ dx</m></p>
           </statement>
           <solution>
             <p><m>-4</m></p>
@@ -1109,7 +1109,7 @@
             <p><m>\ds\int_{1}^{2} \frac1{x} \ dx</m></p>
           </statement>
           <solution>
-            <p><m>\ln 2</m></p>
+            <p><m>\ln(2)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1276,7 +1276,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{\pi/6}^{\pi/3} \csc x\cot x\ dx</m></p>
+            <p><m>\ds \int_{\pi/6}^{\pi/3} \csc(x) \cot(x) \ dx</m></p>
           </statement>
           <solution>
             <p><m>2-2/\sqrt{3}</m></p>
@@ -1386,7 +1386,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x)=\sin x</m> on <m>[0,\pi/2]</m></p>
+            <p><m>f(x)=\sin(x)</m> on <m>[0,\pi/2]</m></p>
           </statement>
           <solution>
             <p><m>2/\pi</m></p>
@@ -1403,7 +1403,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>y=\sin x</m> on <m>[0,\pi]</m></p>
+            <p><m>y=\sin(x)</m> on <m>[0,\pi]</m></p>
           </statement>
           <solution>
             <p><m>2/pi</m></p>
@@ -1540,7 +1540,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>v(t) = \cos t</m> ft/s on <m>[0,3\pi/2]</m></p>
+            <p><m>v(t) = \cos(t)</m> ft/s on <m>[0,3\pi/2]</m></p>
           </statement>
           <solution>
             <p><m>-1</m>ft</p>
@@ -1626,7 +1626,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>a(t) = \cos t</m> ft/s<m>^2</m> on <m>[0,\pi]</m></p>
+            <p><m>a(t) = \cos(t)</m> ft/s<m>^2</m> on <m>[0,\pi]</m></p>
           </statement>
           <solution>
             <p><m>0</m>ft/s</p>
@@ -1764,10 +1764,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds F(x) = \int_{\ln x}^{e^x} \sin t\ dt</m></p>
+            <p><m>\ds F(x) = \int_{\ln(x) }^{e^x} \sin(t) \ dt</m></p>
           </statement>
           <solution>
-            <p><m>F'(x) = e^x\sin (e^x) - 1/x\sin(\ln x)</m></p>
+            <p><m>F'(x) = e^x\sin(e^x) - 1/x\sin(\ln(x) )</m></p>
           </solution>
         </webwork>
       </exercise>

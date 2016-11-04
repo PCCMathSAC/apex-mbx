@@ -37,7 +37,7 @@
       <statement>
         <p>Use the Ratio Test to determine the convergence of the following series:</p>
 
-        <p><m>\ds 1.\ \sum_{n=1}^\infty \frac{2^n}{n!}\qquad\qquad 2.\ \sum_{n=1}^\infty \frac{3^n}{n^3} \qquad\qquad 3.\ \sum_{n=1}^\infty \frac{1}{n^2+1}.</m></p>
+        <p><m>\ds 1.\ \sum_{n=1}^\infty \frac{2^n}{n!}\qquad\qquad 2.\ \sum_{n=1}^\infty \frac{3^n}{n^3} \qquad\qquad 3.\ \sum_{n=1}^\infty \frac{1}{n^2+1}</m>.</p>
       </statement>
       <solution>
         <ol>
@@ -119,20 +119,20 @@
       <statement>
         <p>Determine the convergence of the following series using the Root Test:</p>
 
-        <p><m>\ds1. \ \sum_{n=1}^\infty \left(\frac{3n+1}{5n-2}\right)^n\qquad\qquad 2.\ \sum_{n=1}^\infty\frac{n^4}{(\ln n)^n}\qquad\qquad 3.\ \sum_{n=1}^\infty \frac{2^n}{n^2}.</m></p>
+        <p><m>\ds1. \ \sum_{n=1}^\infty \left(\frac{3n+1}{5n-2}\right)^n\qquad\qquad 2.\ \sum_{n=1}^\infty\frac{n^4}{(\ln(n) )^n}\qquad\qquad 3.\ \sum_{n=1}^\infty \frac{2^n}{n^2}</m>.</p>
       </statement>
       <solution>
         <ol>
-          <li><p><m>\lim\limits_{n\to\infty} \left(\left(\frac{3n+1}{5n-2}\right)^n\right)^{1/n} = \lim_{n\to\infty} \frac{3n+1}{5n-2} = \frac 35.</m> 
+          <li><p><m>\lim\limits_{n\to\infty} \left(\left(\frac{3n+1}{5n-2}\right)^n\right)^{1/n} = \lim_{n\to\infty} \frac{3n+1}{5n-2} = \frac 35</m>. 
 	
 	Since the limit is less than 1, we conclude the series converges. Note: it is difficult to apply the Ratio Test to this series.</p></li>
 
-          <li><p><m>\lim\limits_{n\to\infty} \left(\frac{n^4}{(\ln n)^n}\right)^{1/n} = \lim_{n\to\infty} \frac {\big(n^{1/n}\big)^4}{\ln n}</m>. 
+          <li><p><m>\lim\limits_{n\to\infty} \left(\frac{n^4}{(\ln(n) )^n}\right)^{1/n} = \lim_{n\to\infty} \frac {\big(n^{1/n}\big)^4}{\ln(n) }</m>. 
 	
 	As <m>n</m> grows, the numerator approaches 1 (apply L'H&#xf4;pital's Rule) and the denominator 
 	grows to infinity.  Thus
               <me>
-                \lim_{n\to\infty} \frac{\big(n^{1/n}\big)^4}{\ln n} = 0.
+                \lim_{n\to\infty} \frac{\big(n^{1/n}\big)^4}{\ln(n) } = 0.
               </me>
               Since the limit is less than 1, we conclude the series converges.</p></li>
 
@@ -542,7 +542,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\sum_{n=1}^\infty \frac1{\big(\ln n\big)^n}</m></p>
+            <p><m>\ds\sum_{n=1}^\infty \frac1{\big(\ln(n) \big)^n}</m></p>
           </statement>
           <solution>
             <p>Converges</p>
@@ -559,7 +559,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\sum_{n=1}^\infty \frac{n^2}{\big(\ln n\big)^n}</m></p>
+            <p><m>\ds\sum_{n=1}^\infty \frac{n^2}{\big(\ln(n) \big)^n}</m></p>
           </statement>
           <solution>
             <p>Converges</p>
@@ -679,7 +679,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\sum_{n=1}^\infty \frac{1}{\ln n}</m></p>
+            <p><m>\ds\sum_{n=1}^\infty \frac{1}{\ln(n) }</m></p>
           </statement>
           <solution>
             <p>Diverges; Direct Comparison Test with <m>1/n</m></p>
@@ -713,7 +713,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\sum_{n=1}^\infty \frac{n^3}{\big(\ln n\big)^n}</m></p>
+            <p><m>\ds\sum_{n=1}^\infty \frac{n^3}{\big(\ln(n) \big)^n}</m></p>
           </statement>
           <solution>
             <p>Converges; Root Test</p>
