@@ -202,7 +202,7 @@
             y = (x^2-x-6)/(6x^2-19x+3)
           </me>
           on a small interval that contains <m>3</m>. To numerically approximate the limit, create a table of values where the <m>x</m> values are near <m>3</m>. This is done in <xref ref="fig_limit1">Figure</xref> and <xref ref="table_limit1">Table</xref>, respectively.</p>
-
+          <todo>Figure out why the x and y discontinuities don't work on this one. I tried it and it won't compile</todo>
         <sidebyside>
           <figure xml:id="fig_limit1" >
             <caption>Graphically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
@@ -215,7 +215,10 @@
                                                              ymin=.25,ymax=.35,
                                                              extra y tick labels={},
                                                             ]
-                                                    \addplot+[domain=2.5:3.49] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
+                                                    \addplot[<-,domain=2.5:2.99, blue, thick] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
+                                                    \addplot[->,domain=3.01:3.45, blue, thick] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
+                                                    \addplot [hollowdot] coordinates{(3,0.294)};
+                                                   
                                                 \end{axis}
                                             \end{tikzpicture}
                                             ]]>
@@ -709,9 +712,11 @@
                               \begin{axis}[xmin=-1,xmax=6.5,
                                           ymin=-1,ymax=25,
                                           ]
-                                  \addplot+[domain=0:6] {-1.5*x^2+11.5*x};
-                                  \addplot+[domain=0:6] {2.5*(x-1)+10};
-                                  \addplot[soliddot] coordinates {(1,10) (5,20)};
+                                  \addplot+[domain=0:6,first
+                                  ] {-1.5*x^2+11.5*x};
+                                  \addplot+[domain=0:6, secondcurvestyle] {2.5*(x-1)+10};
+                                  \addplot[soliddot, first
+                                  ] coordinates {(1,10) (5,20)};
                               \end{axis}
                           \end{tikzpicture}
                           ]]>
@@ -740,7 +745,7 @@
 
     <p>Let <m>f(x) = -1.5x^2+11.5x</m>; note that <m>f(1)=10</m> and <m>f(5) = 20</m>, as in our discussion. We can compute this difference quotient for all values of <m>h</m> (even negative values!) except <m>h=0</m>, for then we get <q>0/0,</q> the indeterminate form introduced earlier. For all values <m>h\neq 0</m>, the difference quotient computes the average velocity of the particle over an interval of time of length <m>h</m> starting at <m>x=1</m>.</p>
 
-    <p>For small values of <m>h</m>, i.e., values of <m>h</m> close to <m>0</m>, we get average velocities over very short time periods and compute secant lines over small intervals. See <xref ref="fig_diff_quot_small_h">Figure</xref>. This leads us to wonder what the limit of the difference quotient is as <m>h</m> approaches <m>0</m>. That is,
+    <p>For small values of <m>h</m>, i.e., values of <m>h</m> close to <m>0</m>, we get average velocities over very short time periods and compute secant lines over small intervals. See <xref ref="fig_diff_quot_small_ha">Figure</xref>. This leads us to wonder what the limit of the difference quotient is as <m>h</m> approaches <m>0</m>. That is,
       <me>
         \lim_{h\to 0} \frac{f(1+h)-f(1)}{h} = \text{ ? }
       </me>
@@ -800,9 +805,9 @@
                                     \begin{axis}[xmin=-1,xmax=6.5,
                                                 ymin=-1,ymax=25,
                                                 ]
-                                        \addplot+[domain=0:6] {-1.5*x^2+11.5*x};
-                                        \addplot+[domain=0:2.80645] {7.75*(x-1)+10};
-                                        \addplot[soliddot] coordinates {(1,10) (1.5,13.875)};
+                                        \addplot+[domain=0:6, firstcurvestyle] {-1.5*x^2+11.5*x};
+                                        \addplot+[domain=0:2.80645,secondcurvestyle] {7.75*(x-1)+10};
+                                        \addplot[soliddot,blue] coordinates {(1,10) (1.5,13.875)};
                                     \end{axis}
                                 \end{tikzpicture}
                                 ]]>
