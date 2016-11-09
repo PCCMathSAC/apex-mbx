@@ -3,7 +3,7 @@
 <section xml:id="sec_prod_quot_rules">
   <title>The Product and Quotient Rules</title>
   <introduction>
-    <p>The previous section showed that, in some ways, derivatives behave nicely. The Constant Multiple and Sum/Difference Rules established that the derivative of <m>f(x) = 5x^2+\sin x</m> was not complicated. We neglected computing the derivative of things like <m>g(x) = 5x^2\sin x</m> and <m>h(x) = \frac{5x^2}{\sin x}</m> on purpose; their derivatives are <em>not</em> as straightforward. (If you had to guess what their respective derivatives are, you would probably guess wrong.) For these, we need the Product and Quotient Rules, respectively, which are defined in this section.</p>
+    <p>The previous section showed that, in some ways, derivatives behave nicely. The Constant Multiple and Sum/Difference Rules established that the derivative of <m>f(x) = 5x^2+\sin(x)</m> was not complicated. We neglected computing the derivative of things like <m>g(x) = 5x^2\sin(x)</m> and <m>h(x) = \frac{5x^2}{\sin(x) }</m> on purpose; their derivatives are <em>not</em> as straightforward. (If you had to guess what their respective derivatives are, you would probably guess wrong.) For these, we need the Product and Quotient Rules, respectively, which are defined in this section.</p>
 
     <p>We begin with the Product Rule.</p>
 
@@ -25,25 +25,25 @@
     <example xml:id="ex_prod1">
       <title>Using the Product Rule</title>
       <statement>
-        <p>Use the Product Rule to compute the derivative of <m>y=5x^2\sin x</m>. Evaluate the derivative at <m>x=\pi/2</m>.</p>
+        <p>Use the Product Rule to compute the derivative of <m>y=5x^2\sin(x)</m>. Evaluate the derivative at <m>x=\pi/2</m>.</p>
       </statement>
       <solution>
-        <p>To make our use of the Product Rule explicit, let's set <m>f(x) = 5x^2</m> and <m>g(x) = \sin x</m>. We easily compute/recall that <m>\fp(x) = 10x</m> and <m>g'(x) = \cos x</m>. Employing the rule, we have
+        <p>To make our use of the Product Rule explicit, let's set <m>f(x) = 5x^2</m> and <m>g(x) = \sin(x)</m>. We easily compute/recall that <m>\fp(x) = 10x</m> and <m>g'(x) = \cos(x)</m>. Employing the rule, we have
           <me>
-            \frac{d}{dx}\Big(5x^2\sin x\Big) = 5x^2\cos x + 10x\sin x.
+            \frac{d}{dx}\Big(5x^2\sin(x) \Big) = 5x^2\cos(x) + 10x\sin(x) .
           </me>
         </p>
 
         <p>At <m>x=\pi/2</m>, we have
           <me>
-            y'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos \left(\frac{\pi}2\right) + 10\frac{\pi}2 \sin\left(\frac{\pi}{2}\right) = 5\pi.
+            y'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos\left(\frac{\pi}2\right) + 10\frac{\pi}2 \sin\left(\frac{\pi}{2}\right) = 5\pi.
           </me>
         </p>
 
         <p>We graph <m>y</m> and its tangent line at <m>x=\pi/2</m>, which has a slope of <m>5\pi</m>, in <xref ref="fig_5xsquaredsinx">Figure</xref>. While this does not <em>prove</em> that the Product Rule is the correct way to handle derivatives of products, it helps validate its truth.</p>
 
         <figure xml:id="fig_5xsquaredsinx" >
-          <caption>A graph of <m>y = 5x^2\sin x</m> and its tangent line at <m>x=\pi/2</m>.</caption>
+          <caption>A graph of <m>y = 5x^2\sin(x)</m> and its tangent line at <m>x=\pi/2</m>.</caption>
           <!-- START figures/fig_5xsquaredsinx.tex -->
           <image xml:id="img_5xsquaredsinx" >
             <description></description>
@@ -125,15 +125,15 @@
     <example xml:id="ex_prod10">
       <title>Using the Product Rule with a product of three functions</title>
       <statement>
-        <p>Let <m>y = x^3\ln x\cos x</m>. Find <m>y'.</m></p>
+        <p>Let <m>y = x^3\ln(x) \cos(x)</m>. Find <m>y'</m>.</p>
       </statement>
       <solution>
-        <p>We have a product of three functions while the Product Rule only specifies how to handle a product of two functions. Our method of handling this problem is to simply group the latter two functions together, and consider <m>y = x^3\big(\ln x\cos x\big)</m>. Following the Product Rule, we have
+        <p>We have a product of three functions while the Product Rule only specifies how to handle a product of two functions. Our method of handling this problem is to simply group the latter two functions together, and consider <m>y = x^3\big(\ln(x) \cos(x) \big)</m>. Following the Product Rule, we have
           <md>
-            <mrow>\yp \amp = (x^3)\big(\ln x\cos x\big)' + 3x^2\big(\ln x\cos x\big)</mrow>
-            <intertext>To evaluate <m>\big(\ln x\cos x\big)'</m>, we apply the Product Rule again:</intertext>
-            <mrow>\amp = (x^3)\big(\ln x(-\sin x) + \frac1x\cos x\big)+ 3x^2\big(\ln x\cos x\big)</mrow>
-            <mrow>\amp = x^3\ln x(-\sin x) + x^3\frac1x\cos x+ 3x^2\ln x\cos x</mrow>
+            <mrow>\yp \amp = (x^3)\big(\ln(x) \cos(x) \big)' + 3x^2\big(\ln(x) \cos(x) \big)</mrow>
+            <intertext>To evaluate <m>\big(\ln(x) \cos(x) \big)'</m>, we apply the Product Rule again:</intertext>
+            <mrow>\amp = (x^3)\big(\ln(x) (-\sin(x) ) + \frac1x\cos(x) \big)+ 3x^2\big(\ln(x) \cos(x) \big)</mrow>
+            <mrow>\amp = x^3\ln(x) (-\sin(x) ) + x^3\frac1x\cos(x) + 3x^2\ln(x) \cos(x) </mrow>
           </md>
         </p>
 
@@ -149,25 +149,25 @@
         <p>Find the derivatives of the following functions.</p>
 
         <ol>
-          <li><p><m>f(x) = x\ln x</m></p></li>
+          <li><p><m>f(x) = x\ln(x)</m></p></li>
 
-          <li><p><m>g(x) = x\ln x - x</m>.</p></li>
+          <li><p><m>g(x) = x\ln(x) - x</m>.</p></li>
         </ol>
       </statement>
       <solution>
-        <p>Recalling that the derivative of <m>\ln x</m> is <m>1/x</m>, we use the Product Rule to find our answers.</p>
+        <p>Recalling that the derivative of <m>\ln(x)</m> is <m>1/x</m>, we use the Product Rule to find our answers.</p>
 
         <ol>
-          <li><p><m>\ds \frac{d}{dx}\Big(x\ln x\Big) = x\cdot 1/x + 1\cdot \ln x = 1+\ln x</m>.</p></li>
+          <li><p><m>\ds \frac{d}{dx}\Big(x\ln(x) \Big) = x\cdot 1/x + 1\cdot \ln(x) = 1+\ln(x)</m>.</p></li>
 
           <li><p>Using the result from above, we compute
               <me>
-                \ds \frac{d}{dx}\Big(x\ln x-x\Big) = 1+\ln x-1 = \ln x.
+                \ds \frac{d}{dx}\Big(x\ln(x) -x\Big) = 1+\ln(x) -1 = \ln(x) .
               </me>
             </p></li>
         </ol>
 
-        <p>This seems significant; if the natural log function <m>\ln x</m> is an important function (it is), it seems worthwhile to know a function whose derivative is <m>\ln x</m>. We have found one. (We leave it to the reader to find another; a correct answer will be <em>very</em> similar to this one.)</p>
+        <p>This seems significant; if the natural log function <m>\ln(x)</m> is an important function (it is), it seems worthwhile to know a function whose derivative is <m>\ln(x)</m>. We have found one. (We leave it to the reader to find another; a correct answer will be <em>very</em> similar to this one.)</p>
       </solution>
     </example>
 
@@ -195,13 +195,13 @@
     <example xml:id="ex_quot1">
       <title>Using the Quotient Rule</title>
       <statement>
-        <p>Let <m>\ds f(x) = \frac{5x^2}{\sin x}</m>. Find <m>\fp(x)</m>.</p>
+        <p>Let <m>\ds f(x) = \frac{5x^2}{\sin(x) }</m>. Find <m>\fp(x)</m>.</p>
       </statement>
       <solution>
         <p>Directly applying the Quotient Rule gives:
           <md>
-            <mrow>\frac{d}{dx}\left(\frac{5x^2}{\sin x}\right) \amp = \frac{\sin x\cdot 10x - 5x^2\cdot \cos x}{\sin^2x}</mrow>
-            <mrow>\amp =	\frac{10x\sin x - 5x^2\cos x}{\sin^2 x}.</mrow>
+            <mrow>\frac{d}{dx}\left(\frac{5x^2}{\sin(x) }\right) \amp = \frac{\sin(x) \cdot 10x - 5x^2\cdot \cos(x) }{\sin^2(x) }</mrow>
+            <mrow>\amp =	\frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }.</mrow>
           </md>
         </p>
       </solution>
@@ -210,25 +210,25 @@
     <p>The Quotient Rule allows us to fill in holes in our understanding of derivatives of the common trigonometric functions. We start with finding the derivative of the tangent function.</p>
 
     <example xml:id="ex_der_tan">
-      <title>Using the Quotient Rule to find <m>\frac{d}{dx}\big(\tan x\big)</m>.</title>
+      <title>Using the Quotient Rule to find <m>\frac{d}{dx}\big(\tan(x) \big)</m>.</title>
       <statement>
-        <p>Find the derivative of <m>y=\tan x</m>.</p>
+        <p>Find the derivative of <m>y=\tan(x)</m>.</p>
       </statement>
       <solution>
-        <p>At first, one might feel unequipped to answer this question. But recall that <m>\tan x = \sin x/\cos x</m>, so we can apply the Quotient Rule.
+        <p>At first, one might feel unequipped to answer this question. But recall that <m>\tan(x) = \sin(x) /\cos(x)</m>, so we can apply the Quotient Rule.
           <md>
-            <mrow>\frac{d}{dx}\Big(\tan x\Big) \amp = \frac{d}{dx}\left(\frac{\sin x}{\cos x}\right)</mrow>
-            <mrow>\amp =	\frac{\cos x \cos x - \sin x (-\sin x)}{\cos^2 x}</mrow>
-            <mrow>\amp = \frac{\cos^2x+\sin^2x}{\cos^2x}</mrow>
-            <mrow>\amp = \frac{1}{\cos^2x}</mrow>
-            <mrow>\amp = \sec ^2 x.</mrow>
+            <mrow>\frac{d}{dx}\Big(\tan(x) \Big) \amp = \frac{d}{dx}\left(\frac{\sin(x) }{\cos(x) }\right)</mrow>
+            <mrow>\amp =	\frac{\cos(x) \cos(x) - \sin(x) (-\sin(x) )}{\cos^2(x) }</mrow>
+            <mrow>\amp = \frac{\cos^2(x) +\sin^2(x) }{\cos^2(x) }</mrow>
+            <mrow>\amp = \frac{1}{\cos^2(x) }</mrow>
+            <mrow>\amp = \sec^2(x) .</mrow>
           </md>
         </p>
 
-        <p>This is a beautiful result. To confirm its truth, we can find the equation of the tangent line to <m>y=\tan x</m> at <m>x=\pi/4</m>. The slope is <m>\sec^2(\pi/4) = 2</m>; <m>y=\tan x</m>, along with its tangent line, is graphed in <xref ref="fig_tanx">Figure</xref>.</p>
+        <p>This is a beautiful result. To confirm its truth, we can find the equation of the tangent line to <m>y=\tan(x)</m> at <m>x=\pi/4</m>. The slope is <m>\sec^2(\pi/4) = 2</m>; <m>y=\tan(x)</m>, along with its tangent line, is graphed in <xref ref="fig_tanx">Figure</xref>.</p>
 
         <figure xml:id="fig_tanx" >
-          <caption>A graph of <m>y=\tan x</m> along with its tangent line at <m>x=\pi/4</m>.</caption>
+          <caption>A graph of <m>y=\tan(x)</m> along with its tangent line at <m>x=\pi/4</m>.</caption>
           <!-- START figures/fig_tanx.tex -->
           <image xml:id="img_tanx" >
             <description></description>
@@ -254,23 +254,23 @@
       </solution>
     </example>
 
-    <p>We include this result in the following theorem about the derivatives of the trigonometric functions. Recall we found the derivative of <m>y=\sin x</m> in <xref ref="ex_deriv_sinx">Example</xref> and stated the derivative of the cosine function in <xref ref="thm_deriv_common">Theorem</xref>. The derivatives of the cotangent, cosecant and secant functions can all be computed directly using <xref ref="thm_deriv_common">Theorem</xref> and the Quotient Rule.</p>
+    <p>We include this result in the following theorem about the derivatives of the trigonometric functions. Recall we found the derivative of <m>y=\sin(x)</m> in <xref ref="ex_deriv_sinx">Example</xref> and stated the derivative of the cosine function in <xref ref="thm_deriv_common">Theorem</xref>. The derivatives of the cotangent, cosecant and secant functions can all be computed directly using <xref ref="thm_deriv_common">Theorem</xref> and the Quotient Rule.</p>
 
     <theorem xml:id="thm_deriv_trig">
       <title>Derivatives of Trigonometric Functions</title>
       <statement>
         <ol cols="2" >
-          <li><p><m>\ds \frac{d}{dx}\big(\sin x\big) = \cos x</m><index><main>derivative</main><sub>trigonometric functions</sub></index></p></li>
+          <li><p><m>\ds \frac{d}{dx}\big(\sin(x) \big) = \cos(x)</m><index><main>derivative</main><sub>trigonometric functions</sub></index></p></li>
 
-          <li><p><m>\ds \frac{d}{dx}\big(\tan x\big) = \sec^2 x</m></p></li>
+          <li><p><m>\ds \frac{d}{dx}\big(\tan(x) \big) = \sec^2(x)</m></p></li>
 
-          <li><p><m>\ds \frac{d}{dx}\big(\sec x\big) = \sec x\tan x</m></p></li>
+          <li><p><m>\ds \frac{d}{dx}\big(\sec(x) \big) = \sec(x) \tan(x)</m></p></li>
 
-          <li><p><m>\ds \frac{d}{dx}\big(\cos x\big) = -\sin x</m></p></li>
+          <li><p><m>\ds \frac{d}{dx}\big(\cos(x) \big) = -\sin(x)</m></p></li>
 
-          <li><p><m>\ds \frac{d}{dx}\big(\cot x\big) = -\csc^2 x</m></p></li>
+          <li><p><m>\ds \frac{d}{dx}\big(\cot(x) \big) = -\csc^2(x)</m></p></li>
 
-          <li><p><m>\ds \frac{d}{dx}\big(\csc x\big) = -\csc x\cot x</m></p></li>
+          <li><p><m>\ds \frac{d}{dx}\big(\csc(x) \big) = -\csc(x) \cot(x)</m></p></li>
         </ol>
       </statement>
     </theorem>
@@ -280,16 +280,16 @@
     <example xml:id="ex_prod_quot">
       <title>Exploring alternate derivative methods</title>
       <statement>
-        <p>In <xref ref="ex_quot1">Example</xref> the derivative of <m>\ds f(x) = \frac{5x^2}{\sin x}</m> was found using the Quotient Rule. Rewriting <m>f</m> as <m>f(x) = 5x^2\csc x</m>, find <m>\fp</m> using <xref ref="thm_deriv_trig">Theorem</xref> and verify the two answers are the same.</p>
+        <p>In <xref ref="ex_quot1">Example</xref> the derivative of <m>\ds f(x) = \frac{5x^2}{\sin(x) }</m> was found using the Quotient Rule. Rewriting <m>f</m> as <m>f(x) = 5x^2\csc(x)</m>, find <m>\fp</m> using <xref ref="thm_deriv_trig">Theorem</xref> and verify the two answers are the same.</p>
       </statement>
       <solution>
-        <p>We found in <xref ref="ex_quot1">Example</xref> that the <m>\ds \fp(x) = \frac{10x\sin x - 5x^2\cos x}{\sin^2 x}</m>. We now find <m>\fp</m> using the Product Rule, considering <m>f</m> as <m>f(x) = 5x^2\csc x</m>.
+        <p>We found in <xref ref="ex_quot1">Example</xref> that the <m>\ds \fp(x) = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</m>. We now find <m>\fp</m> using the Product Rule, considering <m>f</m> as <m>f(x) = 5x^2\csc(x)</m>.
           <md>
-            <mrow>\fp(x) \amp = \frac{d}{dx}\Big(5x^2\csc x\Big)</mrow>
-            <mrow>\amp =	$5x^2(-\csc x\cot x) + 10x\csc x$ \text{ (now rewrite trig functions) }</mrow>
-            <mrow>\amp = 5x^2\cdot \frac{-1}{\sin x}\cdot \frac{\cos x}{\sin x} + \frac{10x}{\sin x}</mrow>
-            <mrow>\amp =	$\ds\frac{-5x^2\cos x}{\sin ^2x}+\frac{10x}{\sin x}$ \text{ (get common denominator) }</mrow>
-            <mrow>\amp = \frac{10x\sin x - 5x^2\cos x}{\sin^2x}</mrow>
+            <mrow>\fp(x) \amp = \frac{d}{dx}\Big(5x^2\csc(x) \Big)</mrow>
+            <mrow>\amp =	$5x^2(-\csc(x) \cot(x) ) + 10x\csc(x) $ \text{ (now rewrite trig functions) }</mrow>
+            <mrow>\amp = 5x^2\cdot \frac{-1}{\sin(x) }\cdot \frac{\cos(x) }{\sin(x) } + \frac{10x}{\sin(x) }</mrow>
+            <mrow>\amp =	$\ds\frac{-5x^2\cos(x) }{\sin^2(x) }+\frac{10x}{\sin(x) }$ \text{ (get common denominator) }</mrow>
+            <mrow>\amp = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</mrow>
           </md>
         </p>
 
@@ -316,7 +316,7 @@
         <ol>
           <li><p><m>\ds \fp(x) = \frac{x\cdot 0 - 1\cdot 1}{x^2} = -\frac{1}{x^2}</m>.</p></li>
 
-          <li><p><m>\ds \fp(x) = \frac{x^n\cdot 0 - 1\cdot nx^{n-1}}{(x^n)^2} = -\frac{nx^{n-1}}{x^{2n}} = -\frac{n}{x^{n+1}}.</m></p></li>
+          <li><p><m>\ds \fp(x) = \frac{x^n\cdot 0 - 1\cdot nx^{n-1}}{(x^n)^2} = -\frac{nx^{n-1}}{x^{2n}} = -\frac{n}{x^{n+1}}</m>.</p></li>
         </ol>
       </solution>
     </example>
@@ -394,7 +394,7 @@
 
     <p>} They are equal; they are all correct; only the first is <q>clear.</q> Work to make answers clear.
 		
-      In the next section we continue to learn rules that allow us to more easily compute derivatives than using the limit definition directly. We have to memorize the derivatives of a certain set of functions, such as <q>the derivative of <m>\sin x</m> is <m>\cos x</m>.</q> The Sum/Difference, Constant Multiple, Power, Product and Quotient Rules show us how to find the derivatives of certain combinations of these functions. The next section shows how to find the derivatives when we <em>compose</em> these functions together.</p>
+      In the next section we continue to learn rules that allow us to more easily compute derivatives than using the limit definition directly. We have to memorize the derivatives of a certain set of functions, such as <q>the derivative of <m>\sin(x)</m> is <m>\cos(x)</m>.</q> The Sum/Difference, Constant Multiple, Power, Product and Quotient Rules show us how to find the derivatives of certain combinations of these functions. The next section shows how to find the derivatives when we <em>compose</em> these functions together.</p>
   </introduction>
   <exercises>
     <exercisegroup>
@@ -409,7 +409,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: The Product Rule states that <m>\ds \frac{d}{dx}\big(x^2\sin x\big) = 2x\cos x</m>.</p>
+            <p>T/F: The Product Rule states that <m>\ds \frac{d}{dx}\big(x^2\sin(x) \big) = 2x\cos(x)</m>.</p>
           </statement>
           <solution>
             <p>F</p>
@@ -426,7 +426,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: The Quotient Rule states that <m>\ds \frac{d}{dx}\left(\frac{x^2}{\sin x}\right) = \frac{\cos x}{2x}</m>.</p>
+            <p>T/F: The Quotient Rule states that <m>\ds \frac{d}{dx}\left(\frac{x^2}{\sin(x) }\right) = \frac{\cos(x) }{2x}</m>.</p>
           </statement>
           <solution>
             <p>F</p>
@@ -731,10 +731,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x\sin x</m></p>
+            <p><m>f(x) = x\sin(x)</m></p>
           </statement>
           <solution>
-            <p><m>\fp(x) = \sin x + x\cos x</m></p>
+            <p><m>\fp(x) = \sin(x) + x\cos(x)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -748,10 +748,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(t) = \frac{1}{t^2}(\csc t-4)</m></p>
+            <p><m>\ds f(t) = \frac{1}{t^2}(\csc(t) -4)</m></p>
           </statement>
           <solution>
-            <p><m>\fp(t) = \frac{-2}{t^3}(\csc t-4) + \frac{1}{t^2}(-\csc t\cot t)</m></p>
+            <p><m>\fp(t) = \frac{-2}{t^3}(\csc(t) -4) + \frac{1}{t^2}(-\csc(t) \cot(t) )</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -782,10 +782,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds g(t) = \frac{t^5}{\cos t-2t^2}</m></p>
+            <p><m>\ds g(t) = \frac{t^5}{\cos(t) -2t^2}</m></p>
           </statement>
           <solution>
-            <p><m>g'(t) = \frac{(\cos t-2t^2)(5t^4)-(t^5)(-\sin t-4t)}{(\cos t-2t^2)^2}</m></p>
+            <p><m>g'(t) = \frac{(\cos(t) -2t^2)(5t^4)-(t^5)(-\sin(t) -4t)}{(\cos(t) -2t^2)^2}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -799,10 +799,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>h(x) =\cot x - e^x</m></p>
+            <p><m>h(x) =\cot(x) - e^x</m></p>
           </statement>
           <solution>
-            <p><m>h'(x) = -\csc^2x-e^x</m></p>
+            <p><m>h'(x) = -\csc^2(x) -e^x</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -873,10 +873,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(t) = t^5(\sec t + e^t)</m></p>
+            <p><m>f(t) = t^5(\sec(t) + e^t)</m></p>
           </statement>
           <solution>
-            <p><m>\fp(t) = 5t^4(\sec t+ e^t) + t^5(\sec t\tan t + e^t)</m></p>
+            <p><m>\fp(t) = 5t^4(\sec(t) + e^t) + t^5(\sec(t) \tan(t) + e^t)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -890,10 +890,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{\sin x}{\cos x+3}</m></p>
+            <p><m>\ds f(x) = \frac{\sin(x) }{\cos(x) +3}</m></p>
           </statement>
           <solution>
-            <p><m>\fp(x) = \frac{\sin ^2(x)+\cos ^2(x)+3 \cos (x)}{(\cos (x)+3)^2}</m></p>
+            <p><m>\fp(x) = \frac{\sin^2(x)+\cos^2(x)+3 \cos(x)}{(\cos(x)+3)^2}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -907,7 +907,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(x) = e^2\big(\sin (\pi/4) - 1\big)</m></p>
+            <p><m>g(x) = e^2\big(\sin(\pi/4) - 1\big)</m></p>
           </statement>
           <solution>
             <p><m>g'(x) = 0</m></p>
@@ -924,10 +924,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(t) = 4t^3e^t - \sin t\cos t</m></p>
+            <p><m>g(t) = 4t^3e^t - \sin(t) \cos(t)</m></p>
           </statement>
           <solution>
-            <p><m>g'(t) = 12t^2e^t + 4t^3e^t - \cos^2t + \sin^2t</m></p>
+            <p><m>g'(t) = 12t^2e^t + 4t^3e^t - \cos^2(t) + \sin^2(t)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -941,10 +941,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds h(t) = \frac{t^2\sin t+3}{t^2\cos t+2}</m></p>
+            <p><m>\ds h(t) = \frac{t^2\sin(t) +3}{t^2\cos(t) +2}</m></p>
           </statement>
           <solution>
-            <p><m>\fp(x) = \frac{(t^2\cos t+2)(2t\sin t+t^2\cos t)-(t^2\sin t+3)(2t\cos t-t^2\sin t)}{(t^2\cos t+2)^2}</m></p>
+            <p><m>\fp(x) = \frac{(t^2\cos(t) +2)(2t\sin(t) +t^2\cos(t) )-(t^2\sin(t) +3)(2t\cos(t) -t^2\sin(t) )}{(t^2\cos(t) +2)^2}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -958,10 +958,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2e^x\tan x</m></p>
+            <p><m>f(x) = x^2e^x\tan(x)</m></p>
           </statement>
           <solution>
-            <p><m>\fp(x) = 2xe^x\tan x = x^2e^x\tan x + x^2e^x\sec^2x</m></p>
+            <p><m>\fp(x) = 2xe^x\tan(x) = x^2e^x\tan(x) + x^2e^x\sec^2(x)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -975,10 +975,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(x) = 2x\sin x \sec x</m></p>
+            <p><m>g(x) = 2x\sin(x) \sec(x)</m></p>
           </statement>
           <solution>
-            <p><m>g'(x) = 2\sin x\sec x+2x\cos x \sec x + 2x\sin x\sec x\tan x = 2\tan x+2x+2x\tan^2x = 2\tan x+2x\sec^2x</m></p>
+            <p><m>g'(x) = 2\sin(x) \sec(x) +2x\cos(x) \sec(x) + 2x\sin(x) \sec(x) \tan(x) = 2\tan(x) +2x+2x\tan^2(x) = 2\tan(x) +2x\sec^2(x)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1012,7 +1012,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(t) = t\sin t</m> at <m>(\frac{3\pi}{2},-\frac{3\pi}{2})</m></p>
+            <p><m>g(t) = t\sin(t)</m> at <m>(\frac{3\pi}{2},-\frac{3\pi}{2})</m></p>
           </statement>
           <solution>
             <p>Tangent line: <m>y = -(x-\frac{3\pi}{2}) - \frac{3\pi}{2} = -x</m></p>
@@ -1050,7 +1050,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds g(\theta) = \frac{\cos \theta - 8\theta}{\theta+1}</m> at <m>(0,-5)</m></p>
+            <p><m>\ds g(\theta) = \frac{\cos(\theta) - 8\theta}{\theta+1}</m> at <m>(0,-5)</m></p>
           </statement>
           <solution>
             <p>Tangent line: <m>y = -9x-5</m></p>
@@ -1087,7 +1087,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x\sin x</m> on <m>[-1,1]</m></p>
+            <p><m>f(x) = x\sin(x)</m> on <m>[-1,1]</m></p>
           </statement>
           <solution>
             <p><m>x=0</m></p>
@@ -1139,10 +1139,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x\sin x</m>; find <m>\fpp(x)</m>.</p>
+            <p><m>f(x) = x\sin(x)</m>; find <m>\fpp(x)</m>.</p>
           </statement>
           <solution>
-            <p><m>\fpp(x) = 2\cos x - x\sin x</m></p>
+            <p><m>\fpp(x) = 2\cos(x) - x\sin(x)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1156,10 +1156,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x\sin x</m>; find <m>f^{(4)}(x)</m>.</p>
+            <p><m>f(x) = x\sin(x)</m>; find <m>f^{(4)}(x)</m>.</p>
           </statement>
           <solution>
-            <p><m>f^{(4)}(x) = -4\cos x+ x\sin x</m></p>
+            <p><m>f^{(4)}(x) = -4\cos(x) + x\sin(x)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1173,10 +1173,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \csc x</m>; find <m>\fpp(x)</m>.</p>
+            <p><m>f(x) = \csc(x)</m>; find <m>\fpp(x)</m>.</p>
           </statement>
           <solution>
-            <p><m>\fpp(x) = \cot^2x\csc x + \csc^3 x</m></p>
+            <p><m>\fpp(x) = \cot^2(x) \csc(x) + \csc^3(x)</m></p>
           </solution>
         </webwork>
       </exercise>

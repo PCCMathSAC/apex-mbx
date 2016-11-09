@@ -133,13 +133,13 @@
       <title>Converting Between Rectangular and Polar Coordinates</title>
       <p>Given the polar point <m>P(r,\theta)</m>, the rectangular coordinates are determined by
         <me>
-          x=r\cos \theta\qquad y=r\sin \theta.
+          x=r\cos(\theta) \qquad y=r\sin(\theta) .
         </me>
       </p>
 
       <p>Given the rectangular coordinates <m>(x,y)</m>, the polar coordinates are determined by
         <me>
-          r^2=x^2+y^2\qquad \tan \theta = \frac yx.
+          r^2=x^2+y^2\qquad \tan(\theta) = \frac yx.
         </me>
       </p>
     </insight>
@@ -160,13 +160,13 @@
         <ol>
           <li><p>We start with <m>P(2,2\pi/3)</m>. Using <xref ref="idea_polarconvert">Key Idea</xref>, we have
               <me>
-                x= 2\cos (2\pi/3) = -1\qquad y = 2\sin (2\pi/3) = \sqrt{3}.
+                x= 2\cos(2\pi/3) = -1\qquad y = 2\sin(2\pi/3) = \sqrt{3}.
               </me>
               So the rectangular coordinates are <m>(-1,\sqrt{3}) \approx (-1,1.732)</m>.</p></li>
 
           <li><p>The polar point <m>P(-1,5\pi/4)</m> is converted to rectangular with:
               <me>
-                x=-1\cos (5\pi/4) = \sqrt{2}/2\qquad y= -1\sin (5\pi/4) = \sqrt{2}/2.
+                x=-1\cos(5\pi/4) = \sqrt{2}/2\qquad y= -1\sin(5\pi/4) = \sqrt{2}/2.
               </me>
               So the rectangular coordinates are <m>(\sqrt{2}/2,\sqrt{2}/2) \approx (0.707,0.707)</m>.</p></li>
         </ol>
@@ -260,23 +260,23 @@
         <ol>
           <li><p>To convert the rectangular point <m>(1,2)</m> to polar coordinates, we use the Key Idea to form the following two equations:
               <me>
-                1^2+2^2 = r^2 \qquad \tan \theta = \frac{2}{1}.
+                1^2+2^2 = r^2 \qquad \tan(\theta) = \frac{2}{1}.
               </me>
               The first equation tells us that <m>r=\sqrt{5}</m>. Using the inverse tangent function, we find
               <me>
-                \tan \theta = 2  \Rightarrow  \theta = \tan^{-1} 2 \approx 1.11\approx 63.43^\circ.
+                \tan(\theta) = 2  \Rightarrow  \theta = \tan^{-1}(2) \approx 1.11\approx 63.43^\circ.
               </me>
               Thus polar coordinates of <m>(1,2)</m> are <m>P(\sqrt{5},1.11)</m>.</p></li>
 
           <li><p>To convert <m>(-1,1)</m> to polar coordinates, we form the equations
               <me>
-                (-1)^2+1^2=r^2 \qquad \tan \theta = \frac{1}{-1}.
+                (-1)^2+1^2=r^2 \qquad \tan(\theta) = \frac{1}{-1}.
               </me>
               Thus <m>r=\sqrt{2}</m>. We need to be careful in computing <m>\theta</m>: using the inverse tangent function, we have
               <me>
-                \tan\theta = -1  \Rightarrow  \theta = \tan^{-1}(-1) = -\pi/4 = -45^\circ.
+                \tan(\theta) = -1  \Rightarrow  \theta = \tan^{-1}(-1) = -\pi/4 = -45^\circ.
               </me>
-              This is not the angle we desire. The range of <m>\tan^{-1}x</m> is <m>(-\pi/2,\pi/2)</m>; that is, it returns angles that lie in the <m>1^\text{ st }</m> and <m>4^\text{ th }</m> quadrants. To find locations in the <m>2^\text{ nd }</m>  and <m>3^\text{ rd }</m> quadrants, add <m>\pi</m> to the result of <m>\tan^{-1}x</m>. So  <m>\pi+(-\pi/4)</m> puts the angle at <m>3\pi/4</m>. Thus the polar point is <m>P(\sqrt{2},3\pi/4)</m>.
+              This is not the angle we desire. The range of <m>\tan^{-1}(x)</m> is <m>(-\pi/2,\pi/2)</m>; that is, it returns angles that lie in the <m>1^\text{ st }</m> and <m>4^\text{ th }</m> quadrants. To find locations in the <m>2^\text{ nd }</m>  and <m>3^\text{ rd }</m> quadrants, add <m>\pi</m> to the result of <m>\tan^{-1}(x)</m>. So  <m>\pi+(-\pi/4)</m> puts the angle at <m>3\pi/4</m>. Thus the polar point is <m>P(\sqrt{2},3\pi/4)</m>.
 		
 		An alternate method is to use the angle <m>\theta</m> given by arctangent, but change the sign of <m>r</m>. Thus we could also refer to <m>(-1,1)</m> as
                <m>P(-\sqrt{2},-\pi/4)</m>.</p></li>
@@ -290,7 +290,7 @@
 
   <subsection>
     <title>Polar Functions and Polar Graphs</title>
-    <p>Defining a new coordinate system allows us to create a new kind of function, a <em>polar function.</em> Rectangular coordinates lent themselves well to creating functions that related <m>x</m> and <m>y</m>, such as <m>y=x^2.</m> Polar coordinates allow us to create functions that relate <m>r</m> and <m>\theta</m>. Normally these functions look like <m>r=f(\theta)</m>, although we can create functions of the form <m>\theta = f(r)</m>. The following examples introduce us to this concept.<index><main>polar</main><sub>functions</sub></index><index><main>polar</main><sub>functions!graphing</sub></index></p>
+    <p>Defining a new coordinate system allows us to create a new kind of function, a <em>polar function.</em> Rectangular coordinates lent themselves well to creating functions that related <m>x</m> and <m>y</m>, such as <m>y=x^2</m>. Polar coordinates allow us to create functions that relate <m>r</m> and <m>\theta</m>. Normally these functions look like <m>r=f(\theta)</m>, although we can create functions of the form <m>\theta = f(r)</m>. The following examples introduce us to this concept.<index><main>polar</main><sub>functions</sub></index><index><main>polar</main><sub>functions!graphing</sub></index></p>
 
     <example xml:id="ex_polar3">
       <title>Introduction to Graphing Polar Functions</title>
@@ -311,9 +311,9 @@
 
           <li><p>The equation <m>\theta = \pi/4</m> describes all points such that the line through them and the pole make an angle of <m>\pi/4</m> with the initial ray. As the radius <m>r</m> is not specified, it can be any value (even negative). Thus <m>\theta = \pi/4</m> describes the line through the pole that makes an angle of <m>\pi/4 = 45^\circ</m> with the initial ray.
 
-              We can again consider the rectangular equivalent of this equation. Combine <m>\tan \theta =y/x</m> and <m>\theta =\pi/4</m>:
+              We can again consider the rectangular equivalent of this equation. Combine <m>\tan(\theta) =y/x</m> and <m>\theta =\pi/4</m>:
               <me>
-                \tan \pi/4 = y/x  \Rightarrow x\tan \pi/4 = y  \Rightarrow y = x.
+                \tan(\pi) /4 = y/x  \Rightarrow x\tan(\pi) /4 = y  \Rightarrow y = x.
               </me>
               This graph is also plotted in <xref ref="fig_polar3">Figure</xref>.
 
@@ -359,7 +359,7 @@
     <example xml:id="ex_polar4">
       <title>Sketching Polar Functions</title>
       <statement>
-        <p>Sketch the polar function <m>r=1+\cos \theta</m> on <m>[0,2\pi]</m> by plotting points.</p>
+        <p>Sketch the polar function <m>r=1+\cos(\theta)</m> on <m>[0,2\pi]</m> by plotting points.</p>
       </statement>
       <solution>
         <p>A common question when sketching curves by plotting points is <q>Which points should I plot?</q> With rectangular equations, we often choose <q>easy</q> values <mdash /> integers, then added more if needed. When plotting polar equations, start with the <q>common</q> angles <mdash /> multiples of <m>\pi/6</m> and <m>\pi/4</m>. <xref ref="fig_polar4">Figure</xref> gives a table of just a few values of <m>\theta</m> in <m>[0,\pi]</m>.</p>
@@ -375,7 +375,7 @@
       <tabular>
         <row>
           <cell><m>\begin{array}{cc}
-		\theta \amp  r=1+\cos\theta \\ \hline
+		\theta \amp  r=1+\cos(\theta) \\ \hline
            0 \amp  2 \\
            \pi/6 \amp  1.86603 \\
             \pi/2 \amp  1 \\
@@ -433,7 +433,7 @@
       </tabular>
     </table>
 
-    <p><em>Technology Note:</em> Plotting functions in this way can be tedious, just as it was with rectangular functions. To obtain very accurate graphs, technology is a great aid. Most graphing calculators can plot polar functions; in the menu, set the plotting mode to something like <c>polar</c> or <c>POL</c>, depending on one's calculator. As with plotting parametric functions, the viewing <q>window</q> no longer determines the <m>x</m>-values that are plotted, so additional information needs to be provided. Often with the <q>window</q> settings are the settings for the beginning and ending <m>\theta</m> values (often called <c><m>\theta_{\text{ min } }</m></c> and <c><m>\theta_{\text{ max } }</m></c>) as well as the <c><m>\theta_{\text{ step } }</m></c> <mdash /> that is, how far apart the <m>\theta</m> values are spaced. The smaller the <c><m>\theta_{\text{ step } }</m></c> value, the more accurate the graph (which also increases plotting time). Using technology, we graphed the polar function <m>r=1+\cos \theta</m> from <xref ref="ex_polar4">Example</xref> in <xref ref="fig_polar4b">Figure</xref>.</p>
+    <p><em>Technology Note:</em> Plotting functions in this way can be tedious, just as it was with rectangular functions. To obtain very accurate graphs, technology is a great aid. Most graphing calculators can plot polar functions; in the menu, set the plotting mode to something like <c>polar</c> or <c>POL</c>, depending on one's calculator. As with plotting parametric functions, the viewing <q>window</q> no longer determines the <m>x</m>-values that are plotted, so additional information needs to be provided. Often with the <q>window</q> settings are the settings for the beginning and ending <m>\theta</m> values (often called <c><m>\theta_{\text{ min } }</m></c> and <c><m>\theta_{\text{ max } }</m></c>) as well as the <c><m>\theta_{\text{ step } }</m></c> <mdash /> that is, how far apart the <m>\theta</m> values are spaced. The smaller the <c><m>\theta_{\text{ step } }</m></c> value, the more accurate the graph (which also increases plotting time). Using technology, we graphed the polar function <m>r=1+\cos(\theta)</m> from <xref ref="ex_polar4">Example</xref> in <xref ref="fig_polar4b">Figure</xref>.</p>
 
     <figure xml:id="fig_polar4b" >
       <caption>Using  technology to graph a polar function.</caption>
@@ -467,14 +467,14 @@
     <example xml:id="ex_polar5">
       <title>Sketching Polar Functions</title>
       <statement>
-        <p>Sketch the polar function <m>r=\cos (2\theta)</m> on <m>[0,2\pi]</m> by plotting points.</p>
+        <p>Sketch the polar function <m>r=\cos(2\theta)</m> on <m>[0,2\pi]</m> by plotting points.</p>
       </statement>
       <solution xml:id="fig_polar5table">
-        <p>We start by making a table of <m>\cos (2\theta)</m> evaluated at common angles <m>\theta</m>, as shown in <xref ref="fig_polar5table">Figure</xref>. These points are then plotted in <xref ref="fig_polar5">Figure</xref> (a). This particular graph <q>moves</q> around quite a bit and one can easily forget which points should be connected to each other. To help us with this, we numbered each point in the table and on the graph.</p>
+        <p>We start by making a table of <m>\cos(2\theta)</m> evaluated at common angles <m>\theta</m>, as shown in <xref ref="fig_polar5table">Figure</xref>. These points are then plotted in <xref ref="fig_polar5">Figure</xref> (a). This particular graph <q>moves</q> around quite a bit and one can easily forget which points should be connected to each other. To help us with this, we numbered each point in the table and on the graph.</p>
 
         <sidebyside>
           <m>\begin{array}{ccc}
-          \text{ Pt. }  \amp  \theta \amp  \cos (2\theta)\\ \hline
+          \text{ Pt. }  \amp  \theta \amp  \cos(2\theta)\\ \hline
            1 \amp  0 \amp  1. \\
            2 \amp  \pi /6 \amp  0.5 \\
            3 \amp  \pi /4 \amp  0. \\
@@ -486,7 +486,7 @@
            9 \amp  \pi  \amp  1. \\
           \end{array}</m>
           <m>\begin{array}{ccc}
-          \text{ Pt. }  \amp  \theta \amp  \cos (2\theta)\\ \hline
+          \text{ Pt. }  \amp  \theta \amp  \cos(2\theta)\\ \hline
            10 \amp  7 \pi /6 \amp  0.5 \\
            11 \amp  5 \pi /4 \amp  0. \\
            12 \amp  4 \pi /3 \amp  -0.5 \\
@@ -626,30 +626,30 @@
           Convert from polar to rectangular.
 
           <ol>
-            <li><p><m>\ds r=\frac{2}{\sin \theta-\cos\theta}</m></p></li>
+            <li><p><m>\ds r=\frac{2}{\sin(\theta) -\cos(\theta) }</m></p></li>
 
-            <li><p><m>r=2\cos \theta</m></p></li>
+            <li><p><m>r=2\cos(\theta)</m></p></li>
           </ol>
         </sidebyside>
       </statement>
       <solution>
         <ol>
-          <li><p>Replace <m>y</m> with <m>r\sin\theta</m> and replace <m>x</m> with <m>r\cos\theta</m>, giving:
+          <li><p>Replace <m>y</m> with <m>r\sin(\theta)</m> and replace <m>x</m> with <m>r\cos(\theta)</m>, giving:
               <md>
                 <mrow>y \amp =x^2</mrow>
-                <mrow>r\sin\theta \amp = r^2\cos^2\theta</mrow>
-                <mrow>\frac{\sin\theta}{\cos^2\theta} \amp = r</mrow>
+                <mrow>r\sin(\theta) \amp = r^2\cos^2(\theta) </mrow>
+                <mrow>\frac{\sin(\theta) }{\cos^2(\theta) } \amp = r</mrow>
               </md>
-              We have found that <m>r=\sin\theta/\cos^2\theta = \tan\theta\sec\theta</m>. The domain of this polar function is <m>(-\pi/2,\pi/2)</m>; plot a few points to see how the familiar parabola is traced out by the polar equation.</p></li>
+              We have found that <m>r=\sin(\theta) /\cos^2(\theta) = \tan(\theta) \sec(\theta)</m>. The domain of this polar function is <m>(-\pi/2,\pi/2)</m>; plot a few points to see how the familiar parabola is traced out by the polar equation.</p></li>
 
           <li><p>We again replace <m>x</m> and <m>y</m> using the standard identities and work to solve for <m>r</m>:
               <md>
                 <mrow>xy \amp = 1</mrow>
-                <mrow>r\cos\theta\cdot r\sin\theta \amp  = 1</mrow>
-                <mrow>r^2 \amp  = \frac{1}{\cos\theta\sin\theta}</mrow>
-                <mrow>r \amp  = \frac{1}{\sqrt{\cos\theta\sin\theta}}</mrow>
+                <mrow>r\cos(\theta) \cdot r\sin(\theta) \amp  = 1</mrow>
+                <mrow>r^2 \amp  = \frac{1}{\cos(\theta) \sin(\theta) }</mrow>
+                <mrow>r \amp  = \frac{1}{\sqrt{\cos(\theta) \sin(\theta) }}</mrow>
               </md>
-              This function is valid only when the product of <m>\cos\theta\sin\theta</m> is positive. This occurs in the first and third quadrants, meaning the domain of this polar function is <m>(0,\pi/2) \cup (\pi,3\pi/2)</m>.
+              This function is valid only when the product of <m>\cos(\theta) \sin(\theta)</m> is positive. This occurs in the first and third quadrants, meaning the domain of this polar function is <m>(0,\pi/2) \cup (\pi,3\pi/2)</m>.
 	
 	We can rewrite the original rectangular equation <m>xy=1</m> as <m>y=1/x</m>. This is graphed in <xref ref="fig_polar6">Figure</xref>; note how it only exists in the first and third quadrants.
 
@@ -696,20 +696,20 @@
 
             </p></li>
 
-          <li><p>There is no set way to convert from polar to rectangular; in general, we look to form the products <m>r\cos \theta</m> and <m>r\sin\theta</m>, and then replace these with <m>x</m> and <m>y</m>, respectively. We start in this problem by multiplying both sides by <m>\sin\theta-\cos\theta</m>:
+          <li><p>There is no set way to convert from polar to rectangular; in general, we look to form the products <m>r\cos(\theta)</m> and <m>r\sin(\theta)</m>, and then replace these with <m>x</m> and <m>y</m>, respectively. We start in this problem by multiplying both sides by <m>\sin(\theta) -\cos(\theta)</m>:
               <md>
-                <mrow>r \amp = \frac{2}{\sin\theta-\cos\theta}</mrow>
-                <mrow>r(\sin\theta-\cos\theta) \amp = 2</mrow>
-                <mrow>r\sin\theta-r\cos\theta \amp = 2. \qquad \text{ Now replace with \(y\) and \(x\): }</mrow>
+                <mrow>r \amp = \frac{2}{\sin(\theta) -\cos(\theta) }</mrow>
+                <mrow>r(\sin(\theta) -\cos(\theta) ) \amp = 2</mrow>
+                <mrow>r\sin(\theta) -r\cos(\theta) \amp = 2. \qquad \text{ Now replace with \(y\) and \(x\): }</mrow>
                 <mrow>y-x \amp = 2</mrow>
                 <mrow>y \amp = x+2.</mrow>
               </md>
-              The original polar equation, <m>r=2/(\sin\theta-\cos\theta)</m> does not easily reveal that its graph is simply a line. However, our conversion shows that it is. The upcoming gallery of polar curves gives the general equations of lines in polar form.</p></li>
+              The original polar equation, <m>r=2/(\sin(\theta) -\cos(\theta) )</m> does not easily reveal that its graph is simply a line. However, our conversion shows that it is. The upcoming gallery of polar curves gives the general equations of lines in polar form.</p></li>
 
-          <li><p>By multiplying both sides by <m>r</m>, we obtain both an <m>r^2</m> term and an <m>r\cos\theta</m> term, which we replace with <m>x^2+y^2</m> and <m>x</m>, respectively.
+          <li><p>By multiplying both sides by <m>r</m>, we obtain both an <m>r^2</m> term and an <m>r\cos(\theta)</m> term, which we replace with <m>x^2+y^2</m> and <m>x</m>, respectively.
               <md>
-                <mrow>r \amp =2\cos\theta</mrow>
-                <mrow>r^2 \amp = 2r\cos\theta</mrow>
+                <mrow>r \amp =2\cos(\theta) </mrow>
+                <mrow>r^2 \amp = 2r\cos(\theta) </mrow>
                 <mrow>x^2+y^2 \amp = 2x.</mrow>
                 <intertext>We recognize this as a circle; by completing the square we can find its radius and center.</intertext>
                 <mrow>x^2-2x+y^2 \amp = 0</mrow>
@@ -720,8 +720,8 @@
       </solution>
     </example>
 
-    <p>Some curves have very simple polar equations but rather complicated rectangular ones. For instance, the equation <m>r=1+\cos\theta</m> describes a <em>cardiod</em> (a shape important the sensitivity of microphones, among other things; one is graphed in the gallery in the Lima&#xe7;on section). It's rectangular form is not nearly as simple; it is the implicit equation
-      <m>x^4+y^4+2x^2y^2-2xy^2-2x^3-y^2=0.</m> The conversion is not <q>hard,</q> but takes several steps, and is left as a problem in the Exercise section.</p>
+    <p>Some curves have very simple polar equations but rather complicated rectangular ones. For instance, the equation <m>r=1+\cos(\theta)</m> describes a <em>cardiod</em> (a shape important the sensitivity of microphones, among other things; one is graphed in the gallery in the Lima&#xe7;on section). It's rectangular form is not nearly as simple; it is the implicit equation
+      <m>x^4+y^4+2x^2y^2-2xy^2-2x^3-y^2=0</m>. The conversion is not <q>hard,</q> but takes several steps, and is left as a problem in the Exercise section.</p>
 
     <p><em> Gallery of Polar Curves</em></p>
 
@@ -735,7 +735,7 @@
     <tabular>
       {p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
       <em>Through the origin:</em> &amp; <em>Horizontal line:</em> &amp; <em>Vertical line:</em> &amp; <em>Not through origin:</em> \\
-      <m>\theta = \alpha</m> &amp; <m>r=a\csc\theta</m> &amp; <m>r=a\sec\theta</m> &amp; <m>\ds r=\frac{b}{\sin\theta-m\cos\theta}</m> \\
+      <m>\theta = \alpha</m> &amp; <m>r=a\csc(\theta)</m> &amp; <m>r=a\sec(\theta)</m> &amp; <m>\ds r=\frac{b}{\sin(\theta) -m\cos(\theta) }</m> \\
 
       <!-- START figures/fig_polarline1.tex -->
       <image xml:id="img_polarline1" >
@@ -880,7 +880,7 @@
     <tabular>
       {p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
       <em>Centered on <m>x</m>-axis:</em> &amp; <em>Centered on <m>y</m>-axis:</em> &amp; <em>Centered on origin:</em> &amp;<em>Archimedean spiral</em>\\
-      <m>r=a\cos \theta</m> &amp; <m>r=a\sin\theta</m> &amp; <m>r=a</m> &amp; <m>r=\theta</m>\\
+      <m>r=a\cos(\theta)</m> &amp; <m>r=a\sin(\theta)</m> &amp; <m>r=a</m> &amp; <m>r=\theta</m>\\
 
       <!-- START figures/fig_polarcircle1.tex -->
       <image xml:id="img_polarcircle1" >
@@ -974,7 +974,7 @@
 
   <subsection>
     <title>Lima&#xe7;ons</title>
-    <p>Symmetric about <m>x</m>-axis: <m>r=a\pm b\cos\theta</m>; Symmetric about <m>y</m>-axis: <m>r=a\pm b\sin \theta</m>; <m>a,b>0</m> </p>
+    <p>Symmetric about <m>x</m>-axis: <m>r=a\pm b\cos(\theta)</m>; Symmetric about <m>y</m>-axis: <m>r=a\pm b\sin(\theta)</m>; <m>a,b>0</m> </p>
     <tabular>
       {p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
       <em>With inner loop:</em> &amp; <em>Cardiod:</em> &amp; <em>Dimpled:</em> &amp; <em>Convex:</em> \\
@@ -1069,7 +1069,7 @@
     <p>Curve contains <m>2n</m> petals when <m>n</m> is even and <m>n</m> petals when <m>n</m> is odd. </p>
     <tabular>
       {p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
-      <m>r=a\cos (2\theta)</m> &amp; <m>r=a\sin(2\theta)</m> &amp; <m>r=a\cos (3\theta)</m> &amp; <m>r=a\sin (3\theta)</m> \\
+      <m>r=a\cos(2\theta)</m> &amp; <m>r=a\sin(2\theta)</m> &amp; <m>r=a\cos(3\theta)</m> &amp; <m>r=a\sin(3\theta)</m> \\
 
       <!-- START figures/fig_polarrose1.tex -->
       <image xml:id="img_polarrose1" >
@@ -1155,7 +1155,7 @@
     <tabular>
       {p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
       <em>Rose curves</em> &amp;  &amp; <em>Lemniscate:</em> &amp; <em>Eight Curve:</em> \\
-      <m>r=a\sin (\theta/5)</m> &amp; <m>r=a\sin(2\theta/5)</m> &amp; <m>r^2=a^2\cos (2\theta)</m> &amp; <m>r^2=a^2\sec^4\theta\cos (2\theta)</m> \\
+      <m>r=a\sin(\theta/5)</m> &amp; <m>r=a\sin(2\theta/5)</m> &amp; <m>r^2=a^2\cos(2\theta)</m> &amp; <m>r^2=a^2\sec^4(\theta) \cos(2\theta)</m> \\
 
       <!-- START figures/fig_polarspecial1.tex -->
       <image xml:id="img_polarspecial1" >
@@ -1244,7 +1244,7 @@
     <example xml:id="ex_polar7">
       <title>Finding points of intersection with polar curves</title>
       <statement>
-        <p>Determine where the graphs of the polar equations <m>r=1+3\cos\theta</m> and <m>r=\cos \theta</m> intersect.</p>
+        <p>Determine where the graphs of the polar equations <m>r=1+3\cos(\theta)</m> and <m>r=\cos(\theta)</m> intersect.</p>
       </statement>
       <solution>
         <p>As technology is generally readily available, it is usually a good idea to start with a graph. We have graphed the two functions in <xref ref="fig_polar7">Figure</xref>(a); to better discern the intersection points, part (b) of the figure zooms in around the origin.</p>
@@ -1339,23 +1339,23 @@
 
         <p>We start by setting the two functions equal to each other and solving for <m>\theta</m>:
           <md>
-            <mrow>1+3\cos\theta \amp = \cos \theta</mrow>
-            <mrow>2\cos\theta \amp = -1</mrow>
-            <mrow>\cos\theta\amp = -\frac12</mrow>
+            <mrow>1+3\cos(\theta) \amp = \cos(\theta) </mrow>
+            <mrow>2\cos(\theta) \amp = -1</mrow>
+            <mrow>\cos(\theta) \amp = -\frac12</mrow>
             <mrow>\theta \amp = \frac{2\pi}{3}, \frac{4\pi}{3}.</mrow>
           </md>
         </p>
 
-        <p>(There are, of course, infinite solutions to the equation <m>\cos\theta=-1/2</m>; as the lima&#xe7;on is traced out once on <m>[0,2\pi]</m>, we restrict our solutions to this interval.)</p>
+        <p>(There are, of course, infinite solutions to the equation <m>\cos(\theta) =-1/2</m>; as the lima&#xe7;on is traced out once on <m>[0,2\pi]</m>, we restrict our solutions to this interval.)</p>
 
-        <p>We need to analyze this solution. When <m>\theta = 2\pi/3</m> we obtain the point of intersection that lies in the 4<m>^\text{ th }</m> quadrant. When <m>\theta = 4\pi/3</m>, we get the point of intersection that lies in the 2<m>^\text{ nd }</m> quadrant. There is more to say about this second intersection point, however. The circle defined by <m>r=\cos\theta</m> is traced out once on <m>[0,\pi]</m>, meaning that this point of intersection occurs while tracing out the circle a second time. It seems strange to pass by the point once and then recognize it as a point of intersection only when arriving there a <q>second time.</q> The first time the circle arrives at this point is when <m>\theta = \pi/3</m>.
-          It is key to understand that these two points are the same: <m>(\cos \pi/3,\pi/3)</m> and <m>(\cos 4\pi/3,4\pi/3)</m>.</p>
+        <p>We need to analyze this solution. When <m>\theta = 2\pi/3</m> we obtain the point of intersection that lies in the 4<m>^\text{ th }</m> quadrant. When <m>\theta = 4\pi/3</m>, we get the point of intersection that lies in the 2<m>^\text{ nd }</m> quadrant. There is more to say about this second intersection point, however. The circle defined by <m>r=\cos(\theta)</m> is traced out once on <m>[0,\pi]</m>, meaning that this point of intersection occurs while tracing out the circle a second time. It seems strange to pass by the point once and then recognize it as a point of intersection only when arriving there a <q>second time.</q> The first time the circle arrives at this point is when <m>\theta = \pi/3</m>.
+          It is key to understand that these two points are the same: <m>(\cos(\pi) /3,\pi/3)</m> and <m>(\cos(4\pi) /3,4\pi/3)</m>.</p>
 
-        <p>To summarize what we have done so far, we have found two points of intersection: when <m>\theta=2\pi/3</m> and when <m>\theta=4\pi/3</m>. When referencing the circle <m>r=\cos \theta</m>, the latter point is better referenced as when <m>\theta=\pi/3</m>.</p>
+        <p>To summarize what we have done so far, we have found two points of intersection: when <m>\theta=2\pi/3</m> and when <m>\theta=4\pi/3</m>. When referencing the circle <m>r=\cos(\theta)</m>, the latter point is better referenced as when <m>\theta=\pi/3</m>.</p>
 
         <p>There is yet another point of intersection: the pole (or, the origin). We did not recognize this intersection point using our work above as each graph arrives at the pole at a different <m>\theta</m> value.</p>
 
-        <p>A graph intersects the pole when <m>r=0</m>. Considering the circle <m>r=\cos\theta</m>, <m>r=0</m> when <m>\theta = \pi/2</m> (and odd multiples thereof, as the circle is repeatedly traced). The lima&#xe7;on intersects the pole when <m>1+3\cos\theta =0</m>; this occurs when <m>\cos \theta = -1/3</m>, or for <m>\theta = \cos^{-1}(-1/3)</m>. This is a nonstandard angle, approximately <m>\theta = 1.9106 = 109.47^\circ</m>. The lima&#xe7;on intersects the pole twice in <m>[0,2\pi]</m>; the other angle at which the lima&#xe7;on is at the pole is the reflection of the first angle across the <m>x</m>-axis. That is, <m>\theta = 4.3726 = 250.53^\circ.</m></p>
+        <p>A graph intersects the pole when <m>r=0</m>. Considering the circle <m>r=\cos(\theta)</m>, <m>r=0</m> when <m>\theta = \pi/2</m> (and odd multiples thereof, as the circle is repeatedly traced). The lima&#xe7;on intersects the pole when <m>1+3\cos(\theta) =0</m>; this occurs when <m>\cos(\theta) = -1/3</m>, or for <m>\theta = \cos^{-1}(-1/3)</m>. This is a nonstandard angle, approximately <m>\theta = 1.9106 = 109.47^\circ</m>. The lima&#xe7;on intersects the pole twice in <m>[0,2\pi]</m>; the other angle at which the lima&#xe7;on is at the pole is the reflection of the first angle across the <m>x</m>-axis. That is, <m>\theta = 4.3726 = 250.53^\circ</m>.</p>
       </solution>
     </example>
 
@@ -1793,7 +1793,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=1-\cos \theta</m>,<m>[0,2\pi]</m></p>
+            <p><m>r=1-\cos(\theta)</m>,<m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <figure>
@@ -1845,7 +1845,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=2+\sin \theta</m>,<m>[0,2\pi]</m></p>
+            <p><m>r=2+\sin(\theta)</m>,<m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <figure>
@@ -1897,7 +1897,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=2-\sin \theta</m>,<m>[0,2\pi]</m></p>
+            <p><m>r=2-\sin(\theta)</m>,<m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <figure>
@@ -1949,7 +1949,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=1-2\sin \theta</m>,<m>[0,2\pi]</m></p>
+            <p><m>r=1-2\sin(\theta)</m>,<m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <figure>
@@ -2001,7 +2001,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=1+2\sin \theta</m>,<m>[0,2\pi]</m></p>
+            <p><m>r=1+2\sin(\theta)</m>,<m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <figure>
@@ -2365,7 +2365,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=\cos\theta\sin\theta</m>,<m>[0,2\pi]</m></p>
+            <p><m>r=\cos(\theta) \sin(\theta)</m>,<m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <figure>
@@ -2469,7 +2469,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds r=\frac{3}{5\sin\theta-\cos\theta}</m>,<m>[0,2\pi]</m></p>
+            <p><m>\ds r=\frac{3}{5\sin(\theta) -\cos(\theta) }</m>,<m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <figure>
@@ -2521,7 +2521,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds r=\frac{-2}{3\cos\theta-2\sin\theta}</m>,<m>[0,2\pi]</m></p>
+            <p><m>\ds r=\frac{-2}{3\cos(\theta) -2\sin(\theta) }</m>,<m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <figure>
@@ -2573,7 +2573,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds r=3\sec \theta</m>,<m>(-\pi/2,\pi/2)</m></p>
+            <p><m>\ds r=3\sec(\theta)</m>,<m>(-\pi/2,\pi/2)</m></p>
           </statement>
           <solution>
             <figure>
@@ -2625,7 +2625,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds r=3\csc \theta</m>,<m>(0,\pi)</m></p>
+            <p><m>\ds r=3\csc(\theta)</m>,<m>(0,\pi)</m></p>
           </statement>
           <solution>
             <figure>
@@ -2678,7 +2678,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=2\cos\theta</m></p>
+            <p><m>r=2\cos(\theta)</m></p>
           </statement>
           <solution>
             <p><m>(x-1)^2+y^2=1</m></p>
@@ -2695,7 +2695,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=-4\sin\theta</m></p>
+            <p><m>r=-4\sin(\theta)</m></p>
           </statement>
           <solution>
             <p><m>x^2+(y+2)^2=4</m></p>
@@ -2712,7 +2712,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=\cos\theta+\sin\theta</m></p>
+            <p><m>r=\cos(\theta) +\sin(\theta)</m></p>
           </statement>
           <solution>
             <p><m>(x-1/2)^2+(y-1/2)^2=1/2</m></p>
@@ -2729,7 +2729,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds r=\frac{7}{5\sin\theta-2\cos\theta}</m></p>
+            <p><m>\ds r=\frac{7}{5\sin(\theta) -2\cos(\theta) }</m></p>
           </statement>
           <solution>
             <p><m>y=2/5x+7/5</m></p>
@@ -2746,7 +2746,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds r=\frac{3}{\cos\theta}</m></p>
+            <p><m>\ds r=\frac{3}{\cos(\theta) }</m></p>
           </statement>
           <solution>
             <p><m>x=3</m></p>
@@ -2763,7 +2763,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds r=\frac{4}{\sin\theta}</m></p>
+            <p><m>\ds r=\frac{4}{\sin(\theta) }</m></p>
           </statement>
           <solution>
             <p><m>y=4</m></p>
@@ -2780,7 +2780,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds r=\tan\theta</m></p>
+            <p><m>\ds r=\tan(\theta)</m></p>
           </statement>
           <solution>
             <p><m>x^4+x^2y^2x^2-y^2=0</m></p>
@@ -2852,7 +2852,7 @@
             <p><m>\ds y=4x+7</m></p>
           </statement>
           <solution>
-            <p><m>r=7/(\sin\theta-4\cos\theta)</m></p>
+            <p><m>r=7/(\sin(\theta) -4\cos(\theta) )</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -2869,7 +2869,7 @@
             <p><m>\ds x=5</m></p>
           </statement>
           <solution>
-            <p><m>r=5\sec \theta</m></p>
+            <p><m>r=5\sec(\theta)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -2886,7 +2886,7 @@
             <p><m>\ds y=5</m></p>
           </statement>
           <solution>
-            <p><m>r=5\csc \theta</m></p>
+            <p><m>r=5\csc(\theta)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -2903,7 +2903,7 @@
             <p><m>\ds x=y^2</m></p>
           </statement>
           <solution>
-            <p><m>r=\cos\theta/\sin^2\theta</m></p>
+            <p><m>r=\cos(\theta) /\sin^2(\theta)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -2920,7 +2920,7 @@
             <p><m>\ds x^2y=1</m></p>
           </statement>
           <solution>
-            <p><m>r=1/\sqrt[3]{\cos^2\theta\sin\theta}</m></p>
+            <p><m>r=1/\sqrt[3]{\cos^2(\theta) \sin(\theta) }</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -2954,7 +2954,7 @@
             <p><m>\ds (x+1)^2+y^2=1</m></p>
           </statement>
           <solution>
-            <p><m>r=-2\cos\theta</m></p>
+            <p><m>r=-2\cos(\theta)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -2969,7 +2969,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=\sin(2\theta)</m> and <m>r=\cos\theta</m> on <m>[0,\pi]</m></p>
+            <p><m>r=\sin(2\theta)</m> and <m>r=\cos(\theta)</m> on <m>[0,\pi]</m></p>
           </statement>
           <solution>
             <p><m>P(\sqrt{3}/2,\pi/6)</m>, <m>P(0,\pi/2)</m>, <m>P(-\sqrt{3}/2,5\pi/6)</m></p>
@@ -2986,7 +2986,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=\cos(2\theta)</m> and <m>r=\cos\theta</m> on <m>[0,\pi]</m></p>
+            <p><m>r=\cos(2\theta)</m> and <m>r=\cos(\theta)</m> on <m>[0,\pi]</m></p>
           </statement>
           <solution>
             <p><m>P(1,0)</m>, <m>P(0,\pi/2)=P(0,\pi/4)</m>, <m>P(-1/2,\pi/3)</m></p>
@@ -3003,7 +3003,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=2\cos\theta</m> and <m>r=2\sin\theta</m> on <m>[0,\pi]</m></p>
+            <p><m>r=2\cos(\theta)</m> and <m>r=2\sin(\theta)</m> on <m>[0,\pi]</m></p>
           </statement>
           <solution>
             <p><m>P(0,0)=P(0,\pi/2)</m>, <m>P(\sqrt{2},\pi/4)</m></p>
@@ -3020,7 +3020,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=\sin\theta</m> and <m>r=\sqrt{3}+3\sin\theta</m> on <m>[0,2\pi]</m></p>
+            <p><m>r=\sin(\theta)</m> and <m>r=\sqrt{3}+3\sin(\theta)</m> on <m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <p><m>P(\sqrt{3}/2,\pi/3)=P(-\sqrt{3}/2,4\pi/3)</m>, <m>P(\sqrt{3}/2,2\pi/3)=P(-\sqrt{3}/2,5\pi/3)</m>, <m>P(0,\pi/2)</m></p>
@@ -3054,7 +3054,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=3\cos\theta</m> and <m>r=1+\cos\theta</m> on <m>[-\pi,\pi]</m></p>
+            <p><m>r=3\cos(\theta)</m> and <m>r=1+\cos(\theta)</m> on <m>[-\pi,\pi]</m></p>
           </statement>
           <solution>
             <p><m>P(3/2,\pi/3)</m>, <m>P(3/2,-\pi/3)</m></p>
@@ -3088,7 +3088,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=1-\cos\theta</m> and <m>r=1+\sin\theta</m> on <m>[0,2\pi]</m></p>
+            <p><m>r=1-\cos(\theta)</m> and <m>r=1+\sin(\theta)</m> on <m>[0,2\pi]</m></p>
           </statement>
           <solution>
             <p><m>P(0,0)=P(0,3\pi/2)</m>, <m>P(1+\sqrt{2}/2,3\pi/4)</m>, <m>P(1-\sqrt{2}/2,7\pi/4)</m></p>

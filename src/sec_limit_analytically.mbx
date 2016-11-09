@@ -103,7 +103,7 @@
           </li>
 
           <li>
-            <p>Using the <xref ref="scalar-multiple-limit-rule" autoname="title" />, <xref ref="sum-difference-limit-rule" autoname="title" />, and <xref ref="power-limit-rule" autoname="title" /> rules, we find that <m>\lim\limits_{x\to 2}(5f(x) + g(x)^2) = 5\cdot 2 + 3^2 = 19.</m></p>
+            <p>Using the <xref ref="scalar-multiple-limit-rule" autoname="title" />, <xref ref="sum-difference-limit-rule" autoname="title" />, and <xref ref="power-limit-rule" autoname="title" /> rules, we find that <m>\lim\limits_{x\to 2}(5f(x) + g(x)^2) = 5\cdot 2 + 3^2 = 19</m>.</p>
           </li>
 
           <li>
@@ -265,8 +265,8 @@
           </li>
 
           <li>
-            <p>Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <m>e^{\ln(x)} = x</m> and evaluate <m>\lim\limits_{x\to 1} e^{\ln(x)} = \lim_\limits{x\to 1} x = 1.</m></p>
-            <p>We can also use the <xref ref="composition-limit-rule" autoname="title" /> rule. Using <xref ref="thm_lim_continuous">Theorem</xref>, we have <m>\lim\limits_{x\to 1}\ln(x) = \ln 1 = 0</m> and <m>\lim_{x\to 0} e^x= e^0=1</m>, satisfying the conditions of the <xref ref="composition-limit-rule" autoname="title" /> rule. Applying this rule,
+            <p>Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <m>e^{\ln(x)} = x</m> and evaluate <m>\lim\limits_{x\to 1} e^{\ln(x)} = \lim_\limits{x\to 1} x = 1</m>.</p>
+            <p>We can also use the <xref ref="composition-limit-rule" autoname="title" /> rule. Using <xref ref="thm_lim_continuous">Theorem</xref>, we have <m>\lim\limits_{x\to 1}\ln(x) = \ln(1) = 0</m> and <m>\lim_{x\to 0} e^x= e^0=1</m>, satisfying the conditions of the <xref ref="composition-limit-rule" autoname="title" /> rule. Applying this rule,
               <me>
                 \lim_{x\to 1} e^{\ln(x)} = e^{\lim_{x\to 1} \ln(x)}=e^{\ln(1)}  = e^0 = 1.
               </me>
@@ -276,7 +276,7 @@
           <li>
             <p>We encountered this limit in <xref ref="sec_limit_intro">Section</xref>. Applying our theorems, we attempt to find the limit as
               <me>
-                 \lim_{x\to 0}\frac{\sin(x)}{x}\rightarrow \frac{\sin 0}{0}
+                 \lim_{x\to 0}\frac{\sin(x)}{x}\rightarrow \frac{\sin(0) }{0}
               </me>
             which is of the form <m>\frac{0}{0}</m>. This, of course, violates a condition of the <xref ref="quotient-limit-rule" autoname="title"/>, as the limit of the denominator is not allowed to be <m>0</m>. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.</p>
           </li>
@@ -369,7 +369,7 @@
                             axis equal image
                             ]
                   \draw (axis cs:0,0) circle [radius=1];
-                  \draw (axis cs:0,0) node[shift={(22.5:25)}]{$\theta$} -- (axis cs:1,0.839) node[above]{$(1,\tan\theta)$} -- (axis cs:1,0) node[below right]{$(1,0)$} -- (axis cs:0.766,0.643) node [left]{$(\sin\theta,\cos\theta)$};
+                  \draw (axis cs:0,0) node[shift={(22.5:25)}]{$\theta$} -- (axis cs:1,0.839) node[above]{$(1,\tan(\theta) )$} -- (axis cs:1,0) node[below right]{$(1,0)$} -- (axis cs:0.766,0.643) node [left]{$(\sin(\theta) ,\cos(\theta) )$};
                   \addplot[soliddot] coordinates {(1,0.839) (1,0) (0.766,0.643)};
                 \end{axis}
               \end{tikzpicture}
@@ -379,7 +379,8 @@
           <!-- figures/fig_squeeze1.tex END -->
         </figure>
 
-        <p><xref ref="fig_squeeze1">Figure</xref> shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is <m>\frac{1}{2}\tan(\theta)</m>; the area of the sector is <m>\theta/2</m>; the area of the triangle contained inside the sector is <m>\frac{1}{2}\sin\theta</m>. It is then clear from <xref ref="fig_squeeze1">Figure</xref> that <me>\frac{\tan(\theta)}{2}\geq\frac{\theta}{2}\geq\frac{\sin(\theta)}{2}\text{.}</me></p> 
+
+        <p><xref ref="fig_squeeze_sinx">Figure</xref> shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is <m>\frac{1}{2}\tan(\theta)</m>; the area of the sector is <m>\theta/2</m>; the area of the triangle contained inside the sector is <m>\frac{1}{2}\sin(\theta)</m>. It is then clear from <xref ref="fig_squeeze1">Figure</xref> that <me>\frac{\tan(\theta)}{2}\geq\frac{\theta}{2}\geq\frac{\sin(\theta)}{2}\text{.}</me></p> 
 
         <aside>
           <p>You may need to recall that the area of a sector of a circle is <m>\frac{1}{2}r^2 \theta</m> with <m>\theta</m> measured in radians.</p>
@@ -393,7 +394,7 @@
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}[x=100pt,y=100pt]
-              \fill [draw=black,thick,fill=blue!20] (0,0) node [shift={(22.5:0.2)}] {$\theta$} -- (1,.839) -- node [pos=.5,below,rotate=90] {$\tan \theta$} (1,0) -- cycle;
+              \fill [draw=black,thick,fill=blue!20] (0,0) node [shift={(22.5:0.2)}] {$\theta$} -- (1,.839) -- node [pos=.5,below,rotate=90] {$\tan(\theta) $} (1,0) -- cycle;
               \draw (.5,0) node [below] {$1$};
               \draw [black,dashed,thick] (1,0) arc (0:40:1);
               \draw [black,dashed,thick] (1,0) -- (.766,.643);
@@ -411,7 +412,7 @@
               \fill [draw=black,thick,fill=blue!20] (0,0) node [shift={(22.5:0.2)}] {$\theta$} -- (1,0) arc(0:40:1) -- cycle;
               \draw (.5,0) node [below] {$1$};
               \draw [black,dashed,thick] (1,0) arc (0:40:1);
-              \draw [black,dashed,thick] (1,0) -- (.766,.643) -- (1,.839) -- node [pos=.5,below,rotate=90,color=white] {$\tan \theta$} cycle;
+              \draw [black,dashed,thick] (1,0) -- (.766,.643) -- (1,.839) -- node [pos=.5,below,rotate=90,color=white] {$\tan(\theta) $} cycle;
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -424,10 +425,10 @@
               <![CDATA[
               \begin{tikzpicture}[x=100pt,y=100pt]
               \fill [draw=black,thick,fill=blue!20] (0,0) node [shift={(22.5:0.2)}] {$\theta$} -- (1,0) --(.766,.643) -- cycle;
-              \draw [dashed,thick] (.766,0)  -- node [pos=.4,above,rotate=90] {$\sin \theta$}(.766,.643);
+              \draw [dashed,thick] (.766,0)  -- node [pos=.4,above,rotate=90] {$\sin(\theta) $}(.766,.643);
               \draw (.766,5pt) -- ++(5pt,0) -- ++(0,-5pt);
               \draw (.5,0) node [below] {$1$};
-              \draw [black,dashed,thick] (1,0) arc(0:40:1) --  (1,.839) -- node [pos=.5,below,rotate=90,color=white] {$\tan \theta$} cycle;
+              \draw [black,dashed,thick] (1,0) arc(0:40:1) --  (1,.839) -- node [pos=.5,below,rotate=90,color=white] {$\tan(\theta) $} cycle;
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -437,22 +438,22 @@
 
         <p>Multiply all terms by <m>\frac{2}{\sin(\theta)}</m>, giving
           <me>
-            \frac{1}{\cos(\theta)} \geq \frac{\theta}{\sin (\theta)} \geq 1.
+            \frac{1}{\cos(\theta)} \geq \frac{\theta}{\sin(\theta)} \geq 1.
           </me>
         </p>
 
         <p>Taking reciprocals reverses the inequalities, giving
           <me>
-            \cos (\theta) \leq \frac{\sin (\theta)}{\theta} \leq 1.
+            \cos(\theta) \leq \frac{\sin(\theta)}{\theta} \leq 1.
           </me>
         </p>
 
-        <p>(These inequalities hold for all values of <m>\theta</m> near <m>0</m>, even negative values, since <m>\cos (-\theta) = \cos \theta</m> and <m>\sin (-\theta) = -\sin (\theta)</m>.)</p>
+        <p>(These inequalities hold for all values of <m>\theta</m> near <m>0</m>, even negative values, since <m>\cos(-\theta) = \cos(\theta)</m> and <m>\sin(-\theta) = -\sin(\theta)</m>.)</p>
 
         <p>Now take limits.
           <md>
-            <mrow>\lim_{\theta\to 0} \cos (\theta)\amp \leq \lim_{\theta\to 0} \frac{\sin(\theta)}{\theta} \leq \lim_{\theta\to 0}  1</mrow>
-            <mrow>\cos 0 \amp\leq \lim_{\theta\to 0} \frac{\sin(\theta)}{\theta} \leq  1</mrow>
+            <mrow>\lim_{\theta\to 0} \cos(\theta)\amp \leq \lim_{\theta\to 0} \frac{\sin(\theta)}{\theta} \leq \lim_{\theta\to 0}  1</mrow>
+            <mrow>\cos(0) \amp\leq \lim_{\theta\to 0} \frac{\sin(\theta)}{\theta} \leq  1</mrow>
             <mrow> 1\amp \leq \lim_{\theta\to 0} \frac{\sin(\theta)}{\theta} \leq  1</mrow>
           </md>
         </p>
@@ -617,12 +618,12 @@
       </solution>
     </example>
 
-    <p>We end this section by revisiting a limit first seen in <xref ref="sec_limit_intro">Section</xref>, a limit of a difference quotient. Let <m>f(x) = -1.5x^2+11.5x</m>; we approximated the limit <m>\lim\limits_{h\to 0}\frac{f(1+h)-f(1)}{h}\approx 8.5.</m> We formally evaluate this limit in the following example.</p>
+    <p>We end this section by revisiting a limit first seen in <xref ref="sec_limit_intro">Section</xref>, a limit of a difference quotient. Let <m>f(x) = -1.5x^2+11.5x</m>; we approximated the limit <m>\lim\limits_{h\to 0}\frac{f(1+h)-f(1)}{h}\approx 8.5</m>. We formally evaluate this limit in the following example.</p>
 
     <example xml:id="ex_limit_diffquot">
       <title>Evaluating the limit of a difference quotient</title>
       <statement>
-        <p>Let <m>f(x) = -1.5x^2+11.5x</m>; find <m>\lim\limits_{h\to 0}\frac{f(1+h)-f(1)}{h}.</m></p>
+        <p>Let <m>f(x) = -1.5x^2+11.5x</m>; find <m>\lim\limits_{h\to 0}\frac{f(1+h)-f(1)}{h}</m>.</p>
       </statement>
       <solution>
         <p>Since <m>f</m> is a polynomial, our first attempt should be to employ <xref ref="thm_lim_continuous">Theorem</xref> and substitute <m>0</m> for <m>h</m>. However, we see that this gives us <q><m>0/0</m>.</q> Knowing that we have a rational function hints that some algebra will help. Consider the following steps:
@@ -1756,7 +1757,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to0}\frac{\ln (1+x)}{x}=</m><var name="$L" width="20"/></p>
+            <p><m>\lim\limits_{x\to0}\frac{\ln(1+x)}{x}=</m><var name="$L" width="20"/></p>
           </statement>
           <solution>
           </solution>

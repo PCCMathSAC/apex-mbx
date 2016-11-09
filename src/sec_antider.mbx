@@ -94,14 +94,14 @@
     <example xml:id="ex_anti2">
       <title>Evaluating indefinite integrals</title>
       <statement>
-        <p>Evaluate <m>\displaystyle \int \sin x\ dx.</m></p>
+        <p>Evaluate <m>\displaystyle \int \sin(x) \ dx</m>.</p>
       </statement>
       <solution>
-        <p>We are asked to find all functions <m>F(x)</m> such that <m>\Fp(x) = \sin x</m>. Some thought will lead us to one solution: <m>F(x) = -\cos x</m>, because <m>\frac{d}{dx}(-\cos x) = \sin x</m>.</p>
+        <p>We are asked to find all functions <m>F(x)</m> such that <m>\Fp(x) = \sin(x)</m>. Some thought will lead us to one solution: <m>F(x) = -\cos(x)</m>, because <m>\frac{d}{dx}(-\cos(x) ) = \sin(x)</m>.</p>
 
-        <p>The indefinite integral of <m>\sin x</m> is thus <m>-\cos x</m>, plus a constant of integration. So:
+        <p>The indefinite integral of <m>\sin(x)</m> is thus <m>-\cos(x)</m>, plus a constant of integration. So:
           <me>
-            \int \sin x \ dx = -\cos x + C.
+            \int \sin(x) \ dx = -\cos(x) + C.
           </me>
         </p>
       </solution>
@@ -111,17 +111,17 @@
 
     <p>This process of <em>antidifferentiation</em> is really solving a <em>differential</em> question. The integral
       <me>
-        \int \sin x\ dx
+        \int \sin(x) \ dx
       </me>
-      presents us with a differential, <m>dy = \sin x\ dx</m>. It is asking: <q>What is <m>y</m>?</q> We found lots of solutions, all of the form <m>y = -\cos x+C</m>.</p>
+      presents us with a differential, <m>dy = \sin(x) \ dx</m>. It is asking: <q>What is <m>y</m>?</q> We found lots of solutions, all of the form <m>y = -\cos(x) +C</m>.</p>
 
-    <p>Letting <m>dy = \sin x\ dx</m>, rewrite
+    <p>Letting <m>dy = \sin(x) \ dx</m>, rewrite
       <me>
-        \int \sin x \ dx  \text{ as }  \int  dy.
+        \int \sin(x) \ dx  \text{ as }  \int  dy.
       </me>
     </p>
 
-    <p>This is asking: <q>What functions have a differential of the form <m>dy</m>?</q> The answer is <q>Functions of the form <m>y+C</m>, where <m>C</m> is a constant.</q> What is <m>y</m>? We have lots of choices, all differing by a constant; the simplest choice is <m>y = -\cos x</m>.</p>
+    <p>This is asking: <q>What functions have a differential of the form <m>dy</m>?</q> The answer is <q>Functions of the form <m>y+C</m>, where <m>C</m> is a constant.</q> What is <m>y</m>? We have lots of choices, all differing by a constant; the simplest choice is <m>y = -\cos(x)</m>.</p>
 
     <p>Understanding all of this is more important later as we try to find antiderivatives of more complicated functions. In this section, we will simply explore the rules of indefinite integration, and one can succeed for now with answering <q>What happened to the <m>dx</m>?</q> with <q>It went away.</q></p>
 
@@ -192,23 +192,23 @@
 
             <li><p><m>\frac{d}{dx}\big(x^n \big) = n\cdot x^{n-1}</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\sin x \big) = \cos x</m></p></li>
+            <li><p><m>\frac{d}{dx}\big(\sin(x) \big) = \cos(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\cos x \big) = -\sin x</m></p></li>
+            <li><p><m>\frac{d}{dx}\big(\cos(x) \big) = -\sin(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\tan x \big) = \sec^2 x</m></p></li>
+            <li><p><m>\frac{d}{dx}\big(\tan(x) \big) = \sec^2(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\csc x \big) = -\csc x\cot x</m></p></li>
+            <li><p><m>\frac{d}{dx}\big(\csc(x) \big) = -\csc(x) \cot(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\sec x \big) = \sec x\tan x</m></p></li>
+            <li><p><m>\frac{d}{dx}\big(\sec(x) \big) = \sec(x) \tan(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\cot x \big) = -\csc^2 x</m></p></li>
+            <li><p><m>\frac{d}{dx}\big(\cot(x) \big) = -\csc^2(x)</m></p></li>
 
             <li><p><m>\frac{d}{dx}\big(e^ x \big) = e^x</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(a^x \big) = \ln a\cdot a^x</m></p></li>
+            <li><p><m>\frac{d}{dx}\big(a^x \big) = \ln(a) \cdot a^x</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\ln x \big) = \frac1 x</m></p></li>
+            <li><p><m>\frac{d}{dx}\big(\ln(x) \big) = \frac1 x</m></p></li>
           </ol>
 
           Common Indefinite Integral Rules
@@ -225,23 +225,23 @@
 
             <li><p><m>\int x^n\ dx =\frac{1}{n+1}x^{n+1}+ C</m>  { (<m>n\neq -1</m>)}</p></li>
 
-            <li><p><m>\int \cos x\ dx = \sin x+C</m></p></li>
+            <li><p><m>\int \cos(x) \ dx = \sin(x) +C</m></p></li>
 
-            <li><p><m>\int \sin x\ dx = -\cos x+C</m></p></li>
+            <li><p><m>\int \sin(x) \ dx = -\cos(x) +C</m></p></li>
 
-            <li><p><m>\int \sec^2 x\ dx = \tan x+C</m></p></li>
+            <li><p><m>\int \sec^2(x) \ dx = \tan(x) +C</m></p></li>
 
-            <li><p><m>\int \csc x\cot  x\ dx = -\csc x+C</m></p></li>
+            <li><p><m>\int \csc(x) \cot(x) \ dx = -\csc(x) +C</m></p></li>
 
-            <li><p><m>\int \sec x\tan x\ dx = \sec x+C</m></p></li>
+            <li><p><m>\int \sec(x) \tan(x) \ dx = \sec(x) +C</m></p></li>
 
-            <li><p><m>\int \csc^2 x\ dx = -\cot x+C</m></p></li>
+            <li><p><m>\int \csc^2(x) \ dx = -\cot(x) +C</m></p></li>
 
             <li><p><m>\int e^x\ dx = e^x+C</m></p></li>
 
-            <li><p><m>\int a^x\ dx = \frac{1}{\ln a}\cdot a^x+C</m></p></li>
+            <li><p><m>\int a^x\ dx = \frac{1}{\ln(a) }\cdot a^x+C</m></p></li>
 
-            <li><p><m>\int \frac{1}x\ dx = \ln \abs{x}+C</m></p></li>
+            <li><p><m>\int \frac{1}x\ dx = \ln\abs{x}+C</m></p></li>
           </ol>
         </sidebyside>
       </statement>
@@ -252,7 +252,7 @@
     <ul>
       <li><p>Rule <hash />1 states <m>\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx</m>. This is the Constant Multiple Rule: <index><main>Constant Multiple Rule</main><sub>of integration</sub></index> we can temporarily ignore constants when finding antiderivatives, just as we did when computing derivatives (i.e., <m>\frac{d}{dx}\big(3x^2\big)</m> is just as easy to compute as <m>\frac{d}{dx}\big(x^2\big)</m>). An example:
           <me>
-            \int 5\cos x\ dx = 5\cdot\int \cos x\ dx = 5\cdot (\sin x+C) = 5\sin x + C.
+            \int 5\cos(x) \ dx = 5\cdot\int \cos(x) \ dx = 5\cdot (\sin(x) +C) = 5\sin(x) + C.
           </me>
           In the last step we can consider the constant as also being multiplied by 5, but <q>5 times a constant</q> is still a constant, so we just write <q><m>C</m> </q>.</p></li>
 
@@ -333,38 +333,38 @@
     <example xml:id="ex_anti5">
       <title>Solving initial value problems</title>
       <statement>
-        <p>Find <m>f(t)</m>, given that <m>\fpp(t) = \cos t</m>, <m>\fp(0) = 3</m> and <m>f(0) = 5</m>.</p>
+        <p>Find <m>f(t)</m>, given that <m>\fpp(t) = \cos(t)</m>, <m>\fp(0) = 3</m> and <m>f(0) = 5</m>.</p>
       </statement>
       <solution>
         <p>We start by finding <m>\fp(t)</m>, which is an antiderivative of <m>\fpp(t)</m>:
           <me>
-            \int \fpp(t)\ dt = \int \cos t\ dt = \sin t + C = \fp(t).
+            \int \fpp(t)\ dt = \int \cos(t) \ dt = \sin(t) + C = \fp(t).
           </me>
         </p>
 
-        <p>So <m>\fp(t) = \sin t+C</m> for the correct value of <m>C</m>. We are given that <m>\fp(0) = 3</m>, so:
+        <p>So <m>\fp(t) = \sin(t) +C</m> for the correct value of <m>C</m>. We are given that <m>\fp(0) = 3</m>, so:
           <me>
-            \fp(0) = 3  \Rightarrow  \sin 0+C = 3  \Rightarrow  C=3.
+            \fp(0) = 3  \Rightarrow  \sin(0) +C = 3  \Rightarrow  C=3.
           </me>
         </p>
 
-        <p>Using the initial value, we have found <m>\fp(t) = \sin t+ 3.</m>
+        <p>Using the initial value, we have found <m>\fp(t) = \sin(t) + 3</m>.
 		
           We now find <m>f(t)</m> by integrating again.
           <me>
-            f(t)=\int \fp(t) \ dt = \int (\sin t+3)\ dt = -\cos t + 3t + C.
+            f(t)=\int \fp(t) \ dt = \int (\sin(t) +3)\ dt = -\cos(t) + 3t + C.
           </me>
         </p>
 
         <p>We are given that <m>f(0) = 5</m>, so
           <md>
-            <mrow>-\cos 0 + 3(0) + C \amp = 5</mrow>
+            <mrow>-\cos(0) + 3(0) + C \amp = 5</mrow>
             <mrow>-1 + C \amp = 5</mrow>
             <mrow>C \amp = 6</mrow>
           </md>
         </p>
 
-        <p>Thus <m>f(t) = -\cos t + 3t + 6</m>.</p>
+        <p>Thus <m>f(t) = -\cos(t) + 3t + 6</m>.</p>
       </solution>
     </example>
 
@@ -645,10 +645,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int \sec^2\theta\  d\theta</m></p>
+            <p><m>\ds \int \sec^2(\theta) \  d\theta</m></p>
           </statement>
           <solution>
-            <p><m>\tan \theta+C</m></p>
+            <p><m>\tan(\theta) +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -662,10 +662,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int \sin\theta\  d\theta</m></p>
+            <p><m>\ds \int \sin(\theta) \  d\theta</m></p>
           </statement>
           <solution>
-            <p><m>-\cos \theta+C</m></p>
+            <p><m>-\cos(\theta) +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -679,10 +679,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int (\sec x\tan x + \csc x\cot x)\  dx</m></p>
+            <p><m>\ds \int (\sec(x) \tan(x) + \csc(x) \cot(x) )\  dx</m></p>
           </statement>
           <solution>
-            <p><m>\sec x - \csc x+C</m></p>
+            <p><m>\sec(x) - \csc(x) +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -716,7 +716,7 @@
             <p><m>\ds \int 3^t\  dt</m></p>
           </statement>
           <solution>
-            <p><m>3^t/\ln 3+C</m></p>
+            <p><m>3^t/\ln(3) +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -733,7 +733,7 @@
             <p><m>\ds \int \frac{5^t}{2}\  dt</m></p>
           </statement>
           <solution>
-            <p><m>\frac{5^t}{2\ln 5}+C</m></p>
+            <p><m>\frac{5^t}{2\ln(5) }+C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -832,16 +832,16 @@
             </pg-code>
           </setup>
           <statement>
-            <p>This problem investigates why <xref ref="thm_indef_alg">Theorem</xref> states that <m>\ds \int \frac1x\ dx = \ln \abs{x} + C</m>.</p>
+            <p>This problem investigates why <xref ref="thm_indef_alg">Theorem</xref> states that <m>\ds \int \frac1x\ dx = \ln\abs{x} + C</m>.</p>
 
             <ol>
-              <li><p>What is the domain of <m>y = \ln x</m>?</p></li>
+              <li><p>What is the domain of <m>y = \ln(x)</m>?</p></li>
 
-              <li><p>Find <m>\frac{d}{dx}\big(\ln x\big)</m>.</p></li>
+              <li><p>Find <m>\frac{d}{dx}\big(\ln(x) \big)</m>.</p></li>
 
-              <li><p>What is the domain of <m>y = \ln (-x)</m>?</p></li>
+              <li><p>What is the domain of <m>y = \ln(-x)</m>?</p></li>
 
-              <li><p>Find <m>\frac{d}{dx}\big(\ln (-x)\big)</m>.</p></li>
+              <li><p>Find <m>\frac{d}{dx}\big(\ln(-x)\big)</m>.</p></li>
 
               <li><p>You should find that <m>1/x</m> has two types of antiderivatives, depending on whether <m>x>0</m> or <m>x\lt 0</m>. In one expression, give a formula for <m>\ds \int \frac{1}{x}\ dx</m> that takes these different domains into account, and explain your answer.</p></li>
             </ol>
@@ -856,7 +856,7 @@
 
               <li><p><m>1/x</m></p></li>
 
-              <li><p><m>\ln \abs{x}+C</m>. Explanations will vary.</p></li>
+              <li><p><m>\ln\abs{x}+C</m>. Explanations will vary.</p></li>
             </ol>
           </solution>
         </webwork>
@@ -872,10 +872,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\fp(x) = \sin x</m> and <m>f(0)= 2</m></p>
+            <p><m>\fp(x) = \sin(x)</m> and <m>f(0)= 2</m></p>
           </statement>
           <solution>
-            <p><m>-\cos x+3</m></p>
+            <p><m>-\cos(x) +3</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -923,10 +923,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\fp(x) = \sec^2 x</m> and <m>f(\pi/4)= 5</m></p>
+            <p><m>\fp(x) = \sec^2(x)</m> and <m>f(\pi/4)= 5</m></p>
           </statement>
           <solution>
-            <p><m>\tan x + 4</m></p>
+            <p><m>\tan(x) + 4</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -943,7 +943,7 @@
             <p><m>\fp(x) = 7^x</m> and <m>f(2)= 1</m></p>
           </statement>
           <solution>
-            <p><m>7^x/\ln 7 + 1-49/\ln 7</m></p>
+            <p><m>7^x/\ln(7) + 1-49/\ln(7)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1008,10 +1008,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\fpp(\theta) = \sin \theta</m> and <m>\fp(\pi)= 2</m>, <m>f(\pi) = 4</m></p>
+            <p><m>\fpp(\theta) = \sin(\theta)</m> and <m>\fp(\pi)= 2</m>, <m>f(\pi) = 4</m></p>
           </statement>
           <solution>
-            <p><m>\theta-\sin (\theta)-\pi +4</m></p>
+            <p><m>\theta-\sin(\theta)-\pi +4</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1025,11 +1025,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\fpp(x) = 24x^2+2^x-\cos x</m> and <m>\fp(0)= 5</m>, <m>f(0) = 0</m></p>
+            <p><m>\fpp(x) = 24x^2+2^x-\cos(x)</m> and <m>\fp(0)= 5</m>, <m>f(0) = 0</m></p>
           </statement>
           <solution>
-            <p><m>\frac{2 x^4 \ln ^2(2)+2^x+x \ln 2) (\ln 32-1)+\ln
-                 ^2(2) \cos (x)-1-\ln ^2(2)}{\ln ^2(2)}</m></p>
+            <p><m>\frac{2 x^4 \ln^2(2)+2^x+x \ln(2) ) (\ln(32) -1)+\ln^2(2) \cos(x)-1-\ln^2(2)}{\ln^2(2)}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1080,10 +1079,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Given <m>y = x^2e^x\cos x</m>, find <m>dy</m>.</p>
+            <p>Given <m>y = x^2e^x\cos(x)</m>, find <m>dy</m>.</p>
           </statement>
           <solution>
-            <p><m>dy = (2xe^x\cos x+ x^2e^x\cos x- x^2e^x\sin x)dx</m></p>
+            <p><m>dy = (2xe^x\cos(x) + x^2e^x\cos(x) - x^2e^x\sin(x) )dx</m></p>
           </solution>
         </webwork>
       </exercise>

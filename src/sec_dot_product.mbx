@@ -212,14 +212,14 @@
       <statement>
         <p>Let <m>\vec u</m> and <m>\vec v</m> be vectors in <m>\mathbb{R}^2</m> or <m>\mathbb{R}^3</m>. Then
           <me>
-            \dotp uv = \norm{\vec u}\,\norm{\vec v} \cos\theta,
+            \dotp uv = \norm{\vec u}\,\norm{\vec v} \cos(\theta) ,
           </me>
           where <m>\theta</m>, <m>0\leq\theta\leq \pi</m>, is the angle between <m>\vec u</m> and <m>\vec v</m>.
           <index><main>dot product</main><sub>properties</sub></index><index><main>vectors</main><sub>dot product</sub></index></p>
       </statement>
     </theorem>
 
-    <p>When <m>\theta</m> is an acute angle (i.e., <m>0\leq \theta \lt \pi/2</m>), <m>\cos \theta</m> is positive; when <m>\theta = \pi/2</m>, <m>\cos \theta = 0</m>; when <m>\theta</m> is an obtuse angle (<m>\pi/2\lt \theta \leq \pi</m>), <m>\cos \theta</m> is negative. Thus the sign of the dot product gives a general indication of the angle between the vectors, illustrated in <xref ref="fig_dotpsign">Figure</xref>.</p>
+    <p>When <m>\theta</m> is an acute angle (i.e., <m>0\leq \theta \lt \pi/2</m>), <m>\cos(\theta)</m> is positive; when <m>\theta = \pi/2</m>, <m>\cos(\theta) = 0</m>; when <m>\theta</m> is an obtuse angle (<m>\pi/2\lt \theta \leq \pi</m>), <m>\cos(\theta)</m> is negative. Thus the sign of the dot product gives a general indication of the angle between the vectors, illustrated in <xref ref="fig_dotpsign">Figure</xref>.</p>
 
     <p><!-- START figures/fig_dotpanglesign.tex -->
       <image xml:id="img_dotpanglesign" >
@@ -255,7 +255,7 @@
 
       \captionof{figure}{Illustrating the relationship between the angle between vectors and the sign of their dot product.} We <em>can</em> use <xref ref="thm_dot_product">Theorem</xref> to compute the dot product, but generally this theorem is used to find the angle between known vectors (since the dot product is generally easy to compute). To this end, we rewrite the theorem's equation as
       <me>
-        \cos \theta = \frac{\dotp uv}{\norm{\vec u}\norm{\vec v}}  \Leftrightarrow  \theta = \cos^{-1}\left(\frac{\dotp uv}{\norm{\vec u}\norm{\vec v}}\right).
+        \cos(\theta) = \frac{\dotp uv}{\norm{\vec u}\norm{\vec v}}  \Leftrightarrow  \theta = \cos^{-1}\left(\frac{\dotp uv}{\norm{\vec u}\norm{\vec v}}\right).
       </me>
     </p>
 
@@ -543,7 +543,7 @@
 
     <p>Using trigonometry, we can state that
       <men xml:id="eq_proj1" >
-        \norm{\vec w} = \norm{\vec u}\cos \theta.
+        \norm{\vec w} = \norm{\vec u}\cos(\theta) .
       </men>
     </p>
 
@@ -597,10 +597,10 @@
 
     </figure>
 
-    <p>We also know that <m>\vec w</m> is parallel to to <m>\vec v</m> ; that is, the direction of <m>\vec w</m> is the direction of <m>\vec v</m>, described by the unit vector <m>\frac{1}{\norm{\vec v}}\vec v</m>. The vector <m>\vec w</m> is the vector in the direction <m>\frac{1}{\norm{\vec v}}\vec v</m> with magnitude <m>\norm{\vec u}\cos \theta</m>:
+    <p>We also know that <m>\vec w</m> is parallel to to <m>\vec v</m> ; that is, the direction of <m>\vec w</m> is the direction of <m>\vec v</m>, described by the unit vector <m>\frac{1}{\norm{\vec v}}\vec v</m>. The vector <m>\vec w</m> is the vector in the direction <m>\frac{1}{\norm{\vec v}}\vec v</m> with magnitude <m>\norm{\vec u}\cos(\theta)</m>:
       <md>
-        <mrow>\vec w \amp = \Big(\norm{\vec u}\cos\theta \Big)\frac{1}{\norm{\vec v}}\vec v.</mrow>
-        <intertext>Replace <m>\cos\theta</m> using <xref ref="thm_dot_product">Theorem</xref>:</intertext>
+        <mrow>\vec w \amp = \Big(\norm{\vec u}\cos(\theta) \Big)\frac{1}{\norm{\vec v}}\vec v.</mrow>
+        <intertext>Replace <m>\cos(\theta)</m> using <xref ref="thm_dot_product">Theorem</xref>:</intertext>
         <mrow>\amp = \left(\norm{\vec u}\frac{\dotp uv}{\norm{\vec u}\norm{\vec v}}\right)\frac{1}{\norm{\vec v}} \vec v</mrow>
         <mrow>\amp = \frac{\dotp uv}{\norm{\vec v}^2}\vec v.</mrow>
         <intertext>Now apply <xref ref="thm_dot_product_properties">Theorem</xref>.</intertext>
@@ -1178,9 +1178,9 @@
         <p>A man slides a box along a ramp that rises 3ft over a distance of 15ft by applying 50lb of force as shown in <xref ref="fig_dotp7">Figure</xref>. Compute the work done.</p>
       </statement>
       <solution>
-        <p>The figure indicates that the force applied makes a <m>30^\circ</m> angle with the horizontal, so <m>\vec F = 50\la \cos 30^\circ,\sin 30^\circ\ra \approx \la 43.3,25\ra.</m> The ramp is represented by <m>\vec d  = \la 15,3\ra</m>. The work done is simply
+        <p>The figure indicates that the force applied makes a <m>30^\circ</m> angle with the horizontal, so <m>\vec F = 50\la \cos(30^\circ) ,\sin(30^\circ) \ra \approx \la 43.3,25\ra</m>. The ramp is represented by <m>\vec d  = \la 15,3\ra</m>. The work done is simply
           <me>
-            \dotp Fd = 50\la \cos 30^\circ,\sin 30^\circ\ra \cdot \la 15,3\ra \approx 724.5 \text{ ft--lb } .
+            \dotp Fd = 50\la \cos(30^\circ) ,\sin(30^\circ) \ra \cdot \la 15,3\ra \approx 724.5 \text{ ft--lb } .
           </me>
         </p>
 

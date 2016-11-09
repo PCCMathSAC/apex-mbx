@@ -87,7 +87,7 @@
 
     <p>This is simply an initial<ndash />value problem. We can solve this using the techniques first described in <xref ref="sec_antider">Section</xref>. To keep <m>p_2(x)</m> as simple as possible, we'll assume that not only <m>p_2''(0)=2</m>, but that <m>p_2''(x)=2</m>. That is, the second derivative of <m>p_2</m> is constant.</p>
 
-    <p>If <m>p_2''(x) = 2</m>, then <m>p_2'(x) = 2x+C</m> for some constant <m>C</m>. Since we have determined that <m>p_2'(0) = 1</m>, we find that <m>C=1</m> and so <m>p_2'(x) = 2x+1</m>. Finally, we can compute <m>p_2(x) = x^2+x+C</m>. Using our initial values, we know <m>p_2(0) = 2</m> so <m>C=2.</m> We conclude that <m>p_2(x) = x^2+x+2.</m> This function is plotted with <m>f</m> in <xref ref="fig_taypolyintrob">Figure</xref>.</p>
+    <p>If <m>p_2''(x) = 2</m>, then <m>p_2'(x) = 2x+C</m> for some constant <m>C</m>. Since we have determined that <m>p_2'(0) = 1</m>, we find that <m>C=1</m> and so <m>p_2'(x) = 2x+1</m>. Finally, we can compute <m>p_2(x) = x^2+x+C</m>. Using our initial values, we know <m>p_2(0) = 2</m> so <m>C=2</m>. We conclude that <m>p_2(x) = x^2+x+2</m>. This function is plotted with <m>f</m> in <xref ref="fig_taypolyintrob">Figure</xref>.</p>
 
     <figure xml:id="fig_taypolyintrob" >
       <caption>Plotting <m>f</m>, <m>p_2</m> and <m>p_4</m>.</caption>
@@ -256,7 +256,7 @@
               <me>
                 p_5 = 1+x+\frac{1}{2}x^2+\frac{1}{6}x^3 + \frac{1}{24}x^4 + \frac{1}{120}x^5.
               </me>
-              To approximate the value of <m>e</m>, note that <m>e = e^1 = f(1) \approx p_5(1).</m> It is very straightforward to evaluate <m>p_5(1)</m>:
+              To approximate the value of <m>e</m>, note that <m>e = e^1 = f(1) \approx p_5(1)</m>. It is very straightforward to evaluate <m>p_5(1)</m>:
               <me>
                 p_5(1) = 1+1+\frac12+\frac16+\frac1{24}+\frac1{120} = \frac{163}{60} \approx 2.71667.
               </me>
@@ -319,22 +319,22 @@
       <title>Finding and using Taylor polynomials</title>
       <statement>
         <ol>
-          <li><p>Find the <m>n^\text{ th }</m> Taylor polynomial of <m>y=\ln x</m> at <m>x=1</m>.</p></li>
+          <li><p>Find the <m>n^\text{ th }</m> Taylor polynomial of <m>y=\ln(x)</m> at <m>x=1</m>.</p></li>
 
-          <li><p>Use <m>p_6(x)</m> to approximate the value of <m>\ln 1.5</m>.</p></li>
+          <li><p>Use <m>p_6(x)</m> to approximate the value of <m>\ln(1.5)</m>.</p></li>
 
-          <li><p>Use <m>p_6(x)</m> to approximate the value of <m>\ln 2</m>.</p></li>
+          <li><p>Use <m>p_6(x)</m> to approximate the value of <m>\ln(2)</m>.</p></li>
         </ol>
       </statement>
       <solution>
         <ol>
-          <li><p>We begin by creating a table of derivatives of <m>\ln x</m> evaluated at <m>x=1</m>. While this is not as straightforward as it was in the previous example, a pattern does emerge, as shown in <xref ref="fig_taypoly2a">Figure</xref>.
+          <li><p>We begin by creating a table of derivatives of <m>\ln(x)</m> evaluated at <m>x=1</m>. While this is not as straightforward as it was in the previous example, a pattern does emerge, as shown in <xref ref="fig_taypoly2a">Figure</xref>.
 
               <table xml:id="fig_taypoly2a" >
-                <caption>Derivatives of <m>\ln x</m> evaluated at <m>x=1</m>.</caption>
+                <caption>Derivatives of <m>\ln(x)</m> evaluated at <m>x=1</m>.</caption>
                 <tabular>
                   <row>
-                    <cell><m>f(x) = \ln x</m></cell>
+                    <cell><m>f(x) = \ln(x)</m></cell>
                     <cell><m>\Rightarrow</m></cell>
                     <cell><m>f(1) = 0</m></cell>
                   </row>
@@ -387,17 +387,17 @@
               <me>
                 p_6(x) = (x-1)-\frac12(x-1)^2+\frac13(x-1)^3-\frac14(x-1)^4+\frac15(x-1)^5-\frac16(x-1)^6.
               </me>
-              Since <m>p_6(x)</m> approximates <m>\ln x</m> well near <m>x=1</m>, we approximate <m>\ln 1.5 \approx p_6(1.5)</m>:
+              Since <m>p_6(x)</m> approximates <m>\ln(x)</m> well near <m>x=1</m>, we approximate <m>\ln(1.5) \approx p_6(1.5)</m>:
               <md>
                 <mrow>p_6(1.5) \amp = (1.5-1)-\frac12(1.5-1)^2+\frac13(1.5-1)^3-\frac14(1.5-1)^4+\cdots</mrow>
                 <mrow>\amp \cdots +\frac15(1.5-1)^5-\frac16(1.5-1)^6</mrow>
                 <mrow>\amp =\frac{259}{640}</mrow>
                 <mrow>\amp \approx 0.404688.</mrow>
               </md>
-              This is a good approximation as a calculator shows that <m>\ln 1.5 \approx 0.4055.</m> <xref ref="fig_taypoly2b">Figure</xref> plots <m>y=\ln x</m> with <m>y=p_6(x)</m>. We can see that <m>\ln 1.5\approx p_6(1.5)</m>.
+              This is a good approximation as a calculator shows that <m>\ln(1.5) \approx 0.4055</m>. <xref ref="fig_taypoly2b">Figure</xref> plots <m>y=\ln(x)</m> with <m>y=p_6(x)</m>. We can see that <m>\ln(1.5) \approx p_6(1.5)</m>.
 
               <figure xml:id="fig_taypoly2b" >
-                <caption>A plot of <m>y=\ln x</m> and its 6<m>^th</m> degree Taylor polynomial at <m>x=1</m>.</caption>
+                <caption>A plot of <m>y=\ln(x)</m> and its 6<m>^th</m> degree Taylor polynomial at <m>x=1</m>.</caption>
                 <!-- START figures/fig_taypoly2b.tex -->
                 <image xml:id="img_taypoly2b" >
                   <description></description>
@@ -429,7 +429,7 @@
                     1.556)(2.78,-2.161)(2.84,-2.892)(2.9,-3.765)(2.96,-4.804)};
                     %\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
 
-                    \draw (axis cs:2.5,1.65) node {\scriptsize $y=\ln x$};
+                    \draw (axis cs:2.5,1.65) node {\scriptsize $y=\ln(x) $};
                     \draw (axis cs:2.2,-2.75) node {\scriptsize $y=p_{6}(x)$};
 
                     \end{axis}
@@ -446,7 +446,7 @@
 
             </p></li>
 
-          <li><p>We approximate <m>\ln 2</m> with <m>p_6(2)</m>:
+          <li><p>We approximate <m>\ln(2)</m> with <m>p_6(2)</m>:
               <md>
                 <mrow>p_6(2) \amp = (2-1)-\frac12(2-1)^2+\frac13(2-1)^3-\frac14(2-1)^4+\cdots</mrow>
                 <mrow>\amp \cdots +\frac15(2-1)^5-\frac16(2-1)^6</mrow>
@@ -454,12 +454,12 @@
                 <mrow>\amp = \frac{37}{60}</mrow>
                 <mrow>\amp \approx 0.616667.</mrow>
               </md>
-              This approximation is not terribly impressive: a hand held calculator shows that <m>\ln 2 \approx 0.693147.</m> The graph in <xref ref="fig_taypoly2b">Figure</xref> shows that <m>p_6(x)</m> provides less accurate approximations of <m>\ln x</m> as <m>x</m> gets close to 0 or 2. 
+              This approximation is not terribly impressive: a hand held calculator shows that <m>\ln(2) \approx 0.693147</m>. The graph in <xref ref="fig_taypoly2b">Figure</xref> shows that <m>p_6(x)</m> provides less accurate approximations of <m>\ln(x)</m> as <m>x</m> gets close to 0 or 2. 
 
-              Surprisingly enough, even the 20<m>^\text{ th }</m> degree Taylor polynomial fails to approximate <m>\ln x</m> for <m>x>2</m>, as shown in <xref ref="fig_taypoly2c">Figure</xref>. We'll soon discuss why this is.
+              Surprisingly enough, even the 20<m>^\text{ th }</m> degree Taylor polynomial fails to approximate <m>\ln(x)</m> for <m>x>2</m>, as shown in <xref ref="fig_taypoly2c">Figure</xref>. We'll soon discuss why this is.
 
               <figure xml:id="fig_taypoly2c" >
-                <caption>A plot of <m>y=\ln x</m> and its 20<m>^th</m> degree Taylor polynomial at <m>x=1</m>.</caption>
+                <caption>A plot of <m>y=\ln(x)</m> and its 20<m>^th</m> degree Taylor polynomial at <m>x=1</m>.</caption>
                 <!-- START figures/fig_taypoly2c.tex -->
                 <image xml:id="img_taypoly2c" >
                   <description></description>
@@ -490,7 +490,7 @@
                     0.621)(2.132,0.4476)(2.188,-0.04877)(2.244,-1.326)(2.3,-4.421)};
                     %\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
 
-                    \draw (axis cs:2.5,1.65) node {\scriptsize $y=\ln x$};
+                    \draw (axis cs:2.5,1.65) node {\scriptsize $y=\ln(x) $};
                     \draw (axis cs:1.7,-2.75) node {\scriptsize $y=p_{20}(x)$};
 
                     \end{axis}
@@ -513,7 +513,7 @@
     <p>Taylor polynomials are used to approximate functions <m>f(x)</m> in mainly two situations:</p>
 
     <ol>
-      <li><p>When <m>f(x)</m> is known, but perhaps <q>hard</q> to compute directly. For instance, we can define <m>y=\cos x</m> as either the ratio of sides of a right triangle (<q>adjacent over hypotenuse</q>) or with the unit circle. However, neither of these provides a convenient way of computing <m>\cos 2</m>. A Taylor polynomial of sufficiently high degree can provide a reasonable method of computing such values using only operations usually hard<ndash />wired into a computer (<m>+</m>, <m>-</m>, <times /> and <m>\div</m>).</p></li>
+      <li><p>When <m>f(x)</m> is known, but perhaps <q>hard</q> to compute directly. For instance, we can define <m>y=\cos(x)</m> as either the ratio of sides of a right triangle (<q>adjacent over hypotenuse</q>) or with the unit circle. However, neither of these provides a convenient way of computing <m>\cos(2)</m>. A Taylor polynomial of sufficiently high degree can provide a reasonable method of computing such values using only operations usually hard<ndash />wired into a computer (<m>+</m>, <m>-</m>, <times /> and <m>\div</m>).</p></li>
 
       <li><p>When <m>f(x)</m> is not known, but information about its derivatives is known. This occurs more often than one might think, especially in the study of differential equations.</p></li>
     </ol>
@@ -522,7 +522,7 @@
       <p>Even though Taylor polynomials <em>could</em> be used in calculators and computers to calculate values of trigonometric functions, in practice they generally aren't. Other more efficient and accurate methods have been developed, such as the CORDIC algorithm.</p>
     </aside>
 
-    <p>In both situations, a critical piece of information to have is <q>How good is my approximation?</q> If we use a Taylor polynomial to compute <m>\cos 2</m>, how do we know how accurate the approximation is?</p>
+    <p>In both situations, a critical piece of information to have is <q>How good is my approximation?</q> If we use a Taylor polynomial to compute <m>\cos(2)</m>, how do we know how accurate the approximation is?</p>
 
     <p>We had the same problem when studying Numerical Integration. <xref ref="thm_numerical_error">Theorem</xref> provided bounds on the error when using, say, Simpson's Rule to approximate a definite integral. These bounds allowed us to determine that, for instance, using <m>10</m> subintervals provided an approximation within <m>\pm .01</m> of the exact value. The following theorem gives similar bounds for Taylor (and hence Maclaurin) polynomials.</p>
 
@@ -534,7 +534,7 @@
               <me>
                 f(x) = f(c) + \fp(c)(x-c) + \frac{\fpp(c)}{2!}(x-c)^2+ \cdots +\frac{f^{(n)}(c)}{n!}(x-c)^n+R_n(x),
               </me>
-              where <m>\ds R_n(x) = \frac{f^{(n+1)}(z_x)}{(n+1)!}(x-c)^{(n+1)}.</m>
+              where <m>\ds R_n(x) = \frac{f^{(n+1)}(z_x)}{(n+1)!}(x-c)^{(n+1)}</m>.
               <index><main>Taylor Polynomial</main><sub>Taylor's Theorem</sub></index><index><main>Taylor's Theorem</main></index></p></li>
 
           <li><p><m>\ds \abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{(x-c)^{(n+1)}}</m></p></li>
@@ -544,24 +544,24 @@
 
     <p>The first part of Taylor's Theorem states that <m>f(x) = p_n(x) + R_n(x)</m>, where <m>p_n(x)</m> is the <m>n^\text{ th }</m> order Taylor polynomial and <m>R_n(x)</m> is the remainder, or error, in the Taylor approximation. The second part gives bounds on how big that error can be. If the <m>(n+1)^\text{ th }</m> derivative is large, the error may be large; if <m>x</m> is far from <m>c</m>, the error may also be large. However, the <m>(n+1)!</m> term in the denominator tends to ensure that the error gets smaller as <m>n</m> increases.</p>
 
-    <p>The following example computes error estimates for the approximations of <m>\ln 1.5</m> and <m>\ln 2</m> made in <xref ref="ex_taypoly2">Example</xref>.</p>
+    <p>The following example computes error estimates for the approximations of <m>\ln(1.5)</m> and <m>\ln(2)</m> made in <xref ref="ex_taypoly2">Example</xref>.</p>
 
     <example xml:id="ex_taypoly3">
       <title>Finding error bounds of a Taylor polynomial</title>
       <statement>
-        <p>Use <xref ref="thm_taylorthm">Theorem</xref> to find error bounds when approximating <m>\ln 1.5</m> and <m>\ln 2</m> with <m>p_6(x)</m>, the Taylor polynomial of degree 6 of <m>f(x)=\ln x</m> at <m>x=1</m>, as calculated in <xref ref="ex_taypoly2">Example</xref>.</p>
+        <p>Use <xref ref="thm_taylorthm">Theorem</xref> to find error bounds when approximating <m>\ln(1.5)</m> and <m>\ln(2)</m> with <m>p_6(x)</m>, the Taylor polynomial of degree 6 of <m>f(x)=\ln(x)</m> at <m>x=1</m>, as calculated in <xref ref="ex_taypoly2">Example</xref>.</p>
       </statement>
       <solution>
         <ol>
-          <li><p>We start with the approximation of <m>\ln 1.5</m> with <m>p_6(1.5)</m>. The theorem references an open interval <m>I</m> that contains both <m>x</m> and <m>c</m>. The smaller the interval we use the better; it will give us a more accurate (and smaller!) approximation of the error. We let <m>I = (0.9,1.6)</m>, as this interval contains both <m>c=1</m> and <m>x=1.5</m>. 
+          <li><p>We start with the approximation of <m>\ln(1.5)</m> with <m>p_6(1.5)</m>. The theorem references an open interval <m>I</m> that contains both <m>x</m> and <m>c</m>. The smaller the interval we use the better; it will give us a more accurate (and smaller!) approximation of the error. We let <m>I = (0.9,1.6)</m>, as this interval contains both <m>c=1</m> and <m>x=1.5</m>. 
 
-              The theorem references <m>\max\abs{f^{(n+1)}(z)}</m>. In our situation, this is asking <q>How big can the <m>7^\text{ th }</m> derivative of <m>y=\ln x</m> be on the interval <m>(0.9,1.6)</m>?</q> The seventh derivative is <m>y = -6!/x^7</m>. The largest value it attains on <m>I</m> is about 1506. Thus we can bound the error as:
+              The theorem references <m>\max\abs{f^{(n+1)}(z)}</m>. In our situation, this is asking <q>How big can the <m>7^\text{ th }</m> derivative of <m>y=\ln(x)</m> be on the interval <m>(0.9,1.6)</m>?</q> The seventh derivative is <m>y = -6!/x^7</m>. The largest value it attains on <m>I</m> is about 1506. Thus we can bound the error as:
               <md>
                 <mrow>\abs{R_6(1.5)} \amp \leq \frac{\max\abs{f^{(7)}(z)}}{7!}\abs{(1.5-1)^7}</mrow>
                 <mrow>\amp \leq \frac{1506}{5040}\cdot\frac1{2^7}</mrow>
                 <mrow>\amp \approx 0.0023.</mrow>
               </md>
-              We computed <m>p_6(1.5) = 0.404688</m>; using a calculator, we find <m>\ln 1.5 \approx 0.405465</m>, so the actual error is about <m>0.000778</m>, which is less than our bound of <m>0.0023</m>. This affirms Taylor's Theorem; the theorem states that our approximation would be within about 2 thousandths of the actual value, whereas the approximation was actually closer.</p></li>
+              We computed <m>p_6(1.5) = 0.404688</m>; using a calculator, we find <m>\ln(1.5) \approx 0.405465</m>, so the actual error is about <m>0.000778</m>, which is less than our bound of <m>0.0023</m>. This affirms Taylor's Theorem; the theorem states that our approximation would be within about 2 thousandths of the actual value, whereas the approximation was actually closer.</p></li>
 
           <li><p>We again find an interval <m>I</m> that contains both <m>c=1</m> and <m>x=2</m>; we choose <m>I = (0.9,2.1)</m>. The maximum value of the seventh derivative of <m>f</m> on this interval is again about 1506 (as the largest values come near <m>x=0.9</m>). Thus
               <md>
@@ -569,7 +569,7 @@
                 <mrow>\amp \leq \frac{1506}{5040}\cdot1^7</mrow>
                 <mrow>\amp \approx 0.30.</mrow>
               </md>
-              This bound is not as nearly as good as before. Using the degree 6 Taylor polynomial at <m>x =1</m> will bring us within 0.3 of the correct answer. As <m>p_6(2)\approx 0.61667</m>, our error estimate guarantees that the actual value of <m>\ln 2</m> is somewhere between <m>0.31667</m> and <m>0.91667</m>. These bounds are not particularly useful.
+              This bound is not as nearly as good as before. Using the degree 6 Taylor polynomial at <m>x =1</m> will bring us within 0.3 of the correct answer. As <m>p_6(2)\approx 0.61667</m>, our error estimate guarantees that the actual value of <m>\ln(2)</m> is somewhere between <m>0.31667</m> and <m>0.91667</m>. These bounds are not particularly useful.
 
               In reality, our approximation was only off by about 0.07. However, we are approximating ostensibly because we do not know the real answer. In order to be assured that we have a good approximation, we would have to resort to using a polynomial of higher degree.</p></li>
         </ol>
@@ -581,70 +581,70 @@
     <example xml:id="ex_taypoly4">
       <title>Finding sufficiently accurate Taylor polynomials</title>
       <statement>
-        <p>Find <m>n</m> such that the <m>n^\text{ th }</m> Taylor polynomial of <m>f(x)=\cos x</m> at <m>x=0</m> approximates <m>\cos 2</m> to within <m>0.001</m> of the actual answer. What is <m>p_n(2)</m>?</p>
+        <p>Find <m>n</m> such that the <m>n^\text{ th }</m> Taylor polynomial of <m>f(x)=\cos(x)</m> at <m>x=0</m> approximates <m>\cos(2)</m> to within <m>0.001</m> of the actual answer. What is <m>p_n(2)</m>?</p>
       </statement>
       <solution>
-        <p>Following Taylor's theorem, we need bounds on the size of the derivatives of <m>f(x)=\cos x</m>. In the case of this trigonometric function, this is easy. All derivatives of cosine are <m>\pm \sin x</m> or <m>\pm \cos x</m>. In all cases, these functions are never greater than 1 in absolute value. We want the error to be less than <m>0.001</m>. To find the appropriate <m>n</m>, consider the following inequalities:
+        <p>Following Taylor's theorem, we need bounds on the size of the derivatives of <m>f(x)=\cos(x)</m>. In the case of this trigonometric function, this is easy. All derivatives of cosine are <m>\pm \sin(x)</m> or <m>\pm \cos(x)</m>. In all cases, these functions are never greater than 1 in absolute value. We want the error to be less than <m>0.001</m>. To find the appropriate <m>n</m>, consider the following inequalities:
           <md>
             <mrow>\frac{\max\abs{f^{(n+1)}(z)}}{(n+1)!}\abs{(2-0)^{(n+1)}} \amp \leq 0.001</mrow>
             <mrow>\frac1{(n+1)!}\cdot2^{(n+1)} \amp \leq 0.001</mrow>
           </md>
         </p>
 
-        <p>We find an <m>n</m> that satisfies this last inequality with trial<ndash />and<ndash />error. When <m>n=8</m>, we have <m>\ds \frac{2^{8+1}}{(8+1)!} \approx 0.0014</m>; when <m>n=9</m>, we have <m>\ds \frac{2^{9+1}}{(9+1)!} \approx 0.000282 \lt 0.001</m>. Thus we want to approximate <m>\cos 2</m> with <m>p_9(2)</m>.</p>
+        <p>We find an <m>n</m> that satisfies this last inequality with trial<ndash />and<ndash />error. When <m>n=8</m>, we have <m>\ds \frac{2^{8+1}}{(8+1)!} \approx 0.0014</m>; when <m>n=9</m>, we have <m>\ds \frac{2^{9+1}}{(9+1)!} \approx 0.000282 \lt 0.001</m>. Thus we want to approximate <m>\cos(2)</m> with <m>p_9(2)</m>.</p>
 
-        <p>We now set out to compute <m>p_9(x)</m>. We again need a table of the derivatives of <m>f(x)=\cos x</m> evaluated at <m>x=0</m>. A table of these values is given in <xref ref="fig_taypoly4a">Figure</xref>.</p>
+        <p>We now set out to compute <m>p_9(x)</m>. We again need a table of the derivatives of <m>f(x)=\cos(x)</m> evaluated at <m>x=0</m>. A table of these values is given in <xref ref="fig_taypoly4a">Figure</xref>.</p>
 
         <table xml:id="fig_taypoly4a" >
-          <caption>A table of the derivatives of <m>f(x)=\cos x</m> evaluated at <m>x=0</m>.</caption>
+          <caption>A table of the derivatives of <m>f(x)=\cos(x)</m> evaluated at <m>x=0</m>.</caption>
           <tabular>
             <row>
-              <cell><m>f(x) = \cos x</m></cell>
+              <cell><m>f(x) = \cos(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>f(0) = 1</m></cell>
             </row>
             <row>
-              <cell><m>\fp(x) = -\sin x</m></cell>
+              <cell><m>\fp(x) = -\sin(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>\fp(0) = 0</m></cell>
             </row>
             <row>
-              <cell><m>\fp'(x) = -\cos x</m></cell>
+              <cell><m>\fp'(x) = -\cos(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>\fp'(0) = -1</m></cell>
             </row>
             <row>
-              <cell><m>\fp''(x) = \sin x</m></cell>
+              <cell><m>\fp''(x) = \sin(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>\fp''(0) = 0</m></cell>
             </row>
             <row>
-              <cell><m>f^{(4)}(x) = \cos x</m></cell>
+              <cell><m>f^{(4)}(x) = \cos(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>f^{(4)}(0) = 1</m></cell>
             </row>
             <row>
-              <cell><m>f^{(5)}(x) = -\sin x</m></cell>
+              <cell><m>f^{(5)}(x) = -\sin(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>f^{(5)}(0) = 0</m></cell>
             </row>
             <row>
-              <cell><m>f^{(6)}(x) = -\cos x</m></cell>
+              <cell><m>f^{(6)}(x) = -\cos(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>f^{(6)}(0) = -1</m></cell>
             </row>
             <row>
-              <cell><m>f^{(7)}(x) = \sin x</m></cell>
+              <cell><m>f^{(7)}(x) = \sin(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>f^{(7)}(0) = 0</m></cell>
             </row>
             <row>
-              <cell><m>f^{(8)}(x) = \cos x</m></cell>
+              <cell><m>f^{(8)}(x) = \cos(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>f^{(8)}(0) = 1</m></cell>
             </row>
             <row>
-              <cell><m>f^{(9)}(x) = -\sin x</m></cell>
+              <cell><m>f^{(9)}(x) = -\sin(x)</m></cell>
               <cell><m>\Rightarrow</m></cell>
               <cell><m>f^{(9)}(0) = 0</m></cell>
             </row>
@@ -660,18 +660,18 @@
           </md>
         </p>
 
-        <p>We finally approximate <m>\cos 2</m>:
+        <p>We finally approximate <m>\cos(2)</m>:
           <me>
-            \cos 2 \approx p_8(2) = -\frac{131}{315} \approx -0.41587.
+            \cos(2) \approx p_8(2) = -\frac{131}{315} \approx -0.41587.
           </me>
         </p>
 
         <p>Our error bound guarantee that this approximation is within <m>0.001</m> of the correct answer. Technology shows us that our approximation is actually within about <m>0.0003</m> of the correct answer.</p>
 
-        <p><xref ref="fig_taypoly4b">Figure</xref> shows a graph of <m>y=p_8(x)</m> and <m>y=\cos x</m>. Note how well the two functions agree on about <m>(-\pi,\pi)</m>.</p>
+        <p><xref ref="fig_taypoly4b">Figure</xref> shows a graph of <m>y=p_8(x)</m> and <m>y=\cos(x)</m>. Note how well the two functions agree on about <m>(-\pi,\pi)</m>.</p>
 
         <figure xml:id="fig_taypoly4b" >
-          <caption>A graph of <m>f(x)= \cos x</m> and its degree 8 Maclaurin polynomial.</caption>
+          <caption>A graph of <m>f(x)= \cos(x)</m> and its degree 8 Maclaurin polynomial.</caption>
           <!-- START figures/fig_taypoly4.tex -->
           <image xml:id="img_taypoly4b" >
             <description></description>
@@ -710,7 +710,7 @@
 
 
 
-              \node [below] at (myplot.below origin) {\begin{tikzpicture} \draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $f(x)= \cos x$};\end{tikzpicture}};
+              \node [below] at (myplot.below origin) {\begin{tikzpicture} \draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $f(x)= \cos(x) $};\end{tikzpicture}};
 
               \end{tikzpicture}
               ]]>
@@ -725,7 +725,7 @@
       <title>Finding and using Taylor polynomials</title>
       <statement>
         <ol>
-          <li><p>Find the degree 4 Taylor polynomial, <m>p_4(x)</m>, for <m>f(x)=\sqrt{x}</m> at <m>x=4.</m></p></li>
+          <li><p>Find the degree 4 Taylor polynomial, <m>p_4(x)</m>, for <m>f(x)=\sqrt{x}</m> at <m>x=4</m>.</p></li>
 
           <li><p>Use <m>p_4(x)</m> to approximate <m>\sqrt{3}</m>.</p></li>
 
@@ -824,7 +824,7 @@
 
 
 
-                    %\node [below] at (myplot.below origin) {\begin{tikzpicture} \draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $f(x)= \cos x$};\end{tikzpicture}};
+                    %\node [below] at (myplot.below origin) {\begin{tikzpicture} \draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $f(x)= \cos(x) $};\end{tikzpicture}};
 
                     \end{tikzpicture}
                     ]]>
@@ -942,7 +942,7 @@
 
 
 
-              %\node [below] at (myplot.below origin) {\begin{tikzpicture} \draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $f(x)= \cos x$};\end{tikzpicture}};
+              %\node [below] at (myplot.below origin) {\begin{tikzpicture} \draw[thick,{\colorone}] (0,0)--(10pt,0) node [right,black] {\scriptsize $f(x)= \cos(x) $};\end{tikzpicture}};
 
               \end{tikzpicture}
               ]]>
@@ -1061,7 +1061,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \sin x,  n=8</m></p>
+            <p><m>f(x) = \sin(x) ,  n=8</m></p>
           </statement>
           <solution>
             <p><m>p_8(x) = x-\frac16x^3+\frac1{120}x^5-\frac1{5040}x^7</m></p>
@@ -1095,7 +1095,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \tan x,  n=6</m></p>
+            <p><m>f(x) = \tan(x) ,  n=6</m></p>
           </statement>
           <solution>
             <p><m>p_6(x) = \frac{2 x^5}{15}+\frac{x^3}{3}+x</m></p>
@@ -1199,10 +1199,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \ln (x+1),  n=4,  c=1</m></p>
+            <p><m>\ds f(x) = \ln(x+1),  n=4,  c=1</m></p>
           </statement>
           <solution>
-            <p><m>p_4(x) = \ln (2)+\frac{1}{2} (-1+x)-\frac{1}{8}
+            <p><m>p_4(x) = \ln(2)+\frac{1}{2} (-1+x)-\frac{1}{8}
                  (-1+x)^2+\frac{1}{24} (-1+x)^3-\frac{1}{64} (-1+x)^4</m></p>
           </solution>
         </webwork>
@@ -1217,7 +1217,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \cos x,  n=6,  c=\pi/4</m></p>
+            <p><m>\ds f(x) = \cos(x) ,  n=6,  c=\pi/4</m></p>
           </statement>
           <solution>
             <p><m>p_6(x) = \frac{1}{\sqrt{2}}-\frac{-\frac{\pi
@@ -1240,7 +1240,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \sin x,  n=5,  c=\pi/6</m></p>
+            <p><m>\ds f(x) = \sin(x) ,  n=5,  c=\pi/6</m></p>
           </statement>
           <solution>
             <p><m>p_5(x) = \frac{1}{2}+\frac{1}{2} \sqrt{3} \left(-\frac{\pi
@@ -1315,7 +1315,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = x^2\cos x,  n=2,  c=\pi</m></p>
+            <p><m>\ds f(x) = x^2\cos(x) ,  n=2,  c=\pi</m></p>
           </statement>
           <solution>
             <p><m>p_2(x) =-\pi ^2-2 \pi  (x-\pi)+\frac{1}{2} \left(\pi ^2-2\right)
@@ -1334,7 +1334,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Approximate <m>\sin 0.1</m> with the Maclaurin polynomial of degree 3.</p>
+            <p>Approximate <m>\sin(0.1)</m> with the Maclaurin polynomial of degree 3.</p>
           </statement>
           <solution>
             <p><m>p_3(x) =x-\frac{x^3}{6}</m>; <m>p_3(0.1) = 0.09983</m>. Error is bounded by <m>\pm \frac{1}{4!}\cdot0.1^4 \approx \pm 0.000004167</m>.</p>
@@ -1351,7 +1351,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Approximate <m>\cos 1</m> with the Maclaurin polynomial of degree 4.</p>
+            <p>Approximate <m>\cos(1)</m> with the Maclaurin polynomial of degree 4.</p>
           </statement>
           <solution>
             <p><m>p_4(x) =1-\frac{x^2}{2}+\frac{x^4}{24}</m>; <m>p_4(1) = 13/24\approx 0.54167</m>. Error is bounded by <m>\pm \frac{1}{5!}\cdot1^5 \approx \pm 0.00833</m></p>
@@ -1371,7 +1371,7 @@
             <p>Approximate <m>\sqrt{10}</m> with the Taylor polynomial of degree 2 centered at <m>x=9</m>.</p>
           </statement>
           <solution>
-            <p><m>p_2(x) =3+\frac{1}{6} (-9+x)-\frac{1}{216} (-9+x)^2</m>; <m>p_2(10) =  3.16204</m>. The third derivative of <m>f(x) =\sqrt x</m> is bounded on <m>(8,11)</m> by <m>0.003</m>. Error is bounded by <m>\pm \frac{0.003}{3!}\cdot1^3 = \pm 0.0005.</m></p>
+            <p><m>p_2(x) =3+\frac{1}{6} (-9+x)-\frac{1}{216} (-9+x)^2</m>; <m>p_2(10) =  3.16204</m>. The third derivative of <m>f(x) =\sqrt x</m> is bounded on <m>(8,11)</m> by <m>0.003</m>. Error is bounded by <m>\pm \frac{0.003}{3!}\cdot1^3 = \pm 0.0005</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1385,10 +1385,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Approximate <m>\ln1.5</m> with the Taylor polynomial of degree 3 centered at <m>x=1</m>.</p>
+            <p>Approximate <m>\ln(1.5)</m> with the Taylor polynomial of degree 3 centered at <m>x=1</m>.</p>
           </statement>
           <solution>
-            <p><m>p_3(x) =-1+x-\frac{1}{2} (-1+x)^2+\frac{1}{3} (-1+x)^3</m>; <m>p_3(1.5) =  0.41667</m>. The fourth derivative of <m>f(x) =\ln x</m> is bounded on <m>(.9,2)</m> by <m>10</m>. Error is bounded by <m>\pm \frac{10}{4!}\cdot.5^4 = \pm 0.026.</m></p>
+            <p><m>p_3(x) =-1+x-\frac{1}{2} (-1+x)^2+\frac{1}{3} (-1+x)^3</m>; <m>p_3(1.5) =  0.41667</m>. The fourth derivative of <m>f(x) =\ln(x)</m> is bounded on <m>(.9,2)</m> by <m>10</m>. Error is bounded by <m>\pm \frac{10}{4!}\cdot.5^4 = \pm 0.026</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1437,10 +1437,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Find <m>n</m> such that the Maclaurin polynomial of degree <m>n</m> of <m>f(x)= \cos x</m> approximates <m>\cos \pi/3</m> within <m>0.0001</m> of the actual value.</p>
+            <p>Find <m>n</m> such that the Maclaurin polynomial of degree <m>n</m> of <m>f(x)= \cos(x)</m> approximates <m>\cos(\pi) /3</m> within <m>0.0001</m> of the actual value.</p>
           </statement>
           <solution>
-            <p>The <m>n^\text{ th }</m> derivative of <m>f(x)=\cos x</m> is bounded by <m>1</m> on intervals containing <m>0</m> and <m>\pi/3</m>. Thus <m>\abs{R_n(\pi/3)}\leq \frac{1}{(n+1)!}(\pi/3)^{(n+1)}</m>. When <m>n=7</m>, this is less than <m>0.0001</m>. Since the Maclaurin polynomial of <m>\cos x</m> only uses even powers, we can actually just use <m>n=6</m>.</p>
+            <p>The <m>n^\text{ th }</m> derivative of <m>f(x)=\cos(x)</m> is bounded by <m>1</m> on intervals containing <m>0</m> and <m>\pi/3</m>. Thus <m>\abs{R_n(\pi/3)}\leq \frac{1}{(n+1)!}(\pi/3)^{(n+1)}</m>. When <m>n=7</m>, this is less than <m>0.0001</m>. Since the Maclaurin polynomial of <m>\cos(x)</m> only uses even powers, we can actually just use <m>n=6</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1454,10 +1454,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Find <m>n</m> such that the Maclaurin polynomial of degree <m>n</m> of <m>f(x)= \sin x</m> approximates <m>\cos \pi</m> within <m>0.0001</m> of the actual value.</p>
+            <p>Find <m>n</m> such that the Maclaurin polynomial of degree <m>n</m> of <m>f(x)= \sin(x)</m> approximates <m>\cos(\pi)</m> within <m>0.0001</m> of the actual value.</p>
           </statement>
           <solution>
-            <p>The <m>n^\text{ th }</m> derivative of <m>f(x)=\sin x</m> is bounded by <m>1</m> on intervals containing <m>0</m> and <m>\pi</m>. Thus <m>\abs{R_n(\pi)}\leq \frac{1}{(n+1)!}(\pi)^{(n+1)}</m>. When <m>n=12</m>, this is less than <m>0.0001</m>. Since the Maclaurin polynomial of <m>\sin x</m> only uses odd powers, we can actually just use <m>n=11</m>.</p>
+            <p>The <m>n^\text{ th }</m> derivative of <m>f(x)=\sin(x)</m> is bounded by <m>1</m> on intervals containing <m>0</m> and <m>\pi</m>. Thus <m>\abs{R_n(\pi)}\leq \frac{1}{(n+1)!}(\pi)^{(n+1)}</m>. When <m>n=12</m>, this is less than <m>0.0001</m>. Since the Maclaurin polynomial of <m>\sin(x)</m> only uses odd powers, we can actually just use <m>n=11</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1489,7 +1489,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Find a formula for the <m>n^\text{ th }</m> term of the Maclaurin polynomial for <m>f(x)=\cos x</m>.</p>
+            <p>Find a formula for the <m>n^\text{ th }</m> term of the Maclaurin polynomial for <m>f(x)=\cos(x)</m>.</p>
           </statement>
           <solution>
             <p>The <m>n^\text{ th }</m> term is: when <m>n</m> is even, <m>\frac{(-1)^{n/2}}{n!}x^n</m>; when <m>n</m> is odd, <m>0</m>.</p>
@@ -1540,7 +1540,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Find a formula for the <m>n^\text{ th }</m> term of the Taylor polynomial for <m>\ds f(x)=\ln x</m>.</p>
+            <p>Find a formula for the <m>n^\text{ th }</m> term of the Taylor polynomial for <m>\ds f(x)=\ln(x)</m>.</p>
           </statement>
           <solution>
             <p>The <m>n^\text{ th }</m> term is <m>(-1)^n\frac{(x-1)^n}{n}</m>.</p>

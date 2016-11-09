@@ -293,7 +293,7 @@
 
           <li><p><m>\int_0^5f(x)\ dx</m> is the total signed area under <m>f</m> on <m>[0,5]</m>. This is <m>1.5 + (-1) = 0.5</m>.</p></li>
 
-          <li><p><m>\int_0^35f(x)\ dx</m> is the area under <m>5f</m> on <m>[0,3]</m>. This is sketched in <xref ref="fig_defint4a">Figure</xref>. Again, the region is a triangle, with height 5 times that of the height of the original triangle. Thus the area is <m>\int_0^35f(x)\ dx = 15/2 = 7.5.</m>
+          <li><p><m>\int_0^35f(x)\ dx</m> is the area under <m>5f</m> on <m>[0,3]</m>. This is sketched in <xref ref="fig_defint4a">Figure</xref>. Again, the region is a triangle, with height 5 times that of the height of the original triangle. Thus the area is <m>\int_0^35f(x)\ dx = 15/2 = 7.5</m>.
 
               <figure xml:id="fig_defint4a" >
                 <caption>A graph of <m>5f</m> in <xref ref="ex_defint4">Example</xref>. (Yes, it looks just like the graph of <m>f</m> in <xref ref="fig_defint4">Figure</xref>, just with a different <m>y</m>-scale.)</caption>
@@ -712,7 +712,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>What is <m>\ds \int_3^3 \sin x\ dx</m>?</p>
+            <p>What is <m>\ds \int_3^3 \sin(x) \ dx</m>?</p>
           </statement>
           <solution>
           </solution>
@@ -1235,7 +1235,7 @@
                   \addplot [{\coloronefill},fill={\coloronefill},domain=0:4,area style,smooth] {sin(deg(3.14159*x/2))} |- (axis cs:0,0) --cycle;
                   \addplot [thick, {\colorone},smooth,samples=40,domain=0:4] {sin(deg(3.14159*x/2))};
 
-                  \draw (axis cs:3,0.75) node {\scriptsize $f(x)=\sin (\pi x/2)$};
+                  \draw (axis cs:3,0.75) node {\scriptsize $f(x)=\sin(\pi x/2)$};
                   \draw (axis cs:1,.6) node {\scriptsize $4/\pi$};
                   \draw (axis cs:3,-.6) node {\scriptsize $4/\pi$};
                   %\draw (axis cs:2.6,10) node {\scriptsize $21$};
@@ -1627,13 +1627,13 @@
       <p>In the following exercises, let</p>
 
       <ul>
-        <li><p><m>\ds \int_0^2 f(x)\ dx = 5,</m></p></li>
+        <li><p><m>\ds \int_0^2 f(x)\ dx = 5</m>,</p></li>
 
-        <li><p><m>\ds \int_0^3 f(x) \ dx=7,</m></p></li>
+        <li><p><m>\ds \int_0^3 f(x) \ dx=7</m>,</p></li>
 
-        <li><p><m>\ds \int_0^2 g(x)\ dx = -3,</m> and</p></li>
+        <li><p><m>\ds \int_0^2 g(x)\ dx = -3</m>, and</p></li>
 
-        <li><p><m>\ds \int_2^3 g(x)\ dx = 5.</m></p></li>
+        <li><p><m>\ds \int_2^3 g(x)\ dx = 5</m>.</p></li>
       </ul>
 
       <p>Use these values to evaluate the given definite integrals.</p>
@@ -1707,13 +1707,13 @@
       <p>In the following exercises, let</p>
 
       <ul>
-        <li><p><m>\ds \int_0^3 s(t)\ dt = 10,</m></p></li>
+        <li><p><m>\ds \int_0^3 s(t)\ dt = 10</m>,</p></li>
 
-        <li><p><m>\ds \int_3^5 s(t) \ dt=8,</m></p></li>
+        <li><p><m>\ds \int_3^5 s(t) \ dt=8</m>,</p></li>
 
-        <li><p><m>\ds \int_3^5 r(t)\ dt = -1,</m> and</p></li>
+        <li><p><m>\ds \int_3^5 r(t)\ dt = -1</m>, and</p></li>
 
-        <li><p><m>\ds \int_0^5 r(t)\ dt = 11.</m></p></li>
+        <li><p><m>\ds \int_0^5 r(t)\ dt = 11</m>.</p></li>
       </ul>
 
       <p>Use these values to evaluate the given definite integrals.</p>
@@ -1817,10 +1817,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int \big(\sin x - \cos x + \sec^2 x\big)\ dx</m></p>
+            <p><m>\ds \int \big(\sin(x) - \cos(x) + \sec^2(x) \big)\ dx</m></p>
           </statement>
           <solution>
-            <p><m>-\cos x - \sin x + \tan x+C</m></p>
+            <p><m>-\cos(x) - \sin(x) + \tan(x) +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1837,7 +1837,7 @@
             <p><m>\ds \int \big(\sqrt[3]{t} + \frac{1}{t^2}+ 2^t\big)\ dt</m></p>
           </statement>
           <solution>
-            <p><m>3/4t^{4/3}-1/t+2^t/\ln 2+C</m></p>
+            <p><m>3/4t^{4/3}-1/t+2^t/\ln(2) +C</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1851,10 +1851,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int \left(\frac{1}{x} -\csc x\cot x\right)\ dx</m></p>
+            <p><m>\ds \int \left(\frac{1}{x} -\csc(x) \cot(x) \right)\ dx</m></p>
           </statement>
           <solution>
-            <p><m>\ln\abs{x} + \csc x+C</m></p>
+            <p><m>\ln\abs{x} + \csc(x) +C</m></p>
           </solution>
         </webwork>
       </exercise>

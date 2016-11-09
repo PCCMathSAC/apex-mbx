@@ -303,10 +303,10 @@
                 <mrow> \ln(1-\varepsilon) \amp\lt  x \lt  \ln(1+\varepsilon) \amp\amp \text{(Take natural logs)}</mrow>
                 </md></p>
 
-                <p>Making the safe assumption that <m>\varepsilon\lt 1</m> ensures the last inequality is valid (i.e., so that <m>\ln (1-\varepsilon)</m> is defined). We can then set <m>\delta</m> to be the minimum of <m>\abs{\ln(1-\varepsilon)}</m> and <m>\ln(1+\varepsilon)</m>; i.e.,<me>\delta = \min\{\abs{\ln(1-\varepsilon)}, \ln(1+\varepsilon)\} = \ln(1+\varepsilon).</me></p>
+                <p>Making the safe assumption that <m>\varepsilon\lt 1</m> ensures the last inequality is valid (i.e., so that <m>\ln(1-\varepsilon)</m> is defined). We can then set <m>\delta</m> to be the minimum of <m>\abs{\ln(1-\varepsilon)}</m> and <m>\ln(1+\varepsilon)</m>; i.e.,<me>\delta = \min\{\abs{\ln(1-\varepsilon)}, \ln(1+\varepsilon)\} = \ln(1+\varepsilon).</me></p>
 
                 <aside>
-                    <p>Recall <m>\ln (1-\varepsilon)</m> is negative because <m>1-\varepsilon\lt1</m>. So <m>\abs{\ln(1-\varepsilon)}=-\ln(1-\varepsilon)=\ln\left(\frac{1}{1-\varepsilon}\right)</m>. So to determine which is smaller between <m>\abs{\ln(1-\varepsilon)}</m> and <m>\ln(1+\varepsilon)</m> amounts to determining which is smaller between <m>\frac{1}{1-\varepsilon}</m> and <m>1+\varepsilon</m>. But <m>(1+\varepsilon)/\left(\frac{1}{1-\varepsilon}\right)=(1+\varepsilon)(1-\varepsilon)=1-\varepsilon^2\lt1</m>, so <m>(1+\varepsilon)\lt\frac{1}{1-\varepsilon}</m>. And therefore <m>\ln(1+\varepsilon)\lt\abs{\ln(1-\varepsilon)}</m>.</p>
+                    <p>Recall <m>\ln(1-\varepsilon)</m> is negative because <m>1-\varepsilon\lt1</m>. So <m>\abs{\ln(1-\varepsilon)}=-\ln(1-\varepsilon)=\ln\left(\frac{1}{1-\varepsilon}\right)</m>. So to determine which is smaller between <m>\abs{\ln(1-\varepsilon)}</m> and <m>\ln(1+\varepsilon)</m> amounts to determining which is smaller between <m>\frac{1}{1-\varepsilon}</m> and <m>1+\varepsilon</m>. But <m>(1+\varepsilon)/\left(\frac{1}{1-\varepsilon}\right)=(1+\varepsilon)(1-\varepsilon)=1-\varepsilon^2\lt1</m>, so <m>(1+\varepsilon)\lt\frac{1}{1-\varepsilon}</m>. And therefore <m>\ln(1+\varepsilon)\lt\abs{\ln(1-\varepsilon)}</m>.</p>
                 </aside>
 
                 <p>Now, we work through the actual the proof:<md>
@@ -326,7 +326,7 @@
 
         <p>We note that we could actually show that <m>\lim\limits_{x\to c} e^x = e^c</m> for any constant <m>c</m>. We do this by factoring out <m>e^c</m> from both sides, leaving us to show <m>\lim\limits_{x\to c} e^{x-c} = 1</m> instead. By using the substitution <m>u=x-c</m>, this reduces to showing <m>\lim\limits_{u\to 0} e^u = 1</m> which we just did in the last example. As an added benefit, this shows that in fact the function <m>f(x)=e^x</m> is <em>continuous</em> at all values of <m>x</m>, an important concept we will define in <xref ref="sec_continuity">Section</xref>.</p>
 
-        <p>This formal definition of the limit is not an easy concept grasp. Our examples are actually <q>easy</q> examples, using <q>simple</q> functions like polynomials, square<ndash />roots and exponentials. It is very difficult to prove, using the techniques given above, that <m>\lim\limits_{x\to 0}(\sin x)/x = 1</m>, as we approximated in <xref ref="sec_limit_intro">Section</xref>.</p>
+        <p>This formal definition of the limit is not an easy concept grasp. Our examples are actually <q>easy</q> examples, using <q>simple</q> functions like polynomials, square<ndash />roots and exponentials. It is very difficult to prove, using the techniques given above, that <m>\lim\limits_{x\to 0}(\sin(x) )/x = 1</m>, as we approximated in <xref ref="sec_limit_intro">Section</xref>.</p>
 
         <p>There is hope. <xref ref="sec_limit_analytically">Section</xref> shows how one can evaluate complicated limits using certain basic limits as building blocks. While limits are an incredibly important part of calculus (and hence much of higher mathematics), rarely are limits evaluated using the definition. Rather, the techniques of <xref ref="sec_limit_analytically">Section</xref> are employed.</p>
 

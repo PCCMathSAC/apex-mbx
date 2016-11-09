@@ -17,7 +17,7 @@
       </me>
     </p>
 
-    <p>Taking the limit as <m>n\to \infty</m> gives the exact area as <m>\int_a^b \big(f(x)-g(x)\big)\ dx.</m></p>
+    <p>Taking the limit as <m>n\to \infty</m> gives the exact area as <m>\int_a^b \big(f(x)-g(x)\big)\ dx</m>.</p>
 
     <figure xml:id="fig_abcintro" >
     <caption>Subdividing a region into vertical slices and approximating the areas with rectangles.</caption>
@@ -189,13 +189,13 @@
     <example xml:id="ex_abc1">
       <title>Finding area enclosed by curves</title>
       <statement>
-        <p>Find the area of the region bounded by <m>f(x) = \sin x+2</m>, <m>g(x) = \frac12\cos (2x)-1</m>, <m>x=0</m> and <m>x=4\pi</m>, as shown in <xref ref="fig_abc1">Figure</xref>.</p>
+        <p>Find the area of the region bounded by <m>f(x) = \sin(x) +2</m>, <m>g(x) = \frac12\cos(2x)-1</m>, <m>x=0</m> and <m>x=4\pi</m>, as shown in <xref ref="fig_abc1">Figure</xref>.</p>
       </statement>
       <solution>
         <p>The graph verifies that the upper boundary of the region is given by <m>f</m> and the lower bound is given by <m>g</m>. Therefore the area of the region is the value of the integral
           <md>
-            <mrow>\int_0^{4\pi} \big(f(x)- g(x)\big)\ dx \amp  = \int_0^{4\pi} \Big(\sin x+2 - \big(\frac12\cos (2x)-1\big)\Big)\ dx</mrow>
-            <mrow>\amp = -\cos x -\frac14\sin(2x)+3x\Big|_0^{4\pi}</mrow>
+            <mrow>\int_0^{4\pi} \big(f(x)- g(x)\big)\ dx \amp  = \int_0^{4\pi} \Big(\sin(x) +2 - \big(\frac12\cos(2x)-1\big)\Big)\ dx</mrow>
+            <mrow>\amp = -\cos(x) -\frac14\sin(2x)+3x\Big|_0^{4\pi}</mrow>
             <mrow>\amp =	12\pi \approx 37.7\ \text{ units } ^2.</mrow>
           </md>
         </p>
@@ -692,7 +692,7 @@
 
                   \addplot [{\coloronefill},domain=0:6.28,stack plots=y,samples=40] {.5*cos(deg(x))+1};
                   \addplot [{\coloronefill},thick,fill={\coloronefill},area style,domain=0:6.28,stack plots=y,samples=40] {.5*x+3-(.5*cos(deg(x))+1)} \closedcycle;
-                  \addplot [smooth,thick, {\colorone},domain=-.9:6.5,samples=40] {.5*cos(deg(x))+1} node [shift={(-25pt,7pt)} ,black] {\scriptsize $y=\frac12\cos x+1$};
+                  \addplot [smooth,thick, {\colorone},domain=-.9:6.5,samples=40] {.5*cos(deg(x))+1} node [shift={(-25pt,7pt)} ,black] {\scriptsize $y=\frac12\cos(x) +1$};
                   \addplot [smooth,thick, {\colorone},domain=-.9:6.5,samples=40] {.5*x+3}node [shift={(-30pt,0pt)} ,black] {\scriptsize $y=\frac12x+3$};
 
 
@@ -856,9 +856,9 @@
                   \addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {sin(deg(x))};
                   \addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {sin(deg(x))+1-(sin(deg(x)))} \closedcycle;
 
-                  \addplot [smooth,thick, {\colorone},samples=40] {sin(deg(x))} node [shift={(-100pt,60pt)} ,black] {\scriptsize $y=\sin x$};
+                  \addplot [smooth,thick, {\colorone},samples=40] {sin(deg(x))} node [shift={(-100pt,60pt)} ,black] {\scriptsize $y=\sin(x) $};
 
-                  \addplot [smooth,thick, {\colorone},samples=40] {sin(deg(x))+1} node [shift={(-75pt,80pt)} ,black] {\scriptsize $y=\sin x+1$};
+                  \addplot [smooth,thick, {\colorone},samples=40] {sin(deg(x))+1} node [shift={(-75pt,80pt)} ,black] {\scriptsize $y=\sin(x) +1$};
 
 
                   \end{axis}
@@ -911,9 +911,9 @@
                   \addplot [{\coloronefill},stack plots=y,samples=40,domain=0:.785] {sin(deg(4*x))};
                   \addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:.785] {sec(deg(x))^2-(sin(deg(4*x)))} \closedcycle;
 
-                  \addplot [smooth,thick, {\colorone},domain=-.1:.9,samples=60] {sin(deg(4*x))} node [shift={(-65pt,40pt)} ,black] {\scriptsize $y=\sin (4x)$};
+                  \addplot [smooth,thick, {\colorone},domain=-.1:.9,samples=60] {sin(deg(4*x))} node [shift={(-65pt,40pt)} ,black] {\scriptsize $y=\sin(4x)$};
 
-                  \addplot [smooth,thick, {\colorone},domain=-.1:.9,samples=60] {sec(deg(x))^2} node [shift={(-35pt,-20pt)} ,black] {\scriptsize $y=\sec^2 x$};
+                  \addplot [smooth,thick, {\colorone},domain=-.1:.9,samples=60] {sec(deg(x))^2} node [shift={(-35pt,-20pt)} ,black] {\scriptsize $y=\sec^2(x) $};
 
 
                   \end{axis}
@@ -966,9 +966,9 @@
                   \addplot [{\coloronefill},stack plots=y,samples=40,domain=.785:3.92] {cos(deg(x))};
                   \addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=.785:3.92] {sin(deg(x))-(cos(deg(x)))} \closedcycle;
 
-                  \addplot [smooth,thick, {\colorone},domain=-.1:4.1,samples=40] {sin(deg(x))} node [shift={(-25pt,70pt)} ,black] {\scriptsize $y=\sin x$};
+                  \addplot [smooth,thick, {\colorone},domain=-.1:4.1,samples=40] {sin(deg(x))} node [shift={(-25pt,70pt)} ,black] {\scriptsize $y=\sin(x) $};
 
-                  \addplot [smooth,thick, {\colorone},domain=-.1:4.1,samples=40] {cos(deg(x))} node [shift={(-75pt,0pt)} ,black] {\scriptsize $y=\cos x$};
+                  \addplot [smooth,thick, {\colorone},domain=-.1:4.1,samples=40] {cos(deg(x))} node [shift={(-75pt,0pt)} ,black] {\scriptsize $y=\cos(x) $};
 
 
                   \end{axis}
@@ -1038,7 +1038,7 @@
             </figure>
           </statement>
           <solution>
-            <p><m>1/\ln 4</m></p>
+            <p><m>1/\ln(4)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1087,7 +1087,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \sin x</m>, <m>g(x) = 2x/\pi</m></p>
+            <p><m>f(x) = \sin(x)</m>, <m>g(x) = 2x/\pi</m></p>
           </statement>
           <solution>
             <p><m>2-\pi/2</m></p>
@@ -1155,7 +1155,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>The functions <m>f(x) = \cos (2x)</m> and <m>g(x) = \sin x</m> intersect infinitely many times, forming an infinite number of repeated, enclosed regions. Find the areas of these regions.</p>
+            <p>The functions <m>f(x) = \cos(2x)</m> and <m>g(x) = \sin(x)</m> intersect infinitely many times, forming an infinite number of repeated, enclosed regions. Find the areas of these regions.</p>
           </statement>
           <solution>
             <p>On regions such as <m>[\pi/6,5\pi/6]</m>, the area is <m>3\sqrt{3}/2</m>. On regions such as <m>[-\pi/2,\pi/6]</m>, the area is <m>3\sqrt{3}/4</m>.</p>

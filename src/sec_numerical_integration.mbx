@@ -7,7 +7,7 @@
 
     <p>An <em>elementary function</em><index><main>elementary function</main></index> is any function that is a combination of polynomials, <m>n^{\text{ th } }</m> roots, rational, exponential, logarithmic and trigonometric functions. We can compute the derivative of any elementary function, but there are many elementary functions of which we cannot compute an antiderivative. For example, the following functions do not have antiderivatives that we can express with elementary functions:
       <me>
-        e^{-x^2},  \sin(x^3) \text{ and }   \frac{\sin x}{x}.
+        e^{-x^2},  \sin(x^3) \text{ and }   \frac{\sin(x) }{x}.
       </me>
     </p>
 
@@ -196,7 +196,7 @@
           (11.5814,-0.0719)  (11.8276,-0.0569) (12.0739,-0.0392)
           (12.3201,-0.0198)  (12.5664,-0.0000)};
 
-          \draw (axis cs:10,.7) node {\scriptsize $\displaystyle y=\frac{\sin x}{x}$};
+          \draw (axis cs:10,.7) node {\scriptsize $\displaystyle y=\frac{\sin(x) }{x}$};
           \end{axis}
 
 
@@ -371,7 +371,7 @@
     <example xml:id="ex_num2">
       <title>Approximating definite integrals with rectangles</title>
       <statement>
-        <p>Approximate <m>\ds\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx</m> using the Left and Right Hand Rules with 10 equally spaced subintervals.</p>
+        <p>Approximate <m>\ds\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin(x^3)\ dx</m> using the Left and Right Hand Rules with 10 equally spaced subintervals.</p>
       </statement>
       <solution>
         <p>We begin by finding \dx:
@@ -471,9 +471,9 @@
 
         <p>Once this table is created, it is straightforward to approximate the definite integral using the Left and Right Hand Rules. (Note: the table itself is easy to create, especially with a standard spreadsheet program on a computer. The last two columns are all that are needed.) The Left Hand Rule sums the first 10 values of <m>\sin(x_i^3)</m> and multiplies the sum by <m>\dx</m>; the Right Hand Rule sums the last 10 values of <m>\sin(x_i^3)</m> and multiplies by <m>\dx</m>. Therefore we have:</p>
 
-        <p>Left Hand Rule: <m>\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\ dx \approx (1.91)(0.236) = 0.451.</m></p>
+        <p>Left Hand Rule: <m>\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\ dx \approx (1.91)(0.236) = 0.451</m>.</p>
 
-        <p>Right Hand Rule: <m>\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\ dx \approx (1.71)(0.236) = 0.404.</m></p>
+        <p>Right Hand Rule: <m>\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\ dx \approx (1.71)(0.236) = 0.404</m>.</p>
 
         <p>Average of the Left and Right Hand Rules: 0.4275.</p>
 
@@ -786,7 +786,7 @@
           </md>
         </p>
 
-        <p>We approximate <m>\ds \int_0^1 e^{-x^2}\ dx \approx 0.7445.</m></p>
+        <p>We approximate <m>\ds \int_0^1 e^{-x^2}\ dx \approx 0.7445</m>.</p>
       </solution>
     </example>
 
@@ -814,12 +814,12 @@
       <title>Using the Trapezoidal Rule</title>
       <statement>
         <p>Revisit <xref ref="ex_num2">Example</xref>
-          and approximate <m>\ds\int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin (x^3)\ dx</m> using the Trapezoidal Rule and 10 equally spaced subintervals.</p>
+          and approximate <m>\ds\int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin(x^3)\ dx</m> using the Trapezoidal Rule and 10 equally spaced subintervals.</p>
       </statement>
       <solution>
         <p>We refer back to <xref ref="fig_num2a">Figure</xref> for the table of values of <m>\sin(x^3)</m>. Recall that <m>\dx = 3\pi/40 \approx 0.236</m>. Thus we have:
           <md>
-            <mrow>\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx \amp \approx \frac{0.236}{2}\Big[-0.466 + 2\Big(-0.165+(-0.031)+\ldots+
+            <mrow>\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin(x^3)\ dx \amp \approx \frac{0.236}{2}\Big[-0.466 + 2\Big(-0.165+(-0.031)+\ldots+
             0.69\Big)+(-0.67)\Big]</mrow>
             <mrow>\amp = 0.4275.</mrow>
           </md>
@@ -1043,7 +1043,7 @@
     <example xml:id="ex_num6">
       <title>Using Simpson's Rule</title>
       <statement>
-        <p>Approximate <m>\ds\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx</m> using Simpson's Rule and 10 equally spaced intervals.</p>
+        <p>Approximate <m>\ds\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin(x^3)\ dx</m> using Simpson's Rule and 10 equally spaced intervals.</p>
       </statement>
       <solution>
         <p><xref ref="fig_num6a">Figure</xref> shows the table of values that we used in the past for this problem, shown here again for convenience. Again, <m>\dx = (\pi/2+\pi/4)/10 \approx 0.236</m>.</p>
@@ -1111,7 +1111,7 @@
 
         <p>Simpson's Rule states that
           <md>
-            <mrow>\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx \amp \approx \frac{0.236}3\Big[(-0.466)+4(-0.165)+2(-0.031) + \ldots</mrow>
+            <mrow>\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin(x^3)\ dx \amp \approx \frac{0.236}3\Big[(-0.466)+4(-0.165)+2(-0.031) + \ldots</mrow>
             <mrow>\amp  \ldots + 2(0.971) + 4(0.69) + (-0.67)\big]</mrow>
             <mrow>\amp = 0.4701</mrow>
           </md>
@@ -1716,7 +1716,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{0}^{\pi} \sin x\ dx</m></p>
+            <p><m>\ds \int_{0}^{\pi} \sin(x) \ dx</m></p>
           </statement>
           <solution>
             <ol>
@@ -1808,7 +1808,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{0}^{2\pi} \cos x\ dx</m></p>
+            <p><m>\ds \int_{0}^{2\pi} \cos(x) \ dx</m></p>
           </statement>
           <solution>
             <ol>
@@ -1855,7 +1855,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{0}^{1} \cos \big(x^2\big) \ dx</m></p>
+            <p><m>\ds \int_{0}^{1} \cos\big(x^2\big) \ dx</m></p>
           </statement>
           <solution>
             <p>Trapezoidal Rule: 	<m>0.9006</m></p>
@@ -1912,7 +1912,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{0}^{\pi} x\sin x \ dx</m></p>
+            <p><m>\ds \int_{0}^{\pi} x\sin(x) \ dx</m></p>
           </statement>
           <solution>
             <p>Trapezoidal Rule: 	<m>3.0695</m></p>
@@ -1931,7 +1931,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{0}^{\pi/2} \sqrt{\cos x} \ dx</m></p>
+            <p><m>\ds \int_{0}^{\pi/2} \sqrt{\cos(x) } \ dx</m></p>
           </statement>
           <solution>
             <p>Trapezoidal Rule: 	<m>1.1703</m></p>
@@ -1950,7 +1950,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{1}^{4} \ln x \ dx</m></p>
+            <p><m>\ds \int_{1}^{4} \ln(x) \ dx</m></p>
           </statement>
           <solution>
             <p>Trapezoidal Rule: 	<m>2.52971</m></p>
@@ -1969,7 +1969,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{-1}^{1} \frac{1}{\sin x+2} \ dx</m></p>
+            <p><m>\ds \int_{-1}^{1} \frac{1}{\sin(x) +2} \ dx</m></p>
           </statement>
           <solution>
             <p>Trapezoidal Rule: 	<m>1.0803</m></p>
@@ -1988,7 +1988,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{0}^{6} \frac{1}{\sin x+2} \ dx</m></p>
+            <p><m>\ds \int_{0}^{6} \frac{1}{\sin(x) +2} \ dx</m></p>
           </statement>
           <solution>
             <p>Trapezoidal Rule: 	<m>3.5472</m></p>
@@ -2019,7 +2019,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{0}^{\pi} \sin x \ dx</m></p>
+            <p><m>\ds \int_{0}^{\pi} \sin(x) \ dx</m></p>
           </statement>
           <solution>
             <ol>
@@ -2061,7 +2061,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{0}^{\pi} \cos \big(x^2\big) \ dx</m></p>
+            <p><m>\ds \int_{0}^{\pi} \cos\big(x^2\big) \ dx</m></p>
           </statement>
           <solution>
             <ol>

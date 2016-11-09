@@ -28,7 +28,7 @@
 		
 		<m>\ds \frac{d}{dx}\big( c\big) = 0</m>, where <m>c</m> is a constant.</p></li>
 
-          <li><p><m>\ds \frac{d}{dx}(\sin x) = \cos x</m></p></li>
+          <li><p><m>\ds \frac{d}{dx}(\sin(x) ) = \cos(x)</m></p></li>
 
           <li><p><m>\ds \frac{d}{dx}\left(e^x\right) = e^x</m></p></li>
 
@@ -36,9 +36,9 @@
 		
 		<m>\ds \frac{d}{dx}\left(x^n\right) = nx^{n-1}</m>, where <m>n</m> is an integer, <m>n>0</m>.</p></li>
 
-          <li><p><m>\ds \frac{d}{dx}(\cos x) = -\sin x</m></p></li>
+          <li><p><m>\ds \frac{d}{dx}(\cos(x) ) = -\sin(x)</m></p></li>
 
-          <li><p><m>\ds \frac{d}{dx}(\ln x) = \frac{1}{x}</m></p></li>
+          <li><p><m>\ds \frac{d}{dx}(\ln(x) ) = \frac{1}{x}</m></p></li>
         </ol>
 
         <index><main>derivative</main><sub>basic rules</sub></index>
@@ -116,7 +116,7 @@
       </solution>
     </example>
 
-    <p><xref ref="thm_deriv_common">Theorem</xref> gives useful information, but we will need much more. For instance, using the theorem, we can easily find the derivative of <m>y=x^3</m>, but it does not tell how to compute the derivative of <m>y=2x^3</m>, <m>y=x^3+\sin x</m> nor <m>y=x^3\sin x</m>. The following theorem helps with the first two of these examples (the third is answered in the next section).</p>
+    <p><xref ref="thm_deriv_common">Theorem</xref> gives useful information, but we will need much more. For instance, using the theorem, we can easily find the derivative of <m>y=x^3</m>, but it does not tell how to compute the derivative of <m>y=2x^3</m>, <m>y=x^3+\sin(x)</m> nor <m>y=x^3\sin(x)</m>. The following theorem helps with the first two of these examples (the third is answered in the next section).</p>
 
     <theorem xml:id="thm_deriv_prop">
       <title>Properties of the Derivative</title>
@@ -144,21 +144,21 @@
       </md>
     </p>
 
-    <p>We were a bit pedantic here, showing every step. Normally we would do all the arithmetic and steps in our head and readily find <m>\ds \frac{d}{dx}\Big(3x^2+5x+7\Big) = 6x+5.</m></p>
+    <p>We were a bit pedantic here, showing every step. Normally we would do all the arithmetic and steps in our head and readily find <m>\ds \frac{d}{dx}\Big(3x^2+5x+7\Big) = 6x+5</m>.</p>
 
     <example xml:id="ex_der2">
       <title>Using the tangent line to approximate a function value</title>
       <statement>
-        <p>Let <m>f(x) = \sin x + 2x+1</m>. Approximate <m>f(3)</m> using an appropriate tangent line.</p>
+        <p>Let <m>f(x) = \sin(x) + 2x+1</m>. Approximate <m>f(3)</m> using an appropriate tangent line.</p>
       </statement>
       <solution>
         <p>This problem is intentionally ambiguous; we are to <em>approximate</em> using an <em>appropriate</em> tangent line. How good of an approximation are we seeking? What does appropriate mean?</p>
 
-        <p>In the <q>real world,</q> people solving problems deal with these issues all time. One must make a judgment using whatever seems reasonable. In this example, the actual answer is <m>f(3) = \sin 3 + 7</m>, where the real problem spot is <m>\sin 3</m>. What is <m>\sin 3</m>?</p>
+        <p>In the <q>real world,</q> people solving problems deal with these issues all time. One must make a judgment using whatever seems reasonable. In this example, the actual answer is <m>f(3) = \sin(3) + 7</m>, where the real problem spot is <m>\sin(3)</m>. What is <m>\sin(3)</m>?</p>
 
-        <p>Since <m>3</m> is close to <m>\pi</m>, we can assume <m>\sin 3\approx \sin \pi = 0</m>. Thus one guess is <m>f(3) \approx 7</m>. Can we do better? Let's use a tangent line as instructed and examine the results; it seems best to find the tangent line at <m>x=\pi</m>.</p>
+        <p>Since <m>3</m> is close to <m>\pi</m>, we can assume <m>\sin(3) \approx \sin(\pi) = 0</m>. Thus one guess is <m>f(3) \approx 7</m>. Can we do better? Let's use a tangent line as instructed and examine the results; it seems best to find the tangent line at <m>x=\pi</m>.</p>
 
-        <p>Using <xref ref="thm_deriv_common">Theorem</xref> we find <m>\fp(x) = \cos x + 2</m>. The slope of the tangent line is thus <m>\fp(\pi) = \cos \pi + 2 =1</m>. Also, <m>f(\pi) = 2\pi+1 \approx 7.28</m>. So the tangent line to the graph of <m>f</m> at <m>x=\pi</m> is <m>y=1(x-\pi)+ 2\pi+1 =x+\pi+1 \approx x+4.14</m>. Evaluated at <m>x=3</m>, our tangent line gives <m>y=3+4.14 = 7.14</m>. Using the tangent line, our final approximation is that <m>f(3) \approx 7.14</m>.</p>
+        <p>Using <xref ref="thm_deriv_common">Theorem</xref> we find <m>\fp(x) = \cos(x) + 2</m>. The slope of the tangent line is thus <m>\fp(\pi) = \cos(\pi) + 2 =1</m>. Also, <m>f(\pi) = 2\pi+1 \approx 7.28</m>. So the tangent line to the graph of <m>f</m> at <m>x=\pi</m> is <m>y=1(x-\pi)+ 2\pi+1 =x+\pi+1 \approx x+4.14</m>. Evaluated at <m>x=3</m>, our tangent line gives <m>y=3+4.14 = 7.14</m>. Using the tangent line, our final approximation is that <m>f(3) \approx 7.14</m>.</p>
 
         <p>Using a calculator, we get an answer accurate to 4 places after the decimal: <m>f(3) = 7.1411</m>. Our initial guess was <m>7</m>; our tangent line approximation was more accurate, at <m>7.14</m>.</p>
 
@@ -214,7 +214,7 @@
         <ol cols="2" >
           <li><p><m>f(x) = 4x^2</m></p></li>
 
-          <li><p><m>f(x) = \sin x</m></p></li>
+          <li><p><m>f(x) = \sin(x)</m></p></li>
 
           <li><p><m>f(x) = 5e^x</m></p></li>
         </ol>
@@ -229,7 +229,7 @@
 
           <li><p>We employ <xref ref="thm_deriv_common">Theorem</xref> repeatedly.
               <me>
-                \fp(x) = \cos x;\qquad \fp'(x) = -\sin x;\qquad \fp''(x) = -\cos x;\qquad f^{(4)}(x) = \sin x.
+                \fp(x) = \cos(x) ;\qquad \fp'(x) = -\sin(x) ;\qquad \fp''(x) = -\cos(x) ;\qquad f^{(4)}(x) = \sin(x) .
               </me>
               Note how we have come right back to <m>f(x)</m> again. (Can you quickly figure what <m>f^{(23)}(x)</m> is?)</p></li>
 
@@ -292,7 +292,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>What is <m>\ds \frac{d}{dx}\big(\ln x\big)</m>?</p>
+            <p>What is <m>\ds \frac{d}{dx}\big(\ln(x) \big)</m>?</p>
           </statement>
           <solution>
             <p><m>1/x</m></p>
@@ -351,11 +351,11 @@
 
                 <li><p><m>g(x) = 3x^2-x+17</m></p></li>
 
-                <li><p><m>h(x) = 5\ln x</m></p></li>
+                <li><p><m>h(x) = 5\ln(x)</m></p></li>
               </ul>
 
               <ul>
-                <li><p><m>j(x) = \sin x \cos x</m></p></li>
+                <li><p><m>j(x) = \sin(x) \cos(x)</m></p></li>
 
                 <li><p><m>k(x) = e^{x^2}</m></p></li>
 
@@ -518,10 +518,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(\theta) = 9\sin \theta + 10\cos \theta</m></p>
+            <p><m>f(\theta) = 9\sin(\theta) + 10\cos(\theta)</m></p>
           </statement>
           <solution>
-            <p><m>\fp(\theta) = 9\cos \theta-10\sin\theta</m></p>
+            <p><m>\fp(\theta) = 9\cos(\theta) -10\sin(\theta)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -552,10 +552,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(t) = 10t^4-\cos t +7\sin t</m></p>
+            <p><m>g(t) = 10t^4-\cos(t) +7\sin(t)</m></p>
           </statement>
           <solution>
-            <p><m>g'(t) = 40t^3 + \sin t + 7\cos t</m></p>
+            <p><m>g'(t) = 40t^3 + \sin(t) + 7\cos(t)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -569,7 +569,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = 2\ln x - x</m></p>
+            <p><m>f(x) = 2\ln(x) - x</m></p>
           </statement>
           <solution>
             <p><m>\fp(x) = \frac2x-1</m></p>
@@ -603,10 +603,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>h(t) = e^t - \sin t - \cos t</m></p>
+            <p><m>h(t) = e^t - \sin(t) - \cos(t)</m></p>
           </statement>
           <solution>
-            <p><m>h'(t) = e^t - \cos t + \sin t</m></p>
+            <p><m>h'(t) = e^t - \cos(t) + \sin(t)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -620,7 +620,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \ln (5x^2)</m></p>
+            <p><m>f(x) = \ln(5x^2)</m></p>
           </statement>
           <solution>
             <p><m>\fp(x) = \frac2x</m></p>
@@ -637,7 +637,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(t) = \ln (17)+ e^2 + \sin \pi/2</m></p>
+            <p><m>f(t) = \ln(17)+ e^2 + \sin(\pi) /2</m></p>
           </statement>
           <solution>
             <p><m>\fp(t) = 0</m></p>
@@ -725,7 +725,7 @@
             <p>A property of logarithms is that <m>\ds \log_a x = \frac{\log_b x}{\log_b a}</m>, for all bases <m>a,b>0,\neq 1</m>.</p>
 
             <ol>
-              <li><p>Rewrite this identity when <m>b=e</m>, i.e., using <m>\log_ex =\ln x</m>.</p></li>
+              <li><p>Rewrite this identity when <m>b=e</m>, i.e., using <m>\log_ex =\ln(x)</m>.</p></li>
 
               <li><p>Use part (a) to find the derivative of <m>y=\log_a x</m>.</p></li>
 
@@ -764,10 +764,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(x) = 2\cos x</m></p>
+            <p><m>g(x) = 2\cos(x)</m></p>
           </statement>
           <solution>
-            <p><m>g'(x) = -2\sin x</m> <m>g''(x) = -2\cos x</m> <m>g'''(x) = 2\sin x</m> <m>g^{(4)}(x) = 2\cos x</m></p>
+            <p><m>g'(x) = -2\sin(x)</m> <m>g''(x) = -2\cos(x)</m> <m>g'''(x) = 2\sin(x)</m> <m>g^{(4)}(x) = 2\cos(x)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -815,10 +815,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(\theta) = \sin\theta-\cos\theta</m></p>
+            <p><m>f(\theta) = \sin(\theta) -\cos(\theta)</m></p>
           </statement>
           <solution>
-            <p><m>\fp(\theta) = \cos\theta+\sin\theta</m> <m>\fp'(\theta) = -\sin\theta+\cos\theta</m> <m>\fp''(\theta) = -\cos\theta-\sin\theta</m> <m>f^{(4)}(\theta) = \sin\theta-\cos\theta</m></p>
+            <p><m>\fp(\theta) = \cos(\theta) +\sin(\theta)</m> <m>\fp'(\theta) = -\sin(\theta) +\cos(\theta)</m> <m>\fp''(\theta) = -\cos(\theta) -\sin(\theta)</m> <m>f^{(4)}(\theta) = \sin(\theta) -\cos(\theta)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -888,7 +888,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(x)=\ln x</m> at <m>x=1</m></p>
+            <p><m>g(x)=\ln(x)</m> at <m>x=1</m></p>
           </statement>
           <solution>
             <p>Tangent line: <m>y = x-1</m></p>
@@ -907,7 +907,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x)=4\sin x</m> at <m>x=\pi/2</m></p>
+            <p><m>f(x)=4\sin(x)</m> at <m>x=\pi/2</m></p>
           </statement>
           <solution>
             <p>Tangent line: <m>y = 4</m></p>
@@ -926,7 +926,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x)=-2\cos x</m> at <m>x=\pi/4</m></p>
+            <p><m>f(x)=-2\cos(x)</m> at <m>x=\pi/4</m></p>
           </statement>
           <solution>
             <p>Tangent line: <m>y = \sqrt{2}(x-\frac{\pi}{4})-\sqrt{2}</m></p>
