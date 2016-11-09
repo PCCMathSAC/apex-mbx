@@ -21,20 +21,20 @@
     <example xml:id="ex_tannorm1">
       <title>Computing the unit tangent vector</title>
       <statement>
-        <p>Let <m>\vrt = \la 3\cos t, 3\sin t, 4t\ra</m>. Find <m>\vec T(t)</m> and compute <m>\vec T(0)</m> and <m>\vec T(1)</m>.</p>
+        <p>Let <m>\vrt = \la 3\cos(t) , 3\sin(t) , 4t\ra</m>. Find <m>\vec T(t)</m> and compute <m>\vec T(0)</m> and <m>\vec T(1)</m>.</p>
       </statement>
       <solution>
         <p>We apply <xref ref="def_unit_tangent">Definition</xref> to find <m>\vec T(t)</m>.
           <md>
             <mrow>\vec T(t) \amp = \frac{1}{\norm{\vrp(t)}}\vrp(t)</mrow>
-            <mrow>\amp =\frac{1}{\sqrt{\big(-3\sin t\big)^2+\big(3\cos t\big)^2+ 4^2}}\la -3\sin t,3\cos t, 4\ra</mrow>
-            <mrow>\amp = \la -\frac35\sin t,\frac35\cos t,\frac45\ra.</mrow>
+            <mrow>\amp =\frac{1}{\sqrt{\big(-3\sin(t) \big)^2+\big(3\cos(t) \big)^2+ 4^2}}\la -3\sin(t) ,3\cos(t) , 4\ra</mrow>
+            <mrow>\amp = \la -\frac35\sin(t) ,\frac35\cos(t) ,\frac45\ra.</mrow>
           </md>
         </p>
 
         <p>We can now easily compute <m>\vec T(0)</m> and <m>\vec T(1)</m>:
           <me>
-            \vec T(0) = \la 0,\frac35,\frac45\ra\,; \vec T(1) = \la -\frac35\sin 1,\frac35\cos 1,\frac45\ra \approx \la -0.505,0.324,0.8\ra.
+            \vec T(0) = \la 0,\frac35,\frac45\ra\,; \vec T(1) = \la -\frac35\sin(1) ,\frac35\cos(1) ,\frac45\ra \approx \la -0.505,0.324,0.8\ra.
           </me>
         </p>
 
@@ -163,7 +163,7 @@
           </me>
         </p>
 
-        <p>When <m>t=0</m>, we have <m>\vec T(0) = \la -1/\sqrt{2},1/\sqrt{2}\ra</m>; when <m>t=1</m>, we have <m>\vec T(1) = \la 1/\sqrt{10}, 3/\sqrt{10}\ra.</m> We leave it to the reader to verify each of these is a unit vector. They are plotted in <xref ref="fig_tannorm2">Figure</xref></p>
+        <p>When <m>t=0</m>, we have <m>\vec T(0) = \la -1/\sqrt{2},1/\sqrt{2}\ra</m>; when <m>t=1</m>, we have <m>\vec T(1) = \la 1/\sqrt{10}, 3/\sqrt{10}\ra</m>. We leave it to the reader to verify each of these is a unit vector. They are plotted in <xref ref="fig_tannorm2">Figure</xref></p>
 
         <figure xml:id="fig_tannorm2" >
           <caption>Plotting unit tangent vectors in <xref ref="ex_tannorm2">Example</xref>.</caption>
@@ -294,18 +294,18 @@
     <example xml:id="ex_tannorm3">
       <title>Computing the unit normal vector</title>
       <statement>
-        <p>Let <m>\vrt = \la 3\cos t, 3\sin t, 4t\ra</m> as in <xref ref="ex_tannorm1">Example</xref>. Sketch both <m>\vec T(\pi/2)</m> and <m>\vec N(\pi/2)</m> with initial points at <m>\vec r(\pi/2)</m>.</p>
+        <p>Let <m>\vrt = \la 3\cos(t) , 3\sin(t) , 4t\ra</m> as in <xref ref="ex_tannorm1">Example</xref>. Sketch both <m>\vec T(\pi/2)</m> and <m>\vec N(\pi/2)</m> with initial points at <m>\vec r(\pi/2)</m>.</p>
       </statement>
       <solution>
-        <p>In <xref ref="ex_tannorm1">Example</xref>, we found <m>\vec T(t) = \la  (-3/5)\sin t,(3/5)\cos t,4/5\ra</m>. Therefore
+        <p>In <xref ref="ex_tannorm1">Example</xref>, we found <m>\vec T(t) = \la  (-3/5)\sin(t) ,(3/5)\cos(t) ,4/5\ra</m>. Therefore
           <me>
-            \vec T\,'(t) = \la -\frac35\cos t,-\frac35\sin t,0\ra \text{ and }   \norm{\vec T\,'(t)} = \frac35.
+            \vec T\,'(t) = \la -\frac35\cos(t) ,-\frac35\sin(t) ,0\ra \text{ and }   \norm{\vec T\,'(t)} = \frac35.
           </me>
         </p>
 
         <p>Thus
           <me>
-            \vec N(t) = \frac{\vec T\,'(t)}{3/5} = \la -\cos t,-\sin t,0\ra.
+            \vec N(t) = \frac{\vec T\,'(t)}{3/5} = \la -\cos(t) ,-\sin(t) ,0\ra.
           </me>
         </p>
 
@@ -574,19 +574,19 @@
     <example xml:id="ex_tannorm5">
       <title>Computing <m>a_T</m> and <m>a_N</m></title>
       <statement>
-        <p>Let <m>\vrt = \la 3\cos t, 3\sin t, 4t\ra</m> as in <xref ref="ex_tannorm1">Examples</xref> and <xref ref="ex_tannorm3"></xref>. Find <m>a_\text{T}</m> and <m>a_\text{N}</m>.</p>
+        <p>Let <m>\vrt = \la 3\cos(t) , 3\sin(t) , 4t\ra</m> as in <xref ref="ex_tannorm1">Examples</xref> and <xref ref="ex_tannorm3"></xref>. Find <m>a_\text{T}</m> and <m>a_\text{N}</m>.</p>
       </statement>
       <solution>
-        <p>The previous examples give <m>\vat = \la -3\cos t,-3\sin t,0\ra</m> and
+        <p>The previous examples give <m>\vat = \la -3\cos(t) ,-3\sin(t) ,0\ra</m> and
           <me>
-            \vec T(t) = \la -\frac35\sin t,\frac35\cos t,\frac45\ra  \text{ and }  \vec N(t) = \la -\cos t,-\sin t,0\ra.
+            \vec T(t) = \la -\frac35\sin(t) ,\frac35\cos(t) ,\frac45\ra  \text{ and }  \vec N(t) = \la -\cos(t) ,-\sin(t) ,0\ra.
           </me>
         </p>
 
         <p>We can find <m>a_\text{T}</m> and <m>a_\text{N}</m> directly with dot products:
           <md>
-            <mrow>a_\text{T}  \amp = \vat\cdot \vec T(t) = \frac95\cos t\sin t-\frac95\cos t\sin t+0 = 0.</mrow>
-            <mrow>a_\text{N}  \amp = \vat\cdot \vec N(t) = 3\cos^2t+3\sin^2t + 0 = 3.</mrow>
+            <mrow>a_\text{T}  \amp = \vat\cdot \vec T(t) = \frac95\cos(t) \sin(t) -\frac95\cos(t) \sin(t) +0 = 0.</mrow>
+            <mrow>a_\text{N}  \amp = \vat\cdot \vec N(t) = 3\cos^2(t) +3\sin^2(t) + 0 = 3.</mrow>
           </md>
         </p>
 
@@ -674,7 +674,7 @@
       <solution>
         <p>Using <xref ref="idea_projectile">Key Idea</xref> of <xref ref="sec_vvf_motion">Section</xref> we form the position function of the ball:
           <me>
-            \vrt = \la \big(64\cos 30^\circ\big)t, -16t^2+\big(64\sin 30^\circ\big)t+240\ra,
+            \vrt = \la \big(64\cos(30^\circ) \big)t, -16t^2+\big(64\sin(30^\circ) \big)t+240\ra,
           </me>
           which we plot in <xref ref="fig_tannorm7b">Figure</xref>.</p>
 
@@ -730,7 +730,7 @@
           <!-- figures/fig_tannorm7b.tex END -->
         </figure>
 
-        <p>From this we find <m>\vvt = \la 64\cos 30^\circ, -32t+64\sin 30^\circ\ra</m> and <m>\vat = \la 0,-32\ra</m>. Computing <m>\vec T(t)</m> is not difficult, and with some simplification we find
+        <p>From this we find <m>\vvt = \la 64\cos(30^\circ) , -32t+64\sin(30^\circ) \ra</m> and <m>\vat = \la 0,-32\ra</m>. Computing <m>\vec T(t)</m> is not difficult, and with some simplification we find
           <me>
             \vec T(t) = \la \frac{\sqrt{3}}{\sqrt{t^2-2t+4}}, \frac{1-t}{\sqrt{t^2-2t+4}}\ra.
           </me>
@@ -909,10 +909,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la t,\cos t\ra</m>,<m>t=\pi/4</m></p>
+            <p><m>\vrt = \la t,\cos(t) \ra</m>,<m>t=\pi/4</m></p>
           </statement>
           <solution>
-            <p><m>\vec T(t) = \la \frac{1}{\sqrt{1+\sin^2t}},-\frac{\sin t}{\sqrt{1+\sin^2t}} \ra</m>;
+            <p><m>\vec T(t) = \la \frac{1}{\sqrt{1+\sin^2(t) }},-\frac{\sin(t) }{\sqrt{1+\sin^2(t) }} \ra</m>;
               <m>\vec T(\pi/4) = \la \sqrt{2/3}, -1/\sqrt{3}\ra</m></p>
           </solution>
         </webwork>
@@ -927,10 +927,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos^3t,\sin^3 t\ra</m>,<m>t=\pi/4</m></p>
+            <p><m>\vrt = \la \cos^3(t) ,\sin^3(t) \ra</m>,<m>t=\pi/4</m></p>
           </statement>
           <solution>
-            <p><m>\vec T(t) = \frac{\cos t\sin t}{\sqrt{\cos^2t\sin^2t}}\la -\cos t,\sin t\ra</m>. (Be careful; this cannot be simplified as just <m>\la -\cos t,\sin t\ra</m> as <m>\sqrt{\cos^2t\sin^2t}\neq \cos t\sin t</m>, but rather <m>\abs{\cos t\sin t}</m>.)
+            <p><m>\vec T(t) = \frac{\cos(t) \sin(t) }{\sqrt{\cos^2(t) \sin^2(t) }}\la -\cos(t) ,\sin(t) \ra</m>. (Be careful; this cannot be simplified as just <m>\la -\cos(t) ,\sin(t) \ra</m> as <m>\sqrt{\cos^2(t) \sin^2(t) }\neq \cos(t) \sin(t)</m>, but rather <m>\abs{\cos(t) \sin(t) }</m>.)
               <m>\vec T(\pi/4) = \la -\sqrt{2}/2,\sqrt{2}/2\ra</m></p>
           </solution>
         </webwork>
@@ -945,10 +945,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos t, \sin t \ra</m>,<m>t=\pi</m></p>
+            <p><m>\vrt = \la \cos(t) , \sin(t) \ra</m>,<m>t=\pi</m></p>
           </statement>
           <solution>
-            <p><m>\vec T(t) = \la -\sin t,\cos t\ra</m>;
+            <p><m>\vec T(t) = \la -\sin(t) ,\cos(t) \ra</m>;
               <m>\vec T(\pi) = \la 0,-1\ra</m></p>
           </solution>
         </webwork>
@@ -984,7 +984,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la t,\cos t \ra</m>,<m>t=\pi/4</m></p>
+            <p><m>\vrt = \la t,\cos(t) \ra</m>,<m>t=\pi/4</m></p>
           </statement>
           <solution>
             <p><m>\ell(t) = \la \pi/4,\sqrt{2}/{2}\ra + t\la \sqrt{2/3},-1/\sqrt{3}\ra</m>; in parametric form,</p>
@@ -1004,7 +1004,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos^3 t,\sin^3t \ra</m>,<m>t=\pi/4</m></p>
+            <p><m>\vrt = \la \cos^3(t) ,\sin^3(t) \ra</m>,<m>t=\pi/4</m></p>
           </statement>
           <solution>
             <p><m>\ell(t) = \la \sqrt{2}/4,\sqrt{2}/4\ra + t\la -\sqrt{2}/2,\sqrt{2}/2\ra</m>; in parametric form,</p>
@@ -1024,7 +1024,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos t,\sin t \ra</m>,<m>t=\pi</m></p>
+            <p><m>\vrt = \la \cos(t) ,\sin(t) \ra</m>,<m>t=\pi</m></p>
           </statement>
           <solution>
             <p><m>\ell(t) = \la -1,0\ra + t\la 0,-1\ra</m>; in parametric form,</p>
@@ -1045,10 +1045,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 3\cos t, 3\sin t \ra</m></p>
+            <p><m>\vrt = \la 3\cos(t) , 3\sin(t) \ra</m></p>
           </statement>
           <solution>
-            <p><m>\vec T(t) = \la -\sin t,\cos t\ra</m>; <m>\vec N(t) = \la -\cos t,-\sin t\ra</m></p>
+            <p><m>\vec T(t) = \la -\sin(t) ,\cos(t) \ra</m>; <m>\vec N(t) = \la -\cos(t) ,-\sin(t) \ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1079,10 +1079,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos t,2\sin t \ra</m></p>
+            <p><m>\vrt = \la \cos(t) ,2\sin(t) \ra</m></p>
           </statement>
           <solution>
-            <p><m>\vec T(t) = \la -\frac{\sin t}{\sqrt{4\cos^2t+\sin^2t}},\frac{2\cos t}{\sqrt{4\cos^2t+\sin^2t}}\ra</m>; <m>\vec N(t) = \la -\frac{2\cos t}{\sqrt{4\cos^2t+\sin^2t}},-\frac{\sin t}{\sqrt{4\cos^2t+\sin^2t}}\ra</m></p>
+            <p><m>\vec T(t) = \la -\frac{\sin(t) }{\sqrt{4\cos^2(t) +\sin^2(t) }},\frac{2\cos(t) }{\sqrt{4\cos^2(t) +\sin^2(t) }}\ra</m>; <m>\vec N(t) = \la -\frac{2\cos(t) }{\sqrt{4\cos^2(t) +\sin^2(t) }},-\frac{\sin(t) }{\sqrt{4\cos^2(t) +\sin^2(t) }}\ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1125,7 +1125,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 3\cos t,5\sin t\ra</m>;<m>\ds \vec T(\pi/4) = \la -\frac3{\sqrt{34}}, \frac5{\sqrt{34}}\ra</m>.</p>
+            <p><m>\vrt = \la 3\cos(t) ,5\sin(t) \ra</m>;<m>\ds \vec T(\pi/4) = \la -\frac3{\sqrt{34}}, \frac5{\sqrt{34}}\ra</m>.</p>
           </statement>
           <solution>
             <ol>
@@ -1167,7 +1167,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \vrt = (1+2\sin t)\la \cos t,\sin t\ra</m>;<m>\ds \vec T(0) = \la \frac2{\sqrt{5}}, \frac1{\sqrt{5}}\ra</m>.</p>
+            <p><m>\ds \vrt = (1+2\sin(t) )\la \cos(t) ,\sin(t) \ra</m>;<m>\ds \vec T(0) = \la \frac2{\sqrt{5}}, \frac1{\sqrt{5}}\ra</m>.</p>
           </statement>
           <solution>
             <ol>
@@ -1188,7 +1188,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \vrt = \la \cos^3 t,\sin^3 t\ra</m>;<m>\ds \vec T(\pi/4) = \la -\frac1{\sqrt{2}}, \frac1{\sqrt{2}}\ra</m>.</p>
+            <p><m>\ds \vrt = \la \cos^3(t) ,\sin^3(t) \ra</m>;<m>\ds \vec T(\pi/4) = \la -\frac1{\sqrt{2}}, \frac1{\sqrt{2}}\ra</m>.</p>
           </statement>
           <solution>
             <ol>
@@ -1210,10 +1210,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 4t,2\sin t,2\cos t \ra</m></p>
+            <p><m>\vrt = \la 4t,2\sin(t) ,2\cos(t) \ra</m></p>
           </statement>
           <solution>
-            <p><m>\vec T(t) = \frac{1}{\sqrt{5}}\la 2,\cos t,-\sin t\ra</m>; <m>\vec N(t) = \la 0,-\sin t,-\cos t\ra</m></p>
+            <p><m>\vec T(t) = \frac{1}{\sqrt{5}}\la 2,\cos(t) ,-\sin(t) \ra</m>; <m>\vec N(t) = \la 0,-\sin(t) ,-\cos(t) \ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1227,10 +1227,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 5\cos t,3\sin t,4\sin t \ra</m></p>
+            <p><m>\vrt = \la 5\cos(t) ,3\sin(t) ,4\sin(t) \ra</m></p>
           </statement>
           <solution>
-            <p><m>\vec T(t) = \la -\sin t, 3/5\cos t, 4/5\cos t\ra</m>; <m>\vec N(t) = \la -\cos t,-3/5\sin t,-4/5\sin t\ra</m></p>
+            <p><m>\vec T(t) = \la -\sin(t) , 3/5\cos(t) , 4/5\cos(t) \ra</m>; <m>\vec N(t) = \la -\cos(t) ,-3/5\sin(t) ,-4/5\sin(t) \ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1244,10 +1244,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la a\cos t,a\sin t,b t \ra</m>; <m>a>0</m></p>
+            <p><m>\vrt = \la a\cos(t) ,a\sin(t) ,b t \ra</m>; <m>a>0</m></p>
           </statement>
           <solution>
-            <p><m>\vec T(t) = \frac{1}{\sqrt{a^2+b^2}}\la -a\sin t,a\cos t,b \ra</m>; <m>\vec N(t) = \la  -\cos t,-\sin t,0\ra</m></p>
+            <p><m>\vec T(t) = \frac{1}{\sqrt{a^2+b^2}}\la -a\sin(t) ,a\cos(t) ,b \ra</m>; <m>\vec N(t) = \la  -\cos(t) ,-\sin(t) ,0\ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1261,10 +1261,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos (at),\sin (at),t \ra</m></p>
+            <p><m>\vrt = \la \cos(at),\sin(at),t \ra</m></p>
           </statement>
           <solution>
-            <p><m>\vec T(t) = \frac{1}{\sqrt{a^2+1}}\la -a\sin (at),a\cos (at),1 \ra</m>; <m>\vec N(t) = \la  -\cos t,-\sin t,0\ra</m></p>
+            <p><m>\vec T(t) = \frac{1}{\sqrt{a^2+1}}\la -a\sin(at),a\cos(at),1 \ra</m>; <m>\vec N(t) = \la  -\cos(t) ,-\sin(t) ,0\ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1325,7 +1325,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 2\cos t,2\sin t \ra</m> on <m>[0,2\pi]</m>; consider <m>t=0</m> and <m>t=\pi/2</m>.</p>
+            <p><m>\vrt = \la 2\cos(t) ,2\sin(t) \ra</m> on <m>[0,2\pi]</m>; consider <m>t=0</m> and <m>t=\pi/2</m>.</p>
           </statement>
           <solution>
             <p><m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 2</m></p>
@@ -1348,7 +1348,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos (t^2),\sin (t^2) \ra</m> on <m>(0,2\pi]</m>; consider <m>t=\sqrt{\pi/2}</m> and <m>t=\sqrt{\pi}</m>.</p>
+            <p><m>\vrt = \la \cos(t^2),\sin(t^2) \ra</m> on <m>(0,2\pi]</m>; consider <m>t=\sqrt{\pi/2}</m> and <m>t=\sqrt{\pi}</m>.</p>
           </statement>
           <solution>
             <p><m>a_{\text{T} } = 2</m> and <m>a_{\text{N} } = 4t^2</m></p>
@@ -1371,7 +1371,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la a\cos t,a\sin t, bt \ra</m> on <m>[0,2\pi]</m>, where <m>a,b>0</m>; consider <m>t=0</m> and <m>t=\pi/2</m>.</p>
+            <p><m>\vrt = \la a\cos(t) ,a\sin(t) , bt \ra</m> on <m>[0,2\pi]</m>, where <m>a,b>0</m>; consider <m>t=0</m> and <m>t=\pi/2</m>.</p>
           </statement>
           <solution>
             <p><m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = a</m></p>
@@ -1394,7 +1394,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 5\cos t,4\sin t, 3\sin t \ra</m> on <m>[0,2\pi]</m>; consider <m>t=0</m> and <m>t=\pi/2</m>.</p>
+            <p><m>\vrt = \la 5\cos(t) ,4\sin(t) , 3\sin(t) \ra</m> on <m>[0,2\pi]</m>; consider <m>t=0</m> and <m>t=\pi/2</m>.</p>
           </statement>
           <solution>
             <p><m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 5</m></p>

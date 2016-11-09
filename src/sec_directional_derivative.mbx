@@ -257,16 +257,16 @@
 
     <p>Using the key property of the dot product, we have
       <men xml:id="eq_gradient" >
-        \nabla f\cdot \vec u = \norm{\nabla f}\,\vnorm u \cos \theta = \norm{\nabla f}\cos \theta,
+        \nabla f\cdot \vec u = \norm{\nabla f}\,\vnorm u \cos(\theta) = \norm{\nabla f}\cos(\theta) ,
       </men>
       where <m>\theta</m> is the angle between the gradient and <m>\vec u</m>. (Since <m>\vec u</m> is a unit vector, <m>\vnorm{u} = 1</m>.) This equation allows us to answer the three questions stated previously.</p>
 
     <ol>
-      <li><p><xref ref="eq_gradient">Equation</xref> is maximized when <m>\cos \theta =1</m>, i.e., when the gradient and <m>\vec u</m> have the same direction. We conclude the gradient points in the direction of greatest <m>z</m> change.</p></li>
+      <li><p><xref ref="eq_gradient">Equation</xref> is maximized when <m>\cos(\theta) =1</m>, i.e., when the gradient and <m>\vec u</m> have the same direction. We conclude the gradient points in the direction of greatest <m>z</m> change.</p></li>
 
-      <li><p><xref ref="eq_gradient">Equation</xref> is minimized when <m>\cos \theta = -1</m>, i.e., when the gradient and <m>\vec u</m> have opposite directions. We conclude the gradient points in the opposite direction of the least <m>z</m> change.</p></li>
+      <li><p><xref ref="eq_gradient">Equation</xref> is minimized when <m>\cos(\theta) = -1</m>, i.e., when the gradient and <m>\vec u</m> have opposite directions. We conclude the gradient points in the opposite direction of the least <m>z</m> change.</p></li>
 
-      <li><p><xref ref="eq_gradient">Equation</xref> is 0 when <m>\cos \theta = 0</m>, i.e., when the gradient and <m>\vec u</m> are orthogonal to each other. We conclude the gradient is orthogonal to directions of no <m>z</m> change.</p></li>
+      <li><p><xref ref="eq_gradient">Equation</xref> is 0 when <m>\cos(\theta) = 0</m>, i.e., when the gradient and <m>\vec u</m> are orthogonal to each other. We conclude the gradient is orthogonal to directions of no <m>z</m> change.</p></li>
     </ol>
 
     <p>This result is rather amazing. Once again imagine standing in a rolling meadow and face the direction that leads you steepest uphill. Then the direction that leads steepest downhill is directly behind you, and side<ndash />stepping either left or right (i.e., moving perpendicularly to the direction you face) does not change your elevation at all.</p>
@@ -306,16 +306,16 @@
     <example xml:id="ex_direct2">
       <title>Finding directions of maximal and minimal increase</title>
       <statement>
-        <p>Let <m>f(x,y) = \sin x\cos y</m> and let <m>P=(\pi/3,\pi/3)</m>. Find the directions of maximal/minimal increase, and find a direction where the instantaneous rate of <m>z</m> change is 0.</p>
+        <p>Let <m>f(x,y) = \sin(x) \cos(y)</m> and let <m>P=(\pi/3,\pi/3)</m>. Find the directions of maximal/minimal increase, and find a direction where the instantaneous rate of <m>z</m> change is 0.</p>
       </statement>
       <solution>
-        <p>We begin by finding the gradient. <m>f_x = \cos x\cos y</m> and <m>f_y = -\sin x\sin y</m>, thus
+        <p>We begin by finding the gradient. <m>f_x = \cos(x) \cos(y)</m> and <m>f_y = -\sin(x) \sin(y)</m>, thus
           <me>
-            \nabla f = \la \cos x\cos y,-\sin x\sin y\ra  \text{ and, at \(P\), }   \nabla f\left(\frac{\pi}3,\frac{\pi}3\right) = \la\frac14,-\frac34\ra.
+            \nabla f = \la \cos(x) \cos(y) ,-\sin(x) \sin(y) \ra  \text{ and, at \(P\), }   \nabla f\left(\frac{\pi}3,\frac{\pi}3\right) = \la\frac14,-\frac34\ra.
           </me>
         </p>
 
-        <p>Thus the direction of maximal increase is <m>\la 1/4, -3/4\ra</m>. In this direction, the instantaneous rate of <m>z</m> change is <m>\norm{\la 1/4,-3/4\ra} = \sqrt{10}/4 \approx 0.79.</m></p>
+        <p>Thus the direction of maximal increase is <m>\la 1/4, -3/4\ra</m>. In this direction, the instantaneous rate of <m>z</m> change is <m>\norm{\la 1/4,-3/4\ra} = \sqrt{10}/4 \approx 0.79</m>.</p>
 
         <p><xref ref="fig_direct2">Figure</xref> shows the surface plotted from two different perspectives. In each, the gradient is drawn at <m>P</m> with a dashed line (because of the nature of this surface, the gradient points <q>into</q> the surface). Let <m>\vec u = \la u_1, u_2\ra</m> be the unit vector in the direction of <m>\nabla f</m> at <m>P</m>. Each graph of the figure also contains the vector <m>\la u_1, u_2, \norm{\nabla f\,}\ra</m>. This vector has a <q>run</q> of 1 (because in the <m>x</m>-<m>y</m> plane it moves 1 unit) and a <q>rise</q> of <m>\norm{\nabla f\,}</m>, hence we can think of it as a vector with slope of <m>\norm{\nabla f\,}</m> in the direction of <m>\nabla f</m>, helping us visualize how <q>steep</q> the surface is in its steepest direction.</p>
 
@@ -766,10 +766,10 @@
             <mrow>\int \frac{1}{2x}\ dx \amp =\int\frac{1}{4y}\ dy</mrow>
             <mrow>\frac 12\ln\abs{x} \amp = \frac14\ln\abs{y} +C_1</mrow>
             <mrow>2\ln\abs{x} \amp = \ln\abs{y} +C_1</mrow>
-            <mrow>\ln \abs{x^2} \amp = \ln\abs{y}+C_1</mrow>
+            <mrow>\ln\abs{x^2} \amp = \ln\abs{y}+C_1</mrow>
             <intertext>Now raise both sides as a power of <m>e</m>:</intertext>
-            <mrow>x^2 \amp = e^{\ln \abs{y}+C_1}</mrow>
-            <mrow>x^2 \amp = e^{\ln \abs{y}}e^{C_1}\qquad \text{(Note that \(e^{C_1}\) is just a constant.)}</mrow>
+            <mrow>x^2 \amp = e^{\ln\abs{y}+C_1}</mrow>
+            <mrow>x^2 \amp = e^{\ln\abs{y}}e^{C_1}\qquad \text{(Note that \(e^{C_1}\) is just a constant.)}</mrow>
             <mrow>x^2 \amp = yC_2</mrow>
             <mrow>\frac1{C_2}x^2 \amp =y   \qquad \text{ (Note that \(1/C_2\) is just a constant.) }</mrow>
             <mrow>Cx^2 \amp = y.</mrow>
@@ -1017,7 +1017,7 @@
       <statement>
         <p>If a point source <m>S</m> is radiating energy, the intensity <m>I</m> at a given point <m>P</m> in space is inversely proportional to the square of the distance between <m>S</m> and <m>P</m>. That is, when <m>S=(0,0,0)</m>, <m>\ds I(x,y,z) = \frac{k}{x^2+y^2+z^2}</m> for some constant <m>k</m>.</p>
 
-        <p>Let <m>k=1</m>, let <m>\vec u = \la 2/3, 2/3, 1/3\ra</m> be a unit vector, and let <m>P = (2,5,3).</m> Measure distances in inches. Find the directional derivative of <m>I</m> at <m>P</m> in the direction of <m>\vec u</m>, and find the direction of greatest intensity increase at <m>P</m>.</p>
+        <p>Let <m>k=1</m>, let <m>\vec u = \la 2/3, 2/3, 1/3\ra</m> be a unit vector, and let <m>P = (2,5,3)</m>. Measure distances in inches. Find the directional derivative of <m>I</m> at <m>P</m> in the direction of <m>\vec u</m>, and find the direction of greatest intensity increase at <m>P</m>.</p>
       </statement>
       <solution>
         <p>We need the gradient <m>\nabla I</m>, meaning we need <m>I_x</m>, <m>I_y</m> and <m>I_z</m>. Each partial derivative requires a simple application of the Quotient Rule, giving
@@ -1181,10 +1181,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) = \sin x\cos y</m></p>
+            <p><m>\ds f(x,y) = \sin(x) \cos(y)</m></p>
           </statement>
           <solution>
-            <p><m>\nabla f = \la \cos x\cos y, -\sin x\sin y\ra</m></p>
+            <p><m>\nabla f = \la \cos(x) \cos(y) , -\sin(x) \sin(y) \ra</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1297,7 +1297,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) = \sin x\cos y</m>, <m>\ds P = \left(\frac{\pi}{4},\frac{\pi}{3}\right)</m></p>
+            <p><m>\ds f(x,y) = \sin(x) \cos(y)</m>, <m>\ds P = \left(\frac{\pi}{4},\frac{\pi}{3}\right)</m></p>
 
             <ol>
               <li><p>In the direction of <m>\vec v=\la 1,1\ra</m>.</p></li>
@@ -1306,7 +1306,7 @@
             </ol>
           </statement>
           <solution>
-            <p><m>\nabla f = \la \cos x\cos y, -\sin x\sin y\ra</m>; <m>\nabla f(\frac{\pi}{4},\frac{\pi}{3}) = \la \frac{1}{2\sqrt{2}},-\frac12\sqrt{\frac32}\ra</m>. Be sure to change all directions to unit vectors.</p>
+            <p><m>\nabla f = \la \cos(x) \cos(y) , -\sin(x) \sin(y) \ra</m>; <m>\nabla f(\frac{\pi}{4},\frac{\pi}{3}) = \la \frac{1}{2\sqrt{2}},-\frac12\sqrt{\frac32}\ra</m>. Be sure to change all directions to unit vectors.</p>
 
             <ol>
               <li><p><m>\frac14(1-\sqrt{3})</m> (<m>\vec u = \la 1/\sqrt{2},1/\sqrt{2}\ra</m>)</p></li>
@@ -1358,7 +1358,7 @@
             <p><m>\ds f(x,y) = -4x+3y</m>, <m>P = (5,2)</m></p>
 
             <ol>
-              <li><p>In the direction of <m>\vec v = \la 3,1\ra.</m></p></li>
+              <li><p>In the direction of <m>\vec v = \la 3,1\ra</m>.</p></li>
 
               <li><p>In the direction toward the point <m>Q = (2,7)</m>.</p></li>
             </ol>
@@ -1490,10 +1490,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) = \sin x\cos y</m>, <m>\ds P = \left(\frac{\pi}{4},\frac{\pi}{3}\right)</m></p>
+            <p><m>\ds f(x,y) = \sin(x) \cos(y)</m>, <m>\ds P = \left(\frac{\pi}{4},\frac{\pi}{3}\right)</m></p>
           </statement>
           <solution>
-            <p><m>\nabla f = \la \cos x\cos y, -\sin x\sin y\ra</m></p>
+            <p><m>\nabla f = \la \cos(x) \cos(y) , -\sin(x) \sin(y) \ra</m></p>
 
             <ol>
               <li><p><m>\nabla f(\frac{\pi}{4},\frac{\pi}{3}) = \la \frac{1}{2\sqrt{2}},-\frac12\sqrt{\frac32}\ra</m></p></li>
@@ -1662,7 +1662,7 @@
           </statement>
           <solution>
             <ol>
-              <li><p><m>\nabla F(x,y,z) = \la \cos x\cos ye^z, -\sin x\sin ye^z, \sin x\cos ye^z\ra</m></p></li>
+              <li><p><m>\nabla F(x,y,z) = \la \cos(x) \cos(y) e^z, -\sin(x) \sin(y) e^z, \sin(x) \cos(y) e^z\ra</m></p></li>
 
               <li><p><m>2/3</m></p></li>
             </ol>

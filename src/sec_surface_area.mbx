@@ -450,9 +450,9 @@
           </md>
         </p>
 
-        <p>The region <m>R</m> that we are integrating over is the circle, centered at the origin, with radius <m>a</m>: <m>x^2+y^2=a^2</m>. Because of this region, we are likely to have greater success with our integration by converting to polar coordinates. Using the substitutions <m>x=r\cos\theta</m>, <m>y=r\sin\theta</m>, <m>dA = r\ dr\ d\theta</m> and bounds <m>0\leq\theta\leq2\pi</m> and <m>0\leq r\leq a</m>, we have:
+        <p>The region <m>R</m> that we are integrating over is the circle, centered at the origin, with radius <m>a</m>: <m>x^2+y^2=a^2</m>. Because of this region, we are likely to have greater success with our integration by converting to polar coordinates. Using the substitutions <m>x=r\cos(\theta)</m>, <m>y=r\sin(\theta)</m>, <m>dA = r\ dr\ d\theta</m> and bounds <m>0\leq\theta\leq2\pi</m> and <m>0\leq r\leq a</m>, we have:
           <md>
-            <mrow>S \amp = 2\int_0^{2\pi}\int_0^a \sqrt{1+\frac{r^2\cos^2\theta+r^2\sin^2\theta}{a^2-r^2\cos^2\theta-r^2\sin^2\theta}}\ r\ dr\ d\theta</mrow>
+            <mrow>S \amp = 2\int_0^{2\pi}\int_0^a \sqrt{1+\frac{r^2\cos^2(\theta) +r^2\sin^2(\theta) }{a^2-r^2\cos^2(\theta) -r^2\sin^2(\theta) }}\ r\ dr\ d\theta</mrow>
             <mrow>\amp =2\int_0^{2\pi}\int_0^ar\sqrt{1+\frac{r^2}{a^2-r^2}}\ dr\ d\theta</mrow>
             <mrow>\amp =2\int_0^{2\pi}\int_0^ar\sqrt{\frac{a^2}{a^2-r^2}}\ dr\ d\theta.</mrow>
             <intertext>Apply substitution <m>u=a^2-r^2</m> and integrate the inner integral, giving</intertext>
@@ -587,7 +587,7 @@
 
         <p>Since we are integrating over the circle <m>x^2+y^2=a^2</m>, we again use polar coordinates. Using the standard substitutions, our integrand becomes
           <me>
-            \sqrt{1+ \left(\frac{hr\cos\theta}{a\sqrt{r^2}}\right)^2 + \left(\frac{hr\sin\theta}{a\sqrt{r^2}}\right)^2}.
+            \sqrt{1+ \left(\frac{hr\cos(\theta) }{a\sqrt{r^2}}\right)^2 + \left(\frac{hr\sin(\theta) }{a\sqrt{r^2}}\right)^2}.
           </me>
         </p>
 
@@ -731,7 +731,7 @@
 
         <p>As with integrals describing arc length, double integrals describing surface area are in general hard to evaluate directly because of the square<ndash />root. This particular integral can be easily evaluated, though, with judicious choice of our order of integration.</p>
 
-        <p>Integrating with order <m>dx\ dy</m> requires us to evaluate <m>\int \sqrt{10+4x^2}\ dx</m>. This can be done, though it involves Integration By Parts and <m>\sinh^{-1}x</m>. Integrating with order <m>dy\ dx</m> has as its first integral <m>\int \sqrt{10+4x^2}\ dy</m>, which is easy to evaluate: it is simply <m>y\sqrt{10+4x^2}+C</m>. So we proceed with the order <m>dy\ dx</m>; the bounds are already given in the statement of the problem.
+        <p>Integrating with order <m>dx\ dy</m> requires us to evaluate <m>\int \sqrt{10+4x^2}\ dx</m>. This can be done, though it involves Integration By Parts and <m>\sinh^{-1}(x)</m>. Integrating with order <m>dy\ dx</m> has as its first integral <m>\int \sqrt{10+4x^2}\ dy</m>, which is easy to evaluate: it is simply <m>y\sqrt{10+4x^2}+C</m>. So we proceed with the order <m>dy\ dx</m>; the bounds are already given in the statement of the problem.
           <md>
             <mrow>\iint_R\sqrt{10+4x^2}\ dA \amp = \int_0^4\int_{-x}^x\sqrt{10+4x^2}\ dy \ dx</mrow>
             <mrow>\amp = \int_0^4\left.\big(y\sqrt{10+4x^2}\big)\right|_{-x}^x dx</mrow>
@@ -871,7 +871,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x,y) = \sin x\cos y</m>;<m>R</m> is the rectangle with bounds <m>0\leq x\leq 2\pi</m>, <m>0\leq y\leq2\pi</m>.</p>
+            <p><m>f(x,y) = \sin(x) \cos(y)</m>;<m>R</m> is the rectangle with bounds <m>0\leq x\leq 2\pi</m>, <m>0\leq y\leq2\pi</m>.</p>
 
             <p><!-- 
                \includemedia[width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
@@ -979,7 +979,7 @@
               <!-- figures/fig13_05_ex_05_3D.asy END --></p>
           </statement>
           <solution>
-            <p><m>\ds SA = \int_0^{2\pi}\int_0^{2\pi} \sqrt{1+ \cos^2x\cos^2y+\sin^2x\sin^2y}\ dx\ dy</m></p>
+            <p><m>\ds SA = \int_0^{2\pi}\int_0^{2\pi} \sqrt{1+ \cos^2(x) \cos^2(y) +\sin^2(x) \sin^2(y) }\ dx\ dy</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1401,7 +1401,7 @@
           <solution>
             <p>This is easier in polar:
               <md>
-                <mrow>SA \amp = \int_{0}^{2\pi}\int_{0}^{4} r\sqrt{1+ 4r^2\cos^2t+4r^2\sin^2t}\ dr\ d\theta</mrow>
+                <mrow>SA \amp = \int_{0}^{2\pi}\int_{0}^{4} r\sqrt{1+ 4r^2\cos^2(t) +4r^2\sin^2(t) }\ dr\ d\theta</mrow>
                 <mrow>\amp = \int_0^{2\pi}\int_0^4r\sqrt{1+4r^2}\ dr\ d\theta</mrow>
                 <mrow>\amp = \frac{\pi}{6}\big(65\sqrt{65}-1\big) \approx 273.87</mrow>
               </md>
@@ -1493,7 +1493,7 @@
           <solution>
             <p>This is easier in polar:
               <md>
-                <mrow>SA \amp = \int_{0}^{2\pi}\int_{0}^{5} r\sqrt{1+ \frac{4r^2\cos^2t+4r^2\sin^2t}{r^2\sin^2t+r^2\cos^2t}}\ dr\ d\theta</mrow>
+                <mrow>SA \amp = \int_{0}^{2\pi}\int_{0}^{5} r\sqrt{1+ \frac{4r^2\cos^2(t) +4r^2\sin^2(t) }{r^2\sin^2(t) +r^2\cos^2(t) }}\ dr\ d\theta</mrow>
                 <mrow>\amp = \int_0^{2\pi}\int_0^5r\sqrt{5}\ dr\ d\theta</mrow>
                 <mrow>\amp = 25\pi\sqrt{5}\approx 175.62</mrow>
               </md>
@@ -1516,7 +1516,7 @@
           <solution>
             <p>This is easier in polar:
               <md>
-                <mrow>SA \amp = 2\int_{0}^{2\pi}\int_{0}^{5} r\sqrt{1+ \frac{r^2\cos^2t+r^2\sin^2t}{25-r^2\sin^2t-r^2\cos^2t}}\ dr\ d\theta</mrow>
+                <mrow>SA \amp = 2\int_{0}^{2\pi}\int_{0}^{5} r\sqrt{1+ \frac{r^2\cos^2(t) +r^2\sin^2(t) }{25-r^2\sin^2(t) -r^2\cos^2(t) }}\ dr\ d\theta</mrow>
                 <mrow>\amp = 2\int_0^{2\pi}\int_0^5r\sqrt{\frac{1}{25-r^2}}\ dr\ d\theta</mrow>
                 <mrow>\amp = 100\pi\approx 314.16</mrow>
               </md>

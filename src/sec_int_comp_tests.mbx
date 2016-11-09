@@ -148,10 +148,10 @@
     <example xml:id="ex_itest1">
       <title>Using the Integral Test</title>
       <statement>
-        <p>Determine the convergence of <m>\ds\sum_{n=1}^\infty \frac{\ln n}{n^2}</m>. (The terms of the sequence <m>\{a_n\} = \{\ln n/n^2\}</m> and the n<m>^{\text{ th } }</m> partial sums are given in <xref ref="fig_itest1">Figure</xref>.)</p>
+        <p>Determine the convergence of <m>\ds\sum_{n=1}^\infty \frac{\ln(n) }{n^2}</m>. (The terms of the sequence <m>\{a_n\} = \{\ln(n) /n^2\}</m> and the n<m>^{\text{ th } }</m> partial sums are given in <xref ref="fig_itest1">Figure</xref>.)</p>
       </statement>
       <solution>
-        <p><xref ref="fig_itest1">Figure</xref> implies that <m>a(n) = (\ln n)/n^2</m> is positive and decreasing on <m>[2,\infty)</m>. We can determine this analytically, too. We know <m>a(n)</m> is positive as both <m>\ln n</m> and <m>n^2</m> are positive on <m>[2,\infty)</m>. To determine that <m>a(n)</m> is decreasing, consider <m>a'(n) = (1-2\ln n)/n^3</m>, which is negative for <m>n\geq 2</m>. Since <m>a'(n)</m> is negative, <m>a(n)</m> is decreasing.</p>
+        <p><xref ref="fig_itest1">Figure</xref> implies that <m>a(n) = (\ln(n) )/n^2</m> is positive and decreasing on <m>[2,\infty)</m>. We can determine this analytically, too. We know <m>a(n)</m> is positive as both <m>\ln(n)</m> and <m>n^2</m> are positive on <m>[2,\infty)</m>. To determine that <m>a(n)</m> is decreasing, consider <m>a'(n) = (1-2\ln(n) )/n^3</m>, which is negative for <m>n\geq 2</m>. Since <m>a'(n)</m> is negative, <m>a(n)</m> is decreasing.</p>
 
         <figure xml:id="fig_itest1" >
           <caption>Plotting the sequence and series in <xref ref="ex_itest1">Example</xref>.</caption>
@@ -197,19 +197,19 @@
           <!-- figures/fig_itest1.tex END -->
         </figure>
 
-        <p>Applying the Integral Test, we test the convergence of <m>\ds \int_1^\infty \frac{\ln x}{x^2}\ dx</m>. Integrating this improper integral requires the use of Integration by Parts, with <m>u = \ln x</m> and <m>dv = 1/x^2\ dx</m>.
+        <p>Applying the Integral Test, we test the convergence of <m>\ds \int_1^\infty \frac{\ln(x) }{x^2}\ dx</m>. Integrating this improper integral requires the use of Integration by Parts, with <m>u = \ln(x)</m> and <m>dv = 1/x^2\ dx</m>.
           <md>
-            <mrow>\int_1^\infty \frac{\ln x}{x^2}\ dx \amp = \lim_{b\to\infty} \int_1^b \frac{\ln x}{x^2}\ dx</mrow>
-            <mrow>\amp = \lim_{b\to\infty} -\frac1x\ln x\Big|_1^b + \int_1^b\frac1{x^2}\ dx</mrow>
+            <mrow>\int_1^\infty \frac{\ln(x) }{x^2}\ dx \amp = \lim_{b\to\infty} \int_1^b \frac{\ln(x) }{x^2}\ dx</mrow>
+            <mrow>\amp = \lim_{b\to\infty} -\frac1x\ln(x) \Big|_1^b + \int_1^b\frac1{x^2}\ dx</mrow>
           </md>
           <md>
-            <mrow>\amp = \lim_{b\to\infty} -\frac1x\ln x -\frac 1x\Big|_1^b</mrow>
-            <mrow>\amp = \lim_{b\to\infty}1-\frac1b-\frac{\ln b}{b}. \text{ Apply L'H\^opital's Rule: }</mrow>
+            <mrow>\amp = \lim_{b\to\infty} -\frac1x\ln(x) -\frac 1x\Big|_1^b</mrow>
+            <mrow>\amp = \lim_{b\to\infty}1-\frac1b-\frac{\ln(b) }{b}. \text{ Apply L'H\^opital's Rule: }</mrow>
             <mrow>\amp = 1.</mrow>
           </md>
         </p>
 
-        <p>Since <m>\ds \int_1^\infty \frac{\ln x}{x^2}\ dx</m> converges, so does <m>\ds \sum_{n=1}^\infty \frac{\ln n}{n^2}</m>.</p>
+        <p>Since <m>\ds \int_1^\infty \frac{\ln(x) }{x^2}\ dx</m> converges, so does <m>\ds \sum_{n=1}^\infty \frac{\ln(n) }{n^2}</m>.</p>
       </solution>
     </example>
 
@@ -276,20 +276,20 @@
     <example xml:id="ex_dct2">
       <title>Applying the Direct Comparison Test</title>
       <statement>
-        <p>Determine the convergence of <m>\ds\sum_{n=1}^\infty \frac{1}{n-\ln n}</m>.</p>
+        <p>Determine the convergence of <m>\ds\sum_{n=1}^\infty \frac{1}{n-\ln(n) }</m>.</p>
       </statement>
       <solution>
         <p>We know the Harmonic Series <m>\ds\sum_{n=1}^\infty \frac1n</m> diverges, and it seems that the given series is closely related to it, hence we predict it will diverge.</p>
 
-        <p>Since <m>n\geq n-\ln n</m> for all <m>n\geq 1</m>, <m>\ds \frac1n \leq \frac1{n-\ln n}</m> for all <m>n\geq 1</m>.</p>
+        <p>Since <m>n\geq n-\ln(n)</m> for all <m>n\geq 1</m>, <m>\ds \frac1n \leq \frac1{n-\ln(n) }</m> for all <m>n\geq 1</m>.</p>
 
-        <p>The Harmonic Series diverges, so we conclude that <m>\ds\sum_{n=1}^\infty \frac{1}{n-\ln n}</m> diverges as well.</p>
+        <p>The Harmonic Series diverges, so we conclude that <m>\ds\sum_{n=1}^\infty \frac{1}{n-\ln(n) }</m> diverges as well.</p>
       </solution>
     </example>
 
     <p>The concept of direct comparison is powerful and often relatively easy to apply. Practice helps one develop the necessary intuition to quickly pick a proper series with which to compare. However, it is easy to construct a series for which it is difficult to apply the Direct Comparison Test.</p>
 
-    <p>Consider <m>\ds\sum_{n=1}^\infty \frac1{n+\ln n}</m>. It is very similar to the divergent series given in <xref ref="ex_dct2">Example</xref>. We suspect that it also diverges, as <m>\ds \frac 1n \approx \frac1{n+\ln n}</m> for large <m>n</m>. However, the inequality that we naturally want to use <q>goes the wrong way</q>: since <m>n\leq n+\ln n</m> for all <m>n\geq 1</m>, <m>\ds\frac1n \geq \frac{1}{n+\ln n}</m> for all <m>n\geq 1</m>. The given series has terms <em>less than</em> the terms of a divergent series, and we cannot conclude anything from this.</p>
+    <p>Consider <m>\ds\sum_{n=1}^\infty \frac1{n+\ln(n) }</m>. It is very similar to the divergent series given in <xref ref="ex_dct2">Example</xref>. We suspect that it also diverges, as <m>\ds \frac 1n \approx \frac1{n+\ln(n) }</m> for large <m>n</m>. However, the inequality that we naturally want to use <q>goes the wrong way</q>: since <m>n\leq n+\ln(n)</m> for all <m>n\geq 1</m>, <m>\ds\frac1n \geq \frac{1}{n+\ln(n) }</m> for all <m>n\geq 1</m>. The given series has terms <em>less than</em> the terms of a divergent series, and we cannot conclude anything from this.</p>
 
     <p>Fortunately, we can apply another test to the given series to determine its convergence.</p>
   </subsection>
@@ -314,22 +314,22 @@
 
     <p><xref ref="thm_series_limit_compare">Theorem</xref> is most useful when the convergence of the series from <m>\{b_n\}</m> is known and we are trying to determine the convergence of the series from <m>\{a_n\}</m>.</p>
 
-    <p>We use the Limit Comparison Test in the next example to examine the series <m>\ds\sum_{n=1}^\infty \frac1{n+\ln n}</m> which motivated this new test.</p>
+    <p>We use the Limit Comparison Test in the next example to examine the series <m>\ds\sum_{n=1}^\infty \frac1{n+\ln(n) }</m> which motivated this new test.</p>
 
     <example xml:id="ex_lct1">
       <title>Applying the Limit Comparison Test</title>
       <statement>
-        <p>Determine the convergence of <m>\ds\sum_{n=1}^\infty \frac1{n+\ln n}</m> using the Limit Comparison Test.</p>
+        <p>Determine the convergence of <m>\ds\sum_{n=1}^\infty \frac1{n+\ln(n) }</m> using the Limit Comparison Test.</p>
       </statement>
       <solution>
-        <p>We compare the terms of <m>\ds\sum_{n=1}^\infty \frac1{n+\ln n}</m> to the terms of the Harmonic Sequence <m>\ds\sum_{n=1}^\infty \frac1{n}</m>:
+        <p>We compare the terms of <m>\ds\sum_{n=1}^\infty \frac1{n+\ln(n) }</m> to the terms of the Harmonic Sequence <m>\ds\sum_{n=1}^\infty \frac1{n}</m>:
           <md>
-            <mrow>\lim_{n\to\infty}\frac{1/(n+\ln n)}{1/n} \amp = \lim_{n\to\infty} \frac{n}{n+\ln n}</mrow>
+            <mrow>\lim_{n\to\infty}\frac{1/(n+\ln(n) )}{1/n} \amp = \lim_{n\to\infty} \frac{n}{n+\ln(n) }</mrow>
             <mrow>\amp = 1 \text{ (after applying L'H\^opital's Rule) } .</mrow>
           </md>
         </p>
 
-        <p>Since the Harmonic Series diverges, we conclude that <m>\ds\sum_{n=1}^\infty \frac1{n+\ln n}</m> diverges as well.</p>
+        <p>Since the Harmonic Series diverges, we conclude that <m>\ds\sum_{n=1}^\infty \frac1{n+\ln(n) }</m> diverges as well.</p>
       </solution>
     </example>
 
@@ -522,7 +522,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=2}^\infty \frac{1}{n\ln n}</m></p>
+            <p><m>\ds \sum_{n=2}^\infty \frac{1}{n\ln(n) }</m></p>
           </statement>
           <solution>
             <p>Diverges</p>
@@ -556,7 +556,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=2}^\infty \frac{1}{n(\ln n)^2}</m></p>
+            <p><m>\ds \sum_{n=2}^\infty \frac{1}{n(\ln(n) )^2}</m></p>
           </statement>
           <solution>
             <p>Converges</p>
@@ -590,7 +590,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=1}^\infty \frac{\ln n}{n^3}</m></p>
+            <p><m>\ds \sum_{n=1}^\infty \frac{\ln(n) }{n^3}</m></p>
           </statement>
           <solution>
             <p>Converges</p>
@@ -642,10 +642,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=1}^\infty \frac{\ln n}{n}</m></p>
+            <p><m>\ds \sum_{n=1}^\infty \frac{\ln(n) }{n}</m></p>
           </statement>
           <solution>
-            <p>Diverges; compare to <m>\ds \sum_{n=1}^\infty \frac{1}{n}</m>, as <m>1/n \leq \ln n/n</m> for all <m>n\geq 2</m>.</p>
+            <p>Diverges; compare to <m>\ds \sum_{n=1}^\infty \frac{1}{n}</m>, as <m>1/n \leq \ln(n) /n</m> for all <m>n\geq 2</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -769,10 +769,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=2}^\infty \frac{1}{n^2\ln n}</m></p>
+            <p><m>\ds \sum_{n=2}^\infty \frac{1}{n^2\ln(n) }</m></p>
           </statement>
           <solution>
-            <p>Converges; compare to <m>\ds \sum_{n=1}^\infty \frac 1{n^2}</m>, as <m>1/(n^2\ln n) \leq 1/n^2</m> for all <m>n\geq 2</m>.</p>
+            <p>Converges; compare to <m>\ds \sum_{n=1}^\infty \frac 1{n^2}</m>, as <m>1/(n^2\ln(n) ) \leq 1/n^2</m> for all <m>n\geq 2</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -821,10 +821,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=4}^\infty \frac{\ln n}{n-3}</m></p>
+            <p><m>\ds \sum_{n=4}^\infty \frac{\ln(n) }{n-3}</m></p>
           </statement>
           <solution>
-            <p>Diverges; compare to <m>\ds \sum_{n=1}^\infty \frac {\ln n}{n}</m>.</p>
+            <p>Diverges; compare to <m>\ds \sum_{n=1}^\infty \frac {\ln(n) }{n}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -892,7 +892,7 @@
             <p><m>\ds \sum_{n=1}^\infty \sin\big(1/n\big)</m></p>
           </statement>
           <solution>
-            <p>Diverges; compare to <m>\ds \sum_{n=1}^\infty \frac {1}{n}</m>. Just as <m>\lim\limits_{n\to0}\frac{\sin n}{n} = 1</m>, <m>\lim\limits_{n\to\infty}\frac{\sin(1/n)}{1/n} = 1</m>.</p>
+            <p>Diverges; compare to <m>\ds \sum_{n=1}^\infty \frac {1}{n}</m>. Just as <m>\lim\limits_{n\to0}\frac{\sin(n) }{n} = 1</m>, <m>\lim\limits_{n\to\infty}\frac{\sin(1/n)}{1/n} = 1</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1009,7 +1009,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=1}^\infty \frac{\ln n}{n!}</m></p>
+            <p><m>\ds \sum_{n=1}^\infty \frac{\ln(n) }{n!}</m></p>
           </statement>
           <solution>
             <p>Converges; the Direct Comparison Test can be used with sequence <m>1/(n-1)!</m>.</p>
@@ -1077,7 +1077,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=1}^\infty \frac{\cos (1/n)}{\sqrt{n}}</m></p>
+            <p><m>\ds \sum_{n=1}^\infty \frac{\cos(1/n)}{\sqrt{n}}</m></p>
           </statement>
           <solution>
             <p>Converges; the Direct Comparison Test can be used with sequence <m>1/\sqrt{n}</m>.</p>

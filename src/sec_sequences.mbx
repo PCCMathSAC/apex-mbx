@@ -243,7 +243,7 @@
     <p><xref ref="thm_seq_limit">Theorem</xref> allows us, in certain cases, to apply the tools developed in <xref ref="chapter_limits">Chapter</xref> to limits of sequences. Note two things <em>not</em> stated by the theorem:</p>
 
     <ol>
-      <li><p>If <m>\lim\limits_{x\to\infty}f(x)</m> does not exist, we cannot conclude that <m>\lim\limits_{n\to\infty} a_n</m> does not exist. It may, or may not, exist. For instance, we can define a sequence <m>\{a_n\} = \{\cos(2\pi n)\}</m>. Let <m>f(x) = \cos (2\pi x)</m>. Since the cosine function oscillates over the real numbers, the limit <m>\lim\limits_{x\to\infty}f(x)</m> does not exist. 
+      <li><p>If <m>\lim\limits_{x\to\infty}f(x)</m> does not exist, we cannot conclude that <m>\lim\limits_{n\to\infty} a_n</m> does not exist. It may, or may not, exist. For instance, we can define a sequence <m>\{a_n\} = \{\cos(2\pi n)\}</m>. Let <m>f(x) = \cos(2\pi x)</m>. Since the cosine function oscillates over the real numbers, the limit <m>\lim\limits_{x\to\infty}f(x)</m> does not exist. 
 		
 		However, for every positive integer <m>n</m>, <m>\cos(2\pi n) = 1</m>, so <m>\lim\limits_{n\to\infty} a_n = 1</m>.</p></li>
 
@@ -256,7 +256,7 @@
         <p>Determine the convergence or divergence of the following sequences.</p>
 
         <p>{1}. <m>\ds\{a_n\} = \left\{\frac{3n^2-2n+1}{n^2-1000}\right\}</m>
-          2. <m>\{a_n\} = \{\cos n \}</m>
+          2. <m>\{a_n\} = \{\cos(n) \}</m>
           3. <m>\ds\{a_n\} = \left\{\frac{(-1)^n}{n}\right\}</m></p>
       </statement>
       <solution>
@@ -324,13 +324,13 @@
 
                       \addplot [only marks,{\colorone},mark size={.75pt},domain=1:100,samples=100] {cos(deg(x))};
 
-                      %\draw (axis cs:60,-.8) node {\scriptsize $\ds a_n = \cos n$};
+                      %\draw (axis cs:60,-.8) node {\scriptsize $\ds a_n = \cos(n) $};
 
                       \end{axis}
 
                       \node [right] at (myplot.right of origin) {\scriptsize $n$};
 
-                      \node [] at (myplot.north) {\scriptsize $\ds a_n = \cos n$};
+                      \node [] at (myplot.north) {\scriptsize $\ds a_n = \cos(n) $};
 
                       \end{tikzpicture}
                       ]]>
@@ -367,7 +367,7 @@
 
                       \node [right] at (myplot.right of origin) {\scriptsize $n$};
 
-                      %\node [] at (myplot.north) {\scriptsize $\ds a_n = \cos n$};
+                      %\node [] at (myplot.north) {\scriptsize $\ds a_n = \cos(n) $};
 
                       \end{tikzpicture}
                       ]]>
@@ -381,9 +381,9 @@
 
             </p></li>
 
-          <li><p>The limit <m>\lim\limits_{x\to\infty}\cos x</m> does not exist, as <m>\cos x</m> oscillates (and takes on every value in <m>[-1,1]</m> infinitely many times). Thus we cannot apply <xref ref="thm_seq_limit">Theorem</xref>. 
+          <li><p>The limit <m>\lim\limits_{x\to\infty}\cos(x)</m> does not exist, as <m>\cos(x)</m> oscillates (and takes on every value in <m>[-1,1]</m> infinitely many times). Thus we cannot apply <xref ref="thm_seq_limit">Theorem</xref>. 
 
-              The fact that the cosine function oscillates strongly hints that <m>\cos n</m>, when <m>n</m> is restricted to <m>\mathbb{N}</m>, will also oscillate. <xref ref="fig_seq4">Figure</xref> (b), where the sequence is plotted, shows that this is true. Because only discrete values of cosine are plotted, it does not bear strong resemblance to the familiar cosine wave.
+              The fact that the cosine function oscillates strongly hints that <m>\cos(n)</m>, when <m>n</m> is restricted to <m>\mathbb{N}</m>, will also oscillate. <xref ref="fig_seq4">Figure</xref> (b), where the sequence is plotted, shows that this is true. Because only discrete values of cosine are plotted, it does not bear strong resemblance to the familiar cosine wave.
 
               We conclude that <m>\lim\limits_{n\to\infty}a_n</m> does not exist.</p></li>
 
@@ -498,7 +498,7 @@
 
           <li><p><m>\ds \{b_n\} = \left\{\left(1+\frac1n\right)^{n}\right\}</m>, and <m>\lim\limits_{n\to\infty} b_n = e</m>; and</p></li>
 
-          <li><p><m>\ds \{c_n\} = \big\{n\cdot \sin (5/n)\big\}</m>, and <m>\lim\limits_{n\to\infty} c_n = 5</m>.</p></li>
+          <li><p><m>\ds \{c_n\} = \big\{n\cdot \sin(5/n)\big\}</m>, and <m>\lim\limits_{n\to\infty} c_n = 5</m>.</p></li>
         </ul>
 
         <p>Evaluate the following limits.</p>
@@ -509,9 +509,9 @@
         <p>We will use <xref ref="thm_seq_properties">Theorem</xref> to answer each of these.</p>
 
         <ol>
-          <li><p>Since <m>\lim\limits_{n\to\infty} a_n = 0</m> and <m>\lim\limits_{n\to\infty} b_n = e</m>, we conclude that <m>\lim\limits_{n\to\infty} (a_n+b_n) = 0+e = e.</m> So even though we are adding something to each term of the sequence <m>b_n</m>, we are adding something so small that the final limit is the same as before.</p></li>
+          <li><p>Since <m>\lim\limits_{n\to\infty} a_n = 0</m> and <m>\lim\limits_{n\to\infty} b_n = e</m>, we conclude that <m>\lim\limits_{n\to\infty} (a_n+b_n) = 0+e = e</m>. So even though we are adding something to each term of the sequence <m>b_n</m>, we are adding something so small that the final limit is the same as before.</p></li>
 
-          <li><p>Since <m>\lim\limits_{n\to\infty} b_n = e</m> and <m>\lim\limits_{n\to\infty} c_n = 5</m>, we conclude that <m>\lim\limits_{n\to\infty} (b_n\cdot c_n) = e\cdot 5 = 5e.</m></p></li>
+          <li><p>Since <m>\lim\limits_{n\to\infty} b_n = e</m> and <m>\lim\limits_{n\to\infty} c_n = 5</m>, we conclude that <m>\lim\limits_{n\to\infty} (b_n\cdot c_n) = e\cdot 5 = 5e</m>.</p></li>
 
           <li><p>Since <m>\lim\limits_{n\to\infty} a_n = 0</m>, we have <m>\lim\limits_{n\to\infty} 1000a_n =1000\cdot 0 = 0</m>. It does not matter that we multiply each term by 1000; the sequence still approaches 0. (It just takes longer to get close to 0.)</p></li>
         </ol>
@@ -1155,7 +1155,7 @@
 
         <li><p><m>\ds \{b_n\} = \left\{\left(1+\frac{2}{n}\right)^n\right\}</m>;  <m>\lim\limits_{n\to\infty} b_n = e^2</m></p></li>
 
-        <li><p><m>\ds \{c_n\} = \left\{\sin (3/n)\right\}</m>;  <m>\lim\limits_{n\to\infty} c_n = 0</m></p></li>
+        <li><p><m>\ds \{c_n\} = \left\{\sin(3/n)\right\}</m>;  <m>\lim\limits_{n\to\infty} c_n = 0</m></p></li>
       </ul>
 
       <exercise>
@@ -1305,7 +1305,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\{a_n\} = \left\{\ln (n)\right\}</m></p>
+            <p><m>\ds\{a_n\} = \left\{\ln(n)\right\}</m></p>
           </statement>
           <solution>
             <p>diverges</p>
@@ -1443,7 +1443,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\{a_n\} = \left\{\sin n\right\}</m></p>
+            <p><m>\ds\{a_n\} = \left\{\sin(n) \right\}</m></p>
           </statement>
           <solution>
             <p>bounded</p>
@@ -1460,7 +1460,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\{a_n\} = \left\{\tan n\right\}</m></p>
+            <p><m>\ds\{a_n\} = \left\{\tan(n) \right\}</m></p>
           </statement>
           <solution>
             <p>neither bounded above or below</p>
@@ -1511,7 +1511,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\{a_n\} = \left\{n\cos n\right\}</m></p>
+            <p><m>\ds\{a_n\} = \left\{n\cos(n) \right\}</m></p>
           </statement>
           <solution>
             <p>neither bounded above or below</p>

@@ -6,7 +6,7 @@
     <p>We have covered almost all of the derivative rules that deal with combinations of two (or more) functions. The operations of addition, subtraction, multiplication (including by a constant) and division led to the Sum and Difference rules, the Constant Multiple Rule, the Power Rule, the Product Rule and the Quotient Rule.
       To complete the list of differentiation rules, we look at the last way two (or more) functions can be combined: the process of composition (i.e. one function <q>inside</q> another).</p>
 
-    <p>One example of a composition of functions is <m>f(x) = \cos(x^2)</m>. We currently do not know how to compute this derivative. If forced to guess, one would likely guess <m>\fp(x) = -\sin(2x)</m>, where we recognize <m>-\sin x</m> as the derivative of <m>\cos x</m> and <m>2x</m> as the derivative of <m>x^2</m>. However, this is not the case; <m>\fp(x)\neq -\sin(2x)</m>. In <xref ref="ex_chain7">Example</xref> we'll see the correct answer, which employs the new rule this section introduces, the <em>Chain Rule</em>.</p>
+    <p>One example of a composition of functions is <m>f(x) = \cos(x^2)</m>. We currently do not know how to compute this derivative. If forced to guess, one would likely guess <m>\fp(x) = -\sin(2x)</m>, where we recognize <m>-\sin(x)</m> as the derivative of <m>\cos(x)</m> and <m>2x</m> as the derivative of <m>x^2</m>. However, this is not the case; <m>\fp(x)\neq -\sin(2x)</m>. In <xref ref="ex_chain7">Example</xref> we'll see the correct answer, which employs the new rule this section introduces, the <em>Chain Rule</em>.</p>
 
     <p>Before we define this new rule, recall the notation for composition of functions. We write <m>(f \circ g)(x)</m> or <m>f(g(x))</m>, read as <q><m>f</m> of <m>g</m> of <m>x</m>,</q> to denote composing <m>f</m> with <m>g</m>. In shorthand, we simply write
       <m>f \circ g</m> or <m>f(g)</m> and read it as <q><m>f</m> of <m>g</m>.</q> Before giving the corresponding differentiation rule, we note that the rule extends to multiple compositions like <m>f(g(h(x)))</m> or <m>f(g(h(j(x))))</m>, etc.</p>
@@ -16,7 +16,7 @@
     <example xml:id="ex_chain1">
       <title>Exploring similar derivatives</title>
       <statement>
-        <p>Find the derivatives of <m>F_1(x) = (1-x)^2</m>, <m>F_2(x) = (1-x)^3,</m> and <m>F_3(x) = (1-x)^4.</m> (We'll see later why we are using subscripts for different functions and an uppercase <m>F</m>.)</p>
+        <p>Find the derivatives of <m>F_1(x) = (1-x)^2</m>, <m>F_2(x) = (1-x)^3</m>, and <m>F_3(x) = (1-x)^4</m>. (We'll see later why we are using subscripts for different functions and an uppercase <m>F</m>.)</p>
       </statement>
       <solution>
         <p>In order to use the rules we already have, we must first expand each function as
@@ -24,7 +24,7 @@
 
         <p>It is not hard to see that:</p>
 
-        <p><m>F_1'(x) = -2 + 2x</m>,<m>F_2'(x) = -3 + 6x - 3x^2</m> and<m>F_3'(x) = -4 + 12x - 12x^2 + 4x^3.</m></p>
+        <p><m>F_1'(x) = -2 + 2x</m>,<m>F_2'(x) = -3 + 6x - 3x^2</m> and<m>F_3'(x) = -4 + 12x - 12x^2 + 4x^3</m>.</p>
 
         <p>An interesting fact is that these can be rewritten as
           <me>
@@ -74,7 +74,7 @@
           </me>
         </p>
 
-        <p>To find <m>y'</m>, we apply the Chain Rule. We need <m>\fp(x)=2x</m> and <m>g'(x)=-1.</m></p>
+        <p>To find <m>y'</m>, we apply the Chain Rule. We need <m>\fp(x)=2x</m> and <m>g'(x)=-1</m>.</p>
 
         <p>Part of the Chain Rule uses <m>\fp(g(x))</m>. This means substitute <m>g(x)</m> for <m>x</m> in the equation for <m>\fp(x)</m>. That is, <m>\fp(x) = 2(1-x)</m>. Finishing out the Chain Rule we have
           <me>
@@ -113,9 +113,9 @@
       </statement>
     </theorem>
 
-    <p>This allows us to quickly find the derivative of functions like <m>y = (3x^2-5x+7+\sin x)^{20}</m>. While it may look intimidating, the Generalized Power Rule states that
+    <p>This allows us to quickly find the derivative of functions like <m>y = (3x^2-5x+7+\sin(x) )^{20}</m>. While it may look intimidating, the Generalized Power Rule states that
       <me>
-        y' = 20(3x^2-5x+7+\sin x)^{19}\cdot (6x-5+\cos x).
+        y' = 20(3x^2-5x+7+\sin(x) )^{19}\cdot (6x-5+\cos(x) ).
       </me>
     </p>
 
@@ -129,24 +129,24 @@
         <p>Find the derivatives of the following functions:</p>
 
         <ol cols="3" >
-          <li><p><m>y = \sin{2x}</m></p></li>
+          <li><p><m>y = \sin(2x)</m></p></li>
 
-          <li><p><m>y= \ln (4x^3-2x^2)</m></p></li>
+          <li><p><m>y= \ln(4x^3-2x^2)</m></p></li>
 
           <li><p><m>y = e^{-x^2}</m></p></li>
         </ol>
       </statement>
       <solution>
         <ol>
-          <li><p>Consider <m>y = \sin 2x</m>. Recognize that this is a composition of functions, where <m>f(x) = \sin x</m> and <m>g(x) = 2x</m>. Thus
+          <li><p>Consider <m>y = \sin(2x)</m>. Recognize that this is a composition of functions, where <m>f(x) = \sin(x)</m> and <m>g(x) = 2x</m>. Thus
               <me>
-                y' = \fp(g(x))\cdot g'(x) = \cos (2x)\cdot 2 = 2\cos 2x.
+                y' = \fp(g(x))\cdot g'(x) = \cos(2x)\cdot 2 = 2\cos(2x) .
               </me>
             </p></li>
 
-          <li><p>Recognize that <m>y = \ln (4x^3-2x^2)</m> is the composition of <m>f(x) = \ln x</m> and <m>g(x) = 4x^3-2x^2</m>. Also, recall that
+          <li><p>Recognize that <m>y = \ln(4x^3-2x^2)</m> is the composition of <m>f(x) = \ln(x)</m> and <m>g(x) = 4x^3-2x^2</m>. Also, recall that
               <me>
-                \frac{d}{dx}\Big(\ln x\Big) = \frac{1}{x}.
+                \frac{d}{dx}\Big(\ln(x) \Big) = \frac{1}{x}.
               </me>
               This leads us to:
               <me>
@@ -166,12 +166,12 @@
     <example xml:id="ex_chain7">
       <title>Using the Chain Rule to find a tangent line</title>
       <statement>
-        <p>Let <m>f(x) = \cos x^2</m>. Find the equation of the line tangent to the graph of <m>f</m> at <m>x=1</m>.</p>
+        <p>Let <m>f(x) = \cos(x^2)</m>. Find the equation of the line tangent to the graph of <m>f</m> at <m>x=1</m>.</p>
       </statement>
       <solution>
         <p>The tangent line goes through the point <m>(1,f(1)) \approx (1,0.54)</m> with slope <m>\fp(1)</m>. To find <m>\fp</m>, we need the Chain Rule.</p>
 
-        <p><m>\fp(x) = -\sin(x^2) \cdot(2x) = -2x\sin x^2</m>. Evaluated at <m>x=1</m>, we have <m>\fp(1) = -2\sin 1\approx -1.68</m>. Thus the equation of the tangent line is
+        <p><m>\fp(x) = -\sin(x^2) \cdot(2x) = -2x\sin(x^2)</m>. Evaluated at <m>x=1</m>, we have <m>\fp(1) = -2\sin(1) \approx -1.68</m>. Thus the equation of the tangent line is
           <me>
             y = -1.68(x-1)+0.54 .
           </me>
@@ -180,7 +180,7 @@
         <p>The tangent line is sketched along with <m>f</m> in <xref ref="fig_chain7">Figure</xref>.</p>
 
         <figure xml:id="fig_chain7" >
-          <caption><m>f(x) = \cos x^2</m> sketched along with its tangent line at <m>x=1</m>.</caption>
+          <caption><m>f(x) = \cos(x^2)</m> sketched along with its tangent line at <m>x=1</m>.</caption>
           <!-- START figures/fig_chain7.tex -->
           <image xml:id="img_chain7" >
             <description></description>
@@ -214,13 +214,13 @@
 
     <p>The Chain Rule is used often in taking derivatives. Because of this, one can become familiar with the basic process and learn patterns that facilitate finding derivatives quickly. For instance,
       <me>
-        \frac{d}{dx}\Big(\ln (\text{ anything } )\Big) = \frac{1}{\text{ anything } }\cdot (\text{ anything } )' = \frac{(\text{ anything } )'}{\text{ anything } }.
+        \frac{d}{dx}\Big(\ln(\text{ anything } )\Big) = \frac{1}{\text{ anything } }\cdot (\text{ anything } )' = \frac{(\text{ anything } )'}{\text{ anything } }.
       </me>
     </p>
 
     <p>A concrete example of this is
       <me>
-        \frac{d}{dx}\Big(\ln(3x^{15}-\cos x+e^x)\Big) = \frac{45x^{14}+\sin x+e^x}{3x^{15}-\cos x+e^x}.
+        \frac{d}{dx}\Big(\ln(3x^{15}-\cos(x) +e^x)\Big) = \frac{45x^{14}+\sin(x) +e^x}{3x^{15}-\cos(x) +e^x}.
       </me>
     </p>
 
@@ -228,22 +228,22 @@
 
     <p>This pattern recognition process can be applied to lots of functions. In general, instead of writing <q>anything</q>, we use <m>u</m> as a generic function of <m>x</m>. We then say
       <me>
-        \frac{d}{dx}\Big(\ln u\Big) = \frac{u'}{u}.
+        \frac{d}{dx}\Big(\ln(u) \Big) = \frac{u'}{u}.
       </me>
     </p>
 
     <p>The following is a short list of how the Chain Rule can be quickly applied to familiar functions.</p>
 
     <ol cols="2" >
-      <li><p><m>\ds\frac{d}{dx}\Big(u^n\Big) = n\cdot u^{n-1}\cdot u'.</m></p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(u^n\Big) = n\cdot u^{n-1}\cdot u'</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(e^u\Big) = u'\cdot e^u.</m></p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(e^u\Big) = u'\cdot e^u</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(\sin u\Big) = u'\cdot \cos u.</m></p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(\sin(u) \Big) = u'\cdot \cos(u)</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(\cos u\Big) = -u'\cdot \sin u.</m></p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(\cos(u) \Big) = -u'\cdot \sin(u)</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(\tan u\Big) = u'\cdot \sec^2 u.</m></p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(\tan(u) \Big) = u'\cdot \sec^2(u)</m>.</p></li>
     </ol>
 
     <p>Of course, the Chain Rule can be applied in conjunction with any of the other rules we have already learned. We practice this next.</p>
@@ -253,13 +253,13 @@
       <statement>
         <p>Find the derivatives of the following functions.</p>
 
-        <p>1. <m>f(x) = x^5 \sin{2x^3}</m> 2. <m>\ds f(x) = \frac{5x^3}{e^{-x^2}}.</m></p>
+        <p>1. <m>f(x) = x^5 \sin(2x^3)</m> 2. <m>\ds f(x) = \frac{5x^3}{e^{-x^2}}</m>.</p>
       </statement>
       <solution>
         <ol>
           <li><p>We must use the Product and Chain Rules. Do not think that you must be able to <q>see</q> the whole answer immediately; rather, just proceed step<ndash />by<ndash />step.
               <me>
-                \fp(x) = x^5\big(6x^2\cos 2x^3\big) + 5x^4\big(\sin 2x^3\big)= 6x^7\cos2x^3+5x^4\sin 2x^3.
+                \fp(x) = x^5\big(6x^2\cos(2x^3) \big) + 5x^4\big(\sin(2x^3) \big)= 6x^7\cos(2x^3) +5x^4\sin(2x^3) .
               </me>
             </p></li>
 
@@ -313,7 +313,7 @@
     <example xml:id="ex_chain5">
       <title>Using the Product, Quotient and Chain Rules</title>
       <statement>
-        <p>Find the derivative of <m>\ds f(x) = \frac{x\cos(x^{-2})-\sin^2(e^{4x})}{\ln(x^2+5x^4)}.</m></p>
+        <p>Find the derivative of <m>\ds f(x) = \frac{x\cos(x^{-2})-\sin^2(e^{4x})}{\ln(x^2+5x^4)}</m>.</p>
       </statement>
       <solution>
         <p>This function likely has no practical use outside of demonstrating derivative skills. The answer is given below without simplification. It employs the Quotient Rule, the Product Rule, and the Chain Rule three times.</p>
@@ -340,27 +340,27 @@
       <solution>
         <p>We only know how to find the derivative of one exponential function: <m>y = e^x</m>; this problem is asking us to find the derivative of functions such as <m>y = 2^x</m>.</p>
 
-        <p>This can be accomplished by rewriting <m>a^x</m> in terms of <m>e</m>. Recalling that <m>e^x</m> and <m>\ln x</m> are inverse functions, we can write
+        <p>This can be accomplished by rewriting <m>a^x</m> in terms of <m>e</m>. Recalling that <m>e^x</m> and <m>\ln(x)</m> are inverse functions, we can write
           <me>
-            a = e^{\ln a}  \text{ and so }   y = a^x = e^{\ln (a^x)}.
+            a = e^{\ln(a) }  \text{ and so }   y = a^x = e^{\ln(a^x)}.
           </me>
         </p>
 
         <p>By the exponent property of logarithms, we can <q>bring down</q> the power to get
           <me>
-            y = a^x = e^{x (\ln a)}.
+            y = a^x = e^{x (\ln(a) )}.
           </me>
         </p>
 
-        <p>The function is now the composition <m>y=f(g(x))</m>, with <m>f(x) = e^x</m> and <m>g(x) = x(\ln a)</m>. Since <m>\fp(x) = e^x</m> and <m>g'(x) = \ln a</m>, the Chain Rule gives
+        <p>The function is now the composition <m>y=f(g(x))</m>, with <m>f(x) = e^x</m> and <m>g(x) = x(\ln(a) )</m>. Since <m>\fp(x) = e^x</m> and <m>g'(x) = \ln(a)</m>, the Chain Rule gives
           <me>
-            y' = e^{x (\ln a)} \cdot \ln a.
+            y' = e^{x (\ln(a) )} \cdot \ln(a) .
           </me>
         </p>
 
-        <p>Recall that the <m>e^{x(\ln a)}</m> term on the right hand side is just <m>a^x</m>, our original function. Thus, the derivative contains the original function itself. We have
+        <p>Recall that the <m>e^{x(\ln(a) )}</m> term on the right hand side is just <m>a^x</m>, our original function. Thus, the derivative contains the original function itself. We have
           <me>
-            y' = y \cdot \ln a = a^x\cdot \ln a.
+            y' = y \cdot \ln(a) = a^x\cdot \ln(a) .
           </me>
         </p>
 
@@ -375,7 +375,7 @@
       <statement>
         <p>Let <m>f(x)=a^x</m>, for <m>a>0, a\neq 1</m>.<index><main>derivative</main><sub>exponential functions</sub></index> Then <m>f</m> is differentiable for all real numbers and
           <me>
-            \fp(x) = \ln a\cdot a^x.
+            \fp(x) = \ln(a) \cdot a^x.
           </me>
         </p>
       </statement>
@@ -384,7 +384,7 @@
 
   <subsection>
     <title>Alternate Chain Rule Notation</title>
-    <p>It is instructive to understand what the Chain Rule <q>looks like</q> using <q><m>\frac{dy}{dx}</m></q> notation instead of <m>y'</m> notation. Suppose that <m>y=f(u)</m> is a function of <m>u</m>, where <m>u=g(x)</m> is a function of <m>x</m>, as stated in <xref ref="thm_chain_rule">Theorem</xref>. Then, through the composition <m>f \circ g</m>, we can think of <m>y</m> as a function of <m>x</m>, as <m>y=f(g(x))</m>. Thus the derivative of <m>y</m> with respect to <m>x</m> makes sense; we can talk about <m>\frac{dy}{dx}.</m> This leads to an interesting progression of notation:<index><main>Chain Rule</main><sub>notation</sub></index><index><main>derivative</main><sub>Chain Rule</sub></index>
+    <p>It is instructive to understand what the Chain Rule <q>looks like</q> using <q><m>\frac{dy}{dx}</m></q> notation instead of <m>y'</m> notation. Suppose that <m>y=f(u)</m> is a function of <m>u</m>, where <m>u=g(x)</m> is a function of <m>x</m>, as stated in <xref ref="thm_chain_rule">Theorem</xref>. Then, through the composition <m>f \circ g</m>, we can think of <m>y</m> as a function of <m>x</m>, as <m>y=f(g(x))</m>. Thus the derivative of <m>y</m> with respect to <m>x</m> makes sense; we can talk about <m>\frac{dy}{dx}</m>. This leads to an interesting progression of notation:<index><main>Chain Rule</main><sub>notation</sub></index><index><main>derivative</main><sub>Chain Rule</sub></index>
       <md>
         <mrow>y' \amp = \fp(g(x))\cdot g'(x)</mrow>
         <mrow>\frac{dy}{dx} \amp = $\ds y'(u) \cdot u'(x)$ \mbox{ (since \(y=f(u)\) and \(u=g(x)\))}</mrow>
@@ -556,7 +556,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: <m>\ds \frac{d}{dx}\big(\ln (x^2)\big) = \frac{1}{x^2}</m>.</p>
+            <p>T/F: <m>\ds \frac{d}{dx}\big(\ln(x^2)\big) = \frac{1}{x^2}</m>.</p>
           </statement>
           <solution>
             <p>F</p>
@@ -662,10 +662,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(\theta) = (\sin \theta+\cos \theta)^3</m></p>
+            <p><m>g(\theta) = (\sin(\theta) +\cos(\theta) )^3</m></p>
           </statement>
           <solution>
-            <p><m>g'(\theta) = 3(\sin \theta+\cos \theta)^2(\cos \theta-\sin\theta)</m></p>
+            <p><m>g'(\theta) = 3(\sin(\theta) +\cos(\theta) )^2(\cos(\theta) -\sin(\theta) )</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -713,7 +713,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \cos (3x)</m></p>
+            <p><m>f(x) = \cos(3x)</m></p>
           </statement>
           <solution>
             <p><m>\fp(x) = -3\sin(3x)</m></p>
@@ -730,7 +730,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(x) = \tan (5x)</m></p>
+            <p><m>g(x) = \tan(5x)</m></p>
           </statement>
           <solution>
             <p><m>g'(x) = 5\sec^2(5x)</m></p>
@@ -781,10 +781,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \ln (\cos x)</m></p>
+            <p><m>f(x) = \ln(\cos(x) )</m></p>
           </statement>
           <solution>
-            <p><m>\fp(x) = -\tan x</m></p>
+            <p><m>\fp(x) = -\tan(x)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -798,7 +798,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \ln (x^2)</m></p>
+            <p><m>f(x) = \ln(x^2)</m></p>
           </statement>
           <solution>
             <p><m>\fp(x) = 2/x</m></p>
@@ -815,7 +815,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = 2\ln (x)</m></p>
+            <p><m>f(x) = 2\ln(x)</m></p>
           </statement>
           <solution>
             <p><m>\fp(x) = 2/x</m></p>
@@ -835,7 +835,7 @@
             <p><m>g(r) = 4^r</m></p>
           </statement>
           <solution>
-            <p><m>g'(r) = \ln 4\cdot 4^r</m></p>
+            <p><m>g'(r) = \ln(4) \cdot 4^r</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -849,10 +849,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(t) = 5^{\cos t}</m></p>
+            <p><m>g(t) = 5^{\cos(t) }</m></p>
           </statement>
           <solution>
-            <p><m>g'(t) = -\ln 5\cdot 5^{\cos t}\sin t</m></p>
+            <p><m>g'(t) = -\ln(5) \cdot 5^{\cos(t) }\sin(t)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -886,7 +886,7 @@
             <p><m>\ds m(w) = \frac{3^w}{2^w}</m></p>
           </statement>
           <solution>
-            <p><m>m'(w) = \ln (3/2) (3/2)^w</m></p>
+            <p><m>m'(w) = \ln(3/2) (3/2)^w</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -903,7 +903,7 @@
             <p><m>\ds h(t) = \frac{2^t+3}{3^t+2}</m></p>
           </statement>
           <solution>
-            <p><m>\fp(x) = \frac{(3^t+2)\big((\ln 2) 2^t\big)-(2^t+3)\big((\ln 3)3^t\big)}{(3^t+2)^2}</m></p>
+            <p><m>\fp(x) = \frac{(3^t+2)\big((\ln(2) ) 2^t\big)-(2^t+3)\big((\ln(3) )3^t\big)}{(3^t+2)^2}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -920,7 +920,7 @@
             <p><m>\ds m(w) = \frac{3^w+1}{2^w}</m></p>
           </statement>
           <solution>
-            <p><m>m'(w) = \frac{2^w\big(\ln 3\cdot 3^w-\ln 2\cdot (3^w+1)\big)}{2^{2w}}</m></p>
+            <p><m>m'(w) = \frac{2^w\big(\ln(3) \cdot 3^w-\ln(2) \cdot (3^w+1)\big)}{2^{2w}}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -937,7 +937,7 @@
             <p><m>\ds f(x) = \frac{3^{x^2}+x}{2^{x^2}}</m></p>
           </statement>
           <solution>
-            <p><m>\fp(x) = \frac{2^{x^2}(\ln 3\cdot 3^x{x^2}2x+1) - (3^{x^2}+x)(\ln 2\cdot 2^{x^2}2x)}{2^{2x^2}}</m></p>
+            <p><m>\fp(x) = \frac{2^{x^2}(\ln(3) \cdot 3^x{x^2}2x+1) - (3^{x^2}+x)(\ln(2) \cdot 2^{x^2}2x)}{2^{2x^2}}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1041,7 +1041,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(\theta) = (\sin\theta+\cos\theta)^3</m> at <m>\theta = \pi/2</m></p>
+            <p><m>g(\theta) = (\sin(\theta) +\cos(\theta) )^3</m> at <m>\theta = \pi/2</m></p>
           </statement>
           <solution>
             <p>Tangent line: <m>y=-3(\theta - \pi/2)+1</m></p>
@@ -1079,12 +1079,12 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Compute <m>\ds \frac{d}{dx}\big(\ln (kx)\big)</m> two ways:</p>
+            <p>Compute <m>\ds \frac{d}{dx}\big(\ln(kx)\big)</m> two ways:</p>
 
             <ol>
               <li><p>Using the Chain Rule, and</p></li>
 
-              <li><p>by first using the logarithm rule <m>\ln (ab) = \ln a + \ln b</m>, then taking the derivative.</p></li>
+              <li><p>by first using the logarithm rule <m>\ln(ab) = \ln(a) + \ln(b)</m>, then taking the derivative.</p></li>
             </ol>
           </statement>
           <solution>
@@ -1102,12 +1102,12 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Compute <m>\ds \frac{d}{dx}\big(\ln (x^k)\big)</m> two ways:</p>
+            <p>Compute <m>\ds \frac{d}{dx}\big(\ln(x^k)\big)</m> two ways:</p>
 
             <ol>
               <li><p>Using the Chain Rule, and</p></li>
 
-              <li><p>by first using the logarithm rule <m>\ln (a^p) = p\ln a</m>, then taking the derivative.</p></li>
+              <li><p>by first using the logarithm rule <m>\ln(a^p) = p\ln(a)</m>, then taking the derivative.</p></li>
             </ol>
           </statement>
           <solution>
@@ -1158,14 +1158,14 @@
             <p>Find the derivatives of the following functions.</p>
 
             <ol>
-              <li><p><m>f(x) = x^2e^x\cot x</m></p></li>
+              <li><p><m>f(x) = x^2e^x\cot(x)</m></p></li>
 
               <li><p><m>g(x) = 2^x3^x4^x</m></p></li>
             </ol>
           </statement>
           <solution>
             <ol>
-              <li><p><m>2xe^x\cot x + x^2e^x\cot x - x^2e^x\csc^2 x</m></p></li>
+              <li><p><m>2xe^x\cot(x) + x^2e^x\cot(x) - x^2e^x\csc^2(x)</m></p></li>
 
               <li><p><m>\ln(48)48^x</m></p></li>
             </ol>

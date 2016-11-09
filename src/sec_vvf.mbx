@@ -228,7 +228,7 @@
     <example xml:id="ex_vvf2">
       <title>Graphing vector<ndash />valued functions.</title>
       <statement>
-        <p>Graph <m>\vec r(t) = \la \cos t,\sin t,t\ra</m> for <m>0\leq t\leq 4\pi</m>.</p>
+        <p>Graph <m>\vec r(t) = \la \cos(t) ,\sin(t) ,t\ra</m> for <m>0\leq t\leq 4\pi</m>.</p>
       </statement>
       <solution>
         <p>We can again plot points, but careful consideration of this function is very revealing. Momentarily ignoring the third component, we see the <m>x</m> and <m>y</m> components trace out a circle of radius 1 centered at the origin. Noticing that the <m>z</m> component is <m>t</m>, we see that as the graph winds around the <m>z</m>-axis, it is also increasing at a constant rate in the positive <m>z</m> direction, forming a spiral. This is graphed in <xref ref="fig_vvf2">Figure</xref>. In the graph <m>\vec r(7\pi/4)\approx (0.707,-0.707,5.498)</m> is highlighted to help us understand the graph.</p>
@@ -353,16 +353,16 @@
     <example xml:id="ex_vvf3">
       <title>Adding and scaling vector<ndash />valued functions.</title>
       <statement>
-        <p>Let <m>\vec r_1(t) = \la\,0.2t,0.3t\,\ra</m>, <m>\vec r_2(t) = \la\,\cos t,\sin t\,\ra</m> and <m>\vec r(t) = \vec r_1(t)+\vec r_2(t)</m>. Graph <m>\vec r_1(t)</m>, <m>\vec r_2(t)</m>, <m>\vec r(t)</m> and <m>5\vec r(t)</m> on <m>-10\leq t\leq10</m>.</p>
+        <p>Let <m>\vec r_1(t) = \la\,0.2t,0.3t\,\ra</m>, <m>\vec r_2(t) = \la\,\cos(t) ,\sin(t) \,\ra</m> and <m>\vec r(t) = \vec r_1(t)+\vec r_2(t)</m>. Graph <m>\vec r_1(t)</m>, <m>\vec r_2(t)</m>, <m>\vec r(t)</m> and <m>5\vec r(t)</m> on <m>-10\leq t\leq10</m>.</p>
       </statement>
       <solution>
         <p>We can graph <m>\vec r_1</m> and <m>\vec r_2</m> easily by plotting points (or just using technology). Let's think about each for a moment to better understand how vector<ndash />valued functions work.</p>
 
         <p>We can rewrite <m>\vec r_1(t) = \la\, 0.2t,0.3t\,\ra</m> as <m>\vec r_1(t) = t\la 0.2,0.3\ra</m>. That is, the function <m>\vec r_1</m> scales the vector <m>\la 0.2,0.3\ra</m> by <m>t</m>. This scaling of a vector produces a line in the direction of <m>\la 0.2,0.3\ra</m>.</p>
 
-        <p>We are familiar with <m>\vec r_2(t) = \la\, \cos t,\sin t\,\ra</m>; it traces out a circle, centered at the origin, of radius 1. <xref ref="fig_vvf3">Figure</xref>(a) graphs <m>\vec r_1(t)</m> and <m>\vec r_2(t)</m>.</p>
+        <p>We are familiar with <m>\vec r_2(t) = \la\, \cos(t) ,\sin(t) \,\ra</m>; it traces out a circle, centered at the origin, of radius 1. <xref ref="fig_vvf3">Figure</xref>(a) graphs <m>\vec r_1(t)</m> and <m>\vec r_2(t)</m>.</p>
 
-        <p>Adding <m>\vec r_1(t)</m> to <m>\vec r_2(t)</m> produces <m>\vec r(t) = \la\,\cos t + 0.2t,\sin t+0.3t\,\ra</m>, graphed in <xref ref="fig_vvf3">Figure</xref>(b). The linear movement of the line combines with the circle to create loops that move in the direction of <m>\la 0.2,0.3\ra</m>. (We encourage the reader to experiment by changing <m>\vec r_1(t)</m> to <m>\la 2t,3t\ra</m>, etc., and observe the effects on the loops.)</p>
+        <p>Adding <m>\vec r_1(t)</m> to <m>\vec r_2(t)</m> produces <m>\vec r(t) = \la\,\cos(t) + 0.2t,\sin(t) +0.3t\,\ra</m>, graphed in <xref ref="fig_vvf3">Figure</xref>(b). The linear movement of the line combines with the circle to create loops that move in the direction of <m>\la 0.2,0.3\ra</m>. (We encourage the reader to experiment by changing <m>\vec r_1(t)</m> to <m>\la 2t,3t\ra</m>, etc., and observe the effects on the loops.)</p>
 
         <figure xml:id="fig_vvf3" >
         <caption>Graphing the functions in <xref ref="ex_vvf3">Example</xref>.</caption>
@@ -491,7 +491,7 @@
 
         </figure>
 
-        <p>Multiplying <m>\vec r(t)</m> by 5 scales the function by 5, producing <m>5\vec r(t) =  \langle 5\cos t+1,5\sin t+1.5\rangle</m>, which is graphed in <xref ref="fig_vvf3">Figure</xref>(c) along with <m>\vec r(t)</m>. The new function is <q>5 times bigger</q> than <m>\vec r(t)</m>. Note how the graph of <m>5\vec r(t)</m> in (c) looks identical to the graph of <m>\vec r(t)</m> in <m>(b)</m>. This is due to the fact that the <m>x</m> and <m>y</m> bounds of the plot in <m>(c)</m> are exactly 5 times larger than the bounds in (b).</p>
+        <p>Multiplying <m>\vec r(t)</m> by 5 scales the function by 5, producing <m>5\vec r(t) =  \langle 5\cos(t) +1,5\sin(t) +1.5\rangle</m>, which is graphed in <xref ref="fig_vvf3">Figure</xref>(c) along with <m>\vec r(t)</m>. The new function is <q>5 times bigger</q> than <m>\vec r(t)</m>. Note how the graph of <m>5\vec r(t)</m> in (c) looks identical to the graph of <m>\vec r(t)</m> in <m>(b)</m>. This is due to the fact that the <m>x</m> and <m>y</m> bounds of the plot in <m>(c)</m> are exactly 5 times larger than the bounds in (b).</p>
       </solution>
     </example>
 
@@ -550,13 +550,13 @@
           \captionof{figure}{Tracing a cycloid.}</p>
       </statement>
       <solution>
-        <p>This problem is not very difficult if we approach it in a clever way. We start by letting <m>\vec p(t)</m> describe the position of the point <m>p</m> on the circle, where the circle is centered at the origin and only rotates clockwise (i.e., it does not roll). This is relatively simple given our previous experiences with parametric equations; <m>\vec p(t) = \la \cos t, -\sin t\ra</m>.</p>
+        <p>This problem is not very difficult if we approach it in a clever way. We start by letting <m>\vec p(t)</m> describe the position of the point <m>p</m> on the circle, where the circle is centered at the origin and only rotates clockwise (i.e., it does not roll). This is relatively simple given our previous experiences with parametric equations; <m>\vec p(t) = \la \cos(t) , -\sin(t) \ra</m>.</p>
 
         <p>We now want the circle to roll. We represent this by letting <m>\vec c(t)</m> represent the location of the center of the circle. It should be clear that the <m>y</m> component of <m>\vec c(t)</m> should be 1; the center of the circle is always going to be 1 if it rolls on a horizontal surface.</p>
 
         <p>The <m>x</m> component of <m>\vec c(t)</m> is a linear function of <m>t</m>: <m>f(t) = mt</m> for some scalar <m>m</m>. When <m>t=0</m>, <m>f(t) = 0</m> (the circle starts centered on the <m>y</m>-axis). When <m>t=2\pi</m>, the circle has made one complete revolution, traveling a distance equal to its circumference, which is also <m>2\pi</m>. This gives us a point on our line <m>f(t) = mt</m>, the point <m>(2\pi, 2\pi)</m>. It should be clear that <m>m=1</m> and <m>f(t) = t</m>. So <m>\vec c(t) = \la t, 1\ra</m>.</p>
 
-        <p>We now combine <m>\vec p</m> and <m>\vec c</m> together to form the equation of the cycloid: <m>\vec r(t) = \vec p(t) + \vec c(t) = \la \cos t+ t,-\sin t+1\ra</m>, which is graphed in <xref ref="fig_vvfa">Figure</xref>.</p>
+        <p>We now combine <m>\vec p</m> and <m>\vec c</m> together to form the equation of the cycloid: <m>\vec r(t) = \vec p(t) + \vec c(t) = \la \cos(t) + t,-\sin(t) +1\ra</m>, which is graphed in <xref ref="fig_vvfa">Figure</xref>.</p>
       </solution>
     </example>
   </subsection>
@@ -630,10 +630,10 @@
     <example xml:id="ex_vvf5">
       <title>Finding and graphing displacement vectors</title>
       <statement>
-        <p>Let <m>\vec r(t) = \la \cos (\frac{\pi}{2}t),\sin (\frac{\pi}2 t)\ra</m>. Graph <m>\vec r(t)</m> on <m>-1\leq t\leq 1</m>, and find the displacement of <m>\vec r(t)</m> on this interval.</p>
+        <p>Let <m>\vec r(t) = \la \cos(\frac{\pi}{2}t),\sin(\frac{\pi}2 t)\ra</m>. Graph <m>\vec r(t)</m> on <m>-1\leq t\leq 1</m>, and find the displacement of <m>\vec r(t)</m> on this interval.</p>
       </statement>
       <solution>
-        <p>The function <m>\vec r(t)</m> traces out the unit circle, though at a different rate than the <q>usual</q> <m>\la \cos t,\sin t\ra</m> parametrization. At <m>t_0=-1</m>, we have <m>\vec r(t_0) = \la 0,-1\ra</m>; at <m>t_1=1</m>, we have <m>\vec r(t_1) = \la 0,1\ra</m>. The displacement of <m>\vec r(t)</m> on <m>[-1,1]</m> is thus <m>\vec d = \la 0,1\ra - \la 0,-1\ra = \la 0,2\ra.</m></p>
+        <p>The function <m>\vec r(t)</m> traces out the unit circle, though at a different rate than the <q>usual</q> <m>\la \cos(t) ,\sin(t) \ra</m> parametrization. At <m>t_0=-1</m>, we have <m>\vec r(t_0) = \la 0,-1\ra</m>; at <m>t_1=1</m>, we have <m>\vec r(t_1) = \la 0,1\ra</m>. The displacement of <m>\vec r(t)</m> on <m>[-1,1]</m> is thus <m>\vec d = \la 0,1\ra - \la 0,-1\ra = \la 0,2\ra</m>.</p>
 
         <figure xml:id="fig_vvf5" >
           <caption>Graphing the displacement of a position function in <xref ref="ex_vvf5">Example</xref>.</caption>
@@ -970,7 +970,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la \frac1{10}t^2,\sin t\ra</m>, for <m>-2\pi\leq t\leq 2\pi</m>.</p>
+            <p><m>\vec r(t) = \la \frac1{10}t^2,\sin(t) \ra</m>, for <m>-2\pi\leq t\leq 2\pi</m>.</p>
           </statement>
           <solution>
             <figure>
@@ -1028,7 +1028,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la \frac1{10}t^2,\sin t\ra</m>, for <m>-2\pi\leq t\leq 2\pi</m>.</p>
+            <p><m>\vec r(t) = \la \frac1{10}t^2,\sin(t) \ra</m>, for <m>-2\pi\leq t\leq 2\pi</m>.</p>
           </statement>
           <solution>
             <figure>
@@ -1086,7 +1086,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 3\sin (\pi t),2\cos (\pi t)\ra</m>, on <m>[0,2]</m>.</p>
+            <p><m>\vec r(t) = \la 3\sin(\pi t),2\cos(\pi t)\ra</m>, on <m>[0,2]</m>.</p>
           </statement>
           <solution>
             <figure>
@@ -1144,7 +1144,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 3\cos t,2\sin (2 t)\ra</m>, on <m>[0,2\pi]</m>.</p>
+            <p><m>\vec r(t) = \la 3\cos(t) ,2\sin(2 t)\ra</m>, on <m>[0,2\pi]</m>.</p>
           </statement>
           <solution>
             <figure>
@@ -1202,7 +1202,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 2\sec t,\tan t\ra</m>, on <m>[-\pi,\pi]</m>.</p>
+            <p><m>\vec r(t) = \la 2\sec(t) ,\tan(t) \ra</m>, on <m>[-\pi,\pi]</m>.</p>
           </statement>
           <solution>
             <figure>
@@ -1262,7 +1262,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 2\cos t, t, 2\sin t\ra</m>, on <m>[0,2\pi]</m>.</p>
+            <p><m>\vec r(t) = \la 2\cos(t) , t, 2\sin(t) \ra</m>, on <m>[0,2\pi]</m>.</p>
           </statement>
           <solution>
             <figure>
@@ -1350,7 +1350,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 3\cos t, \sin t, t/\pi\ra</m> on <m>[0,2\pi]</m>.</p>
+            <p><m>\vec r(t) = \la 3\cos(t) , \sin(t) , t/\pi\ra</m> on <m>[0,2\pi]</m>.</p>
           </statement>
           <solution>
             <figure>
@@ -1438,7 +1438,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la \cos t, \sin t,\sin t\ra</m> on <m>[0,2\pi]</m>.</p>
+            <p><m>\vec r(t) = \la \cos(t) , \sin(t) ,\sin(t) \ra</m> on <m>[0,2\pi]</m>.</p>
           </statement>
           <solution>
             <figure>
@@ -1526,7 +1526,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la \cos t, \sin t,\sin (2t)\ra</m> on <m>[0,2\pi]</m>.</p>
+            <p><m>\vec r(t) = \la \cos(t) , \sin(t) ,\sin(2t)\ra</m> on <m>[0,2\pi]</m>.</p>
           </statement>
           <solution>
             <figure>
@@ -1632,10 +1632,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 5\cos t,3\sin t\ra</m>.</p>
+            <p><m>\vec r(t) = \la 5\cos(t) ,3\sin(t) \ra</m>.</p>
           </statement>
           <solution>
-            <p><m>\norm {\vec r(t)} = \sqrt{25\cos^2t+9\sin^2 t}</m>.</p>
+            <p><m>\norm {\vec r(t)} = \sqrt{25\cos^2(t) +9\sin^2(t) }</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1649,10 +1649,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 2\cos t,2\sin t,t\ra</m>.</p>
+            <p><m>\vec r(t) = \la 2\cos(t) ,2\sin(t) ,t\ra</m>.</p>
           </statement>
           <solution>
-            <p><m>\norm {\vec r(t)} = \sqrt{4\cos^2t+4\sin^2 t+t^2} = \sqrt{t^2+4}</m>.</p>
+            <p><m>\norm {\vec r(t)} = \sqrt{4\cos^2(t) +4\sin^2(t) +t^2} = \sqrt{t^2+4}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1666,10 +1666,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la \cos t,t,t^2\ra</m>.</p>
+            <p><m>\vec r(t) = \la \cos(t) ,t,t^2\ra</m>.</p>
           </statement>
           <solution>
-            <p><m>\norm {\vec r(t)} = \sqrt{\cos^2t+t^2+t^4}</m>.</p>
+            <p><m>\norm {\vec r(t)} = \sqrt{\cos^2(t) +t^2+t^4}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1689,7 +1689,7 @@
           <solution>
             <p>Answers may vary, though most direct solution is</p>
 
-            <p><m>\vec r(t) = \la 2\cos t+1,2\sin t+2\ra</m>.</p>
+            <p><m>\vec r(t) = \la 2\cos(t) +1,2\sin(t) +2\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1708,11 +1708,11 @@
           <solution>
             <p>Answers may vary; three solutions are</p>
 
-            <p><m>\vec r(t) = \la 3\sin t+5,3\cos t+5\ra</m>,</p>
+            <p><m>\vec r(t) = \la 3\sin(t) +5,3\cos(t) +5\ra</m>,</p>
 
-            <p><m>\vec r(t) = \la -3\cos t+5,3\sin t+5\ra</m> and</p>
+            <p><m>\vec r(t) = \la -3\cos(t) +5,3\sin(t) +5\ra</m> and</p>
 
-            <p><m>\vec r(t) = \la 3\cos t+5,-3\sin t+5\ra</m>.</p>
+            <p><m>\vec r(t) = \la 3\cos(t) +5,-3\sin(t) +5\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1731,7 +1731,7 @@
           <solution>
             <p>Answers may vary, though most direct solution is</p>
 
-            <p><m>\vec r(t) = \la 1.5\cos t,5\sin t\ra</m>.</p>
+            <p><m>\vec r(t) = \la 1.5\cos(t) ,5\sin(t) \ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1750,11 +1750,11 @@
           <solution>
             <p>Answers may vary, though most direct solutions are</p>
 
-            <p><m>\vec r(t) = \la -3\cos t+3,2\sin t-2\ra</m>,</p>
+            <p><m>\vec r(t) = \la -3\cos(t) +3,2\sin(t) -2\ra</m>,</p>
 
-            <p><m>\vec r(t) = \la 3\cos t+3,-2\sin t-2\ra</m> and</p>
+            <p><m>\vec r(t) = \la 3\cos(t) +3,-2\sin(t) -2\ra</m> and</p>
 
-            <p><m>\vec r(t) = \la 3\sin t+3,2\cos t-2\ra</m>.</p>
+            <p><m>\vec r(t) = \la 3\sin(t) +3,2\cos(t) -2\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1819,7 +1819,7 @@
           <solution>
             <p>Answers may vary, though most direct solution is</p>
 
-            <p><m>\vec r(t) = \la 2\cos t,2\sin t,2t\ra</m>.</p>
+            <p><m>\vec r(t) = \la 2\cos(t) ,2\sin(t) ,2t\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1838,7 +1838,7 @@
           <solution>
             <p>Answers may vary, though most direct solution is</p>
 
-            <p><m>\vec r(t) = \la 3\cos (4\pi t),3\sin (4\pi t),3t\ra</m>.</p>
+            <p><m>\vec r(t) = \la 3\cos(4\pi t),3\sin(4\pi t),3t\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1870,7 +1870,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la t,t+\sin t\ra</m> on <m>[0,2\pi]</m>.</p>
+            <p><m>\vec r(t) = \la t,t+\sin(t) \ra</m> on <m>[0,2\pi]</m>.</p>
           </statement>
           <solution>
             <p><m>\la 1,1\ra</m></p>
@@ -1887,7 +1887,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 3\cos t,2\sin t,t\ra</m> on <m>[0,2\pi]</m>.</p>
+            <p><m>\vec r(t) = \la 3\cos(t) ,2\sin(t) ,t\ra</m> on <m>[0,2\pi]</m>.</p>
           </statement>
           <solution>
             <p><m>\la 0,0,1\ra</m></p>

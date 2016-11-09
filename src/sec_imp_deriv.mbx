@@ -10,7 +10,7 @@
     <p>Sometimes the <em>implicit</em> relationship between <m>x</m> and <m>y</m> is complicated. Suppose we are given <m>\sin(y)+y^3=6-x^3</m>. A graph of this implicit function is given in <xref ref="fig_implicit1">Figure</xref>. In this case there is absolutely no way to solve for <m>y</m> in terms of elementary functions. The surprising thing is, however, that we can still find <m>y'</m> via a process known as <em>implicit differentiation</em>.<index><main>implicit differentiation</main></index><index><main>derivative</main><sub>implicit</sub></index></p>
 
     <figure xml:id="fig_implicit1" >
-      <caption>A graph of the implicit function <m>\sin (y)+y^3=6-x^3</m>.</caption>
+      <caption>A graph of the implicit function <m>\sin(y)+y^3=6-x^3</m>.</caption>
       <!-- START figures/fig_implicit1.tex -->
       <image xml:id="img_implicit1" >
         <description></description>
@@ -69,7 +69,7 @@
 
         <p>The left hand side requires more consideration. We take the derivative term<ndash />by<ndash />term. Using the technique derived from <xref ref="eq_implicit1">Equation</xref> above, we can see that
           <me>
-            \frac{d}{dx}\Big(\sin y\Big) = \cos y \cdot y'.
+            \frac{d}{dx}\Big(\sin(y) \Big) = \cos(y) \cdot y'.
           </me>
         </p>
 
@@ -88,8 +88,8 @@
         <p>Now solve for <m>y'</m>.
           <md>
             <mrow>\cos(y)y'+3y^2y' 	\amp = -3x^2.</mrow>
-            <mrow>\big(\cos y+3y^2\big)y' \amp =	-3x^2</mrow>
-            <mrow>y'\amp =	\frac{-3x^2}{\cos y+3y^2}</mrow>
+            <mrow>\big(\cos(y) +3y^2\big)y' \amp =	-3x^2</mrow>
+            <mrow>y'\amp =	\frac{-3x^2}{\cos(y) +3y^2}</mrow>
           </md>
         </p>
 
@@ -99,27 +99,27 @@
 
     <p>Implicit functions are generally harder to deal with than explicit functions. With an explicit function, given an <m>x</m> value, we have an explicit formula for computing the corresponding <m>y</m> value. With an implicit function, one often has to find <m>x</m> and <m>y</m> values <em>at the same time</em> that satisfy the equation. It is much easier to demonstrate that a given point satisfies the equation than to actually find such a point.</p>
 
-    <p>For instance, we can affirm easily that the point <m>(\sqrt[3]{6},0)</m> lies on the graph of the implicit function <m>\sin y + y^3=6-x^3</m>. Plugging in <m>0</m> for <m>y</m>, we see the left hand side is <m>0</m>. Setting <m>x=\sqrt[3]6</m>, we see the right hand side is also <m>0</m>; the equation is satisfied. The following example finds the equation of the tangent line to this function at this point.</p>
+    <p>For instance, we can affirm easily that the point <m>(\sqrt[3]{6},0)</m> lies on the graph of the implicit function <m>\sin(y) + y^3=6-x^3</m>. Plugging in <m>0</m> for <m>y</m>, we see the left hand side is <m>0</m>. Setting <m>x=\sqrt[3]6</m>, we see the right hand side is also <m>0</m>; the equation is satisfied. The following example finds the equation of the tangent line to this function at this point.</p>
 
     <example xml:id="ex_implicit2">
       <title>Using Implicit Differentiation to find a tangent line</title>
       <statement>
-        <p>Find the equation of the line tangent to the curve of the implicitly defined function <m>\sin y + y^3=6-x^3</m> at the point <m>(\sqrt[3]6,0)</m>.</p>
+        <p>Find the equation of the line tangent to the curve of the implicitly defined function <m>\sin(y) + y^3=6-x^3</m> at the point <m>(\sqrt[3]6,0)</m>.</p>
       </statement>
       <solution>
         <p>In <xref ref="ex_implicit1">Example</xref> we found that
           <me>
-            y' = \frac{-3x^2}{\cos y +3y^2}.
+            y' = \frac{-3x^2}{\cos(y) +3y^2}.
           </me>
         </p>
 
         <p>We find the slope of the tangent line at the point <m>(\sqrt[3]6,0)</m> by substituting <m>\sqrt[3]6</m> for <m>x</m> and <m>0</m> for <m>y</m>. Thus at the point <m>(\sqrt[3]6,0)</m>, we have the slope as
           <me>
-            y' = \frac{-3(\sqrt[3]{6})^2}{\cos 0 + 3\cdot0^2} = \frac{-3\sqrt[3]{36}}{1} \approx -9.91.
+            y' = \frac{-3(\sqrt[3]{6})^2}{\cos(0) + 3\cdot0^2} = \frac{-3\sqrt[3]{36}}{1} \approx -9.91.
           </me>
         </p>
 
-        <p>Therefore the equation of the tangent line to the implicitly defined function <m>\sin y + y^3=6-x^3</m> at the point <m>(\sqrt[3]{6},0)</m> is
+        <p>Therefore the equation of the tangent line to the implicitly defined function <m>\sin(y) + y^3=6-x^3</m> at the point <m>(\sqrt[3]{6},0)</m> is
           <me>
             y = -3\sqrt[3]{36}(x-\sqrt[3]{6})+0 \approx -9.91x+18.
           </me>
@@ -128,7 +128,7 @@
         <p>The curve and this tangent line are shown in <xref ref="fig_implicit2">Figure</xref>.</p>
 
         <figure xml:id="fig_implicit2" >
-          <caption>The function <m>\sin y+y^3 = 6-x^3</m> and its tangent line at the point <m>(\sqrt[3]{6},0)</m>.</caption>
+          <caption>The function <m>\sin(y) +y^3 = 6-x^3</m> and its tangent line at the point <m>(\sqrt[3]{6},0)</m>.</caption>
           <!-- START figures/fig_implicit2.tex -->
           <image xml:id="img_implicit2" >
             <description></description>
@@ -600,19 +600,19 @@
         <p>As suggested above, we start by taking the natural log of both sides then applying implicit differentiation.
           <md>
             <mrow>y \amp = x^x</mrow>
-            <mrow>\ln (y) \amp = $\ln (x^x)$ \text{ (apply logarithm rule) }</mrow>
-            <mrow>\ln (y) \amp = $x\ln x$  \text{ (now use implicit differentiation) }</mrow>
-            <mrow>\frac{d}{dx}\Big(\ln (y)\Big) \amp = \frac{d}{dx}\Big(x\ln x\Big)</mrow>
-            <mrow>\frac{y'}{y} \amp = \ln x + x\cdot\frac1x</mrow>
-            <mrow>\frac{y'}{y} \amp = \ln x + 1</mrow>
-            <mrow>y' \amp = $y\big(\ln x+1\big)$ \text{ (substitute \(y=x^x\)) }</mrow>
-            <mrow>y' \amp = x^x\big(\ln x+1\big).</mrow>
+            <mrow>\ln(y) \amp = $\ln(x^x)$ \text{ (apply logarithm rule) }</mrow>
+            <mrow>\ln(y) \amp = $x\ln(x) $  \text{ (now use implicit differentiation) }</mrow>
+            <mrow>\frac{d}{dx}\Big(\ln(y)\Big) \amp = \frac{d}{dx}\Big(x\ln(x) \Big)</mrow>
+            <mrow>\frac{y'}{y} \amp = \ln(x) + x\cdot\frac1x</mrow>
+            <mrow>\frac{y'}{y} \amp = \ln(x) + 1</mrow>
+            <mrow>y' \amp = $y\big(\ln(x) +1\big)$ \text{ (substitute \(y=x^x\)) }</mrow>
+            <mrow>y' \amp = x^x\big(\ln(x) +1\big).</mrow>
           </md>
         </p>
 
         <p>To <q>test</q> our answer, let's use it to find the equation of the tangent line at <m>x=1.5</m>. The point on the graph our tangent line must pass through is <m>(1.5, 1.5^{1.5}) \approx (1.5, 1.837)</m>. Using the equation for <m>y'</m>, we find the slope as
           <me>
-            y' = 1.5^{1.5}\big(\ln 1.5+1\big) \approx 1.837(1.405) \approx 2.582.
+            y' = 1.5^{1.5}\big(\ln(1.5) +1\big) \approx 1.837(1.405) \approx 2.582.
           </me>
         </p>
 
@@ -667,7 +667,7 @@
       </solution>
     </example>
 
-    <p>Implicit differentiation proves to be useful as it allows us to find the instantaneous rates of change of a variety of functions. In particular, it extended the Power Rule to rational exponents, which we then extended to all real numbers. In the next section, implicit differentiation will be used to find the derivatives of <em>inverse</em> functions, such as <m>y=\sin^{-1} x</m>.</p>
+    <p>Implicit differentiation proves to be useful as it allows us to find the instantaneous rates of change of a variety of functions. In particular, it extended the Power Rule to rational exponents, which we then extended to all real numbers. In the next section, implicit differentiation will be used to find the derivatives of <em>inverse</em> functions, such as <m>y=\sin^{-1}(x)</m>.</p>
   </subsection>
 
   <exercises>
@@ -806,10 +806,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(t) = \sqrt{t}\sin t</m></p>
+            <p><m>g(t) = \sqrt{t}\sin(t)</m></p>
           </statement>
           <solution>
-            <p><m>g'(t) = \sqrt{t}\cos t + \frac{\sin t}{2\sqrt{t}}</m></p>
+            <p><m>g'(t) = \sqrt{t}\cos(t) + \frac{\sin(t) }{2\sqrt{t}}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -874,10 +874,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(t) = \sqrt[5]{t}(\sec t + e^t)</m></p>
+            <p><m>f(t) = \sqrt[5]{t}(\sec(t) + e^t)</m></p>
           </statement>
           <solution>
-            <p><m>\fp(t) = \frac15x^{-4/5}(\sec t+ e^t) + \sqrt[5]{t}(\sec t\tan t + e^t)</m></p>
+            <p><m>\fp(t) = \frac15x^{-4/5}(\sec(t) + e^t) + \sqrt[5]{t}(\sec(t) \tan(t) + e^t)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -926,10 +926,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\cos (x)+\sin (y)=1</m></p>
+            <p><m>\cos(x)+\sin(y)=1</m></p>
           </statement>
           <solution>
-            <p><m>\frac{dy}{dx}=\sin (x) \sec (y)</m></p>
+            <p><m>\frac{dy}{dx}=\sin(x) \sec(y)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -980,7 +980,7 @@
             <p><m>x^2e^2+2^y=5</m></p>
           </statement>
           <solution>
-            <p><m>-\frac{e^x x (x+2) 2^{-y}}{\ln \abs{2}}</m></p>
+            <p><m>-\frac{e^x x (x+2) 2^{-y}}{\ln\abs{2}}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -994,10 +994,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>x^2\tan y=50</m></p>
+            <p><m>x^2\tan(y) =50</m></p>
           </statement>
           <solution>
-            <p><m>-\frac{2 \sin (y) \cos (y)}{x}</m></p>
+            <p><m>-\frac{2 \sin(y) \cos(y)}{x}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1062,10 +1062,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\frac{\sin (x)+y}{\cos (y)+x}=1</m></p>
+            <p><m>\ds\frac{\sin(x)+y}{\cos(y)+x}=1</m></p>
           </statement>
           <solution>
-            <p><m>\frac{-\cos (x) (x+\cos (y))+\sin (x)+y}{\sin (y) (\sin (x)+y)+x+\cos (y)}</m></p>
+            <p><m>\frac{-\cos(x) (x+\cos(y))+\sin(x)+y}{\sin(y) (\sin(x)+y)+x+\cos(y)}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1079,7 +1079,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ln (x^2+y^2) = e</m></p>
+            <p><m>\ln(x^2+y^2) = e</m></p>
           </statement>
           <solution>
             <p><m>-\frac{x}{y}</m></p>
@@ -1096,7 +1096,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ln (x^2+xy+y^2) = 1</m></p>
+            <p><m>\ln(x^2+xy+y^2) = 1</m></p>
           </statement>
           <solution>
             <p><m>-\frac{2x+y}{2y+x}</m></p>
@@ -1122,7 +1122,7 @@
 
               <li><p><m>\sin(xy) = 1</m></p></li>
 
-              <li><p><m>\ln (xy) =1</m></p></li>
+              <li><p><m>\ln(xy) =1</m></p></li>
             </ol>
           </statement>
           <solution>
@@ -1325,10 +1325,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\cos x+\sin y=1</m></p>
+            <p><m>\cos(x) +\sin(y) =1</m></p>
           </statement>
           <solution>
-            <p><m>\frac{d^2y}{dx^2} = \frac{\cos x\cos y+\sin^2x\tan y}{\cos^2y}</m></p>
+            <p><m>\frac{d^2y}{dx^2} = \frac{\cos(x) \cos(y) +\sin^2(x) \tan(y) }{\cos^2(y) }</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1365,7 +1365,7 @@
           <solution>
             <p><m>y'= (1+x)^{1/x}\big(\frac{1}{x(x+1)}-\frac{\ln(1+x)}{x^2}\big)</m></p>
 
-            <p>Tangent line: <m>y = (1-2\ln 2)(x-1)+ 2</m></p>
+            <p>Tangent line: <m>y = (1-2\ln(2) )(x-1)+ 2</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1382,9 +1382,9 @@
             <p><m>\ds y=(2x)^{x^2}</m>,<m>x=1</m></p>
           </statement>
           <solution>
-            <p><m>y'= (2x)^{x^2}\big(2x\ln (2x)+x\big)</m></p>
+            <p><m>y'= (2x)^{x^2}\big(2x\ln(2x)+x\big)</m></p>
 
-            <p>Tangent line: <m>y = (2+4\ln 2)(x-1)+ 2</m></p>
+            <p>Tangent line: <m>y = (2+4\ln(2) )(x-1)+ 2</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1401,7 +1401,7 @@
             <p><m>\ds y=\frac{x^{x}}{x+1}</m>,<m>x=1</m></p>
           </statement>
           <solution>
-            <p><m>y'= \frac{x^x}{x+1}\big(\ln x+1-\frac1{x+1}\big)</m></p>
+            <p><m>y'= \frac{x^x}{x+1}\big(\ln(x) +1-\frac1{x+1}\big)</m></p>
 
             <p>Tangent line: <m>y = (1/4)(x-1)+ 1/2</m></p>
           </solution>
@@ -1417,10 +1417,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds y=x^{\sin (x)+2}</m>,<m>x=\pi/2</m></p>
+            <p><m>\ds y=x^{\sin(x)+2}</m>,<m>x=\pi/2</m></p>
           </statement>
           <solution>
-            <p><m>y'= x^{\sin (x)+2}\big(\cos x\ln x+\frac{\sin x+2}{x}\big)</m></p>
+            <p><m>y'= x^{\sin(x)+2}\big(\cos(x) \ln(x) +\frac{\sin(x) +2}{x}\big)</m></p>
 
             <p>Tangent line: <m>y = (3\pi^2/4)(x-\pi/2)+(\pi/2)^3</m></p>
           </solution>

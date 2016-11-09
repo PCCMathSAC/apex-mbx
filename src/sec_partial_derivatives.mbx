@@ -256,7 +256,7 @@
         <me>
           \frac{\partial}{\partial x}f(x,y),\ \ \frac{\pf}{\px},\ \ \frac{\pz}{\px},\ \ \text{ and } \ z_x,
         </me>
-        with similar notations for <m>f_y(x,y).</m> For ease of notation, <m>f_x(x,y)</m> is often abbreviated <m>f_x</m>.</p>
+        with similar notations for <m>f_y(x,y)</m>. For ease of notation, <m>f_x(x,y)</m> is often abbreviated <m>f_x</m>.</p>
     </aside>
 
     <example xml:id="ex_partial1">
@@ -284,7 +284,7 @@
 
     <p>Just as <m>\frac{d}{dx}\big(5x^2\big) = 10x</m>, we compute <m>\frac{\partial}{\px}\big(x^2y\big) = 2xy</m>. Here we are treating <m>y</m> as a coefficient.</p>
 
-    <p>Just as <m>\frac{d}{dx}\big(5^3\big) = 0</m>, we compute <m>\frac{\partial}{\px}\big(y^3\big) = 0.</m> Here we are treating <m>y</m> as a constant. More examples will help make this clear.</p>
+    <p>Just as <m>\frac{d}{dx}\big(5^3\big) = 0</m>, we compute <m>\frac{\partial}{\px}\big(y^3\big) = 0</m>. Here we are treating <m>y</m> as a constant. More examples will help make this clear.</p>
 
     <example xml:id="ex_partial2">
       <title>Finding partial derivatives</title>
@@ -294,7 +294,7 @@
         <ol>
           <li><p><m>f(x,y) = x^3y^2+ 5y^2-x+7</m></p></li>
 
-          <li><p><m>f(x,y) = \cos(xy^2)+\sin x</m></p></li>
+          <li><p><m>f(x,y) = \cos(xy^2)+\sin(x)</m></p></li>
 
           <li><p><m>f(x,y) = e^{x^2y^3}\sqrt{x^2+1}</m></p></li>
         </ol>
@@ -315,13 +315,13 @@
               </me>
               Note how the <m>-x</m> and <m>7</m> terms go to zero.</p></li>
 
-          <li><p>We have <m>f(x,y) = \cos(xy^2)+\sin x</m>.
+          <li><p>We have <m>f(x,y) = \cos(xy^2)+\sin(x)</m>.
 
 	Begin with <m>f_x(x,y)</m>. We need to apply the Chain Rule with the cosine term; <m>y^2</m> is the coefficient of the <m>x</m>-term inside the cosine function.
               <me>
-                f_x(x,y) = -\sin(xy^2)(y^2)+\cos x = -y^2\sin(xy^2)+\cos x.
+                f_x(x,y) = -\sin(xy^2)(y^2)+\cos(x) = -y^2\sin(xy^2)+\cos(x) .
               </me>
-              To find <m>f_y(x,y)</m>, note that <m>x</m> is the coefficient of the <m>y^2</m> term inside of the cosine term; also note that since <m>x</m> is fixed, <m>\sin x</m> is also fixed, and we treat it as a constant.
+              To find <m>f_y(x,y)</m>, note that <m>x</m> is the coefficient of the <m>y^2</m> term inside of the cosine term; also note that since <m>x</m> is fixed, <m>\sin(x)</m> is also fixed, and we treat it as a constant.
               <me>
                 f_y(x,y) = -\sin(xy^2)(2xy) = -2xy\sin(xy^2).
               </me>
@@ -654,7 +654,7 @@
         </p>
 
         <ol>
-          <li><p><m>f(x,y) = x^3y^2 + 2xy^3+\cos x</m></p></li>
+          <li><p><m>f(x,y) = x^3y^2 + 2xy^3+\cos(x)</m></p></li>
 
           <li><p><m>\ds f(x,y) = \frac{x^3}{y^2}</m></p></li>
 
@@ -665,17 +665,17 @@
         <p>In each, we give <m>f_x</m> and <m>f_y</m> immediately and then spend time deriving the second partial derivatives.</p>
 
         <ol>
-          <li><p><m>f(x,y) = x^3y^2+2xy^3+\cos x</m>
+          <li><p><m>f(x,y) = x^3y^2+2xy^3+\cos(x)</m>
 		
-		<m>f_x(x,y) = 3x^2y^2+2y^3-\sin x</m>
+		<m>f_x(x,y) = 3x^2y^2+2y^3-\sin(x)</m>
 		
 		<m>f_y(x,y) = 2x^3y+6xy^2</m>
 		
-		<m>\ds f_{xx}(x,y) = \frac{\partial}{\px}\big(f_x\big) = \frac{\partial}{\px}\big(3x^2y^2+2y^3-\sin x\big) = 6xy^2-\cos x</m>
+		<m>\ds f_{xx}(x,y) = \frac{\partial}{\px}\big(f_x\big) = \frac{\partial}{\px}\big(3x^2y^2+2y^3-\sin(x) \big) = 6xy^2-\cos(x)</m>
 		
 		<m>\ds f_{yy}(x,y) = \frac{\partial}{\py}\big(f_y\big) = \frac{\partial}{\py}\big(2x^3y+6xy^2\big) = 2x^3+12xy</m>
 		
-		<m>\ds f_{xy}(x,y) = \frac{\partial}{\py}\big(f_x\big) = \frac{\partial}{\py}\big(3x^2y^2+2y^3-\sin x\big) = 6x^2y+6y^2</m>
+		<m>\ds f_{xy}(x,y) = \frac{\partial}{\py}\big(f_x\big) = \frac{\partial}{\py}\big(3x^2y^2+2y^3-\sin(x) \big) = 6x^2y+6y^2</m>
 		
 		<m>\ds f_{yx}(x,y) = \frac{\partial}{\px}\big(f_x\big) = \frac{\partial}{\px}\big(2x^3y+6xy^2\big) = 6x^2y+6y^2</m></p></li>
 
@@ -1046,7 +1046,7 @@
         <ol>
           <li><p><m>f(x,y,z) = x^2y^3z^4+x^2y^2+x^3z^3+y^4z^4</m></p></li>
 
-          <li><p><m>f(x,y,z) = x\sin (yz)</m></p></li>
+          <li><p><m>f(x,y,z) = x\sin(yz)</m></p></li>
         </ol>
       </statement>
       <solution>
@@ -1115,7 +1115,7 @@
 
     <p>In the previous example we saw that <m>f_{xxy} = f_{yxx}</m>; this is not a coincidence. While we do not state this as a formal theorem, as long as each partial derivative is continuous, it does not matter the order in which the partial derivatives are taken. For instance, <m>f_{xxy} = f_{xyx} = f_{yxx}</m>.</p>
 
-    <p>This can be useful at times. Had we known this, the second part of <xref ref="ex_partial9">Example</xref> would have been much simpler to compute. Instead of computing <m>f_{xyz}</m> in the <m>x</m>, <m>y</m> then <m>z</m> orders, we could have applied the <m>z</m>, then <m>x</m> then <m>y</m> order (as <m>f_{xyz} = f_{zxy}</m>). It is easy to see that <m>f_z = -\sin z</m>; then <m>f_{zx}</m> and <m>f_{zxy}</m> are clearly 0 as <m>f_z</m> does not contain an <m>x</m> or <m>y</m>.</p>
+    <p>This can be useful at times. Had we known this, the second part of <xref ref="ex_partial9">Example</xref> would have been much simpler to compute. Instead of computing <m>f_{xyz}</m> in the <m>x</m>, <m>y</m> then <m>z</m> orders, we could have applied the <m>z</m>, then <m>x</m> then <m>y</m> order (as <m>f_{xyz} = f_{zxy}</m>). It is easy to see that <m>f_z = -\sin(z)</m>; then <m>f_{zx}</m> and <m>f_{zxy}</m> are clearly 0 as <m>f_z</m> does not contain an <m>x</m> or <m>y</m>.</p>
 
     <p>A brief review of this section: partial derivatives measure the instantaneous rate of change of a multivariable function with respect to one variable.
       With <m>z=f(x,y)</m>, the partial derivatives <m>f_x</m> and <m>f_y</m> measure the instantaneous rate of change of <m>z</m> when moving parallel to the <m>x</m>- and <m>y</m>-axes, respectively. How do we measure the rate of change at a point when we do not move parallel to one of these axes? What if we move in the direction given by the vector <m>\la 2,1\ra</m>? Can we measure that rate of change? The answer is, of course, yes, we can. This is the topic of <xref ref="sec_directional_derivative">Section</xref>. First, we need to define what it means for a function of two variables to be <em>differentiable.</em></p>
@@ -1244,10 +1244,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x,y) = \sin y\cos x</m> at <m>(\pi/3,\pi/3)</m></p>
+            <p><m>f(x,y) = \sin(y) \cos(x)</m> at <m>(\pi/3,\pi/3)</m></p>
           </statement>
           <solution>
-            <p><m>f_x=-\sin x\sin y</m>, <m>f_y=\cos x\cos y</m></p>
+            <p><m>f_x=-\sin(x) \sin(y)</m>, <m>f_y=\cos(x) \cos(y)</m></p>
 
             <p><m>f_x(\pi/3,\pi/3) = -3/4</m>, <m>f_y(\pi/3,\pi/3) = 1/4</m></p>
           </solution>
@@ -1409,14 +1409,14 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) = \sin x\cos y</m></p>
+            <p><m>\ds f(x,y) = \sin(x) \cos(y)</m></p>
           </statement>
           <solution>
-            <p><m>f_x=\cos x\cos y</m>, <m>f_y=-\sin x\sin y</m></p>
+            <p><m>f_x=\cos(x) \cos(y)</m>, <m>f_y=-\sin(x) \sin(y)</m></p>
 
-            <p><m>f_{xx}=-\sin x\cos y</m>, <m>f_{yy}=-\sin x\cos y</m></p>
+            <p><m>f_{xx}=-\sin(x) \cos(y)</m>, <m>f_{yy}=-\sin(x) \cos(y)</m></p>
 
-            <p><m>f_{xy}=-\sin y\cos x</m>, <m>f_{yx}=-\sin y\cos x</m></p>
+            <p><m>f_{xy}=-\sin(y) \cos(x)</m>, <m>f_{yx}=-\sin(y) \cos(x)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1619,12 +1619,12 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) =\frac{\ln x}{4y}</m></p>
+            <p><m>\ds f(x,y) =\frac{\ln(x) }{4y}</m></p>
           </statement>
           <solution>
-            <p><m>f_x=\frac{1}{4xy}</m>, <m>f_y=-\frac{\ln x}{4y^2}</m></p>
+            <p><m>f_x=\frac{1}{4xy}</m>, <m>f_y=-\frac{\ln(x) }{4y^2}</m></p>
 
-            <p><m>f_{xx}=-\frac{1}{4x^2y}</m>, <m>f_{yy}=\frac{\ln x}{2y^3}</m></p>
+            <p><m>f_{xx}=-\frac{1}{4x^2y}</m>, <m>f_{yy}=\frac{\ln(x) }{2y^3}</m></p>
 
             <p><m>f_{xy}=-\frac{1}{4xy^2}</m>, <m>f_{yx}=-\frac{1}{4xy^2}</m></p>
           </solution>
@@ -1640,14 +1640,14 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) =5e^x\sin y+9</m></p>
+            <p><m>\ds f(x,y) =5e^x\sin(y) +9</m></p>
           </statement>
           <solution>
-            <p><m>f_x=5e^x\sin y</m>, <m>f_y=5e^x\cos y</m></p>
+            <p><m>f_x=5e^x\sin(y)</m>, <m>f_y=5e^x\cos(y)</m></p>
 
-            <p><m>f_{xx}=5e^x\sin y</m>, <m>f_{yy}=-5e^x\sin y</m></p>
+            <p><m>f_{xx}=5e^x\sin(y)</m>, <m>f_{yy}=-5e^x\sin(y)</m></p>
 
-            <p><m>f_{xy}=5e^x\cos y</m>, <m>f_{yx}=5e^x\cos y</m></p>
+            <p><m>f_{xy}=5e^x\cos(y)</m>, <m>f_{yx}=5e^x\cos(y)</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -1662,10 +1662,10 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>f_x = \sin y+1</m>,<m>f_y = x\cos y</m></p>
+            <p><m>f_x = \sin(y) +1</m>,<m>f_y = x\cos(y)</m></p>
           </statement>
           <solution>
-            <p><m>f(x,y) = x\sin y+ x+ C</m>, where <m>C</m> is any constant.</p>
+            <p><m>f(x,y) = x\sin(y) + x+ C</m>, where <m>C</m> is any constant.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1716,7 +1716,7 @@
             <p><m>\ds f_x = \frac{2x}{x^2+y^2}</m>,<m>\ds f_y = \frac{2y}{x^2+y^2}</m></p>
           </statement>
           <solution>
-            <p><m>f(x,y) = \ln (x^2+y^2)+ C</m>, where <m>C</m> is any constant.</p>
+            <p><m>f(x,y) = \ln(x^2+y^2)+ C</m>, where <m>C</m> is any constant.</p>
           </solution>
         </webwork>
       </exercise>

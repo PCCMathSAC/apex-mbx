@@ -5,9 +5,9 @@
   <introduction>
     <p>We begin our study of <em>limits</em> by considering examples that demonstrate key concepts that will be explained as we progress.</p>
 
-    <p>Consider the function <m>y = \frac{\sin x}{x}</m>. When <m>x</m> is near the value 1, what value (if any) is <m>y</m> near?</p>
+    <p>Consider the function <m>y = \frac{\sin(x) }{x}</m>. When <m>x</m> is near the value 1, what value (if any) is <m>y</m> near?</p>
 
-    <p>While our question is not precisely formed (what constitutes <q>near the value 1</q>?), the answer does not seem difficult to find. One might think first to look at a graph of this function to approximate the appropriate <m>y</m> values. Consider <xref ref="fig_zoom_sinx_over_x">Figure</xref>, where <m>y = \frac{\sin x}{x}</m> is graphed. For values of <m>x</m> near 1, it seems that <m>y</m> takes on values near <m>0.85</m>. In fact, when <m>x=1</m>, then <m>y=\frac{\sin 1}{1} \approx 0.84</m>, so it makes sense that when <m>x</m> is <q>near</q> 1, <m>y</m> will be <q>near</q> <m>0.84</m>.</p>
+    <p>While our question is not precisely formed (what constitutes <q>near the value 1</q>?), the answer does not seem difficult to find. One might think first to look at a graph of this function to approximate the appropriate <m>y</m> values. Consider <xref ref="fig_zoom_sinx_over_x">Figure</xref>, where <m>y = \frac{\sin(x) }{x}</m> is graphed. For values of <m>x</m> near 1, it seems that <m>y</m> takes on values near <m>0.85</m>. In fact, when <m>x=1</m>, then <m>y=\frac{\sin(1) }{1} \approx 0.84</m>, so it makes sense that when <m>x</m> is <q>near</q> 1, <m>y</m> will be <q>near</q> <m>0.84</m>.</p>
 
     <sidebyside>
       <figure xml:id="fig_sinx_over_x_full" >
@@ -75,7 +75,7 @@
 
     <p>Consider this again at a different value for <m>x</m>. When <m>x</m> is near <m>0</m>, what value (if any) is <m>y</m> near? By considering <xref ref="fig_sinx_over_x">Figure</xref>, one can see that it seems that <m>y</m> takes on values near <m>1</m>. But what happens when <m>x=0</m>? We have
       <me>
-        y \rightarrow \frac{\sin 0}{0} \rightarrow {{\text{“}}\atop{}}\frac{0}{0}{{\text{”}}\atop{}}\text{.}
+        y \rightarrow \frac{\sin(0) }{0} \rightarrow {{\text{“}}\atop{}}\frac{0}{0}{{\text{”}}\atop{}}\text{.}
       </me>
       The expression <m>0/0</m> has no value; it is<index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index>  <term>indeterminate</term>. Such an expression gives no information about what is going on with the function nearby. We cannot find out how <m>y</m> behaves near <m>x=0</m> for this function simply by letting <m>x=0</m>.</p>
 
@@ -89,15 +89,15 @@
 
     <p>Above, where <m>f(x) = \sin(x)/x</m>, we approximated
       <me>
-        \lim_{x\to 1} \frac{\sin x}{x} \approx 0.84 \text{ and } \lim_{x\to 0}\frac{\sin x}{x} \approx 1\text{.}
+        \lim_{x\to 1} \frac{\sin(x) }{x} \approx 0.84 \text{ and } \lim_{x\to 0}\frac{\sin(x) }{x} \approx 1\text{.}
       </me>
       (We <em>approximated</em> these limits, hence used the <q><m>\approx</m></q> symbol, since we are working with the pseudo-definition of a limit, not the actual definition.)</p>
 
     <p>Once we have the true definition of a limit, we will find limits <em>analytically</em>; that is, exactly using a variety of mathematical tools. For now, we will <em>approximate</em> limits both graphically and numerically. Graphing a function can provide a good approximation, though often not very precise. Numerical methods can provide a more accurate approximation. We have already approximated limits graphically, so we now turn our attention to numerical approximations.</p>
 
-    <p>Consider again <m>\lim_{x\to 1}\sin (x)/x</m>. To approximate this limit numerically, we can create a table of <m>x</m> and <m>f(x)</m> values where <m>x</m> is <q>near</q> <m>1</m>. This is done in <xref ref="table_sinx_1">Table</xref>.</p>
+    <p>Consider again <m>\lim_{x\to 1}\sin(x)/x</m>. To approximate this limit numerically, we can create a table of <m>x</m> and <m>f(x)</m> values where <m>x</m> is <q>near</q> <m>1</m>. This is done in <xref ref="table_sinx_1">Table</xref>.</p>
 
-    <p>Notice that for values of <m>x</m> near <m>1</m>, we have <m>\sin (x)/x</m> near <m>0.841</m>. The <m>x=1</m> row is included, but we stress the fact that when considering limits, we are <em>not</em> concerned with the value of the function at that particular <m>x</m> value; we are only concerned with the values of the function when <m>x</m> is <em>near</em> 1.</p>
+    <p>Notice that for values of <m>x</m> near <m>1</m>, we have <m>\sin(x)/x</m> near <m>0.841</m>. The <m>x=1</m> row is included, but we stress the fact that when considering limits, we are <em>not</em> concerned with the value of the function at that particular <m>x</m> value; we are only concerned with the values of the function when <m>x</m> is <em>near</em> 1.</p>
 
     <table xml:id="table_sinx_1" >
       <caption>Values of <m>\sin(x)/x</m> with <m>x</m> near <m>1</m>.</caption>
@@ -477,11 +477,11 @@
               </row>
               <row>
                 <cell><m>0.9</m></cell>
-                <cell><m>100.</m></cell>
+                <cell><m>100</m>.</cell>
               </row>
               <row>
                 <cell><m>0.99</m></cell>
-                <cell><m>10000.</m></cell>
+                <cell><m>10000</m>.</cell>
               </row>
               <row>
                 <cell><m>0.999</m></cell>
@@ -493,11 +493,11 @@
               </row>
               <row>
                 <cell><m>1.01</m></cell>
-                <cell><m>10000.</m></cell>
+                <cell><m>10000</m>.</cell>
               </row>
               <row>
                 <cell><m>1.1</m></cell>
-                <cell><m>100.</m></cell>
+                <cell><m>100</m>.</cell>
               </row>
             </tabular>
           </table>

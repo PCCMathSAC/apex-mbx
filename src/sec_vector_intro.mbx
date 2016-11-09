@@ -113,9 +113,9 @@
       <title>Component Form of a Vector</title>
       <statement>
         <ol>
-          <li><p>The <em>component form</em> of a vector <m>\vec{v}</m> in <m>\mathbb{R}^2</m>, whose terminal point is <m>(a,b)</m> when its initial point is <m>(0,0)</m>, is <m>\la a,b\ra.</m></p></li>
+          <li><p>The <em>component form</em> of a vector <m>\vec{v}</m> in <m>\mathbb{R}^2</m>, whose terminal point is <m>(a,b)</m> when its initial point is <m>(0,0)</m>, is <m>\la a,b\ra</m>.</p></li>
 
-          <li><p>The <em>component form</em> of a vector <m>\vec{v}</m> in <m>\mathbb{R}^3</m>, whose terminal point is <m>(a,b,c)</m> when its initial point is <m>(0,0,0)</m>, is <m>\la a,b,c\ra.</m></p></li>
+          <li><p>The <em>component form</em> of a vector <m>\vec{v}</m> in <m>\mathbb{R}^3</m>, whose terminal point is <m>(a,b,c)</m> when its initial point is <m>(0,0,0)</m>, is <m>\la a,b,c\ra</m>.</p></li>
         </ol>
 
         <p>The numbers <m>a</m>, <m>b</m> (and <m>c</m>, respectively) are the <term>components</term> of <m>\vec v</m>.
@@ -494,7 +494,7 @@
     <example xml:id="ex_vect4">
       <title>Vector Subtraction</title>
       <statement>
-        <p>Let <m>\vec u = \la 3,1\ra</m> and <m>\vec v=\la 1,2\ra.</m> Compute and sketch <m>\vec u-\vec v</m>.</p>
+        <p>Let <m>\vec u = \la 3,1\ra</m> and <m>\vec v=\la 1,2\ra</m>. Compute and sketch <m>\vec u-\vec v</m>.</p>
       </statement>
       <solution>
         <p>The computation of <m>\vec u-\vec v</m> is straightforward, and we show all steps below. Usually the formal step of multiplying by <m>(-1)</m> is omitted and we <q>just subtract.</q>
@@ -677,7 +677,7 @@
       </md>
     </p>
 
-    <p>So the vector of length 10 in the direction of <m>\vec v</m> is <m>\ds 10\frac{1}{\norm{\vec v}}\vec v.</m> An example will make this more clear.</p>
+    <p>So the vector of length 10 in the direction of <m>\vec v</m> is <m>\ds 10\frac{1}{\norm{\vec v}}\vec v</m>. An example will make this more clear.</p>
 
     <example xml:id="ex_vect5">
       <title>Using Unit Vectors</title>
@@ -789,7 +789,7 @@
       <p>We prefer the given definition of parallel as it is grounded in the fact that unit vectors provide direction information. One may adopt the convention that <m>\vec 0</m> is parallel to all vectors if they desire. (See also the marginal note on <xref ref="note_crossp">page</xref>.)</p>
     </aside>
 
-    <p>If one graphed all unit vectors in <m>\mathbb{R}^2</m> with the initial point at the origin, then the terminal points would all lie on the unit circle. Based on what we know from trigonometry, we can then say that the component form of all unit vectors in <m>\mathbb{R}^2</m> is <m>\la \cos\theta,\sin\theta\ra</m> for some angle <m>\theta</m>.</p>
+    <p>If one graphed all unit vectors in <m>\mathbb{R}^2</m> with the initial point at the origin, then the terminal points would all lie on the unit circle. Based on what we know from trigonometry, we can then say that the component form of all unit vectors in <m>\mathbb{R}^2</m> is <m>\la \cos(\theta) ,\sin(\theta) \ra</m> for some angle <m>\theta</m>.</p>
 
     <p>A similar construction in <m>\mathbb{R}^3</m> shows that the terminal points all lie on the unit sphere. These vectors also have a particular component form, but its derivation is not as straightforward as the one for unit vectors in <m>\mathbb{R}^2</m>. Important concepts about unit vectors are given in the following Key Idea.</p>
 
@@ -802,10 +802,10 @@
             </me>
           </p></li>
 
-        <li><p>A vector <m>\vec u</m> in <m>\mathbb{R}^2</m> is a unit vector if, and only if, its component form is <m>\la \cos\theta,\sin\theta\ra</m> for some angle <m>\theta</m>.
+        <li><p>A vector <m>\vec u</m> in <m>\mathbb{R}^2</m> is a unit vector if, and only if, its component form is <m>\la \cos(\theta) ,\sin(\theta) \ra</m> for some angle <m>\theta</m>.
             <index><main>unit vector</main><sub>properties</sub></index><index><main>vectors</main><sub>unit vector</sub></index></p></li>
 
-        <li><p>A vector <m>\vec u</m> in <m>\mathbb{R}^3</m> is a unit vector if, and only if, its component form is <m>\la \sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta\ra</m> for some angles <m>\theta</m> and <m>\varphi</m>.</p></li>
+        <li><p>A vector <m>\vec u</m> in <m>\mathbb{R}^3</m> is a unit vector if, and only if, its component form is <m>\la \sin(\theta) \cos(\varphi) ,\sin(\theta) \sin(\varphi) ,\cos(\theta) \ra</m> for some angles <m>\theta</m> and <m>\varphi</m>.</p></li>
       </ol>
     </insight>
 
@@ -860,17 +860,17 @@
 
         <p>We can view each chain as <q>pulling</q> the weight up, preventing it from falling. We can represent the force from each chain with a vector. Let <m>\vec F_1</m> represent the force from the chain making an angle of <m>30^\circ</m> with the vertical, and let <m>\vec F_2</m> represent the force form the other chain. Convert all angles to be measured from the horizontal (as shown in <xref ref="fig_vect6b">Figure</xref>), and apply <xref ref="idea_unit_vectors">Key Idea</xref>. As we do not yet know the magnitudes of these vectors, (that is the problem at hand), we use <m>m_1</m> and <m>m_2</m> to represent them.
           <me>
-            \vec F_1 = m_1\la \cos 120^\circ,\sin120^\circ\ra
+            \vec F_1 = m_1\la \cos(120^\circ) ,\sin(120^\circ) \ra
           </me>
           <me>
-            \vec F_2 = m_2\la \cos 45^\circ,\sin45^\circ\ra
+            \vec F_2 = m_2\la \cos(45^\circ) ,\sin(45^\circ) \ra
           </me>
         </p>
 
         <p>As the weight is not moving, we know the sum of the forces is <m>\vec 0</m>. This gives:
           <md>
             <mrow>\vec F + \vec F_1 + \vec F_2 \amp  = \vec 0</mrow>
-            <mrow>\la 0,-50\ra + m_1\la \cos 120^\circ,\sin120^\circ\ra + m_2\la \cos 45^\circ,\sin45^\circ\ra \amp =\vec 0</mrow>
+            <mrow>\la 0,-50\ra + m_1\la \cos(120^\circ) ,\sin(120^\circ) \ra + m_2\la \cos(45^\circ) ,\sin(45^\circ) \ra \amp =\vec 0</mrow>
           </md>
         </p>
 
@@ -907,8 +907,8 @@
 
         <p>The sum of the entries in the first component is 0, and the sum of the entries in the second component is also 0. This leads us to the following two equations:
           <md>
-            <mrow>m_1\cos120^\circ + m_2\cos45^\circ \amp =0</mrow>
-            <mrow>m_1\sin120^\circ + m_2\sin45^\circ \amp =50</mrow>
+            <mrow>m_1\cos(120^\circ) + m_2\cos(45^\circ) \amp =0</mrow>
+            <mrow>m_1\sin(120^\circ) + m_2\sin(45^\circ) \amp =50</mrow>
           </md>
         </p>
 
@@ -1014,27 +1014,27 @@
       <solution>
         <p>The force of the wind is represented by the vector <m>\vec F_w = 5\vec i</m>. The force of gravity on the weight is represented by <m>\vec F_g = -25\vec j</m>. The direction and magnitude of the vector representing the force on the chain are both unknown. We represent this force with
           <me>
-            \vec F_c = m\la \cos\varphi,\sin\varphi\ra = m\cos\varphi\, \vec i + m\sin\varphi\,\vec j
+            \vec F_c = m\la \cos(\varphi) ,\sin(\varphi) \ra = m\cos(\varphi) \, \vec i + m\sin(\varphi) \,\vec j
           </me>
           for some magnitude <m>m</m> and some angle with the horizontal <m>\varphi</m>. (Note: <m>\theta</m> is the angle the chain makes with the <em>vertical</em>; <m>\varphi</m> is the angle with the <em>horizontal</em>.)</p>
 
         <p>As the weight is at equilibrium, the sum of the forces is <m>\vec0</m>:
           <md>
             <mrow>\vec F_c + \vec F_w + \vec F_g \amp = \vec 0</mrow>
-            <mrow>m\cos\varphi\, \vec i + m\sin\varphi\,\vec j + 5\vec i - 25\vec j \amp =\vec 0</mrow>
+            <mrow>m\cos(\varphi) \, \vec i + m\sin(\varphi) \,\vec j + 5\vec i - 25\vec j \amp =\vec 0</mrow>
           </md>
         </p>
 
         <p>Thus the sum of the <m>\vec i</m> and <m>\vec j</m> components are 0, leading us to the following system of equations:
           <men xml:id="eq_vect8" >
             \begin{split}
-            5+m\cos\varphi \amp = 0\\
-            -25+m\sin\varphi \amp = 0
+            5+m\cos(\varphi) \amp = 0\\
+            -25+m\sin(\varphi) \amp = 0
             \end{split}
           </men>
         </p>
 
-        <p>This is enough to determine <m>\vec F_c</m> already, as we know <m>m\cos \varphi = -5</m> and <m>m\sin\varphi =25</m>. Thus <m>F_c = \la -5,25\ra.</m> We can use this to find the magnitude <m>m</m>:
+        <p>This is enough to determine <m>\vec F_c</m> already, as we know <m>m\cos(\varphi) = -5</m> and <m>m\sin(\varphi) =25</m>. Thus <m>F_c = \la -5,25\ra</m>. We can use this to find the magnitude <m>m</m>:
           <me>
             m = \sqrt{(-5)^2+25^2} = 5\sqrt{26}\approx 25.5\text{ lb } .
           </me>
@@ -1042,13 +1042,13 @@
 
         <p>We can then use either equality from Equation <xref ref="eq_vect8" /> to solve for <m>\varphi</m>. We choose the first equality as using arccosine will return an angle in the <m>2^\text{ nd }</m> quadrant:
           <me>
-            5 + 5\sqrt{26}\cos \varphi = 0  \Rightarrow  \varphi = \cos^{-1}\left(\frac{-5}{5\sqrt{26}}\right) \approx 1.7682\approx 101.31^\circ.
+            5 + 5\sqrt{26}\cos(\varphi) = 0  \Rightarrow  \varphi = \cos^{-1}\left(\frac{-5}{5\sqrt{26}}\right) \approx 1.7682\approx 101.31^\circ.
           </me>
         </p>
 
         <p>Subtracting <m>90^\circ</m> from this angle gives us an angle of <m>11.31^\circ</m> with the vertical.</p>
 
-        <p>We can now use trigonometry to find out how high the weight is lifted. The diagram shows that a right triangle is formed with the 2ft chain as the hypotenuse with an interior angle of <m>11.31^\circ</m>. The length of the adjacent side (in the diagram, the dashed vertical line) is <m>2\cos 11.31^\circ \approx 1.96</m>ft. Thus the weight is lifted by about <m>0.04</m>ft, almost 1/2in.</p>
+        <p>We can now use trigonometry to find out how high the weight is lifted. The diagram shows that a right triangle is formed with the 2ft chain as the hypotenuse with an interior angle of <m>11.31^\circ</m>. The length of the adjacent side (in the diagram, the dashed vertical line) is <m>2\cos(11.31^\circ) \approx 1.96</m>ft. Thus the weight is lifted by about <m>0.04</m>ft, almost 1/2in.</p>
       </solution>
     </example>
 
@@ -1786,7 +1786,7 @@
             <p>Find the unit vector in the first quadrant of <m>\mathbb{R}^2</m> that makes a <m>50^\circ</m> angle with the <m>x</m>-axis.</p>
           </statement>
           <solution>
-            <p><m>\vec u = \la \cos 50^\circ,\sin 50^\circ\ra \approx \la 0.643,0.766\ra</m>.</p>
+            <p><m>\vec u = \la \cos(50^\circ) ,\sin(50^\circ) \ra \approx \la 0.643,0.766\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1803,7 +1803,7 @@
             <p>Find the unit vector in the second quadrant of <m>\mathbb{R}^2</m> that makes a <m>30^\circ</m> angle with the <m>y</m>-axis.</p>
           </statement>
           <solution>
-            <p><m>\vec u = \la \cos 120^\circ,\sin 120^\circ\ra = \la -1/2,\sqrt{3}/2\ra</m>.</p>
+            <p><m>\vec u = \la \cos(120^\circ) ,\sin(120^\circ) \ra = \la -1/2,\sqrt{3}/2\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1817,14 +1817,14 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Verify, from <xref ref="idea_unit_vectors">Key Idea</xref>, that <m>\vec u=\la \sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta\ra</m> is a unit vector for all angles <m>\theta</m> and <m>\varphi</m>.</p>
+            <p>Verify, from <xref ref="idea_unit_vectors">Key Idea</xref>, that <m>\vec u=\la \sin(\theta) \cos(\varphi) ,\sin(\theta) \sin(\varphi) ,\cos(\theta) \ra</m> is a unit vector for all angles <m>\theta</m> and <m>\varphi</m>.</p>
           </statement>
           <solution>
             <p>
               <md>
-                <mrow>\norm{\vec u} \amp = \sqrt{\sin^2\theta\cos^2\varphi+\sin^2\theta\sin^2\varphi+\cos^2\theta}</mrow>
-                <mrow>\amp = \sqrt{\sin^2\theta(\cos^2\varphi+\sin^2\varphi)+\cos^2\theta}</mrow>
-                <mrow>\amp = \sqrt{\sin^2\theta+\cos^2\theta}</mrow>
+                <mrow>\norm{\vec u} \amp = \sqrt{\sin^2(\theta) \cos^2(\varphi) +\sin^2(\theta) \sin^2(\varphi) +\cos^2(\theta) }</mrow>
+                <mrow>\amp = \sqrt{\sin^2(\theta) (\cos^2(\varphi) +\sin^2(\varphi) )+\cos^2(\theta) }</mrow>
+                <mrow>\amp = \sqrt{\sin^2(\theta) +\cos^2(\theta) }</mrow>
                 <mrow>\amp =1.</mrow>
               </md>
             </p>
