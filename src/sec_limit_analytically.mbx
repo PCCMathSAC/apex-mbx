@@ -412,7 +412,7 @@
               \fill [draw=black,thick,fill=blue!20] (0,0) node [shift={(22.5:0.2)}] {$\theta$} -- (1,0) arc(0:40:1) -- cycle;
               \draw (.5,0) node [below] {$1$};
               \draw [black,dashed,thick] (1,0) arc (0:40:1);
-              \draw [black,dashed,thick] (1,0) -- (.766,.643) -- (1,.839) -- node [pos=.5,below,rotate=90,color=white] {$\tan(\theta) $} cycle;
+              \draw [black,dashed,thick] (1,0) -- (.766,.643) -- (1,.839) -- cycle;
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -428,7 +428,7 @@
               \draw [dashed,thick] (.766,0)  -- node [pos=.4,above,rotate=90] {$\sin(\theta) $}(.766,.643);
               \draw (.766,5pt) -- ++(5pt,0) -- ++(0,-5pt);
               \draw (.5,0) node [below] {$1$};
-              \draw [black,dashed,thick] (1,0) arc(0:40:1) --  (1,.839) -- node [pos=.5,below,rotate=90,color=white] {$\tan(\theta) $} cycle;
+              \draw [black,dashed,thick] (1,0) arc(0:40:1) --  (1,.839) --  cycle;
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -572,7 +572,7 @@
         </p>
       </statement>
     </theorem>
-
+    <todo>Add the Fundamental Theorem of Algebra somewhere? Is it in the reference pages? If so, link to it.</todo>
     <p>The Fundamental Theorem of Algebra tells us that when dealing with a rational function of the form <m>g(x)/f(x)</m> and directly evaluating the limit <m>\lim\limits_{x\to c} \frac{g(x)}{f(x)}</m> returns <q>0/0</q>, then <m>(x-c)</m> is a factor of both <m>g(x)</m> and <m>f(x)</m>. One can then use algebra to factor this binomial out, cancel, then apply <xref ref="thm_limit_allbut1">Theorem</xref>. We demonstrate this once more.</p>
 
     <example xml:id="ex_limit_allbut1">
