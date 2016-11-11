@@ -219,8 +219,7 @@
                                                              extra y tick labels={},
                                                              grid=both,
                                                             ]
-                                                    \addplot[<-,domain=2.5:2.99, blue, thick] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
-                                                    \addplot[->,domain=3.01:3.45, blue, thick] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
+                                                    \addplot+[domain=2.5:3.45, blue, thick] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
                                                     \addplot [hollowdot] coordinates{(3,0.294)};
                                                    
                                                 \end{axis}
@@ -729,11 +728,9 @@
                               \begin{axis}[xmin=-1,xmax=6.5,
                                           ymin=-1,ymax=25,
                                           ]
-                                  \addplot+[domain=0:6,firstcurvestyle
-                                  ] {-1.5*x^2+11.5*x};
-                                  \addplot+[domain=0:6, secondcurvestyle] {2.5*(x-1)+10};
-                                  \addplot[soliddot, firstcurvestyle
-                                  ] coordinates {(1,10) (5,20)};
+                                  \addplot+[domain=0:6] {-1.5*x^2+11.5*x};
+                                  \addplot+[domain=0:6] {2.5*(x-1)+10};
+                                  \addplot[soliddot] coordinates {(1,10) (5,20)};
                               \end{axis}
                           \end{tikzpicture}
                           ]]>
@@ -791,7 +788,7 @@
                                                 ]
                                         \addplot+[domain=0:6] {-1.5*x^2+11.5*x};
                                         \addplot+[domain=0:3] {7*(x-1)+10};
-                                        \addplot[soliddot, firstcurvestyle] coordinates {(1,10) (2,17)};
+                                        \addplot[soliddot] coordinates {(1,10) (2,17)};
                                     \end{axis}
                                 \end{tikzpicture}
                                 ]]>
@@ -811,7 +808,7 @@
                                                 ymin=-1,ymax=25,
                                                 ]
                                         \addplot+[domain=0:6, firstcurvestyle] {-1.5*x^2+11.5*x};
-                                        \addplot+[domain=0:2.80645,secondcurvestyle] {7.75*(x-1)+10};
+                                        \addplot+[domain=0:2.80645] {7.75*(x-1)+10};
                                         \addplot[soliddot,firstcurvestyle] coordinates {(1,10) (1.5,13.875)};
                                     \end{axis}
                                 \end{tikzpicture}
