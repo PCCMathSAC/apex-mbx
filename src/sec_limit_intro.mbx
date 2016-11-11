@@ -39,6 +39,7 @@
                                                 ytick={0.6,0.8,1},
                                                 xdiscontinuity,
                                                 ydiscontinuity,
+                                                grid=both,
                                                 ]
                                         \addplot+[domain=0.5:1.5] {sin(x*180/pi)/x};
                                     \end{axis}
@@ -50,34 +51,35 @@
       </figure>
     </sidebyside>
 
-    <figure xml:id="fig_sinx_over_x" >
-      <caption><m>\sin(x)/x</m> near <m>x=0</m>.</caption>
-      <!-- START figures/sinx_over_x_2.tex -->
-      <image xml:id="img_sinx_over_x_2">
-        <latex-image-code>
-          <![CDATA[
-                          \begin{tikzpicture}[declare function = {func(\x) = (\x != 0) * (sin(x*180/pi)/x) + (\x == 0) * (1);}]
-                              \begin{axis}[xmin=-1.1,xmax=1.2,
-                                           ymin=.75,ymax=1.05,
-                                           ytick={.8,.9,1},
-                                           extra y ticks={.1,.3,...,.9},
-                                           extra y tick labels={},
-                                          ]
-                                  \addplot+[domain=-1:1] {func(x)};
-                                  \addplot[hollowdot] coordinates {(0,1)};
-                              \end{axis}
-                          \end{tikzpicture}
-                          ]]>
-        </latex-image-code>
-      </image>
-      <!-- figures/sinx_over_x_2.tex END -->
-    </figure>
-
-    <p>Consider this again at a different value for <m>x</m>. When <m>x</m> is near <m>0</m>, what value (if any) is <m>y</m> near? By considering <xref ref="fig_sinx_over_x">Figure</xref>, one can see that it seems that <m>y</m> takes on values near <m>1</m>. But what happens when <m>x=0</m>? We have
+    <p>Consider this same function again at a different value for <m>x</m>. When <m>x</m> is near <m>0</m>, what value (if any) is <m>y</m> near? By considering <xref ref="fig_sinx_over_x">Figure</xref>, one can see that it seems that <m>y</m> takes on values near <m>1</m>. But what happens when <m>x=0</m>? We have
       <me>
         y \rightarrow \frac{\sin(0) }{0} \rightarrow {{\text{“}}\atop{}}\frac{0}{0}{{\text{”}}\atop{}}\text{.}
       </me>
       The expression <m>0/0</m> has no value; it is<index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index>  <term>indeterminate</term>. Such an expression gives no information about what is going on with the function nearby. We cannot find out how <m>y</m> behaves near <m>x=0</m> for this function simply by letting <m>x=0</m>.</p>
+      <figure xml:id="fig_sinx_over_x" >
+            <caption><m>\sin(x)/x</m> near <m>x=0</m>.</caption>
+            <!-- START figures/sinx_over_x_2.tex -->
+            <image xml:id="img_sinx_over_x_2">
+              <latex-image-code>
+                <![CDATA[
+                                \begin{tikzpicture}[declare function = {func(\x) = (\x != 0) * (sin(x*180/pi)/x) + (\x == 0) * (1);}]
+                                    \begin{axis}[xmin=-1.1,xmax=1.2,
+                                                 ymin=.75,ymax=1.05,
+                                                 ytick={.8,.9,1},
+                                                 extra y ticks={.1,.3,...,.9},
+                                                 extra y tick labels={},
+                                                ]
+                                        \addplot+[domain=-1:1] {func(x)};
+                                        \addplot[hollowdot] coordinates {(0,1)};
+                                    \end{axis}
+                                \end{tikzpicture}
+                                ]]>
+              </latex-image-code>
+            </image>
+            <!-- figures/sinx_over_x_2.tex END -->
+          </figure>
+    
+    
 
     <p><em>Finding a limit</em> entails understanding how a function behaves near a particular value of <m>x</m>. Before continuing, it will be useful to establish some notation. Let <m>y=f(x)</m>; that is, let <m>y</m> be a function of <m>x</m> for some function <m>f</m>. The expression <q>the limit of <m>y</m> as <m>x</m> approaches <m>1</m></q> describes a number, often referred to as <m>L</m>, that <m>y</m> nears as <m>x</m> nears <m>1</m>. We write all this as
       <me>
@@ -202,7 +204,6 @@
             y = (x^2-x-6)/(6x^2-19x+3)
           </me>
           on a small interval that contains <m>3</m>. To numerically approximate the limit, create a table of values where the <m>x</m> values are near <m>3</m>. This is done in <xref ref="fig_limit1">Figure</xref> and <xref ref="table_limit1">Table</xref>, respectively.</p>
-
         <sidebyside>
           <figure xml:id="fig_limit1" >
             <caption>Graphically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
@@ -212,10 +213,15 @@
                 <![CDATA[
                                             \begin{tikzpicture}
                                                 \begin{axis}[xmin=2.3,xmax=3.7,
-                                                             ymin=.25,ymax=.35,
+                                                             ymin=0.2,ymax=.35,
+                                                             xdiscontinuity,
+                                                             ydiscontinuity,
                                                              extra y tick labels={},
+                                                             grid=both,
                                                             ]
-                                                    \addplot+[domain=2.5:3.49] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
+                                                    \addplot+[domain=2.5:3.45] {(x^2 - x - 6)/(6*x^2 - 19*x + 3)};
+                                                    \addplot [hollowdot] coordinates{(3,0.294)};
+                                                   
                                                 \end{axis}
                                             \end{tikzpicture}
                                             ]]>
@@ -699,7 +705,20 @@
     <title>Limits of Difference Quotients</title>
     <p>We have approximated limits of functions as <m>x</m> approached a particular number. We will consider another important kind of limit after explaining a few key ideas.<index><main>limit</main><sub>difference quotient</sub></index></p>
 
-    <figure xml:id="fig_diffquot1" >
+
+    <p>Let <m>f(x)</m> represent the position function, in feet, of some particle that is moving in a straight line, where <m>x</m> is measured in seconds. Let's say that when <m>x=1</m>, the particle is at position <m>10</m> ft., and when <m>x=5</m>, the particle is at <m>20</m> ft. Another way of expressing this is to say</p>
+
+    <blockquote><p><m>f(1)=10</m> and <m>f(5) = 20</m>.</p></blockquote>
+
+    <p>Since the particle traveled <m>10</m> feet in <m>4</m> seconds, we can say the particle's<index><main>average velocity</main></index><index><main>velocity</main><sub>average velocity</sub></index> <term>average velocity</term> was <m>2.5</m> ft/s. We write this calculation using a <q>quotient of differences,</q> or, a<index><main>difference quotient</main></index> <term>difference quotient</term>:
+      <me>
+        \frac{f(5) - f(1)}{5-1} \frac{\text{ ft}}{\text{s}} = \frac{10 \text{ ft}}{4\text{ s}} = 2.5 \text{ ft/s }\text{.}
+      </me>
+    </p>
+
+    <p>This difference quotient can be thought of as the familiar <q>rise over run</q> used to compute the slopes of lines. In fact, that is essentially what we are doing: given two points on the graph of <m>f</m>, we are finding the slope of the <em>secant line</em> through those two points. See <xref ref="fig_diffquot1">Figure</xref>.</p>
+
+     <figure xml:id="fig_diffquot1" >
       <caption>Interpreting a difference quotient as the slope of a secant line.</caption>
       <!-- START figures/fig_diff_quot1.tex -->
       <image xml:id="img_diffquot1">
@@ -720,18 +739,6 @@
       <!-- figures/fig_diff_quot1.tex END -->
     </figure>
 
-    <p>Let <m>f(x)</m> represent the position function, in feet, of some particle that is moving in a straight line, where <m>x</m> is measured in seconds. Let's say that when <m>x=1</m>, the particle is at position <m>10</m> ft., and when <m>x=5</m>, the particle is at <m>20</m> ft. Another way of expressing this is to say</p>
-
-    <blockquote><p><m>f(1)=10</m> and <m>f(5) = 20</m>.</p></blockquote>
-
-    <p>Since the particle traveled <m>10</m> feet in <m>4</m> seconds, we can say the particle's<index><main>average velocity</main></index><index><main>velocity</main><sub>average velocity</sub></index> <term>average velocity</term> was <m>2.5</m> ft/s. We write this calculation using a <q>quotient of differences,</q> or, a<index><main>difference quotient</main></index> <term>difference quotient</term>:
-      <me>
-        \frac{f(5) - f(1)}{5-1} \frac{\text{ ft}}{\text{s}} = \frac{10 \text{ ft}}{4\text{ s}} = 2.5 \text{ ft/s }\text{.}
-      </me>
-    </p>
-
-    <p>This difference quotient can be thought of as the familiar <q>rise over run</q> used to compute the slopes of lines. In fact, that is essentially what we are doing: given two points on the graph of <m>f</m>, we are finding the slope of the <em>secant line</em> through those two points. See <xref ref="fig_diffquot1">Figure</xref>.</p>
-
     <p>Now consider finding the average speed on another time interval. We again start at <m>x=1</m>, but consider the position of the particle <m>h</m> seconds later. That is, consider the positions of the particle when <m>x=1</m> and when <m>x=1+h</m>. The difference quotient (excluding units) is now
       <me>
         \frac{f(1+h)-f(1)}{(1+h)-1} = \frac{f(1+h)-f(1)}{h}\text{.}
@@ -740,13 +747,13 @@
 
     <p>Let <m>f(x) = -1.5x^2+11.5x</m>; note that <m>f(1)=10</m> and <m>f(5) = 20</m>, as in our discussion. We can compute this difference quotient for all values of <m>h</m> (even negative values!) except <m>h=0</m>, for then we get <q>0/0,</q> the indeterminate form introduced earlier. For all values <m>h\neq 0</m>, the difference quotient computes the average velocity of the particle over an interval of time of length <m>h</m> starting at <m>x=1</m>.</p>
 
-    <p>For small values of <m>h</m>, i.e., values of <m>h</m> close to <m>0</m>, we get average velocities over very short time periods and compute secant lines over small intervals. See <xref ref="fig_diff_quot_small_h">Figure</xref>. This leads us to wonder what the limit of the difference quotient is as <m>h</m> approaches <m>0</m>. That is,
+    <p>For small values of <m>h</m>, i.e., values of <m>h</m> close to <m>0</m>, we get average velocities over very short time periods and compute secant lines over small intervals. See <xref ref="fig_diff_quot_smallh">Figure</xref>. This leads us to wonder what the limit of the difference quotient is as <m>h</m> approaches <m>0</m>. That is,
       <me>
         \lim_{h\to 0} \frac{f(1+h)-f(1)}{h} = \text{ ? }
       </me>
     </p>
-
-    <sidebyside>
+    <todo>Add a geogebra applet (for online version only). I've made one here: https://ggbm.at/mGffD9sE</todo>
+    <sidebyside xml:id="fig_diff_quot_smallh">
       <caption>Secant lines of <m>f(x)</m> at <m>x=1</m> and <m>x=1+h</m>, for shrinking values of <m>h</m> (i.e., <m>h\rightarrow 0</m>).</caption>
       <figure xml:id="fig_diff_quot_smallha">
         <caption><m>h=2</m></caption>
