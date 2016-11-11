@@ -111,8 +111,8 @@
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-.1,xmax=4.1,]
-              \addplot[{\colorone},thick,domain=0:4] {x^2};
+              \begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-1,xmax=4.1,]
+              \addplot+[domain=-.8:4] {x^2};
               \end{axis}
 
               \end{tikzpicture}
@@ -124,26 +124,23 @@
       </statement>
       <solution>
         <p>We can answer this exactly (and quickly) after <xref ref="sec_basic_diff_rules">Section</xref>, where we learn to quickly compute derivatives. For now, we will answer graphically, by considering the slopes of the respective tangent lines. </p>
-        <aside><p>Since tangent lines only intersect the function once near <m>c</m>, we will draw short tangent line segments instead of full tangent lines. </p></aside>
+        
 
         <figure xml:id="fig_xsquaredwithgrid" >
-          <caption>A graph of <m>f(x)=x^2</m> and tangent line segments.</caption>
+          <caption>A graph of <m>f(x)=x^2</m> and tangent lines at <m>x=1</m> and <m>x=3</m>.</caption>
           <!-- START figures/fig_xsquaredwithgrid.tex -->
           <image xml:id="img_xsquaredwithgrid" >
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-.1,xmax=4.3,grid=both]
-             \addplot[->,{\colorone},thick,domain=0:4] {x^2};
-              \addplot [{\colortwo},domain=0:4]{2*(x-1)+1};
-              \addplot [{\colortwo},domain=1.5:4.2]{6*(x-3)+9};
-              \addplot[soliddot,{\colortwo}] coordinates{(1,1) (3,9)};
+              \begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-1,xmax=4.3,grid=both]
+             \addplot+[domain=-0.8:4] {x^2};
+              \addplot[tangentline,domain=0.6:3.5]{2*(x-1)+1};
+              \addplot[tangentline,domain=1.6:4]{6*(x-3)+9};
+              \addplot[soliddot] coordinates{(1,1) (3,9)};
               %\draw (axis cs:0,0) grid (axis cs:4,16);
               \end{axis}
-
-
-
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -175,8 +172,8 @@
                                            ymin=-8.9,ymax=5.9,
                                            xmin=-.1,xmax=3.49, 
                                            grid=both]
-                              \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
-                              \addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
+                              \addplot+[domain=0:3.5] {-x^3+7*x^2-12*x+4};
+                              \addplot+[domain=0.5:3.3] {-12+14*x-3*x^2};
                               \draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
                               \draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
                               \end{axis}
@@ -200,7 +197,7 @@
 
         <p>The slope of the tangent line to <m>f</m> at <m>x=3</m> is <m>\fp(3)</m>; this looks to be about <m>3</m>.</p>
 
-        <p>Using these slopes, the tangent lines to <m>f</m> are sketched in <xref ref="fig_fwithderivdots">Figure</xref>. Included on the graph of <m>\fp</m> in this figure are points where <m>x=1</m>, <m>x=2</m> and <m>x=3</m> to help better visualize the <m>y</m> value of <m>\fp</m> at those points.</p>
+        <p>Using these slopes,  tangent line segments to <m>f</m> are sketched in <xref ref="fig_fwithderivdots">Figure</xref>. Included on the graph of <m>\fp</m> in this figure are points where <m>x=1</m>, <m>x=2</m> and <m>x=3</m> to help better visualize the <m>y</m> value of <m>\fp</m> at those points.</p>
 
         <figure width="50%"  xml:id="fig_fwithderivdots" >
                         <caption></caption>
@@ -211,13 +208,13 @@
                             <![CDATA[
                             \begin{tikzpicture}
                             \begin{axis}[,minor y tick num=4, minor x tick num=0, ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49, xtick={1,2,3}, grid=both]
-                            \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
-                            \addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
-                            \addplot [domain=0:2,thick] {-1*(x-1)-2};
-                            \addplot [domain=1:3,thick] {4*(x-2)};
-                            \addplot [domain=2:4,thick] {3*(x-3)+4};
-                            \addplot[soliddot,{\colorone}] coordinates{(1,-2) (2,0) (3,4)};
-                            \addplot[soliddot,{\colortwo}] coordinates{(1,-1) (2,4) (3,3)};
+                            \addplot+[domain=0.5:3.3] {-x^3+7*x^2-12*x+4};
+                            \addplot+[domain=0:3.5] {-12+14*x-3*x^2};
+                            \addplot [tangentlineseg,domain=0.5:1.5] {-1*(x-1)-2};
+                            \addplot [tangentlineseg,domain=1.5:2.5] {4*(x-2)};
+                            \addplot [tangentlineseg,domain=2.5:3.5] {3*(x-3)+4};
+                            \addplot[soliddot] coordinates{(1,-2) (2,0) (3,4)};
+                            \addplot[soliddot] coordinates{(1,-1) (2,4) (3,3)};
                             \draw (axis cs:3.4,3.5) node {\scriptsize $f(x)$};
                             \draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
 
@@ -241,7 +238,7 @@
       </statement>
       <solution>
         <p><xref ref="fig_fwithderivzoom3">Figure</xref> shows the graph of <m>f</m> along with its tangent line, zoomed in at <m>x=3</m>. Notice that near <m>x=3</m>, the tangent line makes an excellent approximation of <m>f</m>. Since lines are easy to deal with, often it works well to approximate a function with its tangent line. (This is especially true when you don't actually know much about the function at hand, as we don't in this example.)</p>
-
+  
         <figure xml:id="fig_fwithderivzoom3" >
           <caption>Zooming in on <m>f</m> at <m>x=3</m> for the function given in <xref ref="ex_der_meaning4">Examples</xref> and <xref ref="ex_der_meaning5"></xref>.</caption>
           <!-- START figures/fig_fwithderivzoom3.tex -->
@@ -256,10 +253,9 @@
                             xdiscontinuity,
                             ydiscontinuity,
                             grid=major]
-                \addplot [{\colorone},smooth,thick,domain=0:3.5] {-x^3+7*x^2-12*x+4};
-                %\addplot [{\colortwo},smooth,thick,domain=0:3.5] {-12+14*x-3*x^2};
-                \addplot [domain=2:4,thick] {3*(x-3)+4};
-                 \addplot[soliddot,{\colorone}] coordinates{(3,4)};
+                \addplot+[domain=0:3.5] {-x^3+7*x^2-12*x+4};
+                \addplot[tangentlineseg,domain=2:4,thick] {3*(x-3)+4};
+                 \addplot[soliddot] coordinates{(3,4)};
                  \draw (axis cs:3.2,4.25) node {\scriptsize $f(x)$};
                 \end{axis}
 
