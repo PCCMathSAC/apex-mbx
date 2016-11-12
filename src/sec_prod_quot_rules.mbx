@@ -12,8 +12,8 @@
       <statement>
         <p>Let <m>f</m> and <m>g</m> be differentiable functions on an open interval <m>I</m>.<index><main>Power Rule</main><sub>differentiation</sub></index><index><main>derivative</main><sub>Product Rule</sub></index> Then <m>fg</m> is a differentiable function on <m>I</m>, and
           <me>
-            \frac{d}{dx}\Big(f(x)g(x)\Big) = f(x)g'(x) + \fp(x)g(x).
-          </me>
+            \frac{d}{dx}\Big(f(x)g(x)\Big) = f(x)g'(x) + \fp(x)g(x)
+          </me>.
         </p>
       </statement>
     </theorem>
@@ -96,7 +96,7 @@
             <mrow>\amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h} \amp \text{ (factor) }</mrow>
             <mrow>\amp =\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x) \amp \text{ (apply limit properties) }</mrow>
             <mrow>\amp =\lim_{h\to0} f(x+h)\cdot \lim_{h\to0} \frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}\cdot \lim_{h\to0} g(x) \amp \text{ (apply limits) }</mrow>
-            <mrow>\amp =f(x)g'(x) + \fp(x)g(x) \amp \text{ (by defn. of derivative)}</mrow>
+            <mrow>\amp =f(x)g'(x) + \fp(x)g(x) \amp \text{ (by defn. of derivative).}</mrow>
           </md>
           We have proven the product rule as desired.
         </p>
@@ -114,8 +114,8 @@
       <solution>
         <p>We first expand the expression for <m>y</m>; a little algebra shows that <m>y = 2x^4+3x^3-6x^2+1</m>. It is easy to compute <m>y'</m>;
           <me>
-            y' = 8x^3+9x^2-12x.
-          </me>
+            y' = 8x^3+9x^2-12x
+          </me>.
         </p>
 
         <p>Instead, let's apply the Product Rule to the original factored form:
@@ -123,7 +123,7 @@
             <mrow>y' \amp = (x^2+3x+1)\lbo{x}{2x^2-3x+1}+\lbo{x}{x^2+3x+1}(2x^2-3x+1)</mrow>
             <mrow>y' \amp = (x^2+3x+1)(4x-3)+(2x+3)(2x^2-3x+1)</mrow>
             <mrow>\amp = \big(4x^3+9x^2-5x-3\big) + \big(4x^3-7x+3\big)</mrow>
-            <mrow>\amp  = 8x^3+9x^2-12x.</mrow>
+            <mrow>\amp  = 8x^3+9x^2-12x</mrow>.
           </md>
         </p>
 
@@ -142,7 +142,7 @@
             <mrow>\yp \amp = (x^3)\lbo{x}{\ln(x) \cos(x)} + \lbo{x}{x^3}\ln(x) \cos(x)</mrow>
             <intertext>To evaluate <m>\lbo{x}{\ln(x) \cos(x)}</m>, we apply the Product Rule again:</intertext>
             <mrow>\amp = (x^3)\big(\ln(x) (-\sin(x) ) + \frac1x\cos(x) \big)+ 3x^2\big(\ln(x) \cos(x) \big)</mrow>
-            <mrow>\amp = x^3\ln(x) (-\sin(x) ) + x^3\frac1x\cos(x) + 3x^2\ln(x) \cos(x) </mrow>
+            <mrow>\amp = x^3\ln(x) (-\sin(x) ) + x^3\frac1x\cos(x) + 3x^2\ln(x) \cos(x) </mrow>.
           </md>
         </p>
 
@@ -191,16 +191,16 @@
       <statement>
         <p>Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, where <m>g(x) \neq 0</m> on <m>I</m>.<index><main>derivative</main><sub>Quotient Rule</sub></index><index><main>Quotient Rule</main></index> Then <m>f/g</m> is differentiable on <m>I</m>, and
           <me>
-            \lbo{x}{\frac{f(x)}{g(x)}} = \frac{g(x)\fp(x) - f(x)g'(x)}{g(x)^2}.
-          </me>
+            \lbo{x}{\frac{f(x)}{g(x)}} = \frac{g(x)\fp(x) - f(x)g'(x)}{g(x)^2}
+          </me>.
         </p>
       </statement>
     </theorem>
 
     <p>The Quotient Rule is not hard to use, although it might be a bit tricky to remember. A useful mnemonic works as follows. Consider a fraction's numerator and denominator as <q>HI</q> and <q>LO</q>, respectively. Then
       <me>
-        \lbo{x}{\frac{\text{ HI } }{\text{ LO } }} = \frac{\text{ LO\(\cdot\) dHI} -\text{ HI\(\cdot\) dLO } }{\text{ LOLO } },
-      </me>
+        \lbo{x}{\frac{\text{ HI } }{\text{ LO } }} = \frac{\text{ LO\(\cdot\) dHI} -\text{ HI\(\cdot\) dLO } }{\text{ LOLO } }
+      </me>,
       read <q>low dee high minus high dee low, over low low.</q> Said fast, that phrase can roll off the tongue, making it easy to memorize. The <q>dee high</q> and <q>dee low</q> parts refer to the derivatives of the numerator and denominator, respectively.</p>
 
     <p>Let's practice using the Quotient Rule.</p>
@@ -214,7 +214,7 @@
         <p>Directly applying the Quotient Rule gives:
           <md>
             <mrow>\lbo{x}{frac{5x^2}{\sin(x) }} \amp = \frac{\sin(x) \cdot \lbo{x}{5x^2} - 5x^2\cdot \lbo{x}{\sin(x)} }{\sin^2(x) }</mrow>
-            <mrow>\amp =	\frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }.</mrow>
+            <mrow>\amp =	\frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</mrow>.
           </md>
         </p>
       </solution>
@@ -235,7 +235,7 @@
             <mrow>\amp =	\frac{\cos(x) \cos(x) - \sin(x) (-\sin(x) )}{\cos^2(x) }</mrow>
             <mrow>\amp = \frac{\cos^2(x) +\sin^2(x) }{\cos^2(x) }</mrow>
             <mrow>\amp = \frac{1}{\cos^2(x) }</mrow>
-            <mrow>\amp = \sec^2(x) .</mrow>
+            <mrow>\amp = \sec^2(x)</mrow>.
           </md>
         </p>
 
@@ -299,7 +299,7 @@
             <mrow>\amp =	5x^2\left(-\csc(x) \cot(x) \right) + 10x\csc(x) \amp\text{ (now rewrite trig functions) }</mrow>
             <mrow>\amp = 5x^2\cdot \frac{-1}{\sin(x) }\cdot \frac{\cos(x) }{\sin(x) } + \frac{10x}{\sin(x) }\amp</mrow>
             <mrow>\amp =	\ds\frac{-5x^2\cos(x) }{\sin^2(x) }+\frac{10x}{\sin(x) } \amp\text{ (get common denominator) }</mrow>
-            <mrow>\amp = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }\amp</mrow>
+            <mrow>\amp = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }\amp</mrow>.
           </md>
         </p>
 
@@ -336,8 +336,8 @@
         <mrow>\frac{d}{dx}\left(\frac{1}{x^n}\right) \amp = \ds\frac{d}{dx}\Big(x^{-n}\Big) \amp\text{ (apply result from } <xref ref="ex_deriv_power">Example</xref>) </mrow>
         <mrow>\amp = \ds-\frac{n}{x^{n+1}} \amp \text{ (rewrite algebraically) }</mrow>
         <mrow>\amp = -nx^{-(n+1)}\amp</mrow>
-        <mrow>\amp = -nx^{-n-1}.\amp</mrow>
-      </md>
+        <mrow>\amp = -nx^{-n-1}\amp</mrow>
+      </md>.
     </p>
 
     <p>This is reminiscent of the Power Rule: multiply by the power, then subtract 1 from the power. We now add to our previous Power Rule, which had the restriction of <m>n>0</m>.</p>
@@ -377,7 +377,7 @@
                 <mrow>\fp(x) \amp =\frac{x\cdot\lbo{x}{2^x-3x+1}-\big(x^2-3x+1\big)\lbo{x}{x}}{x^2}</mrow>
                   <mrow>\amp = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2}</mrow>
                   <mrow>\amp = \frac{x^2-1}{x^2} </mrow>
-                  <mrow>\amp = 1-\frac{1}{x^2}.</mrow>
+                  <mrow>\amp = 1-\frac{1}{x^2}</mrow>.
               </md>
             </p></li>
 
@@ -387,7 +387,7 @@
                 <mrow> \amp = \big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}</mrow>
                 <mrow>\amp =	-\frac{x^2-3x+1}{x^2}+\frac{2x-3}{x}</mrow>
                 <mrow>\amp = -\frac{x^2-3x+1}{x^2}+\frac{2x^2-3x}{x^2}</mrow>
-                <mrow>\amp = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2},</mrow>
+                <mrow>\amp = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2}</mrow>,
               </md>
               the same result as above.</p></li>
 
@@ -404,7 +404,7 @@
       <md>
         <mrow>\amp 1-\frac{1}{x^2} </mrow>
           <mrow>\amp = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2} </mrow>
-          <mrow>\amp = 	\big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}.</mrow>
+          <mrow>\amp = 	\big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}</mrow>.
       </md>
     </p>
 
