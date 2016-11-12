@@ -30,14 +30,20 @@
       <solution>
         <p>To make our use of the Product Rule explicit, let's set <m>f(x) = 5x^2</m> and <m>g(x) = \sin(x)</m>. We easily compute/recall that <m>\fp(x) = 10x</m> and <m>g'(x) = \cos(x)</m>. Employing the rule, we have
           <me>
-            \frac{d}{dx}\Big(5x^2\sin(x) \Big) = 5x^2\cos(x) + 10x\sin(x) .
-          </me>
+            \frac{d}{dx}\Big(5x^2\sin(x) \Big) = 5x^2\cos(x) + 10x\sin(x)
+          </me>.
+          We can also show our work <q>inline</q>:
+          <md>
+            <mrow>\lbo{x}{5x^2\sin(x)} \amp= 5x^2\lbo{x}{\sin(x)} + \lbo{x}{5x^2}\sin(x) .</mrow>
+            <mrow>\amp= 5x^2\cos(x) + 10x\sin(x)</mrow>.
+          </md>
         </p>
 
         <p>At <m>x=\pi/2</m>, we have
           <me>
-            y'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos\left(\frac{\pi}2\right) + 10\frac{\pi}2 \sin\left(\frac{\pi}{2}\right) = 5\pi.
-          </me>
+            y'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos\left(\frac{\pi}2\right) + 10\cdot\frac{\pi}2 \sin\left(\frac{\pi}{2}\right) = 5\pi
+          </me>.
+          
         </p>
 
         <p>We graph <m>y</m> and its tangent line at <m>x=\pi/2</m>, which has a slope of <m>5\pi</m>, in <xref ref="fig_5xsquaredsinx">Figure</xref>. While this does not <em>prove</em> that the Product Rule is the correct way to handle derivatives of products, it helps validate its truth.</p>
@@ -51,11 +57,9 @@
               <![CDATA[
               \begin{tikzpicture}
               \begin{axis}[ymin=-1.1,ymax=21,xmin=-0.1,xmax=3.5,xtick={1.57,3.14},xticklabels={$\frac{\pi}2$,$\pi$},]
-              \addplot [{\colorone},smooth,thick,domain=0:3.14] {5*(x^2)*sin(x*180/3.14)};
-              \addplot [{\colortwo},smooth,thick,domain=0:2.2] {15.7*(x-1.57)+12.34};
-              %\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
-              %\filldraw (axis cs:-1,-1) circle (1pt);
-              %\filldraw (axis cs:-1,3) circle (1pt);
+              \addplot+[domain=0:3.14,samples=200] {5*(x^2)*sin(x*180/3.14)};
+              \addplot [tangentline,domain=0.75:2] {15.7*(x-1.57)+12.34};
+              \addplot[soliddot] coordinates{(1.57,12.34)};
               \end{axis}
 
 
@@ -82,17 +86,21 @@
             \frac{d}{dx}\Big(f(x)g(x)\Big) =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}.
           </me>
         </p>
-
+        <todo>Figure out alignment here. Maybe use intertext instead? This is very wide otherwise</todo>
         <p>We now do something a bit unexpected; add 0 to the numerator (so that nothing is changed) in the form of <m>-f(x+h)g(x)+f(x+h)g(x)</m>, then do some regrouping as shown.
           <md>
-            <mrow>\frac{d}{dx}\Big(f(x)g(x)\Big) \amp =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}  \text{ (now add 0 to the numerator) }</mrow>
-            <mrow>\amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h}  \text{ (regroup) }</mrow>
-            <mrow>\amp =	\lim_{h\to0} \frac{\Big(f(x+h)g(x+h)-f(x+h)g(x)\Big)+\Big(f(x+h)g(x)-f(x)g(x)\Big)}{h}</mrow>
-            <mrow>\amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}\text{ (factor) }</mrow>
-            <mrow>\amp =\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x)\text{ (apply limits) }</mrow>
-            <mrow>\amp =f(x)g'(x) + \fp(x)g(x)</mrow>
+            <mrow>\amp \frac{d}{dx}\Big(f(x)g(x)\Big)\amp</mrow>
+            <mrow> \amp =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}  \amp \text{ (now add 0 to the numerator) }</mrow>
+            <mrow>\amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h}  \amp \text{ (regroup) }</mrow>
+            <mrow>\amp =	\lim_{h\to0} \frac{\Big(f(x+h)g(x+h)-f(x+h)g(x)\Big)+\Big(f(x+h)g(x)-f(x)g(x)\Big)}{h}\amp\text{ (split fraction)}</mrow>
+            <mrow>\amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h} \amp \text{ (factor) }</mrow>
+            <mrow>\amp =\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x) \amp \text{ (apply limit properties) }</mrow>
+            <mrow>\amp =\lim_{h\to0} f(x+h)\cdot \lim_{h\to0} \frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}\cdot \lim_{h\to0} g(x) \amp \text{ (apply limits) }</mrow>
+            <mrow>\amp =f(x)g'(x) + \fp(x)g(x) \amp \text{ (by defn. of derivative)}</mrow>
           </md>
+          We have proven the product rule as desired.
         </p>
+        <aside><p>Adding <m>0</m> in some clever form is a common mathematical proof technique. </p></aside>
       </solution>
     </example>
 
@@ -110,8 +118,9 @@
           </me>
         </p>
 
-        <p>Now apply the Product Rule.
+        <p>Instead, let's apply the Product Rule to the original factored form:
           <md>
+            <mrow>y' \amp = (x^2+3x+1)\lbo{x}{2x^2-3x+1}+\lbo{x}{x^2+3x+1}(2x^2-3x+1)</mrow>
             <mrow>y' \amp = (x^2+3x+1)(4x-3)+(2x+3)(2x^2-3x+1)</mrow>
             <mrow>\amp = \big(4x^3+9x^2-5x-3\big) + \big(4x^3-7x+3\big)</mrow>
             <mrow>\amp  = 8x^3+9x^2-12x.</mrow>
@@ -130,14 +139,18 @@
       <solution>
         <p>We have a product of three functions while the Product Rule only specifies how to handle a product of two functions. Our method of handling this problem is to simply group the latter two functions together, and consider <m>y = x^3\big(\ln(x) \cos(x) \big)</m>. Following the Product Rule, we have
           <md>
-            <mrow>\yp \amp = (x^3)\big(\ln(x) \cos(x) \big)' + 3x^2\big(\ln(x) \cos(x) \big)</mrow>
-            <intertext>To evaluate <m>\big(\ln(x) \cos(x) \big)'</m>, we apply the Product Rule again:</intertext>
+            <mrow>\yp \amp = (x^3)\lbo{x}{\ln(x) \cos(x)} + \lbo{x}{x^3}\ln(x) \cos(x)</mrow>
+            <intertext>To evaluate <m>\lbo{x}{\ln(x) \cos(x)}</m>, we apply the Product Rule again:</intertext>
             <mrow>\amp = (x^3)\big(\ln(x) (-\sin(x) ) + \frac1x\cos(x) \big)+ 3x^2\big(\ln(x) \cos(x) \big)</mrow>
             <mrow>\amp = x^3\ln(x) (-\sin(x) ) + x^3\frac1x\cos(x) + 3x^2\ln(x) \cos(x) </mrow>
           </md>
         </p>
 
         <p>Recognize the pattern in our answer above: when applying the Product Rule to a product of three functions, there are three terms added together in the final derivative. Each terms contains only one derivative of one of the original functions, and each function's derivative shows up in only one term. It is straightforward to extend this pattern to finding the derivative of a product of 4 or more functions.</p>
+        <p>Ultimately though, we would simplify our final to:
+          <me>\yp=-x^3\ln(x)\sin(x) + x^2\cos(x) + 3x^2\ln(x)\cos(x)</me>
+          If you check this answer in a CAS, it may factor and give the answer:
+          <me>\yp=-x^2\left[x\ln(x)\sin(x) + \cos(x) + 3\ln(x)\cos(x)\right]</me></p>
       </solution>
     </example>
 
@@ -178,7 +191,7 @@
       <statement>
         <p>Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, where <m>g(x) \neq 0</m> on <m>I</m>.<index><main>derivative</main><sub>Quotient Rule</sub></index><index><main>Quotient Rule</main></index> Then <m>f/g</m> is differentiable on <m>I</m>, and
           <me>
-            \frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) = \frac{g(x)\fp(x) - f(x)g'(x)}{g(x)^2}.
+            \lbo{x}{\frac{f(x)}{g(x)}} = \frac{g(x)\fp(x) - f(x)g'(x)}{g(x)^2}.
           </me>
         </p>
       </statement>
@@ -186,7 +199,7 @@
 
     <p>The Quotient Rule is not hard to use, although it might be a bit tricky to remember. A useful mnemonic works as follows. Consider a fraction's numerator and denominator as <q>HI</q> and <q>LO</q>, respectively. Then
       <me>
-        \frac{d}{dx}\left(\frac{\text{ HI } }{\text{ LO } }\right) = \frac{\text{ LO\(\cdot\) dHI -- HI\(\cdot\) dLO } }{\text{ LOLO } },
+        \lbo{x}{\frac{\text{ HI } }{\text{ LO } }} = \frac{\text{ LO\(\cdot\) dHI} -\text{ HI\(\cdot\) dLO } }{\text{ LOLO } },
       </me>
       read <q>low dee high minus high dee low, over low low.</q> Said fast, that phrase can roll off the tongue, making it easy to memorize. The <q>dee high</q> and <q>dee low</q> parts refer to the derivatives of the numerator and denominator, respectively.</p>
 
@@ -200,7 +213,7 @@
       <solution>
         <p>Directly applying the Quotient Rule gives:
           <md>
-            <mrow>\frac{d}{dx}\left(\frac{5x^2}{\sin(x) }\right) \amp = \frac{\sin(x) \cdot 10x - 5x^2\cdot \cos(x) }{\sin^2(x) }</mrow>
+            <mrow>\lbo{x}{frac{5x^2}{\sin(x) }} \amp = \frac{\sin(x) \cdot \lbo{x}{5x^2} - 5x^2\cdot \lbo{x}{\sin(x)} }{\sin^2(x) }</mrow>
             <mrow>\amp =	\frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }.</mrow>
           </md>
         </p>
@@ -210,7 +223,7 @@
     <p>The Quotient Rule allows us to fill in holes in our understanding of derivatives of the common trigonometric functions. We start with finding the derivative of the tangent function.</p>
 
     <example xml:id="ex_der_tan">
-      <title>Using the Quotient Rule to find <m>\frac{d}{dx}\big(\tan(x) \big)</m>.</title>
+      <title>Using the Quotient Rule to find <m>\lbo{x}{\tan(x)}</m></title>
       <statement>
         <p>Find the derivative of <m>y=\tan(x)</m>.</p>
       </statement>
@@ -218,6 +231,7 @@
         <p>At first, one might feel unequipped to answer this question. But recall that <m>\tan(x) = \sin(x) /\cos(x)</m>, so we can apply the Quotient Rule.
           <md>
             <mrow>\frac{d}{dx}\Big(\tan(x) \Big) \amp = \frac{d}{dx}\left(\frac{\sin(x) }{\cos(x) }\right)</mrow>
+            <mrow>\amp = \frac{\cos(x) \lbo{x}{\sin(x)} - \sin(x)\lbo{x}{\cos(x)}}{\cos^2(x) }</mrow>
             <mrow>\amp =	\frac{\cos(x) \cos(x) - \sin(x) (-\sin(x) )}{\cos^2(x) }</mrow>
             <mrow>\amp = \frac{\cos^2(x) +\sin^2(x) }{\cos^2(x) }</mrow>
             <mrow>\amp = \frac{1}{\cos^2(x) }</mrow>
@@ -236,15 +250,10 @@
               <![CDATA[
               \begin{tikzpicture}
               \begin{axis}[ymin=-11,ymax=11,xmin=-1.65,xmax=1.7,xtick={-1.57,-.785,.785,1.57},xticklabels={$-\frac{\pi}2$,$-\frac{\pi}2$,$\frac{\pi}4$,$\frac{\pi}2$},]
-              \addplot [{\colorone},smooth,thick,samples=50,domain=-1.5:1.5] {tan(x*180/3.14159)};
-              \addplot [{\colortwo},smooth,thick,domain=-1.0:1.5] {2*(x-.785)+1};
-              %\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
-              %\filldraw (axis cs:-1,-1) circle (1pt);
-              %\filldraw (axis cs:-1,3) circle (1pt);
+              \addplot+ [samples=50,domain=-1.5:1.5] {tan(deg(x))};
+              \addplot [tangentline,domain=-1.0:1.5] {2*(x-.785)+1};
+              \addplot [soliddot] coordinates{(0.785,1)};
               \end{axis}
-
-
-
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -283,13 +292,14 @@
         <p>In <xref ref="ex_quot1">Example</xref> the derivative of <m>\ds f(x) = \frac{5x^2}{\sin(x) }</m> was found using the Quotient Rule. Rewriting <m>f</m> as <m>f(x) = 5x^2\csc(x)</m>, find <m>\fp</m> using <xref ref="thm_deriv_trig">Theorem</xref> and verify the two answers are the same.</p>
       </statement>
       <solution>
-        <p>We found in <xref ref="ex_quot1">Example</xref> that the <m>\ds \fp(x) = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</m>. We now find <m>\fp</m> using the Product Rule, considering <m>f</m> as <m>f(x) = 5x^2\csc(x)</m>.
+        <p>We found in <xref ref="ex_quot1">Example</xref> that <m>\ds \fp(x) = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</m>. We now find <m>\fp</m> using the Product Rule, considering <m>f</m> as <m>f(x) = 5x^2\csc(x)</m>.
           <md>
-            <mrow>\fp(x) \amp = \frac{d}{dx}\Big(5x^2\csc(x) \Big)</mrow>
-            <mrow>\amp =	$5x^2(-\csc(x) \cot(x) ) + 10x\csc(x) $ \text{ (now rewrite trig functions) }</mrow>
-            <mrow>\amp = 5x^2\cdot \frac{-1}{\sin(x) }\cdot \frac{\cos(x) }{\sin(x) } + \frac{10x}{\sin(x) }</mrow>
-            <mrow>\amp =	$\ds\frac{-5x^2\cos(x) }{\sin^2(x) }+\frac{10x}{\sin(x) }$ \text{ (get common denominator) }</mrow>
-            <mrow>\amp = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</mrow>
+            <mrow>\fp(x) \amp = \frac{d}{dx}\Big(5x^2\csc(x) \Big)\amp</mrow>
+            <mrow>\amp =  5x^2\lbo{x}{\csc(x)} + \lbo{x}{5x^2}\csc(x)\amp</mrow>
+            <mrow>\amp =	5x^2\left(-\csc(x) \cot(x) \right) + 10x\csc(x) \amp\text{ (now rewrite trig functions) }</mrow>
+            <mrow>\amp = 5x^2\cdot \frac{-1}{\sin(x) }\cdot \frac{\cos(x) }{\sin(x) } + \frac{10x}{\sin(x) }\amp</mrow>
+            <mrow>\amp =	\ds\frac{-5x^2\cos(x) }{\sin^2(x) }+\frac{10x}{\sin(x) } \amp\text{ (get common denominator) }</mrow>
+            <mrow>\amp = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }\amp</mrow>
           </md>
         </p>
 
@@ -323,10 +333,10 @@
 
     <p>The derivative of <m>\ds y=\frac{1}{x^n}</m> turned out to be rather nice. It gets better. Consider:
       <md>
-        <mrow>\frac{d}{dx}\left(\frac{1}{x^n}\right) \amp = $\ds\frac{d}{dx}\Big(x^{-n}\Big)$ \text{ (apply result from <xref ref="ex_deriv_power">Example</xref>) }</mrow>
-        <mrow>\amp = $\ds-\frac{n}{x^{n+1}}$\text{ (rewrite algebraically) }</mrow>
-        <mrow>\amp = -nx^{-(n+1)}</mrow>
-        <mrow>\amp = -nx^{-n-1}.</mrow>
+        <mrow>\frac{d}{dx}\left(\frac{1}{x^n}\right) \amp = \ds\frac{d}{dx}\Big(x^{-n}\Big) \amp\text{ (apply result from } <xref ref="ex_deriv_power">Example</xref>) </mrow>
+        <mrow>\amp = \ds-\frac{n}{x^{n+1}} \amp \text{ (rewrite algebraically) }</mrow>
+        <mrow>\amp = -nx^{-(n+1)}\amp</mrow>
+        <mrow>\amp = -nx^{-n-1}.\amp</mrow>
       </md>
     </p>
 
@@ -363,14 +373,18 @@
       <solution>
         <ol>
           <li><p>Applying the Quotient Rule gives:
-              <me>
-                \fp(x) = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2} = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2}.
-              </me>
+              <md>
+                <mrow>\fp(x) \amp =\frac{x\cdot\lbo{x}{2^x-3x+1}-\big(x^2-3x+1\big)\lbo{x}{x}}{x^2}</mrow>
+                  <mrow>\amp = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2}</mrow>
+                  <mrow>\amp = \frac{x^2-1}{x^2} </mrow>
+                  <mrow>\amp = 1-\frac{1}{x^2}.</mrow>
+              </md>
             </p></li>
 
           <li><p>By rewriting <m>f</m>, we can apply the Product and Power Rules as follows:
               <md>
-                <mrow>\fp(x) \amp =		\big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}</mrow>
+                <mrow>\fp(x) \amp =		\big(x^2-3x+1\big)\lbo{x}{x^{-1}} + \lbo{x}{x^2-3x+1} x^{-1}</mrow>
+                <mrow> \amp = \big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}</mrow>
                 <mrow>\amp =	-\frac{x^2-3x+1}{x^2}+\frac{2x-3}{x}</mrow>
                 <mrow>\amp = -\frac{x^2-3x+1}{x^2}+\frac{2x^2-3x}{x^2}</mrow>
                 <mrow>\amp = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2},</mrow>
@@ -386,15 +400,17 @@
       </solution>
     </example>
 
-    <p><xref ref="ex_multiple_deriv">Example</xref> demonstrates three methods of finding \fp. One is hard pressed to argue for a <q>best method</q> as all three gave the same result without too much difficulty, although it is clear that using the Product Rule required more steps. Ultimately, the important principle to take away from this is: reduce the answer to a form that seems <q>simple</q> and easy to interpret. In that example, we saw different expressions for \fp, including: {
-      <me>
-        1-\frac{1}{x^2} = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2} = 	\big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}.
-      </me>
+    <p><xref ref="ex_multiple_deriv">Example</xref> demonstrates three methods of finding <m>\fp</m>. One is hard pressed to argue for a <q>best method</q> as all three gave the same result without too much difficulty, although it is clear that using the Product Rule required more steps. Ultimately, the important principle to take away from this is: reduce the answer to a form that seems <q>simple</q> and easy to interpret. In that example, we saw different expressions for <m>\fp</m>, including: 
+      <md>
+        <mrow>\amp 1-\frac{1}{x^2} </mrow>
+          <mrow>\amp = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2} </mrow>
+          <mrow>\amp = 	\big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}.</mrow>
+      </md>
     </p>
 
-    <p>} They are equal; they are all correct; only the first is <q>clear.</q> Work to make answers clear.
+    <p> They are equal; they are all correct; only the first is <q>simple.</q> Work to make answers simple.</p>
 		
-      In the next section we continue to learn rules that allow us to more easily compute derivatives than using the limit definition directly. We have to memorize the derivatives of a certain set of functions, such as <q>the derivative of <m>\sin(x)</m> is <m>\cos(x)</m>.</q> The Sum/Difference, Constant Multiple, Power, Product and Quotient Rules show us how to find the derivatives of certain combinations of these functions. The next section shows how to find the derivatives when we <em>compose</em> these functions together.</p>
+    <p>In the next section we continue to learn rules that allow us to more easily compute derivatives than using the limit definition directly. We have to memorize the derivatives of a certain set of functions, such as <q>the derivative of <m>\sin(x)</m> is <m>\cos(x)</m>.</q> The Sum/Difference, Constant Multiple, Power, Product and Quotient Rules show us how to find the derivatives of certain combinations of these functions. The next section shows how to find the derivatives when we <em>compose</em> these functions together.</p>
   </introduction>
   <exercises>
     <exercisegroup>
