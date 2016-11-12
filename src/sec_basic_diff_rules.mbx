@@ -10,6 +10,7 @@
     <p>Let's abstract once more. Let's find the derivative of the general quadratic function, <m>f(x) = ax^2+bx+c</m>. Using the definition of the derivative, we have:
       <md>
         <mrow>\fp(x) 	\amp =	\lim_{h\to 0}\frac{a(x+h)^2+b(x+h)+c-(ax^2+bx+c)}{h}</mrow>
+        <mrow>\amp =\lim_{h\to 0}\frac{ax^2+2ahx+ah^2+bx+bh+c-ax^2-bx-c)}{h}</mrow>
         <mrow>\amp =	\lim_{h\to 0} \frac{ah^2+2ahx+bh}{h}</mrow>
         <mrow>\amp =	\lim_{h\to 0} ah+2ax+b</mrow>
         <mrow>\amp = 2ax+b.</mrow>
@@ -23,23 +24,24 @@
     <theorem xml:id="thm_deriv_common">
       <title>Derivatives of Common Functions</title>
       <statement>
-        <ol cols="2" >
-          <li><p><em>Constant Rule:</em><index><main>derivative</main><sub>Constant Rule</sub></index> 
+        <dl>
+          <li><title>Constant Rule:</title><index><main>derivative</main><sub>Constant Rule</sub></index> 
+           <p><m>\ds \frac{d}{dx}\big( c\big) = 0</m>, where <m>c</m> is a constant.</p></li>
+
+          <li><title>Power Rule:</title><index><main>derivative</main><sub>Power Rule</sub></index><index><main>Power Rule</main><sub>differentiation</sub></index>
+    
+          <p><m>\ds \frac{d}{dx}\left(x^n\right) = nx^{n-1}</m>, where <m>n</m> is an integer, <m>n>0</m>.</p></li>
 		
-		<m>\ds \frac{d}{dx}\big( c\big) = 0</m>, where <m>c</m> is a constant.</p></li>
+		     
 
-          <li><p><m>\ds \frac{d}{dx}(\sin(x) ) = \cos(x)</m></p></li>
+          <li><title>Other common functions:  </title><p><m>\ds \frac{d}{dx}(\sin(x) ) = \cos(x)</m></p></li>
 
-          <li><p><m>\ds \frac{d}{dx}\left(e^x\right) = e^x</m></p></li>
+          <li><title></title><p><m>\ds \frac{d}{dx}(\cos(x) ) = -\sin(x)</m></p></li>
 
-          <li><p><em>Power Rule:</em><index><main>derivative</main><sub>Power Rule</sub></index><index><main>Power Rule</main><sub>differentiation</sub></index>
-		
-		<m>\ds \frac{d}{dx}\left(x^n\right) = nx^{n-1}</m>, where <m>n</m> is an integer, <m>n>0</m>.</p></li>
+          <li><title></title><p><m>\ds \frac{d}{dx}\left(e^x\right) = e^x</m></p></li>       
 
-          <li><p><m>\ds \frac{d}{dx}(\cos(x) ) = -\sin(x)</m></p></li>
-
-          <li><p><m>\ds \frac{d}{dx}(\ln(x) ) = \frac{1}{x}</m></p></li>
-        </ol>
+          <li><title></title><p><m>\ds \frac{d}{dx}(\ln(x) ) = \frac{1}{x}</m>, for <m>x\gt 0</m>.</p></li>
+        </dl>
 
         <index><main>derivative</main><sub>basic rules</sub></index>
       </statement>
@@ -53,7 +55,7 @@
       </me>
     </p>
 
-    <p>In words, we are asking <q>At what rate does <m>f</m> change with respect to <m>x</m>?</q> Since <m>f</m> <em>is</em> <m>x</m>, we are asking <q>At what rate does <m>x</m> change with respect to <m>x</m>?</q> The answer is: 1. They change at the same rate.</p>
+    <p>In words, we are asking <q>At what rate does <m>f</m> change with respect to <m>x</m>?</q> Since <m>f</m> <em>is</em> <m>x</m>, we are asking <q>At what rate does <m>x</m> change with respect to <m>x</m>?</q> The answer is: 1. They change at the same rate. We can also interpret the derivative as the slope of the tangent line to the function at a point <m>(c,f(c))</m>. Since <m>f(x)=x</m> is a linear function with constant slope <m>1</m>, we can say that the derivative of <m>f(x)=x</m> is <m>\fp(x)=1</m>.</p>
 
     <p>Let's practice using this theorem.</p>
 
@@ -95,11 +97,13 @@
                     <![CDATA[
                     \begin{tikzpicture}
                     \begin{axis}[ymin=-5.1,ymax=5.1,xmin=-2.1,xmax=2.1,]
-                    \addplot [{\colorone},smooth,thick,domain=-2:2] {x^3};
-                    \addplot [{\colortwo},smooth,thick,domain=-2:2] {3*x^2};
-                    \addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
-                    \filldraw (axis cs:-1,-1) circle (1pt);
-                    \filldraw (axis cs:-1,3) circle (1pt);
+                    \addplot+[domain=-1.5:1.5] {x^3};
+                    \addplot+[domain=-1.2:1.2] {3*x^2};
+                    \addplot[tangentline,domain=-2:1] {3*(x+1)-1};
+                    \addplot[soliddot] coordinates {(-1,-1) (-1,3)};
+                    \draw (axis cs:1.25,1) node {\scriptsize $f(x)$};
+                    \draw (axis cs:0.75,3) node {\scriptsize $f\,'(x)$};
+                    \draw (axis cs:0.5,4) node {\scriptsize $l(x)$};
                     \end{axis}
 
 
@@ -123,16 +127,22 @@
       <statement>
         <p>Let <m>f</m> and <m>g</m> be differentiable on an open interval <m>I</m> and let <m>c</m> be a real number. Then:</p>
 
-        <ol>
-          <li><p><em>Sum/Difference Rule:</em>
+        <dl>
+          <li><title>Sum/Difference Rule:</title><p>
 	
-	<m>\ds \frac{d}{dx}\Big(f(x) \pm g(x)\Big) = \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)</m> <m>= \fp(x)\pm g'(x)</m>
+	<md>
+    <mrow>\frac{d}{dx}\Big(f(x) \pm g(x)\Big) \amp= \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)</mrow>
+    <mrow>\amp= \fp(x)\pm g'(x)</mrow>
+  </md>
 	<index><main>derivative</main><sub>Sum/Difference Rule</sub></index><index><main>Sum/Difference Rule</main><sub>of derivatives</sub></index></p></li>
 
-          <li><p><em>Constant Multiple Rule:</em>
+          <li><title>Constant Multiple Rule:</title><p>
 	
-	<m>\ds \frac{d}{dx}\Big(c\cdot f(x)\Big) = c\cdot\frac{d}{dx}\Big(f(x)\Big) = c\cdot\fp(x)</m>.<index><main>derivative</main><sub>Constant Multiple Rule</sub></index><index><main>Constant Multiple Rule</main><sub>of derivatives</sub></index></p></li>
-        </ol>
+	<md>
+    <mrow>\frac{d}{dx}\Big(c\cdot f(x)\Big) \amp= c\cdot\frac{d}{dx}\Big(f(x)\Big)</mrow> 
+    <mrow>\amp = c\cdot\fp(x)</mrow> 
+  </md>.<index><main>derivative</main><sub>Constant Multiple Rule</sub></index><index><main>Constant Multiple Rule</main><sub>of derivatives</sub></index></p></li>
+        </dl>
       </statement>
     </theorem>
 
@@ -163,6 +173,61 @@
         <p>Using a calculator, we get an answer accurate to 4 places after the decimal: <m>f(3) = 7.1411</m>. Our initial guess was <m>7</m>; our tangent line approximation was more accurate, at <m>7.14</m>.</p>
 
         <p>The point is <em>not</em> <q>Here's a cool way to do some math without a calculator.</q> Sure, that might be handy sometime, but your phone could probably give you the answer. Rather, the point is to say that tangent lines are a good way of approximating, and many scientists, engineers and mathematicians often face problems too hard to solve directly. So they approximate.</p>
+        <p>The graphs in <xref ref="fig_sintangapprox">Figure</xref> shows the graph of the function <m>f(x)</m> along with the tangent line constructed at <m>x=\pi</m>. The graph in <xref ref="fig_sintangapprox">Figure</xref> shows the same tangent line and function. Once zoomed in, you can barely distinguish the tangent line from the function. This indicates that the tangent line is a good a approximation of the function so long as we are near the point of tangency. </p>
+        <p> 
+        <sidebyside widths="47% 47%" margins="auto">
+        <figure xml:id="fig_sintangapprox" >
+                <caption>A graph of <m>f(x) = \sin(x)+2x+1</m> along with its tangent line approximation at <m>x=\pi</m>.</caption>
+                <image xml:id="img_sintangapprox" >
+                  <description></description>
+                  <latex-image-code>
+                    <![CDATA[
+                    \begin{tikzpicture}
+                    \begin{axis}[ymin=-1,ymax=10,xmin=-1.1,xmax=5.1,]
+                    \addplot+[domain=-.5:5.5] {sin(deg(x))+2*x+1};
+                    \addplot[tangentline,domain=-.75:4.5] {x+4.14};
+                    \addplot[soliddot] coordinates {(3,7.1411) (3.14,7.28)};
+                    \draw (axis cs:0.5,1.2) node {\scriptsize $f(x)$};
+                    \draw (axis cs:0.5,5) node {\scriptsize $l(x)$};
+                    \end{axis}
+
+
+
+                    \end{tikzpicture}
+                    ]]>
+                  </latex-image-code>
+                </image>
+                <!-- figures/fig_xcubedwithderiv.tex END -->
+              </figure>
+              
+              <figure xml:id="fig_sintangapproxzoom" >
+                <caption>A graph of <m>f(x) = \sin(x)+2x+1</m> along with its tangent line approximation at <m>x=\pi</m>, zoomed in.</caption>
+                <image xml:id="img_sintangapproxzoom" >
+                  <description></description>
+                  <latex-image-code>
+                    <![CDATA[
+                    \begin{tikzpicture}
+                    \begin{axis}[ymin=6.7,ymax=7.4,
+                                 xmin=2.5,xmax=3.5, 
+                                 xdiscontinuity,
+                                 ydiscontinuity]
+                    \addplot+[domain=-2.75:3.4] {sin(deg(x))+2*x+1};
+                    \addplot[tangentlineseg,domain=2.75:3.25] {x+4.14};
+                    \addplot[soliddot] coordinates {(3,7.1411) (3.14,7.28)};
+                    %\draw (axis cs:0.5,1.2) node {\scriptsize $f(x)$};
+                    %\draw (axis cs:0.5,5) node {\scriptsize $l(x)$};
+                    \end{axis}
+
+
+
+                    \end{tikzpicture}
+                    ]]>
+                  </latex-image-code>
+                </image>
+                <!-- figures/fig_xcubedwithderiv.tex END -->
+              </figure>
+              </sidebyside>
+      </p>
       </solution>
     </example>
   </introduction>
@@ -223,13 +288,13 @@
         <ol>
           <li><p>Using the Power and Constant Multiple Rules, we have: <m>\fp(x) = 8x</m>. Continuing on, we have
               <me>
-                \fp'(x) = \frac{d}{dx}\big(8x\big) = 8;\qquad \fp''(x) = 0;\qquad f^{(4)}(x) = 0.
+                \fp'(x) = \frac{d}{dx}\big(8x\big) = 8;\; \fp''(x) = 0;\; f^{(4)}(x) = 0.
               </me>
               Notice how all successive derivatives will also be 0.</p></li>
 
           <li><p>We employ <xref ref="thm_deriv_common">Theorem</xref> repeatedly.
               <me>
-                \fp(x) = \cos(x) ;\qquad \fp'(x) = -\sin(x) ;\qquad \fp''(x) = -\cos(x) ;\qquad f^{(4)}(x) = \sin(x) .
+                \fp(x) = \cos(x) ;\; \fp'(x) = -\sin(x) ;\; \fp''(x) = -\cos(x) ;\; f^{(4)}(x) = \sin(x) .
               </me>
               Note how we have come right back to <m>f(x)</m> again. (Can you quickly figure what <m>f^{(23)}(x)</m> is?)</p></li>
 

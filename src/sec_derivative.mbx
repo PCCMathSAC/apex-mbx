@@ -336,7 +336,7 @@
         </figure>
       </sidebyside>
 
-      <p>The aspect ratio of the picture of the graph plays a big role in this. When using graphing software, there is usually an option called <c>Zoom Square</c> that keeps the aspect ratio <m>1:1</m>)</p>
+      <p>The aspect ratio of the picture of the graph plays a big role in this. When using graphing software, there is usually an option called <c>Zoom Square</c> that keeps the aspect ratio <m>1:1</m></p>
 
       <p>We also found that <m>\fp(3) = 23</m>, so the normal line to the graph of <m>f</m> at <m>x=3</m> will have slope <m>-1/23</m>. An equation for the normal line is
         <me>
@@ -374,7 +374,7 @@
     </solution>
   </example>
 
-  <p>We often desire to find the tangent line to the graph of a function without knowing the actual derivative of the function. In these cases, the best we may be able to do is approximate the tangent line. We demonstrate this in the next example.</p>
+  <p>We often desire to find the tangent line to the graph of a function without knowing the actual derivative of the function. While we will eventually be able to find derivatives of many common functions, the algebra and limit calculations on some functions are complex. Until we develop futher techniques, the best we may be able to do is approximate the tangent line. We demonstrate this in the next example.</p>
 
   <example xml:id="ex_der_num_approx">
     <title>Numerical Approximation of the Tangent Line</title>
@@ -489,8 +489,10 @@
           <mrow>\amp =    \lim_{h\to 0} \frac{\frac{1}{x+h+1}-\frac{1}{x+1}}{h}</mrow>
           <intertext>Now find common denominator then subtract; pull <m>1/h</m> out front to facilitate reading.</intertext>
           <mrow>\amp = \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x+1}{(x+1)(x+h+1)} - \frac{x+h+1}{(x+1)(x+h+1)}\right)</mrow>
+          <intertext>Now simplify algebraically.</intertext>
           <mrow>\amp =    \lim_{h\to 0} \frac 1h\cdot\left(\frac{x+1-(x+h+1)}{(x+1)(x+h+1)}\right)</mrow>
           <mrow>\amp =    \lim_{h\to 0} \frac1h\cdot\left(\frac{-h}{(x+1)(x+h+1)}\right)</mrow>
+          <intertext>Finally, apply the limit.</intertext>
           <mrow>\amp =    \lim_{h\to 0} \frac{-1}{(x+1)(x+h+1)}</mrow>
           <mrow>\amp = \frac{-1}{(x+1)(x+1)}</mrow>
           <mrow>\amp = \frac{-1}{(x+1)^2}</mrow>
@@ -599,6 +601,15 @@
         </p>
       </sidebyside>
 
+
+      <p>The last lines of each column tell the story: the left and right hand limits are not equal. Therefore the limit does not exist at <m>0</m>, and <m>f</m> is not differentiable at <m>0</m>. So we have
+        <me>
+          \fp(x) = \begin{cases} -1 \amp  x\lt 0 \\ 1 \amp  x \gt 0\end{cases}\text{.}
+        </me>
+      </p>
+
+      <p>At <m>x=0</m>, <m>\fp(x)</m> does not exist; there is a jump discontinuity at <m>0</m>; see <xref ref="fig_absolutevalueprime">Figure</xref>. So <m>f(x) = \abs{x}</m> is differentiable everywhere except at <m>0</m>.</p>
+
       <figure xml:id="fig_absolutevalueprime" >
         <caption>A graph of the derivative of <m>f(x) = \abs{x}</m>.</caption>
         <!-- START figures/fig_absolutevalueprime.tex -->
@@ -618,14 +629,6 @@
         </image>
         <!-- figures/fig_absolutevalueprime.tex END -->
       </figure>
-
-      <p>The last lines of each column tell the story: the left and right hand limits are not equal. Therefore the limit does not exist at <m>0</m>, and <m>f</m> is not differentiable at <m>0</m>. So we have
-        <me>
-          \fp(x) = \begin{cases} -1 \amp  x\lt 0 \\ 1 \amp  x \gt 0\end{cases}\text{.}
-        </me>
-      </p>
-
-      <p>At <m>x=0</m>, <m>\fp(x)</m> does not exist; there is a jump discontinuity at <m>0</m>; see <xref ref="fig_absolutevalueprime">Figure</xref>. So <m>f(x) = \abs{x}</m> is differentiable everywhere except at <m>0</m>.</p>
     </solution>
   </example>
 
@@ -671,7 +674,7 @@
 
       <p>We still need to find <m>\fp(\pi/2)</m>. Notice at <m>x=\pi/2</m> that both pieces of <m>\fp</m> are <m>0</m>, meaning we can state that <m>\fp(\pi/2)=0</m>.</p>
 
-      <p>Being more rigorous, we can again evaluate the difference quotient limit at <m>x=\pi/2</m>, utilizing again left- and right-hand limits:</p>
+      <p>Being more rigorous, we can again evaluate the difference quotient limit at <m>x=\pi/2</m>, utilizing again left- and right-hand limits. We will begin with the left-hand limit:</p>
 
       <sidebyside>
         <p>
@@ -680,10 +683,14 @@
           <mrow>\amp =\lim_{h\to0^-}\frac{\sin(\pi/2+h)-\sin(\pi/2)}{h}</mrow>
           <mrow>\amp =\lim_{h\to0^-}{ \frac{\sin(\frac{\pi}{2})\cos(h)+\sin(h)\cos(\frac{\pi}{2})-\sin(\frac{\pi}{2})}{h}}</mrow>
           <mrow>\amp =\lim_{h\to0^-}\frac{1\cdot\cos(h)+\sin(h)\cdot 0-1}{h} </mrow>
+          <mrow>\amp =\lim_{h\to0^-}\frac{\cos(h)-1}{h} \cdot \lim_{h\to0^-}\frac{\sin(h)}{h} </mrow>
+          <mrow>\amp=1\cdot 0</mrow>
           <mrow>\amp =0</mrow>
         </md>
+        Notice we used <xref ref="thm_lim_continuous" autoname="title"/> to finally evaluate the limit.
         </p>
        <p>
+        Now we will find the right-hand limit:
         <md>
           <mrow>\amp \lim_{h\to0^+}\frac{f(\pi/2+h)-f(\pi/2)}{h}</mrow>
           <mrow>\amp =\lim_{h\to0^+}\frac{1-1}{h}</mrow>
@@ -699,7 +706,7 @@
         </me>
       </p>
 
-      <p>See <xref ref="fig_piecewisecosx1">Figure</xref> for a graph of this function.</p>
+      <p>See <xref ref="fig_piecewisecosx1">Figure</xref> for a graph of this derivative function.</p>
 
       <figure xml:id="fig_piecewisecosx1" >
         <caption>A graph of <m>\fp(x)</m> in <xref ref="ex_diff_piecewise">Example</xref>.</caption>
