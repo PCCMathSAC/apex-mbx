@@ -18,15 +18,9 @@
           <![CDATA[
           \begin{tikzpicture}
           \begin{axis}[ymin=-3.2,ymax=3.2,xmin=-3.2,xmax=3.2,]
-          \addplot [{\colorone},smooth,thick] coordinates {(2.89,-2.61) (2.78,-2.46) (2.65,-2.28) (2.52,-2.09) (2.36,-1.82)(2.22,-1.57) (2.1,-1.33) (2.,-1.07) (1.94,-0.842) (1.89,-0.607)(1.85,-0.295) (1.82,-0.0424) (1.79,0.214) (1.76,0.471) (1.71,0.686)
+          \addplot+ [smooth] coordinates {(2.89,-2.61) (2.78,-2.46) (2.65,-2.28) (2.52,-2.09) (2.36,-1.82)(2.22,-1.57) (2.1,-1.33) (2.,-1.07) (1.94,-0.842) (1.89,-0.607)(1.85,-0.295) (1.82,-0.0424) (1.79,0.214) (1.76,0.471) (1.71,0.686)
           (1.65,0.899) (1.61,1.) (1.51,1.18) (1.39,1.32) (1.29,1.42) (1.18,1.5)(1.07,1.55) (0.96,1.6) (0.794,1.65) (0.643,1.68) (0.416,1.7)(0.00338,1.71) (-0.214,1.71) (-0.423,1.72) (-0.643,1.74) (-0.947,1.8)(-1.28,1.93) (-1.49,2.04) (-1.67,2.14) (-1.83,2.24) (-2.07,2.43)(-2.31,2.61) (-2.52,2.79) (-2.68,2.92)};
-          %\addplot [{\colortwo},smooth,thick,domain=0:2.2] {15.7*(x-1.57)+12.34};
-          %\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
-          %\filldraw (axis cs:-1,-1) circle (1pt);
-          %\filldraw (axis cs:-1,3) circle (1pt);
           \end{axis}
-
-
 
           \end{tikzpicture}
           ]]>
@@ -137,10 +131,10 @@
               \begin{tikzpicture}
               \begin{axis}[ymin=-3.2,ymax=3.2,xmin=-3.2,xmax=3.2,]
 
-              \addplot [{\colorone},smooth,thick] coordinates {(2.89,-2.61) (2.78,-2.46) (2.65,-2.28) (2.52,-2.09) (2.36,-1.82)(2.22,-1.57) (2.1,-1.33) (2.,-1.07) (1.94,-0.842) (1.89,-0.607)(1.85,-0.295) (1.82,-0.0424) (1.79,0.214) (1.76,0.471) (1.71,0.686)
+              \addplot+[smooth] coordinates {(2.89,-2.61) (2.78,-2.46) (2.65,-2.28) (2.52,-2.09) (2.36,-1.82)(2.22,-1.57) (2.1,-1.33) (2.,-1.07) (1.94,-0.842) (1.89,-0.607)(1.85,-0.295) (1.82,-0.0424) (1.79,0.214) (1.76,0.471) (1.71,0.686)
               (1.65,0.899) (1.61,1.) (1.51,1.18) (1.39,1.32) (1.29,1.42) (1.18,1.5)(1.07,1.55) (0.96,1.6) (0.794,1.65) (0.643,1.68) (0.416,1.7)(0.00338,1.71) (-0.214,1.71) (-0.423,1.72) (-0.643,1.74) (-0.947,1.8)(-1.28,1.93) (-1.49,2.04) (-1.67,2.14) (-1.83,2.24) (-2.07,2.43)(-2.31,2.61) (-2.52,2.79) (-2.68,2.92)};
 
-              \addplot [{\colortwo},smooth,thick,domain=1.5:2.15] {-9.91*x+18};
+              \addplot [tangentline,domain=1.75:1.9] {-9.91*x+18};
               %\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
               %\filldraw (axis cs:-1,-1) circle (1pt);
               %\filldraw (axis cs:-1,3) circle (1pt);
@@ -209,15 +203,12 @@
               \begin{tikzpicture}
               \begin{axis}[ymin=-10.5,ymax=2.49,xmin=-1.5,xmax=10.5,]
 
-              \addplot [{\colorone},smooth,thick] coordinates {(-0.324,-9.34) (-0.336,-8.66) (-0.351,-7.95) (-0.371,-7.13)
+              \addplot+[smooth] coordinates {(-0.324,-9.34) (-0.336,-8.66) (-0.351,-7.95) (-0.371,-7.13)
               (-0.396,-6.3) (-0.414,-5.68) (-0.451,-4.91) (-0.472,-4.48)(-0.497,-4.02) (-0.525,-3.57) (-0.56,-3.15) (-0.61,-2.63)(-0.664,-2.18) (-0.727,-1.71) (-0.762,-1.29) (-0.668,-0.805)(-0.513,-0.29) (-0.453,0.439) (-0.308,0.71) (0.0816,1.05)(0.452,1.15) (0.893,1.13) (1.33,1.08) (1.79,1.02) (2.24,0.975)(2.82,0.925) (3.4,0.881) (4.11,0.844) (4.91,0.781) (5.77,0.766)(6.76,0.74) (7.59,0.722) (8.26,0.706) (8.93,0.689) (9.69,0.671)
               };
 
-              \addplot [{\colorone},smooth,thick] coordinates {(9.6,-0.677) (9.13,-0.696) (8.66,-0.697) (8.21,-0.707) (7.72,-0.722)(7.3,-0.738) (6.79,-0.754) (5.98,-0.778) (5.1,-0.81) (4.34,-0.858)(3.84,-0.893) (3.4,-0.927) (2.77,-0.99) (2.27,-1.07) (1.82,-1.17)(1.38,-1.34) (0.97,-1.7) (0.779,-2.1) (0.678,-2.5) (0.593,-3.)(0.534,-3.66) (0.483,-4.38) (0.444,-5.04) (0.415,-5.71) (0.393,-6.38)(0.375,-7.05) (0.362,-7.59) (0.343,-8.38) (0.334,-8.9) (0.322,-9.33)(0.317,-9.83) };
-              \addplot [{\colortwo},smooth,thick,domain=-1.4:2.2] {2/3*(x)+1};
-              %\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
-              %\filldraw (axis cs:-1,-1) circle (1pt);
-              %\filldraw (axis cs:-1,3) circle (1pt);
+              \addplot+[firstcurvestyle,smooth] coordinates {(9.6,-0.677) (9.13,-0.696) (8.66,-0.697) (8.21,-0.707) (7.72,-0.722)(7.3,-0.738) (6.79,-0.754) (5.98,-0.778) (5.1,-0.81) (4.34,-0.858)(3.84,-0.893) (3.4,-0.927) (2.77,-0.99) (2.27,-1.07) (1.82,-1.17)(1.38,-1.34) (0.97,-1.7) (0.779,-2.1) (0.678,-2.5) (0.593,-3.)(0.534,-3.66) (0.483,-4.38) (0.444,-5.04) (0.415,-5.71) (0.393,-6.38)(0.375,-7.05) (0.362,-7.59) (0.343,-8.38) (0.334,-8.9) (0.322,-9.33)(0.317,-9.83) };
+              \addplot [tangentline,domain=-1:2] {2/3*(x)+1};
               \end{axis}
 
 
@@ -283,11 +274,9 @@
               \begin{tikzpicture}
               \begin{axis}[ymin=-1.95,ymax=1.95,xmin=-1.95,xmax=1.95,]
 
-              \addplot [{\colorone},smooth,thick] coordinates {(-1.91,-1.57) (-1.82,-1.61) (-1.68,-1.61) (-1.7,-1.49) (-1.74,-1.38)(-1.76,-1.28) (-1.64,-1.26) (-1.54,-1.29) (-1.36,-1.35) (-1.2,-1.42)(-1.09,-1.46) (-0.989,-1.49) (-0.86,-1.5) (-0.714,-1.45)(-0.566,-1.35) (-0.327,-1.18) (-0.15,-1.08)(0.107,-0.947) (0.216,-0.895) (0.332,-0.832)
+              \addplot+[smooth] coordinates {(-1.91,-1.57) (-1.82,-1.61) (-1.68,-1.61) (-1.7,-1.49) (-1.74,-1.38)(-1.76,-1.28) (-1.64,-1.26) (-1.54,-1.29) (-1.36,-1.35) (-1.2,-1.42)(-1.09,-1.46) (-0.989,-1.49) (-0.86,-1.5) (-0.714,-1.45)(-0.566,-1.35) (-0.327,-1.18) (-0.15,-1.08)(0.107,-0.947) (0.216,-0.895) (0.332,-0.832)
               (0.429,-0.755) (0.464,-0.623) (0.429,-0.52) (0.308,-0.335)(0.142,-0.144) (-0.071,0.0714) (-0.239,0.261) (-0.336,0.45)
               (-0.336,0.622) (-0.278,0.757) (-0.17,0.884) (-0.046,0.975)(0.0714,1.03) (0.216,1.07) (0.48,1.09) (0.714,1.07) (0.929,1.05)(1.15,1.07) (1.24,1.13) (1.27,1.25) (1.28,1.37) (1.29,1.49)(1.36,1.58) (1.47,1.57) (1.59,1.52) (1.68,1.48) (1.79,1.43)(1.89,1.39) (1.98,1.36) (1.98,1.6)};
-
-              %\addplot [{\colortwo},smooth,thick,domain=1.5:2.15] {-9.91*x+18};
               \end{axis}
 
 
@@ -317,13 +306,13 @@
               \begin{tikzpicture}
               \begin{axis}[ymin=-1.95,ymax=1.95,xmin=-1.95,xmax=1.95,]
 
-              \addplot [{\colorone},smooth,thick] coordinates {(-1.91,-1.57) (-1.82,-1.61) (-1.68,-1.61) (-1.7,-1.49) (-1.74,-1.38)(-1.76,-1.28) (-1.64,-1.26) (-1.54,-1.29) (-1.36,-1.35) (-1.2,-1.42)(-1.09,-1.46) (-0.989,-1.49) (-0.86,-1.5) (-0.714,-1.45)(-0.566,-1.35) (-0.327,-1.18) (-0.15,-1.08)(0.107,-0.947) (0.216,-0.895) (0.332,-0.832)
+              \addplot+[smooth] coordinates {(-1.91,-1.57) (-1.82,-1.61) (-1.68,-1.61) (-1.7,-1.49) (-1.74,-1.38)(-1.76,-1.28) (-1.64,-1.26) (-1.54,-1.29) (-1.36,-1.35) (-1.2,-1.42)(-1.09,-1.46) (-0.989,-1.49) (-0.86,-1.5) (-0.714,-1.45)(-0.566,-1.35) (-0.327,-1.18) (-0.15,-1.08)(0.107,-0.947) (0.216,-0.895) (0.332,-0.832)
               (0.429,-0.755) (0.464,-0.623) (0.429,-0.52) (0.308,-0.335)(0.142,-0.144) (-0.071,0.0714) (-0.239,0.261) (-0.336,0.45)
               (-0.336,0.622) (-0.278,0.757) (-0.17,0.884) (-0.046,0.975)(0.0714,1.03) (0.216,1.07) (0.48,1.09) (0.714,1.07) (0.929,1.05)(1.15,1.07) (1.24,1.13) (1.27,1.25) (1.28,1.37) (1.29,1.49)(1.36,1.58) (1.47,1.57) (1.59,1.52) (1.68,1.48) (1.79,1.43)(1.89,1.39) (1.98,1.36) (1.98,1.6)};
 
-              \addplot [{\colortwo},smooth,thick,domain=-.75:.75] {-x};
-              \addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x+1};
-              \addplot [{\colortwo},smooth,thick,domain=-.75:.75] {-x};
+              \addplot [tangentline,domain=-.5:.5] {-x};
+              \addplot [tangentline,domain=-.5:.5] {0.5*x+1};
+              \addplot [tangentline,domain=-.5:.5] {0.5*(x-0)-1};
               \end{axis}
 
 
@@ -361,6 +350,7 @@
 
         <p>A graph of the circle and its tangent line at <m>(1/2,\sqrt{3}/2)</m> is given in <xref ref="fig_implicit7">Figure</xref>, along with a thin dashed line from the origin that is perpendicular to the tangent line. (It turns out that all normal lines to a circle pass through the center of the circle.)</p>
 
+        <todo>Fix the circle so the style isn't manually coded. Addplot+ doesn't work because of the arrows that are added to the end.</todo>
         <figure xml:id="fig_implicit7" >
           <caption>The unit circle with its tangent line at <m>(1/2,\sqrt{3}/2)</m>.</caption>
           <!-- START figures/fig_implicit7.tex -->
@@ -370,13 +360,12 @@
               <![CDATA[
               \begin{tikzpicture}
               \begin{axis}[height=\marginparwidth+25pt,ymin=-1.2,ymax=1.2,xmin=-1.2,xmax=1.2,]
-
-              \addplot [{\colorone},smooth,thick,domain=0:360] ({cos(x)},{sin(x)});% {};
-              \addplot [{\colortwo},smooth,thick,domain=.1:.9] {-.577*(x-.5)+.866};
-              \filldraw [black] (axis cs:.5,.866) node [shift={(10pt,10pt)}] {\scriptsize $(1/2,\sqrt{3}/2)$} circle (1pt);
-              \draw [thin,{\colortwo},dashed] (axis cs:0,0) -- (axis cs:.5,.866);
-              %\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x+1};
-              %\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x-1};
+              \addplot[smooth,color=blue,thick,domain=0:6.29,samples=200] ({cos(deg(x))},{sin(deg(x))});% {};
+              \addplot [tangentline,domain=.1:.9] {-.577*(x-.5)+.866};
+               \draw (axis cs:.5,.866) node [shift={(10pt,10pt)}] {\scriptsize $(1/2,\sqrt{3}/2)$};
+              \addplot [soliddot] coordinates {(0.5,.866)};
+              \addplot[normallineseg,domain=0:0.5]{1.732*x};
+              %\draw [thin,{\colortwo},dashed] (axis cs:0,0) -- (axis cs:.5,.866);
               \end{axis}
 
 
@@ -439,7 +428,8 @@
       </statement>
       <solution>
         <p>This is a particularly interesting curve called an <em>astroid</em>. It is the shape traced out by a point on the edge of a circle that is rolling around inside of a larger circle, as shown in <xref ref="fig_implicit9">Figure</xref>.</p>
-
+        <todo>I have a geogebra applet I already made for this: https://ggbm.at/AP9r592M. It may need to be refined to hide some of the underlying mechanics. </todo>
+        <todo>Same issued with the circles/closed curves and arrowheads.</todo>
         <figure xml:id="fig_implicit9" >
           <caption>An astroid, traced out by a point on the smaller circle as it rolls inside the larger circle.</caption>
           <!-- START figures/fig_implicit9.tex -->
@@ -450,16 +440,13 @@
               \begin{tikzpicture}
               \begin{axis}[height=\marginparwidth+25pt,ymin=-24,ymax=24,xmin=-24,xmax=24,]
 
-              \addplot [{\colorone},smooth,thick,domain=0:360,samples=52] ({22.63*cos(x)^3},{22.63*sin(x)^3});% {};
-              %\addplot [{\colortwo},smooth,thick,domain=.1:.9] {-.577*(x-.5)+.866};
+              \addplot[color=blue, thick,domain=0:360,samples=52] ({22.63*cos(x)^3},{22.63*sin(x)^3});% {};
+              %\addplot+[domain=.1:.9] {-.577*(x-.5)+.866};
               %\filldraw [black] (axis cs:8,8) node [shift={(10pt,8pt)}] {\scriptsize $(8,8)$} circle (1pt);
 
               \addplot [black,smooth,thick,domain=0:360] ({22.63*cos(x)},{22.63*sin(x)});% {};
-              \addplot [{\colortwo},smooth,thick,domain=0:360] ({5.66*cos(x)-12},{5.66*sin(x)-12});% {};
-              \filldraw [black] (axis cs:-8,-8) circle (1pt);
-              %\draw [thin,{\colortwo},dashed] (axis cs:0,0) -- (axis cs:.5,.866);
-              %\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x+1};
-              %\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x-1};
+              \addplot[color=red, thick,domain=0:360,samples=52] ({5.66*cos(x)-12},{5.66*sin(x)-12});% {};
+              \addplot [soliddot] coordinates {(-8,-8)};
               \end{axis}
 
 
@@ -481,7 +468,7 @@
         </p>
 
         <p>Plugging in <m>x=8</m> and <m>y=8</m>, we get a slope of <m>-1</m>. The astroid, with its tangent line at <m>(8,8)</m>, is shown in <xref ref="fig_implicit8">Figure</xref>.</p>
-
+        <todo>Same issue with closed curve and arrowheads.</todo>
         <figure xml:id="fig_implicit8" >
           <caption>An astroid with a tangent line.</caption>
           <!-- START figures/fig_implicit8.tex -->
@@ -492,12 +479,10 @@
               \begin{tikzpicture}
               \begin{axis}[height=\marginparwidth+25pt,ymin=-24,ymax=24,xmin=-24,xmax=24,]
 
-              \addplot [{\colorone},smooth,thick,domain=0:360,samples=52] ({22.63*cos(x)^3},{22.63*sin(x)^3});% {};
-              \addplot [{\colortwo},smooth,thick,domain=1:15] {-1*(x-8)+8};
-              \filldraw [black] (axis cs:8,8) node [shift={(10pt,8pt)}] {\scriptsize $(8,8)$} circle (1pt);
-              %\draw [thin,{\colortwo},dashed] (axis cs:0,0) -- (axis cs:.5,.866);
-              %\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x+1};
-              %\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x-1};
+              \addplot[color=blue,thick,domain=0:360,samples=52] ({22.63*cos(x)^3},{22.63*sin(x)^3});% {};
+              \addplot [tangentline,domain=1:15] {-1*(x-8)+8};
+              \draw (axis cs:8,8) node [shift={(10pt,8pt)}] {\scriptsize $(8,8)$};
+              \addplot [soliddot] coordinates {(8,8)};
               \end{axis}
 
 
@@ -524,13 +509,13 @@
       <solution>
         <p>We found that <m>y' = \frac{dy}{dx} = -x/y</m> in <xref ref="ex_implicit7">Example</xref>. To find <m>y''</m>, we apply implicit differentiation to <m>y'</m>.
           <md>
-            <mrow>y'' \amp = \frac{d}{dx}\big(y'\big)</mrow>
-            <mrow>\amp = \frac{d}{dx}\left(-\frac xy\right)\qquad \text{ (Now use the Quotient Rule.) }</mrow>
+            <mrow>y'' \amp = \frac{d}{dx}\big(y'\big)\amp</mrow>
+            <mrow>\amp = \frac{d}{dx}\left(-\frac xy\right)\ \amp \text{ (Now use the Quotient Rule.) }</mrow>
             <mrow>\amp = -\frac{y(1) - x(y')}{y^2}</mrow>
             <intertext>replace <m>y'</m> with <m>-x/y</m>:</intertext>
-            <mrow>\amp = -\frac{y-x(-x/y)}{y^2}</mrow>
-            <mrow>\amp = -\frac{y+x^2/y}{y^2}.</mrow>
-          </md>
+            <mrow>\amp = -\frac{y-x(-x/y)}{y^2}\amp</mrow>
+            <mrow>\amp = -\frac{y+x^2/y}{y^2}\amp</mrow>
+          </md>.
         </p>
 
         <p>While this is not a particularly simple expression, it is usable. We can see that <m>y''>0</m> when <m>y\lt 0</m> and <m>y''\lt 0</m> when <m>y>0</m>. In <xref ref="sec_concavity">Section</xref>, we will see how this relates to the shape of the graph.</p>
@@ -564,7 +549,7 @@
 			xmin=-.1,xmax=2.2%
           ]
 
-          \addplot [{\colorone},smooth,thick] coordinates {(0,1)(0.04,0.8792)(0.08,0.817)(0.12,0.7754)(0.16,0.7459)(0.2,0.7248)(0.24,
+          \addplot+ [smooth] coordinates {(0,1)(0.04,0.8792)(0.08,0.817)(0.12,0.7754)(0.16,0.7459)(0.2,0.7248)(0.24,
           0.71)(0.28,0.7002)(0.32,0.6945)(0.36,0.6923)(0.4,0.6931)(0.44,0.6968)(
           0.48,0.7031)(0.52,0.7117)(0.56,0.7227)(0.6,0.736)(0.64,0.7515)(0.68,0.
           7693)(0.72,0.7894)(0.76,0.8117)(0.8,0.8365)(0.84,0.8638)(0.88,0.8936)(
@@ -574,7 +559,7 @@
           1.64,2.251)(1.68,2.391)(1.72,2.542)(1.76,2.705)(1.8,2.881)(1.84,3.071)
           (1.88,3.277)(1.92,3.499)(1.96,3.74)(2.,4.)};
 
-          \draw [fill=white,draw=black,thick] (axis cs:0,1) circle (1.5pt);
+          \addplot[hollowdot] coordinates{(0,1)};
 
           \end{axis}
 
@@ -599,15 +584,15 @@
       <solution>
         <p>As suggested above, we start by taking the natural log of both sides then applying implicit differentiation.
           <md>
-            <mrow>y \amp = x^x</mrow>
-            <mrow>\ln(y) \amp = $\ln(x^x)$ \text{ (apply logarithm rule) }</mrow>
-            <mrow>\ln(y) \amp = $x\ln(x) $  \text{ (now use implicit differentiation) }</mrow>
-            <mrow>\frac{d}{dx}\Big(\ln(y)\Big) \amp = \frac{d}{dx}\Big(x\ln(x) \Big)</mrow>
-            <mrow>\frac{y'}{y} \amp = \ln(x) + x\cdot\frac1x</mrow>
-            <mrow>\frac{y'}{y} \amp = \ln(x) + 1</mrow>
-            <mrow>y' \amp = $y\big(\ln(x) +1\big)$ \text{ (substitute \(y=x^x\)) }</mrow>
-            <mrow>y' \amp = x^x\big(\ln(x) +1\big).</mrow>
-          </md>
+            <mrow>y \amp = x^x\amp</mrow>
+            <mrow>\ln(y) \amp = \ln(x^x)\amp \text{ (apply logarithm rule) }</mrow>
+            <mrow>\ln(y) \amp = x\ln(x)   \amp \text{ (now use implicit differentiation) }</mrow>
+            <mrow>\frac{d}{dx}\Big(\ln(y)\Big) \amp = \frac{d}{dx}\Big(x\ln(x) \Big)\amp</mrow>
+            <mrow>\frac{y'}{y} \amp = \ln(x) + x\cdot\frac1x\amp</mrow>
+            <mrow>\frac{y'}{y} \amp = \ln(x) + 1\amp </mrow>
+            <mrow>y' \amp = y\big(\ln(x) +1\big) \amp \text{ (substitute \(y=x^x\)) }</mrow>
+            <mrow>y' \amp = x^x\big(\ln(x) +1\big)\amp</mrow>
+          </md>.
         </p>
 
         <p>To <q>test</q> our answer, let's use it to find the equation of the tangent line at <m>x=1.5</m>. The point on the graph our tangent line must pass through is <m>(1.5, 1.5^{1.5}) \approx (1.5, 1.837)</m>. Using the equation for <m>y'</m>, we find the slope as
@@ -626,36 +611,35 @@
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}%[x={(1,0)},z={(0,1)},y={(.5,.87)},xscale=.4,yscale=.3]
-              \begin{axis}[%
-              %axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-              %			xtick=\empty,% 
-              %			extra x ticks={3.14,1.57},
-              %			extra x tick labels={$\pi$,$\pi/2$},
-              %			ytick={-1,1,2,3},
-			%%extra y ticks={-5,-3,...,7},%
-              %			minor x tick num=4,
-			ymin=-.1,ymax=4.2,%
-			xmin=-.1,xmax=2.2%
-              ]
+                \begin{axis}[%
+                %axis on top,%
+            %x=.37\marginparwidth,
+            %y=.37\marginparwidth,
+                %     xtick=\empty,% 
+                %     extra x ticks={3.14,1.57},
+                %     extra x tick labels={$\pi$,$\pi/2$},
+                %     ytick={-1,1,2,3},
+            %%extra y ticks={-5,-3,...,7},%
+                %     minor x tick num=4,
+            ymin=-.1,ymax=4.2,%
+            xmin=-.1,xmax=2.2%
+                ]
 
-              \addplot [{\colorone},smooth,thick] coordinates {(0,1)(0.04,0.8792)(0.08,0.817)(0.12,0.7754)(0.16,0.7459)(0.2,0.7248)(0.24,
-              0.71)(0.28,0.7002)(0.32,0.6945)(0.36,0.6923)(0.4,0.6931)(0.44,0.6968)(
-              0.48,0.7031)(0.52,0.7117)(0.56,0.7227)(0.6,0.736)(0.64,0.7515)(0.68,0.
-              7693)(0.72,0.7894)(0.76,0.8117)(0.8,0.8365)(0.84,0.8638)(0.88,0.8936)(
-              0.92,0.9262)(0.96,0.9616)(1.,1.)(1.04,1.042)(1.08,1.087)(1.12,1.135)(
-              1.16,1.188)(1.2,1.245)(1.24,1.306)(1.28,1.372)(1.32,1.443)(1.36,1.519)
-              (1.4,1.602)(1.44,1.691)(1.48,1.786)(1.52,1.89)(1.56,2.001)(1.6,2.121)(
-              1.64,2.251)(1.68,2.391)(1.72,2.542)(1.76,2.705)(1.8,2.881)(1.84,3.071)
-              (1.88,3.277)(1.92,3.499)(1.96,3.74)(2.,4.)};
+                \addplot+ [smooth] coordinates {(0,1)(0.04,0.8792)(0.08,0.817)(0.12,0.7754)(0.16,0.7459)(0.2,0.7248)(0.24,
+                0.71)(0.28,0.7002)(0.32,0.6945)(0.36,0.6923)(0.4,0.6931)(0.44,0.6968)(
+                0.48,0.7031)(0.52,0.7117)(0.56,0.7227)(0.6,0.736)(0.64,0.7515)(0.68,0.
+                7693)(0.72,0.7894)(0.76,0.8117)(0.8,0.8365)(0.84,0.8638)(0.88,0.8936)(
+                0.92,0.9262)(0.96,0.9616)(1.,1.)(1.04,1.042)(1.08,1.087)(1.12,1.135)(
+                1.16,1.188)(1.2,1.245)(1.24,1.306)(1.28,1.372)(1.32,1.443)(1.36,1.519)
+                (1.4,1.602)(1.44,1.691)(1.48,1.786)(1.52,1.89)(1.56,2.001)(1.6,2.121)(
+                1.64,2.251)(1.68,2.391)(1.72,2.542)(1.76,2.705)(1.8,2.881)(1.84,3.071)
+                (1.88,3.277)(1.92,3.499)(1.96,3.74)(2.,4.)};
 
-              \addplot [{\colortwo},thick,domain=.9:2] {2.582*(x-1.5)+1.837};
+                \addplot[hollowdot] coordinates{(0,1)};
+                \addplot [tangentline, domain=0:1]{1.6833*(x−1.5)+1.837};
+                \end{axis}
 
-              \draw [fill=white,draw=black,thick] (axis cs:0,1) circle (1.5pt);
-
-              \end{axis}
-
+             
 
 
               \end{tikzpicture}
