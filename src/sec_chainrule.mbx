@@ -6,7 +6,31 @@
     <p>We have covered almost all of the derivative rules that deal with combinations of two (or more) functions. The operations of addition, subtraction, multiplication (including by a constant) and division led to the Sum and Difference rules, the Constant Multiple Rule, the Power Rule, the Product Rule and the Quotient Rule.
       To complete the list of differentiation rules, we look at the last way two (or more) functions can be combined: the process of composition (i.e. one function <q>inside</q> another).</p>
 
-    <p>One example of a composition of functions is <m>f(x) = \cos(x^2)</m>. We currently do not know how to compute this derivative. If forced to guess, one would likely guess <m>\fp(x) = -\sin(2x)</m>, where we recognize <m>-\sin(x)</m> as the derivative of <m>\cos(x)</m> and <m>2x</m> as the derivative of <m>x^2</m>. However, this is not the case; <m>\fp(x)\neq -\sin(2x)</m>. In <xref ref="ex_chain7">Example</xref> we'll see the correct answer, which employs the new rule this section introduces, the <em>Chain Rule</em>.</p>
+    <p>One example of a composition of functions is <m>f(x) = \cos(x^2)</m>. We currently do not know how to compute this derivative. If forced to guess, one would likely guess <m>\fp(x) = -\sin(2x)</m>, where we recognize <m>-\sin(x)</m> as the derivative of <m>\cos(x)</m> and <m>2x</m> as the derivative of <m>x^2</m>. However, this is not the case; <m>\fp(x)\neq -\sin(2x)</m>. We can see this clearly in <xref ref="fig_chain" >Figure </xref> that our guess is incorrect as the places that <m>f(x)</m> has zero slope, our proposed derivative, <m>g(x)=-\sin(2x)</m> does not have <m>x</m>-intercepts.</p>
+      
+      <figure xml:id="fig_chain" >
+          <caption>A graph of <m>y=\cos(x^2)</m> along with <m>y=-\sin(2x)</m>.</caption>
+          <image xml:id="img_chain" >
+            <description></description>
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}
+              \begin{axis}[ymin=-1.3,ymax=1.3,
+                           xmin=-.2,xmax=3.5,
+                           ]
+              \addplot+[domain=-0.1:3.14,samples=200] {cos(deg(x^2))};
+              \addplot+[domain=-0.1:3.14] {-1*sin(deg(2*x))};
+              \draw (axis cs:0.75,1) node {\scriptsize $f(x)$};
+              \draw (axis cs:0.75,-1.1) node {\scriptsize $g(x)$};
+              \end{axis}
+              \end{tikzpicture}
+              ]]>
+            </latex-image-code>
+          </image>
+          
+        </figure>
+    
+    <p>In <xref ref="ex_chain7">Example</xref> we'll see the correct answer, which employs the new rule this section introduces, the <em>Chain Rule</em>.</p>
 
     <p>Before we define this new rule, recall the notation for composition of functions. We write <m>(f \circ g)(x)</m> or <m>f(g(x))</m>, read as <q><m>f</m> of <m>g</m> of <m>x</m>,</q> to denote composing <m>f</m> with <m>g</m>. In shorthand, we simply write
       <m>f \circ g</m> or <m>f(g)</m> and read it as <q><m>f</m> of <m>g</m>.</q> Before giving the corresponding differentiation rule, we note that the rule extends to multiple compositions like <m>f(g(h(x)))</m> or <m>f(g(h(j(x))))</m>, etc.</p>
@@ -28,7 +52,7 @@
 
         <p>An interesting fact is that these can be rewritten as
           <me>
-            F_1'(x) = -2(1-x),  F_2'(x) = -3(1-x)^2\ \textrm{ and }  \ 
+            F_1'(x) = -2(1-x), \; F_2'(x) = -3(1-x)^2\ \textrm{ and }  \ 
             F_3'(x) = -4(1-x)^3.
           </me>
         </p>
@@ -37,8 +61,8 @@
           <md>
             <mrow>F_1(x) = f_1(g(x)),\amp  \text{ where }  f_1(x) = x^2,</mrow>
             <mrow>F_2(x) = f_2(g(x)),\amp  \text{ where }  f_2(x) = x^3,</mrow>
-            <mrow>F_3(x) = f_3(g(x)),\amp  \text{ where }  f_3(x) = x^4.</mrow>
-          </md>
+            <mrow>F_3(x) = f_3(g(x)),\amp  \text{ where }  f_3(x) = x^4</mrow>
+          </md>.
         </p>
 
         <p>We'll come back to this example after giving the formal statements of the Chain Rule; for now, we are just illustrating a pattern.</p>
@@ -50,13 +74,12 @@
       <statement>
         <p>Let <m>y = f(u)</m> be a differentiable function of <m>u</m> and let <m>u = g(x)</m> be a differentiable function of <m>x</m>.<index><main>derivative</main><sub>Chain Rule</sub></index><index><main>Chain Rule</main></index> Then <m>y=f(g(x))</m> is a differentiable function of <m>x</m>, and
           <me>
-            y' = \fp(g(x))\cdot g'(x).
-          </me>
+            y' = \fp(g(x))\cdot g'(x)
+          </me>.
         </p>
       </statement>
     </theorem>
-
-    <p>To help understand the Chain Rule, we return to <xref ref="ex_chain1">Example</xref>.</p>
+    <p>Here is the chain rule in words: "The derivative of the outside function, evaluated at the inside function, multiplied by the derivative of the inside function. To help understand the Chain Rule, we return to <xref ref="ex_chain1">Example</xref>.</p>
 
     <example xml:id="ex_chain2">
       <title>Using the Chain Rule</title>
@@ -70,32 +93,39 @@
 
         <p>We found that
           <me>
-            y=(1-x)^2 = f(g(x)), \text{ where }  f(x) = x^2\ \text{ and } \ g(x) = 1-x.
-          </me>
+            y=(1-x)^2 = f(g(x)), \text{ where }  f(x) = x^2\ \text{ and } \ g(x) = 1-x
+          </me>.
         </p>
 
         <p>To find <m>y'</m>, we apply the Chain Rule. We need <m>\fp(x)=2x</m> and <m>g'(x)=-1</m>.</p>
 
         <p>Part of the Chain Rule uses <m>\fp(g(x))</m>. This means substitute <m>g(x)</m> for <m>x</m> in the equation for <m>\fp(x)</m>. That is, <m>\fp(x) = 2(1-x)</m>. Finishing out the Chain Rule we have
-          <me>
-            y' = \fp(g(x))\cdot g'(x) = 2(1-x)\cdot (-1) = -2(1-x)= 2x-2.
-          </me>
+          <md>
+            <mrow>y' \amp = \fp(g(x))\cdot g'(x)</mrow> 
+            <mrow>\amp = 2(1-x)\cdot (-1)</mrow> 
+            <mrow>\amp = -2(1-x)</mrow>
+            <mrow>\amp = 2x-2</mrow>
+          </md>.
         </p>
 
         <p><m>F_2(x) = (1-x)^3</m>:</p>
 
         <p>Let <m>y = (1-x)^3 = f(g(x))</m>, where <m>f(x) = x^3</m> and <m>g(x) = (1-x)</m>. We have <m>\fp(x) = 3x^2</m>, so <m>\fp(g(x)) = 3(1-x)^2</m>. The Chain Rule then states
-          <me>
-            y' = \fp(g(x))\cdot g'(x) = 3(1-x)^2\cdot(-1) = -3(1-x)^2.
-          </me>
+          <md>
+            <mrow>y' \amp = \fp(g(x))\cdot g'(x)</mrow> 
+            <mrow>\amp = 3(1-x)\cdot (-1)</mrow> 
+            <mrow>\amp = -3(1-x)^2</mrow>
+          </md>.
         </p>
 
         <p><m>F_3(x) = (1-x)^4</m>:</p>
 
         <p>Finally, when <m>y = (1-x)^4</m>, we have <m>f(x)= x^4</m> and <m>g(x) = (1-x)</m>. Thus <m>\fp(x) = 4x^3</m> and <m>\fp(g(x)) = 4(1-x)^3</m>. Thus
-          <me>
-            y' = \fp(g(x))\cdot g'(x) = 4(1-x)^3\cdot (-1) = -4(1-x)^3.
-          </me>
+          <md>
+            <mrow>y' \amp = \fp(g(x))\cdot g'(x)</mrow> 
+            <mrow>\amp = 4(1-x)^3\cdot (-1)</mrow> 
+            <mrow>\amp = -4(1-x)^3</mrow>.
+          </md>
         </p>
       </solution>
     </example>
@@ -119,7 +149,7 @@
       </me>
     </p>
 
-    <p>Treat the derivative<ndash />taking process step<ndash />by<ndash />step. In the example just given, first multiply by 20, then rewrite the inside of the parentheses, raising it all to the 19<m>^{\text{ th } }</m> power. Then think about the derivative of the expression inside the parentheses, and multiply by that.</p>
+    <p>Treat the derivative<ndash />taking process step<ndash />by<ndash />step. In the example just given, first multiply by 20, then rewrite the inside of the parentheses, raising it all to the <m>19^{\text{ th } }</m> power. Then think about the derivative of the expression inside the parentheses, and multiply by that.</p>
 
     <p>We now consider more examples that employ the Chain Rule.</p>
 
@@ -139,9 +169,12 @@
       <solution>
         <ol>
           <li><p>Consider <m>y = \sin(2x)</m>. Recognize that this is a composition of functions, where <m>f(x) = \sin(x)</m> and <m>g(x) = 2x</m>. Thus
-              <me>
-                y' = \fp(g(x))\cdot g'(x) = \cos(2x)\cdot 2 = 2\cos(2x) .
-              </me>
+              <md>
+                <mrow>y' \amp = \fp(g(x))\cdot g'(x) </mrow>
+                <mrow> \amp = \cos(2x)\cdot \lbo{x}{2x} </mrow>
+                <mrow> \amp = \cos(2x)\cdot 2 </mrow>
+                <mrow>\amp = 2\cos(2x) </mrow>
+              </md>.
             </p></li>
 
           <li><p>Recognize that <m>y = \ln(4x^3-2x^2)</m> is the composition of <m>f(x) = \ln(x)</m> and <m>g(x) = 4x^3-2x^2</m>. Also, recall that
@@ -149,15 +182,21 @@
                 \frac{d}{dx}\Big(\ln(x) \Big) = \frac{1}{x}.
               </me>
               This leads us to:
-              <me>
-                y' = \frac{1}{4x^3-2x^2} \cdot (12x^2-4x) = \frac{12x^2-4x}{4x^3-2x^2}= \frac{4x(3x-1)}{2x(2x^2-x)} = \frac{2(3x-1)}{2x^2-x}.
-              </me>
+              <md>
+                <mrow>y' \amp = \frac{1}{4x^3-2x^2} \cdot \lbo{x}{4x^3-2x^2}</mrow> 
+                <mrow>\amp = \frac{1}{4x^3-2x^2} \cdot (12x^2-4x)</mrow>
+               <mrow> \amp  = \frac{12x^2-4x}{4x^3-2x^2}</mrow>
+               <mrow> \amp = \frac{4x(3x-1)}{2x(2x^2-x)}</mrow> 
+               <mrow> \amp = \frac{2(3x-1)}{2x^2-x}</mrow>
+              </md>.
             </p></li>
 
           <li><p>Recognize  that <m>y = e^{-x^2}</m> is the composition of <m>f(x) = e^x</m> and <m>g(x) = -x^2</m>. Remembering that <m>\fp(x) = e^x</m>, we have
-              <me>
-                y' = e^{-x^2}\cdot (-2x) = (-2x)e^{-x^2}.
-              </me>
+              <md>
+                <mrow>y' \amp = e^{-x^2}\cdot \lbo{x}{-x^2} </mrow>
+                <mrow>\amp = e^{-x^2}\cdot (-2x)</mrow>
+                <mrow>\amp = -2xe^{-x^2}</mrow>
+              </md>.
             </p></li>
         </ol>
       </solution>
@@ -188,20 +227,10 @@
               <![CDATA[
               \begin{tikzpicture}
               \begin{axis}[height=\marginparwidth+25pt,ymin=-1.1,ymax=1.1,xmin=-3.1,xmax=3.1,]
-
-              \addplot [{\colorone},smooth,thick,domain=-3.14:3.14,samples=40] ({x},{cos(deg(x^2))});% {};
-              \addplot [{\colortwo},smooth,thick,domain=.1:1.9] {-1.68*(x-1)+0.54};
-              %\filldraw [black] (axis cs:8,8) node [shift={(10pt,8pt)}] {\scriptsize $(8,8)$} circle (1pt);
-              %
-              %\addplot [black,smooth,thick,domain=0:360] ({22.63*cos(x)},{22.63*sin(x)});% {};
-              %\addplot [{\colortwo},smooth,thick,domain=0:360] ({5.66*cos(x)-12},{5.66*sin(x)-12});% {};
-              %\filldraw [black] (axis cs:-8,-8) circle (1pt);
-              %\draw [thin,{\colortwo},dashed] (axis cs:0,0) -- (axis cs:.5,.866);
-              %\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x+1};
-              %\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x-1};
+              \addplot+[domain=-3:3,samples=200] ({x},{cos(deg(x^2))});% {};
+              \addplot [tangentline,domain=.9:1.3] {-1.68*(x-1)+0.54};
+              \addplot [soliddot] coordinates{(1,0.54)};
               \end{axis}
-
-
 
               \end{tikzpicture}
               ]]>
@@ -214,7 +243,7 @@
 
     <p>The Chain Rule is used often in taking derivatives. Because of this, one can become familiar with the basic process and learn patterns that facilitate finding derivatives quickly. For instance,
       <me>
-        \frac{d}{dx}\Big(\ln(\text{ anything } )\Big) = \frac{1}{\text{ anything } }\cdot (\text{ anything } )' = \frac{(\text{ anything } )'}{\text{ anything } }.
+        \frac{d}{dx}\Big(\ln(\text{ anything } )\Big) = \frac{1}{\text{ anything } }\cdot \lbo{x}{\text{ anything }}  = \frac{\lbo{x}{\text{ anything }}}{\text{ anything } }.
       </me>
     </p>
 
@@ -228,22 +257,22 @@
 
     <p>This pattern recognition process can be applied to lots of functions. In general, instead of writing <q>anything</q>, we use <m>u</m> as a generic function of <m>x</m>. We then say
       <me>
-        \frac{d}{dx}\Big(\ln(u) \Big) = \frac{u'}{u}.
+        \frac{d}{dx}\Big(\ln(u) \Big) = \frac{\lbo{x}{u}}{u}.
       </me>
     </p>
 
     <p>The following is a short list of how the Chain Rule can be quickly applied to familiar functions.</p>
 
     <ol cols="2" >
-      <li><p><m>\ds\frac{d}{dx}\Big(u^n\Big) = n\cdot u^{n-1}\cdot u'</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(u^n\Big) = n\cdot u^{n-1}\cdot \lbo{x}{u}</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(e^u\Big) = u'\cdot e^u</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(e^u\Big) =  e^u \cdot \lbo{x}{u}</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(\sin(u) \Big) = u'\cdot \cos(u)</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(\sin(u) \Big) = \cos(u) \cdot \lbo{x}{u}</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(\cos(u) \Big) = -u'\cdot \sin(u)</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(\cos(u) \Big) = -\sin(u)\cdot \lbo{x}{u}</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(\tan(u) \Big) = u'\cdot \sec^2(u)</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(\tan(u) \Big) =  \sec^2(u) \cdot \lbo{x}{u}</m>.</p></li>
     </ol>
 
     <p>Of course, the Chain Rule can be applied in conjunction with any of the other rules we have already learned. We practice this next.</p>
@@ -253,21 +282,30 @@
       <statement>
         <p>Find the derivatives of the following functions.</p>
 
-        <p>1. <m>f(x) = x^5 \sin(2x^3)</m> 2. <m>\ds f(x) = \frac{5x^3}{e^{-x^2}}</m>.</p>
+        <ol cols="2">
+          <li><p><m>f(x) = x^5 \sin(2x^3)</m></p></li>  
+          <li><p><m>\ds f(x) = \frac{5x^3}{e^{-x^2}}</m>.</p></li>
+        </ol>
       </statement>
       <solution>
         <ol>
           <li><p>We must use the Product and Chain Rules. Do not think that you must be able to <q>see</q> the whole answer immediately; rather, just proceed step<ndash />by<ndash />step.
-              <me>
-                \fp(x) = x^5\big(6x^2\cos(2x^3) \big) + 5x^4\big(\sin(2x^3) \big)= 6x^7\cos(2x^3) +5x^4\sin(2x^3) .
-              </me>
+              <md>
+                <mrow>\fp(x) \amp = x^5 \cdot \lbo{x}{\sin\left(2x^3\right)} + \sin\left(2x^3\right)\cdot \lbo{x}{x^5}</mrow>
+                <mrow>\amp = x^5\big(\cos\left(2x^3\right)\cdot \lbo{x}{2x^3} \big) + 5x^4\big(\sin\left(2x^3\right) \big)</mrow>
+                <mrow>\amp = x^5\big(6x^2\cos\left(2x^3\right) \big) + 5x^4\big(\sin\left(2x^3\right) \big)</mrow>
+                <mrow> \amp = 6x^7\cos\left(2x^3\right) +5x^4\sin\left(2x^3\right)</mrow> 
+              </md>.
             </p></li>
 
           <li><p>We must employ the Quotient Rule along with the Chain Rule. Again, proceed step<ndash />by<ndash />step.
               <md>
-                <mrow>\fp(x) = \frac{e^{-x^2}\big(15x^2\big) - 5x^3\big((-2x)e^{-x^2}\big)}{\big(e^{-x^2}\big)^2} \amp =\frac{e^{-x^2}\big(10x^4+15x^2\big)}{e^{-2x^2}}</mrow>
-                <mrow>\amp = e^{x^2}\big(10x^4+15x^2\big).</mrow>
-              </md>
+                <mrow>\fp(x) \amp= \frac{e^{-x^2}\cdot \lbo{x}{5x^3} - 5x^3\cdot \lbo{x}{e^{-x^2}}}{\big(e^{-x^2}\big)^2} </mrow>
+                <mrow>\amp= \frac{e^{-x^2}\cdot 15x^2 - 5x^3\cdot e^{-x^2}\cdot \lbo{x}{-x^2}}{\big(e^{-x^2}\big)^2} </mrow>
+                <mrow>\amp= \frac{e^{-x^2}\big(15x^2\big) - 5x^3\big((-2x)e^{-x^2}\big)}{\big(e^{-x^2}\big)^2} </mrow>
+                <mrow>\amp =\frac{e^{-x^2}\big(10x^4+15x^2\big)}{e^{-2x^2}}</mrow>
+                <mrow>\amp = e^{x^2}\big(10x^4+15x^2\big)</mrow>
+              </md>.
             </p></li>
         </ol>
       </solution>
@@ -292,9 +330,10 @@
         </p>
 
         <p>We now find <m>g'(x)</m>. We again need the Chain Rule;
-          <me>
-            g'(x) = \sec^2(6x^3-7x)\cdot(18x^2-7).
-          </me>
+          <md>
+           <mrow> g'(x) \amp = \sec^2(6x^3-7x)\cdot \lbo{x}{6x^3-7x}.</mrow>
+           <mrow> \amp = \sec^2(6x^3-7x)\cdot(18x^2-7).</mrow>
+          </md>
         </p>
 
         <p>Combine this with what we found above to give
@@ -304,7 +343,7 @@
           </md>
         </p>
 
-        <p>This function is frankly a ridiculous function, possessing no real practical value. It is very difficult to graph, as the tangent function has many vertical asymptotes and <m>6x^3-7x</m> grows so very fast. The important thing to learn from this is that the derivative can be found. In fact, it is not <q>hard;</q> one must take several simple steps and be careful to keep track of how to apply each of these steps.</p>
+        <p>This function is frankly a ridiculous function, possessing no real practical value. It is very difficult to graph, as the tangent function has many vertical asymptotes and <m>6x^3-7x</m> grows so very fast. The important thing to learn from this is that the derivative can be found. In fact, it is not <q>hard</q>; one must take several simple steps and be careful to keep track of how to apply each of these steps.</p>
       </solution>
     </example>
 
@@ -318,12 +357,14 @@
       <solution>
         <p>This function likely has no practical use outside of demonstrating derivative skills. The answer is given below without simplification. It employs the Quotient Rule, the Product Rule, and the Chain Rule three times.</p>
 
-        <p><m>\fp(x) =</m>
-          <me>
-            \frac{\left(\begin{array}{l}\ln(x^2+5x^4)\cdot\Big[\big(x\cdot(-\sin(x^{-2}))\cdot(-2x^{-3})+1\cdot \cos(x^{-2})\big)-2\sin(e^{4x})\cdot\cos(e^{4x})\cdot(4e^{4x})\Big]\\
-            \qquad-\Big(x\cos(x^{-2})-\sin^2(e^{4x})\Big)\cdot\frac{2x+20x^3}{x^2+5x^4}
-            \end{array} \right)}{\big(\ln(x^2+5x^4)\big)^2}.
-          </me>
+        <p>
+          <todo>Figure out how to deal with this ridiculously long equation. Tried multiline, it didn't work. </todo>
+          <md>
+            <mrow>\amp \fp(x)</mrow>
+            <mrow>\amp =\frac{\left(\ln(x^2+5x^4)\cdot\Big[\big(x\cdot(-\sin(x^{-2}))\cdot(-2x^{-3})+1\cdot \cos(x^{-2})\big)-2\sin(e^{4x})\cdot\cos(e^{4x})\cdot(4e^{4x})\Big]-\Big(x\cos(x^{-2})-\sin^2(e^{4x})\Big)\cdot\frac{2x+20x^3}{x^2+5x^4}
+            \right)}{\big(\ln(x^2+5x^4)\big)^2}</mrow>
+            <mrow></mrow>
+          </md>.
         </p>
 
         <p>The reader is highly encouraged to look at each term and recognize why it is there. (I.e., the Quotient Rule is used; in the numerator, identify the <q>LOdHI</q> term, etc.) This example demonstrates that derivatives can be computed systematically, no matter how arbitrarily complicated the function is.</p>
@@ -383,12 +424,15 @@
   </introduction>
 
   <subsection>
+    <todo>Re-think this section since I already got rid of the "prime notation" earlier. Or go back to the prime notation and be OK with it being there since this section exists?</todo>
     <title>Alternate Chain Rule Notation</title>
     <p>It is instructive to understand what the Chain Rule <q>looks like</q> using <q><m>\frac{dy}{dx}</m></q> notation instead of <m>y'</m> notation. Suppose that <m>y=f(u)</m> is a function of <m>u</m>, where <m>u=g(x)</m> is a function of <m>x</m>, as stated in <xref ref="thm_chain_rule">Theorem</xref>. Then, through the composition <m>f \circ g</m>, we can think of <m>y</m> as a function of <m>x</m>, as <m>y=f(g(x))</m>. Thus the derivative of <m>y</m> with respect to <m>x</m> makes sense; we can talk about <m>\frac{dy}{dx}</m>. This leads to an interesting progression of notation:<index><main>Chain Rule</main><sub>notation</sub></index><index><main>derivative</main><sub>Chain Rule</sub></index>
+
+    <todo>Is this the right way to do quotes inside of text inside of md?</todo>
       <md>
         <mrow>y' \amp = \fp(g(x))\cdot g'(x)</mrow>
-        <mrow>\frac{dy}{dx} \amp = $\ds y'(u) \cdot u'(x)$ \mbox{ (since \(y=f(u)\) and \(u=g(x)\))}</mrow>
-        <mrow>\frac{dy}{dx} \amp = $\ds \frac{dy}{du} \cdot \frac{du}{dx}$  \mbox{ (using ``fractional'' notation for the derivative)}</mrow>
+        <mrow>\frac{dy}{dx} \amp = \ds y'(u) \cdot \lbo{x}{u} \text{ (since } y=f(u) \text{ and }u=g(x)</mrow>
+        <mrow>\frac{dy}{dx} \amp = \ds \frac{dy}{du} \cdot \frac{du}{dx}  \text{ (using "fractional notation" for the derivative)}</mrow>
       </md>
     </p>
 
@@ -506,7 +550,7 @@
 
     <p>It is difficult to overstate the importance of the Chain Rule. So often the functions that we deal with are compositions of two or more functions, requiring us to use this rule to compute derivatives. It is often used in practice when actual functions are unknown. Rather, through measurement, we can calculate <m>\frac{dy}{du}</m> and <m>\frac{du}{dx}</m>. With our knowledge of the Chain Rule, finding <m>\frac{dy}{dx}</m> is straightforward.</p>
 
-    <p>In the next section, we use the Chain Rule to justify another differentiation technique. There are many curves that we can draw in the plane that fail the <q>vertical line test.</q> For instance, consider <m>x^2+y^2=1</m>, which describes the unit circle. We may still be interested in finding slopes of tangent lines to the circle at various points. The next section shows how we can find <m>\frac{dy}{dx}</m> without first <q>solving for <m>y</m>.</q> While we can in this instance, in many other instances solving for <m>y</m> is impossible. In these situations, <em>implicit differentiation</em> is indispensable.</p>
+    <p>In <xref ref="sec_imp_deriv">Section</xref>, we use the Chain Rule to justify another differentiation technique. There are many curves that we can draw in the plane that fail the <q>vertical line test.</q> For instance, consider <m>x^2+y^2=1</m>, which describes the unit circle. We may still be interested in finding slopes of tangent lines to the circle at various points. <xref ref="sec_imp_deriv">Section</xref> shows how we can find <m>\frac{dy}{dx}</m> without first <q>solving for <m>y</m>.</q> While we can in this instance, in many other instances solving for <m>y</m> is impossible. In these situations, <em>implicit differentiation</em> is indispensable.</p>
   </subsection>
 
   <exercises>
