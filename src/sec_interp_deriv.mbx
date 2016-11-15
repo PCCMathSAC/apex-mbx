@@ -9,92 +9,92 @@
   </introduction>
 
   <subsection>
-    <title>Interpretation of the Derivative <hash />1: Instantaneous Rate of Change</title>
-    <p>The previous section started with an example of using the position of an object (in this case, a falling amusement<ndash />park rider) to find the object's velocity. This type of example is often used when introducing the derivative because we tend to readily recognize that velocity is the <em>instantaneous rate of change of position.</em> In general, if <m>f</m> is a function of <m>x</m>, then <m>\fp(x)</m> measures the instantaneous rate of change of <m>f</m> with respect to <m>x</m>. Put another way, the derivative answers <q>When <m>x</m> changes, at what rate does <m>f</m> change?</q> Thinking back to the amusement<ndash />park ride, we asked <q>When time changed, at what rate did the height change?</q> and found the answer to be <q>By <m>-64</m> feet per second.</q></p>
+    <title>Interpretation of the Derivative as Instantaneous Rate of Change</title>
+    <p><xref ref="sec_derivative">Section</xref> started with an example of using the position of an object (in this case, a falling amusement-park rider) to find the object's velocity. This type of example is often used when introducing the derivative because we tend to readily recognize that velocity is the <em>instantaneous rate of change in position.</em> In general, if <m>f</m> is a function of <m>x</m>, then <m>\fp(x)</m> measures the instantaneous rate of change of <m>f</m> with respect to <m>x</m>. Put another way, the derivative answers <q>When <m>x</m> changes, at what rate does <m>f</m> change?</q> Thinking back to the amusement-park ride, we asked <q>When time changed, at what rate did the height change?</q> and found the answer to be <q>By <m>-64</m> feet per second.</q></p>
 
-    <p>Now imagine driving a car and looking at the speedometer, which reads <q>60 mph.</q> Five minutes later, you wonder how far you have traveled. Certainly, lots of things could have happened in those 5 minutes; you could have intentionally sped up significantly, you might have come to a complete stop, you might have slowed to 20 mph as you passed through construction. But suppose that you know, as the driver, none of these things happened. You know you maintained a fairly consistent speed over those 5 minutes. What is a good approximation of the distance traveled?</p>
+    <p>Now imagine driving a car and looking at the speedometer, which reads <q><quantity><mag>60</mag><unit base="mileperhour" /></quantity>.</q> Five minutes later, you wonder how far you have traveled. Certainly, lots of things could have happened in those <m>5</m> minutes; you could have intentionally sped up significantly, you might have come to a complete stop, you might have slowed to <quantity><mag>20</mag><unit base="mileperhour" /></quantity> as you passed through construction. But suppose that you know, as the driver, none of these things happened. You know you maintained a fairly consistent speed over those <m>5</m> minutes. What is a good approximation of the distance traveled?</p>
 
-    <p>One could argue the <em>only</em> good approximation, given the information provided, would be based on <q>distance = rate <times /> time.</q> In this case, we assume a constant rate of 60 mph with a time of <m>5</m> minutes or <m>5/60</m> hours. Hence we would approximate the distance traveled as 5 miles.</p>
+    <p>One could argue the <em>only</em> good approximation, given the information provided, would be based on <q><m>\text{distance} = \text{rate}\times\text{time.}</m></q> In this case, we assume a constant rate of <quantity><mag>60</mag><unit base="mileperhour" /></quantity> with a time of <m>5</m> minutes or <m>5/60</m> of an hour. Hence we would approximate the distance traveled as <m>5</m> miles.</p>
 
-    <p>Referring back to the falling amusement<ndash />park ride, knowing that at <m>t=2</m> the velocity was <m>-64</m> ft/s, we could reasonably approximate that 1 second later the riders' height would have dropped by about 64 feet. Knowing that the riders were <em>accelerating</em> as they fell would inform us that this is an <em>under<ndash />approximation</em>. If all we knew was that <m>f(2) = 86</m> and <m>\fp(2) = -64</m>, we'd know that we'd have to stop the riders quickly otherwise they would hit the ground!</p>
+    <p>Referring back to the falling amusement-park ride, knowing that at <m>t=2</m> the velocity was <m>-64</m> ft/s, we could reasonably approximate that <m>1</m> second later the riders' height would have dropped by about <m>64</m> feet. Knowing that the riders were <em>accelerating</em> as they fell would inform us that this is an <em>under-approximation</em>. If all we knew was that <m>f(2) = 86</m> and <m>\fp(2) = -64</m>, we'd know that we'd have to stop the riders quickly otherwise they would hit the ground!</p>
     <p>In both of these cases, we are using the instantaneous rate of change to predict future values of the output. </p>
   </subsection>
 
   <subsection>
     <title>Units of the Derivative</title>
-    <p>It is useful to recognize the <em>units</em> of the derivative function. If <m>y</m> is a function of <m>x</m>, i.e., <m>y=f(x)</m> for some function <m>f</m>, and <m>y</m> is measured in feet and <m>x</m> in seconds, then the units of <m>y' = \fp</m> are <q>feet per second,</q> commonly written as <q>ft/s.</q> In general, if <m>y</m> is measured in units <m>P</m> and <m>x</m> is measured in units <m>Q</m>, then <m>y'</m> will be measured in units <q><m>P</m> per <m>Q</m></q>, or <q><m>P/Q</m>.</q> Here we see the fraction<ndash />like behavior of the derivative in the notation:</p>
-
-    <p>the units of <m>\ds \frac{dy}{dx}</m>are <m>\ds \frac{\text{ units of \(y\) } }{\text{ units of \(x\) } }</m>.</p>
+    <p>It is useful to recognize the <em>units</em> of the derivative function. If <m>y</m> is a function of <m>x</m>, i.e., <m>y=f(x)</m> for some function <m>f</m>, and <m>y</m> is measured in feet and <m>x</m> in seconds, then the units of <m>y' = \fp</m> are <q>feet per second,</q> commonly written as <q>ft/s.</q> In general, if <m>y</m> is measured in units <m>P</m> and <m>x</m> is measured in units <m>Q</m>, then <m>y'</m> will be measured in units <q><m>P</m> per <m>Q</m></q>, or <q><m>P/Q</m>.</q> Here we see the fraction-like behavior of the derivative in the notation: the units of <m>\frac{dy}{dx}</m>are <m>\frac{\text{units of }y}{\text{units of }x}</m>.</p>
 
     <example xml:id="ex_der_meaning1">
       <title>The meaning of the derivative: World Population</title>
       <statement>
-        <p>Let <m>P(t)</m> represent the world population <m>t</m> minutes after 12:00 a.m., January 1, 2012. It is fairly accurate to say that <m>P(0) = 7,028,734,178</m> (<c>www.prb.org</c>). It is also fairly accurate to state that <m>P'(0) = 156</m>; that is, at midnight on January 1, 2012, the population of the world was growing by about 156 <em>people per minute</em> (note the units). Twenty days later (or, 28,800 minutes later) we could reasonably assume the population grew by about <m>28,800\cdot156 = 4,492,800</m> people.</p>
+        <p>Let <m>P(t)</m> represent the world population <m>t</m> minutes after 12:00 a.m., January 1, 2012. It is fairly accurate to say that <m>P(0) = 7{,}028{,}734{,}178</m> (<url href="www.prb.org" />). It is also fairly accurate to state that <m>P'(0) = 156</m>; that is, at midnight on January 1, 2012, the population of the world was growing by about 156 <em>people per minute</em> (note the units). Twenty days later (or <m>28{,}800</m> minutes later) we could reasonably assume the population grew by about <m>28{,}800\cdot156 = 4{,}492{,}800</m> people.</p>
       </statement>
     </example>
 
     <example xml:id="ex_der_meaning2">
       <title>The meaning of the derivative: Manufacturing</title>
       <statement>
-        <p>The term <em>widget</em> is an economic term for a generic unit of manufacturing output. Suppose a company produces widgets and knows that the market supports a price of <dollar />10 per widget. Let <m>P(n)</m> give the profit, in dollars, earned by manufacturing and selling <m>n</m> widgets. The company likely cannot make a (positive) profit making just one widget; the start<ndash />up costs will likely exceed <dollar />10. Mathematically, we would write this as <m>P(1) \lt  0</m>.</p>
+        <p>The term <em>widget</em> is an economic term for a generic unit of manufacturing output. Suppose a company produces widgets and knows that the market supports a price of <m>\$10</m> per widget. Let <m>P(n)</m> give the profit, in dollars, earned by manufacturing and selling <m>n</m> widgets. The company likely cannot make a (positive) profit making just one widget; the start-up costs will likely exceed <m>\$10</m>. Mathematically, we would write this as <m>P(1) \lt  0</m>.</p>
 
         <p>What do <m>P(1000) = 500</m> and <m>P'(1000)=0.25</m> mean? Approximate <m>P(1100)</m>.</p>
       </statement>
       <solution>
-        <p>The equation <m>P(1000)=500</m> means that selling 1,000 widgets returns a profit of <dollar />500. We interpret <m>P'(1000) = 0.25</m> as meaning that when we are selling 1000 widgets, the profit is increasing at rate of <dollar /><m>0.25</m> per widget (the units are <q>dollars per widget.</q>) Since we have no other information to use, our best approximation for <m>P(1100)</m> is:
+        <p>The equation <m>P(1000)=500</m> means that selling <m>1000</m> widgets returns a profit of <m>\$500</m>. We interpret <m>P'(1000) = 0.25</m> as meaning that when we are selling <m>1000</m> widgets, the profit is increasing at rate of <m>\$0.25</m> per widget (the units are <q>dollars per widget.</q>) Since we have no other information to use, our best approximation for <m>P(1100)</m> is:
           <md>
             <mrow> P(1100) \amp \approx P(1000) + P'(1000)\times100 </mrow>
-            <mrow>\amp= \text{ \$ 500 }  + (100 \text{ widgets })\cdot \text{\$} 0.25 /\text{widget}</mrow>
-            <mrow>\amp= \text{ \$ 525. }</mrow>
-           
+            <mrow>\amp= \$500 + (100\text{ widgets })\cdot $0.25/\text{widget}</mrow>
+            <mrow>\amp= \$525\text{.}</mrow>
           </md>
         </p>
 
-        <p>We approximate that selling 1,100 widgets returns a profit of <dollar />525.</p>
+        <p>We approximate that selling <m>1100</m> widgets returns a profit of <m>\$525</m>.</p>
       </solution>
     </example>
 
-    <p>The previous examples made use of an important approximation tool that we first used in our previous <q>driving a car at 60 mph</q> example at the beginning of this section. Five minutes after looking at the speedometer, our best approximation for distance traveled assumed the rate of change was constant. In <xref ref="ex_der_meaning1">Examples</xref> and <xref ref="ex_der_meaning2"></xref> we made similar approximations. We were given rate of change information which we used to approximate total change. Notationally, we would say that
+    <p>The previous examples made use of an important approximation tool that we first used in our previous <q>driving a car at <quantity><mag>60</mag><unit base="mileperhour" /></quantity></q> example at the beginning of this section. Five minutes after looking at the speedometer, our best approximation for distance traveled assumed the rate of change was constant. In <xref ref="ex_der_meaning1">Examples</xref> and <xref ref="ex_der_meaning2"></xref> we made similar approximations. We were given rate of change information which we used to approximate total change. Notationally, we would say that
       <me>
         f(c+h) \approx f(c) + \fp(c)\cdot h.
       </me>
     </p>
 
-    <p>This approximation is best when <m>h</m> is <q>small.</q> Small is a relative term; when dealing with the world population, <m>h=</m> 22 days = 28,800 minutes is small in comparison to years. When manufacturing widgets, 100 widgets is small when one plans to manufacture thousands.</p>
+    <p>This approximation is best when <m>h</m> is <q>small.</q> Small is a relative term; when dealing with the world population, <m>h=22\text{ days} = 28{,}800\text{ minutes}</m> is small in comparison to years. When manufacturing widgets, <m>100</m> widgets is small when one plans to manufacture thousands.</p>
   </subsection>
 
   <subsection>
     <title>The Derivative and Motion</title>
     <p>One of the most fundamental applications of the derivative is the study of motion. Let <m>s(t)</m> be a position function, where <m>t</m> is time and <m>s(t)</m> is distance. For instance, <m>s</m> could measure the height of a projectile or the distance an object has traveled.</p>
-    <aside><p>Using <m>s(t)</m> to represent position is a fairly common mathematical convention. It is also common to use <m>s</m> to represent arc length.</p></aside>
+    <aside>
+        <title>Convention with <m>s</m></title>
+        <p>Using <m>s(t)</m> to represent position is a fairly common mathematical convention. It is also common to use <m>s</m> to represent arc length.</p>
+    </aside>
 
     <p>Let's let <m>s(t)</m> measure the distance traveled, in feet, of an object after <m>t</m> seconds of travel. Then <m>s'(t)</m> has units <q>feet per second,</q> and <m>s'(t)</m> measures the <em>instantaneous rate of distance change with repsect to time</em> <mdash /> it measures <em>velocity</em>.<index><main>velocity</main></index></p>
 
-    <p>Now consider <m>v(t)</m>, a velocity function. That is, at time <m>t</m>, <m>v(t)</m> gives the velocity of an object. The derivative of <m>v</m>, <m>v'(t)</m>, gives the <em>instantaneous rate of velocity change with respect to time</em> <mdash /> <em>acceleration</em>. (We often think of acceleration in terms of cars: a car may <q>go from 0 to 60 in 4.8 seconds.</q> This is an <em>average</em> acceleration, a measurement of how quickly the velocity changed.) If velocity is measured in feet per second, and time is measured in seconds, then the units of acceleration (i.e., the units of <m>v'(t)</m>) are <q>feet per second per second,</q> or <m>(</m>ft/s<m>)</m>/s. We often shorten this to <q>feet per second squared,</q> or ft/s<m>^2</m>, but this tends to obscure the meaning of the units.<index><main>acceleration</main></index></p>
+    <p>Now consider <m>v(t)</m>, a velocity function. That is, at time <m>t</m>, <m>v(t)</m> gives the velocity of an object. The derivative of <m>v</m>, <m>v'(t)</m>, gives the <em>instantaneous rate of velocity change with respect to time</em> <mdash /> <em>acceleration</em>. (We often think of acceleration in terms of cars: a car may <q>go from <m>0</m> to <m>60</m> in <m>4.8</m> seconds.</q> This is an <em>average</em> acceleration, a measurement of how quickly the velocity changed.) If velocity is measured in feet per second, and time is measured in seconds, then the units of acceleration (i.e., the units of <m>v'(t)</m>) are <q>feet per second per second,</q> or <m>(</m>ft/s<m>)</m>/s. We often shorten this to <q>feet per second squared,</q> or <quantity><unit base="foot"/><per base="second" exp="2"/></quantity>, but this tends to obscure the meaning of the units.<index><main>acceleration</main></index></p>
 
-    <p>Perhaps the most well known acceleration is that of gravity. In this text, we use <m>g=32</m>ft/s<m>^2</m> or <m>g=9.8</m>m/s<m>^2</m>. What do these numbers mean?</p>
+    <p>Perhaps the most well known acceleration is that of gravity. In this text, we use <m>g=32\,\text{ft}/\text{s}^2</m> or <m>g=9.8\,\text{m}/\text{s}^2</m>. What do these numbers mean?</p>
 
-    <p>A constant acceleration of 32<m>(</m>ft/s<m>)</m>/s means that the velocity changes by 32ft/s each second. For instance, let <m>v(t)</m> measure the velocity of a ball thrown straight up into the air, where <m>v</m> has units ft/s and <m>t</m> is measured in seconds. The ball will have a positive velocity while traveling upwards and a negative velocity while falling down. The acceleration is thus <m>-32</m>ft/s<m>^2</m>. If <m>v(1) = 20</m>ft/s, then <m>1</m> second later, the velocity will have decreased by 32ft/s; that is, <m>v(2) = -12</m>ft/s. We can continue: <m>v(3) = -44</m>ft/s. Working backward, we can also figure that <m>v(0) = 52</m>ft/s.</p>
+    <p>A constant acceleration of <m>32\,\frac{\text{ft}/\text{s}}{\text{s}}</m> means that the velocity changes by <m>32\,\text{ft}/\text{s}</m> each second. For instance, let <m>v(t)</m> measure the velocity of a ball thrown straight up into the air, where <m>v</m> has units ft/s and <m>t</m> is measured in seconds. The ball will have a positive velocity while traveling upwards and a negative velocity while falling down. The acceleration is thus <m>-32\,\text{ft}/\text{s}^2</m>. If <m>v(1) = 20\,\text{ft}/\text{s}</m>, then <m>1</m> second later, the velocity will have decreased by <m>32\,\text{ft}/\text{s}</m>; that is, <m>v(2) = -12\,\text{ft/s}</m>. We can continue: <m>v(3) = -44\,\text{ft/s}</m>. Working backward, we can also figure that <m>v(0) = 52\,\text{ft}/\text{s}</m>.</p>
 
     <p>These ideas are so important we write them out as a Key Idea.</p>
 
     <insight xml:id="idea_motion">
       <title>The Derivative and Motion</title>
-      <ol>
-        <li><p>Let <m>s(t)</m> be the position function of an object. Then <m>s'(t)=v(t)</m> is the velocity function of the object.</p></li>
+      <p>
+        <ol>
+          <li><p>Let <m>s(t)</m> be the position function of an object. Then <m>s'(t)=v(t)</m> is the velocity function of the object.</p></li>
 
-        <li><p>Let <m>v(t)</m> be the velocity function of an object. Then <m>v'(t)=a(t)</m> is the acceleration function of the object.</p></li>
-      </ol>
-
-      <p><index><main>derivative</main><sub>motion</sub></index><index><main>derivative</main><sub>velocity</sub></index><index><main>derivative</main><sub>acceleration</sub></index></p>
+          <li><p>Let <m>v(t)</m> be the velocity function of an object. Then <m>v'(t)=a(t)</m> is the acceleration function of the object.</p></li>
+        </ol>
+      <index><main>derivative</main><sub>motion</sub></index><index><main>derivative</main><sub>velocity</sub></index><index><main>derivative</main><sub>acceleration</sub></index></p>
     </insight>
-
-    <p>We now consider the second interpretation of the derivative given in this section. This interpretation is not independent from the first by any means; many of the same concepts will be stressed, just from a slightly different perspective.</p>
   </subsection>
 
   <subsection>
-    <title>Interpretation of the Derivative <hash />2: The Slope of the Tangent Line</title>
-    <p>Given a function <m>y=f(x)</m>, the difference quotient <m>\ds \frac{f(c+h)-f(c)}{h}</m> gives a change in <m>y</m> values divided by a change in <m>x</m> values; i.e., it is a measure of the <q>rise over run,</q> or <q>slope,</q> of the secant line that goes through two points on the graph of <m>f</m>: <m>\big(c, f(c)\big)</m> and <m>\big(c+h,f(c+h)\big)</m>. As <m>h</m> shrinks to 0, these two points come close together; in the limit we find <m>\fp(c)</m>, the slope of a special line called the tangent line that intersects <m>f</m> only once near <m>x=c</m>.</p>
+    <title>Interpretation of the Derivative as the Slope of the Tangent Line</title>
+    <p>We now consider the second interpretation of the derivative given in this section. This interpretation is not independent from the first by any means; many of the same concepts will be stressed, just from a slightly different perspective.</p>
+
+    <p>Given a function <m>y=f(x)</m>, the difference quotient <m>\frac{f(c+h)-f(c)}{h}</m> gives a change in <m>y</m> values divided by a change in <m>x</m> values; i.e., it is a measure of the <q>rise over run,</q> or <q>slope,</q> of the secant line that goes through two points on the graph of <m>f</m>: <m>(c, f(c))</m> and <m>(c+h,f(c+h))</m>. As <m>h</m> shrinks to <m>0</m>, these two points come close together; in the limit we find <m>\fp(c)</m>, the slope of a special line called the tangent line that intersects <m>f</m> only once near <m>x=c</m>.</p>
 
     <p>Lines have a constant rate of change, their slope. Nonlinear functions do not have a constant rate of change, but we can measure their <em>instantaneous rate of change</em> at a given <m>x</m> value <m>c</m> by computing <m>\fp(c)</m>. We can get an idea of how <m>f</m> is behaving by looking at the slopes of its tangent lines. We explore this idea in the following example.</p>
 
@@ -106,15 +106,20 @@
         <figure xml:id="fig_xsquared" >
           <caption>A graph of <m>f(x)=x^2</m>.</caption>
           <!-- START figures/fig_xsquared.tex -->
-          <image xml:id="img_xsquared" >
+          <image xml:id="img_xsquared" width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-1,xmax=4.1,]
-              \addplot+[domain=-.8:4] {x^2};
-              \end{axis}
-
+                \begin{axis}[xmin=-1,xmax=4.1,
+                            ymin=-.4,ymax=17,
+                            xtick={-1,0,...,4},
+                            minor xtick={-1,0,...,4},
+                            ytick={0,5,...,15},
+                            minor ytick={0,1,...,17},
+                            ]
+                  \addplot+[domain=-.8:4] {x^2};
+                \end{axis}
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -123,24 +128,30 @@
         </figure>
       </statement>
       <solution>
-        <p>We can answer this exactly (and quickly) after <xref ref="sec_basic_diff_rules">Section</xref>, where we learn to quickly compute derivatives. For now, we will answer graphically, by considering the slopes of the respective tangent lines. </p>
+        <p>We can answer this exactly (and quickly) after <xref ref="sec_basic_diff_rules">Section</xref>, where we learn to quickly compute derivatives. For now, we will answer graphically, by considering the slopes of the respective tangent lines.</p>
         
 
         <figure xml:id="fig_xsquaredwithgrid" >
           <caption>A graph of <m>f(x)=x^2</m> and tangent lines at <m>x=1</m> and <m>x=3</m>.</caption>
           <!-- START figures/fig_xsquaredwithgrid.tex -->
-          <image xml:id="img_xsquaredwithgrid" >
+          <image xml:id="img_xsquaredwithgrid" width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[ytick={0,4,8,12,16},minor x tick num=0,minor y tick num=3,ymin=-.4,ymax=17,xmin=-1,xmax=4.3,grid=both]
-             \addplot+[domain=-0.8:4] {x^2};
-              \addplot[tangentline,domain=0.6:3.5]{2*(x-1)+1};
-              \addplot[tangentline,domain=1.6:4]{6*(x-3)+9};
-              \addplot[soliddot] coordinates{(1,1) (3,9)};
-              %\draw (axis cs:0,0) grid (axis cs:4,16);
-              \end{axis}
+                \begin{axis}[xmin=-1,xmax=4.1,
+                            ymin=-.4,ymax=17,
+                            xtick={-1,0,...,4},
+                            minor xtick={-1,0,...,4},
+                            ytick={0,5,...,15},
+                            minor ytick={0,1,...,17},
+                            grid=minor,
+                            ]
+                  \addplot+[domain=-.8:4] {x^2};
+                  \addplot[tangentline,domain=0.4:3.5]{2*(x-1)+1};
+                  \addplot[tangentline,domain=1.6:4]{6*(x-3)+9};
+                  \addplot[soliddot] coordinates{(1,1) (3,9)};
+                \end{axis}
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -148,86 +159,84 @@
           <!-- figures/fig_xsquaredwithgrid.tex END -->
         </figure>
 
-        <p>With practice, one can fairly effectively sketch tangent lines to a curve at a particular point. In <xref ref="fig_xsquaredwithgrid">Figure</xref>, we have sketched the tangent lines to <m>f</m> at <m>x=1</m> and <m>x=3</m>, along with a grid to help us measure the slopes of these lines. At <m>x=1</m>, the slope is 2; at <m>x=3</m>, the slope is 6. Thus we can say not only is <m>f</m> growing faster at <m>x=3</m> than at <m>x=1</m>, it is growing <em>three times as fast</em>.</p>
+        <p>With practice, one can fairly effectively sketch tangent lines to a curve at a particular point. In <xref ref="fig_xsquaredwithgrid">Figure</xref>, we have sketched the tangent lines to <m>f</m> at <m>x=1</m> and <m>x=3</m>, along with a grid to help us measure the slopes of these lines. At <m>x=1</m>, the slope is <m>2</m>; at <m>x=3</m>, the slope is <m>6</m>. Thus we can say not only is <m>f</m> growing faster at <m>x=3</m> than at <m>x=1</m>, it is growing <em>three times as fast</em>.</p>
       </solution>
     </example>
 
     <example xml:id="ex_der_meaning4">
       <title>Understanding the graph of the derivative</title>
       <statement>
-        <p>Consider the graph of <m>f(x)</m> and its derivative, <m>\fp(x)</m>, in <xref ref="fig_fwithderiv">Figure</xref>.
-          Use these graphs to find the slopes of the tangent lines to the graph of <m>f</m> at <m>x=1</m>, <m>x=2</m>, and <m>x=3</m>.</p>
+        <p>Consider the graph of <m>f(x)</m> and its derivative, <m>\fp(x)</m>, in <xref ref="fig_fwithderiv">Figure</xref>. Use these graphs to find the slopes of the tangent lines to the graph of <m>f</m> at <m>x=1</m>, <m>x=2</m>, and <m>x=3</m>.</p>
       
-                    <figure width="50%" xml:id="fig_fwithderiv">
-                      <caption>Graphs of <m>f</m> and <m>\fp</m> in <xref ref="ex_der_meaning4">Example</xref>.</caption>
-                        <!-- START figures/fig_fwithderiv.tex -->
-                        <image xml:id="img_fwithderiv" >
-                          <description></description>
-                          <latex-image-code>
-                            <![CDATA[
-                            \begin{tikzpicture}
-                              \begin{axis}[minor y tick num=4,
-                                           minor x tick num=0,
-                                           xtick={1,2,3},
-                                           ymin=-8.9,ymax=5.9,
-                                           xmin=-.1,xmax=3.49, 
-                                           grid=both]
-                              \addplot+[domain=0:3.5] {-x^3+7*x^2-12*x+4};
-                              \addplot+[domain=0.5:3.3] {-12+14*x-3*x^2};
-                              \draw (axis cs:3.25,5.5) node {\scriptsize $f(x)$};
-                              \draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
-                              \end{axis}
-
-
-
-                            \end{tikzpicture}
-                            ]]>
-                          </latex-image-code>
-                        </image>
-                        <!-- figures/fig_fwithderiv.tex END -->
-                    </figure>  
+        <figure xml:id="fig_fwithderiv">
+          <caption>Graphs of <m>f</m> and <m>\fp</m> in <xref ref="ex_der_meaning4">Example</xref>.</caption>
+            <!-- START figures/fig_fwithderiv.tex -->
+            <image xml:id="img_fwithderiv" width="47%">
+              <description></description>
+              <latex-image-code>
+                <![CDATA[
+                \begin{tikzpicture}
+                  \begin{axis}[minor y tick num=4,
+                               minor x tick num=0,
+                               xtick={1,2,3},
+                               ymin=-8.9,ymax=5.9,
+                               xmin=-.1,xmax=3.49, 
+                               grid=both,
+                               clip=false]
+                  \addplot+[domain=0:3.5] {-x^3+7*x^2-12*x+4} node[above left] {$f(x)$};
+                  \addplot+[domain=0.5:3.3] {-12+14*x-3*x^2} node[pos=0.5, above left] {$f'(x)$};
+                  \end{axis}
+                \end{tikzpicture}
+                ]]>
+              </latex-image-code>
+            </image>
+            <!-- figures/fig_fwithderiv.tex END -->
+        </figure>  
 
       </statement>
       <solution>
-        <p>To find the appropriate slopes of tangent lines to the graph of <m>f</m>, we need to look at the corresponding values of <m>\fp</m>.</p>
-
-        <p>The slope of the tangent line to <m>f</m> at <m>x=1</m> is <m>\fp(1)</m>; this looks to be about <m>-1</m>.</p>
-
-        <p>The slope of the tangent line to <m>f</m> at <m>x=2</m> is <m>\fp(2)</m>; this looks to be about <m>4</m>.</p>
-
-        <p>The slope of the tangent line to <m>f</m> at <m>x=3</m> is <m>\fp(3)</m>; this looks to be about <m>3</m>.</p>
-
+        <p>To find the appropriate slopes of tangent lines to the graph of <m>f</m>, we need to look at the corresponding values of <m>\fp</m>.<ul>
+          <li>
+            <p>The slope of the tangent line to <m>f</m> at <m>x=1</m> is <m>\fp(1)</m>; this looks to be about <m>-1</m>.</p>
+          </li>
+          <li>
+            <p>The slope of the tangent line to <m>f</m> at <m>x=2</m> is <m>\fp(2)</m>; this looks to be about <m>4</m>.</p>
+          </li>
+          <li>
+            <p>The slope of the tangent line to <m>f</m> at <m>x=3</m> is <m>\fp(3)</m>; this looks to be about <m>3</m>.</p>
+          </li>
+        </ul></p>
         <p>Using these slopes, tangent line segments to <m>f</m> are sketched in <xref ref="fig_fwithderivdots">Figure</xref>. Included on the graph of <m>\fp</m> in this figure are points where <m>x=1</m>, <m>x=2</m> and <m>x=3</m> to help better visualize the <m>y</m> value of <m>\fp</m> at those points.</p>
 
-        <figure width="50%"  xml:id="fig_fwithderivdots" >
-                        <caption></caption>
-                        <!-- START figures/fig_fwithderivdots.tex -->
-                        <image>
-                          <description></description>
-                          <latex-image-code>
-                            <![CDATA[
-                            \begin{tikzpicture}
-                            \begin{axis}[,minor y tick num=4, minor x tick num=0, ymin=-8.9,ymax=5.9,xmin=-.1,xmax=3.49, xtick={1,2,3}, grid=both]
-                            \addplot+[domain=0.5:3.3] {-x^3+7*x^2-12*x+4};
-                            \addplot+[domain=0:3.5] {-12+14*x-3*x^2};
-                            \addplot [tangentlineseg,domain=0.5:1.5] {-1*(x-1)-2};
-                            \addplot [tangentlineseg,domain=1.5:2.5] {4*(x-2)};
-                            \addplot [tangentlineseg,domain=2.5:3.5] {3*(x-3)+4};
-                            \addplot[soliddot] coordinates{(1,-2) (2,0) (3,4)};
-                            \addplot[soliddot] coordinates{(1,-1) (2,4) (3,3)};
-                            \draw (axis cs:3.4,3.5) node {\scriptsize $f(x)$};
-                            \draw (axis cs:1.25,3) node {\scriptsize $f\,'(x)$};
-
-                            \end{axis}
-
-
-
-                            \end{tikzpicture}
-                            ]]>
-                          </latex-image-code>
-                        </image>
-                        <!-- figures/fig_fwithderivdots.tex END -->
-                    </figure>
+        <figure xml:id="fig_fwithderivdots" >
+          <caption>Graphs of <m>f</m> and <m>\fp</m> in <xref ref="ex_der_meaning4">Example</xref>.</caption>
+          <!-- START figures/fig_fwithderivdots.tex -->
+          <image xml:id="img_fwithderivdots" width="47%">
+            <description></description>
+            <latex-image-code>
+              <![CDATA[
+                  \begin{tikzpicture}
+                    \begin{axis}[minor y tick num=4,
+                                 minor x tick num=0,
+                                 xtick={1,2,3},
+                                 ymin=-8.9,ymax=5.9,
+                                 xmin=-.1,xmax=3.49, 
+                                 grid=both,
+                                 clip=false]
+                    \addplot+[domain=0:3.5] {-x^3+7*x^2-12*x+4} node[above left] {$f(x)$};
+                    \addplot+[domain=0.5:3.3] {-12+14*x-3*x^2} node[pos=0.5, above left] {$f'(x)$};
+                    \addplot [tangentlineseg,domain=0.5:1.5] {-1*(x-1)-2};
+                    \addplot [tangentlineseg,domain=1.5:2.5] {4*(x-2)};
+                    \addplot [tangentlineseg,domain=2.5:3.5] {3*(x-3)+4};
+                    \addplot[soliddot] coordinates{(1,-2) (2,0) (3,4)};
+                    \addplot[soliddot] coordinates{(1,-1) (2,4) (3,3)};
+                    \end{axis}
+                  \end{tikzpicture}
+              ]]>
+            </latex-image-code>
+          </image>
+          <!-- figures/fig_fwithderivdots.tex END -->
+        </figure>
       </solution>
     </example>
 
@@ -242,7 +251,7 @@
         <figure xml:id="fig_fwithderivzoom3" >
           <caption>Zooming in on <m>f</m> at <m>x=3</m> for the function given in <xref ref="ex_der_meaning4">Examples</xref> and <xref ref="ex_der_meaning5"></xref>.</caption>
           <!-- START figures/fig_fwithderivzoom3.tex -->
-          <image xml:id="img_fwithderivzoom3" >
+          <image xml:id="img_fwithderivzoom3" width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -253,14 +262,10 @@
                             xdiscontinuity,
                             ydiscontinuity,
                             grid=major]
-                \addplot+[domain=0:3.5] {-x^3+7*x^2-12*x+4};
-                \addplot[tangentlineseg,domain=2:4,thick] {3*(x-3)+4};
-                 \addplot[soliddot] coordinates{(3,4)};
-                 \draw (axis cs:3.2,4.25) node {\scriptsize $f(x)$};
+                    \addplot+[domain=2.7:3.3] {-x^3+7*x^2-12*x+4} node[pos=0.85,below] {$f(x)$};
+                    \addplot[tangentlineseg,domain=2.7:3.3,thick] {3*(x-3)+4};
+                    \addplot[soliddot] coordinates{(3,4)};
                 \end{axis}
-
-
-
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -268,14 +273,14 @@
           <!-- figures/fig_fwithderivzoom3.tex END -->
         </figure>
 
-        <p>While the tangent line to <m>f</m> was drawn in <xref ref="ex_der_meaning4">Example</xref>, it was not explicitly computed. Recall that the tangent line to <m>f</m> at <m>x=c</m> is <m>y = \fp(c)(x-c)+f(c)</m>. While <m>f</m> is not explicitly given, by the graph it looks like <m>f(3) = 4</m>. Recalling that <m>\fp(3) = 3</m>, we can compute the tangent line to be approximately <m>y = 3(x-3)+4</m>. It is often useful to leave the tangent line in point<ndash />slope form.</p>
+        <p>While the tangent line to <m>f</m> was drawn in <xref ref="ex_der_meaning4">Example</xref>, it was not explicitly computed. Recall that the tangent line to <m>f</m> at <m>x=c</m> is <m>y = \fp(c)(x-c)+f(c)</m>. While <m>f</m> is not explicitly given, by the graph it looks like <m>f(3) = 4</m>. Recalling that <m>\fp(3) = 3</m>, we can compute the tangent line to be approximately <m>y = 3(x-3)+4</m>. It is often useful to leave the tangent line in point-slope form.</p>
 
         <p>To use the tangent line to approximate <m>f(3.1)</m>, we simply evaluate <m>y</m> at <m>3.1</m> instead of <m>f</m>.
           <md>
             <mrow>f(3.1) \amp \approx y(3.1) </mrow>
             <mrow>\amp= 3(3.1-3)+4 </mrow>
             <mrow>\amp= 0.1\cdot3+4 </mrow>
-            <mrow>\amp = 4.3.</mrow>
+            <mrow>\amp = 4.3\text{.}</mrow>
           </md>
         </p>
 
@@ -283,15 +288,12 @@
       </solution>
     </example>
 
-    <p>To demonstrate the accuracy of the tangent line approximation, we now state that in <xref ref="ex_der_meaning5">Example</xref>, <m>f(x) = -x^3+7x^2-12x+4</m>. We can evaluate <m>f(3.1) = 4.279</m>. Had we known <m>f</m> all along, certainly we could have just made this computation. In reality, we often only know two things:</p>
-
-    <ol>
+    <p>To demonstrate the accuracy of the tangent line approximation, we now state that in <xref ref="ex_der_meaning5">Example</xref>, <m>f(x) = -x^3+7x^2-12x+4</m>. We can evaluate <m>f(3.1) = 4.279</m>. Had we known <m>f</m> all along, certainly we could have just made this computation. In reality, we often only know two things:<ol>
       <li><p>What <m>f(c)</m> is, for some value of <m>c</m>, and</p></li>
-
       <li><p>what <m>\fp(c)</m> is.</p></li>
-    </ol>
+    </ol></p>
 
-    <p>For instance, we can easily observe the location of an object and its instantaneous velocity at a particular point in time. We do not have a <q>function <m>f</m><nbsp /></q> for the location, just an observation. This is enough to create an approximating function for <m>f</m>.</p>
+    <p>For instance, we can easily observe the location of an object and its instantaneous velocity at a particular point in time. We do not have a <q>function <m>f</m></q> for the location, just an observation. This is enough to create an approximating function for <m>f</m>.</p>
 
     <p>This last example has a direct connection to our approximation method explained above after <xref ref="ex_der_meaning2">Example</xref>. We stated there that
       <me>
@@ -313,7 +315,9 @@
 
   <exercises>
     <exercisegroup>
-      <title>Terms and Concepts</title>
+      <introduction>
+        <p>Terms and Concepts</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -331,6 +335,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -348,6 +353,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -366,219 +372,232 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Given <m>f(5)=10</m> and <m>\fp(5) = 2</m>, approximate <m>f(6)</m>.</p>
+        </statement>
+        <solution>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Given <m>P(100)=-67</m> and <m>P'(100) = 5</m>, approximate <m>P(110)</m>.</p>
+        </statement>
+        <solution>
+          <p><m>-17</m></p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Given <m>z(25)=187</m> and <m>z'(25) = 17</m>, approximate <m>z(20)</m>.</p>
+        </statement>
+        <solution>
+          <p><m>102</m></p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Knowing <m>f(10)=25</m> and <m>\fp(10) = 5</m> and the methods described in this section, which approximation is likely to be most accurate: <m>f(10.1)</m>, <m>f(11)</m>, or <m>f(20)</m>? Explain your reasoning.</p>
+        </statement>
+        <solution>
+          <p><m>f(10.1)</m> is likely most accurate, as accuracy is lost the farther from <m>x=10</m> we go.</p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Given <m>f(7)=26</m> and <m>f(8) = 22</m>, approximate <m>\fp(7)</m>.</p>
+        </statement>
+        <solution>
+          <p><m>-4</m></p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Given <m>H(0)=17</m> and <m>H(2) = 29</m>, approximate <m>H'(2)</m>.</p>
+        </statement>
+        <solution>
+          <p><m>6</m></p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Let <m>V(x)</m> measure the volume, in decibels, measured inside a restaurant with <m>x</m> customers. What are the units of <m>V'(x)</m>?</p>
+        </statement>
+        <solution>
+          <p>decibels per person</p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Let <m>v(t)</m> measure the velocity, in ft/s, of a car moving in a straight line <m>t</m> seconds after starting. What are the units of <m>v'(t)</m>?</p>
+        </statement>
+        <solution>
+          <p>ft/s<m>^2</m></p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>The height <m>H</m>, in feet, of a river is recorded <m>t</m> hours after midnight, April 1. What are the units of <m>H'(t)</m>?</p>
+        </statement>
+        <solution>
+          <p>ft/h</p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p><m>P</m> is the profit, in thousands of dollars, of producing and selling <m>c</m> cars.</p>
+
+          <p><ol>
+            <li><p>What are the units of <m>P'(c)</m>?</p></li>
+
+            <li><p>What is likely true of <m>P(0)</m>?</p></li>
+          </ol></p>
+        </statement>
+        <solution>
+          <p><ol>
+            <li><p>thousands of dollars per car</p></li>
+
+            <li><p>It is likely that <m>P(0)\lt 0</m>. That is, negative profit for not producing any cars.</p></li>
+          </ol></p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p><m>T</m> is the temperature in degrees Fahrenheit, <m>h</m> hours after midnight on July 4 in Sidney, NE.</p>
+
+          <p><ol>
+            <li><p>What are the units of <m>T'(h)</m>?</p></li>
+
+            <li><p>Is <m>T'(8)</m> likely greater than or less than 0? Why?</p></li>
+
+            <li><p>Is <m>T(8)</m> likely greater than or less than 0? Why?</p></li>
+          </ol></p>
+        </statement>
+        <solution>
+          <p><ol>
+            <li><p>degrees Fahrenheit per hour</p></li>
+
+            <li><p>It is likely that <m>T'(8)>0</m> since at 8 in the morning, the temperature is likely rising.</p></li>
+
+            <li><p>It is very likely that <m>T(8)>0</m>, as at 8 in the morning on July 4, we would expect the temperature to be well above 0.</p></li>
+          </ol></p>
+        </solution>
+      </webwork>
+    </exercise>
+
     <exercisegroup>
-      <title>Problems</title>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Given <m>f(5)=10</m> and <m>\fp(5) = 2</m>, approximate <m>f(6)</m>.</p>
-          </statement>
-          <solution>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Given <m>P(100)=-67</m> and <m>P'(100) = 5</m>, approximate <m>P(110)</m>.</p>
-          </statement>
-          <solution>
-            <p><m>-17</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Given <m>z(25)=187</m> and <m>z'(25) = 17</m>, approximate <m>z(20)</m>.</p>
-          </statement>
-          <solution>
-            <p><m>102</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Knowing <m>f(10)=25</m> and <m>\fp(10) = 5</m> and the methods described in this section, which approximation is likely to be most accurate: <m>f(10.1)</m>, <m>f(11)</m>, or <m>f(20)</m>? Explain your reasoning.</p>
-          </statement>
-          <solution>
-            <p><m>f(10.1)</m> is likely most accurate, as accuracy is lost the farther from <m>x=10</m> we go.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Given <m>f(7)=26</m> and <m>f(8) = 22</m>, approximate <m>\fp(7)</m>.</p>
-          </statement>
-          <solution>
-            <p><m>-4</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Given <m>H(0)=17</m> and <m>H(2) = 29</m>, approximate <m>H'(2)</m>.</p>
-          </statement>
-          <solution>
-            <p><m>6</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Let <m>V(x)</m> measure the volume, in decibels, measured inside a restaurant with <m>x</m> customers. What are the units of <m>V'(x)</m>?</p>
-          </statement>
-          <solution>
-            <p>decibels per person</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Let <m>v(t)</m> measure the velocity, in ft/s, of a car moving in a straight line <m>t</m> seconds after starting. What are the units of <m>v'(t)</m>?</p>
-          </statement>
-          <solution>
-            <p>ft/s<m>^2</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>The height <m>H</m>, in feet, of a river is recorded <m>t</m> hours after midnight, April 1. What are the units of <m>H'(t)</m>?</p>
-          </statement>
-          <solution>
-            <p>ft/h</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>P</m> is the profit, in thousands of dollars, of producing and selling <m>c</m> cars.</p>
-
-            <ol>
-              <li><p>What are the units of <m>P'(c)</m>?</p></li>
-
-              <li><p>What is likely true of <m>P(0)</m>?</p></li>
-            </ol>
-          </statement>
-          <solution>
-            <ol>
-              <li><p>thousands of dollars per car</p></li>
-
-              <li><p>It is likely that <m>P(0)\lt 0</m>. That is, negative profit for not producing any cars.</p></li>
-            </ol>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>T</m> is the temperature in degrees Fahrenheit, <m>h</m> hours after midnight on July 4 in Sidney, NE.</p>
-
-            <ol>
-              <li><p>What are the units of <m>T'(h)</m>?</p></li>
-
-              <li><p>Is <m>T'(8)</m> likely greater than or less than 0? Why?</p></li>
-
-              <li><p>Is <m>T(8)</m> likely greater than or less than 0? Why?</p></li>
-            </ol>
-          </statement>
-          <solution>
-            <ol>
-              <li><p>degrees Fahrenheit per hour</p></li>
-
-              <li><p>It is likely that <m>T'(8)>0</m> since at 8 in the morning, the temperature is likely rising.</p></li>
-
-              <li><p>It is very likely that <m>T(8)>0</m>, as at 8 in the morning on July 4, we would expect the temperature to be well above 0.</p></li>
-            </ol>
-          </solution>
-        </webwork>
-      </exercise>
-      <p>In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are given. Identify which function is the derivative of the other.)</p>
+      <introduction>
+        <p>In the following exercises, graphs of functions <m>f(x)</m> and <m>g(x)</m> are given. Identify which function is the derivative of the other.)</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -633,6 +652,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -687,6 +707,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -743,6 +764,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -800,9 +822,11 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Review</title>
-      <p>In the following exercises, use the definition to compute the derivatives of the following functions.</p>
+      <introduction>
+        <p>Review</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -820,6 +844,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -837,7 +862,7 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, numerically approximate the value of <m>\fp(x)</m> at the indicated <m>x</m> value.</p>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -855,6 +880,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
