@@ -34,7 +34,7 @@
           </me>.
           We can also show our work <q>inline</q>:
           <md>
-            <mrow>\lbo{x}{5x^2\sin(x)} \amp= 5x^2\lbo{x}{\sin(x)} + \lbo{x}{5x^2}\sin(x) .</mrow>
+            <mrow>\lzoo{x}{5x^2\sin(x)} \amp= 5x^2\lzoo{x}{\sin(x)} + \lzoo{x}{5x^2}\sin(x) .</mrow>
             <mrow>\amp= 5x^2\cos(x) + 10x\sin(x)</mrow>.
           </md>
         </p>
@@ -120,7 +120,7 @@
 
         <p>Instead, let's apply the Product Rule to the original factored form:
           <md>
-            <mrow>y' \amp = (x^2+3x+1)\lbo{x}{2x^2-3x+1}+\lbo{x}{x^2+3x+1}(2x^2-3x+1)</mrow>
+            <mrow>y' \amp = (x^2+3x+1)\lzoo{x}{2x^2-3x+1}+\lzoo{x}{x^2+3x+1}(2x^2-3x+1)</mrow>
             <mrow>y' \amp = (x^2+3x+1)(4x-3)+(2x+3)(2x^2-3x+1)</mrow>
             <mrow>\amp = \big(4x^3+9x^2-5x-3\big) + \big(4x^3-7x+3\big)</mrow>
             <mrow>\amp  = 8x^3+9x^2-12x</mrow>.
@@ -139,8 +139,8 @@
       <solution>
         <p>We have a product of three functions while the Product Rule only specifies how to handle a product of two functions. Our method of handling this problem is to simply group the latter two functions together, and consider <m>y = x^3\big(\ln(x) \cos(x) \big)</m>. Following the Product Rule, we have
           <md>
-            <mrow>\yp \amp = (x^3)\lbo{x}{\ln(x) \cos(x)} + \lbo{x}{x^3}\ln(x) \cos(x)</mrow>
-            <intertext>To evaluate <m>\lbo{x}{\ln(x) \cos(x)}</m>, we apply the Product Rule again:</intertext>
+            <mrow>\yp \amp = (x^3)\lzoo{x}{\ln(x) \cos(x)} + \lzoo{x}{x^3}\ln(x) \cos(x)</mrow>
+            <intertext>To evaluate <m>\lzoo{x}{\ln(x) \cos(x)}</m>, we apply the Product Rule again:</intertext>
             <mrow>\amp = (x^3)\big(\ln(x) (-\sin(x) ) + \frac1x\cos(x) \big)+ 3x^2\big(\ln(x) \cos(x) \big)</mrow>
             <mrow>\amp = x^3\ln(x) (-\sin(x) ) + x^3\frac1x\cos(x) + 3x^2\ln(x) \cos(x) </mrow>.
           </md>
@@ -191,7 +191,7 @@
       <statement>
         <p>Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, where <m>g(x) \neq 0</m> on <m>I</m>.<index><main>derivative</main><sub>Quotient Rule</sub></index><index><main>Quotient Rule</main></index> Then <m>f/g</m> is differentiable on <m>I</m>, and
           <me>
-            \lbo{x}{\frac{f(x)}{g(x)}} = \frac{g(x)\fp(x) - f(x)g'(x)}{g(x)^2}
+            \lzoo{x}{\frac{f(x)}{g(x)}} = \frac{g(x)\fp(x) - f(x)g'(x)}{g(x)^2}
           </me>.
         </p>
       </statement>
@@ -199,7 +199,7 @@
 
     <p>The Quotient Rule is not hard to use, although it might be a bit tricky to remember. A useful mnemonic works as follows. Consider a fraction's numerator and denominator as <q>HI</q> and <q>LO</q>, respectively. Then
       <me>
-        \lbo{x}{\frac{\text{ HI } }{\text{ LO } }} = \frac{\text{ LO\(\cdot\) dHI} -\text{ HI\(\cdot\) dLO } }{\text{ LOLO } }
+        \lzoo{x}{\frac{\text{ HI } }{\text{ LO } }} = \frac{\text{ LO\(\cdot\) dHI} -\text{ HI\(\cdot\) dLO } }{\text{ LOLO } }
       </me>,
       read <q>low dee high minus high dee low, over low low.</q> Said fast, that phrase can roll off the tongue, making it easy to memorize. The <q>dee high</q> and <q>dee low</q> parts refer to the derivatives of the numerator and denominator, respectively.</p>
 
@@ -213,7 +213,7 @@
       <solution>
         <p>Directly applying the Quotient Rule gives:
           <md>
-            <mrow>\lbo{x}{frac{5x^2}{\sin(x) }} \amp = \frac{\sin(x) \cdot \lbo{x}{5x^2} - 5x^2\cdot \lbo{x}{\sin(x)} }{\sin^2(x) }</mrow>
+            <mrow>\lzoo{x}{frac{5x^2}{\sin(x) }} \amp = \frac{\sin(x) \cdot \lzoo{x}{5x^2} - 5x^2\cdot \lzoo{x}{\sin(x)} }{\sin^2(x) }</mrow>
             <mrow>\amp =	\frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</mrow>.
           </md>
         </p>
@@ -223,7 +223,7 @@
     <p>The Quotient Rule allows us to fill in holes in our understanding of derivatives of the common trigonometric functions. We start with finding the derivative of the tangent function.</p>
 
     <example xml:id="ex_der_tan">
-      <title>Using the Quotient Rule to find <m>\lbo{x}{\tan(x)}</m></title>
+      <title>Using the Quotient Rule to find <m>\lzoo{x}{\tan(x)}</m></title>
       <statement>
         <p>Find the derivative of <m>y=\tan(x)</m>.</p>
       </statement>
@@ -231,7 +231,7 @@
         <p>At first, one might feel unequipped to answer this question. But recall that <m>\tan(x) = \sin(x) /\cos(x)</m>, so we can apply the Quotient Rule.
           <md>
             <mrow>\frac{d}{dx}\Big(\tan(x) \Big) \amp = \frac{d}{dx}\left(\frac{\sin(x) }{\cos(x) }\right)</mrow>
-            <mrow>\amp = \frac{\cos(x) \lbo{x}{\sin(x)} - \sin(x)\lbo{x}{\cos(x)}}{\cos^2(x) }</mrow>
+            <mrow>\amp = \frac{\cos(x) \lzoo{x}{\sin(x)} - \sin(x)\lzoo{x}{\cos(x)}}{\cos^2(x) }</mrow>
             <mrow>\amp =	\frac{\cos(x) \cos(x) - \sin(x) (-\sin(x) )}{\cos^2(x) }</mrow>
             <mrow>\amp = \frac{\cos^2(x) +\sin^2(x) }{\cos^2(x) }</mrow>
             <mrow>\amp = \frac{1}{\cos^2(x) }</mrow>
@@ -295,7 +295,7 @@
         <p>We found in <xref ref="ex_quot1">Example</xref> that <m>\ds \fp(x) = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</m>. We now find <m>\fp</m> using the Product Rule, considering <m>f</m> as <m>f(x) = 5x^2\csc(x)</m>.
           <md>
             <mrow>\fp(x) \amp = \frac{d}{dx}\Big(5x^2\csc(x) \Big)\amp</mrow>
-            <mrow>\amp =  5x^2\lbo{x}{\csc(x)} + \lbo{x}{5x^2}\csc(x)\amp</mrow>
+            <mrow>\amp =  5x^2\lzoo{x}{\csc(x)} + \lzoo{x}{5x^2}\csc(x)\amp</mrow>
             <mrow>\amp =	5x^2\left(-\csc(x) \cot(x) \right) + 10x\csc(x) \amp\text{ (now rewrite trig functions) }</mrow>
             <mrow>\amp = 5x^2\cdot \frac{-1}{\sin(x) }\cdot \frac{\cos(x) }{\sin(x) } + \frac{10x}{\sin(x) }\amp</mrow>
             <mrow>\amp =	\ds\frac{-5x^2\cos(x) }{\sin^2(x) }+\frac{10x}{\sin(x) } \amp\text{ (get common denominator) }</mrow>
@@ -374,7 +374,7 @@
         <ol>
           <li><p>Applying the Quotient Rule gives:
               <md>
-                <mrow>\fp(x) \amp =\frac{x\cdot\lbo{x}{2^x-3x+1}-\big(x^2-3x+1\big)\lbo{x}{x}}{x^2}</mrow>
+                <mrow>\fp(x) \amp =\frac{x\cdot\lzoo{x}{2^x-3x+1}-\big(x^2-3x+1\big)\lzoo{x}{x}}{x^2}</mrow>
                   <mrow>\amp = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2}</mrow>
                   <mrow>\amp = \frac{x^2-1}{x^2} </mrow>
                   <mrow>\amp = 1-\frac{1}{x^2}</mrow>.
@@ -383,7 +383,7 @@
 
           <li><p>By rewriting <m>f</m>, we can apply the Product and Power Rules as follows:
               <md>
-                <mrow>\fp(x) \amp =		\big(x^2-3x+1\big)\lbo{x}{x^{-1}} + \lbo{x}{x^2-3x+1} x^{-1}</mrow>
+                <mrow>\fp(x) \amp =		\big(x^2-3x+1\big)\lzoo{x}{x^{-1}} + \lzoo{x}{x^2-3x+1} x^{-1}</mrow>
                 <mrow> \amp = \big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}</mrow>
                 <mrow>\amp =	-\frac{x^2-3x+1}{x^2}+\frac{2x-3}{x}</mrow>
                 <mrow>\amp = -\frac{x^2-3x+1}{x^2}+\frac{2x^2-3x}{x^2}</mrow>

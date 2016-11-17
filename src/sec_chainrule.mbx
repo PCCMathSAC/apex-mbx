@@ -171,7 +171,7 @@
           <li><p>Consider <m>y = \sin(2x)</m>. Recognize that this is a composition of functions, where <m>f(x) = \sin(x)</m> and <m>g(x) = 2x</m>. Thus
               <md>
                 <mrow>y' \amp = \fp(g(x))\cdot g'(x) </mrow>
-                <mrow> \amp = \cos(2x)\cdot \lbo{x}{2x} </mrow>
+                <mrow> \amp = \cos(2x)\cdot \lzoo{x}{2x} </mrow>
                 <mrow> \amp = \cos(2x)\cdot 2 </mrow>
                 <mrow>\amp = 2\cos(2x) </mrow>
               </md>.
@@ -183,7 +183,7 @@
               </me>
               This leads us to:
               <md>
-                <mrow>y' \amp = \frac{1}{4x^3-2x^2} \cdot \lbo{x}{4x^3-2x^2}</mrow> 
+                <mrow>y' \amp = \frac{1}{4x^3-2x^2} \cdot \lzoo{x}{4x^3-2x^2}</mrow> 
                 <mrow>\amp = \frac{1}{4x^3-2x^2} \cdot (12x^2-4x)</mrow>
                <mrow> \amp  = \frac{12x^2-4x}{4x^3-2x^2}</mrow>
                <mrow> \amp = \frac{4x(3x-1)}{2x(2x^2-x)}</mrow> 
@@ -193,7 +193,7 @@
 
           <li><p>Recognize  that <m>y = e^{-x^2}</m> is the composition of <m>f(x) = e^x</m> and <m>g(x) = -x^2</m>. Remembering that <m>\fp(x) = e^x</m>, we have
               <md>
-                <mrow>y' \amp = e^{-x^2}\cdot \lbo{x}{-x^2} </mrow>
+                <mrow>y' \amp = e^{-x^2}\cdot \lzoo{x}{-x^2} </mrow>
                 <mrow>\amp = e^{-x^2}\cdot (-2x)</mrow>
                 <mrow>\amp = -2xe^{-x^2}</mrow>
               </md>.
@@ -243,7 +243,7 @@
 
     <p>The Chain Rule is used often in taking derivatives. Because of this, one can become familiar with the basic process and learn patterns that facilitate finding derivatives quickly. For instance,
       <me>
-        \frac{d}{dx}\Big(\ln(\text{ anything } )\Big) = \frac{1}{\text{ anything } }\cdot \lbo{x}{\text{ anything }}  = \frac{\lbo{x}{\text{ anything }}}{\text{ anything } }.
+        \frac{d}{dx}\Big(\ln(\text{ anything } )\Big) = \frac{1}{\text{ anything } }\cdot \plzoo{x}{\text{ anything }}  = \frac{\plzoo{x}{\text{ anything }}}{\text{ anything } }.
       </me>
     </p>
 
@@ -257,22 +257,22 @@
 
     <p>This pattern recognition process can be applied to lots of functions. In general, instead of writing <q>anything</q>, we use <m>u</m> as a generic function of <m>x</m>. We then say
       <me>
-        \frac{d}{dx}\Big(\ln(u) \Big) = \frac{\lbo{x}{u}}{u}.
+        \frac{d}{dx}\Big(\ln(u) \Big) = \frac{\lzoo{x}{u}}{u}.
       </me>
     </p>
 
     <p>The following is a short list of how the Chain Rule can be quickly applied to familiar functions.</p>
 
     <ol cols="2" >
-      <li><p><m>\ds\frac{d}{dx}\Big(u^n\Big) = n\cdot u^{n-1}\cdot \lbo{x}{u}</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(u^n\Big) = n\cdot u^{n-1}\cdot \plzoo{x}{u}</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(e^u\Big) =  e^u \cdot \lbo{x}{u}</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(e^u\Big) =  e^u \cdot \plzoo{x}{u}</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(\sin(u) \Big) = \cos(u) \cdot \lbo{x}{u}</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(\sin(u) \Big) = \cos(u) \cdot \plzoo{x}{u}</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(\cos(u) \Big) = -\sin(u)\cdot \lbo{x}{u}</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(\cos(u) \Big) = -\sin(u)\cdot \plzoo{x}{u}</m>.</p></li>
 
-      <li><p><m>\ds\frac{d}{dx}\Big(\tan(u) \Big) =  \sec^2(u) \cdot \lbo{x}{u}</m>.</p></li>
+      <li><p><m>\ds\frac{d}{dx}\Big(\tan(u) \Big) =  \sec^2(u) \cdot \plzoo{x}{u}</m>.</p></li>
     </ol>
 
     <p>Of course, the Chain Rule can be applied in conjunction with any of the other rules we have already learned. We practice this next.</p>
@@ -291,8 +291,8 @@
         <ol>
           <li><p>We must use the Product and Chain Rules. Do not think that you must be able to <q>see</q> the whole answer immediately; rather, just proceed step<ndash />by<ndash />step.
               <md>
-                <mrow>\fp(x) \amp = x^5 \cdot \lbo{x}{\sin\left(2x^3\right)} + \sin\left(2x^3\right)\cdot \lbo{x}{x^5}</mrow>
-                <mrow>\amp = x^5\big(\cos\left(2x^3\right)\cdot \lbo{x}{2x^3} \big) + 5x^4\big(\sin\left(2x^3\right) \big)</mrow>
+                <mrow>\fp(x) \amp = x^5 \cdot \lzoo{x}{\sin\left(2x^3\right)} + \sin\left(2x^3\right)\cdot \lzoo{x}{x^5}</mrow>
+                <mrow>\amp = x^5\big(\cos\left(2x^3\right)\cdot \lzoo{x}{2x^3} \big) + 5x^4\big(\sin\left(2x^3\right) \big)</mrow>
                 <mrow>\amp = x^5\big(6x^2\cos\left(2x^3\right) \big) + 5x^4\big(\sin\left(2x^3\right) \big)</mrow>
                 <mrow> \amp = 6x^7\cos\left(2x^3\right) +5x^4\sin\left(2x^3\right)</mrow> 
               </md>.
@@ -300,8 +300,8 @@
 
           <li><p>We must employ the Quotient Rule along with the Chain Rule. Again, proceed step<ndash />by<ndash />step.
               <md>
-                <mrow>\fp(x) \amp= \frac{e^{-x^2}\cdot \lbo{x}{5x^3} - 5x^3\cdot \lbo{x}{e^{-x^2}}}{\big(e^{-x^2}\big)^2} </mrow>
-                <mrow>\amp= \frac{e^{-x^2}\cdot 15x^2 - 5x^3\cdot e^{-x^2}\cdot \lbo{x}{-x^2}}{\big(e^{-x^2}\big)^2} </mrow>
+                <mrow>\fp(x) \amp= \frac{e^{-x^2}\cdot \lzoo{x}{5x^3} - 5x^3\cdot \lzoo{x}{e^{-x^2}}}{\big(e^{-x^2}\big)^2} </mrow>
+                <mrow>\amp= \frac{e^{-x^2}\cdot 15x^2 - 5x^3\cdot e^{-x^2}\cdot \lzoo{x}{-x^2}}{\big(e^{-x^2}\big)^2} </mrow>
                 <mrow>\amp= \frac{e^{-x^2}\big(15x^2\big) - 5x^3\big((-2x)e^{-x^2}\big)}{\big(e^{-x^2}\big)^2} </mrow>
                 <mrow>\amp =\frac{e^{-x^2}\big(10x^4+15x^2\big)}{e^{-2x^2}}</mrow>
                 <mrow>\amp = e^{x^2}\big(10x^4+15x^2\big)</mrow>
@@ -331,7 +331,7 @@
 
         <p>We now find <m>g'(x)</m>. We again need the Chain Rule;
           <md>
-           <mrow> g'(x) \amp = \sec^2(6x^3-7x)\cdot \lbo{x}{6x^3-7x}.</mrow>
+           <mrow> g'(x) \amp = \sec^2(6x^3-7x)\cdot \lzoo{x}{6x^3-7x}.</mrow>
            <mrow> \amp = \sec^2(6x^3-7x)\cdot(18x^2-7).</mrow>
           </md>
         </p>
@@ -357,15 +357,13 @@
       <solution>
         <p>This function likely has no practical use outside of demonstrating derivative skills. The answer is given below without simplification. It employs the Quotient Rule, the Product Rule, and the Chain Rule three times.</p>
 
-        <p>
-          <todo>Figure out how to deal with this ridiculously long equation. Tried multiline, it didn't work. </todo>
-          <md>
-            <mrow>\amp \fp(x)</mrow>
-            <mrow>\amp =\frac{\left(\ln(x^2+5x^4)\cdot\Big[\big(x\cdot(-\sin(x^{-2}))\cdot(-2x^{-3})+1\cdot \cos(x^{-2})\big)-2\sin(e^{4x})\cdot\cos(e^{4x})\cdot(4e^{4x})\Big]-\Big(x\cos(x^{-2})-\sin^2(e^{4x})\Big)\cdot\frac{2x+20x^3}{x^2+5x^4}
-            \right)}{\big(\ln(x^2+5x^4)\big)^2}</mrow>
-            <mrow></mrow>
-          </md>.
-        </p>
+        <todo>Changed this back to the original source version. Alex might want to mess with this?</todo>
+        <p><m>\fp(x) =</m>
+          <me>
+            \frac{\left(\begin{array}{l}\ln(x^2+5x^4)\cdot\Big[\big(x\cdot(-\sin(x^{-2}))\cdot(-2x^{-3})+1\cdot \cos(x^{-2})\big)-2\sin(e^{4x})\cdot\cos(e^{4x})\cdot(4e^{4x})\Big]\\
+               \qquad-\Big(x\cos(x^{-2})-\sin^2(e^{4x})\Big)\cdot\frac{2x+20x^3}{x^2+5x^4}
+               \end{array} \right)}{\big(\ln(x^2+5x^4)\big)^2}.
+          </me></p>
 
         <p>The reader is highly encouraged to look at each term and recognize why it is there. (I.e., the Quotient Rule is used; in the numerator, identify the <q>LOdHI</q> term, etc.) This example demonstrates that derivatives can be computed systematically, no matter how arbitrarily complicated the function is.</p>
       </solution>
@@ -431,7 +429,7 @@
     <todo>Is this the right way to do quotes inside of text inside of md?</todo>
       <md>
         <mrow>y' \amp = \fp(g(x))\cdot g'(x)</mrow>
-        <mrow>\frac{dy}{dx} \amp = \ds y'(u) \cdot \lbo{x}{u} \text{ (since } y=f(u) \text{ and }u=g(x)</mrow>
+        <mrow>\frac{dy}{dx} \amp = \ds y'(u) \cdot \lzoo{x}{u} \text{ (since } y=f(u) \text{ and }u=g(x)</mrow>
         <mrow>\frac{dy}{dx} \amp = \ds \frac{dy}{du} \cdot \frac{du}{dx}  \text{ (using "fractional notation" for the derivative)}</mrow>
       </md>
     </p>
