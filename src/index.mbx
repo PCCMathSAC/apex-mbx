@@ -19,10 +19,37 @@
 \newcommand{\ds}{\displaystyle}
 \newcommand{\fp}{f'}
 \newcommand{\fpp}{f''}
-%Leibniz notation
-\newcommand{\lb}[2]{\frac{d#1}{d#2}}
-%Leibniz operator. Inputs are indpendent variable and function that you want to differentiate. Can change parenthese to globally [] if desired
-\newcommand{\lbo}[2]{\frac{d}{d #1}{\left(#2\right)}}
+
+%Prime-Leibniz on toggle for cases where ' operator was changed to Leibniz. If Greg wishes, he can change just these instances to a prime operator. 
+%Note: For final PCC version, replace all \plzoo with just \lzoo.
+%Usage: \plzoo{x}{y}
+\newcommand{\plzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+%\newcommand{\plzoo}[2]{\left(#2\right)'}
+
+%  Leibniz notation
+%  Usage: \lz{y}{x}
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+%
+%  higher Leibniz notation
+%  Usage: \lzn{n}{y}{x}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+%
+%  Leibniz operator
+%  Usage: \lzo{x}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+%
+%  Leibniz operator on ....
+%  Usage: \lzoo{x}{y}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+%
+%  higher Leibniz operator
+%  Usage: \lzon{n}{x}{y}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+%
+%  Leibniz operator at ....
+%  Usage: \lzoa{y}{x}{a}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+
 \newcommand{\Fp}{F\primeskip'}
 \newcommand{\Fpp}{F\primeskip''}
 \newcommand{\yp}{y\primeskip'}
