@@ -9,7 +9,7 @@
 
     <p>While our question is not precisely formed (what constitutes <q>near the value 1</q>?), the answer does not seem difficult to find. One might think first to look at a graph of this function to approximate the appropriate <m>y</m> values. Consider <xref ref="fig_zoom_sinx_over_x">Figure</xref>, where <m>y = \frac{\sin(x) }{x}</m> is graphed. For values of <m>x</m> near 1, it seems that <m>y</m> takes on values near <m>0.85</m>. In fact, when <m>x=1</m>, then <m>y=\frac{\sin(1) }{1} \approx 0.84</m>, so it makes sense that when <m>x</m> is <q>near</q> 1, <m>y</m> will be <q>near</q> <m>0.84</m>.</p>
 
-    <sidebyside>
+    <sidebyside widths="47% 47%">
       <figure xml:id="fig_sinx_over_x_full" >
         <caption><m>\sin(x)/x</m>.</caption>
         <image xml:id="img_sinx_over_x_full">
@@ -59,7 +59,7 @@
       <figure xml:id="fig_sinx_over_x" >
             <caption><m>\sin(x)/x</m> near <m>x=0</m>.</caption>
             <!-- START figures/sinx_over_x_2.tex -->
-            <image xml:id="img_sinx_over_x_2">
+            <image xml:id="img_sinx_over_x_2" width="47%">
               <latex-image-code>
                 <![CDATA[
                                 \begin{tikzpicture}[declare function = {func(\x) = (\x != 0) * (sin(x*180/pi)/x) + (\x == 0) * (1);}]
@@ -204,7 +204,7 @@
             y = (x^2-x-6)/(6x^2-19x+3)
           </me>
           on a small interval that contains <m>3</m>. To numerically approximate the limit, create a table of values where the <m>x</m> values are near <m>3</m>. This is done in <xref ref="fig_limit1">Figure</xref> and <xref ref="table_limit1">Table</xref>, respectively.</p>
-        <sidebyside>
+        <sidebyside widths="47% 47%">
           <figure xml:id="fig_limit1" >
             <caption>Graphically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
             <!-- START figures/fig_limit1.tex -->
@@ -299,7 +299,7 @@
       <solution>
         <p>Again we graph <m>f(x)</m> and create a table of its values near <m>x=0</m> to approximate the limit. Note that this is a piecewise defined function, so it behaves differently on either side of <m>0</m>. <xref ref="fig_limit2">Figure</xref> shows a graph of <m>f(x)</m>, and on either side of <m>0</m> it seems the <m>y</m> values approach <m>1</m>. Note that <m>f(0)</m> is not actually defined, as indicated in the graph with the open circle.</p>
 
-        <sidebyside>
+        <sidebyside widths="47% 47%">
           <figure xml:id="fig_limit2" >
             <caption>Graphically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
             <!-- START figures/fig_limit2.tex -->
@@ -384,7 +384,7 @@
       <solution>
         <p>A graph of <m>f(x)</m> around <m>x=1</m> and a table are given <xref ref="fig_nolimit1">Figure</xref> and <xref ref="table_nolimit1">Table</xref>, respectively. It is clear that as <m>x</m> approaches <m>1</m>, <m>f(x)</m> does not seem to approach a single number. Instead, it seems as though <m>f(x)</m> approaches two different numbers. When considering values of <m>x</m> less than <m>1</m> (approaching <m>1</m> from the left), it seems that <m>f(x)</m> is approaching <m>2</m>; when considering values of <m>x</m> greater than <m>1</m> (approaching <m>1</m> from the right), it seems that <m>f(x)</m> is approaching <m>1</m>. Recognizing this behavior is important; we'll study this in greater depth later. Right now, it suffices to say that the limit does not exist since <m>f(x)</m> is approaching two <em>different</em> values as <m>x</m> approaches <m>1</m>.</p>
 
-        <sidebyside>
+        <sidebyside widths="47% 47%">
           <figure xml:id="fig_nolimit1" >
             <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit1">Example</xref>.</caption>
             <!-- START figures/fig_nolimit1.tex -->
@@ -452,7 +452,7 @@
       <solution>
         <p>A graph and table of <m>f(x) = 1/(x-1)^2</m> are given in <xref ref="fig_nolimit2">Figure</xref> and <xref ref="table_nolimit2">Table</xref>, respectively. Both show that as <m>x</m> approaches <m>1</m>, <m>f(x)</m> grows larger and larger.</p>
 
-        <sidebyside>
+        <sidebyside widths="47% 47%">
           <figure xml:id="fig_nolimit2" >
             <caption>Observing no limit as <m>x\to 1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
             <!-- START figures/fig_nolimit2.tex -->
@@ -531,7 +531,7 @@
       <solution>
         <p>Two graphs of <m>f(x) = \sin(1/x)</m> are given in <xref ref="fig_nolimit3">Figure</xref>. <xref ref="fig_nolimit3a">Figure</xref> shows <m>f(x)</m> on the interval <m>[-1,1]</m>; notice how <m>f(x)</m> seems to oscillate near <m>x=0</m>. One might think that despite the oscillation, as <m>x</m> approaches <m>0</m>, <m>f(x)</m> approaches <m>0</m>. However, <xref ref="fig_nolimit3b">Figure</xref> zooms in on <m>\sin(1/x)</m>, on the interval <m>[-0.1,0.1]</m>. Here the oscillation is even more pronounced. Finally, in <xref ref="table_nolimit3c">Figure</xref>, we see <m>\sin(x)/x</m> evaluated for values of <m>x</m> near <m>0</m>. As <m>x</m> approaches <m>0</m>, <m>f(x)</m> does not appear to approach any value.</p>
 
-        <sidebyside xml:id="fig_nolimit3">
+        <sidebyside xml:id="fig_nolimit3" widths="47% 47%">
           <caption>Observing that <m>f(x)=\sin(1/x)</m> has no limit as <m>x\to0</m> in <xref ref="ex_no_limit3">Example</xref>.</caption>
           <figure xml:id="fig_nolimit3a">
             <caption /><!-- START figures/fig_nolimit3a.tex -->
@@ -721,7 +721,7 @@
      <figure xml:id="fig_diffquot1" >
       <caption>Interpreting a difference quotient as the slope of a secant line.</caption>
       <!-- START figures/fig_diff_quot1.tex -->
-      <image xml:id="img_diffquot1">
+      <image xml:id="img_diffquot1" width="47%">
         <latex-image-code>
           <![CDATA[
                           \begin{tikzpicture}
@@ -753,7 +753,7 @@
       </me>
     </p>
     <todo>Add a geogebra applet (for online version only). I've made one here: https://ggbm.at/mGffD9sE</todo>
-    <sidebyside xml:id="fig_diff_quot_smallh">
+    <sidebyside xml:id="fig_diff_quot_smallh" widths="31% 31% 31%">
       <caption>Secant lines of <m>f(x)</m> at <m>x=1</m> and <m>x=1+h</m>, for shrinking values of <m>h</m> (i.e., <m>h\rightarrow 0</m>).</caption>
       <figure xml:id="fig_diff_quot_smallha">
         <caption><m>h=2</m></caption>
