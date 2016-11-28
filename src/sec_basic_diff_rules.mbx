@@ -111,14 +111,14 @@
       <title>Properties of the Derivative</title>
       <statement>
         <p>Let <m>f</m> and <m>g</m> be differentiable on an open interval <m>I</m> and let <m>c</m> be a real number. Then:<dl>
-          <li><title>Sum/Difference Rule</title>
+          <li xml:id="sum-difference-derivative-rule"><title>Sum/Difference Rule</title>
             <p><md>
                 <mrow>\lzoo{x}{f(x) \pm g(x)} \amp= \lzoo{x}{f(x)} \pm \lzoo{x}{g(x)}</mrow>
                 <mrow>\amp= \fp(x)\pm g'(x)</mrow>
             </md>
             <index><main>derivative</main><sub>Sum/Difference Rule</sub></index><index><main>Sum/Difference Rule</main><sub>of derivatives</sub></index></p></li>
 
-          <li><title>Constant Multiple Rule</title>
+          <li xml:id="constant-multiple-derivative-rule"><title>Constant Multiple Rule</title>
             <p>
             <md>
               <mrow>\lzoo{x}{c\cdot f(x)} \amp= c\cdot\lzoo{x}{f(x)}</mrow> 
@@ -423,16 +423,21 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$covered">
+              <set>
+                <member correct="yes">Covered by this section</member>
+                <member>Not covered</member>
+              </set>
+            </var>
+            <var name="$not">
+              <set>
+                <member>Covered by this section</member>
+                <member correct="yes">Not covered</member>
+              </set>
             </var>
             <pg-code>
-              $buttons[0] = RadioButtons(["Covered by this section","Not covered"],1);
-              $buttons[1] = RadioButtons(["Covered by this section","Not covered"],0);
-              $buttons[2] = RadioButtons(["Covered by this section","Not covered"],0);
-              $buttons[3] = RadioButtons(["Covered by this section","Not covered"],1);
-              $buttons[4] = RadioButtons(["Covered by this section","Not covered"],1);
-              $buttons[5] = RadioButtons(["Covered by this section","Not covered"],1);
+              $covered = RadioButtons(["Covered by this section","Not covered"],0);
+              $not = RadioButtons(["Covered by this section","Not covered"],1);
             </pg-code>
           </setup>
           <statement>
@@ -442,27 +447,27 @@
               <tabular top="minor" bottom="minor" valign="top">
                 <row>
                   <cell><m>f(x) = \frac{3}{x^2}</m></cell>
-                  <cell><var name="$buttons[0]" form="buttons" /></cell>
+                  <cell><var name="$not" form="buttons" /></cell>
                 </row>
                 <row>
                   <cell><m>g(x) = 3x^2-x+17</m></cell>
-                  <cell><var name="$buttons[1]" form="buttons" /></cell>
+                  <cell><var name="$covered" form="buttons" /></cell>
                 </row>
                 <row>
                   <cell><m>h(x) = 5\ln(x)</m></cell>
-                  <cell><var name="$buttons[2]" form="buttons" /></cell>
+                  <cell><var name="$covered" form="buttons" /></cell>
                 </row>
                 <row>
                   <cell><m>j(x) = \sin(x) \cos(x)</m></cell>
-                  <cell><var name="$buttons[3]" form="buttons" /></cell>
+                  <cell><var name="$not" form="buttons" /></cell>
                 </row>
                 <row>
                   <cell><m>k(x) = e^{x^2}</m></cell>
-                  <cell><var name="$buttons[4]" form="buttons" /></cell>
+                  <cell><var name="$not" form="buttons" /></cell>
                 </row>
                 <row>
                   <cell><m>m(x) = \sqrt{x}{3}{x^2}</m></cell>
-                  <cell><var name="$buttons[5]" form="buttons" /></cell>
+                  <cell><var name="$not" form="buttons" /></cell>
                 </row>
               </tabular>
             </table>
