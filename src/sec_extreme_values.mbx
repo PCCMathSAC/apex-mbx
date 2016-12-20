@@ -25,13 +25,13 @@
     </aside>
 
     <p>Consider <xref ref="fig_extreme">Figure</xref>.
-      The function displayed in (a) has a maximum, but no minimum, as the interval over which the function is defined is open. In (b), the function has a minimum, but no maximum; there is a discontinuity in the <q>natural</q> place for the maximum to occur. Finally, the function shown in (c) has both a maximum and a minimum; note that the function is continuous and the interval on which it is defined is closed.</p>
+      The function displayed in <xref ref="fig_extreme1" /> has a maximum, but no minimum, as the interval over which the function is defined is open. In <xref ref="fig_extreme2" />, the function has a minimum, but no maximum; there is a discontinuity in the <q>natural</q> place for the maximum to occur. Finally, the function shown in <xref ref="fig_extreme3" /> has both a maximum and a minimum; note that the function is continuous and the interval on which it is defined is closed.</p>
 
-    <figure xml:id="fig_extreme" >
+      <todo>I'm not sure if the intervals need to be shown on the x axis. I left them there for now. </todo>
+    <sidebyside xml:id="fig_extreme" widths="31% 31% 31%">
     <caption>Graphs of functions with and without extreme values.</caption>
-    <sidebyside>
-      <figure>
-        <caption>(a)</caption>
+      <figure xml:id="fig_extreme1">
+        <caption/>
         <!-- START figures/fig_extreme1.tex -->
         <image xml:id="img_extreme1" >
           <description></description>
@@ -40,17 +40,12 @@
             \begin{tikzpicture}
             \begin{axis}[ ymin=-.9,ymax=5.5,xmin=-2.2,xmax=2.2,]
 
-            \addplot [thick,{\colorone},smooth,domain=-2:2] {-x^2+5};
-
-            \filldraw [thick,{\colorone},fill=white] (axis cs:2,1) circle (1.5pt);
-            \filldraw [thick,{\colorone},fill=white] (axis cs:-2., 1) circle (1.5pt);
-
+            \addplot+[domain=-2:2] {-x^2+5};
+            \addplot[hollowdot] coordinates {(-2,1) (2,1)};
             \draw [thick] (axis cs:-2,0) node {\textbf{(}};
             \draw [thick] (axis cs:2,0) node {\textbf{)}};
             \draw [ultra thick] (axis cs:-2,0) -- (axis cs:2,0);
             \end{axis}
-
-
 
             \end{tikzpicture}
             ]]>
@@ -59,26 +54,19 @@
         <!-- figures/fig_extreme1.tex END -->
       </figure>
 
-      <figure>
-        (b)
-      </figure>
-
-      <figure>
-        <caption>(c)</caption>
-        <!-- START figures/fig_extreme3.tex -->
-        <image xml:id="img_extreme3" >
+    
+      <figure xml:id="fig_extreme2">
+        <caption/>
+        <image xml:id="img_extreme2" >
           <description></description>
           <latex-image-code>
             <![CDATA[
             \begin{tikzpicture}
             \begin{axis}[ ymin=-.9,ymax=5.5,xmin=-2.2,xmax=2.2,]
 
-            \addplot [thick,{\colorone},smooth,domain=-2:2] {-x^2+5};
-
-            \filldraw [thick,{\colorone}] (axis cs:2,1) circle (1.5pt);
-            \filldraw [thick,{\colorone}] (axis cs:-2., 1) circle (1.5pt);
-            %\filldraw [thick,{\colorone}] (axis cs:0,3) circle (1.5pt);
-            %\filldraw [thick,{\colorone},fill=white] (axis cs:0,5) circle (1.5pt);
+            \addplot+[domain=-2:2] {-x^2+5};
+            \addplot[soliddot] coordinates {(-2,1) (2,1) (0,3)};
+            \addplot[hollowdot] coordinates {(0,5)};
 
             \draw [thick] (axis cs:-2,0) node {\textbf{[}};
             \draw [thick] (axis cs:2,0) node {\textbf{]}};
@@ -91,11 +79,34 @@
             ]]>
           </latex-image-code>
         </image>
+      </figure>
+
+      <figure xml:id="fig_extreme3">
+        <caption/>
+        <!-- START figures/fig_extreme3.tex -->
+        <image xml:id="img_extreme3" >
+          <description></description>
+          <latex-image-code>
+            <![CDATA[
+            \begin{tikzpicture}
+            \begin{axis}[ ymin=-.9,ymax=5.5,xmin=-2.2,xmax=2.2,]
+
+            \addplot+[domain=-2:2] {-x^2+5};
+
+            \addplot[soliddot] coordinates {(-2,1) (2,1)};
+
+            \draw [thick] (axis cs:-2,0) node {\textbf{[}};
+            \draw [thick] (axis cs:2,0) node {\textbf{]}};
+            \draw [ultra thick] (axis cs:-2,0) -- (axis cs:2,0);
+            \end{axis}
+            \end{tikzpicture}
+            ]]>
+          </latex-image-code>
+        </image>
         <!-- figures/fig_extreme3.tex END -->
       </figure>
     </sidebyside>
 
-    </figure>
 
     <p>It is possible for discontinuous functions defined on an open interval to have both a maximum and minimum value, but we have just seen examples where they did not. On the other hand, continuous functions on a closed interval <em>always</em> have a maximum and minimum value.</p>
 
@@ -117,26 +128,20 @@
         <figure xml:id="fig_extval1" >
           <caption>A graph of <m>f(x) = 2x^3-9x^2</m> as in <xref ref="ex_extval1">Example</xref>.</caption>
           <!-- START figures/fig_extval1.tex -->
-          <image xml:id="img_extval1" >
+          <image xml:id="img_extval1"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[minor x tick num=5,xtick={-1,5}, ymin=-31,ymax=31,xmin=-1.5,xmax=5.5,]
+              \begin{axis}[minor x tick num=5,xtick={-1,5}, ymin=-33,ymax=31,xmin=-2,xmax=5.7,]
 
-              \addplot [thick,{\colorone},smooth,domain=-1:5] {2*x^3-9*x^2};
-
-              \filldraw [thick,{\colorone}] (axis cs:5,25) node [black,above] {\tiny$(5,25)$} circle (1pt);
-              \filldraw [thick,{\colorone}] (axis cs:-1., -11) circle (1pt);
-              \filldraw [{\colorone}] (axis cs: 3,-27) node [black,shift={(0,9pt)}] {\tiny$(3,-27)$} circle (1pt);
-              \filldraw [{\colorone}] (axis cs: -1,-11) node [black,shift={(4pt,-5pt)}] {\tiny$(-1,-11)$} circle (1pt) ;
-              \filldraw [{\colorone}] (axis cs: 0,0) node [black,above right] {\tiny$(0,0)$} circle (1pt); 
-              %\filldraw [thick,{\colorone}] (axis cs:0,3) circle (1.5pt);
-              %\filldraw [thick,{\colorone},fill=white] (axis cs:0,5) circle (1.5pt);
+              \addplot+[-,domain=-1:5, samples=40] {2*x^3-9*x^2};
+              \addplot[soliddot] coordinates{(-1,-11)} node[below] {$(-1,-11)$};
+              \addplot[soliddot] coordinates{(0,0)} node[above right] {$(0,0)$};
+              \addplot[soliddot] coordinates{(3,-27)} node[below] {$(3,-27)$};
+              \addplot[soliddot] coordinates{(5,25)} node[above] {$(5,25)$};
 
               \end{axis}
-
-
 
               \end{tikzpicture}
               ]]>
@@ -152,9 +157,7 @@
 
     <p>Notice how the minimum value came at <q>the bottom of a hill,</q> and the maximum value came at an endpoint. Also note that while <m>0</m> is not an extreme value, it would be if we narrowed our interval to <m>[-1,4]</m>. The idea that the point <m>(0,0)</m> is the location of an extreme value for some interval is important, leading us to a definition.</p>
 
-    <aside>
-      <p>The terms <em>local minimum</em> and <em>local maximum</em> are often used as synonyms for <em>relative minimum</em> and <em>relative maximum</em>.</p>
-    </aside>
+
 
     <definition xml:id="def_rel_ext">
       <title>Relative Minimum and Relative Maximum</title>
@@ -171,6 +174,10 @@
       </statement>
     </definition>
 
+    <aside>
+      <p>The terms <em>local minimum</em> and <em>local maximum</em> are often used as synonyms for <em>relative minimum</em> and <em>relative maximum</em>.</p>
+    </aside>
+
     <p>We briefly practice using these definitions.</p>
 
     <example xml:id="ex_extval2">
@@ -181,28 +188,21 @@
         <figure xml:id="fig_extval2" >
           <caption>A graph of <m>f(x) = (3x^4-4x^3-12x^2+5)/5</m> as in <xref ref="ex_extval2">Example</xref>.</caption>
           <!-- START figures/fig_extval2.tex -->
-          <image xml:id="img_extval2" >
+          <image xml:id="img_extval2"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
               \begin{axis}[%
-			xtick={-2,-1,1,2,3},% 
-			ytick={-6,-4,-2,0,2,4,6},
-			%extra y ticks={-5,-3,...,7},%
-			ymin=-6.5,ymax=6.9,%
-			xmin=-2.2,xmax=3.2%
+                  			xtick={-2,-1,1,2,3},% 
+                  			ytick={-6,-4,-2,0,2,4,6},
+                  			%extra y ticks={-5,-3,...,7},%
+                  			ymin=-6.5,ymax=6.9,
+                  			xmin=-2.2,xmax=3.2,
               ]
 
-              \addplot [thick,{\colorone},smooth,domain=-2:3] {(3*x^4-4*x^3-12*x^2+5)/5};
+              \addplot+[domain=-1.8:3, samples=50] {(3*x^4-4*x^3-12*x^2+5)/5};
 
-              %\filldraw [thick,{\colorone}] (axis cs:5,25) node [black,above] {\tiny$(5,25)$} circle (1pt);
-              %\filldraw [thick,{\colorone}] (axis cs:-1., -11) circle (1pt);
-              %\filldraw [{\colorone}] (axis cs: 3,-27) node [black,shift={(0,9pt)}] {\tiny$(3,-27)$} circle (1pt);
-              %\filldraw [{\colorone}] (axis cs: -1,-11) node [black,shift={(4pt,-5pt)}] {\tiny$(-1,-11)$} circle (1pt) ;
-              %\filldraw [{\colorone}] (axis cs: 0,0) node [black,above right] {\tiny$(0,0)$} circle (1pt); 
-              %\filldraw [thick,{\colorone}] (axis cs:0,3) circle (1.5pt);
-              %\filldraw [thick,{\colorone},fill=white] (axis cs:0,5) circle (1.5pt);
 
               \end{axis}
 
@@ -232,7 +232,7 @@
         <figure xml:id="fig_extval3" >
           <caption>A graph of <m>f(x) = (x-1)^{2/3}+2</m> as in <xref ref="ex_extval3">Example</xref>.</caption>
           <!-- START figures/fig_extval3.tex -->
-          <image xml:id="img_extval3" >
+          <image xml:id="img_extval3"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -245,15 +245,10 @@
 			xmin=-.6,xmax=2.6%
               ]
 
-              %\addplot [thick,{\colorone}] coordinates {(-0.5,3.31) (-0.4,3.25) (-0.3,3.19) (-0.2,3.13) (-0.1,3.07) (0,3.) (0.1,2.93) (0.2,2.86) (0.3,2.79) (0.4,2.71) (0.5,2.63)(0.6,2.54) (0.7,2.45) (0.8,2.34) (0.82,2.32) (0.84,2.29) (0.86,2.27) (0.88,2.24) (0.9,2.22)(0.92,2.19) (0.94,2.15) (0.96,2.12) (0.98,2.07) (1.,2.)};
-              %\addplot [thick,{\colorone}] coordinates {(1.,2.) (1.02,2.07) (1.04,2.12) (1.06,2.15) (1.08,2.19) (1.1,2.22) (1.12,2.24) (1.14,2.27) (1.16,2.29) (1.18,2.32) (1.2,2.34)  (1.3,2.45) (1.4,2.54) (1.5,2.63) (1.6,2.71) (1.7,2.79)(1.8,2.86) (1.9,2.93) (2.,3.) (2.1,3.07) (2.2,3.13) (2.3,3.19)(2.4,3.25) (2.5,3.31)};
-
-              \addplot [thick,{\colorone}] coordinates {(-0.5,3.31) (-0.45,3.281) (-0.4,3.251) (-0.35,3.221) (-0.3,3.191)(-0.25,3.16) (-0.2,3.129) (-0.15,3.098) (-0.1,3.066) (-0.05,3.033) (0,3.) (0.05,2.966) (0.1,2.932) (0.15,2.897) (0.2,2.862)(0.25,2.825) (0.3,2.788) (0.35,2.75) (0.4,2.711) (0.45,2.671)(0.5,2.63) (0.55,2.587) (0.6,2.543) (0.65,2.497) (0.7,2.448)(0.75,2.397) (0.8,2.342) (0.85,2.282) (0.9,2.215) (0.95,2.136)(1.,2.) (1.05,2.136) (1.1,2.215) (1.15,2.282) (1.2,2.342)(1.25,2.397) (1.3,2.448) (1.35,2.497) (1.4,2.543) (1.45,2.587)
-              (1.5,2.63) (1.55,2.671) (1.6,2.711) (1.65,2.75) (1.7,2.788)(1.75,2.825) (1.8,2.862) (1.85,2.897) (1.9,2.932) (1.95,2.966)(2.,3.) (2.05,3.033) (2.1,3.066) (2.15,3.098) (2.2,3.129) (2.25,3.16)(2.3,3.191) (2.35,3.221) (2.4,3.251) (2.45,3.281) (2.5,3.31)};
+              \addplot+[->,domain=2:3.2] ({(x-2)^1.5+1},{x});
+              \addplot+[firstcurvestyle,->,domain=2:3.2] ({-(x-2)^1.5+1},{x});
 
               \end{axis}
-
-
 
               \end{tikzpicture}
               ]]>
@@ -279,6 +274,7 @@
         <p>If <m>c</m> is a critical number of <m>f</m>, then the point <m>(c,f(c))</m> is a <term>critical point</term> of <m>f</m>.</p>
       </statement>
     </definition>
+    <aside><p><xref ref="def_criticalnum" >Definition </xref> states that critical numbers must be in the domain of the function. This is an important part of the definition that will be relevant in future sections.</p></aside>
 
     <theorem xml:id="thm_criticalpts">
       <title>Relative Extrema and Critical Points</title>
@@ -292,7 +288,7 @@
     <figure xml:id="fig_extreme4" >
       <caption>A graph of <m>f(x)=x^3</m> which has a critical value of <m>x=0</m>, but no relative extrema.</caption>
       <!-- START figures/fig_extreme4.tex -->
-      <image xml:id="img_extreme4" >
+      <image xml:id="img_extreme4"  width="47%">
         <description></description>
         <latex-image-code>
           <![CDATA[
@@ -305,7 +301,7 @@
 			xmin=-1.1,xmax=1.1%
           ]
 
-          \addplot [thick,{\colorone},domain=-1:1] {x^3};
+          \addplot+[domain=-1:1] {x^3};
           \end{axis}
 
 
@@ -351,7 +347,7 @@
         <figure xml:id="fig_extval4" >
           <caption>A graph of <m>f(x) = 2x^3+3x^2-12x</m> on <m>[0,3]</m> as in <xref ref="ex_extval4">Example</xref>.</caption>
           <!-- START figures/fig_extval4.tex -->
-          <image xml:id="img_extval4" >
+          <image xml:id="img_extval4"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -364,7 +360,8 @@
 			xmin=-.4,xmax=3.3%
               ]
 
-              \addplot [thick,{\colorone},domain=0:3] {2*x^3+3*x^2-12*x};
+              \addplot+[-,domain=0:3] {2*x^3+3*x^2-12*x};
+              \addplot[soliddot] coordinates{(0,0)(3,45)};
               \end{axis}
 
 
@@ -471,7 +468,7 @@
         <figure xml:id="fig_extval5" >
           <caption>A graph of <m>f(x)</m> on <m>[-4,2]</m> as in <xref ref="ex_extval5">Example</xref>.</caption>
           <!-- START figures/fig_extval5.tex -->
-          <image xml:id="img_extval5" >
+          <image xml:id="img_extval5"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -484,8 +481,9 @@
 			xmin=-4.5,xmax=2.5%
               ]
 
-              \addplot [thick,{\colorone},domain=-4:0] {(x-1)^2};
-              \addplot [thick,{\colorone},domain=0:2] {(x+1)};
+              \addplot+[-,domain=-4:0] {(x-1)^2};
+              \addplot [firstcurvestyle,-,domain=0:2] {(x+1)};
+              \addplot[soliddot] coordinates{(-4,25)(2,3)};
               \end{axis}
 
 
@@ -552,7 +550,7 @@
         <figure xml:id="fig_extval6" >
           <caption>A graph of <m>f(x)=\cos(x^2)</m> on <m>[-2,2]</m> as in <xref ref="ex_extval6">Example</xref>.</caption>
           <!-- START figures/fig_extval6.tex -->
-          <image xml:id="img_extval6" >
+          <image xml:id="img_extval6"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -565,7 +563,8 @@
 			xmin=-2.2,xmax=2.2%
               ]
 
-              \addplot [thick,{\colorone},domain=-2:2,samples=40,smooth] {cos(deg(x^2))};
+              \addplot+[-,samples=40,smooth, domain=-2:2] {cos(deg(x^2))};
+              \addplot[soliddot] coordinates{(-2,-0.65)(2,-0.65)};
 
               \end{axis}
 
@@ -593,7 +592,7 @@
         <figure xml:id="fig_extval7" >
           <caption>A graph of <m>f(x)=\sqrt{1-x^2}</m> on <m>[-1,1]</m> as in <xref ref="ex_extval7">Example</xref>.</caption>
           <!-- START figures/fig_extval7.tex -->
-          <image xml:id="img_extval7" >
+          <image xml:id="img_extval7"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -609,7 +608,8 @@
 			xmin=-1.2,xmax=1.2%
               ]
 
-              \addplot [thick,{\colorone},smooth,domain=0:180] ({cos(x)},{sin(x)});
+              \addplot+[-,domain=0:180] ({cos(x)},{sin(x)});
+              \addplot[soliddot] coordinates{(-1,0) (1,0)};
 
               \end{axis}
 
@@ -636,7 +636,7 @@
             <row>
               <cell><m>-1</m></cell>
               <cell><m>0</m></cell>
-            </row>
+            </row>``
             <row>
               <cell><m>0</m></cell>
               <cell><m>1</m></cell>
@@ -648,12 +648,12 @@
           </tabular>
         </table>
 
-        <p>Using the Chain Rule, we find <m>\ds \fp(x) = \frac{-x}{\sqrt{1-x^2}}</m>. The critical points of <m>f</m> are found when <m>\fp(x) = 0</m> or when <m>\fp</m> is undefined. It is straightforward to find that <m>\fp(x) = 0</m> when <m>x=0</m>, and <m>\fp</m> is undefined when <m>x=\pm 1</m>, the endpoints of the interval. The table of important values is given in <xref ref="table_ext7">Figure</xref>. The maximum value is 1, and the minimum value is 0.</p>
+        <p>Using the Chain Rule, we find <m>\ds \fp(x) = \frac{-x}{\sqrt{1-x^2}}</m>. The critical points of <m>f</m> are found when <m>\fp(x) = 0</m> or when <m>\fp</m> is undefined. It is straightforward to find that <m>\fp(x) = 0</m> when <m>x=0</m>, and <m>\fp</m> is undefined when <m>x=\pm 1</m>, the endpoints of the interval (which <em>are</em> in the domain of <m>f</m>.) The table of important values is given in <xref ref="table_ext7">Figure</xref>. The maximum value is 1, and the minimum value is 0.</p>
       </solution>
     </example>
 
     <aside>
-      <p>We implicitly found the derivative of <m>x^2+y^2=1</m>, the unit circle, in <xref ref="ex_implicit7">Example</xref> as <m>\frac{dy}{dx} = -x/y</m>. In <xref ref="ex_extval7">Example</xref>, half of the unit circle is given as <m>y=f(x) = \sqrt{1-x^2}</m>. We found <m>\fp(x) = \frac{-x}{\sqrt{1-x^2}}</m>. Recognize that the denominator of this fraction is <m>y</m>; that is, we again found <m>\fp(x) = \frac{dy}{dx} = -x/y</m>.</p>
+      <p>We implicitly found the derivative of <m>x^2+y^2=1</m>, the unit circle, in <xref ref="sec_imp_deriv.mbx"> Section</xref> <xref ref="ex_implicit7">Example</xref> as <m>\frac{dy}{dx} = -x/y</m>. In <xref ref="ex_extval7">Example</xref>, half of the unit circle is given as <m>y=f(x) = \sqrt{1-x^2}</m>. We found <m>\fp(x) = \frac{-x}{\sqrt{1-x^2}}</m>. Recognize that the denominator of this fraction is <m>y</m>; that is, we again found <m>\fp(x) = \frac{dy}{dx} = -x/y</m>.</p>
     </aside>
 
     <p>We have seen that continuous functions on closed intervals always have a maximum and minimum value, and we have also developed a technique to find these values. In the next section, we further our study of the information we can glean from <q>nice</q> functions with the Mean Value Theorem. On a closed interval, we can find the <em>average rate of change</em> of a function (as we did at the beginning of Chapter 2). We will see that differentiable functions always have a point at which their <em>instantaneous</em> rate of change is same as the <em>average</em> rate of change. This is surprisingly useful, as we'll see.</p>
