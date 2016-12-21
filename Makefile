@@ -144,8 +144,8 @@ pdf:
 	-rm $(PDFOUT)/*.tex
 	cd $(PDFOUT); \
 	xsltproc -xinclude --stringparam webwork.server.latex $(PDFOUT)/webwork-tex/ $(MBXSL)/mathbook-latex.xsl $(MAINFILE); \
-	xelatex book-1.tex; \
-	xelatex book-1.tex
+	xelatex index.tex; \
+	xelatex index.tex
 
 ###########
 # Utilities
