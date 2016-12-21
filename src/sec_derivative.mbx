@@ -1157,13 +1157,31 @@
     <exercise>
       <webwork seed="1">
         <setup>
-          <var name="">
-            <static></static>
+          <var name="$approx[0]">
+            <static>-2</static>
+          </var>
+          <var name="$approx[1]">
+            <static>0</static>
+          </var>
+          <var name="$approx[2]">
+            <static>4</static>
+          </var>
+          <var name="$derivative">
+            <static>2x</static>
+          </var>
+          <var name="$slopes[0]">
+            <static>-2</static>
+          </var>
+          <var name="$slopes[1]">
+            <static>0</static>
+          </var>
+          <var name="$slopes[2]">
+            <static>4</static>
           </var>
           <pg-code>
             $gr = init_graph(-3,-2,3,4,axes=>[0,0],grid=>[6,6],size=>[400,400]);
             add_functions($gr, "x^2-1 for x in &lt;-3,3> using color:blue and weight:2");
-            @approx=(Compute("-2")->with(tolType=>'absolute',tolerance=>0.4),Compute("0")->with(tolType=>'absolute',tolerance=>0.1),Compute("2")->with(tolType=>'absolute',tolerance=>2));
+            @approx=(Compute("-2")->with(tolType=>'absolute',tolerance=>0.4),Compute("0")->with(tolType=>'absolute',tolerance=>0.1),Compute("4")->with(tolType=>'absolute',tolerance=>2));
             $derivative=Formula("2x");
             @slopes=(-2,0,4);
           </pg-code>
@@ -1196,8 +1214,20 @@
     <exercise>
       <webwork seed="1">
         <setup>
-          <var name="">
-            <static></static>
+          <var name="$approx[0]">
+            <static>-1</static>
+          </var>
+          <var name="$approx[1]">
+            <static>-\frac{1}{4}</static>
+          </var>
+          <var name="$derivative">
+            <static>-\frac{1}{(x+1)^2}</static>
+          </var>
+          <var name="$slopes[0]">
+            <static>-1</static>
+          </var>
+          <var name="$slopes[1]">
+            <static>-\frac{1}{4}</static>
           </var>
           <pg-code>
             $gr = init_graph(-1,-1,3,6,axes=>[0,0],grid=>[4,7],size=>[400,400]);
