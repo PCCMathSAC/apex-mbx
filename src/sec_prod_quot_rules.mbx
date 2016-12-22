@@ -2,7 +2,7 @@
 
 <section xml:id="sec_prod_quot_rules">
   <title>The Product and Quotient Rules</title>
-  <introduction>
+  <!--<introduction> Violates DTD to have introduction with no subsections -->
     <p><xref ref="sec_basic_diff_rules">Section</xref> showed that, in some ways, derivatives behave nicely. The <xref ref="constant-multiple-derivative-rule" autoname="title" /> and <xref ref="sum-difference-derivative-rule" autoname="title" /> established that the derivative of <m>f(x) = 5x^2+\sin(x)</m> was not complicated. We neglected computing the derivative of things like <m>g(x) = 5x^2\sin(x)</m> and <m>h(x) = \frac{5x^2}{\sin(x) }</m> on purpose; their derivatives are <em>not</em> as straightforward. (If you had to guess what their respective derivatives are, you would probably guess wrong.) For these, we need the Product and Quotient Rules, respectively, which are defined in this section. We begin with the Product Rule.</p>
 
     <theorem xml:id="thm_ProductRule">
@@ -31,7 +31,7 @@
         <p>To make our use of the <xref ref="thm_ProductRule" autoname="title" /> explicit, let's set <m>f(x) = 5x^2</m> and <m>g(x) = \sin(x)</m>. We easily compute/recall that <m>\fp(x) = 10x</m> and <m>g'(x) = \cos(x)</m>. Employing the rule, we have
           <md>
             <mrow>\lzoo{x}{5x^2\sin(x)} \amp= 5x^2\lzoo{x}{\sin(x)} + \lzoo{x}{5x^2}\sin(x)</mrow>
-            <mrow>\amp= 5x^2\cos(x) + 10x\sin(x)</mrow>.
+            <mrow>\amp= 5x^2\cos(x) + 10x\sin(x).</mrow>
           </md>
         </p>
 
@@ -118,7 +118,7 @@
             <mrow>y' \amp = (x^2+3x+1)\lzoo{x}{2x^2-3x+1}+\lzoo{x}{x^2+3x+1}(2x^2-3x+1)</mrow>
             <mrow>\amp = (x^2+3x+1)(4x-3)+(2x+3)(2x^2-3x+1)</mrow>
             <mrow>\amp = \left(4x^3+9x^2-5x-3\right) + \left(4x^3-7x+3\right)</mrow>
-            <mrow>\amp  = 8x^3+9x^2-12x</mrow>.
+            <mrow>\amp  = 8x^3+9x^2-12x.</mrow>
           </md>
         </p>
 
@@ -137,7 +137,7 @@
             <mrow>\yp \amp = (x^3)\lzoo{x}{\ln(x) \cos(x)} + \lzoo{x}{x^3}\ln(x) \cos(x)</mrow>
             <intertext>To evaluate <m>\lzoo{x}{\ln(x) \cos(x)}</m>, we apply the Product Rule again:</intertext>
             <mrow>\yp \amp = (x^3)\left[\ln(x) (-\sin(x) ) + \frac1x\cos(x) \right]+ 3x^2\left[\ln(x) \cos(x) \right]</mrow>
-            <mrow>\amp = x^3\ln(x) (-\sin(x) ) + x^3\frac{1}{x}\cos(x) + 3x^2\ln(x) \cos(x) </mrow>.
+            <mrow>\amp = x^3\ln(x) (-\sin(x) ) + x^3\frac{1}{x}\cos(x) + 3x^2\ln(x) \cos(x).</mrow>
           </md>
         </p>
 
@@ -154,18 +154,16 @@
     <example xml:id="ex_deriv_ln">
       <title>Using the Product Rule</title>
       <statement>
-        <p>Find the derivatives of the following functions.</p>
-
-        <ol>
+        <p>Find the derivatives of the following functions.<ol>
           <li><p><m>f(x) = x\ln(x)</m></p></li>
 
           <li><p><m>g(x) = x\ln(x) - x</m>.</p></li>
-        </ol>
+        </ol></p>
       </statement>
       <solution>
         <p>Recalling that the derivative of <m>\ln(x)</m> is <m>1/x</m>, we use the <xref ref="thm_ProductRule" autoname="title" /> to find our answers.</p>
 
-        <ol>
+        <p><ol>
           <li><p>Applying the <xref ref="thm_ProductRule" autoname="title" />:<md>
              <mrow>\lzoo{x}{x\ln(x)}\amp= x\cdot 1/x + 1\cdot \ln(x)</mrow>
              <mrow>\amp = 1+\ln(x)</mrow>
@@ -177,7 +175,7 @@
                 <mrow>\amp= \ln(x)</mrow>
               </md>.
             </p></li>
-        </ol>
+        </ol></p>
 
         <p>This seems significant; if the natural log function <m>\ln(x)</m> is an important function (it is), it seems worthwhile to know a function whose derivative is <m>\ln(x)</m>. We have found one. (We leave it to the reader to find another; a correct answer will be <em>very</em> similar to this one.)</p>
       </solution>
@@ -213,7 +211,7 @@
         <p>Directly applying the <xref ref="thm_QuotientRule" autoname="title" /> gives:
           <md>
             <mrow>\lzoo{x}{frac{5x^2}{\sin(x) }} \amp = \frac{\sin(x) \cdot \lzoo{x}{5x^2} - 5x^2\cdot \lzoo{x}{\sin(x)} }{\sin^2(x) }</mrow>
-            <mrow>\amp =    \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</mrow>.
+            <mrow>\amp =    \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }.</mrow>
           </md>
         </p>
       </solution>
@@ -234,7 +232,7 @@
             <mrow>\amp = \frac{\cos(x) \cos(x) - \sin(x) (-\sin(x) )}{\cos^2(x) }</mrow>
             <mrow>\amp = \frac{\cos^2(x) +\sin^2(x) }{\cos^2(x) }</mrow>
             <mrow>\amp = \frac{1}{\cos^2(x) }</mrow>
-            <mrow>\amp = \sec^2(x)</mrow>.
+            <mrow>\amp = \sec^2(x).</mrow>
           </md>
         </p>
 
@@ -298,7 +296,7 @@
             <mrow>\amp = 5x^2\left(-\csc(x) \cot(x) \right) + 10x\csc(x) \amp\amp\text{ (now rewrite trig functions) }</mrow>
             <mrow>\amp = 5x^2\cdot \frac{-1}{\sin(x) }\cdot \frac{\cos(x) }{\sin(x) } + \frac{10x}{\sin(x) }</mrow>
             <mrow>\amp = \frac{-5x^2\cos(x) }{\sin^2(x) }+\frac{10x}{\sin(x) } \amp\amp\text{ (get common denominator) }</mrow>
-            <mrow>\amp = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }</mrow>.
+            <mrow>\amp = \frac{10x\sin(x) - 5x^2\cos(x) }{\sin^2(x) }.</mrow>
           </md>
         </p>
 
@@ -375,7 +373,7 @@
                 <mrow>\fp(x) \amp =\frac{x\cdot\lzoo{x}{x^2-3x+1}-\left(x^2-3x+1\right)\lzoo{x}{x}}{x^2}</mrow>
                   <mrow>\amp = \frac{x\cdot(2x-3)-\left(x^2-3x+1\right)\cdot 1}{x^2}</mrow>
                   <mrow>\amp = \frac{x^2-1}{x^2} </mrow>
-                  <mrow>\amp = 1-\frac{1}{x^2}</mrow>.
+                  <mrow>\amp = 1-\frac{1}{x^2}.</mrow>
               </md>
             </p></li>
 
@@ -385,7 +383,7 @@
                 <mrow>\amp = \left(x^2-3x+1\right)\cdot (-1)x^{-2} + (2x-3)\cdot x^{-1}</mrow>
                 <mrow>\amp = -\frac{x^2-3x+1}{x^2}+\frac{2x-3}{x}</mrow>
                 <mrow>\amp = -\frac{x^2-3x+1}{x^2}+\frac{2x^2-3x}{x^2}</mrow>
-                <mrow>\amp = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2}</mrow>,
+                <mrow>\amp = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2},</mrow>
               </md>
               the same result as above.</p></li>
 
@@ -402,14 +400,14 @@
       <md>
         <mrow>\amp 1-\frac{1}{x^2} </mrow>
         <mrow>\amp \frac{x\cdot(2x-3)-\left(x^2-3x+1\right)\cdot 1}{x^2} </mrow>
-        <mrow>\amp \left(x^2-3x+1\right)\cdot (-1)x^{-2} + (2x-3)\cdot x^{-1}</mrow>.
+        <mrow>\amp \left(x^2-3x+1\right)\cdot (-1)x^{-2} + (2x-3)\cdot x^{-1}.</mrow>
       </md>
     </p>
 
     <p> They are equal; they are all correct; only the first is <q>simple.</q> Work to make answers simple.</p>
         
     <p>In the next section we continue to learn rules that allow us to more easily compute derivatives than using the limit definition directly. We have to memorize the derivatives of a certain set of functions, such as <q>the derivative of <m>\sin(x)</m> is <m>\cos(x)</m>.</q> The <xref ref="sum-difference-derivative-rule" autoname="title" />, <xref ref="constant-multiple-derivative-rule" autoname="title" />, <xref ref="thm_PowerRule" autoname="title">Power Rule</xref>, <xref ref="thm_ProductRule" autoname="title" /> and <xref ref="thm_QuotientRule" autoname="title" /> show us how to find the derivatives of certain combinations of these functions. The next section shows how to find the derivatives when we <em>compose</em> these functions together.</p>
-  </introduction>
+  <!-- </introduction> Violates DTD to have introduction with no subsections -->
   <exercises>
     <exercisegroup>
       <introduction>
@@ -484,7 +482,7 @@
                 <member>Constant Multiple Rule</member>
                 <member>Sum/Difference Rule</member>
                 <member>Product Rule</member>
-                <member correc="yes">Quotient Rule</member>
+                <member correct="yes">Quotient Rule</member>
               </set>
             </var>
             <pg-code>

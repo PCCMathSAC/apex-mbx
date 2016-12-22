@@ -25,7 +25,7 @@
       <title>Derivatives of Common Functions</title>
       <statement>
         <p><dl>
-          <li><title>Constant Rule</title><index><main>derivative</main><sub>Constant Rule</sub></index> 
+          <li><title>Constant Rule</title><index><main>derivative</main><sub>Constant Rule</sub></index>
            <p><m>\lzoo{x}{c} = 0</m>, where <m>c</m> is a constant.</p></li>
 
           <li xml:id="power-derivative-rule"><title>Power Rule</title><index><main>derivative</main><sub>Power Rule</sub></index><index><main>Power Rule</main><sub>differentiation</sub></index>
@@ -121,8 +121,8 @@
           <li xml:id="constant-multiple-derivative-rule"><title>Constant Multiple Rule</title>
             <p>
             <md>
-              <mrow>\lzoo{x}{c\cdot f(x)} \amp= c\cdot\lzoo{x}{f(x)}</mrow> 
-              <mrow>\amp = c\cdot\fp(x)\text{.}</mrow> 
+              <mrow>\lzoo{x}{c\cdot f(x)} \amp= c\cdot\lzoo{x}{f(x)}</mrow>
+              <mrow>\amp = c\cdot\fp(x)\text{.}</mrow>
             </md><index><main>derivative</main><sub>Constant Multiple Rule</sub></index><index><main>Constant Multiple Rule</main><sub>of derivatives</sub></index></p></li>
         </dl></p>
       </statement>
@@ -181,7 +181,7 @@
                 </image>
                 <!-- figures/fig_xcubedwithderiv.tex END -->
             </figure>
-              
+
             <figure xml:id="fig_sintangapproxzoom" >
                 <caption>A graph of <m>f(x) = \sin(x)+2x+1</m> along with its tangent line approximation at <m>x=\pi</m>, zoomed in.</caption>
                 <image xml:id="img_sintangapproxzoom" >
@@ -190,7 +190,7 @@
                     <![CDATA[
                     \begin{tikzpicture}
                     \begin{axis}[ymin=6.7,ymax=7.4,
-                                 xmin=2.5,xmax=3.5, 
+                                 xmin=2.5,xmax=3.5,
                                  xdiscontinuity,
                                  ydiscontinuity]
                     \addplot+[domain=-2.75:3.4] {sin(deg(x))+2*x+1};
@@ -378,7 +378,7 @@
                 $student=Formula($context,$student);
                 $correct=Formula($context,"$c0 e^x");
                 return $correct == $student;
-              }); 
+              });
             </pg-code>
           </setup>
           <statement>
@@ -407,7 +407,7 @@
                 $student=Formula($context,$student);
                 $correct=Formula($context,"$c0");
                 return $correct == $student;
-              }); 
+              });
             </pg-code>
           </setup>
           <statement>
@@ -507,7 +507,7 @@
                 $student=Formula($context,$student);
                 $correct=Formula($context,"$c1 x + $c0");
                 return $correct == $student;
-              }); 
+              });
             </pg-code>
           </setup>
           <statement>
@@ -598,7 +598,7 @@
               Context("ArbitraryString");
               $ans=Compute("lb/ft^2");
               $ev=$ans->cmp(checker => sub {
-              my ($correct,$student,$ans) = @_; 
+              my ($correct,$student,$ans) = @_;
               $correct = $correct->value; # get perl string from String object
               $student = $student->value; # ditto
               my $context = Context(); Context("Numeric");
@@ -608,9 +608,9 @@
               if ($check->{score}) {
                 $ans->{preview_latex_string} = substr($check->{preview_latex_string},3);
                 $ans->{preview_text_string} = substr($check->{preview_text_string},3);
-              }   
+              }
               return $check->{score};
-              }); 
+              });
             </pg-code>
           </setup>
           <statement>
