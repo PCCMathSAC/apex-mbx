@@ -580,695 +580,1047 @@
 
   <exercises>
     <exercisegroup>
-      <title>Terms and Concepts</title>
+      <introduction>
+        <p>Terms and Concepts</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>In your own words, explain the difference between implicit functions and explicit functions.</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$derivativerules">
+              <set>
+                <member>Constant Rule</member>
+                <member>Power Rule</member>
+                <member>Sum/Difference Rule</member>
+                <member>Constant Multiple Rule</member>
+                <member>Product Rule</member>
+                <member>Quotient Rule</member>
+                <member correct="yes">Chain Rule</member>
+              </set>
             </var>
             <pg-code>
+              $derivativerules=RadioButtons(["Constant Rule", "Power Rule", "Sum/Difference Rule", "Constant Multiple Rule", "Product Rule", "Quotient Rule", "Chain Rule"],6);
             </pg-code>
           </setup>
           <statement>
             <p>Implicit differentiation is based on what other differentiation rule?</p>
+            <p><var name="$derivativerules" form="buttons" /></p>
           </statement>
           <solution>
             <p>The Chain Rule.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$tf">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $tf=PopUp(['?','True','False'],1);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: Implicit differentiation can be used to find the derivative of <m>y=\sqrt{x}</m>.</p>
+            <p>True or False? Implicit differentiation can be used to find the derivative of <m>y=\sqrt{x}</m>. <var name="$tf" form="popup"/></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
-      <exercise>
+
+     <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$tf">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $tf=PopUp(['?','True','False'],1);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: Implicit differentiation can be used to find the derivative of <m>y=x^{3/4}</m>.</p>
+            <p>True or False? Implicit differentiation can be used to find the derivative of <m>y=x^{3/4}</m>. <var name="$tf" form="popup"/></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises, compute the derivative of the given function.</p>
+      <introduction>
+        <p>In the following exercises, compute the derivative of the given function.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{1}{2}x^{-1/2}-\frac{1}{2}x^{-3/2}=\frac{1}{2\sqrt{x}}-\frac{1}{2\sqrt{x^3}}</static>
             </var>
             <pg-code>
+              Context()->variables->set(x=>{limits=>[0,4]});
+              $fp=Formula("1/(2sqrt(x))-1/(2sqrt(x^3))");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \sqrt{x} + \frac1{\sqrt{x}}</m></p>
+            <p><m>f(x)=\sqrt{x}+\dfrac{1}{\sqrt{x}}</m></p>
+            <p><m>f'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
-            <p><m>\fp(x) = \frac12x^{-1/2} - \frac12x^{-3/2} = \frac1{2\sqrt{x}}-\frac1{2\sqrt{x^3}}</m></p>
+            <p><m>\fp(x) = \frac{1}{2}x^{-1/2}-\frac{1}{2}x^{-3/2}=\frac{1}{2\sqrt{x}}-\frac{1}{2\sqrt{x^3}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{1}{3}x^{-2/3}+\frac{2}{3}x^{-1/3}=\frac{1}{3\sqrt[3]{x^2}}+\frac{2}{3\sqrt[3]{x}}</static>
             </var>
             <pg-code>
+              Context()->variables->set(x=>{limits=>[0,4]});
+              Context()->flags->set(reduceConstants=>0);
+              $fp=Formula("1/3 x^(-2/3)+2/3 x^(-1/3)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \sqrt[3]{x} + x^{2/3}</m></p>
+            <p><m>f(x)=\sqrt[3]{x}+x^{2/3}</m></p>
+            <p><m>f'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
-            <p><m>\fp(x) = \frac13x^{-2/3}+\frac23x^{-1/3} = \frac1{3\sqrt[3]{x^2}}+\frac2{3\sqrt[3]{x}}</m></p>
+            <p><m>\fp(x) = \frac{1}{3}x^{-2/3}+\frac{2}{3}x^{-1/3}=\frac{1}{3\sqrt[3]{x^2}}+\frac{2}{3\sqrt[3]{x}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{-t}{\sqrt{1-t^2}}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->variables->set(t=>{limits=>[-1,1]});
+              $fp=Formula("-t/sqrt(1-t^2)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(t) = \sqrt{1-t^2}</m></p>
+            <p><m>f(t)=\sqrt{1-t^2}</m></p>
+            <p><m>f'(t)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>\fp(t) = \frac{-t}{\sqrt{1-t^2}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\sqrt{t}\cos(t)+\frac{\sin(t)}{2\sqrt{t}}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->variables->set(t=>{limits=>[0,4]});
+              $fp=Formula("sqrt(t)cos(t)+sin(t)/(2sqrt(t))");
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(t) = \sqrt{t}\sin(t)</m></p>
+            <p><m>g(t)=\sqrt{t}\sin(t)</m></p>
+            <p><m>g'(t)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
-            <p><m>g'(t) = \sqrt{t}\cos(t) + \frac{\sin(t) }{2\sqrt{t}}</m></p>
+            <p><m>g'(t) = \sqrt{t}\cos(t)+\frac{\sin(t)}{2\sqrt{t}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>1.5x^{0.5}=1.5\sqrt{x}</static>
             </var>
             <pg-code>
+              Context()->variables->set(x=>{limits=>[0,4]});
+              $fp=Formula("1.5sqrt(x)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>h(x) = x^{1.5}</m></p>
+            <p><m>h(x)=x^{1.5}</m></p>
+            <p><m>h'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
-            <p><m>h'(x) = 1.5x^{0.5} = 1.5\sqrt{x}</m></p>
+            <p><m>h'(x) = 1.5x^{0.5}=1.5\sqrt{x}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\pi x^{\pi-1}+1.9x^{0.9}</static>
             </var>
             <pg-code>
+              Context()->variables->set(x=>{limits=>[0,4]});
+              Context()->flags->set(reduceConstants=>0);
+              $fp=Formula("pi x^(pi-1)+1.9x^(0.9)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = x^\pi+x^{1.9} + \pi^{1.9}</m></p>
+            <p><m>f(x)=x^{\pi}+x^{1.9}+\pi^{1.9}</m></p>
+            <p><m>f'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>\fp(x) = \pi x^{\pi-1}+1.9x^{0.9}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{\sqrt{x}\cdot1-(x+7)(1/2x^{-1/2})}{x}=\frac{1}{2\sqrt{x}}-\frac{7}{2\sqrt{x^3}}</static>
             </var>
             <pg-code>
+              Context()->variables->set(x=>{limits=>[0,4]});
+              $fp=Formula("1/(2sqrt(x))-7/(2sqrt(x^3))");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds g(x) = \frac{x+7}{\sqrt{x}}</m></p>
+            <p><m>g(x)=\dfrac{x+7}{\sqrt{x}}</m></p>
+            <p><m>g'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
-            <p><m>g'(x) = \frac{\sqrt{x}(1)-(x+7)(1/2x^{-1/2})}{x} = \frac{1}{2\sqrt{x}}-\frac{7}{2\sqrt{x^3}}</m></p>
+            <p><m>g'(x) = \frac{\sqrt{x}\cdot1-(x+7)(1/2x^{-1/2})}{x}=\frac{1}{2\sqrt{x}}-\frac{7}{2\sqrt{x^3}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{1}{5}t^{-4/5}\left(\sec(t)+e^t\right)+\sqrt[5]{t}\left(\sec(t)\tan(t)+e^t\right)</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->variables->set(t=>{limits=>[0,4]});
+              $fp=Formula("1/5t^(-4/5)(sec(t)+e^t)+t^(1/5)(sec(t)tan(t)+e^t)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(t) = \sqrt[5]{t}(\sec(t) + e^t)</m></p>
+            <p><m>f(t)=\sqrt[5]{t}\left(\sec(t) + e^t\right)</m></p>
+            <p><m>f'(t)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
-            <p><m>\fp(t) = \frac15x^{-4/5}(\sec(t) + e^t) + \sqrt[5]{t}(\sec(t) \tan(t) + e^t)</m></p>
+            <p><m>\fp(t) = \frac{1}{5}t^{-4/5}\left(\sec(t)+e^t\right)+\sqrt[5]{t}\left(\sec(t)\tan(t)+e^t\right)</m></p>
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find <m>\ds \frac{dy}{dx}</m> using implicit differentiation.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find <m>\lz{y}{x}</m> using implicit differentiation.</p>
+      </introduction>
       <exercise xml:id="exer_02_06_ex_09">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>-\frac{4x^3}{2y+1}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("-4x^3/(2y+1)");
+              @y=(random(-2,2,0.1),random(-2,2,0.1),random(-2,2,0.1),random(-2,2,0.1),random(-2,2,0.1));
+              @x=map{(7-($_)-($_)**2)**(1/4)*(-1)**(random(-1,1,2))}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
             <p><m>x^4+y^2+y=7</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
-            <p><m>\frac{dy}{dx} = \frac{-4x^3}{2y+1}</m></p>
+            <p><m>\frac{dy}{dx} = -\frac{4x^3}{2y+1}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>-\frac{y^{3/5}}{x^{3/5}}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("-y^(3/5)/x^(3/5)");
+              @y=(random(0.01,0.99,0.01),random(0.01,0.99,0.01),random(0.01,0.99,0.01),random(0.01,0.99,0.01),random(0.01,0.99,0.01));
+              @x=map{(1-($_)**(2/5))**(5/2)}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
             <p><m>x^{2/5}+y^{2/5}=1</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>\frac{dy}{dx}=-\frac{y^{3/5}}{x^{3/5}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\sin(x)\sec(y)</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("sin(x)sec(y)");
+              @y=(random(0,3.14,0.01),random(0,3.14,0.01),random(0,3.14,0.01),random(0,3.14,0.01),random(0,3.14,0.01));
+              @x=map{acos(1-sin($_))}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
             <p><m>\cos(x)+\sin(y)=1</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
-            <p><m>\frac{dy}{dx}=\sin(x) \sec(y)</m></p>
+            <p><m>\frac{dy}{dx}=\sin(x)\sec(y)</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise xml:id="exer_02_06_ex_12">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{y}{x}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("y/x");
+              @x=(random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1));
+              @y=map{$_/10}(@x);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\frac{x}{y}=10</m></p>
+            <p><m>\dfrac{x}{y}=10</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>\frac{dy}{dx}=\frac{y}{x}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{y}{x}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("y/x");
+              @y=(random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1));
+              @x=map{$_/10}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\frac{y}{x}=10</m></p>
+            <p><m>\dfrac{y}{x}=10</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>\frac{dy}{dx}=\frac{y}{x}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>-\frac{e^x x (x+2) 2^{-y}}{\ln(2)}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              Context()->flags->set(reduceConstantFunctions=>0);
+              $dydx=Formula("-(e^x x(x+2) 2^(-y))/(ln(2))");
+              @x=(random(-4,1,0.1),random(-4,1,0.1),random(-4,1,0.1),random(-4,1,0.1),random(-4,1,0.1));
+              @y=map{ln(5-($_)**2*exp($_))/ln(2)}(@x);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
-            <p><m>x^2e^2+2^y=5</m></p>
+            <p><m>x^2e^x+2^y=5</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
-            <p><m>-\frac{e^x x (x+2) 2^{-y}}{\ln\abs{2}}</m></p>
+            <p><m>-\frac{e^x x (x+2) 2^{-y}}{\ln(2)}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>-\frac{2 \sin(y) \cos(y)}{x}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("-2sin(y)cos(y)/x");
+              @x=(random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1));
+              @y=map{atan(50/($_)**2)}(@x);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
             <p><m>x^2\tan(y) =50</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>-\frac{2 \sin(y) \cos(y)}{x}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>-\frac{x}{y^2}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("-x/y^2");
+              @x=(random(-0.6,0.6,0.01),random(-0.6,0.6,0.01),random(-0.6,0.6,0.01),random(-0.6,0.6,0.01),random(-0.6,0.6,0.01));
+              @y=map{((2**0.25-3*($_)**2)/2&lt;0)?-(abs(-(2**0.25-3*($_)**2)/2))**(1/3):((2**0.25-3*($_)**2)/2)**(1/3)}(@x);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
             <p><m>(3 x^2+2 y^3)^4=2</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>-\frac{x}{y^2}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{1}{2y+2}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("1/(2y+2)");
+              @y=(random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1));
+              @x=map{sqrt(200)*(-1)**(random(-1,1,2))+2*($_)+($_)**2}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
             <p><m>(y^2+2y-x)^2=200</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>\frac{1}{2y+2}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{x^2+2 x y^2-y}{2 x^2 y-x+y^2}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("(x^2+2xy^2-y)/(2x^2y-x+y^2)");
+              @y=(random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1));
+              @x=map{(17+(-1)**(random(-1,1,2))*sqrt(289 - 4*($_)*(1 - 17*($_))))/2}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\frac{x^2+y}{x+y^2}=17</m></p>
+            <p><m>\dfrac{x^2+y}{x+y^2}=17</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>\frac{x^2+2 x y^2-y}{2 x^2 y-x+y^2}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{-\cos(x) (x+\cos(y))+\sin(x)+y}{\sin(y) (\sin(x)+y)+x+\cos(y)}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("(-cos(x)(x+cos(y))+sin(x)+y)/(sin(y)(sin(x)+y)+x+cos(y))");
+              $dydx->{test_points}=[[-3.1,-3.83041],[-0.41,0.732269],[0.59,0.759097],[2.6,1.82908],[5.3,6.93017]];
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\frac{\sin(x)+y}{\cos(y)+x}=1</m></p>
+            <p><m>\dfrac{\sin(x)+y}{\cos(y)+x}=1</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>\frac{-\cos(x) (x+\cos(y))+\sin(x)+y}{\sin(y) (\sin(x)+y)+x+\cos(y)}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>-\frac{x}{y}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("-x/y");
+              @t=(random(0,6.28,0.01),random(0,6.28,0.01),random(0,6.28,0.01),random(0,6.28,0.01),random(0,6.28,0.01));
+              @x=map{exp(exp(1)/2)*cos($_)}(@t);
+              @y=map{exp(exp(1)/2)*sin($_)}(@t);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ln(x^2+y^2) = e</m></p>
+            <p><m>\ln\mathopen{}\left(x^2+y^2\right)\mathclose{}=e</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>-\frac{x}{y}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>-\frac{2x+y}{2y+x}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("-(2x+y)/(2y+x)");
+              @t=(random(0,6.28,0.01),random(0,6.28,0.01),random(0,6.28,0.01),random(0,6.28,0.01),random(0,6.28,0.01));
+              @u=map{sqrt(2/3*exp(1))*cos($_)}(@t);
+              @v=map{sqrt(2*exp(1))*sin($_)}(@t);
+              @x=map{($u[$_]-$v[$_])/sqrt(2)}(0..4);
+              @y=map{($u[$_]+$v[$_])/sqrt(2)}(0..4);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ln(x^2+xy+y^2) = 1</m></p>
+            <p><m>\ln\mathopen{}\left(x^2+xy+y^2\right)\mathclose{} = 1</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
           </statement>
           <solution>
             <p><m>-\frac{2x+y}{2y+x}</m></p>
           </solution>
         </webwork>
       </exercise>
+    </exercisegroup>
+
+    <exercise>
+      <webwork seed="1">
+        <statement>
+          <p>Show that <m>\lz{y}{x}</m> is the same for each of the following implicitly defined functions.</p>
+          <p><ol>
+              <li>
+                <p><m>xy=1</m></p>
+                <p><var form="essay" /></p>
+              </li>
+              <li>
+                <p><m>x^2y^2=1</m></p>
+                <p><var form="essay" /></p>
+              </li>
+              <li>
+                <p><m>\sin(xy) = 1</m></p>
+                <p><var form="essay" /></p>
+              </li>
+              <li>
+                <p><m>\ln(xy) =1</m></p>
+                <p><var form="essay" /></p>
+              </li>
+          </ol></p>
+        </statement>
+        <solution>
+          <p>In each, <m>\lz{y}{x} = -\frac{y}{x}</m>.</p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the equation of the tangent line to the graph of the implicitly defined function at the indicated points. As a visual aid, each function is graphed.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq[0]">
+              <static>y=0</static>
+            </var>
+            <var name="$eq[1]">
+              <static>y=-1.859(x-0.1)+0.2811</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              @eq=(Formula("y=0"),Formula("y=-1.859(x-0.1)+0.2811"));
+              $gr=init_graph(-1.2,-1.2,1.2,1.2,axes=>[0,0],size=>[400,400]);
+              $gr->lb('reset');
+              for my$i(-1,-0.5,0.5,1){$gr->moveTo($i,-0.04);$gr->lineTo($i,0.04,'black',2);$gr->lb(new Label($i,-0.05,$i,'black','center','top'));};
+              for my$i(-1,-0.5,0.5,1){$gr->moveTo(-0.04,$i);$gr->lineTo(0.04,$i,'black',2);$gr->lb(new Label(-0.05,$i,$i,'black','right','middle'));};
+              Context("Numeric");
+              Context()->variables->are(t=>'Real');
+              $x=Formula("cos^5(t)");
+              $y=Formula("sin^5(t)");
+              $f=new Fun($x->perlFunction,$y->perlFunction,$gr);
+              $f->domain(0,6.2831852);
+              $f->steps(100);
+              $f->weight(2);
+              $f->color('blue');
+              $gr->stamps(closed_circle(0.1,0.2811,'black'));
+              $gr->lb(new Label(0.1,0.2811,'(0.1,0.2811)','black','left','bottom'));
             </pg-code>
           </setup>
           <statement>
-            <p>Show that <m>\ds \frac{dy}{dx}</m> is the same for each of the following implicitly defined functions.</p>
+            <p>On the curve <m>x^{2/5}+y^{2/5} = 1</m>, find the equation of the tangent line at:</p>
 
-            <ol>
-              <li><p><m>xy=1</m></p></li>
+            <p><ol>
+              <li>
+                <p><m>(1,0)</m></p>
+                <p><var name="$eq[0]" width="30" /></p>
+              </li>
 
-              <li><p><m>x^2y^2=1</m></p></li>
+              <li>
+                <p><m>(0.1,0.2811)</m> (which does not <em>exactly</em> lie on the curve, but is very close)</p>
+                <p><var name="$eq[1]" width="30" /></p>
+              </li>
+            </ol></p>
 
-              <li><p><m>\sin(xy) = 1</m></p></li>
+            <figure>
+              <image pg-name="$gr" />
+            </figure>
 
-              <li><p><m>\ln(xy) =1</m></p></li>
-            </ol>
           </statement>
-          <solution>
-            <p>In each, <m>\frac{dy}{dx} = -\frac yx</m>.</p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the equation of the tangent line to the graph of the implicitly defined function at the indicated points. As a visual aid, each function is graphed.</p>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq[0]">
+              <static>x=1</static>
+            </var>
+            <var name="$eq[1]">
+              <static>y=-\frac{3\sqrt{3}}{8}\left(x-\sqrt{0.6}\right)+\sqrt{0.8} \approx -0.65(x-0.775)+0.894</static>
+            </var>
+            <var name="$eq[2]">
+              <static>y=1</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              @eq=(Formula("x=1"),Formula("y=-3sqrt(3)/8(x-sqrt(0.6))+sqrt(0.8)"),Formula("y=1"));
+              $gr=init_graph(-1.2,-1.2,1.2,1.2,axes=>[0,0],size=>[400,400]);
+              $gr->lb('reset');
+              for my$i(-1,-0.5,0.5,1){$gr->moveTo($i,-0.04);$gr->lineTo($i,0.04,'black',2);$gr->lb(new Label($i,-0.05,$i,'black','center','top'));};
+              for my$i(-1,-0.5,0.5,1){$gr->moveTo(-0.04,$i);$gr->lineTo(0.04,$i,'black',2);$gr->lb(new Label(-0.05,$i,$i,'black','right','middle'));};
+              Context("Numeric");
+              Context()->variables->are(t=>'Real');
+              $x=Formula("(abs(cos(t)))^(1/2)*sgn(cos(t))");
+              $y=Formula("(abs(sin(t)))^(1/2)*sgn(sin(t))");
+              $f=new Fun($x->perlFunction,$y->perlFunction,$gr);
+              $f->domain(0,6.2831852);
+              $f->steps(100);
+              $f->weight(2);
+              $f->color('blue');
+              $gr->stamps(closed_circle(0.7746,0.8944,'black'));
+              $gr->lb(new Label(0.7746,0.8944,'(sqrt(0.6),sqrt(0.8))','black','right','top'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>x^{2/5}+y^{2/5} = 1</m></p>
+            <p>On the curve <m>x^{4}+y^{4} = 1</m>, find the equation of the tangent line at:</p>
 
-            <ol>
-              <li><p>At <m>(1,0)</m>.</p></li>
+            <p><ol>
+              <li>
+                <p><m>(1,0)</m></p>
+                <p><var name="$eq[0]" width="30" /></p>
+              </li>
 
-              <li><p>At <m>(0.1,0.281)</m> (which does not <em>exactly</em> lie on the curve, but is very close).</p></li>
-            </ol>
+              <li>
+                <p><m>\left(\sqrt{0.6},\sqrt{0.8}\right)</m></p>
+                <p><var name="$eq[1]" width="30" /></p>
+              </li>
 
-            <!-- START\1END -->
+              <li>
+                <p>At <m>(0,1)</m></p>
+                <p><var name="$eq[2]" width="30" /></p>
+              </li>
+            </ol></p>
+
+            <figure>
+              <image pg-name="$gr" />
+            </figure>
+
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>y=0</m></p></li>
-
-              <li><p><m>y = -1.859(x-0.1)+0.281</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq[0]">
+              <static>y=4</static>
+            </var>
+            <var name="$eq[1]">
+              <static>y=\frac{3}{\sqrt[4]{108}}(x-2)+\sqrt[4]{108}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              @eq=(Formula("y=4"),Formula("y=3/108^(1/4)(x-2)+108^(1/4)"));
+              $gr=init_graph(-4.2,-4.2,4.2,4.2,axes=>[0,0],size=>[400,400]);
+              $gr->lb('reset');
+              for my$i(-4,-3,-2,-1,1,2,3,4){$gr->moveTo($i,-0.04);$gr->lineTo($i,0.04,'black',2);$gr->lb(new Label($i,-0.05,$i,'black','center','top'));};
+              for my$i(-4,-3,-2,-1,1,2,3,4){$gr->moveTo(-0.04,$i);$gr->lineTo(0.04,$i,'black',2);$gr->lb(new Label(-0.05,$i,$i,'black','right','middle'));};
+              Context("Numeric");
+              Context()->variables->are(t=>'Real');
+              $x=Formula("sqrt((216 sin^2(t) + sqrt((216 sin^2(t))^2 - (36 sin^2(t))^3))^(1/3) + (216 sin^2(t) - sqrt((216 sin^2(t))^2 - (36sin^2(t))^3))^(1/3) + 4) cos(t)");
+              $y=Formula("sqrt((216 sin^2(t) + sqrt((216 sin^2(t))^2 - (36 sin^2(t))^3))^(1/3) + (216 sin^2(t) - sqrt((216 sin^2(t))^2 - (36sin^2(t))^3))^(1/3) + 4) sin(t)");
+              $f=new Fun($x->perlFunction,$y->perlFunction,$gr);
+              $f->domain(0,6.2831852);
+              $f->steps(100);
+              $f->weight(2);
+              $f->color('blue');
+              $gr->stamps(closed_circle(2,-3.224,'black'));
+              $gr->lb(new Label(2,-3.224,'(2,-108^(1/4))','black','left','bottom'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>x^{4}+y^{4} = 1</m></p>
+            <p>On the curve <m>(x^2+y^2-4)^3 = 108y^2</m>, find the equation of the tangent line at:</p>
 
-            <ol>
-              <li><p>At <m>(1,0)</m>.</p></li>
+            <p><ol>
+              <li>
+                <p><m>(0,4)</m></p>
+                <p><var name="$eq[0]" width="30" /></p>
+              </li>
 
-              <li><p>At <m>(\sqrt{0.6},\sqrt{0.8})</m>.</p></li>
+              <li>
+                <p><m>\left(2,-\sqrt[4]{108}\right)</m></p>
+                <p><var name="$eq[1]" width="30" /></p>
+              </li>
+            </ol></p>
 
-              <li><p>At <m>(0,1)</m>.</p></li>
-            </ol>
+            <figure>
+              <image pg-name="$gr" />
+            </figure>
 
-            <!-- START\1END -->
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>x=1</m></p></li>
-
-              <li><p><m>y = -\frac{3\sqrt{3}}{8}(x-\sqrt{.6})+\sqrt{.8} \approx -0.65(x-0.775)+0.894</m></p></li>
-
-              <li><p><m>y=1</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq[0]">
+              <static>y=-\frac{1}{3}x+1</static>
+            </var>
+            <var name="$eq[1]">
+              <static>y=3\sqrt{3}/4</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              @eq=(Formula("y=-1/3x+1"),Formula("y=3sqrt(3)/4"));
+              $gr=init_graph(-2.5,-1.5,0.5,1.5,axes=>[0,0],size=>[400,400]);
+              $gr->lb('reset');
+              for my$i(-2,-1){$gr->moveTo($i,-0.04);$gr->lineTo($i,0.04,'black',2);$gr->lb(new Label($i,-0.05,$i,'black','center','top'));};
+              for my$i(-1,1){$gr->moveTo(-0.04,$i);$gr->lineTo(0.04,$i,'black',2);$gr->lb(new Label(-0.05,$i,$i,'black','right','middle'));};
+              Context("Numeric");
+              Context()->variables->are(t=>'Real');
+              $x=Formula("(1 - cos(t))*cos(t)");
+              $y=Formula("(1 - cos(t))*sin(t)");
+              $f=new Fun($x->perlFunction,$y->perlFunction,$gr);
+              $f->domain(0,6.2831852);
+              $f->steps(100);
+              $f->weight(2);
+              $f->color('blue');
+              $gr->stamps(closed_circle(-0.75,1.299,'black'));
+              $gr->lb(new Label(-0.75,1.299,'(-3/4,3sqrt(3)/4)','black','center','bottom'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>(x^2+y^2-4)^3 = 108y^2</m></p>
+            <p>On the curve <m>(x^2+y^2+x)^2 = x^2+y^2</m>, find the equation of the tangent line at:</p>
 
-            <ol>
-              <li><p>At <m>(0,4)</m>.</p></li>
+            <p><ol>
+              <li>
+                <p><m>(0,1)</m></p>
+                <p><var name="$eq[0]" width="30" /></p>
+              </li>
 
-              <li><p>At <m>(2,-\sqrt[4]{108})</m>.</p></li>
-            </ol>
+              <li>
+                <p><m>\left(-\frac{3}{4}, \frac{3\sqrt{3}}{4}\right)</m></p>
+                <p><var name="$eq[1]" width="30" /></p>
+              </li>
+            </ol></p>
 
-            <!-- START\1END -->
+            <figure>
+              <image pg-name="$gr" />
+            </figure>
+
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>y=4</m></p></li>
-
-              <li><p><m>y = 0.93(x-2)+\sqrt[4]{108}</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq[0]">
+              <static>y=-\frac{1}{\sqrt{3}}\left(x-\frac72\right)+\frac{6+3\sqrt{3}}{2}</static>
+            </var>
+            <var name="$eq[1]">
+              <static>y=\sqrt{3}\left(x-\frac{4+3\sqrt{3}}{2}\right)+\frac{3}{2}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              @eq=(Formula("y=-1/sqrt(3)(x-7/2)+(6+3sqrt(3))/2"),Formula("y=sqrt(3)(x-(4+3sqrt(3)))/2+3/2"));
+              $gr=init_graph(-2,-2,6.5,6.5,axes=>[0,0],size=>[400,400]);
+              $gr->lb('reset');
+              for my$i(2,4,6){$gr->moveTo($i,-0.04);$gr->lineTo($i,0.04,'black',2);$gr->lb(new Label($i,-0.05,$i,'black','center','top'));};
+              for my$i(2,4,6){$gr->moveTo(-0.04,$i);$gr->lineTo(0.04,$i,'black',2);$gr->lb(new Label(-0.05,$i,$i,'black','right','middle'));};
+              Context("Numeric");
+              Context()->variables->are(t=>'Real');
+              $x=Formula("3*cos(t)+2");
+              $y=Formula("3*sin(t)+3");
+              $f=new Fun($x->perlFunction,$y->perlFunction,$gr);
+              $f->domain(0,6.2831852);
+              $f->steps(100);
+              $f->weight(2);
+              $f->color('blue');
+              $gr->stamps(closed_circle(3.5,5.598,'black'));
+              $gr->lb(new Label(3.5,5.598,'(7/2,(6+3sqrt(3))/2)','black','right','top'));
+              $gr->stamps(closed_circle(4.598,1.5,'black'));
+              $gr->lb(new Label(4.598,1.5,'((4+3sqrt(3))/2,3/2)','black','right','bottom'));
             </pg-code>
           </setup>
           <statement>
-            <p><m>(x^2+y^2+x)^2 = x^2+y^2</m></p>
+            <p>On the curve <m>(x-2)^2+(y-3)^2=9</m>, find the equation of the tangent line at:</p>
 
-            <ol>
-              <li><p>At <m>(0,1)</m>.</p></li>
+            <p><ol>
+              <li>
+                <p><m>\left(\frac{7}{2},\frac{6+3\sqrt{3}}{2}\right)</m></p>
+                <p><var name="$eq[0]" width="30" /></p>
+              </li>
 
-              <li><p>At <m>\ds \left(-\frac34, \frac{3 \sqrt{3}}{4}\right)</m>.</p></li>
-            </ol>
+              <li>
+                <p><m>\left(\frac{4+3\sqrt{3}}{2},\frac{3}{2}\right)</m></p>
+                <p><var name="$eq[1]" width="30" /></p>
+              </li>
+            </ol></p>
 
-            <!-- START\1END -->
+            <figure>
+              <image pg-name="$gr" />
+            </figure>
+
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>y=-1/3x+1</m></p></li>
-
-              <li><p><m>y = 3\sqrt{3}/4</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, an implicitly defined function is given. Find <m>\lzn{y}{x}{2}</m>. Note: these are the same problems used in Exercises <xref ref="exer_02_06_ex_09" autoname="no" /> through <xref ref="exer_02_06_ex_12" autoname="no" />.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$ddyddx">
+              <static>-\frac{(2y+1)(12x^2)-4x^3\left(2\cdot-\frac{4x^3}{2y+1}\right)}{(2y+1)^2}</static>
             </var>
             <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>(x-2)^2+(y-3)^2=9</m></p>
-
-            <ol>
-              <li><p>At <m>\ds \left(\frac72,\frac{6+3\sqrt{3}}{2}\right)</m>.</p></li>
-
-              <li><p>At <m>\ds\left(\frac{4+3\sqrt{3}}{2}, \frac32\right)</m>.</p></li>
-            </ol>
-
-            <!-- START\1END -->
-          </statement>
-          <solution>
-            <ol>
-              <li><p><m>y=-\frac{1}{\sqrt{3}}(x-\frac72)+\frac{6+3\sqrt{3}}{2}</m></p></li>
-
-              <li><p><m>y = \sqrt{3}(x-\frac{4+3\sqrt{3}}2)+\frac32</m></p></li>
-            </ol>
-          </solution>
-        </webwork>
-      </exercise>
-      <p>In the following exercises, an implicitly defined function is given. Find <m>\ds \frac{d^2y}{dx^2}</m>. Note: these are the same problems used in <xref ref="exer_02_06_ex_09">Exercises</xref> through <xref ref="exer_02_06_ex_12"></xref>.</p>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
+              Context()->variables->add(y=>'Real');
+              $ddyddx=Formula("-((2y+1)(12x^2)-4x^3(2*-(4x^3)/(2y+1)))/(2y+1)^2");
+              @y=(random(-2,2,0.1),random(-2,2,0.1),random(-2,2,0.1),random(-2,2,0.1),random(-2,2,0.1));
+              @x=map{(7-($_)-($_)**2)**(1/4)*(-1)**(random(-1,1,2))}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $ddyddx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
             <p><m>x^4+y^2+y=7</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$ddyddx" width="50" /></p>
           </statement>
           <solution>
-            <p><m>\frac{d^2y}{dx^2} = \frac{(2y+1)(-12x^2) + 4x^3\left(2\frac{-4x^3}{2y+1}\right)}{(2y+1)^2}</m></p>
+            <p><m>-\frac{(2y+1)(12x^2)-4x^3\left(2\cdot-\frac{4x^3}{2y+1}\right)}{(2y+1)^2}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$ddyddx">
+              <static>-\frac{x^{3/5}\cdot\frac{3}{5}y^{-2/5}\left(-\frac{y^{3/5}}{x^{3/5}}\right)-y^{3/5}\cdot\frac{3}{5}x^{-2/5}}{x^{6/5}}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $ddyddx=Formula("-(x^(3/5)*3/5y^(-2/5)(-y^(3/5)/x^(3/5))-y^(3/5)*3/5x^(-2/5))/x^(6/5)");
+              @y=(random(0.01,0.99,0.01),random(0.01,0.99,0.01),random(0.01,0.99,0.01),random(0.01,0.99,0.01),random(0.01,0.99,0.01));
+              @x=map{(1-($_)**(2/5))**(5/2)}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $ddyddx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
             <p><m>x^{2/5}+y^{2/5}=1</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$ddyddx" width="50" /></p>
           </statement>
           <solution>
-            <p><m>\frac{d^2y}{dx^2} = \frac35\frac{y^{3/5}}{x^{8/5}} +\frac35\frac{1}{yx^{6/5}}</m></p>
+            <p><m>-\frac{x^{3/5}\cdot\frac{3}{5}y^{-2/5}\left(-\frac{y^{3/5}}{x^{3/5}}\right)-y^{3/5}\cdot\frac{3}{5}x^{-2/5}}{x^{6/5}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$ddyddx">
+              <static>\sin^2(x)\sec^2(y)\tan(y)+\cos(x)\sec(y)</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $ddyddx=Formula("sin^2(x)sec^2(y)tan(y)+cos(x)sec(y)");
+              @y=(random(0,3.14,0.01),random(0,3.14,0.01),random(0,3.14,0.01),random(0,3.14,0.01),random(0,3.14,0.01));
+              @x=map{acos(1-sin($_))}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $ddyddx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
-            <p><m>\cos(x) +\sin(y) =1</m></p>
+            <p><m>\cos(x)+\sin(y)=1</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$ddyddx" width="50" /></p>
           </statement>
           <solution>
-            <p><m>\frac{d^2y}{dx^2} = \frac{\cos(x) \cos(y) +\sin^2(x) \tan(y) }{\cos^2(y) }</m></p>
+            <p><m>\sin^2(x)\sec^2(y)\tan(y)+\cos(x)\sec(y)</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$ddyddx">
+              <static>0</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $ddyddx=Formula("0");
+              @x=(random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1));
+              @y=map{$_/10}(@x);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $ddyddx->{test_points}=~~@xy;
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\frac{x}{y}=10</m></p>
+            <p><m>\dfrac{x}{y}=10</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$ddyddx" width="50" /></p>
           </statement>
           <solution>
-            <p><m>\frac{d^2y}{dx^2} = 0</m></p>
+            <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, use logarithmic differentiation to find <m>\ds \frac{dy}{dx}</m>, then find the equation of the tangent line at the indicated <m>x</m><ndash />value.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, use logarithmic differentiation to find <m>\lz{y}{x}</m>, then find the equation of the tangent line at the indicated <m>x</m>-value.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>(1+x)^{1/x}\left(\frac{1}{x(x+1)}-\frac{\ln(1+x)}{x^2}\right)</static>
+            </var>
+            <var name="$t">
+              <static>y=\left(1-2\ln(2)\right)(x-1)+2</static>
             </var>
             <pg-code>
+              Context()->variables->set(x=>{limits=>[-0.9,4]});
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              $dydx=Formula("(1+x)^(1/x)(1/(x(x+1))-ln(1+x)/x^2)");
+
+              Context("Numeric");
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              $t=Formula("y=(1-2ln(2))(x-1)+2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds y=(1+x)^{1/x}</m>,<m>x=1</m></p>
+            <p><m>y=(1+x)^{1/x}</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="50" /></p>
+            <p>The tangent line at <m>x=1</m> has equation:</p>
+            <p><var name="$t" width="50" /></p>
           </statement>
           <solution>
             <p><m>y'= (1+x)^{1/x}\big(\frac{1}{x(x+1)}-\frac{\ln(1+x)}{x^2}\big)</m></p>
@@ -1277,98 +1629,176 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>(2x)^{x^2}(2x\ln(2x)+x)</static>
+            </var>
+            <var name="$t">
+              <static>y=(2+4\ln(2))(x-1)+2</static>
             </var>
             <pg-code>
+              Context()->variables->set(x=>{limits=>[0.01,4]});
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              $dydx=Formula("(2x)^(x^2)(2x ln(2x)+x)");
+
+              Context("Numeric");
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              $t=Formula("y=(2+4ln(2))(x-1)+2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds y=(2x)^{x^2}</m>,<m>x=1</m></p>
+            <p><m>y=(2x)^{x^2}</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="50" /></p>
+            <p>The tangent line at <m>x=1</m> has equation:</p>
+            <p><var name="$t" width="50" /></p>
           </statement>
           <solution>
-            <p><m>y'= (2x)^{x^2}\big(2x\ln(2x)+x\big)</m></p>
+            <p><m>y'=(2x)^{x^2}(2x\ln(2x)+x)</m></p>
 
-            <p>Tangent line: <m>y = (2+4\ln(2) )(x-1)+ 2</m></p>
+            <p>Tangent line: <m>y=(2+4\ln(2))(x-1)+2</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{x^x}{x+1}\left(\ln(x)+1-\frac{1}{x+1}\right)</static>
+            </var>
+            <var name="$t">
+              <static>y=\frac{1}{4}(x-1)+ \frac{1}{2}</static>
             </var>
             <pg-code>
+              Context()->variables->set(x=>{limits=>[0.01,4]});
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              $dydx=Formula("x^x/(x+1)(ln(x)+1-1/(x+1))");
+
+              Context("Numeric");
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              $t=Formula("y=1/4*(x-1)+1/2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds y=\frac{x^{x}}{x+1}</m>,<m>x=1</m></p>
+            <p><m>y=\dfrac{x^{x}}{x+1}</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="50" /></p>
+            <p>The tangent line at <m>x=1</m> has equation:</p>
+            <p><var name="$t" width="50" /></p>
           </statement>
           <solution>
-            <p><m>y'= \frac{x^x}{x+1}\big(\ln(x) +1-\frac1{x+1}\big)</m></p>
+            <p><m>y'=\frac{x^x}{x+1}\left(\ln(x)+1-\frac{1}{x+1}\right)</m></p>
 
-            <p>Tangent line: <m>y = (1/4)(x-1)+ 1/2</m></p>
+            <p>Tangent line: <m>y=\frac{1}{4}(x-1)+ \frac{1}{2}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>x^{\sin(x)+2}\left(\cos(x) \ln(x) +\frac{\sin(x) +2}{x}\right)</static>
+            </var>
+            <var name="$t">
+              <static>y=\frac{3\pi^2}{4}\left(x-\frac{\pi}{2}\right)+\left(\frac{\pi}{2}\right)^3</static>
             </var>
             <pg-code>
+              Context()->variables->set(x=>{limits=>[0.01,4]});
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              $dydx=Formula("x^(sin(x)+2)(cos(x)*ln(x)+(sin(x)+2)/x)");
+
+              Context("Numeric");
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              $t=Formula("y=(3pi^2)/4*(x-pi/2)+(pi/2)^3");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds y=x^{\sin(x)+2}</m>,<m>x=\pi/2</m></p>
+            <p><m>y=x^{\sin(x)+2}</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="50" /></p>
+            <p>The tangent line at <m>x=\pi/2</m> has equation:</p>
+            <p><var name="$t" width="50" /></p>
           </statement>
           <solution>
-            <p><m>y'= x^{\sin(x)+2}\big(\cos(x) \ln(x) +\frac{\sin(x) +2}{x}\big)</m></p>
+            <p><m>y'=x^{\sin(x)+2}\left(\cos(x) \ln(x) +\frac{\sin(x) +2}{x}\right)</m></p>
 
-            <p>Tangent line: <m>y = (3\pi^2/4)(x-\pi/2)+(\pi/2)^3</m></p>
+            <p>Tangent line: <m>y=\frac{3\pi^2}{4}\left(x-\frac{\pi}{2}\right)+\left(\frac{\pi}{2}\right)^3</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{x+1}{x+2}\left(\frac{1}{x+1}-\frac{1}{x+2}\right)</static>
+            </var>
+            <var name="$t">
+              <static>y=\frac{1}{9}(x-1)+\frac{2}{3}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              $dydx=Formula("(x+1)/(x+2)(1/(x+1)-1/(x+2))");
+
+              Context("Numeric");
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              $t=Formula("y=1/9(x-1)+2/3");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds y=\frac{x+1}{x+2}</m>,<m>x=1</m></p>
+            <p><m>y=\dfrac{x+1}{x+2}</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="50" /></p>
+            <p>The tangent line at <m>x=1</m> has equation:</p>
+            <p><var name="$t" width="50" /></p>
           </statement>
           <solution>
-            <p><m>y'= \frac{x+1}{x+2}\big(\frac1{x+1}-\frac1{x+2}\big)</m></p>
+            <p><m>y'=\frac{x+1}{x+2}\left(\frac{1}{x+1}-\frac{1}{x+2}\right)</m></p>
 
-            <p>Tangent line: <m>y = 1/9(x-1)+2/3</m></p>
+            <p>Tangent line: <m>y=\frac{1}{9}(x-1)+\frac{2}{3}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{(x+1)(x+2)}{(x+3)(x+4)}\left(\frac{1}{x+1}+\frac{1}{x+2}-\frac{1}{x+3}-\frac{1}{x+4}\right)</static>
+            </var>
+            <var name="$t">
+              <static>y=\frac{11}{72}x+\frac{1}{6}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              $dydx=Formula("((x+1)(x+2))/((x+3)(x+4))(1/(x+1)+1/(x+2)-1/(x+3)-1/(x+4))");
+
+              Context("Numeric");
+              Context()->flags->set(reduceConstants=>1,reduceConstantFunctions=>1);
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              $t=Formula("y=11/72x+1/6");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds y=\frac{(x+1)(x+2)}{(x+3)(x+4)}</m>,<m>x=0</m></p>
+            <p><m>y=\dfrac{(x+1)(x+2)}{(x+3)(x+4)}</m></p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="50" /></p>
+            <p>The tangent line at <m>x=0</m> has equation:</p>
+            <p><var name="$t" width="50" /></p>
           </statement>
           <solution>
-            <p><m>y'= \frac{(x+1)(x+2)}{(x+3)(x+4)}\big(\frac1{x+1}+\frac1{x+2}-\frac1{x+3}-\frac1{x+4}\big)</m></p>
+            <p><m>y'=\frac{(x+1)(x+2)}{(x+3)(x+4)}\left(\frac{1}{x+1}+\frac{1}{x+2}-\frac{1}{x+3}-\frac{1}{x+4}\right)</m></p>
 
-            <p>Tangent line: <m>y = 11/72x+1/6</m></p>
+            <p>Tangent line: <m>y=\frac{11}{72}x+\frac{1}{6}</m></p>
           </solution>
         </webwork>
       </exercise>
