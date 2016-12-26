@@ -102,7 +102,10 @@
 
 \usetikzlibrary{shapes,decorations,shadows,fadings}
 
-\setlength{\marginparwidth}{215pt} 
+\setlength{\marginparwidth}{215pt}
+
+\usepackage{tkz-euclide}
+\usetkzobj{all}
 
 \usepackage{ifthen}
 
@@ -118,6 +121,7 @@
 \pgfplotsset{normallineseg/.style={color=black,mark=none,thick,-,dashed}}
 \pgfplotsset{asymptote/.style={color=black,mark=none,thick,<->,dashed}}
 \pgfplotsset{guideline/.style={color=black,mark=none,-}}
+\pgfplotsset{symmetryline/.style={color=black,mark=none,-,dashed}}
 \pgfplotscreateplotcyclelist{curvestylelist}{%
         firstcurvestyle\\%
         secondcurvestyle\\%

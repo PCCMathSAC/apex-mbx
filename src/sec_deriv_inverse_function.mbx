@@ -2,10 +2,10 @@
 
 <section xml:id="sec_deriv_inverse_function">
   <title>Derivatives of Inverse Functions</title>
-  <introduction>
-    <p>Recall that a function <m>y=f(x)</m> is said to be <em>one to one</em> if it passes the horizontal line test; that is, for two different <m>x</m> values <m>x_1</m> and <m>x_2</m>, we do <em>not</em> have <m>f(x_1)=f(x_2)</m>. In some cases the domain of <m>f</m> must be restricted so that it is one to one. For instance, consider <m>f(x)=x^2</m>. Clearly, <m>f(-1)= f(1)</m>, so <m>f</m> is not one to one on its regular domain, but by restricting <m>f</m> to <m>(0,\infty)</m>, <m>f</m> is one to one.<index><main>derivative</main><sub>inverse function</sub></index></p>
+  <!--<introduction>-->
+    <p>Recall that a function <m>y=f(x)</m> is said to be <term>one-to-one</term> if it passes the horizontal line test; that is, for two different <m>x</m>-values <m>x_1</m> and <m>x_2</m>, we do <em>not</em> have <m>f\mathopen{}\left(x_1\right)\mathclose{}=f\mathopen{}\left(x_2\right)\mathclose{}</m>. In some cases the domain of <m>f</m> must be restricted so that it is one-to-one. For instance, consider <m>f(x)=x^2</m>. Clearly, <m>f(-1)= f(1)</m>, so <m>f</m> is not one-to-one on its regular domain, but by restricting <m>f</m> to <m>(0,\infty)</m>, <m>f</m> is one-to-one.<index><main>derivative</main><sub>inverse function</sub></index></p>
 
-    <p>Now recall that one to one functions have <em>inverses</em>. That is, if <m>f</m> is one to one, it has an inverse function, denoted by <m>f^{-1}</m>, such that if <m>f(a)=b</m>, then <m>f^{-1}(b) = a</m>. The domain of <m>f^{-1}</m> is the range of <m>f</m>, and vice-versa. For ease of notation, we set <m>g=f^{-1}</m> and treat <m>g</m> as a function of <m>x</m>.</p>
+    <p>Now recall that one-to-one functions have <term>inverses</term>. That is, if <m>f</m> is one-to-one, it has an inverse function, denoted by <m>f^{-1}</m>, such that if <m>f(a)=b</m>, then <m>f^{-1}(b) = a</m>. The domain of <m>f^{-1}</m> is the range of <m>f</m>, and vice-versa. For ease of notation, we set <m>g=f^{-1}</m> and treat <m>g</m> as a function of <m>x</m>.</p>
 
     <p>Since <m>f(a)=b</m> implies <m>g(b)=a</m>, when we compose <m>f</m> and <m>g</m> we get a nice result:
       <me>
@@ -13,7 +13,7 @@
       </me>
     </p>
 
-    <p>In general, <m>f\big(g(x)\big) =x</m> and <m>g\big(f(x)\big) = x</m>. This gives us a convenient way to check if two functions are inverses of each other: compose them and if the result is <m>x</m>, then they are inverses (on the appropriate domains.)</p>
+    <p>In general, <m>f\big(g(x)\big) = x</m> and <m>g\big(f(x)\big) = x</m>. This gives us a convenient way to check if two functions are inverses of each other: compose them and if the result is <m>x</m> (on the appropriate domains), then they are inverses.</p>
 
     <p>When the point <m>(a,b)</m> lies on the graph of <m>f</m>, the point <m>(b,a)</m> lies on the graph of <m>g</m>. This leads us to discover that the graph of <m>g</m> is the reflection of <m>f</m> across the line <m>y=x</m>. In <xref ref="fig_inverse1">Figure</xref> we see a function graphed along with its inverse. See how the point <m>(1,1.5)</m> lies on one graph, whereas <m>(1.5,1)</m> lies on the other. Because of this relationship, whatever we know about <m>f</m> can quickly be transferred into knowledge about <m>g</m>.</p>
 
@@ -26,19 +26,17 @@
           <![CDATA[
           \begin{tikzpicture}
             \begin{axis}[axis equal image,
-                         ymin=-1.3,ymax=1.7,
-                         xmin=-1.3,xmax=1.7,]
-            \addplot+[domain=-1:1.05] (x,x^3+.5);% {};
-            \addplot+[solid,domain=-1:1.05] (x^3+.5,x);
-            \addplot [dashed,thin] {x};
-            \addplot [soliddot] coordinates{(-.5,.375)} node[ above ] {\tiny $(-0.5,0.375)$};
-            \addplot [soliddot] coordinates{(.375,-.5)} node[ below right] {\tiny $(0.375,-0.5)$};
-            \addplot [soliddot] coordinates{(1,1.5)} node[ above left] {\tiny $(1,1.5)$};
-            \addplot [soliddot] coordinates{(1.5,1)} node[ above left] {\tiny $(1.5,1)$};
+                         ymin=-1.3,ymax=2,
+                         xmin=-1.3,xmax=2,
+                         clip=false]
+              \addplot+[domain=-1:1.14] ({x},{x^3+.5});
+              \addplot+[domain=-1:1.14] ({x^3+.5},{x});
+              \addplot [symmetryline] coordinates {(-1.3,-1.3) (1.7,1.7)};
+              \addplot [soliddot] coordinates{(-.5,.375)} node[above left] {$(-0.5,0.375)$};
+              \addplot [soliddot] coordinates{(.375,-.5)} node[below right] {$(0.375,-0.5)$};
+              \addplot [soliddot] coordinates{(1,1.5)} node[above left] {$(1,1.5)$};
+              \addplot [soliddot] coordinates{(1.5,1)} node[below right] {$(1.5,1)$};
             \end{axis}
-
-
-
           \end{tikzpicture}
           ]]>
         </latex-image-code>
@@ -48,7 +46,7 @@
 
     <p>For example, consider <xref ref="fig_inverse2">Figure</xref> where the tangent line to <m>f</m> at the point <m>(1,1.5)</m> is drawn. That line has slope <m>3</m>. Through reflection across <m>y=x</m>, we can see that the tangent line to <m>g</m> at the point <m>(1.5,1)</m> has slope <m>1/3</m>. Their slopes are reciprocals. This should make sense since reflecting a line (such as a tangent line) across the line <m>y=x</m> switches the <m>x</m> and <m>y</m> values. Also consider the point <m>(0,0.5)</m> on the graph of <m>f</m>, where the tangent line is horizontal. At the point <m>(0.5,0)</m> on <m>g</m>, the tangent line is vertical.</p>
 
-    <p>More generally, consider the tangent line to <m>f</m> at the point <m>(a,b)</m>. That line has slope <m>\fp(a)</m>. Through reflection across <m>y=x</m>, we can extend our above observation to say that the tangent line to <m>g</m> at the point <m>(b,a)</m> should have slope <m>\ds \frac{1}{\fp(a)}</m>. This then tells us that <m>\ds g'(b) = \frac{1}{\fp(a)}</m>.</p>
+    <p>More generally, consider the tangent line to <m>f</m> at the point <m>(a,b)</m>. That line has slope <m>\fp(a)</m>. Through reflection across <m>y=x</m>, we can extend our above observation to say that the tangent line to <m>g</m> at the point <m>(b,a)</m> should have slope <m>1/\fp(a)</m>. This then tells us that <m>g'(b)=1/\fp(a)</m>.</p>
 
     <figure xml:id="fig_inverse2" >
       <caption>Corresponding tangent lines drawn to <m>f</m> and <m>f^{-1}</m>.</caption>
@@ -56,30 +54,29 @@
       <image xml:id="img_inverse2" width="47%">
         <description></description>
         <latex-image-code>
-           <![CDATA[
+          <![CDATA[
           \begin{tikzpicture}
             \begin{axis}[axis equal image,
-                         ymin=-1.3,ymax=2.3,
-                         xmin=-1.3,xmax=2.3,
-                         minor x tick num={3},
-                         minor y tick num={3},
-                         grid=both]
-            \addplot+[domain=-1:1.2] (x,x^3+.5);% {};
-            \addplot+[solid,domain=-1:1.2] (x^3+.5,x);
-            \addplot [dashed,thin] {x};
-            \addplot [tangentlineseg,domain=0.75:1.3]{3*(x-1)+1.5};
-            \addplot [tangentlineseg,domain=0.75:2.3]{1/3*(x-1.5)+1};
-            \addplot [soliddot] coordinates{(-.5,.375)} node[ above] {\tiny $(-0.5,0.375)$};
-            \addplot [soliddot] coordinates{(.375,-.5)} node[ below right] {\tiny $(0.375,-0.5)$};
-            \addplot [soliddot] coordinates{(1,1.5)} node[ above left] {\tiny $(1,1.5)$};
-            \addplot [soliddot] coordinates{(1.5,1)} node[ below right] {\tiny $(1.5,1)$};
+                         ymin=-1.3,ymax=2,
+                         xmin=-1.3,xmax=2,
+                         clip=false,
+                         grid=both,
+                         xtick={-1,1},
+                         ytick={-1,1},
+                         minor xtick={-1.25,-1,...,2},
+                         minor ytick={-1.25,-1,...,2},]
+              \addplot+[domain=-1:1.14] ({x},{x^3+.5});
+              \addplot+[domain=-1:1.14] ({x^3+.5},{x});
+              \addplot [symmetryline] coordinates {(-1.3,-1.3) (1.7,1.7)};
+              \addplot [tangentlineseg,domain=0.75:1.25]{3*(x-1)+1.5};
+              \addplot [tangentlineseg,domain=0.75:2]{1/3*(x-1.5)+1};
+              \addplot [soliddot] coordinates{(-.5,.375)} node[above left] {$(-0.5,0.375)$};
+              \addplot [soliddot] coordinates{(.375,-.5)} node[below right] {$(0.375,-0.5)$};
+              \addplot [soliddot] coordinates{(1,1.5)} node[above left] {$(1,1.5)$};
+              \addplot [soliddot] coordinates{(1.5,1)} node[below right] {$(1.5,1)$};
             \end{axis}
-
-
-
           \end{tikzpicture}
           ]]>
-          
         </latex-image-code>
       </image>
       <!-- figures/fig_inverse2.tex END -->
@@ -88,35 +85,29 @@
     <p>The information from these two graphs is summarized in <xref ref="table_fandfinv" > Table </xref> below:</p>
     <table xml:id="table_fandfinv">
       <caption></caption>
-    <tabular>
-      <row>
-        <cell>Information about <m>f</m></cell>
-        <cell></cell>
-        <cell>Information about <m>g=f^{-1}</m></cell>
-      </row>
-      <row bottom="minor">
-        <cell></cell>
-        <cell></cell>
-        <cell></cell>
-      </row>
-      <row>
-        <cell><m>(1,1.5)</m> lies on <m>f</m></cell>
-        <cell></cell>
-        <cell><m>(1.5,1)</m> lies on <m>g</m></cell>
-      </row>
-      <row>
-        <cell>Slope of tangent line to <m>f</m> at <m>x=1</m> is <m>3</m> </cell>
-        <cell></cell>
-        <cell> Slope of tangent line to <m>g</m> at <m>x=1.5</m> is <m>1/3</m> </cell>
-      </row>
-      <row>
-        <cell><m>\fp(1) = 3</m></cell>
-        <cell></cell>
-        <cell><m>g'(1.5) = 1/3</m></cell>
-      </row>
-    </tabular>
+      <tabular>
+        <col width="30%" halign="center"/>
+        <col width="30%" halign="center"/>
+        <row bottom="medium">
+          <cell>Information about <m>f</m></cell>
+          <cell>Information about <m>g=f^{-1}</m></cell>
+        </row>
+        <row>
+          <cell><m>(1,1.5)</m> lies on <m>f</m></cell>
+          <cell><m>(1.5,1)</m> lies on <m>g</m></cell>
+        </row>
+        <row>
+          <cell><p>Slope of tangent line to <m>f</m> at <m>x=1</m> is <m>3</m></p></cell>
+          <cell><p>Slope of tangent line to <m>g</m> at <m>x=1.5</m> is <m>1/3</m></p></cell>
+        </row>
+        <row>
+          <cell><m>\fp(1) = 3</m></cell>
+          <cell><m>g'(1.5) = 1/3</m></cell>
+        </row>
+      </tabular>
     </table>
-    <p>We have discovered a relationship between <m>\fp</m> and <m>g'</m> in a mostly graphical way. We can realize this relationship analytically as well. Let <m>y = g(x)</m>, where again <m>g = f^{-1}</m>. We want to find <m>\ds y'</m>. Since <m>y = g(x)</m>, we know that <m>f(y) = x</m>. Using the Chain Rule and Implicit Differentiation, take the derivative of both sides of this last equality.
+
+    <p>We have discovered a relationship between <m>\fp</m> and <m>g'</m> in a mostly graphical way. We can realize this relationship analytically as well. Let <m>y = g(x)</m>, where again <m>g = f^{-1}</m>. We want to find <m>y'</m>. Since <m>y = g(x)</m>, we know that <m>f(y) = x</m>. Using the <xref ref="thm_Chain_Rule" autoname="title" /> and Implicit Differentiation, take the derivative of both sides of this last equality.
       <md>
         <mrow>\lzoo{x}{f(y)} \amp = \lzoo{x}{x}</mrow>
         <mrow>\fp(y)\cdot y' \amp = 1</mrow>
@@ -130,11 +121,10 @@
     <theorem xml:id="thm_deriv_inverse_functions">
       <title>Derivatives of Inverse Functions</title>
       <statement>
-        <p>Let <m>f</m> be differentiable and one to one on an open interval <m>I</m>, where <m>\fp(x) \neq 0</m> for all <m>x</m> in <m>I</m>, let <m>J</m> be the range of <m>f</m> on <m>I</m>, let <m>g</m> be the inverse function of <m>f</m>, and let <m>f(a) = b</m> for some <m>a</m> in <m>I</m>. Then <m>g</m> is a differentiable function on <m>J</m>, and in particular,</p>
-        <ol cols="2">
-          <li><m>\ds \left(f^{-1}\right)'(b)=g'(b) = \frac{1}{\fp(a)}</m></li>
-          <li><m>\ds \left(f^{-1}\right)'(x)=g'(x) = \frac{1}{\fp(g(x))}</m></li>
-        </ol>
+        <p>Let <m>f</m> be differentiable and one-to-one on an open interval <m>I</m>, where <m>\fp(x) \neq 0</m> for all <m>x</m> in <m>I</m>, let <m>J</m> be the range of <m>f</m> on <m>I</m>, let <m>g</m> be the inverse function of <m>f</m>, and let <m>f(a) = b</m> for some <m>a</m> in <m>I</m>. Then <m>g</m> is a differentiable function on <m>J</m>, and in particular,<ol cols="2">
+          <li><m>\left(f^{-1}\right)'(b)=g'(b) = \dfrac{1}{\fp(a)}</m></li>
+          <li><m>\left(f^{-1}\right)'(x)=g'(x) = \dfrac{1}{\fp(g(x))}</m></li>
+        </ol></p>
       </statement>
     </theorem>
 
@@ -145,17 +135,17 @@
     <example xml:id="ex_deriv_arcsin">
       <title>Finding the derivative of an inverse trigonometric function</title>
       <statement>
-        <p>Let <m>y = \arcsin(x) x = \sin^{-1}(x)</m>. Find <m>y'</m> using <xref ref="thm_deriv_inverse_functions">Theorem</xref>.</p>
+        <p>Let <m>y = \arcsin(x) = \sin^{-1}(x)</m>. Find <m>y'</m> using <xref ref="thm_deriv_inverse_functions">Theorem</xref>.</p>
       </statement>
       <solution>
         <p>Adopting our previously defined notation, let <m>g(x) = \arcsin(x) </m> and <m>f(x) = \sin(x)</m>. Thus <m>\fp(x) = \cos(x)</m>. Applying the theorem, we have
           <md>
             <mrow>g'(x) \amp = \frac{1}{\fp(g(x))}</mrow>
-            <mrow>\amp = \frac{1}{\cos(\arcsin(x))}</mrow>
-          </md>.
+            <mrow>\amp = \frac{1}{\cos(\arcsin(x))}.</mrow>
+          </md>
         </p>
 
-        <p>This last expression is not immediately illuminating. Drawing a figure will help, as shown in <xref ref="fig_inverse3">Figure</xref>. Recall that the sine function can be viewed as taking in an angle and returning a ratio of sides of a right triangle, specifically, the ratio <q>opposite over hypotenuse.</q> This means that the arcsine function takes as input a ratio of sides and returns an angle. The equation <m>y=\arcsin(x)</m> can be rewritten as <m>y=\arcsin(x/1)</m>; that is, consider a right triangle where the hypotenuse has length 1 and the side opposite of the angle with measure <m>y</m> has length <m>x</m>. This means the final side has length <m>\sqrt{1-x^2}</m>, using the Pythagorean Theorem.</p>
+        <p>This last expression is not immediately illuminating. Drawing a figure will help, as shown in <xref ref="fig_inverse3">Figure</xref>. Recall that the sine function can be viewed as taking in an angle and returning a ratio of sides of a right triangle, specifically, the ratio <q>opposite over hypotenuse.</q> This means that the arcsine function takes as input a ratio of sides and returns an angle. The equation <m>y=\arcsin(x)</m> can be rewritten as <m>y=\arcsin(x/1)</m>; that is, consider a right triangle where the hypotenuse has length <m>1</m> and the side opposite of the angle with measure <m>y</m> has length <m>x</m>. This means the final side has length <m>\sqrt{1-x^2}</m>, using the Pythagorean Theorem.</p>
 
         <figure xml:id="fig_inverse3" >
           <caption>A right triangle defined by <m>y=\sin^{-1}(x/1)</m> with the length of the third leg found using the Pythagorean Theorem.</caption>
@@ -164,13 +154,20 @@
             <description></description>
             <latex-image-code>
               <![CDATA[
-              \begin{tikzpicture}[x=.5\marginparwidth,y=.5\marginparwidth,>=stealth]
+              \begin{tikzpicture}
+                \coordinate (O) at (0,0);
+                \coordinate (A) at (5,0);
+                \coordinate (B) at (5,3.75);
+                \draw (O)--(A)--(B)--cycle;
 
-              \draw (0,0) node [shift={(15pt,5pt)}] {\scriptsize$y$} -- (1,0) node [pos=.5,below] {\scriptsize $\sqrt{1-x^2}$}%
-              -- (1,.75) node [pos=.5,right] {\scriptsize $x$} -- (0,0) node [pos=.5,above] {\scriptsize $1$};
-              %\draw [black,dashed] (1,0) arc (0:40:1);
-              %\draw [black,dashed] (1,0) -- (.766,.643);
+                \tkzLabelSegment[below=0pt](O,A){$\sqrt{1-x^2}$}
+                \tkzLabelSegment[above left=0pt](O,B){$1$}
+                \tkzLabelSegment[right=0pt](A,B){$x$}
 
+                \tkzMarkAngle[fill= orange,
+                              size=1,
+                              opacity=.4](A,O,B)
+                \tkzLabelAngle[pos = 0.75](A,O,B){$y$}
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -178,47 +175,50 @@
           <!-- figures/fig_inverse3.tex END -->
         </figure>
 
-        <p>Therefore 
+        <p>Therefore
           <md>
-            <mrow>\cos(\sin^{-1}(x) ) \amp= \cos(y)</mrow> 
-            <mrow>\amp = \sqrt{1-x^2}/1</mrow> 
-            <mrow>\amp = \sqrt{1-x^2}</mrow>
-          </md>, resulting in
+            <mrow>\cos\mathopen{}\left(\sin^{-1}(x)\right)\mathclose{} \amp= \cos(y)</mrow>
+            <mrow>\amp = \frac{\sqrt{1-x^2}}{1}</mrow>
+            <mrow>\amp = \sqrt{1-x^2},</mrow>
+          </md>resulting in
           <me>
-            \frac{d}{dx}\big(\arcsin(x) \big) = \frac{1}{\sqrt{1-x^2}}
-          </me>.
+            \lzoo{x}{\arcsin(x)} = \frac{1}{\sqrt{1-x^2}}.
+          </me>
         </p>
       </solution>
     </example>
 
-    <p>Remember that the input <m>x</m> of the arcsin(x)e function is a ratio of a side of a right triangle to its hypotenuse; the absolute value of this ratio will never be greater than 1. Therefore the inside of the square root will never be negative.</p>
+    <p>Remember that the input <m>x</m> of the arcsine function is a ratio of a side of a right triangle to its hypotenuse; the absolute value of this ratio will never be greater than <m>1</m>. Therefore the inside of the square root will never be negative.</p>
 
-    <p>In order to make <m>y=\sin(x)</m> one to one, we restrict its domain to <m>[-\pi/2,\pi/2]</m>; on this domain, the range is <m>[-1,1]</m>. Therefore the domain of <m>y=\arcsin(x) x</m> is <m>[-1,1]</m> and the range is <m>[-\pi/2,\pi/2]</m>. When <m>x=\pm 1</m>, note how the derivative of the arcsine function is undefined; this corresponds to the fact that as <m>x\to \pm1</m>, the tangent lines to arcsine approach vertical lines with undefined slopes.</p>
- 
-        <figure xml:id="fig_inversesine" >
+    <p>In order to make <m>y=\sin(x)</m> one-to-one, we restrict its domain to <m>[-\pi/2,\pi/2]</m>; on this domain, the range is <m>[-1,1]</m>. Therefore the domain of <m>y=\arcsin(x)</m> is <m>[-1,1]</m> and the range is <m>[-\pi/2,\pi/2]</m>. When <m>x=\pm 1</m>, note how the derivative of the arcsine function is undefined; this corresponds to the fact that as <m>x\to \pm1</m>, the tangent lines to arcsine approach vertical lines with undefined slopes.</p>
+
+    <sidebyside xml:id="fig_inversesine" widths="47% 47%">
       <caption>Graphs of <m>\sin(x)</m> and <m>\sin^{-1}(x)</m> along with corresponding tangent lines.</caption>
       <!-- START figures/fig_inverse4.tex -->
-      <image xml:id="img_inverse4" width="47%">
-        <description></description>
-        <latex-image-code>
-          <![CDATA[
-          \begin{tikzpicture}
-            \begin{axis}[ymin=-1.7,ymax=1.7,
-                         xmin=-1.7,xmax=1.7,
-                         xtick={-1.57,-.79,.79,1.57},
-                         xticklabels={$-\frac{\pi}{2}$,$-\frac{\pi}{4}$,$\frac{\pi}{4}$,$\frac{\pi}{2}$},]
+      <figure>
+        <image xml:id="img_inverse4">
+          <description></description>
+          <latex-image-code>
+            <![CDATA[
+            \begin{tikzpicture}
+              \begin{axis}[ymin=-1.7,ymax=1.7,
+                           xmin=-1.7,xmax=1.7,
+                           xtick={-1.57,-.79,.79,1.57},
+                           xticklabels={$-\frac{\pi}{2}$,$-\frac{\pi}{4}$,$\frac{\pi}{4}$,$\frac{\pi}{2}$},
+                           axis equal]
 
-              \addplot+[domain=-1.57:1.57] (x,{sin(deg(x))}) node [pos=0.2, above left]{\scriptsize $y=\sin(x)$};
-              \addplot [soliddot] coordinates {(1.06,.866)} node [above left] {\scriptsize $(\frac{\pi}{3},\frac{\sqrt{3}}{2})$};
-              \addplot [tangentline,domain=.5:1.5] {.5*(x-1.05)+.866};
+                \addplot+[domain=-1.57:1.57,-] (x,{sin(deg(x))}) node [pos=0.5,above,sloped]{$y=\sin(x)$};
+                \addplot [tangentline,domain=.42:1.7] {.5*(x-pi/3)+sqrt(3)/2};
+                \addplot [soliddot] coordinates {(1.06,.866)} node [above left] {$\left(\frac{\pi}{3},\frac{\sqrt{3}}{2}\right)$};
+            \end{axis}
+            \end{tikzpicture}
 
-          \end{axis}
-          \end{tikzpicture}
-
-          ]]>
+            ]]>
           </latex-image-code>
         </image>
-        <image xml:id="img_inverse5" width="47%">
+      </figure>
+      <figure>
+        <image xml:id="img_inverse5">
           <description></description>
           <latex-image-code>
             <![CDATA[
@@ -226,55 +226,43 @@
               \begin{axis}[ymin=-1.7,ymax=1.7,
                            xmin=-1.7,xmax=1.7,
                            ytick={-1.57,-.79,.79,1.57},
-                           yticklabels={$-\frac{\pi}{2}$,$-\frac{\pi}{4}$,$\frac{\pi}{4}$,$\frac{\pi}{2}$},]
-              \addplot+[domain=-1.57:1.57,] ({sin(deg(x))},x) node [ pos=0.2,above left]{\scriptsize $y=\sin^{-1}(x) $};
-              \addplot[soliddot] coordinates {(0.866,1.06)} node [above right] {\scriptsize $(\frac{\sqrt{3}}{2},\frac{\pi}{3})$};
-              \addplot [tangentline,domain=.5:1.2] {2*(x-.866)+1.05};
+                           yticklabels={$-\frac{\pi}{2}$,$-\frac{\pi}{4}$,$\frac{\pi}{4}$,$\frac{\pi}{2}$},
+                           axis equal]
+              \addplot+[domain=-1.57:1.57,-] ({sin(deg(x))},x) node [pos=0.5,above,sloped]{$y=\sin^{-1}(x)$};
+              \addplot [tangentline,domain=.42:1.7] ({.5*(x-pi/3)+sqrt(3)/2},{x});
+              \addplot [soliddot] coordinates {(0.866,1.06)} node [below right] {$\left(\frac{\sqrt{3}}{2},\frac{\pi}{3}\right)$};
             \end{axis}
           \end{tikzpicture}
           ]]>
           </latex-image-code>
         </image>
       </figure>
+    </sidebyside>
 
-  
-
-    <p>In <xref ref="fig_inversesine">Figure</xref> we see <m>f(x) = \sin(x)</m> and <m>f^{-1} = \sin^{-1}(x)</m> graphed on their respective domains. The line tangent to <m>\sin(x)</m> at the point <m>(\pi/3, \sqrt{3}/2)</m> has slope <m>\cos(\pi) /3 = 1/2</m>. The slope of the corresponding point on <m>\sin^{-1}(x)</m>, the point <m>(\sqrt{3}/2,\pi/3)</m>, is
+    <p>In <xref ref="fig_inversesine">Figure</xref> we see <m>f(x) = \sin(x)</m> and <m>f^{-1} = \sin^{-1}(x)</m> graphed on their respective domains. The line tangent to <m>\sin(x)</m> at the point <m>\left(\pi/3, \sqrt{3}/2\right)</m> has slope <m>\cos(\pi)/3 = 1/2</m>. The slope of the corresponding point on <m>\sin^{-1}(x)</m>, the point <m>\left(\sqrt{3}/2,\pi/3\right)</m>, is
       <md>
-        <mrow>\frac{1}{\sqrt{1-(\sqrt{3}/2)^2}} \amp  = \frac{1}{\sqrt{1-3/4}}</mrow> 
-        <mrow> \amp = \frac{1}{\sqrt{1/4}}</mrow> 
+        <mrow>\frac{1}{\sqrt{1-\left(\sqrt{3}/2\right)^2}} \amp  = \frac{1}{\sqrt{1-3/4}}</mrow>
+        <mrow> \amp = \frac{1}{\sqrt{1/4}}</mrow>
         <mrow> \amp = \frac{1}{1/2}=2</mrow>
       </md>,
       verifying yet again that at corresponding points, a function and its inverse have reciprocal slopes.</p>
 
-    <p>Using similar techniques, we can find the derivatives of all the inverse trigonometric functions. In <xref ref="fig_domain_trig">Figure</xref> we show the restrictions of the domains of the standard trigonometric functions that allow them to be invertible.</p>
+    <p>Using similar techniques, we can find the derivatives of all the inverse trigonometric functions. In <xref ref="tab_domain_trig">Table</xref> we show the restrictions of the domains of the standard trigonometric functions that allow them to be invertible.</p>
 
-    <!--
-    <caption>Domains and ranges of the trigonometric and inverse trigonometric functions.</caption>
-    -->
-    <todo>Re-think this layout. Maybe pair inverse functions together in a vertical table? Or do a separate table for the inverses?</todo>
-    <sidebyside>
+    <table xml:id="tab_domain_trig">
+      <caption>Domains and ranges of the trigonometric and inverse trigonometric functions.</caption>
       <tabular>
-        <row>
+        <row bottom="medium">
           <cell>Function</cell>
           <cell>Domain</cell>
           <cell>Range</cell>
-          <cell>Inverse Function</cell>
-          <cell>Domain</cell>
-          <cell>Range</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell><m>\sin(x)</m></cell>
           <cell><m>[-\pi/2, \pi/2]</m></cell>
           <cell><m>[-1,1]</m></cell>
+        </row>
+        <row>
           <cell><m>\sin^{-1}(x)</m></cell>
           <cell><m>[-1,1]</m></cell>
           <cell><m>[-\pi/2, \pi/2]</m></cell>
@@ -283,6 +271,8 @@
           <cell><m>\cos(x)</m></cell>
           <cell><m>[0,\pi]</m></cell>
           <cell><m>[-1,1]</m></cell>
+        </row>
+        <row>
           <cell><m>\cos^{-1}(x)</m></cell>
           <cell><m>[-1,1]</m></cell>
           <cell><m>[0,\pi]</m></cell>
@@ -291,6 +281,8 @@
           <cell><m>\tan(x)</m></cell>
           <cell><m>(-\pi/2,\pi/2)</m></cell>
           <cell><m>(-\infty,\infty)</m></cell>
+        </row>
+        <row>
           <cell><m>\tan^{-1}(x)</m></cell>
           <cell><m>(-\infty,\infty)</m></cell>
           <cell><m>(-\pi/2,\pi/2)</m></cell>
@@ -299,6 +291,8 @@
           <cell><m>\csc(x)</m></cell>
           <cell><m>[-\pi/2,0)\cup (0, \pi/2]</m></cell>
           <cell><m>(-\infty,-1]\cup [1,\infty)</m></cell>
+        </row>
+        <row>
           <cell><m>\csc^{-1}(x)</m></cell>
           <cell><m>(-\infty,-1]\cup [1,\infty)</m></cell>
           <cell><m>[-\pi/2,0)\cup (0, \pi/2]</m></cell>
@@ -307,6 +301,8 @@
           <cell><m>\sec(x)</m></cell>
           <cell><m>[0,\pi/2)\cup (\pi/2,\pi]</m></cell>
           <cell><m>(-\infty,-1]\cup [1,\infty)</m></cell>
+        </row>
+        <row>
           <cell><m>\sec^{-1}(x)</m></cell>
           <cell><m>(-\infty,-1]\cup [1,\infty)</m></cell>
           <cell><m>[0,\pi/2)\cup (\pi/2,\pi]</m></cell>
@@ -315,50 +311,56 @@
           <cell><m>\cot(x)</m></cell>
           <cell><m>(0,\pi)</m></cell>
           <cell><m>(-\infty,\infty)</m></cell>
+        </row>
+        <row>
           <cell><m>\cot^{-1}(x)</m></cell>
           <cell><m>(-\infty,\infty)</m></cell>
           <cell><m>(0,\pi)</m></cell>
         </row>
       </tabular>
-    </sidebyside>
+    </table>
 
     <theorem xml:id="thm_deriv_inverse_trig">
       <title>Derivatives of Inverse Trigonometric Functions</title>
       <statement>
-        <p>The inverse trigonometric functions are differentiable on all open sets contained in their domains (as listed in <xref ref="fig_domain_trig">Figure</xref>) and their derivatives are as follows:</p>
+        <p>The inverse trigonometric functions are differentiable on all open sets contained in their domains (as listed in <xref ref="tab_domain_trig">Table</xref>) and their derivatives are as follows:<ol>
+          <li>
+            <p><m>\lzoo{x}{\sin^{-1}(x)} = \frac{1}{\sqrt{1-x^2}}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\cos^{-1}(x)} = -\frac{1}{\sqrt{1-x^2}}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\tan^{-1}(x)} = \frac{1}{1+x^2}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\csc^{-1}(x)} = -\frac{1}{\abs{x}\sqrt{x^2-1}}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\sec^{-1}(x)} = \frac{1}{\abs{x}\sqrt{x^2-1}}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\cot^{-1}(x)} = -\frac{1}{1+x^2}</m></p>
+          </li>
+        </ol><index><main>derivative</main><sub>inverse trig.</sub></index></p>
 
-        <ol cols="2" >
-          <li><p><m>\ds \frac{d}{dx}\big(\sin^{-1}(x)\big) = \frac{1}{\sqrt{1-x^2}}</m></p></li>
-
-          <li><p><m>\ds \frac{d}{dx}\big(\sec^{-1}(x)\big) = \frac{1}{\abs{x}\sqrt{x^2-1}}</m></p></li>
-
-          <li><p><m>\ds \frac{d}{dx}\big(\tan^{-1}(x)\big) = \frac{1}{1+x^2}</m></p></li>
-
-          <li><p><m>\ds \frac{d}{dx}\big(\cos^{-1}(x)\big) = -\frac{1}{\sqrt{1-x^2}}</m></p></li>
-
-          <li><p><m>\ds \frac{d}{dx}\big(\csc^{-1}(x)\big) = -\frac{1}{\abs{x}\sqrt{x^2-1}}</m></p></li>
-
-          <li><p><m>\ds \frac{d}{dx}\big(\cot^{-1}(x)\big) = -\frac{1}{1+x^2}</m></p></li>
-        </ol>
-
-        <index><main>derivative</main><sub>inverse trig.</sub></index>
       </statement>
     </theorem>
 
-    <p>Note how the last three derivatives are merely the opposites of the first three, respectively. Because of this, the first three are used almost exclusively throughout this text.</p>
+    <p>Note how each derivative is the negative of the derivative of its <q>co</q> function. Because of this, derivatives of <m>\sin^{-1}(x)</m>, <m>\tan^{-1}(x)</m>, and <m>\sec^{-1}(x)</m> are used almost exclusively throughout this text.</p>
 
-    <p>In <xref ref="sec_basic_diff_rules">Section</xref>, we stated without proof or explanation that <m>\ds \frac{d}{dx}\big(\ln(x) \big) = \frac{1}{x}</m>. We can justify that now using <xref ref="thm_deriv_inverse_functions">Theorem</xref>, as shown in the example.</p>
+    <p>In <xref ref="sec_basic_diff_rules">Section</xref>, we stated without proof or explanation that <m>\lzoo{\ln(x)}=\frac{1}{x}</m>. We can justify that now using <xref ref="thm_deriv_inverse_functions">Theorem</xref>, as shown in the example.</p>
 
     <example xml:id="ex_deriv_lnx">
       <title>Finding the derivative of <m>y=\ln(x)</m></title>
       <statement>
-        <p>Use <xref ref="thm_deriv_inverse_functions">Theorem</xref> to compute <m>\ds \frac{d}{dx}\big(\ln(x) \big)</m>.</p>
+        <p>Use <xref ref="thm_deriv_inverse_functions">Theorem</xref> to compute <m>\lzoo{x}{\ln(x)}</m>.</p>
       </statement>
       <solution>
         <p>View <m>y= \ln(x)</m> as the inverse of <m>y = e^x</m>. Therefore, using our standard notation, let <m>f(x) = e^x</m> and <m>g(x) = \ln(x)</m>. We wish to find <m>g'(x)</m>. <xref ref="thm_deriv_inverse_functions">Theorem</xref> gives:
           <md>
             <mrow>g'(x) \amp = \frac{1}{\fp(g(x))}</mrow>
-            <mrow>\amp =	\frac{1}{e^{\ln(x) }}</mrow>
+            <mrow>\amp = \frac{1}{e^{\ln(x) }}</mrow>
             <mrow>\amp = \frac{1}{x}.</mrow>
           </md>
         </p>
@@ -372,58 +374,83 @@
       <statement>
         <p>Let <m>f</m> and <m>g</m> be differentiable functions, and let <m>a</m>, <m>c</m> and <m>n</m> be real numbers, <m>a>0</m>, <m>n\neq 0</m>.</p>
 
-        <ol cols="2" >
-          <li><p><m>\frac{d}{dx}\big(c \cdot f(x)\big) = c\cdot f'(x)</m></p></li>
-
-          <li><p><m>\lzoo{x}{f(x)\pm g(x)} = f'(x) \pm g'(x)</m></p></li>
-
-          <li><p><m>\lzoo{x}{f(x)\cdot g(x)} = f'(x)\cdot g(x)+f(x)\cdot g'(x)</m></p></li>
-
-           <li><p><m>\lzoo{x}{\frac{f(x)}{g(x)}} = \frac{f'(x)\cdot g(x)-f(x) \cdot g'(x)}{\left(g(x)\right)^2}</m></p></li>
-
-          <li><p><m>\lzoo{x}{f(g(x)} = f'\left(g(x)\right) \cdot g'(x)</m></p></li>
-
-          <li><p><m>\lzoo{x}{c} = 0</m></p></li>
-
-          <li><p><m>\lzoo{x}{x} = 1</m></p></li>
-
-          <li><p><m>\lzoo{x}{x^n} = nx^{n-1}</m></p></li>
-
-          <li><p><m>\lzoo{x}{e^x} = e^x</m></p></li>
-
-          <li><p><m>\lzoo{x}{\ln(x) } = \frac{1}{x}</m></p></li>
-
-          <li><p><m>\lzoo{x}{a^x} = \ln(a) \cdot a^x</m></p></li>
-
-          <li><p><m>\lzoo{x}{\log_a x} = \frac{1}{\ln(a) }\cdot\frac{1}{x}</m></p></li>
-
-          <li><p><m>\lzoo{x}{\sin(x) } = \cos(x)</m></p></li>
-
-          <li><p><m>\lzoo{x}{\cos(x) } = -\sin(x)</m></p></li>
-
-          <li><p><m>\lzoo{x}{\tan(x) } = \sec^2(x)</m></p></li>
-
-          <li><p><m>\lzoo{x}{\csc(x) } = -\csc(x) \cot(x)</m></p></li>
-
-          <li><p><m>\lzoo{x}{\sec(x) } = \sec(x) \tan(x)</m></p></li>
-
-          <li><p><m>\lzoo{x}{\cot(x) } = -\csc^2(x)</m></p></li>
-
-          <li><p><m>\lzoo{x}{\sin^{-1}(x) } = \frac{1}{\sqrt{1-x^2}}</m></p></li>
-
-          <li><p><m>\lzoo{x}{\cos^{-1}(x) } = -\frac{1}{\sqrt{1-x^2}}</m></p></li>
-
-          <li><p><m>\lzoo{x}{\tan^{-1}(x) } = \frac{1}{1+x^2}</m></p></li>
-
-          <li><p><m>\lzoo{x}{\csc^{-1}(x) } = -\frac{1}{\abs{x}\sqrt{x^2-1}}</m></p></li>
-
-          <li><p><m>\lzoo{x}{\sec^{-1}(x) } = \frac{1}{\abs{x}\sqrt{x^2-1}}</m></p></li>
-
-          <li><p><m>\lzoo{x}{\cot^{-1}(x) } = -\frac{1}{1+x^2}</m></p></li>
-        </ol>
+        <p><ol cols="2" >
+          <li>
+            <p><m>\lzoo{x}{c\cdot f(x)} = c\cdot f'(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{f(x)\pm g(x)} = f'(x) \pm g'(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{f(x)\cdot g(x)} = f'(x)\cdot g(x)+f(x)\cdot g'(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\frac{f(x)}{g(x)}} = \frac{f'(x)\cdot g(x)-f(x) \cdot g'(x)}{(g(x))^2}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{f(g(x)} = f'(g(x)) \cdot g'(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{c} = 0</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{x} = 1</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{x^n} = nx^{n-1}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{e^x} = e^x</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\ln(x)} = \frac{1}{x}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{a^x} = \ln(a)\cdot a^x</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\log_a x} = \frac{1}{\ln(a)}\cdot\frac{1}{x}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\sin(x)} = \cos(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\cos(x)} = -\sin(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\tan(x)} = \sec^2(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\csc(x)} = -\csc(x)\cot(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\sec(x)} = \sec(x)\tan(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\cot(x)} = -\csc^2(x)</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\sin^{-1}(x)} = \frac{1}{\sqrt{1-x^2}}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\cos^{-1}(x)} = -\frac{1}{\sqrt{1-x^2}}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\tan^{-1}(x)} = \frac{1}{1+x^2}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\csc^{-1}(x)} = -\frac{1}{\abs{x}\sqrt{x^2-1}}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\sec^{-1}(x)} = \frac{1}{\abs{x}\sqrt{x^2-1}}</m></p>
+          </li>
+          <li>
+            <p><m>\lzoo{x}{\cot^{-1}(x)} = -\frac{1}{1+x^2}</m></p>
+          </li>
+        </ol></p>
       </statement>
     </theorem>
-  </introduction>
+  <!--</introduction>-->
   <exercises>
     <exercisegroup>
       <title>Terms and Concepts</title>
@@ -454,7 +481,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>In your own words explain what it means for a function to be <q>one to one.</q></p>
+            <p>In your own words explain what it means for a function to be <q>one-to-one.</q></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
