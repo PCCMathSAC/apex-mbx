@@ -129,7 +129,7 @@
       </statement>
       <solution>
         <p>We can answer this exactly (and quickly) after <xref ref="sec_basic_diff_rules">Section</xref>, where we learn to quickly compute derivatives. For now, we will answer graphically, by considering the slopes of the respective tangent lines.</p>
-        
+
 
         <figure xml:id="fig_xsquaredwithgrid" >
           <caption>A graph of <m>f(x)=x^2</m> and tangent lines at <m>x=1</m> and <m>x=3</m>.</caption>
@@ -167,7 +167,7 @@
       <title>Understanding the graph of the derivative</title>
       <statement>
         <p>Consider the graph of <m>f(x)</m> and its derivative, <m>\fp(x)</m>, in <xref ref="fig_fwithderiv">Figure</xref>. Use these graphs to find the slopes of the tangent lines to the graph of <m>f</m> at <m>x=1</m>, <m>x=2</m>, and <m>x=3</m>.</p>
-      
+
         <figure xml:id="fig_fwithderiv">
           <caption>Graphs of <m>f</m> and <m>\fp</m> in <xref ref="ex_der_meaning4">Example</xref>.</caption>
             <!-- START figures/fig_fwithderiv.tex -->
@@ -180,7 +180,7 @@
                                minor x tick num=0,
                                xtick={1,2,3},
                                ymin=-8.9,ymax=5.9,
-                               xmin=-.1,xmax=3.49, 
+                               xmin=-.1,xmax=3.49,
                                grid=both,
                                clip=false]
                   \addplot+[domain=0:3.5] {-x^3+7*x^2-12*x+4} node[above left] {$f(x)$};
@@ -191,7 +191,7 @@
               </latex-image-code>
             </image>
             <!-- figures/fig_fwithderiv.tex END -->
-        </figure>  
+        </figure>
 
       </statement>
       <solution>
@@ -220,7 +220,7 @@
                                  minor x tick num=0,
                                  xtick={1,2,3},
                                  ymin=-8.9,ymax=5.9,
-                                 xmin=-.1,xmax=3.49, 
+                                 xmin=-.1,xmax=3.49,
                                  grid=both,
                                  clip=false]
                     \addplot+[domain=0:3.5] {-x^3+7*x^2-12*x+4} node[above left] {$f(x)$};
@@ -247,7 +247,7 @@
       </statement>
       <solution>
         <p><xref ref="fig_fwithderivzoom3">Figure</xref> shows the graph of <m>f</m> along with its tangent line, zoomed in at <m>x=3</m>. Notice that near <m>x=3</m>, the tangent line makes an excellent approximation of <m>f</m>. Since lines are easy to deal with, often it works well to approximate a function with its tangent line. (This is especially true when you don't actually know much about the function at hand, as we don't in this example.)</p>
-  
+
         <figure xml:id="fig_fwithderivzoom3" >
           <caption>Zooming in on <m>f</m> at <m>x=3</m> for the function given in <xref ref="ex_der_meaning4">Examples</xref> and <xref ref="ex_der_meaning5"></xref>.</caption>
           <!-- START figures/fig_fwithderivzoom3.tex -->
@@ -258,7 +258,7 @@
               \begin{tikzpicture}
                 \begin{axis}[minor y tick num=4,
                             ymin=1.9,ymax=4.9,
-                            xmin=2.7,xmax=3.3, 
+                            xmin=2.7,xmax=3.3,
                             xdiscontinuity,
                             ydiscontinuity,
                             grid=major]
