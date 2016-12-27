@@ -453,69 +453,58 @@
   <!--</introduction>-->
   <exercises>
     <exercisegroup>
-      <title>Terms and Concepts</title>
+      <introduction>
+        <p>Terms and Concepts</p>
+      </introduction>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$tf">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $tf=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: Every function has an inverse.</p>
+            <p>True or False? Every function has an inverse. <var name="$tf" form="popup"/></p>
           </statement>
-          <solution>
-            <p>F</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>In your own words explain what it means for a function to be <q>one-to-one.</q></p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>If <m>(1,10)</m> lies on the graph of <m>y=f(x)</m>, what can be said about the graph of <m>y=f^{-1}(x)</m>?</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>The point <m>(10,1)</m> lies on the graph of <m>y=f^{-1}(x)</m> (assuming <m>f</m> is invertible).</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>If <m>(1,10)</m> lies on the graph of <m>y=f(x)</m> and <m>\fp(1) = 5</m>, what can be said about <m>y=f^{-1}(x)</m>?</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>The point <m>(10,1)</m> lies on the graph of <m>y=f^{-1}(x)</m> (assuming <m>f</m> is invertible) and <m>(f^{-1})'(10) = 1/5</m>.</p>
@@ -523,546 +512,604 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Problems</title>
       <introduction>
         <p>In the following exercises, verify that the given functions are inverses.</p>
       </introduction>
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>f(x) = 2x+6</m> and <m>g(x) = \frac12x-3</m></p>
+            <p>Verify that <m>f(x) = 2x+6</m> and <m>g(x) = \frac{1}{2}x-3</m> are inverse functions.</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Compose <m>f(g(x))</m> and <m>g(f(x))</m> to confirm that each equals <m>x</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>f(x) = x^2+6x+11</m>, <m>x\geq 3</m> and</p>
-
-            <p><m>g(x) = \sqrt{x-2}-3</m>, <m>x\geq 2</m></p>
+            <p>Verify that <m>f(x) = x^2+6x+11</m>, <m>x\geq 3</m> and <m>g(x) = \sqrt{x-2}-3</m>, <m>x\geq 2</m> are inverse functions.</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Compose <m>f(g(x))</m> and <m>g(f(x))</m> to confirm that each equals <m>x</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{3}{x-5}</m>, <m>x\neq 5</m> and</p>
-
-            <p><m>\ds g(x) = \frac{3+5x}{x}</m>, <m>x\neq 0</m></p>
+            <p>Verify that <m>f(x) = \frac{3}{x-5}</m>, <m>x\neq 5</m> and <m>g(x) = \frac{3+5x}{x}</m>, <m>x\neq 0</m> are inverse functions.</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Compose <m>f(g(x))</m> and <m>g(f(x))</m> to confirm that each equals <m>x</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{x+1}{x-1}</m>, <m>x\neq 1</m> and <m>g(x) = f(x)</m></p>
+            <p>Verify that <m>f(x) = \frac{x+1}{x-1}</m>, <m>x\neq 1</m> and <m>g(x) = f(x)</m> are inverse functions.</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Compose <m>f(g(x))</m> and <m>g(f(x))</m> to confirm that each equals <m>x</m>.</p>
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, an invertible function <m>f(x)</m> is given along with a point that lies on its graph. Using <xref ref="thm_deriv_inverse_functions">Theorem</xref>, evaluate <m>\left(f^{-1}\right)'(x)</m> at the indicated value.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, an invertible function <m>f(x)</m> is given along with a point that lies on its graph. Using <xref ref="thm_deriv_inverse_functions">Theorem</xref>, evaluate <m>\left(f^{-1}\right)'(x)</m> at the indicated value.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fip">
+              <static>1/5</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $fip=Formula("1/5");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = 5x+10</m></p>
-
-            <p>Point<m>=(2,20)</m></p>
-
-            <p>Evaluate <m>\left(f^{-1}\right)'(20)</m></p>
+            <p>The point <m>(2,20)</m> is on the graph of <m>f(x) = 5x+10</m>.</p>
+            <p><m>\left(f^{-1}\right)'(20)=</m><var name="$fip" width="10" /></p>
           </statement>
           <solution>
             <p><m>\left(f^{-1}\right)'(20) = \frac{1}{\fp(2)} = 1/5</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fip">
+              <static>1/4</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $fip=Formula("1/4");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2-2x+4</m>, <m>x\geq 1</m></p>
-
-            <p>Point<m>=(3,7)</m></p>
-
-            <p>Evaluate <m>\left(f^{-1}\right)'(7)</m></p>
+            <p>The point <m>(3,7)</m> is on the graph of <m>f(x) = x^2-2x+4</m>, <m>x\geq 1</m>.</p>
+            <p><m>\left(f^{-1}\right)'(7)=</m><var name="$fip" width="10" /></p>
           </statement>
           <solution>
             <p><m>\left(f^{-1}\right)'(7) = \frac{1}{\fp(3)} = 1/4</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fip">
+              <static>1</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $fip=Formula("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \sin(2x)</m>, <m>-\pi/4\leq x\leq \pi/4</m></p>
-
-            <p>Point<m>=(\pi/6,\sqrt{3}/2)</m></p>
-
-            <p>Evaluate <m>\left(f^{-1}\right)'(\sqrt{3}/2)</m></p>
+            <p>The point <m>\left(\pi/6,\sqrt{3}/2\right)</m> is on the graph of <m>f(x) = \sin(2x)</m>, <m>-\pi/4\leq x\leq \pi/4</m>.</p>
+            <p><m>\left(f^{-1}\right)'\left(\sqrt{3}/2\right)=</m><var name="$fip" width="10" /></p>
           </statement>
           <solution>
-            <p><m>\left(f^{-1}\right)'(\sqrt{3}/2) = \frac{1}{\fp(\pi/6)} = 1</m></p>
+            <p><m>\left(f^{-1}\right)'\left(\sqrt{3}/2\right) = \frac{1}{\fp(\pi/6)} = 1</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fip">
+              <static>1/6</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $fip=Formula("1/6");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^3-6x^2+15x-2</m></p>
-
-            <p>Point<m>=(1,8)</m></p>
-
-            <p>Evaluate <m>\left(f^{-1}\right)'(8)</m></p>
+            <p>The point <m>(1,8)</m> is on the graph of <m>f(x) = x^3-6x^2+15x-2</m>.</p>
+            <p><m>\left(f^{-1}\right)'(8)=</m><var name="$fip" width="10" /></p>
           </statement>
           <solution>
             <p><m>\left(f^{-1}\right)'(8) = \frac{1}{\fp(1)} = 1/6</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fip">
+              <static>-2</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $fip=Formula("-2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{1}{1+x^2}</m>, <m>x\geq 0</m></p>
-
-            <p>Point<m>=(1,1/2)</m></p>
-
-            <p>Evaluate <m>\left(f^{-1}\right)'(1/2)</m></p>
+            <p>The point <m>(1,1/2)</m> is on the graph of <m>\ds f(x) = \frac{1}{1+x^2}</m>, <m>x\geq 0</m>.</p>
+            <p><m>\left(f^{-1}\right)'(1/2)=</m><var name="$fip" width="10" /></p>
           </statement>
           <solution>
             <p><m>\left(f^{-1}\right)'(1/2) = \frac{1}{\fp(1)} = -2</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fip">
+              <static>1/18</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $fip=Formula("1/18");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = 6e^{3x}</m></p>
-
-            <p>Point<m>=(0,6)</m></p>
-
-            <p>Evaluate <m>\left(f^{-1}\right)'(6)</m></p>
+            <p>The point <m>(0,6)</m> is on the graph of <m>f(x) = 6e^{3x}</m>.</p>
+            <p><m>\left(f^{-1}\right)'(6)=</m><var name="$fip" width="10" /></p>
           </statement>
           <solution>
-            <p><m>\left(f^{-1}\right)'(6) = \frac{1}{\fp(0)} = 1/6</m></p>
+            <p><m>\left(f^{-1}\right)'(6) = \frac{1}{\fp(0)} = 1/18</m></p>
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, compute the derivative of the given function.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, compute the derivative of the given function.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{2}{\sqrt{1-4t^2}}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->set(t=>{limits=>[-0.25,0.25]});
+              $fp=Formula("2/sqrt(1-4t^2)");
             </pg-code>
           </setup>
           <statement>
             <p><m>h(t) = \sin^{-1}(2t)</m></p>
+            <p><m>h'(t)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>h'(t) = \frac{2}{\sqrt{1-4t^2}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{1}{\abs{t}\sqrt{4t^2+1}}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $fp=Formula("1/(|t|sqrt(4t^2+1))");
             </pg-code>
           </setup>
           <statement>
             <p><m>f(t) = \sec^{-1}(2t)</m></p>
+            <p><m>f'(t)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>\fp(t) = \frac{1}{\abs{t}\sqrt{4t^2+1}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{2}{1+4x^2}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $fp=Formula("2/(1+4x^2)");
             </pg-code>
           </setup>
           <statement>
             <p><m>g(x)=\tan^{-1}(2x)</m></p>
+            <p><m>g'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>g'(x) = \frac{2}{1+4x^2}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{x}{\sqrt{1-x^2}}+\sin^{-1}(x)</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->set(x=>{limits=>[-1,1]});
+              $fp=Formula("x/sqrt(1-x^2)+sin^(-1)(x)");
             </pg-code>
           </setup>
           <statement>
             <p><m>f(x) =x\sin^{-1}(x)</m></p>
+            <p><m>f'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>\fp(x) = \frac{x}{\sqrt{1-x^2}}+\sin^{-1}(x)</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\cos^{-1}(t) \cos(t)-\frac{\sin(t)}{\sqrt{1-t^2}}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->set(t=>{limits=>[-1,1]});
+              $fp=Formula("cos^(-1)(t)cos(t)-sin(t)/sqrt(1-t^2)");
             </pg-code>
           </setup>
           <statement>
             <p><m>g(t) = \sin(t) \cos^{-1}(t)</m></p>
+            <p><m>g'(t)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>g'(t) = \cos^{-1}(t) \cos(t)-\frac{\sin(t)}{\sqrt{1-t^2}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{e^t}{t} + \ln(t) e^t</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->set(t=>{limits=>[1,5]});
+              $fp=Formula("e^t/t+ln(t)e^t");
             </pg-code>
           </setup>
           <statement>
             <p><m>f(t) = \ln(t) e^t</m></p>
+            <p><m>f'(t)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>\fp(t) = \frac{e^t}{t} + \ln(t) e^t</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{\pi}{2\sqrt{1-x^2} \left(\cos^{-1}(x)\right)^2}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->set(x=>{limits=>[-1,1]});
+              $fp=Formula("(sin^-1(x)+cos^-1(x))/(sqrt(1-x^2)(cos^-1(x))^2)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds h(x) = \frac{\sin^{-1}(x) }{\cos^{-1}(x) }</m></p>
+            <p><m>h(x) = \frac{\sin^{-1}(x) }{\cos^{-1}(x) }</m></p>
+            <p><m>h'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
-            <p><m>h'(x)=\frac{\sin^{-1}(x)+\cos^{-1}(x)}{\sqrt{1-x^2} \cos^{-1}(x)^2}</m></p>
+            <p><m>h'(x)=\frac{\pi}{2\sqrt{1-x^2} \left(\cos^{-1}(x)\right)^2}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>\frac{1}{\sqrt{x} (2 x+2)}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->set(x=>{limits=>[1,5]});
+              $fp=Formula("1/(2sqrt(x)(1+x))");
             </pg-code>
           </setup>
           <statement>
-            <p><m>g(x) = \tan^{-1}(\sqrt{x})</m></p>
+            <p><m>g(x) = \tan^{-1}\mathopen{}\left(\sqrt{x}\right)\mathclose{}</m></p>
+            <p><m>g'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>g'(x) = \frac{1}{\sqrt{x} (2 x+2)}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>-\frac{1}{\sqrt{1-x^2}}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->set(x=>{limits=>[-1,1]});
+              $fp=Formula("-1/sqrt(1-x^2)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) =\sec^{-1}(1/x)</m></p>
+            <p><m>f(x)=\sec^{-1}(1/x)</m></p>
+            <p><m>f'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
             <p><m>\fp(x) = -\frac{1}{\sqrt{1-x^2}}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fp">
+              <static>1</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->set(x=>{limits=>[-1,1]});
+              $fp=Formula("1");
             </pg-code>
           </setup>
           <statement>
             <p><m>f(x) =\sin(\sin^{-1}(x) )</m></p>
+            <p><m>f'(x)=</m><var name="$fp" width="40" /></p>
           </statement>
           <solution>
-            <ol>
+            <p><ol>
               <li><p><m>f(x) = x</m>, so <m>\fp(x) = 1</m></p></li>
 
               <li><p><m>\fp(x) = \cos(\sin^{-1}(x) )\frac{1}{\sqrt{1-x^2}} = 1</m>.</p></li>
-            </ol>
-          </solution>
-        </webwork>
-      </exercise>
-      <p>In the following exercises, compute the derivative of the given function in two ways:</p>
-
-      <ol>
-        <li>
-          <title>(a)</title>
-          <p>By simplifying first, then taking the derivative, and</p></li>
-
-        <li>
-          <title>(b)</title>
-          <p>by using the Chain Rule first then simplifying.</p></li>
-      </ol>
-
-      <p>Verify that the two answers are the same.</p>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>f(x) =\sin(\sin^{-1}(x) )</m></p>
-          </statement>
-          <solution>
-            <ol>
-              <li><p><m>f(x) = x</m>, so <m>\fp(x) = 1</m></p></li>
-
-              <li><p><m>\fp(x) = \cos(\sin^{-1}(x) )\frac{1}{\sqrt{1-x^2}} = 1</m>.</p></li>
-            </ol>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>f(x) =\tan^{-1}(\tan(x) )</m></p>
-          </statement>
-          <solution>
-            <ol>
-              <li><p><m>f(x) = x</m>, so <m>\fp(x) = 1</m></p></li>
-
-              <li><p><m>\fp(x) = \frac{1}{1+\tan^2(x) }\sec^2(x) = 1</m></p></li>
-            </ol>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>f(x) =\sin(\cos^{-1}(x) )</m></p>
-          </statement>
-          <solution>
-            <ol>
-              <li><p><m>f(x) = \sqrt{1-x^2}</m>, so <m>\fp(x) = \frac{-x}{\sqrt{1-x^2}}</m></p></li>
-
-              <li><p><m>\fp(x) = \cos(\cos^{-1}(x) )(\frac{1}{\sqrt{1-x^2}} =\frac{-x}{\sqrt{1-x^2}}</m></p></li>
-            </ol>
-          </solution>
-        </webwork>
-      </exercise>
-      <p>In the following exercises, find the equation of the line tangent to the graph of <m>f</m> at the indicated <m>x</m> value.</p>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>f(x) =\sin^{-1}(x)</m> at<m>x=\frac{\sqrt{2}}{2}</m></p>
-          </statement>
-          <solution>
-            <p><m>y = \sqrt{2}(x-\sqrt{2}/2)+\pi/4</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>f(x) =\cos^{-1}(2x)</m> at<m>x=\frac{\sqrt{3}}{4}</m></p>
-          </statement>
-          <solution>
-            <p><m>y = -4(x-\sqrt{3}/4)+\pi/6</m></p>
+            </ol></p>
           </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Review</title>
+      <introduction>
+        <p>In the following exercises, compute the derivative of the given function in two ways:</p>
+        <p><ol>
+          <li>
+            <title>(a)</title>
+            <p>By simplifying first, then taking the derivative, and</p></li>
+
+          <li>
+            <title>(b)</title>
+            <p>by using the Chain Rule first then simplifying.</p></li>
+        </ol></p>
+
+        <p>Verify that the two answers are the same.</p>
+      </introduction>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p>Find <m>\frac{dy}{dx}</m>, where <m>x^2y-y^2x = 1</m>.</p>
+            <p>Compute the derivative of <m>f(x)=\sin(\sin^{-1}(x))</m> in two ways: by simplifying first and then taking the derivative; and by using the Chain Rule first and then simplying. Verify the two answers are the same.</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
-            <p><m>\frac{dy}{dx} = \frac{y (y-2 x)}{x (x-2 y)}</m></p>
+            <p><ol>
+              <li><p><m>f(x) = x</m>, so <m>\fp(x) = 1</m></p></li>
+
+              <li><p><m>\fp(x) = \cos(\sin^{-1}(x) )\frac{1}{\sqrt{1-x^2}} = 1</m>.</p></li>
+            </ol></p>
           </solution>
         </webwork>
       </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <statement>
+            <p>Compute the derivative of <m>f(x)=\tan^{-1}(\tan(x))</m> in two ways: by simplifying first and then taking the derivative; and by using the Chain Rule first and then simplying. Verify the two answers are the same.</p>
+            <p><var form="essay" /></p>
+          </statement>
+          <solution>
+            <p><ol>
+              <li><p><m>f(x) = x</m>, so <m>\fp(x) = 1</m></p></li>
+
+              <li><p><m>\fp(x) = \frac{1}{1+\tan^2(x) }\sec^2(x) = 1</m></p></li>
+            </ol></p>
+          </solution>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <statement>
+            <p>Compute the derivative of <m>f(x) \sin(\cos^{-1}(x))</m> in two ways: by simplifying first and then taking the derivative; and by using the Chain Rule first and then simplying. Verify the two answers are the same.</p>
+            <p><var form="essay" /></p>
+          </statement>
+          <solution>
+            <p><ol>
+              <li><p><m>f(x) = \sqrt{1-x^2}</m>, so <m>\fp(x) = \frac{-x}{\sqrt{1-x^2}}</m></p></li>
+
+              <li><p><m>\fp(x) = \cos(\cos^{-1}(x) )(\frac{1}{\sqrt{1-x^2}} =\frac{-x}{\sqrt{1-x^2}}</m></p></li>
+            </ol></p>
+          </solution>
+        </webwork>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the equation of the line tangent to the graph of <m>f</m> at the indicated <m>x</m> value.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$t">
+              <static>y=\sqrt{2}\left(x-\sqrt{2}/2\right)+\pi/4</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $t=Formula("y=sqrt(2)(x-sqrt(2)/2)+pi/4");
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Find the equation of the tangent line to <m>f(x)=\sin^{-1}(x)</m> at <m>x=\frac{\sqrt{2}}{2}</m>.</p>
+            <p><var name="$t" width="30" /></p>
+          </statement>
+          <solution>
+            <p><m>y=\sqrt{2}(x-\sqrt{2}/2)+\pi/4</m></p>
+          </solution>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$t">
+              <static>y=-4\left(x-\sqrt{3}/4\right)+\pi/6</static>
+            </var>
+            <pg-code>
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $t=Formula("y=-4(x-sqrt(3)/4)+pi/6");
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Find the equation of the tangent line to <m>f(x)=\cos^{-1}(2x)</m> at <m>x=\frac{\sqrt{3}}{4}</m>.</p>
+            <p><var name="$t" width="30" /></p>
+          </statement>
+          <solution>
+            <p><m>y=-4(x-\sqrt{3}/4)+\pi/6</m></p>
+          </solution>
+        </webwork>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>Review</p>
+      </introduction>
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$dydx">
+              <static>\frac{y(y-2x)}{x(x-2y)}</static>
+            </var>
+            <pg-code>
+              Context()->variables->add(y=>'Real');
+              $dydx=Formula("(y(y-2x))/(x(x-2y))");
+              @y=(random(0,5,0.1),random(0,5,0.1),random(0,5,0.1),random(0,5,0.1),random(0,5,0.1));
+              @x=map{$_/2 +(-1)**(random(-1,1,2))*sqrt(($_)**2/4+1/$_)}(@y);
+              @xy=map{[$x[$_],$y[$_]]}(0..4);
+              $dydx->{test_points}=~~@xy;
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Find <m>\lz{y}{x}</m>, where <m>x^2y-y^2x = 1</m>.</p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="40" /></p>
+          </statement>
+          <solution>
+            <p><m>\lz{y}{x} = \frac{y(y-2x)}{x(x-2y)}</m></p>
+          </solution>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$t">
+              <static>y=-\frac{4}{5}(x-1)+2</static>
+            </var>
+            <pg-code>
+              Context()->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $t=Formula("y=-4/5(x-1)+2");
             </pg-code>
           </setup>
           <statement>
             <p>Find the equation of the line tangent to the graph of <m>x^2+y^2+xy=7</m> at the point <m>(1,2)</m>.</p>
+            <p><var name="$t" width="30" /></p>
           </statement>
           <solution>
-            <p><m>y=-4/5(x-1)+2</m></p>
+            <p><m>y=-\frac{4}{5}(x-1)+2</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$l">
+              <static>3x^2+1</static>
             </var>
             <pg-code>
+              $l=Formula("3x^2+1");
             </pg-code>
           </setup>
           <statement>
             <p>Let <m>f(x) = x^3+x</m>.</p>
 
-            <p>Evaluate <m>\lim\limits_{s\to 0} \frac{f(x+s)-f(x)}{s}</m>.</p>
+            <p><m>\lim\limits_{s\to 0} \frac{f(x+s)-f(x)}{s}=</m><var name="$l" width="20" /></p>
           </statement>
           <solution>
             <p><m>3x^2+1</m></p>
