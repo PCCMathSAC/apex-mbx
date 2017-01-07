@@ -1035,58 +1035,89 @@
 
   <exercises>
     <exercisegroup>
-      <title>Terms and Concepts</title>
+      <introduction>
+        <p>Terms and Concepts</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$true">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
+            <var name="$false">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
+            </var>            
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: When sketching the graph of parametric equations, the <m>x</m> and <m>y</m> values are found separately, then plotted together.</p>
+            <p>True or False? When sketching the graph of parametric equations, the <m>x</m>- and <m>y</m>-values are found separately, then plotted together. <var name="$true" form="popup"/></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>contextArbitraryString.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$orientation">
+              <static>orientation</static>
             </var>
             <pg-code>
+              Context("ArbitraryString");
+              $orientation=Compute("orientation");
+              $evaluator=$orientation->cmp(checker => sub {
+                my ($correct,$student,$ans) = @_;
+                $correct = $correct->value;
+                $student = $student->value;
+                $student =~ s/^~~W+|~~W+$//g;
+                return uc($correct) eq uc($student);
+              });
             </pg-code>
           </setup>
           <statement>
-            <p>The direction in which a graph is <q>moving</q> is called the <fillin /> of the graph.</p>
+            <p>The direction in which a graph is <q>moving</q> is called the <var name="$orientation" evaluator="$evaluator" width="10" /> of the graph.</p>
           </statement>
-          <solution>
-            <p>orientation</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>contextArbitraryString.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$rectangular">
+              <static>rectangular</static>
             </var>
             <pg-code>
+              Context("ArbitraryString");
+              $rectangular=Compute("rectangular");
+              $evaluator=$rectangular->cmp(checker => sub {
+                my ($correct,$student,$ans) = @_;
+                $correct = $correct->value;
+                $student = $student->value;
+                $student =~ s/^~~W+|~~W+$//g;
+                return uc($correct) eq uc($student);
+              });
             </pg-code>
           </setup>
           <statement>
-            <p>An equation written as <m>y=f(x)</m> is written in <fillin /> form.</p>
+            <p>An equation written as <m>y=f(x)</m> is written in <var name="$rectangular" evaluator="$evaluator" width="10" /> form.</p>
           </statement>
-          <solution>
-            <p>rectangular</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1105,9 +1136,11 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises, sketch the graph of the given parametric equations <em>by hand</em>, making a table of points to plot. Be sure to indicate the orientation of the graph.</p>
+      <introduction>
+        <p>In the following exercises, sketch the graph of the given parametric equations <em>by hand</em>, making a table of points to plot. Be sure to indicate the orientation of the graph.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1321,7 +1354,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, sketch the graph of the given parametric equations; using a graphing utility is advisable. Be sure to indicate the orientation of the graph.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, sketch the graph of the given parametric equations; using a graphing utility is advisable. Be sure to indicate the orientation of the graph.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1670,7 +1708,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, four sets of parametric equations are given. Describe how their graphs are similar and different. Be sure to discuss orientation and ranges.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, four sets of parametric equations are given. Describe how their graphs are similar and different. Be sure to discuss orientation and ranges.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1737,24 +1780,32 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, eliminate the parameter in the given parametric equations.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, eliminate the parameter in the given parametric equations.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq">
+              <static>3x+2y=17</static>
             </var>
             <pg-code>
+              Context("ImplicitEquation");
+              $eq=ImplicitEquation("3x+2y=17",limits=>[[-3,3],[6,11]]);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds x=2t+5</m>, <m>\ds y=-3t+1</m></p>
+            <p>Eliminate the parameter <m>t</m>.<md>
+              <mrow>x\amp=2t+5\amp y\amp=-3t+1</mrow>
+            </md></p>
+            <p><var name="$eq" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>y=-1.5x+8.5</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1806,23 +1857,27 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq">
+              <static>y-2x=3</static>
             </var>
             <pg-code>
+              Context("ImplicitEquation");
+              $eq=ImplicitEquation("y-2x=3",limits=>[[-3,3],[0,6]]);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds x=\frac{1}{t+1}</m>, <m>\ds y=\frac{3t+5}{t+1}</m></p>
+            <p>Eliminate the parameter <m>t</m>.<md>
+              <mrow>x\amp=\frac{1}{t+1}\amp y\amp=\frac{3t+5}{t+1}</mrow>
+            </md></p>
+            <p><var name="$eq" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>y=2x+3</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1891,24 +1946,32 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq">
+              <static>x=1-2y^2</static>
             </var>
             <pg-code>
+              Context("ImplicitEquation");
+              $eq=ImplicitEquation("x=1-2y^2",limits=>[[-1,2],[-2,2]]);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds x=\cos(2t)</m>, <m>\ds y=\sin(t)</m></p>
+            <p>Eliminate the parameter <m>t</m>.<md>
+              <mrow>x\amp=\cos(2t)\amp y\amp=\sin(t)</mrow>
+            </md></p>
+            <p><var name="$eq" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>x=1-2y^2</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, eliminate the parameter in the given parametric equations. Describe the curve defined by the parametric equations based on its rectangular form.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, eliminate the parameter in the given parametric equations. Describe the curve defined by the parametric equations based on its rectangular form.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1977,18 +2040,31 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find parametric equations for the given rectangular equation using the parameter <m>\ds t=\frac{dy}{dx}</m>. Verify that at <m>t=1</m>, the point on the graph has a tangent line with slope of 1.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find parametric equations for the given rectangular equation using the parameter <m>\ds t=\frac{dy}{dx}</m>. Verify that at <m>t=1</m>, the point on the graph has a tangent line with slope of 1.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$x">
+              <static>\frac{t+11}{6}</static>
+            </var>
+            <var name="$y">
+              <static>\frac{t^2-97}{12}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              $x=Formula("(t+11)/6");
+              $y=Formula("(t^2-97)/12");
             </pg-code>
           </setup>
           <statement>
-            <p><m>y=3x^2-11x+2</m></p>
+            <p>Find parametric equations for <m>y=3x^2-11x+2</m> using the parameter <m>t=\lz{y}{x}</m>. Verify that at <m>t=1</m>, the point on the graph has a tangent line with slope of <m>1</m>.</p>
+            <p><m>x=</m><var name="$x" width="40" /></p>
+            <p><m>y=</m><var name="$y" width="40" /></p>
           </statement>
           <solution>
             <p><m>x=(t+11)/6</m>, <m>y=(t^2-97)/12</m>. At <m>t=1</m>, <m>x=2</m>, <m>y=-8</m>.</p>
@@ -1997,17 +2073,27 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$x">
+              <static>\ln(t)</static>
+            </var>
+            <var name="$y">
+              <static>t</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->variables->set(t=>{limits=>[0.1,10]});
+              $x=Formula("ln(t)");
+              $y=Formula("t");
             </pg-code>
           </setup>
           <statement>
-            <p><m>y=e^x</m></p>
+            <p>Find parametric equations for <m>y=e^x</m> using the parameter <m>t=\lz{y}{x}</m>. Verify that at <m>t=1</m>, the point on the graph has a tangent line with slope of <m>1</m>.</p>
+            <p><m>x=</m><var name="$x" width="40" /></p>
+            <p><m>y=</m><var name="$y" width="40" /></p>
           </statement>
           <solution>
             <p><m>x=\ln(t)</m>, <m>y=t</m>. At <m>t=1</m>, <m>x=0</m>, <m>y=1</m>.</p>
@@ -2016,17 +2102,27 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$x">
+              <static>\arccos(t)</static>
+            </var>
+            <var name="$y">
+              <static>\sqrt{1-t^2}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->variables->set(t=>{limits=>[-0.9,0.9]});
+              $x=Formula("cos^-1(t)");
+              $y=Formula("sqrt(1-t^2)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>y=\sin(x)</m> on <m>[0,\pi]</m></p>
+            <p>Find parametric equations for <m>y=\sin(x)</m> using the parameter <m>t=\lz{y}{x}</m>. Verify that at <m>t=1</m>, the point on the graph has a tangent line with slope of <m>1</m>.</p>
+            <p><m>x=</m><var name="$x" width="40" /></p>
+            <p><m>y=</m><var name="$y" width="40" /></p>
           </statement>
           <solution>
             <p><m>x=\cos^{-1}(t)</m>, <m>y=\sqrt{1-t^2}</m>. At <m>t=1</m>, <m>x=0</m>, <m>y=0</m>.</p>
@@ -2035,6 +2131,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -2054,24 +2151,29 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the values of <m>t</m> where the graph of the parametric equations crosses itself.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the values of <m>t</m> where the graph of the parametric equations crosses itself.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$crossings">
+              <static>-1, 1</static>
             </var>
             <pg-code>
+              $crossings=List("-1,1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>x=t^3-t+3</m>,<m>y=t^2-3</m></p>
+            <p>Find the values of <m>t</m> where the graph of <m>x=t^3-t+3</m>, <m>y=t^2-3</m> crosses itself. (Use commas to separate them.)</p>
+            <p><m>t\in\big\{</m><var name="$crossings" width="10" /><m>\big\}</m></p>
           </statement>
-          <solution>
-            <p><m>t=\pm 1</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -2123,7 +2225,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the value(s) of <m>t</m> where the curve defined by the parametric equations is not smooth.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the value(s) of <m>t</m> where the curve defined by the parametric equations is not smooth.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -2141,23 +2248,24 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$cusps">
+              <static>2</static>
             </var>
             <pg-code>
+              $cusps=List("2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>x=t^2-4t</m>,<m>y=t^3-2t^2-4t</m></p>
+            <p>Find the value(s) of <m>t</m> where the curve defined by <m>x=t^2-4t</m>, <m>y=t^3-2t^2-4t</m> is not smooth. (If there is more than one, use commas to separate them.)</p>
+            <p><m>t\in\big\{</m><var name="$cusps" width="10" /><m>\big\}</m></p>
           </statement>
-          <solution>
-            <p><m>t=2</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -2175,24 +2283,29 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$cusps">
+              <static>0</static>
             </var>
             <pg-code>
+              $cusps=List("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>x=2\cos(t) -\cos(2t)</m>,<m>y=2\sin(t) -\sin(2t)</m></p>
+            <p>Find the value(s) of <m>t</m> in <m>[0,2\pi)</m> where the curve defined by <m>x=2\cos(t)-\cos(2t)</m>, <m>y=2\sin(t)-\sin(2t)</m> is not smooth. (If there is more than one, use commas to separate them.)</p>
+            <p><m>t\in\big\{</m><var name="$cusps" width="10" /><m>\big\}</m></p>
           </statement>
-          <solution>
-            <p><m>t=\ldots 0,\ 2\pi,\ 4\pi,\ \ldots</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find parametric equations that describe the given situation.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find parametric equations that describe the given situation.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -2244,57 +2357,88 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$x">
+              <static>2\cos(t)</static>
+            </var>
+            <var name="$y">
+              <static>-2\sin(t)</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              $x=Formula("2cos(t)");
+              $y=Formula("-2sin(t)");
             </pg-code>
           </setup>
           <statement>
-            <p>A circle of radius 2, centered at the origin, that is traced clockwise once on <m>[0,2\pi]</m>.</p>
+            <p>Find parametric equations that describe a circle of radius <m>2</m>, centered at the origin, that is traced clockwise once on <m>[0,2\pi]</m>, starting at <m>(2,0)</m>.</p>
+            <p><m>x=</m><var name="$x" width="40" /></p>
+            <p><m>y=</m><var name="$y" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>x=2\cos(t)</m>, <m>y=-2\sin(t)</m>; other answers possible</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$x">
+              <static>3\cos(2\pi t)+1</static>
+            </var>
+            <var name="$y">
+              <static>3\sin(2\pi t)+1</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              $x=Formula("3cos(2 pi t)+1");
+              $y=Formula("3sin(2 pi t)+1");
             </pg-code>
           </setup>
           <statement>
-            <p>A circle of radius 3, centered at <m>(1,1)</m>, that is traced once counter<ndash />clockwise on <m>[0,1]</m>.</p>
+            <p>Find parametric equations that describe a circle of radius <m>3</m>, centered at <m>(1,1)</m>, that is traced once counter-clockwise on <m>[0,1]</m>, starting at <m>(4,1)</m>.</p>
+            <p><m>x=</m><var name="$x" width="40" /></p>
+            <p><m>y=</m><var name="$y" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>x=3\cos(2\pi t)+1</m>, <m>y=3\sin(2\pi t)+1</m>; other answers possible</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$x">
+              <static>\cos(t)+1</static>
+            </var>
+            <var name="$y">
+              <static>3\sin(t)+3</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              $x=Formula("3cos(2 pi t)+1");
+              $y=Formula("3sin(2 pi t)+1");
+              $multians = MultiAnswer($x, $y)->with(
+                singleResult => 1,
+                checker => sub {
+                  my ( $correct, $student, $self ) = @_;
+                  my ( $xstu, $ystu ) = @{$student};
+                  my $dx = $xstu->D('t');
+                  my $dy = $ystu->D('t');
+                  return 0 if ($dx == Formula("0") or $dy == Formula("0"));
+                  my $eliminated = Formula("($xstu-1)^2 + ($ystu/3 - 1)^2");
+                  return ($eliminated == Formula("1"));
+                }
+              );
             </pg-code>
           </setup>
           <statement>
-            <p>An ellipse centered at <m>(1,3)</m> with vertical major axis of length 6 and minor axis of length 2.</p>
+            <p>Find parametric equations that describe an ellipse centered at <m>(1,3)</m>, with vertical major axis of length <m>6</m> and minor axis of length <m>2</m>.</p>
+            <p><m>x=</m><var name="$multians" width="40" /></p>
+            <p><m>y=</m><var name="$multians" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>x=\cos(t) +1</m>, <m>y=3\sin(t) +3</m>; other answers possible</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
