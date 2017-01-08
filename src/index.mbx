@@ -98,7 +98,7 @@
 
 \usepackage{pgfplots}
 
-\usetikzlibrary{positioning,matrix,arrows}
+\usetikzlibrary{positioning,matrix,arrows,arrows.meta}
 
 \usetikzlibrary{shapes,decorations,shadows,fadings}
 
@@ -112,16 +112,22 @@
 \newboolean{colorprint}
 \setboolean{colorprint}{true}
 
-\pgfplotsset{firstcurvestyle/.style={color=blue,mark=none,thick,<->,solid}}
-\pgfplotsset{secondcurvestyle/.style={color=red,mark=none,thick,<->,dashdotted}}
-\pgfplotsset{thirdcurvestyle/.style={color=magenta,mark=none,thick,<->,dashdotdotted}}
-\pgfplotsset{tangentline/.style={color=black,mark=none,thick,<->,solid}}
+\colorlet{firstcolor}{blue}
+\colorlet{secondcolor}{red}
+\colorlet{thirdcolor}{magenta}
+\pgfplotsset{firstcurvestyle/.style={color=firstcolor,mark=none,thick,{Kite}-{Kite},solid}}
+\pgfplotsset{secondcurvestyle/.style={color=secondcolor,mark=none,thick,{Kite}-{Kite},dashdotted}}
+\pgfplotsset{thirdcurvestyle/.style={color=thirdcolor,mark=none,thick,{Kite}-{Kite},dashdotdotted}}
+\pgfplotsset{tangentline/.style={color=black,mark=none,thick,{Kite}-{Kite},solid}}
 \pgfplotsset{tangentlineseg/.style={color=black,mark=none,thick,-,solid}}
-\pgfplotsset{normalline/.style={color=black,mark=none,thick,<->,dashed}}
+\pgfplotsset{normalline/.style={color=black,mark=none,thick,{Kite}-{Kite},dashed}}
 \pgfplotsset{normallineseg/.style={color=black,mark=none,thick,-,dashed}}
-\pgfplotsset{asymptote/.style={color=black,mark=none,thick,<->,dashed}}
+\pgfplotsset{asymptote/.style={color=black,mark=none,thick,{Kite}-{Kite},dashed}}
 \pgfplotsset{guideline/.style={color=black,mark=none,-}}
 \pgfplotsset{symmetryline/.style={color=black,mark=none,-,dashed}}
+\pgfplotsset{openinterval/.style={color=black,mark=none,ultra thick,{Parenthesis}-{Parenthesis}}}
+\pgfplotsset{closedinterval/.style={color=black,mark=none,ultra thick,{Bracket}-{Bracket}}}
+
 \pgfplotscreateplotcyclelist{curvestylelist}{%
         firstcurvestyle\\%
         secondcurvestyle\\%
@@ -129,8 +135,8 @@
 }
 
 %To disable arrows, edit these and the above lines accordingly
-\pgfplotsset{leftarrow/.style={<-}}
-\pgfplotsset{rightarrow/.style={->}}
+\pgfplotsset{leftarrow/.style={{Kite}-}}}
+\pgfplotsset{rightarrow/.style={-{Kite}}}
 
 
 
@@ -138,8 +144,8 @@
 \pgfplotsset{xdiscontinuity/.style={axis x discontinuity=parallel}}
 \pgfplotsset{ydiscontinuity/.style={axis y discontinuity=crunch}}
 
-\pgfplotsset{hollowdot/.style={color=black,fill=white,only marks,mark=*}}
-\pgfplotsset{soliddot/.style={color=black,fill=black,only marks,mark=*}}
+\pgfplotsset{hollowdot/.style={color=firstcolor,fill=white,only marks,mark=*}}
+\pgfplotsset{soliddot/.style={color=firstcolor,fill=firstcolor,only marks,mark=*}}
 
 \pgfplotsset{every axis/.append style = {
     cycle list name = curvestylelist,
