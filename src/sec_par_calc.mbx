@@ -1266,8 +1266,8 @@
               <static>1</static>
             </var>
             <pg-code>
-              $t0 = Real("0");
-              $L = Real("0");
+              $t0 = Real("2");
+              $L = Real("1");
             </pg-code>
           </setup>
           <statement>
@@ -1374,7 +1374,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>For the curve defined by <m>x=t^2-t</m>, <m>y=t^2+t</m>, find <m>\lz{2}{y}{x}</m> (as a function of <m>t</m>). Then determine the intervals on which the graph of the curve is concave up/down.</p>
+            <p>For the curve defined by <m>x=t^2-t</m>, <m>y=t^2+t</m>, find <m>\lzn{2}{y}{x}</m> (as a function of <m>t</m>). Then determine the intervals on which the graph of the curve is concave up/down.</p>
             <p><m>\lzn{2}{y}{x}=</m><var name="$ypp" width="40" /></p>
             <p>The curve is concave up for <m>t</m> in the interval(s) <var name="$up" width="20" />. (If there is more than one interval, use commas to separate them.)</p>
             <p>The curve is concave down for <m>t</m> in the interval(s) <var name="$down" width="20" />. (If there is more than one interval, use commas to separate them.)</p>
@@ -1421,24 +1421,24 @@
         <webwork seed="1">
           <setup>
             <var name="$ypp">
-              <static>\frac{\cos(t) \sin(2t)+2\sin(t) \cos(2t)}{(-\sin(t) \sin(2t)+2\cos(t) \cos(2t))^2}</static>
+              <static>\frac{-4\sin(t)\sin(2t) - 2\cos(t)\cos(2t)}{\sin^3(t)}</static>
             </var>
             <var name="$up">
-              <static>(-\infty,1/2]</static>
+              <static>\left[\frac{\pi}{2},\pi\right], \left[\frac{3\pi}{2},2\pi\right]</static>
             </var>
             <var name="$down">
-              <static>[1/2,\infty)</static>
+              <static>\left[0,\frac{\pi}{2}\right], \left[\pi, \frac{3\pi}{2}\right]</static>
             </var>
             <pg-code>
               Context()->variables->are(t=>'Real');
-              $ypp=Formula("(cos(t)sin(2t)+2sin(t)cos(2t))/(-sin(t)sin(2t)+2cos(t)cos(2t))^2");
+              $ypp=Formula("2 (sin(t)*-2sin(2t) - cos(2t)*cos(t)) / sin^3(t)");
               Context()->flags->set(ignoreEndpointTypes => 1);
-              $up=Compute("[0,arccos(1/sqrt(3))], [arccos(-1/sqrt(3)),pi], [2pi-arccos(-1/sqrt(3)), 2pi-arccos(1/sqrt(3))]");
-              $down=Compute("[arccos(1/sqrt(3)),arccos(-1/sqrt(3))], [pi,2pi-arccos(-1/sqrt(3))], [2pi-arccos(1/sqrt(3)),2pi]");
+              $up=Compute("[pi/2,pi], [3pi/2,2pi]");
+              $down=Compute("[0,pi/2], [pi,3pi/2]");
             </pg-code>
           </setup>
           <statement>
-            <p>For the curve defined by <m>x=\cos(t)</m>, <m>y=\sin(2t)</m>, find <m>\lz{2}{y}{x}</m> (as a function of <m>t</m>). Then determine the intervals (within <m>[0,2\pi)</m>) on which the graph of the curve is concave up/down.</p>
+            <p>For the curve defined by <m>x=\cos(t)</m>, <m>y=\sin(2t)</m>, find <m>\lzn{2}{y}{x}</m> (as a function of <m>t</m>). Then determine the intervals (within <m>[0,2\pi)</m>) on which the graph of the curve is concave up/down.</p>
             <p><m>\lzn{2}{y}{x}=</m><var name="$ypp" width="40" /></p>
             <p>The curve is concave up for <m>t</m> in the interval(s) <var name="$up" width="40" />. (If there is more than one interval, use commas to separate them.)</p>
             <p>The curve is concave down for <m>t</m> in the interval(s) <var name="$down" width="40" />. (If there is more than one interval, use commas to separate them.)</p>
@@ -1516,7 +1516,7 @@
             <pg-code>
               Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
               $length1=Formula("sqrt(101)(e^(pi/5)-1)");
-              $length2=Formula("sqrt(101)(e^(2pi/5)-1)");
+              $length2=Formula("sqrt(101)(e^(2pi/5)-e^(pi/5))");
             </pg-code>
           </setup>
           <statement>
