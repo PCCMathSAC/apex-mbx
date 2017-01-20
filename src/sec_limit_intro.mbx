@@ -2649,6 +2649,9 @@
             <var name="$tabout[3]">
               <static>-7</static>
             </var>
+            <var name="$tableanswers">
+              <static>-0.1,-7,-0.01,-7,0.01,-7,0.1,-7</static>
+            </var>
             <pg-code>
               $m=non_zero_random(-9,9,1);
               do {$b=non_zero_random(-9,9,1);}until(abs($m)!=abs($b));
@@ -2777,6 +2780,9 @@
             <var name="$tabout[3]">
               <static>9</static>
             </var>
+            <var name="$tableanswers">
+              <static>-0.1,9,-0.01,9,0.01,9,0.1,9</static>
+            </var>
             <pg-code>
               $m=non_zero_random(-9,9,1);
               $b=random(0.01,0.09,0.01)+random(0.1,0.9,0.1)+random(-9,9,1);
@@ -2904,6 +2910,9 @@
             </var>
             <var name="$tabout[3]">
               <static>5.1</static>
+            </var>
+            <var name="$tableanswers">
+              <static>-0.1,4.9,-0.01,4.99,0.01,5.01,0.1,5.1</static>
             </var>
             <pg-code>
               do{
@@ -3036,6 +3045,9 @@
             <var name="$tabout[3]">
               <static>-0.107527</static>
             </var>
+            <var name="$tableanswers">
+              <static>-0.1,-0.114943,-0.01,-0.111483,0.01,-0.110742,0.1,-0.107527</static>
+            </var>
             <pg-code>
               $b=non_zero_random(-5,5,1);
               $a=random(-5,5,1);
@@ -3163,6 +3175,9 @@
             </var>
             <var name="$tabout[3]">
               <static>28.6</static>
+            </var>
+            <var name="$tableanswers">
+              <static>-0.1,29.4,-0.01,29.04,0.01,28.96,0.1,28.6</static>
             </var>
             <pg-code>
               do{
@@ -3298,6 +3313,9 @@
             <var name="$tabout[3]">
               <static>0.198026</static>
             </var>
+            <var name="$tableanswers">
+              <static>-0.1,0.202027,-0.01,0.2002,0.01,0.1998,0.1,0.198026</static>
+            </var>
             <pg-code>
               $a=random(2,9,1);
               if ($envir{problemSeed}==1){$a=5;};
@@ -3425,6 +3443,9 @@
             <var name="$tabout[3]">
               <static>-0.998334</static>
             </var>
+            <var name="$tableanswers">
+              <static>-0.1,-0.998334,-0.01,-0.999983,0.01,-0.999983,0.1,-0.998334</static>
+            </var>
             <pg-code>
               Context()->flags->set(reduceConstants=>0);
               $a=list_random(Formula("pi/3"),Formula("2pi/3"),Formula("pi"),Formula("4pi/3"),Formula("5pi/3"),);
@@ -3542,16 +3563,19 @@
               <static>\pi</static>
             </var>
             <var name="$tabout[0]">
-              <static>-0.998334</static>
+              <static>−0.0499583</static>
             </var>
             <var name="$tabout[1]">
-              <static>-0.999983</static>
+              <static>−0.00499996</static>
             </var>
             <var name="$tabout[2]">
-              <static>-0.999983</static>
+              <static>0.00499996</static>
             </var>
             <var name="$tabout[3]">
-              <static>-0.998334</static>
+              <static>0.0499583</static>
+            </var>
+            <var name="$tableanswers">
+              <static>-0.1,−0.0499583,-0.01,−0.00499996,0.01,0.00499996,0.1,0.0499583</static>
             </var>
             <pg-code>
               Context()->flags->set(reduceConstants=>0);

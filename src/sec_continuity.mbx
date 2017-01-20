@@ -697,6 +697,9 @@
       <exercise>
         <webwork seed="1">
           <setup>
+            <var name="$a">
+              <static>1</static>
+            </var>
             <var name="$answer">
               <set>
                 <member>Yes.</member>
@@ -747,6 +750,9 @@
       <exercise>
         <webwork seed="1">
           <setup>
+            <var name="$a">
+              <static>1</static>
+            </var>
             <var name="$answer">
               <set>
                 <member>Yes.</member>
@@ -797,6 +803,9 @@
       <exercise>
         <webwork seed="1">
           <setup>
+            <var name="$a">
+              <static>1</static>
+            </var>
             <var name="$answer">
               <set>
                 <member>Yes.</member>
@@ -849,6 +858,9 @@
       <exercise>
         <webwork seed="1">
           <setup>
+            <var name="$a">
+              <static>0</static>
+            </var>
             <var name="$answer">
               <set>
                 <member>Yes.</member>
@@ -896,6 +908,9 @@
       <exercise>
         <webwork seed="1">
           <setup>
+            <var name="$a">
+              <static>1</static>
+            </var>
             <var name="$answer">
               <set>
                 <member correct="yes">Yes.</member>
@@ -946,6 +961,9 @@
       <exercise>
         <webwork seed="1">
           <setup>
+            <var name="$a">
+              <static>4</static>
+            </var>
             <var name="$answer">
               <set>
                 <member correct="yes">Yes.</member>
@@ -996,7 +1014,7 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="$answer1">
+            <var name="$answer[0]">
               <set>
                 <member>Yes.</member>
                 <member>No; the limit of f(x) as x goes to a does not exist.</member>
@@ -1004,7 +1022,7 @@
                 <member correct="yes">No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
               </set>
             </var>
-            <var name="$answer2">
+            <var name="$answer[1]">
               <set>
                 <member correct="yes">Yes.</member>
                 <member>No; the limit of f(x) as x goes to a does not exist.</member>
@@ -1012,7 +1030,7 @@
                 <member>No; the limit of f(x) as x goes to a does not equal f(a) even though both exist</member>
               </set>
             </var>
-            <var name="$answer3">
+            <var name="$answer[2]">
               <set>
                 <member>Yes.</member>
                 <member>No; the limit of f(x) as x goes to a does not exist.</member>
@@ -1617,6 +1635,72 @@
             <var name="$in[0]">
               <static>[1,1.5]</static>
             </var>
+            <var name="$popup[0]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$popup[1]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[2]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[3]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[4]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[5]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$popup[6]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$in[1]">
+              <static>[1,1.25]</static>
+            </var>
+            <var name="$in[2]">
+              <static>[1.125,1.25]</static>
+            </var>
+            <var name="$in[3]">
+              <static>[1.1875,1.25]</static>
+            </var>
+            <var name="$in[4]">
+              <static>[1.21875,1.25]</static>
+            </var>
+            <var name="$in[5]">
+              <static>[1.23438,1.25]</static>
+            </var>
+            <var name="$in[6]">
+              <static>[1.23438,1.24219]</static>
+            </var>
+            <var name="$in[7]">
+              <static>[1.23438,1.23828]</static>
+            </var>
+            <var name="$z">
+              <static>1.23633</static>
+            </var>
             <pg-code>
               Context("Interval"); 
               Context()->flags->set(tolType=>'absolute',tolerance=>0.00000005);
@@ -1702,6 +1786,72 @@
             <var name="$in[0]">
               <static>[0.5,0.55]</static>
             </var>
+            <var name="$popup[0]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$popup[1]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[2]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[3]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[4]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[5]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$popup[6]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$in[1]">
+              <static>[0.5,0.525]</static>
+            </var>
+            <var name="$in[2]">
+              <static>[0.5125,0.525]</static>
+            </var>
+            <var name="$in[3]">
+              <static>[0.51875,0.525]</static>
+            </var>
+            <var name="$in[4]">
+              <static>[0.521875,0.525]</static>
+            </var>
+            <var name="$in[5]">
+              <static>[0.523438,0.525]</static>
+            </var>
+            <var name="$in[6]">
+              <static>[0.523438,0.524219]</static>
+            </var>
+            <var name="$in[7]">
+              <static>[0.523438,0.523828]</static>
+            </var>
+            <var name="$z">
+              <static>0.523633</static>
+            </var>
             <pg-code>
               Context("Interval"); 
               Context()->flags->set(tolType=>'absolute',tolerance=>0.00000005,reduceConstants=>0);
@@ -1785,6 +1935,72 @@
             <var name="$in[0]">
               <static>[0.65,0.7]</static>
             </var>
+            <var name="$popup[0]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[1]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[2]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$popup[3]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[4]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[5]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[6]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$in[1]">
+              <static>[0.675,0.7]</static>
+            </var>
+            <var name="$in[2]">
+              <static>[0.6875,0.7]</static>
+            </var>
+            <var name="$in[3]">
+              <static>[0.6875,0.69375]</static>
+            </var>
+            <var name="$in[4]">
+              <static>[0.690625,0.69375]</static>
+            </var>
+            <var name="$in[5]">
+              <static>[0.692187,0.69375]</static>
+            </var>
+            <var name="$in[6]">
+              <static>[0.692969,0.69375]</static>
+            </var>
+            <var name="$in[7]">
+              <static>[0.692969,0.693359]</static>
+            </var>
+            <var name="$z">
+              <static>0.693164</static>
+            </var>
             <pg-code>
               Context("Interval"); 
               Context()->flags->set(tolType=>'absolute',tolerance=>0.00000005);
@@ -1867,6 +2083,72 @@
             </var>
             <var name="$in[0]">
               <static>[0.7,0.8]</static>
+            </var>
+            <var name="$popup[0]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$popup[1]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$popup[2]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[3]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$popup[4]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$popup[5]">
+              <set>
+                <member correct="yes">\lt</member>
+                <member>\gt</member>
+              </set>
+            </var>
+            <var name="$popup[6]">
+              <set>
+                <member>\lt</member>
+                <member correct="yes">\gt</member>
+              </set>
+            </var>
+            <var name="$in[1]">
+              <static>[0.75,0.8]</static>
+            </var>
+            <var name="$in[2]">
+              <static>[0.775,0.8]</static>
+            </var>
+            <var name="$in[3]">
+              <static>[0.775,0.7875]</static>
+            </var>
+            <var name="$in[4]">
+              <static>[0.78125,0.7875]</static>
+            </var>
+            <var name="$in[5]">
+              <static>[0.784375,0.7875]</static>
+            </var>
+            <var name="$in[6]">
+              <static>[0.784375,0.785937]</static>
+            </var>
+            <var name="$in[7]">
+              <static>[0.785156,0.785937]</static>
+            </var>
+            <var name="$z">
+              <static>0.785547</static>
             </var>
             <pg-code>
               Context("Interval"); 

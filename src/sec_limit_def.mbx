@@ -355,14 +355,14 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="$whichfirst">
+            <var name="$limitequalsvalue">
               <set>
                 <member>x\text{-tolerance}</member>
                 <member correct="yes">y\text{-tolerance}</member>
               </set>
             </var>
             <pg-code>
-              $limitequalsvalue=PopUp(['?','x-tolerance','y-tolerance'],'y-tolerance');
+              $limitequalsvalue=PopUp(['?','x-tolerance','y-tolerance'],2);
             </pg-code>
           </setup>
           <statement>
