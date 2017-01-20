@@ -15,13 +15,13 @@
         <image xml:id="img_sinx_over_x_full">
           <latex-image-code>
             <![CDATA[
-                                \begin{tikzpicture}[declare function = {func(\x) = (\x != 0) * (sin(x*180/pi)/x) + (\x == 0) * (1);}]
-                                    \begin{axis}[]
-                                        \addplot+[domain=-7:7,samples=50] {func(x)};
-                                        \addplot[hollowdot] coordinates {(0,1)};
-                                    \end{axis}
-                                \end{tikzpicture}
-                                ]]>
+              \begin{tikzpicture}[declare function = {func(\x) = (\x != 0) * (sin(x*180/pi)/x) + (\x == 0) * (1);}]
+                  \begin{axis}[]
+                      \addplot+[domain=-7:7,samples=50] {func(x)};
+                      \addplot[hollowdot] coordinates {(0,1)};
+                  \end{axis}
+              \end{tikzpicture}
+              ]]>
           </latex-image-code>
         </image>
       </figure>
@@ -32,19 +32,19 @@
         <image xml:id="img_zoom_sinx_over_x">
           <latex-image-code>
             <![CDATA[
-                                \begin{tikzpicture}
-                                    \begin{axis}[xmin=.3, xmax=1.6, 
-                                                ymin=.4, ymax=1.1,
-                                                xtick={0.5,1,1.5},
-                                                ytick={0.6,0.8,1},
-                                                xdiscontinuity,
-                                                ydiscontinuity,
-                                                grid=both,
-                                                ]
-                                        \addplot+[domain=0.5:1.5] {sin(x*180/pi)/x};
-                                    \end{axis}
-                                \end{tikzpicture}
-                                ]]>
+              \begin{tikzpicture}
+                  \begin{axis}[xmin=.3, xmax=1.6,
+                              ymin=.4, ymax=1.1,
+                              xtick={0.5,1,1.5},
+                              ytick={0.6,0.8,1},
+                              xdiscontinuity,
+                              ydiscontinuity,
+                              grid=both,
+                              ]
+                      \addplot+[domain=0.5:1.5] {sin(x*180/pi)/x};
+                  \end{axis}
+              \end{tikzpicture}
+              ]]>
           </latex-image-code>
         </image>
         <!-- figures/sinx_over_x_1.tex END -->
@@ -2720,7 +2720,7 @@
             <table>
               <tabular>
                 <col halign="center"/>
-                                               <col halign="center"/>
+                <col halign="center"/>
                 <row bottom="medium">
                   <cell><m>h</m></cell>
                   <cell><m>\frac{f(a+h)-f(a)}{h}</m></cell>
@@ -2821,7 +2821,7 @@
             <table>
               <tabular>
                 <col halign="center"/>
-                                               <col halign="center"/>
+                <col halign="center"/>
                 <row bottom="medium">
                   <cell><m>h</m></cell>
                   <cell><m>\frac{f(a+h)-f(a)}{h}</m></cell>
