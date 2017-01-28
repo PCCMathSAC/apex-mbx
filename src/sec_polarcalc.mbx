@@ -1142,62 +1142,78 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises, find:</p>
-
-      <ol>
-        <li>
-          <title>(a)</title>
-          <p><m>\ds \frac{dy}{dx}</m></p></li>
-
-        <li>
-          <title>(b)</title>
-          <p>the equation of the tangent and normal lines to the curve at the indicated <m>\theta</m><ndash />value.</p></li>
-      </ol>
+      <introduction>
+        <p>In the following exercises, find <m>\lz{y}{x}</m> (in terms of <m>\theta</m>). Then find the equations of the tangent and normal lines to the curve at the indicated <m>\theta</m>-value.</p>
+      </introduction>
 
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>-\cot(\theta)</static>
+            </var>
+            <var name="$tan">
+              <static>y=-(x-\sqrt{2}/2)+\sqrt{2}/2</static>
+            </var>
+            <var name="$nor">
+              <static>y=x</static>
             </var>
             <pg-code>
+              Context()->variables->are(theta=>['Real',TeX=>'\theta']);
+              $dydx=Formula("-cot(theta)");
+              Context("Numeric")->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              Context()->flags->set(reduceConstants=>0, reduceConstantFunctions=>0);
+              $tan=Formula("y=-(x-sqrt(2)/2)+sqrt(2)/2");
+              $nor=Formula("y=x");
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=1</m>;<m>\theta = \pi/4</m></p>
+            <p>For the polar equation <m>r=1</m>, find <m>\lz{y}{x}</m> in terms of <m>\theta</m>. Type <sq><c>theta</c></sq> for <m>\theta</m>.</p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="30" /></p>
+            <p>At <m>\theta = \pi/4</m>, the tangent line has equation</p>
+            <p><var name="$tan" width="30" /></p>
+            <p>and the normal line has equation</p>
+            <p><var name="$nor" width="30" />.</p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>\frac{dy}{dx} = -\cot(\theta)</m></p></li>
-
-              <li><p>tangent line: <m>y=-(x-\sqrt{2}/2)+\sqrt{2}/2</m>; normal line: <m>y=x</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{1}{2}(\tan(\theta)-\cot(\theta))</static>
+            </var>
+            <var name="$tan">
+              <static>y=\frac{1}{2}</static>
+            </var>
+            <var name="$nor">
+              <static>x=\frac{1}{2}</static>
             </var>
             <pg-code>
+              Context()->variables->are(theta=>['Real',TeX=>'\theta']);
+              $dydx=Formula("1/2(tan(theta)-cot(theta))");
+              Context("Numeric")->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              Context()->flags->set(reduceConstants=>0, reduceConstantFunctions=>0);
+              $tan=Formula("y=1/2");
+              $nor=Formula("x=1/2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=\cos(\theta)</m>;<m>\theta = \pi/4</m></p>
+            <p>For the polar equation <m>r=\cos(\theta)</m>, find <m>\lz{y}{x}</m> in terms of <m>\theta</m>. Type <sq><c>theta</c></sq> for <m>\theta</m>.</p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="30" /></p>
+            <p>At <m>\theta = \pi/4</m>, the tangent line has equation</p>
+            <p><var name="$tan" width="30" /></p>
+            <p>and the normal line has equation</p>
+            <p><var name="$nor" width="30" />.</p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>\frac{dy}{dx} = 1/2(\tan(\theta) -\cot(\theta) )</m></p></li>
-
-              <li><p>tangent line: <m>y=1/2</m>; normal line: <m>x=1/2</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1240,69 +1256,106 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{\theta\cos(\theta)+\sin(\theta)}{\cos(\theta)-\theta\sin(\theta)}</static>
+            </var>
+            <var name="$tan">
+              <static>y=-2/\pi x+\pi/2</static>
+            </var>
+            <var name="$nor">
+              <static>y=\pi/2x+\pi/2</static>
             </var>
             <pg-code>
+              Context()->variables->are(theta=>['Real',TeX=>'\theta']);
+              $dydx=Formula("(theta cos(theta) + sin(theta))/(cos(theta)-theta sin(theta))");
+              Context("Numeric")->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              Context()->flags->set(reduceConstants=>0, reduceConstantFunctions=>0);
+              $tan=Formula("y=-2/pi x + pi/2");
+              $nor=Formula("y=pi/2 x + pi/2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=\theta</m>;<m>\theta = \pi/2</m></p>
+            <p>For the polar equation <m>r=\theta</m>, find <m>\lz{y}{x}</m> in terms of <m>\theta</m>. Type <sq><c>theta</c></sq> for <m>\theta</m>.</p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="30" /></p>
+            <p>At <m>\theta = \pi/2</m>, the tangent line has equation</p>
+            <p><var name="$tan" width="30" /></p>
+            <p>and the normal line has equation</p>
+            <p><var name="$nor" width="30" />.</p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>\frac{dy}{dx} = \frac{\theta\cos(\theta) +\sin(\theta) }{\cos(\theta) -\theta\sin(\theta) }</m></p></li>
-
-              <li><p>tangent line: <m>y=-2/\pi x+\pi/2</m>; normal line: <m>y=\pi/2x+\pi/2</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{\cos(\theta)\cos(3\theta)-3\sin(\theta)\sin(3\theta)}{-\cos(3\theta)\sin(\theta)-3\cos(\theta)\sin(3\theta)}</static>
+            </var>
+            <var name="$tan">
+              <static>y=x/\sqrt{3}</static>
+            </var>
+            <var name="$nor">
+              <static>y=-\sqrt{3}x</static>
             </var>
             <pg-code>
+              Context()->variables->are(theta=>['Real',TeX=>'\theta']);
+              $dydx=Formula("(cos(theta)cos(3theta)-3sin(theta)sin(3theta))/(-cos(3theta)sin(theta)-3cos(theta)sin(3theta))");
+              Context("Numeric")->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              Context()->flags->set(reduceConstants=>0, reduceConstantFunctions=>0);
+              $tan=Formula("y=x/sqrt(3)");
+              $nor=Formula("y=-sqrt(3)x");
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=\cos(3\theta)</m>;<m>\theta = \pi/6</m></p>
+            <p>For the polar equation <m>r=\cos(3\theta)</m>, find <m>\lz{y}{x}</m> in terms of <m>\theta</m>. Type <sq><c>theta</c></sq> for <m>\theta</m>.</p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="30" /></p>
+            <p>At <m>\theta = \pi/6</m>, the tangent line has equation</p>
+            <p><var name="$tan" width="30" /></p>
+            <p>and the normal line has equation</p>
+            <p><var name="$nor" width="30" />.</p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>\frac{dy}{dx} = \frac{\cos(\theta) \cos(3\theta)-3\sin(\theta) \sin(3\theta)}{-\cos(3\theta)\sin(\theta) -3\cos(\theta) \sin(3\theta)}</m></p></li>
-
-              <li><p>tangent line: <m>y=x/\sqrt{3}</m>; normal line: <m>y=-\sqrt{3}x</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dydx">
+              <static>\frac{4\sin(\theta)\cos(4\theta)+\sin(4\theta)\cos(\theta)}{4\cos(\theta)\cos(4\theta)-\sin(\theta)\sin(4\theta)}</static>
+            </var>
+            <var name="$tan">
+              <static>y=5\sqrt{3}\left(x+\sqrt{3}/4\right)-3/4</static>
+            </var>
+            <var name="$nor">
+              <static>y=-\frac{1}{5\sqrt{3}}\left(x+\sqrt{3}/4\right)-3/4</static>
             </var>
             <pg-code>
+              Context()->variables->are(theta=>['Real',TeX=>'\theta']);
+              $dydx=Formula("(4sin(theta)cos(4theta)+sin(4theta)cos(theta))/(4cos(theta)cos(4theta)-sin(theta)sin(4theta))");
+              Context("Numeric")->variables->add(y=>'Real');
+              parser::Assignment->Allow;
+              Context()->flags->set(reduceConstants=>0, reduceConstantFunctions=>0);
+              $tan=Formula("y=5sqrt(3)(x+sqrt(3)/4)-3/4");
+              $nor=Formula("y=-1/(5sqrt(3))(x+sqrt(3)/4)-3/4");
             </pg-code>
           </setup>
           <statement>
-            <p><m>r=\sin(4\theta)</m>;<m>\theta = \pi/3</m></p>
+            <p>For the polar equation <m>r=\sin(4\theta)</m>, find <m>\lz{y}{x}</m> in terms of <m>\theta</m>. Type <sq><c>theta</c></sq> for <m>\theta</m>.</p>
+            <p><m>\lz{y}{x}=</m><var name="$dydx" width="30" /></p>
+            <p>At <m>\theta = \pi/3</m>, the tangent line has equation</p>
+            <p><var name="$tan" width="30" /></p>
+            <p>and the normal line has equation</p>
+            <p><var name="$nor" width="30" />.</p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>\frac{dy}{dx} = \frac{4 \sin(t) \cos(4 t)+\sin(4 t) \cos(t)}{4 \cos(t) \cos(4 t)-\sin(t) \sin(4 t)}</m></p></li>
-
-              <li><p>tangent line: <m>y=5\sqrt{3}(x+\sqrt{3}/4)-3/4</m>; normal line: <m>y=-1/5\sqrt{3}(x+\sqrt{3}/4)-3/4</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1324,7 +1377,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the values of <m>\theta</m> in the given interval where the graph of the polar function has horizontal and vertical tangent lines.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the values of <m>\theta</m> in the given interval where the graph of the polar function has horizontal and vertical tangent lines.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1382,17 +1440,26 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$hor">
+              <static>\pi/3, \pi, 5\pi/3</static>
+            </var>
+            <var name="$ver">
+              <static>0, 2\pi/3, 4\pi/3</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFormulas=>0);
+              $hor=List(Formula("pi/3"), Formula("pi"), Formula("5pi/3"));
+              $ver=List(Formula("0"), Formula("2pi/3"), Formula("4pi/3"));
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds r=1+\cos(\theta)</m>;<m>[0,2\pi]</m></p>
+            <p>Find the values of <m>\theta</m> in <m>[0,2\pi)</m> where the graph of <m>r=1+\cos(\theta)</m> has horizontal and vertical tangent lines.</p>
+            <p>Horizontal tangent lines for <m>\theta\in\bigg\{</m><var name="$hor" width="20" /><m>\bigg\}</m></p>
+            <p>Vertical tangent lines for <m>\theta\in\bigg\{</m><var name="$ver" width="20" /><m>\bigg\}</m></p>
           </statement>
           <solution>
             <p>horizontal: <m>\theta=\pi/3,\ 5\pi/3</m>;</p>
@@ -1403,7 +1470,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the equation of the lines tangent to the graph at the pole.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the equation of the lines tangent to the graph at the pole.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1442,7 +1514,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the area of the described region.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the area of the described region.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1477,40 +1554,43 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$area">
+              <static>\pi/12</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFormulas=>0);
+              $area=Formula("pi/12");
             </pg-code>
           </setup>
           <statement>
-            <p>Enclosed by one petal of <m>\ds r=\sin(3\theta)</m></p>
+            <p>Find the area enclosed by one petal of <m>r=\sin(3\theta)</m>.</p>
+            <p><var name="$area" width="15" /></p>
           </statement>
-          <solution>
-            <p>area = <m>\pi/12</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$area">
+              <static>3\pi/2</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFormulas=>0);
+              $area=Formula("3pi/2");
             </pg-code>
           </setup>
           <statement>
-            <p>Enclosed by the cardiod <m>\ds r=1-\sin(\theta)</m></p>
+            <p>Find the area enclosed by the cardiod <m>r=1-\sin(\theta)</m>.</p>
+            <p><var name="$area" width="15" /></p>
           </statement>
-          <solution>
-            <p>area = <m>3\pi/2</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1528,59 +1608,85 @@
           </solution>
         </webwork>
       </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Enclosed by the outer loop of the lima&#xe7;on <m>\ds r=1+2\cos(\theta)</m> (including area enclosed by the inner loop)</p>
-          </statement>
-          <solution>
-            <p>area = <m>2\pi+3\sqrt{3}/2</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Enclosed between the inner and outer loop of the lima&#xe7;on <m>\ds r=1+2\cos(\theta)</m></p>
-          </statement>
-          <solution>
-            <p>area = <m>\pi+3\sqrt{3}</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Enclosed by <m>r=2\cos(\theta)</m> and <m>r=2\sin(\theta)</m>, as shown:</p>
 
-            <!-- START\1END -->
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$area">
+              <static>2\pi+3\sqrt{3}/2</static>
+            </var>
+            <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFormulas=>0);
+              $area=Formula("2pi+3sqrt(3)/2");
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Find the area enclosed by the outer loop of the lima&#xe7;on <m>r=1+2\cos(\theta)</m> (including area enclosed by the inner loop).</p>
+            <p><var name="$area" width="15" /></p>
           </statement>
-          <solution>
-            <p>area = <m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$area">
+              <static>\pi+3\sqrt{3}</static>
+            </var>
+            <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFormulas=>0);
+              $area=Formula("pi+3sqrt(3)");
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Find the area enclosed between the inner and outer loop of the lima&#xe7;on <m>r=1+2\cos(\theta)</m>.</p>
+            <p><var name="$area" width="15" /></p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$area">
+              <static>1</static>
+            </var>
+            <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFormulas=>0);
+              $area=Formula("1");
+              $gr = init_graph(-1.5,-1.5,2.5,2.5,size=>[400,400]);
+              $gr->moveTo(-1.5,0); $gr->arrowTo(2.4,0,'black',1);
+              $gr->moveTo(0,-1.5); $gr->arrowTo(0,2.4,'black',1);
+              Context()->variables->are(t=>"Real");
+              $x[0] = Formula("2*cos(t)*cos(t)");
+              $y[0] = Formula("2*cos(t)*sin(t)");
+              $c[0] = new Fun( $x[0]->perlFunction, $y[0]->perlFunction, $gr );
+              $c[0]->domain(0,6.28318);
+              $c[0]->steps(90);
+              $c[0]->weight(1);
+              $c[0]->color('black');
+              $x[1] = Formula("2*sin(t)*cos(t)");
+              $y[1] = Formula("2*sin(t)*sin(t)");
+              $c[1] = new Fun( $x[1]->perlFunction, $y[1]->perlFunction, $gr );
+              $c[1]->domain(0,6.28318);
+              $c[1]->steps(90);
+              $c[1]->weight(1);
+              $c[1]->color('black');
+              for my$i(-1,1,2){$gr->lb( new Label($i,-0.1,$i,'black','center','top'));};
+              for my$i(-1,1,2){$gr->lb( new Label(-0.1,$i,$i,'black','right','middle'));};
+              $gr->fillRegion([1.5,0.5,"blue"]);
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Find the area enclosed by <m>r=2\cos(\theta)</m>, <m>r=2\sin(\theta)</m>, and the <m>x</m>-axis, as shown:</p>
+            <figure>
+              <image pg-name="$gr" />
+            </figure>
+            <p>The area is <var name="$area" width="15" />.</p>
+          </statement>
+        </webwork>
+      </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1600,25 +1706,49 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$area">
+              <static>\frac{1}{32}\left(4\pi-3\sqrt{3}\right)</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFormulas=>0);
+              $area=Formula("1/32(4pi-3sqrt(3))");
+              $gr = init_graph(-0.1,-0.1,1.5,1.5,size=>[400,400]);
+              $gr->moveTo(-0.1,0); $gr->arrowTo(1.4,0,'black',1);
+              $gr->moveTo(0,-0.1); $gr->arrowTo(0,1.4,'black',1);
+              Context()->variables->are(t=>"Real");
+              $x[0] = Formula("cos(t)*cos(t)");
+              $y[0] = Formula("cos(t)*sin(t)");
+              $c[0] = new Fun( $x[0]->perlFunction, $y[0]->perlFunction, $gr );
+              $c[0]->domain(0,1.570796);
+              $c[0]->steps(90);
+              $c[0]->weight(1);
+              $c[0]->color('black');
+              $x[1] = Formula("sin(2t)*cos(t)");
+              $y[1] = Formula("sin(2t)*sin(t)");
+              $c[1] = new Fun( $x[1]->perlFunction, $y[1]->perlFunction, $gr );
+              $c[1]->domain(0,1.570796);
+              $c[1]->steps(90);
+              $c[1]->weight(1);
+              $c[1]->color('black');
+              for my$i(1){$gr->lb( new Label($i,-0.025,$i,'black','center','top'));};
+              for my$i(1){$gr->lb( new Label(-0.025,$i,$i,'black','right','middle'));};
+              $gr->fillRegion([0.3,0.3,"blue"]);
             </pg-code>
           </setup>
           <statement>
-            <p>Enclosed by <m>r=\cos(\theta)</m> and <m>r=\sin(2\theta)</m>, as shown:</p>
-
-            <!-- START\1END -->
+            <p>Find the area enclosed by <m>r=\cos(\theta)</m> and <m>r=\sin(2\theta)</m>, as shown:</p>
+            <figure>
+              <image pg-name="$gr" />
+            </figure>
+            <p>The area is <var name="$area" width="15" />.</p>
           </statement>
-          <solution>
-            <p>area = <m>\frac{1}{32}(4\pi-3\sqrt{3})</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1638,7 +1768,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, answer the questions involving arc length.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, answer the questions involving arc length.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1660,75 +1795,82 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$length">
+              <static>4\pi</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFormulas=>0);
+              $length=Formula("4pi");
             </pg-code>
           </setup>
           <statement>
             <p>Use the arc length formula to compute the arc length of the circle <m>r=2</m>.</p>
+            <p><var name="$length" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>4\pi</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$length">
+              <static>4\pi</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFormulas=>0);
+              $length=Formula("4pi");
             </pg-code>
           </setup>
           <statement>
             <p>Use the arc length formula to compute the arc length of the circle <m>r=4\sin(\theta)</m>.</p>
+            <p><var name="$length" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>4\pi</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$length">
+              <static>2.2592</static>
             </var>
             <pg-code>
+              $length=OneOf("2.2592,2.22748");
             </pg-code>
           </setup>
           <statement>
             <p>Approximate the arc length of one petal of the rose curve <m>r=\sin(3\theta)</m> with Simpson's Rule and <m>n=4</m>.</p>
+            <p><var name="$length" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>L\approx 2.2592</m>; (actual value <m>L=2.22748</m>)</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$length">
+              <static>7.62933</static>
             </var>
             <pg-code>
+              $length=OneOf("7.62933,8");
             </pg-code>
           </setup>
           <statement>
             <p>Approximate the arc length of the cardiod <m>r=1+\cos(\theta)</m> with Simpson's Rule and <m>n=6</m>.</p>
+            <p><var name="$length" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>L\approx 7.62933</m>; (actual value <m>L=8</m>)</p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, answer the questions involving surface area.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, answer the questions involving surface area.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>

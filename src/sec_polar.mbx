@@ -3272,13 +3272,13 @@
         <webwork seed="1">
           <setup>
             <var name="$rts">
-              <static>P(3/2,\pi/3), P(3/2,-\pi/3)</static>
+              <static>P(3/2,\pi/3), P(3/2,-\pi/3), P(0,\pi)</static>
             </var>
             <pg-code>
               Context("Point");
               Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
               Context()->operators->add('P'=>{precedence=>6,associativity=>'left',type=>'unary',string=>"P",class=>'Parser::UOP::plus'});
-              $rts=Compute("P(3/2,pi/3), P(3/2,-pi/3)");
+              $rts=Compute("P(3/2,pi/3), P(3/2,-pi/3), P(0,pi)");
               $rtsev=$rts->cmp(showCoordinateHints => 0, checker => sub {
                 my ($correct,$student,$ansHash) = @_;
                 my ($sr,$st) = $student->value;

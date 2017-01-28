@@ -4987,7 +4987,9 @@
 
   <exercises>
     <exercisegroup>
-      <title>Terms and Concepts</title>
+      <introduction>
+        <p>Terms and Concepts</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -5005,23 +5007,46 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>contextArbitraryString.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$line">
+              <static>line</static>
+            </var>
+            <var name="$plane">
+              <static>plane</static>
             </var>
             <pg-code>
+              Context("ArbitraryString");
+              $line=Compute("line");
+              $plane=Compute("plane");
+              $lineevaluator=$line->cmp(checker => sub {
+                my ($correct,$student,$ans) = @_;
+                $correct = $correct->value;
+                $student = $student->value;
+                $student =~ s/^~~W+|~~W+$//g;
+                return uc($correct) eq uc($student);
+              });
+              $planeevaluator=$plane->cmp(checker => sub {
+                my ($correct,$student,$ans) = @_;
+                $correct = $correct->value;
+                $student = $student->value;
+                $student =~ s/^~~W+|~~W+$//g;
+                return uc($correct) eq uc($student);
+              });
             </pg-code>
           </setup>
           <statement>
-            <p>In the plane, the equation <m>x=2</m> defines a <fillin />; in space, <m>x=2</m> defines a <fillin />.</p>
+            <p>In the plane, the equation <m>x=2</m> defines a <var name="$line" evaluator="$lineevaluator" width="10" />;</p>
+            <p>in space, <m>x=2</m> defines a <var name="$plane" evaluator="$planeevaluator" width="10" />.</p>
           </statement>
-          <solution>
-            <p>line; plane</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -5039,23 +5064,30 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$surfaces">
+              <set>
+                <member>Elliptic Paraboloid</member>
+                <member>Elliptic Cone</member>
+                <member>Ellipsoid</member>
+                <member>Hyperboloid of One Sheet</member>
+                <member>Hyperboloid of Two Sheets</member>
+                <member correct="yes">Hyperbolic Paraboloid</member>
+              </set>
             </var>
             <pg-code>
+              $surfaces=PopUp(['?','Elliptic Paraboloid','Elliptic Cone','Ellipsoid','Hyperboloid of One Sheet','Hyperboloid of Two Sheets','Hyperbolic Paraboloid'],6);
             </pg-code>
           </setup>
           <statement>
-            <p>Which quadric surface looks like a Pringles\textregistered<nbsp />chip?</p>
+            <p>Which quadric surface looks like a Pringles<trademark /><nbsp />chip? <var name="$surfaces" form="popup" /></p>
           </statement>
-          <solution>
-            <p>a hyperbolic paraboloid</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -5091,81 +5123,127 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="$magAB">
+            <static>\sqrt{6}</static>
+          </var>
+          <var name="$magBC">
+            <static>\sqrt{17}</static>
+          </var>
+          <var name="$magCA">
+            <static>\sqrt{11}</static>
+          </var>
+          <var name="$yn">
+            <set>
+              <member correct="yes">do</member>
+              <member>do not</member>
+            </set>
+          </var>
+          <pg-code>
+            Context("Point");
+            $A=Point("(1,4,2)");
+            $B=Point("(2,6,3)");
+            $C=Point("(4,3,1)");
+            $AB=$B-$A;
+            $BC=$C-$B;
+            $CA=$A-$C;
+            @ABcoords=$AB->value;
+            @BCcoords=$BC->value;
+            @CAcoords=$CA->value;
+            Context()->flags->set(reduceConstantFunctions=>0);
+            $magAB=Formula("sqrt(($ABcoords[0])^2+($ABcoords[1])^2+($ABcoords[2])^2)");
+            $magBC=Formula("sqrt(($BCcoords[0])^2+($BCcoords[1])^2+($BCcoords[2])^2)");
+            $magCA=Formula("sqrt(($CAcoords[0])^2+($CAcoords[1])^2+($CAcoords[2])^2)");
+            ($a,$b,$c)=num_sort($magAB,$magBC,$magCA);
+            $dodonot=(($a)**2+($b)**2==($c)**2)?'do':'do not';
+            $yn=PopUp(['?','do','do not'],$dodonot);
+          </pg-code>
+        </setup>
+        <statement>
+          <p>The points <m>A=(1,4,2)</m>, <m>B=(2,6,3)</m> and <m>C=(4,3,1)</m> form a triangle in space. Find the distances between each pair of points and determine if the triangle is a right triangle.</p>
+          <p><m>\left\lVert\overline{AB}\right\rVert=</m><var name="$magAB" width="10" /></p>
+          <p><m>\left\lVert\overline{BC}\right\rVert=</m><var name="$magBC" width="10" /></p>
+          <p><m>\left\lVert\overline{CA}\right\rVert=</m><var name="$magCA" width="10" /></p>
+          <p>The three points <var name="$yn" form="popup" /> form a right triangle.</p>
+        </statement>
+        <solution>
+          <p><m>\norm{\overline{AB}} = \sqrt{6}</m>; <m>\norm{\overline{BC}} = \sqrt{17}</m>; <m>\norm{\overline{AC}} = \sqrt{11}</m>. Yes, it is a right triangle as <m>\norm{\overline{AB}}^2+\norm{\overline{AC}}^2=\norm{\overline{BC}}^2</m>.</p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>The points <m>A=(1,1,3)</m>, <m>B=(3,2,7)</m>, <m>C=(2,0,8)</m> and <m>D = (0,-1,4)</m> form a quadrilateral <m>ABCD</m> in space. Is this a parallelogram?</p>
+        </statement>
+        <solution>
+          <p>Yes, as opposite sides have equal length. <m>\norm{\overline{AB}} = \sqrt{21}=\norm{\overline{CD}}</m>; <m>\norm{\overline{BC}} = \sqrt{6}=\norm{\overline{AD}}</m>.</p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="$center">
+            <static>(4,-1,0)</static>
+          </var>
+          <var name="$radius">
+            <static>3</static>
+          </var>
+          <pg-code>
+            Context("Point");
+            $center=Point("(4,-1,0)");
+            $radius=Real("3");
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Find the center and radius of the sphere defined by<me>x^2-8x+y^2+2y+z^2+8=0:</me></p>
+          <p>Center at <var name="$center" width="10" />.</p>
+          <p>Radius of <var name="$radius" width="10" />.</p>
+        </statement>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="$center">
+            <static>(-2,1,2)</static>
+          </var>
+          <var name="$radius">
+            <static>\sqrt{5}</static>
+          </var>
+          <pg-code>
+            Context("Point");
+            $center=Point("(-2,1,2)");
+            Context()->flags->set(reduceConstantFunctions=>0);
+            $radius=Formula("sqrt(5)");
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Find the center and radius of the sphere defined by<me>x^2+y^2+z^2+4x-2y-4z+4=0:</me></p>
+          <p>Center at <var name="$center" width="10" />.</p>
+          <p>Radius of <var name="$radius" width="10" />.</p>
+        </statement>
+      </webwork>
+    </exercise>
+
     <exercisegroup>
-      <title>Problems</title>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>The points <m>A=(1,4,2)</m>, <m>B=(2,6,3)</m> and <m>C=(4,3,1)</m> form a triangle in space. Find the distances between each pair of points and determine if the triangle is a right triangle.</p>
-          </statement>
-          <solution>
-            <p><m>\norm{\overline{AB}} = \sqrt{6}</m>; <m>\norm{\overline{BC}} = \sqrt{17}</m>; <m>\norm{\overline{AC}} = \sqrt{11}</m>. Yes, it is a right triangle as <m>\norm{\overline{AB}}^2+\norm{\overline{AC}}^2=\norm{\overline{BC}}^2</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>The points <m>A=(1,1,3)</m>, <m>B=(3,2,7)</m>, <m>C=(2,0,8)</m> and <m>D = (0,-1,4)</m> form a quadrilateral <m>ABCD</m> in space. Is this a parallelogram?</p>
-          </statement>
-          <solution>
-            <p>Yes, as opposite sides have equal length. <m>\norm{\overline{AB}} = \sqrt{21}=\norm{\overline{CD}}</m>; <m>\norm{\overline{BC}} = \sqrt{6}=\norm{\overline{AD}}</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Find the center and radius of the sphere defined by</p>
-
-            <p><m>x^2-8x+y^2+2y+z^2+8=0</m>.</p>
-          </statement>
-          <solution>
-            <p>Center at <m>(4,-1,0)</m>; radius = 3</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Find the center and radius of the sphere defined by</p>
-
-            <p><m>x^2+y^2+z^2+4x-2y-4z+4=0</m>.</p>
-          </statement>
-          <solution>
-            <p>Center at <m>(-2,1,2)</m>; radius = <m>\sqrt{5}</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <p>In the following exercises, describe the region in space defined by the inequalities.</p>
+      <introduction>
+        <p>In the following exercises, describe the region in space defined by the inequalities.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -5234,7 +5312,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, sketch the cylinder in space.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, sketch the cylinder in space.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -5751,76 +5834,94 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, give the equation of the surface of revolution described.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, give the equation of the surface of revolution described.</p>
+      </introduction>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq">
+              <static>x^2+z^2=\left(\frac{1}{1+y^2}\right)^2</static>
             </var>
             <pg-code>
+              Context("ImplicitEquation");
+              Context()->variables->are(x=>'Real',y=>'Real',z=>'Real');
+              $eq=ImplicitEquation("x^2+z^2=(1/(1+y^2))^2");
             </pg-code>
           </setup>
           <statement>
-            <p>Revolve <m>\ds z=\frac1{1+y^2}</m> about the <m>y</m>-axis.</p>
+            <p>Give the equation of the surface formed by revolving <m>z=\frac{1}{1+y^2}</m> in the <m>yz</m>-plane about the <m>y</m>-axis.</p>
+            <p><var name="$eq" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>y^2+z^2=x^4</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq">
+              <static>y^2+z^2=x^4</static>
             </var>
             <pg-code>
+              Context("ImplicitEquation");
+              Context()->variables->are(x=>'Real',y=>'Real',z=>'Real');
+              $eq=ImplicitEquation("y^2+z^2=x^4");
             </pg-code>
           </setup>
           <statement>
-            <p>Revolve <m>\ds y=x^2</m> about the <m>x</m>-axis.</p>
+            <p>Give the equation of the surface formed by revolving <m>y=x^2</m> in the <m>xy</m>-plane about the <m>x</m>-axis.</p>
+            <p><var name="$eq" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>y^2+z^2=x^4</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq">
+              <static>x^2+y^2=z</static>
             </var>
             <pg-code>
+              Context("ImplicitEquation");
+              Context()->variables->are(x=>'Real',y=>'Real',z=>'Real');
+              $eq=ImplicitEquation("x^2+y^2=z");
             </pg-code>
           </setup>
           <statement>
-            <p>Revolve <m>\ds z=x^2</m> about the <m>z</m>-axis.</p>
+            <p>Give the equation of the surface formed by revolving <m>z=x^2</m> in the <m>xz</m>-plane about the <m>z</m>-axis.</p>
+            <p><var name="$eq" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>z=(\sqrt{x^2+y^2})^2=x^2+y^2</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$eq">
+              <static>x^2+y^2=\frac{1}{z^2}</static>
             </var>
             <pg-code>
+              Context("ImplicitEquation");
+              Context()->variables->are(x=>'Real',y=>'Real',z=>'Real');
+              $eq=ImplicitEquation("x^2+y^2=1/z^2");
             </pg-code>
           </setup>
           <statement>
-            <p>Revolve <m>\ds z=1/x</m> about the <m>z</m>-axis.</p>
+            <p>Give the equation of the surface formed by revolving <m>z=1/x</m> in the <m>xz</m>-plane about the <m>z</m>-axis.</p>
+            <p><var name="$eq" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>z=\frac{1}{\sqrt{x^2+y^2}}</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, a quadric surface is sketched. Determine which of the given equations best fits the graph.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, a quadric surface is sketched. Determine which of the given equations best fits the graph.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -6304,7 +6405,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, sketch the quadric surface.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, sketch the quadric surface.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
