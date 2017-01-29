@@ -163,6 +163,20 @@
     width = {ifthenelse(.9\linewidth>240pt,240pt,.9\linewidth)},
 }}
 
+\pgfplotsset{numberline/.style     = {xmin=-10,xmax=10,
+                                      minor xtick={-11,-10,...,11},
+                                      xtick={-10,-5,...,10},
+                                      axis y line=none,
+                                      every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+                                      y=15pt,
+                                      axis lines=middle,
+                                      enlarge x limits,
+                                      xlabel={},
+                                      grid=none,
+                                      clip=false,
+                                      axis background/.style={},
+                                      }}
+
 ]]></latex-image-preamble>
 
 <rename element="insight" lang="en-US">Key Idea</rename>
