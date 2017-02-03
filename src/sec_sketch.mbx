@@ -55,7 +55,7 @@
               <md>
                 <mrow>\fpp(x) \amp = 0</mrow>
                 <mrow>18x-20 \amp =0</mrow>
-                <mrow>x \amp = 10/9</mrow> 
+                <mrow>x \amp = 10/9</mrow>
                 <mrow>\amp \approx 1.111</mrow>
               </md>.
             </p></li>
@@ -143,7 +143,7 @@
           We plot the appropriate points on axes as shown in <xref ref="fig_sketch1a">Figure</xref> and connect the points with straight lines (to show increasing/decreasig behavior). In <xref ref="fig_sketch1b">Figure</xref> we adjust these lines to demonstrate the proper concavity. In <xref ref="fig_sketch1c">Figure</xref> we show a graph of <m>f</m> drawn with a computer program, verifying the accuracy of our sketch.</p></li>
         </ol>
 
-  <todo>Figure out how to match graph styles when \draw is used instead of \addplot. All of these seem very labor intensive to change to functions.</todo>   
+  <todo>Figure out how to match graph styles when \draw is used instead of \addplot. All of these seem very labor intensive to change to functions.</todo>
         <sidebyside xml:id="fig_sketch1" widths="31% 31% 31%">
           <caption>Sketching <m>f</m> in <xref ref="ex_sketch1">Example</xref>.</caption>
           <figure xml:id="fig_sketch1a">
@@ -166,7 +166,7 @@
             <!-- figures/fig_sketch1a.tex END -->
           </figure>
 
- 
+
           <figure xml:id="fig_sketch1b">
             <caption/>
             <!-- START figures/fig_sketch1b.tex -->
@@ -308,7 +308,7 @@
           </tabular>
         </table>
 
-            <p>To find the <m>x</m>-intercept, we solve <m>0=\frac{x^2-x-2}{x^2-x-6}</m>. The zeros of a rational function are found in the numerator, so 
+            <p>To find the <m>x</m>-intercept, we solve <m>0=\frac{x^2-x-2}{x^2-x-6}</m>. The zeros of a rational function are found in the numerator, so
             <md>
               <mrow>0 \amp =x^2-x-2</mrow>
               <mrow>0 \amp =(x-2)(x+1)</mrow>
@@ -321,9 +321,9 @@
           </li>
         </ol>
 
-        
 
-       
+
+
         <sidebyside xml:id="fig_sketch2" widths="31% 31% 31%">
            <caption>Sketching <m>f</m> in <xref ref="ex_sketch2">Example</xref>.</caption>
           <figure xml:id="fig_sketch2a">
@@ -335,10 +335,10 @@
                 <![CDATA[
                 \begin{tikzpicture}
                 \begin{axis}[
-                              minor y tick num = 4, 
+                              minor y tick num = 4,
                               ymin=-5.5,ymax=5.5,
                               xmin=-5.2,xmax=5.2,]
-                \addplot+[-,domain=-5:-2.1]{(x+2.1)+5}; 
+                \addplot+[-,domain=-5:-2.1]{(x+2.1)+5};
                 \addplot+[firstcurvestyle,-,domain=-1.9:2.9]{-2*abs(x-0.5)+0.3333};
                 \addplot+[firstcurvestyle,-,domain=3.1:5]{-1*(x-3.1)+5};
                 \addplot[asymptote,domain=-5:5]({-2},{x});
@@ -431,8 +431,8 @@
           <li><p>We find the critical values of <m>f</m> by setting <m>\fp(x)=0</m> and solving for <m>x</m>. We find
               <md>
                 <mrow>\fp(x) \amp = \frac{15x(x+4)}{(x^2+2x+4)^2}</mrow>
-                <mrow>0 \amp =\frac{15x(x+4)}{(x^2+2x+4)^2}</mrow>  
-                <mrow>x \amp =-4,0</mrow> 
+                <mrow>0 \amp =\frac{15x(x+4)}{(x^2+2x+4)^2}</mrow>
+                <mrow>x \amp =-4,0</mrow>
               </md>.
 
               Since the denominator of <m>\fp</m> is just the square of the denominator of <m>f</m>, there are no values of <m>x</m> for which <m>\fp</m> is undefined.
@@ -478,7 +478,7 @@
                     \draw (-2.5,.5) node {\tiny \parbox{50pt}{\centering $\fp>0$, \ $f$ incr \vskip 3pt$\fpp<0$, \ $f$ c. down}};
                     \draw (-.83,.5) node {\tiny \parbox{50pt}{\centering $\fp<0$, \ $f$ decr \vskip 3pt $\fpp<0$, \ $f$ c. down}};
                     \draw (.83,.5) node {\tiny \parbox{50pt}{\centering $\fp<0$, \ $f$ decr \vskip 3pt $\fpp>0$, \ $f$ c. up}};
-                    \draw (2.5,.5) node {\tiny \parbox{50pt}{\centering $\fp>0$, \ $f$ incr \vskip 3pt $\fpp<0$, 
+                    \draw (2.5,.5) node {\tiny \parbox{50pt}{\centering $\fp>0$, \ $f$ incr \vskip 3pt $\fpp<0$,
                   \ $f$ c. down}};
                     \draw (4.165,.5) node {\tiny \parbox{50pt}{\centering $\fp>0$ \ decr \vskip 3pt $\fpp<0$, \ $f$ c. down}};
 
@@ -534,7 +534,7 @@
             <p>In <xref ref="fig_sketch3a">Figure</xref> we plot the significant points from the number line as well as the two roots of <m>f</m>, <m>x=-1</m> and <m>x=2</m>, and connect the points with straight lines to get a general impression about the graph (this graph only includes increasing/decreasing information). In <xref ref="fig_sketch3b">Figure</xref>, we add concavity. Finally, we draw the function so that it is smooth ( xince <m>f</m> is differntiable everywhere, there should be no kinks or corners). <xref ref="fig_sketch3c">Figure</xref> shows a computer generated graph of <m>f</m>, affirming our results.</p></li>
         </ol>
 
-        
+
         <sidebyside xml:id="fig_sketch3" widths="31% 31% 31%">
           <caption>Sketching <m>f</m> in <xref ref="ex_sketch3">Example</xref>.</caption>
           <figure xml:id="fig_sketch3a">
@@ -569,7 +569,7 @@
               <latex-image-code>
                 <![CDATA[
                 \begin{tikzpicture}
-                \begin{axis}[ ymin=-3.1,ymax=8.1,xmin=-7.5,xmax=6.5,]      
+                \begin{axis}[ ymin=-3.1,ymax=8.1,xmin=-7.5,xmax=6.5,]
                 \draw [{\colorone},thick]  (axis cs:-7,6.1)parabola (axis cs:-5.75,7.2);
                 \draw [{\colorone},thick]  (axis cs:-5.75,7.2) parabola [bend at end] (axis cs:-4., 7.5);
                 \draw [{\colorone},thick]  (axis cs:-4., 7.5) parabola (axis cs:-1.31, 1.63);
@@ -616,7 +616,7 @@
           </figure>
         </sidebyside>
 
-  
+
       </solution>
     </example>
 
@@ -628,19 +628,19 @@
 
     <p>In <xref ref="fig_mathematica_sinx">Figure</xref>, a graph of <m>y=\sin(x)</m> is given, generated by <em>Mathematica</em>. The small points represent each of the places <em>Mathematica</em> sampled the function. Notice how at the <q>bends</q> of <m>\sin(x)</m>, lots of points are used; where <m>\sin(x)</m> is relatively straight, fewer points are used. (Many points are also used at the endpoints to ensure the <q>end behavior</q> is accurate.)</p>
 
-    
+
     <todo>Get this figure!</todo>
     <figure xml:id="fig_mathematica_sinx">
       <caption>A graph of <m>y=\sin(x)</m> generated by \textit{Mathematica}.</caption>
       <image xml:id="img_mathematica_sinx">
-        
+
       </image>
-      
+
     </figure>
 
 
 
-    
+
 
     <p>How does <em>Mathematica</em> know where the graph is <q>curvy</q>? Calculus. When we study <em>curvature</em> in a later chapter, we will see how the first and second derivatives of a function work together to provide a measurement of <q>curviness.</q> <em>Mathematica</em> employs algorithms to determine regions of <q>high curvature</q> and plots extra points there.</p>
 

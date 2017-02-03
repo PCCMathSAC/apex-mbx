@@ -19,7 +19,7 @@
           axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick=\empty,% 
+			xtick=\empty,%
 			extra x ticks={1,2.5,3},
 			extra x tick labels={$a$,$x$,$b$},
 			ytick=\empty,
@@ -131,7 +131,7 @@
         <ol>
           <li><p><m>\ds \int_{-2}^2 x^3\ dx = \left.\frac14x^4\right|_{-2}^2 = \left(\frac142^4\right) - \left(\frac14(-2)^4\right) = 0</m>.</p></li>
 
-          <li><p><m>\ds \int_0^\pi \sin(x) \ dx = -\cos(x) \Big|_0^\pi = -\cos(\pi) - \big(-\cos(0) \big) = 1+1=2</m>. 
+          <li><p><m>\ds \int_0^\pi \sin(x) \ dx = -\cos(x) \Big|_0^\pi = -\cos(\pi) - \big(-\cos(0) \big) = 1+1=2</m>.
 
               (This is interesting; it says that the area under one <q>hump</q> of a sine curve is 2.)</p></li>
 
@@ -139,9 +139,9 @@
 
           <li><p><m>\ds \int_4^9 \sqrt{u}\ du = \int_4^9 u^\frac12\ du = \left.\frac23u^\frac32\right|_4^9 = \frac23\left(9^\frac32-4^\frac32\right) = \frac23\big(27-8\big) =\frac{38}3</m>.</p></li>
 
-          <li><p><m>\ds \int_1^5 2\ dx = 2x\Big|_1^5 = 2(5)-2=2(5-1)=8</m>. 
+          <li><p><m>\ds \int_1^5 2\ dx = 2x\Big|_1^5 = 2(5)-2=2(5-1)=8</m>.
 
-              This integral is interesting; the integrand is a constant function, hence we are finding the area of a rectangle with width <m>(5-1)=4</m> and height 2. Notice how the evaluation of the definite integral led to <m>2(4)=8</m>. 
+              This integral is interesting; the integrand is a constant function, hence we are finding the area of a rectangle with width <m>(5-1)=4</m> and height 2. Notice how the evaluation of the definite integral led to <m>2(4)=8</m>.
 
               In general, if <m>c</m> is a constant, then <m>\int_a^b c\ dx = c(b-a)</m>.</p></li>
         </ol>
@@ -258,7 +258,7 @@
           axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick=\empty,% 
+			xtick=\empty,%
 			extra x ticks={.5,3},
 			extra x tick labels={$a$,$b$},
 			ytick=\empty,
@@ -283,7 +283,7 @@
         </latex-image-code>
       </image>
       <!-- figures/fig_ftc5.tex END -->
- 
+
       <!-- START figures/fig_ftc5a.tex -->
       <image xml:id="img_ftc5a" >
         <description></description>
@@ -294,7 +294,7 @@
           axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick=\empty,% 
+			xtick=\empty,%
 			extra x ticks={.5,3},
 			extra x tick labels={$a$,$b$},
 			ytick=\empty,
@@ -365,7 +365,7 @@
               axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={-2,-1,1,2,3,4},% 
+			xtick={-2,-1,1,2,3,4},%
               %			extra x ticks={.5,3},
               %			extra x tick labels={$a$,$b$},
 			ytick={5,10,15},
@@ -375,9 +375,9 @@
 			xmin=-2.5,xmax=4.5%
               ]
 
-              \addplot [smooth,thick, {\colorone},domain=-2:4] {x^2+x-5}; 
+              \addplot [smooth,thick, {\colorone},domain=-2:4] {x^2+x-5};
               \draw (axis cs: 2.5,15) node [black] {\scriptsize $y=x^2+x-5$};
-              \addplot [smooth,thick, {\colorone},domain=-2:4] {3*x-2}; 
+              \addplot [smooth,thick, {\colorone},domain=-2:4] {3*x-2};
               \draw (axis cs: -1.5,-9) node [black] {\scriptsize $y=3x-2$};
 
 
@@ -428,7 +428,7 @@
           axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={1,2,3,4},% 
+			xtick={1,2,3,4},%
           %			extra x ticks={.5,3},
           %			extra x tick labels={$a$,$b$},
 			ytick=\empty,
@@ -438,7 +438,7 @@
 			xmin=-.5,xmax=4.5%
           ]
 
-          \addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1}; 
+          \addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1};
 
 
           \end{axis}
@@ -471,7 +471,7 @@
             axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={1,2,3,4},% 
+			xtick={1,2,3,4},%
             %			extra x ticks={.5,3},
             %			extra x tick labels={$a$,$b$},
 			ytick=\empty,
@@ -482,7 +482,7 @@
             ]
 
             \addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {.3*cos(deg(x))+1} \closedcycle;
-            \addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1}; 
+            \addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1};
             \draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,1.35);
             \end{axis}
 
@@ -507,7 +507,7 @@
             axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={1,2,3,4},% 
+			xtick={1,2,3,4},%
             %			extra x ticks={.5,3},
             %			extra x tick labels={$a$,$b$},
 			ytick=\empty,
@@ -518,7 +518,7 @@
             ]
 
             \addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {.3*cos(deg(x))+1} \closedcycle;
-            \addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1}; 
+            \addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1};
             \draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,.65);
             \end{axis}
 
@@ -543,7 +543,7 @@
             axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={1,2,3,4},% 
+			xtick={1,2,3,4},%
             %			extra x ticks={.5,3},
             %			extra x tick labels={$a$,$b$},
 			ytick=\empty,
@@ -554,7 +554,7 @@
             ]
 
             \addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {.3*cos(deg(x))+1} \closedcycle;
-            \addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1}; 
+            \addplot [smooth,thick, {\colorone},domain=-.5:4.5] {.3*cos(deg(x))+1};
             \draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,.84);
             \end{axis}
 
@@ -620,7 +620,7 @@
               axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={1,2},% 
+			xtick={1,2},%
 			extra x ticks={.69,3.14},
 			extra x tick labels={$c$,$\pi$},
 			ytick={1},
@@ -633,7 +633,7 @@
               ]
 
               \addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:3.14] {sin(deg(x))} \closedcycle;
-              \addplot [smooth,thick, {\colorone},domain=-.5:3.5] {sin(deg(x))}; 
+              \addplot [smooth,thick, {\colorone},domain=-.5:3.5] {sin(deg(x))};
               \draw [thick,draw={\colortwo}] (axis cs: 0,0) rectangle (axis cs:3.14,.637);
               \end{axis}
 
@@ -672,7 +672,7 @@
           axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick=\empty,% 
+			xtick=\empty,%
 			extra x ticks={1,4,1.63},
 			extra x tick labels={$a$,$b$,$c$},
 			ytick=\empty,
@@ -685,7 +685,7 @@
           ]
 
           \addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {(x-2.5)^2+1} \closedcycle;
-          \addplot [smooth,thick, {\colorone},domain=-.5:4.25] {(x-2.5)^2+1}; 
+          \addplot [smooth,thick, {\colorone},domain=-.5:4.25] {(x-2.5)^2+1};
           \draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,1.75);
           \draw (axis cs:3.35,3) node {\scriptsize $y=f(x)$};
           \end{axis}
@@ -697,7 +697,7 @@
         </latex-image-code>
       </image>
       <!-- figures/fig_ftc9a.tex END -->
- 
+
       <!-- START figures/fig_ftc9b.tex -->
       <image xml:id="img_ftc9b" >
         <description></description>
@@ -708,7 +708,7 @@
           axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick=\empty,% 
+			xtick=\empty,%
 			extra x ticks={1,4,1.63},
 			extra x tick labels={$a$,$b$,$c$},
 			ytick=\empty,
@@ -721,7 +721,7 @@
           ]
 
           \addplot [{\coloronefill},thick,fill={\coloronefill},domain=1:4] {(x-2.5)^2-.75} \closedcycle;
-          \addplot [smooth,thick, {\colorone},domain=.75:4.25] {(x-2.5)^2-.75}; 
+          \addplot [smooth,thick, {\colorone},domain=.75:4.25] {(x-2.5)^2-.75};
           %\draw [thick,draw={\colortwo}] (axis cs: 1,0) rectangle (axis cs:4,1.75);
           \draw (axis cs:3.2,2.5) node {\scriptsize $y=f(x)-f(c)$};
           \end{axis}

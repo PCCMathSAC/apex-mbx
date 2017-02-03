@@ -644,7 +644,7 @@
               axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={-1,1,2,3,4,5},% 
+			xtick={-1,1,2,3,4,5},%
               %			extra x ticks={.5,3},
               %			extra x tick labels={$a$,$b$},
               %			ytick=\empty,
@@ -655,7 +655,7 @@
               ]
 
               \addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:2] {cos(deg(3*x-1))} \closedcycle;
-              \addplot [smooth,thick, {\colorone},domain=-1.5:5.5,samples=50] {cos(deg(3*x-1))}; 
+              \addplot [smooth,thick, {\colorone},domain=-1.5:5.5,samples=50] {cos(deg(3*x-1))};
               \draw (axis cs:3.5,1.05) node {\scriptsize $y=\cos(3x-1)$};
               \end{axis}
 
@@ -677,7 +677,7 @@
               axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={-1,1,2,3,4,5},% 
+			xtick={-1,1,2,3,4,5},%
               %			extra x ticks={.5,3},
               %			extra x tick labels={$a$,$b$},
               %			ytick=\empty,
@@ -688,7 +688,7 @@
               ]
 
               \addplot [{\coloronefill},thick,fill={\coloronefill},domain=-1:5] {cos(deg(x))/3} \closedcycle;
-              \addplot [smooth,thick, {\colorone},domain=-1.5:5.5] {cos(deg(x))/3}; 
+              \addplot [smooth,thick, {\colorone},domain=-1.5:5.5] {cos(deg(x))/3};
               \draw (axis cs:3.5,.5) node {\scriptsize $y=\frac13\cos(u)$};
               \end{axis}
 
@@ -739,7 +739,7 @@
               axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={1},% 
+			xtick={1},%
 			extra x ticks={1.57},
 			extra x tick labels={$\frac{\pi}{2}$},
               %			ytick=\empty,
@@ -750,7 +750,7 @@
               ]
 
               \addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:1.57] {cos(deg(x))*sin(deg(x)} \closedcycle;
-              \addplot [smooth,thick, {\colorone},domain=-.5:2] {cos(deg(x))*sin(deg(x)}; 
+              \addplot [smooth,thick, {\colorone},domain=-.5:2] {cos(deg(x))*sin(deg(x)};
               \draw (axis cs:1.25,.6) node {\scriptsize $y=\sin(x) \cos(x) $};
               \end{axis}
 
@@ -772,7 +772,7 @@
               axis on top,%
 			%x=.37\marginparwidth,
 			%y=.37\marginparwidth,
-			xtick={1},% 
+			xtick={1},%
 			extra x ticks={1.57},
 			extra x tick labels={$\frac{\pi}{2}$},
               %			ytick=\empty,
@@ -783,7 +783,7 @@
               ]
 
               \addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:1] {x} \closedcycle;
-              \addplot [smooth,thick, {\colorone},domain=-.5:1.1] {x}; 
+              \addplot [smooth,thick, {\colorone},domain=-.5:1.1] {x};
               \draw (axis cs:1.25,1) node {\scriptsize $y=u$};
               \end{axis}
 
