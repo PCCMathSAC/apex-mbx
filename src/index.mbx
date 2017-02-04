@@ -52,7 +52,7 @@
 \newcommand{\dy}{\Delta y}
 \newcommand{\ddz}{\Delta z}
 \newcommand{\thet}{\theta}
-\newcommand{\norm}[1]{||\ #1\ ||}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\vnorm}[1]{\norm{\vec #1}}
 \newcommand{\snorm}[1]{\left|\left|\ #1\ \right|\right|}
 \newcommand{\la}{\left\langle}
@@ -122,6 +122,8 @@
 \pgfplotsset{tangentlineseg/.style={color=black,mark=none,thick,-,solid}}
 \pgfplotsset{normalline/.style={color=black,mark=none,thick,{Kite}-{Kite},dashed}}
 \pgfplotsset{normallineseg/.style={color=black,mark=none,thick,-,dashed}}
+\pgfplotsset{secantline/.style={color=black,mark=none,thin,{Kite}-{Kite},dashed}}
+\pgfplotsset{secantlineseg/.style={color=black,mark=none,thin,-,dashed}}
 \pgfplotsset{asymptote/.style={color=black,mark=none,thick,{Kite}-{Kite},dashed}}
 \pgfplotsset{guideline/.style={color=black,mark=none,-}}
 \pgfplotsset{symmetryline/.style={color=black,mark=none,-,dashed}}
@@ -160,6 +162,20 @@
     minor y tick num = 1,
     width = {ifthenelse(.9\linewidth>240pt,240pt,.9\linewidth)},
 }}
+
+\pgfplotsset{numberline/.style     = {xmin=-10,xmax=10,
+                                      minor xtick={-11,-10,...,11},
+                                      xtick={-10,-5,...,10},
+                                      axis y line=none,
+                                      every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+                                      y=15pt,
+                                      axis lines=middle,
+                                      enlarge x limits,
+                                      xlabel={},
+                                      grid=none,
+                                      clip=false,
+                                      axis background/.style={},
+                                      }}
 
 ]]></latex-image-preamble>
 
