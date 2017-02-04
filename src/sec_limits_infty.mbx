@@ -40,7 +40,7 @@
       </statement>
     </definition>
 
-    <p>This is just like the <m>\varepsilon</m><ndash /><m>\delta</m> definition in <xref ref="def_limit">Definition </xref> from <xref ref="sec_limit_def">Section</xref>. In that definition, given any (small) value <m>\varepsilon</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>) then <m>f(x)</m> is guaranteed to be within <m>\varepsilon</m> of <m>f(c)</m>. Here, given any (large) value <m>M</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>), then <m>f(x)</m> will be at least as large as <m>M</m>. In other words, if we get close enough to <m>c</m>, then we can make <m>f(x)</m> as large as we want. We can define limits equal to <m>-\infty</m> in a similar way.</p>
+    <p>This is just like the <m>\varepsilon</m><ndash /><m>\delta</m> definition in <xref ref="def_limit">Definition</xref> from <xref ref="sec_limit_def">Section</xref>. In that definition, given any (small) value <m>\varepsilon</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>) then <m>f(x)</m> is guaranteed to be within <m>\varepsilon</m> of <m>f(c)</m>. Here, given any (large) value <m>M</m>, if we let <m>x</m> get close enough to <m>c</m> (within <m>\delta</m> units of <m>c</m>), then <m>f(x)</m> will be at least as large as <m>M</m>. In other words, if we get close enough to <m>c</m>, then we can make <m>f(x)</m> as large as we want. We can define limits equal to <m>-\infty</m> in a similar way.</p>
 
     <p>It is important to note that by saying <m>\lim\limits_{x\to c}f(x) = \infty</m> we are implicitly stating that <em>the</em> limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, <em>does not exist.</em> A limit only exists when <m>f(x)</m> approaches an actual numeric value. We use the concept of limits that approach infinity because it is helpful and descriptive. It is one <em>specific way</em> in which a limit can fail to exist.</p>
 
@@ -71,7 +71,7 @@
         </figure>
       </statement>
       <solution>
-        <p>In <xref ref="ex_no_limit2">Example</xref> of <xref ref="sec_limit_intro">Section</xref>, by inspecting values of <m>x</m> close to <m>1</m> we concluded that this limit does not exist. That is, it cannot equal any real number. But the limit could be infinite. And in fact, we see that the function does appear to be growing larger and larger, as <m>f(.99)=10^4</m>, <m>f(.999)=10^6</m>, <m>f(.9999)=10^8</m>. A similar thing happens on the other side of <m>1</m>. From the graph and the numeric information, we could state <m>\lim \limits_{x \to 1}1/(x-1)^2=\infty</m>. We can prove this by using <xref ref="def_limit_of_infinity">Definition </xref></p>
+        <p>In <xref ref="ex_no_limit2">Example</xref> of <xref ref="sec_limit_intro">Section</xref>, by inspecting values of <m>x</m> close to <m>1</m> we concluded that this limit does not exist. That is, it cannot equal any real number. But the limit could be infinite. And in fact, we see that the function does appear to be growing larger and larger, as <m>f(.99)=10^4</m>, <m>f(.999)=10^6</m>, <m>f(.9999)=10^8</m>. A similar thing happens on the other side of <m>1</m>. From the graph and the numeric information, we could state <m>\lim \limits_{x \to 1}1/(x-1)^2=\infty</m>. We can prove this by using <xref ref="def_limit_of_infinity">Definition</xref></p>
          <p>In general, let a <q>large</q> value <m>M</m> be given. Let <m>\delta=1/\sqrt{M}</m>. If <m>x</m> is within <m>\delta</m> of <m>1</m>, i.e., if <m>\abs{x-1}\lt 1/\sqrt{M}</m>, then:<md>
             <mrow>\abs{x-1} \amp \lt  \frac{1}{\sqrt{M}}</mrow>
             <mrow>(x-1)^2 \amp \lt  \frac{1}{M}</mrow>
@@ -451,7 +451,7 @@
             <p>The highest power of <m>x</m> is in the numerator so the limit will be <m>\infty</m> or <m>-\infty</m>.  To see which, consider only the dominant terms from the numerator and denominator, which are <m>x^2</m> and <m>-x</m>.  The expression in the limit will behave like <m>x^2/(-x) = -x</m> for large values of <m>x</m>.  Therefore, the limit is <m>-\infty</m>. See <xref ref="fig_hzasy3c">Figure</xref>.</p>
           </li>
         </ol></p>
-            
+
         <sidebyside xml:id="fig_hzasy3"  widths="31% 31% 31%">
           <caption>Visualizing the functions in <xref ref="ex_hzasy3">Example</xref>.</caption>
           <figure xml:id="fig_hzasy3a">
@@ -522,7 +522,7 @@
         <mrow>\sqrt{x^2+1}\amp\approx \sqrt{x^2}= \abs{x}\amp\frac{x}{\sqrt{x^2+1}}\amp \approx \frac{x}{\abs{x}}\text{.}</mrow>
     </md></p>
 
-    <p>This expression is <m>1</m> when <m>x</m> is positive and <m>-1</m> when <m>x</m> is negative. Hence we get asymptotes of <m>y=1</m> and <m>y=-1</m>, respectively. We will show this more formally in the next example. </p>
+    <p>This expression is <m>1</m> when <m>x</m> is positive and <m>-1</m> when <m>x</m> is negative. Hence we get asymptotes of <m>y=1</m> and <m>y=-1</m>, respectively. We will show this more formally in the next example.</p>
 
     <example xml:id="ex_hzasy4">
       <title>Finding a limit using dominant terms</title>
@@ -530,9 +530,9 @@
         <p>Confirm analytically that <m>y=1</m> and <m>y=-1</m> are the horizontal asymptote of <m>\lim\limits_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}}</m>, as graphed in <xref ref="fig_hzasyb">Figure</xref>.</p>
       </statement>
       <solution>
-        <p> The dominating term of <m>f</m> in the denominator is <m>\sqrt{x^2}=\abs{x}</m> so divide the numerator and denominator of <m>f</m> by <m>\sqrt{x^2}</m>, then take limits.<md>
+        <p>The dominating term of <m>f</m> in the denominator is <m>\sqrt{x^2}=\abs{x}</m> so divide the numerator and denominator of <m>f</m> by <m>\sqrt{x^2}</m>, then take limits.<md>
             <mrow>\lim\limits_{x\to\infty}\frac{x}{\sqrt{x^2+1}}
-              \amp = \lim\limits_{x\to\infty}\frac{x}{\sqrt{x^2+1}}\cdot \frac{\frac{1}{\sqrt{x^2}}}{\frac{1}{\sqrt{x^2}}}</mrow> 
+              \amp = \lim\limits_{x\to\infty}\frac{x}{\sqrt{x^2+1}}\cdot \frac{\frac{1}{\sqrt{x^2}}}{\frac{1}{\sqrt{x^2}}}</mrow>
               <mrow>\amp = \lim\limits_{x\to\infty} \frac{\frac{x}{\abs{x}}}{\sqrt{\frac{x^2+1}{x^2}}}</mrow>
               <mrow>\amp = \lim\limits_{x\to\infty} \frac{1}{\sqrt{1+\frac{1}{x^2}}} \text{ for } x\gt 0</mrow>
               <mrow>\amp =\frac{1}{\sqrt{1+0}}</mrow>
@@ -1522,7 +1522,7 @@
               $c[0]=random(2,5,1);
               $c[1]=non_zero_random(-9,9,1);
               @b=map{($_==9)?10:$_-9}(NchooseK(19,3));
-              if($envir{problemSeed}==1){@c=(2,-2);@b=(2,4,-5)};  
+              if($envir{problemSeed}==1){@c=(2,-2);@b=(2,4,-5)};
               $f=Formula("($c[0] x^2-($c[1]+$b[0]*$c[0])*x+$b[0]*$c[1])/(x^2-($b[1]+$b[2])*x+$b[1]*$b[2])")->reduce;
               parser::Assignment->Allow;
               Context()->variables->are(x=>'Real',y=>'Real');
@@ -1553,8 +1553,8 @@
               $c[0]=random(2,5,1);
               $c[1]=non_zero_random(-9,9,1);
               @b=map{($_==9)?10:$_-9}(NchooseK(19,3));
-              if($envir{problemSeed}==1){@c=(-3,6);@b=(-1,3,5)};  
-              Context()->noreduce('(-x)+y','(-x)-y');   
+              if($envir{problemSeed}==1){@c=(-3,6);@b=(-1,3,5)};
+              Context()->noreduce('(-x)+y','(-x)-y');
               $f=Formula("($c[0] x^2-($c[1]+$b[0]*$c[0])*x+$b[0]*$c[1])/($b[2]*x^2-$b[2]*($b[0]+$b[1])*x+$b[0]*$b[1]*$b[2])")->reduce;
               parser::Assignment->Allow;
               Context()->variables->are(x=>'Real',y=>'Real');
@@ -1585,8 +1585,8 @@
               $c[0]=random(1,5,1);
               $c[1]=non_zero_random(-9,9,1);
               @b=map{($_==9)?10:$_-9}(NchooseK(19,3));
-              if($envir{problemSeed}==1){@c=(1,-4);@b=(3,-1,7)};  
-              Context()->noreduce('(-x)+y','(-x)-y');   
+              if($envir{problemSeed}==1){@c=(1,-4);@b=(3,-1,7)};
+              Context()->noreduce('(-x)+y','(-x)-y');
               $f=Formula("($c[0] x^2-($c[1]+$b[0]*$c[0])*x+$b[0]*$c[1])/($b[2]*x^3-$b[2]*($b[0]+$b[1])*x^2+$b[0]*$b[1]*$b[2]*x)")->reduce;
               parser::Assignment->Allow;
               Context()->variables->are(x=>'Real',y=>'Real');
@@ -1618,8 +1618,8 @@
               $c[0]=random(1,5,1);
               $c[1]=non_zero_random(-9,9,1);
               @b=map{($_==9)?10:$_-9}(NchooseK(19,3));
-              if($envir{problemSeed}==1){@c=(1,3);@b=(-3,1,9)};  
-              Context()->noreduce('(-x)+y','(-x)-y');   
+              if($envir{problemSeed}==1){@c=(1,3);@b=(-3,1,9)};
+              Context()->noreduce('(-x)+y','(-x)-y');
               $f=Formula("($c[0] x^2-($c[1]+$b[0]*$c[0])*x+$b[0]*$c[1])/($b[2]*x-$b[2]*$b[1])")->reduce;
               parser::Assignment->Allow;
               Context()->variables->are(x=>'Real',y=>'Real');
@@ -1651,8 +1651,8 @@
               $c[0]=random(1,5,1);
               $c[1]=non_zero_random(-9,9,1);
               @b=map{($_==9)?10:$_-9}(NchooseK(19,3));
-              if($envir{problemSeed}==1){@c=(1,3);@b=(-3,1,9)};  
-              Context()->noreduce('(-x)+y','(-x)-y');   
+              if($envir{problemSeed}==1){@c=(1,3);@b=(-3,1,9)};
+              Context()->noreduce('(-x)+y','(-x)-y');
               $f=Formula("($c[0] x^2-($c[1]+$b[0]*$c[0])*x+$b[0]*$c[1])/($b[2]*x-$b[2]*$b[0])")->reduce;
               parser::Assignment->Allow;
               Context()->variables->are(x=>'Real',y=>'Real');
@@ -1685,8 +1685,8 @@
               @b=map{($_==9)?10:$_-9}(NchooseK(19,2));
               $b[2]=random(-2,2,1);
               $b[3]=random(1,5,1);
-              if($envir{problemSeed}==1){@c=(1,-1);@b=(1,-1,0,1)};  
-              Context()->noreduce('(-x)+y','(-x)-y');   
+              if($envir{problemSeed}==1){@c=(1,-1);@b=(1,-1,0,1)};
+              Context()->noreduce('(-x)+y','(-x)-y');
               $f=Formula("($c[0] x^2-($b[0]+$b[1])*$c[0]*x+$b[0]*$b[1]*$c[0])/($c[1] x^2-2*$b[2]*$c[1]*x+($b[2]^2+$b[3])*$c[1])")->reduce;
               parser::Assignment->Allow;
               Context()->variables->are(x=>'Real',y=>'Real');
