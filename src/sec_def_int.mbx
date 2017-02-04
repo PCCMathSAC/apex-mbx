@@ -475,30 +475,17 @@
                 <latex-image-code>
                   <![CDATA[
                   \begin{tikzpicture}
-                  \begin{axis}[%
-                  axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick={-3,3},%
-                  %			extra x ticks={.5,1.5,3},
-                  %			extra x tick labels={$a$,$b$,$\ c$},
-			extra y ticks={1,2,3,4},%
-			extra y tick labels=\empty,
-			ytick={5},
-                  %			minor y tick num=4,
-                  %			minor x tick num=4,
-			ymin=-.5,ymax=5.5,%
-			xmin=-3.5,xmax=3.5%
-                  ]
+                  \begin{axis}[axis on top,
+                               xtick={-3,3},
+                               extra y ticks={1,2,3,4},
+                               extra y tick labels=\empty,
+                               ytick={5},
+                               ymin=-.5,ymax=5.5,
+                               xmin=-3.5,xmax=3.5]
 
+                   \addplot+[-,domain=0:180,samples=50] ({3*cos (x)},{3*sin(x)});
                   \addplot [smooth,{\coloronefill},fill={\coloronefill},area style,domain=0:180] ({3*cos (x)},{3*sin(x)}) \closedcycle;
-                  \addplot [smooth,thick, {\colorone},domain=0:180] ({3*cos (x)},{3*sin(x)});
-
-
                   \end{axis}
-
-
-
                   \end{tikzpicture}
                   ]]>
                 </latex-image-code>
