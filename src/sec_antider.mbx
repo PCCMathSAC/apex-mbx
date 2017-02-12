@@ -53,7 +53,11 @@
 
     <p>Let's analyze this indefinite integral notation.<index><main>integration</main><sub>notation</sub></index></p>
 
+
+<todo>Figure out how to deal with this type of figure (it shows up again in Riemann sums). Would a static figure be better?</todo>
     <p><!-- START figures/fig_anti1.tex -->
+      <figure xml:id="fig_anti1">
+        <caption/>
       <image xml:id="img_anti1" >
         <description></description>
         <latex-image-code>
@@ -83,11 +87,14 @@
           ]]>
         </latex-image-code>
       </image>
+      </figure>
       <!-- figures/fig_anti1.tex END -->
 
-      \captionof{figure}{Understanding the indefinite integral notation.} <xref ref="fig_anti1">Figure</xref> shows the typical notation of the indefinite integral. The integration symbol, <m>\int</m>, is in reality an <q>elongated S,</q> representing <q>take the sum.</q> We will later see how <em>sums</em> and <em>antiderivatives</em> are related.</p>
+     <xref ref="fig_anti1">Figure</xref> shows the typical notation of the indefinite integral. The integration symbol, <m>\int</m>, is in reality an <q>elongated S,</q> representing <q>take the sum.</q> We will later see how <em>sums</em> and <em>antiderivatives</em> are related.</p>
 
     <p>The function we want to find an antiderivative of is called the <em>integrand</em>. It contains the differential of the variable we are integrating with respect to. The <m>\int</m> symbol and the differential <m>dx</m> are not <q>bookends</q> with a function sandwiched in between; rather, the symbol <m>\int</m> means <q>find all antiderivatives of what follows,</q> and the function <m>f(x)</m> and <m>dx</m> are multiplied together; the <m>dx</m> does not <q>just sit there.</q></p>
+
+    <aside><p>Another way we can interpret <m>dx</m> is that it tells us the variable we are integrating with respect to, much like <m>\lzo{x}</m> would mean to take the derivative with respect to <m>x</m>, whereas <m>\lzo{t}</m> would be the derivative with respect to <m>t</m>. A different meaning of <m>dx</m> will be discussed in <xref ref="sec_riemann">Section</xref>.</p></aside>
 
     <p>Let's practice using this notation.</p>
 
@@ -165,14 +172,16 @@
       </me>
     </p>
 
-    <p>Differentiation <q>undoes</q> the work done by antidifferentiation.</p>
+    <p>Differentiation <q>undoes</q> the work done by antidifferentiation. This isn't just coincidence, it is a theorem (the <xref ref="thm_FTC1" autoname="title"/>).</p>
 
     <p><xref ref="thm_deriv_glossary">Theorem</xref> gave a list of the derivatives of common functions we had learned at that point. We restate part of that list here to stress the relationship between derivatives and antiderivatives. This list will also be useful as a glossary of common antiderivatives as we learn.</p>
+
+    <!--Not sure what this does in the printed version, but it's not working with the MBX
 
     <p>\newlength{\bh}
       \newlength{\bd}
       \settoheight{\bh}{<m>\frac{d}{dx}</m>}
-      \settodepth{\bd}{<m>\frac{d}{dx}</m>}</p>
+      \settodepth{\bd}{<m>\frac{d}{dx}</m>}</p>-->
 
     <theorem xml:id="thm_indef_alg">
       <title>Derivatives and Antiderivatives</title>
@@ -181,34 +190,34 @@
           Common Differentiation Rules
 
           <ol>
-            <li><p><m>\frac{d}{dx}\big(cf(x) \big) = c\cdot \fp(x)</m></p></li>
+            <li><p><m>\lzoo{x}{cf(x) } = c\cdot \fp(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(f(x)\pm g(x) \big) =</m>
+            <li><p><m>\lzoo{x}{f(x)\pm g(x) } =</m>
                 <m>\fp(x)\pm g'(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(C \big) = 0</m></p></li>
+            <li><p><m>\lzoo{x}{C } = 0</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(x \big) = 1</m></p></li>
+            <li><p><m>\lzoo{x}{x } = 1</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(x^n \big) = n\cdot x^{n-1}</m></p></li>
+            <li><p><m>\lzoo{x}{x^n } = n\cdot x^{n-1}</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\sin(x) \big) = \cos(x)</m></p></li>
+            <li><p><m>\lzoo{x}{\sin(x) } = \cos(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\cos(x) \big) = -\sin(x)</m></p></li>
+            <li><p><m>\lzoo{x}{\cos(x) } = -\sin(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\tan(x) \big) = \sec^2(x)</m></p></li>
+            <li><p><m>\lzoo{x}{\tan(x) } = \sec^2(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\csc(x) \big) = -\csc(x) \cot(x)</m></p></li>
+            <li><p><m>\lzoo{x}{\csc(x) } = -\csc(x) \cot(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\sec(x) \big) = \sec(x) \tan(x)</m></p></li>
+            <li><p><m>\lzoo{x}{\sec(x) } = \sec(x) \tan(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\cot(x) \big) = -\csc^2(x)</m></p></li>
+            <li><p><m>\lzoo{x}{\cot(x) } = -\csc^2(x)</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(e^ x \big) = e^x</m></p></li>
+            <li><p><m>\lzoo{x}{e^ x } = e^x</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(a^x \big) = \ln(a) \cdot a^x</m></p></li>
+            <li><p><m>\lzoo{x}{a^x } = \ln(a) \cdot a^x</m></p></li>
 
-            <li><p><m>\frac{d}{dx}\big(\ln(x) \big) = \frac1 x</m></p></li>
+            <li><p><m>\lzoo{x}{\ln(x) } = \frac1 x,\ x \gt 0</m></p></li>
           </ol>
 
           Common Indefinite Integral Rules
@@ -250,7 +259,7 @@
     <p>We highlight a few important points from <xref ref="thm_indef_alg">Theorem</xref>:</p>
 
     <ul>
-      <li><p>Rule <hash />1 states <m>\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx</m>. This is the Constant Multiple Rule: <index><main>Constant Multiple Rule</main><sub>of integration</sub></index> we can temporarily ignore constants when finding antiderivatives, just as we did when computing derivatives (i.e., <m>\frac{d}{dx}\big(3x^2\big)</m> is just as easy to compute as <m>\frac{d}{dx}\big(x^2\big)</m>). An example:
+      <li><p>Rule <hash />1 states <m>\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx</m>. This is the Constant Multiple Rule: <index><main>Constant Multiple Rule</main><sub>of integration</sub></index> we can temporarily ignore constants when finding antiderivatives, just as we did when computing derivatives (i.e., <m>\lzoo{x}{3x^2}</m> is just as easy to compute as <m>\lzoo{x}{x^2}</m>). An example:
           <me>
             \int 5\cos(x) \ dx = 5\cdot\int \cos(x) \ dx = 5\cdot (\sin(x) +C) = 5\sin(x) + C.
           </me>
@@ -337,28 +346,31 @@
       </statement>
       <solution>
         <p>We start by finding <m>\fp(t)</m>, which is an antiderivative of <m>\fpp(t)</m>:
-          <me>
-            \int \fpp(t)\ dt = \int \cos(t) \ dt = \sin(t) + C = \fp(t).
-          </me>
+          <md>
+            <mrow>\int \fpp(t)\ dt \amp = \int \cos(t) \ dt</mrow>
+            <mrow>\amp = \sin(t) + C </mrow>
+            <mrow>\amp = \fp(t)</mrow>.
+          </md>
         </p>
 
         <p>So <m>\fp(t) = \sin(t) +C</m> for the correct value of <m>C</m>. We are given that <m>\fp(0) = 3</m>, so:
-          <me>
-            \fp(0) = 3  \Rightarrow  \sin(0) +C = 3  \Rightarrow  C=3.
-          </me>
+          <md>
+            <mrow>\sin(0) +C \amp = 3</mrow>
+            <mrow>C \amp = 3</mrow>.
+          </md>
         </p>
 
         <p>Using the initial value, we have found <m>\fp(t) = \sin(t) + 3</m>.
 		
-          We now find <m>f(t)</m> by integrating again.
+          We now find <m>f(t)</m> by integrating again. We will use a different integration constant since we have already defined <m>C</m> to equal 3 above.
           <me>
-            f(t)=\int \fp(t) \ dt = \int (\sin(t) +3)\ dt = -\cos(t) + 3t + C.
+            f(t)=\int \fp(t) \ dt = \int (\sin(t) +3)\ dt = -\cos(t) + 3t + D.
           </me>
         </p>
 
         <p>We are given that <m>f(0) = 5</m>, so
           <md>
-            <mrow>-\cos(0) + 3(0) + C \amp = 5</mrow>
+            <mrow>-\cos(0) + 3(0) + D \amp = 5</mrow>
             <mrow>-1 + C \amp = 5</mrow>
             <mrow>C \amp = 6</mrow>
           </md>
@@ -837,11 +849,11 @@
             <ol>
               <li><p>What is the domain of <m>y = \ln(x)</m>?</p></li>
 
-              <li><p>Find <m>\frac{d}{dx}\big(\ln(x) \big)</m>.</p></li>
+              <li><p>Find <m>\lzoo{x}{\ln(x) }</m>.</p></li>
 
               <li><p>What is the domain of <m>y = \ln(-x)</m>?</p></li>
 
-              <li><p>Find <m>\frac{d}{dx}\big(\ln(-x)\big)</m>.</p></li>
+              <li><p>Find <m>\lzoo{x}{\ln(-x)}</m>.</p></li>
 
               <li><p>You should find that <m>1/x</m> has two types of antiderivatives, depending on whether <m>x>0</m> or <m>x\lt 0</m>. In one expression, give a formula for <m>\ds \int \frac{1}{x}\ dx</m> that takes these different domains into account, and explain your answer.</p></li>
             </ol>
