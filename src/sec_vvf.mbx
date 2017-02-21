@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <section xml:id="sec_vvf">
-  <title>Vector<ndash />Valued Functions</title>
+  <title>Vector-Valued Functions</title>
   <introduction>
-    <p>We are very familiar with <em>real valued functions</em>, that is, functions whose output is a real number. This section introduces <em>vector<ndash />valued functions</em> <mdash /> functions whose output is a vector.</p>
+    <p>We are very familiar with <em>real valued functions</em>, that is, functions whose output is a real number. This section introduces <em>vector-valued functions</em> <mdash /> functions whose output is a vector.</p>
 
     <definition xml:id="def_vvf">
-      <title>Vector<ndash />Valued Functions</title>
+      <title>Vector-Valued Functions</title>
       <statement>
-        <p>A <term>vector<ndash />valued function</term> is a function of the form
+        <p>A <term>vector-valued function</term> is a function of the form
           <me>
             \vec r(t) = \la\, f(t),g(t)\,\ra  \text{ or }  \vec r(t) = \la \,f(t),g(t),h(t)\,\ra,
           </me>
           where <m>f</m>, <m>g</m> and <m>h</m> are real valued functions.</p>
 
         <p>The <term>domain</term> of <m>\vec r</m> is the set of all values of <m>t</m> for which <m>\vec r(t)</m> is defined. The <term>range</term> of <m>\vec r</m> is the set of all possible output vectors <m>\vec r(t)</m>.
-          <index><main>vector<ndash />valued function</main><sub>definition</sub></index><index><main>function</main><sub>vector<ndash />valued</sub></index></p>
+          <index><main>vector-valued function</main><sub>definition</sub></index><index><main>function</main><sub>vector-valued</sub></index></p>
       </statement>
     </definition>
 
-    <p><em>Evaluating and Graphing Vector<ndash />Valued Functions</em></p>
+    <p><em>Evaluating and Graphing Vector-Valued Functions</em></p>
 
-    <p>Evaluating a vector<ndash />valued function at a specific value of <m>t</m> is straightforward; simply evaluate each component function at that value of <m>t</m>. For instance, if <m>\vec r(t) = \la t^2,t^2+t-1\ra</m>, then <m>\vec r(-2) = \la 4,1\ra</m>. We can sketch this vector, as is done in <xref ref="fig_vvfintro1">Figure</xref>(a). Plotting lots of vectors is cumbersome, though, so generally we do not sketch the whole vector but just the terminal point. The <em>graph</em> of a vector<ndash />valued function is the set of all terminal points of <m>\vec r(t)</m>, where the initial point of each vector is always the origin. In <xref ref="fig_vvfintro1">Figure</xref>(b) we sketch the graph of <m>\vec r</m> ; we can indicate individual points on the graph with their respective vector, as shown.
-      <index><main>vector<ndash />valued function</main><sub>graphing</sub></index></p>
+    <p>Evaluating a vector-valued function at a specific value of <m>t</m> is straightforward; simply evaluate each component function at that value of <m>t</m>. For instance, if <m>\vec r(t) = \la t^2,t^2+t-1\ra</m>, then <m>\vec r(-2) = \la 4,1\ra</m>. We can sketch this vector, as is done in <xref ref="fig_vvfintro1">Figure</xref>(a). Plotting lots of vectors is cumbersome, though, so generally we do not sketch the whole vector but just the terminal point. The <em>graph</em> of a vector-valued function is the set of all terminal points of <m>\vec r(t)</m>, where the initial point of each vector is always the origin. In <xref ref="fig_vvfintro1">Figure</xref>(b) we sketch the graph of <m>\vec r</m> ; we can indicate individual points on the graph with their respective vector, as shown.
+      <index><main>vector-valued function</main><sub>graphing</sub></index></p>
 
     <figure xml:id="fig_vvfintro1" >
-    <caption>Sketching the graph of a vector<ndash />valued function.</caption>
+    <caption>Sketching the graph of a vector-valued function.</caption>
     <sidebyside>
       <figure>
         <caption>(a)</caption>
@@ -114,10 +114,10 @@
 
     </figure>
 
-    <p>Vector<ndash />valued functions are closely related to parametric equations of graphs. While in both methods we plot points <m>\big(x(t), y(t)\big)</m> or <m>\big(x(t),y(t),z(t)\big)</m> to produce a graph, in the context of vector<ndash />valued functions each such point represents a vector. The implications of this will be more fully realized in the next section as we apply calculus ideas to these functions.</p>
+    <p>Vector<ndash />valued functions are closely related to parametric equations of graphs. While in both methods we plot points <m>\big(x(t), y(t)\big)</m> or <m>\big(x(t),y(t),z(t)\big)</m> to produce a graph, in the context of vector-valued functions each such point represents a vector. The implications of this will be more fully realized in the next section as we apply calculus ideas to these functions.</p>
 
     <example xml:id="ex_vvf1">
-      <title>Graphing vector<ndash />valued functions</title>
+      <title>Graphing vector-valued functions</title>
       <statement>
         <p>Graph <m>\ds \vec r(t) = \la t^3-t, \frac{1}{t^2+1}\ra</m>, for <m>-2\leq t\leq 2</m>. Sketch <m>\vec r(-1)</m> and <m>\vec r(2)</m>.</p>
       </statement>
@@ -125,7 +125,7 @@
         <p>We start by making a table of <m>t</m>, <m>x</m> and <m>y</m> values as shown in <xref ref="fig_vvf1">Figure</xref>(a). Plotting these points gives an indication of what the graph looks like. In <xref ref="fig_vvf1">Figure</xref>(b), we indicate these points and sketch the full graph. We also highlight <m>\vec r(-1)</m> and <m>\vec r(2)</m> on the graph.</p>
 
         <table xml:id="fig_vvf1" >
-          <caption>Sketching the vector<ndash />valued function of <xref ref="ex_vvf1">Example</xref>.</caption>
+          <caption>Sketching the vector-valued function of <xref ref="ex_vvf1">Example</xref>.</caption>
           <tabular>
           <row>
           <cell><tabular>
@@ -226,7 +226,7 @@
     </example>
 
     <example xml:id="ex_vvf2">
-      <title>Graphing vector<ndash />valued functions.</title>
+      <title>Graphing vector-valued functions.</title>
       <statement>
         <p>Graph <m>\vec r(t) = \la \cos(t) ,\sin(t) ,t\ra</m> for <m>0\leq t\leq 4\pi</m>.</p>
       </statement>
@@ -331,11 +331,11 @@
   </introduction>
 
   <subsection>
-    <title>Algebra of Vector<ndash />Valued Functions</title>
+    <title>Algebra of Vector-Valued Functions</title>
     <definition xml:id="def_vvf_algebra">
-      <title>Operations on Vector<ndash />Valued Functions</title>
+      <title>Operations on Vector-Valued Functions</title>
       <statement>
-        <p>Let <m>\vec r_1(t)=\la f_1(t),g_1(t)\ra</m> and <m>\vec r_2(t)=\la f_2(t),g_2(t)\ra</m> be vector<ndash />valued functions in <m>\mathbb{R}^2</m> and let <m>c</m> be a scalar. Then:</p>
+        <p>Let <m>\vec r_1(t)=\la f_1(t),g_1(t)\ra</m> and <m>\vec r_2(t)=\la f_2(t),g_2(t)\ra</m> be vector-valued functions in <m>\mathbb{R}^2</m> and let <m>c</m> be a scalar. Then:</p>
 
         <ol>
           <li><p><m>\vec r_1(t) \pm \vec r_2(t) = \la\, f_1(t)\pm f_2(t),g_1(t)\pm g_2(t)\,\ra</m>.</p></li>
@@ -343,20 +343,20 @@
           <li><p><m>c\vec r_1(t) = \la\, cf_1(t),cg_1(t)\,\ra</m>.</p></li>
         </ol>
 
-        <p>A similar definition holds for vector<ndash />valued functions in <m>\mathbb{R}^3</m>.
-          <index><main>vector<ndash />valued function</main><sub>algebra of</sub></index></p>
+        <p>A similar definition holds for vector-valued functions in <m>\mathbb{R}^3</m>.
+          <index><main>vector-valued function</main><sub>algebra of</sub></index></p>
       </statement>
     </definition>
 
-    <p>This definition states that we add, subtract and scale vector-valued functions component<ndash />wise. Combining vector<ndash />valued functions in this way can be very useful (as well as create interesting graphs).</p>
+    <p>This definition states that we add, subtract and scale vector-valued functions component<ndash />wise. Combining vector-valued functions in this way can be very useful (as well as create interesting graphs).</p>
 
     <example xml:id="ex_vvf3">
-      <title>Adding and scaling vector<ndash />valued functions.</title>
+      <title>Adding and scaling vector-valued functions.</title>
       <statement>
         <p>Let <m>\vec r_1(t) = \la\,0.2t,0.3t\,\ra</m>, <m>\vec r_2(t) = \la\,\cos(t) ,\sin(t) \,\ra</m> and <m>\vec r(t) = \vec r_1(t)+\vec r_2(t)</m>. Graph <m>\vec r_1(t)</m>, <m>\vec r_2(t)</m>, <m>\vec r(t)</m> and <m>5\vec r(t)</m> on <m>-10\leq t\leq10</m>.</p>
       </statement>
       <solution>
-        <p>We can graph <m>\vec r_1</m> and <m>\vec r_2</m> easily by plotting points (or just using technology). Let's think about each for a moment to better understand how vector<ndash />valued functions work.</p>
+        <p>We can graph <m>\vec r_1</m> and <m>\vec r_2</m> easily by plotting points (or just using technology). Let's think about each for a moment to better understand how vector-valued functions work.</p>
 
         <p>We can rewrite <m>\vec r_1(t) = \la\, 0.2t,0.3t\,\ra</m> as <m>\vec r_1(t) = t\la 0.2,0.3\ra</m>. That is, the function <m>\vec r_1</m> scales the vector <m>\la 0.2,0.3\ra</m> by <m>t</m>. This scaling of a vector produces a line in the direction of <m>\la 0.2,0.3\ra</m>.</p>
 
@@ -496,7 +496,7 @@
     </example>
 
     <example xml:id="ex_vvf4">
-      <title>Adding and scaling vector<ndash />valued functions.</title>
+      <title>Adding and scaling vector-valued functions.</title>
       <statement>
         <p>A <em>cycloid</em> is a graph traced by a point <m>p</m> on a rolling circle, as shown in <xref ref="fig_vvf4">Figure</xref>. Find an equation describing the cycloid, where the circle has radius 1.
           <index><main>cycloid</main></index></p>
@@ -612,12 +612,12 @@
       <!-- figures/fig_vvf4a.tex END -->
     </figure>
 
-    <p>A vector<ndash />valued function <m>\vec r(t)</m> is often used to describe the position of a moving object at time <m>t</m>. At <m>t=t_0</m>, the object is at <m>\vec r(t_0)</m>; at <m>t=t_1</m>, the object is at <m>\vec r(t_1)</m>. Knowing the locations <m>\vec r(t_0)</m> and <m>\vec r(t_1)</m> give no indication of the path taken between them, but often we only care about the difference of the locations, <m>\vec r(t_1)-\vec r(t_0)</m>, the <em>displacement</em>.<index><main>displacement</main></index><index><main>vector<ndash />valued function</main><sub>displacement</sub></index></p>
+    <p>A vector-valued function <m>\vec r(t)</m> is often used to describe the position of a moving object at time <m>t</m>. At <m>t=t_0</m>, the object is at <m>\vec r(t_0)</m>; at <m>t=t_1</m>, the object is at <m>\vec r(t_1)</m>. Knowing the locations <m>\vec r(t_0)</m> and <m>\vec r(t_1)</m> give no indication of the path taken between them, but often we only care about the difference of the locations, <m>\vec r(t_1)-\vec r(t_0)</m>, the <em>displacement</em>.<index><main>displacement</main></index><index><main>vector-valued function</main><sub>displacement</sub></index></p>
 
     <definition xml:id="def_displacement">
       <title>Displacement</title>
       <statement>
-        <p>Let <m>\vec r(t)</m> be a vector<ndash />valued function and let <m>t_0\lt t_1</m> be values in the domain. The <term>displacement</term> <m>\vec d</m> of <m>\vec r</m>, from <m>t=t_0</m> to <m>t=t_1</m>, is
+        <p>Let <m>\vec r(t)</m> be a vector-valued function and let <m>t_0\lt t_1</m> be values in the domain. The <term>displacement</term> <m>\vec d</m> of <m>\vec r</m>, from <m>t=t_0</m> to <m>t=t_1</m>, is
           <me>
             \vec d=\vec r(t_1)-\vec r(t_0).
           </me>
@@ -695,8 +695,8 @@
     <definition xml:id="def_av_rate_of_change_vect">
       <title>Average Rate of Change</title>
       <statement>
-        <p>Let <m>\vec r(t)</m> be a vector<ndash />valued function, where each of its component functions is continuous on its domain, and let <m>t_0\lt t_1</m>. The <term>average rate of change</term> of <m>\vec r(t)</m> on <m>[t_0,t_1]</m> is
-          <index><main>average rate of change</main></index><index><main>vector<ndash />valued function</main><sub>average rate of change</sub></index>
+        <p>Let <m>\vec r(t)</m> be a vector-valued function, where each of its component functions is continuous on its domain, and let <m>t_0\lt t_1</m>. The <term>average rate of change</term> of <m>\vec r(t)</m> on <m>[t_0,t_1]</m> is
+          <index><main>average rate of change</main></index><index><main>vector-valued function</main><sub>average rate of change</sub></index>
           <me>
             \text{ average rate of change }  = \frac{\vec r(t_1) - \vec r(t_0)}{t_1-t_0}.
           </me>
@@ -728,7 +728,7 @@
       </solution>
     </example>
 
-    <p>We considered average rates of change in <xref ref="sec_limit_intro">Sections</xref> and <xref ref="sec_derivative"></xref> as we studied limits and derivatives. The same is true here; in the following section we apply calculus concepts to vector<ndash />valued functions as we find limits, derivatives, and integrals. Understanding the average rate of change will give us an understanding of the derivative; displacement gives us one application of integration.</p>
+    <p>We considered average rates of change in <xref ref="sec_limit_intro">Sections</xref> and <xref ref="sec_derivative"></xref> as we studied limits and derivatives. The same is true here; in the following section we apply calculus concepts to vector-valued functions as we find limits, derivatives, and integrals. Understanding the average rate of change will give us an understanding of the derivative; displacement gives us one application of integration.</p>
   </subsection>
 
   <exercises>
@@ -763,7 +763,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>When sketching vector<ndash />valued functions, technically one isn't graphing points, but rather <fillin />.</p>
+            <p>When sketching vector-valued functions, technically one isn't graphing points, but rather <fillin />.</p>
           </statement>
           <solution>
             <p>vectors</p>
@@ -1254,7 +1254,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, sketch the vector<ndash />valued function on the given interval in <m>\mathbb{R}^3</m>. Technology may be useful in creating the sketch.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, sketch the vector-valued function on the given interval in <m>\mathbb{R}^3</m>. Technology may be useful in creating the sketch.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1607,24 +1612,29 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find <m>\norm{\vec r(t)}</m>.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find <m>\norm{\vec r(t)}</m>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$norm">
+              <static>\abs{t}\sqrt{1+t^2}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              $norm=Formula("|t| sqrt(1+t^2)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la t,t^2\ra</m>.</p>
+            <p>If <m>\vec r(t) = \la t,t^2\ra</m>, then <m>\norm{\vec r(t)}=</m><var name="$norm" width="30" />.</p>
           </statement>
-          <solution>
-            <p><m>\norm {\vec r(t)} = \sqrt{t^2+t^4} = \abs{t}\sqrt{t^2+1}</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1642,23 +1652,24 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$norm">
+              <static>\sqrt{4+t^2}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              $norm=Formula("sqrt(4+t^2)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 2\cos(t) ,2\sin(t) ,t\ra</m>.</p>
+            <p>If <m>\vec r(t) = \la 2\cos(t) ,2\sin(t) ,t\ra</m>, then <m>\norm{\vec r(t)}=</m><var name="$norm" width="30" />.</p>
           </statement>
-          <solution>
-            <p><m>\norm {\vec r(t)} = \sqrt{4\cos^2(t) +4\sin^2(t) +t^2} = \sqrt{t^2+4}</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1676,26 +1687,52 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, create a vector<ndash />valued function whose graph matches the given description.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, create a vector-valued function whose graph matches the given description.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$vvf">
+              <static>\langle2\cos(t)+1,2\sin(t)+2\rangle</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->variables->are(t=>'Real');
+              $vvf=Formula("&lt;2 cos(t)+1, 2 sin(t) + 2>");
+              Context()->flags->set(tolType=>'absolute',tolerance=>0.001);
+              $vvfev=$vvf->cmp(checker=>sub{
+                  my ($correct,$student,$self)=@_;
+                  my ($sx,$sy)=$student->value;
+                  my ($cx,$cy)=$correct->value;
+                  my $eliminated=Formula("(($sx-1)/2)^2 + (($sy-2)/2)^2");
+                  return 0 unless ($eliminated == Formula("1"));
+                  #normalize answers
+                  $sx=($sx-1)/2;
+                  $sy=($sy-2)/2;
+                  $cx=($cx-1)/2;
+                  $cy=($cy-2)/2;
+                  #shift student answers
+                  my $sx0=$sx->eval(t=>0);
+                  my $sy0=$sy->eval(t=>0);
+                  my $phi=($sx0 >= 0)?Compute("arcsin($sy0)"):Compute("pi-arcsin($sy0)");
+                  $sx=$sx->substitute(t=>Formula("t-$phi"));
+                  $sy=$sy->substitute(t=>Formula("t-$phi"));
+                  return ($sx == $cx and $sy == $cy);
+                }
+              );
             </pg-code>
           </setup>
           <statement>
-            <p>A circle of radius 2, centered at <m>(1,2)</m>, traced counter<ndash />clockwise once on <m>[0,2\pi]</m>.</p>
+            <p>Create a vector-valued function <m>\vec r</m> whose graph is a circle of radius <m>2</m>, centered at <m>(1,2)</m>, traced counter<ndash />clockwise once at constant speed on <m>[0,2\pi)</m>.</p>
+            <p><m>\vec r(t)=</m><var name="$vvf" evaluator="$vvfev" width="40" /></p>
           </statement>
-          <solution>
-            <p>Answers may vary, though most direct solution is</p>
-
-            <p><m>\vec r(t) = \la 2\cos(t) +1,2\sin(t) +2\ra</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1761,27 +1798,29 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserParametricLine.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$vvf">
+              <static>\la t+2,5t+3\ra</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->variables->are(t=>'Real');
+              $vvf=ParametricLine("&lt;t+2, 5t+3>");
             </pg-code>
           </setup>
           <statement>
-            <p>A line through <m>(2,3)</m> with a slope of 5.</p>
+            <p>Create a vector-valued function <m>\vec r</m> whose graph is a line through <m>(2,3)</m> with a slope of <m>5</m>.</p>
+            <p><m>\vec r(t)=</m><var name="$vvf" width="40" /></p>
           </statement>
-          <solution>
-            <p>Answers may vary, though most direct solutions are</p>
-
-            <p><m>\vec r(t) = \la t,5(t-2)+3\ra</m> and</p>
-
-            <p><m>\vec r(t) = \la t+2,5t+3\ra</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1807,25 +1846,38 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$vvf">
+              <static>\la 2\cos(t) ,2\sin(t) ,2t\ra</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->variables->are(t=>'Real');
+              $vvf=Formula("&lt;2 cos(t), 2 sin(t), 2t>");
+              Context()->flags->set(tolType=>'absolute',tolerance=>0.001);
+              $vvfev=$vvf->cmp(checker=>sub{
+                  my ($correct,$student,$self)=@_;
+                  my ($sx,$sy,$sz)=$student->value;
+                  my ($cx,$cy,$cz)=$correct->value;
+                  return 0 unless ($sx == $cx and $sy == $cy);
+                  $szd=$sz->reduce->D('t');
+                  return 0 unless ($szd == Formula("2"));
+                  my $r = ($sz->eval(t=>0))/(4*pi);
+                  return 0 unless ($r == int($r));
+                }
+              );
             </pg-code>
           </setup>
           <statement>
-            <p>A vertically oriented helix with radius of 2 that starts at <m>(2,0,0)</m> and ends at <m>(2,0,4\pi)</m> after 1 revolution on <m>[0,2\pi]</m>.</p>
+            <p>Create a vector-valued function <m>\vec r</m> whose graph is a vertically oriented helix with radius of <m>2</m> that starts at <m>(2,0,0)</m> and ends at <m>(2,0,4\pi)</m> after one revolution on <m>[0,2\pi]</m>.</p>
+            <p><m>\vec r(t)=</m><var name="$vvf" evaluator="$vvfev" width="40" /></p>
           </statement>
-          <solution>
-            <p>Answers may vary, though most direct solution is</p>
-
-            <p><m>\vec r(t) = \la 2\cos(t) ,2\sin(t) ,2t\ra</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1845,24 +1897,30 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the average rate of change of <m>\vec r(t)</m> on the given interval.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the average rate of change of <m>\vec r(t)</m> on the given interval.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$arc">
+              <static>\langle1,0\rangle</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              $arc=Vector("&lt;1,0>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la t,t^2\ra</m> on <m>[-2,2]</m>.</p>
+            <p>Find the average rate of change of <m>\vec r(t) = \la t,t^2\ra</m> on <m>[-2,2]</m>.</p>
+            <p><var name="$arc" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>\la 1,0\ra</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1880,23 +1938,25 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$arc">
+              <static>\langle0,0,1\rangle</static>
             </var>
             <pg-code>
+              Context("Vector");
+              $arc=Vector("&lt;0,0,1>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec r(t) = \la 3\cos(t) ,2\sin(t) ,t\ra</m> on <m>[0,2\pi]</m>.</p>
+            <p>Find the average rate of change of <m>\vec r(t) = \la 3\cos(t) ,2\sin(t) ,t\ra</m> on <m>[0,2\pi]</m>.</p>
+            <p><var name="$arc" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>\la 0,0,1\ra</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
