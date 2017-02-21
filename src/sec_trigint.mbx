@@ -11,39 +11,70 @@
     <title>Integrals of the form <m>\ds \int \sin^m(x) \cos^n(x) \ dx</m></title>
     <p>In learning the technique of Substitution, we saw the integral <m>\int \sin(x) \cos(x) \ dx</m> in <xref ref="ex_sub10">Example</xref>. The integration was not difficult, and one could easily evaluate the indefinite integral by letting <m>u=\sin(x)</m> or by letting <m>u = \cos(x)</m>. This integral is easy since the power of both sine and cosine is 1.</p>
 
-    <p>We generalize this integral and consider integrals of the form <m>\int \sin^m(x) \cos^n(x) \ dx</m>, where <m>m,n</m> are nonnegative integers. Our strategy for evaluating these integrals is to use the identity <m>\cos^2(x) +\sin^2(x) =1</m> to convert high powers of one trigonometric function into the other, leaving a single sine or cosine term in the integrand. We summarize the general technique in the following Key Idea.</p>
+    <p>We generalize this integral and consider integrals of the form <m>\int \sin^m(x) \cos^n(x) \ dx</m>, where <m>m,n</m> are nonnegative integers. Our strategy for evaluating these integrals is to use the identity <m>\cos^2(x) +\sin^2(x) =1</m> to convert high powers of one trigonometric function into the other, leaving a single sine or cosine term in the integrand. Let's see an example of how this technique works.
 
-    <sidebyside>
+    <example xml:id="ex_trigint0">
+       <title>Integrating powers of sine and cosine</title>
+       <statement>
+         <p>Evaluate <m>\ds\int\sin^3(x) \cos(x) \ dx</m>.</p>
+      </statement>
+      <solution>
+      <p> We have used substitution on problems similar to this problem in <xref ref="sec_substitution"> Section</xref> . If we let <m>u=\cos(x)</m>, then <m>du=-\sin(x)\,dx</m>.  Unfortunately, we have <m>\sin^3(x)</m> as part of our integrand, not just <m>\sin(x)</m>. The solution to this problem is to replace some of our powers of sine (two of them to be exact) with expressions that involve cosine. We will use the Pythagorean Identity <m>\sin^2(x)=1-\cos^2(x)</m>.
+
+      <md>
+        <mrow>\ds\int\sin^3(x) \cos(x) \ dx \amp =\int\sin(x)\cdot \sin^2(x) \cos(x) \ dx</mrow>
+        <mrow>\amp =\int\sin(x)\left(1-\cos^2(x)\right) \cos(x) \ dx</mrow>
+      </md>
+      </p>
+
+      <p>Now we let <m>u=\cos(x)</m> so that <m>-du=\sin(x)\,dx</m>.  
+        <md>
+          <mrow>\ds\int\sin^3(x) \cos(x) \ dx \amp =\int\sin(x)\left(1-\cos^2(x)\right) \cos(x) \ dx</mrow>
+          <mrow>\amp =\int -\left(1-u^2\right)u\ du</mrow>
+          <mrow>\amp =\int -\left(u-u^3\right)\ du</mrow>
+          <mrow>\amp =\frac{u^2}{2}-\frac{u^4}{4}+C</mrow>
+          <mrow>\amp =\frac{\cos^2(x)}{2}-\frac{\cos^4(x)}{4}+C</mrow>
+      </md></p>
+
+      </solution>
+      
+    </example>
+
+
+    We summarize the general technique in the following Key Idea.</p>
+
       <insight xml:id="idea_trig_int_1">
         <title>Integrals Involving Powers of Sine and Cosine</title>
         <p>Consider <m>\ds \int \sin^m(x) \cos^n(x) \ dx</m>, where <m>m,n</m> are nonnegative integers.<index><main>integration</main><sub>of trig. powers</sub></index></p>
 
         <ol>
           <li><p>If <m>m</m> is odd, then <m>m=2k+1</m> for some integer <m>k</m>. Rewrite
-              <me>
-                \sin^m(x) = \sin^{2k+1}(x) = \sin^{2k}(x) \sin(x) = (\sin^2(x) )^k\sin(x) = (1-\cos^2(x) )^k\sin(x) .
-              </me>
+              <md>
+                <mrow>\sin^m(x) \amp = \sin^{2k+1}(x)</mrow>
+                <mrow>\amp  = \sin^{2k}(x) \sin(x) </mrow>
+                <mrow>\amp = (\sin^2(x) )^k\sin(x) </mrow>
+                <mrow>\amp = (1-\cos^2(x) )^k\sin(x)  </mrow>.
+              </md>
               Then
-              <me>
-                \int \sin^m(x) \cos^n(x) \ dx = \int (1-\cos^2(x) )^k\sin(x) \cos^n(x) \ dx = -\int (1-u^2)^ku^n\ du,
-              </me>
+              <md>
+                <mrow>\int \sin^m(x) \cos^n(x) \ dx \amp = \int (1-\cos^2(x) )^k\sin(x) \cos^n(x) \ dx</mrow>
+                <mrow> \amp = -\int (1-u^2)^ku^n\ du</mrow>,
+              </md>
               where <m>u = \cos(x)</m> and <m>du = -\sin(x) \ dx</m>.</p></li>
 
-          <li><p>If <m>n</m> is odd, then using substitutions similar to that outlined above we have
+          <li><p>If <m>n</m> is odd, then using substitutions similar to that outlined above (replacing all of the even powers of <m>cosine</m> using a Pythagorean identity) we have:
               <me>
                 \int \sin^m(x) \cos^n(x) \ dx = \int u^m(1-u^2)^k\ du,
               </me>
               where <m>u = \sin(x)</m> and <m>du = \cos(x) \ dx</m>.</p></li>
 
-          <li><p>If both <m>m</m> and <m>n</m> are even, use the power<ndash />reducing identities
-		\small
+          <li><p>If both <m>m</m> and <m>n</m> are even, use the power<ndash />reducing identities:
               <me>
                 \cos^2(x) = \frac{1+\cos(2x)}{2}  \text{ and }  \sin^2(x) = \frac{1-\cos(2x)}2
               </me>
               to reduce the degree of the integrand. Expand the result and apply the principles of this Key Idea again.</p></li>
         </ol>
       </insight>
-    </sidebyside>
 
     <p>We practice applying <xref ref="idea_trig_int_1">Key Idea</xref> in the next examples.</p>
 
@@ -54,15 +85,18 @@
       </statement>
       <solution>
         <p>The power of the sine term is odd, so we rewrite <m>\sin^5(x)</m> as
-          <me>
-            \sin^5(x) = \sin^4(x) \sin(x) = (\sin^2(x) )^2\sin(x) = (1-\cos^2(x) )^2\sin(x) .
-          </me>
+          <md>
+            <mrow>\sin^5(x) \amp = \sin^4(x) \sin(x) </mrow>
+            <mrow>\amp = (\sin^2(x) )^2\sin(x)</mrow>
+            <mrow>\amp = (1-\cos^2(x) )^2\sin(x) </mrow>
+          </md>.
         </p>
 
         <p>Our integral is now <m>\ds \int (1-\cos^2(x) )^2\cos^8(x) \sin(x) \ dx</m>. Let <m>u = \cos(x)</m>, hence <m>du = -\sin(x) \ dx</m>. Making the substitution and expanding the integrand gives
-          <me>
-            \int (1-\cos^2)^2\cos^8(x) \sin(x) \ dx = -\int (1-u^2)^2u^8\ du = -\int \big(1-2u^2+u^4\big)u^8\ du = -\int \big(u^8-2u^{10}+u^{12}\big)\ du.
-          </me>
+          <md>
+            <mrow>\int (1-\cos^2)^2\cos^8(x) \sin(x) \ dx \amp = -\int (1-u^2)^2u^8\ du </mrow>
+            <mrow>\amp = -\int \big(1-2u^2+u^4\big)u^8\ du</mrow><mrow> \amp = -\int \big(u^8-2u^{10}+u^{12}\big)\ du</mrow>.
+          </md>
         </p>
 
         <p>This final integral is not difficult to evaluate, giving
@@ -85,26 +119,26 @@
         <p>We rewrite <m>\cos^9(x)</m> as
           <md>
             <mrow>\cos^9(x) \amp = \cos^8(x) \cos(x) </mrow>
-            <mrow>\amp = (\cos^2(x) )^4\cos(x) </mrow>
-            <mrow>\amp = (1-\sin^2(x) )^4\cos(x) </mrow>
-            <mrow>\amp = (1-4\sin^2(x) +6\sin^4(x) -4\sin^6(x) +\sin^8(x) )\cos(x) .</mrow>
+            <mrow>\amp = \left(\cos^2(x)\right)^4\cos(x) </mrow>
+            <mrow>\amp = \left(1-\sin^2(x)\right)^4\cos(x) </mrow>.
           </md>
         </p>
 
         <p>We rewrite the integral as
           <me>
-            \int\sin^5(x) \cos^9(x) \ dx = \int\sin^5(x) \big(1-4\sin^2(x) +6\sin^4(x) -4\sin^6(x) +\sin^8(x) \big)\cos(x) \ dx.
+            \int\sin^5(x) \cos^9(x) \ dx = \int\sin^5(x)  \left(1-\sin^2(x)\right)^4\cos(x) \ dx.
           </me>
         </p>
 
-        <p>Now substitute and integrate, using <m>u = \sin(x)</m> and <m>du = \cos(x) \ dx</m>.</p>
+        <p>Now substitute and integrate, using <m>u = \sin(x)</m> and <m>du = \cos(x) \ dx</m>. Expand the binomial using algebra.</p>
 
-        <p><m>\ds \int\sin^5(x) \big(1-4\sin^2(x) +6\sin^4(x) -4\sin^6(x) +\sin^8(x) \big)\cos(x) \ dx =</m>
+        <p>
           <md>
-            <mrow>\int u^5(1-4u^2+6u^4-4u^6+u^8)\ du \amp = \int\big(u^5-4u^7+6u^9-4u^{11}+u^{13}\big)\ du</mrow>
+            <mrow>\amp \int u^5(1-u^2)^4\ du </mrow>
+              <mrow> \amp = \int u^5(1-4u^2+6u^4-4u^6+u^8)\ du</mrow>
+            <mrow>\amp = \int\big(u^5-4u^7+6u^9-4u^{11}+u^{13}\big)\ du</mrow>
             <mrow>\amp = \frac16u^6-\frac12u^8+\frac35u^{10}-\frac13u^{12}+\frac{1}{14}u^{14}+C</mrow>
-            <mrow>\amp = \frac16\sin^6(x) -\frac12\sin^8(x) +\frac35\sin^{10}(x) +\ldots</mrow>
-            <mrow>\amp -\frac13\sin^{12}(x) +\frac{1}{14}\sin^{14}(x) +C.</mrow>
+            <mrow>\amp = \frac16\sin^6(x) -\frac12\sin^8(x) +\frac35\sin^{10}(x)-\frac13\sin^{12}(x) +\frac{1}{14}\sin^{14}(x) +C.</mrow>
           </md>
         </p>
       </solution>
@@ -179,28 +213,29 @@
           <md>
             <mrow>\int \cos^4(x) \sin^2(x) \ dx \amp = \int\left(\frac{1+\cos(2x)}{2}\right)^2\left(\frac{1-\cos(2x)}2\right)\ dx</mrow>
             <mrow>\amp = \int\frac{1+2\cos(2x)+\cos^2(2x)}4\cdot\frac{1-\cos(2x)}2\ dx</mrow>
-            <mrow>\amp =	\int \frac18\big(1+\cos(2x)-\cos^2(2x)-\cos^3(2x)\big)\ dx</mrow>
+            <mrow>\amp =	\int \frac18\big(1+\cos(2x)+\cos^2(2x)-\cos^3(2x)\big)\ dx</mrow>
+            <mrow>\amp = \frac18 \left(\underbrace{\int 1 \ dx}_{a}+\underbrace{\int \cos(2x)\ dx}_{b}-\underbrace{\int \cos^2(2x)\ dx}_{c}-\underbrace{\int \cos^3(2x)\ dx}_{d}\right)</mrow>
           </md>
         </p>
 
-        <p>The <m>\cos(2x)</m> term is easy to integrate, especially with <xref ref="idea_linearsub">Key Idea</xref>. The <m>\cos^2(2x)</m> term is another trigonometric integral with an even power, requiring the power<ndash />reducing formula again. The <m>\cos^3(2x)</m> term is a cosine function with an odd power, requiring a substitution as done before. We integrate each in turn below.
-          <me>
-            \int\cos(2x)\ dx = \frac12\sin(2x)+C.
-          </me>
-          <me>
-            \int\cos^2(2x)\ dx = \int \frac{1+\cos(4x)}2\ dx = \frac12\big(x+\frac14\sin(4x)\big)+C.
-          </me>
+        <p>The first integral labelled a is easy to integrate. The <m>\cos(2x)</m> term is also easy to integrate, especially with <xref ref="idea_linearsub">Key Idea</xref>. The <m>\cos^2(2x)</m> term is another trigonometric integral with an even power, requiring the power<ndash />reducing formula again. The <m>\cos^3(2x)</m> term is a cosine function with an odd power, requiring a substitution as done before. We integrate each in turn below.
+          <md>
+           <mrow> \underbrace{\int\cos(2x)\ dx}_{b} \amp = \frac12\sin(2x)+C</mrow>
+            <mrow>\underbrace{\int\cos^2(2x)\ dx}_{c} \amp = \int \frac{1+\cos(4x)}2\ dx </mrow>
+            <mrow>\amp = \frac12\big(x+\frac14\sin(4x)\big)+C</mrow>.
+          </md>
         </p>
 
         <p>Finally, we rewrite <m>\cos^3(2x)</m> as
-          <me>
-            \cos^3(2x) = \cos^2(2x)\cos(2x) = \big(1-\sin^2(2x)\big)\cos(2x).
-          </me>
+          <md>
+            <mrow>\cos^3(2x) \amp = \cos^2(2x)\cos(2x)</mrow>
+            <mrow>\amp = \big(1-\sin^2(2x)\big)\cos(2x)</mrow>.
+          </md>
         </p>
 
         <p>Letting <m>u=\sin(2x)</m>, we have <m>du = 2\cos(2x)\ dx</m>, hence
           <md>
-            <mrow>\int \cos^3(2x)\ dx \amp = \int\big(1-\sin^2(2x)\big)\cos(2x)\ dx</mrow>
+            <mrow>\underbrace{\int \cos^3(2x)\ dx}_{d} \amp = \int\big(1-\sin^2(2x)\big)\cos(2x)\ dx</mrow>
             <mrow>\amp = \int \frac12(1-u^2)\ du</mrow>
             <mrow>\amp = \frac12\Big(u-\frac13u^3\Big)+C</mrow>
             <mrow>\amp =	\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)+C</mrow>
@@ -209,7 +244,8 @@
 
         <p>Putting all the pieces together, we have
           <md>
-            <mrow>\int \cos^4(x) \sin^2(x) \ dx \amp =\int \frac18\big(1+\cos(2x)-\cos^2(2x)-\cos^3(2x)\big)\ dx</mrow>
+            <mrow>\amp \int \cos^4(x) \sin^2(x) \ dx</mrow>
+             <mrow>\amp =\int \frac18\big(1+\cos(2x)-\cos^2(2x)-\cos^3(2x)\big)\ dx</mrow>
             <mrow>\amp = \frac18\Big[x+\frac12\sin(2x)-\frac12\big(x+\frac14\sin(4x)\big)-\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)\Big]+C</mrow>
             <mrow>\amp =\frac18\Big[\frac12x-\frac18\sin(4x)+\frac16\sin^3(2x)\Big]+C</mrow>
           </md>
@@ -226,7 +262,7 @@
       <me>
         \int\sin(mx)\sin(nx)\ dx, \int \cos(mx)\cos(nx)\ dx  \text{ and } \int \sin(mx)\cos(nx)\ dx
       </me>
-      are best approached by first applying the Product to Sum Formulas found in the back cover of this text, namely
+      are best approached by first applying the Product to Sum Formulas found in the back cover <todo>Add an xref to this</todo>of this text, namely
       <md>
         <mrow>\sin(mx)\sin(nx) \amp = \frac12\Big[\cos\big((m-n)x\big)-\cos\big((m+n)x\big)\Big]</mrow>
         <mrow>\cos(mx)\cos(nx) \amp = \frac12\Big[\cos\big((m-n)x\big)+\cos\big((m+n)x\big)\Big]</mrow>
@@ -242,7 +278,8 @@
       <solution>
         <p>The application of the formula and subsequent integration are straightforward:
           <md>
-            <mrow>\int\sin(5x)\cos(2x)\ dx \amp = \int \frac12\Big[\sin(3x)+\sin(7x)\Big]\ dx</mrow>
+            <mrow>\int\sin(5x)\cos(2x)\ dx \amp = \int \frac12\Big[\sin((5-2)x)+\sin((5+2)x)\Big]\ dx</mrow>
+              <mrow>\amp= \int \frac12\Big[\sin(3x)+\sin(7x)\Big]\ dx</mrow>
             <mrow>\amp = -\frac16\cos(3x) - \frac1{14}\cos(7x) + C</mrow>
           </md>
         </p>
@@ -271,41 +308,49 @@
       <p>Consider <m>\ds\int\tan^m(x) \sec^n(x) \ dx</m>, where <m>m,n</m> are nonnegative integers.<index><main>integration</main><sub>of trig. powers</sub></index></p>
 
       <ol>
-        <li><p>If <m>n</m> is even, then <m>n=2k</m> for some integer <m>k</m>. Rewrite <m>\sec^n(x)</m> as
-            <me>
-              \sec^n(x) = \sec^{2k}(x) = \sec^{2k-2}(x) \sec^2(x) = (1+\tan^2(x) )^{k-1}\sec^2(x) .
-            </me>
+        <li xml:id="idea_trig_int_2a"><p>If <m>n</m> is even, then <m>n=2k</m> for some integer <m>k</m>. Rewrite <m>\sec^n(x)</m> as
+            <md>
+              <mrow>\sec^n(x) \amp = \sec^{2k}(x)</mrow>
+              <mrow>\amp = \sec^{2k-2}(x) \sec^2(x)</mrow>
+              <mrow>\amp = (1+\tan^2(x) )^{k-1}\sec^2(x)</mrow>.
+            </md>
             Then
-            <me>
-              \int\tan^m(x) \sec^n(x) \ dx=\int\tan^m(x) (1+\tan^2(x) )^{k-1}\sec^2(x) \ dx = \int u^m(1+u^2)^{k-1}\ du,
-            </me>
+            <md>
+              <mrow>\int\tan^m(x) \sec^n(x) \ dx \amp =\int\tan^m(x) (1+\tan^2(x) )^{k-1}\sec^2(x) \ dx</mrow>
+              <mrow>\amp =\int u^m(1+u^2)^{k-1}\ du</mrow>,
+            </md>
             where <m>u = \tan(x)</m> and <m>du = \sec^2(x) \ dx</m>.</p></li>
 
-        <li><p>If <m>m</m> is odd, then <m>m=2k+1</m> for some integer <m>k</m>. Rewrite <m>\tan^m(x) \sec^n(x)</m> as
-            <me>
-              \tan^m(x) \sec^n(x) = \tan^{2k+1}(x) \sec^n(x) = \tan^{2k}(x) \sec^{n-1}(x) \sec(x) \tan(x) = (\sec^2(x) -1)^k\sec^{n-1}(x) \sec(x) \tan(x) .
-            </me>
+        <li xml:id="idea_trig_int_2b"><p>If <m>m</m> is odd, then <m>m=2k+1</m> for some integer <m>k</m>. Rewrite <m>\tan^m(x) \sec^n(x)</m> as
+            <md>
+              <mrow>\tan^m(x) \sec^n(x) \amp = \tan^{2k+1}(x) \sec^n(x)</mrow>
+              <mrow>\amp = \tan^{2k}(x) \sec^{n-1}(x) \sec(x) \tan(x) </mrow> 
+              <mrow>\amp = (\sec^2(x) -1)^k\sec^{n-1}(x) \sec(x) \tan(x) </mrow>.
+            </md>
             Then
-            <me>
-              \int\tan^m(x) \sec^n(x) \ dx=\int(\sec^2(x) -1)^k\sec^{n-1}(x) \sec(x) \tan(x) \ dx = \int(u^2-1)^ku^{n-1}\ du,
-            </me>
+            <md>
+              <mrow>\int\tan^m(x) \sec^n(x) \ dx \amp =\int(\sec^2(x) -1)^k\sec^{n-1}(x) \sec(x) \tan(x) \ dx</mrow>
+              <mrow>\amp = \int(u^2-1)^ku^{n-1}\ du</mrow>,
+            </md>
             where <m>u = \sec(x)</m> and <m>du = \sec(x) \tan(x) \ dx</m>.</p></li>
 
-        <li><p>If <m>n</m> is odd and <m>m</m> is even, then <m>m=2k</m> for some integer <m>k</m>. Convert <m>\tan^m(x)</m> to <m>(\sec^2(x) -1)^k</m>. Expand the new integrand and use Integration By Parts, with <m>dv = \sec^2(x) \ dx</m>.</p></li>
+        <li xml:id="idea_trig_int_2c"><p>If <m>n</m> is odd and <m>m</m> is even, then <m>m=2k</m> for some integer <m>k</m>. Convert <m>\tan^m(x)</m> to <m>(\sec^2(x) -1)^k</m>. Expand the new integrand and use Integration By Parts, with <m>dv = \sec^2(x) \ dx</m>.</p></li>
 
-        <li><p>If <m>m</m> is even and <m>n=0</m>, rewrite <m>\tan^m(x)</m> as
-            <me>
-              \tan^m(x) = \tan^{m-2}(x) \tan^2(x) = \tan^{m-2}(x) (\sec^2(x) -1) = \tan^{m-2}\sec^2(x) -\tan^{m-2}(x) .
-            </me>
+        <li xml:id="idea_trig_int_2d"><p>If <m>m</m> is even and <m>n=0</m>, rewrite <m>\tan^m(x)</m> as
+            <md>
+              <mrow>\tan^m(x) \amp = \tan^{m-2}(x) \tan^2(x)</mrow> 
+              <mrow>\amp = \tan^{m-2}(x) (\sec^2(x) -1)</mrow> 
+              <mrow>\amp = \tan^{m-2}\sec^2(x) -\tan^{m-2}(x) </mrow>.
+            </md>
             So
             <me>
-              \int\tan^m(x) \ dx = \underbrace{\int\tan^{m-2}\sec^2(x) \ dx}_{\text{ apply rule \#1 } } - \underbrace{\int\tan^{m-2}(x) \ dx}_{\text{ apply rule \#4 again } }.
+              \int\tan^m(x) \ dx = \underbrace{\int\tan^{m-2}\sec^2(x) \ dx}_{\text{ apply rule #1 } } - \underbrace{\int\tan^{m-2}(x) \ dx}_{\text{ apply rule #4 again } }.
             </me>
           </p></li>
       </ol>
     </insight>
 
-    <p>The techniques described in items 1 and 2 of <xref ref="idea_trig_int_2">Key Idea</xref> are relatively straightforward, but the techniques in items 3 and 4 can be rather tedious. A few examples will help with these methods.</p>
+    <p>The techniques described in <xref ref="idea_trig_int_2a" > Item</xref> and <xref ref="idea_trig_int_2b" > Item</xref> of <xref ref="idea_trig_int_2">Key Idea</xref> are relatively straightforward, but the techniques in <xref ref="idea_trig_int_2c" > Item</xref> and <xref ref="idea_trig_int_2d" > Item</xref> can be rather tedious. A few examples will help with these methods.</p>
 
     <example xml:id="ex_trigint5">
       <title>Integrating powers of tangent and secant</title>
@@ -313,7 +358,7 @@
         <p>Evaluate <m>\ds\int \tan^2(x) \sec^6(x) \ dx</m>.</p>
       </statement>
       <solution>
-        <p>Since the power of secant is even, we use rule <hash />1 from <xref ref="idea_trig_int_2">Key Idea</xref> and pull out a <m>\sec^2(x)</m> in the integrand. We convert the remaining powers of secant into powers of tangent.
+        <p>Since the power of secant is even, we use <xref ref="idea_trig_int_2a" > Rule</xref>from <xref ref="idea_trig_int_2">Key Idea</xref> and pull out a <m>\sec^2(x)</m> in the integrand. We convert the remaining powers of secant into powers of tangent.
           <md>
             <mrow>\int \tan^2(x) \sec^6(x) \ dx \amp = \int\tan^2(x) \sec^4(x) \sec^2(x) \ dx</mrow>
             <mrow>\amp = \int \tan^2(x) \big(1+\tan^2(x) \big)^2\sec^2(x) \ dx</mrow>
@@ -332,30 +377,42 @@
         <p>Evaluate <m>\ds\int \sec^3(x) \ dx</m>.</p>
       </statement>
       <solution xml:id="fig_trigint1">
-        <p>We apply rule <hash />3 from <xref ref="idea_trig_int_2">Key Idea</xref> as the power of secant is odd and the power of tangent is even (0 is an even number). We use Integration by Parts; the rule suggests letting <m>dv = \sec^2(x) \ dx</m>, meaning that <m>u = \sec(x)</m>.</p>
+        <p>We apply <xref ref="idea_trig_int_2c" > Rule</xref> from <xref ref="idea_trig_int_2">Key Idea</xref> as the power of secant is odd and the power of tangent is even (0 is an even number). We use Integration by Parts; the rule suggests letting <m>dv = \sec^2(x) \ dx</m>, meaning that <m>u = \sec(x)</m>.</p>
 
         <!--
         <caption>Setting up Integration by Parts.</caption>
         -->
-
-        <sidebyside>
-          <md>
-            <mrow>u\amp = \sec(x) \amp  v\amp =\text{?}</mrow>
-            <mrow>du\amp = \text{?}  \amp  dv\amp =\sec^2(x) \ dx</mrow>
-          </md>
-          <m>\Rightarrow</m>
-          <md>
-            <mrow>u\amp = \sec(x) \amp  v\amp =\tan(x) </mrow>
-            <mrow>du\amp = \sec(x) \tan(x) \ dx \amp  dv\amp =\sec^2(x) \ dx</mrow>
-          </md>
-        </sidebyside>
+      <p>
+          <tabular>
+            <col width="30%" halign="center"/>
+            <col width="30%" halign="center"/>
+            <col width="30%" halign="center"/>
+            <row>
+              <cell>
+                <md>
+                  <mrow>u\amp = \sec(x) \amp  v\amp =\text{?}</mrow>
+                  <mrow>du\amp = \text{?}  \amp  dv\amp =\sec^2(x) \ dx</mrow>
+                </md>
+              </cell>
+              <cell>
+                <md>\Rightarrow</md>
+              </cell>
+              <cell>
+                <md>
+                  <mrow>u\amp = \sec(x) \amp  v\amp =\tan(x) </mrow>
+                  <mrow>du\amp = \sec(x) \tan(x) \ dx \amp  dv\amp =\sec^2(x) \ dx</mrow>
+                </md>       
+              </cell>
+            </row>
+          </tabular>
+        </p>
 
         <p>Employing Integration by Parts, we have
           <md>
             <mrow>\int \sec^3(x) \ dx  	\amp =	\int \underbrace{\sec(x) }_u\cdot\underbrace{\sec^2(x) \ dx}_{dv}</mrow>
             <mrow>\amp =	\sec(x) \tan(x) - \int \sec(x) \tan^2(x) \ dx.</mrow>
-            <intertext>This new integral also requires applying rule <hash />3 of <xref ref="idea_trig_int_2">Key Idea</xref>:</intertext>
-            <mrow>\amp = \sec(x) \tan(x) - \int \sec(x) \big(\sec^2(x) -1\big)\ dx</mrow>
+            <intertext>This new integral also requires applying <xref ref="idea_trig_int_2c" > Rule</xref> of <xref ref="idea_trig_int_2">Key Idea</xref>:</intertext>
+            <mrow>\int \sec^3(x)\ dx\amp = \sec(x) \tan(x) - \int \sec(x) \big(\sec^2(x) -1\big)\ dx</mrow>
             <mrow>\amp =	\sec(x) \tan(x) - \int \sec^3(x) \ dx + \int \sec(x) \ dx</mrow>
             <mrow>\amp = \sec(x) \tan(x) -\int \sec^3(x) \ dx + \ln\abs{\sec(x) +\tan(x) }</mrow>
             <intertext>In previous applications of Integration by Parts, we have seen where the original integral has reappeared in our work. We resolve this by adding <m>\int \sec^3(x) \ dx</m> to both sides, giving:</intertext>
@@ -374,18 +431,18 @@
         <p>Evaluate <m>\ds\int\tan^6(x) \ dx</m>.</p>
       </statement>
       <solution>
-        <p>We employ rule <hash />4 of <xref ref="idea_trig_int_2">Key Idea</xref>.
+        <p>We employ <xref ref="idea_trig_int_2c" > Rule</xref>of <xref ref="idea_trig_int_2">Key Idea</xref>.
           <md>
             <mrow>\int \tan^6(x) \ dx \amp = \int \tan^4(x) \tan^2(x) \ dx</mrow>
             <mrow>\amp = \int\tan^4(x) \big(\sec^2(x) -1\big)\ dx</mrow>
             <mrow>\amp = \int\tan^4(x) \sec^2(x) \ dx - \int\tan^4(x) \ dx</mrow>
-            <intertext>Integrate the first integral with substitution, <m>u=\tan(x)</m>; integrate the second by employing rule <hash />4 again.</intertext>
+            <intertext>Integrate the first integral with substitution, <m>u=\tan(x)</m>; integrate the second by employing rule <xref ref="idea_trig_int_2d" > Rule</xref> again.</intertext>
             <mrow>\amp =	\frac15\tan^5(x) -\int\tan^2(x) \tan^2(x) \ dx</mrow>
             <mrow>\amp =	\frac15\tan^5(x) -\int\tan^2(x) \big(\sec^2(x) -1\big)\ dx</mrow>
-            <mrow>\amp = \frac15\tan^5(x) -\int\tan^2(x) \sec^2(x) \ dx + \int\tan^2(x) \ dx</mrow>
-            <intertext>Again, use substitution for the first integral and rule <hash />4 for the second.</intertext>
+            <mrow>\amp = \frac15\tan^5(x) -\underbrace{\int\tan^2(x) \sec^2(x) \ dx}_{a} + \underbrace{\int\tan^2(x) \ dx}_b</mrow>
+            <intertext>Again, use substitution (<m>u=\tan(x)</m>) for the first integral (a) and <xref ref="idea_trig_int_2d" > Rule</xref> for the second (b).</intertext>
             <mrow>\amp = \frac15\tan^5(x) -\frac13\tan^3(x) +\int\big(\sec^2(x) -1\big)\ dx</mrow>
-            <mrow>\amp =	 \frac15\tan^5(x) -\frac13\tan^3(x) +\tan(x) - x+C.</mrow>
+            <mrow>\int \tan^6(x)\ dx\amp =	 \frac15\tan^5(x) -\frac13\tan^3(x) +\tan(x) - x+C.</mrow>
           </md>
         </p>
       </solution>
@@ -393,7 +450,7 @@
 
     <p>These latter examples were admittedly long, with repeated applications of the same rule. Try to not be overwhelmed by the length of the problem, but rather admire how robust this solution method is. A trigonometric function of a high power can be systematically reduced to trigonometric functions of lower powers until all antiderivatives can be computed.</p>
 
-    <p>The next section introduces an integration technique known as Trigonometric Substitution, a clever combination of Substitution and the Pythagorean Theorem.</p>
+    <p><xref ref="sec_trig_sub">Section</xref> introduces an integration technique known as Trigonometric Substitution, a clever combination of Substitution and the Pythagorean Theorem.</p>
   </subsection>
 
   <exercises>

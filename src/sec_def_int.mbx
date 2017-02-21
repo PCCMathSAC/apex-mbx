@@ -9,35 +9,28 @@
 
     <p>It is interesting to note that this solution of 50 feet can be represented graphically. Consider <xref ref="fig_defint1">Figure</xref>, where the constant velocity of 5ft/s is graphed on the axes. Shading the area under the line from <m>t=0</m> to <m>t=10</m> gives a rectangle with an area of 50 square units; when one considers the units of the axes, we can say this area represents 50 ft.</p>
 
+    <todo>Add some sort of style guidelines for areas.</todo>
+
     <figure xml:id="fig_defint1" >
       <caption>The area under a constant velocity function corresponds to distance traveled.</caption>
       <!-- START figures/fig_defint1.tex -->
-      <image xml:id="img_defint1" >
+      <image xml:id="img_defint1"  width="47%">
         <description></description>
         <latex-image-code>
           <![CDATA[
           \begin{tikzpicture}
           \begin{axis}[%
-          axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-          %			xtick={1,2,3,4},%
-          %			extra x ticks={.33},
-          %			extra x tick labels={$1/3$},
-			ytick={5},
-			%%extra y ticks={-5,-3,...,7},%
-			ymin=-.9,ymax=5.9,%
-			xmin=-.9,xmax=10.9%
-          ]
+                      x label style={at={(axis description cs:0.85,0.05)},anchor=north},
+                      y label style={at={(axis description cs:0,.85)},rotate=90,anchor=south},
+                      xlabel={$t$ (s)},
+                      ylabel={$y$ (ft/s)},
+			                ytick={5},
+			                ymin=-.9,ymax=5.9,
+			                xmin=-.9,xmax=10.9]
 
+          \addplot+[-,domain=0:10] {5};
           \addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} |- (axis cs:0,0) --cycle;
-          \addplot [thick, {\colorone},domain=0:10] {5};
-
-
           \end{axis}
-
-          \node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
-          \node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
           \end{tikzpicture}
           ]]>
         </latex-image-code>
@@ -47,9 +40,9 @@
 
     <p>Now consider a slightly harder situation (and not particularly realistic): an object travels in a straight line with a constant velocity of 5ft/s for 10 seconds, then instantly reverses course at a rate of 2ft/s for 4 seconds. (Since the object is traveling in the opposite direction when reversing course, we say the velocity is a constant <m>-2</m>ft/s.) How far away from the starting point is the object <mdash /> what is its <em>displacement</em>?</p>
 
-    <p>Here we use <q>Distance <m>=</m> Rate<m>_1</m> <times /> Time<m>_1</m> + Rate<m>_2</m> <times /> Time<m>_2</m>,</q> which is
+    <p>Here we use <q>Displacement <m>=</m> Rate<m>_1</m> <times /> Time<m>_1</m> + Rate<m>_2</m> <times /> Time<m>_2</m>,</q> which is
       <me>
-        \text{ Distance }  \ = 5\cdot10 + (-2)\cdot 4 = 42\text{ ft. }
+        \text{ Displacement }  \ = 5\cdot10 + (-2)\cdot 4 = 42\text{ ft. }
       </me>
     </p>
 
@@ -64,34 +57,28 @@
     <figure xml:id="fig_defint2" >
       <caption>The total displacement is the area above the <m>t</m><ndash />axis minus the area below the <m>t</m><ndash />axis.</caption>
       <!-- START figures/fig_defint2.tex -->
-      <image xml:id="img_defint2" >
+      <image xml:id="img_defint2"  width="47%">
         <description></description>
         <latex-image-code>
           <![CDATA[
           \begin{tikzpicture}
           \begin{axis}[%
-          axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-          %			xtick={1,2,3,4},%
-          %			extra x ticks={.33},
-          %			extra x tick labels={$1/3$},
-			ytick={-2,5},
-			%%extra y ticks={-5,-3,...,7},%
-			minor x tick num=4,
-			ymin=-2.9,ymax=5.9,%
-			xmin=-.9,xmax=15.9%
-          ]
+                      axis on top,
+                      x label style={at={(axis description cs:0.85,0.3)},anchor=south},
+                      y label style={at={(axis description cs:0,.85)},rotate=90,anchor=south},
+                      xlabel={$t$ (s)},
+                      ylabel={$y$ (ft/s)},
+			                ytick={-2,5},
+			                minor x tick num=4,
+                      ymin=-2.9,ymax=5.9,
+                      xmin=-.9,xmax=15.9]
 
+          \addplot+[-,domain=0:10] {5};
           \addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} \closedcycle;
-          \addplot [thick, {\colorone},domain=0:10] {5};
+          
           \addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
           \addplot [thick, {\colorone},domain=10:14] {-2};
-
           \end{axis}
-
-          \node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
-          \node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
           \end{tikzpicture}
           ]]>
         </latex-image-code>
@@ -115,20 +102,29 @@
         </ol>
       </statement>
       <solution>
-        <p>It is straightforward to find the initial velocity; at time <m>t=0</m>, <m>v(0) =-32\cdot 0+48 = 48</m> ft/s.</p>
+        <p>It is straightforward to find the initial velocity; at time <m>t=0</m>, 
+        <md>
+          <mrow>v(0) \amp =-32\cdot 0+48 </mrow>
+          <mrow>\amp = 48</mrow>
+      </md> 
+      The initial velocity was <m>48</m>ft/s.</p>
 
-        <p>To answer questions about the height of the object, we need to find the object's position function <m>s(t)</m>. This is an initial value problem, which we studied in the previous section. We are told the initial height is 0, i.e., <m>s(0) = 0</m>. We know <m>s'(t) = v(t) = -32t+48</m>. To find <m>s</m>, we find the indefinite integral of <m>v(t)</m>:
-          <me>
-            \int v(t)\ dt = \int (-32t+48)\ dt = -16t^2+48t+C = s(t).
-          </me>
+        <p>To answer questions about the height of the object, we need to find the object's position function <m>s(t)</m>. This is an initial value problem, which we studied in the previous section. We are told the initial height is <m>0</m>, i.e., <m>s(0) = 0</m>. We know <m>s'(t) = v(t) = -32t+48</m>. To find <m>s</m>, we find the indefinite integral of <m>v(t)</m>:
+          <md>
+            <mrow> s(t) \amp =\int v(t)\ dt </mrow>
+            <mrow> \amp = \int (-32t+48)\ dt</mrow>
+            <mrow>\amp = -16t^2+48t+C </mrow>
+          </md>.
         </p>
 
         <p>Since <m>s(0) = 0</m>, we conclude that <m>C=0</m> and <m>s(t) = -16t^2+48t</m>.</p>
 
-        <p>To find the maximum height of the object, we need to find the maximum of <m>s</m>. Recalling our work finding extreme values, we find the critical points of <m>s</m> by setting its derivative equal to 0 and solving for <m>t</m>:
-          <me>
-            s'(t) = -32t+48 = 0  \Rightarrow  t=48/32 = 1.5\text{s} .
-          </me>
+        <p>To find the maximum height of the object, we need to find the maximum of <m>s</m>. Recalling our work finding extreme values, we find the critical points of <m>s</m> by setting its derivative (the velocity function) equal to <m>0</m> and solving for <m>t</m>:
+          <md>
+            <mrow>0 \amp = -32t+48</mrow>
+            <mrow>t \amp =48/32</mrow>
+            <mrow>\amp = 1.5\text{s}</mrow>.
+          </md>
         </p>
 
         <p>(Notice how we ended up just finding when the velocity was 0ft/s!) The first derivative test shows this is a maximum, so the maximum height of the object is found at
@@ -137,43 +133,36 @@
           </me>
         </p>
 
-        <p>The height at time <m>t=2</m> is now straightforward to compute: it is <m>s(2) = 32</m>ft.</p>
+        <p>The height at time <m>t=2</m> is now straightforward to compute:
+         <md>
+          <mrow>s(2) \amp =-16(2)^2+48(2)</mrow>
+          <mrow>\amp = 32</mrow>
+         </md>.
+        The height is <m>32</m> ft after <m>2</m> seconds.</p>
 
-        <p>While we have answered all three questions, let's look at them again graphically, using the concepts of area that we explored earlier.</p>
+        <p>While we have answered all three questions (using derivatives and antiderivatives), let's look at them again graphically, using the concepts of area that we explored earlier.</p>
 
         <p><xref ref="fig_defint3">Figure</xref> shows a graph of <m>v(t)</m> on axes from <m>t=0</m> to <m>t=3</m>. It is again straightforward to find <m>v(0)</m>. How can we use the graph to find the maximum height of the object?</p>
 
-        <figure xml:id="fig_defint3" >
+        <figure xml:id="fig_defint3">
           <caption>A graph of <m>v(t)=-32t+48</m>; the shaded areas help determine displacement.</caption>
           <!-- START figures/fig_defint3.tex -->
-          <image xml:id="img_defint3" >
+          <image xml:id="img_defint3"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[%
-              axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-              %			xtick={1,2,3,4},%
-              %			extra y ticks={48,-48},
-              %			extra y tick labels={$48$,$-48$},
-              %			ytick={-2,5},
-			%%extra y ticks={-5,-3,...,7},%
-              %			minor x tick num=4,
-			ymin=-55,ymax=55,%
-			xmin=-.5,xmax=3.2%
-              ]
+              \begin{axis}[axis on top,
+                          ymin=-55,ymax=55,
+                          xmin=-.5,xmax=3.2,
+                          x label style={at={(axis description cs:0.85,0.3)},anchor=south},
+                          y label style={at={(axis description cs:0,.85)},rotate=90,anchor=south},
+                          xlabel={$t$ (s)},
+                          ylabel={$y$ (ft/s)},]
 
-              \addplot [{\coloronefill},fill={\coloronefill},domain=0:3,area style] {-32*x+48} \closedcycle;
-              \addplot [thick, {\colorone},domain=0:3] {-32*x+48};
-              %\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
-              %\addplot [thick, {\colorone},domain=10:14] {-2};
-
+              \addplot+[-,domain=0:3] {-32*x+48};
+              \addplot [{\coloronefill},fill={\coloronefill},domain=0:3,area style] {-32*x+48} \closedcycle;         
               \end{axis}
-
-              \node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
-              \node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -182,9 +171,12 @@
         </figure>
 
         <p>Recall how in our previous work that the displacement of the object (in this case, its height) was found as the area under the velocity curve, as shaded in the figure. Moreover, the area between the curve and the <m>t</m><ndash />axis that is below the <m>t</m><ndash />axis counted as <q>negative</q> area. That is, it represents the object coming back toward its starting position. So to find the maximum distance from the starting point <mdash /> the maximum height <mdash /> we find the area under the velocity line that is above the <m>t</m><ndash />axis, i.e., from <m>t=0</m> to <m>t=1.5</m>. This region is a triangle; its area is
-          <me>
-            \text{ Area }  = \frac12\text{ Base }  \times \text{ Height }  =\frac12\times 1.5\text{s} \times 48\text{ ft/s }  = 36\text{ ft } ,
-          </me>
+          <md>
+            <mrow>\text{ Area } \amp = \frac12\text{ Base }  \times \text{ Height }</mrow>
+            <mrow>\amp =\frac12\times 1.5\text{s} \times 48\text{ ft/s }</mrow>
+            <mrow>\amp = 36\text{ ft } </mrow>
+            ,
+          </md>
           which matches our previous calculation of the maximum height.</p>
 
         <p>Finally, to find the height of the object at time <m>t=2</m> we calculate the total signed area under the velocity function from <m>t=0</m> to <m>t=2</m>. This signed area is equal to <m>s(2)</m>, the displacement (i.e., signed distance) from the starting position at <m>t=0</m> to the position at time <m>t=2</m>. That is,</p>
@@ -192,9 +184,10 @@
         <p>Displacement = Area above the <m>t</m><ndash />axis <m>-</m> Area below <m>t</m><ndash />axis.</p>
 
         <p>The regions are triangles, and we find
-          <me>
-            \text{ Displacement }  = \frac12(1.5\text{s} )(48\text{ ft/s } ) - \frac12(.5\text{s} )(16\text{ ft/s } ) = 32\text{ ft } .
-          </me>
+          <md>
+            <mrow>\text{ Displacement } \amp = \frac12(1.5\text{s} )(48\text{ ft/s } ) - \frac12(.5\text{s} )(16\text{ ft/s } )</mrow> 
+            <mrow> \amp = 32\text{ ft } </mrow>.
+          </md>
         </p>
 
         <p>This also matches our previous calculation of the height at <m>t=2</m>.</p>
@@ -236,30 +229,18 @@
         <figure xml:id="fig_defint4" >
           <caption>A graph of <m>f(x)</m> in <xref ref="ex_defint4">Example</xref>.</caption>
           <!-- START figures/fig_defint4.tex -->
-          <image xml:id="img_defint4" >
+          <image xml:id="img_defint4"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[%
-              axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick={1,2,3,4,5},%
-              %			extra y ticks={48,-48},
-              %			extra y tick labels={$48$,$-48$},
-			ytick={-1,1},
-			%%extra y ticks={-5,-3,...,7},%
-              %			minor x tick num=4,
-			ymin=-1.1,ymax=1.1,%
-			xmin=-.5,xmax=5.5%
-              ]
+              \begin{axis}[axis on top,
+                           ymin=-1.1,ymax=1.1,%
+                           xmin=-.5,xmax=5.5]
 
+              \addplot [-] coordinates {(0,0) (1,1) (5,-1)};
               \addplot [{\coloronefill},fill={\coloronefill},area style] coordinates {(0,0) (1,1) (5,-1)} \closedcycle;
-              \addplot [thick, {\colorone}] coordinates {(0,0) (1,1) (5,-1)};
-              %\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
-              %\addplot [thick, {\colorone},domain=10:14] {-2};
-
+              
               \end{axis}
 
 
@@ -298,33 +279,17 @@
               <figure xml:id="fig_defint4a" >
                 <caption>A graph of <m>5f</m> in <xref ref="ex_defint4">Example</xref>. (Yes, it looks just like the graph of <m>f</m> in <xref ref="fig_defint4">Figure</xref>, just with a different <m>y</m>-scale.)</caption>
                 <!-- START figures/fig_defint4a.tex -->
-                <image xml:id="img_defint4a" >
+                <image xml:id="img_defint4a"  width="47%">
                   <description></description>
                   <latex-image-code>
                     <![CDATA[
                     \begin{tikzpicture}
-                    \begin{axis}[%
-                    axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick={1,2,3,4,5},%
-                    %			extra y ticks={48,-48},
-                    %			extra y tick labels={$48$,$-48$},
-			ytick={-5,5},
-			%%extra y ticks={-5,-3,...,7},%
-                    %			minor x tick num=4,
-			ymin=-5.5,ymax=5.5,%
-			xmin=-.5,xmax=5.5%
-                    ]
-
+                    \begin{axis}[axis on top,
+                                ymin=-5.5,ymax=5.5,
+                                xmin=-.5,xmax=5.5]
+                    \addplot+[-] coordinates {(0,0) (1,5) (5,-5)};
                     \addplot [{\coloronefill},fill={\coloronefill},area style] coordinates {(0,0) (1,5) (5,-5)} \closedcycle;
-                    \addplot [thick, {\colorone}] coordinates {(0,0) (1,5) (5,-5)};
-                    %\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
-                    %\addplot [thick, {\colorone},domain=10:14] {-2};
-
                     \end{axis}
-
-
 
                     \end{tikzpicture}
                     ]]>
@@ -400,34 +365,21 @@
         <figure xml:id="fig_defint5" >
           <caption>A graph of a function in <xref ref="ex_defint5">Example</xref>.</caption>
           <!-- START figures/fig_defint5.tex -->
-          <image xml:id="img_defint5" >
+          <image xml:id="img_defint5"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[%
-              axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick=\empty,%
-			extra x ticks={.5,1.5,3},
-			extra x tick labels={$a$,$b$,$\ c$},
-			ytick=\empty,
-			%%extra y ticks={-5,-3,...,7},%
-              %			minor x tick num=4,
-			ymin=-1.1,ymax=1.1,%
-			xmin=-.2,xmax=3.5%
-              ]
-
-              \addplot [smooth,{\coloronefill},fill={\coloronefill},area style,domain=0.5:3] {(x-.5)*(x-1.5)*(x-3)} \closedcycle;
-              \addplot [thick, {\colorone},smooth,domain=0.5:3] {(x-.5)*(x-1.5)*(x-3)};
-              %\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
-              %\addplot [thick, {\colorone},domain=10:14] {-2};
-
+              \begin{axis}[axis on top,
+                          xtick=\empty,
+                          extra x ticks={.5,1.5,3},
+                          extra x tick labels={$a$,$b$,$\ c$},
+                          ytick=\empty,
+                          ymin=-1.1,ymax=1.1,
+                          xmin=-.2,xmax=3.5]
+              \addplot+[-,domain=0.5:3,samples=50] {(x-.5)*(x-1.5)*(x-3)};
+              \addplot[smooth,{\coloronefill},fill={\coloronefill},area style,domain=0.5:3] {(x-.5)*(x-1.5)*(x-3)} \closedcycle;
               \end{axis}
-
-
-
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -451,23 +403,25 @@
 
           <li><p><m>\int_a^c f(x)\ dx</m> is the total signed area under <m>f</m> between <m>x=a</m> and <m>x=c</m>. Since the region below the <m>x</m><ndash />axis looks to be larger than the region above, we conclude that the definite integral has a value less than 0.</p></li>
 
-          <li><p>Note how the second integral has the bounds <q>reversed.</q> Therefore <m>\int_c^b f(x)\ dx</m> represents a positive number, greater than the area described by the first definite integral. Hence <m>\int_c^b f(x)\ dx</m> is greater.</p></li>
+          <li><p>Note how the second integral has the bounds <q>reversed.</q> Therefore <m>\int_c^b f(x)\ dx=-\int_b^c f(x)\ dx</m> represents a positive number, greater than the area described by the first definite integral. Hence <m>\int_c^b f(x)\ dx</m> is greater.</p></li>
         </ol>
       </solution>
     </example>
 
     <p>The area definition of the definite integral allows us to use geometry compute the definite integral of some simple functions.</p>
 
-    <p>\begin{example}[Evaluating definite integrals using geometry] Evaluate the following definite integrals:
+    <example xml:id="ex_defint8">
+      <title>Evaluating definite integrals using geometry</title>
+    <p>Evaluate the following definite integrals:
       <me>
         1. \ \int_{-2}^5 (2x-4)\ dx \qquad 2.\ \int_{-3}^3 \sqrt{9-x^2}\ dx.
       </me>
     </p>
 
-    <p>\begin{solution}</p>
-
+    <solution>
+      <p>
     <ol>
-      <li><p>It is useful to sketch the function in the integrand, as shown in <xref ref="fig_defint8">Figure</xref>(a). We see we need to compute the areas of two regions, which we have labeled <m>R_1</m> and <m>R_2</m>. Both are triangles, so the area computation is straightforward:
+      <li><p>It is useful to sketch the function in the integrand, as shown in <xref ref="fig_defint8a">Figure</xref>. We see we need to compute the areas of two regions, which we have labeled <m>R_1</m> and <m>R_2</m>. Both are triangles, so the area computation is straightforward:
           <me>
             R_1: \frac12(4)(8) = 16 \qquad R_2: \frac12(3)6 = 9.
           </me>
@@ -477,44 +431,28 @@
           </me>
         </p></li>
 
-      <li><p>Recognize that the integrand of this definite integral describes a half circle, as sketched in <xref ref="fig_defint8">Figure</xref>(b), with radius 3. Thus the area is:
+      <li><p>Recognize that the integrand of this definite integral describes a half circle, as sketched in <xref ref="fig_defint8b">Figure</xref>, with radius 3. Thus the area is:
           <me>
             \int_{-3}^3 \sqrt{9-x^2}\ dx = \frac12\pi r^2 = \frac 92\pi.
           </me>
-          \end{solution}
-          \end{example}
 
-          <figure xml:id="fig_defint8" >
-          <caption>A graph of <m>f(x) = 2x-4</m> in (a) and <m>f(x) = \sqrt{9-x^2}</m> in (b), from <xref ref="ex_defint8">Example</xref>.</caption>
-          <sidebyside>
-            <figure>
-              <caption>(a)</caption>
+          <sidebyside xml:id="fig_defint8" widths="47% 47%">
+            <caption>Graphs from <xref ref="ex_defint8">Example</xref></caption>
+            <figure xml:id="fig_defint8a">
+              <caption><m>f(x) = 2x-4</m> </caption>
               <!-- START figures/fig_defint8a.tex -->
-              <image xml:id="img_defint8a" >
+              <image xml:id="img_defint8a">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
                   \begin{tikzpicture}
-                  \begin{axis}[%
-                  axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick={-2,2,5},%
-                  %			extra x ticks={.5,1.5,3},
-                  %			extra x tick labels={$a$,$b$,$\ c$},
-                  %			ytick=\empty,
-			%%extra y ticks={-5,-3,...,7},%
-                  %			minor x tick num=4,
-			ymin=-11,ymax=11,%
-			xmin=-3.5,xmax=5.5%
-                  ]
-
+                  \begin{axis}[axis on top,
+                              ymin=-11,ymax=11,%
+                              xmin=-3.5,xmax=5.5]
+                  \addplot+[-,domain=-2:5] {2*x-4};
                   \addplot [{\coloronefill},fill={\coloronefill},area style,domain=-2:5] {2*x-4} \closedcycle;
-                  \addplot [thick, {\colorone},domain=-2:5] {2*x-4};
-
-                  \draw [black,fill=black] (axis cs: -2,-8) node [shift={(-6pt,-7pt)}] {\scriptsize $(-2,-8)$} circle (1.5pt);
-                  \draw [black,fill=black] (axis cs: 5,6) node [above left] {\scriptsize $(5,6)$} circle (1.5pt);
-
+                  \addplot[soliddot] coordinates{(-2,-8)} node[right]{\small $(-2,-8)$};
+                  \addplot[soliddot] coordinates{(5,6)} node[left]{\small $(5,6)$};   
                   \draw (axis cs:-1,-2) node {\scriptsize $R_1$};
                   \draw (axis cs:4.2,2) node {\scriptsize $R_2$};
 
@@ -529,38 +467,25 @@
               <!-- figures/fig_defint8a.tex END -->
             </figure>
 
-            <figure>
-              <caption>(b)</caption>
+            <figure xml:id="fig_defint8b">
+              <caption><m>f(x) = \sqrt{9-x^2}</m></caption>
               <!-- START figures/fig_defint8b.tex -->
               <image xml:id="img_defint8b" >
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
                   \begin{tikzpicture}
-                  \begin{axis}[%
-                  axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick={-3,3},%
-                  %			extra x ticks={.5,1.5,3},
-                  %			extra x tick labels={$a$,$b$,$\ c$},
-			extra y ticks={1,2,3,4},%
-			extra y tick labels=\empty,
-			ytick={5},
-                  %			minor y tick num=4,
-                  %			minor x tick num=4,
-			ymin=-.5,ymax=5.5,%
-			xmin=-3.5,xmax=3.5%
-                  ]
+                  \begin{axis}[axis on top,
+                               xtick={-3,3},
+                               extra y ticks={1,2,3,4},
+                               extra y tick labels=\empty,
+                               ytick={5},
+                               ymin=-.5,ymax=5.5,
+                               xmin=-3.5,xmax=3.5]
 
+                   \addplot+[-,domain=0:180,samples=50] ({3*cos (x)},{3*sin(x)});
                   \addplot [smooth,{\coloronefill},fill={\coloronefill},area style,domain=0:180] ({3*cos (x)},{3*sin(x)}) \closedcycle;
-                  \addplot [smooth,thick, {\colorone},domain=0:180] ({3*cos (x)},{3*sin(x)});
-
-
                   \end{axis}
-
-
-
                   \end{tikzpicture}
                   ]]>
                 </latex-image-code>
@@ -569,11 +494,12 @@
             </figure>
           </sidebyside>
 
-          </figure>
 
         </p></li>
     </ol>
-
+  </p>
+  </solution>
+</example>
     <example xml:id="ex_defint6">
       <title>Understanding motion given velocity</title>
       <statement>
@@ -582,35 +508,31 @@
         <figure xml:id="fig_defint6" >
           <caption>A graph of a velocity in <xref ref="ex_defint6">Example</xref>.</caption>
           <!-- START figures/fig_defint6.tex -->
-          <image xml:id="img_defint6" >
+          <image xml:id="img_defint6"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[%
-              axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick=\empty,%
-			extra x ticks={2,6,8},
-			extra x tick labels={$\ a$,$b\ $,$\ c$},
-			ytick={-5,5,10,15},
-			%%extra y ticks={-5,-3,...,7},%
-              %			minor x tick num=4,
-			ymin=-9,ymax=17,%
-			xmin=-.5,xmax=8.5%
-              ]
+              \begin{axis}[axis on top,
+                          x label style={at={(axis description cs:0.85,0.35)},anchor=south},
+                          y label style={at={(axis description cs:-.05,.85)},rotate=90,anchor=south},
+                          xlabel={$t$ (s)},
+                          ylabel={$y$ (ft/s)},
+                          xtick=\empty,
+                          extra x ticks={2,6,8},
+                          extra x tick labels={$\ a$,$b\ $,$\ c$},
+                          ytick={-5,5,10,15},
+                          ymin=-9,ymax=17,
+                          xmin=-.5,xmax=8.5]
 
+              \addplot+[-,domain=0:8, samples=50] {15/64*x*(x-2)*(x-6)*(x-8)};
               \addplot [smooth,{\coloronefill},fill={\coloronefill},area style,domain=0:8] {15/64*x*(x-2)*(x-6)*(x-8)} \closedcycle;
-              \addplot [smooth,thick, {\colorone},domain=0:8] {15/64*x*(x-2)*(x-6)*(x-8)};
+              
 
               \draw (axis cs:.9,-4) node {\scriptsize $11$};
               \draw (axis cs:7.1,-4) node {\scriptsize $11$};
               \draw (axis cs:4,8) node {\scriptsize $38$};
               \end{axis}
-
-              \node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
-              \node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
               \end{tikzpicture}
               ]]>
             </latex-image-code>
@@ -630,32 +552,18 @@
     <figure xml:id="fig_defint7" >
       <caption>What is the area below <m>y=x^2</m> on <m>[0,3]</m>? The region is not a usual geometric shape.</caption>
       <!-- START figures/fig_defint7.tex -->
-      <image xml:id="img_defint7" >
+      <image xml:id="img_defint7"  width="47%">
         <description></description>
         <latex-image-code>
           <![CDATA[
           \begin{tikzpicture}
-          \begin{axis}[%
-          axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick={1,2,3},%
-          %			extra x ticks={2,6,8},
-          %			extra x tick labels={$\ a$,$b\ $,$\ c$},
-          %			ytick={-5,5,10,15},
-			%%extra y ticks={-5,-3,...,7},%
-          %			minor x tick num=4,
-			ymin=-1,ymax=11,%
-			xmin=-1,xmax=3.5%
-          ]
-
+          \begin{axis}[axis on top,
+                      xtick={1,2,3},
+                      ymin=-1,ymax=11,
+                      xmin=-1,xmax=3.5]
+          \addplot+[-,domain=0:3] {x^2};
           \addplot [{\coloronefill},fill={\coloronefill},area style,domain=0:3] {x^2} \closedcycle;
-          \addplot [smooth,thick, {\colorone},domain=0:3] {x^2};
-
           \end{axis}
-
-
-
           \end{tikzpicture}
           ]]>
         </latex-image-code>
@@ -663,7 +571,7 @@
       <!-- figures/fig_defint7.tex END -->
     </figure>
 
-    <p>In the next section we will explore how to find the areas of such regions.</p>
+    <p>In <xref ref="sec_riemann">Section</xref> we will explore how to find the areas of such regions.</p>
   </introduction>
   <exercises>
     <exercisegroup>
@@ -756,7 +664,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_05.tex -->
-              <image xml:id="img_05_02_ex_05" >
+              <image xml:id="img_05_02_ex_05"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -834,7 +742,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_06.tex -->
-              <image xml:id="img_05_02_ex_06" >
+              <image xml:id="img_05_02_ex_06"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -914,7 +822,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_07.tex -->
-              <image xml:id="img_05_02_ex_07" >
+              <image xml:id="img_05_02_ex_07"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -995,7 +903,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_08.tex -->
-              <image xml:id="img_05_02_ex_08" >
+              <image xml:id="img_05_02_ex_08"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -1073,7 +981,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_09.tex -->
-              <image xml:id="img_05_02_ex_09" >
+              <image xml:id="img_05_02_ex_09"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -1144,7 +1052,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_10.tex -->
-              <image xml:id="img_05_02_ex_10" >
+              <image xml:id="img_05_02_ex_10"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -1217,7 +1125,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_11.tex -->
-              <image xml:id="img_05_02_ex_11" >
+              <image xml:id="img_05_02_ex_11"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -1290,7 +1198,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_12.tex -->
-              <image xml:id="img_05_02_ex_12" >
+              <image xml:id="img_05_02_ex_12"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -1364,7 +1272,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_13.tex -->
-              <image xml:id="img_05_02_ex_13" >
+              <image xml:id="img_05_02_ex_13"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -1440,7 +1348,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_14.tex -->
-              <image xml:id="img_05_02_ex_14" >
+              <image xml:id="img_05_02_ex_14"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -1503,7 +1411,7 @@
           <statement>
             <figure>
               <!-- START figures/fig_05_02_ex_15.tex -->
-              <image xml:id="img_05_02_ex_15" >
+              <image xml:id="img_05_02_ex_15"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
