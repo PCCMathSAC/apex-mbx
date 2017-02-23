@@ -53,8 +53,8 @@
                 <mrow>\sin^m(x) \amp = \sin^{2k+1}(x)</mrow>
                 <mrow>\amp  = \sin^{2k}(x) \sin(x) </mrow>
                 <mrow>\amp = (\sin^2(x) )^k\sin(x) </mrow>
-                <mrow>\amp = (1-\cos^2(x) )^k\sin(x)  </mrow>.
-              </md>
+                <mrow>\amp = (1-\cos^2(x) )^k\sin(x)  </mrow>
+						</md>.
               Then
               <md>
                 <mrow>\int \sin^m(x) \cos^n(x) \ dx \amp = \int (1-\cos^2(x) )^k\sin(x) \cos^n(x) \ dx</mrow>
@@ -95,8 +95,8 @@
         <p>Our integral is now <m>\ds \int (1-\cos^2(x) )^2\cos^8(x) \sin(x) \ dx</m>. Let <m>u = \cos(x)</m>, hence <m>du = -\sin(x) \ dx</m>. Making the substitution and expanding the integrand gives
           <md>
             <mrow>\int (1-\cos^2)^2\cos^8(x) \sin(x) \ dx \amp = -\int (1-u^2)^2u^8\ du </mrow>
-            <mrow>\amp = -\int \big(1-2u^2+u^4\big)u^8\ du</mrow><mrow> \amp = -\int \big(u^8-2u^{10}+u^{12}\big)\ du</mrow>.
-          </md>
+            <mrow>\amp = -\int \big(1-2u^2+u^4\big)u^8\ du</mrow><mrow> \amp = -\int \big(u^8-2u^{10}+u^{12}\big)\ du</mrow>
+						</md>.
         </p>
 
         <p>This final integral is not difficult to evaluate, giving
@@ -120,8 +120,8 @@
           <md>
             <mrow>\cos^9(x) \amp = \cos^8(x) \cos(x) </mrow>
             <mrow>\amp = \left(\cos^2(x)\right)^4\cos(x) </mrow>
-            <mrow>\amp = \left(1-\sin^2(x)\right)^4\cos(x) </mrow>.
-          </md>
+            <mrow>\amp = \left(1-\sin^2(x)\right)^4\cos(x) </mrow>
+						</md>.
         </p>
 
         <p>We rewrite the integral as
@@ -222,15 +222,15 @@
           <md>
            <mrow> \underbrace{\int\cos(2x)\ dx}_{b} \amp = \frac12\sin(2x)+C</mrow>
             <mrow>\underbrace{\int\cos^2(2x)\ dx}_{c} \amp = \int \frac{1+\cos(4x)}2\ dx </mrow>
-            <mrow>\amp = \frac12\big(x+\frac14\sin(4x)\big)+C</mrow>.
-          </md>
+            <mrow>\amp = \frac12\big(x+\frac14\sin(4x)\big)+C</mrow>
+          </md>.
         </p>
 
         <p>Finally, we rewrite <m>\cos^3(2x)</m> as
           <md>
             <mrow>\cos^3(2x) \amp = \cos^2(2x)\cos(2x)</mrow>
-            <mrow>\amp = \big(1-\sin^2(2x)\big)\cos(2x)</mrow>.
-          </md>
+            <mrow>\amp = \big(1-\sin^2(2x)\big)\cos(2x)</mrow>(.)
+	</md>
         </p>
 
         <p>Letting <m>u=\sin(2x)</m>, we have <m>du = 2\cos(2x)\ dx</m>, hence
@@ -312,8 +312,8 @@
             <md>
               <mrow>\sec^n(x) \amp = \sec^{2k}(x)</mrow>
               <mrow>\amp = \sec^{2k-2}(x) \sec^2(x)</mrow>
-              <mrow>\amp = (1+\tan^2(x) )^{k-1}\sec^2(x)</mrow>.
-            </md>
+              <mrow>\amp = (1+\tan^2(x) )^{k-1}\sec^2(x)</mrow>
+						</md>.
             Then
             <md>
               <mrow>\int\tan^m(x) \sec^n(x) \ dx \amp =\int\tan^m(x) (1+\tan^2(x) )^{k-1}\sec^2(x) \ dx</mrow>
@@ -325,8 +325,8 @@
             <md>
               <mrow>\tan^m(x) \sec^n(x) \amp = \tan^{2k+1}(x) \sec^n(x)</mrow>
               <mrow>\amp = \tan^{2k}(x) \sec^{n-1}(x) \sec(x) \tan(x) </mrow> 
-              <mrow>\amp = (\sec^2(x) -1)^k\sec^{n-1}(x) \sec(x) \tan(x) </mrow>.
-            </md>
+              <mrow>\amp = (\sec^2(x) -1)^k\sec^{n-1}(x) \sec(x) \tan(x) </mrow>
+            </md>.
             Then
             <md>
               <mrow>\int\tan^m(x) \sec^n(x) \ dx \amp =\int(\sec^2(x) -1)^k\sec^{n-1}(x) \sec(x) \tan(x) \ dx</mrow>
@@ -340,8 +340,8 @@
             <md>
               <mrow>\tan^m(x) \amp = \tan^{m-2}(x) \tan^2(x)</mrow> 
               <mrow>\amp = \tan^{m-2}(x) (\sec^2(x) -1)</mrow> 
-              <mrow>\amp = \tan^{m-2}\sec^2(x) -\tan^{m-2}(x) </mrow>.
-            </md>
+              <mrow>\amp = \tan^{m-2}\sec^2(x) -\tan^{m-2}(x) </mrow>
+						</md>.
             So
             <me>
               \int\tan^m(x) \ dx = \underbrace{\int\tan^{m-2}\sec^2(x) \ dx}_{\text{ apply rule #1 } } - \underbrace{\int\tan^{m-2}(x) \ dx}_{\text{ apply rule #4 again } }.

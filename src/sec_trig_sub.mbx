@@ -19,20 +19,19 @@
         <p>Evaluate <m>\ds \int_{-3}^3\sqrt{9-x^2}\ dx</m>.</p>
       </statement>
       <solution>
-        <p>We begin by noting that <m>9\sin^2(\theta) + 9\cos^2(\theta) = 9</m>, and hence <m>9\cos^2(\theta) = 9-9\sin^2(\theta)</m>. If we let <m>x=3\sin(\theta)</m>, then <m>9-x^2 = 9-9\sin^2(\theta) = 9\cos^2(\theta)</m>.</p>
+        <p>We begin by noting that <m>9\left(\sin^2(\theta) + \cos^2(\theta)\right) = 9</m>, and hence <m>9\cos^2(\theta) = 9-9\sin^2(\theta)</m>. If we let <m>x=3\sin(\theta)</m>, then <m>9-x^2 = 9-9\sin^2(\theta) = 9\cos^2(\theta)</m>.</p>
 
         <p>Setting <m>x=3\sin(\theta)</m> gives <m>dx = 3\cos(\theta) \ d\theta</m>. We are almost ready to substitute. We also wish to change our bounds of integration. The bound <m>x=-3</m> corresponds to <m>\theta = -\pi/2</m> (for when <m>\theta = -\pi/2</m>, <m>x=3\sin(\theta) = -3</m>). Likewise, the bound of <m>x=3</m> is replaced by the bound <m>\theta = \pi/2</m>. Thus
           <md>
-            <mrow>\int_{-3}^3\sqrt{9-x^2}\ dx \amp = \int_{-\pi/2}^{\pi/2} \sqrt{9-9\sin^2(\theta) } (3\cos(\theta) )\ d\theta</mrow>
+            <mrow>\int_{-3}^3\sqrt{9-x^2}\ dx \amp = \int_{-\pi/2}^{\pi/2} \sqrt{9-9\sin^2(\theta) }\ (3\cos(\theta) )\ d\theta</mrow>
             <mrow>\amp = \int_{-\pi/2}^{\pi/2} 3\sqrt{9\cos^2(\theta) } \cos(\theta) \ d\theta</mrow>
             <mrow>\amp =\int_{-\pi/2}^{\pi/2} 3\abs{3\cos(\theta) } \cos(\theta) \ d\theta.</mrow>
             <intertext>On <m>[-\pi/2,\pi/2]</m>, <m>\cos(\theta)</m> is always positive, so we can drop the absolute value bars, then employ a power--reducing formula:</intertext>
-          </md>
-          <md>
             <mrow>\amp = \int_{-\pi/2}^{\pi/2} 9\cos^2(\theta) \ d\theta</mrow>
             <mrow>\amp = \int_{-\pi/2}^{\pi/2} \frac{9}{2}\big(1+\cos(2\theta)\big)\ d\theta</mrow>
-            <mrow>\amp  = \frac92 \big(\theta +\frac12\sin(2\theta)\big)\Bigg|_{-\pi/2}^{\pi/2}= \frac92\pi.</mrow>
-          </md>
+            <mrow>\amp  = \frac92 \big(\theta +\frac12\sin(2\theta)\big)\Bigg|_{-\pi/2}^{\pi/2}</mrow>
+            <mrow>\amp = \frac92\pi</mrow>
+						</md>.
         </p>
 
         <p>This matches our answer from before.</p>
@@ -41,27 +40,18 @@
 
     <p>We now describe in detail Trigonometric Substitution. This method excels when dealing with integrands that contain <m>\sqrt{a^2-x^2}</m>, <m>\sqrt{x^2-a^2}</m> and <m>\sqrt{x^2+a^2}</m>. The following Key Idea outlines the procedure for each case, followed by more examples. Each right triangle acts as a reference to help us understand the relationships between <m>x</m> and <m>\theta</m>.</p>
 
-    <sidebyside>
+    <todo> Consider using a table similar to what I use in my notes with the reference triangle.</todo>
     <insight xml:id="idea_trigsub">
       <title>Trigonometric Substitution</title>
       <ol>
-        <li>
-          <title>(a)</title>
+        <li xml:id="idea_trigsuba">
           <p>
-
-            <sidebyside>
-              For integrands containing <m>\sqrt{a^2-x^2}</m>:<index><main>integration</main><sub>trig. subst.</sub></index>
-
-		Let <m>x=a\sin(\theta)</m>,   <m>dx = a\cos(\theta) \ d\theta</m>
-	
-	Thus <m>\theta = \sin^{-1}(x/a)</m>, for <m>-\pi/2\leq \theta\leq \pi/2</m>.
-	
-	On this interval, <m>\cos(\theta) \geq 0</m>, so
-	
-	<m>\sqrt{a^2-x^2} = a\cos(\theta)</m>
+            For integrands containing <m>\sqrt{a^2-x^2}</m>:<index><main>integration</main><sub>trig. subst.</sub></index>
+            Let <m>x=a\sin(\theta)</m>,   <m>dx = a\cos(\theta) \ d\theta</m>.
+            Thus <m>\theta = \sin^{-1}(x/a)</m>, for <m>-\pi/2\leq \theta\leq \pi/2</m>. On this interval, <m>\cos(\theta) \geq 0</m>, so <m>\sqrt{a^2-x^2} = a\cos(\theta)</m>.
 
               <!-- START figures/fig_trigsub_intro1.tex -->
-              <image xml:id="img_trigsub_intro1" >
+              <image xml:id="img_trigsub_intro1"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -76,27 +66,17 @@
                 </latex-image-code>
               </image>
               <!-- figures/fig_trigsub_intro1.tex END -->
-            </sidebyside>
+
 
           </p></li>
 
-        <li>
-          <title>(b)</title>
+        <li xml:id="idea_trigsubb">
           <p>
-
-            <figure>
-              For integrands containing <m>\sqrt{x^2+a^2}</m>:
-
-		Let <m>x=a\tan(\theta)</m>,   <m>dx = a\sec^2(\theta) \ d\theta</m>
-	
-	Thus <m>\theta = \tan^{-1}(x/a)</m>, for <m>-\pi/2 \lt  \theta \lt  \pi/2</m>.
-	
-	On this interval, <m>\sec(\theta) > 0</m>, so
-	
-	<m>\sqrt{x^2+a^2} = a\sec(\theta)</m>
+            For integrands containing <m>\sqrt{x^2+a^2}</m>:
+            Let <m>x=a\tan(\theta)</m>,   <m>dx = a\sec^2(\theta) \ d\theta</m>. Thus <m>\theta = \tan^{-1}(x/a)</m>, for <m>-\pi/2 \lt  \theta \lt  \pi/2</m>. On this interval, <m>\sec(\theta) > 0</m>, so <m>\sqrt{x^2+a^2} = a\sec(\theta)</m>.
 
               <!-- START figures/fig_trigsub_intro3.tex -->
-              <image xml:id="img_trigsub_intro3" >
+              <image xml:id="img_trigsub_intro3"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -111,28 +91,14 @@
                 </latex-image-code>
               </image>
               <!-- figures/fig_trigsub_intro3.tex END -->
-            </figure>
 
           </p></li>
 
-        <li>
-          <title>(c)</title>
-          <p>
-
-            <figure>
-              For integrands containing <m>\sqrt{x^2-a^2}</m>:
-
-		Let <m>x=a\sec(\theta)</m>,   <m>dx = a\sec(\theta) \tan(\theta) \ d\theta</m>
-	
-	Thus <m>\theta = \sec^{-1}(x/a)</m>. If <m>x/a\geq 1</m>, then <m>0\leq\theta\lt \pi/2</m>; if <m>x/a \leq -1</m>, then <m>\pi/2\lt \theta\leq \pi</m>.
-	
-	We restrict our work to where <m>x\geq a</m>, so <m>x/a\geq 1</m>, and <m>0\leq\theta\lt \pi/2</m>.
-	On this interval, <m>\tan(\theta) \geq 0</m>, so
-	
-	<m>\sqrt{x^2-a^2} = a\tan(\theta)</m>
+        <li xml:id="idea_trigsubc">
+          <p>For integrands containing <m>\sqrt{x^2-a^2}</m>: Let <m>x=a\sec(\theta)</m>,   <m>dx = a\sec(\theta) \tan(\theta) \ d\theta</m>. Thus <m>\theta = \sec^{-1}(x/a)</m>. If <m>x/a\geq 1</m>, then <m>0\leq\theta\lt \pi/2</m>; if <m>x/a \leq -1</m>, then <m>\pi/2\lt \theta\leq \pi</m>. We restrict our work to where <m>x\geq a</m>, so <m>x/a\geq 1</m>, and <m>0\leq\theta\lt \pi/2</m>. On this interval, <m>\tan(\theta) \geq 0</m>, so <m>\sqrt{x^2-a^2} = a\tan(\theta)</m>.
 
               <!-- START figures/fig_trigsub_intro2.tex -->
-              <image xml:id="img_trigsub_intro2" >
+              <image xml:id="img_trigsub_intro2"  width="47%">
                 <description></description>
                 <latex-image-code>
                   <![CDATA[
@@ -147,12 +113,32 @@
                 </latex-image-code>
               </image>
               <!-- figures/fig_trigsub_intro2.tex END -->
-            </figure>
 
           </p></li>
       </ol>
     </insight>
-    </sidebyside>
+   
+   <todo>Add an easier example here first!</todo>
+
+    <example xml:id="ex_trigsub2">
+      <title>Using Trigonometric Substitution</title>
+      <statement>
+        <p>Evaluate <m>\ds \int \frac{1}{\sqrt{x^2-4}}\ dx</m>.</p>
+      </statement>
+      <solution>
+          <p>Using <xref ref="idea_trigsubc">Item</xref> from <xref ref="idea_trigsub">Key Idea</xref>, we recognize <m>a=2</m> and set <m>x= 2\sec(\theta)</m> for <m>0 \leq \theta \lt \pi/2</m>. This makes <m>dx = 2\sec(\theta)\tan(\theta) \ d\theta</m>. We will use the Pythagorean identity <m>\tan^2(\theta)=\sec^2(\theta)-1</m> and the fact that <m>\tan(\theta)\geq 0</m> on the interval. Substituting, we have:
+          <md>
+            <mrow>\int \frac{1}{\sqrt{x^2-4}}\ dx \amp = \int \frac{1}{\sqrt{4\sec^2(\theta)-4}}\cdot 2 \sec(\theta)\tan(\theta)\ d\theta</mrow>
+            <mrow>\amp = 2\int \frac{1}{\sqrt{4(\sec^2(\theta)-1)}}\cdot \sec(\theta)\tan(\theta)\ d\theta</mrow>
+            <mrow>\amp = 2\int \frac{1}{\sqrt{4(\tan^2(\theta)}}\cdot\sec(\theta)\tan(\theta)\ d\theta</mrow>
+            <mrow>\amp = 2\int \frac{1}{2\abs{\tan(\theta)}}\sec(\theta)\tan(\theta)\ d\theta</mrow>
+            <mrow>\amp = \int \sec(\theta)\ d\theta</mrow>
+            <mrow>\amp =\ln \abs{\sec(\theta)+\tan(\theta)}</mrow>
+          </md>
+          However, our original integral involved <m>x</m>.
+        </p>
+      </solution>
+    </example>
 
     <example xml:id="ex_trigsub3">
       <title>Using Trigonometric Substitution</title>
@@ -160,7 +146,7 @@
         <p>Evaluate <m>\ds \int \frac{1}{\sqrt{5+x^2}}\ dx</m>.</p>
       </statement>
       <solution>
-        <p>Using <xref ref="idea_trigsub">Key Idea</xref>(b), we recognize <m>a=\sqrt{5}</m> and set <m>x= \sqrt{5}\tan(\theta)</m>. This makes <m>dx = \sqrt{5}\sec^2(\theta) \ d\theta</m>. We will use the fact that <m>\sqrt{5+x^2} = \sqrt{5+5\tan^2(\theta) } = \sqrt{5\sec^2(\theta) } = \sqrt{5}\sec(\theta)</m>. Substituting, we have:
+        <p>Using <xref ref="idea_trigsubb">Item</xref><xref ref="idea_trigsub">Key Idea</xref>, we recognize <m>a=\sqrt{5}</m> and set <m>x= \sqrt{5}\tan(\theta)</m>. This makes <m>dx = \sqrt{5}\sec^2(\theta) \ d\theta</m>. We will use the fact that <m>\sqrt{5+x^2} = \sqrt{5+5\tan^2(\theta) } = \sqrt{5\sec^2(\theta) } = \sqrt{5}\sec(\theta)</m>. Substituting, we have:
           <md>
             <mrow>\int \frac{1}{\sqrt{5+x^2}}\ dx \amp = \int \frac{1}{\sqrt{5+5\tan^2(\theta) }}\sqrt{5}\sec^2(\theta) \ d\theta</mrow>
             <mrow>\amp = \int \frac{\sqrt{5}\sec^2(\theta) }{\sqrt{5}\sec(\theta) } \ d\theta</mrow>
