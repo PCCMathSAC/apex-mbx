@@ -54,7 +54,7 @@
                 <mrow>\amp  = \sin^{2k}(x) \sin(x) </mrow>
                 <mrow>\amp = (\sin^2(x) )^k\sin(x) </mrow>
                 <mrow>\amp = (1-\cos^2(x) )^k\sin(x)  </mrow>
-						</md>.
+              </md>.
               Then
               <md>
                 <mrow>\int \sin^m(x) \cos^n(x) \ dx \amp = \int (1-\cos^2(x) )^k\sin(x) \cos^n(x) \ dx</mrow>
@@ -96,7 +96,7 @@
           <md>
             <mrow>\int (1-\cos^2)^2\cos^8(x) \sin(x) \ dx \amp = -\int (1-u^2)^2u^8\ du </mrow>
             <mrow>\amp = -\int \big(1-2u^2+u^4\big)u^8\ du</mrow><mrow> \amp = -\int \big(u^8-2u^{10}+u^{12}\big)\ du</mrow>
-						</md>.
+          </md>.
         </p>
 
         <p>This final integral is not difficult to evaluate, giving
@@ -121,7 +121,7 @@
             <mrow>\cos^9(x) \amp = \cos^8(x) \cos(x) </mrow>
             <mrow>\amp = \left(\cos^2(x)\right)^4\cos(x) </mrow>
             <mrow>\amp = \left(1-\sin^2(x)\right)^4\cos(x) </mrow>
-						</md>.
+          </md>.
         </p>
 
         <p>We rewrite the integral as
@@ -229,8 +229,8 @@
         <p>Finally, we rewrite <m>\cos^3(2x)</m> as
           <md>
             <mrow>\cos^3(2x) \amp = \cos^2(2x)\cos(2x)</mrow>
-            <mrow>\amp = \big(1-\sin^2(2x)\big)\cos(2x)</mrow>(.)
-	</md>
+            <mrow>\amp = \big(1-\sin^2(2x)\big)\cos(2x)</mrow>
+          </md>.
         </p>
 
         <p>Letting <m>u=\sin(2x)</m>, we have <m>du = 2\cos(2x)\ dx</m>, hence
@@ -239,7 +239,7 @@
             <mrow>\amp = \int \frac12(1-u^2)\ du</mrow>
             <mrow>\amp = \frac12\Big(u-\frac13u^3\Big)+C</mrow>
             <mrow>\amp =	\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)+C</mrow>
-          </md>
+          </md>.
         </p>
 
         <p>Putting all the pieces together, we have
@@ -248,7 +248,7 @@
              <mrow>\amp =\int \frac18\big(1+\cos(2x)-\cos^2(2x)-\cos^3(2x)\big)\ dx</mrow>
             <mrow>\amp = \frac18\Big[x+\frac12\sin(2x)-\frac12\big(x+\frac14\sin(4x)\big)-\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)\Big]+C</mrow>
             <mrow>\amp =\frac18\Big[\frac12x-\frac18\sin(4x)+\frac16\sin^3(2x)\Big]+C</mrow>
-          </md>
+          </md>.
         </p>
       </solution>
     </example>
@@ -267,7 +267,7 @@
         <mrow>\sin(mx)\sin(nx) \amp = \frac12\Big[\cos\big((m-n)x\big)-\cos\big((m+n)x\big)\Big]</mrow>
         <mrow>\cos(mx)\cos(nx) \amp = \frac12\Big[\cos\big((m-n)x\big)+\cos\big((m+n)x\big)\Big]</mrow>
         <mrow>\sin(mx)\cos(nx) \amp =	\frac12\Big[\sin\big((m-n)x\big)+\sin\big((m+n)x\big)\Big]</mrow>
-      </md>
+      </md>.
     </p>
 
     <example xml:id="ex_trigint4">
@@ -313,7 +313,7 @@
               <mrow>\sec^n(x) \amp = \sec^{2k}(x)</mrow>
               <mrow>\amp = \sec^{2k-2}(x) \sec^2(x)</mrow>
               <mrow>\amp = (1+\tan^2(x) )^{k-1}\sec^2(x)</mrow>
-						</md>.
+            </md>.
             Then
             <md>
               <mrow>\int\tan^m(x) \sec^n(x) \ dx \amp =\int\tan^m(x) (1+\tan^2(x) )^{k-1}\sec^2(x) \ dx</mrow>
@@ -341,7 +341,7 @@
               <mrow>\tan^m(x) \amp = \tan^{m-2}(x) \tan^2(x)</mrow> 
               <mrow>\amp = \tan^{m-2}(x) (\sec^2(x) -1)</mrow> 
               <mrow>\amp = \tan^{m-2}\sec^2(x) -\tan^{m-2}(x) </mrow>
-						</md>.
+            </md>.
             So
             <me>
               \int\tan^m(x) \ dx = \underbrace{\int\tan^{m-2}\sec^2(x) \ dx}_{\text{ apply rule #1 } } - \underbrace{\int\tan^{m-2}(x) \ dx}_{\text{ apply rule #4 again } }.
@@ -442,8 +442,8 @@
             <mrow>\amp = \frac15\tan^5(x) -\underbrace{\int\tan^2(x) \sec^2(x) \ dx}_{a} + \underbrace{\int\tan^2(x) \ dx}_b</mrow>
             <intertext>Again, use substitution (<m>u=\tan(x)</m>) for the first integral (a) and <xref ref="idea_trig_int_2d" > Rule</xref> for the second (b).</intertext>
             <mrow>\amp = \frac15\tan^5(x) -\frac13\tan^3(x) +\int\big(\sec^2(x) -1\big)\ dx</mrow>
-            <mrow>\int \tan^6(x)\ dx\amp =	 \frac15\tan^5(x) -\frac13\tan^3(x) +\tan(x) - x+C.</mrow>
-          </md>
+            <mrow>\int \tan^6(x)\ dx\amp =	 \frac15\tan^5(x) -\frac13\tan^3(x) +\tan(x) - x+C</mrow>
+          </md>.
         </p>
       </solution>
     </example>
