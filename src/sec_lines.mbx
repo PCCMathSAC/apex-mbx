@@ -965,7 +965,9 @@
 
   <exercises>
     <exercisegroup>
-      <title>Terms and Concepts</title>
+      <introduction>
+        <p>Terms and Concepts</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1036,8 +1038,9 @@
       </exercise>
     </exercisegroup>
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises, write the vector, parametric and symmetric equations of the lines described.</p>
+      <introduction>
+        <p>In the following exercises, write the vector, parametric and symmetric equations of the lines described.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1059,27 +1062,134 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$v">
+              <static>(6,1,7)+t\langle-3,2,5\rangle</static>
+            </var>
+            <var name="$p">
+              <static>x=6-3t, y=1+2t, z=7+5t</static>
+            </var>
+            <var name="$s">
+              <static>\frac{x-6}{-3}=\frac{y-1}{2}=\frac{z-7}{5}</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->variables->are(t=>"Real");
+              $v=Compute("(6,1,7)+t&lt;-3,2,5>");
+              $vev=$v->cmp(checker=>sub{my($c,$st,$aH)=@_;
+               $ds=Formula($st)->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");}else{return 0;};
+               $dc=$c->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=Formula($st)->eval(t=>0);$cp=$c->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return ($par and $tch);
+              });
+              Context("Numeric");
+              Context()->variables->add(y=>"Real",z=>"Real",t=>"Real");
+              parser::Assignment->Allow;
+              $p=List(Formula("x=6-3t"),Formula("y=1+2t"),Formula("z=7+5t"));
+              $pev=$p->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");
+               Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0,0)+t*&lt;0,0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$var;my$for;
+                if($entry->type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                else{($var,$for)=split('=',"$entry");
+                 $var=Formula("$var");$for=Formula("$for");
+                 if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for->usesOneOf("x","y","z"))
+                  {push(@err,"Your $ith entry is not a parametrization")unless $aH->{isPreview};next;}
+                };
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->type eq "Assignment"){
+                  my($vj,$fj)=split('=',$st->[$j]->string);
+                  $vj=Formula("$vj");
+                  if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH->{isPreview};$used = 1;last;}
+                }}
+                if(!$used){
+                 if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0>")}
+                 elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0>")}
+                 else{$sV=$sV+Formula("&lt;0,0,$for>")};
+               }}
+               if(!$aH->{isPreview}){
+                push(@err,"You need to provide more parametrizations")if $i&lt;3;
+                push(@err,"You have given too many parametrizations")if $i>3;
+               }
+               $sV=Formula($sV);
+               $ds=$sV->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");} else{return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return (3*($par and $tch),@err);
+              });
+              Context("Numeric");
+              Context()->variables->add(y=>'Real',z=>'Real');
+              Context()->operators->redefine('=',using=>',',from=>'Numeric');
+              Context()->operators->set('='=>{string=>' = ',TeX=>'='});
+              Context()->lists->set(List=>{separator=>" = "});
+              $s=List("(x-6)/-3","(y-1)/2","(z-7)/5");
+              $sev=$s->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");
+               Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0,0)+t*&lt;0,0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$dv;my$incpt;my%uses;
+                if($entry->class ne "Formula"){push(@err,"Your $ith quantity $entry is not a formula");next;}
+                else{$uses{'x'}=$entry->usesOneOf("x");$uses{'y'}=$entry->usesOneOf("y");$uses{'z'}=$entry->usesOneOf("z");
+                 if($uses{'x'}+$uses{'y'}+$uses{'z'}!=1){push(@err,"Your $ith quantity is not a formula in only x, y, or z");next;};
+                 $dv=$entry->D('x')->eval(x=>0,y=>0,z=>0)+$entry->D('y')->eval(x=>0,y=>0,z=>0)+$entry->D('z')->eval(x=>0,y=>0,z=>0);
+                 $incpt=$entry->eval(x=>0,y=>0,z=>0)/$dv;
+                };
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->class eq "Formula"){
+                  $uj{'x'}=$st->[$j]->usesOneOf("x");
+                  $uj{'y'}=$st->[$j]->usesOneOf("y");
+                  $uj{'z'}=$st->[$j]->usesOneOf("z");
+                   if(($uses{'x'} and $uj{'x'}) or ($uses{'y'} and $uj{'y'}) or ($uses{'z'} and $uj{'z'})){
+                    push(@err,"Your $ith quantity uses the same variable as a previous one")unless $aH->{isPreview};
+                  $used=1;last;
+                }}}
+                if(!$used){
+                 if($uses{'x'}){$sV=$sV+Formula("&lt;t/$dv-$incpt,0,0>")};
+                 if($uses{'y'}){$sV=$sV+Formula("&lt;0,t/$dv-$incpt,0>")};
+                 if($uses{'z'}){$sV=$sV+Formula("&lt;0,0,t/$dv-$incpt>")};
+               }}
+               if(!$aH->{isPreview}){
+                push(@err,"You need to provide more symmetric quantities") if $i&lt;3;
+                push(@err,"You have given too many symmetric quantities") if $i>3;
+               }
+               $sV=Formula($sV);
+               $ds=$sV->D('t')->reduce;
+               if($ds->isConstant) {$ds = Vector("$ds");} else {return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return (3*($par and $tch),@err);
+              });
+
             </pg-code>
           </setup>
           <statement>
-            <p>Passes through <m>P=(6,1,7)</m>, parallel to <m>\vec d=\la -3,2,5\ra</m>.</p>
+            <p><m>\ell</m> is a line that passes through <m>P=(6,1,7)</m>, parallel to <m>\vec d=\la -3,2,5\ra</m>.</p>
+            <p>A vector equation for <m>\ell</m> is <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30" />.</p>
+            <p>Parametric equations for <m>\ell</m> (separated using commas) are <var name="$p" evaluator="$pev" width="50" />.</p>
+            <p>Symmetric equations for <m>\ell</m> are <var name="$s" evaluator="$sev" width="50" />. (Enter <c>DNE</c> if they are not defined.)</p>
           </statement>
-          <solution>
-            <p>vector: <m>\ell(t) = \la 6,1,7\ra + t\la -3,2,5\ra</m></p>
-
-            <p>parametric: <m>x= 6-3t</m>, <m>y=1+2t</m>, <m>z = 7+5t</m></p>
-
-            <p>symmetric: <m>-(x-6)/3 =(y-1)/2 = (z-7)/5</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1102,28 +1212,143 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$v">
+              <static>(1,-2,3)+t\langle4,7,2\rangle</static>
+            </var>
+            <var name="$p">
+              <static>x=1+4t, y=-2+7t, z=3+2t</static>
+            </var>
+            <var name="$s">
+              <static>\frac{x-1}{4}=\frac{y+2}{7}=\frac{z-3}{2}</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->variables->are(t=>"Real");
+              $v=Compute("(1,-2,3)+t&lt;4,7,2>");
+              $vev=$v->cmp(checker=>sub{my($c,$st,$aH)=@_;
+               $ds=Formula($st)->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");}else{return 0;};
+               $dc=$c->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=Formula($st)->eval(t=>0);$cp=$c->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return ($par and $tch);
+              });
+              Context("Numeric");
+              Context()->variables->add(y=>"Real",z=>"Real",t=>"Real");
+              parser::Assignment->Allow;
+              $p=List(Formula("x=1+4t"),Formula("y=-2+7t"),Formula("z=3+2t"));
+              $pev=$p->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");
+               Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0,0)+t*&lt;0,0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$var;my$for;
+                if($entry->type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                else{
+                 ($var,$for)=split('=',"$entry");
+                 $var=Formula("$var");$for=Formula("$for");
+                 if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for->usesOneOf("x","y","z"))
+                  {push(@err,"Your $ith entry is not a parametrization")unless $aH->{isPreview};next;}
+                };
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->type eq "Assignment"){
+                  my($vj,$fj)=split('=',$st->[$j]->string);
+                  $vj=Formula("$vj");
+                  if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH->{isPreview};$used = 1;last;}
+                 }
+                }
+                if(!$used){
+                 if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0>")}
+                 elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0>")}
+                 else{$sV=$sV+Formula("&lt;0,0,$for>")};
+                }
+               }
+               if(!$aH->{isPreview}){
+                push(@err,"You need to provide more parametrizations")if $i&lt;3;
+                push(@err,"You have given too many parametrizations")if $i>3;
+               }
+               $sV=Formula($sV);
+               $ds=$sV->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");} else{return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return (3*($par and $tch),@err);
+              });
+              Context("Numeric");
+              Context()->variables->add(y=>'Real',z=>'Real');
+              Context()->operators->redefine('=',using=>',',from=>'Numeric');
+              Context()->operators->set('='=>{string=>' = ',TeX=>'='});
+              Context()->lists->set(List=>{separator=>" = "});
+              $s=List("(x-1)/4","(y+2)/7","(z-3)/2");
+              $sev=$s->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");
+               Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0,0)+t*&lt;0,0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$dv;my$incpt;my%uses;
+                if($entry->class ne "Formula"){push(@err,"Your $ith quantity $entry is not a formula");next;}
+                else {
+                 $uses{'x'}=$entry->usesOneOf("x");
+                 $uses{'y'}=$entry->usesOneOf("y");
+                 $uses{'z'}=$entry->usesOneOf("z");
+                 if($uses{'x'}+$uses{'y'}+$uses{'z'}!=1){push(@err,"Your $ith quantity is not a formula in only x, y, or z");next;};
+                 $dv=$entry->D('x')->eval(x=>0,y=>0,z=>0)+$entry->D('y')->eval(x=>0,y=>0,z=>0)+$entry->D('z')->eval(x=>0,y=>0,z=>0);
+                 $incpt=$entry->eval(x=>0,y=>0,z=>0)/$dv;
+                };
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->class eq "Formula"){
+                  $uj{'x'}=$st->[$j]->usesOneOf("x");
+                  $uj{'y'}=$st->[$j]->usesOneOf("y");
+                  $uj{'z'}=$st->[$j]->usesOneOf("z");
+                   if(($uses{'x'} and $uj{'x'}) or ($uses{'y'} and $uj{'y'}) or ($uses{'z'} and $uj{'z'})){
+                    push(@err,"Your $ith quantity uses the same variable as a previous one")unless $aH->{isPreview};
+                  $used=1;last;
+                  }
+                 }
+                }
+                if(!$used){
+                 if($uses{'x'}){$sV=$sV+Formula("&lt;t/$dv-$incpt,0,0>")};
+                 if($uses{'y'}){$sV=$sV+Formula("&lt;0,t/$dv-$incpt,0>")};
+                 if($uses{'z'}){$sV=$sV+Formula("&lt;0,0,t/$dv-$incpt>")};
+                }
+               }
+               if(!$aH->{isPreview}){
+                push(@err,"You need to provide more symmetric quantities") if $i&lt;3;
+                push(@err,"You have given too many symmetric quantities") if $i>3;
+               }
+               $sV=Formula($sV);
+               $ds=$sV->D('t')->reduce;
+               if($ds->isConstant) {$ds = Vector("$ds");} else {return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return (3*($par and $tch),@err);
+              });
+
             </pg-code>
           </setup>
           <statement>
-            <p>Passes through <m>P=(1,-2,3)</m> and <m>Q = (5,5,5)</m>.</p>
+            <p><m>\ell</m> is a line that passes through <m>P=(1,-2,3)</m> and <m>Q = (5,5,5)</m>.</p>
+            <p>A vector equation for <m>\ell</m> is <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30" />.</p>
+            <p>Parametric equations for <m>\ell</m> (separated using commas) are <var name="$p" evaluator="$pev" width="50" />.</p>
+            <p>Symmetric equations for <m>\ell</m> are <var name="$s" evaluator="$sev" width="50" />. (Enter <c>DNE</c> if they are not defined.)</p>
           </statement>
-          <solution>
-            <p>Answers can vary:
-              vector: <m>\ell(t) = \la 1,-2,3\ra + t\la 4,7,2\ra</m></p>
-
-            <p>parametric: <m>x= 1+4t</m>, <m>y=-2+7t</m>, <m>z = 3+2t</m></p>
-
-            <p>symmetric: <m>(x-1)/4 =(y+2)/7 = (z-3)/2</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1148,82 +1373,306 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$v">
+              <static>(5,1,9)+t\langle0,-1,0\rangle</static>
+            </var>
+            <var name="$p">
+              <static>x=5, y=1-t, z=9</static>
+            </var>
+            <var name="$s">
+              <static>\text{DNE}</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->variables->are(t=>"Real");
+              $v=Compute("(5,1,9)+t&lt;0,-1,0>");
+              $vev=$v->cmp(checker=>sub{my($c,$st,$aH)=@_;
+               $ds=Formula($st)->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");}else{return 0;};
+               $dc=$c->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=Formula($st)->eval(t=>0);$cp=$c->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return ($par and $tch);
+              });
+              Context("Numeric");
+              Context()->variables->add(y=>"Real",z=>"Real",t=>"Real");
+              parser::Assignment->Allow;
+              $p=List(Formula("x=5"),Formula("y=1-t"),Formula("z=9"));
+              $pev=$p->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");
+               Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0,0)+t*&lt;0,0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$var;my$for;
+                if($entry->type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                else{
+                 ($var,$for)=split('=',"$entry");
+                 $var=Formula("$var");$for=Formula("$for");
+                 if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for->usesOneOf("x","y","z"))
+                  {push(@err,"Your $ith entry is not a parametrization")unless $aH->{isPreview};next;}
+                };
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->type eq "Assignment"){
+                  my($vj,$fj)=split('=',$st->[$j]->string);
+                  $vj=Formula("$vj");
+                  if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH->{isPreview};$used = 1;last;}
+                 }
+                }
+                if(!$used){
+                 if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0>")}
+                 elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0>")}
+                 else{$sV=$sV+Formula("&lt;0,0,$for>")};
+                }
+               }
+               if(!$aH->{isPreview}){
+                push(@err,"You need to provide more parametrizations")if $i&lt;3;
+                push(@err,"You have given too many parametrizations")if $i>3;
+               }
+               $sV=Formula($sV);
+               $ds=$sV->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");} else{return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return (3*($par and $tch),@err);
+              });
             </pg-code>
           </setup>
           <statement>
-            <p>Passes through <m>P=(5,1,9)</m> and orthogonal to both</p>
-
-            <p><m>\vec d_1=\la 1,0,1\ra</m> and <m>\vec d_2=\la 2,0,3\ra</m>.</p>
+            <p><m>\ell</m> is a line that passes through <m>P=(5,1,9)</m> and is orthogonal to both <m>\vec d_1=\la 1,0,1\ra</m> and <m>\vec d_2=\la 2,0,3\ra</m>.</p>
+            <p>A vector equation for <m>\ell</m> is <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30" />.</p>
+            <p>Parametric equations for <m>\ell</m> (separated using commas) are <var name="$p" evaluator="$pev" width="50" />.</p>
+            <p>Symmetric equations for <m>\ell</m> are <var name="DNE" width="50" />. (Enter <c>DNE</c> if they are not defined.)</p>
           </statement>
-          <solution>
-            <p>Answers can vary; here the direction is given by <m>\vec d_1\times \vec d_2</m>:
-              vector: <m>\ell(t) = \la 5,1,9\ra + t\la 0,-1,0\ra</m></p>
-
-            <p>parametric: <m>x= 5</m>, <m>y=1-t</m>, <m>z = 9</m></p>
-
-            <p>symmetric: not defined, as some components of the direction are 0.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$v">
+              <static>(7,2,-1)+t\langle1,-1,2\rangle</static>
+            </var>
+            <var name="$p">
+              <static>x=7+t, y=2-t, z=-1+2t</static>
+            </var>
+            <var name="$s">
+              <static>x-7=2-y=\frac{z+1}{2}</static>
             </var>
             <pg-code>
+              Context("Vector");Context()->variables->are(t=>"Real");
+              $v=Compute("(7,2,-1)+t&lt;1,-1,2>");
+              $vev=$v->cmp(checker=>sub{my($c,$st,$aH)=@_;
+               $ds=Formula($st)->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");}else{return 0;};
+               $dc=$c->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=Formula($st)->eval(t=>0);$cp=$c->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return($par and $tch);
+              });
+              Context("Numeric");Context()->variables->add(y=>"Real",z=>"Real",t=>"Real");
+              parser::Assignment->Allow;
+              $p=List(Formula("x=7+t"),Formula("y=2-t"),Formula("z=-1+2t"));
+              $pev=$p->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");
+               Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0,0)+t*&lt;0,0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$var;my$for;
+                if($entry->type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                else{($var,$for)=split('=',"$entry");
+                 $var=Formula("$var");$for=Formula("$for");
+                 if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for->usesOneOf("x","y","z"))
+                  {push(@err,"Your $ith entry is not a parametrization")unless $aH->{isPreview};next;}
+                };
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->type eq "Assignment"){
+                  my($vj,$fj)=split('=',$st->[$j]->string);
+                  $vj=Formula("$vj");
+                  if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH->{isPreview};$used = 1;last;}
+                }}
+                if(!$used){
+                 if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0>")}
+                 elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0>")}
+                 else{$sV=$sV+Formula("&lt;0,0,$for>")};
+               }}
+               if(!$aH->{isPreview}){push(@err,"You need to provide more parametrizations")if $i&lt;3;push(@err,"You have given too many parametrizations")if $i>3;}
+               $sV=Formula($sV);
+               $ds=$sV->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");} else{return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return(3*($par and $tch),@err);
+              });
+              Context("Numeric");Context()->variables->add(y=>'Real',z=>'Real');
+              Context()->operators->redefine('=',using=>',',from=>'Numeric');
+              Context()->operators->set('='=>{string=>' = ',TeX=>'='});
+              Context()->lists->set(List=>{separator=>" = "});
+              $s=List("x-7","2-y","(z+1)/2");
+              $sev=$s->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0,0)+t*&lt;0,0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$dv;my$incpt;my%uses;
+                if($entry->class ne "Formula"){push(@err,"Your $ith quantity $entry is not a formula");next;}
+                else{$uses{'x'}=$entry->usesOneOf("x");$uses{'y'}=$entry->usesOneOf("y");$uses{'z'}=$entry->usesOneOf("z");
+                 if($uses{'x'}+$uses{'y'}+$uses{'z'}!=1){push(@err,"Your $ith quantity is not a formula in only x, y, or z");next;};
+                 $dv=$entry->D('x')->eval(x=>0,y=>0,z=>0)+$entry->D('y')->eval(x=>0,y=>0,z=>0)+$entry->D('z')->eval(x=>0,y=>0,z=>0);
+                 $incpt=$entry->eval(x=>0,y=>0,z=>0)/$dv;};
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->class eq "Formula"){
+                  $uj{'x'}=$st->[$j]->usesOneOf("x");$uj{'y'}=$st->[$j]->usesOneOf("y");$uj{'z'}=$st->[$j]->usesOneOf("z");
+                   if(($uses{'x'} and $uj{'x'}) or ($uses{'y'} and $uj{'y'}) or ($uses{'z'} and $uj{'z'})){push(@err,"Your $ith quantity uses the same variable as a previous one")unless $aH->{isPreview};$used=1;last;}
+                }}
+                if(!$used){
+                 if($uses{'x'}){$sV=$sV+Formula("&lt;t/$dv-$incpt,0,0>")};
+                 if($uses{'y'}){$sV=$sV+Formula("&lt;0,t/$dv-$incpt,0>")};
+                 if($uses{'z'}){$sV=$sV+Formula("&lt;0,0,t/$dv-$incpt>")};
+               }}
+               if(!$aH->{isPreview}){push(@err,"You need to provide more symmetric quantities") if $i&lt;3;push(@err,"You have given too many symmetric quantities") if $i>3;}
+               $sV=Formula($sV);$ds=$sV->D('t')->reduce;
+               if($ds->isConstant) {$ds = Vector("$ds");} else {return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);$tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return(3*($par and $tch),@err);
+              });
             </pg-code>
           </setup>
           <statement>
-            <p>Passes through the point of intersection of <m>\vec\ell_1(t)</m> and <m>\vec\ell_2(t)</m> and orthogonal to both lines, where</p>
-
-            <p><m>\vec\ell_1(t) = \la 2,1,1\ra + t\la5,1,-2\ra</m> and</p>
-
-            <p><m>\vec\ell_2(t) = \la-2,-1,2\ra+t\la 3,1,-1\ra</m>.</p>
+            <p><m>\ell</m> is a line that passes through the intersection of <m>\vec\ell_1(t)=\la2,1,1\ra+t\la5,1,-2\ra</m> and <m>\vec\ell_2(t)=\la-2,-1,2\ra+t\la 3,1,-1\ra</m>, and is orthogonal to both lines.</p>
+            <p>A vector equation for <m>\ell</m> is <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30" />.</p>
+            <p>Parametric equations for <m>\ell</m> (separated using commas) are <var name="$p" evaluator="$pev" width="50" />.</p>
+            <p>Symmetric equations for <m>\ell</m> are <var name="$s" evaluator="$sev" width="50" />. (Enter <c>DNE</c> if they are not defined.)</p>
           </statement>
-          <solution>
-            <p>Answers can vary; here the direction is given by <m>\vec d_1\times \vec d_2</m>:
-              vector: <m>\ell(t) = \la 7,2,-1\ra + t\la 1,-1,2\ra</m></p>
-
-            <p>parametric: <m>x= 7+t</m>, <m>y=2-t</m>, <m>z = -1+2t</m></p>
-
-            <p>symmetric: <m>x-7=2-y=(z+1)/2</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$v">
+              <static>(2,2,3)+t\langle5,-1,-3\rangle</static>
+            </var>
+            <var name="$p">
+              <static>x=2+5t, y=2-t, z=3-3t</static>
+            </var>
+            <var name="$s">
+              <static>\frac{x-2}{5}=2-y=\frac{z-3}{-3}</static>
             </var>
             <pg-code>
+              Context("Vector");Context()->variables->are(t=>"Real");
+              $v=Compute("(2,2,3)+t&lt;5,-1,-3>");
+              $vev=$v->cmp(checker=>sub{my($c,$st,$aH)=@_;
+               $ds=Formula($st)->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");}else{return 0;};
+               $dc=$c->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=Formula($st)->eval(t=>0);$cp=$c->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return($par and $tch);
+              });
+              Context("Numeric");Context()->variables->add(y=>"Real",z=>"Real",t=>"Real");
+              parser::Assignment->Allow;
+              $p=List(Formula("x=2+5t"),Formula("y=2-t"),Formula("z=3-3t"));
+              $pev=$p->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");
+               Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0,0)+t*&lt;0,0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$var;my$for;
+                if($entry->type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                else{($var,$for)=split('=',"$entry");
+                 $var=Formula("$var");$for=Formula("$for");
+                 if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for->usesOneOf("x","y","z"))
+                  {push(@err,"Your $ith entry is not a parametrization")unless $aH->{isPreview};next;}
+                };
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->type eq "Assignment"){
+                  my($vj,$fj)=split('=',$st->[$j]->string);
+                  $vj=Formula("$vj");
+                  if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH->{isPreview};$used = 1;last;}
+                }}
+                if(!$used){
+                 if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0>")}
+                 elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0>")}
+                 else{$sV=$sV+Formula("&lt;0,0,$for>")};
+               }}
+               if(!$aH->{isPreview}){push(@err,"You need to provide more parametrizations")if $i&lt;3;push(@err,"You have given too many parametrizations")if $i>3;}
+               $sV=Formula($sV);
+               $ds=$sV->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");} else{return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return(3*($par and $tch),@err);
+              });
+              Context("Numeric");Context()->variables->add(y=>'Real',z=>'Real');
+              Context()->operators->redefine('=',using=>',',from=>'Numeric');
+              Context()->operators->set('='=>{string=>' = ',TeX=>'='});
+              Context()->lists->set(List=>{separator=>" = "});
+              $s=List("(x-2)/5","-(y-2)","-(z-3)/3");
+              $sev=$s->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0,0)+t*&lt;0,0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$dv;my$incpt;my%uses;
+                if($entry->class ne "Formula"){push(@err,"Your $ith quantity $entry is not a formula");next;}
+                else{$uses{'x'}=$entry->usesOneOf("x");$uses{'y'}=$entry->usesOneOf("y");$uses{'z'}=$entry->usesOneOf("z");
+                 if($uses{'x'}+$uses{'y'}+$uses{'z'}!=1){push(@err,"Your $ith quantity is not a formula in only x, y, or z");next;};
+                 $dv=$entry->D('x')->eval(x=>0,y=>0,z=>0)+$entry->D('y')->eval(x=>0,y=>0,z=>0)+$entry->D('z')->eval(x=>0,y=>0,z=>0);
+                 $incpt=$entry->eval(x=>0,y=>0,z=>0)/$dv;};
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->class eq "Formula"){
+                  $uj{'x'}=$st->[$j]->usesOneOf("x");$uj{'y'}=$st->[$j]->usesOneOf("y");$uj{'z'}=$st->[$j]->usesOneOf("z");
+                   if(($uses{'x'} and $uj{'x'}) or ($uses{'y'} and $uj{'y'}) or ($uses{'z'} and $uj{'z'})){push(@err,"Your $ith quantity uses the same variable as a previous one")unless $aH->{isPreview};$used=1;last;}
+                }}
+                if(!$used){
+                 if($uses{'x'}){$sV=$sV+Formula("&lt;t/$dv-$incpt,0,0>")};
+                 if($uses{'y'}){$sV=$sV+Formula("&lt;0,t/$dv-$incpt,0>")};
+                 if($uses{'z'}){$sV=$sV+Formula("&lt;0,0,t/$dv-$incpt>")};
+               }}
+               if(!$aH->{isPreview}){push(@err,"You need to provide more symmetric quantities") if $i&lt;3;push(@err,"You have given too many symmetric quantities") if $i>3;}
+               $sV=Formula($sV);$ds=$sV->D('t')->reduce;
+               if($ds->isConstant) {$ds = Vector("$ds");} else {return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);$tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return(3*($par and $tch),@err);
+              });
             </pg-code>
           </setup>
           <statement>
-            <p>Passes through the point of intersection of <m>\ell_1(t)</m> and <m>\ell_2(t)</m> and orthogonal to both lines, where</p>
-
-            <p><m>\ell_1 = \left\{\begin{aligned}x\amp =t\\y\amp =-2+2t\\z\amp =1+t
-              \end{aligned} \right.</m> and <m>\ell_2 = \left\{\begin{aligned}x\amp =2+t\\y\amp =2-t\\z\amp =3+2t
-              \end{aligned} \right.</m>.</p>
+            <p><m>\ell</m> is a line that passes through the intersection of <m>\vec\ell_1(t)=\begin{cases}x\amp=t\\y\amp=-2+2t\\z\amp=1+t\end{cases}</m> and <m>\vec\ell_2(t)=\begin{cases}x\amp=2+t\\y\amp=2-t\\z\amp=3+2t\end{cases}</m>, and is orthogonal to both lines.</p>
+            <p>A vector equation for <m>\ell</m> is <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30" />.</p>
+            <p>Parametric equations for <m>\ell</m> (separated using commas) are <var name="$p" evaluator="$pev" width="50" />.</p>
+            <p>Symmetric equations for <m>\ell</m> are <var name="$s" evaluator="$sev" width="50" />. (Enter <c>DNE</c> if they are not defined.)</p>
           </statement>
-          <solution>
-            <p>Answers can vary; here the direction is given by <m>\vec d_1\times \vec d_2</m>:
-              vector: <m>\ell(t) = \la 2,2,3\ra + t\la 5,-1,-3\ra</m></p>
-
-            <p>parametric: <m>x= 2+5t</m>, <m>y=2-t</m>, <m>z = 3-3t</m></p>
-
-            <p>symmetric: <m>(x-2)/5=-(y-2)=-(z-3)/3</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1245,66 +1694,122 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$v">
+              <static>(-2,5)+t\langle0,1\rangle</static>
+            </var>
+            <var name="$p">
+              <static>x=-2, y=5+t</static>
+            </var>
+            <var name="$s">
+              <static>\text{DNE}</static>
             </var>
             <pg-code>
+              Context("Vector");Context()->variables->are(t=>"Real");
+              $v=Compute("(-2,5)+t&lt;0,1>");
+              $vev=$v->cmp(checker=>sub{my($c,$st,$aH)=@_;
+               $ds=Formula($st)->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");}else{return 0;};
+               $dc=$c->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=Formula($st)->eval(t=>0);$cp=$c->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return($par and $tch);
+              });
+              Context("Numeric");Context()->variables->add(y=>"Real",t=>"Real");
+              parser::Assignment->Allow;
+              $p=List(Formula("x=-2"),Formula("y=5+t"));
+              $pev=$p->cmp(list_checker=>sub{my($c,$st,$aH,$value)=@_;
+               my$n=scalar(@$st);
+               my@err=();my$i,$j;
+               Context("Vector");
+               Context()->variables->add(t=>"Real");
+               my$sV=Formula("(0,0)+t*&lt;0,0>");
+               for($i=0;$i&lt;$n;$i++){
+                my$ith=Value::List->NameForNumber($i+1);
+                my$entry=$st->[$i];
+                my$var;my$for;
+                if($entry->type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                else{($var,$for)=split('=',"$entry");
+                 $var=Formula("$var");$for=Formula("$for");
+                 if(!($var!=Formula("x") or $var!=Formula("y")) or $for->usesOneOf("x","y"))
+                  {push(@err,"Your $ith entry is not a parametrization")unless $aH->{isPreview};next;}
+                };
+                for($j=0,$used=0;$j&lt;$i;$j++){
+                 if($st->[$j]->type eq "Assignment"){
+                  my($vj,$fj)=split('=',$st->[$j]->string);
+                  $vj=Formula("$vj");
+                  if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH->{isPreview};$used = 1;last;}
+                }}
+                if(!$used){
+                 if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0>")}
+                 else{$sV=$sV+Formula("&lt;0,$for>")};
+               }}
+               if(!$aH->{isPreview}){push(@err,"You need to provide more parametrizations")if $i&lt;2;push(@err,"You have given too many parametrizations")if $i>2;}
+               $sV=Formula($sV);
+               $ds=$sV->D('t')->reduce;
+               if($ds->isConstant){$ds=Vector("$ds");} else{return 0;};
+               $dc=$v->D('t')->reduce;$dc=Vector("$dc");$par=$ds->isParallel($dc);
+               $sp=$sV->eval(t=>0);$cp=$v->eval(t=>0);
+               $tch=(($sp==$cp) or $dc->isParallel($sp-$cp));
+               return(2*($par and $tch),@err);
+              });
             </pg-code>
           </setup>
           <statement>
-            <p>Passes through <m>P=(-2,5)</m>, parallel to <m>\vec d = \la 0,1\ra</m>.</p>
+            <p><m>\ell</m> is a line that passes through <m>P=(-2,5)</m>, parallel to <m>\vec d = \la 0,1\ra</m>.</p>
+            <p>A vector equation for <m>\ell</m> is <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30" />.</p>
+            <p>Parametric equations for <m>\ell</m> (separated using commas) are <var name="$p" evaluator="$pev" width="50" />.</p>
+            <p>Symmetric equations for <m>\ell</m> are <var name="DNE" width="50" />. (Enter <c>DNE</c> if they are not defined.)</p>
           </statement>
-          <solution>
-            <p>vector: <m>\ell(t) = \la-2,5\ra + t\la 0,1\ra</m></p>
-
-            <p>parametric: <m>x= -2</m>, <m>y=5+t</m></p>
-
-            <p>symmetric: not defined</p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, determine if the described lines are the same line, parallel lines, intersecting or skew lines. If intersecting, give the point of intersection.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, determine if the described lines are the same line, parallel lines, intersecting or skew lines. If intersecting, give the point of intersection.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <static>\text{parallel}</static>
             </var>
             <pg-code>
+              Context("Point");
+              Context()->strings->add(same=>{},parallel=>{},skew=>{});
+              $answer=Compute("parallel");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec\ell_1(t) = \la 1,2,1\ra + t\la 2,-1,1\ra</m>,</p>
-
-            <p><m>\vec\ell_2(t) = \la 3,3,3\ra + t\la -4,2,-2\ra</m>.</p>
+            <p>Determine if <m>\vec\ell_1(t) = \la 1,2,1\ra + t\la 2,-1,1\ra</m> and <m>\vec\ell_2(t) = \la 3,3,3\ra + t\la -4,2,-2\ra</m> describe the same line, parallel lines, intersecting or skew lines. You can answer with <q><c>same</c></q>, <q><c>parallel</c></q>, <q><c>skew</c></q>, or give the point of intersection.</p>
+            <p><var name="$answer" width="10" /></p>
           </statement>
-          <solution>
-            <p>parallel</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <static>(12,3,7)</static>
             </var>
             <pg-code>
+              Context("Point");
+              Context()->strings->add(same=>{},parallel=>{},skew=>{});
+              $answer=Compute("(12,3,7)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec\ell_1(t) = \la 2,1,1\ra + t\la 5,1,3\ra</m>,</p>
-
-            <p><m>\vec\ell_2(t) = \la 14,5,9\ra + t\la 1,1,1\ra</m>.</p>
+            <p>Determine if <m>\vec\ell_1(t) = \la 2,1,1\ra + t\la 5,1,3\ra</m> and <m>\vec\ell_2(t) = \la 14,5,9\ra + t\la 1,1,1\ra</m> describe the same line, parallel lines, intersecting or skew lines. You can answer with <q><c>same</c></q>, <q><c>parallel</c></q>, <q><c>skew</c></q>, or give the point of intersection.</p>
+            <p><var name="$answer" width="10" /></p>
           </statement>
-          <solution>
-            <p>intersecting; <m>\ell_1(2) = \ell_2(-2) = \la 12,3,7\ra</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1324,64 +1829,64 @@
           </solution>
         </webwork>
       </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec\ell_1(t) = \la 1,1,1\ra + t\la 3,1,3\ra</m>,</p>
 
-            <p><m>\vec\ell_2(t) = \la 7,3,7\ra + t\la 6,2,6\ra</m>.</p>
-          </statement>
-          <solution>
-            <p>same</p>
-          </solution>
-        </webwork>
-      </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <static>\text{same}</static>
             </var>
             <pg-code>
+              Context("Point");
+              Context()->strings->add(same=>{},parallel=>{},skew=>{});
+              $answer=Compute("same");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ell_1 = \left\{\begin{aligned}x\amp = 1+2t\\ y\amp = 3-2t\\ z\amp = t
-              \end{aligned} \right.</m> and <m>\ell_2 = \left\{\begin{aligned}x\amp = 3-t\\ y\amp = 3+5t\\ z\amp = 2+7t
-              \end{aligned} \right.</m></p>
+            <p>Determine if <m>\vec\ell_1(t) = \la 1,1,1\ra + t\la 3,1,3\ra</m> and <m>\vec\ell_2(t) = \la 7,3,7\ra + t\la 6,2,6\ra</m> describe the same line, parallel lines, intersecting or skew lines. You can answer with <q><c>same</c></q>, <q><c>parallel</c></q>, <q><c>skew</c></q>, or give the point of intersection.</p>
+            <p><var name="$answer" width="10" /></p>
           </statement>
-          <solution>
-            <p>skew</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <static>\text{skew}</static>
             </var>
             <pg-code>
+              Context("Point");
+              Context()->strings->add(same=>{},parallel=>{},skew=>{});
+              $answer=Compute("skew");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ell_1 = \left\{\begin{aligned}x\amp = 1.1+0.6t\\ y\amp = 3.77+0.9t\\ z\amp = -2.3+1.5t
-              \end{aligned} \right.</m>  and
-              <m>\ell_2 = \left\{\begin{aligned}x\amp = 3.11+3.4t\\ y\amp = 2+5.1t\\ z\amp = 2.5+8.5t
-              \end{aligned} \right.</m></p>
+            <p>Determine if <m>\vec\ell_1(t) = \begin{cases}x\amp = 1+2t\\ y\amp = 3-2t\\ z\amp = t\end{cases}</m> and <m>\vec\ell_2(t) = \begin{cases}x\amp = 3-t\\ y\amp = 3+5t\\ z\amp = 2+7t\end{cases}</m> describe the same line, parallel lines, intersecting or skew lines. You can answer with <q><c>same</c></q>, <q><c>parallel</c></q>, <q><c>skew</c></q>, or give the point of intersection.</p>
+            <p><var name="$answer" width="10" /></p>
           </statement>
-          <solution>
-            <p>parallel</p>
-          </solution>
         </webwork>
       </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$answer">
+              <static>\text{parallel}</static>
+            </var>
+            <pg-code>
+              Context("Point");
+              Context()->strings->add(same=>{},parallel=>{},skew=>{});
+              $answer=Compute("parallel");
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Determine if <m>\vec\ell_1(t) = \begin{cases}x\amp = 1.1+0.6t\\ y\amp = 3.77+0.9t\\ z\amp = -2.3+1.5t\end{cases}</m> and <m>\vec\ell_2(t) = \begin{cases}x\amp = 3.11+3.4t\\ y\amp = 2+5.1t\\ z\amp = 2.5+8.5t\end{cases}</m> describe the same line, parallel lines, intersecting or skew lines. You can answer with <q><c>same</c></q>, <q><c>parallel</c></q>, <q><c>skew</c></q>, or give the point of intersection.</p>
+            <p><var name="$answer" width="10" /></p>
+          </statement>
+        </webwork>
+      </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1402,26 +1907,31 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$answer">
+              <static>\text{skew}</static>
             </var>
             <pg-code>
+              Context("Point");
+              Context()->strings->add(same=>{},parallel=>{},skew=>{});
+              $answer=Compute("skew");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ell_1 = \left\{\begin{aligned}x\amp = 0.1+1.1t\\ y\amp = 2.9-1.5t\\ z\amp = 3.2+1.6t
-              \end{aligned} \right.</m> and <m>\ell_2 = \left\{\begin{aligned}x\amp = 4-2.1t\\ y\amp = 1.8+7.2t\\ z\amp = 3.1+1.1t
-              \end{aligned} \right.</m></p>
+            <p>Determine if <m>\vec\ell_1(t) = \begin{cases}x\amp = 0.1+1.1t\\ y\amp = 2.9-1.5t\\ z\amp = 3.2+1.6t\end{cases}</m> and <m>\vec\ell_2(t) = \begin{cases}x\amp = 4-2.1t\\ y\amp = 1.8+7.2t\\ z\amp = 3.1+1.1t\end{cases}</m> describe the same line, parallel lines, intersecting or skew lines. You can answer with <q><c>same</c></q>, <q><c>parallel</c></q>, <q><c>skew</c></q>, or give the point of intersection.</p>
+            <p><var name="$answer" width="10" /></p>
           </statement>
-          <solution>
-            <p>skew</p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the distance from the point to the line.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the distance from the point to the line.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1439,23 +1949,25 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$distance">
+              <static>3\sqrt{2}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $distance=Formula("3sqrt(2)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>P=(2,5,6)</m>, <m>\vec\ell(t) = \la -1,1,1\ra + t\la 1,0,1\ra</m></p>
+            <p>Find the distance from the point <m>P=(2,5,6)</m> to the line <m>\vec\ell(t) = \la -1,1,1\ra + t\la 1,0,1\ra</m>.</p>
+            <p><var name="$distance" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>3\sqrt{2}</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1473,24 +1985,30 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$distance">
+              <static>5</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $distance=Formula("5");
             </pg-code>
           </setup>
           <statement>
-            <p><m>P=(1,1)</m>, <m>\vec\ell(t) = \la 4,5\ra + t\la -4,3\ra</m></p>
+            <p>Find the distance from the point <m>P=(1,1)</m> to the line <m>\vec\ell(t) = \la 4,5\ra + t\la -4,3\ra</m>.</p>
+            <p><var name="$distance" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>5</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the distance between the two lines.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the distance between the two lines.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1510,26 +2028,30 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$distance">
               <static></static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $distance=Formula("2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec\ell_1(t) = \la 0,0,1\ra + t\la 1,0,0\ra</m>,</p>
-
-            <p><m>\vec\ell_2(t) = \la 0,0,3\ra + t\la 0,1,0\ra</m>.</p>
+            <p>Find the distance between the line <m>\vec\ell_1(t) = \la 0,0,1\ra + t\la 1,0,0\ra</m> and the line <m>\vec\ell_2(t) = \la 0,0,3\ra + t\la 0,1,0\ra</m>.</p>
+            <p><var name="$distance" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>2</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>The following exercises explore special cases of the distance formulas found in <xref ref="idea_line_distance">Key Idea</xref>.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>The following exercises explore special cases of the distance formulas found in <xref ref="idea_line_distance">Key Idea</xref>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>

@@ -4,12 +4,12 @@
   <title>Unit Tangent and Normal Vectors</title>
   <subsection>
     <title>Unit Tangent Vector</title>
-    <p>Given a smooth vector<ndash />valued function \vrt, we defined in <xref ref="def_vector_tangent">Definition</xref> that any vector parallel to <m>\vrp(t_0)</m> is <em>tangent</em> to the graph of \vrt<nbsp />at <m>t=t_0</m>. It is often useful to consider just the <em>direction</em> of <m>\vrp(t)</m> and not its magnitude. Therefore we are interested in the unit vector in the direction of <m>\vrp(t)</m>. This leads to a definition.</p>
+    <p>Given a smooth vector-valued function <m>\vrt</m>, we defined in <xref ref="def_vector_tangent">Definition</xref> that any vector parallel to <m>\vrp(t_0)</m> is <em>tangent</em> to the graph of <m>\vrt</m> at <m>t=t_0</m>. It is often useful to consider just the <em>direction</em> of <m>\vrp(t)</m> and not its magnitude. Therefore we are interested in the unit vector in the direction of <m>\vrp(t)</m>. This leads to a definition.</p>
 
     <definition xml:id="def_unit_tangent">
       <title>Unit Tangent Vector</title>
       <statement>
-        <p>Let \vrt<nbsp />be a smooth function on an open interval <m>I</m>. The unit tangent vector <m>\vec T(t)</m> is
+        <p>Let <m>\vrt</m> be a smooth function on an open interval <m>I</m>. The unit tangent vector <m>\vec T(t)</m> is
           <index><main>unit tangent vector</main><sub>definition</sub></index> <index><main>unit vector</main><sub>unit tangent vector</sub></index>
           <me>
             \vec T(t) = \frac{1}{\norm{\vrp(t)}}\vrp(t).
@@ -220,7 +220,7 @@
 
   <subsection>
     <title>Unit Normal Vector</title>
-    <p>Just as knowing the direction tangent to a path is important, knowing a direction orthogonal to a path is important. When dealing with real-valued functions, we defined the normal line at a point to the be the line through the point that was perpendicular to the tangent line at that point. We can do a similar thing with vector<ndash />valued functions. Given \vrt<nbsp />in <m>\mathbb{R}^2</m>, we have 2 directions perpendicular to the tangent vector, as shown in <xref ref="fig_tannorm_intro1">Figure</xref>. It is good to wonder <q>Is one of these two directions preferable over the other?</q></p>
+    <p>Just as knowing the direction tangent to a path is important, knowing a direction orthogonal to a path is important. When dealing with real-valued functions, we defined the normal line at a point to the be the line through the point that was perpendicular to the tangent line at that point. We can do a similar thing with vector-valued functions. Given <m>\vrt</m> in <m>\mathbb{R}^2</m>, we have 2 directions perpendicular to the tangent vector, as shown in <xref ref="fig_tannorm_intro1">Figure</xref>. It is good to wonder <q>Is one of these two directions preferable over the other?</q></p>
 
     <figure xml:id="fig_tannorm_intro1" >
       <caption>Given a direction in the plane, there are always two directions orthogonal to it.</caption>
@@ -269,9 +269,9 @@
       <!-- figures/fig_tannorm_intro1.tex END -->
     </figure>
 
-    <p>Given \vrt<nbsp />in <m>\mathbb{R}^3</m>, there are infinite vectors orthogonal to the tangent vector at a given point. Again, we might wonder <q>Is one of these infinite choices preferable over the others? Is one of these the `right' choice?</q></p>
+    <p>Given <m>\vrt</m> in <m>\mathbb{R}^3</m>, there are infinite vectors orthogonal to the tangent vector at a given point. Again, we might wonder <q>Is one of these infinite choices preferable over the others? Is one of these the `right' choice?</q></p>
 
-    <p>The answer in both <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m> is <q>Yes, there is one vector that is not only preferable, it is the `right' one to choose.</q> Recall <xref ref="thm_vects_of_constant_length">Theorem</xref>, which states that if \vrt<nbsp />has constant length, then \vrt<nbsp />is orthogonal to <m>\vrp(t)</m> for all <m>t</m>. We know <m>\vec T(t)</m>, the unit tangent vector, has constant length. Therefore <m>\vec T(t)</m> is orthogonal to <m>\vec T\,'(t)</m>.<index><main>vector<ndash />valued function</main><sub>of constant length</sub></index></p>
+    <p>The answer in both <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m> is <q>Yes, there is one vector that is not only preferable, it is the `right' one to choose.</q> Recall <xref ref="thm_vects_of_constant_length">Theorem</xref>, which states that if <m>\vrt</m> has constant length, then <m>\vrt</m> is orthogonal to <m>\vrp(t)</m> for all <m>t</m>. We know <m>\vec T(t)</m>, the unit tangent vector, has constant length. Therefore <m>\vec T(t)</m> is orthogonal to <m>\vec T\,'(t)</m>.<index><main>vector-valued function</main><sub>of constant length</sub></index></p>
 
     <p>We'll see that <m>\vec T\,'(t)</m> is more than just a convenient choice of vector that is orthogonal to <m>\vrp(t)</m>; rather, it is the <q>right</q> choice. Since all we care about is the direction, we define this newly found vector to be a unit vector.</p>
 
@@ -282,7 +282,7 @@
     <definition xml:id="def_unit_normal">
       <title>Unit Normal Vector</title>
       <statement>
-        <p>Let \vrt<nbsp />be a vector<ndash />valued function where the unit tangent vector, <m>\vec T(t)</m>, is smooth on an open interval <m>I</m>. The <term>unit normal vector</term> <m>\vec N(t)</m> is
+        <p>Let <m>\vrt</m> be a vector-valued function where the unit tangent vector, <m>\vec T(t)</m>, is smooth on an open interval <m>I</m>. The <term>unit normal vector</term> <m>\vec N(t)</m> is
           <index><main>unit normal vector</main><sub>definition</sub></index><index><main>unit vector</main><sub>unit normal vector</sub></index>
           <me>
             \vec N(t) = \frac1{\norm{\vec T\,'(t)}}\vec T\,'(t).
@@ -412,7 +412,7 @@
       </solution>
     </example>
 
-    <p>The previous example was once again <q>too nice.</q> In general, the expression for <m>\vec T(t)</m> contains fractions of square<ndash />roots, hence the expression of <m>\vec T\,'(t)</m> is very messy. We demonstrate this in the next example.</p>
+    <p>The previous example was once again <q>too nice.</q> In general, the expression for <m>\vec T(t)</m> contains fractions of square roots, hence the expression of <m>\vec T\,'(t)</m> is very messy. We demonstrate this in the next example.</p>
 
     <example xml:id="ex_tannorm4">
       <title>Computing the unit normal vector</title>
@@ -512,7 +512,7 @@
     <theorem xml:id="thm_concave">
       <title>Unit Normal Vectors in <m>\mathbb{R}^2</m></title>
       <statement>
-        <p>Let <m>\vec r(t)</m> be a vector<ndash />valued function in <m>\mathbb{R}^2</m> where <m>\vec T\,'(t)</m> is smooth on an open interval <m>I</m>. Let <m>t_0</m> be in <m>I</m> and <m>\vec T(t_0) = \la t_1,t_2\ra</m> Then <m>\vec N(t_0)</m> is either
+        <p>Let <m>\vec r(t)</m> be a vector-valued function in <m>\mathbb{R}^2</m> where <m>\vec T\,'(t)</m> is smooth on an open interval <m>I</m>. Let <m>t_0</m> be in <m>I</m> and <m>\vec T(t_0) = \la t_1,t_2\ra</m> Then <m>\vec N(t_0)</m> is either
           <me>
             \vec N(t_0) = \la -t_2,t_1\ra  \text{ or }  \vec N(t_0) = \la t_2,-t_1\ra,
           </me>
@@ -524,7 +524,7 @@
 
   <subsection>
     <title>Application to Acceleration</title>
-    <p>Let \vrt<nbsp />be a position function. It is a fact (stated later in <xref ref="thm_acc_plane">Theorem</xref>)
+    <p>Let <m>\vrt</m> be a position function. It is a fact (stated later in <xref ref="thm_acc_plane">Theorem</xref>)
       that acceleration, \vat, lies in the plane defined by <m>\vec T</m> and <m>\vec N</m>. That is, there are scalars <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m> such that
       <me>
         \vat = a_{\text{T} }\vec T(t) + a_{\text{N} }\vec N(t).
@@ -552,7 +552,7 @@
     <theorem xml:id="thm_acc_plane">
       <title>Acceleration in the Plane Defined by <m>\vec T</m> and <m>\vec N</m></title>
       <statement>
-        <p>Let \vrt<nbsp />be a position function with acceleration \vat<nbsp />and unit tangent and normal vectors <m>\vec T(t)</m> and <m>\vec N(t)</m>. Then <m>\vat</m> lies in the plane defined by <m>\vec T(t)</m> and <m>\vec N(t)</m>; that is, there exists scalars <m>a_\text{T}</m> and <m>a_\text{N}</m> such that
+        <p>Let <m>\vrt</m> be a position function with acceleration \vat<nbsp />and unit tangent and normal vectors <m>\vec T(t)</m> and <m>\vec N(t)</m>. Then <m>\vat</m> lies in the plane defined by <m>\vec T(t)</m> and <m>\vec N(t)</m>; that is, there exists scalars <m>a_\text{T}</m> and <m>a_\text{N}</m> such that
           <me>
             \vat = a_\text{T} \vec T(t) + a_\text{N} \vec N(t).
           </me>
@@ -669,7 +669,7 @@
     <example xml:id="ex_tannorm7">
       <title>Analyzing projectile motion</title>
       <statement>
-        <p>A ball is thrown from a height of 240ft with an initial speed of 64ft/s and an angle of elevation of <m>30^\circ</m>. Find the position function \vrt<nbsp />of the ball and analyze <m>a_\text{T}</m> and <m>a_\text{N}</m>.<index><main>projectile motion</main></index></p>
+        <p>A ball is thrown from a height of 240ft with an initial speed of 64ft/s and an angle of elevation of <m>30^\circ</m>. Find the position function <m>\vrt</m> of the ball and analyze <m>a_\text{T}</m> and <m>a_\text{N}</m>.<index><main>projectile motion</main></index></p>
       </statement>
       <solution>
         <p>Using <xref ref="idea_projectile">Key Idea</xref> of <xref ref="sec_vvf_motion">Section</xref> we form the position function of the ball:
@@ -810,39 +810,27 @@
 
   <exercises>
     <exercisegroup>
-      <title>Terms and Concepts</title>
+      <introduction>
+        <p>Terms and Concepts</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>If <m>\vec T(t)</m> is a unit tangent vector, what is <m>\norm{\vec T(t)}</m>?</p>
+            <p><var name="1" width="5" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>If <m>\vec N(t)</m> is a unit normal vector, what is <m>\vec N(t)\cdot \vrp(t)</m>?</p>
+            <p><var name="0" width="5" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -879,8 +867,9 @@
       </exercise>
     </exercisegroup>
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises , given <m>\vrt</m>, find <m>\vec T(t)</m> and evaluate it at the indicated value of <m>t</m>.</p>
+      <introduction>
+        <p>In the following exercises, given <m>\vrt</m>, find <m>\vec T(t)</m> and evaluate it at the indicated value of <m>t</m>.</p>
+      </introduction>
       <exercise xml:id="x11_04_ex_05">
         <webwork seed="1">
           <setup>
@@ -899,24 +888,39 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$T">
+              <static>\la \frac{1}{\sqrt{1+\sin^2(t) }},-\frac{\sin(t) }{\sqrt{1+\sin^2(t) }} \ra</static>
+            </var>
+            <var name="$Ta">
+              <static>\la \sqrt{2/3}, -1/\sqrt{3}\ra</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $T=Compute("&lt;1/sqrt(1+sin^2(t)),-sin(t)/sqrt(1+sin^2(t))>");
+              $Ta=Compute("&lt;sqrt(2/3),-1/sqrt(3)>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la t,\cos(t) \ra</m>,<m>t=\pi/4</m></p>
+            <p>Given <m>\vrt = \la t,\cos(t) \ra</m>:<ol label="a">
+              <li>
+                <p>Find <m>\vec T(t)</m>.</p>
+                <p><var name="$T" width="30" /></p>
+              </li>
+              <li>
+                <p>Find <m>\vec T(\pi/4)</m>.</p>
+                <p><var name="$Ta" width="30" /></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <p><m>\vec T(t) = \la \frac{1}{\sqrt{1+\sin^2(t) }},-\frac{\sin(t) }{\sqrt{1+\sin^2(t) }} \ra</m>;
-              <m>\vec T(\pi/4) = \la \sqrt{2/3}, -1/\sqrt{3}\ra</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -935,65 +939,82 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise xml:id="x11_04_ex_08">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$T">
+              <static>\la -\sin(t) ,\cos(t) \ra</static>
+            </var>
+            <var name="$Ta">
+              <static>\la 0, -1\ra</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $T=Compute("&lt;-sin(t), cos(t)>");
+              $Ta=Compute("&lt;0,-1>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos(t) , \sin(t) \ra</m>,<m>t=\pi</m></p>
+            <p>Given <m>\vrt = \la \cos(t) , \sin(t) \ra</m>:<ol label="a">
+              <li>
+                <p>Find <m>\vec T(t)</m>.</p>
+                <p><var name="$T" width="30" /></p>
+              </li>
+              <li>
+                <p>Find <m>\vec T(\pi)</m>.</p>
+                <p><var name="$Ta" width="30" /></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <p><m>\vec T(t) = \la -\sin(t) ,\cos(t) \ra</m>;
-              <m>\vec T(\pi) = \la 0,-1\ra</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises , find the equation of the line tangent to the curve at the indicated <m>t</m>-value using the unit tangent vector. Note: these are the same problems as in <xref ref="x11_04_ex_05">Exercises</xref> <mdash /> <xref ref="x11_04_ex_08"></xref>.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the equation of the line tangent to the curve at the indicated <m>t</m>-value using the unit tangent vector. Note: these are the same problems as in <xref ref="x11_04_ex_05">Exercises</xref> <mdash /> <xref ref="x11_04_ex_08"></xref>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$L">
+              <static>\la 2,0\ra + t\la 4/\sqrt{17},1/\sqrt{17}\ra</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->variables->are(t=>'Real');
+              $L=Compute("(2,0) + t*&lt;4/sqrt(17),1/sqrt(17)>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 2t^2,t^2-t \ra</m>,<m>t=1</m></p>
+            <p>Find the vector equation of the line tangent to <m>\vrt = \la 2t^2,t^2-t \ra</m> at <m>t=1</m> using the unit tangent vector.</p>
+            <p><m>\ell(t)=</m><var name="$L" width="30" /></p>
           </statement>
-          <solution>
-            <p><m>\ell(t) = \la 2,0\ra + t\la 4/\sqrt{17},1/\sqrt{17}\ra</m>; in parametric form,</p>
-
-            <p><m>\ell(t) = \left\{\begin{array}{ccc} x\amp =\amp 2+4t/\sqrt{17} \\ y \amp =\amp  t/\sqrt{17}
-              \end{array} \right.</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$L">
+              <static>\la \pi/4,\sqrt{2}/{2}\ra + t\la \sqrt{2/3},-1/\sqrt{3}\ra</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->variables->are(t=>'Real');
+              $L=Compute("(pi/4,sqrt(2)/2) + t*&lt;sqrt(2/3),-1/sqrt(3)>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la t,\cos(t) \ra</m>,<m>t=\pi/4</m></p>
+            <p>Find the vector equation of the line tangent to <m>\vrt = \la t,\cos(t) \ra</m> at <m>t=\pi/4</m> using the unit tangent vector.</p>
+            <p><m>\ell(t)=</m><var name="$L" width="30" /></p>
           </statement>
-          <solution>
-            <p><m>\ell(t) = \la \pi/4,\sqrt{2}/{2}\ra + t\la \sqrt{2/3},-1/\sqrt{3}\ra</m>; in parametric form,</p>
-
-            <p><m>\ell(t) = \left\{\begin{array}{ccc} x\amp =\amp \pi/4+\sqrt{2/3}t \\ y \amp =\amp  \sqrt{2}/2-t/\sqrt{3}
-              \end{array} \right.</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1014,27 +1035,31 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$L">
+              <static>\la -1,0\ra + t\la 0,-1\ra</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->variables->are(t=>'Real');
+              $L=Compute("(-1,0) + t*&lt;0,-1>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos(t) ,\sin(t) \ra</m>,<m>t=\pi</m></p>
+            <p>Find the vector equation of the line tangent to <m>\vrt = \la \cos(t) ,\sin(t) \ra</m> at <m>t=\pi</m> using the unit tangent vector.</p>
+            <p><m>\ell(t)=</m><var name="$L" width="30" /></p>
           </statement>
-          <solution>
-            <p><m>\ell(t) = \la -1,0\ra + t\la 0,-1\ra</m>; in parametric form,</p>
-
-            <p><m>\ell(t) = \left\{\begin{array}{ccc} x\amp =\amp -1 \\ y \amp =\amp  -t
-              \end{array} \right.</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises , find <m>\vec N(t)</m> using <xref ref="def_unit_normal">Definition</xref>. Confirm the result using <xref ref="thm_concave">Theorem</xref>.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find <m>\vec N(t)</m> using <xref ref="def_unit_normal">Definition</xref>. Confirm the result using <xref ref="thm_concave">Theorem</xref>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1103,17 +1128,22 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises , a position function <m>\vrt</m> is given along with its unit tangent vector <m>\vec T(t)</m> evaluated at <m>t=a</m>, for some value of <m>a</m>.</p>
+    </exercisegroup>
 
-      <ol>
-        <li>
-          <title>(a)</title>
-          <p>Confirm that <m>\vec T(a)</m> is as stated.</p></li>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, a position function <m>\vrt</m> is given along with its unit tangent vector <m>\vec T(t)</m> evaluated at <m>t=a</m>, for some value of <m>a</m>.</p>
 
-        <li>
-          <title>(b)</title>
-          <p>Using a graph of \vrt<nbsp />and <xref ref="thm_concave">Theorem</xref>, find <m>\vec N(a)</m>.</p></li>
-      </ol>
+        <p><ol label="a">
+          <li>
+            <p>Confirm that <m>\vec T(a)</m> is as stated.</p>
+          </li>
+
+          <li>
+            <p>Using a graph of <m>\vrt</m> and <xref ref="thm_concave">Theorem</xref>, find <m>\vec N(a)</m>.</p>
+          </li>
+        </ol></p>
+      </introduction>
 
       <exercise>
         <webwork seed="1">
@@ -1199,7 +1229,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises , find <m>\vec N(t)</m>.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find <m>\vec N(t)</m>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1217,23 +1252,27 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$N">
+              <static>\la -\cos(t) ,-3/5\sin(t) ,-4/5\sin(t) \ra</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $N=Compute("&lt;-cos(t), -3/5 sin(t), -4/5sin(t)>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 5\cos(t) ,3\sin(t) ,4\sin(t) \ra</m></p>
+            <p>If <m>\vrt = \la 5\cos(t) ,3\sin(t) ,4\sin(t) \ra</m>, find <m>\vec N(t)</m>.</p>
+            <p><var name="$N" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>\vec T(t) = \la -\sin(t) , 3/5\cos(t) , 4/5\cos(t) \ra</m>; <m>\vec N(t) = \la -\cos(t) ,-3/5\sin(t) ,-4/5\sin(t) \ra</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1251,24 +1290,32 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$N">
+              <static>\la  -\cos(at) ,-\sin(at) ,0\ra</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->variables->are(t=>'Real',a=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $N=Compute("&lt;-cos(at), -sin(at), 0>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos(at),\sin(at),t \ra</m></p>
+            <p>If <m>\vrt = \la \cos(at),\sin(at),t \ra</m>, find <m>\vec N(t)</m>.</p>
+            <p><var name="$N" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>\vec T(t) = \frac{1}{\sqrt{a^2+1}}\la -a\sin(at),a\cos(at),1 \ra</m>; <m>\vec N(t) = \la  -\cos(t) ,-\sin(t) ,0\ra</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises , find <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m> given <m>\vrt</m>. Sketch \vrt<nbsp />on the indicated interval, and comment on the relative sizes of <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m> at the indicated <m>t</m> values.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m> given <m>\vrt</m>. Sketch <m>\vrt</m> on the indicated interval, and comment on the relative sizes of <m>a_{\text{T} }</m> and <m>a_{\text{N} }</m> at the indicated <m>t</m> values.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1292,29 +1339,74 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$aT">
+              <static>\frac{-2/t^5}{\sqrt{1+1/t^4}}</static>
+            </var>
+            <var name="$aN">
+              <static>\frac{2/t^3}{\sqrt{1+1/t^4}}</static>
+            </var>
+            <var name="$aT1">
+              <static>-\sqrt{2}</static>
+            </var>
+            <var name="$aN1">
+              <static>\sqrt{2}</static>
+            </var>
+            <var name="$aT2">
+              <static>-\frac{1}{4\sqrt{17}}</static>
+            </var>
+            <var name="$aN2">
+              <static>\frac{1}{\sqrt{17}}</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->variables->set(t=>{limits=>[0.1,4]});
+              $aT=Compute("-2/t^5/sqrt(1+1/t^4)");
+              $aN=Compute("2/t^3/sqrt(1+1/t^4)");
+              $aT1=Formula("-sqrt(2)");
+              $aN1=Formula("sqrt(2)");
+              $aT2=Formula("-1/(4sqrt(17))");
+              $aN2=Formula("1/sqrt(17)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la t,1/t \ra</m> on <m>(0,4]</m>; consider <m>t=1</m> and <m>t=2</m>.</p>
+            <p>Given <m>\vrt = \la t,1/t \ra</m> on <m>(0,4]</m>:<ol label="a">
+              <li>
+                <p><m>a_{T}=</m><var name="$aT" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{N}=</m><var name="$aN" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{T}(1)=</m><var name="$aT1" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{N}(1)=</m><var name="$aN1" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{T}(2)=</m><var name="$aT2" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{N}(2)=</m><var name="$aN2" width="20" /></p>
+              </li>
+              <li>
+                <p>Sketch <m>\vrt</m>.</p>
+              </li>
+              <li>
+                <p>Comment on the relative sizes of <m>a_{T}(1)</m>, <m>a_{N}(1)</m>, <m>a_{T}(2)</m>, and <m>a_{N}(2)</m>.</p>
+              </li>
+            </ol></p>
           </statement>
           <solution>
-            <p><m>a_{\text{T} } = \frac{-2/t^5}{\sqrt{1+1/t^4}}</m> and <m>a_{\text{N} } = \sqrt{\frac{4}{t^6}-\frac{4/t^{10}}{1+1/t^4}}</m></p>
-
-            <p>At <m>t=1</m>, <m>a_{\text{T} } = \sqrt{2}</m> and <m>a_{\text{N} } = -\sqrt{2}</m>;</p>
-
-            <p>At <m>t=2</m>, <m>a_{\text{T} } = -\frac{1}{4\sqrt{17}}</m> and <m>a_{\text{N} } = \frac{1}{\sqrt{17}}</m>.</p>
-
             <p>At <m>t=1</m>, acceleration comes from changing speed and changing direction in <q>equal measure;</q> at <m>t=2</m>, acceleration is nearly <m>\vec 0</m> as it is; the low value of <m>a_{\text{T} }</m> shows that the speed is nearly constant and the low value of <m>a_{\text{N} }</m> shows the direction is not changing quickly.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1338,29 +1430,73 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$aT">
+              <static>2</static>
+            </var>
+            <var name="$aN">
+              <static>4t^2</static>
+            </var>
+            <var name="$aT1">
+              <static>2</static>
+            </var>
+            <var name="$aN1">
+              <static>2\pi</static>
+            </var>
+            <var name="$aT2">
+              <static>2</static>
+            </var>
+            <var name="$aN2">
+              <static>4\pi</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $aT=Compute("2");
+              $aN=Compute("4t^2");
+              $aT1=Formula("2");
+              $aN1=Formula("2pi");
+              $aT2=Formula("2");
+              $aN2=Formula("4pi");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la \cos(t^2),\sin(t^2) \ra</m> on <m>(0,2\pi]</m>; consider <m>t=\sqrt{\pi/2}</m> and <m>t=\sqrt{\pi}</m>.</p>
+            <p>Given <m>\vrt = \la \cos(t^2),\sin(t^2) \ra</m> on <m>(0,2\pi]</m>:<ol label="a">
+              <li>
+                <p><m>a_{T}=</m><var name="$aT" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{N}=</m><var name="$aN" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{T}\mathopen{}\left(\sqrt{\pi/2}\right)\mathclose{}=</m><var name="$aT1" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{N}\mathopen{}\left(\sqrt{\pi/2}\right)\mathclose{}=</m><var name="$aN1" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{T}\mathopen{}\left(\sqrt{\pi}\right)\mathclose{}=</m><var name="$aT2" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{N}\mathopen{}\left(\sqrt{\pi}\right)\mathclose{}=</m><var name="$aN2" width="20" /></p>
+              </li>
+              <li>
+                <p>Sketch <m>\vrt</m>.</p>
+              </li>
+              <li>
+                <p>Comment on the relative sizes of <m>a_{T}\mathopen{}\left(\sqrt{\pi/2}\right)\mathclose{}</m>, <m>a_{N}\mathopen{}\left(\sqrt{\pi/2}\right)\mathclose{}</m>, <m>a_{T}\mathopen{}\left(\sqrt{\pi}\right)\mathclose{}</m>, and <m>a_{N}\mathopen{}\left(\sqrt{\pi}\right)\mathclose{}</m>.</p>
+              </li>
+            </ol></p>
           </statement>
           <solution>
-            <p><m>a_{\text{T} } = 2</m> and <m>a_{\text{N} } = 4t^2</m></p>
-
-            <p>At <m>t=\sqrt{\pi/2}</m>, <m>a_{\text{T} } = 2</m> and <m>a_{\text{N} } = 2\pi</m>;</p>
-
-            <p>At <m>t=\sqrt{\pi}</m>, <m>a_{\text{T} } = 2</m> and <m>a_{\text{N} } = 4\pi</m>.</p>
-
             <p>The object moves at increasing speed (increasing at a constant rate of acceleration), hence <m>a_{\text{T} }=2</m>. Since the object is increasing speed yet always traveling in a circle of radius 1, the direction must change more quickly; the amount of acceleration that changes direction increases over time.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1384,26 +1520,69 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$aT">
+              <static>0</static>
+            </var>
+            <var name="$aN">
+              <static>5</static>
+            </var>
+            <var name="$aT1">
+              <static>0</static>
+            </var>
+            <var name="$aN1">
+              <static>5</static>
+            </var>
+            <var name="$aT2">
+              <static>0</static>
+            </var>
+            <var name="$aN2">
+              <static>5</static>
             </var>
             <pg-code>
+              Context()->variables->are(t=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $aT=Compute("0");
+              $aN=Compute("5");
+              $aT1=Formula("0");
+              $aN1=Formula("5");
+              $aT2=Formula("0");
+              $aN2=Formula("5");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vrt = \la 5\cos(t) ,4\sin(t) , 3\sin(t) \ra</m> on <m>[0,2\pi]</m>; consider <m>t=0</m> and <m>t=\pi/2</m>.</p>
+            <p>Given <m>\vrt = \la 5\cos(t) ,4\sin(t) , 3\sin(t) \ra</m> on <m>[0,2\pi]</m>:<ol label="a">
+              <li>
+                <p><m>a_{T}=</m><var name="$aT" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{N}=</m><var name="$aN" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{T}(0)=</m><var name="$aT1" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{N}(0)=</m><var name="$aN1" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{T}(\pi/2)=</m><var name="$aT2" width="20" /></p>
+              </li>
+              <li>
+                <p><m>a_{N}(\pi/2)=</m><var name="$aN2" width="20" /></p>
+              </li>
+              <li>
+                <p>Sketch <m>\vrt</m>.</p>
+              </li>
+              <li>
+                <p>Comment on the relative sizes of <m>a_{T}(0)</m>, <m>a_{N}(0)</m>, <m>a_{T}(\pi/2)</m>, and <m>a_{N}(\pi/2)</m>.</p>
+              </li>
+            </ol></p>
           </statement>
           <solution>
-            <p><m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 5</m></p>
-
-            <p>At <m>t=0</m>, <m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 5</m>;</p>
-
-            <p>At <m>t=\pi/2</m>, <m>a_{\text{T} } = 0</m> and <m>a_{\text{N} } = 5</m>.</p>
-
-            <p>The object moves at constant speed, meaning that <m>a_{\text{T} }</m> is always 0. Acceleration is thus always perpendicular to the direction of travel; in this particular case, it is always 5 times the unit vector pointing orthogonal to the direction of travel.</p>
+            <p>The object moves at constant speed, meaning that <m>a_{\text{T} }</m> is always 0. Acceleration is thus always perpendicular to the direction of travel; in this particular case, it is always <m>5</m> times the unit vector pointing orthogonal to the direction of travel.</p>
           </solution>
         </webwork>
       </exercise>

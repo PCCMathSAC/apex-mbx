@@ -1216,7 +1216,9 @@
 
   <exercises>
     <exercisegroup>
-      <title>Terms and Concepts</title>
+      <introduction>
+        <p>Terms and Concepts</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1287,77 +1289,83 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises, find the dot product of the given vectors.</p>
+      <introduction>
+        <p>In the following exercises, find the dot product of the given vectors.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dot">
+              <static>-22</static>
             </var>
             <pg-code>
+              Context("LimitedNumeric");
+              $dot=Real("-22");
             </pg-code>
           </setup>
           <statement>
             <p><m>\vec u = \la 2,-4\ra</m>, <m>\vec v = \la 3,7\ra</m></p>
+            <p><m>\vec u \cdot\vec v=</m><var name="$dot" width="5" /></p>
           </statement>
-          <solution>
-            <p><m>-22</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dot">
+              <static>33</static>
             </var>
             <pg-code>
+              Context("LimitedNumeric");
+              $dot=Real("33");
             </pg-code>
           </setup>
           <statement>
             <p><m>\vec u = \la 5,3\ra</m>, <m>\vec v = \la 6,1\ra</m></p>
+            <p><m>\vec u \cdot\vec v=</m><var name="$dot" width="5" /></p>
           </statement>
-          <solution>
-            <p><m>33</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dot">
+              <static>3</static>
             </var>
             <pg-code>
+              Context("LimitedNumeric");
+              $dot=Real("3");
             </pg-code>
           </setup>
           <statement>
             <p><m>\vec u = \la 1,-1,2\ra</m>, <m>\vec v = \la 2,5,3\ra</m></p>
+            <p><m>\vec u \cdot\vec v=</m><var name="$dot" width="5" /></p>
           </statement>
-          <solution>
-            <p><m>3</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dot">
+              <static>0</static>
             </var>
             <pg-code>
+              Context("LimitedNumeric");
+              $dot=Real("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\vec u = \la 3,5,-1\ra</m>, <m>\vec v = \la 4,-1,7\ra</m></p>
+            <p><m>\vec u \cdot\vec v=</m><var name="$dot" width="5" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1375,520 +1383,977 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$dot">
+              <static>0</static>
             </var>
             <pg-code>
+              Context("LimitedNumeric");
+              $dot=Real("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\vec u = \la 1,2,3\ra</m>, <m>\vec v = \la 0,0,0\ra</m></p>
+            <p><m>\vec u \cdot\vec v=</m><var name="$dot" width="5" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
+    </exercisegroup>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Create your own vectors <m>\vec u</m>, <m>\vec v</m> and <m>\vec w</m> in <m>\mathbb{R}^2</m> and show that <m>\vec u\cdot (\vec v+\vec w) = \vec u\cdot \vec v + \vec u\cdot \vec w</m>.</p>
+        </statement>
+        <solution>
+          <p>Answers will vary.</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Create your own vectors <m>\vec u</m> and <m>\vec v</m> in <m>\mathbb{R}^3</m> and scalar <m>c</m> and show that <m>c(\vec u\cdot \vec v) = \vec u\cdot (c\vec v)</m>.</p>
+        </statement>
+        <solution>
+          <p>Answers will vary.</p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the measure of the angle between the two vectors in both radians and degrees.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$theta">
+              <static>\arccos\mathopen{}(3/\sqrt{10}\right)\mathclose{}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $theta=Formula("arccos(3/sqrt(10))");
             </pg-code>
           </setup>
           <statement>
-            <p>Create your own vectors <m>\vec u</m>, <m>\vec v</m> and <m>\vec w</m> in <m>\mathbb{R}^2</m> and show that <m>\vec u\cdot (\vec v+\vec w) = \vec u\cdot \vec v + \vec u\cdot \vec w</m>.</p>
+            <p>The angle between <m>\vec u = \la 1,1\ra</m> and <m>\vec v = \la 1,2\ra</m> is <var name="$theta" width="10" />.</p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$theta">
+              <static>\arccos\mathopen{}(-1/\sqrt{170}\right)\mathclose{}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $theta=Formula("arccos(-1/sqrt(170))");
             </pg-code>
           </setup>
           <statement>
-            <p>Create your own vectors <m>\vec u</m> and <m>\vec v</m> in <m>\mathbb{R}^3</m> and scalar <m>c</m> and show that <m>c(\vec u\cdot \vec v) = \vec u\cdot (c\vec v)</m>.</p>
+            <p>The angle between <m>\vec u = \la -2,1\ra</m> and <m>\vec v = \la 3,5\ra</m> is <var name="$theta" width="10" />.</p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the measure of the angle between the two vectors in both radians and degrees.</p>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$theta">
+              <static>\pi/4</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $theta=Formula("pi/4");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u = \la 1,1\ra</m>, <m>\vec v = \la 1,2\ra</m></p>
+            <p>The angle between <m>\vec u = \la 8,1,-4\ra</m> and <m>\vec v = \la 2,2,0\ra</m> is <var name="$theta" width="10" />.</p>
           </statement>
-          <solution>
-            <p><m>\theta = 0.3218 \approx 18.43^\circ</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$theta">
+              <static>\pi/2</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $theta=Formula("pi/2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u = \la -2,1\ra</m>, <m>\vec v = \la 3,5\ra</m></p>
+            <p>The angle between <m>\vec u = \la 1,7,2\ra</m> and <m>\vec v = \la 4,-2,5\ra</m> is <var name="$theta" width="10" />.</p>
           </statement>
-          <solution>
-            <p><m>\theta = 1.6476 \approx 94.4^\circ</m></p>
-          </solution>
         </webwork>
       </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, a vector <m>\vec v</m> is given. Give two vectors that are orthogonal to <m>\vec v</m>.</p>
+      </introduction>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\langle-7,4\rangle</member>
+                <member correct="yes">\langle14,-8\rangle</member>
+              </set>
             </var>
             <pg-code>
+              Context("Vector");
+              $v=Vector("&lt;4,7>");
+              $u=Vector("&lt;-7,4>");
+              $w=Vector("&lt;14,-8>");
+              $multians = MultiAnswer($u,$v)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0>")));
+                      $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0>")) and ($s1 != $s2));
+                      return ~~@ret;
+                   }
+                );
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u = \la 8,1,-4\ra</m>, <m>\vec v = \la 2,2,0\ra</m></p>
-          </statement>
-          <solution>
-            <p><m>\theta = \pi/4 = 45^\circ</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec u = \la 1,7,2\ra</m>, <m>\vec v = \la 4,-2,5\ra</m></p>
-          </statement>
-          <solution>
-            <p><m>\theta = \pi/2 = 90^\circ</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <p>In the following exercises, a vector <m>\vec v</m> is given. Give two vectors that are orthogonal to <m>\vec v</m>.</p>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec v = \la 4,7\ra</m></p>
+            <p>Find two nonzero vectors orthogonal to <m>\vec v = \la 4,7\ra</m>.</p>
+            <p><var name="$multians" width="10"/> and <var name="$multians" width="10"/></p>
           </statement>
           <solution>
             <p>Answers will vary; two possible answers are <m>\la -7,4\ra</m> and <m>\la 14,-8\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\langle5,3\rangle</member>
+                <member correct="yes">\langle-15,-9\rangle</member>
+              </set>
             </var>
             <pg-code>
+              Context("Vector");
+              $v=Vector("&lt;-3,5>");
+              $u=Vector("&lt;5,3>");
+              $w=Vector("&lt;-15,-9>");
+              $multians = MultiAnswer($u,$v)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0>")));
+                      $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0>")) and ($s1 != $s2));
+                      return ~~@ret;
+                   }
+                );
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec v = \la -3,5\ra</m></p>
+            <p>Find two nonzero vectors orthogonal to <m>\vec v = \la -3,5\ra</m>.</p>
+            <p><var name="$multians" width="10"/> and <var name="$multians" width="10"/></p>
           </statement>
           <solution>
             <p>Answers will vary; two possible answers are <m>\la 5,3\ra</m> and <m>\la -15,-9\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\langle1,0,-1\rangle</member>
+                <member correct="yes">\langle4,5,-9\rangle</member>
+              </set>
             </var>
             <pg-code>
+              Context("Vector");
+              $v=Vector("&lt;1,1,1>");
+              $u=Vector("&lt;1,0,-1>");
+              $w=Vector("&lt;4,5,-9>");
+              $multians = MultiAnswer($u,$v)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0>")));
+                      $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0>")) and ($s1 != $s2));
+                      return ~~@ret;
+                   }
+                );
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec v = \la 1,1,1\ra</m></p>
+            <p>Find two nonzero vectors orthogonal to <m>\vec v = \la 1,1,1\ra</m>.</p>
+            <p><var name="$multians" width="10"/> and <var name="$multians" width="10"/></p>
           </statement>
           <solution>
             <p>Answers will vary; two possible answers are <m>\la 1,0,-1\ra</m> and <m>\la 4,5,-9\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\langle2,1,0\rangle</member>
+                <member correct="yes">\langle1,1,1/3\rangle</member>
+              </set>
             </var>
             <pg-code>
+              Context("Vector");
+              $v=Vector("&lt;1,-2,3>");
+              $u=Vector("&lt;2,1,0>");
+              $w=Vector("&lt;1,1,1/3>");
+              $multians = MultiAnswer($u,$v)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0>")));
+                      $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0>")) and ($s1 != $s2));
+                      return ~~@ret;
+                   }
+                );
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec v = \la 1,-2,3\ra</m></p>
+            <p>Find two nonzero vectors orthogonal to <m>\vec v = \la 1,-2,3\ra</m>.</p>
+            <p><var name="$multians" width="10"/> and <var name="$multians" width="10"/></p>
           </statement>
           <solution>
             <p>Answers will vary; two possible answers are <m>\la 2,1,0\ra</m> and <m>\la 1,1,1/3\ra</m>.</p>
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. Find <m>\proj uv</m>, the orthogonal projection of <m>\vec u</m> onto <m>\vec v</m>, and sketch all three vectors on the same axes.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. Find <m>\proj uv</m>, the orthogonal projection of <m>\vec u</m> onto <m>\vec v</m>, and sketch all three vectors on the same axes.</p>
+      </introduction>
       <exercise xml:id="ex_10_03_ex_21">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$projuv">
+              <static>\langle -1/2,3/2\rangle</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;1,2>");
+              $v=Vector("&lt;-1,3>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u = \la 1,2\ra</m>, <m>\vec v = \la -1,3\ra</m></p>
+            <p>If <m>\vec u = \la 1,2\ra</m> and <m>\vec v = \la -1,3\ra</m>, then <m>\proj uv=</m><var name="$projuv" width="15" />.</p>
+            <p>Sketch all three vectors on the same axes.</p>
           </statement>
-          <solution>
-            <p><m>\proj uv = \la -1/2,3/2\ra</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$projuv">
+              <static>\langle 2,6\rangle</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;5,5>");
+              $v=Vector("&lt;1,3>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u = \la 5,5\ra</m>, <m>\vec v = \la 1,3\ra</m></p>
+            <p>If <m>\vec u = \la 5,5\ra</m> and <m>\vec v = \la 1,3\ra</m>, then <m>\proj uv=</m><var name="$projuv" width="15" />.</p>
+            <p>Sketch all three vectors on the same axes.</p>
           </statement>
-          <solution>
-            <p><m>\proj uv = \la 2,6\ra</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$projuv">
+              <static>\langle -1/2,-1/2\rangle</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;-3,2>");
+              $v=Vector("&lt;1,1>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u = \la -3,2\ra</m>, <m>\vec v = \la 1,1\ra</m></p>
+            <p>If <m>\vec u = \la -3,2\ra</m> and <m>\vec v = \la 1,1\ra</m>, then <m>\proj uv=</m><var name="$projuv" width="15" />.</p>
+            <p>Sketch all three vectors on the same axes.</p>
           </statement>
-          <solution>
-            <p><m>\proj uv = \la -1/2,-1/2\ra</m>.</p>
-          </solution>
         </webwork>
       </exercise>
-      <exercise>
+
+     <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$projuv">
+              <static>\langle 0,0\rangle</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;-3,2>");
+              $v=Vector("&lt;2,3>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u = \la -3,2\ra</m>, <m>\vec v = \la 2,3\ra</m></p>
+            <p>If <m>\vec u = \la -3,2\ra</m> and <m>\vec v = \la 2,3\ra</m>, then <m>\proj uv=</m><var name="$projuv" width="15" />.</p>
+            <p>Sketch all three vectors on the same axes.</p>
           </statement>
-          <solution>
-            <p><m>\proj uv = \la 0,0\ra</m>.</p>
-          </solution>
         </webwork>
       </exercise>
-      <exercise>
+
+     <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$projuv">
+              <static>\langle 1,2,3\rangle</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;1,5,1>");
+              $v=Vector("&lt;1,2,3>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u = \la 1,5,1\ra</m>, <m>\vec v = \la 1,2,3\ra</m></p>
+            <p>If <m>\vec u = \la 1,5,1\ra</m> and <m>\vec v = \la 1,2,3\ra</m>, then <m>\proj uv=</m><var name="$projuv" width="15" />.</p>
+            <p>Sketch all three vectors on the same axes.</p>
           </statement>
-          <solution>
-            <p><m>\proj uv = \la 1,2,3\ra</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise xml:id="ex_10_03_ex_24">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$projuv">
+              <static>\langle 4/3,4/3,2/3\rangle</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;3,-1,2>");
+              $v=Vector("&lt;2,2,1>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u = \la 3,-1,2\ra</m>, <m>\vec v = \la 2,2,1\ra</m></p>
+            <p>If <m>\vec u = \la 3,-1,2\ra</m> and <m>\vec v = \la 2,2,1\ra</m>, then <m>\proj uv=</m><var name="$projuv" width="15" />.</p>
+            <p>Sketch all three vectors on the same axes.</p>
           </statement>
-          <solution>
-            <p><m>\proj uv = \la 4/3, 4/3, 2/3\ra</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <p>In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. Write <m>\vec u</m> as the sum of two vectors, one of which is parallel to <m>\vec v</m> and one of which is perpendicular to <m>\vec v</m>. Note: these are the same pairs of vectors as found in <xref ref="ex_10_03_ex_21">Exercises</xref> <mdash /> <xref ref="ex_10_03_ex_24"></xref>.</p>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec u = \la 1,2\ra</m>, <m>\vec v = \la -1,3\ra</m></p>
-          </statement>
-          <solution>
-            <p><m>\vec u = \la -1/2,3/2\ra + \la 3/2,1/2\ra</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec u = \la 5,5\ra</m>, <m>\vec v = \la 1,3\ra</m></p>
-          </statement>
-          <solution>
-            <p><m>\vec u = \la 2,6\ra + \la 3,-1\ra</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec u = \la -3,2\ra</m>, <m>\vec v = \la 1,1\ra</m></p>
-          </statement>
-          <solution>
-            <p><m>\vec u = \la -1/2,-1/2\ra + \la -5/2,5/2\ra</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec u = \la -3,2\ra</m>, <m>\vec v = \la 2,3\ra</m></p>
-          </statement>
-          <solution>
-            <p><m>\vec u = \la 0,0\ra + \la -3,2\ra</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec u = \la 1,5,1\ra</m>, <m>\vec v = \la 1,2,3\ra</m></p>
-          </statement>
-          <solution>
-            <p><m>\vec u = \la 1,2,3\ra + \la 0,3,-2\ra</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec u = \la 3,-1,2\ra</m>, <m>\vec v = \la 2,2,1\ra</m></p>
-          </statement>
-          <solution>
-            <p><m>\vec u = \la 4/3,4/3,2/3\ra + \la 5/3,-7/3,4/3\ra</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>A 10lb box sits on a ramp that rises 4ft over a distance of 20ft. How much force is required to keep the box from sliding down the ramp?</p>
-          </statement>
-          <solution>
-            <p>1.96lb</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>A 10lb box sits on a 15ft ramp that makes a <m>30^\circ</m> angle with the horizontal. How much force is required to keep the box from sliding down the ramp?</p>
-          </statement>
-          <solution>
-            <p>5lb</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>How much work is performed in moving a box horizontally 10ft with a force of 20lb applied at an angle of <m>45^\circ</m> to the horizontal?</p>
-          </statement>
-          <solution>
-            <p><m>141.42</m>ft<ndash />lb</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>How much work is performed in moving a box horizontally 10ft with a force of 20lb applied at an angle of <m>10^\circ</m> to the horizontal?</p>
-          </statement>
-          <solution>
-            <p><m>196.96</m>ft<ndash />lb</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>How much work is performed in moving a box up the length of a ramp that rises 2ft over a distance of 10ft, with a force of 50lb applied horizontally?</p>
-          </statement>
-          <solution>
-            <p><m>500</m>ft<ndash />lb</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>How much work is performed in moving a box up the length of a ramp that rises 2ft over a distance of 10ft, with a force of 50lb applied at an angle of <m>45^\circ</m> to the horizontal?</p>
-          </statement>
-          <solution>
-            <p><m>424.26</m>ft<ndash />lb</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>How much work is performed in moving a box up the length of a 10ft ramp that makes a <m>5^\circ</m> angle with the horizontal, with 50lb of force applied in the direction of the ramp?</p>
-          </statement>
-          <solution>
-            <p><m>500</m>ft<ndash />lb</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given. Write <m>\vec u</m> as the sum of two vectors, one of which is parallel to <m>\vec v</m> (or is zero) and one of which is orthogonal to <m>\vec v</m>. Note: these are the same pairs of vectors as found in <xref ref="ex_10_03_ex_21">Exercises</xref> <mdash /> <xref ref="ex_10_03_ex_24"></xref>.</p>
+      </introduction>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\la -1/2,3/2\ra</member>
+                <member correct="yes">\la 3/2,1/2\ra</member>
+              </set>
+            </var>
+            <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;1,2>");
+              $v=Vector("&lt;-1,3>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den>");
+              @uc=$u->value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den>");
+              $multians = MultiAnswer($projuv,$comp)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self->setMessage(1,"These vectors do not sum to u.");
+                         $self->setMessage(2,"These vectors do not sum to u.");
+                         return [0,0];
+                         }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is parallel to v.");
+                         $self->setMessage(2,"But this vector is not orthogonal to v.");
+                         return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is not orthogonal to v.");
+                         $self->setMessage(2,"This vector is parallel to v.");
+                         return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self->setMessage(1,"This vector is orthogonal to v.");
+                         $self->setMessage(2,"But this vector is not parallel to v.");
+                         return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self->setMessage(1,"This vector is not parallel to v.");
+                         $self->setMessage(2,"This vector is orthogonal to v.");
+                         return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                   }
+                );
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Write <m>\vec u = \la 1,2\ra</m> as the sum of two vectors, one parallel to <m>\vec v = \la -1,3\ra</m> (or zero) and the other perpendicular.</p>
+            <p><m>\vec u=</m><var name="$multians" width="15" /><m>{}+{}</m><var name="$multians" width="15" /></p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\la 2,6\ra</member>
+                <member correct="yes">\la 3,-1\ra</member>
+              </set>
+            </var>
+            <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;5,5>");
+              $v=Vector("&lt;1,3>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den>");
+              @uc=$u->value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den>");
+              $multians = MultiAnswer($projuv,$comp)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self->setMessage(1,"These vectors do not sum to u.");
+                         $self->setMessage(2,"These vectors do not sum to u.");
+                         return [0,0];
+                         }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is parallel to v.");
+                         $self->setMessage(2,"But this vector is not orthogonal to v.");
+                         return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is not orthogonal to v.");
+                         $self->setMessage(2,"This vector is parallel to v.");
+                         return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self->setMessage(1,"This vector is orthogonal to v.");
+                         $self->setMessage(2,"But this vector is not parallel to v.");
+                         return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self->setMessage(1,"This vector is not parallel to v.");
+                         $self->setMessage(2,"This vector is orthogonal to v.");
+                         return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                   }
+                );
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Write <m>\vec u = \la 5,5\ra</m> as the sum of two vectors, one parallel to <m>\vec v = \la 1,3\ra</m> (or zero) and the other perpendicular.</p>
+            <p><m>\vec u=</m><var name="$multians" width="15" /><m>{}+{}</m><var name="$multians" width="15" /></p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\la -1/2,-1/2\ra</member>
+                <member correct="yes">\la -5/2,5/2\ra</member>
+              </set>
+            </var>
+            <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;-3,2>");
+              $v=Vector("&lt;1,1>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den>");
+              @uc=$u->value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den>");
+              $multians = MultiAnswer($projuv,$comp)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self->setMessage(1,"These vectors do not sum to u.");
+                         $self->setMessage(2,"These vectors do not sum to u.");
+                         return [0,0];
+                         }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is parallel to v.");
+                         $self->setMessage(2,"But this vector is not orthogonal to v.");
+                         return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is not orthogonal to v.");
+                         $self->setMessage(2,"This vector is parallel to v.");
+                         return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self->setMessage(1,"This vector is orthogonal to v.");
+                         $self->setMessage(2,"But this vector is not parallel to v.");
+                         return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self->setMessage(1,"This vector is not parallel to v.");
+                         $self->setMessage(2,"This vector is orthogonal to v.");
+                         return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                   }
+                );
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Write <m>\vec u = \la -3,2\ra</m> as the sum of two vectors, one parallel to <m>\vec v = \la 1,1\ra</m> (or zero) and the other perpendicular.</p>
+            <p><m>\vec u=</m><var name="$multians" width="15" /><m>{}+{}</m><var name="$multians" width="15" /></p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\la 0,0\ra</member>
+                <member correct="yes">\la -3,2\ra</member>
+              </set>
+            </var>
+            <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;-3,2>");
+              $v=Vector("&lt;2,3>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den>");
+              @uc=$u->value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den>");
+              $multians = MultiAnswer($projuv,$comp)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self->setMessage(1,"These vectors do not sum to u.");
+                         $self->setMessage(2,"These vectors do not sum to u.");
+                         return [0,0];
+                         }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is parallel to v.");
+                         $self->setMessage(2,"But this vector is not orthogonal to v.");
+                         return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is not orthogonal to v.");
+                         $self->setMessage(2,"This vector is parallel to v.");
+                         return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self->setMessage(1,"This vector is orthogonal to v.");
+                         $self->setMessage(2,"But this vector is not parallel to v.");
+                         return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self->setMessage(1,"This vector is not parallel to v.");
+                         $self->setMessage(2,"This vector is orthogonal to v.");
+                         return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                   }
+                );
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Write <m>\vec u = \la -3,2\ra</m> as the sum of two vectors, one parallel to <m>\vec v = \la 2,3\ra</m> (or zero) and the other perpendicular.</p>
+            <p><m>\vec u=</m><var name="$multians" width="15" /><m>{}+{}</m><var name="$multians" width="15" /></p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\la 1,2,3\ra</member>
+                <member correct="yes">\la 0,3,-2\ra</member>
+              </set>
+            </var>
+            <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;1,5,1>");
+              $v=Vector("&lt;1,2,3>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den>");
+              @uc=$u->value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1,2);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den,$compnums[2]/$den>");
+              $multians = MultiAnswer($projuv,$comp)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self->setMessage(1,"These vectors do not sum to u.");
+                         $self->setMessage(2,"These vectors do not sum to u.");
+                         return [0,0];
+                         }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is parallel to v.");
+                         $self->setMessage(2,"But this vector is not orthogonal to v.");
+                         return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is not orthogonal to v.");
+                         $self->setMessage(2,"This vector is parallel to v.");
+                         return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self->setMessage(1,"This vector is orthogonal to v.");
+                         $self->setMessage(2,"But this vector is not parallel to v.");
+                         return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self->setMessage(1,"This vector is not parallel to v.");
+                         $self->setMessage(2,"This vector is orthogonal to v.");
+                         return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                   }
+                );
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Write <m>\vec u = \la 1,5,1\ra</m> as the sum of two vectors, one parallel to <m>\vec v = \la 1,2,3\ra</m> (or zero) and the other perpendicular.</p>
+            <p><m>\vec u=</m><var name="$multians" width="15" /><m>{}+{}</m><var name="$multians" width="15" /></p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$multians">
+              <set>
+                <member correct="yes">\la 4/3,4/3,2/3\ra</member>
+                <member correct="yes">\la 5/3,-7/3,4/3\ra</member>
+              </set>
+            </var>
+            <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $u=Vector("&lt;3,-1,2>");
+              $v=Vector("&lt;2,2,1>");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v->value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den>");
+              @uc=$u->value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1,2);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den,$compnums[2]/$den>");
+              $multians = MultiAnswer($projuv,$comp)->with(
+                  singleResult => 0,
+                  checker => sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self->setMessage(1,"These vectors do not sum to u.");
+                         $self->setMessage(2,"These vectors do not sum to u.");
+                         return [0,0];
+                         }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is parallel to v.");
+                         $self->setMessage(2,"But this vector is not orthogonal to v.");
+                         return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self->setMessage(1,"This vector is not orthogonal to v.");
+                         $self->setMessage(2,"This vector is parallel to v.");
+                         return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self->setMessage(1,"This vector is orthogonal to v.");
+                         $self->setMessage(2,"But this vector is not parallel to v.");
+                         return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self->setMessage(1,"This vector is not parallel to v.");
+                         $self->setMessage(2,"This vector is orthogonal to v.");
+                         return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                   }
+                );
+            </pg-code>
+          </setup>
+          <statement>
+            <p>Write <m>\vec u = \la 3,-1,2\ra</m> as the sum of two vectors, one parallel to <m>\vec v = \la 2,2,1\ra</m> (or zero) and the other perpendicular.</p>
+            <p><m>\vec u=</m><var name="$multians" width="15" /><m>{}+{}</m><var name="$multians" width="15" /></p>
+          </statement>
+        </webwork>
+      </exercise>
+    </exercisegroup>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>A 10lb box sits on a ramp that rises 4ft over a distance of 20ft. How much force is required to keep the box from sliding down the ramp?</p>
+        </statement>
+        <solution>
+          <p>1.96lb</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>A 10lb box sits on a 15ft ramp that makes a <m>30^\circ</m> angle with the horizontal. How much force is required to keep the box from sliding down the ramp?</p>
+        </statement>
+        <solution>
+          <p>5lb</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>How much work is performed in moving a box horizontally 10ft with a force of 20lb applied at an angle of <m>45^\circ</m> to the horizontal?</p>
+        </statement>
+        <solution>
+          <p><m>141.42</m>ft<ndash />lb</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>How much work is performed in moving a box horizontally 10ft with a force of 20lb applied at an angle of <m>10^\circ</m> to the horizontal?</p>
+        </statement>
+        <solution>
+          <p><m>196.96</m>ft<ndash />lb</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>How much work is performed in moving a box up the length of a ramp that rises 2ft over a distance of 10ft, with a force of 50lb applied horizontally?</p>
+        </statement>
+        <solution>
+          <p><m>500</m>ft<ndash />lb</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>How much work is performed in moving a box up the length of a ramp that rises 2ft over a distance of 10ft, with a force of 50lb applied at an angle of <m>45^\circ</m> to the horizontal?</p>
+        </statement>
+        <solution>
+          <p><m>424.26</m>ft<ndash />lb</p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>How much work is performed in moving a box up the length of a 10ft ramp that makes a <m>5^\circ</m> angle with the horizontal, with 50lb of force applied in the direction of the ramp?</p>
+        </statement>
+        <solution>
+          <p><m>500</m>ft<ndash />lb</p>
+        </solution>
+      </webwork>
+    </exercise>
   </exercises>
 </section>
