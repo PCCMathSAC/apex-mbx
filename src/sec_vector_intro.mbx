@@ -1054,9 +1054,12 @@
 
     <p>The algebra we have applied to vectors is already demonstrating itself to be very useful. There are two more fundamental operations we can perform with vectors, the <em>dot product</em> and the <em>cross product</em>. The next two sections explore each in turn.</p>
   </introduction>
+
   <exercises>
     <exercisegroup>
-      <title>Terms and Concepts</title>
+      <introduction>
+        <p>Terms and Concepts</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1143,140 +1146,213 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
-      <title>Problems</title>
-      <p>In the following exercises, points <m>P</m> and <m>Q</m> are given. Write the vector <m>\vv{PQ}</m> in component form and using the standard unit vectors.</p>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>P=(2,-1)</m>,<m>Q = (3,5)</m></p>
-          </statement>
-          <solution>
-            <p><m>\vv{PQ} = \la 1,6\ra = 1\vec i + 6\vec j</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>P=(3,2)</m>,<m>Q = (7,-2)</m></p>
-          </statement>
-          <solution>
-            <p><m>\vv{PQ} = \la -4,4\ra = -4\vec i + 4\vec j</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>P=(0,3,-1)</m>,<m>Q = (6,2,5)</m></p>
-          </statement>
-          <solution>
-            <p><m>\vv{PQ} = \la 6,-1,6\ra = 6\vec i -\vec j+6\vec k</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>P=(2,1,2)</m>,<m>Q = (4,3,2)</m></p>
-          </statement>
-          <solution>
-            <p><m>\vv{PQ} = \la 2,2,0\ra = 2\vec i +2\vec j</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Let <m>\vec u = \la 1,-2\ra</m> and <m>\vec v= \la 1,1\ra</m>.</p>
+      <introduction>
+        <p>In the following exercises, points <m>P</m> and <m>Q</m> are given. Write the vector <m>\overrightarrow{PQ}</m> in component form and using the standard unit vectors.</p>
+      </introduction>
 
-            <ol>
-              <li><p>Find <m>\vec u+\vec v</m>, <m>\vec u-\vec v</m>, <m>2\vec u-3\vec v</m>.</p></li>
-
-              <li><p>Sketch the above vectors on the same axes, along with <m>\vec u</m> and <m>\vec v</m>.</p></li>
-
-              <li><p>Find <m>\vec x</m> where <m>\vec u+\vec x = 2\vec v-\vec x</m>.</p></li>
-            </ol>
-          </statement>
-          <solution>
-            <ol>
-              <li><p><m>\vec u+\vec v = \la 2,-1\ra</m>; <m>\vec u -\vec v = \la0,-3\ra</m>; <m>2\vec u-3\vec v = \la -1,-7\ra</m>.</p></li>
-
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$comp">
+              <static>\langle1,6\rangle</static>
+            </var>
+            <var name="$stan">
+              <static>\hat{\mathi}+6\hat{\mathj}</static>
+            </var>
+            <pg-code>
+              Context("Vector2D");
+              Context()->constants->undefine(i,j);
+              $comp=Vector("&lt;1,6>");
+              Context("Vector2D");
+              Context()->flags->set(ijk=>1);
+              Context()->parens->undefine('&lt;','(','{');
+              $stan=Vector("i+6j");
+            </pg-code>
+          </setup>
+          <statement>
+            <p>If <m>P=(2,-1)</m> and <m>Q = (3,5)</m>, write the vector <m>\overrightarrow{PQ}</m>:</p>
+            <p><ol label="a">
               <li>
-                <title>(c)</title>
-                <p><m>\vec x = \la 1/2,2\ra</m>.</p></li>
-            </ol>
-          </solution>
+                <p>in component form: <var name="$comp" width="10" /></p>
+              </li>
+              <li>
+                <p>using the standard unit vectors: <var name="$stan" width="10" /></p>
+              </li>
+            </ol></p>
+          </statement>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$comp">
+              <static>\langle4,-4\rangle</static>
+            </var>
+            <var name="$stan">
+              <static>4\hat{\mathi}-4\hat{\mathj}</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->constants->undefine(i,j);
+              $comp=Vector("&lt;4,-4>");
+              Context("Vector2D");
+              Context()->flags->set(ijk=>1);
+              Context()->parens->undefine('&lt;','(','{');
+              $stan=Vector("4i-4j");
             </pg-code>
           </setup>
           <statement>
-            <p>Let <m>\vec u = \la 1,1,-1\ra</m> and <m>\vec v= \la 2,1,2\ra</m>.</p>
-
-            <ol>
-              <li><p>Find <m>\vec u+\vec v</m>, <m>\vec u-\vec v</m>, <m>\pi\vec u-\sqrt{2}\vec v</m>.</p></li>
-
-              <li><p>Sketch the above vectors on the same axes, along with <m>\vec u</m> and <m>\vec v</m>.</p></li>
-
-              <li><p>Find <m>\vec x</m> where <m>\vec u+\vec x = \vec v+2\vec x</m>.</p></li>
-            </ol>
-          </statement>
-          <solution>
-            <ol>
-              <li><p><m>\vec u+\vec v = \la 3,2,1\ra</m>; <m>\vec u -\vec v = \la-1,0,-3\ra</m>; <m>\pi\vec u-\sqrt{2}\vec v = \la \pi-2\sqrt{2},\pi-\sqrt{2},-\pi-2\sqrt{2}\ra</m>.</p></li>
-
+            <p>If <m>P=(3,2)</m> and <m>Q = (7,-2)</m>, write the vector <m>\overrightarrow{PQ}</m>:</p>
+            <p><ol label="a">
               <li>
-                <title>(c)</title>
-                <p><m>\vec x = \la-1,0,-3\ra</m>.</p></li>
-            </ol>
-          </solution>
+                <p>in component form: <var name="$comp" width="10" /></p>
+              </li>
+              <li>
+                <p>using the standard unit vectors: <var name="$stan" width="10" /></p>
+              </li>
+            </ol></p>
+          </statement>
         </webwork>
       </exercise>
-      <p>In the following exercises, sketch <m>\vec u</m>, <m>\vec v</m>, <m>\vec u+\vec v</m> and <m>\vec u-\vec v</m> on the same axes.</p>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$comp">
+              <static>\langle6,-1,6\rangle</static>
+            </var>
+            <var name="$stan">
+              <static>6\hat{\mathi}-\hat{\mathj}+6\hat{k}</static>
+            </var>
+            <pg-code>
+              Context("Vector");
+              Context()->constants->undefine(i,j,k);
+              $comp=Vector("&lt;6,-1,6>");
+              Context("Vector");
+              Context()->flags->set(ijk=>1);
+              Context()->parens->undefine('&lt;','(','{');
+              $stan=Vector("6i-j+6k");
+            </pg-code>
+          </setup>
+          <statement>
+            <p>If <m>P=(0,3,-1)</m> and <m>Q = (6,2,5)</m>, write the vector <m>\overrightarrow{PQ}</m>:</p>
+            <p><ol label="a">
+              <li>
+                <p>in component form: <var name="$comp" width="10" /></p>
+              </li>
+              <li>
+                <p>using the standard unit vectors: <var name="$stan" width="10" /></p>
+              </li>
+            </ol></p>
+          </statement>
+        </webwork>
+      </exercise>
+
+      <exercise>
+        <webwork seed="1">
+          <setup>
+            <var name="$comp">
+              <static>\langle2,2,0\rangle</static>
+            </var>
+            <var name="$stan">
+              <static>2\hat{\mathi}+2\hat{\mathj}</static>
+            </var>
+            <pg-code>
+              Context("Vector");
+              Context()->constants->undefine(i,j,k);
+              $comp=Vector("&lt;2,2,0>");
+              Context("Vector");
+              Context()->flags->set(ijk=>1);
+              Context()->parens->undefine('&lt;','(','{');
+              $stan=Vector("2i+2j");
+            </pg-code>
+          </setup>
+          <statement>
+            <p>If <m>P=(2,1,2)</m> and <m>Q = (4,3,2)</m>, write the vector <m>\overrightarrow{PQ}</m>:</p>
+            <p><ol label="a">
+              <li>
+                <p>in component form: <var name="$comp" width="10" /></p>
+              </li>
+              <li>
+                <p>using the standard unit vectors: <var name="$stan" width="10" /></p>
+              </li>
+            </ol></p>
+          </statement>
+        </webwork>
+      </exercise>
+    </exercisegroup>
+
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Let <m>\vec u = \la 1,-2\ra</m> and <m>\vec v= \la 1,1\ra</m>.</p>
+
+          <ol>
+            <li><p>Find <m>\vec u+\vec v</m>, <m>\vec u-\vec v</m>, <m>2\vec u-3\vec v</m>.</p></li>
+
+            <li><p>Sketch the above vectors on the same axes, along with <m>\vec u</m> and <m>\vec v</m>.</p></li>
+
+            <li><p>Find <m>\vec x</m> where <m>\vec u+\vec x = 2\vec v-\vec x</m>.</p></li>
+          </ol>
+        </statement>
+        <solution>
+          <ol>
+            <li><p><m>\vec u+\vec v = \la 2,-1\ra</m>; <m>\vec u -\vec v = \la0,-3\ra</m>; <m>2\vec u-3\vec v = \la -1,-7\ra</m>.</p></li>
+
+            <li>
+              <title>(c)</title>
+              <p><m>\vec x = \la 1/2,2\ra</m>.</p></li>
+          </ol>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Let <m>\vec u = \la 1,1,-1\ra</m> and <m>\vec v= \la 2,1,2\ra</m>.</p>
+
+          <ol>
+            <li><p>Find <m>\vec u+\vec v</m>, <m>\vec u-\vec v</m>, <m>\pi\vec u-\sqrt{2}\vec v</m>.</p></li>
+
+            <li><p>Sketch the above vectors on the same axes, along with <m>\vec u</m> and <m>\vec v</m>.</p></li>
+
+            <li><p>Find <m>\vec x</m> where <m>\vec u+\vec x = \vec v+2\vec x</m>.</p></li>
+          </ol>
+        </statement>
+        <solution>
+          <ol>
+            <li><p><m>\vec u+\vec v = \la 3,2,1\ra</m>; <m>\vec u -\vec v = \la-1,0,-3\ra</m>; <m>\pi\vec u-\sqrt{2}\vec v = \la \pi-2\sqrt{2},\pi-\sqrt{2},-\pi-2\sqrt{2}\ra</m>.</p></li>
+
+            <li>
+              <title>(c)</title>
+              <p><m>\vec x = \la-1,0,-3\ra</m>.</p></li>
+          </ol>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, sketch <m>\vec u</m>, <m>\vec v</m>, <m>\vec u+\vec v</m> and <m>\vec u-\vec v</m> on the same axes.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1618,219 +1694,308 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find <m>\norm{\vec u}</m>, <m>\norm{\vec v}</m>, <m>\norm{\vec u+\vec v}</m> and <m>\norm{\vec u-\vec v}</m>.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find <m>\norm{\vec u}</m>, <m>\norm{\vec v}</m>, <m>\norm{\vec u+\vec v}</m> and <m>\norm{\vec u-\vec v}</m>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$normu">
+              <static>\sqrt{5}</static>
+            </var>
+            <var name="$normv">
+              <static>\sqrt{13}</static>
+            </var>
+            <var name="$normupv">
+              <static>\sqrt{26}</static>
+            </var>
+            <var name="$normumv">
+              <static>\sqrt{10}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstantFunctions=>0);
+              $normu=Formula("sqrt(5)");
+              $normv=Formula("sqrt(13)");
+              $normupv=Formula("sqrt(26)");
+              $normumv=Formula("sqrt(10)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u=\la 2,1\ra</m>,<m>\vec v = \la 3,-2\ra</m></p>
+            <p>Given <m>\vec u=\la 2,1\ra</m> and <m>\vec v = \la 3,-2\ra</m>, find:</p>
+            <p><m>\norm{\vec u}=</m><var name="$normu" width="5" /></p>
+            <p><m>\norm{\vec v}=</m><var name="$normv" width="5" /></p>
+            <p><m>\norm{\vec u+\vec v}=</m><var name="$normupv" width="5" /></p>
+            <p><m>\norm{\vec u-\vec v}=</m><var name="$normumv" width="5" /></p>
           </statement>
-          <solution>
-            <p><m>\norm{\vec u} = \sqrt{5}</m>, <m>\norm{\vec v} = \sqrt{13}</m>, <m>\norm{\vec u+\vec v} = \sqrt{26}</m>, <m>\norm{\vec u-\vec v} = \sqrt{10}</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$normu">
+              <static>\sqrt{17}</static>
+            </var>
+            <var name="$normv">
+              <static>\sqrt{3}</static>
+            </var>
+            <var name="$normupv">
+              <static>\sqrt{14}</static>
+            </var>
+            <var name="$normumv">
+              <static>\sqrt{26}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstantFunctions=>0);
+              $normu=Formula("sqrt(17)");
+              $normv=Formula("sqrt(3)");
+              $normupv=Formula("sqrt(14)");
+              $normumv=Formula("sqrt(26)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u=\la -3,2,2\ra</m>,<m>\vec v = \la 1,-1,1\ra</m></p>
+            <p>Given <m>\vec u=\la -3,2,2\ra</m> and <m>\vec v = \la 1,-1,1\ra</m>, find:</p>
+            <p><m>\norm{\vec u}=</m><var name="$normu" width="5" /></p>
+            <p><m>\norm{\vec v}=</m><var name="$normv" width="5" /></p>
+            <p><m>\norm{\vec u+\vec v}=</m><var name="$normupv" width="5" /></p>
+            <p><m>\norm{\vec u-\vec v}=</m><var name="$normumv" width="5" /></p>
           </statement>
-          <solution>
-            <p><m>\norm{\vec u} = \sqrt{17}</m>, <m>\norm{\vec v} = \sqrt{3}</m>, <m>\norm{\vec u+\vec v} = \sqrt{14}</m>, <m>\norm{\vec u-\vec v} = \sqrt{26}</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$normu">
+              <static>\sqrt{5}</static>
+            </var>
+            <var name="$normv">
+              <static>3\sqrt{5}</static>
+            </var>
+            <var name="$normupv">
+              <static>2\sqrt{5}</static>
+            </var>
+            <var name="$normumv">
+              <static>4\sqrt{5}</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstantFunctions=>0);
+              $normu=Formula("sqrt(5)");
+              $normv=Formula("3sqrt(5)");
+              $normupv=Formula("2sqrt(5)");
+              $normumv=Formula("4sqrt(5)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u=\la 1,2\ra</m>,<m>\vec v = \la -3,-6\ra</m></p>
+            <p>Given <m>\vec u=\la 1,2\ra</m> and <m>\vec v = \la -3,-6\ra</m>, find:</p>
+            <p><m>\norm{\vec u}=</m><var name="$normu" width="5" /></p>
+            <p><m>\norm{\vec v}=</m><var name="$normv" width="5" /></p>
+            <p><m>\norm{\vec u+\vec v}=</m><var name="$normupv" width="5" /></p>
+            <p><m>\norm{\vec u-\vec v}=</m><var name="$normumv" width="5" /></p>
           </statement>
-          <solution>
-            <p><m>\norm{\vec u} = \sqrt{5}</m>, <m>\norm{\vec v} = 3\sqrt{5}</m>, <m>\norm{\vec u+\vec v} = 2\sqrt{5}</m>, <m>\norm{\vec u-\vec v} = 4\sqrt{5}</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$normu">
+              <static>7</static>
+            </var>
+            <var name="$normv">
+              <static>35</static>
+            </var>
+            <var name="$normupv">
+              <static>42</static>
+            </var>
+            <var name="$normumv">
+              <static>28</static>
             </var>
             <pg-code>
+              Context()->flags->set(reduceConstantFunctions=>0);
+              $normu=Formula("7");
+              $normv=Formula("35");
+              $normupv=Formula("42");
+              $normumv=Formula("28");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec u=\la 2,-3,6\ra</m>,<m>\vec v = \la 10,-15,30\ra</m></p>
+            <p>Given <m>\vec u=\la 2,-3,6\ra</m> and <m>\vec v = \la 10,-15,30\ra</m>, find:</p>
+            <p><m>\norm{\vec u}=</m><var name="$normu" width="5" /></p>
+            <p><m>\norm{\vec v}=</m><var name="$normv" width="5" /></p>
+            <p><m>\norm{\vec u+\vec v}=</m><var name="$normupv" width="5" /></p>
+            <p><m>\norm{\vec u-\vec v}=</m><var name="$normumv" width="5" /></p>
           </statement>
-          <solution>
-            <p><m>\norm{\vec u} = 7</m>, <m>\norm{\vec v} = 35</m>, <m>\norm{\vec u+\vec v} = 42</m>, <m>\norm{\vec u-\vec v} = 28</m></p>
-          </solution>
         </webwork>
       </exercise>
+    </exercisegroup>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Under what conditions is <m>\norm{\vec u}+\norm{\vec v} = \norm{\vec u+\vec v}</m>?</p>
+        </statement>
+        <solution>
+          <p>When <m>\vec u</m> and <m>\vec v</m> have the same direction. (Note: parallel is not enough.)</p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the unit vector <m>\vec u</m> in the direction of <m>\vec v</m>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$u">
+              <static>\left\langle\frac{3}{\sqrt{58}},\frac{7}{\sqrt{58}}\right\rangle</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->flags->set(reduceConstantFunctions=>0);
+              $u=Compute("&lt;3/sqrt(58), 7/sqrt(58)>");
             </pg-code>
           </setup>
           <statement>
-            <p>Under what conditions is <m>\norm{\vec u}+\norm{\vec v} = \norm{\vec u+\vec v}</m>?</p>
+            <p>Find the unit vector <m>\vec u</m> in the direction of <m>\vec v = \la 3,7\ra</m>.</p>
+            <p><m>\vec u=</m><var name="$u" width="20" /></p>
           </statement>
-          <solution>
-            <p>When <m>\vec u</m> and <m>\vec v</m> have the same direction. (Note: parallel is not enough.)</p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the unit vector <m>\vec u</m> in the direction of <m>\vec v</m>.</p>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$u">
+              <static>\left\langle0.6,0.8\right\rangle</static>
             </var>
             <pg-code>
+              Context("Vector2D");
+              Context()->flags->set(reduceConstantFunctions=>0);
+              $u=Compute("&lt;0.6, 0.8>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec v = \la 3,7\ra</m></p>
+            <p>Find the unit vector <m>\vec u</m> in the direction of <m>\vec v = \la 6,8\ra</m>.</p>
+            <p><m>\vec u=</m><var name="$u" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>\vec u = \la 3/\sqrt{58},7/\sqrt{58}\ra</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$u">
+              <static>\left\langle\frac{1}{3},-\frac{2}{3},\frac{2}{3}\right\rangle</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstantFunctions=>0,reduceConstants=>0);
+              $u=Compute("&lt;1/3,-2/3,2/3>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec v = \la 6,8\ra</m></p>
+            <p>Find the unit vector <m>\vec u</m> in the direction of <m>\vec v = \la 1,-2,2\ra</m>.</p>
+            <p><m>\vec u=</m><var name="$u" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>\vec u = \la 0.6,0.8\ra</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$u">
+              <static>\left\langle\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right\rangle</static>
             </var>
             <pg-code>
+              Context("Vector");
+              Context()->flags->set(reduceConstantFunctions=>0,reduceConstants=>0);
+              $u=Compute("&lt;1/sqrt(3),-1/sqrt(3),1/sqrt(3)>");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\vec v = \la 1,-2,2\ra</m></p>
+            <p>Find the unit vector <m>\vec u</m> in the direction of <m>\vec v = \la 2,-2,2\ra</m>.</p>
+            <p><m>\vec u=</m><var name="$u" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>\vec u = \la 1/3, -2/3, 2/3\ra</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p><m>\vec v = \la 2,-2,2\ra</m></p>
-          </statement>
-          <solution>
-            <p><m>\vec u = \la 1/\sqrt{3},-1/\sqrt{3},1/\sqrt{3}\ra</m></p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Find the unit vector in the first quadrant of <m>\mathbb{R}^2</m> that makes a <m>50^\circ</m> angle with the <m>x</m>-axis.</p>
-          </statement>
-          <solution>
-            <p><m>\vec u = \la \cos(50^\circ) ,\sin(50^\circ) \ra \approx \la 0.643,0.766\ra</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Find the unit vector in the second quadrant of <m>\mathbb{R}^2</m> that makes a <m>30^\circ</m> angle with the <m>y</m>-axis.</p>
-          </statement>
-          <solution>
-            <p><m>\vec u = \la \cos(120^\circ) ,\sin(120^\circ) \ra = \la -1/2,\sqrt{3}/2\ra</m>.</p>
-          </solution>
-        </webwork>
-      </exercise>
-      <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
-          <statement>
-            <p>Verify, from <xref ref="idea_unit_vectors">Key Idea</xref>, that <m>\vec u=\la \sin(\theta) \cos(\varphi) ,\sin(\theta) \sin(\varphi) ,\cos(\theta) \ra</m> is a unit vector for all angles <m>\theta</m> and <m>\varphi</m>.</p>
-          </statement>
-          <solution>
-            <p>
-              <md>
-                <mrow>\norm{\vec u} \amp = \sqrt{\sin^2(\theta) \cos^2(\varphi) +\sin^2(\theta) \sin^2(\varphi) +\cos^2(\theta) }</mrow>
-                <mrow>\amp = \sqrt{\sin^2(\theta) (\cos^2(\varphi) +\sin^2(\varphi) )+\cos^2(\theta) }</mrow>
-                <mrow>\amp = \sqrt{\sin^2(\theta) +\cos^2(\theta) }</mrow>
-                <mrow>\amp =1.</mrow>
-              </md>
-            </p>
-          </solution>
-        </webwork>
-      </exercise>
+    </exercisegroup>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="$u">
+            <static>\left\langle\cos\mathopen{}\left(50^{\circ}\right),\sin\mathopen{}\left(50^{\circ}\right)\right\rangle</static>
+          </var>
+          <pg-code>
+              Context("Vector2D");
+              Context()->flags->set(reduceConstantFunctions=>0,reduceConstants=>0);
+              $u=Compute("&lt;cos(50*pi/180),sin(50*pi/180)>");
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Find the unit vector in the first quadrant of <m>\mathbb{R}^2</m> that makes a <m>50^{\circ}</m> angle with the <m>x</m>-axis.</p>
+          <p><var name="$u" width="20" /></p>
+        </statement>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="$u">
+            <static>\left\langle-\frac{1}{2},\frac{\sqrt{3}}{2}\right\rangle</static>
+          </var>
+          <pg-code>
+              Context("Vector2D");
+              Context()->flags->set(reduceConstantFunctions=>0,reduceConstants=>0);
+              $u=Compute("&lt;-1/2,sqrt(3)/2>");
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Find the unit vector in the second quadrant of <m>\mathbb{R}^2</m> that makes a <m>30^{\circ}</m> angle with the <m>y</m>-axis.</p>
+          <p><var name="$u" width="20" /></p>
+        </statement>
+      </webwork>
+    </exercise>
+
+    <exercise>
+      <webwork seed="1">
+        <setup>
+          <var name="">
+            <static></static>
+          </var>
+          <pg-code>
+          </pg-code>
+        </setup>
+        <statement>
+          <p>Verify, from <xref ref="idea_unit_vectors">Key Idea</xref>, that <m>\vec u=\la \sin(\theta) \cos(\varphi) ,\sin(\theta) \sin(\varphi) ,\cos(\theta) \ra</m> is a unit vector for all angles <m>\theta</m> and <m>\varphi</m>.</p>
+        </statement>
+        <solution>
+          <p>
+            <md>
+              <mrow>\norm{\vec u} \amp = \sqrt{\sin^2(\theta) \cos^2(\varphi) +\sin^2(\theta) \sin^2(\varphi) +\cos^2(\theta) }</mrow>
+              <mrow>\amp = \sqrt{\sin^2(\theta) (\cos^2(\varphi) +\sin^2(\varphi) )+\cos^2(\theta) }</mrow>
+              <mrow>\amp = \sqrt{\sin^2(\theta) +\cos^2(\theta) }</mrow>
+              <mrow>\amp =1.</mrow>
+            </md>
+          </p>
+        </solution>
+      </webwork>
+    </exercise>
+
+    <exercisegroup>
       <p>{ A weight of 100lb is suspended from two chains, making angles with the vertical of <m>\theta</m> and <m>\varphi</m> as shown in the figure below.</p>
 
       <!-- START\1END -->
