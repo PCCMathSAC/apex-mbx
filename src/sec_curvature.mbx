@@ -1300,7 +1300,7 @@
               <static>\frac{\abs{\sec^3(t) }}{\left(\sec^4(t) +\sec^2(t) \tan^2(t) \right)^{3/2}}</static>
             </var>
             <var name="$k[0]">
-              <static>0</static>
+              <static>1</static>
             </var>
             <var name="$k[1]">
               <static>\frac{3\sqrt{3}}{5\sqrt{5}}</static>
@@ -1310,7 +1310,7 @@
               Context()->variables->are(t=>'Real');
               $comp=PopUp(['?','greater than', 'equal to', 'less than'],3);
               $kappa=Compute("|sec^3(t)|/(sec^4(t)+sec^2(t)tan^2(t))^(3/2)");
-              $k[0]=Formula("0");
+              $k[0]=Formula("1");
               $k[1]=Formula("3sqrt(3)/(5sqrt(5))");
             </pg-code>
           </setup>
@@ -1550,7 +1550,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Find the radius of curvature on <m>y=x^2+x-3</m> at <m>x=\pi/4</m>.</p>
+            <p>Find the radius of curvature on <m>y=x^2+x-3</m> at <m>x=1</m>.</p>
             <p><var name="$radius" width="15" /></p>
           </statement>
         </webwork>
