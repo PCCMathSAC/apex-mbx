@@ -890,12 +890,13 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
       <introduction>
         <p>In the following exercises, a set <m>S</m> is given.</p>
       </introduction>
 
-      <ol>
+      <p><ol>
         <li>
           <title>(a)</title>
           <p>Give one boundary point and one interior point, when possible, of <m>S</m>.</p></li>
@@ -907,7 +908,7 @@
         <li>
           <title>(c)</title>
           <p>State whether <m>S</m> is bounded or unbounded.</p></li>
-      </ol>
+      </ol></p>
 
       <exercise>
         <webwork seed="1">
@@ -936,33 +937,71 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$bp">
+              <static>(3,9)</static>
+            </var>
+            <var name="$ip">
+              <static>(-5,28)</static>
+            </var>
+            <var name="$ocn">
+              <set>
+                <member correct="yes">\text{open}</member>
+                <member>\text{closed}</member>
+                <member>\text{neither}</member>
+              </set>
+            </var>
+            <var name="$bu">
+              <set>
+                <member>\text{bounded}</member>
+                <member correct="yes">\text{unbounded}</member>
+              </set>
             </var>
             <pg-code>
+              Context("Point");
+              $bp=Point("(3,9)");
+              $bpev=$bp->cmp(showCoordinateHints => 0,
+                checker => sub {
+                  my ($correct,$student,$ansHash) = @_;
+                  my ($sx,$sy) = $student->value;
+                  return ($sy == $sx**2 ? 1 : 0);
+                });
+              $ip=Point("(-5,28)");
+              $ipev=$ip->cmp(showCoordinateHints => 0,
+                checker => sub {
+                  my ($correct,$student,$ansHash) = @_;
+                  my ($sx,$sy) = $student->value;
+                  return ($sy != $sx**2 ? 1 : 0);
+                });
+              $ocn=PopUp(['?','open','closed','neither'],1);
+              $bu=PopUp(['?','bounded','unbounded'],2);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds S = \left\{(x,y)\,| \, y\neq x^2\right\}</m></p>
+            <p>Let <m>\ = \left\{(x,y)\mid y\neq x^2\right\}</m>.</p>
+            <p><ol label="a">
+              <li>
+                <p>Give one boundary point of <m>S</m>.</p>
+                <p><var name="$bp" evaluator="$bpev" width="10" /></p>
+              </li>
+              <li>
+                <p>Give one interior point in <m>S</m>.</p>
+                <p><var name="$ip" evaluator="$ipev" width="10" /></p>
+              </li>
+              <li>
+                <p><m>S</m> is <var name="$ocn" form="popup" />.</p>
+              </li>
+              <li>
+                <p><m>S</m> is <var name="$bu" form="popup" />.</p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p>Answers will vary.
-
-                  interior point: <m>(-5,28)</m>
-
-                  boundary point: <m>(3,9)</m></p></li>
-
-              <li><p><m>S</m> is an open set</p></li>
-
-              <li><p><m>S</m> is unbounded</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -990,48 +1029,88 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$bp">
+              <static>(0,0)</static>
+            </var>
+            <var name="$ip">
+              <static>(0,1)</static>
+            </var>
+            <var name="$ocn">
+              <set>
+                <member correct="yes">\text{open}</member>
+                <member>\text{closed}</member>
+                <member>\text{neither}</member>
+              </set>
+            </var>
+            <var name="$bu">
+              <set>
+                <member>\text{bounded}</member>
+                <member correct="yes">\text{unbounded}</member>
+              </set>
             </var>
             <pg-code>
+              Context("Point");
+              $bp=Point("(0,0)");
+              $bpev=$bp->cmp(showCoordinateHints => 0,
+                checker => sub {
+                  my ($correct,$student,$ansHash) = @_;
+                  my ($sx,$sy) = $student->value;
+                  return ($sy == sin($sx) ? 1 : 0);
+                });
+              $ip=Point("(0,1)");
+              $ipev=$ip->cmp(showCoordinateHints => 0,
+                checker => sub {
+                  my ($correct,$student,$ansHash) = @_;
+                  my ($sx,$sy) = $student->value;
+                  return ($sy > sin($sx) ? 1 : 0);
+                });
+              $ocn=PopUp(['?','open','closed','neither'],1);
+              $bu=PopUp(['?','bounded','unbounded'],2);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds S=\{ (x,y) | y>\sin(x) \}</m></p>
+            <p>Let <m>\ = \left\{(x,y)\mid y>\sin(x)\right\}</m>.</p>
+            <p><ol label="a">
+              <li>
+                <p>Give one boundary point of <m>S</m>.</p>
+                <p><var name="$bp" evaluator="$bpev" width="10" /></p>
+              </li>
+              <li>
+                <p>Give one interior point in <m>S</m>.</p>
+                <p><var name="$ip" evaluator="$ipev" width="10" /></p>
+              </li>
+              <li>
+                <p><m>S</m> is <var name="$ocn" form="popup" />.</p>
+              </li>
+              <li>
+                <p><m>S</m> is <var name="$bu" form="popup" />.</p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p>Answers will vary.
-
-                  Interior point: <m>(0,1)</m>
-
-                  Boundary point: <m>(0,0)</m></p></li>
-
-              <li><p><m>S</m> is a closed set, containing all of its boundary points.</p></li>
-
-              <li><p><m>S</m> is unbounded.</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises:</p>
+    </exercisegroup>
 
-      <ol>
-        <li>
-          <title>(a)</title>
-          <p>Find the domain <m>D</m> of the given function.</p></li>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises:</p>
 
-        <li>
-          <title>(b)</title>
-          <p>State whether <m>D</m> is an open or closed set.</p></li>
-
-        <li>
-          <title>(c)</title>
-          <p>State whether <m>D</m> is bounded or unbounded.</p></li>
-      </ol>
+        <p><ol label="a">
+          <li>
+            <p>Find the domain <m>D</m> of the given function.</p>
+          </li>
+          <li>
+            <p>State whether <m>D</m> is an open or closed set.</p>
+          </li>
+          <li>
+            <p>State whether <m>D</m> is bounded or unbounded.</p>
+          </li>
+        </ol></p>
+      </introduction>
 
       <exercise>
         <webwork seed="1">
@@ -1125,7 +1204,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, a limit is given. Evaluate the limit along the paths given, then state why these results show the given limit does not exist.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, a limit is given. Evaluate the limit along the paths given, then state why these results show the given limit does not exist.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
