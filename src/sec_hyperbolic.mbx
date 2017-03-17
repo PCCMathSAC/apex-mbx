@@ -7,26 +7,24 @@
 
     <p>These functions are sometimes referred to as the <q>hyperbolic trigonometric functions</q> as there are many, many connections between them and the standard trigonometric functions. <xref ref="fig_hfcircle">Figure</xref> demonstrates one such connection. Just as cosine and sine are used to define points on the circle defined by <m>x^2+y^2=1</m>, the functions <em>hyperbolic cosine</em> and <em>hyperbolic sine</em> are used to define points on the hyperbola <m>x^2-y^2=1</m>.</p>
 
-    <figure xml:id="fig_hfcircle" >
+    <sidebyside xml:id="fig_hfcircle" widths="47% 47%">
       <caption>Using trigonometric functions to define points on a circle and hyperbolic functions to define points on a hyperbola. The area of the shaded regions are included in them.</caption>
+
+    <figure>
+      <caption/>
+      
       <!-- START figures/fig_hf_circlearea.tex -->
-      <image xml:id="img_hf_circlearea" >
+      <image xml:id="img_hf_circlearea">
         <description></description>
         <latex-image-code>
           <![CDATA[
           \begin{tikzpicture}
-          \begin{axis}[%
-          axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick={-1,1},%
-          %			extra x ticks={.5,3},
-          %			extra x tick labels={$a$,$b$},
-			ytick={-1,1},
-			%%extra y ticks={-5,-3,...,7},%
-          %			minor x tick num=4,
-			ymin=-1.1,ymax=1.1,%
-			xmin=-1.1,xmax=1.1%
+          \begin{axis}[axis equal image,
+                       axis on top,
+                       extra x tick labels={$a$,$b$},
+                       ytick={-1,1},
+                       ymin=-1.1,ymax=1.1,
+                       xmin=-1.1,xmax=1.1
           ]
 
           \addplot [{\coloronefill},fill={\coloronefill},domain=0:45] ({cos(x)},{sin(x)}) -- (axis cs:0,0)--cycle;
@@ -47,9 +45,13 @@
         </latex-image-code>
       </image>
       <!-- figures/fig_hf_circlearea.tex END -->
+    </figure>
+      
+    <figure>
+      <caption/>
 
       <!-- START figures/fig_hf_hyperbolaarea.tex -->
-      <image xml:id="img_hf_hyperbolaarea" >
+      <image xml:id="img_hf_hyperbolaarea">
         <description></description>
         <latex-image-code>
           <![CDATA[
@@ -88,6 +90,7 @@
       </image>
       <!-- figures/fig_hf_hyperbolaarea.tex END -->
     </figure>
+    </sidebyside>
 
     <p>We begin with their definition.</p>
 
@@ -110,12 +113,6 @@
       </statement>
     </definition>
 
-    <p>These hyperbolic functions are graphed in <xref ref="fig_hyperbolic">Figure</xref>. In the graphs of <m>\cosh(x)</m> and <m>\sinh(x)</m>, graphs of <m>e^x/2</m> and <m>e^{-x}/2</m> are included with dashed lines. As <m>x</m> gets <q>large,</q> <m>\cosh(x)</m> and <m>\sinh(x)</m> each act like <m>e^x/2</m>; when <m>x</m> is a large negative number, <m>\cosh(x)</m> acts like <m>e^{-x}/2</m> whereas <m>\sinh(x)</m> acts like <m>-e^{-x}/2</m>.</p>
-
-    <p>Notice the domains of <m>\tanh(x)</m> and <m>\sech(x)</m> are <m>(-\infty,\infty)</m>, whereas both <m>\coth(x)</m> and <m>\csch(x)</m> have vertical asymptotes at <m>x=0</m>. Also note the ranges of these functions, especially <m>\tanh(x)</m>: as <m>x\to\infty</m>, both <m>\sinh(x)</m> and <m>\cosh(x)</m> approach <m>e^{-x}/2</m>, hence <m>\tanh(x)</m> approaches <m>1</m>.</p>
-
-    <p>The following example explores some of the properties of these functions that bear remarkable resemblance to the properties of their trigonometric counterparts.</p>
-
     <aside>
       <p><em>Pronunciation Note:</em></p>
 
@@ -126,188 +123,131 @@
       <p><q>tanh</q> rhymes with <q>ranch.</q></p>
     </aside>
 
-    <figure>
-      <caption>[20pt]
+    <p>These hyperbolic functions are graphed in <xref ref="fig_hyperbolic1">Figure</xref> and <xref ref="fig_hyperbolic2">Figure</xref>.</p>
 
-      <!-- START figures/fig_hf_tanh_coth.tex -->
-      <image xml:id="img_hf_tanh_coth" >
-        <description></description>
-        <latex-image-code>
-          <![CDATA[
-          \begin{tikzpicture}
-          \begin{axis}[%
-          axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-          %			xtick=\empty,%
-          %			extra x ticks={.5,3},
-          %			extra x tick labels={$a$,$b$},
-			ytick={-2,2},
-          %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%
-          %			extra y ticks={0.001},%
-          %			minor x tick num=4,
-			ymin=-3.5,ymax=3.5,%
-			xmin=-3.5,xmax=3.5,%
-			scaled ticks=false
-          ]
+    <p>In the graph of <m>\cosh(x)</m> in <xref ref="fig_hf_cosh">Figure</xref>, the graphs of <m>e^x/2</m> and <m>e^{-x}/2</m> are included with dashed lines. In the graph of <m>\sinh(x)</m> in <xref ref="fig_hf_sinh">Figure</xref>, the graphs of <m>e^x/2</m> and <m>-
+    e^{-x}/2</m> are included with dashed lines. As <m>x</m> gets <q>large,</q> <m>\cosh(x)</m> and <m>\sinh(x)</m> each act like <m>e^x/2</m>; when <m>x</m> is a large negative number, <m>\cosh(x)</m> acts like <m>e^{-x}/2</m> whereas <m>\sinh(x)</m> acts like <m>-e^{-x}/2</m>.</p>
 
-          \addplot [{\colorone},thick,smooth] coordinates {(-3.,-0.995)(-2.9,-0.994)(-2.8,-0.993)(-2.7,-0.991)(-2.6,-0.989)(-2.5,-0.987)(-2.4,-0.984)(-2.3,-0.98)(-2.2,-0.976)(-2.1,-0.97)(-2.,-0.964)(-1.9,-0.956)(-1.8,-0.947)(-1.7,-0.935)(-1.6,-0.922)(-1.5,-0.905)(-1.4,-0.885)(-1.3,-0.862)(-1.2,-0.834)(-1.1,-0.8)(-1.,-0.762)(-0.9,-0.716)(-0.8,-0.664)(-0.7,-0.604)(-0.6,-0.537)(-0.5,-0.462)(-0.4,-0.38)(-0.3,-0.291)(-0.2,-0.197)(-0.1,-0.0997)(0,0)(0.1,0.0997)(0.2,0.197)(0.3,0.291)(0.4,0.38)(0.5,0.462)(0.6,0.537)(0.7,0.604)(0.8,0.664)(0.9,0.716)(1.,0.762)(1.1,0.8)(1.2,0.834)(1.3,0.862)(1.4,0.885)(1.5,0.905)(1.6,0.922)(1.7,0.935)(1.8,0.947)(1.9,0.956)(2.,0.964)(2.1,0.97)(2.2,0.976)(2.3,0.98)(2.4,0.984)(2.5,0.987)(2.6,0.989)(2.7,0.991)(2.8,0.993)(2.9,0.994)(3.,0.995)};
+   
 
-          \draw (axis cs:1.7,-1.5) node {\scriptsize $f(x)=\tanh(x) $};
-          \draw (axis cs:2.2,2) node {\scriptsize $f(x)=\coth(x) $};
-          \draw [->,>=stealth] (axis cs:1,-1) -- (axis cs:.6,.45);
-
-
-          \addplot [{\colortwo},smooth,thick] coordinates {(-3.,-1.)(-2.9,-1.01)(-2.8,-1.01)(-2.7,-1.01)(-2.6,-1.01)(-2.5,-1.01)(-2.4,-1.02)(-2.3,-1.02)(-2.2,-1.02)(-2.1,-1.03)(-2.,-1.04)(-1.9,-1.05)(-1.8,-1.06)(-1.7,-1.07)(-1.6,-1.08)(-1.5,-1.1)(-1.4,-1.13)(-1.3,-1.16)(-1.2,-1.2)(-1.1,-1.25)(-1.,-1.31)(-0.9,-1.4)(-0.8,-1.51)(-0.7,-1.65)(-0.6,-1.86)(-0.5,-2.16)(-0.4,-2.63)(-0.3,-3.43)(-0.2,-5.07)(-0.1,-10.)};
-
-          \addplot [{\colortwo},smooth,thick] coordinates {(0.1,10.)(0.2,5.07)(0.3,3.43)(0.4,2.63)(0.5,2.16)(0.6,1.86)(0.7,1.65)(0.8,1.51)(0.9,1.4)(1.,1.31)(1.1,1.25)(1.2,1.2)(1.3,1.16)(1.4,1.13)(1.5,1.1)(1.6,1.08)(1.7,1.07)(1.8,1.06)(1.9,1.05)(2.,1.04)(2.1,1.03)(2.2,1.02)(2.3,1.02)(2.4,1.02)(2.5,1.01)(2.6,1.01)(2.7,1.01)(2.8,1.01)(2.9,1.01)(3.,1.)};
-          %\draw (axis cs:2.4,-0.002) node {\scriptsize $f(x)$};
-          \draw [loosely dashed] (axis cs:-3,1) -- (axis cs:3,1);
-          \draw [loosely dashed] (axis cs:-3,-1) -- (axis cs:3,-1);
-
-          \end{axis}
-
-
-
-          \end{tikzpicture}
-          ]]>
-        </latex-image-code>
-      </image>
-      <!-- figures/fig_hf_tanh_coth.tex END -->
-      &amp; &amp;
-      <!-- START figures/fig_hf_sech_csch.tex -->
-      <image xml:id="img_hf_sech_csch" >
-        <description></description>
-        <latex-image-code>
-          <![CDATA[
-          \begin{tikzpicture}
-          \begin{axis}[%
-          axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-          %			xtick=\empty,%
-          %			extra x ticks={.5,3},
-          %			extra x tick labels={$a$,$b$},
-			ytick={-3,-2,-1,1,2,3},
-          %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%
-          %			extra y ticks={0.001},%
-          %			minor x tick num=4,
-			ymin=-3.5,ymax=3.5,%
-			xmin=-3.5,xmax=3.5,%
-			scaled ticks=false
-          ]
-
-          \addplot [{\colorone},thick,smooth] coordinates {(-3.,0.0993)(-2.9,0.11)(-2.8,0.121)(-2.7,0.134)(-2.6,0.148)(-2.5,0.163)(-2.4,0.18)(-2.3,0.199)(-2.2,0.219)(-2.1,0.241)(-2.,0.266)(-1.9,0.293)(-1.8,0.322)(-1.7,0.354)(-1.6,0.388)(-1.5,0.425)(-1.4,0.465)(-1.3,0.507)(-1.2,0.552)(-1.1,0.599)(-1.,0.648)(-0.9,0.698)(-0.8,0.748)(-0.7,0.797)(-0.6,0.844)(-0.5,0.887)(-0.4,0.925)(-0.3,0.957)(-0.2,0.98)(-0.1,0.995)(0,1.)(0.1,0.995)(0.2,0.98)(0.3,0.957)(0.4,0.925)(0.5,0.887)(0.6,0.844)(0.7,0.797)(0.8,0.748)(0.9,0.698)(1.,0.648)(1.1,0.599)(1.2,0.552)(1.3,0.507)(1.4,0.465)(1.5,0.425)(1.6,0.388)(1.7,0.354)(1.8,0.322)(1.9,0.293)(2.,0.266)(2.1,0.241)(2.2,0.219)(2.3,0.199)(2.4,0.18)(2.5,0.163)(2.6,0.148)(2.7,0.134)(2.8,0.121)(2.9,0.11)(3.,0.0993)};
-
-          \draw (axis cs:-2,1.5) node {\scriptsize $f(x)=\sech(x) $};
-          \draw (axis cs:2.2,2) node {\scriptsize $f(x)=\csch(x) $};
-          %\draw [->,>=latex] (axis cs:1,-1) -- (axis cs:.6,.45);
-
-
-          \addplot [{\colortwo},smooth,thick] coordinates {(-3.,-0.0998)(-2.9,-0.11)(-2.8,-0.122)(-2.7,-0.135)(-2.6,-0.149)(-2.5,-0.165)(-2.4,-0.183)(-2.3,-0.203)(-2.2,-0.224)(-2.1,-0.249)(-2.,-0.276)(-1.9,-0.306)(-1.8,-0.34)(-1.7,-0.378)(-1.6,-0.421)(-1.5,-0.47)(-1.4,-0.525)(-1.3,-0.589)(-1.2,-0.662)(-1.1,-0.749)(-1.,-0.851)(-0.9,-0.974)(-0.8,-1.13)(-0.7,-1.32)(-0.6,-1.57)(-0.5,-1.92)(-0.4,-2.43)(-0.3,-3.28)(-0.2,-4.97)(-0.1,-9.98)};
-
-          \addplot [{\colortwo},smooth,thick] coordinates {(0.1,9.98)(0.2,4.97)(0.3,3.28)(0.4,2.43)(0.5,1.92)(0.6,1.57)(0.7,1.32)(0.8,1.13)(0.9,0.974)(1.,0.851)(1.1,0.749)(1.2,0.662)(1.3,0.589)(1.4,0.525)(1.5,0.47)(1.6,0.421)(1.7,0.378)(1.8,0.34)(1.9,0.306)(2.,0.276)(2.1,0.249)(2.2,0.224)(2.3,0.203)(2.4,0.183)(2.5,0.165)(2.6,0.149)(2.7,0.135)(2.8,0.122)(2.9,0.11)(3.,0.0998)};
-          %\draw (axis cs:2.4,-0.002) node {\scriptsize $f(x)$};
-          \end{axis}
-
-
-
-          \end{tikzpicture}
-          ]]>
-        </latex-image-code>
-      </image>
-      <!-- figures/fig_hf_sech_csch.tex END --></caption>
+  <sidebyside xml:id="fig_hyperbolic1" widths="47% 47%">
+    <caption>Graphs of <m>\sinh(x)</m> and <m>\cosh(x)</m>.</caption>
       <!-- START figures/fig_hf_cosh.tex -->
-      <image xml:id="img_hf_cosh" >
+    <figure xml:id="fig_hf_cosh">
+      <caption/>
+      <image xml:id="img_hf_cosh">
         <description></description>
         <latex-image-code>
           <![CDATA[
           \begin{tikzpicture}
-          \begin{axis}[%
-          axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-          %			xtick=\empty,%
-          %			extra x ticks={.5,3},
-          %			extra x tick labels={$a$,$b$},
-          %			ytick={-.002,.002,.004},
-          %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%
-          %			extra y ticks={0.001},%
-          %			minor x tick num=4,
-			ymin=-10.9,ymax=10.9,%
-			xmin=-3.5,xmax=3.5,%
-			scaled ticks=false
-          ]
-
-          \addplot [{\colorone},thick,smooth] coordinates {(-3.,10.1) (-2.9,9.11) (-2.8,8.25) (-2.7,7.47) (-2.6,6.77)(-2.5,6.13) (-2.4,5.56) (-2.3,5.04) (-2.2,4.57) (-2.1,4.14)(-2.,3.76) (-1.9,3.42) (-1.8,3.11) (-1.7,2.83) (-1.6,2.58)(-1.5,2.35) (-1.4,2.15) (-1.3,1.97) (-1.2,1.81) (-1.1,1.67)(-1.,1.54) (-0.9,1.43) (-0.8,1.34) (-0.7,1.26) (-0.6,1.19)(-0.5,1.13) (-0.4,1.08) (-0.3,1.05) (-0.2,1.02) (-0.1,1.01) (0,1.)(0.1,1.01) (0.2,1.02) (0.3,1.05) (0.4,1.08) (0.5,1.13) (0.6,1.19)(0.7,1.26) (0.8,1.34) (0.9,1.43) (1.,1.54) (1.1,1.67) (1.2,1.81) (1.3,1.97) (1.4,2.15) (1.5,2.35) (1.6,2.58) (1.7,2.83) (1.8,3.11)(1.9,3.42) (2.,3.76) (2.1,4.14) (2.2,4.57) (2.3,5.04) (2.4,5.56)
-          (2.5,6.13) (2.6,6.77) (2.7,7.47) (2.8,8.25) (2.9,9.11) (3.,10.1)};
-
-          \draw (axis cs:2,-6) node {\scriptsize $f(x)=\cosh(x) $};
-
-          \addplot [{\colortwo},smooth,thick,dashed] coordinates {(-3.,0.0249) (-2.9,0.0275) (-2.8,0.0304) (-2.7,0.0336) (-2.6,0.0371)(-2.5,0.041) (-2.4,0.0454) (-2.3,0.0501) (-2.2,0.0554) (-2.1,0.0612)(-2.,0.0677) (-1.9,0.0748) (-1.8,0.0826) (-1.7,0.0913) (-1.6,0.101)(-1.5,0.112) (-1.4,0.123) (-1.3,0.136) (-1.2,0.151) (-1.1,0.166)(-1.,0.184) (-0.9,0.203) (-0.8,0.225) (-0.7,0.248) (-0.6,0.274)(-0.5,0.303) (-0.4,0.335) (-0.3,0.37) (-0.2,0.409) (-0.1,0.452)(0,0.5) (0.1,0.553) (0.2,0.611) (0.3,0.675) (0.4,0.746) (0.5,0.824)(0.6,0.911) (0.7,1.01) (0.8,1.11) (0.9,1.23) (1.,1.36) (1.1,1.5)(1.2,1.66) (1.3,1.83) (1.4,2.03) (1.5,2.24) (1.6,2.48) (1.7,2.74)(1.8,3.02) (1.9,3.34) (2.,3.69) (2.1,4.08) (2.2,4.51) (2.3,4.99)(2.4,5.51) (2.5,6.09) (2.6,6.73) (2.7,7.44) (2.8,8.22) (2.9,9.09)(3.,10.)};
-
-          \addplot [{\colortwo},smooth,thick,dashed] coordinates {(-3.,10.) (-2.9,9.09) (-2.8,8.22) (-2.7,7.44) (-2.6,6.73) (-2.5,6.09)(-2.4,5.51) (-2.3,4.99) (-2.2,4.51) (-2.1,4.08) (-2.,3.69)(-1.9,3.34) (-1.8,3.02) (-1.7,2.74) (-1.6,2.48) (-1.5,2.24)(-1.4,2.03) (-1.3,1.83) (-1.2,1.66) (-1.1,1.5) (-1.,1.36) (-0.9,1.23)(-0.8,1.11) (-0.7,1.01) (-0.6,0.911) (-0.5,0.824) (-0.4,0.746)(-0.3,0.675) (-0.2,0.611) (-0.1,0.553) (0,0.5) (0.1,0.452)(0.2,0.409) (0.3,0.37) (0.4,0.335) (0.5,0.303) (0.6,0.274)(0.7,0.248) (0.8,0.225) (0.9,0.203) (1.,0.184) (1.1,0.166)(1.2,0.151) (1.3,0.136) (1.4,0.123) (1.5,0.112) (1.6,0.101)(1.7,0.0913) (1.8,0.0826) (1.9,0.0748) (2.,0.0677) (2.1,0.0612)(2.2,0.0554) (2.3,0.0501) (2.4,0.0454) (2.5,0.041) (2.6,0.0371)(2.7,0.0336) (2.8,0.0304) (2.9,0.0275) (3.,0.0249)};
-
-
-          %\draw (axis cs:2.4,-0.002) node {\scriptsize $f(x)$};
+          \begin{axis}[axis on top,
+                      ymin=-11,ymax=11,
+                      xmin=-3.5,xmax=3.5,
+                      scaled ticks=false
+                      ]
+          \addplot+[domain=-3.1:3.1]{0.5*(2.71828^x+2.71828^(-x))} node [pos=0.9, above left] {\scriptsize $f(x)=\cosh(x)$};
+          \addplot+[domain=-3:3]{0.5*(2.71828^x)} node [pos=0, above right] {\scriptsize $e^x/2$};
+          \addplot+[domain=-3:3, secondcurvestyle]{0.5*(2.71828^(-x)} node [pos=0.9, above right] {\scriptsize $e^{-x}/2$};
           \end{axis}
-
-
 
           \end{tikzpicture}
           ]]>
         </latex-image-code>
       </image>
+      </figure>
       <!-- figures/fig_hf_cosh.tex END -->
-       &amp;<nbsp /> &amp;
+      
       <!-- START figures/fig_hf_sinh.tex -->
-      <image xml:id="img_hf_sinh" >
+      <figure xml:id="fig_hf_sinh">
+        <caption/>
+      <image xml:id="img_hf_sinh">
         <description></description>
         <latex-image-code>
           <![CDATA[
           \begin{tikzpicture}
-          \begin{axis}[%
-          axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-          %			xtick=\empty,%
-          %			extra x ticks={.5,3},
-          %			extra x tick labels={$a$,$b$},
-          %			ytick={-.002,.002,.004},
-          %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%
-          %			extra y ticks={0.001},%
-          %			minor x tick num=4,
-			ymin=-10.9,ymax=10.9,%
-			xmin=-3.5,xmax=3.5,%
-			scaled ticks=false
-          ]
-
-          \addplot [{\colorone},thick,smooth] coordinates {(-3.,-10.) (-2.9,-9.06) (-2.8,-8.19) (-2.7,-7.41) (-2.6,-6.69)(-2.5,-6.05) (-2.4,-5.47) (-2.3,-4.94) (-2.2,-4.46) (-2.1,-4.02)(-2.,-3.63) (-1.9,-3.27) (-1.8,-2.94) (-1.7,-2.65) (-1.6,-2.38)(-1.5,-2.13) (-1.4,-1.9) (-1.3,-1.7) (-1.2,-1.51) (-1.1,-1.34)(-1.,-1.18) (-0.9,-1.03) (-0.8,-0.888) (-0.7,-0.759) (-0.6,-0.637)(-0.5,-0.521) (-0.4,-0.411) (-0.3,-0.305) (-0.2,-0.201) (-0.1,-0.1)(0,0) (0.1,0.1) (0.2,0.201) (0.3,0.305) (0.4,0.411) (0.5,0.521)(0.6,0.637) (0.7,0.759) (0.8,0.888) (0.9,1.03) (1.,1.18) (1.1,1.34)(1.2,1.51) (1.3,1.7) (1.4,1.9) (1.5,2.13) (1.6,2.38) (1.7,2.65)(1.8,2.94) (1.9,3.27) (2.,3.63) (2.1,4.02) (2.2,4.46) (2.3,4.94)(2.4,5.47) (2.5,6.05) (2.6,6.69) (2.7,7.41) (2.8,8.19) (2.9,9.06)(3.,10.) };
-
-          \draw (axis cs:2,-6) node {\scriptsize $f(x)=\sinh(x) $};
-
-          \addplot [{\colortwo},smooth,thick,dashed] coordinates {(-3.,0.0249) (-2.9,0.0275) (-2.8,0.0304) (-2.7,0.0336) (-2.6,0.0371)(-2.5,0.041) (-2.4,0.0454) (-2.3,0.0501) (-2.2,0.0554) (-2.1,0.0612)(-2.,0.0677) (-1.9,0.0748) (-1.8,0.0826) (-1.7,0.0913) (-1.6,0.101)(-1.5,0.112) (-1.4,0.123) (-1.3,0.136) (-1.2,0.151) (-1.1,0.166)(-1.,0.184) (-0.9,0.203) (-0.8,0.225) (-0.7,0.248) (-0.6,0.274)(-0.5,0.303) (-0.4,0.335) (-0.3,0.37) (-0.2,0.409) (-0.1,0.452)(0,0.5) (0.1,0.553) (0.2,0.611) (0.3,0.675) (0.4,0.746) (0.5,0.824)(0.6,0.911) (0.7,1.01) (0.8,1.11) (0.9,1.23) (1.,1.36) (1.1,1.5)(1.2,1.66) (1.3,1.83) (1.4,2.03) (1.5,2.24) (1.6,2.48) (1.7,2.74)(1.8,3.02) (1.9,3.34) (2.,3.69) (2.1,4.08) (2.2,4.51) (2.3,4.99)(2.4,5.51) (2.5,6.09) (2.6,6.73) (2.7,7.44) (2.8,8.22) (2.9,9.09)(3.,10.)};
-
-          \addplot [{\colortwo},smooth,thick,dashed] coordinates {(-3.,10.) (-2.9,9.09) (-2.8,8.22) (-2.7,7.44) (-2.6,6.73) (-2.5,6.09)(-2.4,5.51) (-2.3,4.99) (-2.2,4.51) (-2.1,4.08) (-2.,3.69)(-1.9,3.34) (-1.8,3.02) (-1.7,2.74) (-1.6,2.48) (-1.5,2.24)(-1.4,2.03) (-1.3,1.83) (-1.2,1.66) (-1.1,1.5) (-1.,1.36) (-0.9,1.23)(-0.8,1.11) (-0.7,1.01) (-0.6,0.911) (-0.5,0.824) (-0.4,0.746)(-0.3,0.675) (-0.2,0.611) (-0.1,0.553) (0,0.5) (0.1,0.452)(0.2,0.409) (0.3,0.37) (0.4,0.335) (0.5,0.303) (0.6,0.274)(0.7,0.248) (0.8,0.225) (0.9,0.203) (1.,0.184) (1.1,0.166)(1.2,0.151) (1.3,0.136) (1.4,0.123) (1.5,0.112) (1.6,0.101)(1.7,0.0913) (1.8,0.0826) (1.9,0.0748) (2.,0.0677) (2.1,0.0612)(2.2,0.0554) (2.3,0.0501) (2.4,0.0454) (2.5,0.041) (2.6,0.0371)(2.7,0.0336) (2.8,0.0304) (2.9,0.0275) (3.,0.0249)};
-
-
-          %\draw (axis cs:2.4,-0.002) node {\scriptsize $f(x)$};
+          \begin{axis}[axis on top,
+                      ymin=-11,ymax=11,
+                      xmin=-3.5,xmax=3.5,
+                      scaled ticks=false
+                      ]
+          \addplot+[domain=-3.1:3.1]{0.5*(2.71828^x-2.71828^(-x))} node [pos=0.9, above left] {\scriptsize $f(x)=\sinh(x)$};
+          \addplot+[domain=-3:3]{0.5*(2.71828^x)} node [pos=0, above right] {\scriptsize $e^x/2$};
+          \addplot+[domain=-3:3, secondcurvestyle]{-0.5*(2.71828^(-x)} node [pos=0.9, above right] {\scriptsize $-e^{-x}/2$};
           \end{axis}
-
-
-
+          
           \end{tikzpicture}
           ]]>
         </latex-image-code>
       </image>
       <!-- figures/fig_hf_sinh.tex END -->
     </figure>
+    </sidebyside>
 
-    <p>\captionof{figure}{Graphs of the hyperbolic functions.}</p>
+     <p>In Figure <xref ref="fig_hyperbolic2">Figure</xref>, notice the domains of <m>\tanh(x)</m> and <m>\sech(x)</m> are <m>(-\infty,\infty)</m>, whereas both <m>\coth(x)</m> and <m>\csch(x)</m> have vertical asymptotes at <m>x=0</m>. Also note the ranges of these functions, especially <m>\tanh(x)</m>: as <m>x\to\infty</m>, both <m>\sinh(x)</m> and <m>\cosh(x)</m> approach <m>e^{-x}/2</m>, hence <m>\tanh(x)</m> approaches <m>1</m>.</p>
+
+    <p>The following example explores some of the properties of these functions that bear remarkable resemblance to the properties of their trigonometric counterparts.</p>
+
+    <sidebyside xml:id="fig_hyperbolic2" widths="47% 47%">
+    <caption>Graphs of <m>\tanh(x), \coth(x), \csch(x)</m> and <m>\cosh(x)</m>.</caption>
+    <figure>
+      <caption/>
+      <!-- START figures/fig_hf_tanh_coth.tex -->
+      <image xml:id="img_hf_tanh_coth">
+        <description></description>
+        <latex-image-code>
+          <![CDATA[
+          \begin{tikzpicture}
+          \begin{axis}[axis on top,
+                      ymin=-3.5,ymax=3.5,
+                      xmin=-3.5,xmax=3.5,
+                      scaled ticks=false]
+
+          \addplot+[domain=-3:3]{(2.71828^x-2.71828^(-x))/(2.71828^x+2.71828^(-x))} node [pos=0.60,pin={120:$\scriptsize \tanh(x)$},inner sep=0pt] {};
+
+          \addplot+[solid,domain=-3:-.33]{(2.71828^x+2.71828^(-x))/(2.71828^x-2.71828^(-x))};
+          \addplot+[secondcurvestyle, solid,domain=.33:3]{(2.71828^x+2.71828^(-x))/(2.71828^x-2.71828^(-x))} node [pos=0.5,pin={45:$\scriptsize \coth(x)$},inner sep=0pt] {};
+          \addplot+[lineseg,dotted,domain=-3:3]{1};
+          \addplot+[lineseg,dotted,domain=-3:3]{-1};
+
+          \end{axis}
+
+          \end{tikzpicture}
+          ]]>
+        </latex-image-code>
+      </image>
+    </figure>
+      <!-- figures/fig_hf_tanh_coth.tex END -->
+    
+      <!-- START figures/fig_hf_sech_csch.tex -->
+    <figure xml:id="fig_hf_sech_csch">
+      <caption/>
+      <image xml:id="img_hf_sech_csch">
+        <description></description>
+        <latex-image-code>
+          <![CDATA[
+          \begin{tikzpicture}
+           \begin{axis}[axis on top,
+                      ymin=-3.5,ymax=3.5,
+                      xmin=-3.5,xmax=3.5,
+                      scaled ticks=false]
+
+          \addplot+[domain=-3:3]{(2/(2.71828^x+2.71828^(-x))} node [pos=0.50,pin={120:$\scriptsize \sech(x)$},inner sep=0pt] {};
+
+          \addplot+[solid,domain=-3:-.33]{2/(2.71828^x-2.71828^(-x))};
+          \addplot+[secondcurvestyle, solid,domain=.33:3]{2/(2.71828^x-2.71828^(-x))} node [pos=0.5,pin={45:$\scriptsize \csch(x)$},inner sep=0pt] {};
+
+          \end{axis}
+
+
+
+          \end{tikzpicture}
+          ]]>
+        </latex-image-code>
+      </image>
+    </figure>
+      <!-- figures/fig_hf_sech_csch.tex END -->
+  </sidebyside>
+    
 
     <example xml:id="ex_hf1">
       <title>Exploring properties of hyperbolic functions</title>
@@ -330,50 +270,62 @@
       </statement>
       <solution>
         <ol>
-          <li><p><m>\begin{aligned}\cosh^2(x) -\sinh^2(x) \amp = \left(\frac{e^x+e^{-x}}2\right)^2 -\left(\frac{e^x-e^{-x}}2\right)^2\\
- 						\amp = \frac{e^{2x}+2e^xe^{-x} + e^{-2x}}4 - \frac{e^{2x}-2e^xe^{-x} + e^{-2x}}4\\
- 						\amp = \frac44=1.
-              \end{aligned}</m>
+          <li xml:id="ex_hf1a">
+            <p>By <xref ref="def_hyperbolic_functions">Definition</xref>
+            <md>
+              <mrow> \cosh^2(x) -\sinh^2(x) \amp = \left(\frac{e^x+e^{-x}}2\right)^2 -\left(\frac{e^x-e^{-x}}2\right)^2</mrow>
+              <mrow>\amp = \frac{e^{2x}+2e^xe^{-x} + e^{-2x}}4 - \frac{e^{2x}-2e^xe^{-x} + e^{-2x}}4</mrow>
+              <mrow>\amp = \frac44=1.</mrow>
+            </md>
 
               So <m>\cosh^2(x) -\sinh^2(x) =1</m>.</p></li>
 
-          <li><p><m>\begin{aligned}\tanh^2(x) +\sech^2(x) \amp =\frac{\sinh^2(x) }{\cosh^2(x) } + \frac{1}{\cosh^2(x) } \\
-					\amp = \frac{\sinh^2(x) +1}{\cosh^2(x) }\qquad \text{ Now use identity from \#1. } \\
-					\amp = \frac{\cosh^2(x) }{\cosh^2(x) } = 1.
-              \end{aligned}</m>
-
-
+          <li><p>Again, use <xref ref="def_hyperbolic_functions">Definition</xref>
+            <md>
+              <mrow>\tanh^2(x) +\sech^2(x) \amp =\frac{\sinh^2(x) }{\cosh^2(x) } + \frac{1}{\cosh^2(x) } </mrow>
+              <mrow> \amp= \frac{\sinh^2(x) +1}{\cosh^2(x) }\qquad \text{ Now use identity from } <xref ref="ex_hf1a">Part</xref></mrow>
+              <mrow>\amp = \frac{\cosh^2(x) }{\cosh^2(x) } = 1</mrow>			
+            </md>.
 
               So <m>\tanh^2(x) +\sech^2(x) =1</m>.</p></li>
 
-          <li><p><m>\begin{aligned}2\cosh(x) \sinh(x) \amp = 2\left(\frac{e^x+e^{-x}}2\right)\left(\frac{e^x-e^{-x}}2\right) \\
-					\amp = 2 \cdot\frac{e^{2x} - e^{-2x}}4\\
-					\amp = \frac{e^{2x} - e^{-2x}}2 = \sinh(2x).\\
-              \end{aligned}</m>
+          <li><p>Again, use <xref ref="def_hyperbolic_functions">Definition</xref>
+            <md>
+              <mrow>2\cosh(x) \sinh(x) \amp = 2\left(\frac{e^x+e^{-x}}2\right)\left(\frac{e^x-e^{-x}}2\right)  </mrow>
+              <mrow>\amp = 2 \cdot\frac{e^{2x} - e^{-2x}}4 </mrow>
+              <mrow>\amp = \frac{e^{2x} - e^{-2x}}2 = \sinh(2x) </mrow>
+            </md>.
 			
-              Thus <m>2\cosh(x) \sinh(x) = \sinh(2x)</m>.</p></li>
+            Thus <m>2\cosh(x) \sinh(x) = \sinh(2x)</m>.</p></li>
 
-          <li><p><m>\begin{aligned}\frac{d}{dx}\big(\cosh(x) \big) \amp = \frac{d}{dx}\left(\frac{e^x+e^{-x}}2\right) \\
-					\amp = \frac{e^x-e^{-x}}2\\
-					\amp = \sinh(x) .
-              \end{aligned}</m>
+          <li><p>Again, use <xref ref="def_hyperbolic_functions">Definition</xref>
+          <md>
+            <mrow>\frac{d}{dx}\big(\cosh(x) \big) \amp = \frac{d}{dx}\left(\frac{e^x+e^{-x}}2\right)</mrow>
+            <mrow>\amp = \frac{e^x-e^{-x}}2 </mrow>
+            <mrow>\amp = \sinh(x) </mrow>
+          </md>
 
               So <m>\frac{d}{dx}\big(\cosh(x) \big) = \sinh(x)</m>.</p></li>
 
-          <li><p><m>\begin{aligned}\frac{d}{dx}\big(\sinh(x) \big) \amp = \frac{d}{dx}\left(\frac{e^x-e^{-x}}2\right) \\
-					\amp = \frac{e^x+e^{-x}}2\\
-					\amp = \cosh(x) .
-              \end{aligned}</m>
+          <li><p>Apply derivatives to <xref ref="def_hyperbolic_functions">Definition</xref>:
+            <md>
+              <mrow>\frac{d}{dx}\big(\sinh(x) \big) \amp = \frac{d}{dx}\left(\frac{e^x-e^{-x}}2\right)  </mrow>
+              <mrow>\amp = \frac{e^x+e^{-x}}2 </mrow>
+              <mrow>\amp = \cosh(x)  </mrow>
+            </md>.
 
               So <m>\frac{d}{dx}\big(\sinh(x) \big) = \cosh(x)</m>.</p></li>
 
-          <li><p><m>\begin{aligned}\frac{d}{dx}\big(\tanh(x) \big) \amp = \frac{d}{dx}\left(\frac{\sinh(x) }{\cosh(x) }\right) \\
-					\amp = \frac{\cosh(x) \cosh(x) - \sinh(x) \sinh(x) }{\cosh^2(x) }\\
-					\amp = \frac{1}{\cosh^2(x) }\\
-					\amp = \sech^2(x) .
-              \end{aligned}</m>
+          <li><p>Apply derivatives to <xref ref="def_hyperbolic_functions">Definition</xref>:
+            <md>
+              <mrow>\frac{d}{dx}\big(\tanh(x) \big) \amp = \frac{d}{dx}\left(\frac{\sinh(x) }{\cosh(x) }\right)</mrow>
+              <mrow>\amp = \frac{\cosh(x) \cosh(x) - \sinh(x) \sinh(x) }{\cosh^2(x) } </mrow>
+              <mrow>\amp = \frac{1}{\cosh^2(x) } </mrow>
+              <mrow>\amp = \sech^2(x)  </mrow>
+            </md>.
+              
 
-              So <m>\frac{d}{dx}\big(\tanh(x) \big) = \sech^2(x)</m>.</p></li>
+            So <m>\frac{d}{dx}\big(\tanh(x) \big) = \sech^2(x)</m>.</p></li>
         </ol>
       </solution>
     </example>
@@ -382,9 +334,10 @@
 
     <insight xml:id="idea_hyperbolic_identities">
       <title>Useful Hyperbolic Function Properties</title>
-      <p><term>Basic Identities</term></p>
-    </insight>
-
+      <todo>I'd like these to be in a sidebyside like the current pdf, but that doesn't seem to be supported. For now I've commented out the sbs.</todo>
+ <!--</sidebyside>-->
+    <list>
+      <title>Basic Identities</title>
     <ol>
       <li><p><m>\cosh^2(x) -\sinh^2(x) =1</m><index><main>hyperbolic function</main><sub>identities</sub></index><index><main>hyperbolic function</main><sub>derivatives</sub></index><index><main>hyperbolic function</main><sub>integrals</sub></index><index><main>derivative</main><sub>hyperbolic funct.</sub></index><index><main>integration</main><sub>hyperbolic funct.</sub></index></p></li>
 
@@ -400,9 +353,11 @@
 
       <li><p><m>\ds \sinh^2(x) =\frac{\cosh(2x) -1}{2}</m></p></li>
     </ol>
+     </list>
 
-    <p><em>Derivatives</em></p>
 
+    <list>
+      <title>Derivatives</title>
     <ol>
       <li><p><m>\frac{d}{dx}\big(\cosh(x) \big) = \sinh(x)</m></p></li>
 
@@ -416,9 +371,10 @@
 
       <li><p><m>\frac{d}{dx}\big(\coth(x) \big) = -\csch^2(x)</m></p></li>
     </ol>
+  </list>
 
-    <p><em>Integrals</em></p>
-
+  <list>
+    <title>Integrals</title>
     <ol>
       <li><p><m>\ds\int \cosh(x) \ dx = \sinh(x) +C</m></p></li>
 
@@ -428,6 +384,9 @@
 
       <li><p><m>\ds\int \coth(x) \ dx = \ln\abs{\sinh(x) \,}+C</m></p></li>
     </ol>
+  </list>
+ <!--</sidebyside>-->
+  </insight>
 
     <p>We practice using <xref ref="idea_hyperbolic_identities">Key Idea</xref>.</p>
 
@@ -450,7 +409,8 @@
 
               Just to demonstrate that it works, let's also use the Basic Identity found in <xref ref="idea_hyperbolic_identities">Key Idea</xref>: <m>\cosh(2x) = \cosh^2(x) +\sinh^2(x)</m>.
               <md>
-                <mrow>\frac{d}{dx}\big(\cosh(2x) \big) = \frac{d}{dx}\big(\cosh^2(x) +\sinh^2(x) \big) \amp = 2\cosh(x) \sinh(x) + 2\sinh(x) \cosh(x) </mrow>
+                <mrow>\frac{d}{dx}\big(\cosh(2x) \big) \amp = \frac{d}{dx}\big(\cosh^2(x) +\sinh^2(x) \big)</mrow>
+                <mrow>\amp = 2\cosh(x) \sinh(x) + 2\sinh(x) \cosh(x)</mrow>
                 <mrow>\amp = 4\cosh(x) \sinh(x) .</mrow>
               </md>
               Using another Basic Identity, we can see that <m>4\cosh(x) \sinh(x) = 2\sinh(2x)</m>. We get the same answer either way.</p></li>
@@ -462,22 +422,26 @@
             </p></li>
 
           <li><p>
-              <me>
-                \int_0^{\ln(2) } \cosh(x) \ dx = \sinh(x) \Big|_0^{\ln(2) } = \sinh(\ln(2) ) - \sinh(0) = \sinh(\ln(2) ).
-              </me>
+              <md>
+                <mrow>\int_0^{\ln(2) } \cosh(x) \ dx \amp = \sinh(x) \Big|_0^{\ln(2) }</mrow>
+                <mrow>\amp = \sinh(\ln(2) ) - \sinh(0)</mrow>
+                <mrow>\amp  = \sinh(\ln(2) )</mrow>               
+              </md>.
               We can simplify this last expression as <m>\sinh(x)</m> is based on exponentials:
-              <me>
-                \sinh(\ln(2) ) = \frac{e^{\ln(2) }-e^{-\ln(2) }}2 = \frac{2-1/2}{2} = \frac34.
-              </me>
+              <md>
+                <mrow>\sinh(\ln(2) ) \amp = \frac{e^{\ln(2) }-e^{-\ln(2) }}2</mrow>
+                <mrow>\amp = \frac{2-1/2}{2} </mrow>
+                <mrow>\amp = \frac34</mrow>       
+              </md>.
             </p></li>
         </ol>
       </solution>
     </example>
   </introduction>
 
-  <subsection xml:id="fig_hfinverse2">
+  <subsection>
     <title>Inverse Hyperbolic Functions</title>
-    <p>Just as the inverse trigonometric functions are useful in certain integrations, the inverse hyperbolic functions are useful with others. <xref ref="fig_hfinverse2">Figure</xref> shows the restrictions on the domains to make each function one-to-one and the resulting domains and ranges of their inverse functions. Their graphs are shown in <xref ref="fig_hfinverse1">Figure</xref>.<index><main>hyperbolic function</main><sub>inverse</sub></index></p>
+    <p>Just as the inverse trigonometric functions are useful in certain integrations, the inverse hyperbolic functions are useful with others. <xref ref="fig_hfarccosh">Figure</xref> shows restriction on the domain of <m>\cosh(x)</m> to make the function one-to-one and the resulting domain and range of its inverse function. Since <m>\sinh(x)</m> is already one-to-one, no domain restriction is needed as shown in <xref ref="fig_hfarcsinh"> Figure </xref>. Since <m>\sech(x)</m> is not one to one, it also needs a restricted domain in order to be invertible. <xref ref="fig_hfarcsecharccsch">Figure</xref> shows the graph of <m>\sech^{-1}(x)</m>. You should carefully compare the graph of this function to the graph given in <xref ref="fig_hf_sech_csch">Figure </xref> to see how this inverse was constructed. The rest of the hyperbolic functions area already one-to-one and need no domain restrictions. Their graphs are also shown in <xref ref="fig_hfinverse2">Figure</xref>.<index><main>hyperbolic function</main><sub>inverse</sub></index></p>
 
     <p>Because the hyperbolic functions are defined in terms of exponential functions, their inverses can be expressed in terms of logarithms as shown in <xref ref="idea_hyperbolic_log">Key Idea</xref>. It is often more convenient to refer to <m>\sinh^{-1}(x)</m> than to <m>\ln\big(x+\sqrt{x^2+1}\big)</m>, especially when one is working on theory and does not need to compute actual values. On the other hand, when computations are needed, technology is often helpful but many hand-held calculators lack a <em>convenient</em> <m>\sinh^{-1}(x)</m> button. (Often it can be accessed under a menu system, but not conveniently.) In such a situation, the logarithmic representation is useful. The reader is not encouraged to memorize these, but rather know they exist and know how to use them when needed.</p>
 
@@ -485,7 +449,7 @@
     <caption>Domains and ranges of the hyperbolic and inverse hyperbolic functions.</caption>
     -->
 
-    <sidebyside>
+    <sidebyside widths="47% 47%">
       <tabular>
         <row>
           <cell>Function</cell>
@@ -572,15 +536,113 @@
       </tabular>
     </sidebyside>
 
-    <!--
-    <caption>Graphs of the hyperbolic functions and their inverses.</caption>
-    -->
 
-    <sidebyside>
-    <sidebyside>
+
+      <sidebyside widths="47% 47%" xml:id="fig_hfinverse1">
+        <caption>Graphs of the hyperbolic sine and cosine (with restricted domain) and their inverses.</caption>
+        <figure xml:id="fig_hfarccosh">
+          <caption/>
+        <!-- START figures/fig_hfarccosh.tex -->
+        <image xml:id="img_hfarccosh">
+          <description></description>
+          <latex-image-code>
+            <![CDATA[
+            \begin{tikzpicture}
+            \begin{axis}[%
+            axis on top,%
+      %x=.37\marginparwidth,
+      %y=.37\marginparwidth,
+            %     xtick=\empty,%
+            %     extra x ticks={.5,3},
+            %     extra x tick labels={$a$,$b$},
+            %     ytick={-.002,.002,.004},
+            %     yticklabels={$-0.002$,$0.002$,$0.004$},
+      %
+            %     extra y ticks={0.001},%
+            %     minor x tick num=4,
+      ymin=-.9,ymax=10.9,%
+      xmin=-.9,xmax=10.9,%
+      scaled ticks=false
+            ]
+
+            \addplot [{\colorone},thick,smooth] coordinates {(0,1.)(0.1,1.01) (0.2,1.02) (0.3,1.05) (0.4,1.08) (0.5,1.13) (0.6,1.19)(0.7,1.26) (0.8,1.34) (0.9,1.43) (1.,1.54) (1.1,1.67) (1.2,1.81) (1.3,1.97) (1.4,2.15) (1.5,2.35) (1.6,2.58) (1.7,2.83) (1.8,3.11)(1.9,3.42) (2.,3.76) (2.1,4.14) (2.2,4.57) (2.3,5.04) (2.4,5.56)
+            (2.5,6.13) (2.6,6.77) (2.7,7.47) (2.8,8.25) (2.9,9.11) (3.,10.1)};
+
+            \draw (axis cs:8,4) node {\scriptsize $y=\cosh^{-1}(x) $};
+            \draw (axis cs:5.6,10) node {\scriptsize $y=\cosh(x) $};
+
+            \addplot [{\colortwo},smooth,thick] coordinates {(1.,0)(1.1,0.444)(1.2,0.622)(1.3,0.756)(1.4,0.867)(1.5,0.962)(1.6,1.05)(1.7,1.12)(1.8,1.19)(1.9,1.26)(2.,1.32)(2.1,1.37)(2.2,1.43)(2.3,1.48)(2.4,1.52)(2.5,1.57)(2.6,1.61)(2.7,1.65)(2.8,1.69)(2.9,1.73)(3.,1.76)(3.1,1.8)(3.2,1.83)(3.3,1.86)(3.4,1.89)(3.5,1.92)(3.6,1.95)(3.7,1.98)(3.8,2.01)(3.9,2.04)(4.,2.06)(4.1,2.09)(4.2,2.11)(4.3,2.14)(4.4,2.16)(4.5,2.18)(4.6,2.21)(4.7,2.23)(4.8,2.25)(4.9,2.27)(5.,2.29)(5.1,2.31)(5.2,2.33)(5.3,2.35)(5.4,2.37)(5.5,2.39)(5.6,2.41)(5.7,2.43)(5.8,2.44)(5.9,2.46)(6.,2.48)(6.1,2.49)(6.2,2.51)(6.3,2.53)(6.4,2.54)(6.5,2.56)(6.6,2.57)(6.7,2.59)(6.8,2.6)(6.9,2.62)(7.,2.63)(7.1,2.65)(7.2,2.66)(7.3,2.68)(7.4,2.69)(7.5,2.7)(7.6,2.72)(7.7,2.73)(7.8,2.74)(7.9,2.76)(8.,2.77)(8.1,2.78)(8.2,2.79)(8.3,2.81)(8.4,2.82)(8.5,2.83)(8.6,2.84)(8.7,2.85)(8.8,2.86)(8.9,2.88)(9.,2.89)(9.1,2.9)(9.2,2.91)(9.3,2.92)(9.4,2.93)(9.5,2.94)(9.6,2.95)(9.7,2.96)(9.8,2.97)(9.9,2.98)(10.,2.99)};
+
+            \addplot [dashed,domain=-.5:10] {x};
+
+
+            %\draw (axis cs:2.4,-0.002) node {\scriptsize $f(x)$};
+            \end{axis}
+
+
+
+            \end{tikzpicture}
+            ]]>
+          </latex-image-code>
+        </image>
+        </figure>
+        <!-- figures/fig_hfarccosh.tex END -->
+     
+        <!-- START figures/fig_hfarcsinh.tex -->
+        <figure xml:id="fig_hfarcsinh">
+          <caption/>
+        <image xml:id="img_hfarcsinh">
+          <description></description>
+          <latex-image-code>
+            <![CDATA[
+            \begin{tikzpicture}
+            \begin{axis}[%
+            axis on top,%
+      %x=.37\marginparwidth,
+      %y=.37\marginparwidth,
+            %     xtick=\empty,%
+            %     extra x ticks={.5,3},
+            %     extra x tick labels={$a$,$b$},
+            %     ytick={-.002,.002,.004},
+            %     yticklabels={$-0.002$,$0.002$,$0.004$},
+      %
+            %     extra y ticks={0.001},%
+            %     minor x tick num=4,
+      ymin=-10.9,ymax=10.9,%
+      xmin=-10.9,xmax=10.9,%
+      scaled ticks=false
+            ]
+
+            \addplot [{\colorone},thick,smooth] coordinates {(-3.,-10.) (-2.9,-9.06) (-2.8,-8.19) (-2.7,-7.41) (-2.6,-6.69)(-2.5,-6.05) (-2.4,-5.47) (-2.3,-4.94) (-2.2,-4.46) (-2.1,-4.02)(-2.,-3.63) (-1.9,-3.27) (-1.8,-2.94) (-1.7,-2.65) (-1.6,-2.38)(-1.5,-2.13) (-1.4,-1.9) (-1.3,-1.7) (-1.2,-1.51) (-1.1,-1.34)(-1.,-1.18) (-0.9,-1.03) (-0.8,-0.888) (-0.7,-0.759) (-0.6,-0.637)(-0.5,-0.521) (-0.4,-0.411) (-0.3,-0.305) (-0.2,-0.201) (-0.1,-0.1)(0,0) (0.1,0.1) (0.2,0.201) (0.3,0.305) (0.4,0.411) (0.5,0.521)(0.6,0.637) (0.7,0.759) (0.8,0.888) (0.9,1.03) (1.,1.18) (1.1,1.34)(1.2,1.51) (1.3,1.7) (1.4,1.9) (1.5,2.13) (1.6,2.38) (1.7,2.65)(1.8,2.94) (1.9,3.27) (2.,3.63) (2.1,4.02) (2.2,4.46) (2.3,4.94)(2.4,5.47) (2.5,6.05) (2.6,6.69) (2.7,7.41) (2.8,8.19) (2.9,9.06)(3.,10.) };
+
+            \draw (axis cs:-6,7) node {\scriptsize $y=\sinh(x) $};
+            \draw (axis cs:6,-5) node {\scriptsize $y=\sinh^{-1}(x) $};
+            \draw[->,>=stealth] (axis cs:-1,7) -- (axis cs:2,7);
+            \draw[->,>=stealth] (axis cs:7,-3) -- (axis cs:7,2);
+
+            \addplot [{\colortwo},smooth,thick] coordinates {(-10.,-3.)(-9.6,-2.96)(-9.2,-2.92)(-8.8,-2.87)(-8.4,-2.82)(-8.,-2.78)(-7.6,-2.73)(-7.2,-2.67)(-6.8,-2.62)(-6.4,-2.56)(-6.,-2.49)(-5.6,-2.42)(-5.2,-2.35)(-4.8,-2.27)(-4.4,-2.19)(-4.,-2.09)(-3.6,-1.99)(-3.2,-1.88)(-2.8,-1.75)(-2.4,-1.61)(-2.,-1.44)(-1.6,-1.25)(-1.2,-1.02)(-0.8,-0.733)(-0.4,-0.39)(0,0)(0.4,0.39)(0.8,0.733)(1.2,1.02)(1.6,1.25)(2.,1.44)(2.4,1.61)(2.8,1.75)(3.2,1.88)(3.6,1.99)(4.,2.09)(4.4,2.19)(4.8,2.27)(5.2,2.35)(5.6,2.42)(6.,2.49)(6.4,2.56)(6.8,2.62)(7.2,2.67)(7.6,2.73)(8.,2.78)(8.4,2.82)(8.8,2.87)(9.2,2.92)(9.6,2.96)(10.,3.)};
+
+            \addplot [dashed,domain=-10:10] {x};
+
+
+            %\draw (axis cs:2.4,-0.002) node {\scriptsize $f(x)$};
+            \end{axis}
+
+
+
+            \end{tikzpicture}
+            ]]>
+          </latex-image-code>
+        </image>
+        <!-- figures/fig_hfarcsinh.tex END -->
+      </figure>
+    </sidebyside>
+
+  <sidebyside widths="47% 47%" xml:id="fig_hfinverse2">
+    <caption>Graphs of the inverse hyperbolic tangent, cotangent, cosecant and secant.</caption>
+
       <figure>
-        <caption>[15pt]
-
+        <caption/>
         <!-- START figures/fig_hfarctanharccoth.tex -->
         <image xml:id="img_hfarctanharccoth" >
           <description></description>
@@ -629,10 +691,13 @@
             ]]>
           </latex-image-code>
         </image>
+      </figure>
+      
         <!-- figures/fig_hfarctanharccoth.tex END -->
-         &amp; &amp;
+      <figure xml:id="fig_hfarcsecharccsch">
+        <caption/>
         <!-- START figures/fig_hfarcsecharccsch.tex -->
-        <image xml:id="img_hfarcsecharccsch" >
+        <image xml:id="img_hfarcsecharccsch">
           <description></description>
           <latex-image-code>
             <![CDATA[
@@ -675,153 +740,98 @@
             ]]>
           </latex-image-code>
         </image>
-        <!-- figures/fig_hfarcsecharccsch.tex END --></caption>
-        <!-- START figures/fig_hfarccosh.tex -->
-        <image xml:id="img_hfarccosh" >
-          <description></description>
-          <latex-image-code>
-            <![CDATA[
-            \begin{tikzpicture}
-            \begin{axis}[%
-            axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-            %			xtick=\empty,%
-            %			extra x ticks={.5,3},
-            %			extra x tick labels={$a$,$b$},
-            %			ytick={-.002,.002,.004},
-            %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%
-            %			extra y ticks={0.001},%
-            %			minor x tick num=4,
-			ymin=-.9,ymax=10.9,%
-			xmin=-.9,xmax=10.9,%
-			scaled ticks=false
-            ]
+        </figure>
+        <!-- figures/fig_hfarcsecharccsch.tex END -->
 
-            \addplot [{\colorone},thick,smooth] coordinates {(0,1.)(0.1,1.01) (0.2,1.02) (0.3,1.05) (0.4,1.08) (0.5,1.13) (0.6,1.19)(0.7,1.26) (0.8,1.34) (0.9,1.43) (1.,1.54) (1.1,1.67) (1.2,1.81) (1.3,1.97) (1.4,2.15) (1.5,2.35) (1.6,2.58) (1.7,2.83) (1.8,3.11)(1.9,3.42) (2.,3.76) (2.1,4.14) (2.2,4.57) (2.3,5.04) (2.4,5.56)
-            (2.5,6.13) (2.6,6.77) (2.7,7.47) (2.8,8.25) (2.9,9.11) (3.,10.1)};
+      </sidebyside>
+ 
 
-            \draw (axis cs:8,4) node {\scriptsize $y=\cosh^{-1}(x) $};
-            \draw (axis cs:5.6,10) node {\scriptsize $y=\cosh(x) $};
-
-            \addplot [{\colortwo},smooth,thick] coordinates {(1.,0)(1.1,0.444)(1.2,0.622)(1.3,0.756)(1.4,0.867)(1.5,0.962)(1.6,1.05)(1.7,1.12)(1.8,1.19)(1.9,1.26)(2.,1.32)(2.1,1.37)(2.2,1.43)(2.3,1.48)(2.4,1.52)(2.5,1.57)(2.6,1.61)(2.7,1.65)(2.8,1.69)(2.9,1.73)(3.,1.76)(3.1,1.8)(3.2,1.83)(3.3,1.86)(3.4,1.89)(3.5,1.92)(3.6,1.95)(3.7,1.98)(3.8,2.01)(3.9,2.04)(4.,2.06)(4.1,2.09)(4.2,2.11)(4.3,2.14)(4.4,2.16)(4.5,2.18)(4.6,2.21)(4.7,2.23)(4.8,2.25)(4.9,2.27)(5.,2.29)(5.1,2.31)(5.2,2.33)(5.3,2.35)(5.4,2.37)(5.5,2.39)(5.6,2.41)(5.7,2.43)(5.8,2.44)(5.9,2.46)(6.,2.48)(6.1,2.49)(6.2,2.51)(6.3,2.53)(6.4,2.54)(6.5,2.56)(6.6,2.57)(6.7,2.59)(6.8,2.6)(6.9,2.62)(7.,2.63)(7.1,2.65)(7.2,2.66)(7.3,2.68)(7.4,2.69)(7.5,2.7)(7.6,2.72)(7.7,2.73)(7.8,2.74)(7.9,2.76)(8.,2.77)(8.1,2.78)(8.2,2.79)(8.3,2.81)(8.4,2.82)(8.5,2.83)(8.6,2.84)(8.7,2.85)(8.8,2.86)(8.9,2.88)(9.,2.89)(9.1,2.9)(9.2,2.91)(9.3,2.92)(9.4,2.93)(9.5,2.94)(9.6,2.95)(9.7,2.96)(9.8,2.97)(9.9,2.98)(10.,2.99)};
-
-            \addplot [dashed,domain=-.5:10] {x};
-
-
-            %\draw (axis cs:2.4,-0.002) node {\scriptsize $f(x)$};
-            \end{axis}
-
-
-
-            \end{tikzpicture}
-            ]]>
-          </latex-image-code>
-        </image>
-        <!-- figures/fig_hfarccosh.tex END -->
-         &amp;  <nbsp />&amp;
-        <!-- START figures/fig_hfarcsinh.tex -->
-        <image xml:id="img_hfarcsinh" >
-          <description></description>
-          <latex-image-code>
-            <![CDATA[
-            \begin{tikzpicture}
-            \begin{axis}[%
-            axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-            %			xtick=\empty,%
-            %			extra x ticks={.5,3},
-            %			extra x tick labels={$a$,$b$},
-            %			ytick={-.002,.002,.004},
-            %			yticklabels={$-0.002$,$0.002$,$0.004$},
-			%
-            %			extra y ticks={0.001},%
-            %			minor x tick num=4,
-			ymin=-10.9,ymax=10.9,%
-			xmin=-10.9,xmax=10.9,%
-			scaled ticks=false
-            ]
-
-            \addplot [{\colorone},thick,smooth] coordinates {(-3.,-10.) (-2.9,-9.06) (-2.8,-8.19) (-2.7,-7.41) (-2.6,-6.69)(-2.5,-6.05) (-2.4,-5.47) (-2.3,-4.94) (-2.2,-4.46) (-2.1,-4.02)(-2.,-3.63) (-1.9,-3.27) (-1.8,-2.94) (-1.7,-2.65) (-1.6,-2.38)(-1.5,-2.13) (-1.4,-1.9) (-1.3,-1.7) (-1.2,-1.51) (-1.1,-1.34)(-1.,-1.18) (-0.9,-1.03) (-0.8,-0.888) (-0.7,-0.759) (-0.6,-0.637)(-0.5,-0.521) (-0.4,-0.411) (-0.3,-0.305) (-0.2,-0.201) (-0.1,-0.1)(0,0) (0.1,0.1) (0.2,0.201) (0.3,0.305) (0.4,0.411) (0.5,0.521)(0.6,0.637) (0.7,0.759) (0.8,0.888) (0.9,1.03) (1.,1.18) (1.1,1.34)(1.2,1.51) (1.3,1.7) (1.4,1.9) (1.5,2.13) (1.6,2.38) (1.7,2.65)(1.8,2.94) (1.9,3.27) (2.,3.63) (2.1,4.02) (2.2,4.46) (2.3,4.94)(2.4,5.47) (2.5,6.05) (2.6,6.69) (2.7,7.41) (2.8,8.19) (2.9,9.06)(3.,10.) };
-
-            \draw (axis cs:-6,7) node {\scriptsize $y=\sinh(x) $};
-            \draw (axis cs:6,-5) node {\scriptsize $y=\sinh^{-1}(x) $};
-            \draw[->,>=stealth] (axis cs:-1,7) -- (axis cs:2,7);
-            \draw[->,>=stealth] (axis cs:7,-3) -- (axis cs:7,2);
-
-            \addplot [{\colortwo},smooth,thick] coordinates {(-10.,-3.)(-9.6,-2.96)(-9.2,-2.92)(-8.8,-2.87)(-8.4,-2.82)(-8.,-2.78)(-7.6,-2.73)(-7.2,-2.67)(-6.8,-2.62)(-6.4,-2.56)(-6.,-2.49)(-5.6,-2.42)(-5.2,-2.35)(-4.8,-2.27)(-4.4,-2.19)(-4.,-2.09)(-3.6,-1.99)(-3.2,-1.88)(-2.8,-1.75)(-2.4,-1.61)(-2.,-1.44)(-1.6,-1.25)(-1.2,-1.02)(-0.8,-0.733)(-0.4,-0.39)(0,0)(0.4,0.39)(0.8,0.733)(1.2,1.02)(1.6,1.25)(2.,1.44)(2.4,1.61)(2.8,1.75)(3.2,1.88)(3.6,1.99)(4.,2.09)(4.4,2.19)(4.8,2.27)(5.2,2.35)(5.6,2.42)(6.,2.49)(6.4,2.56)(6.8,2.62)(7.2,2.67)(7.6,2.73)(8.,2.78)(8.4,2.82)(8.8,2.87)(9.2,2.92)(9.6,2.96)(10.,3.)};
-
-            \addplot [dashed,domain=-10:10] {x};
-
-
-            %\draw (axis cs:2.4,-0.002) node {\scriptsize $f(x)$};
-            \end{axis}
-
-
-
-            \end{tikzpicture}
-            ]]>
-          </latex-image-code>
-        </image>
-        <!-- figures/fig_hfarcsinh.tex END -->
-      </figure>
-    </sidebyside>
 
     <insight xml:id="idea_hyperbolic_log">
       <title>Logarithmic definitions of Inverse Hyperbolic Functions</title>
       <ol cols="2" >
-        <li><p><m>\ds\cosh^{-1}(x) =\ln\big(x+\sqrt{x^2-1}\big);\ x\geq1</m><index><main>hyperbolic function</main><sub>inverse!logarithmic def.</sub></index></p></li>
+        <li><p><m>\ds\cosh^{-1}(x) =\ln\big(x+\sqrt{x^2-1}\big);\\ x\geq1</m><index><main>hyperbolic function</main><sub>inverse!logarithmic def.</sub></index></p></li>
 
-        <li><p><m>\ds\tanh^{-1}(x) = \frac12\ln\left(\frac{1+x}{1-x}\right);\ \abs{x}\lt 1</m></p></li>
+        <li><p><m>\ds\tanh^{-1}(x) = \frac12\ln\left(\frac{1+x}{1-x}\right);\\ \abs{x}\lt 1</m></p></li>
 
-        <li><p><m>\ds \sech^{-1}(x) = \ln\left(\frac{1+\sqrt{1-x^2}}x\right);\ 0\lt x\leq1</m></p></li>
+        <li><p><m>\ds \sech^{-1}(x) = \ln\left(\frac{1+\sqrt{1-x^2}}x\right);\\ 0\lt x\leq1</m></p></li>
 
         <li><p><m>\ds\sinh^{-1}(x) = \ln\big(x+\sqrt{x^2+1}\big)</m></p></li>
 
-        <li><p><m>\ds\coth^{-1}(x) = \frac12\ln\left(\frac{x+1}{x-1}\right);\ \abs{x}>1</m></p></li>
+        <li><p><m>\ds\coth^{-1}(x) = \frac12\ln\left(\frac{x+1}{x-1}\right);\\ \abs{x}>1</m></p></li>
 
-        <li><p><m>\ds\csch^{-1}(x) = \ln\left(\frac1x+\frac{\sqrt{1+x^2}}{\abs{x}}\right);\ x\neq0</m></p></li>
+        <li><p><m>\ds\csch^{-1}(x) = \ln\left(\frac1x+\frac{\sqrt{1+x^2}}{\abs{x}}\right);\\ x\neq0</m></p></li>
       </ol>
     </insight>
-    </sidebyside>
+    
 
     <p>The following Key Ideas give the derivatives and integrals relating to the inverse hyperbolic functions. In <xref ref="idea_hyperbolic_inverse_integrals">Key Idea</xref>, both the inverse hyperbolic and logarithmic function representations of the antiderivative are given, based on <xref ref="idea_hyperbolic_log">Key Idea</xref>. Again, these latter functions are often more useful than the former. Note how inverse hyperbolic functions can be used to solve integrals we used Trigonometric Substitution to solve in <xref ref="sec_trig_sub">Section</xref>.</p>
-
+    <todo>Consider adding an example showing how one of the inverse functions is found using logarithms?</todo>
     <insight xml:id="idea_hyperbolic_inverse_derivatives">
       <title>Derivatives Involving Inverse Hyperbolic Functions</title>
       <ol cols="2" >
-        <li><p><m>\ds\frac{d}{dx}\big(\cosh^{-1}(x) \big) = \frac{1}{\sqrt{x^2-1}};\ x>1</m><index><main>derivative</main><sub>inverse hyper.</sub></index><index><main>hyperbolic function</main><sub>inverse!derivative</sub></index></p></li>
+        <li><p><m>\ds\frac{d}{dx}\big(\cosh^{-1}(x) \big) = \frac{1}{\sqrt{x^2-1}};\\ x>1</m><index><main>derivative</main><sub>inverse hyper.</sub></index><index><main>hyperbolic function</main><sub>inverse!derivative</sub></index></p></li>
 
         <li><p><m>\ds\frac{d}{dx}\big(\sinh^{-1}(x) \big) = \frac{1}{\sqrt{x^2+1}}</m></p></li>
 
-        <li><p><m>\ds\frac{d}{dx}\big(\tanh^{-1}(x) \big) = \frac{1}{1-x^2};\ \abs{x}\lt 1</m></p></li>
+        <li><p><m>\ds\frac{d}{dx}\big(\tanh^{-1}(x) \big) = \frac{1}{1-x^2};\\ \abs{x}\lt 1</m></p></li>
 
-        <li><p><m>\ds\frac{d}{dx}\big(\sech^{-1}(x) \big) = \frac{-1}{x\sqrt{1-x^2}}; 0\lt x\lt 1</m></p></li>
+        <li><p><m>\ds\frac{d}{dx}\big(\sech^{-1}(x) \big) = \frac{-1}{x\sqrt{1-x^2}};\\ 0\lt x\lt 1</m></p></li>
 
-        <li><p><m>\ds\frac{d}{dx}\big(\csch^{-1}(x) \big) = \frac{-1}{\abs{x}\sqrt{1+x^2}};\ x\neq0</m></p></li>
+        <li><p><m>\ds\frac{d}{dx}\big(\csch^{-1}(x) \big) = \frac{-1}{\abs{x}\sqrt{1+x^2}};\\ x\neq0</m></p></li>
 
-        <li><p><m>\ds\frac{d}{dx}\big(\coth^{-1}(x) \big) = \frac{1}{1-x^2};\ \abs{x}>1</m></p></li>
+        <li><p><m>\ds\frac{d}{dx}\big(\coth^{-1}(x) \big) = \frac{1}{1-x^2};\\ \abs{x}>1</m></p></li>
       </ol>
     </insight>
 
-    <p>\end{minipage}</p>
 
     <insight xml:id="idea_hyperbolic_inverse_integrals">
       <title>Integrals Involving Inverse Hyperbolic Functions</title>
       <ol>
-        <li><p><m>\ds\int \frac{1}{\sqrt{x^2-a^2}}\ dx</m> \text{<m>\ds=\qquad \cosh^{-1}\left(\frac xa\right)+C;\ 0\lt a\lt x</m>} <m>\ds=\ln\Big\abs{x+\sqrt{x^2-a^2}\Big}+C</m><index><main>integration</main><sub>inverse hyper.</sub></index><index><main>hyperbolic function</main><sub>inverse!integration</sub></index></p></li>
+        <li><p>
+          <md>
+            <mrow>\int \frac{1}{\sqrt{x^2-a^2}}\ dx \amp= \cosh^{-1}\left(\frac xa\right)+C ;\ 0\lt a\lt x\amp =\ln\abs{x+\sqrt{x^2-a^2}}+C </mrow>
+          </md>
+            <index><main>integration</main><sub>inverse hyper.</sub></index><index><main>hyperbolic function</main><sub>inverse!integration</sub></index>
+          </p></li>
 
-        <li><p><m>\ds\int \frac{1}{\sqrt{x^2+a^2}}\ dx</m> \text{<m>\ds=\qquad \sinh^{-1}\left(\frac xa\right)+C;\ a>0</m>} <m>\ds=\ln\Big\abs{x+\sqrt{x^2+a^2}\Big}+C</m></p></li>
+        <li>
+          <p>
+            <md>
+              <mrow>\int \frac{1}{\sqrt{x^2+a^2}}\ dx \amp =\sinh^{-1}\left(\frac xa\right)+C;\ a \gt 0 \amp =\ln\abs{x+\sqrt{x^2+a^2}}+C</mrow>
+            </md>.
+          </p>
+        </li>
 
-        <li><p><m>\ds\int \frac{1}{a^2-x^2}\ dx</m> \text{<m>\ds=\qquad \left\{\begin{array}{ccc} \frac1a\tanh^{-1}\left(\frac xa\right)+C \amp  \amp  x^2\lt a^2 \\ \\
-            \frac1a\coth^{-1}\left(\frac xa\right)+C \amp  \amp  a^2\lt x^2
-            \end{array} \right.</m>} <m>\ds=\frac1{2a}\ln\abs{\frac{a+x}{a-x}}+C</m></p></li>
+        <li>
+          <p>
+            <md>
+              <mrow>\ds\int \frac{1}{a^2-x^2}\ dx \amp =
+                \begin{cases}
+                \frac1a\tanh^{-1}\left(\frac xa\right)+C \amp x^2\lt a^2\\
+                \frac1a\coth^{-1}\left(\frac xa\right)+C \amp  a^2\lt x^2
+                \end{cases}
+                \amp =\frac1{2a}\ln\abs{\frac{a+x}{a-x}}+C
+              </mrow>
+          </md>.
+            </p>
+          </li>
 
-        <li><p><m>\ds\int \frac{1}{x\sqrt{a^2-x^2}}\ dx</m> \text{<m>\ds=\qquad -\frac1a\sech^{-1}\left(\frac xa\right)+C;\ 0\lt x\lt a</m>} <m>\ds= \frac1a \ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C</m></p></li>
+        <li>
+          <p>
+            <md>
+              <mrow>\ds\int \frac{1}{x\sqrt{a^2-x^2}}\ dx \amp = -\frac1a\sech^{-1}\left(\frac xa\right)+C;\ 0\lt x\lt a 
+                \amp =\frac1a \ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C</mrow>
+            </md>
+          </p>
+        </li>
 
-        <li><p><m>\ds\int \frac{1}{x\sqrt{x^2+a^2}}\ dx</m> \text{<m>\ds=\qquad -\frac1a\csch^{-1}\abs{\frac xa} + C;\ x\neq 0,\ a>0</m>}<m>\ds= \frac1a \ln\abs{\frac{x}{a+\sqrt{a^2+x^2}}}+C</m></p></li>
+        <li>
+          <p>
+            <md>
+              <mrow>\ds\int \frac{1}{x\sqrt{x^2+a^2}}\ dx \amp -\frac1a\csch^{-1}\abs{\frac xa} + C;\ x\neq 0,\ a\gt 0 \amp = \frac1a \ln\abs{\frac{x}{a+\sqrt{a^2+x^2}}}+C </mrow>
+            </md>
+          </p></li>
       </ol>
     </insight>
 
