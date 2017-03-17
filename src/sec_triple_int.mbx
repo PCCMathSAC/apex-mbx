@@ -3618,25 +3618,24 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$int">
+              <static>52</static>
             </var>
             <pg-code>
+                $int=Compute("52");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f_1(x,y) = x^2+y^2</m>, <m>f_2(x,y) = -x^2-y^2</m>;</p>
-
-            <p><m>R</m> is the square with corners <m>(0,0)</m> and <m>(2,3)</m>.</p>
+            <p>Evaluate the double integral that finds the volme between the surfaces <m>z=f_1(x,y) = x^2+y^2</m> and <m>z=f_2(x,y) = -x^2-y^2</m>, over <m>R</m>, the square with corners <m>(0,0)</m> and <m>(2,3)</m>.</p>
+            <p><var name="$int" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>V = \int_{0}^2\int_{0}^3 \big(x^2+y^2-(-x^2-y^2)\big)\ dy\ dx = 52</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -3656,27 +3655,30 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$int">
+              <static>3\pi/2</static>
             </var>
             <pg-code>
+                $int=Compute("3pi/2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f_1(x,y) = 2x^2+2y^2+3</m>, <m>f_2(x,y) = 6-x^2-y^2</m>;</p>
-
-            <p><m>R</m> is the circle <m>x^2+y^2=1</m>.</p>
+            <p>Evaluate the double integral that finds the volme between the surfaces <m>z=f_1(x,y) = 2x^2+2y^2+3</m> and <m>z=f_2(x,y) = 6-x^2-y^2</m>, over <m>R</m>, the disc <m>x^2+y^2\leq1</m>.</p>
+            <p><var name="$int" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>V = \int_{-1}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} \big(6-x^2-y^2-(2x^2+2y^2+3))\ dy\ dx</m>. Integrating in polar is easier, giving <m>V = \int_0^{2\pi}\int_0^1 \big(3-3r^2\big)r\ dr\ d\theta = 3\pi/2</m>.</p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, a domain <m>D</m> is described by its bounding surfaces, along with a graph. Set up the triple integrals that give the volume of <m>D</m> in all 6 orders of integration, and find the volume of <m>D</m> by evaluating the indicated triple integral.</p>
-      <exercise xml:id="x13_06_ex_07">
+  </exercisegroup>
+
+  <exercisegroup>
+    <introduction>
+        <p>In the following exercises, a domain <m>D</m> is described by its bounding surfaces, along with a graph. Set up the triple integrals that give the volume of <m>D</m> in all 6 orders of integration, and find the volume of <m>D</m> by evaluating the indicated triple integral.</p>
+    </introduction>
+    <exercise xml:id="x13_06_ex_07">
         <webwork seed="1">
           <setup>
             <var name="">
@@ -4785,7 +4787,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, evaluate the triple integral.</p>
+  </exercisegroup>
+
+    <exercisegroup>
+        <introduction>
+            <p>In the following exercises, evaluate the triple integral.</p>
+        </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -4802,23 +4809,24 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$int">
+              <static>\frac{7}{8}</static>
             </var>
             <pg-code>
+                $int=Compute("7/8");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{0}^{1}\int_0^x\int_0^{x+y}\big(x+y+z\big)\ dz\ dy\ dx</m></p>
+            <p>Evaluate <m>\ds \int_{0}^{1}\int_0^x\int_0^{x+y}(x+y+z)\,dz\,dy\,dx</m>.</p>
+            <p><var name="$int" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>7/8</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -4836,24 +4844,29 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$int">
+              <static>0</static>
             </var>
             <pg-code>
+                $int=Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{\pi}^{\pi^2}\int_{x}^{x^3}\int_{-y^2}^{y^2}\left(z\frac{x^2y+y^2x}{e^{x^2+y^2}}\right)\ dz\ dy\ dx</m></p>
+            <p>Evaluate <m>\ds \int_{\pi}^{\pi^2}\int_{x}^{x^3}\int_{-y^2}^{y^2}\left(z\frac{x^2y+y^2x}{e^{x^2+y^2}}\right)\,dz\,dy\,dx</m>.</p>
+            <p><var name="$int" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the center of mass of the solid represented by the indicated space region <m>D</m> with density function <m>\delta(x,y,z)</m>.</p>
+  </exercisegroup>
+
+  <exercisegroup>
+    <introduction>
+        <p>In the following exercises, find the center of mass of the solid represented by the indicated space region <m>D</m> with density function <m>\delta(x,y,z)</m>.</p>
+    </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
