@@ -748,31 +748,36 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>2+\pi^2\cos(y)</static>
+            </var>
+            <var name="$b">
+              <static>\pi^2+\pi</static>
             </var>
             <pg-code>
+              Context()->variables->are(x=>'Real',y=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $a=Compute("2+pi^2cos(y)");
+              $b=Formula("pi^2+pi");
             </pg-code>
           </setup>
           <statement>
-            <ol>
-              <li><p><m>\ds \int_0^{\pi} \big(2x\cos(y) + \sin(x) \big)\ dx</m></p></li>
-
-              <li><p><m>\ds \int_{0}^{\pi/2} \int_0^{\pi} \big(2x\cos(y) + \sin(x) \big)\ dx\ dy</m></p></li>
-            </ol>
+            <p><ol label="a">
+              <li>
+                <p><m>\ds \int_0^{\pi} (2x\cos(y) + \sin(x) )\,dx=</m><var name="$a" width="20" /></p>
+              </li>
+              <li>
+                <p><m>\ds \int_{0}^{\pi/2} \int_0^{\pi} (2x\cos(y) + \sin(x) )\,dx\,dy=</m><var name="$b" width="20" /></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>2+\pi^2\cos(y)</m></p></li>
-
-              <li><p><m>\pi^2+\pi</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -798,31 +803,36 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>y^4/2-y^3+y^2/2</static>
+            </var>
+            <var name="$b">
+              <static>8/15</static>
             </var>
             <pg-code>
+              Context()->variables->are(x=>'Real',y=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $a=Compute("y^4/2-y^3+y^2/2");
+              $b=Formula("8/15");
             </pg-code>
           </setup>
           <statement>
-            <ol>
-              <li><p><m>\ds \int_y^{y^2} \big(x-y\big)\ dx</m></p></li>
-
-              <li><p><m>\ds \int_{-1}^1\int_y^{y^2} \big(x-y\big)\ dx\ dy</m></p></li>
-            </ol>
+            <p><ol label="a">
+              <li>
+                <p><m>\ds \int_y^{y^2} (x-y)\,dx=</m><var name="$a" width="20" /></p>
+              </li>
+              <li>
+                <p><m>\ds \int_{-1}^1\int_y^{y^2} (x-y)\,dx\,dy=</m><var name="$b" width="20" /></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>y^4/2-y^3+y^2/2</m></p></li>
-
-              <li><p><m>8/15</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -848,32 +858,41 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>x/(1+x^2)</static>
+            </var>
+            <var name="$b">
+              <static>\frac12\ln\left(\frac52\right)</static>
             </var>
             <pg-code>
+              Context()->variables->are(x=>'Real',y=>'Real');
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $a=Compute("x/(1+x^2)");
+              $b=Formula("1/2 ln(5/2)");
             </pg-code>
           </setup>
           <statement>
-            <ol>
-              <li><p><m>\ds \int_0^{x} \left(\frac{1}{1+x^2}\right)\ dy</m></p></li>
-
-              <li><p><m>\ds \int_1^2 \int_0^{x} \left(\frac{1}{1+x^2}\right)\ dy\ dx</m></p></li>
-            </ol>
+            <p><ol label="a">
+              <li>
+                <p><m>\ds \int_0^{x} \left(\frac{1}{1+x^2}\right)\,dy=</m><var name="$a" width="20" /></p>
+              </li>
+              <li>
+                <p><m>\ds \int_1^2 \int_0^{x} \left(\frac{1}{1+x^2}\right)\,dy\,dx=</m><var name="$b" width="20" /></p>
+              </li>
+            </ol></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>x/(1+x^2)</m></p></li>
-
-              <li><p><m>\frac12\ln\left(\frac52\right)</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, a graph of a planar region <m>R</m> is given. Give the iterated integrals, with both orders of integration <m>dy\ dx</m> and <m>dx\ dy</m>, that give the area of <m>R</m>. Evaluate one of the iterated integrals to find the area.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, a graph of a planar region <m>R</m> is given. Give the iterated integrals, with both orders of integration <m>dy\ dx</m> and <m>dx\ dy</m>, that give the area of <m>R</m>. Evaluate one of the iterated integrals to find the area.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
