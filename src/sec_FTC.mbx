@@ -3,38 +3,64 @@
 <section xml:id="sec_FTC">
   <title>The Fundamental Theorem of Calculus</title>
   <introduction>
-    <p>Let <m>f(t)</m> be a continuous function defined on <m>[a,b]</m>. The definite integral <m>\int_a^b f(x)\ dx</m> is the <q>area under <m>f\</m></q> on <m>[a,b]</m>. We can turn this concept into a function by letting the upper (or lower) bound vary.</p>
+    <p>Let <m>f(t)</m> be a continuous function defined on <m>[a,b]</m>. The definite integral <m>\int_a^b f(x)\ dx</m> is the <q>area under <m>f</m></q> on <m>[a,b]</m>. We can turn this concept into a function by letting the upper (or lower) bound vary.</p>
 
-    <p>Let <m>F(x) = \int_a^x f(t)\ dt</m>. It computes the area under <m>f</m> on <m>[a,x]</m> as illustrated in <xref ref="fig_ftc1">Figure</xref>. We can study this function using our knowledge of the definite integral. For instance, <m>F(a)=0</m> since <m>\int_a^af(t)\ dt=0</m>.</p>
+    <p>Let <m>F(x) = \int_a^x f(t)\ dt</m>. It computes the area under <m>f</m> on <m>[a,x]</m> as illustrated in <xref ref="fig_ftc0">Figure</xref>. We can study this function using our knowledge of the definite integral. For instance, <m>F(a)=0</m> since <m>\int_a^af(t)\ dt=0</m>.</p>
 
-    <figure xml:id="fig_ftc1" >
+    <figure xml:id="fig_ftc0">
       <caption>The area of the shaded region is <m>F(x) = \int_a^x f(t)\ dt</m>.</caption>
       <!-- START figures/fig_ftc1.tex -->
-      <image xml:id="img_ftc1" >
+      <image xml:id="img_ftc0"  width="47%">
         <description></description>
         <latex-image-code>
           <![CDATA[
           \begin{tikzpicture}
-          \begin{axis}[%
-          axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick=\empty,%
-			extra x ticks={1,2.5,3},
-			extra x tick labels={$a$,$x$,$b$},
-			ytick=\empty,
-			%%extra y ticks={-5,-3,...,7},%
-          %			minor x tick num=4,
-			ymin=-.5,ymax=2,%
-			xmin=-.5,xmax=3.5%
-          ]
-
-          \addplot [{\coloronefill},fill={\coloronefill},area style,domain=1:2.5] {.5*sin(deg(x))+1} \closedcycle;
-          \addplot [smooth,thick, {\colorone},domain=0:3.25] {.5*sin(deg(x))+1};
+          \begin{axis}[axis on top,
+                      xtick=\empty,
+                      extra x ticks={1,2.5,3},
+                      extra x tick labels={$a$,$x$,$b$},
+                      ytick=\empty,
+                      xlabel=$t$,
+                      ymin=-.5,ymax=2,
+                      xmin=-.5,xmax=3.5
+                      ]
+                \addplot+[domain=0:3.25] {.5*sin(deg(x))+1};
+                \addplot [{\coloronefill},fill={\coloronefill},area style,domain=1:2.5] {.5*sin(deg(x))+1}\closedcycle;
 
           \end{axis}
+          \end{tikzpicture}
+          ]]>
+        </latex-image-code>
+      </image>
+      <!-- figures/fig_ftc0.tex END -->
+    </figure>
 
-          \node [right] at (myplot.right of origin) {\scriptsize $t$};
+    <example xml:id="ex_ftc1">
+      <title>Exploring the <q>Area so far</q> function</title>
+      <statement>
+        <p>Consider <m>f(t)=2t</m> pictured in Figure <xref ref="fig_ftc1">Figure </xref> and its associated <q>area so far</q> function, <m>F(x)=\int_1^x 2t\ dt</m>. Using the graph of <m>f</m> and geometry, find an explicit formula for <m>F</m>.</p>
+
+    <figure xml:id="fig_ftc1" >
+      <caption>The area of the shaded region is <m>F(x) = \int_1^x 2t\ dt</m>.</caption>
+      <!-- START figures/fig_ftc1.tex -->
+
+      <image xml:id="img_ftc1"  width="47%">
+        <description></description>
+        <latex-image-code>
+          <![CDATA[
+          \begin{tikzpicture}
+          \begin{axis}[xtick=\empty,
+                       extra x ticks={1,2.5},
+                       extra x tick labels={$1$,$x$},
+                       %ytick=\empty,
+                       xlabel=$t$,
+                       ymin=-2,ymax=8,
+                       xmin=-1,xmax=3.5
+                       ]
+                       \addplot+[domain=-1:3.25] {2*x};
+                       \addplot [{\coloronefill},fill={\coloronefill},area style,domain=1:2.5] {2*x} \closedcycle;        
+
+          \end{axis}
 
           \end{tikzpicture}
           ]]>
@@ -43,7 +69,75 @@
       <!-- figures/fig_ftc1.tex END -->
     </figure>
 
-    <p>We can also apply calculus ideas to <m>F(x)</m>; in particular, we can compute its derivative. While this may seem like an innocuous thing to do, it has far<ndash />reaching implications, as demonstrated by the fact that the result is given as an important theorem.</p>
+ 
+
+      </statement>
+      <solution>
+        <p>We can see from <xref ref="fig_ftc1b">Figure</xref> that for <m>x \ge 1</m>, the area under the curve can be found by subtracting the area of two triangles. The larger triangle will have a base of <m>x</m> and a height of <m>f(x)=2x</m>, while the smaller triangle will have a base of <m>1</m> and a height of <m>2</m>. Therefore, the area under the curve for <m>x \gt 1</m> is given by <m>A(x)=\frac12 (x)(2x)-\frac12 (1)(2)=x^2-1</m>. </p>
+    <figure xml:id="fig_ftc1b" >
+      <caption>The area of the shaded region is <m>F(x) = \int_1^x 2t\ dt</m>.</caption>
+      <!-- START figures/fig_ftc1.tex -->
+      <image xml:id="img_ftc1b"  width="47%">
+        <description></description>
+        <latex-image-code>
+          <![CDATA[
+          \begin{tikzpicture}
+          \begin{axis}[ xtick=\empty,
+                       extra x ticks={1,2.5},
+                       extra x tick labels={$1$,$x$},
+                       %ytick=\empty,
+                       xlabel=$t$,
+                       ymin=-2,ymax=8,%
+                       xmin=-1,xmax=3.5%
+                       ]
+                       \addplot+[domain=-1:3.25] {2*x};
+                       \addplot [{\coloronefill},fill={\coloronefill},area style,domain=1:2.5] {2*x} \closedcycle;
+                       \addplot[lineseg, domain=0:2]({1},{x}) node[pos=0.5, right]{$2$};
+                       \addplot[lineseg, domain=0:1]({x},{0}) node[pos=0.5, above]{$1$};
+                       \addplot[lineseg,<->, domain=0:2.5]({x},{-1}) node[pos=0.5, below]{$x$};
+                       \addplot[lineseg, domain=0:5]({2.5},{x}) node[pos=0.5, right]{$2x$};
+
+          \end{axis}
+
+          \end{tikzpicture}
+          ]]>
+        </latex-image-code>
+      </image>
+      <!-- figures/fig_ftc1.tex END -->
+    </figure>
+
+    <p>Note that this same formula holds for <m>x\lt 1</m>. If <m>x \lt 1</m>, then <m>F(x) = \int_1^x 2t\ dt=-\int_x^1 2t\ dt</m>. The areas to the left of <m>x=1</m> will have opposite signs (since they areas are accumulated <em>before</em> <m>x=1</m>). For example, when <m>x=0</m>, <m>F(0) = -\int_0^1 2t\ dt=-\frac12 (1)(2)=-1</m>. This is the same value we get from evaluating <m>x^2-1</m> for <m>x=0</m>. Also notice that <m>F(-1)=\int_1^{-1} 2t \ dt=-\int_{-1}^1 2t\ dt</m>. This integral is clearly <m>0</m> since the areas over <m>[-1,0]</m> and <m>[0,1]</m> will sum to zero. Again, this is the same answer obtained by evaluating <m>x^2-1</m> for <m>x=-1</m>. </p>
+
+    <p>Therefore, we can reasonably say that <m>F(x)=x^2-1</m>. A plot of both <m>f(x)=2x</m> and <m>F(x)=x^2-1</m> are given in Figure <xref ref="fig_ftc1c">Figure</xref>. You should notice a familiar relationship between these two functions. This relationship is formally stated in <xref autoname="title" ref="thm_FTC1"/>.</p>
+
+    <figure xml:id="fig_ftc1c">
+      <caption>Graphs of <m>f(x)=2x</m> and <m>F(x)=x^2-1</m>.</caption>
+      <!-- START figures/fig_ftc1.tex -->
+      <image xml:id="img_ftc1c"  width="47%">
+        <description></description>
+        <latex-image-code>
+          <![CDATA[
+          \begin{tikzpicture}
+          \begin{axis}[ymin=-2,ymax=8,
+                       xmin=-1,xmax=3.5
+                       ]
+                       \addplot+[domain=-1:3.25] {2*x};
+                       \addplot+[domain=-1:3.25] {x^2-1};
+                       
+
+          \end{axis}
+
+          \end{tikzpicture}
+          ]]>
+        </latex-image-code>
+      </image>
+      <!-- figures/fig_ftc1.tex END -->
+    </figure>
+
+      </solution>
+    </example>
+
+    <p>As <xref ref="ex_ftc1">Example</xref> hinted, we can apply calculus ideas to <m>F(x)</m>; in particular, we can compute its derivative. In <xref ref="ex_ftc1">Example</xref>, <m>F(x)=x^2-1</m>, so <m>F'(x)=2x=f(x)</m>. While this may seem like an innocuous thing to do, it has far<ndash />reaching implications, as demonstrated by the fact that the result is given as an important theorem.</p>
 
     <theorem xml:id="thm_FTC1">
       <title>The Fundamental Theorem of Calculus, Part 1</title>
@@ -52,6 +146,7 @@
           <me>
             \Fp(x)=f(x).
           </me>
+          In other words: <me>\lzoo{x}{\int_a^x f(t)\ dt}=f(x).</me>
         </p>
       </statement>
     </theorem>
@@ -64,22 +159,27 @@
         <p>Let <m>\ds F(x) = \int_{-5}^x (t^2+\sin(t) )\ dt</m>. What is <m>\Fp(x)</m>?</p>
       </statement>
       <solution>
-        <p>Using the Fundamental Theorem of Calculus, we have <m>\Fp(x) = x^2+\sin(x)</m>.</p>
+        <p>Using the Fundamental Theorem of Calculus, we have <m>\Fp(x) = x^2+\sin(x)</m>. That is, the derivative of the <q>area so far</q> function, is simply the integrand replacing <m>x</m> with <m>t</m>.
+      </p>
+       <p>This simple example reveals something incredible: <m>F(x)</m> is an antiderivative of <m>x^2+\sin(x)</m>! Therefore, <m>F(x) = \frac13x^3-\cos(x) +C</m> for some value of <m>C</m>. (We can find <m>C</m>, but generally we do not care. We know that <m>F(-5)=0</m>, which allows us to compute <m>C</m>. In this case, <m>C=\cos(-5)+\frac{125}3</m>.)</p>
       </solution>
     </example>
 
-    <p>This simple example reveals something incredible: <m>F(x)</m> is an antiderivative of <m>x^2+\sin(x)</m>! Therefore, <m>F(x) = \frac13x^3-\cos(x) +C</m> for some value of <m>C</m>. (We can find <m>C</m>, but generally we do not care. We know that <m>F(-5)=0</m>, which allows us to compute <m>C</m>. In this case, <m>C=\cos(-5)+\frac{125}3</m>.)</p>
-
-    <p>We have done more than found a complicated way of computing an antiderivative. Consider a function <m>f</m> defined on an open interval containing <m>a</m>, <m>b</m> and <m>c</m>. Suppose we want to compute <m>\int_a^b f(t)\ dt</m>. First, let <m>F(x) = \int_c^x f(t)\ dt</m>. Using the properties of the definite integral found in <xref ref="thm_defintprop">Theorem</xref>, we know
+   
+    <p>What we have done in <xref ref="ex_ftc2">Example</xref> was more than finding a complicated way of computing an antiderivative. Consider a function <m>f</m> defined on an open interval containing <m>a</m>, <m>b</m> and <m>c</m>. Suppose we want to compute <m>\int_a^b f(t)\ dt</m>. First, let 
+    <men xml:id="eq_ftc_c">F(x) = \int_c^x f(t)\ dt</men>. Using the properties of the definite integral found in <xref ref="thm_defintprop">Theorem</xref>, we know
       <md>
         <mrow>\int_a^b f(t)\ dt \amp = \int_a^c f(t)\ dt + \int_c^b f(t)\ dt</mrow>
         <mrow>\amp = -\int_c^a f(t)\ dt + \int_c^b f(t)\ dt</mrow>
-        <mrow>\amp =-F(a) + F(b)</mrow>
+      </md>
+      Using <xref ref="eq_ftc_c">Equation</xref>, let <m>x=a</m> in the first integral and <m>x=b</m> in the second integral so that <m>\int_c^a f(t)\ dt =F(a)</m> and <m>\int_c^b f(t)\ dt =F(b)</m>. Therefore:
+        <md>
+        <mrow>\int_a^b f(t)\ dt \amp =-F(a) + F(b)</mrow>
         <mrow>\amp = F(b) - F(a).</mrow>
       </md>
     </p>
 
-    <p>We now see how indefinite integrals and definite integrals are related: we can evaluate a definite integral using antiderivatives! This is the second part of the Fundamental Theorem of Calculus.</p>
+    <p>We now see how indefinite integrals and definite integrals are related: we can evaluate a definite integral using antiderivatives! In fact, this es exactly what we noticed in <xref ref="ex_ftc1">Example</xref>. The <q>area so far</q> function was indeed an anti-derivative of the integrand. This is the second part of the Fundamental Theorem of Calculus.</p>
 
     <theorem xml:id="thm_FTC2">
       <title>The Fundamental Theorem of Calculus, Part 2</title>
@@ -93,7 +193,7 @@
     </theorem>
 
     <example xml:id="ex_ftc3">
-      <title>Using the Fundamental Theorem of Calculus, Part 2</title>
+      <title>Using the <xref autoname="title" ref="thm_FTC2" /></title>
       <statement>
         <p>We spent a great deal of time in the previous section studying <m>\int_0^4(4x-x^2)\ dx</m>. Using the Fundamental Theorem of Calculus, evaluate this definite integral.</p>
       </statement>
@@ -101,9 +201,12 @@
         <p>We need an antiderivative of <m>f(x)=4x-x^2</m>. All antiderivatives of <m>f</m> have the form <m>F(x) = 2x^2-\frac13x^3+C</m>; for simplicity, choose <m>C=0</m>.</p>
 
         <p>The Fundamental Theorem of Calculus states
-          <me>
-            \int_0^4(4x-x^2)\ dx = F(4)-F(0) = \big(2(4)^2-\frac134^3\big)-\big(0-0\big) = 32-\frac{64}3 = 32/3.
-          </me>
+          <md>
+            <mrow>\int_0^4(4x-x^2)\ dx \amp= F(4)-F(0)</mrow>
+            <mrow>\amp = \big(2(4)^2-\frac134^3\big)-\big(0-0\big)</mrow>
+            <mrow>\amp = 32-\frac{64}3 = 32/3\text{.}</mrow>
+              
+          </md>
         </p>
 
         <p>This is the same answer we obtained using limits in the previous section, just with much less work.</p>
@@ -111,9 +214,11 @@
     </example>
 
     <p><em>Notation:</em><index><main>integration</main><sub>notation</sub></index> A special notation is often used in the process of evaluating definite integrals using the Fundamental Theorem of Calculus. Instead of explicitly writing <m>F(b)-F(a)</m>, the notation <m>F(x)\Big|_a^b</m> is used. Thus the solution to <xref ref="ex_ftc3">Example</xref> would be written as:
-      <me>
-        \int_0^4(4x-x^2)\ dx = \left.\left(2x^2-\frac13x^3\right)\right|_0^4 = \big(2(4)^2-\frac134^3\big)-\big(0-0\big) =  32/3.
-      </me>
+      <md>
+        <mrow> \int_0^4(4x-x^2)\ dx \amp = \left.\left(2x^2-\frac13x^3\right)\right|_0^4 </mrow>
+        <mrow>\amp = \big(2(4)^2-\frac134^3\big)-\big(0-0\big) =  32/3.</mrow>
+       
+      </md>
     </p>
 
     <p><em>The Constant <m>C</m>:</em> <em>Any</em> antiderivative <m>F(x)</m> can be chosen when using the Fundamental Theorem of Calculus to evaluate a definite integral, meaning any value of <m>C</m> can be picked. The constant <em>always</em> cancels out of the expression when evaluating <m>F(b)-F(a)</m>, so it does not matter what value is picked. This being the case, we might as well let <m>C=0</m>.</p>
@@ -122,24 +227,57 @@
       <title>Using the Fundamental Theorem of Calculus, Part 2</title>
       <statement>
         <p>Evaluate the following definite integrals.
-          <me>
-            1.\ \int_{-2}^2 x^3\ dx  2.\ \int_0^\pi \sin(x) \ dx \qquad 3.\ \int_0^5 e^t\ dt \qquad 4.\ \int_4^9 \sqrt{u}\ du\qquad 5.\ \int_1^5 2\ dx
-          </me>
+          <ol>
+            <li><m>\int_{-2}^2 x^3\ dx</m></li>
+            <li><m>\int_0^\pi \sin(x) \ dx</m></li>
+            <li><m> \int_0^5 e^t\ dt</m></li>
+            <li><m> \int_4^9 \sqrt{u}\ du</m></li>
+            <li><m>\int_1^5 2\ dx</m></li>
+          </ol>
         </p>
       </statement>
       <solution>
         <ol>
-          <li><p><m>\ds \int_{-2}^2 x^3\ dx = \left.\frac14x^4\right|_{-2}^2 = \left(\frac142^4\right) - \left(\frac14(-2)^4\right) = 0</m>.</p></li>
+          <li><p>
+            <md>
+              <mrow>\int_{-2}^2 x^3\ dx \amp = \left.\frac14x^4\right|_{-2}^2 \amp</mrow>
+              <mrow>\amp = \left(\frac142^4\right) - \left(\frac14(-2)^4\right) </mrow>
+              <mrow>\amp = 0</mrow>
+            </md>.
+          </p></li>
 
-          <li><p><m>\ds \int_0^\pi \sin(x) \ dx = -\cos(x) \Big|_0^\pi = -\cos(\pi) - \big(-\cos(0) \big) = 1+1=2</m>.
+          <li>
+          <p>
+            <md>
+              <mrow>\int_0^\pi \sin(x) \ dx \amp = -\cos(x) \Big|_0^\pi</mrow>
+              <mrow> \amp = -\cos(\pi) - \big(-\cos(0) \big)</mrow> 
+              <mrow>\amp = 1+1=2</mrow>
+            </md>.
 
               (This is interesting; it says that the area under one <q>hump</q> of a sine curve is 2.)</p></li>
 
-          <li><p><m>\ds \int_0^5e^t\ dt = e^t\Big|_0^5 = e^5 - e^0 = e^5-1 \approx 147.41</m>.</p></li>
+          <li><p>
+            <md>
+              <mrow>\int_0^5e^t\ dt \amp = e^t\Big|_0^5 </mrow>
+              <mrow>\amp = e^5 - e^0 </mrow>
+              <mrow>\amp= e^5-1 \approx 147.41</mrow>
+            </md>.</p></li>
 
-          <li><p><m>\ds \int_4^9 \sqrt{u}\ du = \int_4^9 u^\frac12\ du = \left.\frac23u^\frac32\right|_4^9 = \frac23\left(9^\frac32-4^\frac32\right) = \frac23\big(27-8\big) =\frac{38}3</m>.</p></li>
+          <li><p>
+            <md> 
+              <mrow>\int_4^9 \sqrt{u}\ du \amp= \int_4^9 u^\frac12\ du</mrow>
+              <mrow> \amp = \frac23u^\frac32\Big|_4^9</mrow>
+              <mrow>\amp = \frac23\left(9^\frac32-4^\frac32\right)</mrow>
+              <mrow>\amp = \frac23\big(27-8\big) =\frac{38}3</mrow> 
+            </md>.
+            </p></li>
 
-          <li><p><m>\ds \int_1^5 2\ dx = 2x\Big|_1^5 = 2(5)-2=2(5-1)=8</m>.
+          <li><p>
+            <md>
+              <mrow> \int_1^5 2\ dx \amp = 2x\Big|_1^5 </mrow>
+              <mrow>\amp = 2(5)-2</mrow>
+              <mrow>\amp =2(5-1)=8</mrow>
+            </md>.
 
               This integral is interesting; the integrand is a constant function, hence we are finding the area of a rectangle with width <m>(5-1)=4</m> and height 2. Notice how the evaluation of the definite integral led to <m>2(4)=8</m>.
 
@@ -160,26 +298,97 @@
       where <m>V(t)</m> is any antiderivative of <m>v(t)</m>. Since <m>v(t)</m> is a velocity function, <m>V(t)</m> must be a position function, and <m>V(b) - V(a)</m> measures a change in position, or <em>displacement</em>.</p>
 
     <example xml:id="ex_ftcmotion1">
-      <title>Finding displacement</title>
+      <title>Finding displacement and distance</title>
       <statement>
-        <p>A ball is thrown straight up with velocity given by <m>v(t) = -32t+20</m>ft/s, where <m>t</m> is measured in seconds. Find, and interpret, <m>\ds \int_0^1 v(t)\ dt.</m></p>
+        <p>A ball is thrown straight up with velocity given by <m>v(t) = -32t+20</m>ft/s, where <m>t</m> is measured in seconds. Find, and interpret, <m>\ds \int_0^1 v(t)\ dt</m> and <m>\int_0^1 \abs{v(t)}\ dt</m>.</p>
       </statement>
       <solution>
         <p>Using the Fundamental Theorem of Calculus, we have
           <md>
             <mrow>\int_0^1 v(t)\ dt \amp = \int_0^1 (-32t+20)\ dt</mrow>
-            <mrow>\amp = -16t^2 + 20t\Big|_0^1</mrow>
+            <mrow>\amp = \left(-16t^2 + 20t\right)\Big|_0^1</mrow>
             <mrow>\amp = 4.</mrow>
           </md>
         </p>
 
-        <p>Thus if a ball is thrown straight up into the air with velocity <m>v(t) = -32t+20</m>, the height of the ball, 1 second later, will be 4 feet above the initial height. (Note that the ball has <em>traveled</em> much farther. It has gone up to its peak and is falling down, but the difference between its height at <m>t=0</m> and <m>t=1</m> is 4ft.)</p>
+        <p>Thus if a ball is thrown straight up into the air with velocity <m>v(t) = -32t+20</m>, the height of the ball, 1 second later, will be 4 feet above the initial height.</p> 
+        <p>Note that the ball has <em>traveled</em> much farther. It has gone up to its peak and is falling down, but the difference between its height at <m>t=0</m> and <m>t=1</m> is 4ft. </p>
+        <p>If we wish to find the total distance traveled, we must evaluate <m>\int_0^1 \abs{v(t)}\ dt</m> (noting that negative velocities will reduce the diplacement, but we want <em>distance</em>, not displacement). In this case, we know that the velocity changes sign once when <m>t=20/32=5/8</m> seconds. The velocity is positive over <m>[0,5/8]</m> and negative over <m>[5/8,1]</m>. Therefore 
+        <md>
+          <mrow>\int_0^1 \abs{-32t+20}\ dt \amp =\int_0^{5/8}-32t+20\ dt-\int_{5/8}^1 -32t+20\ dt</mrow>
+          <mrow>\amp =\left(-16t^2 + 20t\right)\Big|_0^{5/8}-\left(-16t^2 + 20t\right)\Big|_0^1</mrow>
+          <mrow>\amp = \frac{25}4-\left(-\frac94\right)=9</mrow>
+        </md>.
+        So the total distance traveled over <m>[0,1]</m> is <m>\int_0^1 \abs{-32t+20}\ dt=9 \text{ feet }.</m> </p>
+        <p>As we can see in <xref ref="fig_ftcmotion1a">Figure</xref>, the positive area between <m>v(t)</m> and the <m>t</m>-axis, <m>A_1=25/4</m>, while the negative area, <m>A_2=-9/4</m>. When we add these two areas, we get the displacement of <m>4</m> ft. But when we add the absolute value of both of these areas (as in <xref ref="fig_ftcmotion1b">Figure</xref>), we get the total distance of <m>9</m> ft. 
+
+  <sidebyside xml:id="fig_ftcmotion1"  widths="47% 47%">
+    <figure xml:id="fig_ftcmotion1a" >
+      <caption>The area between <m>v(t)</m> and the <m>t</m>-axis can be used to represent displacement.</caption>
+      <image xml:id="img_ftcmotion1a" >
+        <description></description>
+        <latex-image-code>
+          <![CDATA[
+          \begin{tikzpicture}
+          \begin{axis}[ xtick=\empty,
+                       extra x ticks={0.625,1},
+                       extra x tick labels={$5/8$,$1$},
+                       %ytick=\empty,
+                       xlabel=$t$,
+                       ymin=-15,ymax=25,%
+                       xmin=-1,xmax=1.5%
+                       ]
+                       \addplot+[domain=-.5:1.5] {-32*x+20};
+                       \addplot [{\coloronefill},fill={\coloronefill},area style,domain=0:1] {-32*x+20} \closedcycle;
+                       \node at (axis cs:.3125,5) {\scriptsize $A_1$};
+                       \node at (axis cs:.8125,-3) {\scriptsize $A_2$};
+
+          \end{axis}
+
+          \end{tikzpicture}
+          ]]>
+        </latex-image-code>
+      </image>
+    </figure>
+
+       <figure xml:id="fig_ftcmotion1b" >
+      <caption>The area between <m>\abs{v(t)}</m> and the <m>t</m>-axis can be used to represent distance.</caption>
+      <image xml:id="img_ftcmotion1b">
+        <description></description>
+        <latex-image-code>
+          <![CDATA[
+          \begin{tikzpicture}
+          \begin{axis}[ xtick=\empty,
+                       extra x ticks={0.625,1},
+                       extra x tick labels={$5/8$,$1$},
+                       %ytick=\empty,
+                       xlabel=$t$,
+                       ymin=-15,ymax=25,%
+                       xmin=-1,xmax=1.5%
+                       ]
+                       \addplot+[-,domain=-.5:5/8] {-32*x+20};
+                       \addplot+[-,domain=5/8:1.5, firstcurvestyle] {32*x-20};
+                       \addplot [{\coloronefill},fill={\coloronefill},area style,domain=0:5/8] {-32*x+20} \closedcycle;
+                       \addplot [{\coloronefill},fill={\coloronefill},area style,domain=5/8:1] {32*x-20} \closedcycle;
+                       \node at (axis cs:.3125,5) {\scriptsize $A_1$};
+                       \node at (axis cs:.8125,3) {\scriptsize $A_3$};
+
+          \end{axis}
+
+          \end{tikzpicture}
+          ]]>
+        </latex-image-code>
+      </image>
+    </figure>
+
+  </sidebyside>
+    </p>
       </solution>
     </example>
 
     <p>Integrating a rate of change function gives total change. Velocity is the rate of position change; integrating velocity gives the total change of position, i.e., displacement.</p>
 
-    <p>Integrating a speed function gives a similar, though different, result. Speed is also the rate of position change, but does not account for direction. So integrating a speed function gives total change of position, without the possibility of <q>negative position change.</q> Hence the integral of a speed function gives <em>distance traveled.</em></p>
+    <p>Integrating a speed function gives a similar, though different, result. Speed is also the rate of position change, but does not account for direction. That is, the speed an object is the absolute value of its velocity. This is what we saw in <xref ref="ex_ftcmotion1">Example</xref> when we evaluated <m>\int_0^1 \abs{v(t)}\ dt</m>. So integrating a speed function gives total change of position, without the possibility of <q>negative position change.</q> Hence the integral of a speed function gives <em>distance traveled.</em></p>
 
     <p>As acceleration is the rate of velocity change, integrating an acceleration function gives total change in velocity. We do not have a simple term for this analogous to displacement. If <m>a(t) = 5</m>miles/h<m>^2</m> and <m>t</m> is measured in hours, then
       <me>
@@ -190,7 +399,7 @@
 
   <subsection>
     <title>The Fundamental Theorem of Calculus and the Chain Rule</title>
-    <p>Part 1 of the Fundamental Theorem of Calculus (FTC) states that given <m>\ds F(x) = \int_a^x f(t)\ dt</m>, <m>\Fp(x) = f(x)</m>. Using other notation, <m>\ds \frac{d}{dx}\big(F(x)\big) = f(x)</m>. While we have just practiced evaluating definite integrals, sometimes finding antiderivatives is impossible and we need to rely on other techniques to approximate the value of a definite integral. Functions written as <m>F(x) = \int_a^x f(t)\ dt</m> are useful in such situations.</p>
+    <p>Part 1 of the Fundamental Theorem of Calculus (FTC) states that given <m>\ds F(x) = \int_a^x f(t)\ dt</m>, we have <m>\Fp(x) = f(x)</m>. Using other notation, <m>\ds \lzoo{x}{F(x)}=\lzoo{x}{\int_a^x f(t)\ dt} = f(x)</m>. While we have just practiced evaluating definite integrals, sometimes finding antiderivatives is impossible and we need to rely on other techniques to approximate the value of a definite integral. Functions written as <m>F(x) = \int_a^x f(t)\ dt</m> are useful in such situations.</p>
 
     <p>It may be of further use to compose such a function with another. As an example, we may compose <m>F(x)</m> with <m>g(x)</m> to get
       <me>
@@ -234,9 +443,10 @@
       </statement>
       <solution>
         <p>Note that <m>\ds F(x) = -\int_5^{\cos(x) } t^3\ dt</m>. Viewed this way, the derivative of <m>F</m> is straightforward:
-          <me>
-            F'(x) = \sin(x) \cos^3(x) .
-          </me>
+          <md>
+            <mrow>F'(x) \amp= -\cos^3(x)\left(-\sin(x)\right)</mrow>
+            <mrow>\amp= \cos^3(x)\sin(x)</mrow>           
+          </md>.
         </p>
       </solution>
     </example>
@@ -246,10 +456,12 @@
     <title>Area Between Curves</title>
     <p>Consider continuous functions <m>f(x)</m> and <m>g(x)</m> defined on <m>[a,b]</m>, where <m>f(x) \geq g(x)</m> for all <m>x</m> in <m>[a,b]</m>, as demonstrated in <xref ref="fig_ftc5">Figure</xref>. What is the area of the shaded region bounded by the two curves over <m>[a,b]</m>?<index><main>integration</main><sub>area between curves</sub></index></p>
 
-    <figure xml:id="fig_ftc5" >
-      <caption>Finding the area bounded by two functions on an interval; it is found by subtracting the area under <m>g</m> from the area under <m>f</m>.</caption>
+    <sidebyside xml:id="fig_ftc5" widths="47% 47%">
+       <caption>Finding the area bounded by two functions on an interval; it is found by subtracting the area under <m>g</m> from the area under <m>f</m>.</caption>
+    <figure xml:id="fig_ftc5a"> 
+      <caption/>
       <!-- START figures/fig_ftc5.tex -->
-      <image xml:id="img_ftc5" >
+      <image xml:id="img_ftc5a">
         <description></description>
         <latex-image-code>
           <![CDATA[
@@ -283,9 +495,13 @@
         </latex-image-code>
       </image>
       <!-- figures/fig_ftc5.tex END -->
+    </figure>
+
+      <figure xml:id="fig_ftc5b">
+        <caption/>
 
       <!-- START figures/fig_ftc5a.tex -->
-      <image xml:id="img_ftc5a" >
+      <image xml:id="img_ftc5b">
         <description></description>
         <latex-image-code>
           <![CDATA[
@@ -321,6 +537,7 @@
       </image>
       <!-- figures/fig_ftc5a.tex END -->
     </figure>
+    </sidebyside>
 
     <p>The area can be found by recognizing that this area is <q>the area under <m>f</m> <m>-</m> the area under <m>g</m>.</q> Using mathematical notation, the area is
       <me>
@@ -356,30 +573,21 @@
         <figure xml:id="fig_ftc6" >
           <caption>Sketching the region enclosed by <m>y=x^2+x-5</m> and <m>y=3x-2</m> in <xref ref="ex_ftc6">Example</xref>.</caption>
           <!-- START figures/fig_ftc6.tex -->
-          <image xml:id="img_ftc6" >
+          <image xml:id="img_ftc6"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}
-              \begin{axis}[%
-              axis on top,%
-			%x=.37\marginparwidth,
-			%y=.37\marginparwidth,
-			xtick={-2,-1,1,2,3,4},%
-              %			extra x ticks={.5,3},
-              %			extra x tick labels={$a$,$b$},
-			ytick={5,10,15},
-			%%extra y ticks={-5,-3,...,7},%
-              %			minor x tick num=4,
-			ymin=-10,ymax=16,%
-			xmin=-2.5,xmax=4.5%
+              \begin{axis}[axis on top,
+                           xtick={-2,-1,1,2,3,4},
+                           ytick={5,10,15},
+                           ymin=-10,ymax=16,
+                           xmin=-2.5,xmax=4.5
               ]
 
-              \addplot [smooth,thick, {\colorone},domain=-2:4] {x^2+x-5};
-              \draw (axis cs: 2.5,15) node [black] {\scriptsize $y=x^2+x-5$};
-              \addplot [smooth,thick, {\colorone},domain=-2:4] {3*x-2};
-              \draw (axis cs: -1.5,-9) node [black] {\scriptsize $y=3x-2$};
-
+              \addplot+[name path=F,domain={-2:4}] {x^2+x-5} node[pos=1, left]{\scriptsize $y=x^2+x-5$};
+              \addplot+[name path=G,domain={-2:4}] {3*x-2}node[pos=0.7, above left]{\scriptsize $y=3x-2$};
+              \addplot[color=gray!50]fill between[of=F and G, soft clip={domain=-1:3}];
 
               \end{axis}
 
@@ -419,7 +627,7 @@
     <figure xml:id="fig_ftc7a" >
       <caption>A graph of a function <m>f</m> to introduce the Mean Value Theorem.</caption>
       <!-- START figures/fig_ftc7a.tex -->
-      <image xml:id="img_ftc7a" >
+      <image xml:id="img_ftc7a"  width="47%">
         <description></description>
         <latex-image-code>
           <![CDATA[
@@ -452,17 +660,20 @@
       <!-- figures/fig_ftc7a.tex END -->
     </figure>
 
-    <p>Consider the graph of a function <m>f</m> in <xref ref="fig_ftc7a">Figure</xref> and the area defined by <m>\int_1^4 f(x)\ dx</m>. Three rectangles are drawn in <xref ref="fig_ftc7b">Figure</xref>; in (a), the height of the rectangle is greater than <m>f</m> on <m>[1,4]</m>, hence the area of this rectangle is is greater than <m>\int_0^4 f(x)\ dx</m>.</p>
+    <p>Consider the graph of a function <m>f</m> in <xref ref="fig_ftc7a">Figure</xref> and the area defined by <m>\int_1^4 f(x)\ dx</m>. Three rectangles are drawn in <xref ref="fig_ftc7b">Figure</xref>; in <xref ref="fig_ftc7b2">Figure</xref>, the height of the rectangle is greater than <m>f</m> on <m>[1,4]</m>, hence the area of this rectangle is is greater than <m>\int_0^4 f(x)\ dx</m>.</p>
 
-    <p>In (b), the height of the rectangle is smaller than <m>f</m> on <m>[1,4]</m>, hence the area of this rectangle is less than <m>\int_1^4 f(x)\ dx</m>.</p>
+    <p>In <xref ref="fig_ftc7b1">Figure</xref>, the height of the rectangle is smaller than <m>f</m> on <m>[1,4]</m>, hence the area of this rectangle is less than <m>\int_1^4 f(x)\ dx</m>.</p>
 
-    <figure xml:id="fig_ftc7b" >
-    <caption>Differently sized rectangles give upper and lower bounds on <m>\int_1^4 f(x)\ dx</m>; the last rectangle matches the area exactly.</caption>
-    <sidebyside>
-      <figure>
-        <caption>(a)</caption>
+     <p>Finally, in <xref ref="fig_ftc7b3">Figure</xref> the height of the rectangle is such that the area of the rectangle is <em>exactly</em> that of <m>\int_0^4 f(x)\ dx</m>. Since rectangles that are <q>too big</q>, as in (a), and rectangles that are <q>too little,</q> as in (b), give areas greater/lesser than <m>\int_1^4 f(x)\ dx</m>, it makes sense that there is a rectangle, whose top intersects <m>f(x)</m> somewhere on <m>[1,4]</m>, whose area is <em>exactly</em> that of the definite integral.</p>
+
+    <p>We state this idea formally in a theorem.</p>
+
+    <sidebyside xml:id="fig_ftc7b" widths="31% 31% 31%">
+       <caption>Differently sized rectangles give upper and lower bounds on <m>\int_1^4 f(x)\ dx</m>; the last rectangle matches the area exactly.</caption>
+      <figure xml:id="fig_ftc7b2">
+        <caption/>
         <!-- START figures/fig_ftc7b2.tex -->
-        <image xml:id="img_ftc7b2" >
+        <image xml:id="img_ftc7b2">
           <description></description>
           <latex-image-code>
             <![CDATA[
@@ -495,10 +706,11 @@
         <!-- figures/fig_ftc7b2.tex END -->
       </figure>
 
-      <figure>
-        <caption>(b)</caption>
+
+      <figure xml:id="fig_ftc7b1">
+        <caption/>
         <!-- START figures/fig_ftc7b1.tex -->
-        <image xml:id="img_ftc7b1" >
+        <image xml:id="img_ftc7b1">
           <description></description>
           <latex-image-code>
             <![CDATA[
@@ -531,10 +743,10 @@
         <!-- figures/fig_ftc7b1.tex END -->
       </figure>
 
-      <figure>
-        <caption>(c)</caption>
+      <figure xml:id="fig_ftc7b3">
+        <caption/>
         <!-- START figures/fig_ftc7b3.tex -->
-        <image xml:id="img_ftc7b3" >
+        <image xml:id="img_ftc7b3">
           <description></description>
           <latex-image-code>
             <![CDATA[
@@ -568,11 +780,8 @@
       </figure>
     </sidebyside>
 
-    </figure>
 
-    <p>Finally, in (c) the height of the rectangle is such that the area of the rectangle is <em>exactly</em> that of <m>\int_0^4 f(x)\ dx</m>. Since rectangles that are <q>too big</q>, as in (a), and rectangles that are <q>too little,</q> as in (b), give areas greater/lesser than <m>\int_1^4 f(x)\ dx</m>, it makes sense that there is a rectangle, whose top intersects <m>f(x)</m> somewhere on <m>[1,4]</m>, whose area is <em>exactly</em> that of the definite integral.</p>
-
-    <p>We state this idea formally in a theorem.</p>
+   
 
     <theorem xml:id="thm_mvt2">
       <title>The Mean Value Theorem of Integration</title>
@@ -587,6 +796,8 @@
 
     <p>This is an <em>existential</em> statement; <m>c</m> exists, but we do not provide a method of finding it. <xref ref="thm_mvt2">Theorem</xref> is directly connected to the Mean Value Theorem of Differentiation, given
       as <xref ref="thm_mvt">Theorem</xref>; we leave it to the reader to see how.</p>
+
+      <aside><p>The <xref ref="thm_mvt2">Theorem</xref> simply says that there is a rectangle with height <m>f(c)</m> and width <m>b-a</m>, the area of which is the same as the area between <m>f</m> and the <m>x</m>-axis over<m>[a,b]</m>. Furthermore, we know that <m>c</m> will be in the interval <m>[a,b]</m>.</p></aside>
 
     <p>We demonstrate the principles involved in this version of the Mean Value Theorem in the following example.</p>
 
@@ -611,7 +822,7 @@
         <figure xml:id="fig_ftc8" >
           <caption>A graph of <m>y=\sin(x)</m> on <m>[0,\pi]</m> and the rectangle guaranteed by the Mean Value Theorem.</caption>
           <!-- START figures/fig_ftc8.tex -->
-          <image xml:id="img_ftc8" >
+          <image xml:id="img_ftc8"  width="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -650,7 +861,7 @@
       </solution>
     </example>
 
-    <p>Let <m>f</m> be a function on <m>[a,b]</m> with <m>c</m> such that <m>f(c)(b-a) = \int_a^bf(x)\ dx</m>. Consider <m>\int_a^b\big(f(x)-f(c)\big)\ dx</m>:
+    <p>We now turn our attention to a related topic <mdash/>average value. Let <m>f</m> be a function on <m>[a,b]</m> with <m>c</m> such that <m>f(c)(b-a) = \int_a^bf(x)\ dx</m>. Consider <m>\int_a^b\big(f(x)-f(c)\big)\ dx</m>:
       <md>
         <mrow>\int_a^b\big(f(x)-f(c)\big)\ dx \amp =	\int_a^b f(x) - \int_a^b f(c)\ dx</mrow>
         <mrow>\amp = f(c)(b-a) - f(c)(b-a)</mrow>
@@ -658,12 +869,12 @@
       </md>
     </p>
 
-    <p>When <m>f(x)</m> is shifted by <m>-f(c)</m>, the amount of area under <m>f</m> above the <m>x</m><ndash />axis on <m>[a,b]</m> is the same as the amount of area below the <m>x</m><ndash />axis above <m>f</m>; see <xref ref="fig_ftc9">Figure</xref> for an illustration of this. In this sense, we can say that <m>f(c)</m> is the <em>average value</em> of <m>f</m> on <m>[a,b]</m>.</p>
+    <p> When <m>f(x)</m> is shifted by <m>-f(c)</m>, the amount of area under <m>f</m> above the <m>x</m><ndash />axis on <m>[a,b]</m> is the same as the amount of area below the <m>x</m><ndash />axis above <m>f</m>; see <xref ref="fig_ftc9">Figure</xref> for an illustration of this. In this sense, we can say that <m>f(c)</m> is the <em>average value</em> of <m>f</m> on <m>[a,b]</m>.</p>
 
     <figure xml:id="fig_ftc9" >
       <caption>On the left, a graph of <m>y=f(x)</m> and the rectangle guaranteed by the Mean Value Theorem. On the right, <m>y=f(x)</m> is shifted down by <m>f(c)</m>; the resulting <q>area under the curve</q> is 0.</caption>
       <!-- START figures/fig_ftc9a.tex -->
-      <image xml:id="img_ftc9a" >
+      <image xml:id="img_ftc9a"  width="47%">
         <description></description>
         <latex-image-code>
           <![CDATA[
@@ -699,7 +910,7 @@
       <!-- figures/fig_ftc9a.tex END -->
 
       <!-- START figures/fig_ftc9b.tex -->
-      <image xml:id="img_ftc9b" >
+      <image xml:id="img_ftc9b"  width="47%">
         <description></description>
         <latex-image-code>
           <![CDATA[
@@ -739,7 +950,24 @@
       <me>
         f(c) = \frac{1}{b-a}\int_a^b f(x)\ dx,
       </me>
-      for some value of <m>c</m> in <m>[a,b]</m>. Next, partition the interval <m>[a,b]</m> into <m>n</m> equally spaced subintervals, <m>a=x_1 \lt  x_2 \lt  \ldots \lt  x_{n+1}=b</m> and choose any <m>c_i</m> in <m>[x_i,x_{i+1}]</m>. The average of the numbers <m>f(c_1)</m>, <m>f(c_2)</m>, <ellipsis />, <m>f(c_n)</m> is:
+      for some value of <m>c</m> in <m>[a,b]</m>. 
+
+      Replacing the integral with the limit of a Riemann sum (as in <xref ref="thm_riemann_sum">Theorem</xref>):
+      <md>
+        <mrow>f(c) \amp = \frac{1}{b-a}\int_a^b f(x)\ dx \amp </mrow>
+        <mrow>\amp = \frac{1}{b-a} \lim_\limits{n \to \infty}\sum_{i=1}^n f(c_i)\ \Delta x \amp \text{Using } <xref ref="thm_riemann_sum">Theorem</xref> </mrow>
+        <mrow>\amp =\frac{1}{b-a} \lim_\limits{n \to \infty}\sum_{i=1}^n f(c_i)\ \frac{b-a}{n}\amp \Delta x =\frac{b-a}{n}</mrow>
+        <mrow>\amp =\lim_\limits{n \to \infty}\sum_{i=1}^n f(c_i)\frac{1}{n} \amp \text{Cancelling the common factor of } b-a. </mrow>
+
+
+        
+      </md>
+    </p>
+
+    <p>Examining this last line closely, the expression <m>\sum_{i=1}^n f(c_i)\frac{1}{n}</m> represents adding up <m>n</m> sample values of <m>f(x)</m>and then dividing by <m>n</m>. This is <em>exactly</em> what we do when we calculate the average of a set of <m>n</m> numbers. Now when we consider taking the limit as <m>n</m> goes to <m>\infty</m>, <m>\lim_\limits{n \to \infty}\sum_{i=1}^n f(c_i)\frac{1}{n}</m>, we are adding up <em>all</em> of the function's output values over <m>[a,b]</m> and dividing by the <q>number of numbers</q>. In a sense, we are adding up an infinite number of output values and then dividing by the number of terms we summed (which is again infinite). </p>
+
+
+      <!--Next, partition the interval <m>[a,b]</m> into <m>n</m> equally spaced subintervals, <m>a=x_1 \lt  x_2 \lt  \ldots \lt  x_{n+1}=b</m> and choose any <m>c_i</m> in <m>[x_i,x_{i+1}]</m>. The average of the numbers <m>f(c_1)</m>, <m>f(c_2)</m>, <ellipsis />, <m>f(c_n)</m> is:
       <me>
         \frac1n\Big(f(c_1) + f(c_2) + \ldots + f(c_n)\Big) = \frac1n\sum_{i=1}^n f(c_i).
       </me>
@@ -760,8 +988,10 @@
       </me>
     </p>
 
-    <p>This tells us this: when we evaluate <m>f</m> at <m>n</m> (somewhat) equally spaced points in <m>[a,b]</m>, the average value of these samples is <m>f(c)</m> as <m>n\to\infty</m>.</p>
+    <p>This tells us this: when we evaluate <m>f</m> at <m>n</m> (somewhat) equally spaced points in <m>[a,b]</m>, the average value of these samples is <m>f(c)</m> as <m>n\to\infty</m>.</p>-->
 
+    
+  
     <p>This leads us to a definition.</p>
 
     <definition xml:id="def_av_val">
@@ -786,9 +1016,12 @@
       </statement>
       <solution>
         <p>By our definition, the average velocity is:
-          <me>
-            \frac{1}{3-0}\int_0^3 (t-1)^2\ dt =\frac13 \int_0^3 \big(t^2-2t+1\big)\ dt = \left.\frac13\left(\frac13t^3-t^2+t\right)\right|_0^3 = 1\text{ ft/s } .
-          </me>
+          <md>
+            <mrow>\frac{1}{3-0}\int_0^3 (t-1)^2\ dt \amp =\frac13 \int_0^3 \big(t^2-2t+1\big)\ dt</mrow>
+            <mrow>\amp = \left.\frac13\left(\frac13t^3-t^2+t\right)\right|_0^3</mrow>
+            <mrow>\amp =\frac13\left[\left(\frac13(3)^3-(3)^2+(3)\right)-\left(\frac13(0)^3-(0)^2+(0)\right)\right]</mrow>
+            <mrow> \amp = 1\text{ ft/s } </mrow>
+          </md>.
         </p>
       </solution>
     </example>
@@ -797,9 +1030,9 @@
 
     <p>What was the displacement of the object in <xref ref="ex_ftc10">Example</xref>? We calculate this by integrating its velocity function: <m>\int_0^3 (t-1)^2\ dt = 3</m> ft. Its final position was 3 feet from its initial position after 3 seconds: its average velocity was 1 ft/s.</p>
 
-    <p>This section has laid the groundwork for a lot of great mathematics to follow. The most important lesson is this: definite integrals can be evaluated using antiderivatives. Since the previous section established that definite integrals are the limit of Riemann sums, we can later create Riemann sums to approximate values other than <q>area under the curve,</q> convert the sums to definite integrals, then evaluate these using the Fundamental Theorem of Calculus. This will allow us to compute the work done by a variable force, the volume of certain solids, the arc length of curves, and more.</p>
+    <p>This section has laid the groundwork for a lot of great mathematics to follow. The most important lesson is this: definite integrals can be evaluated using antiderivatives. Since <xref ref="sec_riemann">Section</xref> established that definite integrals are the limit of Riemann sums, we can later create Riemann sums to approximate values other than <q>area under the curve,</q> convert the sums to definite integrals, then evaluate these using the <xref autoname="title" ref="thm_FTC2"/>. This will allow us to compute the work done by a variable force, the volume of certain solids, the arc length of curves, and more.</p>
 
-    <p>The downside is this: generally speaking, computing antiderivatives is much more difficult than computing derivatives. The next chapter is devoted to techniques of finding antiderivatives so that a wide variety of definite integrals can be evaluated. Before that, the next section explores techniques of approximating the value of definite integrals beyond using the Left Hand, Right Hand and Midpoint Rules.</p>
+    <p>The downside is this: generally speaking, computing antiderivatives is much more difficult than computing derivatives. <xref ref="chapter_anti_tech">Chapter</xref> is devoted to techniques of finding antiderivatives so that a wide variety of definite integrals can be evaluated. Before that, <xref ref="sec_numerical_integration">Section</xref> explores techniques of approximating the value of definite integrals beyond using the Left Hand, Right Hand and Midpoint Rules.</p>
   </subsection>
 
   <exercises>
