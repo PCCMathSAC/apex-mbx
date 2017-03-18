@@ -964,23 +964,24 @@
       <introduction>
         <p>In the following exercises, a function <m>f(x,y)</m> is given and a region <m>R</m> of the <m>x</m>-<m>y</m> plane is described. Set up and evaluate <m>\iint_Rf(x,y)\ dA</m> using polar coordinates.</p>
       </introduction>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$int">
+              <static>4\pi</static>
             </var>
             <pg-code>
+              $int=Compute("4pi");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x,y) = 3x-y+4</m>; <m>R</m> is the region enclosed by the circle <m>x^2+y^2=1</m>.</p>
+            <p>Use polar coordinates to evaluate <m>\iint_Rf(x,y)\,dA</m>, where <m>f(x,y) = 3x-y+4</m> and <m>R</m> is the region enclosed by the circle <m>x^2+y^2=1</m>.</p>
+            <p><var name="$int" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>\ds \int_0^{2\pi}\int_0^1 \big(3r\cos(\theta) -r\sin(\theta) +4\big)r\ dr\ d\theta = 4\pi</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -998,23 +999,24 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$int">
+              <static>16\pi</static>
             </var>
             <pg-code>
+              $int=Compute("16pi");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x,y) = 8-y</m>; <m>R</m> is the region enclosed by the circles with polar equations <m>r=\cos(\theta)</m> and <m>r=3\cos(\theta)</m>.</p>
+            <p>Use polar coordinates to evaluate <m>\iint_Rf(x,y)\,dA</m>, where <m>f(x,y) = 8-y</m> and <m>R</m> is the region enclosed by the circles with polar equations <m>r=\cos(\theta)</m> and <m>r=3\cos(\theta)</m>.</p>
+            <p><var name="$int" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>\ds \int_0^{\pi}\int_{\cos(\theta) }^{3\cos(\theta) } \big(8-r\sin(\theta) \big)r\ dr\ d\theta = 16\pi</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1049,23 +1051,24 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$int">
+              <static>\pi/2</static>
             </var>
             <pg-code>
+              $int=Compute("pi/2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x,y) = 1-x^2-y^2</m>; <m>R</m> is the region enclosed by the circle <m>x^2+y^2=1</m>.</p>
+            <p>Use polar coordinates to evaluate <m>\iint_Rf(x,y)\,dA</m>, where <m>f(x,y) = 1-x^2-y^2</m> and <m>R</m> is the region enclosed by the circle <m>x^2+y^2=1</m>.</p>
+            <p><var name="$int" width="15" /></p>
           </statement>
-          <solution>
-            <p><m>\ds \int_0^{2\pi}\int_{0}^{1} \big(1-r^2\big)r\ dr\ d\theta = \pi/2</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1100,7 +1103,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, an iterated integral in rectangular coordinates is given. Rewrite the integral using polar coordinates and evaluate the new double integral.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, an iterated integral in rectangular coordinates is given. Rewrite the integral using polar coordinates and evaluate the new double integral.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1118,23 +1126,24 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$int">
+              <static>\frac{128}{3}</static>
             </var>
             <pg-code>
+              $int=Compute("128/3");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \int_{-4}^{4}\int_{-\sqrt{16-y^2}}^{0} \big(2y-x\big)\ dx\ dy</m></p>
+            <p>Evalueate the integral <m>\ds \int_{-4}^{4}\int_{-\sqrt{16-y^2}}^{0} \big(2y-x\big)\ dx\ dy</m> by first rewriting it using polar coordinates.</p>
+            <p><var name="$int" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>\ds \int_{\pi/2}^{3\pi/2}\int_{0}^{4} \big(2r\sin(\theta) -r\cos(\theta) \big)r\ dr\ d\theta=128/3</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1171,7 +1180,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, special double integrals are presented that are especially well suited for evaluation in polar coordinates.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, special double integrals are presented that are especially well suited for evaluation in polar coordinates.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>

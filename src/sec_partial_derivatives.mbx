@@ -1160,41 +1160,48 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$first">
+              <set>
+                <member correct="yes">f_{x}</member>
+                <member>f_{y}</member>
+              </set>
             </var>
             <pg-code>
+              $first=RadioButtons(['\(f_x\)', '\(f_y\)'],0,labels=>[f_x,f_y],displayLabels => 0 );
             </pg-code>
           </setup>
           <statement>
             <p>In the mixed partial fraction <m>f_{xy}</m>, which is computed first, <m>f_x</m> or <m>f_y</m>?</p>
+            <p><var name="$first" form="buttons" /></p>
           </statement>
-          <solution>
-            <p><m>f_x</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$first">
+              <set>
+                <member correct="yes">f_{x}</member>
+                <member>f_{y}</member>
+              </set>
             </var>
             <pg-code>
+              $first=RadioButtons(['\(f_x\)', '\(f_y\)'],1,labels=>[f_x,f_y],displayLabels => 0 );
             </pg-code>
           </setup>
           <statement>
-            <p>In the mixed partial fraction <m>\ds \frac{\partial^2f}{\partial x\partial y}</m>, which is computed first, <m>f_x</m> or <m>f_y</m>?</p>
+            <p>In the mixed partial fraction <m>\frac{\partial^2f}{\partial x\partial y}</m>, which is computed first, <m>f_x</m> or <m>f_y</m>?</p>
+            <p><var name="$first" form="buttons" /></p>
           </statement>
-          <solution>
-            <p><m>f_y</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
       <introduction>
         <p>In the following exercises, evaluate <m>f_x(x,y)</m> and <m>f_y(x,y)</m> at the indicated point.</p>
@@ -1218,25 +1225,29 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>0</static>
+            </var>
+            <var name="$fy">
+              <static>0</static>
             </var>
             <pg-code>
+              $fx=0;
+              $fy=0;
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x,y) = x^3-3x+y^2-6y</m> at <m>(-1,3)</m></p>
+            <p>Let <m>f(x,y) = x^3-3x+y^2-6y</m>. Find:</p>
+            <p><m>f_x(-1,3)=</m><var name="$fx" width="10" /></p>
+            <p><m>f_y(-1,3)=</m><var name="$fy" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=3x^2-3</m>, <m>f_y=2y-6</m></p>
-
-            <p><m>f_x(-1,3) = 0</m>, <m>f_y(-1,3) = 0</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1256,26 +1267,35 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>-1/2</static>
+            </var>
+            <var name="$fy">
+              <static>-1/3</static>
             </var>
             <pg-code>
+              Context("Fraction");
+              $fx=Fraction(-1,2);
+              $fy=Fraction(-1,3);
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x,y) = \ln(xy)</m> at <m>(-2,-3)</m></p>
+            <p>Let <m>f(x,y) = \ln(xy)</m>. Find:</p>
+            <p><m>f_x(-2,-3)=</m><var name="$fx" width="10" /></p>
+            <p><m>f_y(-2,-3)=</m><var name="$fy" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=1/x</m>, <m>f_y=1/y</m></p>
-
-            <p><m>f_x(-2,-3) = -1/2</m>, <m>f_y(-2,-3) = -1/3</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find <m>f_x</m>,<nbsp /> <m>f_y</m>,<nbsp /> <m>f_{xx}</m>,<nbsp /> <m>f_{yy}</m>,<nbsp /> <m>f_{xy}</m> and <m>f_{yx}</m>.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find <m>f_x</m>, <m>f_y</m>, <m>f_{xx}</m>, <m>f_{yy}</m>, <m>f_{xy}</m> and <m>f_{yx}</m>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1297,27 +1317,50 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>3x^2+6xy+3y^2</static>
+            </var>
+            <var name="$fy">
+              <static>3x^2+6xy+3y^2</static>
+            </var>
+            <var name="$fxx">
+              <static>6x+6y</static>
+            </var>
+            <var name="$fxy">
+              <static>6x+6y</static>
+            </var>
+            <var name="$fyx">
+              <static>6x+6y</static>
+            </var>
+            <var name="$fyy">
+              <static>6x+6y</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $fx=Compute("3x^2+6xy+3y^2");
+              $fy=Compute("3x^2+6xy+3y^2");
+              $fxx=Compute("6x+6y");
+              $fxy=Compute("6x+6y");
+              $fyx=Compute("6x+6y");
+              $fyy=Compute("6x+6y");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x,y) = y^3+3xy^2+3x^2y+x^3</m></p>
+            <p>Let <m>f(x,y) = y^3+3xy^2+3x^2y+x^3</m>. Find:</p>
+            <p><m>f_{x}(x,y)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{xx}(x,y)=</m><var name="$fxx" width="40" /></p>
+            <p><m>f_{xy}(x,y)=</m><var name="$fxy" width="40" /></p>
+            <p><m>f_{yx}(x,y)=</m><var name="$fyx" width="40" /></p>
+            <p><m>f_{yy}(x,y)=</m><var name="$fyy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=3x^2+6xy+3y^2</m>, <m>f_y=3x^2+6xy+3y^2</m></p>
-
-            <p><m>f_{xx}=6x+6y</m>, <m>f_{yy}=6x+6y</m></p>
-
-            <p><m>f_{xy}=6x+6y</m>, <m>f_{yx}=6x+6y</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1339,27 +1382,50 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>-\frac{4}{x^2y}</static>
+            </var>
+            <var name="$fy">
+              <static>-\frac{4}{xy^2}</static>
+            </var>
+            <var name="$fxx">
+              <static>\frac{8}{x^3y}</static>
+            </var>
+            <var name="$fxy">
+              <static>\frac{4}{x^2y^2}</static>
+            </var>
+            <var name="$fyx">
+              <static>\frac{4}{x^2y^2}</static>
+            </var>
+            <var name="$fyy">
+              <static>\frac{8}{xy^3}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $fx=Compute("-4/(x^2y)");
+              $fy=Compute("-4/(xy^2)");
+              $fxx=Compute("8/(x^3y)");
+              $fxy=Compute("4/(x^2y^2)");
+              $fyx=Compute("4/(x^2y^2)");
+              $fyy=Compute("8/(xy^3)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) = \frac 4{xy}</m></p>
+            <p>Let <m>f(x,y) = \frac{4}{xy}</m>. Find:</p>
+            <p><m>f_{x}(x,y)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{xx}(x,y)=</m><var name="$fxx" width="40" /></p>
+            <p><m>f_{xy}(x,y)=</m><var name="$fxy" width="40" /></p>
+            <p><m>f_{yx}(x,y)=</m><var name="$fyx" width="40" /></p>
+            <p><m>f_{yy}(x,y)=</m><var name="$fyy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=-4/(x^2y)</m>, <m>f_y=-4/(xy^2)</m></p>
-
-            <p><m>f_{xx}=8/(x^3y)</m>, <m>f_{yy}=8/(xy^3)</m></p>
-
-            <p><m>f_{xy}=4/(x^2y^2)</m>, <m>f_{yx}=4/(x^2y^2)</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1381,27 +1447,50 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>e^{x+2y}</static>
+            </var>
+            <var name="$fy">
+              <static>2e^{x+2y}</static>
+            </var>
+            <var name="$fxx">
+              <static>e^{x+2y}</static>
+            </var>
+            <var name="$fxy">
+              <static>2e^{x+2y}</static>
+            </var>
+            <var name="$fyx">
+              <static>2e^{x+2y}</static>
+            </var>
+            <var name="$fyy">
+              <static>4e^{x+2y}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $fx=Compute("e^(x+2y)");
+              $fy=Compute("2e^(x+2y)");
+              $fxx=Compute("e^(x+2y)");
+              $fxy=Compute("2e^(x+2y)");
+              $fyx=Compute("2e^(x+2y)");
+              $fyy=Compute("4e^(x+2y)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) = e^{x+2y}</m></p>
+            <p>Let <m>f(x,y) = e^{x+2y}</m>. Find:</p>
+            <p><m>f_{x}(x,y)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{xx}(x,y)=</m><var name="$fxx" width="40" /></p>
+            <p><m>f_{xy}(x,y)=</m><var name="$fxy" width="40" /></p>
+            <p><m>f_{yx}(x,y)=</m><var name="$fyx" width="40" /></p>
+            <p><m>f_{yy}(x,y)=</m><var name="$fyy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=e^{x+2y}</m>, <m>f_y=2e^{x+2y}</m></p>
-
-            <p><m>f_{xx}=e^{x+2y}</m>, <m>f_{yy}=4e^{x+2y}</m></p>
-
-            <p><m>f_{xy}=2e^{x+2y}</m>, <m>f_{yx}=2e^{x+2y}</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1423,27 +1512,50 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>3(x+y)^2</static>
+            </var>
+            <var name="$fy">
+              <static>3(x+y)^2</static>
+            </var>
+            <var name="$fxx">
+              <static>6(x+y)</static>
+            </var>
+            <var name="$fxy">
+              <static>6(x+y)</static>
+            </var>
+            <var name="$fyx">
+              <static>6(x+y)</static>
+            </var>
+            <var name="$fyy">
+              <static>6(x+y)</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $fx=Compute("3(x+y)^2");
+              $fy=Compute("3(x+y)^2");
+              $fxx=Compute("6(x+y)");
+              $fxy=Compute("6(x+y)");
+              $fyx=Compute("6(x+y)");
+              $fyy=Compute("6(x+y)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) = (x+y)^3</m></p>
+            <p>Let <m>f(x,y) = (x+y)^3</m>. Find:</p>
+            <p><m>f_{x}(x,y)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{xx}(x,y)=</m><var name="$fxx" width="40" /></p>
+            <p><m>f_{xy}(x,y)=</m><var name="$fxy" width="40" /></p>
+            <p><m>f_{yx}(x,y)=</m><var name="$fyx" width="40" /></p>
+            <p><m>f_{yy}(x,y)=</m><var name="$fyy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=3(x+y)^2</m>, <m>f_y=3(x+y)^2</m></p>
-
-            <p><m>f_{xx}=6(x+y)</m>, <m>f_{yy}=6(x+y)</m></p>
-
-            <p><m>f_{xy}=6(x+y)</m>, <m>f_{yx}=6(x+y)</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1465,48 +1577,93 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>10x cos\mathopen{}\left(5x^2+2y^3\right)\mathclose{}</static>
+            </var>
+            <var name="$fy">
+              <static>6y^2 cos\mathopen{}\left(5x^2+2y^3\right)\mathclose{}</static>
+            </var>
+            <var name="$fxx">
+              <static>10 cos\mathopen{}\left(5x^2+2y^3\right)\mathclose{}-100x^2 sin\mathopen{}\left(5x^2+2y^3\right)\mathclose{}</static>
+            </var>
+            <var name="$fxy">
+              <static>-60xy^2 sin\mathopen{}\left(5x^2+2y^3\right)\mathclose{}</static>
+            </var>
+            <var name="$fyx">
+              <static>-60xy^2 sin\mathopen{}\left(5x^2+2y^3\right)\mathclose{}</static>
+            </var>
+            <var name="$fyy">
+              <static>12y cos\mathopen{}\left(5x^2+2y^3\right)\mathclose{}-36y^4 sin\mathopen{}\left(5x^2+2y^3\right)\mathclose{}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $fx=Compute("10x cos(5x^2+2y^3)");
+              $fy=Compute("6y^2 cos(5x^2+2y^3)");
+              $fxx=Compute("10 cos(5x^2+2y^3)-100x^2 sin(5x^2+2y^3)");
+              $fxy=Compute("-60xy^2 sin(5x^2+2y^3)");
+              $fyx=Compute("-60xy^2 sin(5x^2+2y^3)");
+              $fyy=Compute("12y cos(5x^2+2y^3)-36y^4 sin(5x^2+2y^3)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x,y) = \sin(5x^2+2y^3)</m></p>
+            <p>Let <m>f(x,y) = \sin\mathopen{}\left(5x^2+2y^3\right)\mathclose{}</m>. Find:</p>
+            <p><m>f_{x}(x,y)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{xx}(x,y)=</m><var name="$fxx" width="40" /></p>
+            <p><m>f_{xy}(x,y)=</m><var name="$fxy" width="40" /></p>
+            <p><m>f_{yx}(x,y)=</m><var name="$fyx" width="40" /></p>
+            <p><m>f_{yy}(x,y)=</m><var name="$fyy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=10x\cos(5x^2+2y^3)</m>, <m>f_y=6y^2\cos(5x^2+2y^3)</m></p>
-
-            <p><m>f_{xx}=10\cos(5x^2+2y^3)-100x^2\sin(5x^2+2y^3)</m>, <m>f_{yy}=12y\cos(5x^2+2y^3)-36y^4\sin(5x^2+2y^3)</m></p>
-
-            <p><m>f_{xy}=-60xy^2\sin(5x^2+2y^3)</m>, <m>f_{yx}=-60xy^2\sin(5x^2+2y^3)</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>\frac{2y^2}{\sqrt{4xy^2+1}}</static>
+            </var>
+            <var name="$fy">
+              <static>\frac{4xy}{\sqrt{4xy^2+1}}</static>
+            </var>
+            <var name="$fxx">
+              <static>-\frac{4y^4}{\sqrt{4xy^2+1}^3}</static>
+            </var>
+            <var name="$fxy">
+              <static>-\frac{8xy^3}{\sqrt{4xy^2+1}^3}+\frac{4y}{\sqrt{4xy^2+1}}</static>
+            </var>
+            <var name="$fyx">
+              <static>-\frac{8xy^3}{\sqrt{4xy^2+1}^3}+\frac{4y}{\sqrt{4xy^2+1}}</static>
+            </var>
+            <var name="$fyy">
+              <static>-\frac{16x^2y^2}{\sqrt{4xy^2+1}^3}+\frac{4x}{\sqrt{4xy^2+1}}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $fx=Compute("2y^2/sqrt(4xy^2+1)");
+              $fy=Compute("4xy/sqrt(4xy^2+1)");
+              $fxx=Compute("-4y^4/sqrt(4xy^2+1)^3");
+              $fxy=Compute("-8xy^3/sqrt(4xy^2+1)^3+4y/sqrt(4xy^2+1)");
+              $fyx=Compute("-8xy^3/sqrt(4xy^2+1)^3+4y/sqrt(4xy^2+1)");
+              $fyy=Compute("-16x^2y^2/sqrt(4xy^2+1)^3+4x/sqrt(4xy^2+1)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) = \sqrt{4xy^2+1}</m></p>
+            <p>Let <m>f(x,y) = \sqrt{4xy^2+1}</m>. Find:</p>
+            <p><m>f_{x}(x,y)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{xx}(x,y)=</m><var name="$fxx" width="40" /></p>
+            <p><m>f_{xy}(x,y)=</m><var name="$fxy" width="40" /></p>
+            <p><m>f_{yx}(x,y)=</m><var name="$fyx" width="40" /></p>
+            <p><m>f_{yy}(x,y)=</m><var name="$fyy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=\frac{2y^2}{\sqrt{4xy^2+1}}</m>, <m>f_y=\frac{4xy}{\sqrt{4xy^2+1}}</m></p>
-
-            <p><m>f_{xx}=-\frac{4y^4}{\sqrt{4xy^2+1}^3}</m>, <m>f_{yy}=-\frac{16x^2y^2}{\sqrt{4xy^2+1}^3}+\frac{4x}{\sqrt{4xy^2+1}}</m></p>
-
-            <p><m>f_{xy}=-\frac{8xy^3}{\sqrt{4xy^2+1}^3}+\frac{4y}{\sqrt{4xy^2+1}}</m>, <m>f_{yx}=-\frac{8xy^3}{\sqrt{4xy^2+1}^3}+\frac{4y}{\sqrt{4xy^2+1}}</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1549,27 +1706,50 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>5</static>
+            </var>
+            <var name="$fy">
+              <static>-17</static>
+            </var>
+            <var name="$fxx">
+              <static>0</static>
+            </var>
+            <var name="$fxy">
+              <static>0</static>
+            </var>
+            <var name="$fyx">
+              <static>0</static>
+            </var>
+            <var name="$fyy">
+              <static>0</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $fx=Compute("5");
+              $fy=Compute("-17");
+              $fxx=Compute("0");
+              $fxy=Compute("0");
+              $fyx=Compute("0");
+              $fyy=Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) =5x-17y</m></p>
+            <p>Let <m>f(x,y) = 5x-17y</m>. Find:</p>
+            <p><m>f_{x}(x,y)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{xx}(x,y)=</m><var name="$fxx" width="40" /></p>
+            <p><m>f_{xy}(x,y)=</m><var name="$fxy" width="40" /></p>
+            <p><m>f_{yx}(x,y)=</m><var name="$fyx" width="40" /></p>
+            <p><m>f_{yy}(x,y)=</m><var name="$fyy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=5</m>, <m>f_y=-17</m></p>
-
-            <p><m>f_{xx}=0</m>, <m>f_{yy}=0</m></p>
-
-            <p><m>f_{xy}=0</m>, <m>f_{yx}=0</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1591,27 +1771,50 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>\frac{2x}{x^2+y}</static>
+            </var>
+            <var name="$fy">
+              <static>\frac{1}{x^2+y}</static>
+            </var>
+            <var name="$fxx">
+              <static>-\frac{4x^2}{(x^2+y)^2}+\frac{2}{x^2+y}</static>
+            </var>
+            <var name="$fxy">
+              <static>-\frac{2x}{(x^2+y)^2}</static>
+            </var>
+            <var name="$fyx">
+              <static>-\frac{2x}{(x^2+y)^2}</static>
+            </var>
+            <var name="$fyy">
+              <static>-\frac{1}{(x^2+y)^2}</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $fx=Compute("2x/(x^2+y)");
+              $fy=Compute("1/(x^2+y)");
+              $fxx=Compute("-4x^2/(x^2+y)^2+2/(x^2+y)");
+              $fxy=Compute("-2x/(x^2+y)^2");
+              $fyx=Compute("-2x/(x^2+y)^2");
+              $fyy=Compute("-1/(x^2+y)^2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) =\ln(x^2+y)</m></p>
+            <p>Let <m>f(x,y) = \ln(x^2+y)</m>. Find:</p>
+            <p><m>f_{x}(x,y)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{xx}(x,y)=</m><var name="$fxx" width="40" /></p>
+            <p><m>f_{xy}(x,y)=</m><var name="$fxy" width="40" /></p>
+            <p><m>f_{yx}(x,y)=</m><var name="$fyx" width="40" /></p>
+            <p><m>f_{yy}(x,y)=</m><var name="$fyy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=\frac{2x}{(x^2+y)}</m>, <m>f_y=\frac{1}{(x^2+y)}</m></p>
-
-            <p><m>f_{xx}=-\frac{4x^2}{(x^2+y)^2}+\frac{2}{(x^2+y)}</m>, <m>f_{yy}=-\frac{1}{(x^2+y)^2}</m></p>
-
-            <p><m>f_{xy}=-\frac{2x}{(x^2+y)^2}</m>, <m>f_{yx}=-\frac{2x}{(x^2+y)^2}</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1633,28 +1836,55 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>5e^x\sin(y)</static>
+            </var>
+            <var name="$fy">
+              <static>5e^x\cos(y)</static>
+            </var>
+            <var name="$fxx">
+              <static>5e^x\sin(y)</static>
+            </var>
+            <var name="$fxy">
+              <static>5e^x\cos(y)</static>
+            </var>
+            <var name="$fyx">
+              <static>5e^x\cos(y)</static>
+            </var>
+            <var name="$fyy">
+              <static>-5e^x\sin(y)</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $fx=Compute("5e^x sin(y)");
+              $fy=Compute("5e^x cos(y)");
+              $fxx=Compute("5e^x sin(y)");
+              $fxy=Compute("5e^x cos(y)");
+              $fyx=Compute("5e^x cos(y)");
+              $fyy=Compute("-5e^x sin(y)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y) =5e^x\sin(y) +9</m></p>
+            <p>Let <m>f(x,y) = 5e^x\sin(y)+9</m>. Find:</p>
+            <p><m>f_{x}(x,y)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{xx}(x,y)=</m><var name="$fxx" width="40" /></p>
+            <p><m>f_{xy}(x,y)=</m><var name="$fxy" width="40" /></p>
+            <p><m>f_{yx}(x,y)=</m><var name="$fyx" width="40" /></p>
+            <p><m>f_{yy}(x,y)=</m><var name="$fyy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x=5e^x\sin(y)</m>, <m>f_y=5e^x\cos(y)</m></p>
-
-            <p><m>f_{xx}=5e^x\sin(y)</m>, <m>f_{yy}=-5e^x\sin(y)</m></p>
-
-            <p><m>f_{xy}=5e^x\cos(y)</m>, <m>f_{yx}=5e^x\cos(y)</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, form a function <m>z=f(x,y)</m> such that <m>f_x</m> and <m>f_y</m> match those given.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, form a function <m>z=f(x,y)</m> such that <m>f_x</m> and <m>f_y</m> match those given.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1672,23 +1902,29 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\frac{1}{2}x^2+xy+\frac{1}{2}y^2+C</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $f=Compute("1/2x^2+xy+1/2y^2");
+              $fev=$f->cmp(upToConstant=>1);
             </pg-code>
           </setup>
           <statement>
-            <p><m>f_x = x+y</m>,<m>f_y = x+ y</m></p>
+            <p>Form a function <m>f(x,y)</m> such that <m>f_x = x+y</m> and <m>f_y = x+y</m>.</p>
+            <p><m>f(x,y)=</m><var name="$f" evaluator="$fev" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f(x,y) = \frac12x^2+xy+\frac12y^2+ C</m>, where <m>C</m> is any constant.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1706,24 +1942,34 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$f">
+              <static>\ln(x^2+y^2)+C</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real');
+              $f=Compute("ln(x^2+y^2)");
+              $fev=$f->cmp(upToConstant=>1);
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f_x = \frac{2x}{x^2+y^2}</m>,<m>\ds f_y = \frac{2y}{x^2+y^2}</m></p>
+            <p>Form a function <m>f(x,y)</m> such that <m>f_x = \frac{2x}{x^2+y^2}</m> and <m>f_y = \frac{2y}{x^2+y^2}</m>.</p>
+            <p><m>f(x,y)=</m><var name="$f" evaluator="$fev" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f(x,y) = \ln(x^2+y^2)+ C</m>, where <m>C</m> is any constant.</p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find <m>f_x</m>,<nbsp /> <m>f_y</m>,<nbsp /> <m>f_z</m>,<nbsp /> <m>f_{yz}</m> and <m>f_{zy}</m>.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find <m>f_x</m>, <m>f_y</m>, <m>f_z</m>, <m>f_{yz}</m> and <m>f_{zy}</m>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1743,25 +1989,45 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>3x^2y^2+3x^2z</static>
+            </var>
+            <var name="$fy">
+              <static>2x^3y+2yz</static>
+            </var>
+            <var name="$fz">
+              <static>x^3+y^2</static>
+            </var>
+            <var name="$fyz">
+              <static>2y</static>
+            </var>
+            <var name="$fzy">
+              <static>2y</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real',z=>'Real');
+              $fx=Compute("3x^2y^2+3x^2z");
+              $fy=Compute("2x^3y+2yz");
+              $fz=Compute("x^3+y^2");
+              $fyz=Compute("2y");
+              $fzy=Compute("2y");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y,z) = x^3y^2+x^3z+y^2z</m></p>
+            <p>Let <m>f(x,y,z) = x^3y^2+x^3z+y^2z</m>. Find:</p>
+            <p><m>f_{x}(x,y,z)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y,z)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{z}(x,y,z)=</m><var name="$fz" width="40" /></p>
+            <p><m>f_{yz}(x,y,z)=</m><var name="$fyz" width="40" /></p>
+            <p><m>f_{zy}(x,y,z)=</m><var name="$fzy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x = 3x^2y^2+3x^2z</m>, <m>f_y = 2x^3y+2yz</m>, <m>f_z = x^3+y^2</m></p>
-
-            <p><m>f_{yz} = 2y</m>, <m>f_{zy} = 2y</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1781,23 +2047,42 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$fx">
+              <static>\frac{1}{x}</static>
+            </var>
+            <var name="$fy">
+              <static>\frac{1}{y}</static>
+            </var>
+            <var name="$fz">
+              <static>\frac{1}{z}</static>
+            </var>
+            <var name="$fyz">
+              <static>0</static>
+            </var>
+            <var name="$fzy">
+              <static>0</static>
             </var>
             <pg-code>
+              Context()->variables->add(y=>'Real',z=>'Real');
+              $fx=Compute("1/x");
+              $fy=Compute("1/y");
+              $fz=Compute("1/z");
+              $fyz=Compute("0");
+              $fzy=Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x,y,z) = \ln(xyz)</m></p>
+            <p>Let <m>f(x,y,z) = \ln(xyz)</m>. Find:</p>
+            <p><m>f_{x}(x,y,z)=</m><var name="$fx" width="40" /></p>
+            <p><m>f_{y}(x,y,z)=</m><var name="$fy" width="40" /></p>
+            <p><m>f_{z}(x,y,z)=</m><var name="$fz" width="40" /></p>
+            <p><m>f_{yz}(x,y,z)=</m><var name="$fyz" width="40" /></p>
+            <p><m>f_{zy}(x,y,z)=</m><var name="$fzy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>f_x = \frac1x</m>, <m>f_y = \frac1y</m>, <m>f_z = \frac1z</m></p>
-
-            <p><m>f_{yz} = 0</m>, <m>f_{zy} = 0</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
