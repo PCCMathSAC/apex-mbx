@@ -251,8 +251,8 @@
           <md>
             <mrow>\sum_{i=1}^n f(x_i)\dx \amp = \big(f(x_1)+f(x_2) + f(x_3) + f(x_4) + f(x_5)\big)\dx</mrow>
             <mrow>\amp = \big(f(0) + f(0.2) + f(0.4) + f(0.6) + f(0.8)\big)\dx</mrow>
-            <mrow>\amp \approx (1+0.961 + 0.852 + 0.698 + 0.527)(0.2)</mrow>
-            <mrow>\amp \approx 0.808.</mrow>
+            <mrow>\amp \approx (1+0.9608 +0.8521 + 0.6977 + 0.5273)(0.2)</mrow>
+            <mrow>\amp \approx 0.8076.</mrow>
           </md>
         </p>
 
@@ -260,8 +260,8 @@
           <md>
             <mrow>\sum_{i=1}^n f(x_{i+1})\dx \amp = \big(f(x_2) + f(x_3) + f(x_4) + f(x_5)+f(x_6)\big)\dx</mrow>
             <mrow>\amp = \big(f(0.2) + f(0.4) + f(0.6) + f(0.8)+f(1)\big)\dx</mrow>
-            <mrow>\amp \approx (0.961 +0.852 + 0.698 + 0.527 + 0.368)(0.2)</mrow>
-            <mrow>\amp \approx 0.681.</mrow>
+            <mrow>\amp \approx (0.9608 +0.8521 + 0.6977 + 0.5273 + 0.3678)(0.2)</mrow>
+            <mrow>\amp \approx 0.6812.</mrow>
           </md>
         </p>
 
@@ -381,7 +381,7 @@
 
         <p><xref ref="fig_num1">Figure</xref> shows the rectangles used in each method to approximate the definite integral. These graphs show that in this particular case, the Left Hand Rule is an over approximation and the Right Hand Rule is an under approximation. To get a better approximation, we could use more rectangles, as we did in <xref ref="sec_riemann">Section</xref>. We could also average the Left and Right Hand Rule results together, giving
           <me>
-            \frac{0.808 + 0.681}{2} = 0.7445.
+            \frac{0.8076 + 0.6812}{2} = 0.7444.
           </me>
         </p>
 
@@ -492,9 +492,9 @@
 
         <p>Once this table is created, it is straightforward to approximate the definite integral using the Left and Right Hand Rules. (Note: the table itself is easy to create, especially with a standard spreadsheet program on a computer. The last two columns are all that are needed.) The Left Hand Rule sums the first 10 values of <m>\sin(x_i^3)</m> and multiplies the sum by <m>\dx</m>; the Right Hand Rule sums the last 10 values of <m>\sin(x_i^3)</m> and multiplies by <m>\dx</m>. Therefore we have:</p>
 
-        <p>Left Hand Rule: <m>\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\ dx \approx (1.9093)(0.2356) = 0.4498</m>.</p>
+        <p>Left Hand Rule: <m>\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\ dx \approx (1.9093)(0.2356) \approx 0.4498</m>.</p>
 
-        <p>Right Hand Rule: <m>\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\ dx \approx (1.705)(0.2356) = 0.4017</m>.</p>
+        <p>Right Hand Rule: <m>\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\ dx \approx (1.705)(0.2356) \approx 0.4017</m>.</p>
 
         <p>Average of the Left and Right Hand Rules: 0.4258.</p>
 
@@ -504,7 +504,7 @@
       <!-- START figures/fig_num2b.tex -->
         <figure xml:id="fig_num2b">
           <caption/>    
-          <image xml:id="img_num2b"  width="47%">
+          <image xml:id="img_num2b">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -582,7 +582,7 @@
       <!-- START figures/fig_num2a.tex -->
         <figure xml:id="fig_num2c">
           <caption/>
-          <image xml:id="img_num2c"  width="47%">
+          <image xml:id="img_num2c">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -757,7 +757,7 @@
         <p>Use 5 trapezoids of equal width to approximate <m>\ds \int_0^1e^{-x^2}\ dx</m>.</p>
       </statement>
       <solution>
-        <p>To compute the areas of the 5 trapezoids in <xref ref="fig_num3a">Figure</xref>, it will again be useful to create a table of values as shown in <xref ref="fig_num3b">Figure</xref>.</p>
+        <p>To compute the areas of the 5 trapezoids in <xref ref="fig_num3a">Figure</xref>, it will again be useful to create a table of values as shown in <xref ref="fig_num3b">Table</xref>.</p>
 
         <table xml:id="fig_num3b" >
           <caption>A table of values of <m>e^{-x^2}</m>.</caption>
@@ -776,59 +776,59 @@
             </row>
             <row>
               <cell><m>0.2</m></cell>
-              <cell><m>0.961</m></cell>
+              <cell><m>0.9607</m></cell>
             </row>
             <row>
               <cell><m>0.4</m></cell>
-              <cell><m>0.852</m></cell>
+              <cell><m>0.8521</m></cell>
             </row>
             <row>
               <cell><m>0.6</m></cell>
-              <cell><m>0.698</m></cell>
+              <cell><m>0.6977</m></cell>
             </row>
             <row>
               <cell><m>0.8</m></cell>
-              <cell><m>0.527</m></cell>
+              <cell><m>0.5273</m></cell>
             </row>
             <row>
               <cell><m>1</m></cell>
-              <cell><m>0.368</m></cell>
+              <cell><m>0.3679</m></cell>
             </row>
           </tabular>
         </table>
 
-        <p>The leftmost trapezoid has legs of length 1 and 0.961 and a height of 0.2. Thus, by our formula, the area of the leftmost trapezoid is:
+        <p>The leftmost trapezoid has legs of length <m>1</m> and <m>0.9607</m> and a height of 0.2. Thus, by our formula, the area of the leftmost trapezoid is:
           <me>
-            \frac{1+0.961}{2}(0.2) = 0.1961.
+            \frac{1+0.9607}{2}(0.2) = 0.1961.
           </me>
         </p>
 
-        <p>Moving right, the next trapezoid has legs of length 0.961 and 0.852 and a height of 0.2. Thus its area is:
+        <p>Moving right, the next trapezoid has legs of length <m>0.9607</m> and <m>0.8521</m> and a height of 0.2. Thus its area is:
           <me>
-            \frac{0.961+0.852}2(0.2) = 0.1813.
+            \frac{0.9607+0.8521}2(0.2) = 0.1813.
           </me>
         </p>
 
         <p>The sum of the areas of all 5 trapezoids is:
           <md>
-            <mrow>\frac{1+0.961}{2}(0.2) + \frac{0.961+0.852}2(0.2)+\frac{0.852+0.698}2(0.2)\amp +</mrow>
-            <mrow>\frac{0.698+0.527}2(0.2)+\frac{0.527+0.368}2(0.2)\amp = 0.7445.</mrow>
+            <mrow>\frac{1+0.9607}{2}(0.2) + \frac{0.961+0.852}2(0.2)+\frac{0.8521+0.6977}2(0.2)\amp +</mrow>
+            <mrow>\frac{0.6977+0.5273}2(0.2)+\frac{0.5273+0.3679}2(0.2)\amp = 0.7444.</mrow>
           </md>
         </p>
 
-        <p>We approximate <m>\ds \int_0^1 e^{-x^2}\ dx \approx 0.7445</m>.</p>
+        <p>We approximate <m>\ds \int_0^1 e^{-x^2}\ dx \approx 0.7444</m>.</p>
       </solution>
     </example>
 
     <p>There are many things to observe in this example. Note how each term in the final summation was multiplied by both 1/2 and by <m>\dx = 0.2</m>. We can factor these coefficients out, leaving a more concise summation as:
       <me>
-        \frac12(0.2)\Big[(1+0.961) + (0.961+0.852) + (0.852+0.698) + ( 0.698+ 0.527) +(0.527 + 0.368)\Big].
+        \frac12(0.2)\Big[(1+0.9608) + (0.9608+0.8521) + (0.8521+0.6977) + ( 0.6977+ 0.5273) +(0.5273 + 0.3679)\Big].
       </me>
     </p>
 
     <p>Now notice that all numbers except for the first and the last are added twice. Therefore we can write the summation even more concisely as
       <me>
-        \frac{0.2}{2}\Big[1 + 2(0.961+0.852+0.698+0.527) + 0.368\Big].
+        \frac{0.2}{2}\Big[1 + 2(0.9608+0.8521+0.6977+0.5273) + 0.3679\Big].
       </me>
     </p>
 
@@ -847,14 +847,14 @@
           and approximate <m>\ds\int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin(x^3)\ dx</m> using the Trapezoidal Rule and 10 equally spaced subintervals.</p>
       </statement>
       <solution>
-        <p>We refer back to <xref ref="fig_num2a">Figure</xref> for the table of values of <m>\sin(x^3)</m>. Recall that <m>\dx = 3\pi/40 \approx 0.236</m>. Thus we have:
+        <p>We refer back to <xref ref="fig_num2a">Table</xref> for the table of values of <m>\sin(x^3)</m>. Recall that <m>\dx = 3\pi/40 \approx 0.236</m>. Thus we have:
           <md>
             <mrow>\amp \int_{-\frac{\pi}4}^{\frac{\pi}2} \sin(x^3)\ dx </mrow>
-            <mrow>\amp \approx \frac{0.236}{2}\Big[-0.466 + 2\Big(-0.165+(-0.031)+\ldots+
-            0.69\Big)+(-0.67)\Big]</mrow>
-            <mrow>\amp = 0.4257.</mrow>
+            <mrow>\amp \approx \frac{0.236}{2}\Big[-0.4657 + 2\Big(-0.1654+(-0.031)+\ldots+
+            0.68999\Big)+(-0.67)\Big]</mrow>
+            <mrow>\amp = 0.4258.</mrow>
           </md>
-          The actual answer, accurate to 4 decimal places is <m>0.4609</m>. So the Trapezoidal Rule with 10 subintervals is an underapproximation by about <m>0.0352.</m>
+          The actual answer, accurate to 4 decimal places is <m>0.4609</m>. So the Trapezoidal Rule with 10 subintervals is an underapproximation by about <m>0.0351.</m>
         </p>
       </solution>
     </example>
@@ -866,7 +866,7 @@
     <subsection>
       <title>The Midpoint Rule</title>
 
-    <p>Another method that is more accurate than the Trapezoidal Rule is the Midpoint Rule:
+    <p>Another method that can be more accurate than the Trapezoidal Rule is the Midpoint Rule:
       <md>
         <mrow>S_M(n)\amp =\sum_{i=1}^n f\left(\frac{x_i+x_{i+1}}{2}\right)\Delta x</mrow>
         <mrow>\amp = \sum_{i=1}^n f\left(\overline{x_i}\right)\Delta x </mrow>
@@ -880,7 +880,9 @@
         <p>Use the Midpoint Rule with <m>n=5</m> to approximate <m>\ds \int_0^1e^{-x^2}\ dx</m>.</p>
       </statement>
       <solution>
-        <p>It will again be useful to create a table of values as shown in <xref ref="fig_num3_2b">Table</xref>. We have <m>\dx=(1-0)/5=0.2</m>. The midpoint of the first subinteval is at <m>0+0.2/2=0.1</m> and each successive midpoint is <m>0.2</m> from the last.</p>
+         <p>We cannot use the same table (<xref ref="fig_num3b">Table</xref>) that we used for the Trapezoidal, Right and Left Hand Rules when using the Midpoint Rule. The Trapezoidal rule averages the <em>outputs</em> of the function to obtain a more accurate estimate of the definite integral. The Midpoint Rule averages the <em>inputs</em> of each subinterval to create a rectangle with height <m>f\left(\frac{x_i+x_{i+1}}{2}\right)</m>. Generally <m>f\left(\frac{x_i+x_{i+1}}{2}\right)\neq \frac{f(x_i)+f(x_{i+1})}{2}</m>. </p>
+
+        <p>So we will create a new table of values as shown in <xref ref="fig_num3_2b">Table</xref>. We have <m>\dx=(1-0)/5=0.2</m>. The midpoint of the first subinteval is at <m>0+0.2(1/2)=0.1</m> and each successive midpoint is <m>0.2</m> from the last.</p>
 
 
 
@@ -937,8 +939,8 @@
           and approximate <m>\ds\int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin(x^3)\ dx</m> using the Midpoint Rule and 10 equally spaced subintervals.</p>
       </statement>
       <solution>
-        <p>We cannot use the same table (<xref ref="fig_num2a">Figure</xref>) that we used for the Trapezoidal, Right and Left Hand Rules when using the Midpoint Rule. The Trapezoidal rule averages the <em>outputs</em> of the function to obtain a more accurate estimate of the definite integral. The Midpoint Rule averages the <em>inputs</em> of each subinterval to create a rectangle with height <m>f\left(\frac{x_i+x_{i+1}}{2}\right)</m>. Generally <m>f\left(\frac{x_i+x_{i+1}}{2}\right)\neq \frac{f(x_i)+f(x_{i+1})}{2}</m>. </p>
-        <p> Recall that <m>\dx = 3\pi/40 \approx 0.2356</m>. The midpoint of the first subinterval is <m>\overline{x_1}=a+\dx/2=-\pi/4+3\pi/80=-17\pi/80</m> (notice that <m>\overline{x_1}</m> is half of a subinterval to the right of <m>a</m>). Each successive midpoint is <m>\dx=6\pi/80</m> apart from the last. So we have:
+       
+        <p>Again, a table will be useful. Recall that <m>\dx = 3\pi/40 \approx 0.2356</m>. The midpoint of the first subinterval is <m>\overline{x_1}=a+\dx/2=-\pi/4+3\pi/40(1/2)=-17\pi/80</m> (notice that <m>\overline{x_1}</m> is half of a subinterval width to the right of <m>a</m>). Each successive midpoint is <m>\dx=3 \pi/40=6\pi/80</m> to the right of the last. So we have:
 
         <table xml:id="fig_num4_2" >
           <caption>Table of values used to approximate <m>\int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\ dx</m> in <xref ref="ex_num4_2 ">Example</xref>.</caption>
@@ -1036,7 +1038,7 @@ Thus we have:
 
 
     </subsection>
-    <p>In many cases, the Midpoint Rule will more accurate than the Trapezoidal Rule. You may wonder though, how can we improve on the Trapezoidal Rule and Midpoint Rule, apart from using more and more trapezoids? The answer is clear once we look back and consider what we have <em>really</em> done so far. The Left Hand Rule, Right Hand Rule and Midpoint Rules are not <em>really</em> about using rectangles to approximate area. Instead, they approximates a function <m>f</m> with constant functions on small subintervals and then computes the definite integral of these constant functions. The Trapezoidal Rule is really approximating a function <m>f</m> with a linear function on a small subinterval, then computes the definite integral of this linear function.  In all of these cases the definite integrals are easy to compute in geometric terms.</p>
+    <p>In many cases, the Midpoint Rule will more accurate than the Trapezoidal Rule. You may wonder though, how can we improve on the Trapezoidal and Midpoint Rules, apart from using more and more subintervals? The answer is clear once we look back and consider what we have <em>really</em> done so far. The Left Hand Rule, Right Hand Rule and Midpoint Rules are not <em>really</em> about using rectangles to approximate area. Instead, they approximates a function <m>f</m> with constant functions on small subintervals and then computes the definite integral of these constant functions. The Trapezoidal Rule is really approximating a function <m>f</m> with a linear function on a small subinterval, then computes the definite integral of this linear function.  In all of these cases the definite integrals are easy to compute in geometric terms.</p>
 
     <p>So we have a progression: we start by approximating <m>f</m> with a constant function and then with a linear function. What is next? A quadratic function. By approximating the curve of a function with lots of parabolas, we generally get an even better approximation of the definite integral. We call this process <em>Simpson's Rule</em>, named after Thomas Simpson (1710-1761), even though others had used this rule as much as 100 years prior.</p>
   </subsection>
@@ -1133,7 +1135,7 @@ Thus we have:
       <solution>
         <p>We begin by making a table of values as we have in the past, as shown in <xref ref="fig_num5a">Figure</xref>.</p>
 
-      <sidebyside xml:id="fig_num5" >
+      <sidebyside xml:id="fig_num5" widths ="40% 54%" >
         <caption>A table of values to approximate <m>\int_0^1e^{-x^2}\ dx</m>, along with a graph of the function.</caption>
 
         <table xml:id="fig_num5a">
@@ -1174,9 +1176,9 @@ Thus we have:
         </table>
 
 
-          <figure><!-- START figures/fig_num5b.tex -->
+          <figure xml:id="fig_num5b"><!-- START figures/fig_num5b.tex -->
             <caption/>
-            <image xml:id="img_num5b"  width="47%">
+            <image xml:id="img_num5b">
               <description></description>
               <latex-image-code>
                 <![CDATA[
@@ -1468,7 +1470,7 @@ Thus we have:
       <li><p>If there is value to approximating, how are we supposed to know if the approximation is any good?</p></li>
     </ol>
 
-    <p>These are good questions, and their answers are educational. In the examples, <em>the</em> right answer was never computed. Rather, an approximation accurate to a certain number of places after the decimal was given. In <xref ref="ex_num1">Example</xref>, we do not know the <em>exact</em> answer, but we know it starts with 0.7468. These more accurate approximations were computed using numerical integration but with more precision (i.e., more subintervals and the help of a computer).</p>
+    <p>These are good questions, and their answers are educational. In the examples, <em>the</em> right answer was never computed. Rather, an approximation accurate to a certain number of places after the decimal was given. In <xref ref="ex_num1">Example</xref>, we do not know the <em>exact</em> answer, but we know it starts with <m>0.7468</m>. These more accurate approximations were computed using numerical integration but with more precision (i.e., more subintervals and the help of a computer).</p>
 
     <p>Since the exact answer cannot be found, approximation still has its place. How are we to tell if the approximation is any good?</p>
 
@@ -1584,14 +1586,14 @@ Thus we have:
         </p>
 
         <todo>Update everything to 4 decimal places.</todo>
-        <p>Our error estimation formula states that our approximation of 0.7445 found in <xref ref="ex_num3">Example</xref> is within 0.0067 of the correct answer. Hence we know that the actual value is within <m>[0.7445-0.0067, 0.7445+0.0067]=[.7378,.7512]. So:</m>
+        <p>Our error estimation formula states that our approximation of 0.7444 found in <xref ref="ex_num3">Example</xref> is within 0.0067 of the correct answer. Hence we know that the actual value is within <m>[0.7444-0.0067, 0.7444+0.0067]=[.7377,.7511]. So:</m>
           <me>
-         0.7378 \leq \int_0^1e^{-x^2}\ dx \leq 0.7512
+         0.7377 \leq \int_0^1e^{-x^2}\ dx \leq 0.7511
           </me>
           But we can do better than this with the Midpoint Rule since it's error is at most half of the error of the Trapezoidal Rule.  Our error estimate formula state that our approximate of <m>0.7480</m> found in <xref ref="ex_num3_2">Example</xref> is within <m>0.0034</m> of the correct answer. Hence Hence we know that the actual value is within <m>[0.7480-0.0034, 0.7480+0.0033]=[.7447,.7513]</m>. 
         </p>
 
-        <p>We had earlier computed the exact answer, correct to 4 decimal places, to be 0.7468, affirming the validity of <xref ref="thm_numerical_error">Theorem</xref>.</p>
+        <p>We had earlier stated the actual answer, correct to 4 decimal places, to be 0.7468, affirming the validity of <xref ref="thm_numerical_error">Theorem</xref>.</p>
 
         <p><em>Simpson's Rule with <m>n=4</m>:</em></p>
 
