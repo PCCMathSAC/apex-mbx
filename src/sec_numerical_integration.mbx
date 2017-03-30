@@ -776,7 +776,7 @@
             </row>
             <row>
               <cell><m>0.2</m></cell>
-              <cell><m>0.9607</m></cell>
+              <cell><m>0.9608</m></cell>
             </row>
             <row>
               <cell><m>0.4</m></cell>
@@ -799,19 +799,19 @@
 
         <p>The leftmost trapezoid has legs of length <m>1</m> and <m>0.9607</m> and a height of 0.2. Thus, by our formula, the area of the leftmost trapezoid is:
           <me>
-            \frac{1+0.9607}{2}(0.2) = 0.1961.
+            \frac{1+0.9608}{2}(0.2) = 0.1961.
           </me>
         </p>
 
         <p>Moving right, the next trapezoid has legs of length <m>0.9607</m> and <m>0.8521</m> and a height of 0.2. Thus its area is:
           <me>
-            \frac{0.9607+0.8521}2(0.2) = 0.1813.
+            \frac{0.9608+0.8521}2(0.2) = 0.1813.
           </me>
         </p>
 
         <p>The sum of the areas of all 5 trapezoids is:
           <md>
-            <mrow>\frac{1+0.9607}{2}(0.2) + \frac{0.961+0.852}2(0.2)+\frac{0.8521+0.6977}2(0.2)\amp +</mrow>
+            <mrow>\frac{1+0.9608}{2}(0.2) + \frac{0.9608+0.8521}2(0.2)+\frac{0.8521+0.6977}2(0.2)\amp +</mrow>
             <mrow>\frac{0.6977+0.5273}2(0.2)+\frac{0.5273+0.3679}2(0.2)\amp = 0.7444.</mrow>
           </md>
         </p>
@@ -1120,10 +1120,60 @@ Thus we have:
     </p>
 
     <p>Note how the coefficients of the terms in the summation have the pattern 1, 4, 2, 4, 2, 4, <m>\ldots</m>, 2, 4, 1.</p>
-    <todo>Insert a Figure here showing how it looks on more than one subinterval. I have one I created using Maple</todo>
-    <figure>
-      <caption>An illustration of Simpson's rule on <m>f(x)=\sin(x)+2</m> over <m>[0,6\pi]</m> using <m>8</m> subintervals, resulting in <m>4</m> quadratic approximations. </caption>
-    </figure>
+    <p><xref ref="fig_simpsons2">Figure</xref> illustrates how the area calculated by Simpson's Rule approximates <m>\int_0^5 f(x)\ dx</m> for the function <m>f(x)=\sin(\pi x)</m>. In this case, <m>8</m> subintervals were used, resulting in <m>4</m> quadratic curves (dashed lines) being fitted to each pair of subintervals. The actual answer (accurate to <m>4</m> decimal places) is about <m>10.6366</m>, while Simpson's rule gives <m>10.7294</m>. Of course more subintervals would result in better accuracy. However <m>8</m> intervals were chosen specifically so that you could see how the parabolas compare to the original function. With larger values of <m>n</m>, it becomes difficult to distinguish the function and its quadratic approximations on each subinterval.</p>
+   
+
+     
+    <figure xml:id="fig_simpsons2">
+      <caption>An illustration of Simpson's rule on <m>f(x)=\sin(\pi x)+2</m> over <m>[0,5]</m> using <m>8</m> subintervals, resulting in <m>4</m> quadratic approximations. </caption>
+          <image xml:id="img_simpsons2" width="47%">
+            <description></description>
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}
+              \begin{axis}[axis on top,
+                           ymin=-.2,ymax=3.2,
+                           xmin=-1,xmax=6.5,
+                          ]
+
+              \addplot+[name path=F,domain={-0.9:5.2},samples=100,smooth] {sin(deg(3.14159*x))+2} node[pos=.9, right]{\scriptsize $y=\sin(\pi x)$};
+              \addplot[name path=G,domain={0:5}]{0};
+              \addplot[color=blue!50]fill between[of=F and G, soft clip={domain=0:5}];
+             
+              \addplot+[secondcurvestyle,-,name path=H,domain=0:1.25]{-3.27*x^2+3.52*x+2};
+              \addplot[color=gray!30]fill between[of=H and G, soft clip={domain=0:1.25}];
+
+              \addplot+[secondcurvestyle,-,name path=I,domain=1.25:2.5]{1.35*x^2-3.71*x+3.82};
+              \addplot[color=gray!30]fill between[of=I and G, soft clip={domain=1.25:2.5}];
+
+              \addplot+[secondcurvestyle,-,name path=J,domain=2.5:3.75]{1.35*x^2-9.83*x+19.11};
+              \addplot[color=gray!30]fill between[of=J and G, soft clip={domain=2.5:3.75}];
+
+              \addplot+[secondcurvestyle,-,name path=K,domain=3.75:5]{-3.27*x^2+29.18*x-62.145};
+              \addplot[color=gray!30]fill between[of=K and G, soft clip={domain=3.75:5}];
+
+              \addplot[-,color=gray!70, dashed, thin,domain=0:2.924]({.625},{x});
+              \addplot[-,color=gray, dashed, thin,domain=0:1.293]({1.25},{x});
+              \addplot[-,color=gray!70, dashed, thin,domain=0:1.617]({1.875},{x});
+              \addplot[-,color=gray, dashed, thin,domain=0:3]({2.5},{x});
+              \addplot[-,color=gray!70, dashed, thin,domain=0:1.617]({3.125},{x});
+              \addplot[-,color=gray, dashed, thin,domain=0:1.293]({3.75},{x});
+              \addplot[-,color=gray!70, dashed, thin,domain=0:2.924]({4.375},{x});
+              \addplot[-,color=gray, dashed, thin,domain=0:3]({5},{x});
+  
+    }
+
+              \end{axis}
+
+
+
+              \end{tikzpicture}
+              ]]>
+            </latex-image-code>
+          </image>
+        </figure>
+
+
 
     <p>Let's demonstrate Simpson's Rule with a concrete example.</p>
 
@@ -1501,7 +1551,7 @@ Thus we have:
 
           <li><p>Let <m>E_S</m> be the error in approximating <m>\ds \int_a^b f(x)\ dx</m> using Simpson's Rule.
 
-              If <m>f</m> has a continuous 4<m>^\text{ th }</m> derivative on <m>[a,b]</m> and <m>K</m> is any upper bound of <m>\abs{f^{(4)}}</m> on <m>[a,b]</m>, then
+              If <m>f</m> has a continuous 4<m>^\text{ th }</m> derivative on <m>[a,b]</m> and <m>K</m> is any upper bound of <m>\abs{f^{(4)}(x)}</m> on <m>[a,b]</m>, then
               <me>
                 E_S \leq \frac{(b-a)^5}{180n^4}K.
               </me>

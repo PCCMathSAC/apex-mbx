@@ -73,7 +73,7 @@
 
       </statement>
       <solution>
-        <p>We can see from <xref ref="fig_ftc1b">Figure</xref> that for <m>x \ge 1</m>, the area under the curve can be found by subtracting the area of two triangles. The larger triangle will have a base of <m>x</m> and a height of <m>f(x)=2x</m>, while the smaller triangle will have a base of <m>1</m> and a height of <m>2</m>. Therefore, the area under the curve for <m>x \gt 1</m> is given by <m>A(x)=\frac12 (x)(2x)-\frac12 (1)(2)=x^2-1</m>. </p>
+        <p>We can see from <xref ref="fig_ftc1b">Figure</xref> that for <m>x \ge 1</m>, the area under the curve can be found by subtracting the area of two triangles. The larger triangle will have a base of <m>x</m> and a height of <m>f(x)=2x</m>, while the smaller triangle will have a base of <m>1</m> and a height of <m>2</m>. Therefore, the area under the curve for <m>x \gte 1</m> is given by <m>A(x)=\frac12 (x)(2x)-\frac12 (1)(2)=x^2-1</m>. </p>
     <figure xml:id="fig_ftc1b" >
       <caption>The area of the shaded region is <m>F(x) = \int_1^x 2t\ dt</m>.</caption>
       <!-- START figures/fig_ftc1.tex -->
@@ -313,7 +313,7 @@
 
         <p>Thus if a ball is thrown straight up into the air with velocity <m>v(t) = -32t+20</m>, the height of the ball, 1 second later, will be 4 feet above the initial height.</p> 
         <p>Note that the ball has <em>traveled</em> much farther. It has gone up to its peak and is falling down, but the difference between its height at <m>t=0</m> and <m>t=1</m> is 4ft. </p>
-        <p>If we wish to find the total distance traveled, we must evaluate <m>\int_0^1 \abs{v(t)}\ dt</m> (noting that negative velocities will reduce the diplacement, but we want <em>distance</em>, not displacement). In this case, we know that the velocity changes sign once when <m>t=20/32=5/8</m> seconds. The velocity is positive over <m>[0,5/8]</m> and negative over <m>[5/8,1]</m>. Therefore 
+        <p>If we wish to find the total distance traveled, we must evaluate <m>\int_0^1 \abs{v(t)}\ dt</m> (noting that negative velocities will reduce the diplacement, but we want <em>distance</em>, not displacement). In this case, we know that the velocity changes sign once when <m>v(t)=0</m>,so <m>t=20/32=5/8</m> seconds. The velocity is positive over <m>[0,5/8]</m> and negative over <m>[5/8,1]</m>. Therefore 
         <md>
           <mrow>\int_0^1 \abs{-32t+20}\ dt \amp =\int_0^{5/8}-32t+20\ dt-\int_{5/8}^1 -32t+20\ dt</mrow>
           <mrow>\amp =\left(-16t^2 + 20t\right)\Big|_0^{5/8}-\left(-16t^2 + 20t\right)\Big|_0^1</mrow>

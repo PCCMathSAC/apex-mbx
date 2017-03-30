@@ -35,19 +35,21 @@
 
         <p><ol>
           <li>
-            <p><m>f</m> is <em>increasing</em> on <m>I</m> if for every <m>a\lt b</m> in <m>I</m>, <m>f(a) \leq f(b)</m>.</p>
+            <p><m>f</m> is <em>strictly increasing</em> on <m>I</m> if for every <m>a\lt b</m> in <m>I</m>, <m>f(a) \lt f(b)</m>.</p>
           </li>
 
           <li>
-            <p><m>f</m> is <em>decreasing</em> on <m>I</m> if for every <m>a\lt b</m> in <m>I</m>, <m>f(a) \geq f(b)</m>.</p>
+            <p><m>f</m> is <em>strictly decreasing</em> on <m>I</m> if for every <m>a\lt b</m> in <m>I</m>, <m>f(a) \gt f(b)</m>.</p>
           </li>
         </ol></p>
 
-        <p>A function is <term>strictly increasing</term> when <m>a\lt b</m> in <m>I</m> implies <m>f(a) \lt  f(b)</m>, with a similar definition holding for <term>strictly decreasing</term>.</p>
+        <!--<p>A function is <term>strictly increasing</term> when <m>a\lt b</m> in <m>I</m> implies <m>f(a) \lt  f(b)</m>, with a similar definition holding for <term>strictly decreasing</term>.</p>-->
       </statement>
     </definition>
 
-    <p>Informally, a function is increasing if as <m>x</m> gets larger (i.e., looking left to right) <m>f(x)</m> gets larger or stays constant.</p>
+    <aside><p>We will often say <q>increasing</q> when we really mean <q>strictly increasing</q>. </p></aside>
+
+    <p>Informally, a function is increasing if as <m>x</m> gets larger (i.e., looking left to right) <m>f(x)</m> gets larger <!--or stays constant-->.</p>
 
     <p>Our interest lies in finding intervals in the domain of <m>f</m> on which <m>f</m> is either increasing or decreasing. Such information should seem useful. For instance, if <m>f</m> describes the speed of an object, we might want to know when the speed was increasing or decreasing (i.e., when the object was accelerating <abbr>vs.</abbr> decelerating). If <m>f</m> describes the population of a city, we should be interested in when the population is growing or declining.</p>
 
@@ -119,7 +121,7 @@
           </li>
         </ol></p>
 
-        <p> The conclusions of <xref ref="thm_incr" /> and <xref ref="thm_decr" /> also hold if if <m>\fp(c) = 0</m> for a finite number of values of <m>c</m> in <m>I</m>.</p>
+        <p> The conclusions of <xref ref="thm_incr" /> and <xref ref="thm_decr" /> also hold if if <m>\fp(c) = 0</m> for a finite number of nonadjacent values of <m>c</m> in <m>I</m>.</p>
       </statement>
     </theorem>
 
@@ -128,15 +130,17 @@
     <insight xml:id="idea_incr_decr">
       <title>Finding Intervals on Which <m>f</m> is Increasing or Decreasing</title>
 
-      <p>Let <m>f</m> be a differentiable function on an interval <m>I</m>. To find intervals on which <m>f</m> is increasing and decreasing:<index><main>increasing function</main><sub>finding intervals</sub></index><index><main>decreasing function</main><sub>finding intervals</sub></index></p>
+
+      <p>Let <m>f</m> be a function on a domain <m>D</m>. To find intervals on which <m>f</m> is increasing and decreasing:<index><main>increasing function</main><sub>finding intervals</sub></index><index><main>decreasing function</main><sub>finding intervals</sub></index></p>
 
       <p><ol>
-        <li>
-          <p>Find the critical values of <m>f</m>. That is, find all <m>c</m> in <m>I</m> where <m>\fp(c) = 0</m> or <m>\fp</m> is not defined.</p>
+        <li xml:id="stp_inc_dec1">If not stated, find the domain of <m>f</m>, <m>D</m>. Begin a number line that only includes <m>D</m>. </li>
+        <li xml:id="stp_inc_dec2">
+          <p>Find the critical values of <m>f</m>. That is, find all <m>c</m> in the domain of <m>f</m> where <m>\fp(c) = 0</m> or <m>\fp</m> is not defined. (Note: Any values of <m>c</m> <em>not</em> in the domain of <m>f</m> where <m>\fp(c)</m> is undefined should already be marked on your number line from <xref ref="stp_inc_dec1">Step</xref>).</p>
         </li>
 
         <li>
-          <p>Use the critical values to divide <m>I</m> into subintervals.</p>
+          <p>Use the critical values to divide <m>D</m> into subintervals.</p>
         </li>
 
         <li>
@@ -159,9 +163,9 @@
         <p>Let <m>f(x) = x^3+x^2-x+1</m>. Find intervals on which <m>f</m> is increasing or decreasing.</p>
       </statement>
       <solution>
-        <p>Using <xref ref="idea_incr_decr">Key Idea</xref>, we first find the critical values of <m>f</m>. We have <m>\fp(x) = 3x^2+2x-1 = (3x-1)(x+1)</m>, so <m>\fp(x) = 0</m> when <m>x=-1</m> and when <m>x=1/3</m>. <m>\fp</m> is never undefined.</p>
+        <p>Using <xref ref="idea_incr_decr">Key Idea</xref>, the domain of <m>f</m> is <m>\mathbb{R}</m> or <m>(-\infty,\infty)</m>. Next, we find the critical values of <m>f</m>. We have <m>\fp(x) = 3x^2+2x-1 = (3x-1)(x+1)</m>, so <m>\fp(x) = 0</m> when <m>x=-1</m> and when <m>x=1/3</m>. <m>\fp</m> is never undefined.</p>
 
-        <p>Since an interval was not specified for us to consider, we consider the entire domain of <m>f</m> which is <m>(-\infty,\infty)</m>. We thus break the whole real line into three subintervals based on the two critical values we just found: <m>(-\infty,-1)</m>, <m>(-1,1/3)</m> and <m>(1/3,\infty)</m>. This is shown in <xref ref="fig_incrline1">Figure</xref>.</p>
+        <p>We thus break the domain (in this case the real line) into three subintervals based on the two critical values we just found: <m>(-\infty,-1)</m>, <m>(-1,1/3)</m> and <m>(1/3,\infty)</m>. This is shown in <xref ref="fig_incrline1">Figure</xref>.</p>
 
         <!--
         <caption>Number line for <m>f</m> in Example \ref{ex_incr1}.</caption>
@@ -272,7 +276,7 @@
     <theorem xml:id="thm_first_der">
       <title>First Derivative Test</title>
       <statement>
-        <p>Let <m>f</m> be differentiable on <m>I</m> and let <m>c</m> be a critical number in <m>I</m>.<index><main>First Derivative Test</main></index><index><main>derivative</main><sub>First Deriv. Test</sub></index><index><main>extrema</main><sub>and First Deriv. Test</sub></index><index><main>maximum</main><sub>and First Deriv. Test</sub></index><index><main>minimum</main><sub>and First Deriv. Test</sub></index></p>
+        <p>Let <m>f</m> be <em>continuous</em> on an interval <m>I</m>, and differentiable on <m>I</m>, except possibly at <m>c</m>, where <m>c</m> is a critical number in <m>I</m>.<index><main>First Derivative Test</main></index><index><main>derivative</main><sub>First Deriv. Test</sub></index><index><main>extrema</main><sub>and First Deriv. Test</sub></index><index><main>maximum</main><sub>and First Deriv. Test</sub></index><index><main>minimum</main><sub>and First Deriv. Test</sub></index></p>
 
         <p><ol>
           <li>
@@ -289,6 +293,35 @@
         </ol></p>
       </statement>
     </theorem>
+    <aside>
+      <p>The continuity of <m>f</m> when using the first derivative test is very important. Without continuity, almost anything can happen at a critical number. For example, we can construct a piecewise function where the sign of <m>\fp</m> switches to positive to negative at <m>c</m> and <m>f(c)</m> is <em>not</em> a local maximum. This is shown in <xref ref="fig_inc_counter">Figure</xref>
+
+        <figure xml:id="fig_inc_counter" >
+          <caption>A discontinuous function where <m>\fp</m> changes sign at 1, but <m>f(1)</m> is not a local maximum.</caption>
+          <image xml:id="img_incr_counter"  width="47%">
+            <description></description>
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}
+                \begin{axis}[xmin=-1,xmax=3,
+                            ymin=-3,ymax=4,]
+                  \addplot+[<-,domain=-.9:1] {x+1};
+                  \addplot+[firstcurvestyle,->,domain=1:2.5] {-1*(x-1)+1};
+                  \addplot[soliddot] coordinates{(1,1)};
+                   \addplot[hollowdot] coordinates{(1,2)};
+                \end{axis}
+              \end{tikzpicture}
+              ]]>
+            </latex-image-code>
+          </image>
+          <!-- figures/fig_incr1.tex END -->
+        </figure>
+    </p>
+
+
+   
+
+    </aside>
 
     <example xml:id="ex_incr2">
       <title>Using the First Derivative Test</title>
@@ -300,9 +333,9 @@
         </p>
       </statement>
       <solution>
-        <p>We start by noting the domain of <m>f</m>: <m>(-\infty,1)\cup(1,\infty)</m>. <xref ref="idea_incr_decr">Key Idea</xref> describes how to find intervals where <m>f</m> is increasing and decreasing <em>when the domain of <m>f</m> is an interval.</em> Since the domain of <m>f</m> in this example is the union of two intervals, we apply the techniques of <xref ref="idea_incr_decr">Key Idea</xref> to both intervals of the domain of <m>f</m>.</p>
+        <p>We start by noting the domain of <m>f</m>: <m>(-\infty,1)\cup(1,\infty)</m>. </p>
 
-        <p>Since <m>f</m> is not defined at <m>x=1</m>, the increasing/decreasing nature of <m>f</m> could switch at this value. We do not formally consider <m>x=1</m> to be a critical value of <m>f</m>, but we will include it in our list of critical values that we find next.</p>
+        <p>Since <m>f</m> is not defined at <m>x=1</m> (it has a vertical asymptote), the increasing/decreasing nature of <m>f</m> could switch at this value. We know that <m>\fp(1)</m> will be undefined since <m>f</m> is discontinuous at <m>1</m>. We do not formally consider <m>x=1</m> to be a critical value of <m>f</m>, but we will use <m>1</m> to subdivide the real number line.</p>
 
         <p>Using the <xref ref="thm_QuotientRule">Quotient Rule</xref>, we find
           <me>
@@ -310,7 +343,7 @@
           </me>.
         </p>
 
-        <p>We need to find the critical values of <m>f</m>; we want to know when <m>\fp(x)=0</m> and when <m>\fp</m> is not defined. That latter is straightforward: when the denominator of <m>\fp(x)</m> is <m>0</m>, <m>\fp</m> is undefined. That occurs when <m>x=1</m>, which we've already recognized as an important value.</p>
+        <p>We need to find the critical values of <m>f</m>; we want to know when <m>\fp(x)=0</m> and when <m>\fp</m> is not defined. That latter is straightforward: when the denominator of <m>\fp(x)</m> is <m>0</m>, <m>\fp</m> is undefined. That occurs when <m>x=1</m>, which we've already recognized as an important value, but not a critical number.</p>
 
         <p><m>\fp(x)=0</m> when the numerator of <m>\fp(x)</m> is <m>0</m>. That occurs when <m>x^2-2x-3 = (x-3)(x+1) = 0</m>; i.e., when <m>x=-1,3</m>.</p>
 
@@ -341,7 +374,7 @@
           </li>
         </dl></p>
 
-        <p>In summary, <m>f</m> is increasing on the intervals <m>(-\infty,-1)</m> and <m>(3,\infty)</m> and is decreasing on the intervals <m>(-1,1)</m> and <m>(1,3)</m>. Since at <m>x=-1</m>, the sign of <m>\fp</m> switched from positive to negative, <xref ref="thm_first_der">Theorem</xref> states that <m>f(-1)</m> is a relative maximum of <m>f</m>. At <m>x=3</m>, the sign of <m>\fp</m> switched from negative to positive, meaning <m>f(3)</m> is a relative minimum. At <m>x=1</m>, <m>f</m> is not defined, so there is no relative extremum at <m>x=1</m>.</p>
+        <p>In summary, <m>f</m> is increasing on the intervals <m>(-\infty,-1)</m> and <m>(3,\infty)</m> and is decreasing on the intervals <m>(-1,1)</m> and <m>(1,3)</m>. Since at <m>x=-1</m>, the sign of <m>\fp</m> switched from positive to negative, <xref ref="thm_first_der">Theorem</xref> states that <m>f(-1)</m> is a relative maximum of <m>f</m>. At <m>x=3</m>, the sign of <m>\fp</m> switched from negative to positive, meaning <m>f(3)</m> is a relative minimum. At <m>x=1</m>, <m>f</m> is not defined, so there is no relative extremum at <m>x=1</m>. As previously stated, <m>x=1</m> is a vertical asymptote of <m>f</m>.</p>
 
         <figure xml:id="fig_incrline2">
           <caption></caption>
@@ -363,6 +396,7 @@
                     \addplot[mark=none] coordinates {(2,1)} node {\parbox{3em}{\centering \small  $\fp\lt0$\\$f$ decr }};
                     \addplot[mark=none] coordinates {(4,1)} node {\parbox{3em}{\centering \small  $\fp>0$\\$f$ incr }};
                     \addplot[mark=none] coordinates {(-1,2)} node[above] {\parbox{3em}{\centering \small  rel\\max}};
+                    \addplot[mark=none] coordinates {(1,2)} node[above] {\parbox{3em}{\centering \small  VA}};
                     \addplot[mark=none] coordinates {(3,2)} node[above] {\parbox{3em}{\centering \small  rel\\min}};
                 \end{axis}
               \end{tikzpicture}
@@ -408,7 +442,7 @@
         <p>Find the intervals on which <m>f(x) = x^{8/3}-4x^{2/3}</m> is increasing and decreasing and identify the relative extrema.</p>
       </statement>
       <solution>
-        <p>We again start with taking derivatives. Since we know we want to solve <m>\fp(x) = 0</m>, we will do some algebra after taking derivatives.
+        <p>The domain of <m>f</m> is <m>\mathbb{R}</m> (you can take the odd root of both positive and negative nubmers). Next, we take the first derivative. Since we know we want to solve <m>\fp(x) = 0</m>, we will do some algebra after taking derivatives.
           <md>
             <mrow>f(x) \amp = x^{\frac{8}{3}}-4x^{\frac{2}{3}}</mrow>
             <mrow>\fp(x) \amp = \frac{8}{3} x^{\frac{5}{3}} - \frac{8}{3}x^{-\frac{1}{3}}</mrow>
@@ -511,6 +545,8 @@
 
     <p>We have seen how the first derivative of a function helps determine when the function is going <q>up</q> or <q>down.</q> In the next section, we will see how the second derivative helps determine how the graph of a function curves.</p>
 
+  
+<todo>Update exercises/solutions to reflect new terminology (inc/dec) as well as reworked theorems)</todo>
   <exercises>
     <exercisegroup>
       <introduction>
