@@ -47,7 +47,10 @@
       </statement>
     </definition>
 
-    <aside><p>We will often say <q>increasing</q> when we really mean <q>strictly increasing</q>. </p></aside>
+    <aside>
+      <title><q>Increasing</q></title>
+      <p>We will often say <q>increasing</q> when we really mean <q>strictly increasing</q>.</p>
+    </aside>
 
     <p>Informally, a function is increasing if as <m>x</m> gets larger (i.e., looking left to right) <m>f(x)</m> gets larger <!--or stays constant-->.</p>
 
@@ -294,33 +297,29 @@
       </statement>
     </theorem>
     <aside>
-      <p>The continuity of <m>f</m> when using the first derivative test is very important. Without continuity, almost anything can happen at a critical number. For example, we can construct a piecewise function where the sign of <m>\fp</m> switches to positive to negative at <m>c</m> and <m>f(c)</m> is <em>not</em> a local maximum. This is shown in <xref ref="fig_inc_counter">Figure</xref>
+      <title>Importance of Continuity</title>
+      <p>The continuity of <m>f</m> when using the first derivative test is very important. Without continuity, almost anything can happen at a critical number. For example, we can construct a piecewise function where the sign of <m>\fp</m> switches to positive to negative at <m>c</m> and <m>f(c)</m> is <em>not</em> a local maximum. This is shown in <xref ref="fig_inc_counter">Figure</xref>.</p>
 
-        <figure xml:id="fig_inc_counter" >
-          <caption>A discontinuous function where <m>\fp</m> changes sign at 1, but <m>f(1)</m> is not a local maximum.</caption>
-          <image xml:id="img_incr_counter"  width="47%">
-            <description></description>
-            <latex-image-code>
-              <![CDATA[
-              \begin{tikzpicture}
-                \begin{axis}[xmin=-1,xmax=3,
-                            ymin=-3,ymax=4,]
-                  \addplot+[<-,domain=-.9:1] {x+1};
-                  \addplot+[firstcurvestyle,->,domain=1:2.5] {-1*(x-1)+1};
-                  \addplot[soliddot] coordinates{(1,1)};
-                   \addplot[hollowdot] coordinates{(1,2)};
-                \end{axis}
-              \end{tikzpicture}
-              ]]>
-            </latex-image-code>
-          </image>
-          <!-- figures/fig_incr1.tex END -->
-        </figure>
-    </p>
-
-
-   
-
+      <figure xml:id="fig_inc_counter" >
+        <caption>A discontinuous function where <m>\fp</m> changes sign at 1, but <m>f(1)</m> is not a local maximum.</caption>
+        <image xml:id="img_incr_counter"  width="47%">
+          <description></description>
+          <latex-image-code>
+            <![CDATA[
+            \begin{tikzpicture}
+              \begin{axis}[xmin=-1,xmax=3,
+                          ymin=-3,ymax=4,]
+                \addplot+[<-,domain=-.9:1] {x+1};
+                \addplot+[firstcurvestyle,->,domain=1:2.5] {-1*(x-1)+1};
+                \addplot[soliddot] coordinates{(1,1)};
+                 \addplot[hollowdot] coordinates{(1,2)};
+              \end{axis}
+            \end{tikzpicture}
+            ]]>
+          </latex-image-code>
+        </image>
+        <!-- figures/fig_incr1.tex END -->
+      </figure>
     </aside>
 
     <example xml:id="ex_incr2">
@@ -641,17 +640,16 @@
     <exercisegroup>
       <introduction>
         <p>In the following exercises, a function <m>f(x)</m> is given.</p>
+
+        <p><ol label="a">
+          <li>
+            <p>Compute <m>\fp(x)</m>.</p>
+          </li>
+          <li>
+            <p>Graph <m>f</m> and <m>\fp</m> on the same axes (using technology is permitted) and verify <xref ref="thm_incr_decr">Theorem</xref>.</p>
+          </li>
+        </ol></p>
       </introduction>
-
-      <ol>
-        <li>
-          <title>(a)</title>
-          <p>Compute <m>\fp(x)</m>.</p></li>
-
-        <li>
-          <title>(b)</title>
-          <p>Graph <m>f</m> and <m>\fp</m> on the same axes (using technology is permitted) and verify <xref ref="thm_incr_decr">Theorem</xref>.</p></li>
-      </ol>
 
       <exercise>
         <webwork seed="1">
@@ -789,25 +787,30 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, a function <m>f(x)</m> is given.</p>
+    </exercisegroup>
 
-      <ol>
-        <li>
-          <title>(a)</title>
-          <p>Give the domain of <m>f</m>.</p></li>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, a function <m>f(x)</m> is given.</p>
 
-        <li>
-          <title>(b)</title>
-          <p>Find the critical numbers of <m>f</m>.</p></li>
+        <p><ol label="a">
+          <li>
+            <p>Give the domain of <m>f</m>.</p>
+          </li>
 
-        <li>
-          <title>(c)</title>
-          <p>Create a number line to determine the intervals on which <m>f</m> is increasing and decreasing.</p></li>
+          <li>
+            <p>Find the critical numbers of <m>f</m>.</p>
+          </li>
 
-        <li>
-          <title>(d)</title>
-          <p>Use the First Derivative Test to determine whether each critical point is a relative maximum, minimum, or neither.</p></li>
-      </ol>
+          <li>
+            <p>Create a number line to determine the intervals on which <m>f</m> is increasing and decreasing.</p>
+          </li>
+
+          <li>
+            <p>Use the First Derivative Test to determine whether each critical point is a relative maximum, minimum, or neither.</p>
+          </li>
+        </ol></p>
+      </introduction>
 
       <exercise>
         <webwork seed="1">
