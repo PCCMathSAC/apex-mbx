@@ -109,6 +109,7 @@ images:
 	install -d $(IMAGESOUT)
 	-rm $(IMAGESOUT)/*.svg
 	$(MB)/script/mbx -c latex-image -f svg -d $(IMAGESOUT) $(MAINFILE)
+	$(MB)/script/mbx -c sageplot -f svg -d $(IMAGESOUT) $(MAINFILE)
 #	$(MB)/script/mbx -c asymptote -f svg -d $(IMAGESOUT) $(MAINFILE)
 
 # make all the image files in pdf format
