@@ -122,10 +122,10 @@
         </ol></p>
       </statement>
     </definition>
-    <aside>
-      <p><xref ref="def_right_continuity">Item</xref> in <xref ref="def_closed_continuity">Definition </xref> indicates that the function is continuous <em>from the right</em> at <m>a</m>, while <xref ref="def_left_continuity">Item</xref> indicates that the function is continuous <em>from the left</em> at <m>b</m>.</p>
-    </aside>
-    <p>We can make the appropriate adjustments to talk about continuity on half-open intervals such as <m>[a,b)</m> or <m>(a,b]</m> if necessary.</p>
+
+    <p><xref ref="def_right_continuity">Item</xref> in <xref ref="def_closed_continuity">Definition </xref> indicates that the function is continuous <em>from the right</em> at <m>a</m>, while <xref ref="def_left_continuity">Item</xref> indicates that the function is continuous <em>from the left</em> at <m>b</m>.</p>
+
+    <p>We could make the appropriate adjustments to talk about continuity on half-open intervals such as <m>[a,b)</m> or <m>(a,b]</m> if necessary.</p>
 
     <example xml:id="ex_cont_funct1">
       <title>Determining intervals on which a function is continuous</title>
@@ -263,31 +263,32 @@
         </ol></p>
       </statement>
       <solution>
-        <p>We examine each in turn, applying <xref ref="thm_continuity_algebra">Theorems</xref> and <xref ref="thm_continuous_functions"></xref> as appropriate.<ol>
+        <p>We examine each in turn, applying <xref ref="thm_continuity_algebra">Theorems</xref> and <xref ref="thm_continuous_functions"></xref> as appropriate.</p>
+
+        <figure xml:id="fig_continuous3" >
+          <caption>A graph of <m>f</m></caption>
+          <!-- START figures/fig_continuous3.tex -->
+          <image xml:id="img_continuous3" width="47%">
+            <description></description>
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}
+                  \begin{axis}[xmin=-.4,xmax=5.4,
+                              ymin=-.4,ymax=3.2,]
+                      \addplot+[-,domain=0:180] ({3+2*cos(x)},{sqrt(2+2*cos(x))+sqrt(2-2*cos(x))});
+                      \addplot[soliddot] coordinates {(1,2) (5,2)};
+                  \end{axis}
+              \end{tikzpicture}
+              ]]>
+            </latex-image-code>
+          </image>
+          <!-- figures/fig_continuous3.tex END -->
+        </figure>
+
+        <p><ol>
           <li>
             <p>The square root terms are continuous on the intervals <m>[1,\infty)</m> and <m>(-\infty,5]</m>, respectively. As <m>f</m> is continuous only where each term is continuous, <m>f</m> is continuous on <m>[1,5]</m>, the intersection of these two intervals. A graph of <m>f</m> is given in <xref ref="fig_continuous3">Figure</xref>.</p>
-
-            <figure xml:id="fig_continuous3" >
-              <caption>A graph of <m>f</m></caption>
-                <!-- START figures/fig_continuous3.tex -->
-                <image xml:id="img_continuous3" width="47%">
-                  <description></description>
-                  <latex-image-code>
-                    <![CDATA[
-                    \begin{tikzpicture}
-                        \begin{axis}[xmin=-.4,xmax=5.4,
-                                    ymin=-.4,ymax=3.2,]
-                            \addplot+[-,domain=0:180] ({3+2*cos(x)},{sqrt(2+2*cos(x))+sqrt(2-2*cos(x))});
-                            \addplot[soliddot] coordinates {(1,2) (5,2)};
-                        \end{axis}
-                    \end{tikzpicture}
-                    ]]>
-                  </latex-image-code>
-                </image>
-                <!-- figures/fig_continuous3.tex END -->
-              </figure>
-
-            </li>
+          </li>
 
           <li>
             <p>The functions <m>y=x</m> and <m>y=\sin(x)</m> are each continuous everywhere, hence their product is, too.</p>
