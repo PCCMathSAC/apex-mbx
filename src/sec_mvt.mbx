@@ -238,32 +238,23 @@
       </introduction>
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Explain in your own words what the Mean Value Theorem states.</p>
+
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Explain in your own words what Rolle's Theorem states.</p>
+
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
@@ -271,95 +262,110 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
       <introduction>
-        <p>In the following exercises, a function <m>f(x)</m> and interval <m>[a,b]</m> are given. Check if Rolle's Theorem can be applied to <m>f</m> on <m>[a,b]</m>; if so, find <m>c</m> in <m>[a,b]</m> such that <m>\fp(c)=0</m>.</p>
+        <p>In the following exercises, a function <m>f(x)</m> and interval <m>[a,b]</m> are given. Check if <xref ref="thm_rolles" autoname="title"/> can be applied to <m>f</m> on <m>[a,b]</m>; if so, find <m>c</m> in <m>(a,b)</m> such that <m>\fp(c)=0</m>.</p>
       </introduction>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$c">
+              <static>(-1,1)</static>
             </var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $c=Compute("(-1,1)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = 6</m> on <m>[-1,1]</m>.</p>
+            <p>Let <m>f(x) = 6</m>.  Check if Rolle's Theorem can be applied on <m>[-1,1]</m>. If it cannot, state that Rolle's Theorem <q><c>does not apply</c></q>. Otherwise find all <m>c</m> in <m>(-1,1)</m> such that <m>\fp(c)=0</m>.</p>
+            <p><var name="$c" width="30" /></p>
           </statement>
-          <solution>
-            <p>Any <m>c</m> in <m>[-1,1]</m> is valid.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$c">
+              <static>\text{does not apply}</static>
             </var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $c=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = 6x</m> on <m>[-1,1]</m>.</p>
+            <p>Let <m>f(x) = 6x</m>.  Check if Rolle's Theorem can be applied on <m>[-1,1]</m>. If it cannot, state that Rolle's Theorem <q><c>does not apply</c></q>. Otherwise find all <m>c</m> in <m>(-1,1)</m> such that <m>\fp(c)=0</m>.</p>
+            <p><var name="$c" width="30" /></p>
           </statement>
-          <solution>
-            <p>Rolle's Thm. does not apply.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$c">
+              <static>-\frac{1}{2}</static>
             </var>
             <pg-code>
+              Context("Interval");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->strings->add('does not apply'=>{});
+              $c=Compute("-1/2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2+x-6</m> on <m>[-3,2]</m>.</p>
+            <p>Let <m>f(x) = x^2+x-6</m>.  Check if Rolle's Theorem can be applied on <m>[-3,2]</m>. If it cannot, state that Rolle's Theorem <q><c>does not apply</c></q>. Otherwise find all <m>c</m> in <m>(-3,2)</m> such that <m>\fp(c)=0</m>.</p>
+            <p><var name="$c" width="30" /></p>
           </statement>
-          <solution>
-            <p><m>c=-1/2</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$c">
+              <static>-\frac{1}{2}</static>
             </var>
             <pg-code>
+              Context("Interval");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->strings->add('does not apply'=>{});
+              $c=Compute("-1/2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2+x-2</m> on <m>[-3,2]</m>.</p>
+            <p>Let <m>f(x) = x^2+x-2</m>.  Check if Rolle's Theorem can be applied on <m>[-3,2]</m>. If it cannot, state that Rolle's Theorem <q><c>does not apply</c></q>. Otherwise find all <m>c</m> in <m>(-3,2)</m> such that <m>\fp(c)=0</m>.</p>
+            <p><var name="$c" width="30" /></p>
           </statement>
-          <solution>
-            <p><m>c=-1/2</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$c">
+              <static>\text{does not apply}</static>
             </var>
             <pg-code>
+              Context("Interval");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->strings->add('does not apply'=>{});
+              $c=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2+x</m> on <m>[-2,2]</m>.</p>
+            <p>Let <m>f(x) = x^2+x</m>.  Check if Rolle's Theorem can be applied on <m>[-2,2]</m>. If it cannot, state that Rolle's Theorem <q><c>does not apply</c></q>. Otherwise find all <m>c</m> in <m>(-2,2)</m> such that <m>\fp(c)=0</m>.</p>
+            <p><var name="$c" width="30" /></p>
           </statement>
-          <solution>
-            <p>Rolle's Thm. does not apply.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -411,7 +417,12 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, a function <m>f(x)</m> and interval <m>[a,b]</m> are given. Check if the Mean Value Theorem can be applied to <m>f</m> on <m>[a,b]</m>; if so, find a value <m>c</m> in <m>[a,b]</m> guaranteed by the Mean Value Theorem.</p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, a function <m>f(x)</m> and interval <m>[a,b]</m> are given. Check if the Mean Value Theorem can be applied to <m>f</m> on <m>[a,b]</m>; if so, find a value <m>c</m> in <m>[a,b]</m> guaranteed by the Mean Value Theorem.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>

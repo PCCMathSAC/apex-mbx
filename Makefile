@@ -109,6 +109,8 @@ images:
 	install -d $(IMAGESOUT)
 	-rm $(IMAGESOUT)/*.svg
 	$(MB)/script/mbx -c latex-image -f svg -d $(IMAGESOUT) $(MAINFILE)
+	$(MB)/script/mbx -c sageplot -f svg -d $(IMAGESOUT) $(MAINFILE)
+	$(MB)/script/mbx -c sageplot -f pdf -d $(IMAGESOUT) $(MAINFILE)
 #	$(MB)/script/mbx -c asymptote -f svg -d $(IMAGESOUT) $(MAINFILE)
 
 # make all the image files in pdf format
@@ -142,6 +144,7 @@ latex:
 pdf:
 	install -d $(PDFOUT)
 	-rm $(PDFOUT)/*.tex
+	cp -a $(IMAGESOUT)/*.pdf $(PDFOUT)/images
 	cd $(PDFOUT); \
 	xsltproc -xinclude --stringparam webwork.server.latex $(PDFOUT)/webwork-tex/ $(MBXSL)/mathbook-latex.xsl $(MAINFILE); \
 	xelatex index.tex; \
