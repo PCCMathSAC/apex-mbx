@@ -309,8 +309,8 @@
             \begin{tikzpicture}
               \begin{axis}[xmin=-1,xmax=3,
                           ymin=-3,ymax=4,]
-                \addplot+[<-,domain=-.9:1] {x+1};
-                \addplot+[firstcurvestyle,->,domain=1:2.5] {-1*(x-1)+1};
+                \addplot+[leftarrow,domain=-.9:1] {x+1};
+                \addplot+[firstcurvestyle,rightarrow,domain=1:2.5] {-1*(x-1)+1};
                 \addplot[soliddot] coordinates{(1,1)};
                  \addplot[hollowdot] coordinates{(1,2)};
               \end{axis}

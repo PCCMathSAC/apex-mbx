@@ -305,7 +305,7 @@
         <figure xml:id="fig_concline2">
           <caption></caption>
           <!-- START figures/fig_concline2.tex -->
-          <image xml:id="img_concline2"  width="67%">
+          <image xml:id="img_concline2"  width="80%">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -381,7 +381,7 @@
                         		ymin=-1,ymax=21,
                             xlabel={$t$},
                             ]
-                  \addplot+[rightarrow, domain=0:3, samples=40] {x^4-8*x^2+20} node[above right, pos=0.3]{$S(t)$};
+                  \addplot+[rightarrow, domain=0:2.8, samples=40] {x^4-8*x^2+20} node[above right, pos=0.3]{$S(t)$};
                 \end{axis}
               \end{tikzpicture}
               ]]>
@@ -409,7 +409,7 @@
                             ymin=-16,ymax=21,
                             xlabel={$t$},
                            ]
-                  \addplot+[-,domain=0:3, samples=40] {x^4-8*x^2+20} node[above right, pos=0.3]{$S(t)$};
+                  \addplot+[rightarrow,domain=0:2.8, samples=40] {x^4-8*x^2+20} node[above right, pos=0.3]{$S(t)$};
                   \addplot+[-,domain=0:3, samples=40] {4*x^3-16*x} node[below right, pos=0.2]{$S'(t)$};
                   \addplot[soliddot] coordinates {(1.16,11.04) (1.16,-12.32)};
                 \end{axis}
@@ -462,8 +462,8 @@
                         ]
               \addplot+[domain=-2:2, samples=50] {5*x^3-15*x};
               \addplot[soliddot] coordinates {(-1,10) (1,-10)};
-              \addplot[mark=none] coordinates {(-1,5)} node {\parbox{6em}{\centering concave down\\$\implies$ rel max}};
-              \addplot[mark=none] coordinates {(1,-5)} node {\parbox{6em}{\centering concave up\\$\implies$ rel min}};
+              \addplot[mark=none] coordinates {(-1,7.5)} node {\parbox{6em}{\centering concave down\\$\implies$ rel max}};
+              \addplot[mark=none] coordinates {(1,-7.5)} node {\parbox{6em}{\centering concave up\\$\implies$ rel min}};
             \end{axis}
           \end{tikzpicture}
           ]]>
