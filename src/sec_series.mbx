@@ -68,7 +68,7 @@
               </md>
               Since <m>\lim\limits_{n\to\infty}S_n = \infty</m>, we conclude that the series <m>\ds \sum_{n=1}^\infty n^2</m> diverges. It is instructive to write <m>\ds \sum_{n=1}^\infty n^2=\infty</m> for this tells us <em>how</em> the series diverges: it grows without bound.
 
-              A scatter plot of the sequences <m>\{a_n\}</m> and <m>\{S_n\}</m> is given in <xref ref="fig_series1">Figure</xref>(a). The terms of <m>\{a_n\}</m> are growing, so the terms of the partial sums <m>\{S_n\}</m> are growing even faster, illustrating that the series diverges.</p></li>
+              A scatter plot of the sequences <m>\{a_n\}</m> and <m>\{S_n\}</m> is given in <xref ref="fig_series1a">Figure</xref>. The terms of <m>\{a_n\}</m> are growing, so the terms of the partial sums <m>\{S_n\}</m> are growing even faster, illustrating that the series diverges.</p></li>
 
           <li><p>The sequence <m>\{b_n\}</m> starts with 1, <m>-1</m>, 1, <m>-1</m>, <m>\ldots</m>. Consider some of the partial sums <m>S_n</m> of <m>\{b_n\}</m>:
               <md>
@@ -82,14 +82,14 @@
               \end{array} \right.</m>.
               As <m>\{S_n\}</m> oscillates, repeating 1, 0, 1, 0, <m>\ldots</m>, we conclude that <m>\lim\limits_{n\to\infty}S_n</m> does not exist, hence <m>\ds\sum_{n=1}^\infty (-1)^{n+1}</m> diverges.		
 
-              A scatter plot of the sequence <m>\{b_n\}</m> and the partial sums <m>\{S_n\}</m> is given in <xref ref="fig_series1">Figure</xref>(b). When <m>n</m> is odd, <m>b_n = S_n</m> so the marks for <m>b_n</m> are drawn oversized to show they coincide.
+              A scatter plot of the sequence <m>\{b_n\}</m> and the partial sums <m>\{S_n\}</m> is given in <xref ref="fig_series1b">Figure</xref>. When <m>n</m> is odd, <m>b_n = S_n</m> so the marks for <m>b_n</m> are drawn oversized to show they coincide.
 
-              <figure xml:id="fig_series1" >
-              <caption>Scatter plots relating to <xref ref="ex_series1">Example</xref>.</caption>
-              <sidebyside>
-                <figure>
-                  <caption>[10pt]
-                  (a)</caption>
+          
+              
+              <sidebyside xml:id="fig_series1">
+                <caption>Scatter plots relating to <xref ref="ex_series1">Example</xref>.</caption>
+                <figure xml:id="fig_series1a">
+                  <caption/>
                   <!-- START figures/fig_series1a.tex -->
                   <image xml:id="img_series1a" >
                     <description></description>
@@ -132,9 +132,8 @@
                   <!-- figures/fig_series1a.tex END -->
                 </figure>
 
-                <figure>
-                  <caption>[10pt]
-                  (b)</caption>
+                <figure xml:id="fig_series1b">
+                  <caption/>
                   <!-- START figures/fig_series1b.tex -->
                   <image xml:id="img_series1b" >
                     <description></description>
@@ -178,7 +177,6 @@
                 </figure>
               </sidebyside>
 
-              </figure>
 
             </p></li>
         </ol>
@@ -213,7 +211,7 @@
         <p>Consider the geometric series <m>\ds \sum_{n=0}^\infty r^n</m>.</p>
 
         <ol>
-          <li><p>The <m>n^\text{ th }</m> partial sum is: <m>\ds S_n = \frac{1-r^{n+1}}{1-r}</m>.</p></li>
+          <li xml:id="thm_geom_series_a"><p>The <m>n^\text{ th }</m> partial sum is: <m>\ds S_n = \frac{1-r^{n+1}}{1-r}</m>.</p></li>
 
           <li><p>The series converges if, and only if, <m>\abs{r} \lt  1</m>. When <m>\abs{r}\lt 1</m>,
               <index><main>series</main><sub>geometric</sub></index><index><main>geometric series</main></index><index><main>convergence</main><sub>of geometric series</sub></index><index><main>divergence</main><sub>of geometric series</sub></index>
@@ -225,18 +223,47 @@
       </statement>
     </theorem>
 
+    <proof statement="thm_geom_series">
+      <p>
+        We begin by proving the formula for the simplied form for the partial sums. Consider the <m>n^\text{ th }</m> partial sum of the geometric series, <m>S_n=\sum_{i=0}^n r^i</m>:
+        <md>
+          <mrow>S_n \amp = 1+r+r^2+\dots+r^{n-1}+r^n</mrow>
+          <intertext>Multiply both sides by <m>r</m>:</intertext>
+          <mrow>r\cdot S_n \amp = r+r^2+r^3+\dots+r^{n}+r^{n+1}</mrow>
+          <intertext>Now subtract the second line from the first and solve for <m>S_n</m>:</intertext>
+          <mrow>S_n-r\cdot S_n \amp = 1-r^{n+1}</mrow>
+          <mrow>S_n(1-r) \amp = 1-r^{n+1}</mrow>
+          <mrow>S_n \amp = \frac{1-r^{n+1}}{1-r}</mrow>
+        </md>.
+
+        We have shown <xref ref="thm_geom_series_a">Part</xref> of <xref ref="thm_geom_series" autoname="title"/>.
+      </p>
+      <p>Now, examining the partial sums, we consider four cases to determine when <m>S_n</m> converges:
+        <ol>
+          <li><p>If <m>\abs{r}\lt 1</m>, then <m>r^n \to 0</m> as <m>n \to \infty</m>, so we have <m>\inflim S_n=\frac{1-0}{1-r}=\frac{1}{1-r}</m>, a convergent sequence of partial sums.</p></li>
+          <li><p>If <m>\abs{r}\gt 1</m>, then <m>r^n \to \pm \infty</m> (depending on the sign of <m>r</m>) as <m>n \to \infty</m>. We also have <m>1-r</m> a constant, so <m>\inflim S_n</m> does not exist (if <m>r \gt 0</m>, the partial sums diverge to <m>\infty</m> and if <m>r \lt 0</m>, the partial sums diverge to <m>-\infty</m>).</p></li>
+          <li>If <m>r=1</m>, then <m>S_n = \frac{1-1^{n+1}}{1-1}</m> is undefined. However, examining <m>S_n = 1+r+r^2+\dots+r^{n-1}+r^n</m> for <m>r=1</m>, we can see that the partial sums simplify to <m>S_n=n+1</m>. Clearly this sequence diverges to <m>\infty</m>. </li>
+          <li>If <m>r=-1</m>, then <m>S_n = \frac{1-(-1)^{n+1}}{2}</m>. For even values of <m>n</m>, the partial sums are always <m>1</m>. For odd values of <m>n</m>, the partial sums are always <m>0</m>. So the sequence of partial sums diverges.</li>
+        </ol>
+        Therefore, a geometric series converges if and only if <m>\abs{r} \lt 1</m>.
+      </p>
+    </proof>
+
     <p>According to <xref ref="thm_geom_series">Theorem</xref>, the series
       <me>
         \ds\sum_{n=0}^\infty \frac{1}{2^n} =\sum_{n=0}^\infty \left(\frac 12\right)^2= 1+\frac12+\frac14+\cdots
       </me>
-      converges as <m>r=1/2</m>, and <m>\ds \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2</m>. This concurs with our introductory example; while there we got a sum of 1, we skipped the first term of 1.</p>
+      converges as <m>r=1/2 \lt 1</m>, and <m>\ds \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2</m>. This concurs with our introductory example; while there we got a sum of 1, we skipped the first term of 1.</p>
 
     <example xml:id="ex_series2">
       <title>Exploring geometric series</title>
       <statement>
         <p>Check the convergence of the following series. If the series converges, find its sum.</p>
-
-        <p>1. <m>\ds \sum_{n=2}^\infty \left(\frac34\right)^n</m> 2. <m>\ds \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n</m>  3. <m>\ds \sum_{n=0}^\infty 3^n</m></p>
+        <ol cols="3">
+          <li><p><m>\ds \sum_{n=2}^\infty \left(\frac34\right)^n</m></p></li>
+          <li><p><m>\ds \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n</m></p></li>
+          <li><p><m>\ds \sum_{n=0}^\infty 3^n</m></p></li>
+        </ol>
       </statement>
       <solution>
         <ol>
@@ -250,10 +277,10 @@
               </me>
               This is illustrated in <xref ref="fig_series2a">Figure</xref>.
 
-              <figure xml:id="fig_series2a" >
+              <figure xml:id="fig_series2" >
                 <caption>Scatter plots relating to the series in <xref ref="ex_series2">Example</xref>.</caption>
                 <!-- START figures/fig_series2a.tex -->
-                <image xml:id="img_series2a" >
+                <image xml:id="img_series2" width="47%" >
                   <description></description>
                   <latex-image-code>
                     <![CDATA[
@@ -300,22 +327,22 @@
               <me>
                 \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n = \frac{1}{1-(-1/2)} = \frac23.
               </me>
-              The partial sums of this series are plotted in <xref ref="fig_series2">Figure</xref>(a). Note how the partial sums are not purely increasing as some of the terms of the sequence <m>\{(-1/2)^n\}</m> are negative.</p></li>
+              The partial sums of this series are plotted in <xref ref="fig_series2a">Figure</xref>. Note how the partial sums are not purely increasing as some of the terms of the sequence <m>\{(-1/2)^n\}</m> are negative.</p></li>
 
-          <li><p>Since <m>r>1</m>, the series diverges. (This makes <q>common sense</q>; we expect the sum
+          <li><p>Since <m>r \gt 1</m>, the series diverges. (This makes <q>common sense</q>; we expect the sum
               <me>
                 1+3+9+27 + 81+243+\cdots
               </me>
-              to diverge.) This is illustrated in <xref ref="fig_series2">Figure</xref>(b).
+              to diverge.) This is illustrated in <xref ref="fig_series2b">Figure</xref>.
 
-              <figure xml:id="fig_series2" >
-              <caption>Scatter plots relating to the series in <xref ref="ex_series2">Example</xref>.</caption>
-              <sidebyside>
-                <figure>
-                  <caption>[10pt]
-                  (a)</caption>
+      
+              
+              <sidebyside xml:id="fig_series2_2" widths="47% 47%">
+                <caption>Scatter plots relating to the series in <xref ref="ex_series2">Example</xref>.</caption>
+                <figure xml:id="fig_series2a">
+                  <caption/>
                   <!-- START figures/fig_series2b.tex -->
-                  <image xml:id="img_series2b" >
+                  <image xml:id="img_series2a" >
                     <description></description>
                     <latex-image-code>
                       <![CDATA[
@@ -356,11 +383,10 @@
                   <!-- figures/fig_series2b.tex END -->
                 </figure>
 
-                <figure>
-                  <caption>[10pt]
-                  (b)</caption>
+                <figure xml:id="fig_series2b">
+                  <caption/>
                   <!-- START figures/fig_series2c.tex -->
-                  <image xml:id="img_series2c" >
+                  <image xml:id="img_series2b" >
                     <description></description>
                     <latex-image-code>
                       <![CDATA[
@@ -401,8 +427,6 @@
                   <!-- figures/fig_series2c.tex END -->
                 </figure>
               </sidebyside>
-
-              </figure>
 
             </p></li>
         </ol>
@@ -445,7 +469,7 @@
     </theorem>
 
     <aside>
-      <p><xref ref="thm_pseries">Theorem</xref> assumes that <m>an+b\neq 0</m> for all <m>n</m>. If <m>an+b=0</m> for some <m>n</m>, then of course the series does not converge regardless of <m>p</m> as not all of the terms of the sequence are defined.</p>
+      <p>We will be able to prove <xref ref="thm_pseries">Theorem</xref> in <xref ref="sec_int_comp_tests">Section</xref>.  This theorem assumes that <m>an+b\neq 0</m> for all <m>n</m>. If <m>an+b=0</m> for some <m>n</m>, then of course the series does not converge regardless of <m>p</m> as not all of the terms of the sequence are defined. </p>
     </aside>
 
     <example xml:id="ex_series6">
@@ -509,7 +533,7 @@
         <figure xml:id="fig_series3" >
           <caption>Scatter plots relating to the series of <xref ref="ex_series3">Example</xref>.</caption>
           <!-- START figures/fig_series3.tex -->
-          <image xml:id="img_series3" >
+          <image xml:id="img_series3" widths="47%">
             <description></description>
             <latex-image-code>
               <![CDATA[
@@ -560,8 +584,12 @@
       <title>Evaluating series</title>
       <statement>
         <p>Evaluate each of the following infinite series.</p>
+        <ol cols="2">
+          <li><p><m>\ds \sum_{n=1}^\infty \frac{2}{n^2+2n}</m> </p></li>
+          <li><p><m>\ds \sum_{n=1}^\infty \ln\left(\frac{n+1}{n}\right)</m></p></li>    
+        </ol>
 
-        <p>1. <m>\ds \sum_{n=1}^\infty \frac{2}{n^2+2n}</m>  2. <m>\ds \sum_{n=1}^\infty \ln\left(\frac{n+1}{n}\right)</m></p>
+    
       </statement>
       <solution>
         <ol>
@@ -570,6 +598,8 @@
                 \frac2{n^2+2n} = \frac1n-\frac1{n+2}.
               </me>
               (See <xref ref="sec_partial_fraction">Section</xref>, Partial Fraction Decomposition, to recall how  this is done, if necessary.)
+
+              <todo>Figure out how to format this. You could write S_4 as S_3+a_4 and save two terms?</todo>
 
               Expressing the terms of <m>\{S_n\}</m> is now more instructive:
               <md>
@@ -580,17 +610,15 @@
                 <mrow>S_5 \amp = \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right)+\left(\frac14-\frac16\right)+\left(\frac15-\frac17\right) \amp \amp = 1+\frac12-\frac16-\frac17</mrow>
               </md>
               We again have a telescoping series. In each partial sum, most of the terms cancel and we obtain the formula <m>\ds S_n = 1+\frac12-\frac1{n+1}-\frac1{n+2}</m>. Taking limits allows us to determine the convergence of the series:
-              <me>
-                \lim_{n\to\infty}S_n = \lim_{n\to\infty} \left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right) = \frac32, \text{ so }  \sum_{n=1}^\infty \frac1{n^2+2n} = \frac32.
-              </me>
-              This is illustrated in <xref ref="fig_series4">Figure</xref>(a).
+              <m>\lim_{n\to\infty}S_n = \lim_{n\to\infty} \left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right) = \frac32</m> So <m>\sum_{n=1}^\infty \frac1{n^2+2n} = \frac32</m>.
+              
+              This is illustrated in <xref ref="fig_series4a">Figure</xref>.
 
-              <figure xml:id="fig_series4" >
-              <caption>Scatter plots relating to the series in <xref ref="ex_series4">Example</xref>.</caption>
-              <sidebyside>
-                <figure>
-                  <caption>[10pt]
-                  (a)</caption>
+              
+              <sidebyside xml:id="fig_series4" widths="47% 47%">
+                <caption>Scatter plots relating to the series in <xref ref="ex_series4">Example</xref>.</caption>
+                <figure xml:id="fig_series4a" >
+                  <caption/>
                   <!-- START figures/fig_series4a.tex -->
                   <image xml:id="img_series4a" >
                     <description></description>
@@ -633,9 +661,8 @@
                   <!-- figures/fig_series4a.tex END -->
                 </figure>
 
-                <figure>
-                  <caption>[10pt]
-                  (b)</caption>
+                <figure xml:id="fig_series4b">
+                  <caption/>
                   <!-- START figures/fig_series4b.tex -->
                   <image xml:id="img_series4b" >
                     <description></description>
@@ -679,7 +706,6 @@
                 </figure>
               </sidebyside>
 
-              </figure>
 
             </p></li>
 
@@ -738,8 +764,11 @@
       <title>Evaluating series</title>
       <statement>
         <p>Evaluate the given series.</p>
-
-        <p>1. <m>\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}\big(n^2-n\big)}{n^3}</m> 2. <m>\ds\sum_{n=1}^\infty \frac{1000}{n!}</m> 3. <m>\ds \frac1{16}+\frac1{25}+\frac1{36}+\frac1{49}+\cdots</m></p>
+        <ol cols="3">
+          <li><p><m>\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}\big(n^2-n\big)}{n^3}</m> </p></li>
+          <li><p><m>\ds\sum_{n=1}^\infty \frac{1000}{n!}</m></p></li>
+          <li><p><m>\ds \frac1{16}+\frac1{25}+\frac1{36}+\frac1{49}+\cdots</m></p></li>
+        </ol>
       </statement>
       <solution>
         <ol>
@@ -749,21 +778,21 @@
                 <mrow>\amp = \sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}-\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n^2}</mrow>
                 <mrow>\amp = \ln(2) - \frac{\pi^2}{12}	\approx	-0.1293.</mrow>
               </md>
-              This is illustrated in <xref ref="fig_series5">Figure</xref>(a).</p></li>
+              This is illustrated in <xref ref="fig_series5a">Figure</xref>.</p></li>
 
           <li><p>This looks very similar to the series that involves <m>e</m> in <xref ref="idea_famous_series">Key Idea</xref>. Note, however, that the series given in this example starts with <m>n=1</m> and not <m>n=0</m>. The first term of the series in the Key Idea is <m>1/0! = 1</m>, so we will subtract this from our result below:
               <md>
                 <mrow>\sum_{n=1}^\infty \frac{1000}{n!} \amp = 1000\cdot\sum_{n=1}^\infty \frac{1}{n!}</mrow>
                 <mrow>\amp = 1000\cdot (e-1) \approx  1718.28.</mrow>
               </md>
-              This is illustrated in <xref ref="fig_series5">Figure</xref>(b). The graph shows how this particular series converges very rapidly.
+              This is illustrated in <xref ref="fig_series5b">Figure</xref>. The graph shows how this particular series converges very rapidly.
 
-              <figure xml:id="fig_series5" >
-              <caption>Scatter plots relating to the series in <xref ref="ex_series5">Example</xref>.</caption>
-              <sidebyside>
-                <figure>
-                  <caption>[10pt]
-                  (a)</caption>
+
+             
+              <sidebyside xml:id="fig_series5" widths="47% 47%">
+                 <caption>Scatter plots relating to the series in <xref ref="ex_series5">Example</xref>.</caption>
+                <figure xml:id="fig_series5a">
+                  <caption/>
                   <!-- START figures/fig_series5a.tex -->
                   <image xml:id="img_series5a" >
                     <description></description>
@@ -806,9 +835,8 @@
                   <!-- figures/fig_series5a.tex END -->
                 </figure>
 
-                <figure>
-                  <caption>[10pt]
-                  (b)</caption>
+                <figure xml:id="fig_series5b">
+                  <caption/>
                   <!-- START figures/fig_series5b.tex -->
                   <image xml:id="img_series5b" >
                     <description></description>
@@ -852,7 +880,6 @@
                 </figure>
               </sidebyside>
 
-              </figure>
 
             </p></li>
 
@@ -894,7 +921,7 @@
     <p>These concepts are very important and lie at the heart of the next two theorems.</p>
 
     <theorem xml:id="thm_series_nth_term">
-      <title><m>n^th</m><ndash />Term Test for Convergence/Divergence</title>
+      <title><m>n^{th}</m><ndash />Term Test and the Test for Divergence</title>
       <statement>
         <p>Consider the series <m>\ds\sum_{n=1}^\infty a_n</m>.
           <index><main>series</main><sub>nth@<m>n^\text{ th }</m><ndash />term test</sub></index><index><main>nth@<m>n^\text{ th }</m><ndash />term test</main></index><index><main>convergence</main><sub>nth@<m>n^\text{ th }</m><ndash />term test</sub></index><index><main>divergence</main><sub>nth@<m>n^\text{ th }</m><ndash />term test</sub></index></p>
@@ -902,12 +929,12 @@
         <ol>
           <li><p>If <m>\ds\sum_{n=1}^\infty a_n</m> converges, then <m>\lim\limits_{n\to\infty}a_n =0</m>.</p></li>
 
-          <li><p>If <m>\lim\limits_{n\to\infty}a_n \neq 0</m>, then <m>\ds\sum_{n=1}^\infty a_n</m> diverges.</p></li>
+          <li xml:id="thm_series_nth_term_2"><p>If <m>\lim\limits_{n\to\infty}a_n \neq 0</m>, then <m>\ds\sum_{n=1}^\infty a_n</m> diverges.</p></li>
         </ol>
       </statement>
     </theorem>
 
-    <p>Note that the two statements in <xref ref="thm_series_nth_term">Theorem</xref> are really the same. In order to converge, the limit of the terms of the sequence must approach 0; if they do not, the series will not converge.</p>
+    <p>Note that the two statements in <xref ref="thm_series_nth_term">Theorem</xref> are logically equivalent (each is the other's contrapositive). In order to converge, the limit of the terms of the sequence must approach 0; if they do not, the series will not converge.</p>
 
     <p>Looking back, we can apply this theorem to the series in <xref ref="ex_series1">Example</xref>. In that example, the <m>n^\text{ th }</m> terms of both sequences do not converge to 0, therefore we can quickly conclude that each series diverges.</p>
 
@@ -930,11 +957,43 @@
 
     <p>The equations below illustrate this. The first line shows the infinite sum of the Harmonic Series split into the sum of the first 10 million terms plus the sum of <q>everything else.</q> The next equation shows us subtracting these first 10 million terms from both sides. The final equation employs a bit of <q>psuedo<ndash />math</q>: subtracting 16.7 from <q>infinity</q> still leaves one with <q>infinity.</q>
       <md>
-        <mrow>$\ds\sum_{n=1}^\infty \frac1n$ \amp = $\ds\sum_{n=1}^{10,000,000}\frac1n$ + $\ds\sum_{n=10,000,001}^\infty \frac1n$</mrow>
-        <mrow>$\ds\sum_{n=1}^\infty \frac1n$ - $\ds\sum_{n=1}^{10,000,000}\frac1n$\amp = $\ds\sum_{n=10,000,001}^\infty \frac1n$</mrow>
-        <mrow>$\infty$ - $16.7$ \amp =  $\infty.$</mrow>
+        <mrow>\sum_{n=1}^\infty \frac1n \amp = \sum_{n=1}^{10,000,000}\frac1n + \ds\sum_{n=10,000,001}^\infty \frac1n</mrow>
+        <mrow>\sum_{n=1}^\infty \frac1n - \sum_{n=1}^{10,000,000}\frac1n\amp = \ds\sum_{n=10,000,001}^\infty \frac1n</mrow>
+        <mrow>\infty - 16.7 \amp =  \infty.</mrow>
       </md>
     </p>
+
+    <p>
+      Just for fun, we can show that the Harmonic Series diverges algebraically (without the use of <xref ref="thm_pseries" autoname="title"/>). </p>
+
+      <proof>
+      <p>If you just consider the partial sums <m>S_1, S_2, S_3, \dots, S_{1000}, S_{1001}, \dots</m>, it is not apparent that the partial sums diverge. Indeed they do diverge, but very, very slowly. (If you graph them on a logarithmic scale however, you can clearly see the divergence of the partial sums.) Instead, we will consider the partial sums, indexed by powers of <m>2</m>. That is, we will consider <m>S_2,S_4, S_8, S_{16}, \dots</m>.
+
+  
+      <md>
+        <mrow>S_2=1+\frac12</mrow>
+        <mrow>S_4=1+\frac12+\frac13+\frac14</mrow>
+        <mrow>S_8=1+\frac12+\frac13+\frac14+\frac15+\frac16+\frac18</mrow>
+      </md>
+    </p>
+    <p>
+      Next, we consider grouping together terms in each partial sum. We will use these groupings to set up inequalities. 
+            <md>
+        <mrow>S_2=1+\frac12</mrow>
+        <mrow>S_4=1+\frac12+\left(\frac13+\frac14\right)</mrow>
+        <mrow>S_8=1+\frac12+\left(\frac13+\frac14\right)+\left(\frac15+\frac16+\frac17+\frac18\right)</mrow>
+      </md>
+    </p>
+    <p>
+      In the partial sum <m>S_4</m>, we note that since <m>1/3\gt 1/4</m>, we can say <me>S_4=1+\frac12+\left(\frac13+\frac14\right)\gt 1+\frac12+\underbrace{\left(\frac14+\frac14\right)}_{1/2}=1+\frac22</me>. Do the same in <m>S_8</m> and also note that every term in the group <m>\left(\frac15+\frac16+\frac17+\frac18\right)</m> is larger than <m>1/8</m>. So 
+      <md>
+        <mrow>S_8 \amp = 1+\frac12+\left(\frac13+\frac14\right)+\left(\frac15+\frac16+\frac17+\frac18\right)</mrow>
+        <mrow>\amp \gt 1+\frac12+\underbrace{\left(\frac14+\frac14\right)}_{1/2}+\underbrace{\left(\frac18+\frac18+\frac18+\frac18\right)}_{1/2}=1+\frac32</mrow></md>
+    </p>
+
+    <p>Generally, we can see that <m>S_{2^n} \gt 1+\frac{n}2</m>. (In order to <em>really</em> show this, we should employ proof by induction.) Since the sequence of partial sums clearly diverges, so does the series <m>\infser 1/n</m>.</p>
+
+    </proof>
 
     <p>This section introduced us to series and defined a few special types of series whose convergence properties are well known: we know when a <m>p</m>-series or a geometric series converges or diverges. Most series that we encounter are not one of these types, but we are still interested in knowing whether or not they converge. The next three sections introduce tests that help us determine whether or not a given series converges.</p>
   </subsection>
