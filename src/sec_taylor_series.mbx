@@ -174,7 +174,7 @@
 
         <p>Since <m>f(1) = \ln(1) = 0</m>, we skip the first term and start the summation with <m>n=1</m>, giving the Taylor series for <m>\ln(x)</m>, centered at <m>x=1</m>, as
           <me>
-            \sum_{n=1}^\infty (-1)^{n+1}(n-1)!\frac{1}{n!}(x-1)^n = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^n}{n}.
+            \infser (-1)^{n+1}(n-1)!\frac{1}{n!}(x-1)^n = \infser (-1)^{n+1}\frac{(x-1)^n}{n}.
           </me>
         </p>
       </solution>
@@ -333,7 +333,7 @@
             <cell><m>(-\infty,\infty)</m></cell>
           </row>
           <row>
-            <cell><m>\ds \ln(x) = \sum_{n=1}^\infty(-1)^{n+1}\frac{(x-1)^n}{n}</m></cell>
+            <cell><m>\ds \ln(x) = \infser(-1)^{n+1}\frac{(x-1)^n}{n}</m></cell>
             <cell><m>\ds (x-1)- \frac{(x-1)^2}{2} +\frac{(x-1)^3}{3}-\cdots</m></cell>
             <cell><m>(0,2]</m></cell>
           </row>
@@ -422,11 +422,11 @@
         <p>The Taylor expansion for <m>\ln(x)</m> given in <xref ref="idea_common_taylor">Key Idea</xref> is centered at <m>x=1</m>, so we will center the series for <m>\ln(\sqrt{x})</m> at <m>x=1</m> as well.
           With
           <me>
-            \ln(x) = \sum_{n=1}^\infty(-1)^{n+1}\frac{(x-1)^n}{n} = (x-1)- \frac{(x-1)^2}{2} +\frac{(x-1)^3}{3}-\cdots,
+            \ln(x) = \infser(-1)^{n+1}\frac{(x-1)^n}{n} = (x-1)- \frac{(x-1)^2}{2} +\frac{(x-1)^3}{3}-\cdots,
           </me>
           we substitute <m>\sqrt{x}</m> for <m>x</m> to obtain
           <me>
-            \ln(\sqrt{x}) = \sum_{n=1}^\infty(-1)^{n+1}\frac{(\sqrt{x}-1)^n}{n} = (\sqrt{x}-1)- \frac{(\sqrt{x}-1)^2}{2} +\frac{(\sqrt{x}-1)^3}{3}-\cdots.
+            \ln(\sqrt{x}) = \infser(-1)^{n+1}\frac{(\sqrt{x}-1)^n}{n} = (\sqrt{x}-1)- \frac{(\sqrt{x}-1)^2}{2} +\frac{(\sqrt{x}-1)^3}{3}-\cdots.
           </me>
         </p>
 
@@ -734,7 +734,7 @@
 
             <p>The Taylor series starts <m>x-\frac{x^2}2+\frac{x^3}3-\frac{x^4}4+\cdots</m>;</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac{x^n}{n}</m>.</p>
+            <p>the Taylor series is <m>\ds \infser (-1)^{n+1}\frac{x^n}{n}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -899,7 +899,7 @@
 
             <p>As <m>n\to\infty</m>, <m>1/(n+1)\to0</m>. Thus by the Squeeze Theorem, we conclude that <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
               <me>
-                \ln(x) = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^{n}}{n} \text{ for all \(0\lt x\leq 2\) } .
+                \ln(x) = \infser (-1)^{n+1}\frac{(x-1)^{n}}{n} \text{ for all \(0\lt x\leq 2\) } .
               </me>
             </p>
           </solution>
@@ -1018,9 +1018,9 @@
           <solution>
             <p>Given <m>\ds \cos(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}</m>,</p>
 
-            <p><m>\ds\frac{d}{dx}\big(\cos(x) \big)  = \frac{d}{dx}\left(\sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}\right)=\sum_{n=1}^\infty (-1)^n\frac{(2n)x^{2n-1}}{(2n)!}=\sum_{n=1}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)!}</m>. We can re-index this summation to start at <m>n=0</m> by replacing <m>n</m> with <m>n+1</m> in the summation:
+            <p><m>\ds\frac{d}{dx}\big(\cos(x) \big)  = \frac{d}{dx}\left(\sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}\right)=\infser (-1)^n\frac{(2n)x^{2n-1}}{(2n)!}=\infser (-1)^n\frac{x^{2n-1}}{(2n-1)!}</m>. We can re-index this summation to start at <m>n=0</m> by replacing <m>n</m> with <m>n+1</m> in the summation:
               <me>
-                \sum_{n=1}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)!} =\sum_{n=0}^\infty (-1)^{n+1}\frac{x^{2n+1}}{(2n+1)!}.
+                \infser (-1)^n\frac{x^{2n-1}}{(2n-1)!} =\sum_{n=0}^\infty (-1)^{n+1}\frac{x^{2n+1}}{(2n+1)!}.
               </me>
             </p>
 
