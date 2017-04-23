@@ -51,7 +51,14 @@
 %  partial Leibniz operator at ....
 %  Usage: \plzoa{y}{x}{a}
 \newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
-%
+
+%Limit at infinity for sequences
+%Usage: \inflim e^{-n} or \inflim[m] e^{-m}
+\newcommand{inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+%Infinite Series with index starting n=1
+%Usage: \infser \frac{1}{n} or \infser[0] 0.5^n
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
 
 \newcommand{\Fp}{F\primeskip'}
 \newcommand{\Fpp}{F\primeskip''}

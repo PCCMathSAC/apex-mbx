@@ -32,7 +32,7 @@
       <statement>
         <p>Write out the first five terms of the following power series:</p>
 
-        <p><m>\ds 1.\ \sum_{n=0}^\infty x^n \qquad\qquad 2.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{(x+1)^n}n\qquad\qquad 3.\ \sum_{n=0}^\infty (-1)^{n+1} \frac{(x-\pi)^{2n}}{(2n)!}</m>.</p>
+        <p><m>\ds 1.\ \sum_{n=0}^\infty x^n \qquad\qquad 2.\ \infser (-1)^{n+1}\frac{(x+1)^n}n\qquad\qquad 3.\ \sum_{n=0}^\infty (-1)^{n+1} \frac{(x-\pi)^{2n}}{(2n)!}</m>.</p>
       </statement>
       <solution>
         <ol>
@@ -44,7 +44,7 @@
 
           <li><p>This series is centered at <m>c=-1</m>. Note how this series starts with <m>n=1</m>. We could rewrite this series starting at <m>n=0</m> with the understanding that <m>a_0=0</m>, and hence the first term is <m>0</m>.
               <me>
-                \sum_{n=1}^\infty (-1)^{n+1}\frac{(x+1)^n}n = (x+1) - \frac{(x+1)^2}{2} + \frac{(x+1)^3}{3} - \frac{(x+1)^4}{4}+\frac{(x+1)^5}{5}\ldots
+                \infser (-1)^{n+1}\frac{(x+1)^n}n = (x+1) - \frac{(x+1)^2}{2} + \frac{(x+1)^3}{3} - \frac{(x+1)^4}{4}+\frac{(x+1)^5}{5}\ldots
               </me>
             </p></li>
 
@@ -109,7 +109,7 @@
       <statement>
         <p>Find the radius and interval of convergence for each of the following series:</p>
 
-        <p><m>\ds 1.\ \sum_{n=0}^\infty \frac{x^n}{n!} \qquad 2.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{x^n}{n}\qquad 3.\ \sum_{n=0}^\infty 2^n(x-3)^n\qquad 4.\ \sum_{n=0}^\infty n!x^n</m></p>
+        <p><m>\ds 1.\ \sum_{n=0}^\infty \frac{x^n}{n!} \qquad 2.\ \infser (-1)^{n+1}\frac{x^n}{n}\qquad 3.\ \sum_{n=0}^\infty 2^n(x-3)^n\qquad 4.\ \sum_{n=0}^\infty n!x^n</m></p>
       </statement>
       <solution>
         <ol>
@@ -121,7 +121,7 @@
               </md>
               The Ratio Test shows us that regardless of the choice of <m>x</m>, the series converges. Therefore the radius of convergence is <m>R=\infty</m>, and the interval of convergence is <m>(-\infty,\infty)</m>.</p></li>
 
-          <li><p>We apply the Ratio Test to the series <m>\ds \sum_{n=1}^\infty \abs{(-1)^{n+1}\frac{x^n}{n}} = \sum_{n=1}^\infty \abs{\frac{x^n}{n}}</m>:
+          <li><p>We apply the Ratio Test to the series <m>\ds \infser \abs{(-1)^{n+1}\frac{x^n}{n}} = \infser \abs{\frac{x^n}{n}}</m>:
               <md>
                 <mrow>\lim_{n\to\infty} \frac{\abs{x^{n+1}/(n+1)}}{\abs{x^n/n}} \amp = \lim_{n\to\infty} \abs{\frac{x^{n+1}}{x^n}\cdot \frac{n}{n+1}}</mrow>
                 <mrow>\amp = \lim_{n\to\infty} \abs{x}\frac{n}{n+1}</mrow>
@@ -132,12 +132,12 @@
 	
 	To determine the interval of convergence, we need to check the endpoints of <m>(-1,1)</m>. When <m>x=-1</m>, we have the opposite of the Harmonic Series:
               <md>
-                <mrow>\sum_{n=1}^\infty (-1)^{n+1}\frac{(-1)^n}{n} \amp = \sum_{n=1}^\infty \frac{-1}{n}</mrow>
+                <mrow>\infser (-1)^{n+1}\frac{(-1)^n}{n} \amp = \infser \frac{-1}{n}</mrow>
                 <mrow>\amp = -\infty.</mrow>
               </md>
               The series diverges when <m>x=-1</m>.
 	
-	When <m>x=1</m>, we have the series <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac{(1)^n}{n}</m>, which is the Alternating Harmonic Series, which converges. Therefore the interval of convergence is <m>(-1,1]</m>.</p></li>
+	When <m>x=1</m>, we have the series <m>\ds \infser (-1)^{n+1}\frac{(1)^n}{n}</m>, which is the Alternating Harmonic Series, which converges. Therefore the interval of convergence is <m>(-1,1]</m>.</p></li>
 
           <li><p>We apply the Ratio Test to the series <m>\ds\sum_{n=0}^\infty \abs{2^n(x-3)^n}</m>:
               <md>
@@ -177,7 +177,7 @@
         <ol>
           <li><p><m>f(x)</m> is continuous and differentiable on <m>(c-R,c+R)</m>.</p></li>
 
-          <li><p><m>\ds \fp(x) = \sum_{n=1}^\infty a_n\cdot n\cdot (x-c)^{n-1}</m>, with radius of convergence <m>R</m>.</p></li>
+          <li><p><m>\ds \fp(x) = \infser a_n\cdot n\cdot (x-c)^{n-1}</m>, with radius of convergence <m>R</m>.</p></li>
 
           <li><p><m>\ds \int f(x)\ dx = C+\sum_{n=0}^\infty a_n\frac{(x-c)^{n+1}}{n+1}</m>, with radius of convergence <m>R</m>.
 		<index><main>series</main><sub>power!derivatives and integrals</sub></index><index><main>integration</main><sub>of power series</sub></index><index><main>derivative</main><sub>power series</sub></index><index><main>power series</main><sub>derivatives and integrals</sub></index></p></li>
@@ -204,7 +204,7 @@
         <p>We find the derivative and indefinite integral of <m>f(x)</m>, following <xref ref="thm_calc_power_series">Theorem</xref>.</p>
 
         <ol>
-          <li><p><m>\ds \fp(x) = \sum_{n=1}^\infty nx^{n-1} = 1+2x+3x^2+4x^3+\cdots</m>.
+          <li><p><m>\ds \fp(x) = \infser nx^{n-1} = 1+2x+3x^2+4x^3+\cdots</m>.
 
               In <xref ref="ex_ps1">Example</xref>, we recognized that <m>\ds \sum_{n=0}^\infty x^n</m> is a geometric series in <m>x</m>. We know that such a geometric series converges when <m>\abs{x}\lt 1</m>; that is, the interval of convergence is <m>(-1,1)</m>.
 
@@ -292,8 +292,8 @@
 
         <p>We now find the derivative:
           <md>
-            <mrow>\fp(x) \amp = \sum_{n=1}^\infty n\frac{x^{n-1}}{n!}</mrow>
-            <mrow>\amp =\sum_{n=1}^\infty \frac{x^{n-1}}{(n-1)!} = 1+x+\frac{x^2}{2!}+\cdots.</mrow>
+            <mrow>\fp(x) \amp = \infser n\frac{x^{n-1}}{n!}</mrow>
+            <mrow>\amp =\infser \frac{x^{n-1}}{(n-1)!} = 1+x+\frac{x^2}{2!}+\cdots.</mrow>
             <intertext>Since the series starts at <m>n=1</m> and each term refers to <m>(n-1)</m>, we can re-index the series starting with <m>n=0</m>:</intertext>
             <mrow>\amp = \sum_{n=0}^\infty \frac{x^{n}}{n!}</mrow>
             <mrow>\amp = f(x).</mrow>
@@ -341,7 +341,7 @@
           </me>
           for unknown coefficients <m>a_n</m>. We can find <m>\fp(x)</m> using <xref ref="thm_calc_power_series">Theorem</xref>:
           <me>
-            \fp(x) = \sum_{n=1}^\infty a_n\cdot n\cdot x^{n-1} = a_1+2a_2x+3a_3x^2+4a_4x^3\cdots.
+            \fp(x) = \infser a_n\cdot n\cdot x^{n-1} = a_1+2a_2x+3a_3x^2+4a_4x^3\cdots.
           </me>
         </p>
 
@@ -427,7 +427,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>If the radius of convergence of <m>\ds\sum_{n=0}^\infty a_nx^n</m> is 5, what is the radius of convergence of <m>\ds\sum_{n=1}^\infty n\cdot a_nx^{n-1}</m>?</p>
+            <p>If the radius of convergence of <m>\ds\sum_{n=0}^\infty a_nx^n</m> is 5, what is the radius of convergence of <m>\ds\infser n\cdot a_nx^{n-1}</m>?</p>
           </statement>
           <solution>
           </solution>
@@ -481,7 +481,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\sum_{n=1}^\infty \frac{1}{n^2}x^n</m></p>
+            <p><m>\ds\infser \frac{1}{n^2}x^n</m></p>
           </statement>
           <solution>
             <p><m>x+\frac{x^2}{4}+\frac{x^3}{9}+\frac{x^4}{16}+\frac{x^5}{25}</m></p>
@@ -586,7 +586,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\sum_{n=1}^\infty \frac{(-1)^n(x-3)^{n}}{n}</m></p>
+            <p><m>\ds\infser \frac{(-1)^n(x-3)^{n}}{n}</m></p>
           </statement>
           <solution>
             <ol>
@@ -796,7 +796,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\sum_{n=1}^\infty \frac{x^n}{n^2}</m></p>
+            <p><m>\ds\infser \frac{x^n}{n^2}</m></p>
           </statement>
           <solution>
             <ol>
@@ -817,7 +817,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\sum_{n=1}^\infty \frac{(x+2)^n}{n^3}</m></p>
+            <p><m>\ds\infser \frac{(x+2)^n}{n^3}</m></p>
           </statement>
           <solution>
             <ol>
@@ -896,7 +896,7 @@
           </statement>
           <solution>
             <ol>
-              <li><p><m>\ds \fp(x) =  \sum_{n=1}^\infty n^2x^{n-1}</m>;   <m>(-1,1)</m></p></li>
+              <li><p><m>\ds \fp(x) =  \infser n^2x^{n-1}</m>;   <m>(-1,1)</m></p></li>
 
               <li><p><m>\ds \int f(x)\ dx = C+\sum_{n=0}^\infty \frac{n}{n+1}x^{n+1}</m>;   <m>(-1,1)</m></p></li>
             </ol>
@@ -913,13 +913,13 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds\sum_{n=1}^\infty \frac{x^n}{n}</m></p>
+            <p><m>\ds\infser \frac{x^n}{n}</m></p>
           </statement>
           <solution>
             <ol>
-              <li><p><m>\ds \fp(x) = \sum_{n=1}^\infty x^{n-1}</m>;   <m>(-1,1)</m></p></li>
+              <li><p><m>\ds \fp(x) = \infser x^{n-1}</m>;   <m>(-1,1)</m></p></li>
 
-              <li><p><m>\ds \int f(x)\ dx = C+\sum_{n=1}^\infty \frac{1}{n(n+1)}x^{n+1}</m>;   <m>[-1,1]</m></p></li>
+              <li><p><m>\ds \int f(x)\ dx = C+\infser \frac{1}{n(n+1)}x^{n+1}</m>;   <m>[-1,1]</m></p></li>
             </ol>
           </solution>
         </webwork>
@@ -938,7 +938,7 @@
           </statement>
           <solution>
             <ol>
-              <li><p><m>\ds \fp(x) = \sum_{n=1}^\infty \frac{n}{2^n}x^{n-1}</m>;   <m>(-2,2)</m></p></li>
+              <li><p><m>\ds \fp(x) = \infser \frac{n}{2^n}x^{n-1}</m>;   <m>(-2,2)</m></p></li>
 
               <li><p><m>\ds \int f(x)\ dx = C+\sum_{n=0}^\infty \frac{1}{(n+1)2^n}x^{n+1}</m>;   <m>[-2,2)</m></p></li>
             </ol>
@@ -959,7 +959,7 @@
           </statement>
           <solution>
             <ol>
-              <li><p><m>\ds \fp(x) = \sum_{n=1}^\infty n(-3)^nx^{n-1}</m>;   <m>(-1/3,1/3)</m></p></li>
+              <li><p><m>\ds \fp(x) = \infser n(-3)^nx^{n-1}</m>;   <m>(-1/3,1/3)</m></p></li>
 
               <li><p><m>\ds \int f(x)\ dx = C+\sum_{n=0}^\infty \frac{(-3)^n}{n+1}x^{n+1}</m>;   <m>(-1/3,1/3]</m></p></li>
             </ol>
@@ -980,7 +980,7 @@
           </statement>
           <solution>
             <ol>
-              <li><p><m>\ds \fp(x) = \sum_{n=1}^\infty \frac{(-1)^nx^{2n-1}}{(2n-1)!} =\sum_{n=0}^\infty \frac{(-1)^{n+1}x^{2n+1}}{(2n+1)!}</m>;   <m>(-\infty,\infty)</m></p></li>
+              <li><p><m>\ds \fp(x) = \infser \frac{(-1)^nx^{2n-1}}{(2n-1)!} =\sum_{n=0}^\infty \frac{(-1)^{n+1}x^{2n+1}}{(2n+1)!}</m>;   <m>(-\infty,\infty)</m></p></li>
 
               <li><p><m>\ds \int f(x)\ dx = C+\sum_{n=0}^\infty \frac{(-1)^nx^{2n+1}}{(2n+1)!}</m>;   <m>(-\infty,\infty)</m></p></li>
             </ol>
@@ -1001,7 +1001,7 @@
           </statement>
           <solution>
             <ol>
-              <li><p><m>\ds \fp(x) = \sum_{n=1}^\infty \frac{(-1)^nx^{n-1}}{(n-1)!} =\sum_{n=0}^\infty \frac{(-1)^{n+1}x^{n}}{n!}</m>;   <m>(-\infty,\infty)</m></p></li>
+              <li><p><m>\ds \fp(x) = \infser \frac{(-1)^nx^{n-1}}{(n-1)!} =\sum_{n=0}^\infty \frac{(-1)^{n+1}x^{n}}{n!}</m>;   <m>(-\infty,\infty)</m></p></li>
 
               <li><p><m>\ds \int f(x)\ dx = C+\sum_{n=0}^\infty \frac{(-1)^{n}x^{n+1}}{(n+1)!}</m>;   <m>(-\infty,\infty)</m></p></li>
             </ol>
