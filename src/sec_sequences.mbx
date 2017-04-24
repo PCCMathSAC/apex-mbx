@@ -43,9 +43,9 @@
 
         <p> 
           <ol cols="3">
-            <li><m>\ds \{a_n\} = \left\{\frac{3^n}{n!}\right\}</m> </li>
+            <li><m>\{a_n\} = \left\{\frac{3^n}{n!}\right\}</m> </li>
             <li><m>\{a_n\} = \{4+(-1)^n\}</m> </li>
-            <li><m>\ds \{a_n\} = \left\{\frac{(-1)^{n(n+1)/2}}{n^2}\right\}</m></li>
+            <li><m>\{a_n\} = \left\{\frac{(-1)^{n(n+1)/2}}{n^2}\right\}</m></li>
           </ol>
         </p>
       </statement>
@@ -228,7 +228,7 @@
     <definition xml:id="def_seq_limit">
       <title>Limit of a Sequence, Convergent, Divergent</title>
       <statement>
-        <p>Let <m>\{a_n\}</m> be a sequence and let <m>L</m> be a real number. Given any <m>\varepsilon>0</m>, if an <m>m</m> can be found such that <m>\abs{a_n-L}\lt \varepsilon</m> for all <m>n>m</m>, then we say the <term>limit of <m>\{a_n\}</m>, as <m>n</m> approaches infinity, is <m>L</m></term>, denoted
+        <p>Let <m>\{a_n\}</m> be a sequence and let <m>L</m> be a real number. Given any <m>\varepsilon>0</m>, if an <m>N</m> can be found such that <m>\abs{a_n-L}\lt \varepsilon</m> for all <m>n\gt N</m>, then we say the <term>limit of <m>\{a_n\}</m>, as <m>n</m> approaches infinity, is <m>L</m></term>, denoted
           <me>
             \lim_{n\to\infty}a_n = L.
           </me>
@@ -242,12 +242,26 @@
 
     <p>This definition is reminiscent of the <m>\varepsilon</m><ndash /><m>\delta</m> proofs of <xref ref="chapter_limits">Chapter</xref>. In that chapter we developed other tools to evaluate limits apart from the formal definition; we do so here as well.</p>
 
+    <definition xml:id="def_seq_limit_infinity">
+      <title>Limit of Infinity, Divergent Sequence</title>
+      <statement>
+        <p> Let <m>\{a_n\}</m> be a sequence. We say <m>\lim\limits_{n\to\infty} a_n=\infty</m> if for all <m>M \gt 0</m>, there exists a number <m>N</m> such that if <m>n\ge N</m>, then <m>a_n>M</m>. In this case, we say the sequence diverges to <m>\infty.</m></p>
+       
+      </statement>
+    </definition>
+
+    <p>This definition states, informally, that if the limit of <m>a_n</m> is <m>\infty</m>, then you can guarantee that the terms of <m>a_n</m> will get arbitrarily large (larger than any value of <m>M</m> that you think of), by going out far enough in the sequence.</p>
+
     <theorem xml:id="thm_seq_limit">
       <title>Limit of a Sequence</title>
       <statement>
-        <p>Let <m>\{a_n\}</m> be a sequence and let <m>f(x)</m> be a function whose domain contains the positive real numbers where <m>f(n) = a_n</m> for all <m>n</m> in <m>\mathbb{N}</m>.</p>
+        <p>Let <m>\{a_n\}</m> be a sequence, let <m>L</m> be a real number, and let <m>f(x)</m> be a function whose domain contains the positive real numbers where <m>f(n) = a_n</m> for all <m>n</m> in <m>\mathbb{N}</m>.</p>
+        <ol>
+          <li><p>If <m>\lim\limits_{x\to\infty} f(x) = L</m>, then <m>\lim\limits_{n\to\infty} a_n = L</m>.</p></li>
+          <li><p>If <m>\lim\limits_{x\to\infty} f(x) = \infty</m>, then <m>\lim\limits_{n\to\infty} a_n = \infty</m>.</p></li>
+        </ol>
 
-        <p>If <m>\lim\limits_{x\to\infty} f(x) = L</m>, then <m>\lim\limits_{n\to\infty} a_n = L</m>.</p>
+        
       </statement>
     </theorem>
 
