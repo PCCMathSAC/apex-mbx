@@ -53,6 +53,7 @@ include Makefile.paths
 PRJSRC    = $(PRJ)/src
 OUTPUT    = $(PRJ)/output
 STYLE     = $(PRJ)/style
+IMGSRC    = $(PRJSRC)/images
 
 # The project's main hub file
 MAINFILE  = $(PRJSRC)/index.mbx
@@ -100,6 +101,7 @@ html:
 	install -d $(HTMLOUT)
 	-rm $(HTMLOUT)/*.html
 	-rm $(HTMLOUT)/knowl/*.html
+	cp -a $(IMGSRC) $(HTMLOUT)
 	cp -a $(IMAGESOUT) $(HTMLOUT)
 	cd $(HTMLOUT); \
 	xsltproc -xinclude --stringparam webwork.server $(SERVER) --stringparam html.knowl.exercise.inline no --stringparam html.knowl.example no $(MBXSL)/mathbook-html.xsl $(MAINFILE)
