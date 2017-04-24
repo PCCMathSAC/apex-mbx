@@ -27,13 +27,13 @@
 
     <p>Geometric Series can also be alternating series when <m>r\lt 0</m>. For instance, if <m>r=-1/2</m>, the geometric series is
       <me>
-        \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n = 1-\frac12+\frac14-\frac18+\frac1{16}-\frac1{32}+\cdots
+        \infser[0] \left(\frac{-1}{2}\right)^n = 1-\frac12+\frac14-\frac18+\frac1{16}-\frac1{32}+\cdots
       </me>
     </p>
 
-    <p><xref ref="thm_geom_series">Theorem</xref> states that geometric series converge when <m>\abs{r}\lt 1</m> and gives the sum: <m>\ds \sum_{n=0}^\infty r^n = \frac1{1-r}</m>. When <m>r=-1/2</m> as above, we find
+    <p><xref ref="thm_geom_series">Theorem</xref> states that geometric series converge when <m>\abs{r}\lt 1</m> and gives the sum: <m>\ds \infser[0] r^n = \frac1{1-r}</m>. When <m>r=-1/2</m> as above, we find
       <me>
-        \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n = \frac1{1-(-1/2)} = \frac 1{3/2} = \frac23.
+        \infser[0] \left(\frac{-1}{2}\right)^n = \frac1{1-(-1/2)} = \frac 1{3/2} = \frac23.
       </me>
     </p>
 
@@ -438,7 +438,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>Give an example of a series where <m>\ds \sum_{n=0}^\infty a_n</m> converges but <m>\ds \sum_{n=0}^\infty \abs{a_n}</m> does not.</p>
+            <p>Give an example of a series where <m>\ds \infser[0] a_n</m> converges but <m>\ds \infser[0] \abs{a_n}</m> does not.</p>
           </statement>
           <solution>
             <p>Many examples exist; one common example is <m>a_n = (-1)^n/n</m>.</p>
@@ -475,11 +475,11 @@
 
         <li>
           <title>(b)</title>
-          <p>Determine if <m>\ds \sum_{n=0}^\infty \abs{a_n}</m> converges or diverges.</p></li>
+          <p>Determine if <m>\ds \infser[0] \abs{a_n}</m> converges or diverges.</p></li>
 
         <li>
           <title>(c)</title>
-          <p>If <m>\ds \sum_{n=0}^\infty a_n</m> converges, determine if the convergence is conditional or absolute.</p></li>
+          <p>If <m>\ds \infser[0] a_n</m> converges, determine if the convergence is conditional or absolute.</p></li>
       </ol>
 
       <exercise>
@@ -538,7 +538,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty (-1)^{n}\frac{n+5}{3n-5}</m></p>
+            <p><m>\ds \infser[0] (-1)^{n}\frac{n+5}{3n-5}</m></p>
           </statement>
           <solution>
             <ol>
@@ -584,7 +584,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty (-1)^{n+1}\frac{3n+5}{n^2-3n+1}</m></p>
+            <p><m>\ds \infser[0] (-1)^{n+1}\frac{3n+5}{n^2-3n+1}</m></p>
           </statement>
           <solution>
             <ol>
@@ -722,7 +722,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \left(-\frac23\right)^n</m></p>
+            <p><m>\ds \infser[0] \left(-\frac23\right)^n</m></p>
           </statement>
           <solution>
             <ol>
@@ -745,7 +745,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty (-e)^{-n}</m></p>
+            <p><m>\ds \infser[0] (-e)^{-n}</m></p>
           </statement>
           <solution>
             <ol>
@@ -768,7 +768,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^nn^2}{n!}</m></p>
+            <p><m>\ds \infser[0] \frac{(-1)^nn^2}{n!}</m></p>
           </statement>
           <solution>
             <ol>
@@ -791,7 +791,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty (-1)^n2^{-n^2}</m></p>
+            <p><m>\ds \infser[0] (-1)^n2^{-n^2}</m></p>
           </statement>
           <solution>
             <ol>
@@ -901,12 +901,12 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{n!}</m>, <m>n=6</m></p>
+            <p><m>\ds \infser[0] \frac{(-1)^{n}}{n!}</m>, <m>n=6</m></p>
           </statement>
           <solution>
             <p><m>S_6 = 0.3681</m>; <m>S_7 = 0.3679</m>;</p>
 
-            <p><m>\ds 0.3681 \leq \sum_{n=0}^\infty \frac{(-1)^{n}}{n!} \leq 0.3679</m></p>
+            <p><m>\ds 0.3681 \leq \infser[0] \frac{(-1)^{n}}{n!} \leq 0.3679</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -920,12 +920,12 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \left(-\frac12\right)^n</m>, <m>n=9</m></p>
+            <p><m>\ds \infser[0] \left(-\frac12\right)^n</m>, <m>n=9</m></p>
           </statement>
           <solution>
             <p><m>S_9 = 0.666016</m>; <m>S_{10} = 0.666992</m>;</p>
 
-            <p><m>\ds 0.666016 \leq \sum_{n=0}^\infty \left(-\frac12\right)^n \leq 0.666992</m></p>
+            <p><m>\ds 0.666016 \leq \infser[0] \left(-\frac12\right)^n \leq 0.666992</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -957,7 +957,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{n!} = \frac1e</m>, <m>\varepsilon = 0.0001</m></p>
+            <p><m>\ds \infser[0] \frac{(-1)^{n}}{n!} = \frac1e</m>, <m>\varepsilon = 0.0001</m></p>
           </statement>
           <solution>
             <p><m>n=7</m></p>
@@ -974,7 +974,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{2n+1}=\frac{\pi}4</m>, <m>\varepsilon = 0.001</m></p>
+            <p><m>\ds \infser[0] \frac{(-1)^{n}}{2n+1}=\frac{\pi}4</m>, <m>\varepsilon = 0.001</m></p>
           </statement>
           <solution>
             <p>Using the theorem, we find <m>n=499</m> guarantees the sum is within <m>0.001</m> of <m>\pi/4</m>. (Convergence is actually faster, as the sum is within <m>\varepsilon</m> of <m>\pi/24</m> when <m>n\geq 249</m>.)</p>
@@ -991,7 +991,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-1)^{n}}{(2n)!}=\cos(1)</m>, <m>\varepsilon = 10^{-8}</m></p>
+            <p><m>\ds \infser[0] \frac{(-1)^{n}}{(2n)!}=\cos(1)</m>, <m>\varepsilon = 10^{-8}</m></p>
           </statement>
           <solution>
             <p><m>n=5</m> (<m>(2n)!>10^8</m> when <m>n\geq 6</m>)</p>
