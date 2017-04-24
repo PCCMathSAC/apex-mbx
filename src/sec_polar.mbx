@@ -171,7 +171,7 @@
               So the rectangular coordinates are <m>(\sqrt{2}/2,\sqrt{2}/2) \approx (0.707,0.707)</m>.</p></li>
         </ol>
 
-        These points are plotted in <xref ref="fig_polar2">Figure</xref> (a). The rectangular coordinate system is drawn lightly under the polar coordinate system so that the relationship between the two can be seen.
+        <p>These points are plotted in <xref ref="fig_polar2">Figure</xref> (a). The rectangular coordinate system is drawn lightly under the polar coordinate system so that the relationship between the two can be seen.</p>
 
         <figure xml:id="fig_polar2" >
         <caption>Plotting rectangular and polar points in <xref ref="ex_polar2">Example</xref>.</caption>
@@ -282,7 +282,7 @@
                <m>P(-\sqrt{2},-\pi/4)</m>.</p></li>
         </ol>
 
-        These points are plotted in <xref ref="fig_polar2">Figure</xref> (b). The polar system is drawn lightly under the rectangular grid with rays to demonstrate the angles used.</li>
+        <p>These points are plotted in <xref ref="fig_polar2">Figure</xref> (b). The polar system is drawn lightly under the rectangular grid with rays to demonstrate the angles used.</p></li>
         </ol>
       </solution>
     </example>
@@ -433,7 +433,7 @@
       </tabular>
     </table>
 
-    <p><em>Technology Note:</em> Plotting functions in this way can be tedious, just as it was with rectangular functions. To obtain very accurate graphs, technology is a great aid. Most graphing calculators can plot polar functions; in the menu, set the plotting mode to something like <c>polar</c> or <c>POL</c>, depending on one's calculator. As with plotting parametric functions, the viewing <q>window</q> no longer determines the <m>x</m>-values that are plotted, so additional information needs to be provided. Often with the <q>window</q> settings are the settings for the beginning and ending <m>\theta</m> values (often called <c><m>\theta_{\text{ min } }</m></c> and <c><m>\theta_{\text{ max } }</m></c>) as well as the <c><m>\theta_{\text{ step } }</m></c> <mdash /> that is, how far apart the <m>\theta</m> values are spaced. The smaller the <c><m>\theta_{\text{ step } }</m></c> value, the more accurate the graph (which also increases plotting time). Using technology, we graphed the polar function <m>r=1+\cos(\theta)</m> from <xref ref="ex_polar4">Example</xref> in <xref ref="fig_polar4b">Figure</xref>.</p>
+    <p><em>Technology Note:</em> Plotting functions in this way can be tedious, just as it was with rectangular functions. To obtain very accurate graphs, technology is a great aid. Most graphing calculators can plot polar functions; in the menu, set the plotting mode to something like <c>polar</c> or <c>POL</c>, depending on one's calculator. As with plotting parametric functions, the viewing <q>window</q> no longer determines the <m>x</m>-values that are plotted, so additional information needs to be provided. Often with the <q>window</q> settings are the settings for the beginning and ending <m>\theta</m> values (often called <m>\theta_{\text{ min } }</m> and <m>\theta_{\text{ max } }</m>) as well as the <m>\theta_{\text{ step } }</m> <mdash /> that is, how far apart the <m>\theta</m> values are spaced. The smaller the <m>\theta_{\text{ step } }</m> value, the more accurate the graph (which also increases plotting time). Using technology, we graphed the polar function <m>r=1+\cos(\theta)</m> from <xref ref="ex_polar4">Example</xref> in <xref ref="fig_polar4b">Figure</xref>.</p>
 
     <figure xml:id="fig_polar4b" >
       <caption>Using  technology to graph a polar function.</caption>
@@ -1642,14 +1642,14 @@
             for my$i(1,2,3)
               {$gr->lb( new Label($i+0.04,0,$i,'black','left','top'));};
             $gr->lb( new Label(0,0,'O','black','center','top'));
-            $gr->lb( new Label(2*cos(pi/6),2*sin(pi/6)-0.04,'A','black','center','top'));
-            $gr->lb( new Label(cos(-pi/3),sin(-pi/3)-0.04,'B','black','center','top'));
-            $gr->lb( new Label(2*cos(3*pi/4),2*sin(3*pi/4)-0.04,'C','black','center','top'));
-            $gr->lb( new Label(2.5*cos(pi),2.5*sin(pi)-0.04,'D','black','center','top'));
-            $gr->stamps( closed_circle(2*cos(pi/6),2*sin(pi/6),'black') );
-            $gr->stamps( closed_circle(cos(-pi/3),sin(-pi/3),'black') );
-            $gr->stamps( closed_circle(2*cos(3*pi/4),2*sin(3*pi/4),'black') );
-            $gr->stamps( closed_circle(2.5*cos(pi),2.5*sin(pi),'black') );
+            $gr->lb( new Label(2*cos(pi()/6),2*sin(pi()/6)-0.04,'A','black','center','top'));
+            $gr->lb( new Label(cos(-pi()/3),sin(-pi()/3)-0.04,'B','black','center','top'));
+            $gr->lb( new Label(2*cos(3*pi()/4),2*sin(3*pi()/4)-0.04,'C','black','center','top'));
+            $gr->lb( new Label(2.5*cos(pi()),2.5*sin(pi())-0.04,'D','black','center','top'));
+            $gr->stamps( closed_circle(2*cos(pi()/6),2*sin(pi()/6),'black') );
+            $gr->stamps( closed_circle(cos(-pi()/3),sin(-pi()/3),'black') );
+            $gr->stamps( closed_circle(2*cos(3*pi()/4),2*sin(3*pi()/4),'black') );
+            $gr->stamps( closed_circle(2.5*cos(pi()),2.5*sin(pi()),'black') );
 
             @r=(2,1,2,2.5);
             @s=map{-$_}(@r);
@@ -1674,10 +1674,10 @@
               <col halign='center' />
               <row bottom="medium">
                 <cell>Point</cell>
-                <cell><m>r_1</m></cell>
+                <cell><m>(positive) r_1</m></cell>
                 <cell><m>\theta_1</m></cell>
                 <cell><m>r_2</m></cell>
-                <cell><m>\theta_2</m></cell>
+                <cell><m>(negative) \theta_2</m></cell>
               </row>
               <row>
                 <cell><m>A</m></cell>
@@ -3032,7 +3032,7 @@
             <pg-code>
               Context("ImplicitEquation");
               Context()->variables->are(r=>'Real',theta=>['Real',TeX=>'\theta']);
-              $eq=ImplicitEquation("r=7/(sin(theta) -4cos(theta) )", limits=>[[1.5,3],[pi/2,3*pi/2]]);
+              $eq=ImplicitEquation("r=7/(sin(theta) -4cos(theta) )", limits=>[[1.5,3],[pi()/2,3*pi()/2]]);
             </pg-code>
           </setup>
           <statement>
@@ -3052,7 +3052,7 @@
             <pg-code>
               Context("ImplicitEquation");
               Context()->variables->are(r=>'Real',theta=>['Real',TeX=>'\theta']);
-              $eq=ImplicitEquation("r=5sec(theta)", limits=>[[4,10],[-pi/4,pi/4]]);
+              $eq=ImplicitEquation("r=5sec(theta)", limits=>[[4,10],[-pi()/4,pi()/4]]);
             </pg-code>
           </setup>
           <statement>
@@ -3072,7 +3072,7 @@
             <pg-code>
               Context("ImplicitEquation");
               Context()->variables->are(r=>'Real',theta=>['Real',TeX=>'\theta']);
-              $eq=ImplicitEquation("r=5csc(theta)", limits=>[[4,10],[pi/4,3*pi/4]]);
+              $eq=ImplicitEquation("r=5csc(theta)", limits=>[[4,10],[pi()/4,3*pi()/4]]);
             </pg-code>
           </setup>
           <statement>
@@ -3092,7 +3092,7 @@
             <pg-code>
               Context("ImplicitEquation");
               Context()->variables->are(r=>'Real',theta=>['Real',TeX=>'\theta']);
-              $eq=ImplicitEquation("r=cos(theta)/sin^2(theta)", limits=>[[0,4],[-pi/2,pi/2]]);
+              $eq=ImplicitEquation("r=cos(theta)/sin^2(theta)", limits=>[[0,4],[-pi()/2,pi()/2]]);
             </pg-code>
           </setup>
           <statement>
@@ -3131,7 +3131,7 @@
               Context("ImplicitEquation");
               Context()->variables->are(r=>'Real',theta=>['Real',TeX=>'\theta']);
               Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
-              $eq=ImplicitEquation("r=sqrt(7)", limits=>[[0,4],[0,2*pi]]);
+              $eq=ImplicitEquation("r=sqrt(7)", limits=>[[0,4],[0,2*pi()]]);
             </pg-code>
           </setup>
           <statement>
