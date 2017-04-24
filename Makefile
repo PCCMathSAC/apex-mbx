@@ -118,7 +118,7 @@ images:
 pdfimages:
 	install -d $(IMAGESOUT)
 	-rm $(IMAGESOUT)/*.pdf
-	$(MB)/script/mbx -c latex-image -f pdf -d $(IMAGESOUT) $(MAINFILE)
+	$(MB)/script/mbx -c sageplot -f pdf -d $(IMAGESOUT) $(MAINFILE)
 
 # for pdf output, a one-time prerequisite for LaTeX conversion of
 # problems living on a server, and image construction at server
@@ -146,8 +146,9 @@ pdf:
 	install -d $(PDFOUT)
 	-rm $(PDFOUT)/*.tex
 	cp -a $(IMAGESOUT)/*.pdf $(PDFOUT)/images
+	cp -a $(IMGSRC)/*.pdf $(PDFOUT)/images
 	cd $(PDFOUT); \
-	xsltproc -xinclude --stringparam webwork.server.latex $(PDFOUT)/webwork-tex/ $(MBXSL)/mathbook-latex.xsl $(MAINFILE); \
+	xsltproc -xinclude --stringparam webwork.server.latex $(PDFOUT)/webwork-tex/ --stringparam exercise.text.hint no --stringparam exercise.text.solution no --stringparam exercise.text.answer no $(MBXSL)/mathbook-latex.xsl $(MAINFILE); \
 	xelatex index.tex; \
 	xelatex index.tex
 
