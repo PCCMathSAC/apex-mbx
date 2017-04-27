@@ -35,7 +35,7 @@
         <p>Find the Maclaurin series of <m>f(x)=\cos(x)</m>.</p>
       </statement>
       <solution>
-        <p>In <xref ref="ex_taypoly4">Example</xref> we found the <m>8^\text{ th }</m> degree Maclaurin polynomial of <m>\cos(x)</m>. In doing so, we created the table shown in <xref ref="fig_ts1">Figure</xref>.</p>
+        <p>In <xref ref="ex_taypoly4">Example</xref> we found the <m>8^\text{ th }</m> degree Maclaurin polynomial of <m>\cos(x)</m>. In doing so, we created the table shown in <xref ref="fig_ts1">Table</xref>.</p>
 
         <table xml:id="fig_ts1" >
           <caption>A table of the derivatives of <m>f(x)=\cos(x)</m> evaluated at <m>x=0</m>.</caption>
@@ -99,13 +99,15 @@
           </me>
         </p>
 
-        <p>We can go further and write this as a summation. Since we only need the terms where the power of <m>x</m> is even, we write the power series in terms of <m>x^{2n}</m>:
+        <p>We can go further and write this as a summation. The coefficients alternate between positive and negative. Since we only need the terms where the power of <m>x</m> is even, we write the power series in terms of <m>x^{2n}</m>:
           <me>
             \infser[0] (-1)^{n}\frac{x^{2n}}{(2n)!}.
           </me>
         </p>
       </solution>
     </example>
+    <p><xref ref="ex_ts1">Example</xref> found the Taylor Series representation of <m>\cos(x)</m>. We can easily find the Taylor Series representation of <m>\sin(x)</m> by recognizing that <m>\int \cos(x)\ dx=\sin(x)</m> and apply <xref ref="thm_calc_power_series">Theorem</xref>.</p>
+    
 
     <example xml:id="ex_ts2">
       <title>The Taylor series of <m>f(x)=\ln(x)</m> at <m>x=1</m></title>
@@ -113,7 +115,7 @@
         <p>Find the Taylor series of <m>f(x) = \ln(x)</m> centered at <m>x=1</m>.</p>
       </statement>
       <solution>
-        <p><xref ref="fig_ts2">Figure</xref> shows the <m>n^\text{ th }</m> derivative of <m>\ln(x)</m> evaluated at <m>x=1</m> for <m>n=0,\ldots,5</m>, along with an expression for the <m>n^\text{ th }</m> term:
+        <p><xref ref="fig_ts2">Table</xref> shows the <m>n^\text{ th }</m> derivative of <m>\ln(x)</m> evaluated at <m>x=1</m> for <m>n=0,\ldots,5</m>, along with an expression for the <m>n^\text{ th }</m> term:
           <me>
             f^{(n)}(1) = (-1)^{n+1}(n-1)! \text{ for \(n\geq 1\). }
           </me>
@@ -267,9 +269,11 @@
           <mrow>f^{(n)}(x) \amp = k(k-1)\cdots\big(k-(n-1)\big)(1+x)^{k-n} \amp  f^{(n)}(0) \amp =k(k-1)\cdots\big(k-(n-1)\big)</mrow>
         </md>
         <p>Thus the Maclaurin series for <m>f(x) = (1+x)^k</m> is
-          <me>
-            1+ k + \frac{k(k-1)}{2!} + \frac{k(k-1)(k-2)}{3!} + \ldots + \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}+\ldots
-          </me>
+          <md>
+            <mrow>(1+x)^k\amp =1+ k(x-c) + \frac{k(k-1)}{2!}(x-c)^2 + \frac{k(k-1)(k-2)}{3!}(x-c)^3 + \ldots</mrow>
+            <mrow>\dots + \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}(x-c)^n+\ldots</mrow>
+            
+          </md>
         </p>
 
         <p>It is important to determine the interval of convergence of this series. With
@@ -278,7 +282,7 @@
           </me>
           we apply the Ratio Test:
           <md>
-            <mrow>\lim_{n\to\infty}\frac{\abs{a_{n+1}}}{\abs{a_n}}\amp =\lim_{n\to\infty} \abs{\frac{k(k-1)\cdots(k-n)}{(n+1)!}x^{n+1}}\Bigg/\abs{\frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n}</mrow>
+            <mrow>\lim_{n\to\infty}\frac{\abs{a_{n+1}}}{\abs{a_n}}\amp =\lim_{n\to\infty} \abs{\frac{k(k-1)\cdots(k-(n-1))(k-n)}{(n+1)!}x^{n+1}}\Bigg/\abs{\frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n}</mrow>
             <mrow>\amp =\lim_{n\to\infty} \abs{\frac{k-n}{n}x}</mrow>
             <mrow>\amp = \abs{x}.</mrow>
           </md>
@@ -312,7 +316,7 @@
           <row>
             <cell><term>Function and Series</term></cell>
             <cell><term>First Few Terms</term></cell>
-            <cell>\text{ <term>Interval of</term></cell>
+            <cell><term>Interval of</term></cell>
           </row>
           <row>
             <cell><term>Convergence</term> }</cell>
@@ -343,7 +347,7 @@
             <cell><m>(-1,1)</m></cell>
           </row>
           <row>
-            <cell>\small<m>\ds (1+x)^k=\infser[0] \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n</m></cell>
+            <cell><m>\small\ds (1+x)^k=\infser[0] \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n</m></cell>
             <cell><m>\ds 1+kx+\frac{k(k-1)}{2!}x^2 + \cdots</m></cell>
             <cell><m>(-1,1)</m><fn>Convergence at <m>x=\pm1</m> depends on the value of <m>k</m>.</fn></cell>
           </row>
@@ -412,9 +416,11 @@
             \sin(x) = \infser[0] (-1)^n\frac{x^{2n+1}}{(2n+1)!} = x-\frac{x^3}{3!}+\frac{x^5}{5!} -\frac{x^7}{7!}+\cdots,
           </me>
           we simply substitute <m>x^2</m> for <m>x</m> in the series, giving
-          <me>
-            \sin(x^2) = \infser[0] (-1)^n\frac{(x^2)^{2n+1}}{(2n+1)!} = x^2-\frac{x^6}{3!}+\frac{x^{10}}{5!} -\frac{x^{14}}{7!}\cdots.
-          </me>
+          <md>
+            <mrow>\sin(x^2) \amp = \infser[0] (-1)^n\frac{(x^2)^{2n+1}}{(2n+1)!}</mrow>
+            <mrow>\amp \infser[0] (-1)^n\frac{(x^{4n+2}}{(2n+1)!}</mrow>
+            <mrow>\amp =x^2-\frac{x^6}{3!}+\frac{x^{10}}{5!} -\frac{x^{14}}{7!}\cdots</mrow>
+          </md>.
         </p>
 
         <p>Since the Taylor series for <m>\sin(x)</m> has an infinite radius of convergence, so does the Taylor series for <m>\sin(x^2)</m>.</p>
