@@ -497,19 +497,19 @@
               <static>1.5</static>
             </var>
             <var name="$x[1]">
-              <static>1.5709148</static>
+              <static>1.5709</static>
             </var>
             <var name="$x[2]">
-              <static>1.5707963</static>
+              <static>1.5708</static>
             </var>
             <var name="$x[3]">
-              <static>1.5707963</static>
+              <static>1.5708</static>
             </var>
             <var name="$x[4]">
-              <static>1.5707963</static>
+              <static>1.5708</static>
             </var>
             <var name="$x[5]">
-              <static>1.5707963</static>
+              <static>1.5708</static>
             </var>
             <pg-code>
               $f=list_random('cos(x)');
@@ -568,16 +568,16 @@
               <static>1</static>
             </var>
             <var name="$x[1]">
-              <static>-0.55740772</static>
+              <static>-0.5574</static>
             </var>
             <var name="$x[2]">
-              <static>0.065936452</static>
+              <static>0.06594</static>
             </var>
             <var name="$x[3]">
-              <static>-0.000095721919</static>
+              <static>-0.00009572</static>
             </var>
             <var name="$x[4]">
-              <static>2.9235662*10^-13</static>
+              <static>2.924*10^{-13}</static>
             </var>
             <var name="$x[5]">
               <static>0</static>
@@ -633,7 +633,7 @@
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\x^2+x-2</static>
+              <static>x^2+x-2</static>
             </var>
             <var name="$x[0]">
               <static>0</static>
@@ -645,7 +645,7 @@
               <static>1.2</static>
             </var>
             <var name="$x[3]">
-              <static>1.0117647</static>
+              <static>1.01176</static>
             </var>
             <var name="$x[4]">
               <static>1.0000458</static>
@@ -704,25 +704,25 @@
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\x^2-2</static>
+              <static>x^2-2</static>
             </var>
             <var name="$x[0]">
               <static>1.5</static>
             </var>
             <var name="$x[1]">
-              <static>1.4166666667</static>
+              <static>1.417</static>
             </var>
             <var name="$x[2]">
-              <static>1.414215686274</static>
+              <static>1.414</static>
             </var>
             <var name="$x[3]">
-              <static>1.414213562375</static>
+              <static>1.414</static>
             </var>
             <var name="$x[4]">
-              <static>1.4142135623731</static>
+              <static>1.414</static>
             </var>
             <var name="$x[5]">
-              <static>1.4142135623731</static>
+              <static>1.414</static>
             </var>
             <pg-code>
               $f=list_random('x^2-2');
@@ -781,16 +781,16 @@
               <static>2</static>
             </var>
             <var name="$x[1]">
-              <static>.6137056389</static>
+              <static>0.6137</static>
             </var>
             <var name="$x[2]">
-              <static>0.9133412072</static>
+              <static>0.9133</static>
             </var>
             <var name="$x[3]">
-              <static>0.9961317034</static>
+              <static>0.996132</static>
             </var>
             <var name="$x[4]">
-              <static>0.9999925085</static>
+              <static>0.999992509</static>
             </var>
             <var name="$x[5]">
               <static>1</static>
@@ -852,28 +852,21 @@
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\x^3+5x^2-x-1</static>
+              <static>x^3+5x^2-x-1</static>
             </var>
             <var name="$L">
-              <static>/(5.156,0.369,0.525)</static>
+              <static>(-5.15633,-0.369102,0.525430)</static>
             </var>
             <pg-code>
               $f = list_random('x^3+5x^2-x-1');
               $f = Compute($f);
-              $L = List(5.156,0.369,0.525);
+              $L = List(-5.15633,-0.369102,0.525430);
               Context("LimitedNumeric");
             </pg-code>
           </setup>
           <statement>
-            <p>Use Newton's Method to approximate all roots of <m>f(x)=<var name="$f" /></m> accurate to three places after the decimal. Use technology to obtain good initial approximations. Enter answers in list format, separated by commas.</p>
-            <table>
-              <tabular>
-                <row>
-                  <cell>Roots:</cell>
-                  <cell><var name="$L" width="50"/></cell>
-                </row>
-              </tabular>
-            </table>
+            <p>Use Newton's Method to approximate all roots of <m>f(x)=<var name="$f" /></m> accurate to three places after the decimal. Use technology to obtain good initial approximations.</p>
+            <p><var name="$L" width="50"/></p>
           </statement>
         </webwork>
       </exercise>
@@ -882,28 +875,21 @@
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\x^4+2x^3-7x^2-x+5</static>
+              <static>x^4+2x^3-7x^2-x+5</static>
             </var>
             <var name="$L">
-              <static>/(-3.714,-0.857,1,1.571)</static>
+              <static>(-3.714,-0.8567,1,1.571)</static>
             </var>
             <pg-code>
               $f = list_random('x^4+2x^3-7x^2-x+5');
               $f = Compute($f);
-              $L = List(-3.714,-0.857,1,1.571);
+              $L = List(-3.71448,-0.856723,1,1.57120);
               Context("LimitedNumeric");
               </pg-code>
           </setup>
           <statement>
-            <p>Use Newton's Method to approximate all roots of <m>f(x)=<var name="$f" /></m> accurate to three places after the decimal. Use technology to obtain good initial approximations. Enter answers in list format, separated by commas.</p>
-            <table>
-              <tabular>
-                <row>
-                  <cell>Roots:</cell>
-                  <cell><var name="$L" width="50"/></cell>
-                </row>
-              </tabular>
-            </table>
+            <p>Use Newton's Method to approximate all roots of <m>f(x)=<var name="$f" /></m> accurate to three places after the decimal. Use technology to obtain good initial approximations.</p>
+            <p><var name="$L" width="50"/></p>
           </statement>
         </webwork>
       </exercise>
@@ -912,32 +898,25 @@
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\x^17-2x^13-10x^8+10</static>
+              <static>x^17-2x^13-10x^8+10</static>
             </var>
             <var name="$L">
-              <static>/(-1.013,0.988,1.393)</static>
+              <static>(-1.013,0.9883,1.393)</static>
             </var>
             <var name="$I">
-              <static>/(-2,2)</static>
+              <static>(-2,2)</static>
             </var>
             <pg-code>
               $f = list_random('x^17-2x^13-10x^8+10');
               $I = Interval(-2,2);
               $f = Compute($f);
-              $L = List(-1.013,0.988,1.393);
+              $L = List(-1.01340,0.988312,1.39341);
               Context("LimitedNumeric");
             </pg-code>
           </setup>
           <statement>
-            <p>Use Newton's Method to approximate all roots of <m>f(x)=<var name="$f" /></m> on the interval <m><var name="$I" /></m> accurate to three places after the decimal. Use technology to obtain good initial approximations. Enter answers in list format, separated by commas.</p>
-            <table>
-              <tabular>
-                <row>
-                  <cell>Roots:</cell>
-                  <cell><var name="$L" width="50"/></cell>
-                </row>
-              </tabular>
-            </table>
+            <p>Use Newton's Method to approximate all roots of <m>f(x)=<var name="$f" /></m> on the interval <m><var name="$I" /></m> accurate to three places after the decimal. Use technology to obtain good initial approximations.</p>
+            <p><var name="$L" width="50"/></p>
           </statement>
         </webwork>
       </exercise>
@@ -946,32 +925,25 @@
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\x^2*cos(x) + (x-1)*sin(x)</static>
+              <static>x^2\cos(x) + (x-1)\sin(x)</static>
             </var>
             <var name="$L">
-              <static>/(-2.165,0,0.525,1.813)</static>
+              <static>(-2.165,0,0.525,1.813)</static>
             </var>
             <var name="$I">
-              <static>/(-3,3)</static>
+              <static>(-3,3)</static>
             </var>
             <pg-code>
-              $f = list_random('x^2*cos(x) + (x-1)*sin(x)');
+              $f = list_random('x^2cos(x) + (x-1)sin(x)');
               $I = Interval(-3,3);
               $f = Compute($f);
-              $L = List(-2.165,0,0.525,1.813);
+              $L = List(-2.16477,0,0.524501,1.81328);
               Context("LimitedNumeric");
             </pg-code>
           </setup>
           <statement>
-            <p>Use Newton's Method to approximate all roots of <m>f(x)=<var name="$f" /></m> on the interval <m><var name="$I" /></m> accurate to three places after the decimal. Use technology to obtain good initial approximations. Enter answers in list format, separated by commas.</p>
-            <table>
-              <tabular>
-                <row>
-                  <cell>Roots:</cell>
-                  <cell><var name="$L" width="50"/></cell>
-                </row>
-              </tabular>
-            </table>
+            <p>Use Newton's Method to approximate all roots of <m>f(x)=<var name="$f" /></m> on the interval <m><var name="$I" /></m> accurate to three places after the decimal. Use technology to obtain good initial approximations.</p>
+            <p><var name="$L" width="50"/></p>
           </statement>
         </webwork>
       </exercise>
@@ -988,33 +960,26 @@
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\x^2</static>
+              <static>x^2</static>
             </var>
             <var name="$g">
-              <static>/cos(x)</static>
+              <static>\cos(x)</static>
             </var>
             <var name="$L">
-              <static>/(0.824)</static>
+              <static>(0.8241,-0.8241)</static>
             </var>
             <pg-code>
               $f = list_random('x^2');
               $g = list_random('cos(x)');
               $f = Compute($f);
               $g = Compute($g);
-              $L = List(0.824);
+              $L = List(0.824132,-0.824132);
               Context("LimitedNumeric");
             </pg-code>
           </setup>
           <statement>
-            <p>Use Newton's Method to approximate when <m>f(x)=<var name="$f" /></m> is equal to <m>g(x)=<var name="$g" /></m>, accurate to three places after the decimal. Use technology to obtain good initial approximations. Enter answers in list format, separated by commas.</p>
-            <table>
-              <tabular>
-                <row>
-                  <cell><m>f(x)=g(x)</m> when <m>x = </m></cell>
-                  <cell><var name="$L" width="40"/></cell>
-                </row>
-              </tabular>
-            </table>
+            <p>Use Newton's Method to approximate when <m>f(x)=<var name="$f" /></m> is equal to <m>g(x)=<var name="$g" /></m>, accurate to three places after the decimal. Use technology to obtain good initial approximations.</p>
+            <p><var name="$L" width="50"/></p>
           </statement>
         </webwork>
       </exercise>
@@ -1024,69 +989,56 @@
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\x^2-1</static>
+              <static>x^2-1</static>
             </var>
             <var name="$g">
-              <static>/sin(x)</static>
+              <static>\sin(x)</static>
             </var>
             <var name="$L">
-              <static>/(-0.637,1.410)</static>
+              <static>(-0.6367,1.410)</static>
             </var>
             <pg-code>
               $f = list_random('x^2-1');
               $g = list_random('sin(x)');
               $f = Compute($f);
               $g = Compute($g);
-              $L = List(-0.637,1.410);
+              $L = List(-0.636733,1.40962);
               Context("LimitedNumeric");
             </pg-code>
           </setup>
           <statement>
-            <p>Use Newton's Method to approximate when <m>f(x)=<var name="$f" /></m> is equal to <m>g(x)=<var name="$g" /></m>, accurate to three places after the decimal. Use technology to obtain good initial approximations. Enter answers in list format, separated by commas.</p>
-            <table>
-              <tabular>
-                <row>
-                  <cell><m>f(x)=g(x)</m> when <m>x = </m></cell>
-                  <cell><var name="$L" width="40"/></cell>
-                </row>
-              </tabular>
-            </table>
+            <p>Use Newton's Method to approximate when <m>f(x)=<var name="$f" /></m> is equal to <m>g(x)=<var name="$g" /></m>, accurate to three places after the decimal. Use technology to obtain good initial approximations.</p>
+            <p><var name="$L" width="50"/></p>
           </statement>
         </webwork>
       </exercise>
 
 <!--THREE OF FOUR-->
+<!--This exercise has the solution x = 0, not the one listed in the solutions; it's rather trivial-->
       <exercise>
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\e^(x^2)</static>
+              <static>e^(x^2)</static>
             </var>
             <var name="$g">
-              <static>/cos(x)</static>
+              <static>\cos(x)</static>
             </var>
             <var name="$L">
-              <static>/(0.743)</static>
+              <static>(0)</static>
             </var>
             <pg-code>
               $f = list_random('e^(x^2)');
               $g = list_random('cos(x)');
               $f = Compute($f);
               $g = Compute($g);
-              $L = List(0.743);
+              $L = List(0);
               Context("LimitedNumeric");
             </pg-code>
           </setup>
           <statement>
-            <p>Use Newton's Method to approximate when <m>f(x)=<var name="$f" /></m> is equal to <m>g(x)=<var name="$g" /></m>, accurate to three places after the decimal. Use technology to obtain good initial approximations. Enter answers in list format, separated by commas.</p>
-            <table>
-              <tabular>
-                <row>
-                  <cell><m>f(x)=g(x)</m> when <m>x = </m></cell>
-                  <cell><var name="$L" width="40"/></cell>
-                </row>
-              </tabular>
-            </table>
+            <p>Use Newton's Method to approximate when <m>f(x)=<var name="$f" /></m> is equal to <m>g(x)=<var name="$g" /></m>, accurate to three places after the decimal. Use technology to obtain good initial approximations.</p>
+            <p><var name="$L" width="50"/></p>
           </statement>
         </webwork>
       </exercise>
@@ -1096,16 +1048,16 @@
         <webwork seed="1">
           <setup>
             <var name="$f">
-              <static>\x</static>
+              <static>x</static>
             </var>
             <var name="$g">
-              <static>/tan(x)</static>
+              <static>\tan(x)</static>
             </var>
             <var name="$I">
-              <static>/[-6,6]</static>
+              <static>[-6,6]</static>
             </var>
             <var name="$L">
-              <static>/(4.493,0)</static>
+              <static>(4.493,-4.493,0)</static>
             </var>
             <pg-code>
               $f = list_random('x');
@@ -1113,20 +1065,13 @@
               $f = Compute($f);
               $g = Compute($g);
               $I = Interval([-6,6]);
-              $L = List(4.493,0);
+              $L = List(4.49341,-4.49341,0);
               Context("LimitedNumeric");
             </pg-code>
           </setup>
           <statement>
-            <p>Use Newton's Method to approximate when <m>f(x)=<var name="$f" /></m> is equal to <m>g(x)=<var name="$g" /></m> on the interval <m><var name="$I" /></m>, accurate to three places after the decimal. Use technology to obtain good initial approximations. Enter answers in list format, separated by commas.</p>
-            <table>
-              <tabular>
-                <row>
-                  <cell><m>f(x)=g(x)</m> when <m>x = </m></cell>
-                  <cell><var name="$L" width="40"/></cell>
-                </row>
-              </tabular>
-            </table>
+            <p>Use Newton's Method to approximate when <m>f(x)=<var name="$f" /></m> is equal to <m>g(x)=<var name="$g" /></m> on the interval <m><var name="$I" /></m>, accurate to three places after the decimal. Use technology to obtain good initial approximations.</p>
+            <p><var name="$L" width="50"/></p>
           </statement>
         </webwork>
       </exercise>
