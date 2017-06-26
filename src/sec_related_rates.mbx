@@ -269,232 +269,303 @@
     <p>In the next section we use Extreme Value concepts to <em>optimize</em> quantities.</p>
   </introduction>
   <exercises>
+<!--Group 1: T/F questions-->
     <exercisegroup>
       <introduction>
         <p>Terms and Concepts</p>
       </introduction>
+<!--Exercise 1: T/F-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$true">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
+            </var>
+            <var name="$false">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: Implicit differentiation is often used when solving <q>related rates</q> type problems.</p>
+            <p>T/F: Implicit differentiation is often used when solving <q>related rates</q> type problems. <var name="$true" form="popup"/></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 2: Bizarre T/F-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+             <var name="$true">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
+            </var>
+            <var name="$false">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: A study of related rates is part of the standard police officer training.</p>
+            <p>T/F: A study of related rates is part of the standard police officer training. <var name="$false" form="popup"/></p>
           </statement>
-          <solution>
-            <p>F</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
+<!--Group 2: Related rates answer entry-->
     <exercisegroup>
       <title>Problems</title>
+<!--Exercise 3: Puddle of depth 10 cm growing-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.7958</static>
+            </var>
+            <var name="$b">
+              <static>0.07958</static>
+            </var>
+            <var name="$c">
+              <static>0.007958</static>
             </var>
             <pg-code>
+              <!--FUNGUS: Is this correct?-->
+              $a = 0.7958;
+              $b = 0.07958;
+              $c = 0.007958;
             </pg-code>
           </setup>
           <statement>
             <p>Water flows onto a flat surface at a rate of 5cm<m>^3</m>/s forming a circular puddle 10mm deep. How fast is the radius growing when the radius is:</p>
 
             <ol>
-              <li><p>1 cm?</p></li>
+              <li><p>1 cm?</p>
+                <p><var name="$a" width="10"/></p>
+              </li>
 
-              <li><p>10 cm?</p></li>
+              <li><p>10 cm?</p>
+                <p><var name="$b" width="10"/></p>
+              </li>
 
-              <li><p>100 cm?</p></li>
+              <li><p>100 cm?</p>
+                <p><var name="$c" width="10"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>5/(2\pi) \approx 0.796</m>cm/s</p></li>
-
-              <li><p><m>1/(4\pi)\approx 0.0796</m> cm/s</p></li>
-
-              <li><p><m>1/(40\pi)\approx 0.00796</m> cm/s</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 4: Spherical balloon radius increasing-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.7958</static>
+            </var>
+            <var name="$b">
+              <static>0.007958</static>
+            </var>
+            <var name="$c">
+              <!--FUNGUS: The decimal 0.00007958 is not recognized as correct when I test it,
+              when entered in the pg-code. It says 7.958e-5 is correct, but that evaluates to 16.6321.
+              Putting the exact answer there instead allows WW to recognize 0.00007958 as correct.-->
+
+              <static>0.00007958</static>
             </var>
             <pg-code>
+              $a = 0.7958;
+              $b = 0.007958;
+              $c = 1/(4000*pi);
             </pg-code>
           </setup>
           <statement>
-            <p>A circular balloon is inflated with air flowing at a rate of 10cm<m>^3</m>/s. How fast is the radius of the balloon increasing when the radius is:</p>
+            <p>A spherical balloon is inflated with air flowing at a rate of 10cm<m>^3</m>/s. How fast is the radius of the balloon increasing when the radius is:</p>
 
             <ol>
-              <li><p>1 cm?</p></li>
-
-              <li><p>10 cm?</p></li>
-
-              <li><p>100 cm?</p></li>
+              <li><p>1 cm?</p>
+                <p><var name="$a" width="10"/></p>
+              </li>
+              <li><p>10 cm?</p>
+                <p><var name="$b" width="10"/></p>
+              </li>
+              <li><p>100 cm?</p>
+                <p><var name="$c" width="10"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>5/(2\pi)\approx 0.796</m>cm/s</p></li>
-
-              <li><p><m>1/(40\pi)\approx 0.00796</m> cm/s</p></li>
-
-              <li><p><m>1/(4000\pi)\approx 0.0000796</m> cm/s</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 5: Refer to Example 100-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>63.14</static>
             </var>
             <pg-code>
+              $a = 63.14;
             </pg-code>
           </setup>
           <statement>
+            <!--FUNGUS: Is this really -80mph? It looks out of place when rendered.-->
             <p>Consider the traffic situation introduced in <xref ref="ex_rr3">Example</xref>. How fast is the <q>other car</q> traveling if the officer and the other car are each 1/2 mile from the intersection, the other car is traveling <em>due west</em>, the officer is traveling north at 50mph, and the radar reading is <m>-80</m>mph?</p>
+            <p><var name="$a" width="10" /></p>
+            <!--FUNGUS: Are units required with the answer? (Yes) How do I force the user to enter them?-->
           </statement>
-          <solution>
-            <p><m>63.14</m>mph</p>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 6: Also refer to Example 100-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>64.44</static>
+            </var>
+            <var name="$b">
+              <static>78.89</static>
             </var>
             <pg-code>
+              $a = 64.44;
+              $b = 78.89;
             </pg-code>
           </setup>
           <statement>
             <p>Consider the traffic situation introduced in <xref ref="ex_rr3">Example</xref>. Calculate how fast the <q>other car</q> is traveling in each of the following situations.</p>
-
             <ol>
-              <li><p>The officer is traveling due north at 50mph and is 1/2 mile from the intersection, while the other car is 1 mile from the intersection traveling west and the radar reading is <m>-80</m>mph?</p></li>
-
-              <li><p>The officer is traveling due north at 50mph and is 1 mile from the intersection, while the other car is 1/2 mile from the intersection traveling west and the radar reading is <m>-80</m>mph?</p></li>
+              <li>
+                <p>The officer is traveling due north at 50mph and is 1/2 mile from the intersection, while the other car is 1 mile from the intersection traveling west and the radar reading is <m>-80</m>mph?</p>
+                <p><var name="$a" width="10"/></p>
+              </li>
+              <li>
+                <p>The officer is traveling due north at 50mph and is 1 mile from the intersection, while the other car is 1/2 mile from the intersection traveling west and the radar reading is <m>-80</m>mph?</p>
+                <p><var name="$b" width="10"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>64.44</m> mph</p></li>
-
-              <li><p><m>78.89</m> mph</p></li>
-            </ol>
-          </solution>
+<!--FUNGUS: There's no reason I need to keep the <solution> text, is there?-->
         </webwork>
       </exercise>
+<!--Exercise 7: Anti-aircraft gun-->
+<!--FUNGUS: Why does this exercise have xml:id? The others do not.-->
       <exercise xml:id="exer_04_02_ex_07">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+<!--FUNGUS: Should I solve these to get the requisite 4 significant figures?-->
+            <var name="$a">
+              <static>0.0573</static>
+            </var>
+            <var name="$b">
+              <static>0.0725</static>
+            </var>
+            <var name="$c">
+              <static>0.0733</static>
             </var>
             <pg-code>
+              $a = 0.0573;
+              $b = 0.0725;
+              $c = 0.0733;
             </pg-code>
           </setup>
           <statement>
+<!--FUNGUS: With the picture, this question seems okay, but without it, the aircraft's minimum distance is  10,000 feet away. The ground distance should be referenced, for maximum clarity.-->
+<!--Except, there's no code here to embed the picture like there is for the question with the ladder. But there is a picture in the printed book I have.-->
+<!--FUNGUS: This problem makes no sense. You have to lead a target to actually hit it. Are we assuming the gun rotates to a spot in front of the aircraft that accounts for travel time of aircraft, projectile, and detonation? Real-world problems should be actually real. Make it a camera tracking a plane or something instead.-->
+<!--I feel like this question should have prompting regarding the appropriate units to be used in the answer. Radians/second isn't something students are likely to be familiar with.-->
             <p>An F-22 aircraft is flying at 500mph with an elevation of 10,000ft on a straight<ndash />line path that will take it directly over an anti<ndash />aircraft gun.</p>
-
-            <!-- START\1END -->
-
             <p>How fast must the gun be able to turn to accurately track the aircraft when the plane is:</p>
 
             <ol>
-              <li><p>1 mile away?</p></li>
-
-              <li><p>1/5 mile away?</p></li>
-
-              <li><p>Directly overhead?</p></li>
+              <li><p>1 mile away?</p>
+                <p><var name="$a" width="10"/></p>
+              </li>
+              <li><p>1/5 mile away?</p>
+                <p><var name="$b" width="10"/></p>
+              </li>
+              <li><p>Directly overhead?</p>
+                <p><var name="$c" width="10"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <p>Due to the height of the plane, the gun does not have to rotate very fast.</p>
-
-            <ol>
-              <li><p><m>0.0573</m> rad/s</p></li>
-
-              <li><p><m>0.0725</m> rad/s</p></li>
-
-              <li><p>In the limit, rate goes to <m>0.0733</m> rad/s</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 8: Anti-aircraft gun 2-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.073</static>
+            </var>
+            <var name="$b">
+              <static>3.66</static>
+            </var>
+            <var name="$c">
+              <static>7.33</static>
             </var>
             <pg-code>
+              $a = 0.073;
+              $b = 3.66;
+              $c = 7.33;
             </pg-code>
           </setup>
           <statement>
+<!--FUNGUS: The ensuing class discussion regarding this pilot's death wish will certainly be lively-->
             <p>An F-22 aircraft is flying at 500mph with an elevation of 100ft on a straight<ndash />line path that will take it directly over an anti<ndash />aircraft gun as in <xref ref="exer_04_02_ex_07">Exercise</xref> (note the lower elevation here).</p>
 
             <p>How fast must the gun be able to turn to accurately track the aircraft when the plane is:</p>
 
             <ol>
-              <li><p>1000 feet away?</p></li>
-
-              <li><p>100 feet away?</p></li>
-
-              <li><p>Directly overhead?</p></li>
+              <li><p>1000 feet away?</p>
+                <p><var name="$a" width="10"/></p>
+              </li>
+              <li><p>100 feet away?</p>
+                <p><var name="$b" width="10"/></p>
+              </li>
+              <li><p>Directly overhead?</p>
+                <p><var name="$c" width="10"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <p>Due to the height of the plane, the gun does not have to rotate very fast.</p>
-
-            <ol>
-              <li><p><m>0.073</m> rad/s</p></li>
-
-              <li><p><m>3.66</m> rad/s (about 1/2 revolution/sec)</p></li>
-
-              <li><p>In the limit, rate goes to <m>7.33</m> rad/s (more than 1 revolution/sec)</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 9: Ladder sliding down a house-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.04</static>
+            </var>
+            <var name="$b">
+              <static>0.458</static>
+            </var>
+            <var name="$c">
+              <static>3.35</static>
+            </var>
+            <var name="$d">
+              <!--FUNGUS: How do I code this answer? It doesn't work, so it's not really infinity.
+              And in the same comment: Why does the svg image not load in Firefox for Ubuntu?-->
+              <static>/infty</static>
             </var>
             <pg-code>
+              $a = 0.04;
+              $b = 0.458;
+              $c = 3.35;
+              $d = infinity;
             </pg-code>
           </setup>
           <statement>
@@ -527,35 +598,44 @@
             <p>At what rate is the top of the ladder sliding down the side of the house when the base is:</p>
 
             <ol>
-              <li><p>1 foot from the house?</p></li>
-
-              <li><p>10 feet from the house?</p></li>
-
-              <li><p>23 feet from the house?</p></li>
-
-              <li><p>24 feet from the house?</p></li>
+              <li><p>1 foot from the house?</p>
+                <p><var name="$a" width="10"/></p>
+              </li>
+              <li><p>10 feet from the house?</p>
+                <p><var name="$b" width="10"/></p>
+              </li>
+              <li><p>23 feet from the house?</p>
+                <p><var name="$c" width="10"/></p>
+              </li>
+              <li><p>24 feet from the house?</p>
+                <p><var name="$d" width="10"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>0.04</m> ft/s</p></li>
-
-              <li><p><m>0.458</m> ft/s</p></li>
-
-              <li><p><m>3.35</m> ft/s</p></li>
-
-              <li><p>Not defined; as the distance approaches 24, the rates approaches <m>\infty</m>.</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 10: Winch that boat in-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$a">
+              <static>30.59</static>
+            </var>
+            <var name="$b">
+              <static>36.1</static>
+            </var>
+            <var name="$c">
+              <static>301</static>
+            </var>
+            <var name="$d">
+              <!--FUNGUS: Not sure what to put here. Text answer.-->
               <static></static>
             </var>
             <pg-code>
+              $a = 30.59;
+              $b = 36.1;
+              $c = 301;
+              $d = "FUNGUS";
             </pg-code>
           </setup>
           <statement>
@@ -603,15 +683,21 @@
             <p>At what rate is the boat approaching the dock when the boat is:</p>
 
             <ol>
-              <li><p>50 feet out?</p></li>
-
-              <li><p>15 feet out?</p></li>
-
-              <li><p>1 foot from the dock?</p></li>
-
-              <li><p>What happens when the length of rope pulling in the boat is less than 10 feet long?</p></li>
+              <li><p>50 feet out?</p>
+                <p><var name="$a" width="10"/></p>
+              </li>
+              <li><p>15 feet out?</p>
+                <p><var name="$b" width="10"/></p>
+              </li>
+              <li><p>1 foot from the dock?</p>
+                <p><var name="$c" width="10"/></p>
+              </li>
+              <li><p>What happens when the length of rope pulling in the boat is less than 10 feet long?</p>
+                <p><var name="$d" width="10"/></p>
+              </li>
             </ol>
           </statement>
+<!--FUNGUS: leaving these in until I know how to code answer d-->
           <solution>
             <ol>
               <li><p><m>30.59</m> ft/min</p></li>
@@ -625,48 +711,70 @@
           </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 11: Inverted cylindrical cone-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>50.92</static>
+            </var>
+            <var name="$b">
+              <static>0.509</static>
+            </var>
+            <var name="$c">
+              <static>0.141</static>
+            </var>
+            <var name="$d">
+              <static>52.36</static>
             </var>
             <pg-code>
+              $a = 50.92;
+              $b = 0.509;
+              $c = 0.141;
+              $d = 52.36;
             </pg-code>
           </setup>
           <statement>
             <p>An inverted cylindrical cone, 20ft deep and 10ft across at the top, is being filled with water at a rate of 10ft<m>^3</m>/min. At what rate is the water rising in the tank when the depth of the water is:</p>
-
+<!--FUNGUS: maybe it makes more sense to put the answer blanks right below the text-->
             <ol>
-              <li><p>1 foot?</p></li>
+              <li><p>1 foot?</p>
+                <p><var name="$a" width="10" /></p>
+              </li>
 
-              <li><p>10 feet?</p></li>
+              <li><p>10 feet?</p>
+                <p><var name="$b" width="10" /></p>
+              </li>
 
-              <li><p>19 feet?</p></li>
+              <li><p>19 feet?</p>
+                <p><var name="$c" width="10" /></p>
+              </li>
             </ol>
 
             <p>How long will the tank take to fill when starting at empty?</p>
+            <p><var name="$d" width="10" /></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>50.92</m> ft/min</p></li>
-
-              <li><p><m>0.509</m> ft/min</p></li>
-
-              <li><p><m>0.141</m> ft/min</p></li>
-            </ol>
-
-            <p>As the tank holds about 523.6ft<m>^3</m>, it will take about 52.36 minutes.</p>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 12: Rope, pulley, man standing next to the weight and walking away-->
+<!--FUNGUS: why a man? Sure problem 14 has a woman, but does gender matter to related rates?-->
       <exercise xml:id="exer_04_02_ex_12">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.63</static>
+            </var>
+            <var name="$b">
+              <static>1.6</static>
+            </var>
+            <var name="$c">
+              <static>52</static>
             </var>
             <pg-code>
+              $a = 0.63;
+              $b = 1.6;
+              $c = 52;
             </pg-code>
           </setup>
           <statement>
@@ -703,77 +811,91 @@
             <p>Suppose the man stands directly next to the weight (i.e., a total rope length of 60 ft) and begins to walk away at a rate of 2ft/s. How fast is the weight rising when the man has walked:</p>
 
             <ol>
-              <li><p>10 feet?</p></li>
-
-              <li><p>40 feet?</p></li>
+              <li><p>10 feet?</p>
+                <p><var name="$a" width="10" /></p>
+              </li>
+              <li><p>40 feet?</p>
+                <p><var name="$b" width="10" /></p>
+              </li>
             </ol>
-
             <p>How far must the man walk to raise the weight all the way to the pulley?</p>
+            <p><var name="$c" width="10" /></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>0.63</m> ft/sec</p></li>
-
-              <li><p><m>1.6</m> ft/sec</p></li>
-            </ol>
-
-            <p>About 52 ft.</p>
-          </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 13: Same setup, but starting further away-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>80</static>
+            </var>
+            <var name="$b">
+              <static>1.71</static>
+            </var>
+            <var name="$c">
+              <static>1.87</static>
+            </var>
+            <var name="$d">
+              <static>34</static>
             </var>
             <pg-code>
+              $a = 80;
+              $b = 1.71;
+              $c = 1.87;
+              $d = 34;
             </pg-code>
           </setup>
           <statement>
             <p>Consider the situation described in <xref ref="exer_04_02_ex_12">Exercise</xref>. Suppose the man starts 40ft from the weight and begins to walk away at a rate of 2ft/s.</p>
 
             <ol>
-              <li><p>How long is the rope?</p></li>
-
-              <li><p>How fast is the weight rising after the man has walked 10 feet?</p></li>
-
-              <li><p>How fast is the weight rising after the man has walked 40 feet?</p></li>
-
-              <li><p>How far must the man walk to raise the weight all the way to the pulley?</p></li>
+              <li><p>How long is the rope?</p>
+                <p><var name="$a" width="10" /></p>
+              </li>
+              <li><p>How fast is the weight rising after the man has walked 10 feet?</p>
+                <p><var name="$b" width="10" /></p>
+              </li>
+              <li><p>How fast is the weight rising after the man has walked 40 feet?</p>
+                <p><var name="$c" width="10" /></p>
+              </li>
+              <li><p>How far must the man walk to raise the weight all the way to the pulley?</p>
+                <p><var name="$d" width="10" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p>The rope is 80ft long.</p></li>
-
-              <li><p><m>1.71</m> ft/sec</p></li>
-
-              <li><p><m>1.87</m> ft/sec</p></li>
-
-              <li><p>About 34 feet.</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 14: Hot air balloon rising while being tracked-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>105</static>
+            </var>
+            <var name="$b">
+              <static>17.45</static>
             </var>
             <pg-code>
+              $a = 105;
+              $b = 17.45;
             </pg-code>
           </setup>
           <statement>
             <p>A hot air balloon lifts off from ground rising vertically. From 100 feet away, a 5' woman tracks the path of the balloon. When her sightline with the balloon makes a 45<m>^\circ</m> angle with the horizontal, she notes the angle is increasing at about 5<m>^\circ</m>/min.</p>
 
             <ol>
-              <li><p>What is the elevation of the balloon?</p></li>
-
-              <li><p>How fast is it rising?</p></li>
+              <li><p>What is the elevation of the balloon?</p>
+                <p><var name="$a" width="10" /></p>
+              </li>
+              <li><p>How fast is it rising?</p>
+                <p><var name="$b" width="10" /></p>
+              </li>
             </ol>
           </statement>
+<!--FUNGUS: a hint at the end of the solution doesn't seem particularly useful. Should it be above?-->
           <solution>
             <ol>
               <li><p>The balloon is 105ft in the air.</p></li>
@@ -783,23 +905,24 @@
           </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 15: Sand being dumped into a conical pile-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.003</static>
             </var>
             <pg-code>
+              $a = 0.003;
             </pg-code>
           </setup>
           <statement>
             <p>A company that produces landscaping materials is dumping sand into a conical pile. The sand is being poured at a rate of 5ft<m>^3</m>/sec; the physical properties of the sand, in conjunction with gravity, ensure that the cone's height is roughly 2/3 the length of the diameter of the circular base.</p>
 
             <p>How fast is the cone rising when it has a height of 30 feet?</p>
+            <p><var name="$a" width="10" /></p>
           </statement>
-          <solution>
-            <p>The cone is rising at a rate of <m>0.003</m>ft/s.</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
