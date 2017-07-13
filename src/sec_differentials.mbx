@@ -325,117 +325,115 @@
 
   </introduction>
   <exercises>
+
+<!-- Group 1: T/F and Text -->
     <exercisegroup>
       <introduction>
         <p>Terms and Concepts</p>
       </introduction>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: Given a differentiable function <m>y=f(x)</m>, we are generally free to choose a value for <m>dx</m>, which then determines the value of <m>dy</m>.</p>
+            <p>Given a differentiable function <m>y=f(x)</m>, we are generally free to choose a value for <m>dx</m>, which then determines the value of <m>dy</m>.</p>
+            <p><var name="$true" form="popup" /></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: The symbols <q><m>dx</m></q> and <q>\dx</q> represent the same concept.</p>
+            <todo>In this question and the next, the book shows delta but this renders as d</todo>
+            <p>The symbols <q><m>dx</m></q> and <q>\dx</q> represent the same concept.</p>
+            <p><var name="$true" form="popup" /></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: The symbols <q><m>dy</m></q> and <q>\dy</q> represent the same concept.</p>
+            <p>The symbols <q><m>dy</m></q> and <q>\dy</q> represent the same concept.</p>
+            <p><var name="$false" form="popup" /></p> <!--Not clear in text how this is false but above is true -->
           </statement>
-          <solution>
-            <p>F</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: Differentials are important in the study of integration.</p>
+            <p>Differentials are important in the study of integration.</p>
+            <p><var name = "$true" form="popup" /></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>How are differentials and tangent lines related?</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+    
+<!-- Group 2: Approximate with differentials -->
     <exercisegroup xml:id="lastdefcount1">
       <introduction>
         <p>In the following exercises, use differentials to approximate the given value by hand.</p>
       </introduction>
+
+<!-- Exercises 6 & 7: Square function -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("x^2");
+              $df = $f->D('x');
+              $x0 = Compute("2");
+              $dx = Compute("0.05");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0)); <!--4.2-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>2.05^2</m></p>
+            <p><m><var name="$x1" />^2</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = x^2</m>; <m>dy = 2x\cdot dx</m> with <m>x=2</m> and <m>dx = 0.05</m>. Thus <m>dy = .2</m>; knowing <m>2^2=4</m>, we have <m>2.05^2 \approx 4.2</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -443,16 +441,23 @@
               <static></static>
             </var>
             <pg-code>
+              $f = Compute("x^2");
+              $df = $f->D('x');
+              $x0 = Compute("6");
+              $dx = Compute("-0.07");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0)); <!--35.16-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>5.93^2</m></p>
+            <p><m><var name="$x1" />^2</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = x^2</m>; <m>dy = 2x\cdot dx</m> with <m>x=6</m> and <m>dx = -0.07</m>. Thus <m>dy = -0.84</m>; knowing <m>6^2=36</m>, we have <m>5.93^2 \approx 35.16</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercises 8 & 9: Cube function -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -460,16 +465,22 @@
               <static></static>
             </var>
             <pg-code>
+              $f = Compute("x^3");
+              $df = $f->D('x');
+              $x0 = Compute("5");
+              $dx = Compute("0.1");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0)); <!--132.5-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>5.1^3</m></p>
+            <p><m><var name="$x1" />^3</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = x^3</m>; <m>dy = 3x^2\cdot dx</m> with <m>x=5</m> and <m>dx = 0.1</m>. Thus <m>dy = 7.5</m>; knowing <m>5^3=125</m>, we have <m>5.1^3 \approx 132.5</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -477,147 +488,189 @@
               <static></static>
             </var>
             <pg-code>
+              $f = Compute("x^3");
+              $df = $f->D('x');
+              $x0 = Compute("7");
+              $dx = Compute("-0.2");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0)); <!--313.6-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>6.8^3</m></p>
+            <p><m><var name="$x1" />^3</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = x^3</m>; <m>dy = 3x^2\cdot dx</m> with <m>x=7</m> and <m>dx = -0.2</m>. Thus <m>dy = -29.4</m>; knowing <m>7^3=343</m>, we have <m>6.8^3 \approx 313.6</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercises 10 & 11: Square root function -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("x^0.5");
+              $df = $f->D('x');
+              $x0 = Compute("16");
+              $dx = Compute("0.5");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0)); <!--4.0625-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>\sqrt{16.5}</m></p>
+            <p><m>\sqrt{<var name="$x1" />}</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = \sqrt{x}</m>; <m>dy = 1/(2\sqrt{x})\cdot dx</m> with <m>x=16</m> and <m>dx = 0.5</m>. Thus <m>dy = .0625</m>; knowing <m>\sqrt{16}=4</m>, we have <m>\sqrt{16.5} \approx 4.0625</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("x^0.5");
+              $df = $f->D('x');
+              $x0 = Compute("25");
+              $dx = Compute("-1");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0)); <!--4.9-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>\sqrt{24}</m></p>
+            <p><m>\sqrt{<var name="$x1" />}</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = \sqrt{x}</m>; <m>dy = 1/(2\sqrt{x})\cdot dx</m> with <m>x=25</m> and <m>dx = -1</m>. Thus <m>dy = -0.1</m>; knowing <m>\sqrt{25}=5</m>, we have <m>\sqrt{24} \approx 4.9</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+      
+<!-- Exercises 12 & 13: Cube root -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("x^(1/3)");
+              $df = $f->D('x');
+              $x0 = Compute("64");
+              $dx = Compute("-1");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0)); <!--3.98-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>\sqrt[3]{63}</m></p>
+            <p><m>\sqrt[3]{<var name="$x1" />}</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = \sqrt[3]{x}</m>; <m>dy = 1/(3\sqrt[3]{x^2})\cdot dx</m> with <m>x=64</m> and <m>dx = -1</m>. Thus <m>dy = -1/48\approx 0.0208</m>; we could use <m>-1/48\approx -1/50=-0.02</m>; knowing <m>\sqrt[3]{64}=4</m>, we have <m>\sqrt[3]{63} \approx 3.98</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("x^(1/3)");
+              $df = $f->D('x');
+              $x0 = Compute("8");
+              $dx = Compute("0.5");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0));   <!--2.04-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>\sqrt[3]{8.5}</m></p>
+            <p><m>\sqrt[3]{<var name="$x1" />}</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = \sqrt[3]{x}</m>; <m>dy = 1/(3\sqrt[3]{x^2})\cdot dx</m> with <m>x=8</m> and <m>dx = 0.5</m>. Thus <m>dy = 1/24\approx 1/25=0.04</m>; knowing <m>\sqrt[3]{8}=2</m>, we have <m>\sqrt[3]{8.5} \approx 2.04</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercise 14: sin(x) -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->flags->set(ReducedConstants=>0);
+              $f = Compute("sin(x)");
+              $df = $f->D('x');
+              $x0 = Compute("pi");
+              $dx = Compute("3 - pi");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0));   <!--0.1416-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>\sin(3)</m></p>
+            <p><m>\sin(<var name="$x1" />)</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = \sin(x)</m>; <m>dy = \cos(x) \cdot dx</m> with <m>x=\pi</m> and <m>dx \approx -0.14</m>. Thus <m>dy = 0.14</m>; knowing <m>\sin(\pi) = 0</m>, we have <m>\sin(3) \approx 0.14</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercise 15: cos(x) -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->flags->set(ReducedConstants=>0);
+              $f = Compute("cos(x)");
+              $df = $f->D('x');
+              $x0 = Compute("pi/2");
+              $dx = Compute("1.5 - pi/2");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0));   <!--0.07080-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>\cos(1.5)</m></p>
+            <p><m>\cos(<var name="$x1" />)</m></p>
+            <p><var name="$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = \cos(x)</m>; <m>dy = -\sin(x) \cdot dx</m> with <m>x=\pi/2\approx 1.57</m> and <m>dx \approx -0.07</m>. Thus <m>dy = 0.07</m>; knowing <m>\cos(\pi) /2 = 0</m>, we have <m>\cos(1.5) \approx 0.07</m>.</p>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercise 16: e^x -->
       <exercise>
         <webwork seed="1">
+
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("e^x");
+              $df = $f->D('x');
+              $x0 = Compute("0");
+              $dx = Compute("0.1");
+              $x1 = Compute($x0 + $dx);
+              $dy = Compute($df->eval(x=>$x0)*$dx);
+              $r = Compute($dy + $f->eval(x=>$x0));   <!--1.100-->
             </pg-code>
           </setup>
           <statement>
-            <p><m>e^{0.1}</m></p>
+            <p><m>e^{<var name="$x1" />}</m></p>
+            <p><var name = "$r" width="10" /></p>
           </statement>
-          <solution>
-            <p>Use <m>y = e^x</m>; <m>dy = e^x\cdot dx</m> with <m>x=0</m> and <m>dx =0.1</m>. Thus <m>dy = 0.1</m>; knowing <m>e^0=1</m>, we have <m>e^{0.1} \approx 1.1</m>.</p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, compute the differential <m>dy</m>.</p>
+    </exercisegroup>
+
+<!-- Exercise 17 - 29: Compute differential -->
+<!--FUNGUS: Come back to this group when I figure out how to make them enter "$df dx"-->
+    <exercisegroup>
+      <introduction>
+       <p>In the following exercises, compute the differential <m>dy</m>.</p>
+      </introduction>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("x^2+3x-5");
+              $df = $f->D('x');
+              $r = "$df";
             </pg-code>
           </setup>
           <statement>
             <p><m>y=x^2+3x-5</m></p>
+            <p><var name="$r" width="10" /> <m>dx</m></p>
           </statement>
           <solution>
             <p><m>dy = (2x+3)dx</m></p>
@@ -828,67 +881,84 @@
           </solution>
         </webwork>
       </exercise>
+    </exercisegroup>
+    
+    <exercisegroup>
+
+<!-- Exercise 30: Propogated error in a plastic sphere -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("4/3*pi*x^3");
+              $df = $f->D('x');
+              $x0 = Compute("1/2");
+              $dx = Compute("0.1/2");
+              $err = $df->eval(x=>$x0) * $dx;
+              $err = NumberWithUnits("$err cm^3");    <!--pi/20-->
             </pg-code>
           </setup>
           <statement>
             <p>A set of plastic spheres are to be made with a diameter of 1cm. If the manufacturing process is accurate to 1mm, what is the propagated error in volume of the spheres?</p>
+            <p><var name="$err" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dV = \pm 0.157</m></p>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercise 31: Propagated error dropping a stone into a hole -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("16*x^2");
+              $df = $f->D('x');
+              $dx = Compute("2/10");
+              $x0_a = Compute("2");
+              $x0_b = Compute("5");
+              
+              $err_a = $df->eval(x=>$x0_a) * $dx;
+              $err_a = NumberWithUnits("$err_a ft");  <!--12.8 ft-->
+              
+              $err_b = $df->eval(x=>$x0_b) * $dx;
+              $err_b = NumberWithUnits("$err_b ft"); <!--32 ft-->
             </pg-code>
           </setup>
           <statement>
             <p>The distance, in feet, a stone drops in <m>t</m> seconds is given by <m>d(t) = 16t^2</m>. The depth of a hole is to be approximated by dropping a rock and listening for it to hit the bottom. What is the propagated error if the time measurement is accurate to <m>2/10^{\text{ ths } }</m> of a second and the measured time is:</p>
 
             <ol>
-              <li><p>2 seconds?</p></li>
-
-              <li><p>5 seconds?</p></li>
+              <li><p>2 seconds?</p>
+                <p><var name="$err_a" width="20" /></p>
+              </li>
+              <li><p>5 seconds?</p>
+                <p><var name="$err_b" width="20" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>\pm</m>12.8 feet</p></li>
-
-              <li><p><m>\pm</m>32 feet</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercise 32: Propagated error in cross-sectional area of a log -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $f = Compute("pi*x^2");
+              $df = $f->D('x');
+              $r = Compute("15/2");
+              $dr = Compute("1/8");
+              $err = $df->eval(x=>$r) * $dr;    <!--15pi/8-->
+              $err = NumberWithUnits("$err in^2"); 
             </pg-code>
           </setup>
           <statement>
             <p>What is the propagated error in the measurement of the cross sectional area of a circular log if the diameter is measured at <m>15''</m>, accurate to <m>1/4''</m>?</p>
+            <p><var name="$err" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>\pm15\pi/8 \approx \pm5.89</m>in<m>^2</m></p>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercise 33: Propagated error in SA of wall -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -896,17 +966,28 @@
               <static></static>
             </var>
             <pg-code>
+              $f = Compute("8*x");
+              $df = $f->D('x');
+              $dx = Compute("1/24");
+              $x = Compute("10 + 7/12");
+              $err = $df->eval(x=>$x) * $dx;
+              $err = NumberWithUnits("$err ft^2");
             </pg-code>
           </setup>
           <statement>
             <p>A wall is to be painted that is <m>8'</m> high and is measured to be <m>10',\ 7''</m> long. Find the propagated error in the measurement of the wall's surface area if the measurement is accurate to <m>1/2''</m>.</p>
+            <p><var name="$err" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>\pm</m>48in<m>^2</m>, or 1/3ft<m>^2</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>The following exercises explore some issues related to surveying in which distances are approximated using other measured distances and measured angles. <em>(Hint: Convert all angles to radians before computing.)</em></p>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>The following exercises explore some issues related to surveying in which distances are approximated using other measured distances and measured angles. <em>(Hint: Convert all angles to radians before computing.)</em></p>
+      </introduction>
+    
+<!-- Exercise 34: Error in length of wall -->
       <exercise xml:id="exer_04_04_ex_35">
         <webwork seed="1">
           <setup>
@@ -914,6 +995,15 @@
               <static></static>
             </var>
             <pg-code>
+              $theta = Compute("85.2*pi/180");
+              $dtheta = Compute("1*pi/180");
+              $f = Compute("25*tan(x)");
+              $df = $f->D('x');
+              $l = $f->eval(x=>$theta);   
+              $err = $df->eval(x=>$theta) * $dtheta;
+              $err_pct = Compute("$err/$l");  <!--20.92%-->
+              $l = NumberWithUnits("$l ft");  <!--297.8 ft-->
+              $err = NumberWithUnits("$err ft");  <!--62.32 ft%-->
             </pg-code>
           </setup>
           <statement>
@@ -931,24 +1021,22 @@
             </figure>
 
             <ol>
-              <li><p>What is the measured length <m>l</m> of the wall?</p></li>
+              <li><p>What is the measured length <m>l</m> of the wall?</p>
+                <p><var name="$l" width="20" /></p>
+              </li>
 
-              <li><p>What is the propagated error?</p></li>
+              <li><p>What is the propagated error?</p>
+                <p><var name="$err" width="20" /></p>
+              </li>
 
-              <li><p>What is the percent error?</p></li>
+              <li><p>What is the percent error?</p>
+                <p><var name="$err_pct" width="20" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p>297.8 feet</p></li>
-
-              <li><p><m>\pm 62.3</m> ft</p></li>
-
-              <li><p><m>\pm 20.9</m><percent /></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise xml:id="exer_04_04_ex_36">
         <webwork seed="1">
           <setup>
