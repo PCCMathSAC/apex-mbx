@@ -1037,6 +1037,7 @@
         </webwork>
       </exercise>
 
+<!-- Exercise 35: Length of the wall with a different angle and distance -->
       <exercise xml:id="exer_04_04_ex_36">
         <webwork seed="1">
           <setup>
@@ -1044,22 +1045,38 @@
               <static></static>
             </var>
             <pg-code>
+              $theta = Compute("71.5*pi/180");
+              $dtheta = Compute("1*pi/180");
+              $f = Compute("100*tan(x)");
+              $df = $f->D('x');
+              $l = $f->eval(x=>$theta);   
+              $err = $df->eval(x=>$theta) * $dtheta;
+              $err_pct = Compute("$err/$l");  <!--0.058002-->
+<!-- FUNGUS: How to let answers be entered with the % sign -->
+              $l = NumberWithUnits("$l ft");  <!--298.87 ft-->
+              $err = NumberWithUnits("$err ft");  <!--17.335 ft%-->
             </pg-code>
           </setup>
           <statement>
             <p>Answer the questions of <xref ref="exer_04_04_ex_35">Exercise</xref>, but with a measured angle of <m>71.5^\circ</m>, accurate to <m>1^\circ</m>, measured from a point <m>100'</m> from the wall.</p>
-          </statement>
-          <solution>
             <ol>
-              <li><p>298.8 feet</p></li>
+              <li><p>What is the measured length <m>l</m> of the wall?</p>
+                <p><var name="$l" width="20" /></p>
+              </li>
 
-              <li><p><m>\pm 17.3</m> ft</p></li>
+              <li><p>What is the propagated error?</p>
+                <p><var name="$err" width="20" /></p>
+              </li>
 
-              <li><p><m>\pm 5.8</m><percent /></p></li>
+              <li><p>What is the percent error?</p>
+                <p><var name="$err_pct" width="20" /></p>
+              </li>
             </ol>
-          </solution>
+          </statement>
         </webwork>
       </exercise>
+
+<!-- Exercise 36: Length of the wall if an isosceles triangle -->
       <exercise xml:id="exer_04_04_ex_34">
         <webwork seed="1">
           <setup>
@@ -1067,6 +1084,15 @@
               <static></static>
             </var>
             <pg-code>
+              $theta = Compute("143*pi/180");
+              $dtheta = Compute("1*pi/180");
+              $f = Compute("100*tan(x/2)");
+              $df = $f->D('x');
+              $l = $f->eval(x=>$theta);   
+              $err = $df->eval(x=>$theta) * $dtheta;
+              $err_pct = Compute("$err/$l");  <!--2.900%-->
+              $l = NumberWithUnits("$l ft");  <!--298.87 ft-->
+              $err = NumberWithUnits("$err ft");  <!--8.6675 ft-->
             </pg-code>
           </setup>
           <statement>
@@ -1085,24 +1111,21 @@
             </figure>
 
             <ol>
-              <li><p>What is the measured length of the wall?</p></li>
-
-              <li><p>What is the propagated error?</p></li>
-
-              <li><p>What is the percent error?</p></li>
+              <li><p>What is the measured length of the wall?</p>
+                <p><var name="$l" width="20" /></p>
+              </li>
+              <li><p>What is the propagated error?</p>
+                <p><var name="$err" width="20" /></p>
+              </li>
+              <li><p>What is the percent error?</p>
+                <p><var name="$err_pct" width="20" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p>298.9 feet</p></li>
-
-              <li><p><m>\pm 8.67</m> ft</p></li>
-
-              <li><p><m>\pm 2.9</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercise 37: Compare errors in wall measurements from previous exercises -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1110,16 +1133,18 @@
               <static></static>
             </var>
             <pg-code>
+<!--Change these to reference the actual problems using xref -->
+              $A=PopUp(['?','Exercise 34','Exercise 35','Exercise 36'],3);
             </pg-code>
           </setup>
           <statement>
             <p>The length of the walls in <xref ref="exer_04_04_ex_35">Exercises</xref> <mdash /> <xref ref="exer_04_04_ex_34"></xref> are essentially the same. Which setup gives the most accurate result?</p>
+            <p><var name="$A" form="popup" /></p>
           </statement>
-          <solution>
-            <p>The isosceles triangle setup works the best with the smallest percent error.</p>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- Exercise 38: Length of wall if the distance has the error instead of the angle -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1127,13 +1152,22 @@
               <static></static>
             </var>
             <pg-code>
+              $theta = Compute("143*pi/180");
+              $d = Compute("50");
+              $dd = Compute("1/2");
+              $f = Compute("2*x*tan($theta/2)");
+              $df = $f->D('x');
+              $l = $f->eval(x=>$d);   
+              $err = $df->eval(x=>$d) * $dd;
+              $err_pct = Compute("$err/$l");  <!--1.000%-->
+              $l = NumberWithUnits("$l ft");  <!--298.87 ft-->
+              $err = NumberWithUnits("$err ft");  <!--2.9887 ft-->
             </pg-code>
           </setup>
           <statement>
-            <p>Consider the setup in <xref ref="exer_04_04_ex_34">Exercises</xref>. This time, assume the angle measurement of <m>143^\circ</m> is exact but the measured <m>50'</m> from the wall is accurate to <m>6''</m>. What is the approximate percent error?</p>
+            <p>Consider the setup in <xref ref="exer_04_04_ex_34">Exercise</xref>. This time, assume the angle measurement of <m>143^\circ</m> is exact but the measured <m>50'</m> from the wall is accurate to <m>6''</m>.</p>
+            <p>What is the approximate percent error? <var name="$err_pct" width="20" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
