@@ -393,94 +393,74 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>Define the term <q>antiderivative</q> in your own words.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $A = PopUp(['?','the','an'],2);
             </pg-code>
           </setup>
           <statement>
             <p>Is it more accurate to refer to <q>the</q> antiderivative of <m>f(x)</m> or <q>an</q> antiderivative of <m>f(x)</m>?</p>
+            <p><var name="$A" form="popup" /></p>
           </statement>
-          <solution>
-            <p><q>an</q></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>Use your own words to define the indefinite integral of <m>f(x)</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $A = PopUp(['?','same','opposite'],2);
+              $B = PopUp(['?','same','reverse'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>Fill in the blanks: <q>Inverse operations do the <fillin /> things in the <fillin /> order.</q></p>
+            <p>Fill in the blanks: <q>Inverse operations do the <fillin /><var name="$A" form="popup" /> things in the <fillin /> <var name="$B" form="popup" /> order.</q></p>
           </statement>
-          <solution>
-            <p>opposite; opposite</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>What is an <q>initial value problem</q>?</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
+
+<!-- FUNGUS: Fill in the blanks with one specific word should be easy enough to code -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -492,6 +472,7 @@
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -510,51 +491,48 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
       <introduction>
         <p>In the following exercises, evaluate the given indefinite integral.</p>
       </introduction>
+<!-- Exercise 8 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->constants->add(C=>0.12345);
+              $F = Formula("3/4*x^4+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int 3x^3\ dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>3/4x^4+C</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(C=>"Real");
+              $F = Formula("x^9/9+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int x^8\ dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>1/9x^9+C</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(C=>"Real");
+              $F = Formula("10/3*x^3+2x+C");
             </pg-code>
           </setup>
           <statement>
@@ -562,281 +540,301 @@
           </statement>
           <solution>
             <p><m>10/3x^3-2x+C</m></p>
+            <p><var name="$F" width="40" /></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 11 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(t=>"Real",C=>"Real");
+              $F = Formula("t + C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int  dt</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>t+C</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(s=>"Real",C=>"Real");
+              $F = Formula("s + C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int 1\  ds</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>s+C</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(t=>"Real",C=>"Real");
+              $F = Formula("-1/(3t)+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \frac{1}{3t^2}\  dt</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>-1/(3t)+C</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 14 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(t=>"Real",C=>"Real");
+              $F = Formula("-3/t+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \frac{3}{t^2}\  dt</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>-3/(t)+C</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(C=>"Real");
+              $F = Formula("2*sqrt(x)+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \frac{1}{\sqrt{x}}\  dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>2\sqrt{x}+C</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(theta=>"Real",C=>"Real");
+              $F = Formula("tan(theta)+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \sec^2(\theta) \  d\theta</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>\tan(\theta) +C</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 17 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(theta=>"Real",C=>"Real");
+              $F = Formula("-cos(theta)+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \sin(\theta) \  d\theta</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>-\cos(\theta) +C</m></p>
           </solution>
         </webwork>
       </exercise>
+      
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(C=>"Real");
+              $F = Formula("1/cos(x) - 1/sin(x)+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int (\sec(x) \tan(x) + \csc(x) \cot(x) )\  dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>\sec(x) - \csc(x) +C</m></p>
           </solution>
         </webwork>
       </exercise>
+      
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(theta=>"Real",C=>"Real");
+              <!-- This works, but it renders theta as "theta" not \theta which would be nicer -->
+              $F = Formula("5e^theta+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int 5e^\theta\  d\theta</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>5e^\theta+C</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 20 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(t=>"Real",C=>"Real");
+              $F = Formula("3^t/ln(3)+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int 3^t\  dt</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>3^t/\ln(3) +C</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(t=>"Real",C=>"Real");
+              $F = Formula("5^t/(2*ln(5)) + C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \frac{5^t}{2}\  dt</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>\frac{5^t}{2\ln(5) }+C</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(t=>"Real",C=>"Real");
+              <!-- This method fails here. And really in general it fails. Fix soon. -->
+              $F = Formula("(2t+3)^3/6+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int (2t+3)^2\  dt</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>4/3t^3+6t^2+9t+C</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 23 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(t=>"Real",C=>"Real");
+              $F = Formula("t^6/6+t^4/4-3t^2+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int (t^2+3)(t^3-2t)\  dt</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>t^6/6+t^4/4-3t^2+C</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(C=>"Real");
+              $F = Formula("x^6/6+C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int x^2x^3\  dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>x^6/6+C</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(C=>"Real");
+              $F = Formula("e^pi*x + C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int e^\pi\  dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>e^\pi x+C</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 26 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(a=>"Real",C=>"Real");
+              $F = Formula("a*x + C");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int a\  dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>ax+C</m></p>
           </solution>
         </webwork>
       </exercise>
+    </exercisegroup>
       <exercise>
         <webwork seed="1">
           <setup>
@@ -844,21 +842,32 @@
               <static></static>
             </var>
             <pg-code>
+              $a = Interval(0,inf);
+              $c = Interval(-inf,0);
+              <!-- It'd be nice if x>0 and x<0 were recognized for the above two, respectively -->
+              $b = Formula("1/x");
+              $d = Formula("-1/x");
             </pg-code>
           </setup>
           <statement>
             <p>This problem investigates why <xref ref="thm_indef_alg">Theorem</xref> states that <m>\ds \int \frac1x\ dx = \ln\abs{x} + C</m>.</p>
 
             <ol>
-              <li><p>What is the domain of <m>y = \ln(x)</m>?</p></li>
-
-              <li><p>Find <m>\lzoo{x}{\ln(x) }</m>.</p></li>
-
-              <li><p>What is the domain of <m>y = \ln(-x)</m>?</p></li>
-
-              <li><p>Find <m>\lzoo{x}{\ln(-x)}</m>.</p></li>
-
-              <li><p>You should find that <m>1/x</m> has two types of antiderivatives, depending on whether <m>x>0</m> or <m>x\lt 0</m>. In one expression, give a formula for <m>\ds \int \frac{1}{x}\ dx</m> that takes these different domains into account, and explain your answer.</p></li>
+              <li><p>What is the domain of <m>y = \ln(x)</m>?</p>
+                <p><var name="$a" width="20" /></p>
+              </li>
+              <li><p>Find <m>\lzoo{x}{\ln(x) }</m>.</p>
+                <p><var name="$b" width="20" /></p>
+              </li>
+              <li><p>What is the domain of <m>y = \ln(-x)</m>?</p>
+                <p><var name="$c" width="20" /></p>
+              </li>
+              <li><p>Find <m>\lzoo{x}{\ln(-x)}</m>.</p>
+                <p><var name="$d" width="20" /></p>
+              </li>
+              <li><p>You should find that <m>1/x</m> has two types of antiderivatives, depending on whether <m>x>0</m> or <m>x\lt 0</m>. In one expression, give a formula for <m>\ds \int \frac{1}{x}\ dx</m> that takes these different domains into account, and explain your answer.</p>
+                <p><var form="essay" /></p>
+              </li>
             </ol>
           </statement>
           <solution>
@@ -876,177 +885,184 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find <m>f(x)</m> described by the given initial value problem.</p>
+    <exercisegroup>
+        <introduction>
+          <p>In the following exercises, find <m>f(x)</m> described by the given initial value problem.</p>
+        </introduction>
+<!-- Exercise 28 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $F = Formula("-cos(x) + 3");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fp(x) = \sin(x)</m> and <m>f(0)= 2</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>-\cos(x) +3</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $F = Formula("5e^x+5");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fp(x) = 5e^x</m> and <m>f(0)= 10</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>5e^x+5</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 30 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $F = Formula("x^4 - x^3 + 7");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fp(x) = 4x^3-3x^2</m> and <m>f(-1)= 9</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>x^4-x^3+7</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $F = Formula("tan(x) + 4");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fp(x) = \sec^2(x)</m> and <m>f(\pi/4)= 5</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>\tan(x) + 4</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 32 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $F = Formula("7^x/ln(7) + 1-49/ln(7)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fp(x) = 7^x</m> and <m>f(2)= 1</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>7^x/\ln(7) + 1-49/\ln(7)</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $F = Formula("5/2*x^2+7x+3");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fpp(x) = 5</m> and <m>\fp(0)= 7</m>, <m>f(0) = 3</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>5/2x^2+7x+3</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 34 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $F = Formula("7x^3/6-9x/2+40/3");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fpp(x) = 7x</m> and <m>\fp(1)= -1</m>, <m>f(1) = 10</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>\frac{7 x^3}{6}-\frac{9 x}{2}+\frac{40}{3}</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $F = Formula("5e^x-2x");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fpp(x) = 5e^x</m> and <m>\fp(0)= 3</m>, <m>f(0) = 5</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>5e^x-2x</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 36 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->add(theta=>"Real");
+              $F = Formula("theta - sin(theta) - pi + 4");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fpp(\theta) = \sin(\theta)</m> and <m>\fp(\pi)= 2</m>, <m>f(\pi) = 4</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>\theta-\sin(\theta)-\pi +4</m></p>
           </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->constants->add(a=>Compute("1/ln(2)"));
+              $F = Formula("2x^4+2^x*a^2+cos(x)+(5-a)*x - 1 - a^2");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fpp(x) = 24x^2+2^x-\cos(x)</m> and <m>\fp(0)= 5</m>, <m>f(0) = 0</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
+            <!-- This solution is the same, but it has an extra close paren -->
             <p><m>\frac{2 x^4 \ln^2(2)+2^x+x \ln(2) ) (\ln(32) -1)+\ln^2(2) \cos(x)-1-\ln^2(2)}{\ln^2(2)}</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 38 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1054,10 +1070,12 @@
               <static></static>
             </var>
             <pg-code>
+              $F = Formula("3x-2");
             </pg-code>
           </setup>
           <statement>
             <p><m>\fpp(x) = 0</m> and <m>\fp(1)= 3</m>, <m>f(1) = 1</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
           <solution>
             <p><m>3x-2</m></p>
@@ -1065,6 +1083,7 @@
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
       <introduction>
         <p>Review</p>
@@ -1075,23 +1094,24 @@
             <var name="">
               <static></static>
             </var>
+<!--             I'm rewriting this problem because I like it, but it seems impossible for WW to grade, and students would just graph it on the computer anyway. Which they still could. -->
             <pg-code>
+              $a = Interval(-inf,inf);
+              $b = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p>Use information gained from the first and second derivatives to sketch <m>\ds f(x) = \frac{1}{e^x+1}</m>.</p>
+            <p>For the function <m>\ds f(x) = \frac{1}{e^x+1}</m>:</p>
+            <p>The function is decreasing on the interval <var name="$a" width="20" />.</p>
+            <p>The function has an inflection point at <m>x = </m><var name="$b" width="20" />.</p>
           </statement>
-          <solution>
-            <p>No answer provided.</p>
-          </solution>
         </webwork>
       </exercise>
+
+      <!-- FUNGUS: Come back to this after figuring out how to enter these in differentials section -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
