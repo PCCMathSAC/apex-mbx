@@ -654,7 +654,6 @@
     </exercisegroup>
 
 <!-- Exercise 17 - 29: Compute differential -->
-<!--FUNGUS: Come back to this group when I figure out how to make them enter "$df dx"-->
     <exercisegroup>
       <introduction>
        <p>In the following exercises, compute the differential <m>dy</m>.</p>
@@ -663,20 +662,19 @@
         <webwork seed="1">
           <setup>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
               $f = Compute("x^2+3x-5");
               $df = $f->D('x');
-              $r = "$df";
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>y=x^2+3x-5</m></p>
-            <p><var name="$r" width="10" /> <m>dx</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = (2x+3)dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 18 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -684,16 +682,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("x^7-x^5");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>y=x^7-x^5</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = (7x^6-5x^4)dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 19 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -701,16 +702,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("1/(4x^2)");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=\frac{1}{4x^2}</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = \frac{-2}{4x^3}dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 20 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -718,16 +722,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("(2x + sin(x))^2");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=(2x+\sin(x) )^2</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = 2(2x+\sin(x) )(2+\cos(x) )dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 21 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -735,16 +742,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("x^2*e^(3x)");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=x^2e^{3x}</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = \big(2xe^{3x}+3x^2e^{3x}\big)dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 22       -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -752,16 +762,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("4/x^4");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=\frac{4}{x^4}</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = \frac{-16}{x^5}dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 23 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -769,16 +782,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("2x/(tan(x)+1)");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=\frac{2x}{\tan(x) + 1}</m></p>
+            <p><var name="$A" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>dy = \frac{2(\tan(x) + 1)-2x\sec^2(x) }{(\tan(x) +1)^2}dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 24 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -786,16 +802,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("ln(5x)");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=\ln(5x)</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = \frac{1}{x}dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 25 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -803,16 +822,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("e^x*sin(x)");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=e^x\sin(x)</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = (e^x\sin(x) + e^x\cos(x) )dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 26 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -820,16 +842,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("cos(sin(x))");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=\cos(\sin(x) )</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = (-\sin(\sin(x) )\cos(x) )dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 27 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -837,16 +862,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("(x+1)/(x+2)");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=\frac{x+1}{x+2}</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = \frac{1}{(x+2)^2}dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 28 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -854,16 +882,19 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("3^x*ln(x)");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=3^x\ln(x)</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = ((\ln(3) )3^x\ln(x) + \frac{3^x}{x})dx</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 29 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -871,20 +902,21 @@
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Compute("x*ln(x)-x");
+              $df = $f->D('x');
+              $A = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds y=x\ln(x) -x</m></p>
+            <p><var name="$A" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>dy = (\ln(x) )dx</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
     
     <exercisegroup>
-
 <!-- Exercise 30: Propogated error in a plastic sphere -->
       <exercise>
         <webwork seed="1">
