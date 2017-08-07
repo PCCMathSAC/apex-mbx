@@ -457,7 +457,7 @@
         </webwork>
       </exercise>
 
-<!-- FUNGUS: Fill in the blanks with one specific word should be easy enough to code -->
+<!-- FUNGUS: Fill in the blank questions for 6 and 7 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -499,10 +499,12 @@
 <!-- Exercise 8 -->
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->constants->add(C=>0.12345);
-              $F = Formula("3/4*x^4+C");
+              $F = FormulaUpToConstant("3/4*x^4");
             </pg-code>
           </setup>
           <statement>
@@ -514,10 +516,12 @@
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(C=>"Real");
-              $F = Formula("x^9/9+C");
+              $F = FormulaUpToConstant("x^9/9");
             </pg-code>
           </setup>
           <statement>
@@ -529,318 +533,310 @@
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(C=>"Real");
-              $F = Formula("10/3*x^3+2x+C");
+              $F = FormulaUpToConstant("10/3*x^3-2x");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int (10x^2-2)\ dx</m></p>
-          </statement>
-          <solution>
-            <p><m>10/3x^3-2x+C</m></p>
             <p><var name="$F" width="40" /></p>
-          </solution>
+          </statement>
         </webwork>
       </exercise>
 <!-- Exercise 11 -->
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(t=>"Real",C=>"Real");
-              $F = Formula("t + C");
+              Context()->variables->add(t=>"Real");
+              $F = FormulaUpToConstant("t");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int  dt</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>t+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(s=>"Real",C=>"Real");
-              $F = Formula("s + C");
+              Context()->variables->add(s=>"Real");
+              $F = FormulaUpToConstant("s");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int 1\  ds</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>s+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(t=>"Real",C=>"Real");
-              $F = Formula("-1/(3t)+C");
+              Context()->variables->add(t=>"Real");
+              $F = FormulaUpToConstant("-1/(3t)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \frac{1}{3t^2}\  dt</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>-1/(3t)+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 14 -->
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(t=>"Real",C=>"Real");
-              $F = Formula("-3/t+C");
+              Context()->variables->add(t=>"Real");
+              $F = FormulaUpToConstant("-3/t");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \frac{3}{t^2}\  dt</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>-3/(t)+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(C=>"Real");
-              $F = Formula("2*sqrt(x)+C");
+              $F = FormulaUpToConstant("2*sqrt(x)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \frac{1}{\sqrt{x}}\  dx</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>2\sqrt{x}+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(theta=>"Real",C=>"Real");
-              $F = Formula("tan(theta)+C");
+              Context()->variables->add(theta=>"Real");
+              $F = FormulaUpToConstant("tan(theta)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \sec^2(\theta) \  d\theta</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>\tan(\theta) +C</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 17 -->
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(theta=>"Real",C=>"Real");
-              $F = Formula("-cos(theta)+C");
+              Context()->variables->add(theta=>"Real");
+              $F = FormulaUpToConstant("-cos(theta)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \sin(\theta) \  d\theta</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>-\cos(\theta) +C</m></p>
-          </solution>
         </webwork>
       </exercise>
       
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(C=>"Real");
-              $F = Formula("1/cos(x) - 1/sin(x)+C");
+              $F = FormulaUpToConstant("1/cos(x) - 1/sin(x)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int (\sec(x) \tan(x) + \csc(x) \cot(x) )\  dx</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>\sec(x) - \csc(x) +C</m></p>
-          </solution>
         </webwork>
       </exercise>
       
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(theta=>"Real",C=>"Real");
-              <!-- This works, but it renders theta as "theta" not \theta which would be nicer -->
-              $F = Formula("5e^theta+C");
+              Context()->variables->add(theta=>"Real");
+              <!-- This works, but it renders theta as "theta" not the Greek letter -->
+              $F = FormulaUpToConstant("5e^theta");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int 5e^\theta\  d\theta</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>5e^\theta+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 20 -->
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(t=>"Real",C=>"Real");
-              $F = Formula("3^t/ln(3)+C");
+              Context()->variables->add(t=>"Real");
+              $F = FormulaUpToConstant("3^t/ln(3)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int 3^t\  dt</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>3^t/\ln(3) +C</m></p>
-          </solution>
         </webwork>
       </exercise>
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(t=>"Real",C=>"Real");
-              $F = Formula("5^t/(2*ln(5)) + C");
+              Context()->variables->add(t=>"Real");
+              $F = FormulaUpToConstant("5^t/(2*ln(5))");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \frac{5^t}{2}\  dt</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>\frac{5^t}{2\ln(5) }+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(t=>"Real",C=>"Real");
-              <!-- This method fails here. And really in general it fails. Fix soon. -->
-              $F = Formula("(2t+3)^3/6+C");
+              Context()->variables->add(t=>"Real");
+              $F = FormulaUpToConstant("(2t+3)^3/6");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int (2t+3)^2\  dt</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>4/3t^3+6t^2+9t+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 23 -->
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(t=>"Real",C=>"Real");
-              $F = Formula("t^6/6+t^4/4-3t^2+C");
+              Context()->variables->add(t=>"Real");
+              $F = FormulaUpToConstant("t^6/6+t^4/4-3t^2");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int (t^2+3)(t^3-2t)\  dt</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>t^6/6+t^4/4-3t^2+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(C=>"Real");
-              $F = Formula("x^6/6+C");
+              $F = FormulaUpToConstant("x^6/6");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int x^2x^3\  dx</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>x^6/6+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(C=>"Real");
-              $F = Formula("e^pi*x + C");
+              $F = FormulaUpToConstant("e^pi*x");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int e^\pi\  dx</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>e^\pi x+C</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 26 -->
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <pg-code>
-              Context()->variables->add(a=>"Real",C=>"Real");
-              $F = Formula("a*x + C");
+              Context()->variables->add(a=>"Real");
+              $F = FormulaUpToConstant("a*x");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int a\  dx</m></p>
             <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>ax+C</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
               $a = Interval(0,inf);
               $c = Interval(-inf,0);
@@ -870,19 +866,6 @@
               </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>x>0</m></p></li>
-
-              <li><p><m>1/x</m></p></li>
-
-              <li><p><m>x\lt 0</m></p></li>
-
-              <li><p><m>1/x</m></p></li>
-
-              <li><p><m>\ln\abs{x}+C</m>. Explanations will vary.</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
     <exercisegroup>
@@ -899,11 +882,8 @@
           </setup>
           <statement>
             <p><m>\fp(x) = \sin(x)</m> and <m>f(0)= 2</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>-\cos(x) +3</m></p>
-          </solution>
         </webwork>
       </exercise>
 
@@ -916,11 +896,8 @@
           </setup>
           <statement>
             <p><m>\fp(x) = 5e^x</m> and <m>f(0)= 10</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>5e^x+5</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 30 -->
@@ -933,11 +910,8 @@
           </setup>
           <statement>
             <p><m>\fp(x) = 4x^3-3x^2</m> and <m>f(-1)= 9</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>x^4-x^3+7</m></p>
-          </solution>
         </webwork>
       </exercise>
 
@@ -950,11 +924,8 @@
           </setup>
           <statement>
             <p><m>\fp(x) = \sec^2(x)</m> and <m>f(\pi/4)= 5</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>\tan(x) + 4</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 32 -->
@@ -967,11 +938,8 @@
           </setup>
           <statement>
             <p><m>\fp(x) = 7^x</m> and <m>f(2)= 1</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>7^x/\ln(7) + 1-49/\ln(7)</m></p>
-          </solution>
         </webwork>
       </exercise>
 
@@ -984,11 +952,8 @@
           </setup>
           <statement>
             <p><m>\fpp(x) = 5</m> and <m>\fp(0)= 7</m>, <m>f(0) = 3</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>5/2x^2+7x+3</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 34 -->
@@ -1001,11 +966,8 @@
           </setup>
           <statement>
             <p><m>\fpp(x) = 7x</m> and <m>\fp(1)= -1</m>, <m>f(1) = 10</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>\frac{7 x^3}{6}-\frac{9 x}{2}+\frac{40}{3}</m></p>
-          </solution>
         </webwork>
       </exercise>
 
@@ -1018,11 +980,8 @@
           </setup>
           <statement>
             <p><m>\fpp(x) = 5e^x</m> and <m>\fp(0)= 3</m>, <m>f(0) = 5</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>5e^x-2x</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 36 -->
@@ -1036,11 +995,8 @@
           </setup>
           <statement>
             <p><m>\fpp(\theta) = \sin(\theta)</m> and <m>\fp(\pi)= 2</m>, <m>f(\pi) = 4</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(\theta) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>\theta-\sin(\theta)-\pi +4</m></p>
-          </solution>
         </webwork>
       </exercise>
 
@@ -1054,12 +1010,8 @@
           </setup>
           <statement>
             <p><m>\fpp(x) = 24x^2+2^x-\cos(x)</m> and <m>\fp(0)= 5</m>, <m>f(0) = 0</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <!-- This solution is the same, but it has an extra close paren -->
-            <p><m>\frac{2 x^4 \ln^2(2)+2^x+x \ln(2) ) (\ln(32) -1)+\ln^2(2) \cos(x)-1-\ln^2(2)}{\ln^2(2)}</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 38 -->
@@ -1075,11 +1027,8 @@
           </setup>
           <statement>
             <p><m>\fpp(x) = 0</m> and <m>\fp(1)= 3</m>, <m>f(1) = 1</m></p>
-            <p><var name="$F" width="40" /></p>
+            <p><m>f(x) = </m><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>3x-2</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
@@ -1094,7 +1043,7 @@
             <var name="">
               <static></static>
             </var>
-<!--             I'm rewriting this problem because I like it, but it seems impossible for WW to grade, and students would just graph it on the computer anyway. Which they still could. -->
+<!--The original problem tells students to graph the function. Seems difficult on WeBWorK -->
             <pg-code>
               $a = Interval(-inf,inf);
               $b = Compute("0");
@@ -1108,19 +1057,20 @@
         </webwork>
       </exercise>
 
-      <!-- FUNGUS: Come back to this after figuring out how to enter these in differentials section -->
       <exercise>
         <webwork seed="1">
           <setup>
             <pg-code>
+              Context()->variables->add(dx=>"Real");
+              $f = Formula("x^2*e^x*cos(x)");
+              $df = $f->D('x');
+              $dy = Formula("$df dx");
             </pg-code>
           </setup>
           <statement>
             <p>Given <m>y = x^2e^x\cos(x)</m>, find <m>dy</m>.</p>
+            <p><m>dy = </m><var name="$dy" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>dy = (2xe^x\cos(x) + x^2e^x\cos(x) - x^2e^x\sin(x) )dx</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
