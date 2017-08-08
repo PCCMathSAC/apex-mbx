@@ -1023,9 +1023,6 @@
       <exercise xml:id="exer_04_04_ex_35">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
               $theta = Compute("85.2*pi/180");
               $dtheta = Compute("1*pi/180");
@@ -1085,6 +1082,7 @@
               $err = $df->eval(x=>$theta) * $dtheta;
               $err_pct = Compute("$err/$l");  <!--0.058002-->
 <!-- FUNGUS: How to let answers be entered with the % sign -->
+              $err_pct = NumberWithUnits("$err_pct %");
               $l = NumberWithUnits("$l ft");  <!--298.87 ft-->
               $err = NumberWithUnits("$err ft");  <!--17.335 ft%-->
             </pg-code>
