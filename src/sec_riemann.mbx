@@ -898,10 +898,8 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- FUNGUS: Another fill in the blank -->
             </pg-code>
           </setup>
           <statement>
@@ -912,29 +910,26 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 2 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $ub = 14;
             </pg-code>
           </setup>
           <statement>
             <p>What is the upper bound in the summation <m>\ds \sum_{i=7}^{14} (48i-201)</m>?</p>
+            <p><var name = "$ub" width="10" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 3 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- FUNGUS: Here too -->
             </pg-code>
           </setup>
           <statement>
@@ -945,39 +940,46 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 4 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
             <p>T/F: A sum using the Right Hand Rule is an example of a Riemann Sum.</p>
+            <p><var name = "$true" form="popup" /></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
       <introduction>
         <p>In the following exercises, write out each term of the summation and compute the sum.</p>
       </introduction>
+<!-- Exercise 5 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              @l = (2..4);
+              @l2 = ();
+              $sum = 0;
+              foreach $i (@l) {
+                  $sum += $i**2;
+                  push @l2, $i**2;
+              }
+              $list = List(@l2);
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \sum_{i=2}^{4} i^2</m></p>
+            <p>Terms: <var name="$list" width="10"/></p>
+            <p>Sum: <var name="$sum" width="10" /></p>
           </statement>
           <solution>
             <p><m>2^2+3^2+4^2 = 29</m></p>
