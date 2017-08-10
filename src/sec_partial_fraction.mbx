@@ -63,7 +63,7 @@
       <statement>
         <p>Decompose <m>\ds f(x)=\frac{1}{(x+5)(x-2)^3(x^2+x+2)(x^2+x+7)^2}</m> without solving for the resulting coefficients.</p>
       </statement>
-      <solution-hidden>
+      <solution>
         <p>The denominator is already factored, as both <m>x^2+x+2</m> and <m>x^2+x+7</m> cannot be factored further. We need to decompose <m>f(x)</m> properly. Since <m>(x+5)</m> is a linear term that divides the denominator, there will be a
           <me>
             \frac{A}{x+5}
@@ -93,7 +93,7 @@
         </p>
 
         <p>Solving for the coefficients <m>A</m>, <m>B \ldots J</m> would be a bit tedious but not <q>hard.</q></p>
-      </solution-hidden>
+      </solution>
     </example>
 
     <example xml:id="ex_pf2">
@@ -101,7 +101,7 @@
       <statement>
         <p>Perform the partial fraction decomposition of <m>\ds \frac{1}{x^2-1}</m>.</p>
       </statement>
-      <solution-hidden>
+      <solution>
         <p>The denominator factors into two linear terms: <m>x^2-1 = (x-1)(x+1)</m>. Thus
           <me>
             \frac{1}{x^2-1} = \frac{A}{x-1} + \frac{B}{x+1}.
@@ -147,7 +147,7 @@
             \frac{1}{x^2-1} = \frac{1/2}{x-1}-\frac{1/2}{x+1}.
           </me>
         </p>
-      </solution-hidden>
+      </solution>
     </example>
 
     <p>There is another method for finding the partial fraction decomposition called the <q>Heaviside</q> method, named after Oliver Heaviside. We show a variation of this process using the same example as in <xref ref="ex_pf1">Example</xref>.</p>
@@ -158,7 +158,7 @@
       <statement>
         <p>Perform the partial fraction decomposition of <m>\ds \frac{1}{x^2-1}</m>.</p>
       </statement>
-      <solution-hidden>
+      <solution>
         <p>As we saw in <xref ref="ex_pf2">Example</xref>,
           <me>
             \frac{1}{x^2-1} = \frac{A}{x-1} + \frac{B}{x+1}.
@@ -189,7 +189,7 @@
             \frac{1}{x^2-1} = \frac{1/2}{x-1}-\frac{1/2}{x+1}
           </me>.
         </p>
-      </solution-hidden>
+      </solution>
       
     </example>
     For the remaining examples, we will use a combination of systems of equations and the Heaviside method to get partial fraction decompositions.
@@ -198,7 +198,7 @@
       <statement>
         <p>Use partial fraction decomposition to integrate <m>\ds\int\frac{1}{(x-1)(x+2)^2}\ dx</m>.</p>
       </statement>
-      <solution-hidden>
+      <solution>
         <p>We decompose the integrand as follows, as described by <xref ref="idea_partial_fraction">Key Idea</xref>:
           <me>
             \frac{1}{(x-1)(x+2)^2} = \frac{A}{x-1} + \frac{B}{x+2} + \frac{C}{(x+2)^2}.
@@ -250,7 +250,7 @@
             \int\frac{1}{(x-1)(x+2)^2}\ dx = \frac19\ln\abs{x-1} -\frac19\ln\abs{x+2} +\frac1{3(x+2)}+C.
           </me>
         </p>
-      </solution-hidden>
+      </solution>
     </example>
 
     <example xml:id="ex_pf4">
@@ -258,7 +258,7 @@
       <statement>
         <p>Use partial fraction decomposition to integrate <m>\ds \int \frac{x^3}{(x-5)(x+3)}\ dx</m>.</p>
       </statement>
-      <solution-hidden>
+      <solution>
         <p><xref ref="idea_partial_fraction">Key Idea</xref> presumes that the degree of the numerator is less than the degree of the denominator. Since this is not the case here, we begin by using polynomial division to reduce the degree of the numerator. We omit the steps, but encourage the reader to verify that
           <me>
             \frac{x^3}{(x-5)(x+3)} = x+2+\frac{19x+30}{(x-5)(x+3)}.
@@ -291,7 +291,7 @@
             <mrow>\amp = \frac{x^2}2 + 2x + \frac{125}{8}\ln\abs{x-5} + \frac{27}8\ln\abs{x+3} + C.</mrow>
           </md>
         </p>
-      </solution-hidden>
+      </solution>
     </example>
 
     <example xml:id="ex_pf5">
@@ -299,7 +299,7 @@
       <statement>
         <p>Use partial fraction decomposition to evaluate <m>\ds \int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\ dx</m>.</p>
       </statement>
-      <solution-hidden>
+      <solution>
         <p>The degree of the numerator is less than the degree of the denominator so we begin by applying <xref ref="idea_partial_fraction">Key Idea</xref>. We have:
         <!--          <md>
             <mrow>\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)} \amp = \frac{A}{x+1} + \frac{Bx+C}{x^2+6x+11}.</mrow>
@@ -357,7 +357,7 @@
         </p>
 
         <p>As with many other problems in calculus, it is important to remember that one is not expected to <q>see</q> the final answer immediately after seeing the problem. Rather, given the initial problem, we break it down into smaller problems that are easier to solve. The final answer is a combination of the answers of the smaller problems.</p>
-      </solution-hidden>
+      </solution>
     </example>
 
     <p>Partial Fraction Decomposition is an important tool when dealing with rational functions. Note that at its heart, it is a technique of algebra, not calculus, as we are rewriting a fraction in a new form. Regardless, it is very useful in the realm of calculus as it lets us evaluate a certain set of <q>complicated</q> integrals.</p>
