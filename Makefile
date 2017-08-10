@@ -53,6 +53,7 @@ include Makefile.paths
 PRJSRC    = $(PRJ)/src
 OUTPUT    = $(PRJ)/output
 STYLE     = $(PRJ)/style
+IMGSRC    = $(PRJSRC)/images
 
 # The project's main hub file
 MAINFILE  = $(PRJSRC)/index.mbx
@@ -100,6 +101,7 @@ html:
 	install -d $(HTMLOUT)
 	-rm $(HTMLOUT)/*.html
 	-rm $(HTMLOUT)/knowl/*.html
+	cp -a $(IMGSRC) $(HTMLOUT)
 	cp -a $(IMAGESOUT) $(HTMLOUT)
 	cd $(HTMLOUT); \
 	xsltproc -xinclude --stringparam webwork.server $(SERVER) --stringparam html.knowl.exercise.inline no --stringparam html.knowl.example no $(MBXSL)/mathbook-html.xsl $(MAINFILE)
@@ -110,14 +112,13 @@ images:
 	-rm $(IMAGESOUT)/*.svg
 	$(MB)/script/mbx -c latex-image -f svg -d $(IMAGESOUT) $(MAINFILE)
 	$(MB)/script/mbx -c sageplot -f svg -d $(IMAGESOUT) $(MAINFILE)
-	$(MB)/script/mbx -c sageplot -f pdf -d $(IMAGESOUT) $(MAINFILE)
 #	$(MB)/script/mbx -c asymptote -f svg -d $(IMAGESOUT) $(MAINFILE)
 
 # make all the image files in pdf format
 pdfimages:
 	install -d $(IMAGESOUT)
 	-rm $(IMAGESOUT)/*.pdf
-	$(MB)/script/mbx -c latex-image -f pdf -d $(IMAGESOUT) $(MAINFILE)
+	$(MB)/script/mbx -c sageplot -f pdf -d $(IMAGESOUT) $(MAINFILE)
 
 # for pdf output, a one-time prerequisite for LaTeX conversion of
 # problems living on a server, and image construction at server
@@ -145,8 +146,9 @@ pdf:
 	install -d $(PDFOUT)
 	-rm $(PDFOUT)/*.tex
 	cp -a $(IMAGESOUT)/*.pdf $(PDFOUT)/images
+	cp -a $(IMGSRC)/*.pdf $(PDFOUT)/images
 	cd $(PDFOUT); \
-	xsltproc -xinclude --stringparam webwork.server.latex $(PDFOUT)/webwork-tex/ $(MBXSL)/mathbook-latex.xsl $(MAINFILE); \
+	xsltproc -xinclude --stringparam webwork.server.latex $(PDFOUT)/webwork-tex/ --stringparam exercise.text.hint no --stringparam exercise.text.solution no --stringparam exercise.text.answer no $(MBXSL)/mathbook-latex.xsl $(MAINFILE); \
 	xelatex index.tex; \
 	xelatex index.tex
 

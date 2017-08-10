@@ -14,13 +14,13 @@
         <ol>
           <li><p>The <em>Taylor Series of <m>f(x)</m>, centered at <m>c</m></em> is
               <me>
-                \sum_{n=0}^\infty \frac{f^{(n)}(c)}{n!}(x-c)^n.
+                \infser[0] \frac{f^{(n)}(c)}{n!}(x-c)^n.
               </me>
             </p></li>
 
           <li><p>Setting <m>c=0</m> gives the <em>Maclaurin Series of <m>f(x)</m></em>:
               <me>
-                \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n.
+                \infser[0] \frac{f^{(n)}(0)}{n!}x^n.
               </me>
             </p></li>
         </ol>
@@ -35,7 +35,7 @@
         <p>Find the Maclaurin series of <m>f(x)=\cos(x)</m>.</p>
       </statement>
       <solution>
-        <p>In <xref ref="ex_taypoly4">Example</xref> we found the <m>8^\text{ th }</m> degree Maclaurin polynomial of <m>\cos(x)</m>. In doing so, we created the table shown in <xref ref="fig_ts1">Figure</xref>.</p>
+        <p>In <xref ref="ex_taypoly4">Example</xref> we found the <m>8^\text{ th }</m> degree Maclaurin polynomial of <m>\cos(x)</m>. In doing so, we created the table shown in <xref ref="fig_ts1">Table</xref>.</p>
 
         <table xml:id="fig_ts1" >
           <caption>A table of the derivatives of <m>f(x)=\cos(x)</m> evaluated at <m>x=0</m>.</caption>
@@ -99,13 +99,15 @@
           </me>
         </p>
 
-        <p>We can go further and write this as a summation. Since we only need the terms where the power of <m>x</m> is even, we write the power series in terms of <m>x^{2n}</m>:
+        <p>We can go further and write this as a summation. The coefficients alternate between positive and negative. Since we only need the terms where the power of <m>x</m> is even, we write the power series in terms of <m>x^{2n}</m>:
           <me>
-            \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!}.
+            \infser[0] (-1)^{n}\frac{x^{2n}}{(2n)!}.
           </me>
         </p>
       </solution>
     </example>
+    <p><xref ref="ex_ts1">Example</xref> found the Taylor Series representation of <m>\cos(x)</m>. We can easily find the Taylor Series representation of <m>\sin(x)</m> by recognizing that <m>\int \cos(x)\ dx=\sin(x)</m> and apply <xref ref="thm_calc_power_series">Theorem</xref>.</p>
+    
 
     <example xml:id="ex_ts2">
       <title>The Taylor series of <m>f(x)=\ln(x)</m> at <m>x=1</m></title>
@@ -113,7 +115,7 @@
         <p>Find the Taylor series of <m>f(x) = \ln(x)</m> centered at <m>x=1</m>.</p>
       </statement>
       <solution>
-        <p><xref ref="fig_ts2">Figure</xref> shows the <m>n^\text{ th }</m> derivative of <m>\ln(x)</m> evaluated at <m>x=1</m> for <m>n=0,\ldots,5</m>, along with an expression for the <m>n^\text{ th }</m> term:
+        <p><xref ref="fig_ts2">Table</xref> shows the <m>n^\text{ th }</m> derivative of <m>\ln(x)</m> evaluated at <m>x=1</m> for <m>n=0,\ldots,5</m>, along with an expression for the <m>n^\text{ th }</m> term:
           <me>
             f^{(n)}(1) = (-1)^{n+1}(n-1)! \text{ for \(n\geq 1\). }
           </me>
@@ -174,7 +176,7 @@
 
         <p>Since <m>f(1) = \ln(1) = 0</m>, we skip the first term and start the summation with <m>n=1</m>, giving the Taylor series for <m>\ln(x)</m>, centered at <m>x=1</m>, as
           <me>
-            \sum_{n=1}^\infty (-1)^{n+1}(n-1)!\frac{1}{n!}(x-1)^n = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^n}{n}.
+            \infser (-1)^{n+1}(n-1)!\frac{1}{n!}(x-1)^n = \infser (-1)^{n+1}\frac{(x-1)^n}{n}.
           </me>
         </p>
       </solution>
@@ -197,7 +199,7 @@
           If <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m> in <m>I</m>, then
           <index><main>Taylor Series</main><sub>equality with generating function</sub></index>
           <me>
-            f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(c)}{n!}(x-c)^n\ \text{ on \(I\). }
+            f(x) = \infser[0] \frac{f^{(n)}(c)}{n!}(x-c)^n\ \text{ on \(I\). }
           </me>
         </p>
       </statement>
@@ -229,7 +231,7 @@
 
         <p>For any <m>x</m>, <m>\lim\limits_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0</m>. Applying the Squeeze Theorem to Equation <xref ref="eq_coseqtaylor" />, we conclude that <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
           <me>
-            \cos(x) = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!} \text{ for all \(x\) } .
+            \cos(x) = \infser[0] (-1)^{n}\frac{x^{2n}}{(2n)!} \text{ for all \(x\) } .
           </me>
         </p>
       </solution>
@@ -267,9 +269,11 @@
           <mrow>f^{(n)}(x) \amp = k(k-1)\cdots\big(k-(n-1)\big)(1+x)^{k-n} \amp  f^{(n)}(0) \amp =k(k-1)\cdots\big(k-(n-1)\big)</mrow>
         </md>
         <p>Thus the Maclaurin series for <m>f(x) = (1+x)^k</m> is
-          <me>
-            1+ k + \frac{k(k-1)}{2!} + \frac{k(k-1)(k-2)}{3!} + \ldots + \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}+\ldots
-          </me>
+          <md>
+            <mrow>(1+x)^k\amp =1+ k(x-c) + \frac{k(k-1)}{2!}(x-c)^2 + \frac{k(k-1)(k-2)}{3!}(x-c)^3 + \ldots</mrow>
+            <mrow>\dots + \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}(x-c)^n+\ldots</mrow>
+            
+          </md>
         </p>
 
         <p>It is important to determine the interval of convergence of this series. With
@@ -278,7 +282,7 @@
           </me>
           we apply the Ratio Test:
           <md>
-            <mrow>\lim_{n\to\infty}\frac{\abs{a_{n+1}}}{\abs{a_n}}\amp =\lim_{n\to\infty} \abs{\frac{k(k-1)\cdots(k-n)}{(n+1)!}x^{n+1}}\Bigg/\abs{\frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n}</mrow>
+            <mrow>\lim_{n\to\infty}\frac{\abs{a_{n+1}}}{\abs{a_n}}\amp =\lim_{n\to\infty} \abs{\frac{k(k-1)\cdots(k-(n-1))(k-n)}{(n+1)!}x^{n+1}}\Bigg/\abs{\frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n}</mrow>
             <mrow>\amp =\lim_{n\to\infty} \abs{\frac{k-n}{n}x}</mrow>
             <mrow>\amp = \abs{x}.</mrow>
           </md>
@@ -312,43 +316,43 @@
           <row>
             <cell><term>Function and Series</term></cell>
             <cell><term>First Few Terms</term></cell>
-            <cell>\text{ <term>Interval of</term></cell>
+            <cell><term>Interval of</term></cell>
           </row>
           <row>
             <cell><term>Convergence</term> }</cell>
           </row>
           <row>
-            <cell><m>\ds e^x = \sum_{n=0}^\infty \frac{x^n}{n!}</m></cell>
+            <cell><m>\ds e^x = \infser[0] \frac{x^n}{n!}</m></cell>
             <cell><m>\ds 1+ x+\frac{x^2}{2!} + \frac{x^3}{3!}+\cdots</m></cell>
             <cell><m>(-\infty,\infty)</m></cell>
           </row>
           <row>
-            <cell><m>\ds \sin(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m></cell>
+            <cell><m>\ds \sin(x) = \infser[0] (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m></cell>
             <cell><m>\ds x-\frac{x^3}{3!}+\frac{x^5}{5!} - \frac{x^7}{7!}+\cdots</m></cell>
             <cell><m>(-\infty,\infty)</m></cell>
           </row>
           <row>
-            <cell><m>\ds \cos(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}</m></cell>
+            <cell><m>\ds \cos(x) = \infser[0] (-1)^n\frac{x^{2n}}{(2n)!}</m></cell>
             <cell><m>\ds 1-\frac{x^2}{2!}+\frac{x^4}{4!} - \frac{x^6}{6!} +\cdots</m></cell>
             <cell><m>(-\infty,\infty)</m></cell>
           </row>
           <row>
-            <cell><m>\ds \ln(x) = \sum_{n=1}^\infty(-1)^{n+1}\frac{(x-1)^n}{n}</m></cell>
+            <cell><m>\ds \ln(x) = \infser(-1)^{n+1}\frac{(x-1)^n}{n}</m></cell>
             <cell><m>\ds (x-1)- \frac{(x-1)^2}{2} +\frac{(x-1)^3}{3}-\cdots</m></cell>
             <cell><m>(0,2]</m></cell>
           </row>
           <row>
-            <cell><m>\ds \frac{1}{1-x} = \sum_{n=0}^\infty x^n</m></cell>
+            <cell><m>\ds \frac{1}{1-x} = \infser[0] x^n</m></cell>
             <cell><m>\ds 1+x+x^2+x^3+\cdots</m></cell>
             <cell><m>(-1,1)</m></cell>
           </row>
           <row>
-            <cell>\small<m>\ds (1+x)^k=\sum_{n=0}^\infty \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n</m></cell>
+            <cell><m>\small\ds (1+x)^k=\infser[0] \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n</m></cell>
             <cell><m>\ds 1+kx+\frac{k(k-1)}{2!}x^2 + \cdots</m></cell>
             <cell><m>(-1,1)</m><fn>Convergence at <m>x=\pm1</m> depends on the value of <m>k</m>.</fn></cell>
           </row>
           <row>
-            <cell><m>\ds \tan^{-1}(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1}</m></cell>
+            <cell><m>\ds \tan^{-1}(x) = \infser[0] (-1)^n\frac{x^{2n+1}}{2n+1}</m></cell>
             <cell><m>\ds x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\cdots</m></cell>
             <cell><m>[-1,1]</m></cell>
           </row>
@@ -359,15 +363,15 @@
       <theorem xml:id="thm_series_alg">
         <title>Algebra of Power Series</title>
         <statement>
-          <p>Let <m>\ds f(x) = \sum_{n=0}^\infty a_nx^n</m> and <m>\ds g(x) = \sum_{n=0}^\infty b_nx^n</m> converge absolutely for <m>\abs{x}\lt R</m>, and let <m>h(x)</m> be continuous.
+          <p>Let <m>\ds f(x) = \infser[0] a_nx^n</m> and <m>\ds g(x) = \infser[0] b_nx^n</m> converge absolutely for <m>\abs{x}\lt R</m>, and let <m>h(x)</m> be continuous.
             <index><main>power series</main><sub>algebra of</sub></index></p>
 
           <ol>
-            <li><p><m>\ds f(x)\pm g(x) = \sum_{n=0}^\infty (a_n\pm b_n)x^n</m>   for <m>\abs{x}\lt R</m>.</p></li>
+            <li><p><m>\ds f(x)\pm g(x) = \infser[0] (a_n\pm b_n)x^n</m>   for <m>\abs{x}\lt R</m>.</p></li>
 
-            <li><p><m>\ds 	f(x)g(x) = \left(\sum_{n=0}^\infty a_nx^n\right)\left(\sum_{n=0}^\infty b_nx^n\right) = \sum_{n=0}^\infty\big(a_0b_n+a_1b_{n-1}+\ldots a_nb_0\big)x^n</m> for <m>\abs{x}\lt R</m>.</p></li>
+            <li><p><m>\ds 	f(x)g(x) = \left(\infser[0] a_nx^n\right)\left(\infser[0] b_nx^n\right) = \infser[0]\big(a_0b_n+a_1b_{n-1}+\ldots a_nb_0\big)x^n</m> for <m>\abs{x}\lt R</m>.</p></li>
 
-            <li><p><m>\ds f\big(h(x)\big) = \sum_{n=0}^\infty a_n\big(h(x)\big)^n</m>   for <m>\abs{h(x)}\lt R</m>.</p></li>
+            <li><p><m>\ds f\big(h(x)\big) = \infser[0] a_n\big(h(x)\big)^n</m>   for <m>\abs{h(x)}\lt R</m>.</p></li>
           </ol>
         </statement>
       </theorem>
@@ -409,12 +413,14 @@
       <solution>
         <p>Given that
           <me>
-            \sin(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!} = x-\frac{x^3}{3!}+\frac{x^5}{5!} -\frac{x^7}{7!}+\cdots,
+            \sin(x) = \infser[0] (-1)^n\frac{x^{2n+1}}{(2n+1)!} = x-\frac{x^3}{3!}+\frac{x^5}{5!} -\frac{x^7}{7!}+\cdots,
           </me>
           we simply substitute <m>x^2</m> for <m>x</m> in the series, giving
-          <me>
-            \sin(x^2) = \sum_{n=0}^\infty (-1)^n\frac{(x^2)^{2n+1}}{(2n+1)!} = x^2-\frac{x^6}{3!}+\frac{x^{10}}{5!} -\frac{x^{14}}{7!}\cdots.
-          </me>
+          <md>
+            <mrow>\sin(x^2) \amp = \infser[0] (-1)^n\frac{(x^2)^{2n+1}}{(2n+1)!}</mrow>
+            <mrow>\amp \infser[0] (-1)^n\frac{(x^{4n+2}}{(2n+1)!}</mrow>
+            <mrow>\amp =x^2-\frac{x^6}{3!}+\frac{x^{10}}{5!} -\frac{x^{14}}{7!}\cdots</mrow>
+          </md>.
         </p>
 
         <p>Since the Taylor series for <m>\sin(x)</m> has an infinite radius of convergence, so does the Taylor series for <m>\sin(x^2)</m>.</p>
@@ -422,11 +428,11 @@
         <p>The Taylor expansion for <m>\ln(x)</m> given in <xref ref="idea_common_taylor">Key Idea</xref> is centered at <m>x=1</m>, so we will center the series for <m>\ln(\sqrt{x})</m> at <m>x=1</m> as well.
           With
           <me>
-            \ln(x) = \sum_{n=1}^\infty(-1)^{n+1}\frac{(x-1)^n}{n} = (x-1)- \frac{(x-1)^2}{2} +\frac{(x-1)^3}{3}-\cdots,
+            \ln(x) = \infser(-1)^{n+1}\frac{(x-1)^n}{n} = (x-1)- \frac{(x-1)^2}{2} +\frac{(x-1)^3}{3}-\cdots,
           </me>
           we substitute <m>\sqrt{x}</m> for <m>x</m> to obtain
           <me>
-            \ln(\sqrt{x}) = \sum_{n=1}^\infty(-1)^{n+1}\frac{(\sqrt{x}-1)^n}{n} = (\sqrt{x}-1)- \frac{(\sqrt{x}-1)^2}{2} +\frac{(\sqrt{x}-1)^3}{3}-\cdots.
+            \ln(\sqrt{x}) = \infser(-1)^{n+1}\frac{(\sqrt{x}-1)^n}{n} = (\sqrt{x}-1)- \frac{(\sqrt{x}-1)^2}{2} +\frac{(\sqrt{x}-1)^3}{3}-\cdots.
           </me>
         </p>
 
@@ -448,10 +454,10 @@
 
         <p>We can quickly write out the Taylor series for <m>e^{-x^2}</m> using the Taylor series of <m>e^x</m>:
           <md>
-            <mrow>e^x \amp = \sum_{n=0}^\infty \frac{x^n}{n!} = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots</mrow>
+            <mrow>e^x \amp = \infser[0] \frac{x^n}{n!} = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots</mrow>
             <intertext>and so</intertext>
-            <mrow>e^{-x^2} \amp = \sum_{n=0}^\infty \frac{(-x^2)^n}{n!}</mrow>
-            <mrow>\amp = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{n!}</mrow>
+            <mrow>e^{-x^2} \amp = \infser[0] \frac{(-x^2)^n}{n!}</mrow>
+            <mrow>\amp = \infser[0] (-1)^n\frac{x^{2n}}{n!}</mrow>
             <mrow>\amp = 1-x^2+\frac{x^4}{2!}-\frac{x^6}{3!}+\cdots.</mrow>
           </md>
         </p>
@@ -486,13 +492,13 @@
 
         <p>We include the <q>unsimplified</q> expressions for the coefficients found in <xref ref="ex_ps5">Example</xref> as we are looking for a pattern. It can be shown that <m>a_n = 2^n/n!</m>. Thus the solution, written as a power series, is
           <me>
-            y = \sum_{n=0}^\infty \frac{2^n}{n!}x^n = \sum_{n=0}^\infty \frac{(2x)^n}{n!}.
+            y = \infser[0] \frac{2^n}{n!}x^n = \infser[0] \frac{(2x)^n}{n!}.
           </me>
         </p>
 
         <p>Using <xref ref="idea_common_taylor">Key Idea</xref> and <xref ref="thm_series_alg">Theorem</xref>, we recognize <m>f(x) = e^{2x}</m>:
           <me>
-            e^x = \sum_{n=0}^\infty \frac{x^n}{n!} \qquad \Rightarrow \qquad e^{2x} = \sum_{n=0}^\infty \frac{(2x)^n}{n!}.
+            e^x = \infser[0] \frac{x^n}{n!} \qquad \Rightarrow \qquad e^{2x} = \infser[0] \frac{(2x)^n}{n!}.
           </me>
         </p>
       </solution>
@@ -513,7 +519,7 @@
       for some values <m>b_2</m>, <m>b_3</m> and <m>b_4</m>.
       Solving for these values, we see that <m>b_2=4</m>, <m>b_3 = 8</m> and <m>b_4=16</m>. That is, we are recovering the pattern we had previously seen, allowing us to write
       <md>
-        <mrow>f(x) = \sum_{n=0}^\infty a_nx^n \amp = \sum_{n=0}^\infty \frac{b_n}{n!}x^n</mrow>
+        <mrow>f(x) = \infser[0] a_nx^n \amp = \infser[0] \frac{b_n}{n!}x^n</mrow>
         <mrow>\amp = 1+2x+ \frac{4}{2!}x^2 + \frac{8}{3!}x^3+\frac{16}{4!}x^4 + \cdots</mrow>
       </md>
     </p>
@@ -588,7 +594,7 @@
 
             <p>The Taylor series starts <m>1+x+\frac12x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\cdots</m>;</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=0}^\infty \frac{x^n}{n!}</m></p>
+            <p>the Taylor series is <m>\ds \infser[0] \frac{x^n}{n!}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -607,7 +613,7 @@
           <solution>
             <p>All derivatives of <m>\sin(x)</m> are either <m>\pm\cos(x)</m> or <m>\pm \sin(x)</m>, which evaluate to <m>\pm 1</m> or <m>0</m> at <m>x=0</m>. The Taylor series starts <m>0+x+0x^2-\frac16x^3+0x^4+\frac1{120}x^5</m>;</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m></p>
+            <p>the Taylor series is <m>\ds \infser[0] (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -628,7 +634,7 @@
 
             <p>The Taylor series starts <m>1+x+x^2+x^3+\cdots</m>;</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=0}^\infty x^n</m></p>
+            <p>the Taylor series is <m>\ds \infser[0] x^n</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -653,7 +659,7 @@
 
             <p>The Taylor series starts <m>x-\frac13x^3+\frac15x^5+\cdots</m>; by reindexing to only obtain odd powers of <m>x</m>, we get</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1}</m>.</p>
+            <p>the Taylor series is <m>\ds \infser[0] (-1)^n\frac{x^{2n+1}}{2n+1}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -673,7 +679,7 @@
           <solution>
             <p>The Taylor series starts <m>0-(x-\pi/2)+0x^2+\frac16(x-\pi/2)^3+0x^4-\frac1{120}(x-\pi/2)^5</m>;</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^{n+1}\frac{(x-\pi/2)^{2n+1}}{(2n+1)!}</m></p>
+            <p>the Taylor series is <m>\ds \infser[0] (-1)^{n+1}\frac{(x-\pi/2)^{2n+1}}{(2n+1)!}</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -692,7 +698,7 @@
           <solution>
             <p>The Taylor series starts <m>1-(x-1)+(x-1)^2-(x-1)^3+(x-1)^4-(x-1)^5</m>;</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^{n}(x-1)^n</m></p>
+            <p>the Taylor series is <m>\ds \infser[0] (-1)^{n}(x-1)^n</m></p>
           </solution>
         </webwork>
       </exercise>
@@ -713,7 +719,7 @@
 
             <p>The Taylor series starts <m>1-x+\frac12x^2-\frac1{3!}x^3+\cdots</m>;</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^n\frac{x^n}{n!}</m>.</p>
+            <p>the Taylor series is <m>\ds \infser[0] (-1)^n\frac{x^n}{n!}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -734,7 +740,7 @@
 
             <p>The Taylor series starts <m>x-\frac{x^2}2+\frac{x^3}3-\frac{x^4}4+\cdots</m>;</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=1}^\infty (-1)^{n+1}\frac{x^n}{n}</m>.</p>
+            <p>the Taylor series is <m>\ds \infser (-1)^{n+1}\frac{x^n}{n}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -755,7 +761,7 @@
 
             <p>The Taylor series starts <m>\frac12+\frac14(x-1)-\frac18(x-1)^2+\frac1{16}(x-1)^3\cdots</m>;</p>
 
-            <p>the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^{n+1}\frac{(x-1)^n}{2^{n+1}}</m>.</p>
+            <p>the Taylor series is <m>\ds \infser[0] (-1)^{n+1}\frac{(x-1)^n}{2^{n+1}}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -777,7 +783,7 @@
             <p>The Taylor series starts <m>\frac{\sqrt{2}}2+\frac{\sqrt{2}}2(x-\pi/4) - \frac{\sqrt{2}}2\frac{(x-\pi/4)^2}{2}-\frac{\sqrt{2}}2\frac{(x-\pi/4)^3}{3!}+\frac{\sqrt{2}}2\frac{(x-\pi/4)^4}{4!}+\frac{\sqrt{2}}2\frac{(x-\pi/4)^5}{5!}\cdots</m>. Note how the signs are ``even, even, odd, odd, even, even, odd, odd,<m>\ldots</m> We saw signs like these in <xref ref="ex_seq1">Example</xref> of <xref ref="sec_sequences">Section</xref>; one way of producing such signs is to raise <m>(-1)</m> to a special quadratic power. While many possibilities exist,
               one such quadratic is <m>(n+3)(n+4)/2</m>.</p>
 
-            <p>Thus the Taylor series is <m>\ds \sum_{n=0}^\infty (-1)^{\frac{(n+3)(n+4)}{2}}\frac{\sqrt2}{2}\frac{(x-\pi/4)^n}{n!}</m>.</p>
+            <p>Thus the Taylor series is <m>\ds \infser[0] (-1)^{\frac{(n+3)(n+4)}{2}}\frac{\sqrt2}{2}\frac{(x-\pi/4)^n}{n!}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -809,7 +815,7 @@
 
             <p>For any <m>x</m>, <m>\lim\limits_{n\to\infty} \frac{M}{(n+1)!}\abs{x^{(n+1)}}= 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
               <me>
-                e^x = \sum_{n=0}^\infty \frac{x^{n}}{n!} \text{ for all \(x\) } .
+                e^x = \infser[0] \frac{x^{n}}{n!} \text{ for all \(x\) } .
               </me>
             </p>
           </solution>
@@ -844,7 +850,7 @@
 
             <p>For any <m>x</m>, <m>\lim\limits_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0</m>. Thus by the Squeeze Theorem, we conclude that <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
               <me>
-                \sin(x) = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n+1}}{(2n+1)!} \text{ for all \(x\) } .
+                \sin(x) = \infser[0] (-1)^{n}\frac{x^{2n+1}}{(2n+1)!} \text{ for all \(x\) } .
               </me>
             </p>
           </solution>
@@ -899,7 +905,7 @@
 
             <p>As <m>n\to\infty</m>, <m>1/(n+1)\to0</m>. Thus by the Squeeze Theorem, we conclude that <m>\lim\limits_{n\to\infty} R_n(x) = 0</m> for all <m>x</m>, and hence
               <me>
-                \ln(x) = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^{n}}{n} \text{ for all \(0\lt x\leq 2\) } .
+                \ln(x) = \infser (-1)^{n+1}\frac{(x-1)^{n}}{n} \text{ for all \(0\lt x\leq 2\) } .
               </me>
             </p>
           </solution>
@@ -939,7 +945,7 @@
               </me>
               hence
               <me>
-                \frac{1}{1-x} = \sum_{n=0}^\infty x^n \text{ on }  (-1,0).
+                \frac{1}{1-x} = \infser[0] x^n \text{ on }  (-1,0).
               </me>
             </p>
           </solution>
@@ -959,9 +965,9 @@
             <p><m>\cos(-x) = \cos(x)</m></p>
           </statement>
           <solution>
-            <p>Given <m>\ds \cos(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}</m>,</p>
+            <p>Given <m>\ds \cos(x) = \infser[0] (-1)^n\frac{x^{2n}}{(2n)!}</m>,</p>
 
-            <p><m>\ds\cos(-x) = \sum_{n=0}^\infty (-1)^n\frac{(-x)^{2n}}{(2n)!}=\sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}=\cos(x)</m>, as all powers in the series are even.</p>
+            <p><m>\ds\cos(-x) = \infser[0] (-1)^n\frac{(-x)^{2n}}{(2n)!}=\infser[0] (-1)^n\frac{x^{2n}}{(2n)!}=\cos(x)</m>, as all powers in the series are even.</p>
           </solution>
         </webwork>
       </exercise>
@@ -978,9 +984,9 @@
             <p><m>\sin(-x) = -\sin(x)</m></p>
           </statement>
           <solution>
-            <p>Given <m>\ds \sin(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m>,</p>
+            <p>Given <m>\ds \sin(x) = \infser[0] (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m>,</p>
 
-            <p><m>\ds\sin(-x) = \sum_{n=0}^\infty (-1)^n\frac{(-x)^{2n+1}}{(2n+1)!}=\sum_{n=0}^\infty (-1)^n\frac{-x^{2n+1}}{(2n+1)!}=-\sin(x)</m>, as all powers in the series are odd.</p>
+            <p><m>\ds\sin(-x) = \infser[0] (-1)^n\frac{(-x)^{2n+1}}{(2n+1)!}=\infser[0] (-1)^n\frac{-x^{2n+1}}{(2n+1)!}=-\sin(x)</m>, as all powers in the series are odd.</p>
           </solution>
         </webwork>
       </exercise>
@@ -997,9 +1003,9 @@
             <p><m>\frac{d}{dx}\big(\sin(x) \big) = \cos(x)</m></p>
           </statement>
           <solution>
-            <p>Given <m>\ds \sin(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m>,</p>
+            <p>Given <m>\ds \sin(x) = \infser[0] (-1)^n\frac{x^{2n+1}}{(2n+1)!}</m>,</p>
 
-            <p><m>\ds\frac{d}{dx}\big(\sin(x) \big)  = \frac{d}{dx}\left(\sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}\right)=\sum_{n=0}^\infty (-1)^n\frac{(2n+1)x^{2n}}{(2n+1)!}=\sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}=\cos(x)</m>. (The summation still starts at <m>n=0</m> as there was no constant term in the expansion of <m>\sin(x)</m>).</p>
+            <p><m>\ds\frac{d}{dx}\big(\sin(x) \big)  = \frac{d}{dx}\left(\infser[0] (-1)^n\frac{x^{2n+1}}{(2n+1)!}\right)=\infser[0] (-1)^n\frac{(2n+1)x^{2n}}{(2n+1)!}=\infser[0] (-1)^n\frac{x^{2n}}{(2n)!}=\cos(x)</m>. (The summation still starts at <m>n=0</m> as there was no constant term in the expansion of <m>\sin(x)</m>).</p>
           </solution>
         </webwork>
       </exercise>
@@ -1016,11 +1022,11 @@
             <p><m>\frac{d}{dx}\big(\cos(x) \big) = -\sin(x)</m></p>
           </statement>
           <solution>
-            <p>Given <m>\ds \cos(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}</m>,</p>
+            <p>Given <m>\ds \cos(x) = \infser[0] (-1)^n\frac{x^{2n}}{(2n)!}</m>,</p>
 
-            <p><m>\ds\frac{d}{dx}\big(\cos(x) \big)  = \frac{d}{dx}\left(\sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}\right)=\sum_{n=1}^\infty (-1)^n\frac{(2n)x^{2n-1}}{(2n)!}=\sum_{n=1}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)!}</m>. We can re-index this summation to start at <m>n=0</m> by replacing <m>n</m> with <m>n+1</m> in the summation:
+            <p><m>\ds\frac{d}{dx}\big(\cos(x) \big)  = \frac{d}{dx}\left(\infser[0] (-1)^n\frac{x^{2n}}{(2n)!}\right)=\infser (-1)^n\frac{(2n)x^{2n-1}}{(2n)!}=\infser (-1)^n\frac{x^{2n-1}}{(2n-1)!}</m>. We can re-index this summation to start at <m>n=0</m> by replacing <m>n</m> with <m>n+1</m> in the summation:
               <me>
-                \sum_{n=1}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)!} =\sum_{n=0}^\infty (-1)^{n+1}\frac{x^{2n+1}}{(2n+1)!}.
+                \infser (-1)^n\frac{x^{2n-1}}{(2n-1)!} =\infser[0] (-1)^{n+1}\frac{x^{2n+1}}{(2n+1)!}.
               </me>
             </p>
 
@@ -1111,7 +1117,7 @@
             <p><m>f(x) = \cos\big(x^2\big)</m></p>
           </statement>
           <solution>
-            <p><m>\ds \sum_{n=0}^\infty (-1)^n\frac{(x^2)^{2n}}{(2n)!} = \sum_{n=0}^\infty (-1)^n\frac{x^{4n}}{(2n)!}</m>.</p>
+            <p><m>\ds \infser[0] (-1)^n\frac{(x^2)^{2n}}{(2n)!} = \infser[0] (-1)^n\frac{x^{4n}}{(2n)!}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1128,7 +1134,7 @@
             <p><m>f(x) = e^{-x}</m></p>
           </statement>
           <solution>
-            <p><m>\ds \sum_{n=0}^\infty \frac{(-x)^n}{n!}</m>.</p>
+            <p><m>\ds \infser[0] \frac{(-x)^n}{n!}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1145,7 +1151,7 @@
             <p><m>f(x) = \sin\big(2x+3\big)</m></p>
           </statement>
           <solution>
-            <p><m>\ds \sum_{n=0}^\infty (-1)^n\frac{(2x+3)^{2n+1}}{(2n+1)!}</m>.</p>
+            <p><m>\ds \infser[0] (-1)^n\frac{(2x+3)^{2n+1}}{(2n+1)!}</m>.</p>
           </solution>
         </webwork>
       </exercise>
@@ -1162,7 +1168,7 @@
             <p><m>f(x) = \tan^{-1}\big(x/2\big)</m></p>
           </statement>
           <solution>
-            <p><m>\ds \sum_{n=0}^\infty (-1)^n\frac{(x/2)^{2n+1}}{(2n+1)}</m>.</p>
+            <p><m>\ds \infser[0] (-1)^n\frac{(x/2)^{2n+1}}{(2n+1)}</m>.</p>
           </solution>
         </webwork>
       </exercise>

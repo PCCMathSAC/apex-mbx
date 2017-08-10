@@ -2,39 +2,38 @@
 
 <section xml:id="sec_related_rates">
   <title>Related Rates</title>
-  <introduction>
-    <p>When two quantities are related by an equation, knowing the value of one quantity can determine the value of the other. For instance, the circumference and radius of a circle are related by <m>C=2\pi r</m>; knowing that <m>C = 6\pi</m>in determines the radius must be 3in.</p>
+    <p>When two quantities are related by an equation, knowing the value of one quantity can determine the value of the other. For instance, the circumference and radius of a circle are related by <m>C=2\pi r</m>; knowing that <m>C</m> is <quantity><mag>6\pi</mag><unit base="inch" /></quantity> determines the radius must be <quantity><mag>3</mag><unit base="inch" /></quantity>.</p>
 
     <p>But what if both variables are changing with time? If we know how two variables are related and we know how one of them changes with time, can we find how the other variable changes with time?</p>
 
-    <p>The topic of <em>related rates</em> allows us to answer this question: knowing the <em>rate</em> at which one quantity is changing can determine the <em>rate</em> at which the other changes.<index><main>related rates</main></index></p>
+    <p>The topic of <term>related rates</term> allows us to answer this question: knowing the <em>rate</em> at which one quantity is changing can determine the <em>rate</em> at which the other changes.<index><main>related rates</main></index></p>
 
-    <aside>
+    <remark>
       <p>This section relies heavily on implicit differentiation, so referring back to <xref ref="sec_imp_deriv">Section</xref> may help.</p>
-    </aside>
+    </remark>
 
     <p>We demonstrate the concepts of related rates through examples.</p>
 
     <example xml:id="ex_rr1">
       <title>Understanding related rates</title>
       <statement>
-        <p>The radius of a circle is growing at a rate of 5in/hr. At what rate is the circumference growing?</p>
+        <p>The radius of a circle is growing at a rate of <quantity><mag>5</mag><unit base="inch" /><per base="hour" /></quantity>. At what rate is the circumference growing?</p>
       </statement>
       <solution>
-        <p>The circumference and radius of a circle are related by <m>C = 2\pi r</m>. We are given information about how the length of <m>r</m> changes with respect to time; that is, we are told <m>\frac{dr}{dt} = 5</m>in/hr. We want to know how the length of <m>C</m> changes with respect to time, i.e., we want to know <m>\frac{dC}{dt}</m>.</p>
+        <p>The circumference and radius of a circle are related by <m>C = 2\pi r</m>. We are given information about how the length of <m>r</m> changes with respect to time; that is, we are told <m>\lz{r}{t}</m> is <quantity><mag>5</mag><unit base="inch" /><per base="hour" /></quantity>. We want to know how the length of <m>C</m> changes with respect to time, i.e., we want to know <m>\lz{C}{t}</m>.</p>
 
         <p>Implicitly differentiate both sides of <m>C = 2\pi r</m> with respect to <m>t</m>:
           <md>
-            <mrow>C 	\amp = 2\pi r</mrow>
-            <mrow>\frac{d}{dt}\big(C\big) \amp = \frac{d}{dt}\big(2\pi r\big)</mrow>
-            <mrow>\frac{dC}{dt} 	\amp =	2\pi \frac{dr}{dt}.</mrow>
-          </md>
+            <mrow>C \amp = 2\pi r</mrow>
+            <mrow>\lzoo{t}{C} \amp = \lzoo{t}{2\pi r}</mrow>
+            <mrow>\lz{C}{t} \amp =2\pi \lz{r}{t}</mrow>
+          </md>.
         </p>
 
-        <p>As we know <m>\frac{dr}{dt} = 5</m>in/hr, we know
+        <p>As we know <m>\lz{r}{t}</m> is <quantity><mag>5</mag><unit base="inch" /><per base="hour" /></quantity>, we know
           <me>
-            \frac{dC}{dt} = 2\pi 5 = 10\pi \approx 31.4\text{ in/hr. }
-          </me>
+            \lz{C}{t} = 2\pi 5 = 10\pi \approx 31.4\text{ in/hr }
+          </me>.
         </p>
       </solution>
     </example>
@@ -43,85 +42,87 @@
     <insight xml:id="idea_relatedrates">
       <title>Related Rates</title>
       <index><main>Related Rates</main></index>
-      <ol>
-        <li><p>Read the problem carefully and identify the quantities that are changing with time. (There may be many quantities that change with time, try to identify which variables are important to your goal and only focus on these quantities.)</p></li>
+      <p><ol>
+        <li>
+          <p>Read the problem carefully and identify the quantities that are changing with time. (There may be many quantities that change with time, try to identify which variables are important to your goal and only focus on these quantities.)</p>
+        </li>
 
-        <li><p>Draw a diagram (if applicable) and assign mathematical variables to each quantity that is changing with time. (If you are given a particular value of a quantity that is also changing with time, do not include these values on your diagram. We will call these <q>instantaneous values</q> of the variable.)</p></li>
-        <li xml:id="li_rrmodel"><p>Relate the important variables using a mathematical model. (Typical models are known formulas for area, perimeter, the Pythagorean Theorem or Trigonometric Ratios.) It may be necessary to use more than one technique (such as similar triangles) to reduce your model down to one that only involves the variables of interest.</p></li>
-        <li><p>Implicitly differentiate both sides of the equation found in <xref ref="li_rrmodel">Step</xref> with respect to <m>t</m>.</p></li>
-        <li><p>Substitute in the known values of rates and known instantaneous values of the variables.</p></li>
-        <li><p>Solve for the unknown rate.</p></li>
-        <li><p>Write a full sentence conclusion.</p></li>
-      </ol>
+        <li>
+          <p>Draw a diagram (if applicable) and assign mathematical variables to each quantity that is changing with time. (If you are given a particular value of a quantity that is also changing with time, do not include these values on your diagram. We will call these <q>instantaneous values</q> of the variable.)</p>
+        </li>
+        <li xml:id="li_rrmodel">
+          <p>Relate the important variables using a mathematical model. (Typical models are known formulas for area, perimeter, the Pythagorean Theorem or Trigonometric Ratios.) It may be necessary to use more than one technique (such as similar triangles) to reduce your model down to one that only involves the variables of interest.</p>
+        </li>
+        <li>
+          <p>Implicitly differentiate both sides of the equation found in <xref ref="li_rrmodel">Step</xref> with respect to <m>t</m>.</p>
+        </li>
+        <li>
+          <p>Substitute in the known values of rates and known instantaneous values of the variables.</p>
+        </li>
+        <li>
+          <p>Solve for the unknown rate.</p>
+        </li>
+        <li>
+          <p>Write a full sentence conclusion.</p>
+        </li>
+      </ol></p>
     </insight>
+
     <p>Consider another, similar example.</p>
 
     <example xml:id="ex_rr2">
       <title>Finding related rates</title>
       <statement>
-        <p>Water streams out of a faucet at a rate of <m>2</m>in<m>^3</m>/s onto a flat surface at a constant rate, forming a circular puddle that is <m>1/8</m>in deep.</p>
+        <p>Water streams out of a faucet at a rate of <quantity><mag>2</mag><unit base="inch" exp="3" /><per base="second" /></quantity> onto a flat surface at a constant rate, forming a circular puddle that is <quantity><mag>1/8</mag><unit base="inch" /></quantity> deep.</p>
 
-        <ol>
-          <li xml:id="ex_rr2a"><p>At what rate is the area of the puddle growing?</p></li>
+        <p><ol>
+          <li xml:id="ex_rr2a">
+            <p>At what rate is the area of the puddle growing?</p>
+          </li>
 
-          <li xml:id="ex_rr2b"><p>At what rate is the radius of the circle growing?</p></li>
-        </ol>
+          <li xml:id="ex_rr2b">
+            <p>At what rate is the radius of the circle growing?</p>
+          </li>
+        </ol></p>
       </statement>
       <solution>
-        <ol>
-          <li><p>We can answer this question two ways: using <q>common sense</q> or related rates. The common sense method states that the volume of the puddle is growing by <m>2</m>in<m>^3</m>/s, where
+        <p><ol>
+          <li>
+            <p>We can answer this question two ways: using <q>common sense</q> or related rates. The common sense method states that the volume of the puddle is growing by <quantity><mag>2</mag><unit base="inch" exp="3" /><per base="second" /></quantity>, where <me>\text{volume of puddle}=\text{area of circle}\times\text{depth}</me>. Since the depth is constant at <quantity><mag>1/8</mag><unit base="inch" /></quantity>, the area must be growing by <quantity><mag>16</mag><unit base="inch" exp="2" /><per base="second" /></quantity> since <m>16\cdot \frac{1}{8}=2</m>. This approach reveals the underlying related rates principle.</p>
 
-              volume of puddle <m>=</m> area of circle <times /> depth.
+            <p>Now let's solve the problem using <xref ref="idea_relatedrates">Key Idea</xref> to solve the problem. Based on the problem description, the quantities that change with time are the volume of water (the volume of the puddle), the area of the circular puddle and the radius of the circle. We don't need a diagram for this problem. The important variables for this part of the problem are the volume and area.</p>
 
-              Since the depth is constant at <m>1/8</m>in, the area must be growing by 16in<m>^2</m>/s since <m>16\cdot \frac18=2</m>. This approach reveals the underlying related<ndash />rates principle.</p>
+            <p>Let <m>V</m> and <m>A</m> represent the Volume and Area of the puddle. We know <m>V= A\times \frac{1}{8}</m>. Take the derivative of both sides with respect to <m>t</m>, employing implicit differentiation.<md>
+                <mrow>V \amp = \frac{1}{8}A</mrow>
+                <mrow>\lzoo{t}{V}\amp = \lzoo{t}{\frac{1}{8}A}</mrow>
+                <mrow>\lz{V}{t} \amp = \frac{1}{8}\lz{A}{t}</mrow>
+            </md>We know the change in volume, <m>\lz{V}{t} = 2</m>, so we substitute this value into our related rates equation: <m>2 = \frac{1}{8}\lz{A}{t}</m>, and hence <m>\lz{A}{t} = 16</m>. Thus the area is growing by <quantity><mag>16</mag><unit base="inch" exp="2" /><per base="second" /></quantity>.</p>
+          </li>
 
-              <p> Now let's solve the problem using <xref ref="idea_relatedrates">Key Idea</xref> to solve the problem. Based on the problem description, the quantities that change with time are the volume of water (the volume of the puddle), the area of the circular puddle and the radius of the circle. We don't need a diagram for this problem. The important variables for this part of the problem are the volume and area.
+          <li>
+            <p>We already identified the quantities that are changing in <xref ref="ex_rr2a">Part</xref>. The variables of interest in this problem are the radius and the volume. We need an equation that relates the volume of the circle to the radius. Since the puddle is a right circular cylinder, we will use a known volume formula, <m>V=\pi r^2 h</m> where <m>V</m> is the volume of the puddle (in <quantity><unit base="inch" exp="3" /></quantity>, <m>r</m> is the radius (in inches) and <m>h</m> is the height (<ie /> depth) of the puddle in inches. (Notice that this formula is equivalent to <m>V=\text{area} \times \text{depth}</m>. We know that the height (depth) is a constant <m>1/8</m> inch. Since this quantity does not change in the problem, we can safely substitute this value now.</p>
 
+            <p>Implicitly derive both sides of <m>V=\pi r^2 \frac{1}{8}</m> with respect to <m>t</m>:<md>
+                <mrow>V \amp = \frac{1}{8} \pi r^2</mrow>
+                <mrow>\frac{d}{dt}\big(V\big) \amp = \frac{d}{dt}\left(\frac{1}{8}\pi r^2\right)</mrow>
+                <mrow>\lz{V}{t} \amp = \frac{1}{8} 2\pi r\lz{r}{t}</mrow>
+                <mrow>\lz{V}{t} \amp = \frac{1}{4} \pi r\lz{r}{t}</mrow>
+            </md>We know that  <m>\lz{V}{t}</m> is <quantity><mag>2</mag><unit base="inch" exp="3" /><per base="second" /></quantity>. So we have:<me>2 = \frac14 \pi r\lz{r}{t}</me>Solving for <m>\lz{r}{t}</m>, we have<me>\lz{r}{t} = \frac{8}{\pi r}</me>. Note how our answer is not a number, but rather a function of <m>r</m>. In other words, <em>the rate at which the radius is growing depends on how big the circle already is.</em> If the circle is very large, adding <quantity><mag>2</mag><unit base="inch" exp="3" /><per base="second" /></quantity> of water will not make the circle much bigger at all. If the circle dime-sized, adding the same amount of water will make a radical change in the radius of the circle.</p>
 
-              Let <m>V</m> and <m>A</m> represent the Volume and Area of the puddle. We know <m>V= A\times \frac18</m>. Take the derivative of both sides with respect to <m>t</m>, employing implicit differentiation.
-              <md>
-                <mrow>V \amp = \frac18A</mrow>
-                <mrow>\frac{d}{dt}\big(V\big) \amp = \frac{d}{dt}\left(\frac18A\right)</mrow>
-                <mrow>\frac{dV}{dt} \amp =	\frac18\frac{dA}{dt}</mrow>
-              </md>
-              We know the change in volume, <m>\frac{dV}{dt} = 2</m>, so we substitute this value into our related rates equation: <m>2 = \frac18\frac{dA}{dt}</m>, and hence <m>\frac{dA}{dt} = 16</m>. Thus the area is growing by 16in<m>^2</m>/s.</p></li>
-
-          <li><p>We already identified the quantities that are changing in <xref ref="ex_rr2a">Part</xref>. The variables of interest in this problem are the radius and the volume. We need an equation that relates the volume of the circle to the radius. Since the puddle is a right circular cylinder, we will use a known volume formula, <m>V=\pi r^2 h</m> where <m>V</m> is the volume of the puddle (in in<m>^3</m>, <m>r</m> is the radius (in inches) and <m>h</m> is the height (i.e. depth) of the puddle in inches. (Notice that this formula is equivalent to <m>V=\text{area} \times \text{depth}</m>. We know that the height (depth) is a constant <m>1/8</m> inch. Since this quantity does not change in the problem, we can safely substitute this value now.
-
-              Implicitly derive both sides of <m>V=\pi r^2 \frac18</m> with respect to <m>t</m>:
-              <md>
-                <mrow>V 	\amp = \frac18 \pi r^2</mrow>
-                <mrow>\frac{d}{dt}\big(V\big) \amp = \frac{d}{dt}\left(\frac18\pi r^2\right)</mrow>
-                <mrow>\frac{dV}{dt} \amp = \frac18 2\pi r\frac{dr}{dt}</mrow>
-                <mrow>\frac{dV}{dt} \amp = \frac14 \pi r\frac{dr}{dt}</mrow>
-              </md>
-              We know that  <m>\frac{dV}{dt} = 2</m>in<m>^3</m>/s. So we have:
-              <me>
-                2 = \frac14 \pi r\frac{dr}{dt}
-              </me>
-               Solving for <m>\frac{dr}{dt}</m>, we have
-              <me>
-                \frac{dr}{dt} = \frac{8}{\pi r}.
-              </me>
-              Note how our answer is not a number, but rather a function of <m>r</m>. In other words, <em>the rate at which the radius is growing depends on how big the circle already is.</em> If the circle is very large, adding 2in<m>^3</m> of water will not make the circle much bigger at all. If the circle dime<ndash />sized, adding the same amount of water will make a radical change in the radius of the circle.
-
-              In some ways, our problem was (intentionally) ill<ndash />posed. We need to specify a current (instantaneous) value of the radius in order to know a rate of change. When the puddle has a radius of 10in, the radius is growing at a rate of
-              <me>
-                \frac{dr}{dt} = \frac{8}{10\pi} = \frac{4}{5\pi} \approx 0.25\text{ in/s } .
-              </me>
-            </p></li>
-        </ol>
+            <p>In some ways, our problem was (intentionally) ill-posed. We need to specify a current (instantaneous) value of the radius in order to know a rate of change. When the puddle has a radius of <quantity><mag>10</mag><unit base="inch" /></quantity>, the radius is growing at a rate of<me>\lz{r}{t} = \frac{8}{10\pi} = \frac{4}{5\pi} \approx 0.25\text{ in/s }.</me></p>
+          </li>
+        </ol></p>
       </solution>
     </example>
 
     <example xml:id="ex_rr3">
       <title>Studying related rates</title>
       <statement>
-        <p>Radar guns measure the rate of distance change between the gun and the object it is measuring. For instance, a reading of <q>55mph</q> means the object is moving away from the gun at a rate of 55 miles per hour, whereas a measurement of <q><m>-25</m>mph</q> would mean that the object is approaching the gun at a rate of 25 miles per hour.</p>
+        <p>Radar guns measure the rate of distance change between the gun and the object it is measuring. For instance, a reading of <q><quantity><mag>55</mag><unit base="mileperhour" /></quantity></q> means the object is moving away from the gun at a rate of <m>55</m> miles per hour, whereas a measurement of <q><quantity><mag>-25</mag><unit base="mileperhour" /></quantity></q> would mean that the object is approaching the gun at a rate of <m>25</m> miles per hour.</p>
 
-        <p>If the radar gun is moving (say, attached to a police car) then radar readouts are only immediately understandable if the gun and the object are moving along the same line. If a police officer is traveling 60mph and gets a readout of 15mph, he knows that the car ahead of him is moving away at a rate of 15 miles an hour, meaning the car is traveling 75mph. (This straight<ndash />line principle is one reason officers park on the side of the highway and try to shoot straight back down the road. It gives the most accurate reading.)</p>
+        <p>If the radar gun is moving (say, attached to a police car) then radar readouts are only immediately understandable if the gun and the object are moving along the same line. If a police officer is traveling <quantity><mag>60</mag><unit base="mileperhour" /></quantity> and gets a readout of <quantity><mag>15</mag><unit base="mileperhour" /></quantity>, he knows that the car ahead of him is moving away at a rate of <m>15</m> miles an hour, meaning the car is traveling <quantity><mag>75</mag><unit base="mileperhour" /></quantity>. (This straight-line principle is one reason officers park on the side of the highway and try to shoot straight back down the road. It gives the most accurate reading.)</p>
 
-        <p>Suppose an officer is driving due north at 30 mph and sees a car moving due east, as shown in <xref ref="fig_rr3">Figure</xref>. Using his radar gun, he measures a reading of 20mph. By using landmarks, he believes both he and the other car are about 1/2 mile from the intersection of their two roads.</p>
+        <p>Suppose an officer is driving due north at <quantity><mag>30</mag><unit base="mileperhour" /></quantity> and sees a car moving due east, as shown in <xref ref="fig_rr3">Figure</xref>. Using his radar gun, he measures a reading of <quantity><mag>20</mag><unit base="mileperhour" /></quantity>. By using landmarks, he believes both he and the other car are about <m>1/2</m> mile from the intersection of their two roads.</p>
 
         <figure xml:id="fig_rr3" >
           <caption>A sketch of a police car (at bottom) attempting to measure the speed of a car (at right) in <xref ref="ex_rr3">Example</xref>.</caption>
@@ -131,16 +132,15 @@
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}[>=latex]
+                \draw(0,0) -- (3,0) node [pos=.5,above] {\scriptsize $B=1/2$} -- (0,-3) node [pos=.4,below] {\scriptsize $C$}-- (0,0) node [pos=.5,rotate=90,shift={(.1,.2)}] {\scriptsize $A=1/2$};
 
-              \draw(0,0) -- (3,0) node [pos=.5,above] {\scriptsize $B=1/2$} -- (0,-3) node [pos=.4,below] {\scriptsize $C$}-- (0,0) node [pos=.5,rotate=90,shift={(.1,.2)}] {\scriptsize $A=1/2$};
+                \draw[thick] (0,-3.5) -- (0,.5) node [above] {\scriptsize $N$};
+                \draw[thick] (-.5,0) -- (3.5,0) node [right] {\scriptsize $E$};
+                \filldraw[fill={\colortwo},draw={\colortwo}] (0,-3) circle (2pt) node [right] {\scriptsize Officer};
+                \filldraw[fill=black,draw=black] (3,0) circle (2pt) node [below ] {\scriptsize \quad Car};
 
-              \draw[thick] (0,-3.5) -- (0,.5) node [above] {\scriptsize $N$};
-              \draw[thick] (-.5,0) -- (3.5,0) node [right] {\scriptsize $E$};
-              \filldraw[fill={\colortwo},draw={\colortwo}] (0,-3) circle (2pt) node [right] {\scriptsize Officer};
-              \filldraw[fill=black,draw=black] (3,0) circle (2pt) node [below ] {\scriptsize \quad Car};
-
-              \draw[->,thick] (-.2,-3.3) -- (-.2,-2.7);
-              \draw[->,thick] (2.7,.2) -- (3.3,.2);
+                \draw[->,thick] (-.2,-3.3) -- (-.2,-2.7);
+                \draw[->,thick] (2.7,.2) -- (3.3,.2);
 
               \end{tikzpicture}
               ]]>
@@ -149,49 +149,43 @@
           <!-- figures/fig_rr3.tex END -->
         </figure>
 
-        <p>If the speed limit on the other road is 55mph, is the other driver speeding?</p>
+        <p>If the speed limit on the other road is <quantity><mag>55</mag><unit base="mileperhour" /></quantity>, is the other driver speeding?</p>
       </statement>
       <solution>
-        <p>The important quantities that are changing are: the distance of the officer to the intersection, the distance of the car to the intersection, and the distance of the officer to the car. (There are other quantities that are changing as well such as the angles and area of the triangle, but these are not important to this problem.)
+        <p>The important quantities that are changing are: the distance of the officer to the intersection, the distance of the car to the intersection, and the distance of the officer to the car. (There are other quantities that are changing as well such as the angles and area of the triangle, but these are not important to this problem.)</p>
 
-        Using the diagram in <xref ref="fig_rr3">Figure</xref>, let's label what we know about the situation. As both the police officer and other driver are 1/2 mile from the intersection, we have <m>A = 1/2</m>, <m>B = 1/2</m>, and through the Pythagorean Theorem, <m>C = 1/\sqrt{2}\approx 0.707</m>. These values are <q>instantaneous</q> values for our variables, so we won't use them until the <em>end</em> of the problem. Instead, we will use the variables <m>A,B \text{ and } C</m>.</p>
+        <p>Using the diagram in <xref ref="fig_rr3">Figure</xref>, let's label what we know about the situation. As both the police officer and other driver are <m>1/2</m> mile from the intersection, we have <m>A = 1/2</m>, <m>B = 1/2</m>, and through the Pythagorean Theorem, <m>C = 1/\sqrt{2}\approx 0.707</m>. These values are <q>instantaneous</q> values for our variables, so we won't use them until the <em>end</em> of the problem. Instead, we will use the variables <m>A</m>, <m>B</m>, and <m>C</m>.</p>
 
-        <p>We need an equation that relates <m>A,B \text{ and } C</m>. The Pythagorean Theorem is a good choice: <m>A^2+B^2 = C^2</m>. Differentiate both sides with respect to <m>t</m>:
+        <p>We need an equation that relates <m>A</m>, <m>B</m>, and <m>C</m>. The Pythagorean Theorem is a good choice: <m>A^2+B^2 = C^2</m>. Differentiate both sides with respect to <m>t</m>:
           <md>
             <mrow>A^2 + B^2 \amp = C^2</mrow>
-            <mrow>\frac{d}{dt}\left(A^2+B^2\right) \amp = \frac{d}{dt}\left(C^2\right)</mrow>
-            <mrow>2A\frac{dA}{dt} + 2B\frac{dB}{dt} \amp = 2C\frac{dC}{dt}</mrow>
+            <mrow>\lzoo{t}{A^2+B^2} \amp = \lzoo{t}{C^2}</mrow>
+            <mrow>2A\lz{A}{t} + 2B\lz{B}{t} \amp = 2C\lz{C}{t}</mrow>
           </md>
         </p>
 
-        <p>We know the police officer is traveling at 30mph; that is, <m>\frac{dA}{dt} = -30</m>. The reason this rate of change is negative is that <m>A</m> is getting smaller; the distance between the officer and the intersection is shrinking. The radar measurement is <m>\frac{dC}{dt} = 20</m>. We want to find <m>\frac{dB}{dt}</m>.</p>
+        <p>We know the police officer is traveling at <quantity><mag>30</mag><unit base="mileperhour" /></quantity>; that is, <m>\lz{A}{t} = -30</m>. The reason this rate of change is negative is that <m>A</m> is getting smaller; the distance between the officer and the intersection is shrinking. The radar measurement is <m>\lz{C}{t} = 20</m>. We want to find <m>\lz{B}{t}</m>.</p>
 
-        <p>We have values for everything except <m>\frac{dB}{dt}</m>. Solving for this we have:
-          <me>
-            \frac{dB}{dt} = \frac{C\frac{dC}{dt}- A\frac{dA}{dt}}{B}
-          </me>.
-
-          Now we substitue in our known rates and instantaneous values of our variables:
-          <md>
-            <mrow>\frac{dB}{dt} \amp \approx \frac{0.707(20)- 0.5(-30)}{(0.5)}</mrow>
+        <p>We have values for everything except <m>\lz{B}{t}</m>. Solving for this we have:<me>\lz{B}{t} = \frac{C\lz{C}{t}- A\lz{A}{t}}{B}</me>. Now we substitue in our known rates and instantaneous values of our variables:<md>
+            <mrow>\lz{B}{t} \amp \approx \frac{0.707(20)- 0.5(-30)}{(0.5)}</mrow>
             <mrow>\amp= 58.28 \text{mph}</mrow>
-          </md>.
-        </p>
+        </md>.</p>
 
         <p>The other driver appears to be speeding slightly.</p>
       </solution>
     </example>
 
     <aside>
-      <p><xref ref="ex_rr3">Example</xref> is both interesting and impractical. It highlights the difficulty in using radar in a non<ndash />linear fashion, and explains why <q>in real life</q> the police officer would follow the other driver to determine their speed, and not pull out pencil and paper.</p>
+      <title>Practicality</title>
+      <p><xref ref="ex_rr3">Example</xref> is both interesting and impractical. It highlights the difficulty in using radar in a nonlinear fashion, and explains why <q>in real life</q> the police officer would follow the other driver to determine their speed, and not pull out pencil and paper.</p>
 
-      <p>The principles here are important, though. Many automated vehicles make judgments about other moving objects based on perceived distances, radar<ndash />like measurements and the concepts of related rates.</p>
+      <p>The principles here are important, though. Many automated vehicles make judgments about other moving objects based on perceived distances, radar-like measurements and the concepts of related rates.</p>
     </aside>
 
     <example xml:id="ex_rr4">
       <title>Studying related rates</title>
       <statement>
-        <p>A camera is placed on a tripod 10ft from the side of a road. The camera is to turn to track a car that is to drive by at 100mph for a promotional video. The video's planners want to know what kind of motor the tripod should be equipped with in order to properly track the car as it passes by. <xref ref="fig_rr4">Figure</xref> shows the proposed setup.</p>
+        <p>A camera is placed on a tripod <quantity><mag>10</mag><unit base="foot" /></quantity> from the side of a road. The camera is to turn to track a car that is to drive by at <quantity><mag>100</mag><unit base="mileperhour" /></quantity> for a promotional video. The video's planners want to know what kind of motor the tripod should be equipped with in order to properly track the car as it passes by. <xref ref="fig_rr4">Figure</xref> shows the proposed setup.</p>
 
         <figure xml:id="fig_rr4" >
           <caption>Tracking a speeding car (at left) with a rotating camera.</caption>
@@ -202,11 +196,11 @@
               <![CDATA[
               \begin{tikzpicture}[>=latex]
 
-              \draw (-3,0) -- (0,0) -- (0,-2) node [shift={(-5pt,10pt)}] {\small $\theta$} node [right,pos=.5] {\scriptsize 10ft}-- cycle;
-              \draw [<->, thick] (-3.5,0) -- node [below,pos=.5] {\scriptsize $x$} (.5,0);
-              \draw [fill={\colortwo},draw={\colortwo}] (-3,0) circle (2pt);
-              \draw [fill=black] (0,-2) circle (2pt);
-              \draw [->] (-3,.2) -- (-2,.2) node [above,pos=.5] {\scriptsize 100mph};
+                \draw (-3,0) -- (0,0) -- (0,-2) node [shift={(-5pt,10pt)}] {\small $\theta$} node [right,pos=.5] {\scriptsize 10ft}-- cycle;
+                \draw [<->, thick] (-3.5,0) -- node [below,pos=.5] {\scriptsize $x$} (.5,0);
+                \draw [fill={\colortwo},draw={\colortwo}] (-3,0) circle (2pt);
+                \draw [fill=black] (0,-2) circle (2pt);
+                \draw [->] (-3,.2) -- (-2,.2) node [above,pos=.5] {\scriptsize 100mph};
 
               \end{tikzpicture}
               ]]>
@@ -218,7 +212,7 @@
         <p>How fast must the camera be able to turn to track the car?</p>
       </statement>
       <solution>
-        <p>The quantities that changing are <m>x</m> and <m>\theta</m> as drawn on <xref ref="fig_rr4"> Figure </xref>. (The hypotenuse of the triangle is also changing, but this isn't important to the problem). We seek information about how fast the camera is to <em>turn</em>; therefore, we need an equation that will relate an angle <m>\theta</m> to the position of the camera and the speed and position of the car.</p>
+        <p>The quantities that changing are <m>x</m> and <m>\theta</m> as drawn on <xref ref="fig_rr4">Figure</xref>. (The hypotenuse of the triangle is also changing, but this isn't important to the problem). We seek information about how fast the camera is to <em>turn</em>; therefore, we need an equation that will relate an angle <m>\theta</m> to the position of the camera and the speed and position of the car.</p>
 
         <p><xref ref="fig_rr4">Figure</xref> suggests we use a trigonometric equation. Letting <m>x</m> represent the distance the car is from the point on the road directly in front of the camera, we have
           <men xml:id="eq_rr4" >
@@ -229,45 +223,43 @@
         <p>Now take the derivative of both sides of Equation <xref ref="eq_rr4" /> using implicit differentiation:
           <md>
             <mrow>\tan(\theta) \amp = \frac{x}{10}</mrow>
-            <mrow>\frac{d}{dt}\big(\tan(\theta) \big) \amp = \frac{d}{dt}\left(\frac{x}{10}\right)</mrow>
-            <mrow>\sec^2(\theta) \,\frac{d\theta}{dt} \amp = \frac{1}{10}\frac{dx}{dt}</mrow>
-
+            <mrow>\lzoo{t}{\tan(\theta)} \amp = \lzoo{t}{\frac{x}{10}}</mrow>
+            <mrow>\sec^2(\theta)\lz{\theta}{t} \amp = \frac{1}{10}\lz{x}{t}</mrow>
           </md>
-          Now we solve for <m>\frac{d\theta}{dt} </m>:
+          Now we solve for <m>\lz{\theta}{t}</m>:
           <men xml:id="eq_rr4b">
-            \frac{d\theta}{dt} = \frac{\cos^2(\theta) }{10}\frac{dx}{dt}
+            \lz{\theta}{t} = \frac{\cos^2(\theta)}{10}\lz{x}{t}
           </men>
         </p>
 
 
-        <p>As the car is moving at 100mph, we have <m>\frac{dx}{dt} = -100</m>mph (as in the last example, since <m>x</m> is getting smaller as the car travels, <m>\frac{dx}{dt}</m> is negative). We need to convert the measurements so they use the same units (we chose ft); rewrite -100mph in terms of ft/s:
+        <p>As the car is moving at <quantity><mag>100</mag><unit base="mileperhour" /></quantity>, we have that <m>\lz{x}{t}</m> is <quantity><mag>-100</mag><unit base="mileperhour" /></quantity> (as in the last example, since <m>x</m> is getting smaller as the car travels, <m>\lz{x}{t}</m> is negative). We need to convert the measurements so they use the same units (we chose <quantity><unit base="foot" /></quantity>); rewrite <quantity><mag>-100</mag><unit base="mileperhour" /></quantity> in terms of <quantity><unit base="foot" /><per base="second" /></quantity>:
           <md>
-            <mrow>\frac{dx}{dt} \amp = -100\frac{\text{mi} }{\text{ hr } }</mrow>
+            <mrow>\lz{x}{t} \amp = -100\frac{\text{mi} }{\text{ hr } }</mrow>
             <mrow>\amp = -100\frac{\text{mi} }{\text{ hr } }\cdot5280\frac{\text{ ft } }{\text{mi} }\cdot\frac{1}{3600}\frac{\text{ hr } }{\text{s} } </mrow>
-            <mrow> \amp =-146.\overline{6}\text{ ft/s } </mrow>
+            <mrow>\amp =-146.\overline{6}\text{ ft/s } </mrow>
           </md>.
         </p>
 
-        <p>We want to know the fastest the camera has to turn. Common sense tells us this is when the car is directly in front of the camera (i.e., when <m>\theta = 0</m>). Our mathematics bears this out. In Equation <xref ref="eq_rr4b" /> we see this is when <m>\cos^2(\theta)</m> is largest; this is when <m>\cos(\theta) = 1</m>, or when <m>\theta = 0</m>. We also know that we should get an answer that is in radians/s. Since <m>\cos(\theta)</m> is a <q>dimensionless</q> measure, it won't contribute to the units. However, radians are also dimensionless. This means we can write (or erase) the word <q>radian</q> without any unit consequences (the same is not true of degrees <mdash/> always convert degress to radians).</p>
+        <p>We want to know the fastest the camera has to turn. Common sense tells us this is when the car is directly in front of the camera (i.e., when <m>\theta = 0</m>). Our mathematics bears this out. In <xref ref="eq_rr4b">Equation</xref> we see this is when <m>\cos^2(\theta)</m> is largest; this is when <m>\cos(\theta) = 1</m>, or when <m>\theta = 0</m>. We also know that we should get an answer that is in <quantity><unit base="radian" /><per base="second" /></quantity>. Since <m>\cos(\theta)</m> is a <q>dimensionless</q> measure, it won't contribute to the units. However, radians are also dimensionless. This means we can write (or erase) the word <q>radian</q> without any unit consequences. (The same is not true of degrees <mdash/> always convert degress to radians).</p>
 
-        <p>With <m>\frac{dx}{dt} \approx -146.67</m>ft/s, we have
+        <p>With <m>\lz{x}{t}</m> approximately <quantity><mag>-146.7</mag><unit base="foot" /><per base="second" /></quantity>, we have
           <md>
-            <mrow>\frac{d\theta}{dt} \amp \approx -\frac{1}{10\text{ ft } }146.67\text{ ft/s }</mrow>
+            <mrow>\lz{\theta}{t} \amp \approx -\frac{1}{10\text{ ft } }146.67\text{ ft/s }</mrow>
             <mrow>\amp = -14.667\text{ radians/s } </mrow>
-
           </md>
         </p>
 
-        <p>We find that <m>\frac{d\theta}{dt}</m> is negative; this matches our diagram in <xref ref="fig_rr4">Figure</xref> for <m>\theta</m> is getting smaller as the car approaches the camera.	
-	
-          What is the practical meaning of <m>-14.667</m>radians/s? Recall that 1 circular revolution goes through <m>2\pi</m> radians, thus <m>14.667</m>rad/s means <m>14.667/(2\pi)\approx 2.33</m> revolutions per second. The negative sign indicates the camera is rotating in a clockwise fashion.</p>
+        <p>We find that <m>\lz{\theta}{t}</m> is negative; this matches our diagram in <xref ref="fig_rr4">Figure</xref> for <m>\theta</m> is getting smaller as the car approaches the camera.</p>
+
+        <p>What is the practical meaning of <quantity><mag>-14.667</mag><unit base="radian" /><per base="second" /></quantity>? Recall that <m>1</m> circular revolution goes through <m>2\pi</m> radians, thus <quantity><mag>14.667</mag><unit base="radian" /><per base="second" /></quantity> means <m>14.667/(2\pi)\approx 2.33</m> revolutions per second. The negative sign indicates the camera is rotating in a clockwise fashion.</p>
       </solution>
     </example>
 
     <p>We introduced the derivative as a function that gives the slopes of tangent lines of functions. This chapter emphasizes using the derivative in other ways. Newton's Method uses the derivative to approximate roots of functions; this section stresses the <q>rate of change</q> aspect of the derivative to find a relationship between the rates of change of two related quantities.</p>
 
     <p>In the next section we use Extreme Value concepts to <em>optimize</em> quantities.</p>
-  </introduction>
+
   <exercises>
 <!--Group 1: T/F questions-->
     <exercisegroup>
