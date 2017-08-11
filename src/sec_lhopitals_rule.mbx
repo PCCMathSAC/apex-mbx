@@ -291,123 +291,103 @@
       <introduction>
         <p>Terms and Concepts</p>
       </introduction>
+<!-- Exercise 1 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>List the different indeterminate forms described in this section.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
+          <solution-hidden>
             <p><m>0/0, \infty/\infty, 0\cdot\infty,\infty-\infty,0^0,1^\infty,\infty^0</m></p>
-          </solution>
+          </solution-hidden>
         </webwork>
       </exercise>
+<!-- Exercise 2 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $true = PopUp(['?','True','False'],1);
+              $false = PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: l'H&#xf4;pital's Rule provides a faster method of computing derivatives.</p>
+            <p>T/F: l'H&#xf4;pital's Rule provides a faster method of computing derivatives.<var name="$false" form="popup" /></p>
           </statement>
-          <solution>
-            <p>F</p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 3 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $true = PopUp(['?','True','False'],1);
+              $false = PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: l'H&#xf4;pital's Rule states that <m>\ds \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{\fp(x)}{g'(x)}</m>.</p>
+            <p>l'H&#xf4;pital's Rule states that <m>\ds \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{\fp(x)}{g'(x)}</m>.<var name="$false" form="popup" /></p>
           </statement>
-          <solution>
-            <p>F</p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 4 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>Explain what the indeterminate form <q><m>1^\infty</m></q> means.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
+          <solution-hidden>
             <p>The base of an expression is approaching 1 while its power is growing without bound.</p>
-          </solution>
+          </solution-hidden>
         </webwork>
       </exercise>
+<!-- Exercise 5 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>Fill in the blanks: The Quotient Rule is applied to <m>\ds \frac{f(x)}{g(x)}</m> when taking <fillin />; l'H&#xf4;pital's Rule is applied when taking certain <fillin />.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>derivatives; limits</p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 6 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>Create (but do not evaluate!) a limit that returns <q><m>\infty^0</m></q>.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 7 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>Create a function <m>f(x)</m> such that <m>\lim\limits_{x\to 1}f(x)</m> returns <q><m>0^0</m></q>.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
@@ -415,107 +395,125 @@
       <introduction>
         <p>In the following exercises, evaluate the given limit.</p>
       </introduction>
+<!-- Exercise 8 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0 or inf/inf, one iteration -->
+              $xlim = 1;
+              $fu = Formula("x^2+x-2");
+              $fl = Formula("x-1");
+              $dfu = $fu->D('x');
+              $dfl = $fl->D('x');
+              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 1} \frac{x^2+x-2}{x-1}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 9 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0 or inf/inf, one iteration -->
+              $xlim = 2;
+              $fu = Formula("x^2+x-6");
+              $fl = Formula("x^2-7x+10");
+              $dfu = $fu->D('x');
+              $dfl = $fl->D('x');
+              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 2} \frac{x^2+x-6}{x^2-7x+10}</m></p>
+            <p><var name="$l" width="10" /></p>   <!-- -5/3 -->
           </statement>
-          <solution>
-            <p><m>-5/3</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 10 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0 or inf/inf, one iteration -->
+              $xlim = pi;
+              $fu = Formula("sin(x)");
+              $fl = Formula("x-pi");
+              $dfu = $fu->D('x');
+              $dfl = $fl->D('x');
+              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \pi} \frac{\sin(x) }{x-\pi}</m></p>
+            <p><var name="$l" width="10" /></p>   <!-- -1 -->
           </statement>
-          <solution>
-            <p><m>-1</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 11 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0 or inf/inf, one iteration -->
+              $xlim = pi/4;
+              $fu = Formula("sin(x)-cos(x)");
+              $fl = Formula("cos(2x)");
+              $dfu = $fu->D('x');
+              $dfl = $fl->D('x');
+              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \pi/4} \frac{\sin(x) -\cos(x) }{\cos(2x)}</m></p>
+            <p><var name="$l" width="10" /></p>   <!-- -sqrt(2)/2 -->
           </statement>
-          <solution>
-            <p><m>-\sqrt{2}/2</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 12 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0 or inf/inf, one iteration -->
+              $xlim = 0;
+              $fu = Formula("sin(5x)");
+              $fl = Formula("x");
+              $dfu = $fu->D('x');
+              $dfl = $fl->D('x');
+              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0} \frac{\sin(5x)}{x}</m></p>
+            <p><var name="$l" width="10" /></p>   <!-- 5 -->
           </statement>
-          <solution>
-            <p><m>5</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 13 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Not indeterminate - evaluate directly -->
+              $xlim = 0;
+              $fu = Formula("sin(2x)");
+              $fl = Formula("x+2");
+              $l = $fu->eval(x=>$xlim) / $fl->eval(x=>$xlim);
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0} \frac{\sin(2x)}{x+2}</m></p>
+            <p><var name="$l" width="10" /></p>   <!-- 0 -->
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 14 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -527,12 +525,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0} \frac{\sin(2x)}{\sin(3x)}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>2/3</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 15 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -544,12 +544,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0} \frac{\sin(ax)}{\sin(bx)}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>a/b</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 16 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -561,12 +563,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} \frac{e^x-1}{x^2}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>\infty</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 17 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -578,12 +582,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} \frac{e^x-x-1}{x^2}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1/2</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 18 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -595,12 +601,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} \frac{x-\sin(x) }{x^3-x^2}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 19 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -612,12 +620,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{x^4}{e^x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 20 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -629,12 +639,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{\sqrt{x}}{e^x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 21 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -646,12 +658,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{e^x}{\sqrt{x}}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>\infty</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 22 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -663,12 +677,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{e^x}{2^x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>\infty</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 23 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -680,12 +696,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{e^x}{3^x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 24 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -697,12 +715,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 3} \frac{x^3-5x^2+3x+9}{x^3-7x^2+15x-9}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>2</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 25 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -714,12 +734,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to -2} \frac{x^3+4x^2+4x}{x^3+7x^2+16x+12}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>-2</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 26 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -731,12 +753,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{\ln(x) }{x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 27 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -748,12 +772,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{\ln(x^2)}{x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 28 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -765,12 +791,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{\Big(\ln(x) \Big)^2}{x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 29 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -782,12 +810,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} x\cdot \ln(x)</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 30 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -799,12 +829,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} \sqrt{x}\cdot \ln(x)</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 31 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -816,12 +848,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} xe^{1/x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>\infty</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 32 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -833,12 +867,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} x^3-x^2</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>\infty</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 33 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -850,12 +886,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \sqrt{x}-\ln(x)</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>\infty</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 34 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -867,12 +905,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to -\infty} xe^x</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 35 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -884,12 +924,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} \frac{1}{x^2}e^{-1/x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 36 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -901,12 +943,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} (1+x)^{1/x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>e</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 37 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -918,12 +962,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} (2x)^{x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 38 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -935,12 +981,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} (2/x)^{x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 39 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -952,12 +1000,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} (\sin(x) )^{x}</m> Hint: use the Squeeze Theorem.</p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 40 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -969,12 +1019,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 1^+} (1-x)^{1-x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 41 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -986,12 +1038,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} (x)^{1/x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 42 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1003,12 +1057,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} (1/x)^{x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 43 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1020,12 +1076,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 1^+} (\ln(x) )^{1-x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 44 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1037,12 +1095,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} (1+x)^{1/x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 45 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1054,12 +1114,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} (1+x^2)^{1/x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 46 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1071,12 +1133,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \pi/2} \tan(x) \cos(x)</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 47 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1088,12 +1152,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \pi/2} \tan(x) \sin(2x)</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>2</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 48 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1105,12 +1171,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 1^+} \frac{1}{\ln(x) } - \frac{1}{x-1}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1/2</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 49 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1122,12 +1190,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 3^+} \frac{5}{x^2-9} - \frac{x}{x-3}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>-\infty</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 50 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1139,12 +1209,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} x\tan(1/x)</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>1</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 51 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1156,12 +1228,14 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{(\ln(x) )^3}{x}</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>0</m></p>
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 52 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -1173,6 +1247,7 @@
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 1} \frac{x^2+x-2}{\ln(x) }</m></p>
+            <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
             <p><m>3</m></p>
