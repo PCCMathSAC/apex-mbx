@@ -400,13 +400,18 @@
         <webwork seed="1">
           <setup>
             <pg-code>
-              <!-- Form 0/0 or inf/inf, one iteration -->
+              <!-- Form 0/0, one iteration -->
               $xlim = 1;
               $fu = Formula("x^2+x-2");
               $fl = Formula("x-1");
               $dfu = $fu->D('x');
               $dfl = $fl->D('x');
-              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              if ($dfl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
@@ -420,13 +425,18 @@
         <webwork seed="1">
           <setup>
             <pg-code>
-              <!-- Form 0/0 or inf/inf, one iteration -->
+              <!-- Form 0/0, one iteration -->
               $xlim = 2;
               $fu = Formula("x^2+x-6");
               $fl = Formula("x^2-7x+10");
               $dfu = $fu->D('x');
               $dfl = $fl->D('x');
-              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              if ($dfl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
@@ -440,13 +450,18 @@
         <webwork seed="1">
           <setup>
             <pg-code>
-              <!-- Form 0/0 or inf/inf, one iteration -->
+              <!-- Form 0/0, one iteration -->
               $xlim = pi;
               $fu = Formula("sin(x)");
               $fl = Formula("x-pi");
               $dfu = $fu->D('x');
               $dfl = $fl->D('x');
-              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              if ($dfl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
@@ -460,13 +475,18 @@
         <webwork seed="1">
           <setup>
             <pg-code>
-              <!-- Form 0/0 or inf/inf, one iteration -->
+              <!-- Form 0/0, one iteration -->
               $xlim = pi/4;
               $fu = Formula("sin(x)-cos(x)");
               $fl = Formula("cos(2x)");
               $dfu = $fu->D('x');
               $dfl = $fl->D('x');
-              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              if ($dfl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
@@ -480,13 +500,18 @@
         <webwork seed="1">
           <setup>
             <pg-code>
-              <!-- Form 0/0 or inf/inf, one iteration -->
+              <!-- Form 0/0, one iteration -->
               $xlim = 0;
               $fu = Formula("sin(5x)");
               $fl = Formula("x");
               $dfu = $fu->D('x');
               $dfl = $fl->D('x');
-              $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              if ($dfl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
@@ -517,228 +542,254 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0, one iteration -->
+              $xlim = 0;
+              $fu = Formula("sin(2x)");
+              $fl = Formula("sin(3x)");
+              $dfu = $fu->D('x');
+              $dfl = $fl->D('x');
+              if ($dfl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0} \frac{\sin(2x)}{\sin(3x)}</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><var name="$l" width="10" /></p>   <!-- 2/3 -->
           </statement>
-          <solution>
-            <p><m>2/3</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 15 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0, one iteration -->
+              <!-- This problem uses constants a and b, hence substitute not eval -->
+              Context()->variables->add(a=>"Real",b=>"Real");
+              $xlim = 0;
+              $fu = Formula("sin(a*x)");
+              $fl = Formula("sin(b*x)");
+              $dfu = $fu->D('x');
+              $dfl = $fl->D('x');
+              if ($dfl->substitute(x=>$xlim)==Formula("0")) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $dfu->substitute(x=>$xlim) / $dfl->substitute(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0} \frac{\sin(ax)}{\sin(bx)}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>a/b</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 16 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0, one iteration -->
+              $xlim = 0;
+              $fu = Formula("e^x-1");
+              $fl = Formula("x^2");
+              $dfu = $fu->D('x');
+              $dfl = $fl->D('x');
+              if ($dfl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} \frac{e^x-1}{x^2}</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><var name="$l" width="10" /></p>   <!-- infinity -->
           </statement>
-          <solution>
-            <p><m>\infty</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 17 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0, two iterations -->
+              $xlim = 0;
+              $fu = Formula("e^x-x-1");
+              $fl = Formula("x^2");
+              $d2fu = $fu->D('x')->D('x');
+              $d2fl = $fl->D('x')->D('x');
+              if ($d2fl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $d2fu->eval(x=>$xlim) / $d2fl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} \frac{e^x-x-1}{x^2}</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><var name="$l" width="10" /></p>   <!-- 1/2 -->
           </statement>
-          <solution>
-            <p><m>1/2</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 18 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0, two iterations -->
+              $xlim = 0;
+              $fu = Formula("x-sin(x)");
+              $fl = Formula("x^3-x^2");
+              $d2fu = $fu->D('x')->D('x');
+              $d2fl = $fl->D('x')->D('x');
+              if ($d2fl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $d2fu->eval(x=>$xlim) / $d2fl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 0^+} \frac{x-\sin(x) }{x^3-x^2}</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><var name="$l" width="10" /></p>   <!-- 0 -->
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 19 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf/inf -->
+              <!-- Not sure how to do this without just knowing what the result is and writing f(x)/g(x) to get that result, ala sec_limits_infy.mbx -->
+              <!-- I could come back and put the functions here and display them below -->
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{x^4}{e^x}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 20 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf/inf -->
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{\sqrt{x}}{e^x}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 21 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf/inf -->
+              $l = Compute("infinity");
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{e^x}{\sqrt{x}}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>\infty</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 22 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf/inf -->
+              $l = Compute("infinity");
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{e^x}{2^x}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>\infty</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 23 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf/inf -->
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to \infty} \frac{e^x}{3^x}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 24 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0, two iterations -->
+              $xlim = 3;
+              $fu = Formula("x^3-5x^2+3x+9");
+              $fl = Formula("x^3-7x^2+15x-9");
+              $d2fu = $fu->D('x')->D('x');
+              $d2fl = $fl->D('x')->D('x');
+              if ($d2fl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $d2fu->eval(x=>$xlim) / $d2fl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to 3} \frac{x^3-5x^2+3x+9}{x^3-7x^2+15x-9}</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><var name="$l" width="10" /></p>   <!-- 2 -->
           </statement>
-          <solution>
-            <p><m>2</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 25 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0, two iterations -->
+              $xlim = -2;
+              $fu = Formula("x^3+4x^2+4x");
+              $fl = Formula("x^3+7x^2+16x+12");
+              $d2fu = $fu->D('x')->D('x');
+              $d2fl = $fl->D('x')->D('x');
+              if ($d2fl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $d2fu->eval(x=>$xlim) / $d2fl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
             <p><m>\lim\limits_{x\to -2} \frac{x^3+4x^2+4x}{x^3+7x^2+16x+12}</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><var name="$l" width="10" /></p>   <!-- -2 -->
           </statement>
-          <solution>
-            <p><m>-2</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 26 -->
