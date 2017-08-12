@@ -609,52 +609,39 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $true = PopUp(['?','True','False'],1);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: The area between curves is always positive.</p>
+            <p>The area between curves is always positive.<var name="$true" form="popup" /></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 2 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $true = PopUp(['?','True','False'],1);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: Calculus can be used to find the area of basic geometric shapes.</p>
+            <p>Calculus can be used to find the area of basic geometric shapes.<var name="$true" form="popup" /></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 3 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
           <statement>
             <p>In your own words, describe how to find the total area enclosed by <m>y=f(x)</m> and <m>y=g(x)</m>.</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
@@ -662,13 +649,19 @@
       <introduction>
         <p>In the following exercises, find the area of the shaded region in the given graph.</p>
       </introduction>
+<!-- Exercise 4 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = 0;
+              $x1 = Compute("2*pi");
+              $f = Formula("x/2+3");
+              $g = Formula("1/2*cos(x)+1");
+              $F = Formula("x^2/4+3x");
+              $G = Formula("1/2*sin(x)+x");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
@@ -709,19 +702,23 @@
               </image>
               <!-- figures/fig_07_01_ex_04.tex END -->
             </figure>
+            <p><var name="$area" width="10" /></p>  <!-- 4pi+pi^2 -->
           </statement>
-          <solution>
-            <p><m>4\pi+\pi^2\approx 22.436</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 5 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("-1");
+              $x1 = Compute("1");
+              $f = Formula("-3x^3+2x+2");
+              $g = Formula("x^2+x-1");
+              $F = Formula("-x^4/3+3x^2/2+2x");
+              $G = Formula("x^3/3+x^2/2-x");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
@@ -764,19 +761,23 @@
               </image>
               <!-- figures/fig_07_01_ex_05.tex END -->
             </figure>
+            <p><var name="$area" width="10" /></p>  <!-- 10/3 -->
           </statement>
-          <solution>
-            <p><m>16/3</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 6 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("0");
+              $x1 = Compute("pi");
+              $f = Formula("2");
+              $g = Formula("1");
+              $F = Formula("2x");
+              $G = Formula("x");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
@@ -819,19 +820,23 @@
               </image>
               <!-- figures/fig_07_01_ex_10.tex END -->
             </figure>
+            <p><var name="$area" width="10" /></p>  <!-- pi -->
           </statement>
-          <solution>
-            <p><m>\pi</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 7 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("0");
+              $x1 = Compute("pi");
+              $f = Formula("sin(x)+1");
+              $g = Formula("sin(x)");
+              $F = Formula("-cos(x)+x");
+              $G = Formula("-cos(x)");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
@@ -874,19 +879,23 @@
               </image>
               <!-- figures/fig_07_01_ex_06.tex END -->
             </figure>
+            <p><var name="$area" width="10" /></p>  <!-- pi -->
           </statement>
-          <solution>
-            <p><m>\pi</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 8 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("0");
+              $x1 = Compute("pi/4");
+              $f = Formula("sec(x)^2");
+              $g = Formula("sin(4x)");
+              $F = Formula("tan(x)");
+              $G = Formula("-cos(4x)/4");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
@@ -929,19 +938,23 @@
               </image>
               <!-- figures/fig_07_01_ex_07.tex END -->
             </figure>
+            <p><var name="$area" width="10" /></p>  <!-- 1/2 -->
           </statement>
-          <solution>
-            <p><m>1/2</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 9 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("pi/4");
+              $x1 = Compute("5*pi/4");
+              $f = Formula("sin(x)");
+              $g = Formula("cos(x)");
+              $F = Formula("-cos(x)");
+              $G = Formula("sin(x)");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
@@ -984,19 +997,23 @@
               </image>
               <!-- figures/fig_07_01_ex_08.tex END -->
             </figure>
+            <p><var name="$area" width="10" /></p>  <!-- 2sqrt(2) -->
           </statement>
-          <solution>
-            <p><m>2\sqrt{2}</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 10 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("0");
+              $x1 = Compute("1");
+              $f = Formula("4^x");
+              $g = Formula("2^x");
+              $F = Formula("4^x/ln(4)");
+              $G = Formula("2^x/ln(2)");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
@@ -1039,146 +1056,198 @@
               </image>
               <!-- figures/fig_07_01_ex_09.tex END -->
             </figure>
+            <p><var name="$area" width="10" /></p>  <!-- 1/ln(4) -->
           </statement>
-          <solution>
-            <p><m>1/\ln(4)</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the total area enclosed by the functions <m>f</m> and <m>g</m>.</p>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the total area enclosed by the functions <m>f</m> and <m>g</m>.</p>
+      </introduction>
+<!-- Exercise 11 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("-2");
+              $x1 = Compute("1");
+              $f = Formula("x^2+4x-1");
+              $g = Formula("2x^2+5x-3");
+              $F = Formula("x^3/3+2x^2-x");
+              $G = Formula("2x^3/3+5x^2/2-3x");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
             <p><m>f(x) = 2x^2+5x-3</m>, <m>g(x) = x^2+4x-1</m></p>
+            <p><var name="$area" width="10" /></p>  <!-- 9/2 -->
           </statement>
-          <solution>
-            <p><m>4.5</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 12 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("-1");
+              $x1 = Compute("1");
+              $f = Formula("-3x+3");
+              $g = Formula("x^2-3x+2");
+              $F = Formula("3x^2/2+3x");
+              $G = Formula("x^3/3-3x^2+2x");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
             <p><m>f(x) = x^2-3x+2</m>, <m>g(x) = -3x+3</m></p>
+            <p><var name="$area" width="10" /></p>  <!-- 4/3 -->
           </statement>
-          <solution>
-            <p><m>4/3</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 13 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("0");
+              $x1 = Compute("pi/2");
+              $f = Formula("sin(x)");
+              $g = Formula("2x/pi");
+              $F = Formula("-cos(x)");
+              $G = Formula("x^2/pi");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
+              $area = 2*$area; <!-- symmetry, region from -pi/2 to pi/2 -->
             </pg-code>
           </setup>
           <statement>
             <p><m>f(x) = \sin(x)</m>, <m>g(x) = 2x/\pi</m></p>
+            <p><var name="$area" width="10" /></p>  <!-- 2-pi/2 -->
           </statement>
-          <solution>
-            <p><m>2-\pi/2</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 14 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("-1");
+              $x1 = Compute("1");
+              $x2 = Compute("3");
+              <!-- f(x0) > g(x0), but g(x2) > f(x2) -->
+              $f = Formula("x^3-4x^2+x-1");
+              $g = Formula("-x^2+2x-4");
+              $F = Formula("x^4/4-4x^3/3+x^2/2-x");
+              $G = Formula("-x^3/3+x^2-4x");
+              $D1 = Formula("$F-$G");
+              $area1 = $D1->eval(x=>$x1) - $D1->eval(x=>$x0);
+              $D2 = Formula("-$D1");
+              $area2 = $D2->eval(x=>$x2) - $D2->eval(x=>$x1);
+              $area = $area1 + $area2;
             </pg-code>
           </setup>
           <statement>
             <p><m>f(x) = x^3-4x^2+x-1</m>, <m>g(x) = -x^2+2x-4</m></p>
+            <p><var name="$area" width="10" /></p>  <!-- 8 -->
           </statement>
-          <solution>
-            <p><m>8</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 15 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("0");
+              $x1 = Compute("1");
+              $f = Formula("sqrt(x)");
+              $g = Formula("x");
+              $F = Formula("2/3*x^(3/2)");
+              $G = Formula("x^2/2");
+              $D = Formula("$F-$G");
+              $area = $D->eval(x=>$x1) - $D->eval(x=>$x0);
             </pg-code>
           </setup>
           <statement>
             <p><m>f(x) = x</m>, <m>g(x) = \sqrt{x}</m></p>
+            <p><var name="$area" width="10" /></p>  <!-- 1/6 -->
           </statement>
-          <solution>
-            <p><m>1/6</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 16 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("-1");
+              $x1 = Compute("1");
+              $x2 = Compute("2");
+              $f = Formula("3x^2+x+3");
+              $g = Formula("-x^3+5x^2+2x+1");
+              $F = Formula("x^3+x^2/2+3x");
+              $G = Formula("-x^4/4+5x^3/3+x^2+x");
+              $D1 = Formula("$F-$G");
+              $area1 = $D1->eval(x=>$x1) - $D1->eval(x=>$x0);
+              $D2 = Formula("-$D1");
+              $area2 = $D2->eval(x=>$x2) - $D2->eval(x=>$x1);
+              $area = $area1 + $area2;
             </pg-code>
           </setup>
           <statement>
             <p><m>f(x) = -x^3+5x^2+2x+1</m>, <m>g(x) = 3x^2+x+3</m></p>
+            <p><var name="$area" width="10" /></p>  <!-- 37/12 -->
           </statement>
-          <solution>
-            <p><m>37/12</m></p>
-          </solution>
         </webwork>
       </exercise>
+    </exercisegroup>
+    <exercisegroup>
+<!-- Exercise 17 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $x0 = Compute("pi/6");
+              $x1 = Compute("5*pi/6");
+              $x2 = Compute("3*pi/2");
+              <!-- f(x0) > g(x0), but g(x2) > f(x2) -->
+              $f = Formula("sin(x)");
+              $g = Formula("cos(2x)");
+              $F = Formula("-cos(x)");
+              $G = Formula("sin(2x)/2");
+              $D1 = Formula("$F-$G");
+              $area1 = $D1->eval(x=>$x1) - $D1->eval(x=>$x0);
+              $D2 = Formula("-$D1");
+              $area2 = $D2->eval(x=>$x2) - $D2->eval(x=>$x1);
+              $area = $area1 + $area2;
             </pg-code>
           </setup>
           <statement>
             <p>The functions <m>f(x) = \cos(2x)</m> and <m>g(x) = \sin(x)</m> intersect infinitely many times, forming an infinite number of repeated, enclosed regions. Find the areas of these regions.</p>
+            <p>Sum of repeated areas: <var name="$area" width="10" /></p>
+            <!-- 3sqrt(3)/2 + 3sqrt(3)/4 corresponding to the two non-symmetric areas-->
           </statement>
           <solution>
             <p>On regions such as <m>[\pi/6,5\pi/6]</m>, the area is <m>3\sqrt{3}/2</m>. On regions such as <m>[-\pi/2,\pi/6]</m>, the area is <m>3\sqrt{3}/4</m>.</p>
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the area of the enclosed region in two ways:</p>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the area of the enclosed region in two ways:</p>
 
-      <ol>
-        <li><p>by treating the boundaries as functions of <m>x</m>, and</p></li>
+        <ol>
+          <li><p>by treating the boundaries as functions of <m>x</m>, and</p></li>
 
-        <li><p>by treating the boundaries as functions of <m>y</m>.</p></li>
-      </ol>
-
+          <li><p>by treating the boundaries as functions of <m>y</m>.</p></li>
+        </ol>
+      </introduction>
+<!-- Exercise 18 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1231,12 +1300,10 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 19 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1288,12 +1355,10 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 20 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1345,12 +1410,10 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 21 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1402,12 +1465,10 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 22 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1459,13 +1520,15 @@
           </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, find the area triangle formed by the given three points.</p>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, find the area triangle formed by the given three points.</p>
+      </introduction>
+<!-- Exercise 23 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1476,12 +1539,10 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 24 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1492,12 +1553,10 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 25 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1508,12 +1567,10 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 26 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1524,12 +1581,12 @@
           </solution>
         </webwork>
       </exercise>
+    </exercisegroup>
+    <exercisegroup>
+<!-- Exercise 27 -->
       <exercise xml:id="x07_01_ex_29">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
@@ -1580,12 +1637,10 @@
           </solution>
         </webwork>
       </exercise>
+<!-- Exercise 28 -->
       <exercise xml:id="x07_01_ex_30">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
             </pg-code>
           </setup>
