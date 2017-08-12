@@ -415,7 +415,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 1} \frac{x^2+x-2}{x-1}</m></p>
+            <p><m>\lim\limits_{x\to 1} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
         </webwork>
@@ -440,7 +440,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 2} \frac{x^2+x-6}{x^2-7x+10}</m></p>
+            <p><m>\lim\limits_{x\to 2} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- -5/3 -->
           </statement>
         </webwork>
@@ -465,7 +465,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \pi} \frac{\sin(x) }{x-\pi}</m></p>
+            <p><m>\lim\limits_{x\to \pi} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- -1 -->
           </statement>
         </webwork>
@@ -490,7 +490,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \pi/4} \frac{\sin(x) -\cos(x) }{\cos(2x)}</m></p>
+            <p><m>\lim\limits_{x\to \pi/4} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- -sqrt(2)/2 -->
           </statement>
         </webwork>
@@ -515,7 +515,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0} \frac{\sin(5x)}{x}</m></p>
+            <p><m>\lim\limits_{x\to 0} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- 5 -->
           </statement>
         </webwork>
@@ -533,7 +533,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0} \frac{\sin(2x)}{x+2}</m></p>
+            <p><m>\lim\limits_{x\to 0} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- 0 -->
           </statement>
         </webwork>
@@ -558,7 +558,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0} \frac{\sin(2x)}{\sin(3x)}</m></p>
+            <p><m>\lim\limits_{x\to 0} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- 2/3 -->
           </statement>
         </webwork>
@@ -585,7 +585,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0} \frac{\sin(ax)}{\sin(bx)}</m></p>
+            <p><m>\lim\limits_{x\to 0} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
         </webwork>
@@ -610,7 +610,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} \frac{e^x-1}{x^2}</m></p>
+            <p><m>\lim\limits_{x\to 0^+} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- infinity -->
           </statement>
         </webwork>
@@ -635,7 +635,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} \frac{e^x-x-1}{x^2}</m></p>
+            <p><m>\lim\limits_{x\to 0^+} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- 1/2 -->
           </statement>
         </webwork>
@@ -660,7 +660,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} \frac{x-\sin(x) }{x^3-x^2}</m></p>
+            <p><m>\lim\limits_{x\to 0^+} \frac{<var name="$fu" /> }{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- 0 -->
           </statement>
         </webwork>
@@ -672,12 +672,13 @@
             <pg-code>
               <!-- Form inf/inf -->
               <!-- Not sure how to do this without just knowing what the result is and writing f(x)/g(x) to get that result, ala sec_limits_infy.mbx -->
-              <!-- I could come back and put the functions here and display them below -->
               $l = Compute("0");
+              $fu = Formula("x^4");
+              $fl = Formula("e^x");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \frac{x^4}{e^x}</m></p>
+            <p><m>\lim\limits_{x\to \infty} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
         </webwork>
@@ -689,10 +690,12 @@
             <pg-code>
               <!-- Form inf/inf -->
               $l = Compute("0");
+              $fu = Formula("sqrt(x)");
+              $fl = Formula("e^x");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \frac{\sqrt{x}}{e^x}</m></p>
+            <p><m>\lim\limits_{x\to \infty} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
         </webwork>
@@ -703,11 +706,13 @@
           <setup>
             <pg-code>
               <!-- Form inf/inf -->
+              $fu = Formula("e^x");
+              $fl = Formula("sqrt(x)");
               $l = Compute("infinity");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \frac{e^x}{\sqrt{x}}</m></p>
+            <p><m>\lim\limits_{x\to \infty} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
         </webwork>
@@ -718,11 +723,13 @@
           <setup>
             <pg-code>
               <!-- Form inf/inf -->
+              $fu = Formula("e^x");
+              $fl = Formula("2^x");
               $l = Compute("infinity");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \frac{e^x}{2^x}</m></p>
+            <p><m>\lim\limits_{x\to \infty} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
         </webwork>
@@ -733,11 +740,13 @@
           <setup>
             <pg-code>
               <!-- Form inf/inf -->
+              $fu = Formula("e^x");
+              $fl = Formula("3^x");
               $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \frac{e^x}{3^x}</m></p>
+            <p><m>\lim\limits_{x\to \infty} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
         </webwork>
@@ -762,7 +771,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 3} \frac{x^3-5x^2+3x+9}{x^3-7x^2+15x-9}</m></p>
+            <p><m>\lim\limits_{x\to 3} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- 2 -->
           </statement>
         </webwork>
@@ -787,7 +796,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to -2} \frac{x^3+4x^2+4x}{x^3+7x^2+16x+12}</m></p>
+            <p><m>\lim\limits_{x\to -2} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>   <!-- -2 -->
           </statement>
         </webwork>
@@ -796,71 +805,70 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf/inf -->
+              $fu = Formula("ln(x)");
+              $fl = Formula("x");
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \frac{\ln(x) }{x}</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><m>\lim\limits_{x\to \infty} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
+            <p><var name="$l" width="10" /></p>   <!-- 0 -->
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 27 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf/inf -->
+              $fu = Formula("ln(x^2)");
+              $fl = Formula("x");
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \frac{\ln(x^2)}{x}</m></p>
-            <p><var name="$l" width="10" /></p>
+            <!-- <p><m>\lim\limits_{x\to \infty} \frac{\ln(x^2)}{x}</m></p> -->
+            <!-- When placed from above ln(x^2) squishes the n( too closely -->
+            <p><m>\lim\limits_{x\to \infty} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
+            <p><var name="$l" width="10" /></p> <!-- 0 -->
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 28 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf/inf -->
+              $fu = Formula("ln(x)^2");
+              $fl = Formula("x");
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \frac{\Big(\ln(x) \Big)^2}{x}</m></p>
-            <p><var name="$l" width="10" /></p>
+            <!-- <p><m>\lim\limits_{x\to \infty} \frac{\Big(\ln(x) \Big)^2}{x}</m></p> -->
+            <!-- Format is different when fn's placed from above. Bad? -->
+            <p><m>\lim\limits_{x\to \infty} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
+            <p><var name="$l" width="10" /></p> <!-- 0 -->
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 29 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0*inf -->
+              $f1 = Formula("x");
+              $f2 = Formula("ln(x)");
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} x\cdot \ln(x)</m></p>
+            <p><m>\lim\limits_{x\to 0^+} <var name="$f1" />\cdot <var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
@@ -872,53 +880,51 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0*inf -->
+              $f1 = Formula("sqrt(x)");
+              $f2 = Formula("ln(x)");
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} \sqrt{x}\cdot \ln(x)</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><m>\lim\limits_{x\to 0^+} <var name="$f1" />\cdot <var name="$f2" /></m></p>
+            <p><var name="$l" width="10" /></p>   <!-- 0 -->
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 31 -->
+<!-- Same as first example in on 0*inf -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0*inf -->
+              $f1 = Formula("x");
+              $f2 = Formula("e^(1/x)");
+              $l = Compute("inf");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} xe^{1/x}</m></p>
+            <p><m>\lim\limits_{x\to 0^+} <var name="$f1" /> \cdot <var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>\infty</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 32 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf-inf -->
+              $f1 = Formula("x^3");
+              $f2 = Formula("x^2");
+              $l = Compute("inf");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} x^3-x^2</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><m>\lim\limits_{x\to \infty} <var name="$f1" />-<var name="$f2" /></m></p>
+            <p><var name="$l" width="10" /></p>   <!-- inf -->
           </statement>
           <solution>
             <p><m>\infty</m></p>
@@ -929,14 +935,15 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf-inf -->
+              $f1 = Formula("sqrt(x)");
+              $f2 = Formula("ln(x)");
+              $l = Compute("inf");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \sqrt{x}-\ln(x)</m></p>
+            <p><m>\lim\limits_{x\to \infty} <var name="$f1" />-<var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
           <solution>
@@ -948,361 +955,331 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0*inf -->
+              $f1 = Formula("x");
+              $f2 = Formula("e^x");
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to -\infty} xe^x</m></p>
+            <p><m>\lim\limits_{x\to -\infty} <var name="$f1" /> \cdot <var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 35 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf*0 -->
+              $f1 = Formula("1/x^2");
+              $f2 = Formula("e^(-1/x)");
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} \frac{1}{x^2}e^{-1/x}</m></p>
+            <p><m>\lim\limits_{x\to 0^+} <var name="$f1" /> \cdot <var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 36 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 1^inf -->
+              $fb = Formula("(1+x)");
+              $fp = Formula("1/x");
+              $l = Compute("e");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} (1+x)^{1/x}</m></p>
+            <p><m>\lim\limits_{x\to 0^+} (<var name="$fb" />)^<var name="$fp" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>e</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 37 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0^0 -->
+              $fb = Formula("2x");
+              $fp = Formula("x");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} (2x)^{x}</m></p>
+            <p><m>\lim\limits_{x\to 0^+} (<var name="$fb" />)^{<var name="$fp" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 38 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf^0 -->
+              $fb = Formula("2/x");
+              $fp = Formula("x");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} (2/x)^{x}</m></p>
+            <p><m>\lim\limits_{x\to 0^+} (<var name="$fb" />)^{<var name="$fp" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 39 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0^0 -->
+              $fb = Formula("sin(x)");
+              $fp = Formula("x");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 0^+} (\sin(x) )^{x}</m> Hint: use the Squeeze Theorem.</p>
+            <p><m>\lim\limits_{x\to 0^+} (<var name="$fb" />)^{<var name="$fp" />}</m> Hint: use the Squeeze Theorem.</p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 40 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0^0 -->
+              $fb = Formula("1-x");
+              $fp = Formula("1-x");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 1^+} (1-x)^{1-x}</m></p>
+            <p><m>\lim\limits_{x\to 1^+} (<var name="$fb" />)^{<var name="$fp" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 41 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf^0 -->
+              $fb = Formula("x");
+              $fp = Formula("1/x");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} (x)^{1/x}</m></p>
+            <p><m>\lim\limits_{x\to \infty} (<var name="$fb" />)^{<var name="$fp" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 42 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0^inf -->
+              $fb = Formula("1/x");
+              $fp = Formula("x");
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} (1/x)^{x}</m></p>
+            <p><m>\lim\limits_{x\to \infty} (<var name="$fb" />)^{<var name="$fp" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 43 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0^0 -->
+              $fb = Formula("ln(x)");
+              $fp = Formula("1-x");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 1^+} (\ln(x) )^{1-x}</m></p>
+            <p><m>\lim\limits_{x\to 1^+} (<var name="$fb" />)^{<var name="$fp" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 44 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf^0 -->
+              $fb = Formula("1+x");
+              $fp = Formula("1/x");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} (1+x)^{1/x}</m></p>
+            <p><m>\lim\limits_{x\to \infty} (<var name="$fb" />)^{<var name="$fp" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 45 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf^0 -->
+              $fb = Formula("1+x^2");
+              $fp = Formula("1/x");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} (1+x^2)^{1/x}</m></p>
+            <p><m>\lim\limits_{x\to \infty} (<var name="$fb" />)^{<var name="$fp" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 46 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf*0 -->
+              $f1 = Formula("tan(x)");
+              $f2 = Formula("cos(x)");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \pi/2} \tan(x) \cos(x)</m></p>
+            <p><m>\lim\limits_{x\to \pi/2} <var name="$f1" />  <var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 47 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf*0 -->
+              $f1 = Formula("tan(x)");
+              $f2 = Formula("cos(x)");
+              $l = Compute("2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \pi/2} \tan(x) \sin(2x)</m></p>
+            <p><m>\lim\limits_{x\to \pi/2} <var name="$f1" />  <var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>2</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 48 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf-inf -->
+              $f1 = Formula("1/ln(x)");
+              $f2 = Formula("1/(x-1)");
+              $l = Compute("1/2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 1^+} \frac{1}{\ln(x) } - \frac{1}{x-1}</m></p>
+            <p><m>\lim\limits_{x\to 1^+} <var name="$f1" /> - <var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1/2</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 49 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf-inf -->
+              $f1 = Formula("5/(x^2-9)");
+              $f2 = Formula("x/(x-3)");
+              $l = Compute("-inf");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 3^+} \frac{5}{x^2-9} - \frac{x}{x-3}</m></p>
+            <p><m>\lim\limits_{x\to 3^+} <var name="$f1" /> - <var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>-\infty</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 50 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf*0 -->
+              $f1 = Formula("x");
+              $f2 = Formula("tan(1/x)");
+              $l = Compute("1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} x\tan(1/x)</m></p>
+            <p><m>\lim\limits_{x\to \infty} <var name="$f1" /> <var name="$f2" /></m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>1</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 51 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form inf/inf -->
+              $fu = Formula("ln(x)^3");
+              $fl = Formula("x");
+              $l = Compute("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to \infty} \frac{(\ln(x) )^3}{x}</m></p>
+            <p><m>\lim\limits_{x\to \infty} \frac{<var name="$fu" />}{<var name="$fl" />}</m></p>
             <p><var name="$l" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>0</m></p>
-          </solution>
         </webwork>
       </exercise>
 <!-- Exercise 52 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              <!-- Form 0/0, one iteration -->
+              $xlim = 1;
+              $fu = Formula("x^2+x-2");
+              $fl = Formula("ln(x)");
+              $dfu = $fu->D('x');
+              $dfl = $fl->D('x');
+              if ($dfl->eval(x=>$xlim)==0) {
+                $l = Compute("inf");
+              }
+              else {
+                $l = $dfu->eval(x=>$xlim) / $dfl->eval(x=>$xlim);
+              }
             </pg-code>
           </setup>
           <statement>
-            <p><m>\lim\limits_{x\to 1} \frac{x^2+x-2}{\ln(x) }</m></p>
-            <p><var name="$l" width="10" /></p>
+            <p><m>\lim\limits_{x\to 1} \frac{<var name="$fu" />}{<var name="$fl" /> }</m></p>
+            <p><var name="$l" width="10" /></p>   <!-- 3 -->
           </statement>
-          <solution>
-            <p><m>3</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
