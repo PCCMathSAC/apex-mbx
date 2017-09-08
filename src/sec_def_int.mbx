@@ -572,6 +572,7 @@
     </figure>
 
     <p>In <xref ref="sec_riemann">Section</xref> we will explore how to find the areas of such regions.</p>
+  
   </introduction>
   <exercises>
     <exercisegroup>
@@ -580,54 +581,36 @@
       </introduction>
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>What is <q>total signed area</q>?</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>What is <q>displacement</q>?</p>
+            <p><var form="essay" /></p>
           </statement>
-          <solution>
-            <p>Answers will vary.</p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $A = Formula("0");
             </pg-code>
           </setup>
           <statement>
             <p>What is <m>\ds \int_3^3 \sin(x) \ dx</m>?</p>
+            <p><var name="$A" width="10" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
           <setup>
@@ -635,12 +618,18 @@
               <static></static>
             </var>
             <pg-code>
+<!-- FUNGUS: Come back to this when I figure out how to enter a definite integral as a solution -->
+              $a = Formula("0");
+              $b = Formula("2");
+              Context()->variables->add(dx=>"Real");
+              $f = Formula("2x+3");
+              $A = Formula("$f dx");
             </pg-code>
           </setup>
           <statement>
             <p>Give a single definite integral that has the same value as</p>
-
             <p><m>\ds \int_0^1(2x+3)\ dx + \int_1^2 (2x+3)\ dx</m>.</p>
+            <p>$integral</p>
           </statement>
           <solution>
             <p><m>\int 0^2 (2x+3)\ dx</m></p>
@@ -652,13 +641,17 @@
       <introduction>
         <p>In the following exercises, a graph of a function <m>f(x)</m> is given. Using the geometry of the graph, evaluate the definite integrals.</p>
       </introduction>
+<!-- Exercise 5 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("3");
+              $b = Formula("4");
+              $c = Formula("3");
+              $d = Formula("0");
+              $e = Formula("-4");
+              $f = Formula("9");
             </pg-code>
           </setup>
           <statement>
@@ -699,44 +692,33 @@
               <!-- figures/fig_05_02_ex_05.tex END -->
 
               <ol cols="2" >
-                <li><p><m>\ds \int_0^1 (-2x+4)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^1 (-2x+4)\ dx = </m><var name="$a" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^2 (-2x+4)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^2 (-2x+4)\ dx = </m><var name="$b" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^3 (-2x+4)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^3 (-2x+4)\ dx = </m><var name="$c" width="3" /></p></li>
 
-                <li><p><m>\ds \int_1^3 (-2x+4)\ dx</m></p></li>
+                <li><p><m>\ds \int_1^3 (-2x+4)\ dx = </m><var name="$d" width="3" /></p></li>
 
-                <li><p><m>\ds \int_2^4 (-2x+4)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^4 (-2x+4)\ dx = </m><var name="$e" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^1 (-6x+12)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^1 (-6x+12)\ dx = </m><var name="$f" width="3" /></p></li>
               </ol>
             </figure>
           </statement>
-          <solution>
-            <ol>
-              <li><p>3</p></li>
-
-              <li><p>4</p></li>
-
-              <li><p>3</p></li>
-
-              <li><p>0</p></li>
-
-              <li><p><m>-4</m></p></li>
-
-              <li><p>9</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 6       -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("-4");
+              $b = Formula("-5");
+              $c = Formula("-3");
+              $d = Formula("1");
+              $e = Formula("-2");
+              $f = Formula("10");
             </pg-code>
           </setup>
           <statement>
@@ -779,44 +761,33 @@
               <!-- figures/fig_05_02_ex_06.tex END -->
 
               <ol cols="2" >
-                <li><p><m>\ds \int_0^2 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^2 f(x)\ dx = </m><var name="$a" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^3 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^3 f(x)\ dx = </m><var name="$b" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^5 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^5 f(x)\ dx = </m><var name="$c" width="3" /></p></li>
 
-                <li><p><m>\ds \int_2^5 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^5 f(x)\ dx = </m><var name="$d" width="3" /></p></li>
 
-                <li><p><m>\ds \int_5^3 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_5^3 f(x)\ dx = </m><var name="$e" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^3 -2f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^3 -2f(x)\ dx = </m><var name="$f" width="3" /></p></li>
               </ol>
             </figure>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>-4</m></p></li>
-
-              <li><p><m>-5</m></p></li>
-
-              <li><p><m>-3</m></p></li>
-
-              <li><p>1</p></li>
-
-              <li><p><m>-2</m></p></li>
-
-              <li><p>10</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 7 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("4");
+              $b = Formula("2");
+              $c = Formula("4");
+              $d = Formula("2");
+              $e = Formula("1");
+              $f = Formula("2");
             </pg-code>
           </setup>
           <statement>
@@ -860,44 +831,33 @@
               <!-- figures/fig_05_02_ex_07.tex END -->
 
               <ol cols="2" >
-                <li><p><m>\ds \int_0^2 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^2 f(x)\ dx = </m><var name="$a" width="3" /></p></li>
 
-                <li><p><m>\ds \int_2^4 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^4 f(x)\ dx = </m><var name="$b" width="3" /></p></li>
 
-                <li><p><m>\ds \int_2^4 2f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^4 2f(x)\ dx = </m><var name="$c" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^1 4x\ dx</m></p></li>
+                <li><p><m>\ds \int_0^1 4x\ dx = </m><var name="$d" width="3" /></p></li>
 
-                <li><p><m>\ds \int_2^3 (2x-4)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^3 (2x-4)\ dx = </m><var name="$e" width="3" /></p></li>
 
-                <li><p><m>\ds \int_2^3 (4x-8)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^3 (4x-8)\ dx = </m><var name="$f" width="3" /></p></li>
               </ol>
             </figure>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>4</m></p></li>
-
-              <li><p><m>2</m></p></li>
-
-              <li><p><m>4</m></p></li>
-
-              <li><p>2</p></li>
-
-              <li><p><m>1</m></p></li>
-
-              <li><p>2</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 8 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("-1/2");
+              $b = Formula("0");
+              $c = Formula("3/2");
+              $d = Formula("3/2");
+              $e = Formula("9/2");
+              $f = Formula("15/2");
             </pg-code>
           </setup>
           <statement>
@@ -938,37 +898,23 @@
               <!-- figures/fig_05_02_ex_08.tex END -->
 
               <ol cols="2" >
-                <li><p><m>\ds \int_0^1 (x-1)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^1 (x-1)\ dx = </m><var name="$a" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^2 (x-1)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^2 (x-1)\ dx = </m><var name="$b" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^3 (x-1)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^3 (x-1)\ dx = </m><var name="$c" width="3" /></p></li>
 
-                <li><p><m>\ds \int_2^3 (x-1)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^3 (x-1)\ dx = </m><var name="$d" width="3" /></p></li>
 
-                <li><p><m>\ds \int_1^4 (x-1)\ dx</m></p></li>
+                <li><p><m>\ds \int_1^4 (x-1)\ dx = </m><var name="$e" width="3" /></p></li>
 
-                <li><p><m>\ds \int_1^4 \big((x-1)+1\big)\ dx</m></p></li>
+                <li><p><m>\ds \int_1^4 \big((x-1)+1\big)\ dx = </m><var name="$f" width="3" /></p></li>
               </ol>
             </figure>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>-1/2</m></p></li>
-
-              <li><p><m>0</m></p></li>
-
-              <li><p><m>3/2</m></p></li>
-
-              <li><p><m>3/2</m></p></li>
-
-              <li><p><m>9/2</m></p></li>
-
-              <li><p><m>15/2</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 9 -->
       <exercise>
         <webwork seed="1">
           <setup>
@@ -976,6 +922,11 @@
               <static></static>
             </var>
             <pg-code>
+              $r = Formula("2");
+              $a = Formula("1/4*pi*$r^2");
+              $b = Formula("1/4*pi*$r^2");
+              $c = Formula("1/2*pi*$r^2");
+              $d = Formula("5*1/2*pi*$r^2");
             </pg-code>
           </setup>
           <statement>
@@ -1016,37 +967,32 @@
               <!-- figures/fig_05_02_ex_09.tex END -->
 
               <ol cols="2" >
-                <li><p><m>\ds \int_0^2 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^2 f(x)\ dx</m><var name="$a" width="3" /></p></li>
 
-                <li><p><m>\ds \int_2^4 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^4 f(x)\ dx</m><var name="$b" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^4 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^4 f(x)\ dx</m><var name="$c" width="3" /></p></li>
 
-                <li><p><m>\ds \int_0^4 5f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^4 5f(x)\ dx</m><var name="$d" width="3" /></p></li>
               </ol>
             </figure>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>\pi</m></p></li>
-
-              <li><p><m>\pi</m></p></li>
-
-              <li><p><m>2\pi</m></p></li>
-
-              <li><p><m>10\pi</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, a graph of a function <m>f(x)</m> is given; the numbers inside the shaded regions give the area of that region. Evaluate the definite integrals using this area information.</p>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, a graph of a function <m>f(x)</m> is given; the numbers inside the shaded regions give the area of that region. Evaluate the definite integrals using this area information.</p>
+      </introduction>
+<!-- Exercise 10 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("-59");
+              $b = Formula("-48");
+              $c = Formula("-27");
+              $d = Formula("-33");
             </pg-code>
           </setup>
           <statement>
@@ -1090,36 +1036,27 @@
               <!-- figures/fig_05_02_ex_10.tex END -->
 
               <ol cols="2" >
-                <li><p><m>\ds \int_0^1 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^1 f(x)\ dx = </m><var name="$a" width="4" /></p></li>
 
-                <li><p><m>\ds \int_0^2 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^2 f(x)\ dx = </m><var name="$b" width="4" /></p></li>
 
-                <li><p><m>\ds \int_0^3 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^3 f(x)\ dx = </m><var name="$c" width="4" /></p></li>
 
-                <li><p><m>\ds \int_1^2 -3f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_1^2 -3f(x)\ dx = </m><var name="$d" width="4" /></p></li>
               </ol>
             </figure>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>-59</m></p></li>
-
-              <li><p><m>-48</m></p></li>
-
-              <li><p><m>-27</m></p></li>
-
-              <li><p><m>-33</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 11 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("4/pi");
+              $b = Formula("-4/pi");
+              $c = Formula("0");
+              $d = Formula("2/pi");
             </pg-code>
           </setup>
           <statement>
@@ -1163,36 +1100,27 @@
               <!-- figures/fig_05_02_ex_11.tex END -->
 
               <ol cols="2" >
-                <li><p><m>\ds \int_0^2 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^2 f(x)\ dx = </m><var name="$a" width="4" /></p></li>
 
-                <li><p><m>\ds \int_2^4 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^4 f(x)\ dx=</m><var name="$b" width="4" /></p></li>
 
-                <li><p><m>\ds \int_0^4 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^4 f(x)\ dx =</m><var name="$c" width="4" /></p></li>
 
-                <li><p><m>\ds \int_0^1 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^1 f(x)\ dx= </m><var name="$d" width="4" /></p></li>
               </ol>
             </figure>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>4/\pi</m></p></li>
-
-              <li><p><m>-4/\pi</m></p></li>
-
-              <li><p><m>0</m></p></li>
-
-              <li><p><m>2/\pi</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 12 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("4");
+              $b = Formula("4");
+              $c = Formula("-4");
+              $d = Formula("-2");
             </pg-code>
           </setup>
           <statement>
@@ -1237,36 +1165,27 @@
               <!-- figures/fig_05_02_ex_12.tex END -->
 
               <ol cols="2" >
-                <li><p><m>\ds \int_{-2}^{-1} f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_{-2}^{-1} f(x)\ dx = </m><var name="$a" width="4" /></p></li>
 
-                <li><p><m>\ds \int_1^2 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_1^2 f(x)\ dx = </m><var name="$b" width="4" /></p></li>
 
-                <li><p><m>\ds \int_{-1}^1 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_{-1}^1 f(x)\ dx = </m><var name="$c" width="4" /></p></li>
 
-                <li><p><m>\ds \int_0^1 f(x)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^1 f(x)\ dx = </m><var name="$d" width="4" /></p></li>
               </ol>
             </figure>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>4</m></p></li>
-
-              <li><p><m>4</m></p></li>
-
-              <li><p><m>-4</m></p></li>
-
-              <li><p><m>-2</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 13 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("40/3");
+              $b = Formula("26/3");
+              $c = Formula("8/3");
+              $d = Formula("38/3");
             </pg-code>
           </setup>
           <statement>
@@ -1312,37 +1231,34 @@
               <!-- figures/fig_05_02_ex_13.tex END -->
 
               <ol cols="2" >
-                <li><p><m>\ds \int_{0}^{2} 5x^2\ dx</m></p></li>
+                <li><p><m>\ds \int_{0}^{2} 5x^2\ dx = </m><var name="$a" width="4" /></p></li>
 
-                <li><p><m>\ds \int_0^2 (x^2+3)\ dx</m></p></li>
+                <li><p><m>\ds \int_0^2 (x^2+3)\ dx = </m><var name="$b" width="4" /></p></li>
 
-                <li><p><m>\ds \int_{1}^3 (x-1)^2\ dx</m></p></li>
+                <li><p><m>\ds \int_{1}^3 (x-1)^2\ dx = </m><var name="$c" width="4" /></p></li>
 
-                <li><p><m>\ds \int_2^4 \big((x-2)^2+5\big)\ dx</m></p></li>
+                <li><p><m>\ds \int_2^4 \big((x-2)^2+5\big)\ dx = </m><var name="$d" width="4" /></p></li>
               </ol>
             </figure>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>40/3</m></p></li>
-
-              <li><p><m>26/3</m></p></li>
-
-              <li><p><m>8/3</m></p></li>
-
-              <li><p><m>38/3</m></p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, a graph of the velocity function of an object moving in a straight line is given. Answer the questions based on that graph.</p>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, a graph of the velocity function of an object moving in a straight line is given. Answer the questions based on that graph.</p>
+      </introduction>
+<!-- Exercise 14 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $mv = Formula("2");
+              $mv = NumberWithUnits("$mv ft/s");
+              $md = Formula("2");
+              $md = NumberWithUnits("$md ft");
+              $td = Formula("1.5");
+              $td = NumberWithUnits("$td ft");
             </pg-code>
           </setup>
           <statement>
@@ -1381,31 +1297,30 @@
             </figure>
 
             <ol>
-              <li><p>What is the object's maximum velocity?</p></li>
-
-              <li><p>What is the object's maximum displacement?</p></li>
-
-              <li><p>What is the object's total displacement on <m>[0,3]</m>?</p></li>
+              <li><p>What is the object's maximum velocity?</p>
+                <p><var name="$mv" width="20" /></p>
+              </li>
+              <li><p>What is the object's maximum displacement?</p>
+                <p><var name="$md" width="20" /></p>
+              </li>
+              <li><p>What is the object's total displacement on <m>[0,3]</m>?</p>
+                <p><var name="$td" width="20" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p>2ft/s</p></li>
-
-              <li><p>2ft</p></li>
-
-              <li><p>1.5ft</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 15 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $mv = Formula("3");
+              $mv = NumberWithUnits("$mv ft/s");
+              $md = Formula("9.5");
+              $md = NumberWithUnits("$md ft");
+              $td = Formula("9.5");
+              $td = NumberWithUnits("$td ft");
             </pg-code>
           </setup>
           <statement>
@@ -1447,254 +1362,239 @@
             </figure>
 
             <ol>
-              <li><p>What is the object's maximum velocity?</p></li>
-
-              <li><p>What is the object's maximum displacement?</p></li>
-
-              <li><p>What is the object's total displacement on <m>[0,5]</m>?</p></li>
+              <li><p>What is the object's maximum velocity?</p>
+                <p><var name="$mv" width="20" /></p>
+              </li>
+              <li><p>What is the object's maximum displacement?</p>
+                <p><var name="$md" width="20" /></p>
+              </li>
+              <li><p>What is the object's total displacement on <m>[0,5]</m>?</p>
+                <p><var name="$td" width="20" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p>3ft/s</p></li>
-
-              <li><p>9.5ft</p></li>
-
-              <li><p>9.5ft</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 16 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $mv = Formula("64");
+              $mv = NumberWithUnits("$mv ft/s");
+              $md = Formula("64");
+              $md = NumberWithUnits("$md ft");
+              $md_t = Formula("2");
+              $md_t = NumberWithUnits("$md_t s");
+              $h0_t = Formula("2+sqrt(7)");
+              $h0_t = NumberWithUnits("$h0_t s");
             </pg-code>
           </setup>
           <statement>
             <p>An object is thrown straight up with a velocity, in ft/s, given by <m>v(t) = -32t+64</m>, where <m>t</m> is in seconds, from a height of 48 feet.</p>
 
             <ol>
-              <li><p>What is the object's maximum velocity?</p></li>
-
-              <li><p>What is the object's maximum displacement?</p></li>
-
-              <li><p>When does the maximum displacement occur?</p></li>
-
-              <li><p>When will the object reach a height of 0? (Hint: find when the displacement is <m>-48</m>ft.)</p></li>
+              <li><p>What is the object's maximum velocity?</p>
+                <p><var name="$mv" width="20" /></p>
+              </li>
+              <li><p>What is the object's maximum displacement?</p>
+                <p><var name="$md" width="20" /></p>
+              </li>
+              <li><p>When does the maximum displacement occur?</p>
+                <p>At t = <var name="$md_t" width="20" /></p>
+              </li>
+              <li><p>When will the object reach a height of 0? (Hint: find when the displacement is <m>-48</m>ft.)</p>
+                <p>At t = <var name="$h0_t" width="20" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p>64ft/s</p></li>
-
-              <li><p>64ft</p></li>
-
-              <li><p><m>t=2</m></p></li>
-
-              <li><p><m>t=2+\sqrt{7}\approx 4.65</m> seconds</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 17 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $v0 = Formula("96");
+              $v0 = NumberWithUnits("$v0 ft/s");
+              $d = Formula("6");
+              $d = NumberWithUnits("$md s");
+              $h0_2 = Formula("6");
+              $h0_2 = NumberWithUnits("$h0_2 s");
+              $hmax = Formula("-16*3^2+96*3+64");
+              $hmax = NumberWithUnits("$hmax ft");
             </pg-code>
           </setup>
           <statement>
             <p>An object is thrown straight up with a velocity, in ft/s, given by <m>v(t) = -32t+96</m>, where <m>t</m> is in seconds, from a height of 64 feet.</p>
 
             <ol>
-              <li><p>What is the object's initial velocity?</p></li>
+              <li><p>What is the object's initial velocity?</p>
+                <p><var name="$v0" width="20" /></p>
+              </li>
+              <li><p>When is the object's displacement 0?</p>
+                <p><var name="$d" width="20" /></p>
+              </li>
 
-              <li><p>When is the object's displacement 0?</p></li>
-
-              <li><p>How long does it take for the object to return to its initial height?</p></li>
-
-              <li><p>When will the object reach a height of 210 feet?</p></li>
+              <li><p>How long does it take for the object to return to its initial height?</p>
+                <p><var name="$h0_2" width="20" /></p>
+              </li>
+              <li><p>What is the maximum height the object reaches?</p>
+                <p><var name="$hmax" width="20" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p>96ft/s</p></li>
-
-              <li><p>6 seconds</p></li>
-
-              <li><p>6 seconds</p></li>
-
-              <li><p>Never; the maximum height is 208ft.</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, let</p>
+    </exercisegroup>
 
-      <ul>
-        <li><p><m>\ds \int_0^2 f(x)\ dx = 5</m>,</p></li>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, let</p>
+        <ul>
+          <li><p><m>\ds \int_0^2 f(x)\ dx = 5</m>,</p></li>
 
-        <li><p><m>\ds \int_0^3 f(x) \ dx=7</m>,</p></li>
+          <li><p><m>\ds \int_0^3 f(x) \ dx=7</m>,</p></li>
 
-        <li><p><m>\ds \int_0^2 g(x)\ dx = -3</m>, and</p></li>
+          <li><p><m>\ds \int_0^2 g(x)\ dx = -3</m>, and</p></li>
 
-        <li><p><m>\ds \int_2^3 g(x)\ dx = 5</m>.</p></li>
-      </ul>
-
-      <p>Use these values to evaluate the given definite integrals.</p>
+          <li><p><m>\ds \int_2^3 g(x)\ dx = 5</m>.</p></li>
+        </ul>
+        <p>Use these values to evaluate the given definite integrals.</p>
+      </introduction>
+<!-- Exercise 18 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("2");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int_0^2 \big(f(x)+g(x)\big) \ dx</m></p>
+            <p><var name="$a" width="10" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 19 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("5");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int_0^3 \big(f(x)-g(x)\big) \ dx</m></p>
+            <p><var name="$a" width="10" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 20 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("16");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int_2^3 \big(3f(x)+2g(x)\big) \ dx</m></p>
+            <p><var name="$a" width="10" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 21 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->set(b=>"Real");
+              $a = Formula("-2/7*b");
             </pg-code>
           </setup>
           <statement>
-            <p>Find values for <m>a</m> and <m>b</m> such that</p>
+            <p>Find a formula for <m>a</m> in terms of <m>b</m> such that</p>
 
             <p><m>\ds \int_0^3 \big(af(x)+bg(x)\big) \ dx=0</m></p>
+            <p><m>a = </m><var name="$a" width="20" /></p>
           </statement>
-          <solution>
-            <p>Answers can vary; one solution is <m>a=-2</m>, <m>b=7</m></p>
-          </solution>
         </webwork>
       </exercise>
-      <p>In the following exercises, let</p>
+    </exercisegroup>
 
-      <ul>
-        <li><p><m>\ds \int_0^3 s(t)\ dt = 10</m>,</p></li>
+    <exercisegroup>
+      <introduction>
+        <p>In the following exercises, let</p>
 
-        <li><p><m>\ds \int_3^5 s(t) \ dt=8</m>,</p></li>
+        <ul>
+          <li><p><m>\ds \int_0^3 s(t)\ dt = 10</m>,</p></li>
 
-        <li><p><m>\ds \int_3^5 r(t)\ dt = -1</m>, and</p></li>
+          <li><p><m>\ds \int_3^5 s(t) \ dt=8</m>,</p></li>
 
-        <li><p><m>\ds \int_0^5 r(t)\ dt = 11</m>.</p></li>
-      </ul>
+          <li><p><m>\ds \int_3^5 r(t)\ dt = -1</m>, and</p></li>
 
-      <p>Use these values to evaluate the given definite integrals.</p>
+          <li><p><m>\ds \int_0^5 r(t)\ dt = 11</m>.</p></li>
+        </ul>
+
+        <p>Use these values to evaluate the given definite integrals.</p>
+      </introduction>
+<!-- Exercise 22 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("22");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int_0^3 \big(s(t) + r(t)\big)\ dt</m></p>
+            <p><var name="$a" width="10" /></p>
           </statement>
-          <solution>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 23 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("-7");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int_5^0 \big(s(t) - r(t)\big)\ dt</m></p>
+            <p><var name="$a" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>-7</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 24 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              $a = Formula("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int_3^3 \big(\pi s(t) - 7r(t)\big)\ dt</m></p>
+            <p><m>a = </m><var name="$a" width="10" /></p>
           </statement>
-          <solution>
-            <p><m>-7</m></p>
-          </solution>
         </webwork>
       </exercise>
+<!-- Exercise 25 -->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
             <pg-code>
+              Context()->variables->set(b=>"Real");
+              $a = Formula("-18/11*b");
             </pg-code>
           </setup>
           <statement>
-            <p>Find values for <m>a</m> and <m>b</m> such that</p>
-
+            <p>Find a formula for <m>a</m> in terms of <m>b</m> such that</p>
             <p><m>\ds \int_0^5 \big(ar(t)+bs(t)\big) \ dt=0</m></p>
+            <p><var name="$a" width="10" /></p>
           </statement>
-          <solution>
-            <p>Answers can vary; one solution is <m>a=-11</m>, <m>b=18</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
@@ -1705,70 +1605,82 @@
       <p>In the following exercises, evaluate the given indefinite integral.</p>
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <var name="">
               <static></static>
             </var>
             <pg-code>
+              $F = FormulaUpToConstant("1/4*x^4-2/3*x^3+7/2*x^2-9x");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \big(x^3-2x^2+7x-9\big)\ dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>1/4x^4-2/3x^3+7/2x^2-9x+C</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <var name="">
               <static></static>
             </var>
             <pg-code>
+              $F = FormulaUpToConstant("-cos(x) - sin(x) + tan(x)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \big(\sin(x) - \cos(x) + \sec^2(x) \big)\ dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>-\cos(x) - \sin(x) + \tan(x) +C</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <var name="">
               <static></static>
             </var>
             <pg-code>
+              Context()->variables->add(t=>"Real");
+              $F = FormulaUpToConstant("3/4*t^(4/3) - 1/t + 2^t/ln(2)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \big(\sqrt[3]{t} + \frac{1}{t^2}+ 2^t\big)\ dt</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>3/4t^{4/3}-1/t+2^t/\ln(2) +C</m></p>
-          </solution>
         </webwork>
       </exercise>
+
       <exercise>
         <webwork seed="1">
+          <pg-macros>
+            <macro-file>parserFormulaUpToConstant.pl</macro-file>
+          </pg-macros>
           <setup>
             <var name="">
               <static></static>
             </var>
             <pg-code>
+              $F = FormulaUpToConstant("ln(abs(x)) + csc(x)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds \int \left(\frac{1}{x} -\csc(x) \cot(x) \right)\ dx</m></p>
+            <p><var name="$F" width="40" /></p>
           </statement>
-          <solution>
-            <p><m>\ln\abs{x} + \csc(x) +C</m></p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>

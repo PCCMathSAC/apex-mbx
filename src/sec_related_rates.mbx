@@ -261,197 +261,266 @@
     <p>In the next section we use Extreme Value concepts to <em>optimize</em> quantities.</p>
 
   <exercises>
+<!--Group 1: T/F questions-->
     <exercisegroup>
       <introduction>
         <p>Terms and Concepts</p>
       </introduction>
+<!--Exercise 1: T/F-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$true">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
+            </var>
+            <var name="$false">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: Implicit differentiation is often used when solving <q>related rates</q> type problems.</p>
+            <p>Implicit differentiation is often used when solving <q>related rates</q> type problems. <var name="$true" form="popup"/></p>
           </statement>
-          <solution>
-            <p>T</p>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 2: Bizarre T/F-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+             <var name="$true">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
+            </var>
+            <var name="$false">
+              <set>
+                <member>True</member>
+                <member correct="yes">False</member>
+              </set>
             </var>
             <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: A study of related rates is part of the standard police officer training.</p>
+            <p>A study of related rates is part of the standard police officer training. <var name="$false" form="popup"/></p>
           </statement>
-          <solution>
-            <p>F</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
+
+<!--Group 2: Related rates answer entry-->
     <exercisegroup>
       <title>Problems</title>
+<!--Exercise 3: Puddle of depth 10 cm growing-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.7958</static>
+            </var>
+            <var name="$b">
+              <static>0.07958</static>
+            </var>
+            <var name="$c">
+              <static>0.007958</static>
             </var>
             <pg-code>
+              Context()->flags->set(ReducedConstants=>0);
+              $a = Compute("5/(2pi)");
+              $a = NumberWithUnits("$a cm/s");
+              $b = Compute("5/(20pi)");
+              $b = NumberWithUnits("$b cm/s");
+              $c = Compute("5/(200pi)");
+              $c = NumberWithUnits("$c cm/s");
             </pg-code>
           </setup>
           <statement>
-            <p>Water flows onto a flat surface at a rate of 5cm<m>^3</m>/s forming a circular puddle 10mm deep. How fast is the radius growing when the radius is:</p>
-
+            <p>Water flows onto a flat surface at a rate of <quantity><mag>5</mag><unit prefix="centi" base="meter" exp="3" /><per base="second" /></quantity> forming a circular puddle 10mm deep. How fast is the radius growing when the radius is:</p>
             <ol>
-              <li><p>1 cm?</p></li>
-
-              <li><p>10 cm?</p></li>
-
-              <li><p>100 cm?</p></li>
+              <li><p>1 cm?</p>
+                <p><var name="$a" width="20"/></p>
+              </li>
+              <li><p>10 cm?</p>
+                <p><var name="$b" width="20"/></p>
+              </li>
+              <li><p>100 cm?</p>
+                <p><var name="$c" width="20"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>5/(2\pi) \approx 0.796</m>cm/s</p></li>
-
-              <li><p><m>1/(4\pi)\approx 0.0796</m> cm/s</p></li>
-
-              <li><p><m>1/(40\pi)\approx 0.00796</m> cm/s</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 4: Spherical balloon radius increasing-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.7958</static>
+            </var>
+            <var name="$b">
+              <static>0.007958</static>
+            </var>
+            <var name="$c">
+              <static>0.00007958</static>
             </var>
             <pg-code>
+              Context()->flags->set(ReducedConstants=>0);
+              $a = Compute("5/(2pi)");
+              $a = NumberWithUnits("$a cm/s");
+              $b = Compute("5/(200pi)");
+              $b = NumberWithUnits("$b cm/s");
+              $c = Compute("5/(20000pi)");
+              $c = NumberWithUnits("$c cm/s");
             </pg-code>
           </setup>
           <statement>
-            <p>A circular balloon is inflated with air flowing at a rate of 10cm<m>^3</m>/s. How fast is the radius of the balloon increasing when the radius is:</p>
+            <p>A spherical balloon is inflated with air flowing at a rate of 10cm<m>^3</m>/s. How fast is the radius of the balloon increasing when the radius is:</p>
 
             <ol>
-              <li><p>1 cm?</p></li>
-
-              <li><p>10 cm?</p></li>
-
-              <li><p>100 cm?</p></li>
+              <li><p>1 cm?</p>
+                <p><var name="$a" width="10"/></p>
+              </li>
+              <li><p>10 cm?</p>
+                <p><var name="$b" width="10"/></p>
+              </li>
+              <li><p>100 cm?</p>
+                <p><var name="$c" width="10"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>5/(2\pi)\approx 0.796</m>cm/s</p></li>
-
-              <li><p><m>1/(40\pi)\approx 0.00796</m> cm/s</p></li>
-
-              <li><p><m>1/(4000\pi)\approx 0.0000796</m> cm/s</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 5: Refer to Example 100-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>63.14</static>
             </var>
             <pg-code>
+              Context()->flags->set(ReducedConstants=>0);
+              $a = Compute("abs(-80*sqrt(2)+50)");
+              $a = NumberWithUnits("$a mi/h");
             </pg-code>
           </setup>
           <statement>
             <p>Consider the traffic situation introduced in <xref ref="ex_rr3">Example</xref>. How fast is the <q>other car</q> traveling if the officer and the other car are each 1/2 mile from the intersection, the other car is traveling <em>due west</em>, the officer is traveling north at 50mph, and the radar reading is <m>-80</m>mph?</p>
+            <p><var name="$a" width="20" /></p>
           </statement>
-          <solution>
-            <p><m>63.14</m>mph</p>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 6: Also refer to Example 100-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>64.44</static>
+            </var>
+            <var name="$b">
+              <static>78.89</static>
             </var>
             <pg-code>
+              Context()->flags->set(ReducedConstants=>0);
+              $a = Compute("abs(-40*sqrt(5)+25)");
+              $a = NumberWithUnits("$a mi/h");
+              $b = Compute("abs(-80*sqrt(5)+100)");
+              $b = NumberWithUnits("$b mi/h");
             </pg-code>
           </setup>
           <statement>
             <p>Consider the traffic situation introduced in <xref ref="ex_rr3">Example</xref>. Calculate how fast the <q>other car</q> is traveling in each of the following situations.</p>
-
             <ol>
-              <li><p>The officer is traveling due north at 50mph and is 1/2 mile from the intersection, while the other car is 1 mile from the intersection traveling west and the radar reading is <m>-80</m>mph?</p></li>
-
-              <li><p>The officer is traveling due north at 50mph and is 1 mile from the intersection, while the other car is 1/2 mile from the intersection traveling west and the radar reading is <m>-80</m>mph?</p></li>
+              <li>
+                <p>The officer is traveling due north at 50mph and is 1/2 mile from the intersection, while the other car is 1 mile from the intersection traveling west and the radar reading is <m>-80</m>mph?</p>
+                <p><var name="$a" width="20"/></p>
+              </li>
+              <li>
+                <p>The officer is traveling due north at 50mph and is 1 mile from the intersection, while the other car is 1/2 mile from the intersection traveling west and the radar reading is <m>-80</m>mph?</p>
+                <p><var name="$b" width="20"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>64.44</m> mph</p></li>
-
-              <li><p><m>78.89</m> mph</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 7: Anti-aircraft gun-->
       <exercise xml:id="exer_04_02_ex_07">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <!--Static answers are in rad/s-->
+            <var name="$a">
+              <static>0.0573</static>
+            </var>
+            <var name="$b">
+              <static>0.0725</static>
+            </var>
+            <var name="$c">
+              <static>0.0733</static>
             </var>
             <pg-code>
+              Context()->flags->set(ReducedConstants=>0);
+              $a = Compute("10000/5280*500/1^2*cos(atan(10000/5280/1))^2");
+              $a = NumberWithUnits("$a rad/hr");
+              $b = Compute("10000/5280*500/0.2^2*cos(atan(10000/5280/0.2))^2");
+              $b = NumberWithUnits("$b rad/hr");
+              $c = Compute("500/(10000/5280)"); <!--Simplify the formula and get this as the limit>-->
+              $c = NumberWithUnits("$c rad/hr");
             </pg-code>
           </setup>
           <statement>
+
             <p>An F-22 aircraft is flying at 500mph with an elevation of 10,000ft on a straight<ndash />line path that will take it directly over an anti<ndash />aircraft gun.</p>
-
-            <!-- START\1END -->
-
             <p>How fast must the gun be able to turn to accurately track the aircraft when the plane is:</p>
-
+            <todo>Needs image</todo>
             <ol>
-              <li><p>1 mile away?</p></li>
-
-              <li><p>1/5 mile away?</p></li>
-
-              <li><p>Directly overhead?</p></li>
+              <li><p>1 mile away?</p>
+                <p><var name="$a" width="10"/></p>
+              </li>
+              <li><p>1/5 mile away?</p>
+                <p><var name="$b" width="10"/></p>
+              </li>
+              <li><p>Directly overhead?</p>
+                <p><var name="$c" width="10"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <p>Due to the height of the plane, the gun does not have to rotate very fast.</p>
-
-            <ol>
-              <li><p><m>0.0573</m> rad/s</p></li>
-
-              <li><p><m>0.0725</m> rad/s</p></li>
-
-              <li><p>In the limit, rate goes to <m>0.0733</m> rad/s</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 8: Anti-aircraft gun 2-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.07261</static>
+            </var>
+            <var name="$b">
+              <static>3.667</static>
+            </var>
+            <var name="$c">
+              <static>7.333</static>
             </var>
             <pg-code>
+              Context()->flags->set(ReducedConstants=>0);
+              $hmi = Compute("100/5280");
+              $dmi_a = Compute("1000/5280");
+              $dmi_b = Compute("100/5280");
+              $a = Compute("$hmi*500/($dmi_a)^2*cos(atan($hmi/$dmi_a))^2");
+              $a = NumberWithUnits("$a rad/hr");
+              $b = Compute("$hmi*500/($dmi_b)^2*cos(atan($hmi/$dmi_b))^2");
+              $b = NumberWithUnits("$b rad/hr");
+              $c = Compute("500/(100/5280)");
+              $c = NumberWithUnits("$c rad/hr");
             </pg-code>
           </setup>
           <statement>
@@ -460,33 +529,47 @@
             <p>How fast must the gun be able to turn to accurately track the aircraft when the plane is:</p>
 
             <ol>
-              <li><p>1000 feet away?</p></li>
-
-              <li><p>100 feet away?</p></li>
-
-              <li><p>Directly overhead?</p></li>
+              <li><p>1000 feet away?</p>
+                <p><var name="$a" width="20"/></p>
+              </li>
+              <li><p>100 feet away?</p>
+                <p><var name="$b" width="20"/></p>
+              </li>
+              <li><p>Directly overhead?</p>
+                <p><var name="$c" width="20"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <p>Due to the height of the plane, the gun does not have to rotate very fast.</p>
-
-            <ol>
-              <li><p><m>0.073</m> rad/s</p></li>
-
-              <li><p><m>3.66</m> rad/s (about 1/2 revolution/sec)</p></li>
-
-              <li><p>In the limit, rate goes to <m>7.33</m> rad/s (more than 1 revolution/sec)</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 9: Ladder sliding down a house-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.04170</static>
+            </var>
+            <var name="$b">
+              <static>0.4583</static>
+            </var>
+            <var name="$c">
+              <static>3.355</static>
+            </var>
+            <var name="$d">
+              <!--FUNGUS: How do I code this answer? It doesn't work, so it's not really infinity.
+              And in the same comment: Why does the svg image not load in Firefox for Ubuntu?-->
+              <static>/infty</static>
             </var>
             <pg-code>
+              $f = Compute("x/sqrt(24^2-x^2)");
+              $a = Compute($f->eval(x=>1));
+              $a = NumberWithUnits("$a ft/s");
+              $b = Compute($f->eval(x=>10));
+              $b = NumberWithUnits("$b ft/s");
+              $c = Compute($f->eval(x=>23));
+              $c = NumberWithUnits("$c ft/s");
+              $d = Compute("inf");
             </pg-code>
           </setup>
           <statement>
@@ -519,35 +602,47 @@
             <p>At what rate is the top of the ladder sliding down the side of the house when the base is:</p>
 
             <ol>
-              <li><p>1 foot from the house?</p></li>
-
-              <li><p>10 feet from the house?</p></li>
-
-              <li><p>23 feet from the house?</p></li>
-
-              <li><p>24 feet from the house?</p></li>
+              <li><p>1 foot from the house?</p>
+                <p><var name="$a" width="20"/></p>
+              </li>
+              <li><p>10 feet from the house?</p>
+                <p><var name="$b" width="20"/></p>
+              </li>
+              <li><p>23 feet from the house?</p>
+                <p><var name="$c" width="20"/></p>
+              </li>
+              <li><p>24 feet from the house?</p>
+                <p><var name="$d" width="20"/></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>0.04</m> ft/s</p></li>
-
-              <li><p><m>0.458</m> ft/s</p></li>
-
-              <li><p><m>3.35</m> ft/s</p></li>
-
-              <li><p>Not defined; as the distance approaches 24, the rates approaches <m>\infty</m>.</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 10: Winch that boat in-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$a">
+              <static>30.59</static>
+            </var>
+            <var name="$b">
+              <static>36.06</static>
+            </var>
+            <var name="$c">
+              <static>301.5</static>
+            </var>
+            <var name="$d">
+              <!--Text answer.-->
               <static></static>
             </var>
             <pg-code>
+              $f = Compute("30*sqrt(10^2+x^2)/x");
+              $a = Compute($f->eval(x=>50));
+              $a = NumberWithUnits("$a ft/min");
+              $b = Compute($f->eval(x=>15));
+              $b = NumberWithUnits("$b ft/min");
+              $c = Compute($f->eval(x=>1));
+              $c = NumberWithUnits("$c ft/min");
             </pg-code>
           </setup>
           <statement>
@@ -595,70 +690,91 @@
             <p>At what rate is the boat approaching the dock when the boat is:</p>
 
             <ol>
-              <li><p>50 feet out?</p></li>
-
-              <li><p>15 feet out?</p></li>
-
-              <li><p>1 foot from the dock?</p></li>
-
-              <li><p>What happens when the length of rope pulling in the boat is less than 10 feet long?</p></li>
-            </ol>
+              <li><p>50 feet out?</p>
+                <p><var name="$a" width="20"/></p>
+              </li>
+              <li><p>15 feet out?</p>
+                <p><var name="$b" width="20"/></p>
+              </li>
+              <li><p>1 foot from the dock?</p>
+                <p><var name="$c" width="20"/></p>
+              </li>
+<!--               <li><p>What happens when the length of rope pulling in the boat is less than 10 feet long?</p>
+                <p><var name="$d" width="10"/></p>
+              </li>
+ -->            </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>30.59</m> ft/min</p></li>
-
-              <li><p><m>36.1</m> ft/min</p></li>
-
-              <li><p><m>301</m> ft/min</p></li>
-
-              <li><p>The boat no longer floats as usual, but is being pulled up by the winch (assuming it has the power to do so).</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 11: Inverted cylindrical cone-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>50.92</static>
+            </var>
+            <var name="$b">
+              <static>0.5093</static>
+            </var>
+            <var name="$c">
+              <static>0.1411</static>
+            </var>
+            <var name="$d">
+              <static>52.36</static>
             </var>
             <pg-code>
+              $f = Compute("160/(pi*x^2)");
+              $a = Compute($f->eval(x=>1));
+              $a = NumberWithUnits("$a ft/min");
+              $b = Compute($f->eval(x=>10));
+              $b = NumberWithUnits("$b ft/min");
+              $c = Compute($f->eval(x=>19));
+              $c = NumberWithUnits("$c ft/min");
+              $d = Compute("(1/3*pi*5^2*20)/10");
+              $d = NumberWithUnits("$d min");
             </pg-code>
           </setup>
           <statement>
             <p>An inverted cylindrical cone, 20ft deep and 10ft across at the top, is being filled with water at a rate of 10ft<m>^3</m>/min. At what rate is the water rising in the tank when the depth of the water is:</p>
-
             <ol>
-              <li><p>1 foot?</p></li>
-
-              <li><p>10 feet?</p></li>
-
-              <li><p>19 feet?</p></li>
+              <li><p>1 foot?</p>
+                <p><var name="$a" width="20" /></p>
+              </li>
+              <li><p>10 feet?</p>
+                <p><var name="$b" width="20" /></p>
+              </li>
+              <li><p>19 feet?</p>
+                <p><var name="$c" width="20" /></p>
+              </li>
             </ol>
 
             <p>How long will the tank take to fill when starting at empty?</p>
+            <p><var name="$d" width="20" /></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>50.92</m> ft/min</p></li>
-
-              <li><p><m>0.509</m> ft/min</p></li>
-
-              <li><p><m>0.141</m> ft/min</p></li>
-            </ol>
-
-            <p>As the tank holds about 523.6ft<m>^3</m>, it will take about 52.36 minutes.</p>
-          </solution>
         </webwork>
       </exercise>
+<!--Exercise 12: Rope, pulley, man standing next to the weight and walking away-->
       <exercise xml:id="exer_04_02_ex_12">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.6325</static>
+            </var>
+            <var name="$b">
+              <static>1.600</static>
+            </var>
+            <var name="$c">
+              <static>51.96</static>
             </var>
             <pg-code>
+              $f = Compute("2x/sqrt(x^2+30^2)");
+              $a = Compute($f->eval(x=>10));
+              $a = NumberWithUnits("$a ft/s");
+              $b = Compute($f->eval(x=>40));
+              $b = NumberWithUnits("$b ft/s");
+              $c = Compute("sqrt(60^2-30^2)");
+              $c = NumberWithUnits("$c ft");
             </pg-code>
           </setup>
           <statement>
@@ -695,103 +811,117 @@
             <p>Suppose the man stands directly next to the weight (i.e., a total rope length of 60 ft) and begins to walk away at a rate of 2ft/s. How fast is the weight rising when the man has walked:</p>
 
             <ol>
-              <li><p>10 feet?</p></li>
-
-              <li><p>40 feet?</p></li>
+              <li><p>10 feet?</p>
+                <p><var name="$a" width="20" /></p>
+              </li>
+              <li><p>40 feet?</p>
+                <p><var name="$b" width="20" /></p>
+              </li>
             </ol>
-
             <p>How far must the man walk to raise the weight all the way to the pulley?</p>
+            <p><var name="$c" width="20" /></p>
           </statement>
-          <solution>
-            <ol>
-              <li><p><m>0.63</m> ft/sec</p></li>
-
-              <li><p><m>1.6</m> ft/sec</p></li>
-            </ol>
-
-            <p>About 52 ft.</p>
-          </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 13: Same setup, but starting further away-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>80</static>
+            </var>
+            <var name="$b">
+              <static>1.715</static>
+            </var>
+            <var name="$c">
+              <static>1.873</static>
+            </var>
+            <var name="$d">
+              <static>34.16</static>
             </var>
             <pg-code>
+              $a = Compute("sqrt(30^2+40^2)+30");
+              $a = NumberWithUnits("$a ft");
+              $f = Compute("(40 + x)/sqrt(30^2 + (40+x)^2)*2");
+              $b = Compute($f->eval(x=>10));
+              $b = NumberWithUnits("$b ft/s");
+              $c = Compute($f->eval(x=>40));
+              $c = NumberWithUnits("$c ft/s");
+              $d = Compute("sqrt(80^2-30^2)-40");
+              $d = NumberWithUnits("$d ft");
             </pg-code>
           </setup>
           <statement>
             <p>Consider the situation described in <xref ref="exer_04_02_ex_12">Exercise</xref>. Suppose the man starts 40ft from the weight and begins to walk away at a rate of 2ft/s.</p>
 
             <ol>
-              <li><p>How long is the rope?</p></li>
-
-              <li><p>How fast is the weight rising after the man has walked 10 feet?</p></li>
-
-              <li><p>How fast is the weight rising after the man has walked 40 feet?</p></li>
-
-              <li><p>How far must the man walk to raise the weight all the way to the pulley?</p></li>
+              <li><p>How long is the rope?</p>
+                <p><var name="$a" width="20" /></p>
+              </li>
+              <li><p>How fast is the weight rising after the man has walked 10 feet?</p>
+                <p><var name="$b" width="20" /></p>
+              </li>
+              <li><p>How fast is the weight rising after the man has walked 40 feet?</p>
+                <p><var name="$c" width="20" /></p>
+              </li>
+              <li><p>How far must the man walk to raise the weight all the way to the pulley?</p>
+                <p><var name="$d" width="20" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p>The rope is 80ft long.</p></li>
-
-              <li><p><m>1.71</m> ft/sec</p></li>
-
-              <li><p><m>1.87</m> ft/sec</p></li>
-
-              <li><p>About 34 feet.</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 14: Hot air balloon rising while being tracked-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>105</static>
+            </var>
+            <var name="$b">
+              <static>17.45</static>
             </var>
             <pg-code>
+              $a = Compute("100+5");
+              $a = NumberWithUnits("$a ft");
+              $b = Compute("100*5*pi/180/cos(45*pi/180)^2");
+              $b = NumberWithUnits("$b ft/min");
             </pg-code>
           </setup>
           <statement>
             <p>A hot air balloon lifts off from ground rising vertically. From 100 feet away, a 5' woman tracks the path of the balloon. When her sightline with the balloon makes a 45<m>^\circ</m> angle with the horizontal, she notes the angle is increasing at about 5<m>^\circ</m>/min.</p>
-
             <ol>
-              <li><p>What is the elevation of the balloon?</p></li>
-
-              <li><p>How fast is it rising?</p></li>
+              <li><p>What is the elevation of the balloon?</p>
+                <p><var name="$a" width="20" /></p>
+              </li>
+              <li><p>How fast is it rising?</p>
+                <p><var name="$b" width="20" /></p>
+              </li>
             </ol>
           </statement>
-          <solution>
-            <ol>
-              <li><p>The balloon is 105ft in the air.</p></li>
-
-              <li><p>The balloon is rising at a rate of 17.45ft/min. (Hint: convert all angles to radians.)</p></li>
-            </ol>
-          </solution>
         </webwork>
       </exercise>
+
+<!--Exercise 15: Sand being dumped into a conical pile-->
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$a">
+              <static>0.003144</static>
             </var>
             <pg-code>
+              $a = Compute("5*16/(9*pi*30^2)");
+              $a = NumberWithUnits("$a ft/s");
             </pg-code>
           </setup>
           <statement>
             <p>A company that produces landscaping materials is dumping sand into a conical pile. The sand is being poured at a rate of 5ft<m>^3</m>/sec; the physical properties of the sand, in conjunction with gravity, ensure that the cone's height is roughly 2/3 the length of the diameter of the circular base.</p>
 
             <p>How fast is the cone rising when it has a height of 30 feet?</p>
+            <p><var name="$a" width="20" /></p>
           </statement>
-          <solution>
-            <p>The cone is rising at a rate of <m>0.003</m>ft/s.</p>
-          </solution>
         </webwork>
       </exercise>
     </exercisegroup>
