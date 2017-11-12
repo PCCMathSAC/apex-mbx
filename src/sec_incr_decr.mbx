@@ -28,7 +28,7 @@
       <!-- figures/fig_incr0.tex END -->
     </figure>
 
-    <definition xml:id="def_incr_decr">
+    <assemblage xml:id="def_incr_decr">
       <title>Increasing and Decreasing Functions</title>
       <statement>
         <p>Let <m>f</m> be a function defined on an interval <m>I</m>.<index><main>increasing function</main></index><index><main>decreasing function</main></index><index><main>increasing function</main><sub>strictly</sub></index><index><main>decreasing function</main><sub>strictly</sub></index></p>
@@ -45,7 +45,7 @@
 
         <!--<p>A function is <term>strictly increasing</term> when <m>a\lt b</m> in <m>I</m> implies <m>f(a) \lt  f(b)</m>, with a similar definition holding for <term>strictly decreasing</term>.</p>-->
       </statement>
-    </definition>
+    </assemblage>
 
     <aside>
       <title><q>Increasing</q></title>
@@ -552,16 +552,11 @@
         <p>Terms and Concepts</p>
       </introduction>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
+        <webwork>
           <statement>
             <p>In your own words describe what it means for a function to be increasing.</p>
+
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
@@ -569,16 +564,11 @@
         </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
+        <webwork>
           <statement>
             <p>What does a decreasing function <q>look like</q>?</p>
+
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
@@ -586,33 +576,19 @@
         </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Sketch a graph of a function on <m>[0,2]</m> that is increasing but not strictly increasing.</p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
+        <webwork>
           <statement>
             <p>Give an example of a function describing a situation where it is <q>bad</q> to be increasing and <q>good</q> to be decreasing.</p>
+
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
@@ -620,16 +596,11 @@
         </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
+        <webwork>
           <statement>
-            <p>A function <m>f</m> has derivative <m>\fp(x) = (\sin(x) +2)e^{x^2+1}</m>, where <m>\fp(x) >1</m> for all <m>x</m>. Is <m>f</m> increasing, decreasing, or can we not tell from the given information?</p>
+            <p>A function <m>f</m> has derivative <m>\fp(x) = (\sin(x) +2)e^{x^2+1}</m>, where <m>\fp(x) \gt 1</m> for all <m>x</m>. Is <m>f</m> increasing, decreasing, or can we not tell from the given information?</p>
+
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Increasing</p>
@@ -654,14 +625,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$c">
               <static></static>
             </var>
             <pg-code>
+              $c=Formula("2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = 2x+3</m></p>
+            <p>Compute <m>\fp(x)</m> for <m>f(x) = 2x+3</m></p>
+            <p><m>\fp(x)=</m><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -671,14 +644,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$c">
               <static></static>
             </var>
             <pg-code>
+              $c=Formula("2x-3");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^2-3x+5</m></p>
+            <p>Compute <m>\fp(x)</m> for <m>f(x) = x^2-3x+5</m></p>
+            <p><m>\fp(x)=</m><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -688,14 +663,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$c">
               <static></static>
             </var>
             <pg-code>
+              $c=Formula("-sin(x)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \cos(x)</m></p>
+            <p>Compute <m>\fp(x)</m> for <m>f(x) = \cos(x)</m></p>
+            <p><m>\fp(x)=</m><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -705,14 +682,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$c">
               <static></static>
             </var>
             <pg-code>
+              $c=Formula("sec^(2)(x)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = \tan(x)</m></p>
+            <p>Compute <m>\fp(x)</m> for <m>f(x) = \tan(x)</m></p>
+            <p><m>\fp(x)=</m><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -722,14 +701,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$c">
               <static></static>
             </var>
             <pg-code>
+              $c=Formula("3x^2-10x+7");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = x^3-5x^2+7x-1</m></p>
+            <p>Compute <m>\fp(x)</m> for <m>f(x) = x^3-5x^2+7x-1</m></p>
+            <p><m>\fp(x)=</m><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -739,14 +720,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$c">
               <static></static>
             </var>
             <pg-code>
+              $c=Formula("6x^2-2x+1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) = 2x^3-x^2+x-1</m></p>
+            <p>Compute <m>\fp(x)</m> for <m>f(x) = 2x^3-x^2+x-1</m></p>
+            <p><m>\fp(x)=</m><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -756,14 +739,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$c">
               <static></static>
             </var>
             <pg-code>
+              $c=Formula("4x^3-10x");
             </pg-code>
           </setup>
           <statement>
-            <p><m>f(x) =x^4-5x^2+4</m></p>
+            <p>Compute <m>\fp(x)</m> for <m>f(x) =x^4-5x^2+4</m></p>
+            <p><m>\fp(x)=</m><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -773,14 +758,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$c">
               <static></static>
             </var>
             <pg-code>
+              $c=Formula("-2x(x^2+1)^(-2)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) =\frac{1}{x^2+1}</m></p>
+            <p>Compute <m>\fp(x)</m> for <m>\ds f(x) =\frac{1}{x^2+1}</m></p>
+            <p><m>\fp(x)=</m><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -793,273 +780,646 @@
       <introduction>
         <p>In the following exercises, a function <m>f(x)</m> is given.</p>
 
-        <p><ol label="a">
-          <li>
-            <p>Give the domain of <m>f</m>.</p>
-          </li>
-
-          <li>
-            <p>Find the critical numbers of <m>f</m>.</p>
-          </li>
-
-          <li>
-            <p>Create a number line to determine the intervals on which <m>f</m> is increasing and decreasing.</p>
-          </li>
-
-          <li>
-            <p>Use the First Derivative Test to determine whether each critical point is a relative maximum, minimum, or neither.</p>
-          </li>
-        </ol></p>
+        <p>
+          <ol label="a">
+            <li><p>Give the domain of <m>f</m>.</p></li>
+            <li><p>Find the critical numbers of <m>f</m>.</p></li>
+            <li><p>Create a number line to determine the intervals on which <m>f</m> is increasing and decreasing.</p></li>
+            <li><p>Use the First Derivative Test to determine whether each critical point is a relative maximum, minimum, or neither.</p></li>
+          </ol>
+        </p>
       </introduction>
 
       <exercise>
-        <webwork seed="1">
+        <webwork>
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static>(-\infty,\infty)</static></var>
+            <var name="$crit"><static>-1</static></var>
+            <var name="$inc"><static>(-\infty,-1)</static></var>
+            <var name="$dec"><static>(-1,\infty)</static></var>
+            <var name="$max"><static>does not apply</static></var>
+            <var name="$min"><static>-1</static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,inf)");
+              $c=Compute("-1");
+              $inc=Compute("(-inf,-1)");
+              $dec=Compute("(-1,inf)");
+              $max=Compute("does not apply");
+              $min=Formula("-1");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) =x^2+2x-3</m></p>
+            <p>For the function <m>\ds f(x) =x^2+2x-3</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>. If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
+            </p>
           </statement>
           <solution>
-            <p>domain: <m>(-\infty,\infty)</m></p>
-
-            <p>c.p. at <m>c=-1</m>;</p>
-
-            <p>decreasing on <m>(-\infty,-1)</m>;</p>
-
-            <p>increasing on <m>(-1,\infty)</m>;</p>
-
-            <p>rel. min at <m>x=-1</m>.</p>
+            <p>
+              <ol>
+                <li><p>domain: <m>(-\infty,\infty)</m></p></li>
+                <li><p>c.p. at <m>c=-1</m></p></li>
+                <li><p>increasing on <m>(-1,\infty)</m></p></li>
+                <li><p>decreasing on <m>(-\infty,-1)</m></p></li>
+                <li><p>does not apply</p></li>
+                <li><p>rel. min at <m>x=-1</m>.</p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
-      <exercise>
+    <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static></static></var>
+            <var name="$crit"><static></static></var>
+            <var name="$inc"><static></static></var>
+            <var name="$dec"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,inf)");
+              $crit=Compute("-2,0");
+              $inc=Compute("(-inf,-2)U(0,inf)");
+              $dec=Compute("(-2,0)");
+              $max=Formula("0");
+              $min=Formula("-2");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =x^3+3x^2+3</m></p>
+            <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>. If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
           </statement>
           <solution>
-            <p>domain=<m>(-\infty,\infty)</m></p>
-
-            <p>c.p. at <m>c=-2,0</m>;</p>
-
-            <p>increasing on <m>(-\infty,-2)\cup (0,\infty)</m>;</p>
-
-            <p>decreasing on <m>(-2,0)</m>;</p>
-
-            <p>rel. min at <m>x=0</m>;</p>
-
-            <p>rel. max at <m>x=-2</m>.</p>
+            <p>
+              <ol>
+                <li><p>domain=<m>(-\infty,\infty)</m></p></li>
+                <li><p>c.p. at <m>c=-2,0</m></p></li>
+                <li><p>increasing on <m>(-\infty,-2)\cup (0,\infty)</m></p></li>
+                <li><p>decreasing on <m>(-2,0)</m></p></li>
+                <li><p>rel. min at <m>x=0</m></p></li>
+                <li><p>rel. max at <m>x=-2</m></p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static></static></var>
+            <var name="$crit"><static></static></var>
+            <var name="$inc"><static></static></var>
+            <var name="$dec"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,inf)");
+              $crit=Compute("(-1-sqrt(7))/6,(-1+sqrt(7))/6");
+              $inc=Compute("(-inf,(-1-sqrt(7))/6)U((-1+sqrt(7))/6,inf)");
+              $dec=Compute("((-1-sqrt(7))/6,(-1+sqrt(7))/6)");
+              $max=Formula("(-1-sqrt(7))/6");
+              $min=Formula("(-1+sqrt(7))/6");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =2 x^3+x^2-x+3</m></p>
+            <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>. If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
           </statement>
           <solution>
-            <p>domain=<m>(-\infty,\infty)</m></p>
-
-            <p>c.p. at <m>c=\frac16(-1\pm\sqrt{7})</m>;</p>
-
-            <p>decreasing on <m>(\frac16(-1-\sqrt{7}),\frac16(-1+\sqrt{7})))</m>;</p>
-
-            <p>increasing on <m>(-\infty,\frac16(-1-\sqrt{7})) \cup (\frac16(-1+\sqrt{7}),\infty)</m>;</p>
-
-            <p>rel. min at <m>x=\frac16(-1+\sqrt{7})</m>;</p>
-
-            <p>rel. max at <m>x=\frac16(-1-\sqrt{7})</m>.</p>
+            <p>
+              <ol>
+                <li><p>domain=<m>(-\infty,\infty)</m></p></li>
+                <li><p>c.p. at <m>c=\frac16(-1\pm\sqrt{7})</m></p></li>
+                <li><p>increasing on <m>(-\infty,\frac16(-1-\sqrt{7})) \cup (\frac16(-1+\sqrt{7}),\infty)</m></p></li>
+                <li><p>decreasing on <m>(\frac16(-1-\sqrt{7}),\frac16(-1+\sqrt{7})))</m></p></li>
+                <li><p>rel. max at <m>x=\frac16(-1-\sqrt{7})</m></p></li>
+                <li><p>rel. min at <m>x=\frac16(-1+\sqrt{7})</m></p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static></static></var>
+            <var name="$crit"><static></static></var>
+            <var name="$inc"><static></static></var>
+            <var name="$dec"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,inf)");
+              $crit=Compute("1");
+              $inc=Compute("(-inf,inf)");
+              $dec=Compute("does not apply");
+              $max=Compute("does not apply");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =x^3-3x^2+3x-1</m></p>
+            <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>. If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p> </p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
           </statement>
           <solution>
-            <p>domain=<m>(-\infty,\infty)</m></p>
-
-            <p>c.p. at <m>c=1</m>;</p>
-
-            <p>increasing on <m>(-\infty,\infty)</m>;</p>
+            <p>
+              <ol>
+                <li><p>domain=<m>(-\infty,\infty)</m></p></li>
+                <li><p>c.p. at <m>c=1</m></p></li>
+                <li><p>increasing on <m>(-\infty,\infty)</m></p></li>
+                <li><p>does not apply</p></li>
+                <li><p>does not apply</p></li>
+                <li><p>does not apply</p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static></static></var>
+            <var name="$crit"><static></static></var>
+            <var name="$inc"><static></static></var>
+            <var name="$dec"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,inf)");
+              $crit=Compute("1");
+              $inc=Compute("(-inf,1)");
+              $dec=Compute("(1,inf)");
+              $max=Compute("1");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =\frac{1}{x^2-2x+2}</m></p>
+            <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>. If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
           </statement>
           <solution>
-            <p>domain=<m>(-\infty,\infty)</m></p>
-
-            <p>c.p. at <m>c=1</m>;</p>
-
-            <p>decreasing on <m>(1,\infty)</m></p>
-
-            <p>increasing on <m>(-\infty,1)</m>;</p>
-
-            <p>rel. max at <m>x=1</m>.</p>
+            <p>
+              <ol>
+                <li><p>domain=<m>(-\infty,\infty)</m></p></li>
+                <li><p>c.p. at <m>c=1</m></p></li>
+                <li><p>increasing on <m>(-\infty,1)</m></p></li>
+                <li><p>decreasing on <m>(1,\infty)</m></p></li>
+                <li><p>rel. max at <m>x=1</m></p></li>
+                <li><p>does not apply</p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static></static></var>
+            <var name="$crit"><static></static></var>
+            <var name="$inc"><static></static></var>
+            <var name="$dec"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,-1)U(-1,1)U(1,inf)");
+              $crit=Compute("0");
+              $inc=Compute("(0,1)U(1,inf)");
+              $dec=Compute("(-inf,-1)U(-1,0)");
+              $max=Compute("does not apply");
+              $min=Compute("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =\frac{x^2-4}{x^2-1}</m></p>
+            <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>. If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
           </statement>
           <solution>
-            <p>domain=<m>(-\infty,-1)\cup(-1,1)\cup(1,\infty)</m></p>
-
-            <p>c.p. at <m>c=0</m>;</p>
-
-            <p>decreasing on <m>(-\infty,-1)\cup (-1,0)</m>;</p>
-
-            <p>increasing on <m>(0,1)\cup (1,\infty)</m>;</p>
-
-            <p>rel. min at <m>x=0</m>;</p>
+            <p>
+              <ol>
+                <li><p>domain=<m>(-\infty,-1)\cup(-1,1)\cup(1,\infty)</m></p></li>
+                <li><p>c.p. at <m>c=0</m></p></li>
+                <li><p>increasing on <m>(0,1)\cup (1,\infty)</m></p></li>
+                <li><p>decreasing on <m>(-\infty,-1)\cup (-1,0)</m></p></li>
+                <li><p>does not apply</p></li>
+                <li><p>rel. min at <m>x=0</m></p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static></static></var>
+            <var name="$crit"><static></static></var>
+            <var name="$inc"><static></static></var>
+            <var name="$dec"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,-2)U(-2,4)U(4,inf)");
+              $crit=Compute("does not apply");
+              $inc=Compute("does not apply");
+              $dec=Compute("(-inf,-2)U(-2,4)U(4,inf)");
+              $max=Compute("does not apply");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =\frac{x}{x^2-2x-8}</m></p>
+            <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>. If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
           </statement>
           <solution>
-            <p>domain=<m>(-\infty,-2)\cup(-2,4)\cup(4,\infty)</m></p>
-
-            <p>no c.p.;</p>
-
-            <p>decreasing on entire domain, <m>(-\infty,-2)\cup(-2,4)\cup(4,\infty)</m></p>
+            <p>
+              <ol>
+                <li><p>domain=<m>(-\infty,-2)\cup(-2,4)\cup(4,\infty)</m></p></li>
+                <li><p>does not apply</p></li>
+                <li><p>does not apply</p></li>
+                <li><p>decreasing on entire domain, <m>(-\infty,-2)\cup(-2,4)\cup(4,\infty)</m></p></li>
+                <li><p>does not apply</p></li>
+                <li><p>does not apply</p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static></static></var>
+            <var name="$crit"><static></static></var>
+            <var name="$inc"><static></static></var>
+            <var name="$dec"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,0)U(0,inf)");
+              $crit=Compute("2,6");
+              $inc=Compute("(2,6)");
+              $dec=Compute("(-inf,0)U(0,2)U(6,inf)");
+              $max=Compute("6");
+              $min=Compute("2");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =\frac{(x-2)^{2/3}}{x}</m></p>
+            <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>. If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
           </statement>
           <solution>
-            <p>domain=<m>(-\infty,0)\cup(0,\infty)</m>;</p>
-
-            <p>c.p. at <m>c=2,6</m>;</p>
-
-            <p>decreasing on <m>(-\infty,0)\cup (0,2)\cup(6,\infty)</m>;</p>
-
-            <p>increasing on <m>(2,6)</m>;</p>
-
-            <p>rel. min at <m>x=2</m>;
-              rel. max at <m>x=6</m>.</p>
+            <p>
+              <ol>
+                <li><p>domain=<m>(-\infty,0)\cup(0,\infty)</m></p></li>
+                <li><p>c.p. at <m>c=2,6</m></p></li>
+                <li><p>increasing on <m>(2,6)</m></p></li>
+                <li><p>decreasing on <m>(-\infty,0)\cup (0,2)\cup(6,\infty)</m></p></li>
+                <li><p>rel. max at <m>x=6</m></p></li>
+                <li><p>rel. min at <m>x=2</m></p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static></static></var>
+            <var name="$crit"><static></static></var>
+            <var name="$inc"><static></static></var>
+            <var name="$dec"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,inf)");
+              $crit=Compute("-3pi/4,-pi/4,pi/4,3pi/4");
+              $inc=Compute("(-pi,-3pi/4)U(-pi/4,pi/4)U(3pi/4,pi)");
+              $dec=Compute("(-3pi/4,-pi/4)U(pi/4,3pi/4)");
+              $max=Compute("-3pi/4,pi/4");
+              $min=Compute("-pi/4,3pi/4");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =\sin(x) \cos(x)</m> on <m>(-\pi,\pi)</m>.</p>
+            <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>. If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
           </statement>
           <solution>
-            <p>domain=<m>(-\infty,\infty)</m></p>
-
-            <p>c.p. at <m>c=-3\pi/4,-\pi/4,\pi/4,3\pi/4</m>;</p>
-
-            <p>decreasing on <m>(-3\pi/4,-\pi/4) \cup (\pi/4,3\pi/4)</m>;</p>
-
-            <p>increasing on <m>(-\pi,-3\pi/4)\cup (-\pi/4,\pi/4) \cup (3\pi/4,\pi)</m>;</p>
-
-            <p>rel. min at <m>x=-\pi/4,3\pi/4</m>;</p>
-
-            <p>rel. max at <m>x=-3\pi/4,\pi/4</m>.</p>
+            <p>
+              <ol>
+                <li><p>domain=<m>(-\infty,\infty)</m></p></li>
+                <li><p>c.p. at <m>c=-3\pi/4,-\pi/4,\pi/4,3\pi/4</m></p></li>
+                <li><p>increasing on <m>(-\pi,-3\pi/4)\cup (-\pi/4,\pi/4) \cup (3\pi/4,\pi)</m></p></li>
+                <li><p>decreasing on <m>(-3\pi/4,-\pi/4) \cup (\pi/4,3\pi/4)</m></p></li>
+                <li><p>rel. max at <m>x=-3\pi/4,\pi/4</m></p></li>
+                <li><p>rel. min at <m>x=-\pi/4,3\pi/4</m></p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$d"><static></static></var>
+            <var name="$crit"><static></static></var>
+            <var name="$inc"><static></static></var>
+            <var name="$dec"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->strings->add('does not apply'=>{});
+              $d=Compute("(-inf,inf)");
+              $c=Formula("-1,1");
+              $inc=Compute("(-inf,-1)U(1,inf)");
+              $dec=Compute("(-1,1)");
+              $max=Compute("-1");
+              $min=Formula("1");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =x^5-5x</m></p>
+            <ol>
+                <li>
+                  <p>Give the domain of <m>f</m>.</p>
+                  <p><var name="$d" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the critical numbers of <m>f</m>.If there are no critical numbers, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is increasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inc" width="30" /></p>
+                </li>
+                <li>
+                  <p>State the intervals where <m>f</m> is decreasing. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$dec" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative maximum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Which critical points are a relative minimum? If none are, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+              </ol>
           </statement>
           <solution>
-            <p>domain = <m>(-\infty,\infty)</m>;</p>
-
-            <p>c.p. at <m>c=-1,1</m>;</p>
-
-            <p>decreasing on <m>(-1,1)</m>;</p>
-
-            <p>increasing on <m>(-\infty,-1) \cup (1,\infty)</m>;</p>
-
-            <p>rel. min at <m>x=1</m>;</p>
-
-            <p>rel. max at <m>x=-1</m></p>
+            <p>
+              <ol>
+                <li><p>domain = <m>(-\infty,\infty)</m></p></li>
+                <li><p>c.p. at <m>c=-1,1</m></p></li>
+                <li><p>decreasing on <m>(-1,1)</m></p></li>
+                <li><p>increasing on <m>(-\infty,-1) \cup (1,\infty)</m></p></li>
+                <li><p>rel. max at <m>x=-1</m></p></li>
+                <li><p>rel. min at <m>x=1</m></p></li>
+              </ol>
+            </p>
           </solution>
         </webwork>
       </exercise>
@@ -1069,16 +1429,18 @@
         <p>Review</p>
       </introduction>
       <exercise>
-        <webwork seed="1">
+        <webwork>
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="c"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $c=Formula("1/2");
             </pg-code>
           </setup>
           <statement>
             <p>Consider <m>f(x) = x^2-3x+5</m> on <m>[-1,2]</m>; find <m>c</m> guaranteed by the Mean Value Theorem.</p>
+            <p><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p><m>c=1/2</m></p>
@@ -1086,16 +1448,18 @@
         </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
+        <webwork>
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$c"><static></static></var>
             <pg-code>
+              Context("Interval");
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $c=Formula("acos(2/pi),-acos(2/pi)");
             </pg-code>
           </setup>
           <statement>
             <p>Consider <m>f(x) = \sin(x)</m> on <m>[-\pi/2,\pi/2]</m>; find <m>c</m> guaranteed by the Mean Value Theorem.</p>
+            <p><var name="$c" width="30" /></p>
           </statement>
           <solution>
             <p><m>c=\pm \cos^{-1}(2/\pi)</m></p>

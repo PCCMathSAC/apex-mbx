@@ -536,31 +536,14 @@
         <p>Terms and Concepts</p>
       </introduction>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Sketch a graph of a function <m>f(x)</m> that is concave up on <m>(0,1)</m> and is concave down on <m>(1,2)</m>.</p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Sketch a graph of a function <m>f(x)</m> that is:</p>
 
@@ -585,41 +568,22 @@
           <solution>
             <p>Answers will vary.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Is is possible for a function to be increasing and concave down on <m>(0,\infty)</m> with a horizontal asymptote of <m>y=1</m>? If so, give a sketch of such a function.</p>
           </statement>
           <solution>
             <p>Yes; Answers will vary.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
             <p>Is is possible for a function to be increasing and concave up on <m>(0,\infty)</m> with a horizontal asymptote of <m>y=1</m>? If so, give a sketch of such a function.</p>
           </statement>
           <solution>
             <p>No.</p>
           </solution>
-        </webwork>
       </exercise>
     </exercisegroup>
     <exercisegroup>
@@ -639,14 +603,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("0");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = -7x+3</m></p>
+            <p><m>\ds f(x) = -7x+3</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -656,14 +622,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("-8");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = -4x^2+3x-8</m></p>
+            <p><m>\ds f(x) = -4x^2+3x-8</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -673,14 +641,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("8");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = 4x^2+3x-8</m></p>
+            <p><m>\ds f(x) = 4x^2+3x-8</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -690,14 +660,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("6x-6");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = x^3-3x^2+x-1</m></p>
+            <p><m>\ds f(x) = x^3-3x^2+x-1</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -707,14 +679,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("-6x+2");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = -x^3+x^2-2x+5</m></p>
+            <p><m>\ds f(x) = -x^3+x^2-2x+5</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -724,14 +698,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("-cos(x)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \cos(x)</m></p>
+            <p><m>\ds f(x) = \cos(x)</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -741,14 +717,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("-sin(x)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \sin(x)</m></p>
+            <p><m>\ds f(x) = \sin(x)</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -758,14 +736,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("2tan(x)sec^(2)(x)");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \tan(x)</m></p>
+            <p><m>\ds f(x) = \tan(x)</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -775,14 +755,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("(6x^2-2)/(x^2+1)^3");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{1}{x^2+1}</m></p>
+            <p><m>\ds f(x) = \frac{1}{x^2+1}</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -792,14 +774,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("2/x^3");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{1}{x}</m></p>
+            <p><m>\ds f(x) = \frac{1}{x}</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -809,14 +793,16 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
+            <var name="$der">
               <static></static>
             </var>
             <pg-code>
+              $der=Formula("6/x^4");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{1}{x^2}</m></p>
+            <p><m>\ds f(x) = \frac{1}{x^2}</m>. Compute <m>\fpp(x)</m></p>
+            <p><m>\fpp(x)=</m><var name="$der" width="30" /></p>
           </statement>
           <solution>
             <p>Graph and verify.</p>
@@ -842,14 +828,34 @@
       <exercise xml:id="exer_03_04_ex_16">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("does not apply");
+              $up=Compute("(-inf,inf)");
+              $down=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^2-2x+1</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: none;
@@ -860,14 +866,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("does not apply");
+              $up=Compute("does not apply");
+              $down=Compute("(-inf,inf)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = -x^2-5x+7</m></p>
+            <p>
+            <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: none;
@@ -878,14 +904,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("0");
+              $up=Compute("(0,inf)");
+              $down=Compute("(-inf,0)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^3-x+1</m></p>
+            <p>
+            <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=0</m>;
@@ -897,14 +943,35 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $i=Compute("1/2");
+              $up=Compute("(1/2,inf)");
+              $down=Compute("(-inf,1/2)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = 2x^3-3x^2+9x+5</m></p>
+            <p>
+            <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=1/2</m>;
@@ -916,14 +983,35 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $i=Compute("-2/3, 0");
+              $up=Compute("(-inf,-2/3)U(0,inf)");
+              $down=Compute("(-2/3,0)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \frac{x^4}{4}+\frac{x^3}{3}-2 x+3</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=-2/3,0</m>;
@@ -935,14 +1023,35 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
+              $i=Compute("(2+sqrt(7))/3,(2-sqrt(7))/3");
+              $up=Compute("(-inf,(2-sqrt(7))/3)U((2+sqrt(7))/3,inf)");
+              $down=Compute("((2-sqrt(7))/3,(2+sqrt(7))/3)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = -3 x^4+8 x^3+6 x^2-24 x+2</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=(1/3)(2\pm\sqrt{7})</m>;
@@ -954,14 +1063,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("1");
+              $up=Compute("(-inf,inf)");
+              $down=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^4-4x^3+6x^2-4x+1</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=1</m>;
@@ -972,14 +1101,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("1/sqrt(3),-1/sqrt(3)");
+              $up=Compute("(-inf,-1/sqrt(3))U(1/sqrt(3),inf)");
+              $down=Compute("(-1/sqrt(3),1/sqrt(3))");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \frac{1}{x^2+1}</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=\pm1/\sqrt{3}</m>;
@@ -991,14 +1140,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("0,1,-1");
+              $up=Compute("(-1,0)U(1,inf)");
+              $down=Compute("(-inf,-1)U(0,1)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \frac{x}{x^2-1}</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=0,\pm 1</m>;
@@ -1010,14 +1179,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("-pi/4,3pi/4");
+              $up=Compute("(-pi,-pi/4)U(3pi/4,pi)");
+              $down=Compute("(-pi/4,3pi/4)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \sin(x) + \cos(x)</m> on <m>(-\pi,\pi)</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=-\pi/4,3\pi/4</m>;
@@ -1029,14 +1218,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("-2+sqrt(2),-2-sqrt(2)");
+              $up=Compute("(-inf,-2-sqrt(2))U(-2+sqrt(2),inf)");
+              $down=Formula("(-2-sqrt(2),-2+sqrt(2))");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^2e^x</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=-2\pm\sqrt{2}</m>;
@@ -1048,14 +1257,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("1/e^(3/2)");
+              $up=Formula("(1/e^(3/2),inf)");
+              $down=Compute("(0,1/e^(3/2))");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^2\ln(x)</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=1/e^{3/2}</m>;
@@ -1067,14 +1296,34 @@
       <exercise xml:id="exer_03_04_ex_28">
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$i"><static></static></var>
+            <var name="$up"><static></static></var>
+            <var name="$down"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $i=Compute("1/sqrt(2),-1/sqrt(2)");
+              $up=Formula("(-inf,-1/sqrt(2))U(1/sqrt(2),inf)");
+              $down=Compute("(-1/sqrt(2),1/sqrt(2))");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = e^{-x^2}</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the inflection points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$i" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave up. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$up" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the intervals where <m>f</m> is concave down. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$down" width="30" /></p>
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=\pm 1/\sqrt{2}</m>;
@@ -1092,14 +1341,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("");
+              $max=Compute("does not apply");
+              $min=Compute("1");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =x^2-2x+1</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>min: <m>x=1</m></p>
@@ -1109,14 +1378,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("");
+              $max=Compute("-5/2");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =-x^2-5x+7</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>max: <m>x=-5/2</m></p>
@@ -1126,14 +1415,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("-1/sqrt(3)");
+              $min=Compute("1/sqrt(3)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =x^3-x+1</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>max: <m>x=-1/\sqrt{3}</m>
@@ -1144,14 +1453,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("does not apply");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) =2 x^3-3 x^2+9 x+5</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>No relative extrema</p>
@@ -1161,14 +1490,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("does not apply");
+              $min=Compute("1");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \frac{x^4}{4}+\frac{x^3}{3}-2 x+3</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>min: <m>x=1</m></p>
@@ -1178,14 +1527,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("-1,2");
+              $min=Compute("1");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = -3 x^4+8 x^3+6 x^2-24 x+2</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>max: <m>x=-1,2</m>;
@@ -1196,14 +1565,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("does not apply");
+              $min=Compute("1");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^4-4x^3+6x^2-4x+1</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>min: <m>x=1</m></p>
@@ -1213,14 +1602,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("0");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \frac{1}{x^2+1}</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>max: <m>x=0</m></p>
@@ -1230,14 +1639,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("-1,1");
+              $max=Compute("does not apply");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \frac{x}{x^2-1}</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>critical values: <m>x=-1,1</m>; no max/min</p>
@@ -1247,14 +1676,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("pi/4");
+              $min=Compute("-3pi/4");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \sin(x) + \cos(x)</m> on <m>(-\pi,\pi)</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>max: <m>x=\pi/4</m>;
@@ -1265,14 +1714,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("-2");
+              $min=Compute("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^2e^x</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>max: <m>x=-2</m>;
@@ -1283,14 +1752,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("does not apply");
+              $min=Compute("1/sqrt(e)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^2\ln(x)</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>min: <m>x=1/\sqrt{e}</m></p>
@@ -1300,14 +1789,34 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Compute("does not apply");
+              $max=Compute("0");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = e^{-x^2}</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the maximum values of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the minimum value of <m>f</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>max: <m>x=0</m></p>
@@ -1323,14 +1832,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("does not apply");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^2-2x+1</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has no maximal or minimal value.</p>
@@ -1340,14 +1863,27 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("does not apply");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
-            <p><m>\ds f(x) = -x^2-5x+7</m></p>
+            <p><m>\ds f(x) = -x^2-5x+7</m></p><p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has no maximal or minimal value</p>
@@ -1357,14 +1893,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("does not apply");
+              $min=Compute("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^3-x+1</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has a minimal value at <m>x=0</m></p>
@@ -1374,14 +1924,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("does not apply");
+              $min=Compute("1/2");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = 2x^3-3x^2+9x+5</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has a minimal value at <m>x=1/2</m></p>
@@ -1391,14 +1955,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("-2/3");
+              $min=Compute("0");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \frac{x^4}{4}+\frac{x^3}{3}-2 x+3</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p>Possible points of inflection: <m>x=-2/3,0</m>;
@@ -1410,14 +1988,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("(2+sqrt(7))/3");
+              $min=Compute("(2-sqrt(7))/3");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = -3 x^4+8 x^3+6 x^2-24 x+2</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has a relative max at: <m>x=(1/3)(2+\sqrt{7})</m>
@@ -1428,14 +2020,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("does not apply");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^4-4x^3+6x^2-4x+1</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has no relative extrema</p>
@@ -1445,14 +2051,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("-1/sqrt(3)");
+              $min=Compute("1/sqrt(3)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \frac{1}{x^2+1}</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has a relative max at <m>x = -1/\sqrt{3}</m>;
@@ -1463,14 +2083,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("0");
+              $min=Compute("does not apply");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \frac{x}{x^2-1}</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has a relative max at <m>x=0</m></p>
@@ -1480,14 +2114,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("-pi/4");
+              $min=Compute("3pi/4");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = \sin(x) + \cos(x)</m> on <m>(-\pi,\pi)</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has a relative min at <m>x=3\pi/4</m>;
@@ -1498,14 +2146,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("-2-sqrt(2)");
+              $min=Compute("-2+sqrt(2)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^2e^x</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has a relative max at <m>x=-2-\sqrt{2}</m>;
@@ -1516,14 +2178,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("does not apply");
+              $min=Compute("1/sqrt(e^3)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = x^2\ln(x)</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has a relative min at <m>x= 1/\sqrt{e^3}=e^{-3/2}</m></p>
@@ -1533,14 +2209,28 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$max"><static></static></var>
+            <var name="$min"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $max=Compute("-1/sqrt(2)");
+              $min=Compute("1/sqrt(2)");
             </pg-code>
           </setup>
           <statement>
             <p><m>\ds f(x) = e^{-x^2}</m></p>
+            <p>
+             <ol>
+                <li>
+                  <p>Find the relative maximum values of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$max" width="30" /></p>
+                </li>
+                <li>
+                  <p>Find the relative minimum value of <m>\fp</m>. If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$min" width="30" /></p>
+                </li>
+             </ol>
+            </p>
           </statement>
           <solution>
             <p><m>\fp</m> has a relative max at <m>x=-1/\sqrt{2}</m>; a relative min at <m>x=1/\sqrt{2}</m></p>

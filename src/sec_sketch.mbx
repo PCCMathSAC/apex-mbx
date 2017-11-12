@@ -647,6 +647,7 @@
           </setup>
           <statement>
             <p>Why is sketching curves by hand beneficial even though technology is ubiquitous?</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Answers will vary.</p>
@@ -664,6 +665,7 @@
           </setup>
           <statement>
             <p>What does <q>ubiquitous</q> mean?</p>
+            <p><var form="essay" /></p>
           </statement>
           <solution>
             <p>Found everywhere.</p>
@@ -673,51 +675,63 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$tf">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $tf=PopUp(['?','True','False'],1);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: When sketching graphs of functions, it is useful to find the critical points.</p>
+            <p>T/F: When sketching graphs of functions, it is useful to find the critical points.<var name="$tf" form="popup"/></p>
           </statement>
           <solution>
-            <p>T</p>
+            <p>True</p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$tf">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $tf=PopUp(['?','True','False'],1);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: When sketching graphs of functions, it is useful to find the possible points of inflection.</p>
+            <p>T/F: When sketching graphs of functions, it is useful to find the possible points of inflection.<var name="$tf" form="popup"/></p>
           </statement>
           <solution>
-            <p>T</p>
+            <p>True</p>
           </solution>
         </webwork>
       </exercise>
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
+            <var name="$tf">
+              <set>
+                <member correct="yes">True</member>
+                <member>False</member>
+              </set>
             </var>
             <pg-code>
+              $tf=PopUp(['?','True','False'],1);
             </pg-code>
           </setup>
           <statement>
-            <p>T/F: When sketching graphs of functions, it is useful to find the horizontal and vertical asymptotes.</p>
+            <p>T/F: When sketching graphs of functions, it is useful to find the horizontal and vertical asymptotes.<var name="$tf" form="popup"/></p>
           </statement>
           <solution>
-            <p>T</p>
+            <p>True</p>
           </solution>
         </webwork>
       </exercise>
@@ -727,106 +741,52 @@
         <p>In the following exercises, practice using <xref ref="idea_sketch">Key Idea</xref> by applying the principles to the given functions with familiar graphs.</p>
       </introduction>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>f(x) = 2x+4</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>f(x) = 2x+4</m></p>
           </statement>
           <solution>
             <p>A good sketch will include the <m>x</m> and <m>y</m> intercepts and draw the appropriate line.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>f(x) = -x^2+1</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>f(x) = -x^2+1</m></p>
           </statement>
           <solution>
             <p>A good sketch will include the <m>x</m> and <m>y</m> intercepts..</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>f(x) = \sin(x)</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>f(x) = \sin(x)</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>f(x) = e^x</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>f(x) = e^x</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{1}{x}</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = \frac{1}{x}</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{1}{x^2}</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = \frac{1}{x^2}</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
     </exercisegroup>
 
@@ -835,242 +795,116 @@
         <p>In the following exercises, sketch a graph of the given function using <xref ref="idea_sketch">Key Idea</xref>. Show all work; check your answer with technology.</p>
       </introduction>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = x^3-2x^2+4x+1</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = x^3-2x^2+4x+1</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = -x^3+5x^2-3x+2</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = -x^3+5x^2-3x+2</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = x^3+3x^2+3x+1</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = x^3+3x^2+3x+1</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = x^3-x^2-x+1</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = x^3-x^2-x+1</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = (x-2)\ln(x-2)</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = (x-2)\ln(x-2)</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = (x-2)^2\ln(x-2)</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = (x-2)^2\ln(x-2)</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{x^2-4}{x^2}</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = \frac{x^2-4}{x^2}</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{x^2-4x+3}{x^2-6x+8}</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = \frac{x^2-4x+3}{x^2-6x+8}</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{x^2-2x+1}{x^2-6x+8}</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = \frac{x^2-2x+1}{x^2-6x+8}</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = x\sqrt{x+1}</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = x\sqrt{x+1}</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = x^2e^x</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = x^2e^x</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = \sin(x) \cos(x)</m> on <m>[-\pi,\pi]</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = \sin(x) \cos(x)</m> on <m>[-\pi,\pi]</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = (x-3)^{2/3} + 2</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = (x-3)^{2/3} + 2</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
       <exercise>
-        <webwork seed="1">
-          <setup>
-            <var name="">
-              <static></static>
-            </var>
-            <pg-code>
-            </pg-code>
-          </setup>
           <statement>
-            <p><m>\ds f(x) = \frac{(x-1)^{2/3}}{x}</m></p>
+            <p>Use <xref ref="idea_sketch">Key Idea</xref> to sketch a graph of <m>\ds f(x) = \frac{(x-1)^{2/3}}{x}</m></p>
           </statement>
           <solution>
             <p>Use technology to verify sketch.</p>
           </solution>
-        </webwork>
       </exercise>
     </exercisegroup>
 
@@ -1079,77 +913,115 @@
         <p>In the following exercises, a function with the parameters <m>a</m> and <m>b</m> are given. Describe the critical points and possible points of inflection of <m>f</m> in terms of <m>a</m> and <m>b</m>.</p>
       </introduction>
       <exercise>
-        <webwork seed="1">
+<!--         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$inf"><static></static></var>
             <pg-code>
             </pg-code>
-          </setup>
+          </setup> -->
           <statement>
             <p><m>\ds f(x) = \frac{a}{x^2+b^2}</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>.</p><!-- If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p> -->
+                </li>
+                <li>
+                  <p>Find the inflection points of <m>f</m>.</p><!-- If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inf" width="30" /></p> -->
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Critical point: <m>x=0</m>
               Points of inflection: <m>\pm b/\sqrt{3}</m></p>
           </solution>
-        </webwork>
+     <!--    </webwork> -->
       </exercise>
       <exercise>
-        <webwork seed="1">
+<!--         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$inf"><static></static></var>
             <pg-code>
+              $crit=Formula("(a+b)/2");
+              $inf=Compute("does not apply");
             </pg-code>
-          </setup>
+          </setup> -->
           <statement>
             <p><m>\ds f(x) = \sin(ax+b)</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>.</p><!--  If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p> -->
+                </li>
+                <li>
+                  <p>Find the inflection points of <m>f</m>.</p><!-- If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inf" width="30" /></p> -->
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Critical points: <m>x=\frac{n\pi/2-b}{a}</m>, where <m>n</m> is an odd integer
               Points of inflection: <m>(n\pi-b)/a</m>, where <m>n</m> is an integer.</p>
           </solution>
-        </webwork>
+       <!--  </webwork> -->
       </exercise>
       <exercise>
-        <webwork seed="1">
+<!--         <webwork seed="1">
           <setup>
-            <var name="">
-              <static></static>
-            </var>
+            <var name="$crit"><static></static></var>
+            <var name="$inf"><static></static></var>
             <pg-code>
+              Context()->strings->add('does not apply'=>{});
+              $crit=Formula("(a+b)/2");
+              $inf=Compute("does not apply");
             </pg-code>
-          </setup>
+          </setup> -->
           <statement>
             <p><m>\ds f(x) = (x-a)(x-b)</m></p>
+            <p>
+              <ol>
+                <li>
+                  <p>Find the critical points of <m>f</m>.</p> <!-- If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$crit" width="30" /></p>-->
+                </li>
+                <li>
+                  <p>Find the inflection points of <m>f</m>.</p><!--  If there are none, state <q><c>does not apply</c></q></p>
+                  <p><var name="$inf" width="30" /></p> -->
+                </li>
+            </ol>
+          </p>
           </statement>
           <solution>
             <p>Critical point: <m>x=(a+b)/2</m>
               Points of inflection: none</p>
           </solution>
-        </webwork>
+<!--         </webwork> -->
       </exercise>
       <exercise>
-        <webwork seed="1">
+<!--         <webwork seed="1">
           <setup>
             <var name="">
               <static></static>
             </var>
             <pg-code>
             </pg-code>
-          </setup>
+          </setup> -->
           <statement>
             <p>Given <m>x^2+y^2=1</m>, use implicit differentiation to find <m>\frac{dy}{dx}</m> and <m>\frac{d^2y}{dx^2}</m>. Use this information to justify the sketch of the unit circle.</p>
           </statement>
           <solution>
             <p><m>\frac{dy}{dx} = -x/y</m>, so the function is increasing in second and fourth quadrants, decreasing in the first and third quadrants.</p>
 
-            <p><m>\frac{d^2y}{dx^2} = -1/y - x^2/y^3</m>, which is positive when <m>y\lt 0</m> and is negative when <m>y>0</m>. Hence the function is concave down in the first and second quadrants and concave up in the third and fourth quadrants.</p>
+            <p><m>\frac{d^2y}{dx^2} = -1/y - x^2/y^3</m>, which is positive when <m>y\lt 0</m> and is negative when <m>y\gt0</m>. Hence the function is concave down in the first and second quadrants and concave up in the third and fourth quadrants.</p>
           </solution>
-        </webwork>
+<!--         </webwork> -->
       </exercise>
     </exercisegroup>
   </exercises>
