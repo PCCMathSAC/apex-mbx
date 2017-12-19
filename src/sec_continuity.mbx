@@ -1159,13 +1159,13 @@
             </var>
             <pg-code>
               Context("PiecewiseFunction");
-              for my$i(0..3){$b[$i]=non_zero_random(-2,2,1)};
-              if($envir{problemSeed}==1){@b=(1,-1,1,-2)};
-              $left=Formula("$b[0]x^3+$b[1]x^2")->reduce;
-              $right=Formula("$b[2]x+$b[3]")->reduce;
+              for my$i(0..3){$a[$i]=non_zero_random(-2,2,1)};
+              if($envir{problemSeed}==1){@a=(1,-1,1,-2)};
+              $left=Formula("$a[0]x^3+$a[1]x^2")->reduce;
+              $right=Formula("$a[2]x+$a[3]")->reduce;
               $f=PiecewiseFunction("x&lt;1" => "$left","x>=1"=>"$right");
               @choices=('?','Yes.',"No; the limit of f(x) as x goes to a does not exist.","No; f(a) is not defined.","No; the limit of f(x) as x goes to a does not equal f(a) even though both exist.");
-              $correct[1]=($left->eval(x=>$a[1])==$right->eval(x=>$a[1]))?1:4;
+              $correct[1]=($left->eval(x=>1)==$right->eval(x=>1))?1:4;
               @answer=(PopUp(~~@choices,1),PopUp(~~@choices,$correct[1]));
             </pg-code>
           </setup>
@@ -1394,7 +1394,7 @@
               if($envir{problemSeed}==1){$a=5;$b=6};
               Context()->variables->are(t=>'Real');
               $f=Formula("sqrt($a t^2-$a*$b)")->reduce;
-              $interval=Compute("(-inf,-sqrt($b)]U[-sqrt($b),inf)");
+              $interval=Compute("(-inf,-sqrt($b)]U[sqrt($b),inf)");
             </pg-code>
           </setup>
           <statement>

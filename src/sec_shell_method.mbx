@@ -11,9 +11,9 @@
 
     <figure xml:id="fig_shell_intro" >
     <caption>Introducing the Shell Method.</caption>
-    <sidebyside>
-      <figure>
-        <caption>(a)</caption>
+    <sidebyside xml:id="fig_soupcan">
+      <figure xml:id="fig_soupcana">
+        <caption/>
         <!--
          \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
         3Droll=134.9923368693739,
@@ -116,8 +116,8 @@
         <!-- figures/figshell_intro_b_3D.asy END -->
       </figure>
 
-      <figure>
-        <caption>(b)</caption>
+      <figure xml:id="fig_soupcanb">
+        <caption/>
         <!--
          \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
         3Droll=134.9923368693739,
@@ -222,8 +222,8 @@
         <!-- figures/figshell_intro_a_3D.asy END -->
       </figure>
 
-      <figure>
-        <caption>(c)</caption>
+      <figure xml:id="fig_soupcanc">
+        <caption/>
         <!--
          \includemedia[width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
         3Droll=134.9923368693739,
@@ -374,9 +374,9 @@
 
     </figure>
 
-    <p>To compute the volume of one shell, first consider the paper label on a soup can with radius <m>r</m> and height <m>h</m>. What is the area of this label? A simple way of determining this is to cut the label and lay it out flat, forming a rectangle with height <m>h</m> and length <m>2\pi r</m>. Thus the area is <m>A = 2\pi rh</m>; see <xref ref="fig_soupcan">Figure</xref> (a).</p>
+    <p>To compute the volume of one shell, first consider the paper label on a soup can with radius <m>r</m> and height <m>h</m>. What is the area of this label? A simple way of determining this is to cut the label and lay it out flat, forming a rectangle with height <m>h</m> and length <m>2\pi r</m>. Thus the area is <m>A = 2\pi rh</m>; see <xref ref="fig_soupcana">Figure</xref>.</p>
 
-    <p>Do a similar process with a cylindrical shell, with height <m>h</m>, thickness <m>\Delta x</m>, and approximate radius <m>r</m>. Cutting the shell and laying it flat forms a rectangular solid with length <m>2\pi r</m>, height <m>h</m> and depth <m>\dx</m>. Thus the volume is <m>V \approx 2\pi rh\dx</m>; see <xref ref="fig_soupcan">Figure</xref> (b). (We say <q>approximately</q> since our radius was an approximation.)</p>
+    <p>Do a similar process with a cylindrical shell, with height <m>h</m>, thickness <m>\Delta x</m>, and approximate radius <m>r</m>. Cutting the shell and laying it flat forms a rectangular solid with length <m>2\pi r</m>, height <m>h</m> and depth <m>\dx</m>. Thus the volume is <m>V \approx 2\pi rh\dx</m>; see <xref ref="fig_soupcanb">Figure</xref>. (We say <q>approximately</q> since our radius was an approximation.)</p>
 
     <p>By breaking the solid into <m>n</m> cylindrical shells, we can approximate the volume of the solid as
       <me>
@@ -391,7 +391,7 @@
     -->
 
     <figure>
-      <caption>(a) &amp; (b)</caption>
+      <caption/>
       <!-- START figures/fig_shell_soupcan.tex -->
       <image xml:id="img_shell_soupcan" >
         <description></description>
@@ -424,8 +424,10 @@
           ]]>
         </latex-image-code>
       </image>
+    </figure>
       <!-- figures/fig_shell_soupcan.tex END -->
-       &amp;
+    <figure>
+      <caption/>
       <!-- START figures/fig_shell_unwrapshell.tex -->
       <image xml:id="img_shell_unwrapshell" >
         <description></description>

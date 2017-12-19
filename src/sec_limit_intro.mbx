@@ -85,9 +85,7 @@
       <me>
         \lim_{x\to 1} y = \lim_{x\to 1} f(x) = L\text{.}
       </me>
-    </p>
-
-    <p>This is not a complete definition (that will come in the next section); this is a pseudo-definition that will allow us to explore the idea of a limit.<index><main>limit</main><sub>pseudo-definition</sub></index></p>
+    This is not a complete definition (that will come in the next section); this is a pseudo-definition that will allow us to explore the idea of a limit.<index><main>limit</main><sub>pseudo-definition</sub></index></p>
 
     <p>Above, where <m>f(x) = \sin(x)/x</m>, we approximated
       <me>
@@ -1082,7 +1080,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m><var name="$f" /></m> is close to <m><var name="$l" /></m>. So
@@ -1227,7 +1225,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m><var name="$f" /></m> is close to <m><var name="$l" /></m>. So
@@ -1377,7 +1375,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m><var name="$f" /></m> grows without bound. So
@@ -1529,7 +1527,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m><var name="$f" /></m> is close to <m><var name="$l" /></m>. So
@@ -1681,7 +1679,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m><var name="$f" /></m> is close to <m><var name="$l" /></m>. So
@@ -1832,7 +1830,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m><var name="$f" /></m> grows without bound. So
@@ -1980,7 +1978,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m>f(x)</m> approaches different values from the left and right. So
@@ -2130,7 +2128,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m>f(x)</m> approaches <var name="$l" />. So
@@ -2275,7 +2273,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m>f(x)</m> approaches <var name="$l" />. So
@@ -2421,7 +2419,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m><var name="$a" /></m>, that <m>f(x)</m> approaches different values from the left and right. So
@@ -2515,7 +2513,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m>0</m>, that <m>\lvert x \rvert^x</m> is close to <m>1</m>. So
@@ -2609,7 +2607,7 @@
             <p>For a graphical approximation:</p>
 
             <figure>
-              <image pg-name="$solgr" />
+              <image pg-name="$solgr" tex_size="200" />
             </figure>
 
             <p>It appears that when <m>x</m> is close to <m>0</m>, that <m>e^{-e^{1/x}}</m> approaches different values from the left and right. So
@@ -3051,8 +3049,8 @@
               <static>-0.1,-0.114943,-0.01,-0.111483,0.01,-0.110742,0.1,-0.107527</static>
             </var>
             <pg-code>
-              $b=non_zero_random(-5,5,1);
-              $a=random(-5,5,1);
+              do{$b=non_zero_random(-5,5,1);
+              $a=random(-5,5,1);} until ($a + $b!= 0);
               if ($envir{problemSeed}==1){$a=2;$b=1;};
               $f=Formula("1/(x+$b)")->reduce;
               $m=$f->D('x')->eval(x=>$a)->with(tolerance => .01);
@@ -3555,30 +3553,6 @@
       <exercise>
         <webwork seed="1">
           <setup>
-            <var name="$m" category="number">
-              <static>0</static>
-            </var>
-            <var name="$f">
-              <static>\cos(x)</static>
-            </var>
-            <var name="$a">
-              <static>\pi</static>
-            </var>
-            <var name="$tabout[0]">
-              <static>−0.0499583</static>
-            </var>
-            <var name="$tabout[1]">
-              <static>−0.00499996</static>
-            </var>
-            <var name="$tabout[2]">
-              <static>0.00499996</static>
-            </var>
-            <var name="$tabout[3]">
-              <static>0.0499583</static>
-            </var>
-            <var name="$tableanswers">
-              <static>-0.1,−0.0499583,-0.01,−0.00499996,0.01,0.00499996,0.1,0.0499583</static>
-            </var>
             <pg-code>
               Context()->flags->set(reduceConstants=>0);
               $a=list_random(Formula("pi/3"),Formula("2pi/3"),Formula("pi"),Formula("4pi/3"),Formula("5pi/3"),);
@@ -3647,7 +3621,7 @@
             <table>
               <tabular>
                 <col halign="center"/>
-                                               <col halign="center"/>
+                <col halign="center"/>
                 <row bottom="medium">
                   <cell><m>h</m></cell>
                   <cell><m>\frac{f(a+h)-f(a)}{h}</m></cell>

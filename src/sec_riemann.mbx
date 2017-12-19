@@ -416,16 +416,16 @@
         </p>
 
         <p>Using the summation formulas, consider:
-          <md>
-            <mrow>\int_0^4 (4x-x^2)\ dx \amp \approx \sum_{i=1}^{16} f(x_{i+1})\Delta x</mrow>
-            <mrow>\amp = \sum_{i=1}^{16} f(i\Delta x) \Delta x</mrow>
-            <mrow>\amp = \sum_{i=1}^{16} \big(4i\Delta x - (i\Delta x)^2\big)\Delta x</mrow>
-            <mrow>\amp = \sum_{i=1}^{16} (4i\Delta x^2 - i^2\Delta x^3)</mrow>
-            <mrow>\amp = (4\Delta x^2)\sum_{i=1}^{16} i - \Delta x^3 \sum_{i=1}^{16} i^2</mrow>
-            <mrow>\amp = (4\Delta x^2)\frac{16\cdot 17}{2} - \Delta x^3 \frac{16(17)(33)}6</mrow>
-            <mrow>\amp =	4\cdot 0.25^2\cdot 136-0.25^3\cdot 1496</mrow>
-            <mrow>\amp =10.625</mrow>
-          </md>
+          <mdn>
+            <mrow number="no">\int_0^4 (4x-x^2)\ dx \amp \approx \sum_{i=1}^{16} f(x_{i+1})\Delta x</mrow>
+            <mrow number="no">\amp = \sum_{i=1}^{16} f(i\Delta x) \Delta x</mrow>
+            <mrow number="no">\amp = \sum_{i=1}^{16} \big(4i\Delta x - (i\Delta x)^2\big)\Delta x</mrow>
+            <mrow number="no">\amp = \sum_{i=1}^{16} (4i\Delta x^2 - i^2\Delta x^3)</mrow>
+            <mrow xml:id="eq_rie7">\amp = (4\Delta x^2)\sum_{i=1}^{16} i - \Delta x^3 \sum_{i=1}^{16} i^2</mrow>
+            <mrow number="no">\amp = (4\Delta x^2)\frac{16\cdot 17}{2} - \Delta x^3 \frac{16(17)(33)}6</mrow>
+            <mrow number="no">\amp =	4\cdot 0.25^2\cdot 136-0.25^3\cdot 1496</mrow>
+            <mrow number="no">\amp =10.625</mrow>
+          </mdn>
         </p>
 
         <p>We were able to sum up the areas of 16 rectangles with very little computation. In <xref ref="fig_rie7">Figure</xref> the function and the 16 rectangles are graphed. While some rectangles over<ndash />approximate the area, other under<ndash />approximate the area (by about the same amount). Thus our approximate area of 10.625 is likely a fairly good approximation.</p>
@@ -868,7 +868,7 @@
 
           <li><p><m>\lim\limits_{n\to\infty}\sum_{i=1}^n f(c_i)\Delta x = \int_a^b f(x)\ dx</m>, and</p></li>
 
-          <li><p><m>\lim\limits_{\\abs{\Delta x\}\to 0} \sum_{i=1}^n f(c_i)\Delta x_i = \int_a^b f(x)\ dx</m>.</p></li>
+          <li><p><m>\lim\limits_{\abs{\Delta x}\to 0} \sum_{i=1}^n f(c_i)\Delta x_i = \int_a^b f(x)\ dx</m>.</p></li>
         </ol>
       </statement>
     </theorem>

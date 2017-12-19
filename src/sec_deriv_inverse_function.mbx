@@ -107,7 +107,7 @@
       </tabular>
     </table>
 
-    <p>We have discovered a relationship between <m>\fp</m> and <m>g'</m> in a mostly graphical way. We can realize this relationship analytically as well. Let <m>y = g(x)</m>, where again <m>g = f^{-1}</m>. We want to find <m>y'</m>. Since <m>y = g(x)</m>, we know that <m>f(y) = x</m>. Using the <xref ref="thm_Chain_Rule" autoname="title" /> and Implicit Differentiation, take the derivative of both sides of this last equality.
+    <p>We have discovered a relationship between <m>\fp</m> and <m>g'</m> in a mostly graphical way. We can realize this relationship analytically as well. Let <m>y = g(x)</m>, where again <m>g = f^{-1}</m>. We want to find <m>y'</m>. Since <m>y = g(x)</m>, we know that <m>f(y) = x</m>. Using the <xref ref="thm_chain_rule" autoname="title" /> and Implicit Differentiation, take the derivative of both sides of this last equality.
       <md>
         <mrow>\lzoo{x}{f(y)} \amp = \lzoo{x}{x}</mrow>
         <mrow>\fp(y)\cdot y' \amp = 1</mrow>
@@ -1057,7 +1057,7 @@
             <pg-code>
               Context()->variables->add(y=>'Real');
               $dydx=Formula("(y(y-2x))/(x(x-2y))");
-              @y=(random(0,5,0.1),random(0,5,0.1),random(0,5,0.1),random(0,5,0.1),random(0,5,0.1));
+              @y=(random(0.1,5,0.1),random(0.1,5,0.1),random(0.1,5,0.1),random(0.1,5,0.1),random(0.1,5,0.1));
               @x=map{$_/2 +(-1)**(random(-1,1,2))*sqrt(($_)**2/4+1/$_)}(@y);
               @xy=map{[$x[$_],$y[$_]]}(0..4);
               $dydx->{test_points}=~~@xy;

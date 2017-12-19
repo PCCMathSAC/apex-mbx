@@ -949,7 +949,7 @@
               $x = 't';
               Context()->variables->are($x => 'Real');
               $formula = Formula("4$x^3e^$x - sin($x)*cos($x)");
-              $deriv = Formula("12$x^2e^$x + 4$x^3e^$x - \cos^2($x) + \sin^2($x)");#$formula->D("$x")->reduce;
+              $deriv = Formula("12$x^2e^$x + 4$x^3e^$x - cos^2($x) + sin^2($x)");#$formula->D("$x")->reduce;
             </pg-code>
           </setup>
           <statement>
@@ -1074,7 +1074,7 @@
               Context()->variables->add(y=>'Real');
               parser::Assignment->Allow;
               $t=Formula("y=-x");
-              $n=Compute("y=x+3pi");
+              $n=Compute("y=x-3pi");
               Context("Point");
               Context()->flags->set(reduceConstants=>0);
               $point='\left(\frac{3\pi}{2},-\frac{3\pi}{2}\right)';

@@ -64,36 +64,22 @@
         <p>The key to Integration by Parts is to identify part of the integrand as <q><m>u</m></q> and part as <q><m>dv</m>.</q> Regular practice will help one make good identifications, and later we will introduce some principles that help. For now, let <m>u=x</m> and <m>dv=\cos(x) \ dx</m>.</p>
 
         <p>It is generally useful to make a small table of these values as done below. Right now we only know <m>u</m> and <m>dv</m> as shown on the left of <xref ref="tab_ibp1">Figure</xref>; on the right we fill in the rest of what we need. If <m>u = x</m>, then <m>du = dx</m>. Since <m>dv = \cos(x) \ dx</m>, <m>v</m> is an antiderivative of <m>\cos(x)</m>. We choose <m>v = \sin(x)</m>.</p>
-     
-      <p>
-        <todo>Figure out why the right arrow won't show up</todo>
-        <table xml:id="tab_ibp1">
-          <caption/>
-          <tabular>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <row>
-              <cell>
-                <md>
-                  <mrow>u\amp = x \amp  v\amp =\text{?}</mrow>
-                  <mrow>du\amp = \text{?}  \amp  dv\amp =\cos(x) \ dx</mrow>
-                </md>
-              </cell>
-              <cell>
-                <md>\Rightarrow</md>
-              </cell>
-              <cell>
-                <md>
-                  <mrow>u\amp = x \amp  v\amp =\sin(x) </mrow>
-                  <mrow>du\amp = dx \amp  dv\amp =\cos(x) \ dx</mrow>
-                </md>       
-              </cell>
-            </row>
-          </tabular>
-        </table>
-        </p>
-      
+
+        <sidebyside widths="40% 10% 40%" xml:id="tab_ibp1">
+
+          <p><md>
+            <mrow>u\amp = x \amp  v\amp =\mathord{?}</mrow>
+            <mrow>du\amp = \mathord{?}  \amp  dv\amp =\cos(x) \ dx</mrow>
+          </md></p>
+
+          <p><m>\implies</m></p>
+
+          <p><md>
+            <mrow>u\amp = x \amp  v\amp =\sin(x) </mrow>
+            <mrow>du\amp = dx \amp  dv\amp =\cos(x) \ dx</mrow>
+          </md></p>
+
+        </sidebyside>
 
         <p>Now substitute all of this into the Integration by Parts formula, giving
           <me>
@@ -142,34 +128,19 @@
         <!--
         <caption>Setting up Integration by Parts.</caption>
         -->
-        <p>
-        <table xml:id="tab_ibp2">
-          <caption/>
-          <tabular>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <row>
-              <cell>
-                <md>
-                  <mrow>u\amp = x \amp  v\amp =\text{?}</mrow>
-                  <mrow>du\amp = \text{?}  \amp  dv\amp =e^x \ dx</mrow>
-                </md>
-              </cell>
-              <cell>
-                <md>\Rightarrow</md>
-              </cell>
-              <cell>
-                <md>
-                  <mrow>u\amp = x \amp  v\amp =e^x </mrow>
-                  <mrow>du\amp = dx \amp  dv\amp =e^x \ dx</mrow>
-                </md>       
-              </cell>
-            </row>
-          </tabular>
-        </table>
-        </p>
-  
+        <sidebyside widths="40% 10% 40%">
+          <p><md>
+            <mrow>u\amp = x \amp  v\amp =\mathord{?}</mrow>
+            <mrow>du\amp = \mathord{?}  \amp  dv\amp =e^x \ dx</mrow>
+          </md></p>
+
+          <p><m>\implies</m></p>
+
+          <p><md>
+            <mrow>u\amp = x \amp  v\amp =e^x </mrow>
+            <mrow>du\amp = dx \amp  dv\amp =e^x \ dx</mrow>
+          </md></p>
+        </sidebyside>
 
         <p>We see <m>du</m> is simpler than <m>u</m>, while there is no change in going from <m>dv</m> to <m>v</m>. This is good. The Integration by Parts formula gives
           <me>
@@ -198,34 +169,21 @@
         <!--
         <caption>Setting up Integration by Parts.</caption>
         -->
-      <p>
-        <todo>Figure out why the right arrow won't show up</todo>
-        <table xml:id="tab_ibp3">
-          <caption/>
-          <tabular>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <row>
-              <cell>
-                <md>
-                  <mrow>u\amp = x^2 \amp  v\amp =\text{?}</mrow>
-                  <mrow>du\amp = \text{?}  \amp  dv\amp =\cos(x) \ dx</mrow>
-                </md>
-              </cell>
-              <cell>
-                <md>\Rightarrow</md>
-              </cell>
-              <cell>
-                <md>
-                  <mrow>u\amp = x^2 \amp  v\amp =\sin(x) </mrow>
-                  <mrow>du\amp = 2x\ dx \amp  dv\amp =\cos(x) \ dx</mrow>
-                </md>       
-              </cell>
-            </row>
-          </tabular>
-        </table>
-        </p>
+
+        <sidebyside widths="40% 10% 40%">
+          <p><md>
+            <mrow>u\amp = x^2 \amp  v\amp =\mathord{?}</mrow>
+            <mrow>du\amp = \mathord{?}  \amp  dv\amp =\cos(x) \ dx</mrow>
+          </md></p>
+
+          <p><m>\implies</m></p>
+
+          <p><md>
+            <mrow>u\amp = x^2 \amp  v\amp =\sin(x) </mrow>
+            <mrow>du\amp = 2x\ dx \amp  dv\amp =\cos(x) \ dx</mrow>
+          </md></p>
+
+        </sidebyside>
 
         <p>The Integration by Parts formula gives
           <me>
@@ -239,34 +197,19 @@
         <caption>Setting up Integration by Parts (again).</caption>
         -->
 
-      <p>
-        <todo>Figure out why the right arrow won't show up</todo>
-        <table xml:id="tab_ibp3b">
-          <caption/>
-          <tabular>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <row>
-              <cell>
-                <md>
-                  <mrow>r\amp = 2x \amp  s\amp =\text{?}</mrow>
-                  <mrow>dr\amp = \text{?}  \amp  ds\amp =\sin(x) \ dx</mrow>
-                </md>
-              </cell>
-              <cell>
-                <md>\Rightarrow</md>
-              </cell>
-              <cell>
-                <md>
-                  <mrow>r\amp = 2x \amp  s\amp =-\cos(x) </mrow>
-                  <mrow>dr\amp = 2\ dx \amp  ds\amp =\sin(x) \ dx</mrow>
-                </md>       
-              </cell>
-            </row>
-          </tabular>
-        </table>
-        </p>
+        <sidebyside widths="40% 10% 40%">
+          <p><md>
+            <mrow>r\amp = 2x \amp  s\amp =\mathord{?}</mrow>
+            <mrow>dr\amp = \mathord{?}  \amp  ds\amp =\sin(x) \ dx</mrow>
+          </md></p>
+
+          <p><m>\implies</m></p>
+
+          <p><md>
+            <mrow>r\amp = 2x \amp  s\amp =-\cos(x) </mrow>
+            <mrow>dr\amp = 2\ dx \amp  ds\amp =\sin(x) \ dx</mrow>
+          </md></p>
+        </sidebyside>
 
         <me>
           \int x^2\cos(x) \,dx = x^2\sin(x) - \left(-2x\cos(x) - \int -2\cos(x) \,dx\right).
@@ -290,34 +233,20 @@
         <!--
         <caption>Setting up Integration by Parts.</caption>
         -->
-      <p>
-        <todo>Figure out why the right arrow won't show up</todo>
-        <table xml:id="tab_ibp4a">
-          <caption/>
-          <tabular>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <row>
-              <cell>
-                <md>
-                  <mrow>u\amp = e^x \amp  v\amp =\text{?}</mrow>
-                  <mrow>du\amp = \text{?}  \amp  dv\amp =\cos(x) \ dx</mrow>
-                </md>
-              </cell>
-              <cell>
-                <md>\Rightarrow</md>
-              </cell>
-              <cell>
-                <md>
-                  <mrow>u\amp = e^x \amp  v\amp =\sin(x)</mrow>
-                  <mrow>du\amp = e^x  \amp  dv\amp =\cos(x) \ dx</mrow>
-                </md>       
-              </cell>
-            </row>
-          </tabular>
-        </table>
-        </p>
+
+        <sidebyside widths="40% 10% 40%">
+          <p><md>
+            <mrow>u\amp = e^x \amp  v\amp =\mathord{?}</mrow>
+            <mrow>du\amp = \mathord{?}  \amp  dv\amp =\cos(x) \ dx</mrow>
+          </md></p>
+
+          <p><m>\implies</m></p>
+
+          <p><md>
+            <mrow>u\amp = e^x \amp  v\amp =\sin(x)</mrow>
+            <mrow>du\amp = e^x  \amp  dv\amp =\cos(x) \ dx</mrow>
+          </md></p>
+        </sidebyside>
 
         <p>Notice that <m>du</m> is no simpler than <m>u</m>, going against our general rule (but bear with us). The Integration by Parts formula yields
           <me>
@@ -330,33 +259,21 @@
         <!--
         <caption>Setting up Integration by Parts (again).</caption>
         -->
-        <p>
-        <table xml:id="tab_ibp4b">
-          <caption/>
-          <tabular>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <row>
-              <cell>
-                <md>
-                  <mrow>r\amp = e^x \amp  s\amp =\text{?}</mrow>
-                  <mrow>dr\amp = \text{?}  \amp  ds\amp =\sin(x) \ dx</mrow>
-                </md>
-              </cell>
-              <cell>
-                <md>\Rightarrow</md>
-              </cell>
-              <cell>
-                <md>
-                  <mrow>r\amp = e^x \amp  s\amp =-\cos(x) </mrow>
-                  <mrow>dr\amp = e^x\ dx \amp  ds\amp =\sin(x) \ dx</mrow>
-                </md>       
-              </cell>
-            </row>
-          </tabular>
-        </table>
-        </p>
+
+        <sidebyside widths="40% 10% 40%">
+          <p><md>
+            <mrow>r\amp = e^x \amp  s\amp =\mathord{?}</mrow>
+            <mrow>dr\amp = \mathord{?}  \amp  ds\amp =\sin(x) \ dx</mrow>
+          </md></p>
+
+          <p><m>\implies</m></p>
+
+          <p><md>
+            <mrow>r\amp = e^x \amp  s\amp =-\cos(x) </mrow>
+            <mrow>dr\amp = e^x\ dx \amp  ds\amp =\sin(x) \ dx</mrow>
+          </md></p>
+        </sidebyside>
+
         <p>The Integration by Parts formula then gives:
           <md>
             <mrow>\int e^x\cos(x) \,dx \amp = e^x\sin(x) - \left(-e^x\cos(x) - \int -e^x\cos(x) \,dx\right)</mrow>
@@ -393,34 +310,20 @@
         <!--
         <caption>Setting up Integration by Parts.</caption>
         -->
-      <p>
-        <todo>Figure out why the right arrow won't show up</todo>
-        <table xml:id="tab_ibp5">
-          <caption/>
-          <tabular>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <row>
-              <cell>
-                <md>
-                  <mrow>u\amp = \ln(x) \amp  v\amp =\text{?}</mrow>
-                  <mrow>du\amp = \text{?}  \amp  dv\amp =1 \ dx</mrow>
-                </md>
-              </cell>
-              <cell>
-                <md>\Rightarrow</md>
-              </cell>
-              <cell>
-                <md>
-                   <mrow>u\amp = \ln(x) \amp  v\amp =x</mrow>
-                  <mrow>du\amp = 1/x\ dx  \amp  dv\amp =1 \ dx</mrow>
-                </md>       
-              </cell>
-            </row>
-          </tabular>
-        </table>
-        </p>
+
+        <sidebyside widths="40% 10% 40%">
+          <p><md>
+            <mrow>u\amp = \ln(x) \amp  v\amp =\mathord{?}</mrow>
+            <mrow>du\amp = \mathord{?}  \amp  dv\amp =1 \ dx</mrow>
+          </md></p>
+
+          <p><m>\implies</m></p>
+
+          <p><md>
+            <mrow>u\amp = \ln(x) \amp  v\amp =x</mrow>
+            <mrow>du\amp = 1/x\ dx  \amp  dv\amp =1 \ dx</mrow>
+          </md></p>
+        </sidebyside>
 
         <p>Putting this all together in the Integration by Parts formula, things work out very nicely:
           <me>
@@ -520,34 +423,20 @@
         <!--
         <caption>Setting up Integration by Parts.</caption>
         -->
-        <p>
-        <todo>Figure out why the right arrow won't show up</todo>
-        <table xml:id="tab_ibp7">
-          <caption/>
-          <tabular>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <row>
-              <cell>
-                <md>
-                  <mrow>u\amp = \ln(x) \amp  v\amp =\text{?}</mrow>
-                  <mrow>du\amp = \text{?}  \amp  dv\amp =x^2 \ dx</mrow>
-                </md>
-              </cell>
-              <cell>
-                <md>\Rightarrow</md>
-              </cell>
-              <cell>
-                <md>
-                   <mrow>u\amp = \ln(x) \amp  v\amp =x^3/3</mrow>
-                  <mrow>du\amp = 1/x\ dx  \amp  dv\amp =1 \ dx</mrow>
-                </md>       
-              </cell>
-            </row>
-          </tabular>
-        </table>
-        </p>
+
+        <sidebyside widths="40% 10% 40%">
+          <p><md>
+            <mrow>u\amp = \ln(x) \amp  v\amp =\mathord{?}</mrow>
+            <mrow>du\amp = \mathord{?}  \amp  dv\amp =x^2 \ dx</mrow>
+          </md></p>
+
+          <p><m>\implies</m></p>
+
+          <p><md>
+            <mrow>u\amp = \ln(x) \amp  v\amp =x^3/3</mrow>
+            <mrow>du\amp = 1/x\ dx  \amp  dv\amp =1 \ dx</mrow>
+          </md></p>
+        </sidebyside>
 
         <p>The Integration by Parts formula then gives
           <md>

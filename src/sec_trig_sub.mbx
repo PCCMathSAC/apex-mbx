@@ -298,16 +298,16 @@
       </statement>
       <solution>
         <p>We start by completing the square, then make the substitution <m>u=x+3</m>, followed by the trigonometric substitution of <m>u=\tan(\theta)</m>:
-          <md>
-            <mrow>\int \frac1{(x^2+6x+10)^2}\ dx =\int \frac1{\big((x+3)^2+1\big)^2}\ dx\amp = \int \frac1{(u^2+1)^2}\ du.</mrow>
+          <mdn>
+            <mrow number="no">\int \frac1{(x^2+6x+10)^2}\ dx =\int \frac1{\big((x+3)^2+1\big)^2}\ dx\amp = \int \frac1{(u^2+1)^2}\ du.</mrow>
             <intertext>Now make the substitution <m>u=\tan(\theta)</m>, <m>du=\sec^2(\theta) \ d\theta</m>:</intertext>
-            <mrow>\amp =	\int \frac1{(\tan^2(\theta) +1)^2}\sec^2(\theta) \ d\theta</mrow>
-            <mrow>\amp = \int\frac 1{(\sec^2(\theta) )^2}\sec^2(\theta) \ d\theta</mrow>
-            <mrow>\amp = \int \cos^2(\theta) \ d\theta.</mrow>
+            <mrow number="no">\amp =	\int \frac1{(\tan^2(\theta) +1)^2}\sec^2(\theta) \ d\theta</mrow>
+            <mrow number="no">\amp = \int\frac 1{(\sec^2(\theta) )^2}\sec^2(\theta) \ d\theta</mrow>
+            <mrow number="no">\amp = \int \cos^2(\theta) \ d\theta.</mrow>
             <intertext>Applying a power reducing formula, we have</intertext>
-            <mrow>\amp = \int \left(\frac12 +\frac12\cos(2\theta)\right)\ d\theta</mrow>
-            <mrow>\amp = \frac12\theta + \frac14\sin(2\theta) + C.</mrow>
-          </md>
+            <mrow number="no">\amp = \int \left(\frac12 +\frac12\cos(2\theta)\right)\ d\theta</mrow>
+            <mrow xml:id="eq_extrigsub7">\amp = \frac12\theta + \frac14\sin(2\theta) + C.</mrow>
+          </mdn>
         </p>
 
         <p>We need to return to the variable <m>x</m>. As <m>u=\tan(\theta)</m>, <m>\theta = \tan^{-1}(u)</m>. Using the identity <m>\sin(2\theta) = 2\sin(\theta) \cos(\theta)</m> and using the reference triangle found in <xref ref="idea_trigsub">Key Idea</xref>(b), we have

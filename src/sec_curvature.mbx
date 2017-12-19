@@ -1291,9 +1291,9 @@
           <setup>
             <var name="$comp">
               <set>
-                <member>\text{greater than}</member>
+                <member correct="yes">\text{greater than}</member>
                 <member>\text{equal to}</member>
-                <member correct="yes">\text{less than}</member>
+                <member>\text{less than}</member>
               </set>
             </var>
             <var name="$kappa">
@@ -1308,7 +1308,7 @@
             <pg-code>
               Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
               Context()->variables->are(t=>'Real');
-              $comp=PopUp(['?','greater than', 'equal to', 'less than'],3);
+              $comp=PopUp(['?','greater than', 'equal to', 'less than'],1);
               $kappa=Compute("|sec^3(t)|/(sec^4(t)+sec^2(t)tan^2(t))^(3/2)");
               $k[0]=Formula("1");
               $k[1]=Formula("3sqrt(3)/(5sqrt(5))");

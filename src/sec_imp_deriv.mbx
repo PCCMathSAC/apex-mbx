@@ -853,7 +853,7 @@
             <pg-code>
               Context()->variables->add(y=>'Real');
               $dydx=Formula("-4x^3/(2y+1)");
-              @y=(random(-2,2,0.1),random(-2,2,0.1),random(-2,2,0.1),random(-2,2,0.1),random(-2,2,0.1));
+              @y=(random(-2,2,0.2),random(-2,2,0.2),random(-2,2,0.2),random(-2,2,0.2),random(-2,2,0.2));
               @x=map{(7-($_)-($_)**2)**(1/4)*(-1)**(random(-1,1,2))}(@y);
               @xy=map{[$x[$_],$y[$_]]}(0..4);
               $dydx->{test_points}=~~@xy;
@@ -928,7 +928,7 @@
             <pg-code>
               Context()->variables->add(y=>'Real');
               $dydx=Formula("y/x");
-              @x=(random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1));
+              @x=(random(-4.05,4.05,0.1),random(-4.05,4.05,0.1),random(-4.05,4.05,0.1),random(-4.05,4.05,0.1),random(-4.05,4.05,0.1));
               @y=map{$_/10}(@x);
               @xy=map{[$x[$_],$y[$_]]}(0..4);
               $dydx->{test_points}=~~@xy;
@@ -953,7 +953,7 @@
             <pg-code>
               Context()->variables->add(y=>'Real');
               $dydx=Formula("y/x");
-              @y=(random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1));
+              @y=(random(-4.05,4.05,0.1),random(-4.05,4.05,0.1),random(-4.05,4.05,0.1),random(-4.05,4.05,0.1),random(-4.05,4.05,0.1));
               @x=map{$_/10}(@y);
               @xy=map{[$x[$_],$y[$_]]}(0..4);
               $dydx->{test_points}=~~@xy;
@@ -1004,7 +1004,8 @@
             <pg-code>
               Context()->variables->add(y=>'Real');
               $dydx=Formula("-2sin(y)cos(y)/x");
-              @x=(random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1),random(-4,4,0.1));
+              # need to avoid x==0
+              @x=(random(-3.9,3.9,0.2),random(-3.9,3.9,0.2),random(-3.9,3.9,0.2),random(-3.9,3.9,0.2),random(-3.9,3.9,0.2));
               @y=map{atan(50/($_)**2)}(@x);
               @xy=map{[$x[$_],$y[$_]]}(0..4);
               $dydx->{test_points}=~~@xy;
@@ -1054,7 +1055,7 @@
             <pg-code>
               Context()->variables->add(y=>'Real');
               $dydx=Formula("1/(2y+2)");
-              @y=(random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1));
+              @y=(random(-3.9,1.9,0.2),random(-3.9,1.9,0.2),random(-3.9,1.9,0.2),random(-3.9,1.9,0.2),random(-3.9,1.9,0.2));
               @x=map{sqrt(200)*(-1)**(random(-1,1,2))+2*($_)+($_)**2}(@y);
               @xy=map{[$x[$_],$y[$_]]}(0..4);
               $dydx->{test_points}=~~@xy;
@@ -1079,7 +1080,7 @@
             <pg-code>
               Context()->variables->add(y=>'Real');
               $dydx=Formula("(x^2+2xy^2-y)/(2x^2y-x+y^2)");
-              @y=(random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1),random(-4,2,0.1));
+              @y=(random(-3.9,1.9,0.2),random(-3.9,1.9,0.2),random(-3.9,1.9,0.2),random(-3.9,1.9,0.2),random(-3.9,1.9,0.2));
               @x=map{(17+(-1)**(random(-1,1,2))*sqrt(289 - 4*($_)*(1 - 17*($_))))/2}(@y);
               @xy=map{[$x[$_],$y[$_]]}(0..4);
               $dydx->{test_points}=~~@xy;
@@ -1334,7 +1335,7 @@
               Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
               Context()->variables->add(y=>'Real');
               parser::Assignment->Allow;
-              @eq=(Formula("y=4"),Formula("y=3/108^(1/4)(x-2)+108^(1/4)"));
+              @eq=(Formula("y=4"),Formula("y=3/108^(1/4)(x-2)-108^(1/4)"));
               $gr=init_graph(-4.2,-4.2,4.2,4.2,axes=>[0,0],size=>[400,400]);
               $gr->lb('reset');
               for my$i(-4,-3,-2,-1,1,2,3,4){$gr->moveTo($i,-0.04);$gr->lineTo($i,0.04,'black',2);$gr->lb(new Label($i,-0.05,$i,'black','center','top'));};
@@ -1388,7 +1389,7 @@
               Context()->flags->set(reduceConstants=>0,reduceConstantFunctions=>0);
               Context()->variables->add(y=>'Real');
               parser::Assignment->Allow;
-              @eq=(Formula("y=-1/3x+1"),Formula("y=3sqrt(3)/4"));
+              @eq=(Formula("y=-x+1"),Formula("y=3sqrt(3)/4"));
               $gr=init_graph(-2.5,-1.5,0.5,1.5,axes=>[0,0],size=>[400,400]);
               $gr->lb('reset');
               for my$i(-2,-1){$gr->moveTo($i,-0.04);$gr->lineTo($i,0.04,'black',2);$gr->lb(new Label($i,-0.05,$i,'black','center','top'));};

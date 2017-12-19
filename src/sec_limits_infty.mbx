@@ -996,13 +996,13 @@
               $L[1]=Compute("DNE");
               $xmin=-14;$xmax=14;
               $gr=init_graph($xmin,-1.2,$xmax,1.2,axes=>[0,0],size=>[400,400]);
-              $gr->h_ticks(0,"black",map{$_*pi/2}(-8..8));
+              $gr->h_ticks(0,"black",map{$_*pi()/2}(-8..8));
               $gr->v_ticks(0,"black",map{$_/2}(-2..2));
-              for my$i(-4,-3,-2,2,3,4){$gr->lb(new Label($i*pi,-0.05,"${i}pi",'black','center','top'));};
-              $gr->lb(new Label(-pi,-0.05,"-pi",'black','center','top'));
-              $gr->lb(new Label(pi,-0.05,"pi",'black','center','top'));
+              for my$i(-4,-3,-2,2,3,4){$gr->lb(new Label($i*pi(),-0.05,"${i}pi",'black','center','top'));};
+              $gr->lb(new Label(-pi(),-0.05,"-pi",'black','center','top'));
+              $gr->lb(new Label(pi(),-0.05,"pi",'black','center','top'));
               for my$i(map{$_/2}(-2..2)){$gr->lb(new Label(-0.05,$i,"$i",'black','right','middle'));};
-              for my$i(-4..4){my$low=($i-0.5)*pi;my$high=($i+0.5)*pi;add_functions($gr, "$f for x in &lt;$low,$high> using color:blue and weight:2");};
+              for my$i(-4..4){my$low=($i-0.5)*pi();my$high=($i+0.5)*pi();add_functions($gr, "$f for x in &lt;$low,$high> using color:blue and weight:2");};
             </pg-code>
           </setup>
           <statement>
@@ -1537,9 +1537,9 @@
               <static>y=2, x=4, x=-5</static>
             </var>
             <pg-code>
-              $c[0]=random(2,5,1);
+              do {$c[0]=random(2,5,1);
               $c[1]=non_zero_random(-9,9,1);
-              @b=map{($_==9)?10:$_-9}(NchooseK(19,3));
+              @b=map{($_==9)?10:$_-9}(NchooseK(19,3));} until ($b[1] != $b[0] and $b[2] != $b[0] and $b[1] != $c[1]/$c[0] and $b[2] !=  $c[1]/$c[0]);
               if($envir{problemSeed}==1){@c=(2,-2);@b=(2,4,-5)};
               $f=Formula("($c[0] x^2-($c[1]+$b[0]*$c[0])*x+$b[0]*$c[1])/(x^2-($b[1]+$b[2])*x+$b[1]*$b[2])")->reduce;
               parser::Assignment->Allow;
@@ -1705,7 +1705,7 @@
               $b[3]=random(1,5,1);
               if($envir{problemSeed}==1){@c=(1,-1);@b=(1,-1,0,1)};
               Context()->noreduce('(-x)+y','(-x)-y');
-              $f=Formula("($c[0] x^2-($b[0]+$b[1])*$c[0]*x+$b[0]*$b[1]*$c[0])/($c[1] x^2-2*$b[2]*$c[1]*x+($b[2]^2+$b[3])*$c[1])")->reduce;
+              $f=Formula("($c[0] x^2-($b[0]+$b[1])*$c[0]*x+$b[0]*$b[1]*$c[0])/($c[1] x^2-2*$b[2]*$c[1]*x+(($b[2])^2+$b[3])*$c[1])")->reduce;
               parser::Assignment->Allow;
               Context()->variables->are(x=>'Real',y=>'Real');
               Context()->flags->set(reduceConstants=>0);

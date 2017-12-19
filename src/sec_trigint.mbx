@@ -344,7 +344,7 @@
             </md>.
             So
             <me>
-              \int\tan^m(x) \ dx = \underbrace{\int\tan^{m-2}\sec^2(x) \ dx}_{\text{ apply rule #1 } } - \underbrace{\int\tan^{m-2}(x) \ dx}_{\text{ apply rule #4 again } }.
+              \int\tan^m(x) \ dx = \underbrace{\int\tan^{m-2}\sec^2(x) \ dx}_{\text{ apply rule 1 } } - \underbrace{\int\tan^{m-2}(x) \ dx}_{\text{ apply rule 4 again } }.
             </me>
           </p></li>
       </ol>
@@ -382,30 +382,20 @@
         <!--
         <caption>Setting up Integration by Parts.</caption>
         -->
-      <p>
-          <tabular>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <col width="30%" halign="center"/>
-            <row>
-              <cell>
-                <md>
-                  <mrow>u\amp = \sec(x) \amp  v\amp =\text{?}</mrow>
-                  <mrow>du\amp = \text{?}  \amp  dv\amp =\sec^2(x) \ dx</mrow>
-                </md>
-              </cell>
-              <cell>
-                <md>\Rightarrow</md>
-              </cell>
-              <cell>
-                <md>
-                  <mrow>u\amp = \sec(x) \amp  v\amp =\tan(x) </mrow>
-                  <mrow>du\amp = \sec(x) \tan(x) \ dx \amp  dv\amp =\sec^2(x) \ dx</mrow>
-                </md>       
-              </cell>
-            </row>
-          </tabular>
-        </p>
+
+        <sidebyside widths="40% 10% 40%">
+          <p><md>
+            <mrow>u\amp = \sec(x) \amp  v\amp =\mathord{?}</mrow>
+            <mrow>du\amp = \mathord{?}  \amp  dv\amp =\sec^2(x) \ dx</mrow>
+          </md></p>
+
+          <p><m>\implies</m></p>
+
+          <p><md>
+            <mrow>u\amp = \sec(x) \amp  v\amp =\tan(x) </mrow>
+            <mrow>du\amp = \sec(x) \tan(x) \ dx \amp  dv\amp =\sec^2(x) \ dx</mrow>
+          </md></p>
+        </sidebyside>
 
         <p>Employing Integration by Parts, we have
           <md>

@@ -835,8 +835,6 @@
       </ol>
     </insight>
 
-    <p>\end{minipage}</p>
-
     <p>We practice using the derivative and integral formulas in the following example.</p>
 
     <example xml:id="ex_hf3">
@@ -861,14 +859,14 @@
             </p></li>
 
           <li><p>Multiplying the numerator and denominator by <m>(-1)</m> gives: <m>\ds \int \frac{1}{x^2-1}\ dx = \int \frac{-1}{1-x^2}\ dx</m>. The second integral can be solved with a direct application of item <hash />3 from <xref ref="idea_hyperbolic_inverse_integrals">Key Idea</xref>, with <m>a=1</m>. Thus
-              <md>
-                <mrow>\int \frac{1}{x^2-1}\ dx \amp = -\int \frac{1}{1-x^2}\ dx</mrow>
-                <mrow>\amp = \left\{\begin{array}{ccc} -\tanh^{-1}\left(x\right)+C \amp  \amp  x^2\lt 1 \\ \\
+              <mdn>
+                <mrow number="no">\int \frac{1}{x^2-1}\ dx \amp = -\int \frac{1}{1-x^2}\ dx</mrow>
+                <mrow number="no">\amp = \left\{\begin{array}{ccc} -\tanh^{-1}\left(x\right)+C \amp  \amp  x^2\lt 1 \\ \\
                 -\coth^{-1}\left(x\right)+C \amp  \amp  1\lt x^2
                 \end{array} \right.</mrow>
-                <mrow>\amp =-\frac12\ln\abs{\frac{x+1}{x-1}}+C</mrow>
-                <mrow>\amp =\frac12\ln\abs{\frac{x-1}{x+1}}+C.</mrow>
-              </md>
+                <mrow number="no">\amp =-\frac12\ln\abs{\frac{x+1}{x-1}}+C</mrow>
+                <mrow xml:id="eq_hf3">\amp =\frac12\ln\abs{\frac{x-1}{x+1}}+C.</mrow>
+              </mdn>
               We should note that this exact problem was solved at the beginning of <xref ref="sec_partial_fraction">Section</xref>. In that example the answer was given as <m>\frac12\ln\abs{x-1}-\frac12\ln\abs{x+1}+C</m>. Note that this is equivalent to the answer given in <xref ref="eq_hf3">Equation</xref>, as <m>\ln(a/b) = \ln(a) - \ln(b)</m>.</p></li>
 
           <li><p>This requires a substitution, then item <hash />2 of <xref ref="idea_hyperbolic_inverse_integrals">Key Idea</xref> can be applied.
@@ -878,7 +876,7 @@
                 <mrow>\int \frac{1}{\sqrt{9x^2+10}}\ dx \amp = \frac13\int\frac{1}{\sqrt{u^2+10}}\ du.</mrow>
                 <intertext>Note <m>a^2=10</m>, hence <m>a = \sqrt{10}</m>. Now apply the integral rule.</intertext>
                 <mrow>\amp = \frac13 \sinh^{-1}\left(\frac{3x}{\sqrt{10}}\right) + C</mrow>
-                <mrow>\amp = \frac13 \ln\Big\abs{3x+\sqrt{9x^2+10}\Big}+C.</mrow>
+                <mrow>\amp = \frac13 \ln\abs{3x+\sqrt{9x^2+10}}+C.</mrow>
               </md>
             </p></li>
         </ol>

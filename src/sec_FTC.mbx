@@ -73,7 +73,7 @@
 
       </statement>
       <solution>
-        <p>We can see from <xref ref="fig_ftc1b">Figure</xref> that for <m>x \ge 1</m>, the area under the curve can be found by subtracting the area of two triangles. The larger triangle will have a base of <m>x</m> and a height of <m>f(x)=2x</m>, while the smaller triangle will have a base of <m>1</m> and a height of <m>2</m>. Therefore, the area under the curve for <m>x \gte 1</m> is given by <m>A(x)=\frac12 (x)(2x)-\frac12 (1)(2)=x^2-1</m>. </p>
+        <p>We can see from <xref ref="fig_ftc1b">Figure</xref> that for <m>x \geq 1</m>, the area under the curve can be found by subtracting the area of two triangles. The larger triangle will have a base of <m>x</m> and a height of <m>f(x)=2x</m>, while the smaller triangle will have a base of <m>1</m> and a height of <m>2</m>. Therefore, the area under the curve for <m>x \geq 1</m> is given by <m>A(x)=\frac12 (x)(2x)-\frac12 (1)(2)=x^2-1</m>. </p>
     <figure xml:id="fig_ftc1b" >
       <caption>The area of the shaded region is <m>F(x) = \int_1^x 2t\ dt</m>.</caption>
       <!-- START figures/fig_ftc1.tex -->
@@ -182,7 +182,7 @@
     <p>We now see how indefinite integrals and definite integrals are related: we can evaluate a definite integral using antiderivatives! In fact, this is exactly what we noticed in <xref ref="ex_ftc1">Example</xref>. The <q>area so far</q> function was indeed an anti-derivative of the integrand. This is the second part of the Fundamental Theorem of Calculus.</p>
 
     <theorem xml:id="thm_FTC2">
-      <title>The Fundamental Theorem of Calculus, Part 2</title>
+      <title>Fundamental Theorem of Calculus, Part 2</title>
       <statement>
         <p>Let <m>f</m> be continuous on <m>[a,b]</m> and let <m>F</m> be <em>any</em> antiderivative of <m>f</m>. Then<index><main>Fundamental Theorem of Calculus</main></index><index><main>integration</main><sub>Fun. Thm. of Calc.</sub></index>
           <me>
@@ -193,7 +193,7 @@
     </theorem>
 
     <example xml:id="ex_ftc3">
-      <title>Using the <xref autoname="title" ref="thm_FTC2" /></title>
+      <title>Using the Fundamental Theorem of Calculus, Part 2</title>
       <statement>
         <p>We spent a great deal of time in the previous section studying <m>\int_0^4(4x-x^2)\ dx</m>. Using the Fundamental Theorem of Calculus, evaluate this definite integral.</p>
       </statement>
@@ -955,16 +955,13 @@
       Replacing the integral with the limit of a Riemann sum (as in <xref ref="thm_riemann_sum">Theorem</xref>):
       <md>
         <mrow>f(c) \amp = \frac{1}{b-a}\int_a^b f(x)\ dx \amp </mrow>
-        <mrow>\amp = \frac{1}{b-a} \lim_\limits{n \to \infty}\sum_{i=1}^n f(c_i)\ \Delta x \amp \text{Using } <xref ref="thm_riemann_sum">Theorem</xref> </mrow>
-        <mrow>\amp =\frac{1}{b-a} \lim_\limits{n \to \infty}\sum_{i=1}^n f(c_i)\ \frac{b-a}{n}\amp \Delta x =\frac{b-a}{n}</mrow>
-        <mrow>\amp =\lim_\limits{n \to \infty}\sum_{i=1}^n f(c_i)\frac{1}{n} \amp \text{Cancelling the common factor of } b-a. </mrow>
-
-
-        
+        <mrow>\amp = \frac{1}{b-a} \lim\limits_{n \to \infty}\sum_{i=1}^n f(c_i)\ \Delta x \amp \text{Using } <xref ref="thm_riemann_sum">Theorem</xref> </mrow>
+        <mrow>\amp =\frac{1}{b-a} \lim\limits_{n \to \infty}\sum_{i=1}^n f(c_i)\ \frac{b-a}{n}\amp \Delta x =\frac{b-a}{n}</mrow>
+        <mrow>\amp =\lim\limits_{n \to \infty}\sum_{i=1}^n f(c_i)\frac{1}{n} \amp \text{Cancelling the common factor of } b-a. </mrow>
       </md>
     </p>
 
-    <p>Examining this last line closely, the expression <m>\sum_{i=1}^n f(c_i)\frac{1}{n}</m> represents adding up <m>n</m> sample values of <m>f(x)</m>and then dividing by <m>n</m>. This is <em>exactly</em> what we do when we calculate the average of a set of <m>n</m> numbers. Now when we consider taking the limit as <m>n</m> goes to <m>\infty</m>, <m>\lim_\limits{n \to \infty}\sum_{i=1}^n f(c_i)\frac{1}{n}</m>, we are adding up <em>all</em> of the function's output values over <m>[a,b]</m> and dividing by the <q>number of numbers</q>. In a sense, we are adding up an infinite number of output values and then dividing by the number of terms we summed (which is again infinite). </p>
+    <p>Examining this last line closely, the expression <m>\sum_{i=1}^n f(c_i)\frac{1}{n}</m> represents adding up <m>n</m> sample values of <m>f(x)</m>and then dividing by <m>n</m>. This is <em>exactly</em> what we do when we calculate the average of a set of <m>n</m> numbers. Now when we consider taking the limit as <m>n</m> goes to <m>\infty</m>, <m>\lim\limits_{n \to \infty}\sum_{i=1}^n f(c_i)\frac{1}{n}</m>, we are adding up <em>all</em> of the function's output values over <m>[a,b]</m> and dividing by the <q>number of numbers</q>. In a sense, we are adding up an infinite number of output values and then dividing by the number of terms we summed (which is again infinite). </p>
 
 
       <!--Next, partition the interval <m>[a,b]</m> into <m>n</m> equally spaced subintervals, <m>a=x_1 \lt  x_2 \lt  \ldots \lt  x_{n+1}=b</m> and choose any <m>c_i</m> in <m>[x_i,x_{i+1}]</m>. The average of the numbers <m>f(c_1)</m>, <m>f(c_2)</m>, <ellipsis />, <m>f(c_n)</m> is:

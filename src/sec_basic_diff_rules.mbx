@@ -442,35 +442,32 @@
           </setup>
           <statement>
             <p>The derivative rules introduced in this section (<xref ref="sec_basic_diff_rules">Section</xref>) explain how to compute the derivative of which of the following functions?</p>
-
-            <table>
-              <tabular top="minor" bottom="minor" valign="top">
-                <row>
-                  <cell><m>f(x) = \frac{3}{x^2}</m></cell>
-                  <cell><var name="$not" form="buttons" /></cell>
-                </row>
-                <row>
-                  <cell><m>g(x) = 3x^2-x+17</m></cell>
-                  <cell><var name="$covered" form="buttons" /></cell>
-                </row>
-                <row>
-                  <cell><m>h(x) = 5\ln(x)</m></cell>
-                  <cell><var name="$covered" form="buttons" /></cell>
-                </row>
-                <row>
-                  <cell><m>j(x) = \sin(x) \cos(x)</m></cell>
-                  <cell><var name="$not" form="buttons" /></cell>
-                </row>
-                <row>
-                  <cell><m>k(x) = e^{x^2}</m></cell>
-                  <cell><var name="$not" form="buttons" /></cell>
-                </row>
-                <row>
-                  <cell><m>m(x) = \sqrt{x}{3}{x^2}</m></cell>
-                  <cell><var name="$not" form="buttons" /></cell>
-                </row>
-              </tabular>
-            </table>
+            <p><ol label="a">
+              <li>
+                <p><m>f(x) = \frac{3}{x^2}</m></p>
+                <p><var name="$not" form="buttons" /></p>
+              </li>
+              <li>
+                <p><m>g(x) = 3x^2-x+17</m></p>
+                <p><var name="$covered" form="buttons" /></p>
+              </li>
+              <li>
+                <p><m>h(x) = 5\ln(x)</m></p>
+                <p><var name="$covered" form="buttons" /></p>
+              </li>
+              <li>
+                <p><m>j(x) = \sin(x) \cos(x)</m></p>
+                <p><var name="$not" form="buttons" /></p>
+              </li>
+              <li>
+                <p><m>k(x) = e^{x^2}</m></p>
+                <p><var name="$not" form="buttons" /></p>
+              </li>
+              <li>
+                <p><m>m(x) = \sqrt{x}{3}{x^2}</m></p>
+                <p><var name="$not" form="buttons" /></p>
+              </li>
+            </ol></p>
           </statement>
         </webwork>
       </exercise>
@@ -1160,8 +1157,8 @@
               Context()->flags->set(reduceConstants=>0);
               Context()->variables->are(y=>'Real',t=>'Real');
               parser::Assignment->Allow;
-              $t=Formula("y=t+3");
-              $n=Formula("y=-t+3");
+              $t=Formula("y=t+4");
+              $n=Formula("y=-t+4");
             </pg-code>
           </setup>
           <statement>
